@@ -216,7 +216,7 @@ public class Xcls_ProjectSettings : Object
 
             // listeners 
             this.el.button_press_event.connect( () => {
-                _this.project.runhtml = "";
+                _this.project.runhtml =   _this.view.el.get_buffer().get_text();
                 _this.buttonPressed("apply");
             } );
         }

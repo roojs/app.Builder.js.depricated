@@ -12,6 +12,8 @@
             "|homogeneous": "false",
             "|void:show": " (Project.Project project) {\n    _this.project = project;\n    // get the active project.\n    \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n    //this.el.show_all();\n}\n",
             "|xns": "Gtk",
+            "": "",
+            "listeners": {},
             "items": [
                 {
                     "|xns": "Gtk",
@@ -48,7 +50,7 @@
                         },
                         {
                             "listeners": {
-                                "button_press_event": "() => {\n    _this.project.runhtml = \"\";\n    _this.buttonPressed(\"apply\");\n}"
+                                "button_press_event": "() => {\n    _this.project.runhtml =   _this.view.el.get_buffer().get_text();\n    _this.buttonPressed(\"apply\");\n}"
                             },
                             "label": "Apply",
                             "pack": "add",

@@ -24,6 +24,7 @@ ProjectSettings=new XObject({
         
         //this.el.show_all();
     },
+     : "",
     items : [
         {
             xtype: Gtk.Label,
@@ -59,7 +60,7 @@ ProjectSettings=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : () => {
-                            _this.project.runhtml = "";
+                            _this.project.runhtml =   _this.view.el.get_buffer().get_text();
                             _this.buttonPressed("apply");
                         }
                     },
