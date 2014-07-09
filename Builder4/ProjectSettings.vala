@@ -45,7 +45,7 @@ public class Xcls_ProjectSettings : Object
         this.el.pack_start (  child_1.el , true,true,0 );
         var child_2 = new Xcls_HBox5( _this );
         child_2.ref();
-        this.el.add (  child_2.el  );
+        this.el.pack_end (  child_2.el , true,true,0 );
     }
 
     // userdefined functions 

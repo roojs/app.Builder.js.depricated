@@ -33,7 +33,7 @@
                     ]
                 },
                 {
-                    "xpack": "pack_etrue,true,0",
+                    "pack": "pack_end,true,true,0",
                     "xtype": "HBox",
                     "|xns": "Gtk"
                 }
