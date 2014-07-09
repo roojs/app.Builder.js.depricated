@@ -300,7 +300,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
-                                            id : "rooview",
+                                            id : "projecteditview",
                                             pack : "get_stage().add_child",
                                             init : {
                                                
