@@ -227,7 +227,7 @@ public class Xcls_MainWindow : Object
             el.save_easing_state();
            
             
-            el.set_scale(0.5f,0.5f);
+            el.set_scale(1.0f,0.5f);
            
             _this.state = "projectedit";
         
