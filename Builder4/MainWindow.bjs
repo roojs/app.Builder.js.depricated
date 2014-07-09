@@ -132,6 +132,7 @@
                                                             "|init": "this.el.set_size(50,50);",
                                                             "|reactive": "true",
                                                             "|xns": "Clutter",
+                                                            "id": "",
                                                             "items": [
                                                                 {
                                                                     "pack": "add_child",

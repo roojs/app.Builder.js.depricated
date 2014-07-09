@@ -288,6 +288,7 @@ MainWindow=new XObject({
                                                     pack : false,
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,
+                                                    id : "",
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
