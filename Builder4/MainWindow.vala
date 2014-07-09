@@ -149,9 +149,10 @@ public class Xcls_MainWindow : Object
         
         
             this.clutterfiles.open.connect((file) => { 
+                _this.project = file.project;
                 _this.showViewEditing();
                 this.left_tree.model.loadFile(file);
-                this.project = file.project;
+                
                 this.window_rooview.loadFile(file);
                 print("OPEN : " + file.name);
         
