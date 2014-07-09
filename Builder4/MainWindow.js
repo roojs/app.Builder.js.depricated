@@ -30,7 +30,7 @@ MainWindow=new XObject({
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
         
-         this.editpane.createThumb();
+         this.window_rooview.createThumb();
          
          this.editpane.el.hide();
         //this.rooview.el.hide();
