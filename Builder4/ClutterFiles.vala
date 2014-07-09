@@ -87,6 +87,8 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
+
+    // skip | - no return type
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
