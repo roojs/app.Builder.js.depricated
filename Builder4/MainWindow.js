@@ -187,10 +187,10 @@ MainWindow=new XObject({
         
         el.set_scale(1.0f,0.5f);
        
-       _this.projecteditview.el.set_scale(1.0f,1.0f);
+        _this.projecteditview.el.set_scale(1.0f,1.0f);
        
         _this.state = "projectedit";
-        projecteditview
+         
      
         //_this.clutterfiles.loadProject(_this.project);
     
