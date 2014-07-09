@@ -306,7 +306,8 @@ MainWindow=new XObject({
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : true,
                                                             y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : true
+                                                            y_expand : true,
+                                                            line_alignment : ""
                                                         }
                                                     ]
                                                 },
