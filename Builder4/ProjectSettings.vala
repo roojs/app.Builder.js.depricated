@@ -190,6 +190,7 @@ public class Xcls_ProjectSettings : Object
             // listeners 
             this.el.button_press_event.connect( () => {
                 _this.buttonPressed("cancel");
+                return false;
             } );
         }
 
@@ -227,6 +228,7 @@ public class Xcls_ProjectSettings : Object
                 
                       
                 _this.buttonPressed("apply");
+                    return false;
             } );
         }
 
@@ -264,6 +266,7 @@ public class Xcls_ProjectSettings : Object
                 
                       
                 _this.buttonPressed("save");
+                    return false;
             } );
         }
 

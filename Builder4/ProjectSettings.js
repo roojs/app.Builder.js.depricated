@@ -50,6 +50,7 @@ ProjectSettings=new XObject({
                     listeners : {
                         button_press_event : () => {
                             _this.buttonPressed("cancel");
+                            return false;
                         }
                     },
                     label : "Cancel",
@@ -68,6 +69,7 @@ ProjectSettings=new XObject({
                             
                                   
                             _this.buttonPressed("apply");
+                                return false;
                         }
                     },
                     label : "Apply",
@@ -86,6 +88,7 @@ ProjectSettings=new XObject({
                             
                                   
                             _this.buttonPressed("save");
+                                return false;
                         }
                     },
                     label : "Save",
