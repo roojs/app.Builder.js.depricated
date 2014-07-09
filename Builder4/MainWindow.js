@@ -91,6 +91,7 @@ MainWindow=new XObject({
         this.clutterfiles.open.connect((file) => { 
             _this.showViewEditing();
             this.left_tree.model.loadFile(file);
+            this.project = file.project;
             this.window_rooview.loadFile(file);
             print("OPEN : " + file.name);
     
