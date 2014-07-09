@@ -148,7 +148,7 @@ MainWindow=new XObject({
         
             el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
             el.set_scale(1.0f,1.0f);
-            _this.is_editing = true;
+            _this.state = "edit";
            // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
             _this.clutterfiles.el.hide();
         
