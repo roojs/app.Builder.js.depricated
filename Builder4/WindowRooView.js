@@ -27,8 +27,8 @@ WindowRooView=new XObject({
     
         Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height);
     
-        screenshot.save("screenshot.png","png");
-        return 0;
+        screenshot.save(filename,"png");
+        return;
         
         
         
