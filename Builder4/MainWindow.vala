@@ -156,7 +156,7 @@ public class Xcls_MainWindow : Object
         
             this.left_projects.project_selected.connect((proj) => {
                 proj.scanDirs();
-                _this.clutterfiles.show(proj);
+                _this.clutterfiles.loadProject(proj);
             
             });
         
