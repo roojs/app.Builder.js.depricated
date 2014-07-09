@@ -37,10 +37,10 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
-    public Xcls_ProjectSetting projectsettings;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
+    public Xcls_ProjectSetting projectsettings;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
@@ -58,6 +58,7 @@ public class Xcls_MainWindow : Object
         // my vars
         this.clutterfiles = null;
         this.left_props = null;
+        this.projectsettings = null;
         this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
