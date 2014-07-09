@@ -136,7 +136,7 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Open\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Open\\nFiles\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
                                                                     "|x_align": "Clutter.ActorAlign.START",

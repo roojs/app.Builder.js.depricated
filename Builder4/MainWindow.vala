@@ -675,7 +675,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text15(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Open",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Open\nFiles",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
