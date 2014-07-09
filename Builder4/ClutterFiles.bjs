@@ -77,7 +77,7 @@
                                 {
                                     "*args": "JsRender.JsRender file",
                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-                                    "id": "+title",
+                                    "id": "+typetitle",
                                     "pack": "add_child",
                                     "xtype": "Text",
                                     "|x_align": "Clutter.ActorAlign.START",

@@ -190,7 +190,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
         public JsRender.JsRender file;
         public Xcls_image image;
-        public Xcls_title title;
+        public Xcls_typetitle typetitle;
         public Xcls_title title;
 
             // ctor 
@@ -210,10 +210,10 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.image =  child_1;
-            var child_2 = new Xcls_title( _this ,file);
+            var child_2 = new Xcls_typetitle( _this ,file);
             child_2.ref();
             this.el.add_child (  child_2.el  );
-            this.title =  child_2;
+            this.typetitle =  child_2;
             var child_3 = new Xcls_title( _this ,file);
             child_3.ref();
             this.el.add_child (  child_3.el  );
@@ -297,7 +297,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_title : Object 
+    public class Xcls_typetitle : Object 
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -306,7 +306,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),new Clutter.Color.from_string("#fff"));
