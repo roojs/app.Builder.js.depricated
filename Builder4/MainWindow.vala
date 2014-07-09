@@ -32,7 +32,7 @@ public class Xcls_MainWindow : Object
     public Xcls_clutterembed clutterembed;
     public Xcls_rooview rooview;
     public Xcls_projectbutton projectbutton;
-    public Xcls_projectbutton projectbutton;
+    public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
     public Project.Project project;
@@ -458,7 +458,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_projectbutton( _this );
             child_1.ref();
             this.el.get_stage().add_child (  child_1.el  );
-            var child_2 = new Xcls_projectbutton( _this );
+            var child_2 = new Xcls_projecteditbutton( _this );
             child_2.ref();
             this.el.get_stage().add_child (  child_2.el  );
 
@@ -618,7 +618,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_projectbutton : Object 
+    public class Xcls_projecteditbutton : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -627,10 +627,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projectbutton(Xcls_MainWindow _owner )
+        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.projectbutton = this;
+            _this.projecteditbutton = this;
             this.el = new GtkClutter.Actor();
 
             // my vars
