@@ -288,6 +288,47 @@ MainWindow=new XObject({
                                                     }
                                                 }
                                             ]
+                                        },
+                                        {
+                                            xtype: GtkClutter.Actor,
+                                            id : "projectbutton",
+                                            pack : "get_stage().add_child",
+                                            init : {
+                                                
+                                                this.el.add_constraint(
+                                                    new Clutter.AlignConstraint(
+                                                        _this.clutterembed.el.get_stage(), 
+                                                        Clutter.AlignAxis.X_AXIS,
+                                                        0.0f
+                                                    )
+                                                );
+                                                
+                                                //this.el.set_position(100,100);
+                                                this.el.set_pivot_point(0.5f,0.5f);
+                                                this.el.set_size(50,50);
+                                            },
+                                            items : [
+                                                {
+                                                    xtype: Gtk.Button,
+                                                    listeners : {
+                                                        clicked : ( ) => {
+                                                             
+                                                            if (_this.is_editing) { 
+                                                                _this.hideViewEditing();
+                                                            } else {
+                                                                _this.showViewEditing();
+                                                            }
+                                                                
+                                                        
+                                                        }
+                                                    },
+                                                    label : "P",
+                                                    pack : false,
+                                                    init : {
+                                                        ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
+                                                    }
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
