@@ -302,12 +302,12 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            line_alignment : Pango.Alignment.CENTER,
                                                             pack : "add_child",
+                                                            line_alignment : Pango.Alignment.CENTER,
                                                             x_align : Clutter.ActorAlign.CENTER,
-                                                            x_expand : true,
+                                                            x_expand : false,
                                                             y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : true
+                                                            y_expand : false
                                                         }
                                                     ]
                                                 },
@@ -339,9 +339,9 @@ MainWindow=new XObject({
                                                             line_alignment : Pango.Alignment.CENTER,
                                                             pack : "add_child",
                                                             x_align : Clutter.ActorAlign.CENTER,
-                                                            x_expand : true,
+                                                            x_expand : false,
                                                             y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : true
+                                                            y_expand : false
                                                         }
                                                     ]
                                                 }

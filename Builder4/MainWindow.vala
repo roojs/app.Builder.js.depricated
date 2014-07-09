@@ -682,9 +682,9 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.line_alignment = Pango.Alignment.CENTER;
             this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = true;
+            this.el.x_expand = false;
             this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = true;
+            this.el.y_expand = false;
         }
 
         // userdefined functions 
@@ -757,9 +757,9 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.line_alignment = Pango.Alignment.CENTER;
             this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = true;
+            this.el.x_expand = false;
             this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = true;
+            this.el.y_expand = false;
         }
 
         // userdefined functions 
