@@ -662,6 +662,13 @@ public class Xcls_MainWindow : Object
                         0.1f
                     )
                 );    
+                 this.el.add_constraint(
+                    new Clutter.BindConstraint(
+                        _this.clutterembed.el.get_stage(), 
+                        Clutter.BindCoordinate.HEIGHT,
+                        0.1f
+                    )
+                );    
                 //this.el.set_position(100,100);
                 //this.el.set_pivot_point(0.5f,0.5f);
                  this.el.set_size(50,
