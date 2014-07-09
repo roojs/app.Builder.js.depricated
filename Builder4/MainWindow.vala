@@ -90,9 +90,6 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showProjectEdit () {
-            // make the browser smaller, and show the edit dialog
-        }
     public void hideViewEditing  ( )   {
             
              this.window_rooview.createThumb();
@@ -194,6 +191,9 @@ public class Xcls_MainWindow : Object
             _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
             this.el.show_all();
         
+        }
+    public void showProjectEdit () {
+            // make the browser smaller, and show the edit dialog
         }
     public void showViewEditing  ( )  {
              this.editpane.el.show();

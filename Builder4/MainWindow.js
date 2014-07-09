@@ -26,9 +26,6 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    'void:showProjectEdit' : () {
-        // make the browser smaller, and show the edit dialog
-    },
     init : //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
@@ -133,6 +130,9 @@ MainWindow=new XObject({
         this.el.show_all();
     
     },
+    'void:showProjectEdit' : () {
+        // make the browser smaller, and show the edit dialog
+    },
     'void:showViewEditing' : ( )  {
          this.editpane.el.show();
       //   this.rooview.el.show();
@@ -154,6 +154,7 @@ MainWindow=new XObject({
             
         print("show view editing");
     },
+     : "",
     items : [
         {
             xtype: Gtk.VBox,
