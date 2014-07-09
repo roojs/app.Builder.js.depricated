@@ -53,13 +53,13 @@ ProjectSettings=new XObject({
                 },
                 {
                     xtype: Gtk.Button,
-                    xpack : "add",
-                    label : "Apply"
+                    label : "Apply",
+                    pack : "add"
                 },
                 {
                     xtype: Gtk.Button,
-                    label : "Save",
-                    pack : false
+                    pack : "add",
+                    label : "Save"
                 }
             ]
         }

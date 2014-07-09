@@ -159,6 +159,7 @@ public class Xcls_ProjectSettings : Object
             this.el.add (  child_1.el  );
             var child_2 = new Xcls_Button8( _this );
             child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // userdefined functions 

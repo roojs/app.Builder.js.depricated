@@ -45,14 +45,14 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "xpack": "add",
                             "label": "Apply",
+                            "pack": "add",
                             "xtype": "Button",
                             "|xns": "Gtk"
                         },
                         {
+                            "pack": "add",
                             "label": "Save",
-                            "pack": false,
                             "xtype": "Button",
                             "|xns": "Gtk"
                         }
