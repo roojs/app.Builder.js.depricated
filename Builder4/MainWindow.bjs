@@ -131,7 +131,16 @@
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
                                                             "|reactive": "true",
-                                                            "|xns": "Clutter"
+                                                            "|xns": "Clutter",
+                                                            "items": [
+                                                                {
+                                                                    "pack": false,
+                                                                    "xtype": "Text",
+                                                                    "|xns": "Clutter",
+                                                                    "": "",
+                                                                    "listeners": {}
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 },

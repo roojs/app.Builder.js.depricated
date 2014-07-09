@@ -287,7 +287,14 @@ MainWindow=new XObject({
                                                     },
                                                     pack : false,
                                                     init : this.el.set_size(50,50);,
-                                                    reactive : true
+                                                    reactive : true,
+                                                    items : [
+                                                        {
+                                                            xtype: Clutter.Text,
+                                                            pack : false,
+                                                             : ""
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             layout_manager : {
