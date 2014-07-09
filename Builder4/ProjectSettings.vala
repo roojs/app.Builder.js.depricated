@@ -156,6 +156,7 @@ public class Xcls_ProjectSettings : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_Button7( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
             var child_2 = new Xcls_Button8( _this );
             child_2.ref();
         }
@@ -182,8 +183,6 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.label = "Cancel";
-
-            // listeners 
         }
 
         // userdefined functions 
