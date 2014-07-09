@@ -27,6 +27,7 @@ public class Xcls_ClutterFiles : Object
 
         // my vars
     public signal void open(JsRender.JsRender file);
+    public Gee.ArrayList fileitems;
 
         // ctor 
     public Xcls_ClutterFiles()
@@ -36,6 +37,10 @@ public class Xcls_ClutterFiles : Object
         this.el = new Clutter.ScrollActor();
 
         // my vars
+        this.fileitems = function() {
+    
+}
+;
 
         // set gobject values
         this.el.reactive = true;
@@ -87,8 +92,6 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
