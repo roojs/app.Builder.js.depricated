@@ -57,7 +57,7 @@ public class Xcls_ProjectSettings : Object
             //project.runhtml = project.runhtml || '';
             _this.view.el.get_buffer().set_text(project.runhtml);
             
-            this.el.show_all();
+            //this.el.show_all();
         }
 
     // skip |xns - no return type

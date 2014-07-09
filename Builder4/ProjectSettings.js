@@ -12,8 +12,8 @@ XObject = imports.XObject.XObject;
 ProjectSettings=new XObject({
     xtype: Gtk.VBox,
     border_width : 5,
-    homogeneous : false,
     id : "ProjectSettings",
+    homogeneous : false,
     pack : get_content_area().add,
     'void:show' : (Project.Project project) {
         _this.project = project;
@@ -23,7 +23,7 @@ ProjectSettings=new XObject({
         //project.runhtml = project.runhtml || '';
         _this.view.el.get_buffer().set_text(project.runhtml);
         
-        this.el.show_all();
+        //this.el.show_all();
     },
     items : [
         {
