@@ -680,13 +680,11 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.line_alignment = "";
+            this.el.line_alignment = Pango.Alignment.CENTER;
             this.el.x_align = Clutter.ActorAlign.CENTER;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.CENTER;
             this.el.y_expand = true;
-
-            // listeners 
         }
 
         // userdefined functions 

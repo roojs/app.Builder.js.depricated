@@ -137,15 +137,14 @@
                                                             "items": [
                                                                 {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Open\\nFiles\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    "|line_alignment": "Pango.Alignment.CENTER",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
                                                                     "|x_align": "Clutter.ActorAlign.CENTER",
                                                                     "|x_expand": "true",
                                                                     "|xns": "Clutter",
                                                                     "|y_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|y_expand": "true",
-                                                                    "line_alignment": "",
-                                                                    "listeners": {}
+                                                                    "|y_expand": "true"
                                                                 }
                                                             ]
                                                         },

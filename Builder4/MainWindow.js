@@ -302,12 +302,12 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
+                                                            line_alignment : Pango.Alignment.CENTER,
                                                             pack : "add_child",
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : true,
                                                             y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : true,
-                                                            line_alignment : ""
+                                                            y_expand : true
                                                         }
                                                     ]
                                                 },
