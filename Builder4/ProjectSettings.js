@@ -48,8 +48,13 @@ ProjectSettings=new XObject({
             items : [
                 {
                     xtype: Gtk.Button,
+                    label : "Cancel",
                     pack : "add",
-                    label : "Cancel"
+                    listeners : {
+                        button_press_event : function (self, event) {
+                        
+                        }
+                    }
                 },
                 {
                     xtype: Gtk.Button,
