@@ -11,10 +11,9 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
+    'Gee.ArrayList<Xcls_fileitem>:fileitems' : "",
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-    'Gee.ArrayList\\<Xcls_fileitem\\>:fileitems' : "",
-    'Gee.ArrayList<Xcls_fileitem>:fileitems' : "function() {\n    \n}\n",
     init : this.fileitems = new Gee.ArrayList<Xcls_fileitem>();,
     reactive : true,
     'void:clearFiles' : () {

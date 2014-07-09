@@ -7,11 +7,10 @@
     "items": [
         {
             ".signal:void:open": "(JsRender.JsRender file)",
+            "Gee.ArrayList<Xcls_fileitem>:fileitems": "",
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
-            "Gee.ArrayList\\<Xcls_fileitem\\>:fileitems": "",
-            "Gee.ArrayList<Xcls_fileitem>:fileitems": "function() {\n    \n}\n",
             "|init": "this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n",
             "|reactive": "true",
             "|void:clearFiles": "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n",
