@@ -655,6 +655,7 @@ public class Xcls_MainWindow : Object
                         0.0f
                     )
                 );
+                // top 10%
                 this.el.add_constraint(
                     new Clutter.BindConstraint(
                         _this.clutterembed.el.get_stage(), 
@@ -662,6 +663,7 @@ public class Xcls_MainWindow : Object
                         0.1f
                     )
                 );    
+                // height 10%
                  this.el.add_constraint(
                     new Clutter.BindConstraint(
                         _this.clutterembed.el.get_stage(), 

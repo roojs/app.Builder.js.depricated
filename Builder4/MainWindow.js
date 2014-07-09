@@ -308,6 +308,7 @@ MainWindow=new XObject({
                                                         0.0f
                                                     )
                                                 );
+                                                // top 10%
                                                 this.el.add_constraint(
                                                     new Clutter.BindConstraint(
                                                         _this.clutterembed.el.get_stage(), 
@@ -315,6 +316,7 @@ MainWindow=new XObject({
                                                         0.1f
                                                     )
                                                 );    
+                                                // height 10%
                                                  this.el.add_constraint(
                                                     new Clutter.BindConstraint(
                                                         _this.clutterembed.el.get_stage(), 
