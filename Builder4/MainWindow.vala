@@ -677,7 +677,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.label = "P";
+            this.el.label = "PE";
 
             // init method 
             {

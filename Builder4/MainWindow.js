@@ -322,7 +322,7 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
-                                                    label : "P",
+                                                    label : "PE",
                                                     pack : false,
                                                     init : {
                                                         ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);

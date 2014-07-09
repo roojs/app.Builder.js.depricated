@@ -138,7 +138,7 @@
                                                             "listeners": {
                                                                 "clicked": "  ( ) => {\n     \n    if (_this.is_editing) { \n        _this.hideViewEditing();\n    } else {\n        _this.showViewEditing();\n    }\n        \n\n}"
                                                             },
-                                                            "label": "P",
+                                                            "label": "PE",
                                                             "pack": false,
                                                             "xtype": "Button",
                                                             "|init": "{\n    ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);\n}",
