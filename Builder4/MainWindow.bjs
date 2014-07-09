@@ -117,7 +117,7 @@
                                                     "|xns": "GtkClutter",
                                                     "items": [
                                                         {
-                                                            "*prop": "",
+                                                            "*prop": "layout_manager",
                                                             "xtype": "BoxLayout",
                                                             "|xns": "Clutter"
                                                         }

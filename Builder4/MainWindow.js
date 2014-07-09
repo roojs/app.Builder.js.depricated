@@ -282,7 +282,7 @@ MainWindow=new XObject({
                                                  
                                                //  this.el.set_size(50,50);
                                             },
-                                             : {
+                                            layout_manager : {
                                                 xtype: Clutter.BoxLayout
                                             }
                                         },

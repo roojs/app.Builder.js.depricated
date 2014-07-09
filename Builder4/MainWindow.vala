@@ -562,7 +562,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_BoxLayout13( _this );
             child_0.ref();
-            this.el. = child_0.el;
+            this.el.layout_manager = child_0.el;
 
             // init method 
             {
