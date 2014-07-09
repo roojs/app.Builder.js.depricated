@@ -24,6 +24,7 @@ ProjectSettings=new XObject({
         
         //this.el.show_all();
     },
+     : "",
     items : [
         {
             xtype: Gtk.Label,
