@@ -291,12 +291,12 @@ MainWindow=new XObject({
                                                             } else {
                                                                 _this.showViewEditing();
                                                             }
-                                                                
+                                                                return false;    
                                                         
                                                         }
                                                     },
-                                                    pack : "add_child",
                                                     id : "projectbutton",
+                                                    pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,
                                                     items : [
@@ -324,7 +324,7 @@ MainWindow=new XObject({
                                                         button_press_event : ( ) => {
                                                              
                                                               _this.showProjectEdit();
-                                                                
+                                                                    return false;
                                                         
                                                         }
                                                     },

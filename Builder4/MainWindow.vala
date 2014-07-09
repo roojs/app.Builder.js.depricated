@@ -654,7 +654,7 @@ public class Xcls_MainWindow : Object
                 } else {
                     _this.showViewEditing();
                 }
-                    
+                    return false;    
             
             } );
         }
@@ -728,7 +728,7 @@ public class Xcls_MainWindow : Object
             this.el.button_press_event.connect(   ( ) => {
                  
                   _this.showProjectEdit();
-                    
+                        return false;
             
             } );
         }
