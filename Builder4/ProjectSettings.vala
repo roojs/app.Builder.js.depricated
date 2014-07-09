@@ -25,7 +25,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_view view;
 
         // my vars
-    public signal void buttonPressed;
+    public signal void buttonPressed(string btn);
     public Project.Project project;
 
         // ctor 
