@@ -59,11 +59,13 @@ public class Xcls_WindowRooView : Object
             var p = new WebKit.PrintOperation(_this.view.el);
              
             var ps = new Gtk.PrintSettings();
+            ps.set_printer("Print to File");
             ps.set("output-file-format", "pdf");
             ps.set("output-uri", "file://" + filename + ".pdf");
+        
+            // find the printer...
             
-            
-            
+            /*
             var ar = Gtk.PaperSize.get_paper_sizes(false);
             var psetup = new Gtk.PageSetup();
             for(var i = 0; i < ar.length(); i++) {
@@ -75,6 +77,7 @@ public class Xcls_WindowRooView : Object
             
              
             p.set_page_setup(psetup);
+            */
             p.set_print_settings(ps);
             
             p.finished.connect(() => {
@@ -86,6 +89,7 @@ public class Xcls_WindowRooView : Object
                // var f = GLib.File.new_for_path (filename + ".pdf");
                // f.delete();
             });
+            
             
             p.print();
             
