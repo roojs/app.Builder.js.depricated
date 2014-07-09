@@ -163,6 +163,7 @@
                                                             "items": [
                                                                 {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Edit\\nProject\\nDetails\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    "|line_alignment": "Pango.Alignment.CENTER",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
                                                                     "|x_align": "Clutter.ActorAlign.CENTER",
