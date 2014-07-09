@@ -175,25 +175,6 @@
                                                     ]
                                                 },
                                                 {
-                                                    "id": "projectbutton",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n    \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    // height 10%\n     this.el.add_constraint(\n        new Clutter.BindConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.BindCoordinate.HEIGHT,\n            0.1f\n        )\n    );    \n    //this.el.set_position(100,100);\n    //this.el.set_pivot_point(0.5f,0.5f);\n     this.el.set_width(50);\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.5f,0.5f);\n  //  this.el.set_size(50,\n  ///          _this.clutterembed.el.get_stage().height * 0.1f);\n     \n   //  this.el.set_size(50,50);\n}",
-                                                    "|xns": "GtkClutter",
-                                                    "items": [
-                                                        {
-                                                            "listeners": {
-                                                                "clicked": "  ( ) => {\n     \n    if (_this.is_editing) { \n        _this.hideViewEditing();\n    } else {\n        _this.showViewEditing();\n    }\n        \n\n}"
-                                                            },
-                                                            "label": "P",
-                                                            "pack": false,
-                                                            "xtype": "Button",
-                                                            "|init": "{\n    ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);\n}",
-                                                            "|xns": "Gtk"
-                                                        }
-                                                    ]
-                                                },
-                                                {
                                                     "id": "projecteditbutton",
                                                     "pack": "get_stage().add_child",
                                                     "xtype": "Actor",
