@@ -557,7 +557,7 @@ public class Xcls_MainWindow : Object
                 _this.clutterfiles.set_size(alloc.width-50,
                        alloc.height);
                 _this.projecteditview.el.set_size(alloc.width-50,
-                       alloc.height / 2.0);
+                       alloc.height / 2.0f);
             
             } );
         }
