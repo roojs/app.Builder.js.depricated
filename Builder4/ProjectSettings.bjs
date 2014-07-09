@@ -57,8 +57,11 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "pack": "add",
+                            "listeners": {
+                                "button_press_event": "() => {\n    _this.project.runhtml = \"\";\n    _this.buttonPressed(\"save\");\n}"
+                            },
                             "label": "Save",
+                            "pack": "add",
                             "xtype": "Button",
                             "|xns": "Gtk"
                         }

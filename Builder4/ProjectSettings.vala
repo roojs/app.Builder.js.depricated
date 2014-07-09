@@ -243,6 +243,12 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.label = "Save";
+
+            // listeners 
+            this.el.button_press_event.connect( () => {
+                _this.project.runhtml = "";
+                _this.buttonPressed("save");
+            } );
         }
 
         // userdefined functions 
