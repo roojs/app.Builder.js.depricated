@@ -4,7 +4,7 @@
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.bjs",
-   
+    "items" : [ 
         {
             "border_width": 5,
             "xtype": "VBox",
