@@ -48,13 +48,13 @@
                             "|xns": "Gtk"
                         },
                         {
+                            "listeners": {
+                                "button_press_event": "() => {\n    _this.project.runhtml = \"\";\n    _this.buttonPressed(\"apply\");\n}"
+                            },
                             "label": "Apply",
                             "pack": "add",
                             "xtype": "Button",
-                            "|xns": "Gtk",
-                            "listeners": {
-                                "button_press_event": "function (self, event) {\n\n}"
-                            }
+                            "|xns": "Gtk"
                         },
                         {
                             "pack": "add",

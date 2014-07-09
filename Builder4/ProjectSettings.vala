@@ -215,8 +215,9 @@ public class Xcls_ProjectSettings : Object
             this.el.label = "Apply";
 
             // listeners 
-            this.el.button_press_event.connect( function (self, event) {
-            
+            this.el.button_press_event.connect( () => {
+                _this.project.runhtml = "";
+                _this.buttonPressed("apply");
             } );
         }
 

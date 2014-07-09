@@ -58,13 +58,14 @@ ProjectSettings=new XObject({
                 },
                 {
                     xtype: Gtk.Button,
-                    label : "Apply",
-                    pack : "add",
                     listeners : {
-                        button_press_event : function (self, event) {
-                        
+                        button_press_event : () => {
+                            _this.project.runhtml = "";
+                            _this.buttonPressed("apply");
                         }
-                    }
+                    },
+                    label : "Apply",
+                    pack : "add"
                 },
                 {
                     xtype: Gtk.Button,
