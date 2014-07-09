@@ -26,7 +26,9 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    init : //this.el.show_all();,
+    init : this.state = "files";
+    	  
+        //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
         

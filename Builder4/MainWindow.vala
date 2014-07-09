@@ -36,7 +36,6 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
-    public string state;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
@@ -44,7 +43,7 @@ public class Xcls_MainWindow : Object
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
     public bool children_loaded;
-    public bool is_editing;
+    public string state;
     public string title;
 
         // ctor 
@@ -61,7 +60,6 @@ public class Xcls_MainWindow : Object
         this.left_tree = null;
         this.window_rooview = null;
         this.children_loaded = false;
-        this.is_editing = false;
         this.title = "Application Builder";
 
         // set gobject values
@@ -73,7 +71,7 @@ public class Xcls_MainWindow : Object
         this.el.add (  child_0.el  );
 
         // init method 
-         
+         this.state = "files";
         	  
             //this.el.show_all();
             
