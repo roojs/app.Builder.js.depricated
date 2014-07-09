@@ -281,7 +281,13 @@ MainWindow=new XObject({
                                               ///          _this.clutterembed.el.get_stage().height * 0.1f);
                                                  
                                                //  this.el.set_size(50,50);
-                                            }
+                                            },
+                                            items : [
+                                                {
+                                                    xtype: Gtk.VBox,
+                                                    pack : false
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
