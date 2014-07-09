@@ -178,10 +178,10 @@ public class Xcls_MainWindow : Object
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
              this.projectsettings.buttonPressed.connect((btn) => {
-                if (btn = "save") {
+                if (btn == "save") {
                      _this.window_rooview.view.renderJS(true);
                 }
-                if (btn = "apply") {
+                if (btn == "apply") {
                     _this.window_rooview.view.renderJS(true);
                     return;
                 }
