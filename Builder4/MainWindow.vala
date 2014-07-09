@@ -229,7 +229,7 @@ public class Xcls_MainWindow : Object
             
             el.set_scale(0.5f,0.5f);
            
-            _this.state = "editproject";
+            _this.state = "projectedit";
         
          
             //_this.clutterfiles.loadProject(_this.project);

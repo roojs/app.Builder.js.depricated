@@ -26,6 +26,10 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
+    init : this.state = "files";
+    	  
+        //this.el.show_all();,
+    type : Gtk.WindowType.TOPLEVEL,
     'void:hideProjectEdit' : () {
         // return to editing state..
            
@@ -48,10 +52,6 @@ MainWindow=new XObject({
             
       
     },
-    init : this.state = "files";
-    	  
-        //this.el.show_all();,
-    type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
         
          this.window_rooview.createThumb();
@@ -170,7 +170,7 @@ MainWindow=new XObject({
         
         el.set_scale(0.5f,0.5f);
        
-        _this.state = "editproject";
+        _this.state = "projectedit";
     
      
         //_this.clutterfiles.loadProject(_this.project);
