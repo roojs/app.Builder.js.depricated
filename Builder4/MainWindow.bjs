@@ -152,7 +152,7 @@
                                                             "listeners": {
                                                                 "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n     \n      _this.showProjectEdit();\n            return false;\n\n}"
+                                                                "button_press_event": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n            _this.showProjectEdit();\n            break;  \n        case \"files\":\n            // _this.showViewEditing();\n            break; \n        case \"projectedit\":\n            _this.hideProjectEdit();\n            break;\n        default:\n            break;\n    }\n    return false;    \n\n\n}"
                                                             },
                                                             "id": "projecteditbutton",
                                                             "pack": "add_child",

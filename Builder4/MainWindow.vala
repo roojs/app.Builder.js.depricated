@@ -731,9 +731,21 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
-                 
-                  _this.showProjectEdit();
-                        return false;
+                switch (_this.state) {
+                    case "edit":
+                        _this.showProjectEdit();
+                        break;  
+                    case "files":
+                        // _this.showViewEditing();
+                        break; 
+                    case "projectedit":
+                        _this.hideProjectEdit();
+                        break;
+                    default:
+                        break;
+                }
+                return false;    
+            
             
             } );
         }
