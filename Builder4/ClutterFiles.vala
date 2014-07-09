@@ -191,6 +191,7 @@ public class Xcls_ClutterFiles : Object
         public JsRender.JsRender file;
         public Xcls_image image;
         public Xcls_title title;
+        public Xcls_title title;
 
             // ctor 
         public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
@@ -213,6 +214,10 @@ public class Xcls_ClutterFiles : Object
             child_2.ref();
             this.el.add_child (  child_2.el  );
             this.title =  child_2;
+            var child_3 = new Xcls_title( _this ,file);
+            child_3.ref();
+            this.el.add_child (  child_3.el  );
+            this.title =  child_3;
 
             // init method 
             this.file = file;
@@ -282,6 +287,33 @@ public class Xcls_ClutterFiles : Object
             this.el.margin_left = 5;
             this.el.margin_right = 5;
             this.el.margin_top = 5;
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.START;
+            this.el.y_expand = false;
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_title : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px", file.nickName(),new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
