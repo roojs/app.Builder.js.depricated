@@ -645,6 +645,9 @@ public class Xcls_MainWindow : Object
                 this.el.background_color = new Clutter.Color.from_string("#333");
                     return false;
             } );
+            this.el.leave_event.connect( function (self, event) {
+            
+            } );
         }
 
         // userdefined functions 

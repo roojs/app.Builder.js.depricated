@@ -279,6 +279,9 @@ MainWindow=new XObject({
                                                         enter_event : (  event)  => {
                                                             this.el.background_color = new Clutter.Color.from_string("#333");
                                                                 return false;
+                                                        },
+                                                        leave_event : function (self, event) {
+                                                        
                                                         }
                                                     },
                                                     pack : false,

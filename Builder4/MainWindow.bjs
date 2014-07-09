@@ -124,7 +124,8 @@
                                                         },
                                                         {
                                                             "listeners": {
-                                                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}"
+                                                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+                                                                "leave_event": "function (self, event) {\n\n}"
                                                             },
                                                             "pack": false,
                                                             "xtype": "Actor",
