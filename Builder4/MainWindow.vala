@@ -641,8 +641,9 @@ public class Xcls_MainWindow : Object
             this.el.set_size(50,50);
 
             // listeners 
-            this.el.enter_event.connect( function (self, event) {
-            
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
             } );
         }
 

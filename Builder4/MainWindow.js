@@ -275,14 +275,15 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    pack : false,
-                                                    reactive : true,
-                                                    init : this.el.set_size(50,50);,
                                                     listeners : {
-                                                        enter_event : function (self, event) {
-                                                        
+                                                        enter_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#333");
+                                                                return false;
                                                         }
-                                                    }
+                                                    },
+                                                    pack : false,
+                                                    init : this.el.set_size(50,50);,
+                                                    reactive : true
                                                 }
                                             ],
                                             layout_manager : {
