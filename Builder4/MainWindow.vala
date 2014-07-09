@@ -548,7 +548,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_buttonlayout : Object 
     {
-        public GtkClutter.Actor el;
+        public Clutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -559,7 +559,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.buttonlayout = this;
-            this.el = new GtkClutter.Actor();
+            this.el = new Clutter.Actor();
 
             // my vars
 

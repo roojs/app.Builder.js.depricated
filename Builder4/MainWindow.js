@@ -252,7 +252,7 @@ MainWindow=new XObject({
                                             }
                                         },
                                         {
-                                            xtype: GtkClutter.Actor,
+                                            xtype: Clutter.Actor,
                                             id : "buttonlayout",
                                             pack : "get_stage().add_child",
                                             init : {
