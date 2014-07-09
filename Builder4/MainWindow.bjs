@@ -140,7 +140,9 @@
                                                                     "|x_expand": "true",
                                                                     "xtype": "Text",
                                                                     "|x_align": "Clutter.ActorAlign.START",
-                                                                    "|xns": "Clutter"
+                                                                    "|xns": "Clutter",
+                                                                    "y_align": "",
+                                                                    "listeners": {}
                                                                 }
                                                             ]
                                                         }

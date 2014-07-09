@@ -679,6 +679,9 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
+            this.el.y_align = "";
+
+            // listeners 
         }
 
         // userdefined functions 
