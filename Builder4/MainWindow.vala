@@ -90,6 +90,8 @@ public class Xcls_MainWindow : Object
     // userdefined functions 
     public void hideViewEditing  ( )   {
             
+             this.editpane.createThumb();
+             
              this.editpane.el.hide();
             //this.rooview.el.hide();
              this.left_projects.el.show();
