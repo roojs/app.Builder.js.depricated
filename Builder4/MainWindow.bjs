@@ -136,14 +136,14 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Project Edit\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Open\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
-                                                                    "|y_expand": "true",
                                                                     "|x_align": "Clutter.ActorAlign.START",
                                                                     "|x_expand": "true",
                                                                     "|xns": "Clutter",
-                                                                    "|y_align": "Clutter.ActorAlign.CENTER"
+                                                                    "|y_align": "Clutter.ActorAlign.CENTER",
+                                                                    "|y_expand": "true"
                                                                 }
                                                             ]
                                                         },

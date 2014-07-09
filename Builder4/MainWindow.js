@@ -303,10 +303,10 @@ MainWindow=new XObject({
                                                         {
                                                             xtype: Clutter.Text,
                                                             pack : "add_child",
-                                                            y_expand : true,
                                                             x_align : Clutter.ActorAlign.START,
                                                             x_expand : true,
-                                                            y_align : Clutter.ActorAlign.CENTER
+                                                            y_align : Clutter.ActorAlign.CENTER,
+                                                            y_expand : true
                                                         }
                                                     ]
                                                 },
