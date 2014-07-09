@@ -639,6 +639,11 @@ public class Xcls_MainWindow : Object
 
             // init method 
             this.el.set_size(50,50);
+
+            // listeners 
+            this.el.enter_event.connect( function (self, event) {
+            
+            } );
         }
 
         // userdefined functions 

@@ -277,7 +277,12 @@ MainWindow=new XObject({
                                                     xtype: Clutter.Actor,
                                                     pack : false,
                                                     reactive : true,
-                                                    init : this.el.set_size(50,50);
+                                                    init : this.el.set_size(50,50);,
+                                                    listeners : {
+                                                        enter_event : function (self, event) {
+                                                        
+                                                        }
+                                                    }
                                                 }
                                             ],
                                             layout_manager : {

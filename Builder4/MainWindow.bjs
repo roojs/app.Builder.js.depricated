@@ -127,7 +127,10 @@
                                                             "|reactive": "true",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter"
+                                                            "|xns": "Clutter",
+                                                            "listeners": {
+                                                                "enter_event": "function (self, event) {\n\n}"
+                                                            }
                                                         }
                                                     ]
                                                 },
