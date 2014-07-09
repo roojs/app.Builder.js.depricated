@@ -276,9 +276,7 @@ MainWindow=new XObject({
                                                 {
                                                     xtype: Clutter.Actor,
                                                     pack : false,
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                    }
+                                                    init : this.el.set_size(50,50);
                                                 }
                                             ],
                                             layout_manager : {

@@ -125,9 +125,8 @@
                                                         {
                                                             "pack": false,
                                                             "xtype": "Actor",
-                                                            "|xns": "Clutter",
-                                                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
-                                                            "listeners": {}
+                                                            "|init": "this.el.set_size(50,50);",
+                                                            "|xns": "Clutter"
                                                         }
                                                     ]
                                                 },

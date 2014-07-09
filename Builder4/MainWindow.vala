@@ -637,11 +637,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            }
-
-            // listeners 
+            this.el.set_size(50,50);
         }
 
         // userdefined functions 
