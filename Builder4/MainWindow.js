@@ -292,7 +292,8 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            pack : "add_child"
+                                                            pack : "add_child",
+                                                            x_align : "Clutter.ActorAlign.START"
                                                         }
                                                     ]
                                                 }
