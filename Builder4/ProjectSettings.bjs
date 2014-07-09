@@ -1,18 +1,17 @@
 {
-    "id": "file-gtk-8",
+    "id": "file-gtk-10",
     "name": "ProjectSettings",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.bjs",
-    "items" : [ 
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.bjs",
+    "items": [
         {
             "border_width": 5,
             "xtype": "VBox",
-            "id" : "ProjectSettings",
+            "id": "ProjectSettings",
             "|pack": " get_content_area().add\n",
             "|xns": "Gtk",
             "|void:show": " (Project.Project project) {\n    _this.project = project;\n    // get the active project.\n    \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n    this.el.show_all();\n}\n",
-    
             "items": [
                 {
                     "|xns": "Gtk",
@@ -32,11 +31,14 @@
                             "id": "view"
                         }
                     ]
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "HBox",
+                    "pack": false
                 }
             ]
-        } 
-                
-        
+        }
     ],
     "permname": "",
     "modOrder": ""
