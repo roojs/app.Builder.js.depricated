@@ -48,8 +48,6 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
-
-    // skip |xns - no return type
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
@@ -88,6 +86,8 @@ public class Xcls_ClutterFiles : Object
                                 this.el.get_stage().height);
                     this.el.set_position(100,50);
         }
+
+    // skip |xns - no return type
     public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;
