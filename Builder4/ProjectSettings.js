@@ -78,11 +78,11 @@ ProjectSettings=new XObject({
                     listeners : {
                         button_press_event : () => {
                             var buf =    _this.view.el.get_buffer();
-                           Gtk.TextIter s;
-                             Gtk.TextIter e;
+                            Gtk.TextIter s;
+                            Gtk.TextIter e;
                             buf.get_start_iter(out s);
                             buf.get_end_iter(out e);
-                              _this.project.runhtml = buf.get_text(s,e,true);
+                            _this.project.runhtml = buf.get_text(s,e,true);
                             
                                   
                             _this.buttonPressed("save");
