@@ -264,23 +264,13 @@ MainWindow=new XObject({
                                                         0.0f
                                                     )
                                                 );
-                                                // height 10%
-                                                 this.el.add_constraint(
-                                                    new Clutter.BindConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.BindCoordinate.HEIGHT,
-                                                        0.1f
-                                                    )
-                                                );    
-                                                //this.el.set_position(100,100);
-                                                //this.el.set_pivot_point(0.5f,0.5f);
-                                                 this.el.set_width(50);
+                                                 
+                                                
                                                 //this.el.set_position(100,100);
                                                 this.el.set_pivot_point(0.5f,0.5f);
-                                              //  this.el.set_size(50,
-                                              ///          _this.clutterembed.el.get_stage().height * 0.1f);
+                                                 this.el.set_size(50,
+                                                       _this.clutterembed.el.get_stage().height);
                                                  
-                                               //  this.el.set_size(50,50);
                                             },
                                             layout_manager : {
                                                 xtype: Clutter.BoxLayout,
