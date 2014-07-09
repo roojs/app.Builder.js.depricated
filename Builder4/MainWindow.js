@@ -138,6 +138,28 @@ MainWindow=new XObject({
     },
     'void:showProjectEdit' : () {
         // make the browser smaller, and show the edit dialog
+        
+        
+         
+         
+        //this.rooview.el.hide();
+         //this.edit_project.el.show();
+        
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+       
+        _this.state = "editproject";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+            
+        print("show view browsing");
+        
     },
     'void:showViewEditing' : ( )  {
          this.editpane.el.show();
