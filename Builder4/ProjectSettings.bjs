@@ -39,6 +39,12 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "label": "Cancel",
+                            "pack": false,
+                            "xtype": "Button",
+                            "|xns": "Gtk"
+                        },
+                        {
                             "label": "Apply",
                             "pack": false,
                             "xtype": "Button",
