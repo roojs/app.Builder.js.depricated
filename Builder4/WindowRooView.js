@@ -21,6 +21,21 @@ WindowRooView=new XObject({
         }
         var filename = this.file.getIconFileName(false);
         
+        win = this.el.get_parent_window();
+        var width = win.get_width();
+        var height = win.get_height();
+    
+        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height);
+    
+        screenshot.save("screenshot.png","png");
+        return 0;
+        
+        
+        
+        
+        
+        
+        
         var p = new WebKit.PrintOperation(_this.view.el);
          
         var ps = new Gtk.PrintSettings();
