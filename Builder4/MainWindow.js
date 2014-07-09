@@ -52,6 +52,8 @@ MainWindow=new XObject({
         print("show view browsing");
     },
     'void:initChildren' : () {
+        // this needs putting in a better place..
+        
         print("init children");
         this.left_tree =new Xcls_WindowLeftTree();
         this.left_tree.ref();
