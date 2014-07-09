@@ -20,9 +20,9 @@
                     "label": "HTML To insert at end of <HEAD>"
                 },
                 {
-                    "|xns": "Gtk",
+                    "pack": "pack_start,true,true,0",
                     "xtype": "ScrolledWindow",
-                    "pack": "pack_end,true,true,0",
+                    "|xns": "Gtk",
                     "items": [
                         {
                             "|xns": "GtkSource",
@@ -34,7 +34,9 @@
                 },
                 {
                     "xtype": "HBox",
-                    "|xns": "Gtk"
+                    "|xns": "Gtk",
+                    "": "",
+                    "listeners": {}
                 }
             ]
         }

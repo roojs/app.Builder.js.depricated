@@ -32,7 +32,7 @@ ProjectSettings=new XObject({
         },
         {
             xtype: Gtk.ScrolledWindow,
-            pack : "pack_end,true,true,0",
+            pack : "pack_start,true,true,0",
             items : [
                 {
                     xtype: GtkSource.View,
@@ -42,7 +42,8 @@ ProjectSettings=new XObject({
             ]
         },
         {
-            xtype: Gtk.HBox
+            xtype: Gtk.HBox,
+             : ""
         }
     ]
 });
