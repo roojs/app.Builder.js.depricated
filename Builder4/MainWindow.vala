@@ -647,13 +647,18 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
-                 
-                if (_this.is_editing) { 
-                    _this.hideViewEditing();
-                } else {
-                    _this.showViewEditing();
+                switch (_this.state) {
+                    case "edit":
+                    
+                        _this.hideViewEditing();
+                        break;  
+                    case "files":
+                        _this.showViewEditing();
+                        break; 
+                    default:
+                        break;
                 }
-                    return false;    
+                return false;    
             
             } );
         }
