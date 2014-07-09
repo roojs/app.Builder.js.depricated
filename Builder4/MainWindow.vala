@@ -652,10 +652,16 @@ public class Xcls_MainWindow : Object
                     new Clutter.AlignConstraint(
                         _this.clutterembed.el.get_stage(), 
                         Clutter.AlignAxis.X_AXIS,
-                        0.1f
+                        0.0f
                     )
                 );
-                
+                this.el.add_constraint(
+                    new Clutter.AlignConstraint(
+                        _this.clutterembed.el.get_stage(), 
+                        Clutter.AlignAxis.Y_AXIS,
+                        0.1f
+                    )
+                );    
                 //this.el.set_position(100,100);
                 //this.el.set_pivot_point(0.5f,0.5f);
                  this.el.set_size(50,
