@@ -167,7 +167,7 @@ public class Xcls_MainWindow : Object
            
             // roo view
             this.window_projectsettings  =new Xcls_ProjectSettings();
-            this.window_projectsettings.ref();
+            this.window_projectsettings.ref();  /// really?
             ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
             this.window_rooview.el.show_all();
         
