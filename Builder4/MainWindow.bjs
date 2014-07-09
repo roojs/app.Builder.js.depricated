@@ -121,6 +121,11 @@
                                                             "*prop": "layout_manager",
                                                             "xtype": "BoxLayout",
                                                             "|xns": "Clutter"
+                                                        },
+                                                        {
+                                                            "|xns": "Clutter",
+                                                            "xtype": "Actor",
+                                                            "pack": false
                                                         }
                                                     ]
                                                 },

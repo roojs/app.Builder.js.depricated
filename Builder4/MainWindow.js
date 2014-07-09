@@ -272,6 +272,12 @@ MainWindow=new XObject({
                                                        _this.clutterembed.el.get_stage().height);
                                                  
                                             },
+                                            items : [
+                                                {
+                                                    xtype: Clutter.Actor,
+                                                    pack : false
+                                                }
+                                            ],
                                             layout_manager : {
                                                 xtype: Clutter.BoxLayout,
                                                 orientation : Clutter.Orientation.VERTICAL
