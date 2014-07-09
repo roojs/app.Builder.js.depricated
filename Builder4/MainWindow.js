@@ -180,13 +180,15 @@ MainWindow=new XObject({
          
         //this.rooview.el.hide();
         this.projectsettings.el.show_all();
-        
+    
+        _this.projecteditview.save_easing_state();
+            
         var el = _this.rooview.el;
         el.save_easing_state();
        
         
         el.set_scale(1.0f,0.5f);
-       
+    
         _this.projecteditview.el.set_scale(1.0f,1.0f);
        
         _this.state = "projectedit";
@@ -195,8 +197,8 @@ MainWindow=new XObject({
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-            
-        print("show view browsing");
+        _this.projecteditview.restore_easing_state();
+      //  print("show view browsing");
         
     },
     'void:showViewEditing' : ( )  {
