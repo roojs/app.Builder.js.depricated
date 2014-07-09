@@ -467,12 +467,9 @@ public class Xcls_MainWindow : Object
             var child_2 = new Xcls_projectbutton( _this );
             child_2.ref();
             this.el.get_stage().add_child (  child_2.el  );
-            var child_3 = new Xcls_projectbutton( _this );
+            var child_3 = new Xcls_projecteditbutton( _this );
             child_3.ref();
             this.el.get_stage().add_child (  child_3.el  );
-            var child_4 = new Xcls_projecteditbutton( _this );
-            child_4.ref();
-            this.el.get_stage().add_child (  child_4.el  );
 
             // init method 
                 var stage = this.el.get_stage();
@@ -571,6 +568,9 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_projectbutton( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
+            var child_2 = new Xcls_projectbutton( _this );
+            child_2.ref();
+            this.el.add_child (  child_2.el  );
 
             // init method 
             {
@@ -700,7 +700,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_projectbutton : Object 
     {
-        public GtkClutter.Actor el;
+        public Clutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -711,74 +711,29 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.projectbutton = this;
-            this.el = new GtkClutter.Actor();
+            this.el = new Clutter.Actor();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button17( _this );
+            this.el.reactive = true;
+            var child_0 = new Xcls_Text17( _this );
             child_0.ref();
+            this.el.add_child (  child_0.el  );
 
             // init method 
-            {
-                
-                this.el.add_constraint(
-                    new Clutter.AlignConstraint(
-                        _this.clutterembed.el.get_stage(), 
-                        Clutter.AlignAxis.X_AXIS,
-                        0.0f
-                    )
-                );
-                // height 10%
-                 this.el.add_constraint(
-                    new Clutter.BindConstraint(
-                        _this.clutterembed.el.get_stage(), 
-                        Clutter.BindCoordinate.HEIGHT,
-                        0.1f
-                    )
-                );    
-                //this.el.set_position(100,100);
-                //this.el.set_pivot_point(0.5f,0.5f);
-                 this.el.set_width(50);
-                //this.el.set_position(100,100);
-                this.el.set_pivot_point(0.5f,0.5f);
-              //  this.el.set_size(50,
-              ///          _this.clutterembed.el.get_stage().height * 0.1f);
-                 
-               //  this.el.set_size(50,50);
-            }
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button17 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button17(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "P";
-
-            // init method 
-            {
-                ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
-            }
+            this.el.set_size(50,50);
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            } );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            } );
+            this.el.button_press_event.connect(   ( ) => {
                  
                 if (_this.is_editing) { 
                     _this.hideViewEditing();
@@ -788,6 +743,33 @@ public class Xcls_MainWindow : Object
                     
             
             } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text17 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text17(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px","Project Edit",new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.CENTER;
+            this.el.y_expand = true;
         }
 
         // userdefined functions 

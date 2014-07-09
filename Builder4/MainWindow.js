@@ -309,49 +309,19 @@ MainWindow=new XObject({
                                                             y_align : Clutter.ActorAlign.CENTER
                                                         }
                                                     ]
-                                                }
-                                            ],
-                                            layout_manager : {
-                                                xtype: Clutter.BoxLayout,
-                                                orientation : Clutter.Orientation.VERTICAL
-                                            }
-                                        },
-                                        {
-                                            xtype: GtkClutter.Actor,
-                                            id : "projectbutton",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                                
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                // height 10%
-                                                 this.el.add_constraint(
-                                                    new Clutter.BindConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.BindCoordinate.HEIGHT,
-                                                        0.1f
-                                                    )
-                                                );    
-                                                //this.el.set_position(100,100);
-                                                //this.el.set_pivot_point(0.5f,0.5f);
-                                                 this.el.set_width(50);
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.5f,0.5f);
-                                              //  this.el.set_size(50,
-                                              ///          _this.clutterembed.el.get_stage().height * 0.1f);
-                                                 
-                                               //  this.el.set_size(50,50);
-                                            },
-                                            items : [
+                                                },
                                                 {
-                                                    xtype: Gtk.Button,
+                                                    xtype: Clutter.Actor,
                                                     listeners : {
-                                                        clicked : ( ) => {
+                                                        enter_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#333");
+                                                                return false;
+                                                        },
+                                                        leave_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#000");
+                                                            return false;
+                                                        },
+                                                        button_press_event : ( ) => {
                                                              
                                                             if (_this.is_editing) { 
                                                                 _this.hideViewEditing();
@@ -362,13 +332,26 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
-                                                    label : "P",
-                                                    pack : false,
-                                                    init : {
-                                                        ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
-                                                    }
+                                                    pack : "add_child",
+                                                    id : "projectbutton",
+                                                    init : this.el.set_size(50,50);,
+                                                    reactive : true,
+                                                    items : [
+                                                        {
+                                                            xtype: Clutter.Text,
+                                                            pack : "add_child",
+                                                            y_expand : true,
+                                                            x_align : Clutter.ActorAlign.START,
+                                                            x_expand : true,
+                                                            y_align : Clutter.ActorAlign.CENTER
+                                                        }
+                                                    ]
                                                 }
-                                            ]
+                                            ],
+                                            layout_manager : {
+                                                xtype: Clutter.BoxLayout,
+                                                orientation : Clutter.Orientation.VERTICAL
+                                            }
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
