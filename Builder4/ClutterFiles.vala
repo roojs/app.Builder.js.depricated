@@ -90,6 +90,7 @@ public class Xcls_ClutterFiles : Object
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
+            // we need to unref all the chidren that we loaded though...
             
         }
     public void loadProject(Project.Project pr) {

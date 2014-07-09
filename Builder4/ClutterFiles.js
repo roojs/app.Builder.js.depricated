@@ -59,6 +59,7 @@ ClutterFiles=new XObject({
     'void:clearFiles' : () {
         
         this.filelayout.el.remove_all_children();
+        // we need to unref all the chidren that we loaded though...
         
     },
     'void:loadProject' : (Project.Project pr) {
