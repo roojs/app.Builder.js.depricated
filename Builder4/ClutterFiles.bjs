@@ -6,8 +6,8 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
     "items": [
         {
-            "Gee.ArrayList<Xcls_fileitem>:fileitems": "",
             ".signal:void:open": "(JsRender.JsRender file)",
+            "Gee.ArrayList<Xcls_fileitem>:fileitems": "",
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
