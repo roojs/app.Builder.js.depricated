@@ -91,6 +91,25 @@ public class Xcls_MainWindow : Object
     // userdefined functions 
     public void hideProjectEdit () {
             // return to editing state..
+               
+             
+            //this.rooview.el.hide();
+             //this.edit_project.el.show();
+            
+            var el = _this.rooview.el;
+            el.save_easing_state();
+           
+            
+            el.set_scale(1.0f,1.0f);
+           
+            _this.state = "edit";
+        
+         
+            //_this.clutterfiles.loadProject(_this.project);
+        
+            el.restore_easing_state();
+                
+          
         }
     public void hideViewEditing  ( )   {
             
