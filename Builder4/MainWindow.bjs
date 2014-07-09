@@ -153,7 +153,7 @@
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
                                                                 "button_press_event": "  ( ) => {\n     \n      _this.showProjectEdit();\n        \n\n}"
                                                             },
-                                                            "id": "projectedit",
+                                                            "id": "projecteditbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",

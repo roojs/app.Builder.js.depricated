@@ -33,7 +33,7 @@ public class Xcls_MainWindow : Object
     public Xcls_rooview rooview;
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
-    public Xcls_projectedit projectedit;
+    public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
     public Project.Project project;
@@ -560,7 +560,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_projectbutton( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
-            var child_2 = new Xcls_projectedit( _this );
+            var child_2 = new Xcls_projecteditbutton( _this );
             child_2.ref();
             this.el.add_child (  child_2.el  );
 
@@ -690,7 +690,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_projectedit : Object 
+    public class Xcls_projecteditbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -699,10 +699,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projectedit(Xcls_MainWindow _owner )
+        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.projectedit = this;
+            _this.projecteditbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
