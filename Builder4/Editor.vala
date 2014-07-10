@@ -28,6 +28,12 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
+    public bool dirty;
+    public bool pos;
+    public int pos_root_x;
+    public int pos_root_y;
+    public string activeEditor;
+    public string active_path;
 
         // ctor 
     public Xcls_Editor()
@@ -37,6 +43,10 @@ public class Xcls_Editor : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars
+        this.dirty = false;
+        this.pos = false;
+        this.activeEditor = "";
+        this.active_path = "";
 
         // set gobject values
         var child_0 = new Xcls_Toolbar2( _this );

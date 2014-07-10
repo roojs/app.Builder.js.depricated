@@ -32,7 +32,7 @@ Editor=new XObject({
         _this.el.hide();
         _this.active_path = "";
         return true;
-        
+      
     },
     'void:show_all' : () {
         this.el.show_all();

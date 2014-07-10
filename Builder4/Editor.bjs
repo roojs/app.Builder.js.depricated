@@ -6,19 +6,19 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
-            "pack": "add",
-            "xtype": "VBox",
-            "|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
-            "|homogeneous": "true",
-            "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n    \n}\n ",
-            "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
-            "|xns": "Gtk",
-			 ".bool:dirty": "false",
+            ".bool:dirty": "false",
             ".bool:pos": "false",
             ".int:pos_root_x": "",
             ".int:pos_root_y": "",
             ".string:activeEditor": "\"\"",
             ".string:active_path": "\"\"",
+            "pack": "add",
+            "xtype": "VBox",
+            "|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
+            "|homogeneous": "true",
+            "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n  \n}\n ",
+            "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
+            "|xns": "Gtk",
             "items": [
                 {
                     "pack": "pack_start,false,true",
