@@ -92,8 +92,13 @@ ProjectSettings=new XObject({
             items : [
                 {
                     xtype: GtkSource.View,
+                    id : "view",
                     pack : "add",
-                    id : "view"
+                    listeners : {
+                        key_release_event : function (self, event) {
+                        
+                        }
+                    }
                 }
             ]
         }

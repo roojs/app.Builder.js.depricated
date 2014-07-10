@@ -268,6 +268,11 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // set gobject values
+
+            // listeners 
+            this.el.key_release_event.connect( function (self, event) {
+            
+            } );
         }
 
         // userdefined functions 

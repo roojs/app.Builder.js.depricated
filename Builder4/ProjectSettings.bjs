@@ -62,10 +62,13 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "|xns": "GtkSource",
-                            "xtype": "View",
+                            "id": "view",
                             "pack": "add",
-                            "id": "view"
+                            "xtype": "View",
+                            "|xns": "GtkSource",
+                            "listeners": {
+                                "key_release_event": "function (self, event) {\n\n}"
+                            }
                         }
                     ]
                 }
