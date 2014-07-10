@@ -255,7 +255,6 @@ public class Xcls_MainWindow : Object
             
             
              _this.projectbutton.el.hide();
-             
              _this.projecteditbutton.el.hide();
              
              

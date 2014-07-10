@@ -193,7 +193,6 @@ MainWindow=new XObject({
         
         
          _this.projectbutton.el.hide();
-         
          _this.projecteditbutton.el.hide();
          
          
