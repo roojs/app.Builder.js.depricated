@@ -75,7 +75,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_HBox2(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox( false, 0 );
 
             // my vars
 

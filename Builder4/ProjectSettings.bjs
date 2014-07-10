@@ -16,11 +16,10 @@
             "|xns": "Gtk",
             "items": [
                 {
+                    "|homogeneous": "false",
                     "pack": "pack_end,false,false,0",
                     "xtype": "HBox",
                     "|xns": "Gtk",
-                    "homogeneous": "",
-                    "listeners": {},
                     "items": [
                         {
                             "listeners": {
