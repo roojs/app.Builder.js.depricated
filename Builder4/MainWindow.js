@@ -58,7 +58,7 @@ MainWindow=new XObject({
     'void:hideViewEditing' : ( )   {
         
          this.window_rooview.createThumb();
-         
+              _this.projecteditbutton.el.show();
          this.editpane.el.hide();
         //this.rooview.el.hide();
          this.left_projects.el.show();
