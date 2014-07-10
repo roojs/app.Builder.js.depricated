@@ -98,7 +98,7 @@ ProjectSettings=new XObject({
                                 return false;
                                  
                             }
-                            if   (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {
+                            if   ( (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {
                                 return false;
                             }
                              var buf =    this.el.get_buffer();

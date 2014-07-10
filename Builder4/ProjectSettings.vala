@@ -275,7 +275,7 @@ public class Xcls_ProjectSettings : Object
                     return false;
                      
                 }
-                if   (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {
+                if   ( (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {
                     return false;
                 }
                  var buf =    this.el.get_buffer();
