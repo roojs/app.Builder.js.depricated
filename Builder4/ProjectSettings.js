@@ -27,8 +27,8 @@ ProjectSettings=new XObject({
     items : [
         {
             xtype: Gtk.HBox,
-            homogeneous : false,
             pack : "pack_end,false,false,0",
+            homogeneous : false,
             items : [
                 {
                     xtype: Gtk.Button,

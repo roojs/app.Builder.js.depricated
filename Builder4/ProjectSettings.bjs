@@ -16,9 +16,9 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "|homogeneous": "false",
                     "pack": "pack_end,false,false,0",
                     "xtype": "HBox",
+                    "|homogeneous": "false",
                     "|xns": "Gtk",
                     "items": [
                         {
