@@ -33,6 +33,8 @@ MainWindow=new XObject({
     'void:hideProjectEdit' : () {
         // return to editing state..
            
+          _this.projectbutton.el.show();
+         _this.projecteditbutton.el.show();
          
          
         //this.rooview.el.hide();
