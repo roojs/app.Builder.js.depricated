@@ -68,7 +68,8 @@
                             "id": "view",
                             "pack": "add",
                             "xtype": "View",
-                            "|xns": "GtkSource"
+                            "|xns": "GtkSource",
+                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n"
                         }
                     ]
                 }

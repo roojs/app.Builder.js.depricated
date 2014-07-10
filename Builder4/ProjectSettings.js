@@ -116,7 +116,10 @@ ProjectSettings=new XObject({
                         }
                     },
                     id : "view",
-                    pack : "add"
+                    pack : "add",
+                    init : function() {
+                        XObject.prototype.init.call(this);
+                    }
                 }
             ]
         }

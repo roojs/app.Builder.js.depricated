@@ -269,6 +269,11 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
 
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
+
             // listeners 
             this.el.key_release_event.connect(  ( event) =>{
                 if (event.keyval != 115) {
