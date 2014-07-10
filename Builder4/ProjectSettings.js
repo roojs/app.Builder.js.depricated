@@ -17,7 +17,10 @@ ProjectSettings=new XObject({
     'void:show' : (Project.Project project) {
         _this.project = project;
         // get the active project.
-        
+         var lm = Gtk.SourceLanguageManager.get_default();
+                    
+        ((Gtk.SourceBuffer)(_this.view.el.get_buffer())) .set_language(lm.get_language("js"));
+      
         //print (project.fn);
         //project.runhtml = project.runhtml || '';
         _this.view.el.get_buffer().set_text(project.runhtml);
