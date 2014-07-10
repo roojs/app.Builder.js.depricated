@@ -120,7 +120,7 @@ public class Xcls_MainWindow : Object
     public void hideViewEditing  ( )   {
             
              this.window_rooview.createThumb();
-                  _this.projecteditbutton.el.show();
+                  _this.projecteditbutton.el.hide();
              this.editpane.el.hide();
             //this.rooview.el.hide();
              this.left_projects.el.show();
