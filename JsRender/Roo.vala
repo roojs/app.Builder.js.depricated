@@ -96,7 +96,7 @@ namespace JsRender {
             this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
             this.tree = new Node(); 
             // load items[0] ??? into tree...
-			if (obj.has_member("items")) {
+			if (obj.has_member("items") && obj.get_member("items").get_node_type() == Json.NodeType.ARRAY) {
 		        var ar = obj.get_array_member("items");
 		        var tree_base = ar.get_object_element(0);
 				this.tree.loadFromJson(tree_base);
