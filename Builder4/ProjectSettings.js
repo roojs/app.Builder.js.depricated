@@ -96,11 +96,10 @@ ProjectSettings=new XObject({
                         key_release_event : ( event) =>{
                             if (event.keyval != 115) {
                                 return false;
-                                
-                                return false;
+                                 
                             }
                             if   (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {
-                                return;
+                                return false;
                             }
                              var buf =    this.el.get_buffer();
                             Gtk.TextIter s;
