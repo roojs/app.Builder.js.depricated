@@ -27,7 +27,7 @@ ProjectSettings=new XObject({
     items : [
         {
             xtype: Gtk.HBox,
-            pack : "pack_end,false,false,0",
+            pack : "pack_start,false,false,0",
             homogeneous : false,
             items : [
                 {
