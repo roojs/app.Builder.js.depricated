@@ -272,7 +272,7 @@ public class Xcls_ProjectSettings : Object
             // listeners 
             this.el.key_release_event.connect(  ( event) =>{
                 if (event.keyval != 115   || (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
-                    return;
+                    return false;
                 }
                  var buf =    this.el.get_buffer();
                 Gtk.TextIter s;
