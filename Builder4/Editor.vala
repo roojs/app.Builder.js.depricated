@@ -17,10 +17,10 @@ static int main (string[] args) {
 
 public static Xcls_Editor  Editor;
 
-public class Xcls_Editor
+public class Xcls_Editor : Object 
 {
     public Gtk.Window el;
-    private static Xcls_Editor  _this;
+    private Xcls_Editor  _this;
 
     public Xcls_save_button save_button;
     public Xcls_RightEditor RightEditor;
@@ -38,9 +38,9 @@ public class Xcls_Editor
         // ctor 
     public Xcls_Editor()
     {
-        this.el = new Gtk.Window();
         _this = this;
         Editor = this;
+        this.el = new Gtk.Window( null );
 
         // my vars
         this.dirty = false;
@@ -52,8 +52,15 @@ public class Xcls_Editor
         this.el.height_request = 300;
         this.el.title = "Application Builder -  Code  Editor";
         this.el.width_request = 500;
-        var child_0 = new Xcls_VBox2();
+        var child_0 = new Xcls_VBox2( _this );
+        child_0.ref();
         this.el.add (  child_0.el  );
+
+        // init method 
+        function() {
+            XObject.prototype.init.call(this);
+           // this.show_all();
+        }
 
         // listeners 
         this.el.configure_event.connect(  (object) => {
@@ -74,30 +81,6 @@ public class Xcls_Editor
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip .bool:dirty - already used 
-
-    // skip .bool:pos - already used 
-
-    // skip .int:pos_root_x - already used 
-
-    // skip .int:pos_root_y - already used 
-
-    // skip .string:activeEditor - already used 
-
-    // skip .string:active_path - already used 
-
-    // skip height_request - already used 
-
-    // skip id - not pipe 
-
-    // skip title - already used 
-
-    // skip width_request - already used 
-
-    // skip xtype - not pipe 
     public bool save  ()  {
         
             if (!Editor.RightEditor.save()) {
@@ -110,8 +93,6 @@ public class Xcls_Editor
         
         } 
 
-    // skip |init - already used 
-
     // skip |show_all - no return type
     public void show_all  () {
             this.el.show_all();
@@ -120,97 +101,75 @@ public class Xcls_Editor
          
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
-    public class Xcls_VBox2
+    public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_VBox2()
+        public Xcls_VBox2(Xcls_Editor _owner )
         {
+            _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Toolbar3();
+            var child_0 = new Xcls_Toolbar3( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_RightEditor();
+            var child_1 = new Xcls_RightEditor( _this );
+            child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip |homogeneous - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Toolbar3
+    public class Xcls_Toolbar3 : Object 
     {
         public Gtk.Toolbar el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Toolbar3()
+        public Xcls_Toolbar3(Xcls_Editor _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Toolbar();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_save_button();
+            var child_0 = new Xcls_save_button( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_save_button
+    public class Xcls_save_button : Object 
     {
         public Gtk.ToolButton el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_save_button()
+        public Xcls_save_button(Xcls_Editor _owner )
         {
-            this.el = new Gtk.ToolButton( null, "Save" );
+            _this = _owner;
             _this.save_button = this;
+            this.el = new Gtk.ToolButton( null, "Save" );
 
             // my vars
 
@@ -226,48 +185,32 @@ public class Xcls_Editor
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip label - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_RightEditor
+    public class Xcls_RightEditor : Object 
     {
         public Gtk.ScrolledWindow el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_RightEditor()
+        public Xcls_RightEditor(Xcls_Editor _owner )
         {
-            this.el = new Gtk.ScrolledWindow( null, null );
+            _this = _owner;
             _this.RightEditor = this;
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_view();
+            var child_0 = new Xcls_view( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
         public bool save  () {
                  print("editor.rightbutton.save");
                  if (_this.active_path.length  < 1 ) {
@@ -292,26 +235,21 @@ public class Xcls_Editor
              
 
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_view
+    public class Xcls_view : Object 
     {
         public Gtk.SourceView el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_view()
+        public Xcls_view(Xcls_Editor _owner )
         {
-            this.el = new Gtk.SourceView();
+            _this = _owner;
             _this.view = this;
+            this.el = new Gtk.SourceView();
 
             // my vars
 
@@ -320,8 +258,17 @@ public class Xcls_Editor
             this.el.indent_width = 4;
             this.el.insert_spaces_instead_of_tabs = true;
             this.el.show_line_numbers = true;
-            var child_0 = new Xcls_buffer();
+            var child_0 = new Xcls_buffer( _this );
+            child_0.ref();
             this.el.set_buffer (  child_0.el  );
+
+            // init method 
+             
+                var description =   Pango.FontDescription.from_string("monospace");
+                description.set_size(8000);
+                this.el.override_font(description);
+            
+             
 
             // listeners 
             this.el.key_release_event.connect(  (event) => {
@@ -341,24 +288,6 @@ public class Xcls_Editor
         }
 
         // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip indent_width - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |auto_indent - already used 
-
-        // skip |init - already used 
-
-        // skip |insert_spaces_instead_of_tabs - already used 
-
-        // skip |show_line_numbers - already used 
         public void load (string str) {
             
             // show the help page for the active node..
@@ -396,26 +325,21 @@ public class Xcls_Editor
              
 
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_buffer
+    public class Xcls_buffer : Object 
     {
         public Gtk.SourceBuffer el;
+        private Xcls_Editor  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_buffer()
+        public Xcls_buffer(Xcls_Editor _owner )
         {
-            this.el = new Gtk.SourceBuffer( null );
+            _this = _owner;
             _this.buffer = this;
+            this.el = new Gtk.SourceBuffer( null );
 
             // my vars
 
@@ -439,14 +363,6 @@ public class Xcls_Editor
         }
 
         // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
         public bool checkSyntax () {
              /*
                 var str = this.toString();
@@ -487,11 +403,5 @@ public class Xcls_Editor
              
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
