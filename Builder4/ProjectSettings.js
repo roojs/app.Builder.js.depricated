@@ -28,6 +28,7 @@ ProjectSettings=new XObject({
         {
             xtype: Gtk.HBox,
             pack : "pack_end,false,false,0",
+            homogeneous : "",
             items : [
                 {
                     xtype: Gtk.Button,
@@ -93,61 +94,6 @@ ProjectSettings=new XObject({
                     xtype: GtkSource.View,
                     pack : "add",
                     id : "view"
-                }
-            ]
-        },
-        {
-            xtype: Gtk.HBox,
-            pack : "pack_end,false,false,0",
-            items : [
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        button_press_event : () => {
-                            _this.buttonPressed("cancel");
-                            return false;
-                        }
-                    },
-                    label : "Cancel",
-                    pack : "add"
-                },
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        button_press_event : () => {
-                            var buf =    _this.view.el.get_buffer();
-                           Gtk.TextIter s;
-                             Gtk.TextIter e;
-                            buf.get_start_iter(out s);
-                            buf.get_end_iter(out e);
-                              _this.project.runhtml = buf.get_text(s,e,true);
-                            
-                                  
-                            _this.buttonPressed("apply");
-                                return false;
-                        }
-                    },
-                    label : "Apply",
-                    pack : "add"
-                },
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        button_press_event : () => {
-                            var buf =    _this.view.el.get_buffer();
-                            Gtk.TextIter s;
-                            Gtk.TextIter e;
-                            buf.get_start_iter(out s);
-                            buf.get_end_iter(out e);
-                            _this.project.runhtml = buf.get_text(s,e,true);
-                            
-                                  
-                            _this.buttonPressed("save");
-                                return false;
-                        }
-                    },
-                    label : "Save",
-                    pack : "add"
                 }
             ]
         }
