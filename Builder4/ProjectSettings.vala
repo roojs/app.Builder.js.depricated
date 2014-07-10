@@ -270,8 +270,14 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
 
             // listeners 
-            this.el.key_release_event.connect( function (self, event) {
-            
+            this.el.key_release_event.connect(  ( event) +>{
+                if (event.keyval != 115   || (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                    return;
+                }
+                print("SAVE: ctrl-S  pressed");
+                this.save();
+                return false;
+                     
             } );
         }
 

@@ -92,13 +92,19 @@ ProjectSettings=new XObject({
             items : [
                 {
                     xtype: GtkSource.View,
-                    id : "view",
-                    pack : "add",
                     listeners : {
-                        key_release_event : function (self, event) {
-                        
+                        key_release_event : ( event) +>{
+                            if (event.keyval != 115   || (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                                return;
+                            }
+                            print("SAVE: ctrl-S  pressed");
+                            this.save();
+                            return false;
+                                 
                         }
-                    }
+                    },
+                    id : "view",
+                    pack : "add"
                 }
             ]
         }

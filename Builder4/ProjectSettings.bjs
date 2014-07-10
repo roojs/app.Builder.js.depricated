@@ -62,13 +62,13 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "listeners": {
+                                "key_release_event": " ( event) +>{\n    if (event.keyval != 115   || (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        return;\n    }\n    print(\"SAVE: ctrl-S  pressed\");\n    this.save();\n    return false;\n         \n}"
+                            },
                             "id": "view",
                             "pack": "add",
                             "xtype": "View",
-                            "|xns": "GtkSource",
-                            "listeners": {
-                                "key_release_event": "function (self, event) {\n\n}"
-                            }
+                            "|xns": "GtkSource"
                         }
                     ]
                 }
