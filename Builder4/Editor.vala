@@ -19,7 +19,7 @@ public static Xcls_Editor  Editor;
 
 public class Xcls_Editor : Object 
 {
-    public Gtk.Window el;
+    public Gtk.VBox el;
     private Xcls_Editor  _this;
 
     public Xcls_save_button save_button;
@@ -28,50 +28,23 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
-    public bool dirty;
-    public bool pos;
-    public int pos_root_x;
-    public int pos_root_y;
-    public string activeEditor;
-    public string active_path;
 
         // ctor 
     public Xcls_Editor()
     {
         _this = this;
         Editor = this;
-        this.el = new Gtk.Window( null );
+        this.el = new Gtk.VBox( true, 0 );
 
         // my vars
-        this.dirty = false;
-        this.pos = false;
-        this.activeEditor = "";
-        this.active_path = "";
 
         // set gobject values
-        this.el.height_request = 300;
-        this.el.title = "Application Builder -  Code  Editor";
-        this.el.width_request = 500;
-        var child_0 = new Xcls_VBox2( _this );
+        var child_0 = new Xcls_Toolbar2( _this );
         child_0.ref();
-        this.el.add (  child_0.el  );
-
-        // listeners 
-        this.el.configure_event.connect(  (object) => {
-            _this.pos = true;
-            this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);
-        
-        
-            return false;
-        }
-         
-         );
-        this.el.show.connect(   () => {
-            if (this.pos) {
-                _this.el.move(this.pos_root_x,this.pos_root_y);
-            }
-        }
-          );
+        this.el.pack_start (  child_0.el , false,true );
+        var child_1 = new Xcls_RightEditor( _this );
+        child_1.ref();
+        this.el.add (  child_1.el  );
     }
 
     // userdefined functions 
@@ -95,36 +68,7 @@ public class Xcls_Editor : Object
          
 
     // skip |xns - no return type
-    public class Xcls_VBox2 : Object 
-    {
-        public Gtk.VBox el;
-        private Xcls_Editor  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_VBox2(Xcls_Editor _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Toolbar3( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_RightEditor( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Toolbar3 : Object 
+    public class Xcls_Toolbar2 : Object 
     {
         public Gtk.Toolbar el;
         private Xcls_Editor  _this;
@@ -133,7 +77,7 @@ public class Xcls_Editor : Object
             // my vars
 
             // ctor 
-        public Xcls_Toolbar3(Xcls_Editor _owner )
+        public Xcls_Toolbar2(Xcls_Editor _owner )
         {
             _this = _owner;
             this.el = new Gtk.Toolbar();

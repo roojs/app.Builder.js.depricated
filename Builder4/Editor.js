@@ -10,25 +10,8 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
-    xtype: Gtk.Window,
-    listeners : {
-        configure_event : (object) => {
-            _this.pos = true;
-            this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);
-        
-        
-            return false;
-        },
-        show : () => {
-            if (this.pos) {
-                _this.el.move(this.pos_root_x,this.pos_root_y);
-            }
-        }
-    },
-    height_request : 300,
-    id : "Editor",
-    title : "Application Builder -  Code  Editor",
-    width_request : 500,
+    xtype: Gtk.VBox,
+    pack : "add",
     'bool:save' : ()  {
     
         if (!Editor.RightEditor.save()) {
@@ -40,6 +23,7 @@ Editor=new XObject({
         return true;
     
     },
+    homogeneous : true,
     show_all : (event) => {
         if (!Editor.RightEditor.save()) {
             // no hiding with errors.
@@ -48,6 +32,7 @@ Editor=new XObject({
         _this.el.hide();
         _this.active_path = "";
         return true;
+        
     },
     'void:show_all' : () {
         this.el.show_all();
@@ -55,168 +40,161 @@ Editor=new XObject({
     },
     items : [
         {
-            xtype: Gtk.VBox,
-            homogeneous : true,
-            pack : "add",
+            xtype: Gtk.Toolbar,
+            pack : "pack_start,false,true",
             items : [
                 {
-                    xtype: Gtk.Toolbar,
-                    pack : "pack_start,false,true",
-                    items : [
-                        {
-                            xtype: Gtk.ToolButton,
-                            listeners : {
-                                clicked : () => { 
-                                    Editor.RightEditor.save();
-                                }
-                            },
-                            id : "save_button",
-                            label : "Save"
+                    xtype: Gtk.ToolButton,
+                    listeners : {
+                        clicked : () => { 
+                            Editor.RightEditor.save();
                         }
-                    ]
-                },
+                    },
+                    id : "save_button",
+                    label : "Save"
+                }
+            ]
+        },
+        {
+            xtype: Gtk.ScrolledWindow,
+            id : "RightEditor",
+            pack : "add",
+            'bool:save' : () {
+                 print("editor.rightbutton.save");
+                 if (_this.active_path.length  < 1 ) {
+                      print("skip - no active path");
+                    return true;
+                 }
+                 
+                 var str = Editor.buffer.toString();
+                 
+                 if (!Editor.buffer.checkSyntax()) {
+                     print("check syntax failed");
+                     //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                     return false;
+                 }
+                 
+                 // LeftPanel.model.changed(  str , false);
+                 _this.dirty = false;
+                 _this.save_button.el.sensitive = false;
+                 print("set save button grey");
+                 return true;
+            },
+            items : [
                 {
-                    xtype: Gtk.ScrolledWindow,
-                    id : "RightEditor",
+                    xtype: GtkSource.View,
+                    listeners : {
+                        key_release_event : (event) => {
+                            
+                            if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                                print("SAVE: ctrl-S  pressed");
+                                this.save();
+                                return false;
+                            }
+                           // print(event.key.keyval)
+                            
+                            return false;
+                        
+                        }
+                    },
+                    id : "view",
+                    indent_width : 4,
                     pack : "add",
-                    'bool:save' : () {
-                         print("editor.rightbutton.save");
-                         if (_this.active_path.length  < 1 ) {
-                              print("skip - no active path");
-                            return true;
-                         }
-                         
-                         var str = Editor.buffer.toString();
-                         
-                         if (!Editor.buffer.checkSyntax()) {
-                             print("check syntax failed");
-                             //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-                             return false;
-                         }
-                         
-                         // LeftPanel.model.changed(  str , false);
-                         _this.dirty = false;
-                         _this.save_button.el.sensitive = false;
-                         print("set save button grey");
-                         return true;
+                    auto_indent : true,
+                    init : var description =   Pango.FontDescription.from_string("monospace");
+                        description.set_size(8000);
+                        this.el.override_font(description);,
+                    insert_spaces_instead_of_tabs : true,
+                    show_line_numbers : true,
+                    'void:load' : (string str) {
+                    
+                    // show the help page for the active node..
+                       //this.get('/Help').show();
+                    
+                    
+                      // this.get('/BottomPane').el.set_current_page(0);
+                        this.el.get_buffer().set_text(str, str.length);
+                        var lm = Gtk.SourceLanguageManager.get_default();
+                        
+                        ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
+                        var buf = this.el.get_buffer();
+                        var cursor = buf.get_mark("insert");
+                        Gtk.TextIter iter;
+                        buf.get_iter_at_mark(out iter, cursor);
+                        iter.set_line(1);
+                        iter.set_line_offset(4);
+                        buf.move_mark(cursor, iter);
+                        
+                        
+                        cursor = buf.get_mark("selection_bound");
+                        //iter= new Gtk.TextIter;
+                        buf.get_iter_at_mark(out iter, cursor);
+                        iter.set_line(1);
+                        iter.set_line_offset(4);
+                        buf.move_mark(cursor, iter);
+                        Editor.dirty = false;
+                        this.el.grab_focus();
+                        _this.save_button.el.sensitive = false;
+                    },
+                    'void:save' : () {
+                    
+                        Editor.RightEditor.save();
                     },
                     items : [
                         {
-                            xtype: GtkSource.View,
+                            xtype: GtkSource.Buffer,
                             listeners : {
-                                key_release_event : (event) => {
-                                    
-                                    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
-                                        print("SAVE: ctrl-S  pressed");
-                                        this.save();
-                                        return false;
+                                changed : () => {
+                                    // check syntax??
+                                        if(this.checkSyntax()) {
+                                        Editor.save_button.el.sensitive = true;
                                     }
-                                   // print(event.key.keyval)
+                                   // print("EDITOR CHANGED");
+                                    Editor.dirty = true;
+                                
+                                    // this.get('/LeftPanel.model').changed(  str , false);
+                                    return ;
+                                }
+                            },
+                            id : "buffer",
+                            pack : "set_buffer",
+                            'bool:checkSyntax' : () {
+                             /*
+                                var str = this.toString();
+                                var res = "";
+                                /*
+                                try {
+                                  //  print('var res = ' + str);
+                                    Seed.check_syntax('var res = ' + str);
                                     
+                                   
+                                } catch (e) {
+                                    
+                                    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                        red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
+                                       }));
+                                    print("SYNTAX ERROR IN EDITOR");   
+                                    print(e);
+                                    // print(str);
+                                    //console.dump(e);
                                     return false;
-                                
                                 }
+                                 this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                                   }));
+                                */
+                                return true;
                             },
-                            id : "view",
-                            indent_width : 4,
-                            pack : "add",
-                            auto_indent : true,
-                            init : var description =   Pango.FontDescription.from_string("monospace");
-                                description.set_size(8000);
-                                this.el.override_font(description);,
-                            insert_spaces_instead_of_tabs : true,
-                            show_line_numbers : true,
-                            'void:load' : (string str) {
-                            
-                            // show the help page for the active node..
-                               //this.get('/Help').show();
-                            
-                            
-                              // this.get('/BottomPane').el.set_current_page(0);
-                                this.el.get_buffer().set_text(str, str.length);
-                                var lm = Gtk.SourceLanguageManager.get_default();
+                            'string:toString' : () {
                                 
-                                ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
-                                var buf = this.el.get_buffer();
-                                var cursor = buf.get_mark("insert");
-                                Gtk.TextIter iter;
-                                buf.get_iter_at_mark(out iter, cursor);
-                                iter.set_line(1);
-                                iter.set_line_offset(4);
-                                buf.move_mark(cursor, iter);
-                                
-                                
-                                cursor = buf.get_mark("selection_bound");
-                                //iter= new Gtk.TextIter;
-                                buf.get_iter_at_mark(out iter, cursor);
-                                iter.set_line(1);
-                                iter.set_line_offset(4);
-                                buf.move_mark(cursor, iter);
-                                Editor.dirty = false;
-                                this.el.grab_focus();
-                                _this.save_button.el.sensitive = false;
-                            },
-                            'void:save' : () {
-                            
-                                Editor.RightEditor.save();
-                            },
-                            items : [
-                                {
-                                    xtype: GtkSource.Buffer,
-                                    listeners : {
-                                        changed : () => {
-                                            // check syntax??
-                                                if(this.checkSyntax()) {
-                                                Editor.save_button.el.sensitive = true;
-                                            }
-                                           // print("EDITOR CHANGED");
-                                            Editor.dirty = true;
-                                        
-                                            // this.get('/LeftPanel.model').changed(  str , false);
-                                            return ;
-                                        }
-                                    },
-                                    id : "buffer",
-                                    pack : "set_buffer",
-                                    'bool:checkSyntax' : () {
-                                     /*
-                                        var str = this.toString();
-                                        var res = "";
-                                        /*
-                                        try {
-                                          //  print('var res = ' + str);
-                                            Seed.check_syntax('var res = ' + str);
-                                            
-                                           
-                                        } catch (e) {
-                                            
-                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
-                                               }));
-                                            print("SYNTAX ERROR IN EDITOR");   
-                                            print(e);
-                                            // print(str);
-                                            //console.dump(e);
-                                            return false;
-                                        }
-                                         this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-                                           }));
-                                        */
-                                        return true;
-                                    },
-                                    'string:toString' : () {
-                                        
-                                        Gtk.TextIter s;
-                                        Gtk.TextIter e;
-                                        this.el.get_start_iter(out s);
-                                        this.el.get_end_iter(out e);
-                                        var ret = this.el.get_text(s,e,true);
-                                        //print("TO STRING? " + ret);
-                                        return ret;
-                                    }
-                                }
-                            ]
+                                Gtk.TextIter s;
+                                Gtk.TextIter e;
+                                this.el.get_start_iter(out s);
+                                this.el.get_end_iter(out e);
+                                var ret = this.el.get_text(s,e,true);
+                                //print("TO STRING? " + ret);
+                                return ret;
+                            }
                         }
                     ]
                 }
