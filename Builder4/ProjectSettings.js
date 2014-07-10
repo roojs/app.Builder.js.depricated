@@ -97,8 +97,16 @@ ProjectSettings=new XObject({
                             if (event.keyval != 115   || (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                                 return;
                             }
-                            print("SAVE: ctrl-S  pressed");
-                            this.save();
+                             var buf =    this.el.get_buffer();
+                            Gtk.TextIter s;
+                            Gtk.TextIter e;
+                            buf.get_start_iter(out s);
+                            buf.get_end_iter(out e);
+                            _this.project.runhtml = buf.get_text(s,e,true);
+                            
+                                  
+                            _this.buttonPressed("save");
+                             
                             return false;
                                  
                         }
