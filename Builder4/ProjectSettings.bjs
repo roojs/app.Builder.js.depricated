@@ -68,8 +68,8 @@
                             "id": "view",
                             "pack": "add",
                             "xtype": "View",
-                            "|xns": "GtkSource",
-                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n"
+                            "|init": " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(10000);\n    this.el.override_font(description);",
+                            "|xns": "GtkSource"
                         }
                     ]
                 }

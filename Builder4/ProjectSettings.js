@@ -117,9 +117,9 @@ ProjectSettings=new XObject({
                     },
                     id : "view",
                     pack : "add",
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                    }
+                    init : var description =   Pango.FontDescription.from_string("monospace");
+                        description.set_size(10000);
+                        this.el.override_font(description);
                 }
             ]
         }

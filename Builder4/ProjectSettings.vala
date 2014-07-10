@@ -270,9 +270,10 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            }
+             
+                var description =   Pango.FontDescription.from_string("monospace");
+                description.set_size(10000);
+                this.el.override_font(description);
 
             // listeners 
             this.el.key_release_event.connect(  ( event) =>{
