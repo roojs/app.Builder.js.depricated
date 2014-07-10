@@ -13,6 +13,12 @@
             "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n    \n}\n ",
             "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
             "|xns": "Gtk",
+			 ".bool:dirty": "false",
+            ".bool:pos": "false",
+            ".int:pos_root_x": "",
+            ".int:pos_root_y": "",
+            ".string:activeEditor": "\"\"",
+            ".string:active_path": "\"\"",
             "items": [
                 {
                     "pack": "pack_start,false,true",
