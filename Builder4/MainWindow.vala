@@ -254,6 +254,9 @@ public class Xcls_MainWindow : Object
             // make the browser smaller, and show the edit dialog
             
             
+             _this.projectbutton.el.hide();
+             
+             _this.projecteditbutton.el.hide();
              
              
             //this.rooview.el.hide();

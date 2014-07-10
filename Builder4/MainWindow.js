@@ -192,6 +192,9 @@ MainWindow=new XObject({
         // make the browser smaller, and show the edit dialog
         
         
+         _this.projectbutton.el.hide();
+         
+         _this.projecteditbutton.el.hide();
          
          
         //this.rooview.el.hide();
