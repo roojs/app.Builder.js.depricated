@@ -94,13 +94,14 @@ namespace JsRender {
             this.permname = this.jsonHasOrEmpty(obj, "permname");
             this.title = this.jsonHasOrEmpty(obj, "title");
             this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
-             
+            this.tree = new Node(); 
             // load items[0] ??? into tree...
-
-            var ar = obj.get_array_member("items");
-            var tree_base = ar.get_object_element(0);
-            this.tree = new Node();
-            this.tree.loadFromJson(tree_base);
+			if (obj.has_member("items")) {
+		        var ar = obj.get_array_member("items");
+		        var tree_base = ar.get_object_element(0);
+				this.tree.loadFromJson(tree_base);
+			}
+            
 
             
         }
