@@ -275,7 +275,7 @@ public class Xcls_ProjectSettings : Object
             // init method 
              
                 var description =   Pango.FontDescription.from_string("monospace");
-                description.set_size(10000);
+                description.set_size(9000);
                 this.el.override_font(description);
 
             // listeners 
