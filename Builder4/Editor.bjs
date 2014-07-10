@@ -4,33 +4,17 @@
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
-    "items": [
-        {
-            "listeners": {
-                "configure_event": " (object) => {\n    _this.pos = true;\n    this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);\n\n\n    return false;\n}\n \n",
-                "show": "  () => {\n    if (this.pos) {\n        _this.el.move(this.pos_root_x,this.pos_root_y);\n    }\n}\n "
-            },
-            ".bool:dirty": "false",
-            ".bool:pos": "false",
-            ".int:pos_root_x": "",
-            ".int:pos_root_y": "",
-            ".string:activeEditor": "\"\"",
-            ".string:active_path": "\"\"",
-            "height_request": 300,
-            "id": "Editor",
-            "title": "Application Builder -  Code  Editor",
-            "width_request": 500,
-            "xtype": "Window",
-            "|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
-            "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n ",
-            "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
-            "|xns": "Gtk",
+ 
             "items": [
                 {
                     "|homogeneous": "true",
                     "pack": "add",
                     "xtype": "VBox",
                     "|xns": "Gtk",
+					"|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
+				    "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n ",
+				    "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
+            
                     "items": [
                         {
                             "pack": "pack_start,false,true",
@@ -88,8 +72,7 @@
                         }
                     ]
                 }
-            ]
-        }
+            
     ],
     "permname": "",
     "modOrder": ""
