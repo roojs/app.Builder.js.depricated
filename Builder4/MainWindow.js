@@ -207,7 +207,7 @@ MainWindow=new XObject({
         el.save_easing_state();
        
         
-        el.set_scale(1.0f,0.5f);
+        el.set_scale(0.5f,0.5f);
     
         _this.projecteditview.el.set_scale(1.0f,1.0f);
        
