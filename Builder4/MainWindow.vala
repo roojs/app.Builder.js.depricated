@@ -288,7 +288,7 @@ public class Xcls_MainWindow : Object
           //   this.rooview.el.show();
              this.left_projects.el.hide();
             
-              
+               _this.projecteditbutton.el.show();
             
             var el = _this.rooview.el;
                 el.save_easing_state();
