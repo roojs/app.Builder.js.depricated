@@ -56,12 +56,6 @@ public class Xcls_Editor : Object
         child_0.ref();
         this.el.add (  child_0.el  );
 
-        // init method 
-        function() {
-            XObject.prototype.init.call(this);
-           // this.show_all();
-        }
-
         // listeners 
         this.el.configure_event.connect(  (object) => {
             _this.pos = true;

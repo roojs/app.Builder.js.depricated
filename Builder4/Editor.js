@@ -40,10 +40,6 @@ Editor=new XObject({
         return true;
     
     },
-    init : function() {
-        XObject.prototype.init.call(this);
-       // this.show_all();
-    },
     show_all : (event) => {
         if (!Editor.RightEditor.save()) {
             // no hiding with errors.

@@ -22,7 +22,6 @@
             "width_request": 500,
             "xtype": "Window",
             "|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
-            "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n ",
             "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
             "|xns": "Gtk",
