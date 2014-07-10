@@ -567,7 +567,7 @@ namespace JsRender {
             
              
             var npart = fbits[fbits.length - 2]; // this should be 'AdminProjectManager' for example...
-            if (npart.substring(0, modname.length) == modname) {
+            if (modname.length < npart.length && npart.substring(0, modname.length) == modname) {
                 npart = npart.substring(modname.length);
             }
             return "[" + this.tree.quoteString(modname) + ", " + this.tree.quoteString(npart) + " ]";
