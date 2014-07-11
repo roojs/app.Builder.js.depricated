@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-14",
+    "id": "file-gtk-15",
     "name": "WindowLeftProjects",
     "parent": "",
     "title": false,
@@ -48,36 +48,6 @@
                                         },
                                         {
                                             "label": "Add",
-                                            "pack": "add",
-                                            "xtype": "Label",
-                                            "|xns": "Gtk"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "listeners": {
-                                "button_press_event": " ( event ) => {\n    _this.show_new_project();\n    return false;\n}"
-                            },
-                            "pack": "add",
-                            "xtype": "Button",
-                            "|xns": "Gtk",
-                            "items": [
-                                {
-                                    "|xns": "Gtk",
-                                    "xtype": "HBox",
-                                    "pack": "add",
-                                    "items": [
-                                        {
-                                            "pack": "add",
-                                            "xtype": "Image",
-                                            "|icon_size": "Gtk.IconSize.MENU",
-                                            "|stock": "Gtk.STOCK_EDIT",
-                                            "|xns": "Gtk"
-                                        },
-                                        {
-                                            "label": "Edit  ",
                                             "pack": "add",
                                             "xtype": "Label",
                                             "|xns": "Gtk"
