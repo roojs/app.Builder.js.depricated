@@ -58,7 +58,10 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public void finish_editing
+    public void finish_editing() {
+             // 
+        
+        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
