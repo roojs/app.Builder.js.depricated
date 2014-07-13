@@ -565,13 +565,8 @@ WindowLeftProps=new XObject({
                     items : [
                         {
                             xtype: Gtk.TreeStore,
-                            columns : typeof(Object),  // 0 real key
-                                typeof(string),  // 1 property type (prop|event)
-                                typeof(string),  // 2 real key
-                                typeof(string),  // 4 visable key
-                                typeof(string)  // 5 visable value,
                             id : "model",
-                            n_columns : 6,
+                            n_columns : 5,
                             pack : "set_model",
                             changed : function(str, doRefresh) {
                                 if (!this.activePath) {
@@ -589,6 +584,11 @@ WindowLeftProps=new XObject({
                             
                                 this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                             },
+                            columns : typeof(Object),  // 0 real key
+                                typeof(string),  // 1 property type (prop|event)
+                                typeof(string),  // 2 real key
+                                typeof(string),  // 4 visable key
+                                typeof(string)  // 5 visable value,
                             toShort : function(str) {
                                 var a = typeof(str) == 'string' ? str.split("\n") : [];
                                     return a.length > 1 ? a[0] + '....' : '' + str;
