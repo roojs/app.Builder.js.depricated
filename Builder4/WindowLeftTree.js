@@ -361,28 +361,29 @@ WindowLeftTree=new XObject({
                         _this.after_node_change(null);
                         
                         return  ;
-                    }
-                            
-                            //console.log('changed');
-                        var s = this.el.get_selection();
-                         Gtk.TreeIter iter;
-                         Gtk.TreeModel mod;
-                        s.get_selected(out mod, out iter);
+                }
                         
-                        
-                        // var val = "";
-                        GLib.Value value;
-                        _this.model.el.get_value(iter, 2, out value);
-                        _this.model.activePath = mod.get_path(iter).to_string();
-                        
-                        var node = (JsRender.Node)value.dup_object();
-                
-                        _this.after_node_change(node);
+                        //console.log('changed');
+                    var s = this.el.get_selection();
+                     Gtk.TreeIter iter;
+                     Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+                    
+                    
+                    // var val = "";
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    _this.model.activePath = mod.get_path(iter).to_string();
+                    
+                    var node = (JsRender.Node)value.dup_object();
+                    _this.node_selected(node);
+                    
+                    //_this.after_node_change(node);
                 
                 //        _this.model.file.changed(node, "tree");
-                       
-                        //Seed.print( value.get_string());
-                        return  ;
+                   
+                    //Seed.print( value.get_string());
+                    return  ;
                                 
                 },
                 drag_data_get : ( drag_context, data, info, time) => {
