@@ -565,7 +565,11 @@ WindowLeftProps=new XObject({
                     items : [
                         {
                             xtype: Gtk.TreeStore,
-                            columns : "    typeof(Object),  // 0 real key\n    typeof(string),  // 1 property type (prop|event)\n    typeof(string),  // 2 real key\n    typeof(string),  // 4 visable key\n    typeof(string)  // 5 visable value\n     ",
+                            columns : typeof(Object),  // 0 real key
+                                typeof(string),  // 1 property type (prop|event)
+                                typeof(string),  // 2 real key
+                                typeof(string),  // 4 visable key
+                                typeof(string)  // 5 visable value,
                             id : "model",
                             n_columns : 6,
                             pack : "set_model",
