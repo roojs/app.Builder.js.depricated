@@ -34,36 +34,28 @@ public class Xcls_WindowLeftTree : Object
         // ctor 
     public Xcls_WindowLeftTree()
     {
-        this.el = new Gtk.ScrolledWindow( null, null );
         _this = this;
         WindowLeftTree = this;
+        this.el = new Gtk.ScrolledWindow( null, null );
 
         // my vars
 
         // set gobject values
         this.el.shadow_type = Gtk.ShadowType.IN;
-        var child_0 = new Xcls_view(_this);
+        var child_0 = new Xcls_view( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
-        var child_1 = new Xcls_LeftTreeMenu(_this);
+        var child_1 = new Xcls_LeftTreeMenu( _this );
         child_1.ref();
 
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
          
+
+        // listeners 
     }
 
     // userdefined functions 
-
-    // skip .signal:void:after_node_change(JsRender.Node? node) - already used 
-
-    // skip .signal:void:before_node_change(JsRender.Node? node) - already used 
-
-    // skip id - not pipe 
-
-    // skip pack - not pipe 
-
-    // skip xtype - not pipe 
     public JsRender.JsRender getActiveFile() {
             return this.model.file;
         }
@@ -75,10 +67,6 @@ public class Xcls_WindowLeftTree : Object
              }
              return _this.model.pathToNode(path);
         }
-
-    // skip |init - already used 
-
-    // skip |shadow_type - already used 
     public string getActivePath () {
             var model = this.model;
             var view = this.view.el;
@@ -92,14 +80,6 @@ public class Xcls_WindowLeftTree : Object
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_view : Object 
     {
         public Gtk.TreeView el;
@@ -115,11 +95,11 @@ public class Xcls_WindowLeftTree : Object
         public string[] dropList;
 
             // ctor 
-        public Xcls_view(Xcls_WindowLeftTree _owner)
+        public Xcls_view(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.TreeView();
             _this = _owner;
             _this.view = this;
+            this.el = new Gtk.TreeView();
 
             // my vars
             this.blockChanges = false;
@@ -128,10 +108,10 @@ public class Xcls_WindowLeftTree : Object
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
             this.el.tooltip_column = 1;
-            var child_0 = new Xcls_model(_this);
+            var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn4(_this);
+            var child_1 = new Xcls_TreeViewColumn4( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
@@ -544,34 +524,6 @@ public class Xcls_WindowLeftTree : Object
         }
 
         // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip .bool:blockChanges - already used 
-
-        // skip .bool:drag_in_motion - already used 
-
-        // skip .int:drag_x - already used 
-
-        // skip .int:drag_y - already used 
-
-        // skip .string:dragData - already used 
-
-        // skip .string[]:dropList - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_column - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |enable_tree_lines - already used 
-
-        // skip |headers_visible - already used 
-
-        // skip |init - already used 
         public void highlightDropPath ( string treepath, Gtk.TreeViewDropPosition pos) {
             
                     // highlighting for drag/drop
@@ -591,14 +543,6 @@ public class Xcls_WindowLeftTree : Object
             }
 
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_model : Object 
     {
@@ -611,11 +555,11 @@ public class Xcls_WindowLeftTree : Object
         public string activePath;
 
             // ctor 
-        public Xcls_model(Xcls_WindowLeftTree _owner)
+        public Xcls_model(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
             _this = _owner;
             _this.model = this;
+            this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
 
             // my vars
             this.file = null;
@@ -628,20 +572,6 @@ public class Xcls_WindowLeftTree : Object
         }
 
         // userdefined functions 
-
-        // skip .JsRender.JsRender?:file - already used 
-
-        // skip .string:activePath - already used 
-
-        // skip currentTree - not pipe 
-
-        // skip id - not pipe 
-
-        // skip n_columns - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
         public JsRender.Node pathToNode(string path) {
              
                  
@@ -654,10 +584,6 @@ public class Xcls_WindowLeftTree : Object
                  return (JsRender.Node)value.dup_object();
             
             }
-
-        // skip |columns - already used 
-
-        // skip |init - already used 
 
         // skip |listAllTypes - no return type
         public string findDropNode (string treepath_str, string[] targets) {
@@ -1075,12 +1001,6 @@ public class Xcls_WindowLeftTree : Object
             }
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_TreeViewColumn4 : Object 
     {
@@ -1091,15 +1011,15 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn4(Xcls_WindowLeftTree _owner)
+        public Xcls_TreeViewColumn4(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.TreeViewColumn();
             _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_renderer(_this);
+            var child_0 = new Xcls_renderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
@@ -1110,21 +1030,7 @@ public class Xcls_WindowLeftTree : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_renderer : Object 
     {
@@ -1135,11 +1041,11 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_renderer(Xcls_WindowLeftTree _owner)
+        public Xcls_renderer(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.CellRendererText();
             _this = _owner;
             _this.renderer = this;
+            this.el = new Gtk.CellRendererText();
 
             // my vars
 
@@ -1148,19 +1054,7 @@ public class Xcls_WindowLeftTree : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_LeftTreeMenu : Object 
     {
@@ -1171,40 +1065,26 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner)
+        public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.Menu();
             _this = _owner;
             _this.LeftTreeMenu = this;
+            this.el = new Gtk.Menu();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem7(_this);
+            var child_0 = new Xcls_MenuItem7( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_MenuItem8(_this);
+            var child_1 = new Xcls_MenuItem8( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem7 : Object 
     {
@@ -1215,10 +1095,10 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem7(Xcls_WindowLeftTree _owner)
+        public Xcls_MenuItem7(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.MenuItem();
             _this = _owner;
+            this.el = new Gtk.MenuItem();
 
             // my vars
 
@@ -1237,21 +1117,7 @@ public class Xcls_WindowLeftTree : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem8 : Object 
     {
@@ -1262,10 +1128,10 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem8(Xcls_WindowLeftTree _owner)
+        public Xcls_MenuItem8(Xcls_WindowLeftTree _owner )
         {
-            this.el = new Gtk.MenuItem();
             _this = _owner;
+            this.el = new Gtk.MenuItem();
 
             // my vars
 
@@ -1283,20 +1149,6 @@ public class Xcls_WindowLeftTree : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
