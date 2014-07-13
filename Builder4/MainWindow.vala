@@ -148,9 +148,25 @@ public class Xcls_MainWindow : Object
             // this needs putting in a better place..
             
             print("init children");
-            this.left_tree =new Xcls_WindowLeftTree();
+            this.left_tree = new Xcls_WindowLeftTree();
             this.left_tree.ref();
             this.tree.el.pack_start(this.left_tree.el,true, true,0);
+            this.left_tree.node_selected.connect((sel) => {
+                if (sel is null) {
+                    this.left_props.el.hide();
+                } 
+                this.left_props.el.show();
+                this.left_props.load(this.left_tree.file, sel);
+                
+            
+            });
+            this.left_tree.before_node_change.connect((sel) => {
+                this.left_props.finish_editing();
+                 
+            });
+            
+            
+        
         
         
             this.left_props =new Xcls_LeftProps();
