@@ -49,31 +49,17 @@ public class Xcls_LeftProps : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_HBox2(_this);
+        var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true,0 );
-        var child_1 = new Xcls_EditProps(_this);
+        var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
+
+        // listeners 
     }
 
     // userdefined functions 
-
-    // skip .JsRender.JsRender:file - already used 
-
-    // skip .JsRender.Node:node - already used 
-
-    // skip .signal:void:changed - already used 
-
-    // skip .signal:void:show_add_props - already used 
-
-    // skip .signal:void:show_editor - already used 
-
-    // skip |homogeneous - already used 
-
-    // skip id - not pipe 
-
-    // skip xtype - not pipe 
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -292,14 +278,6 @@ public class Xcls_LeftProps : Object
                 }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
@@ -309,7 +287,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox2(Xcls_LeftProps _owner)
+        public Xcls_HBox2(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -317,32 +295,20 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button3(_this);
+            var child_0 = new Xcls_Button3( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button7(_this);
+            var child_1 = new Xcls_Button7( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_Button11(_this);
+            var child_2 = new Xcls_Button11( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button3 : Object 
     {
@@ -353,7 +319,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Button3(Xcls_LeftProps _owner)
+        public Xcls_Button3(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -361,7 +327,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox4(_this);
+            var child_0 = new Xcls_HBox4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -374,21 +340,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_HBox4 : Object 
     {
@@ -399,7 +351,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox4(Xcls_LeftProps _owner)
+        public Xcls_HBox4(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -407,10 +359,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image5(_this);
+            var child_0 = new Xcls_Image5( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Label6(_this);
+            var child_1 = new Xcls_Label6( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -418,18 +370,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Image5 : Object 
     {
@@ -440,7 +380,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Image5(Xcls_LeftProps _owner)
+        public Xcls_Image5(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -455,20 +395,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip |stock - already used 
-
-        // skip |icon_size - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Label6 : Object 
     {
@@ -479,7 +405,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Label6(Xcls_LeftProps _owner)
+        public Xcls_Label6(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Property" );
@@ -492,18 +418,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button7 : Object 
     {
@@ -514,7 +428,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Button7(Xcls_LeftProps _owner)
+        public Xcls_Button7(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -522,7 +436,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox8(_this);
+            var child_0 = new Xcls_HBox8( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -540,21 +454,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_HBox8 : Object 
     {
@@ -565,7 +465,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox8(Xcls_LeftProps _owner)
+        public Xcls_HBox8(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -573,10 +473,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image9(_this);
+            var child_0 = new Xcls_Image9( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Label10(_this);
+            var child_1 = new Xcls_Label10( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -584,18 +484,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Image9 : Object 
     {
@@ -606,7 +494,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Image9(Xcls_LeftProps _owner)
+        public Xcls_Image9(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -621,20 +509,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip |stock - already used 
-
-        // skip |icon_size - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Label10 : Object 
     {
@@ -645,7 +519,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Label10(Xcls_LeftProps _owner)
+        public Xcls_Label10(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Handler" );
@@ -658,18 +532,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button11 : Object 
     {
@@ -680,7 +542,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Button11(Xcls_LeftProps _owner)
+        public Xcls_Button11(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -688,10 +550,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox12(_this);
+            var child_0 = new Xcls_HBox12( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_AddPropertyPopup(_this);
+            var child_1 = new Xcls_AddPropertyPopup( _this );
             child_1.ref();
 
             // listeners 
@@ -709,21 +571,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_HBox12 : Object 
     {
@@ -734,7 +582,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox12(Xcls_LeftProps _owner)
+        public Xcls_HBox12(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -742,10 +590,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image13(_this);
+            var child_0 = new Xcls_Image13( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Label14(_this);
+            var child_1 = new Xcls_Label14( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -753,18 +601,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Image13 : Object 
     {
@@ -775,7 +611,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Image13(Xcls_LeftProps _owner)
+        public Xcls_Image13(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -790,20 +626,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip |stock - already used 
-
-        // skip |icon_size - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Label14 : Object 
     {
@@ -814,7 +636,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_Label14(Xcls_LeftProps _owner)
+        public Xcls_Label14(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Other" );
@@ -827,18 +649,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_AddPropertyPopup : Object 
     {
@@ -849,7 +659,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_AddPropertyPopup(Xcls_LeftProps _owner)
+        public Xcls_AddPropertyPopup(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.AddPropertyPopup = this;
@@ -858,34 +668,34 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem16(_this);
+            var child_0 = new Xcls_MenuItem16( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_MenuItem17(_this);
+            var child_1 = new Xcls_MenuItem17( _this );
             child_1.ref();
             this.el.append (  child_1.el  );
-            var child_2 = new Xcls_MenuItem18(_this);
+            var child_2 = new Xcls_MenuItem18( _this );
             child_2.ref();
             this.el.append (  child_2.el  );
-            var child_3 = new Xcls_SeparatorMenuItem19(_this);
+            var child_3 = new Xcls_SeparatorMenuItem19( _this );
             child_3.ref();
             this.el.add (  child_3.el  );
-            var child_4 = new Xcls_MenuItem20(_this);
+            var child_4 = new Xcls_MenuItem20( _this );
             child_4.ref();
             this.el.append (  child_4.el  );
-            var child_5 = new Xcls_MenuItem21(_this);
+            var child_5 = new Xcls_MenuItem21( _this );
             child_5.ref();
             this.el.append (  child_5.el  );
-            var child_6 = new Xcls_MenuItem22(_this);
+            var child_6 = new Xcls_MenuItem22( _this );
             child_6.ref();
             this.el.append (  child_6.el  );
-            var child_7 = new Xcls_SeparatorMenuItem23(_this);
+            var child_7 = new Xcls_SeparatorMenuItem23( _this );
             child_7.ref();
             this.el.add (  child_7.el  );
-            var child_8 = new Xcls_MenuItem24(_this);
+            var child_8 = new Xcls_MenuItem24( _this );
             child_8.ref();
             this.el.append (  child_8.el  );
-            var child_9 = new Xcls_MenuItem25(_this);
+            var child_9 = new Xcls_MenuItem25( _this );
             child_9.ref();
             this.el.append (  child_9.el  );
         }
@@ -893,20 +703,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip id - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem16 : Object 
     {
@@ -917,7 +713,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem16(Xcls_LeftProps _owner)
+        public Xcls_MenuItem16(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -936,23 +732,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem17 : Object 
     {
@@ -963,7 +743,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem17(Xcls_LeftProps _owner)
+        public Xcls_MenuItem17(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -983,23 +763,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem18 : Object 
     {
@@ -1010,7 +774,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem18(Xcls_LeftProps _owner)
+        public Xcls_MenuItem18(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1030,23 +794,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_SeparatorMenuItem19 : Object 
     {
@@ -1057,7 +805,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_SeparatorMenuItem19(Xcls_LeftProps _owner)
+        public Xcls_SeparatorMenuItem19(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -1070,16 +818,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem20 : Object 
     {
@@ -1090,7 +828,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem20(Xcls_LeftProps _owner)
+        public Xcls_MenuItem20(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1111,23 +849,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem21 : Object 
     {
@@ -1138,7 +860,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem21(Xcls_LeftProps _owner)
+        public Xcls_MenuItem21(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1158,23 +880,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem22 : Object 
     {
@@ -1185,7 +891,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem22(Xcls_LeftProps _owner)
+        public Xcls_MenuItem22(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1205,23 +911,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_SeparatorMenuItem23 : Object 
     {
@@ -1232,7 +922,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_SeparatorMenuItem23(Xcls_LeftProps _owner)
+        public Xcls_SeparatorMenuItem23(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -1245,16 +935,6 @@ public class Xcls_LeftProps : Object
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem24 : Object 
     {
@@ -1265,7 +945,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem24(Xcls_LeftProps _owner)
+        public Xcls_MenuItem24(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1285,23 +965,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem25 : Object 
     {
@@ -1312,7 +976,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem25(Xcls_LeftProps _owner)
+        public Xcls_MenuItem25(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1332,23 +996,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_markup - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_EditProps : Object 
     {
@@ -1360,7 +1008,7 @@ public class Xcls_LeftProps : Object
         public bool editing;
 
             // ctor 
-        public Xcls_EditProps(Xcls_LeftProps _owner)
+        public Xcls_EditProps(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.EditProps = this;
@@ -1371,10 +1019,10 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_view(_this);
+            var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ContextMenu(_this);
+            var child_1 = new Xcls_ContextMenu( _this );
             child_1.ref();
 
             // init method 
@@ -1386,27 +1034,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip .bool:editing - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
-        // skip |shadow_type - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_view : Object 
     {
@@ -1417,7 +1045,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_view(Xcls_LeftProps _owner)
+        public Xcls_view(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.view = this;
@@ -1429,13 +1057,13 @@ public class Xcls_LeftProps : Object
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
             this.el.tooltip_column = 5;
-            var child_0 = new Xcls_model(_this);
+            var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_keycol(_this);
+            var child_1 = new Xcls_keycol( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
-            var child_2 = new Xcls_valcol(_this);
+            var child_2 = new Xcls_valcol( _this );
             child_2.ref();
             this.el.append_column (  child_2.el  );
 
@@ -1541,29 +1169,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip tooltip_column - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |enable_tree_lines - already used 
-
-        // skip |headers_visible - already used 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_model : Object 
     {
@@ -1574,7 +1180,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_LeftProps _owner)
+        public Xcls_model(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.model = this;
@@ -1587,27 +1193,11 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip columns - already used 
-
-        // skip id - not pipe 
-
-        // skip n_columns - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |changed - no return type
 
         // skip |toShort - no return type
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_keycol : Object 
     {
@@ -1618,7 +1208,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_keycol(Xcls_LeftProps _owner)
+        public Xcls_keycol(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.keycol = this;
@@ -1628,7 +1218,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.title = "key";
-            var child_0 = new Xcls_keyrender(_this);
+            var child_0 = new Xcls_keyrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
@@ -1639,25 +1229,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip title - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_keyrender : Object 
     {
@@ -1668,7 +1240,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_keyrender(Xcls_LeftProps _owner)
+        public Xcls_keyrender(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.keyrender = this;
@@ -1725,21 +1297,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_valcol : Object 
     {
@@ -1750,7 +1308,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_valcol(Xcls_LeftProps _owner)
+        public Xcls_valcol(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.valcol = this;
@@ -1760,7 +1318,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.title = "value";
-            var child_0 = new Xcls_valrender(_this);
+            var child_0 = new Xcls_valrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
@@ -1777,25 +1335,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip title - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_valrender : Object 
     {
@@ -1806,7 +1346,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_valrender(Xcls_LeftProps _owner)
+        public Xcls_valrender(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.valrender = this;
@@ -1818,8 +1358,9 @@ public class Xcls_LeftProps : Object
             this.el.editable = false;
             this.el.has_entry = true;
             this.el.text_column = 0;
-            var child_0 = new Xcls_ListStore33(_this);
+            var child_0 = new Xcls_ListStore33( _this );
             child_0.ref();
+            this.el.model = child_0.el;
 
             // listeners 
             this.el.edited.connect(   (path, newtext) => {
@@ -1871,29 +1412,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip text_column - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |editable - already used 
-
-        // skip |has_entry - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_ListStore33 : Object 
     {
@@ -1904,7 +1423,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_ListStore33(Xcls_LeftProps _owner)
+        public Xcls_ListStore33(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.ListStore( 1, "typeof(string)" );
@@ -1916,23 +1435,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip columns - already used 
-
-        // skip *prop - not pipe 
-
-        // skip n_columns - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_ContextMenu : Object 
     {
@@ -1943,7 +1446,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_ContextMenu(Xcls_LeftProps _owner)
+        public Xcls_ContextMenu(Xcls_LeftProps _owner )
         {
             _this = _owner;
             _this.ContextMenu = this;
@@ -1952,31 +1455,17 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem35(_this);
+            var child_0 = new Xcls_MenuItem35( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_MenuItem36(_this);
+            var child_1 = new Xcls_MenuItem36( _this );
             child_1.ref();
             this.el.append (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem35 : Object 
     {
@@ -1987,7 +1476,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem35(Xcls_LeftProps _owner)
+        public Xcls_MenuItem35(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -2005,21 +1494,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_MenuItem36 : Object 
     {
@@ -2030,7 +1505,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem36(Xcls_LeftProps _owner)
+        public Xcls_MenuItem36(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -2048,20 +1523,6 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
