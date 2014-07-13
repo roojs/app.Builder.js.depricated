@@ -37,7 +37,6 @@ WindowLeftTree=new XObject({
         view.get_selection().get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
     },
-     : "",
     items : [
         {
             xtype: Gtk.TreeView,

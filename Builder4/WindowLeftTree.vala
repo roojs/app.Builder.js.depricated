@@ -28,6 +28,7 @@ public class Xcls_WindowLeftTree : Object
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars
+    public signal void node_selected(JsRenderNode? node);
     public signal void after_node_change(JsRender.Node? node);
     public signal void before_node_change(JsRender.Node? node);
 
@@ -51,8 +52,6 @@ public class Xcls_WindowLeftTree : Object
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
          
-
-        // listeners 
     }
 
     // userdefined functions 
