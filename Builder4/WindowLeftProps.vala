@@ -58,10 +58,6 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public void finish_editing() {
-             // 
-            this.before_edit();
-        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -150,6 +146,10 @@ public class Xcls_LeftProps : Object
                     this.load(this.file, this.node);
                     
                     _this.changed();
+        }
+    public void finish_editing() {
+             // 
+            this.before_edit();
         }
     public void load(JsRender.JsRender file, JsRender.Node? node) 
         {

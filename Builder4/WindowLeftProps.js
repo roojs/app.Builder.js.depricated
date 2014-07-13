@@ -11,10 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
-    'void:finish_editing' : () {
-         // 
-        this.before_edit();
-    },
     id : "LeftProps",
     homogeneous : false,
     'void:addProp' : (string type, string key, string value) {
@@ -105,6 +101,10 @@ WindowLeftProps=new XObject({
                 this.load(this.file, this.node);
                 
                 _this.changed();
+    },
+    'void:finish_editing' : () {
+         // 
+        this.before_edit();
     },
     'void:load' : (JsRender.JsRender file, JsRender.Node? node) 
     {
