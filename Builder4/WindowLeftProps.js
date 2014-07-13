@@ -13,7 +13,7 @@ WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     'void:finish_editing' : () {
          // 
-    
+        this.before_editing();
     },
     id : "LeftProps",
     homogeneous : false,

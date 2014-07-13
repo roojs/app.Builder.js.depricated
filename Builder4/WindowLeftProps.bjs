@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|void:finish_editing": "() {\n     // \n\n}",
+            "|void:finish_editing": "() {\n     // \n    this.before_editing();\n}",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".signal:void:changed": "()",
