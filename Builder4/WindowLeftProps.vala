@@ -1190,7 +1190,8 @@ public class Xcls_LeftProps : Object
     typeof(string),  // 1 property type (prop|event)
     typeof(string),  // 2 real key
     typeof(string),  // 4 visable key
-    typeof(string)  // 5 visable value
+    typeof(string),  // 5 visable value
+    typeof(string)  // 6 full value (for tooltip)
       );
 
             // my vars
