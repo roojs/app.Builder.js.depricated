@@ -584,7 +584,7 @@ WindowLeftProps=new XObject({
                             
                                 this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                             },
-                            columns : typeof(Object),  // 0 real key
+                            columns : typeof(string),  // 0 real key
                                 typeof(string),  // 1 property type (prop|event)
                                 typeof(string),  // 2 real key
                                 typeof(string),  // 4 visable key
