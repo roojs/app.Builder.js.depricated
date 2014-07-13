@@ -472,7 +472,7 @@ public class Xcls_WindowLeftTree : Object
             
             
                     //??this.model.load( false);
-                    _this.after_node_change(null);
+                    _this.node_selected(null);
                     
                     return  ;
             }
