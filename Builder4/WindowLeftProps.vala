@@ -55,11 +55,10 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
+    public void finish_editing
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
