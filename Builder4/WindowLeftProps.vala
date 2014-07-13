@@ -192,8 +192,8 @@ public class Xcls_LeftProps : Object
                         0, "listener",
                         1, miter.get_key(),
                         2, "<b>" + miter.get_key() + "</b>",
-                        3, miter.get_value()
-                        3, miter.get_value()                
+                        3, miter.get_value(),
+                        4, miter.get_value()                
                     ); 
              }
              
@@ -207,7 +207,8 @@ public class Xcls_LeftProps : Object
                         0, "props",
                         1, miter.get_key(),
                         2,  miter.get_key() ,
-                        3, miter.get_value()
+                        3, miter.get_value(),
+                        4, miter.get_value()                
                     ); 
            }
             
