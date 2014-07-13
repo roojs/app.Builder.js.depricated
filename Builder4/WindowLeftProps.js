@@ -143,13 +143,17 @@ WindowLeftProps=new XObject({
         
         while(miter.next()) {
             m.append(out iter,null);
+            
+            var dl = miter.get_value().split("\n");
+            var dis_val = dl.length > 1 ? dl[0] : "";
+            
             m.set(iter, 
                     0, "listener",
-                    1, miter.get_key(),
-                    2, "<b>" + miter.get_key() + "</b>",
-                    3, miter.get_value(),
-                    4, miter.get_value()                
-                ); 
+                1, miter.get_key(),
+                2, "<b>" + miter.get_key() + "</b>",
+                3, miter.get_value(),
+                4, dis_val        
+            ); 
          }
          
           
@@ -158,12 +162,15 @@ WindowLeftProps=new XObject({
         
        while(miter.next()) {
             m.append(out iter,null);
+            var dl = miter.get_value().split("\n");
+            var dis_val = dl.length > 1 ? dl[0] : "";
+    
             m.set(iter, 
                     0, "props",
                     1, miter.get_key(),
                     2,  miter.get_key() ,
                     3, miter.get_value(),
-                    4, miter.get_value()                
+                    4, dis_val
                 ); 
        }
         
