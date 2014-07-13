@@ -60,7 +60,7 @@ public class Xcls_LeftProps : Object
     // userdefined functions 
     public void finish_editing() {
              // 
-            this.before_editing();
+            this.before_edit();
         }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
