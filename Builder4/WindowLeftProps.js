@@ -594,12 +594,11 @@ WindowLeftProps=new XObject({
                             
                                 this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                             },
-                            columns : typeof(string),  // 0 real key
-                                typeof(string),  // 1 property type (prop|event)
-                                typeof(string),  // 2 real key
-                                typeof(string),  // 4 visable key
-                                typeof(string),  // 5 visable value
-                                typeof(string)  // 6 full value (for tooltip),
+                            columns : typeof(string),  // 0 key type
+                                 typeof(string),  // 1 key
+                                 typeof(string),  // 2 key (display)
+                                 typeof(string),  // 3 value
+                                 typeof(string)   // 4 value (display),
                             toShort : function(str) {
                                 var a = typeof(str) == 'string' ? str.split("\n") : [];
                                     return a.length > 1 ? a[0] + '....' : '' + str;

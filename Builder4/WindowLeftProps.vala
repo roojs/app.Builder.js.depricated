@@ -1196,13 +1196,12 @@ public class Xcls_LeftProps : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.TreeStore( 5,     typeof(string),  // 0 real key
-    typeof(string),  // 1 property type (prop|event)
-    typeof(string),  // 2 real key
-    typeof(string),  // 4 visable key
-    typeof(string),  // 5 visable value
-    typeof(string)  // 6 full value (for tooltip)
-      );
+            this.el = new Gtk.TreeStore( 5,      typeof(string),  // 0 key type
+     typeof(string),  // 1 key
+     typeof(string),  // 2 key (display)
+     typeof(string),  // 3 value
+     typeof(string)   // 4 value (display)
+ );
 
             // my vars
 
