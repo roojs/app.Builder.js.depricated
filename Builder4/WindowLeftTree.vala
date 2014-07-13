@@ -29,7 +29,7 @@ public class Xcls_WindowLeftTree : Object
 
         // my vars
     public signal void before_node_change(JsRender.Node? node);
-    public signal void node_selected(JsRenderNode? node);
+    public signal void node_selected(JsRender.Node? node);
 
         // ctor 
     public Xcls_WindowLeftTree()
