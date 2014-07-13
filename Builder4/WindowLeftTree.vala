@@ -28,9 +28,8 @@ public class Xcls_WindowLeftTree : Object
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars
-    public signal void node_selected(JsRenderNode? node);
-    public signal void after_node_change(JsRender.Node? node);
     public signal void before_node_change(JsRender.Node? node);
+    public signal void node_selected(JsRenderNode? node);
 
         // ctor 
     public Xcls_WindowLeftTree()
