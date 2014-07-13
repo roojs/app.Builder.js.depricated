@@ -718,7 +718,7 @@ WindowLeftProps=new XObject({
                                     has_entry : true,
                                     model : {
                                         xtype: Gtk.ListStore,
-                                        columns : "typeof(string)",
+                                        columns : typeof(string),
                                         n_columns : 1,
                                         pack : false
                                     }
