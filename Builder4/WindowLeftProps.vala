@@ -171,6 +171,15 @@ public class Xcls_LeftProps : Object
             //var provider = this.get('/LeftTree').getPaleteProvider();
             Gtk.TreeIter iter;
             
+            //typeof(string),  // 0 key type
+             //typeof(string),  // 1 key
+             //typeof(string),  // 2 key (display)
+             //typeof(string),  // 3 value
+             //typeof(string),  // 4 value (display)
+        
+            
+            
+            
             
             // really need a way to sort the hashmap...
             var m = this.model.el;
@@ -184,6 +193,7 @@ public class Xcls_LeftProps : Object
                         1, miter.get_key(),
                         2, "<b>" + miter.get_key() + "</b>",
                         3, miter.get_value()
+                        3, miter.get_value()                
                     ); 
              }
              
