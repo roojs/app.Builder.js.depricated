@@ -1069,7 +1069,7 @@ public class Xcls_LeftProps : Object
             // set gobject values
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
-            this.el.tooltip_column = 4;
+            this.el.tooltip_column = 3;
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );

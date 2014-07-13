@@ -561,7 +561,7 @@ WindowLeftProps=new XObject({
                         }
                     },
                     id : "view",
-                    tooltip_column : 4,
+                    tooltip_column : 3,
                     enable_tree_lines : true,
                     headers_visible : false,
                     init : {
