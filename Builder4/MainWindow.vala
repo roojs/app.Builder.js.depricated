@@ -156,7 +156,7 @@ public class Xcls_MainWindow : Object
                     this.left_props.el.hide();
                 } 
                 this.left_props.el.show();
-                this.left_props.load(this.left_tree.file, sel);
+                this.left_props.load(this.left_tree.getActiveFile(), sel);
                 
             
             });
