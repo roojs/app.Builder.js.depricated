@@ -62,7 +62,7 @@ public class Xcls_WindowLeftTree : Object
              var path = this.getActivePath();
              if (path.length < 1) {
                 return null;
-             }2
+             }
              return _this.model.pathToNode(path);
         }
     public string getActivePath () {
