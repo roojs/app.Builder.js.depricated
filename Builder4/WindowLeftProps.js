@@ -206,8 +206,10 @@ WindowLeftProps=new XObject({
                 Gtk.TreeModel mod;
                 
                 var s = this.view.el.get_selection();
-                s.get_selected(out mod, out iter);
-                     
+                if (!s.get_selected(out mod, out iter)) {
+                    print("nothing selected?\n");;
+                    return
+                }
                 /*
                     m.set(iter, 
                             0, "listener",
