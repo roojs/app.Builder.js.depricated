@@ -1358,7 +1358,7 @@ public class Xcls_LeftProps : Object
             
             	
             	this.el.add_attribute(_this.valrender.el , "text", 4 );
-            	this.el.add_attribute(_this.valrender.el , "sensitive", 4 );
+            	//this.el.add_attribute(_this.valrender.el , "sensitive", 4 );
             	//this.el.add_attribute(this.items[0].el , 'editable', 3 );
                       // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
             
