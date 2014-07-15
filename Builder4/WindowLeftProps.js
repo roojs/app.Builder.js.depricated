@@ -208,7 +208,7 @@ WindowLeftProps=new XObject({
                 var s = this.view.el.get_selection();
                 if (!s.get_selected(out mod, out iter)) {
                     print("nothing selected?\n");;
-                    return
+                    return;
                 }
                 /*
                     m.set(iter, 
