@@ -1138,7 +1138,7 @@ public class Xcls_LeftProps : Object
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
                     if (col.title == "value") {
-                        return true;
+                        return false;
                     }
             
                     var p = _this.ContextMenu;
@@ -1157,7 +1157,7 @@ public class Xcls_LeftProps : Object
                     print("col title != value");
                     this.el.get_selection().unselect_all();
                       //  XObject.error("column is not value?");
-                    return true; // ignore.. - key click.. ??? should we do this??
+                    return false; // ignore.. - key click.. ??? should we do this??
                 }
                 
                 // currently editing???
