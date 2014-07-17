@@ -321,6 +321,11 @@
                                     "|xns": "Gtk"
                                 },
                                 {
+                                    "|xns": "Gtk",
+                                    "xtype": "SeparatorMenuItem",
+                                    "pack": false
+                                },
+                                {
                                     "listeners": {
                                         "activate": "  ( )  =>{\n\t_this.deleteSelected();\n}"
                                     },
