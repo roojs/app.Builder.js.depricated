@@ -29,7 +29,7 @@ int main (string[] args) {
 	var  left_props =new Xcls_LeftProps();
 
 	w.add(left_props.el);
-    w.el.show_all();
+	w.show_all();
  
 	left_props.load(tf, tf.items.tree); 
 
