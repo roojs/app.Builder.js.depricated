@@ -198,7 +198,7 @@ WindowLeftProps=new XObject({
                 
                 Gtk.TreeIter iter;
     
-                
+                var mod = this.model;
                 this.model.el.get_iter (out iter, path);
                  
                 /*
