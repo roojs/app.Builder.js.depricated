@@ -105,12 +105,13 @@ public class Xcls_LeftProps : Object
                 if ((string)gval != key) {
                     return false;
                 }
-                s.select_iter(iter);
+                this.startEditingValue(this.model.el.get_path(iter));
+                //s.select_iter(iter);
                 return true; 
             });
             
             
-            this.startEditingValue();
+            
                       
         }
     public void before_edit()
