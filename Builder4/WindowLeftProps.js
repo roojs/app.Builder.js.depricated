@@ -174,7 +174,12 @@ WindowLeftProps=new XObject({
                     4, dis_val
                 ); 
        }
-        
+       
+       // clear selection?
+       m.get_selection().unselect_all();
+       
+       
+       
     },
     'void:startEditingKey' : ( Gtk.TreePath path) {
         

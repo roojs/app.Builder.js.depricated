@@ -221,7 +221,12 @@ public class Xcls_LeftProps : Object
                         4, dis_val
                     ); 
            }
-            
+           
+           // clear selection?
+           m.get_selection().unselect_all();
+           
+           
+           
         }
     public void startEditingKey( Gtk.TreePath path) {
             
