@@ -40,6 +40,7 @@ BUILDER4= Builder4/Application.vala \
 # for testing 
 all:
 	test-leftprops
+
 #  test-full
 
 test-leftprops:
