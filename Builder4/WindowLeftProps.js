@@ -527,7 +527,7 @@ WindowLeftProps=new XObject({
                                 print("col title != value");
                                 this.el.get_selection().unselect_all();
                                   //  XObject.error("column is not value?");
-                                return false; // ignore.. - key click.. ??? should we do this??
+                                return true; // ignore.. - key click.. ??? should we do this??
                             }
                             
                             // currently editing???
@@ -577,6 +577,7 @@ WindowLeftProps=new XObject({
                              //Gtk.TreePath path;
                         
                              ;
+                             
                             _this.startEditingValue(path); // assumes selected row..
                                 
                            //Seed.print("click" + ev.type);
