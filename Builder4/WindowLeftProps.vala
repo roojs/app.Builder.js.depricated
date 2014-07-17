@@ -222,7 +222,7 @@ public class Xcls_LeftProps : Object
            }
             
         }
-    public void startEditingKey() {
+    public void startEditingKey( Gtk.TreePath path) {
             
              
             
