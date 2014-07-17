@@ -3,8 +3,7 @@
 
 
 */
-  	
-}
+ 
 
 int main (string[] args) {
     Gtk.init (ref args);
@@ -30,7 +29,7 @@ int main (string[] args) {
 
 	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
 	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
-	rooWindowClutter(); Gtk.main();
+	 Gtk.main();
     
 	
 	return 0;
