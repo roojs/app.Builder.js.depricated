@@ -750,6 +750,8 @@ WindowLeftProps=new XObject({
                                         },
                                         editing_started : ( editable, path) => {
                                             //_this.editing = true;
+                                            
+                                            print("val - editing_Started\n");
                                             this.el.editable = false; // make sure it's not editor...
                                            
                                         }

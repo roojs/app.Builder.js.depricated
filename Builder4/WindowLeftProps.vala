@@ -1451,6 +1451,8 @@ public class Xcls_LeftProps : Object
             } );
             this.el.editing_started.connect( ( editable, path) => {
                 //_this.editing = true;
+                
+                print("val - editing_Started\n");
                 this.el.editable = false; // make sure it's not editor...
                
             } );
