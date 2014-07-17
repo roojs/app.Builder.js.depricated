@@ -1138,7 +1138,7 @@ public class Xcls_LeftProps : Object
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
                     if (col.title == "value") {
-                        return false;
+                        return true;
                     }
             
                     var p = _this.ContextMenu;
