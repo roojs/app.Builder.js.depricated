@@ -1115,7 +1115,7 @@ public class Xcls_LeftProps : Object
                 int cell_y;
                 Gtk.TreePath path;
                 if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
-                    return false; //not on a element.
+                    return true; //not on a element.
                 }
                 
                  // right click.
