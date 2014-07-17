@@ -1120,6 +1120,7 @@ public class Xcls_LeftProps : Object
                 int cell_y;
                 Gtk.TreePath path;
                 if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
+                    print("nothing selected on click");
                     this.el.get_selection().unselect_all();
                     return true; //not on a element.
                 }
@@ -1145,6 +1146,7 @@ public class Xcls_LeftProps : Object
                  
                 if (col.title != "value") {
                     print("col title != value");
+                    this.el.get_selection().unselect_all();
                       //  XObject.error("column is not value?");
                     return false; // ignore.. - key click.. ??? should we do this??
                 }
