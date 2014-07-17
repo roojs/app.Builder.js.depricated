@@ -784,7 +784,7 @@ WindowLeftProps=new XObject({
                             listeners : {
                                 activate : ( )  =>{
                                   
-                                    var s = _this.view.get_selection();
+                                    var s = _this.view.el.get_selection();
                                     Gtk.TreeIter iter;
                                     Gtk.TreeModel model;
                                     s.get_selected (out  model, out  iter);
