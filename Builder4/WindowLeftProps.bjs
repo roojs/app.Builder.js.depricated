@@ -321,9 +321,9 @@
                                     "|xns": "Gtk"
                                 },
                                 {
-                                    "|xns": "Gtk",
+                                    "pack": "append",
                                     "xtype": "SeparatorMenuItem",
-                                    "pack": false
+                                    "|xns": "Gtk"
                                 },
                                 {
                                     "listeners": {

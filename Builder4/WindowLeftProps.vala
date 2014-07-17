@@ -1515,6 +1515,7 @@ public class Xcls_LeftProps : Object
             this.el.append (  child_0.el  );
             var child_1 = new Xcls_SeparatorMenuItem36( _this );
             child_1.ref();
+            this.el.append (  child_1.el  );
             var child_2 = new Xcls_MenuItem37( _this );
             child_2.ref();
             this.el.append (  child_2.el  );

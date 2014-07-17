@@ -799,7 +799,7 @@ WindowLeftProps=new XObject({
                         },
                         {
                             xtype: Gtk.SeparatorMenuItem,
-                            pack : false
+                            pack : "append"
                         },
                         {
                             xtype: Gtk.MenuItem,
