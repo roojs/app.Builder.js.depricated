@@ -18,14 +18,17 @@ int main (string[] args) {
 	 
 	var tf = proj.files.get(dir + "/" + name + ".bjs");
 	tf.loadItems();
-	var w = new Xcls_MainWindow();
+	
 
-	var  left_tree =new Xcls_WindowLeftTree();
 
-	w.vbox.el.pack_start(left_tree.el,true, true,0);
+    var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
+
+	var  left_tree =new Xcls_WindowLeftProps();
+
+	w.pack_start(left_tree.el,true, true,0);
     w.el.show_all();
  
-	left_tree.model.loadFile(tf);
+	
 
 	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
 	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
