@@ -207,7 +207,7 @@ WindowLeftProps=new XObject({
                 
                 var s = this.view.el.get_selection();
                 if (!s.get_selected(out mod, out iter)) {
-                    print("nothing selected?\n");;
+                    print("nothing selected?\n");
                     return;
                 }
                 /*
@@ -243,6 +243,7 @@ WindowLeftProps=new XObject({
                     return;
                 }
                 // others... - fill in options for true/false?
+                print("turn on editing");
                 
                 this.valuerender.el.editable = true;
                 this.view.el.set_cursor_on_cell(
