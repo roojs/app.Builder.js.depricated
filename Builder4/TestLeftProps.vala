@@ -28,7 +28,7 @@ int main (string[] args) {
 
 	var  left_props =new Xcls_LeftProps();
 
-	w.pack_start(left_props.el,true, true,0);
+	w.add(left_props.el);
     w.el.show_all();
  
 	left_props.load(tf, tf.items.tree); 
