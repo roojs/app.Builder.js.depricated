@@ -570,9 +570,8 @@ WindowLeftProps=new XObject({
                             
                              //Gtk.TreePath path;
                         
-                            var sel = this.el.get_selection();
-                            sel.select_path(path);
-                            _this.startEditingValue(); // assumes selected row..
+                             ;
+                            _this.startEditingValue(path); // assumes selected row..
                                 
                            //Seed.print("click" + ev.type);
                             //console.dump(res);
