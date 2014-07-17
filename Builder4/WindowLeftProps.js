@@ -651,6 +651,8 @@ WindowLeftProps=new XObject({
                                         
                                         },
                                         edited : (path, newtext) => {
+                                                print("Keyrender  - signal:edited\n");
+                                            
                                             this.el.editable = false;
                                           
                                         /*
@@ -721,6 +723,8 @@ WindowLeftProps=new XObject({
                                     xtype: Gtk.CellRendererCombo,
                                     listeners : {
                                         edited : (path, newtext) => {
+                                            print("Valrender  - signal:edited\n");
+                                          
                                                 this.el.editable = false;
                                         /*  
                                          m.set(iter, 

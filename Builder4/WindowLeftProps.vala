@@ -1307,6 +1307,8 @@ public class Xcls_LeftProps : Object
             
             } );
             this.el.edited.connect(   (path, newtext) => {
+                    print("Keyrender  - signal:edited\n");
+                
                 this.el.editable = false;
               
             /*
@@ -1424,6 +1426,8 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.edited.connect(   (path, newtext) => {
+                print("Valrender  - signal:edited\n");
+              
                     this.el.editable = false;
             /*  
              m.set(iter, 
