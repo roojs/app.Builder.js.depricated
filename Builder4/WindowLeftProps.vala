@@ -1164,8 +1164,10 @@ public class Xcls_LeftProps : Object
                 if (col.title != "value") {
                     print("col title != value");
                     
-                    
-                    this.el.get_selection().unselect_all();
+                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                        this.el.get_selection().unselect_all();
+                        retur false;
+                    }
                     
                     
                       //  XObject.error("column is not value?");
