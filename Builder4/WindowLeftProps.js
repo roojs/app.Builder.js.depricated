@@ -510,7 +510,7 @@ WindowLeftProps=new XObject({
                             if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
                                 print("nothing selected on click");
                                 this.el.get_selection().unselect_all();
-                                return true; //not on a element.
+                                return false; //not on a element.
                             }
                             
                              // right click.
