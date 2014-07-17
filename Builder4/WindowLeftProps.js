@@ -514,6 +514,7 @@ WindowLeftProps=new XObject({
                             
                              
                             if (col.title != "value") {
+                                print("col title != value");
                                   //  XObject.error("column is not value?");
                                 return false; // ignore.. - key click.. ??? should we do this??
                             }
