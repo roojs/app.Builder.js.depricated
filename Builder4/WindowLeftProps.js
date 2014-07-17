@@ -499,6 +499,7 @@ WindowLeftProps=new XObject({
                             int cell_y;
                             Gtk.TreePath path;
                             if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
+                                this.el.get_selection().unselect_all();
                                 return true; //not on a element.
                             }
                             
