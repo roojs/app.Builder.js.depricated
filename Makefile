@@ -48,9 +48,9 @@ test-leftprops:
 		Builder4/WindowLeftProps.vala \
 		-o /tmp/test-leftprops
 
-test-full:
+builder4:
 	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  
-		Test.GtkWriter.vala  -o /tmp/test
+		Test.GtkWriter.vala  -o /tmp/Builder4
 
 
 datatest:
