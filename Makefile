@@ -44,9 +44,9 @@ all:
 
 test-leftprops:
 		valac $(FLAGS) $(PKGS) $(CORESRC) \
-				Builder4/TestLeftProps.vala \
-				Builder4/WindowLeftProps.vala \
-				-o /tmp/test-leftprops
+			Builder4/TestLeftProps.vala \
+			Builder4/WindowLeftProps.vala \
+			-o /tmp/test-leftprops
 
 builder4:
 	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  
