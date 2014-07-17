@@ -12,17 +12,13 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg clutter-gtk-1.0
 
 
+FLAGS= -g ==vapidir=. 
 
-
-all:
-	valac -D UI=1 -g  
-		--vapidir=. \
-		$(PKGS)
-		Test.GtkWriter.vala \
-		JsRender/*.vala \
+CORESRC= JsRender/*.vala \
 		Project/*.vala \
-		Palete/*.vala \
-		Builder4/Application.vala \
+		Palete/*.vala 
+
+BUILDER4= Builder4/Application.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/DialogNewComponent.vala \
@@ -39,7 +35,10 @@ all:
 		Builder4/WindowLeftProps.vala \
 		Builder4/ClutterFiles.vala \
 		Builder4/WindowLeftProjects.vala \
-		-o /tmp/test
+
+all:
+	valac $(FLAGS) $(PKGS) $(CORESRC) 
+		Test.GtkWriter.vala  -o /tmp/test
 #		Builder4/*.vala \
 
 datatest:
