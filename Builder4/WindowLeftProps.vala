@@ -290,7 +290,7 @@ public class Xcls_LeftProps : Object
                     // others... - fill in options for true/false?
                     print("turn on editing");
                     
-                    this.valuerender.el.editable = true;
+                    this.valrender.el.editable = true;
                     this.view.el.set_cursor_on_cell(
                         mod.get_path(iter),
                         this.valcol.el,
