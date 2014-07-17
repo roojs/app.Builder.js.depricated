@@ -243,7 +243,7 @@ WindowLeftProps=new XObject({
                     this.allow_edit  = true;
                     this.valrender.el.editable = true;
                     this.view.el.set_cursor_on_cell(
-                        mod.get_path(iter),
+                        path
                         this.valcol.el,
                         this.valrender.el,
                         true
