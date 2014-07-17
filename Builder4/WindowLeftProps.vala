@@ -1296,6 +1296,8 @@ public class Xcls_LeftProps : Object
             
             } );
             this.el.edited.connect(   (path, newtext) => {
+                this.el.editable = false;
+              
             /*
              m.set(iter, 
                             0, "listener",

@@ -640,6 +640,8 @@ WindowLeftProps=new XObject({
                                         
                                         },
                                         edited : (path, newtext) => {
+                                            this.el.editable = false;
+                                          
                                         /*
                                          m.set(iter, 
                                                         0, "listener",
