@@ -238,12 +238,13 @@ WindowLeftProps=new XObject({
                     use_textarea = true;
                 }
                 if (use_textarea) {
+                    print("Call show editor\n");
                     this.show_editor(file, node, type, key);
                     return;
                 }
                 // others... - fill in options for true/false?
                 
-                this.keyrender.el.editable = true;
+                this.valuerender.el.editable = true;
                 this.view.el.set_cursor_on_cell(
                     mod.get_path(iter),
                     this.valcol.el,
