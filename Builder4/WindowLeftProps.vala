@@ -292,16 +292,17 @@ public class Xcls_LeftProps : Object
                     // others... - fill in options for true/false?
                     printf("turn on editing %s \n" , mod.get_path(iter).to_string());
                     
-                    
-                    this.allow_edit  = true;
-                    this.valrender.el.editable = true;
-                    this.view.el.set_cursor_on_cell(
-                        mod.get_path(iter),
-                        this.valcol.el,
-                        this.valrender.el,
-                        true
-                    );
-                    
+                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                        this.allow_edit  = true;
+                        this.valrender.el.editable = true;
+                        this.view.el.set_cursor_on_cell(
+                            mod.get_path(iter),
+                            this.valcol.el,
+                            this.valrender.el,
+                            true
+                        );
+                        return false;
+                    });
                     
                 }
 
