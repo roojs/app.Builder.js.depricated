@@ -72,7 +72,7 @@ WindowLeftProps=new XObject({
     
         print("before edit - stop editing\n");
         
-    
+      // these do not appear to trigger save...
         _this.keyrender.el.stop_editing(false);
         _this.keyrender.el.editable  =false;
     
