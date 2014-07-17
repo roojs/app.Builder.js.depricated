@@ -243,8 +243,8 @@ WindowLeftProps=new XObject({
                     return;
                 }
                 // others... - fill in options for true/false?
-                print("turn on editing \n");
-                
+                printf("turn on editing %s \n" , iter);
+                this.allow_edit  = true;
                 this.valrender.el.editable = true;
                 this.view.el.set_cursor_on_cell(
                     mod.get_path(iter),
