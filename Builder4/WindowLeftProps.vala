@@ -1534,7 +1534,7 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.activate.connect(   ( )  =>{
-            	_this.startEditingKey();
+            	//_this.startEditingKey();
             } );
         }
 

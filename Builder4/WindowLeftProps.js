@@ -777,7 +777,7 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.MenuItem,
                             listeners : {
                                 activate : ( )  =>{
-                                	_this.startEditingKey();
+                                	//_this.startEditingKey();
                                 }
                             },
                             label : "Edit",

@@ -313,7 +313,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "activate": "  ( )  =>{\n\t_this.startEditingKey();\n}"
+                                        "activate": "  ( )  =>{\n\t//_this.startEditingKey();\n}"
                                     },
                                     "label": "Edit",
                                     "pack": "append",
