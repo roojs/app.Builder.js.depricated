@@ -12,7 +12,9 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	 
-	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
+
+
+	var dir = "/home/alan/gitlive/Pman.Cms"; 
 	var proj = new Project.Gtk(dir );
 	proj.scanDirs();
 	 
