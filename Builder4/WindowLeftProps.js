@@ -192,7 +192,7 @@ WindowLeftProps=new XObject({
         
         
     },
-    'void:startEditingValue' : () {
+    'void:startEditingValue' : ( Gtk.TreePath path) {
                 
                  
                 
