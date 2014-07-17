@@ -193,6 +193,7 @@ WindowLeftProps=new XObject({
                 this.keyrender.el,
                 true
             );
+            return false;
         });
          
         
