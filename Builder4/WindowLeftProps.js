@@ -509,7 +509,10 @@ WindowLeftProps=new XObject({
                             Gtk.TreePath path;
                             if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
                                 print("nothing selected on click");
-                                this.el.get_selection().unselect_all();
+                                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                                    this.el.get_selection().unselect_all();
+                                    return false;
+                                }
                                 return false; //not on a element.
                             }
                             
@@ -527,8 +530,11 @@ WindowLeftProps=new XObject({
                                 p.el.popup(null, null, null,  ev.button, ev.time);
                                 //Seed.print("click:" + res.column.title);
                                 // select the 
-                                
-                                this.el.get_selection().select_path(path);
+                                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                          
+                                    this.el.get_selection().select_path(path);
+                                    return false;
+                                }
                                 
                                 return false;
                             }
