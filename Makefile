@@ -38,13 +38,12 @@ BUILDER4= Builder4/Application.vala \
 
 
 # for testing 
-all:
-	test-leftprops
+all: test-leftprops
 
 #  test-full
 
 test-leftprops:
-		valac $(FLAGS) $(PKGS) $(CORESRC) \
+	valac $(FLAGS) $(PKGS) $(CORESRC) \
 			Builder4/TestLeftProps.vala \
 			Builder4/WindowLeftProps.vala \
 			-o /tmp/test-leftprops
