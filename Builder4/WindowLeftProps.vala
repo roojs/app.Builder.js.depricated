@@ -119,10 +119,12 @@ public class Xcls_LeftProps : Object
         
             print("before edit - stop editing\n");
             
-            
+        
             _this.keyrender.el.stop_editing(false);
+            _this.keyrender.el.editable  =false;
+        
             _this.valrender.el.stop_editing(false);
-            
+            _this.valrender.el.editable  =false;    
             
             
         // technicall stop the popup editor..
