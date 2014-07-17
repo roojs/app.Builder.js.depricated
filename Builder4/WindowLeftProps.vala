@@ -33,6 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
+    public bool allow_edit;
     public JsRender.JsRender file;
     public JsRender.Node node;
     public signal void changed();
@@ -47,6 +48,7 @@ public class Xcls_LeftProps : Object
         this.el = new Gtk.VBox( false   , 0 );
 
         // my vars
+        this.allow_edit = false;
 
         // set gobject values
         var child_0 = new Xcls_HBox2( _this );
@@ -55,8 +57,6 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 

@@ -255,7 +255,6 @@ WindowLeftProps=new XObject({
                 
                 
             },
-     : false,
     items : [
         {
             xtype: Gtk.HBox,
