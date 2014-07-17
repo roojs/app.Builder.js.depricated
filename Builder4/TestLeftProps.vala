@@ -26,7 +26,7 @@ int main (string[] args) {
 
     var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
-	var  left_props =new Xcls_WindowLeftProps();
+	var  left_props =new Xcls_LeftProps();
 
 	w.pack_start(left_props.el,true, true,0);
     w.el.show_all();
