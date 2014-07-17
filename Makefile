@@ -36,10 +36,22 @@ BUILDER4= Builder4/Application.vala \
 		Builder4/ClutterFiles.vala \
 		Builder4/WindowLeftProjects.vala \
 
+
+# for testing 
 all:
-	valac $(FLAGS) $(PKGS) $(CORESRC) 
+   test-leftprops
+#  test-full
+
+test-leftprops:
+	valac $(FLAGS) $(PKGS) $(CORESRC) \
+		Builder4/TestLeftProps.vala \
+		Builder4/WindowLeftProps.vala \
+		-o /tmp/test-leftprops
+
+test-full:
+	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  
 		Test.GtkWriter.vala  -o /tmp/test
-#		Builder4/*.vala \
+
 
 datatest:
 	valac -g  --pkg gtk+-3.0 \
