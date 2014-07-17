@@ -109,7 +109,7 @@ WindowLeftProps=new XObject({
     },
     'void:load' : (JsRender.JsRender file, JsRender.Node? node) 
     {
-        
+        print("load leftprops\n");
         this.before_edit();
         this.node = node;
         this.file = file;
