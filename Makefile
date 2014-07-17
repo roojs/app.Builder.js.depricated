@@ -68,4 +68,5 @@ datatest:
 #		Builder4/*.vala \
 
 clean:
-	rm -rf /tmp/test
+	rm -f /tmp/Builder4
+	rm -f /tmp/test-leftprops
