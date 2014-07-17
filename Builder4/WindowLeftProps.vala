@@ -221,9 +221,9 @@ public class Xcls_LeftProps : Object
                         4, dis_val
                     ); 
            }
-           
+           print("clear selection\n");
            // clear selection?
-           m.get_selection().unselect_all();
+           this.view.el.get_selection().unselect_all();
            
            
            
