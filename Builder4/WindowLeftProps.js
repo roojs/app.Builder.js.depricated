@@ -778,7 +778,12 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.MenuItem,
                             listeners : {
                                 activate : ( )  =>{
-                                	//_this.startEditingKey();
+                                  
+                                    var s = _this.view.get_selection();
+                                    Gtk.TreeIter iter;
+                                    Gtk.TreeModel model;
+                                    s.get_selected (out  model, out  iter)
+                                    _this.startEditingKey(model.getPath(iter));
                                 }
                             },
                             label : "Edit",
