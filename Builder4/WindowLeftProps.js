@@ -528,7 +528,7 @@ WindowLeftProps=new XObject({
                                 //Seed.print("click:" + res.column.title);
                                 
                                 
-                                return false;
+                                return true;
                             }
                             
                              

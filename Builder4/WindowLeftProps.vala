@@ -1149,7 +1149,7 @@ public class Xcls_LeftProps : Object
                     //Seed.print("click:" + res.column.title);
                     
                     
-                    return false;
+                    return true;
                 }
                 
                  
