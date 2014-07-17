@@ -1147,15 +1147,21 @@ public class Xcls_LeftProps : Object
                     p.el.show_all();
                     p.el.popup(null, null, null,  ev.button, ev.time);
                     //Seed.print("click:" + res.column.title);
+                    // select the 
                     
+                    this.el.get_selection().select_path(path);
                     
-                    return true;
+                    return false;
                 }
                 
                  
                 if (col.title != "value") {
                     print("col title != value");
+                    
+                    
                     this.el.get_selection().unselect_all();
+                    
+                    
                       //  XObject.error("column is not value?");
                     return false; // ignore.. - key click.. ??? should we do this??
                 }
