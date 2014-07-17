@@ -313,7 +313,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "activate": "  ( )  =>{\n  \n    var s = _this.view.el.get_selection();\n    Gtk.TreeIter iter;\n    Gtk.TreeModel model;\n    s.get_selected (out  model, out  iter);\n    _this.startEditingKey(model.getPath(iter));\n}"
+                                        "activate": "  ( )  =>{\n  \n    var s = _this.view.el.get_selection();\n    Gtk.TreeIter iter;\n    Gtk.TreeModel model;\n    s.get_selected (out  model, out  iter);\n    _this.startEditingKey(model.get_path(iter));\n}"
                                     },
                                     "label": "Edit",
                                     "pack": "append",

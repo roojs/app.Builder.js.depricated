@@ -788,7 +788,7 @@ WindowLeftProps=new XObject({
                                     Gtk.TreeIter iter;
                                     Gtk.TreeModel model;
                                     s.get_selected (out  model, out  iter);
-                                    _this.startEditingKey(model.getPath(iter));
+                                    _this.startEditingKey(model.get_path(iter));
                                 }
                             },
                             label : "Edit",
