@@ -243,7 +243,7 @@ WindowLeftProps=new XObject({
                     return;
                 }
                 // others... - fill in options for true/false?
-                print("turn on editing");
+                print("turn on editing \n");
                 
                 this.valrender.el.editable = true;
                 this.view.el.set_cursor_on_cell(
@@ -255,6 +255,7 @@ WindowLeftProps=new XObject({
                 
                 
             },
+     : false,
     items : [
         {
             xtype: Gtk.HBox,

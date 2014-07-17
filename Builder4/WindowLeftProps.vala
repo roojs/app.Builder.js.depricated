@@ -55,6 +55,8 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
+
+        // listeners 
     }
 
     // userdefined functions 
@@ -288,7 +290,7 @@ public class Xcls_LeftProps : Object
                         return;
                     }
                     // others... - fill in options for true/false?
-                    print("turn on editing");
+                    print("turn on editing \n");
                     
                     this.valrender.el.editable = true;
                     this.view.el.set_cursor_on_cell(
