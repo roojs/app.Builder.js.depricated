@@ -12,7 +12,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg clutter-gtk-1.0
 
 
-FLAGS= -g ==vapidir=. 
+FLAGS= -g --vapidir=. 
 
 CORESRC= JsRender/*.vala \
 		Project/*.vala \
