@@ -226,18 +226,12 @@ public class Xcls_LeftProps : Object
             
              
             
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.el.get_selection();
-            s.get_selected(out mod, out iter);
-                 
           
             // others... - fill in options for true/false?
             
             this.keyrender.el.editable = true;
             this.view.el.set_cursor_on_cell(
-                mod.get_path(iter),
+               path,
                 this.keycol.el,
                 this.keyrender.el,
                 true
