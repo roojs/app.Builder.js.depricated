@@ -84,7 +84,7 @@ MainWindow=new XObject({
      
     
     },
-    'void:hideObjects' : () {
+    'void:hideObject' : () {
           // return to editing state..
            
           //_this.projectbutton.el.show();
@@ -345,7 +345,7 @@ MainWindow=new XObject({
         //_this.projecteditview.el.restore_easing_state();
         this.state = "addprops";
     },
-    'void:showObjects' : () {
+    'void:showObject' : () {
     
          
          
@@ -804,8 +804,8 @@ MainWindow=new XObject({
                                                                     _this.showAddListener();
                                                                     break;
                                                                     
-                                                                case "objects":
-                                                                    _this.hideObjects();
+                                                                case "object":
+                                                                    _this.hideObject();
                                                                     _this.showAddListener();
                                                                     break;
                                                         
@@ -814,8 +814,8 @@ MainWindow=new XObject({
                                                                     break;
                                                         
                                                                     
-                                                                case "addprops":
-                                                                    _this.hideAddProps();
+                                                                case "addprop":
+                                                                    _this.hideAddProp();
                                                                     _this.showAddListener();
                                                                     break;
                                                                     

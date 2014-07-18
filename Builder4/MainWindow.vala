@@ -149,7 +149,7 @@ public class Xcls_MainWindow : Object
          
         
         }
-    public void hideObjects() {
+    public void hideObject() {
               // return to editing state..
                
               //_this.projectbutton.el.show();
@@ -410,7 +410,7 @@ public class Xcls_MainWindow : Object
             //_this.projecteditview.el.restore_easing_state();
             this.state = "addprops";
         }
-    public void showObjects() {
+    public void showObject() {
         
              
              
@@ -1367,8 +1367,8 @@ public class Xcls_MainWindow : Object
                         _this.showAddListener();
                         break;
                         
-                    case "objects":
-                        _this.hideObjects();
+                    case "object":
+                        _this.hideObject();
                         _this.showAddListener();
                         break;
             
@@ -1377,8 +1377,8 @@ public class Xcls_MainWindow : Object
                         break;
             
                         
-                    case "addprops":
-                        _this.hideAddProps();
+                    case "addprop":
+                        _this.hideAddProp();
                         _this.showAddListener();
                         break;
                         
