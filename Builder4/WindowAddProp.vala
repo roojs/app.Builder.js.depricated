@@ -180,8 +180,6 @@ typeof(string) // 5 element type (event|prop)
         }
 
         // userdefined functions 
-
-        // skip |showData - no return type
         public string getValue(Gtk.TreeIter iter, int col)
             {
             

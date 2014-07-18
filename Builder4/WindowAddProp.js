@@ -104,53 +104,6 @@ WindowAddProp=new XObject({
                     typeof(string), // 3 visable desc
                     typeof(string), // 4 function desc
                     typeof(string) // 5 element type (event|prop),
-                    showData : function(type) {
-                        this.el.clear();
-                                if (!this.get('/MidPropTree').activeElement || !type) {
-                                    return; // no active element
-                                }
-                    
-                                var fullpath = this.get('/LeftTree.model').file.guessName(this.get('/MidPropTree').activeElement);
-                                var palete = this.get('/LeftTree').getPaleteProvider();
-                                
-                                 
-                                
-                                Seed.print('Showing right?');
-                                if (!this.get('/MidPropTree').shown) {
-                    
-                                    this.get('/Window.left').el.position = this.get('/Window.left').el.position  + 150;
-                                    this.get('/MidPropTree').el.show();
-                                    this.get('/MidPropTree').shown = true;
-                                }
-                                
-                                var elementList = palete.getPropertiesFor(fullpath, type).sort(function(a,b) { 
-                                    return a.name >  b.name ? 1 : -1;
-                                });
-                                print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
-                               // console.dump(elementList);
-                               
-                                
-                                var iter = new Gtk.TreeIter();
-                                for(var i =0 ; i < elementList.length; i++) {
-                                    var p=elementList[i];
-                                    this.el.append(iter);
-                                  //  console.log( '<b>' + p.name +'</b> ['+p.type+']');
-                                        //GObject.TYPE_STRING,  // real key
-                                        // GObject.TYPE_STRING, // real type
-                                        // GObject.TYPE_STRING, // docs ?this.el.set_value(iter, 0, p.name);et_value(iter, 0, p.name);
-                                        // GObject.TYPE_STRING // func def?
-                                        
-                                    
-                                    this.el.set_value(iter, 0, p.name);
-                                    this.el.set_value(iter, 1, p.type);
-                                    this.el.set_value(iter, 2, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>' + "\n" + p.desc);
-                                    this.el.set_value(iter, 3, p.sig ? p.sig  : '');
-                                    this.el.set_value(iter, 4, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>');
-                                    this.el.set_value(iter, 5, type);
-                                    
-                                }
-                                                 
-                    },
                     'string:getValue' : (Gtk.TreeIter iter, int col)
                     {
                     
