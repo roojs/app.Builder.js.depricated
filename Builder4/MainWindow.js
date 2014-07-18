@@ -343,7 +343,7 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
         //_this.projecteditview.el.restore_easing_state();
-        this.state = "addprops";
+        this.state = "addprop";
     },
     'void:showObject' : () {
     
@@ -372,7 +372,7 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
         //_this.projecteditview.el.restore_easing_state();
-        this.state = "objects";
+        this.state = "object";
     },
     'void:showProjectEdit' : () {
         // make the browser smaller, and show the edit dialog
