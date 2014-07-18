@@ -693,11 +693,11 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var i =  iter.get_key();
 			//, iter.get_value());
-			if ( i[0] != '|') {
+			if ( i[0] != '*') {
 				continue;
 			}
 		
-			if (i == "|init") { 
+			if (i == "* init") { 
 				continue;
 			}
 			var val = iter.get_value();
