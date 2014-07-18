@@ -13,11 +13,6 @@ WindowRightPalete=new XObject({
     xtype: Gtk.VBox,
     id : "RightPalete",
     pack : "pack_start,false,false",
-    'void:hide' : () {
-          _this.buttonbar.el.show();
-          _this.viewbox.el.hide();
-      //    print("TRIED TO HIDE");
-    },
     'void:show' : () {
         _this.buttonbar.el.hide();
         _this.viewbox.el.show();

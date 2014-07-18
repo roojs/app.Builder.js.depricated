@@ -48,11 +48,6 @@ public class Xcls_RightPalete : Object
     }
 
     // userdefined functions 
-    public void hide () {
-              _this.buttonbar.el.show();
-              _this.viewbox.el.hide();
-          //    print("TRIED TO HIDE");
-        } 
     public void show () {
             _this.buttonbar.el.hide();
             _this.viewbox.el.show();
