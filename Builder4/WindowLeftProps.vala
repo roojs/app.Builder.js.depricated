@@ -57,6 +57,8 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
+
+        // listeners 
     }
 
     // userdefined functions 
