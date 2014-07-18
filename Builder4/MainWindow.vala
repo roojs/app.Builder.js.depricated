@@ -95,14 +95,9 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void showPalete
     public void hideAddProps() {
             _this.state = "edit";
-        }
-    public void showAddProps() {
-            // edit->add props..
-            this.state = "props";
-            
-        
         }
     public void hideProjectEdit () {
             // return to editing state..
@@ -278,6 +273,12 @@ public class Xcls_MainWindow : Object
             this.left_tree =new Xcls_WindowLeftTree();
             _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
             this.el.show_all();
+        
+        }
+    public void showAddProps() {
+            // edit->add props..
+            this.state = "props";
+            
         
         }
     public void showProjectEdit () {
