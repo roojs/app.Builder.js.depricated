@@ -12,11 +12,7 @@ XObject = imports.XObject.XObject;
 WindowAddProp=new XObject({
     xtype: Gtk.ScrolledWindow,
     id : "WindowAddProp",
-    init : {
-        this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-      //  this.el.set_size_request ( 150, -1 );
-        //this.shown = true;
-    },
+    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
     shadow_type : Gtk.ShadowType.IN,
     'void:show' : (Palete.Palete pal, string etype, string xtype) {
         this.model.el.clear();
