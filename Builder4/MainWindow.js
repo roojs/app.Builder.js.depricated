@@ -808,7 +808,9 @@ MainWindow=new XObject({
                                                                     _this.showAddListener();
                                                                     break;
                                                                     
-                                                                default:
+                                                                  default:
+                                                                    print("unhandled add listener from %s\n",_this.state);
+                                                        
                                                                     break;
                                                                     
                                                             }
