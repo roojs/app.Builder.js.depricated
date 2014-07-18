@@ -22,10 +22,15 @@
  * ".signal:void:open": "(JsRender.JsRender file)" -- properties (which are signals)
  *  "|void:clearFiles": "() .... some code...."  -- real functions
  *
+ * 
+ * 
+ * 
+ * 
  * Standardize this crap...
  * 
  * standard properties (use to set)
  *          If they are long values show the dialog..
+ * 
  * bool is_xxx  :: can show a pulldown.. (true/false)
  * string html  
  * | string html  = string with value interpolated eg. baseURL + ".." 
@@ -35,10 +40,10 @@
  * object properties (not part of the GOjbect being wrapped?
  * # Gee.ArrayList<Xcls_fileitem> fileitems
  * 
- * signals render with [s]
+ * signals
  * @ void open 
  * 
- * methods
+ * methods -- always text editor..
  * | void clearFiles
  * | someJSmethod
  * 
@@ -48,7 +53,10 @@
  * * ctor -- string
  * * init -- big string?
  * 
- * 
+ * -----------------
+ * special ID values
+ *  +XXXX -- indicates it's a instance property / not glob...
+ *  *XXXX -- skip writing glob property (used as classes that can be created...)
  * 
  * 
  * 
