@@ -23,6 +23,8 @@ MainWindow=new XObject({
     },
     'void:addProps' : () {
         // edit->add props..
+        this.state = "props";
+        
     
     },
     border_width : 0,
