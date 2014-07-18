@@ -585,17 +585,17 @@ MainWindow=new XObject({
                                                          
                                                                 case "addprops":
                                                                     _this.hideAddProps();
-                                                                    _this.showPalete();
+                                                                    _this.showObjects();
                                                                     break;
                                                         
                                                         // show            
                                                                 case "edit":
-                                                                    _this.showPalete();
+                                                                    _this.showObjects();
                                                                     break;
                                                                     
                                                         // hide            
-                                                                case "palate":
-                                                                    _this.hidePalate();
+                                                                case "objects":
+                                                                    _this.hideObjects);
                                                                     break;
                                                                     break;
                                                                                 
