@@ -1487,7 +1487,7 @@ public class Xcls_LeftProps : Object
                    
                     _this.model.el.set_value(iter, 1, newtext);
                     
-                    
+                    print("ktype: %s\n",ktype);
                     switch(ktype) {
                         case "listener":
                             _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
@@ -1496,7 +1496,7 @@ public class Xcls_LeftProps : Object
                             _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
                             
                             break;
-                        case "prop":
+                        case "props":
                             _this.node.props.set(newtext, _this.node.props.get(oldval));
                             _this.node.props.remove(oldval);
                             _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
