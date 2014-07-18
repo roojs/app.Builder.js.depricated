@@ -594,7 +594,7 @@ public class JsRender.Node : Object {
 		var bits = key.substring(1).split(":");
 		// two types '$' or '|' << for methods..
 		// javascript 
-		if  (Regex.match_simple ("^\\s*function\\s*\\(", val)) {
+		if  (Regex.match_simple ("^function\\s*\\(", val.strip())) {
 			return "| " + key.substring(1);
 		}
 		// vala function..
