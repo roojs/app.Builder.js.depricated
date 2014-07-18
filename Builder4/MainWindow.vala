@@ -118,7 +118,7 @@ public class Xcls_MainWindow : Object
         
             
             el.set_scale(1.0f,1.0f);
-               _this.projecteditview.el.set_scale(1.0f,0.0f);
+        //       _this.projecteditview.el.set_scale(1.0f,0.0f);
             _this.state = "edit";
         
          
