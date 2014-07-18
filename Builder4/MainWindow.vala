@@ -61,6 +61,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.rightpalete = null;
         this.clutterfiles = null;
         this.left_props = null;
         this.projectsettings = null;
