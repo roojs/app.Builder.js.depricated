@@ -743,8 +743,8 @@ MainWindow=new XObject({
                                                                     _this.showAddProp();
                                                                     break;
                                                                     
-                                                                case "objects":
-                                                                    _this.hideObjects();
+                                                                case "object":
+                                                                    _this.hideObject();
                                                                     _this.showAddProp();
                                                                     break;
                                                                
@@ -754,7 +754,7 @@ MainWindow=new XObject({
                                                                     break;
                                                                     
                                                                     
-                                                                case "addprops":
+                                                                case "addprop":
                                                                     _this.hideAddProp();
                                                                     break;
                                                                     

@@ -1265,8 +1265,8 @@ public class Xcls_MainWindow : Object
                         _this.showAddProp();
                         break;
                         
-                    case "objects":
-                        _this.hideObjects();
+                    case "object":
+                        _this.hideObject();
                         _this.showAddProp();
                         break;
                    
@@ -1276,7 +1276,7 @@ public class Xcls_MainWindow : Object
                         break;
                         
                         
-                    case "addprops":
+                    case "addprop":
                         _this.hideAddProp();
                         break;
                         
