@@ -255,10 +255,10 @@
                                 {
                                     "id": "keycol",
                                     "pack": "append_column",
-                                    "|resizable": "true",
-                                    "title": "key",
+                                    "title": "Key",
                                     "xtype": "TreeViewColumn",
                                     "|init": " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
+                                    "|resizable": "true",
                                     "|xns": "Gtk",
                                     "items": [
                                         {
@@ -277,7 +277,7 @@
                                     "id": "valcol",
                                     "pack": "append_column",
                                     "|resizable": "true",
-                                    "title": "value",
+                                    "title": "Value",
                                     "xtype": "TreeViewColumn",
                                     "|init": "{\n\t\n\t//     typeof(string),  // 0 key type\n    // typeof(string),  // 1 key\n    // typeof(string),  // 2 key (display)\n    // typeof(string),  // 3 value\n    // typeof(string)   // 4 value (display)\n\n\t\n\tthis.el.add_attribute(_this.valrender.el , \"text\", 4 );\n\t//this.el.add_attribute(_this.valrender.el , \"sensitive\", 4 );\n\t//this.el.add_attribute(this.items[0].el , 'editable', 3 );\n          // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);\n\n //\tthis.get('/LeftPanel').editableColumn= this;\n}\n",
                                     "|xns": "Gtk",

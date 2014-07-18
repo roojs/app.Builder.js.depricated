@@ -1395,7 +1395,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.resizable = true;
-            this.el.title = "key";
+            this.el.title = "Key";
             var child_0 = new Xcls_keyrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
@@ -1510,7 +1510,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.resizable = true;
-            this.el.title = "value";
+            this.el.title = "Value";
             var child_0 = new Xcls_valrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );

@@ -766,10 +766,10 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.TreeViewColumn,
                             id : "keycol",
                             pack : "append_column",
-                            resizable : true,
-                            title : "key",
+                            title : "Key",
                             init : this.el.add_attribute(_this.keyrender.el , "markup", 2 );
                              this.el.add_attribute(_this.keyrender.el , "text", 1 );,
+                            resizable : true,
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
@@ -840,7 +840,7 @@ WindowLeftProps=new XObject({
                             id : "valcol",
                             pack : "append_column",
                             resizable : true,
-                            title : "value",
+                            title : "Value",
                             init : {
                             	
                             	//     typeof(string),  // 0 key type
