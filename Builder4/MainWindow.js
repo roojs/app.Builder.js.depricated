@@ -554,10 +554,14 @@ MainWindow=new XObject({
                                                             
                                                             switch (_this.state) {
                                                                 case "edit":
-                                                                    _this.showPalete();
+                                                                    _this.showAddProps()
                                                                     break;
-                                                                case "showpalete":
+                                                                case "palete":
                                                                     _this.hidePalete();
+                                                                    _this.showAddProps()
+                                                                    break
+                                                                case "addprops":
+                                                                    _this.hideAddProps();
                                                                 default:
                                                                     break;
                                                             }
