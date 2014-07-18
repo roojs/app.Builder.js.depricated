@@ -130,10 +130,10 @@ WindowRightPalete=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.ListStore,
-                                    columns : typeof(string),typeof(string),
                                     id : "model",
                                     n_columns : 2,
                                     pack : "set_model",
+                                    columns : typeof(string),typeof(string),
                                     'string:getValue' : (Gtk.TreeIter iter, int col)  {
                                         GLib.Value gval;
                                          this.el.get_value(iter, col , out gval);
