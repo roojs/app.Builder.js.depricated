@@ -116,8 +116,8 @@ WindowAddProp=new XObject({
                 },
                 {
                     xtype: Gtk.TreeViewColumn,
-                    xpack : "add_column",
                     id : "namecol",
+                    xpack : "fa",
                     init : function() {
                         this.el = new Gtk.TreeViewColumn();
                         this.parent.el.append_column(this.el);

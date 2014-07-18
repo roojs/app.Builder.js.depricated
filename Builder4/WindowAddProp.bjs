@@ -36,8 +36,8 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "xpack": "add_column",
                             "id": "namecol",
+                            "xpack": "fa",
                             "xtype": "TreeViewColumn",
                             "|init": "function() {\n    this.el = new Gtk.TreeViewColumn();\n    this.parent.el.append_column(this.el);\n    \n    \n    this.el.add_attribute(this.items[0].el , 'markup', 4  );\n}\n",
                             "|xns": "Gtk",
