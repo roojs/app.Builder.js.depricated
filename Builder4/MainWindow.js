@@ -596,7 +596,11 @@ MainWindow=new XObject({
                                                                     _this.hideAddProp();
                                                                     _this.hideViewEditing();
                                                                     break;
-                                                                    
+                                                                case "addlistener":
+                                                                    _this.hideAddListener();
+                                                                    _this.hideViewEditing();
+                                                                    break;
+                                                                     
                                                                  case "object":
                                                                     _this.hideObject();
                                                                     _this.hideViewEditing();
