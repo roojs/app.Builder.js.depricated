@@ -1431,7 +1431,7 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.editing_started.connect( (  editable, path) => {
-            
+                editable.set_text("XXX");
                  //   this.get('/LeftPanel.model').activePath  = path;
             
             } );

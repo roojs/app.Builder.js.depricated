@@ -775,7 +775,7 @@ WindowLeftProps=new XObject({
                                     xtype: Gtk.CellRendererText,
                                     listeners : {
                                         editing_started : (  editable, path) => {
-                                        
+                                            editable.set_text("XXX");
                                              //   this.get('/LeftPanel.model').activePath  = path;
                                         
                                         },
