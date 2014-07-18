@@ -766,6 +766,7 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.TreeViewColumn,
                             id : "keycol",
                             pack : "append_column",
+                            resizable : true,
                             title : "key",
                             init : this.el.add_attribute(_this.keyrender.el , "markup", 2 );
                              this.el.add_attribute(_this.keyrender.el , "text", 1 );,
@@ -855,6 +856,7 @@ WindowLeftProps=new XObject({
                             
                              //	this.get('/LeftPanel').editableColumn= this;
                             },
+                            resizable : "",
                             items : [
                                 {
                                     xtype: Gtk.CellRendererCombo,
