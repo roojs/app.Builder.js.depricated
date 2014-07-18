@@ -986,9 +986,11 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
             
-            // fall through cases..
+             
                     case "addprops":
                         _this.hideAddProps();
+                        _this.showPalete();
+                        break;
             
             // show            
                     case "edit":
