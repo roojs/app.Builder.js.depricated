@@ -41,7 +41,9 @@ namespace Palete {
         public bool  is_varargs;
         public  string parent;
         public  string value;
+	// to be filled in...
         public  string desc;
+	public  string sig;
 
 	bool is_overlaid;
         public GLib.List<GirObject> params;
@@ -67,6 +69,7 @@ namespace Palete {
 		this.is_instance = false;
 		this.is_varargs = false;
 		this.desc = "";
+		this.sig = "";
 		
 		this.implements = new GLib.List<string>();
 		this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
