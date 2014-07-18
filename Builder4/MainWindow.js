@@ -504,16 +504,15 @@ MainWindow=new XObject({
                                                             return false;
                                                         },
                                                         button_press_event : ( ) => {
+                                                            
+                                                            
+                                                            
                                                             switch (_this.state) {
                                                                 case "edit":
-                                                                    _this.showProjectEdit();
-                                                                    break;  
-                                                                case "files":
-                                                                    // _this.showViewEditing();
-                                                                    break; 
-                                                                case "projectedit":
-                                                                    _this.hideProjectEdit();
+                                                                    _this.showPalete();
                                                                     break;
+                                                                case "showpalete":
+                                                                    _this.hidePalete();
                                                                 default:
                                                                     break;
                                                             }
@@ -522,7 +521,7 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
-                                                    id : "projecteditbutton",
+                                                    id : "paleteshowbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,

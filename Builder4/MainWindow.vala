@@ -35,7 +35,7 @@ public class Xcls_MainWindow : Object
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
     public Xcls_projecteditbutton projecteditbutton;
-    public Xcls_projecteditbutton projecteditbutton;
+    public Xcls_paleteshowbutton paleteshowbutton;
 
         // my vars
     public Project.Project project;
@@ -718,7 +718,7 @@ public class Xcls_MainWindow : Object
             var child_2 = new Xcls_projecteditbutton( _this );
             child_2.ref();
             this.el.add_child (  child_2.el  );
-            var child_3 = new Xcls_projecteditbutton( _this );
+            var child_3 = new Xcls_paleteshowbutton( _this );
             child_3.ref();
             this.el.add_child (  child_3.el  );
 
@@ -941,7 +941,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_projecteditbutton : Object 
+    public class Xcls_paleteshowbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -950,10 +950,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
+        public Xcls_paleteshowbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.projecteditbutton = this;
+            _this.paleteshowbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -977,16 +977,15 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
+                
+                
+                
                 switch (_this.state) {
                     case "edit":
-                        _this.showProjectEdit();
-                        break;  
-                    case "files":
-                        // _this.showViewEditing();
-                        break; 
-                    case "projectedit":
-                        _this.hideProjectEdit();
+                        _this.showPalete();
                         break;
+                    case "showpalete":
+                        _this.hidePalete();
                     default:
                         break;
                 }
