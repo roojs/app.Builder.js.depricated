@@ -293,12 +293,13 @@ public class Xcls_LeftProps : Object
                         2,  this.keyFormat(miter.get_key() , "prop"),
                         3, miter.get_value(),
                         4, dis_val,
-                         5, "<tt>" + GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>"
+                         5, "<tt>" + GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>",
+                         6,  this.keySortFormat(miter.get_key()),
                     ); 
            }
            print("clear selection\n");
            // clear selection?
-           this.model.el.set_sort_column_id(1); // sort by real key..
+           this.model.el.set_sort_column_id(6); // sort by real key..
            
            this.view.el.get_selection().unselect_all();
            
