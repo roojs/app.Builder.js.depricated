@@ -415,7 +415,7 @@ public class Xcls_LeftProps : Object
             
             var dl = value.strip().split("\n");
         
-            var dis_val = dl.length > 0 ? (dl[0].strip()+ "...") : "";
+            var dis_val = dl.length > 0 ? (dl[0].strip()+ "...") : dl[0];
             if (type == "listener") {
              
                
