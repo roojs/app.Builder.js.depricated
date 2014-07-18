@@ -71,18 +71,12 @@ WindowAddProp=new XObject({
                     id : "model",
                     n_columns : 6,
                     pack : "set_model",
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                       this.el.set_column_types ( 6, [
-                            GObject.TYPE_STRING,  // real key
-                             GObject.TYPE_STRING, // real type
-                             GObject.TYPE_STRING, // docs ?
-                             GObject.TYPE_STRING, // visable desc
-                             GObject.TYPE_STRING, // function desc
-                             GObject.TYPE_STRING // element type (event|prop)
-                            
-                        ] );
-                    },
+                    columns : typeof(string),  // 0 real key
+                    typeof(string), // 1 real type
+                    typeof(string), // 2 docs ?
+                    typeof(string), // 3 visable desc
+                    typeof(string), // 4 function desc
+                    typeof(string) // 5 element type (event|prop),
                     showData : function(type) {
                         this.el.clear();
                                 if (!this.get('/MidPropTree').activeElement || !type) {

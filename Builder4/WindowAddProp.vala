@@ -139,30 +139,20 @@ public class Xcls_MidPropTree : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.ListStore( 6, null );
+            this.el = new Gtk.ListStore( 6, typeof(string),  // 0 real key
+typeof(string), // 1 real type
+typeof(string), // 2 docs ?
+typeof(string), // 3 visable desc
+typeof(string), // 4 function desc
+typeof(string) // 5 element type (event|prop)
+         );
 
             // my vars
 
             // set gobject values
-
-            // init method 
-            function() {
-                XObject.prototype.init.call(this);
-               this.el.set_column_types ( 6, [
-                    GObject.TYPE_STRING,  // real key
-                     GObject.TYPE_STRING, // real type
-                     GObject.TYPE_STRING, // docs ?
-                     GObject.TYPE_STRING, // visable desc
-                     GObject.TYPE_STRING, // function desc
-                     GObject.TYPE_STRING // element type (event|prop)
-                    
-                ] );
-            }
         }
 
         // userdefined functions 
-
-        // skip |xcolumns - no return type
 
         // skip |showData - no return type
         public string getValue(Gtk.TreeIter iter, int col)
