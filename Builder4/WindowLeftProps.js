@@ -251,6 +251,8 @@ WindowLeftProps=new XObject({
        }
        print("clear selection\n");
        // clear selection?
+       this.model.el.set_sort_column_id(1); // sort by real key..
+       
        this.view.el.get_selection().unselect_all();
        
        
