@@ -1228,8 +1228,9 @@ public class Xcls_LeftProps : Object
             
                 _this.before_edit();
                 
+                
                 Gtk.TreeViewColumn col;
-                int cell_x;]
+                int cell_x;
                 int cell_y;
                 Gtk.TreePath path;
                 if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
@@ -1394,7 +1395,8 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.title = "key";
+            this.el.resizable = true;
+            this.el.title = "Name";
             var child_0 = new Xcls_keyrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
@@ -1508,7 +1510,8 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.title = "value";
+            this.el.resizable = true;
+            this.el.title = "Value";
             var child_0 = new Xcls_valrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );

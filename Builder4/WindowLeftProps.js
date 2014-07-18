@@ -607,6 +607,7 @@ WindowLeftProps=new XObject({
                         
                             _this.before_edit();
                             
+                            
                             Gtk.TreeViewColumn col;
                             int cell_x;
                             int cell_y;
