@@ -215,7 +215,7 @@ typeof(string) // 5 element type (event|prop)
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-              this.el.add_attribute(_this.namerender.el , 'markup', 4  );
+              this.el.add_attribute(_this.namerender.el , "markup", 4  );
              
         }
 

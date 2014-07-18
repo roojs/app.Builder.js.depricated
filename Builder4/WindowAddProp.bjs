@@ -39,7 +39,7 @@
                             "id": "namecol",
                             "pack": "append_column",
                             "xtype": "TreeViewColumn",
-                            "|init": "  this.el.add_attribute(_this.namerender.el , 'markup', 4  );\n \n",
+                            "|init": "  this.el.add_attribute(_this.namerender.el , \"markup\", 4  );\n \n",
                             "|xns": "Gtk",
                             "items": [
                                 {

@@ -114,7 +114,7 @@ WindowAddProp=new XObject({
                     xtype: Gtk.TreeViewColumn,
                     id : "namecol",
                     pack : "append_column",
-                    init : this.el.add_attribute(_this.namerender.el , 'markup', 4  );,
+                    init : this.el.add_attribute(_this.namerender.el , "markup", 4  );,
                     items : [
                         {
                             xtype: Gtk.CellRendererText,
