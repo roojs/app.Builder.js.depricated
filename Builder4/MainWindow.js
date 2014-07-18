@@ -228,7 +228,7 @@ MainWindow=new XObject({
         
         
         // objects (palate..)
-        this.rightpalete  =new Xcls_WindowRightPalete();
+        this.rightpalete  =new Xcls_RightPalete();
         this.rightpalete.ref();  /// really?
         ((Gtk.Container)(this.ojbectview.el.get_widget())).add(this.rightpalete.el);
         //this.projectsettings.el.show_all();
