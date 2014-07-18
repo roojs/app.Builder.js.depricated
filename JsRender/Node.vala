@@ -189,8 +189,8 @@ public class JsRender.Node : Object {
 	/* creates javascript based on the rules */
 	public Node? findProp(string n) {
 		for(var i=0;i< this.items.size;i++) {
-			var p = this.items.get(i).get("*prop");
-			if (this.items.get(i).get("*prop").length < 1) {
+			var p = this.items.get(i).get("* prop");
+			if (this.items.get(i).get("* prop").length < 1) {
 				continue;
 			}
 			if (p == n) {
