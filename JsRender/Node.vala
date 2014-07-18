@@ -591,23 +591,19 @@ public class JsRender.Node : Object {
 		if (key[1] != '|') {
 			return key;
 		}
+		var bits = key.substring(1).split(:);
 		// two types '$' or '|' << for methods..
 		// javascript 
-		if  (Regex.match_simple ("\s*function\s*\(", val) {
+		if  (Regex.match_simple ("^\s*function\s*\(", val) {
 			return "| " + key.substring(1);
 		}
-		// vala
-		     
-				
- * Old standard..
- * XXXXX : YYYYY  -- standard - should be rendered as XXXX : "YYYY" usually.
- * |XXXXX : YYYYY  -- standard - should be rendered as XXXX : YYYY usually.
- * |init  -- the initialization...
- * 
- * Newer code
- *  "|void:clearFiles": "() .... some code...."  | type name
- *
-
+		// vala function..
+		if  (Regex.match_simple ("^\s*\(", val) {
+			return "| " + string.joinv(" ", bits);
+		}
+		// guessing it's a property..
+		return "$ " + string.joinv(" ", bits);
+		
 		
 
 	}
