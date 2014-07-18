@@ -1208,6 +1208,12 @@ public class Xcls_MainWindow : Object
                         _this.hidePalete();
                         _this.showAddListener();
                         break;
+            
+                    case "addlistener":
+                        _this.hideAddListener();
+                        _this.showAddListener();
+                        break;
+            
                         
                     case "addprops":
                         _this.hideAddProps();

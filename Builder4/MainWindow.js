@@ -645,6 +645,12 @@ MainWindow=new XObject({
                                                                     _this.hidePalete();
                                                                     _this.showAddListener();
                                                                     break;
+                                                        
+                                                                case "addlistener":
+                                                                    _this.hideAddListener();
+                                                                    _this.showAddListener();
+                                                                    break;
+                                                        
                                                                     
                                                                 case "addprops":
                                                                     _this.hideAddProps();
