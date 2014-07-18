@@ -1080,8 +1080,10 @@ public class Xcls_MainWindow : Object
                         break
                     case "addprops":
                         _this.hideAddProps();
+                        break;
                     default:
                         break;
+                        
                 }
                 return false;    
             

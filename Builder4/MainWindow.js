@@ -562,8 +562,10 @@ MainWindow=new XObject({
                                                                     break
                                                                 case "addprops":
                                                                     _this.hideAddProps();
+                                                                    break;
                                                                 default:
                                                                     break;
+                                                                    
                                                             }
                                                             return false;    
                                                         
