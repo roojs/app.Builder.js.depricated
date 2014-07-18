@@ -529,7 +529,7 @@ public class JsRender.Node : Object {
 		return  Node.gen.to_data (null);   
 	}
 
-	public void loadFromJson(Json.Object obj) {
+	public void loadFromJson(Json.Object obj, int version) {
 		obj.foreach_member((o , key, value) => {
 			//print(key+"\n");
 			if (key == "items") {
@@ -553,7 +553,7 @@ public class JsRender.Node : Object {
 			var v = value.get_value();
 			var sv =  Value (typeof (string));
 			v.transform(ref sv);
-			 
+			
 			this.props.set(key,  (string)sv);
 		});
 		
