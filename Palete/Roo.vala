@@ -50,54 +50,54 @@ namespace Palete {
 		
         public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
         {
-            //print("Loading for " + ename);
-            
+		    //print("Loading for " + ename);
+		    
 
 
-			// if (typeof(this.proplist[ename]) != 'undefined') {
-                //print("using cache");
-             //   return this.proplist[ename][type];
-            //}
-            // use introspection to get lists..
- 
-            var es = ename.split(".");
-			var gir = Gir.factory(es[0]);
-			
-			var cls = gir.classes.get(es[1]);
-			if (cls == null) {
-				var ret = new Gee.HashMap<string,GirObject>();
-				return ret;
-				//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
-				
-			}
+				// if (typeof(this.proplist[ename]) != 'undefined') {
+		        //print("using cache");
+		     //   return this.proplist[ename][type];
+		    //}
+		    // use introspection to get lists..
+	 
+   		var es = ename.split(".");
+		var gir = Gir.factory(es[0]);
 
-			//cls.parseProps();
-			//cls.parseSignals(); // ?? needed for add handler..
-			//cls.parseMethods(); // ?? needed for ??..
-			//cls.parseConstructors(); // ?? needed for ??..
+		var cls = gir.classes.get(es[1]);
+		if (cls == null) {
+			var ret = new Gee.HashMap<string,GirObject>();
+			return ret;
+			//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
+	
+		}
 
-			cls.overlayParent();
+		//cls.parseProps();
+		//cls.parseSignals(); // ?? needed for add handler..
+		//cls.parseMethods(); // ?? needed for ??..
+		//cls.parseConstructors(); // ?? needed for ??..
 
-			switch  (type) {
-				case "props":
-					return cls.props;
-				case "signals":
-					return cls.signals;
-				case "methods":
-					return cls.methods;
-				case "ctors":
-					return cls.ctors;
-				default:
-					throw new Error.INVALID_VALUE( "getPropertiesFor called with: " + type);
-					//var ret = new Gee.HashMap<string,GirObject>();
-					//return ret;
-					
-			}
-					
-				
-			//cls.overlayInterfaces(gir);
-            
-            
+		cls.overlayParent();
+
+		switch  (type) {
+			case "props":
+				return cls.props;
+			case "signals":
+				return cls.signals;
+			case "methods":
+				return cls.methods;
+			case "ctors":
+				return cls.ctors;
+			default:
+				throw new Error.INVALID_VALUE( "getPropertiesFor called with: " + type);
+				//var ret = new Gee.HashMap<string,GirObject>();
+				//return ret;
+		
+		}
+		
+	
+		//cls.overlayInterfaces(gir);
+
+
              
         }
 		public string[] getInheritsFor(string ename)
