@@ -66,7 +66,7 @@ public class Xcls_WindowAddProp : Object
                 
                 this.model.el.append(out iter);
         
-                this.model.el.set_values(iter,
+                this.model.el.set(iter,
                         0,  p.name, 
                         1, p.type,
                         2, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>\n" + p.doctxt,
