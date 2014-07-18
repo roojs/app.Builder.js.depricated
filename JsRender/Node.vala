@@ -564,7 +564,7 @@ public class JsRender.Node : Object {
 	public Node  deepClone()
 	{
 		var n = new Node();
-		n.loadFromJson(this.toJsonObject());
+		n.loadFromJson(this.toJsonObject(), 2);
 		return n;
 
 	}
