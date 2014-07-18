@@ -718,7 +718,7 @@ WindowLeftProps=new XObject({
                     id : "view",
                     tooltip_column : 5,
                     enable_tree_lines : true,
-                    headers_visible : false,
+                    headers_visible : true,
                     init : {
                         var selection = this.el.get_selection();
                         selection.set_mode( Gtk.SelectionMode.SINGLE);
