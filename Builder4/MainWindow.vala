@@ -37,7 +37,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditbutton projecteditbutton;
     public Xcls_paleteshowbutton paleteshowbutton;
     public Xcls_addpropertybutton addpropertybutton;
-    public Xcls_addpropertybutton addpropertybutton;
+    public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
     public Project.Project project;
@@ -726,7 +726,7 @@ public class Xcls_MainWindow : Object
             var child_4 = new Xcls_addpropertybutton( _this );
             child_4.ref();
             this.el.add_child (  child_4.el  );
-            var child_5 = new Xcls_addpropertybutton( _this );
+            var child_5 = new Xcls_addlistenerbutton( _this );
             child_5.ref();
             this.el.add_child (  child_5.el  );
 
@@ -1143,7 +1143,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addpropertybutton : Object 
+    public class Xcls_addlistenerbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1152,10 +1152,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_addpropertybutton(Xcls_MainWindow _owner )
+        public Xcls_addlistenerbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.addpropertybutton = this;
+            _this.addlistenerbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
