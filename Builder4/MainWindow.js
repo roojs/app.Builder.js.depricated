@@ -30,7 +30,7 @@ MainWindow=new XObject({
     	  
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
-    'void:addProps' : () {
+    'void:showAddProps' : () {
         // edit->add props..
         this.state = "props";
         
