@@ -1509,7 +1509,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.resizable = "";
+            this.el.resizable = true;
             this.el.title = "value";
             var child_0 = new Xcls_valrender( _this );
             child_0.ref();
@@ -1532,8 +1532,6 @@ public class Xcls_LeftProps : Object
             
              //	this.get('/LeftPanel').editableColumn= this;
             }
-
-            // listeners 
         }
 
         // userdefined functions 

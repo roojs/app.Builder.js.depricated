@@ -839,6 +839,7 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.TreeViewColumn,
                             id : "valcol",
                             pack : "append_column",
+                            resizable : true,
                             title : "value",
                             init : {
                             	
@@ -856,7 +857,6 @@ WindowLeftProps=new XObject({
                             
                              //	this.get('/LeftPanel').editableColumn= this;
                             },
-                            resizable : "",
                             items : [
                                 {
                                     xtype: Gtk.CellRendererCombo,
