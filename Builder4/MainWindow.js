@@ -594,7 +594,7 @@ MainWindow=new XObject({
                                                                     break;
                                                                     
                                                         // hide            
-                                                                case "palate":
+                                                                case "palete":
                                                                     _this.hidePalete();
                                                                     break;
                                                                     break;
