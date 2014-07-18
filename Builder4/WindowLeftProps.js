@@ -270,6 +270,7 @@ WindowLeftProps=new XObject({
                 });
                 
             },
+     : "",
     items : [
         {
             xtype: Gtk.HBox,
