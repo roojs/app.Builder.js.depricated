@@ -72,7 +72,8 @@ public class Xcls_WindowAddProp : Object
                         2, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>\n" + p.doctxt,
                         3, p.sig ? p.sig  : '',
                         4, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>'",
-                        5, etype
+                        5, etype,
+                        -1
                 );
             }
                                      
