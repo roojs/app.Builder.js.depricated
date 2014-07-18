@@ -62,11 +62,7 @@ namespace JsRender {
         },
 
     */
-		public string jsonHasOrEmpty(Json.Object obj, string key) {
-			return obj.has_member(key) ? 
-						obj.get_string_member(key) : "";
-		}
-
+		
 		
         public  override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
         {

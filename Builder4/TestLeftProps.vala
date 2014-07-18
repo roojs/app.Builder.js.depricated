@@ -8,14 +8,18 @@
 int main (string[] args) {
     Gtk.init (ref args);
 	GtkClutter.init (ref args);
-    new JsRender.Lang_Class();
+	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	 
 
 
-	var dir = "/home/alan/gitlive/Pman.Cms"; 
-	var name = "Pman.Dialog.CmsImage";
+	//var dir = "/home/alan/gitlive/Pman.Cms"; 
+	//var name = "Pman.Dialog.CmsImage";
+
+	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
+	var name = "ClutterFiles";
+
 	var proj = new Project.Gtk(dir );
 	proj.scanDirs();
 	 
@@ -24,14 +28,14 @@ int main (string[] args) {
 
 
 
-    var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
+	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
 	var  left_props =new Xcls_LeftProps();
 
 	w.add(left_props.el);
 	w.show_all();
  
-	left_props.load(tf, tf.items.tree); 
+	left_props.load(tf, tf.tree); 
 
 		
 	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();

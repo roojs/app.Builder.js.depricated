@@ -217,6 +217,12 @@ namespace JsRender {
 		    print("File.getTree tree called on base object?!?!");
 		}
 	*/
+		public string jsonHasOrEmpty(Json.Object obj, string key) {
+			return obj.has_member(key) ? 
+						obj.get_string_member(key) : "";
+		}
+
+		
 		public Json.Object toJsonObject ()
 		{
 		    
