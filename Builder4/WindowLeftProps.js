@@ -11,6 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
+    id : "LeftProps",
+    homogeneous : false,
     'string:keyFormat' : (string val, string type) {
         
         // Glib.markup_escape_text(val);
@@ -75,8 +77,6 @@ WindowLeftProps=new XObject({
         
     
     },
-    id : "LeftProps",
-    homogeneous : false,
     'void:addProp' : (string type, string key, string value) {
           // info includes key, val, skel, etype..
           //console.dump(info);
