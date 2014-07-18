@@ -63,7 +63,23 @@
  * 
  * 
  * 
- * 
+ *  FORMATING?
+.method {
+	 color : green;
+	 font-weight: bold;	 
+}
+.prop {
+	color : #333;
+}
+.prop-code {
+    font-style: italic;
+ }
+.listener {
+    color: #600;
+    font-weight: bold;	 
+}
+.special { 
+  color : #00c;    font-weight: bold;	 
 
 
 */
