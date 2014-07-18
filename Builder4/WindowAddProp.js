@@ -47,7 +47,7 @@ WindowAddProp=new XObject({
             listeners : {
                 cursor_changed : () => {
                         Gtk.TreeIter iter;
-                        Gtk.TreeModel mode;
+                        Gtk.TreeModel mod;
                 
                         var m = _this.model;
                         var s = this.el.get_selection();

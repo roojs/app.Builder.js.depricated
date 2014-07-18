@@ -123,7 +123,7 @@ public class Xcls_WindowAddProp : Object
             // listeners 
             this.el.cursor_changed.connect( () => {
                     Gtk.TreeIter iter;
-                    Gtk.TreeModel mode;
+                    Gtk.TreeModel mod;
             
                     var m = _this.model;
                     var s = this.el.get_selection();
