@@ -27,9 +27,21 @@ WindowLeftProps=new XObject({
         
         //@ = signal
         //$ = property with 
+        //# - object properties
+        //* = special
+        // all of these... - display value is last element..
+        var ar = val.strip().split(" ");
+        var dval = GLib.Markup.escape_text(ar[ar.length-1]);
         
+        switch(val[0]) {
+            case '@': // signal // just bold balck?
+            case '#' // object properties?
+                return @"<span  font_weight=\"bold\">$dval</span>";
+            
+    
+            
         
-        return  GLib.Markup.escape_text(val);
+        return  GLib.Markup.escape_text(dval);
         
         
         

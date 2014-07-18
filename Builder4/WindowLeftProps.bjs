@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|string:keyFormat": "(string val, string type) {\n    \n    // Glib.markup_escape_text(val);\n\n    if (type == \"listener\") {\n        return \"<span font_weight=\\\"bold\\\" color=\\\"#660000\\\">\" + \n            GLib.Markup.escape_text(val) +\n             \"</span>\";\n    }\n    // property..\n    if (val.length < 1) {\n        return \"<span  color=\\\"#FF0000\\\">--empty--</span>\";\n    }\n    \n    //@ = signal\n    //$ = property with \n    \n    \n    return  GLib.Markup.escape_text(val);\n    \n    \n    \n\n}",
+            "|string:keyFormat": "(string val, string type) {\n    \n    // Glib.markup_escape_text(val);\n\n    if (type == \"listener\") {\n        return \"<span font_weight=\\\"bold\\\" color=\\\"#660000\\\">\" + \n            GLib.Markup.escape_text(val) +\n             \"</span>\";\n    }\n    // property..\n    if (val.length < 1) {\n        return \"<span  color=\\\"#FF0000\\\">--empty--</span>\";\n    }\n    \n    //@ = signal\n    //$ = property with \n    //# - object properties\n    //* = special\n    // all of these... - display value is last element..\n    var ar = val.strip().split(\" \");\n    var dval = GLib.Markup.escape_text(ar[ar.length-1]);\n    \n    switch(val[0]) {\n        case '@': // signal // just bold balck?\n        case '#' // object properties?\n            return @\"<span  font_weight=\\\"bold\\\">$dval</span>\";\n        \n\n        \n    \n    return  GLib.Markup.escape_text(dval);\n    \n    \n    \n\n}",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".bool:allow_edit": false,
