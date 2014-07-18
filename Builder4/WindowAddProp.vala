@@ -139,7 +139,7 @@ public class Xcls_MidPropTree : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.ListStore( null, null );
+            this.el = new Gtk.ListStore( 6, null );
 
             // my vars
 
@@ -161,18 +161,17 @@ public class Xcls_MidPropTree : Object
         }
 
         // userdefined functions 
-        public string getValue(treepath, col)
-            {
-                var tp = new Gtk.TreePath.from_string (treepath);
-                var iter = new Gtk.TreeIter();
-                this.el.get_iter (iter, tp);
-                var value = new GObject.Value('');
-                this.el.get_value(iter, col, value);
-                return value.value;
-                
-            }
 
         // skip |showData - no return type
+        public string getValue(Gtk.TreeIter iter, int col)
+            {
+            
+                GLib.Value value;
+                this.get_value(iter, col, out value)
+            
+                return (string)value;
+                
+            }
 
         // skip |xns - no return type
     }

@@ -68,18 +68,10 @@ WindowAddProp=new XObject({
             items : [
                 {
                     xtype: Gtk.ListStore,
+                    xcolumns : "",
                     id : "model",
+                    n_columns : 6,
                     pack : "set_model",
-                    'string:getValue' : (treepath, col)
-                    {
-                        var tp = new Gtk.TreePath.from_string (treepath);
-                        var iter = new Gtk.TreeIter();
-                        this.el.get_iter (iter, tp);
-                        var value = new GObject.Value('');
-                        this.el.get_value(iter, col, value);
-                        return value.value;
-                        
-                    },
                     init : function() {
                         XObject.prototype.init.call(this);
                        this.el.set_column_types ( 6, [
@@ -138,6 +130,15 @@ WindowAddProp=new XObject({
                                     
                                 }
                                                  
+                    },
+                    'string:getValue' : (Gtk.TreeIter iter, int col)
+                    {
+                    
+                        GLib.Value value;
+                        this.get_value(iter, col, out value)
+                    
+                        return (string)value;
+                        
                     }
                 },
                 {
