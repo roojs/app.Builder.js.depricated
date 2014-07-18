@@ -28,43 +28,6 @@ WindowRightPalete=new XObject({
         {
             xtype: Gtk.VBox,
             pack : "add",
-            id : "buttonbar",
-            items : [
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        clicked : () => {
-                        	_this.show();
-                        }
-                    },
-                    pack : "pack_start,false,true",
-                    items : [
-                        {
-                            xtype: Gtk.Image,
-                            pack : "add",
-                            stock : Gtk.STOCK_GOTO_FIRST,
-                            icon_size : Gtk.IconSize.MENU
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.Label,
-                    listeners : {
-                        enter_notify_event : ( event) => {
-                            _this.show();
-                            return false;
-                        }
-                    },
-                    angle : 270,
-                    label : "Palete",
-                    pack : "add",
-                    init : this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );
-                }
-            ]
-        },
-        {
-            xtype: Gtk.VBox,
-            pack : "add",
             id : "viewbox",
             items : [
                 {

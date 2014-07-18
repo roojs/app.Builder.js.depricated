@@ -21,42 +21,6 @@
                     "|xns": "Gtk",
                     "xtype": "VBox",
                     "pack": "add",
-                    "id": "buttonbar",
-                    "items": [
-                        {
-                            "listeners": {
-                                "clicked": "() => {\n\t_this.show();\n}"
-                            },
-                            "pack": "pack_start,false,true",
-                            "xtype": "Button",
-                            "|xns": "Gtk",
-                            "items": [
-                                {
-                                    "|xns": "Gtk",
-                                    "xtype": "Image",
-                                    "pack": "add",
-                                    "|stock": "Gtk.STOCK_GOTO_FIRST",
-                                    "|icon_size": "Gtk.IconSize.MENU"
-                                }
-                            ]
-                        },
-                        {
-                            "listeners": {
-                                "enter_notify_event": " ( event) => {\n    _this.show();\n    return false;\n}"
-                            },
-                            "angle": 270,
-                            "label": "Palete",
-                            "pack": "add",
-                            "xtype": "Label",
-                            "|init": " this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );\n \n",
-                            "|xns": "Gtk"
-                        }
-                    ]
-                },
-                {
-                    "|xns": "Gtk",
-                    "xtype": "VBox",
-                    "pack": "add",
                     "id": "viewbox",
                     "items": [
                         {

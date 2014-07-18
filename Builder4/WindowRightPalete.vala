@@ -22,7 +22,6 @@ public class Xcls_RightPalete : Object
     public Gtk.VBox el;
     private Xcls_RightPalete  _this;
 
-    public Xcls_buttonbar buttonbar;
     public Xcls_viewbox viewbox;
     public Xcls_model model;
     public Xcls_txtrender txtrender;
@@ -43,12 +42,9 @@ public class Xcls_RightPalete : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_buttonbar( _this );
+        var child_0 = new Xcls_viewbox( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
-        var child_1 = new Xcls_viewbox( _this );
-        child_1.ref();
-        this.el.add (  child_1.el  );
     }
 
     // userdefined functions 
@@ -65,126 +61,6 @@ public class Xcls_RightPalete : Object
         }
 
     // skip |xns - no return type
-    public class Xcls_buttonbar : Object 
-    {
-        public Gtk.VBox el;
-        private Xcls_RightPalete  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_buttonbar(Xcls_RightPalete _owner )
-        {
-            _this = _owner;
-            _this.buttonbar = this;
-            this.el = new Gtk.VBox( true, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Button3( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_Label5( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button3 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_RightPalete  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button3(Xcls_RightPalete _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Image4( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-
-            // listeners 
-            this.el.clicked.connect( () => {
-            	_this.show();
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Image4 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_RightPalete  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Image4(Xcls_RightPalete _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars
-
-            // set gobject values
-            this.el.icon_size = Gtk.IconSize.MENU;
-            this.el.stock = Gtk.STOCK_GOTO_FIRST;
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Label5 : Object 
-    {
-        public Gtk.Label el;
-        private Xcls_RightPalete  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Label5(Xcls_RightPalete _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Label( "Palete" );
-
-            // my vars
-
-            // set gobject values
-            this.el.angle = 270;
-
-            // init method 
-             this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );
-             
-
-            // listeners 
-            this.el.enter_notify_event.connect(  ( event) => {
-                _this.show();
-                return false;
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
     public class Xcls_viewbox : Object 
     {
         public Gtk.VBox el;
@@ -203,10 +79,10 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox7( _this );
+            var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_ScrolledWindow11( _this );
+            var child_1 = new Xcls_ScrolledWindow7( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -215,7 +91,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_HBox7 : Object 
+    public class Xcls_HBox3 : Object 
     {
         public Gtk.HBox el;
         private Xcls_RightPalete  _this;
@@ -224,7 +100,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox7(Xcls_RightPalete _owner )
+        public Xcls_HBox3(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -232,10 +108,10 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label8( _this );
+            var child_0 = new Xcls_Label4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button9( _this );
+            var child_1 = new Xcls_Button5( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,true );
         }
@@ -244,7 +120,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Label8 : Object 
+    public class Xcls_Label4 : Object 
     {
         public Gtk.Label el;
         private Xcls_RightPalete  _this;
@@ -253,7 +129,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_Label8(Xcls_RightPalete _owner )
+        public Xcls_Label4(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Palete" );
@@ -267,7 +143,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Button9 : Object 
+    public class Xcls_Button5 : Object 
     {
         public Gtk.Button el;
         private Xcls_RightPalete  _this;
@@ -276,7 +152,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_Button9(Xcls_RightPalete _owner )
+        public Xcls_Button5(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -284,7 +160,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image10( _this );
+            var child_0 = new Xcls_Image6( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -298,7 +174,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Image10 : Object 
+    public class Xcls_Image6 : Object 
     {
         public Gtk.Image el;
         private Xcls_RightPalete  _this;
@@ -307,7 +183,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_Image10(Xcls_RightPalete _owner )
+        public Xcls_Image6(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -323,7 +199,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ScrolledWindow11 : Object 
+    public class Xcls_ScrolledWindow7 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_RightPalete  _this;
@@ -332,7 +208,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow11(Xcls_RightPalete _owner )
+        public Xcls_ScrolledWindow7(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -341,7 +217,7 @@ public class Xcls_RightPalete : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_TreeView12( _this );
+            var child_0 = new Xcls_TreeView8( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -355,7 +231,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_TreeView12 : Object 
+    public class Xcls_TreeView8 : Object 
     {
         public Gtk.TreeView el;
         private Xcls_RightPalete  _this;
@@ -365,7 +241,7 @@ public class Xcls_RightPalete : Object
         public string dragData;
 
             // ctor 
-        public Xcls_TreeView12(Xcls_RightPalete _owner )
+        public Xcls_TreeView8(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
@@ -378,7 +254,7 @@ public class Xcls_RightPalete : Object
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn14( _this );
+            var child_1 = new Xcls_TreeViewColumn10( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
@@ -540,7 +416,7 @@ public class Xcls_RightPalete : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_TreeViewColumn14 : Object 
+    public class Xcls_TreeViewColumn10 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_RightPalete  _this;
@@ -549,7 +425,7 @@ public class Xcls_RightPalete : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn14(Xcls_RightPalete _owner )
+        public Xcls_TreeViewColumn10(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
