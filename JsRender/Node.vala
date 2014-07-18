@@ -723,7 +723,7 @@ public class JsRender.Node : Object {
 		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
 		//if (sr) txt.push('<s>');
 
-		if (this.has("*prop"))   { txt += (this.get("*prop") + ":"); }
+		if (this.has("* prop"))   { txt += (this.get("* prop") + ":"); }
 		
 		//if (renderfull && c['|xns']) {
 			txt += this.fqn();
