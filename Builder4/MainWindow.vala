@@ -1367,11 +1367,7 @@ public class Xcls_MainWindow : Object
                         _this.showAddListener();
                         break;
                         
-                    case "object":
-                        _this.hideObject();
-                        _this.showAddListener();
-                        break;
-            
+                   
                     case "addlistener":
                         _this.hideAddListener();
                         break;
@@ -1381,7 +1377,11 @@ public class Xcls_MainWindow : Object
                         _this.hideAddProp();
                         _this.showAddListener();
                         break;
-                        
+                     case "object":
+                        _this.hideObject();
+                        _this.showAddListener();
+                        break;
+                
                       default:
                         print("unhandled add listener from %s\n",_this.state);
             
