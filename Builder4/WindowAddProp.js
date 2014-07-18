@@ -21,7 +21,7 @@ WindowAddProp=new XObject({
         var elementList = pal.getPropertiesFor(etype, xtype);
         
         
-        print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
+        //print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                // console.dump(elementList);
                
         var miter = elementsList.map_iterator();
