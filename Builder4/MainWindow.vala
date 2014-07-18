@@ -342,7 +342,7 @@ public class Xcls_MainWindow : Object
         
             el.restore_easing_state();
             //_this.projecteditview.el.restore_easing_state();
-            this.state = "palate";
+            this.state = "objects";
         }
     public void showProjectEdit () {
             // make the browser smaller, and show the edit dialog

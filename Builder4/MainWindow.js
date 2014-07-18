@@ -277,7 +277,7 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
         //_this.projecteditview.el.restore_easing_state();
-        this.state = "palate";
+        this.state = "objects";
     },
     'void:showProjectEdit' : () {
         // make the browser smaller, and show the edit dialog
