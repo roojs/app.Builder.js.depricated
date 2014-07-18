@@ -570,15 +570,43 @@ public class JsRender.Node : Object {
 
 	public string upgradeKey(string key, string val)
 	{
-		// convert V1 to V2 
+		// convert V1 to V2
+		if (key.length < 1) {
+			return key;
+		}
 		switch(key) {
 			case "*prop":
 			case "*args":
 			case ".ctor":
 			case "|init":
 				return "* " + key.substring(1);
-
+		}
+		if (key[0] == '.') {
+			var bits = key.substring(1).split(:);
+			if (bits[0] == "signal") {
+				return "@ " + bits[1] + " " bits[2];
+			}
+			return "# " + bits[0] + " " bits[1];			
+		}
+		if (key[1] != '|') {
+			return key;
+		}
+		// two types '$' or '|' << for methods..
+		// javascript 
+		if  (Regex.match_simple ("\s*function\s*\(", val) {
+			return "| " + key.substring(1);
+		}
+		// vala
+		     
 				
+ * Old standard..
+ * XXXXX : YYYYY  -- standard - should be rendered as XXXX : "YYYY" usually.
+ * |XXXXX : YYYYY  -- standard - should be rendered as XXXX : YYYY usually.
+ * |init  -- the initialization...
+ * 
+ * Newer code
+ *  "|void:clearFiles": "() .... some code...."  | type name
+ *
 
 		
 
