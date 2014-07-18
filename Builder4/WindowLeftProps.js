@@ -29,6 +29,9 @@ WindowLeftProps=new XObject({
         //$ = property with 
         
         
+        return  GLib.Markup.escape_text(val);
+        
+        
         
     
     },

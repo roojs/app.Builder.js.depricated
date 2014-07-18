@@ -78,6 +78,9 @@ public class Xcls_LeftProps : Object
             //$ = property with 
             
             
+            return  GLib.Markup.escape_text(val);
+            
+            
             
         
         }
