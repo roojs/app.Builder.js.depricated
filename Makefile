@@ -38,9 +38,9 @@ BUILDER4= Builder4/Application.vala \
 
 
 # for testing 
-all: test-leftprops
+#all: test-leftprops
 
-#  test-full
+all:  test-full
 
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
