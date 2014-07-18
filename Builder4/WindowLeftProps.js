@@ -299,15 +299,14 @@ WindowLeftProps=new XObject({
         GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
             this.allow_edit  = true;
             this.keyrender.el.editable = true;
-            this.keycol.el.clear_attributes(this.keyrender.el);
-            this.keycol.el.add_attribute(this.keyrender.el, "text", 1);
+         
             this.view.el.set_cursor_on_cell(
                 path,
                 this.keycol.el,
                 this.keyrender.el,
                 true
             );
-            this.keycol.el.add_attribute(this.keyrender.el, "markup", 2);        
+                   
             return false;
         });
           
