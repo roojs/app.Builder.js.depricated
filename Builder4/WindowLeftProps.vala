@@ -1430,9 +1430,18 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.editing_started.connect( (  editable, path) => {
-                ((Gtk.Entry)editable).set_text("XXX");
-                 //   this.get('/LeftPanel.model').activePath  = path;
             
+                 Gtk.TreeIter  iter;
+                _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                GLib.Value gval;
+                              
+            
+            
+                 //   this.get('/LeftPanel.model').activePath  = path;
+                _this.model.el.get_value(iter,1, out gval);
+                    var val = (string)gval;
+                             
+                    ((Gtk.Entry)editable).set_text(val);                 
             } );
             this.el.edited.connect(   (path, newtext) => {
                     print("Keyrender  - signal:edited\n");
