@@ -357,7 +357,7 @@ WindowLeftProps=new XObject({
             },
     'void:updateIter' : (Gtk.TreeIter iter,  string type, string key, string value) {
     
-     
+        print("update Iter %s, %s\n", key,value);
         //typeof(string),  // 0 key type
          //typeof(string),  // 1 key
          //typeof(string),  // 2 key (display)
@@ -373,7 +373,7 @@ WindowLeftProps=new XObject({
          
            
             
-            m.set(iter, 
+            this.model.el.set(iter, 
                     0, type,
                 1, key,
                 2, this.keyFormat(key ,type),
@@ -387,7 +387,7 @@ WindowLeftProps=new XObject({
         
     
     
-        m.set(iter, 
+        this.model.el.set(iter, 
                 0, "props",
                 1, key,
                 2,  this.keyFormat(key , "prop"),
