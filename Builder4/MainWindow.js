@@ -287,15 +287,63 @@ MainWindow=new XObject({
         this.el.show_all();
     
     },
-    'void:showAddListener' : ()
-    {
-      this.state = "addlistener";
+    'void:showAddListener' : () {
+    
+         
+         
+         
+         
+         
+        //this.rooview.el.hide();
+        //this.projectsettings.el.show_all();
+        //this.projectsettings.show(this.project);
+    
+        //_this.projecteditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        //_this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        //_this.projecteditview.el.restore_easing_state();
+        this.state = "addlistener";
     },
     'void:showAddProps' : () {
-        // edit->add props..
-        this.state = "addprops";
-        
     
+         
+         
+         
+         
+         
+        //this.rooview.el.hide();
+        //this.projectsettings.el.show_all();
+        //this.projectsettings.show(this.project);
+    
+        //_this.projecteditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        //_this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        //_this.projecteditview.el.restore_easing_state();
+        this.state = "addprops";
     },
     'void:showObjects' : () {
     
