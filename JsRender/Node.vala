@@ -584,7 +584,7 @@ public class JsRender.Node : Object {
 		if (key[0] == '.') {
 			var bits = key.substring(1).split(":");
 			if (bits[0] == "signal") {
-				return "@ " + bits[1] + " "  + bits[2];
+				return "@" + string.joinv(" ", bits).substring(bits[0]);
 			}
 			return "# " + bits[0] + " " + bits[1];			
 		}
