@@ -682,6 +682,10 @@ MainWindow=new XObject({
                                                                     _this.hideAddProps();
                                                                     _this.showObjects();
                                                                     break;
+                                                            case "addlisteners":
+                                                                    _this.hideAddListeners();
+                                                                    _this.showObjects();
+                                                                    break;
                                                         
                                                         // show            
                                                                 case "edit":
