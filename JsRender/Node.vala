@@ -251,7 +251,7 @@ public class JsRender.Node : Object {
 		   
 			for (var ii =0; ii< this.items.size; ii++) {
 				var pl = this.items.get(ii);
-				if (!pl.props.has_key("*prop")) {
+				if (!pl.props.has_key("* prop")) {
 					//newitems.add(pl);
 					continue;
 				}
@@ -260,7 +260,7 @@ public class JsRender.Node : Object {
 				// we have a prop...
 				//var prop = pl['*prop'] + '';
 				//delete pl['*prop'];
-				var prop = pl.get("*prop");
+				var prop = pl.get("* prop");
 				print("got prop "+ prop + "\n");
 				
 				// name ends in [];
