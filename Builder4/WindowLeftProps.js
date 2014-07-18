@@ -957,7 +957,7 @@ WindowLeftProps=new XObject({
                                                 var val = (string)gval;
                                                 var combo =        (Gtk.ComboBox)editable;
                                         
-                                               var entry =  (GtkEntry) combo.get_child();        
+                                               var entry =  (Gtk.Entry) combo.get_child();        
                                             entry.set_text(val);
                                            
                                         }
