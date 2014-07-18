@@ -42,7 +42,7 @@ namespace Palete {
         public  string parent;
         public  string value;
 	// to be filled in...
-        public  string desc;
+ 
 	public  string sig;
 
 	bool is_overlaid;
