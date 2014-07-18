@@ -748,6 +748,7 @@ MainWindow=new XObject({
                                                                     break;
                                                                     
                                                                 default:
+                                                                    print("unhandled add property from %s\n",_this.state);
                                                                     break;
                                                                     
                                                             }

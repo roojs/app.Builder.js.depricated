@@ -1270,6 +1270,7 @@ public class Xcls_MainWindow : Object
                         break;
                         
                     default:
+                        print("unhandled add property from %s\n",_this.state);
                         break;
                         
                 }
