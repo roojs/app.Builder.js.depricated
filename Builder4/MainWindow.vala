@@ -870,7 +870,7 @@ public class Xcls_MainWindow : Object
             // init method 
             {
                
-               
+               /*
                 this.el.add_constraint(
                     new Clutter.AlignConstraint(
                         _this.clutterembed.el.get_stage(), 
@@ -878,7 +878,9 @@ public class Xcls_MainWindow : Object
                         0.0f
                     )
                 );
+                */
                 this.el.anchor_x = 50.f;
+                this.el.anchor_y = 50.f;
                 //this.el.set_position(100,100);
                 this.el.set_pivot_point(0.0f,0.0f);
                 this.el.set_scale(0.0f,1.0f);
