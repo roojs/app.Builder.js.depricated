@@ -12,11 +12,19 @@
  * Old standard..
  * XXXXX : YYYYY  -- standard - should be rendered as XXXX : "YYYY" usually.
  * |XXXXX : YYYYY  -- standard - should be rendered as XXXX : YYYY usually.
+ * |init  -- the initialization...
+ * *prop : a property which is actually an object definition... 
+ * *args : contructor args
+ * .ctor : Full contruct line...  
  * 
  * Newer code
+ * ".Gee.ArrayList<Xcls_fileitem>:fileitems"  --  dot prefix (properties of the class?)
+ * ".signal:void:open": "(JsRender.JsRender file)" -- properties (which are signals)
+ *  "|void:clearFiles": "() .... some code...."  -- real functions
+ *
+ * Standardize this crap...
  * 
- * 
- * 
+ * standard properties (use to set 
  * 
  * 
  * 
