@@ -23,6 +23,8 @@ public class Xcls_MidPropTree : Object
     private Xcls_MidPropTree  _this;
 
     public Xcls_model model;
+    public Xcls_namecol namecol;
+    public Xcls_namerender namerender;
 
         // my vars
     public signal void select(string key, string type, string skel, string etype);
@@ -103,7 +105,7 @@ public class Xcls_MidPropTree : Object
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn4( _this );
+            var child_1 = new Xcls_namecol( _this );
             child_1.ref();
 
             // init method 
@@ -192,7 +194,7 @@ typeof(string) // 5 element type (event|prop)
 
         // skip |xns - no return type
     }
-    public class Xcls_TreeViewColumn4 : Object 
+    public class Xcls_namecol : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_MidPropTree  _this;
@@ -201,15 +203,16 @@ typeof(string) // 5 element type (event|prop)
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn4(Xcls_MidPropTree _owner )
+        public Xcls_namecol(Xcls_MidPropTree _owner )
         {
             _this = _owner;
+            _this.namecol = this;
             this.el = new Gtk.TreeViewColumn();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_CellRendererText5( _this );
+            var child_0 = new Xcls_namerender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
@@ -227,7 +230,7 @@ typeof(string) // 5 element type (event|prop)
 
         // skip |xns - no return type
     }
-    public class Xcls_CellRendererText5 : Object 
+    public class Xcls_namerender : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_MidPropTree  _this;
@@ -236,9 +239,10 @@ typeof(string) // 5 element type (event|prop)
             // my vars
 
             // ctor 
-        public Xcls_CellRendererText5(Xcls_MidPropTree _owner )
+        public Xcls_namerender(Xcls_MidPropTree _owner )
         {
             _this = _owner;
+            _this.namerender = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars
