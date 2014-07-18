@@ -599,7 +599,7 @@ public class JsRender.Node : Object {
 		}
 		// vala function..
 		
-		if  (Regex.match_simple ("(", val.strip())) {
+		if  (Regex.match_simple ("^\\(", val.strip())) {
 			return "| " + string.joinv(" ", bits);
 		}
 		// guessing it's a property..
