@@ -102,7 +102,7 @@ public class Xcls_MainWindow : Object
     public void hideAddProps() {
             _this.state = "edit";
         }
-    public void hidePalete() {
+    public void hideObjects() {
               // return to editing state..
                
               //_this.projectbutton.el.show();

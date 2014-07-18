@@ -21,10 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:hideAddListener' : () {
-    
-        this.state = "edit";
-    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -34,10 +30,14 @@ MainWindow=new XObject({
     	  
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
+    'void:hideAddListener' : () {
+    
+        this.state = "edit";
+    },
     'void:hideAddProps' : () {
         _this.state = "edit";
     },
-    'void:hidePalete' : () {
+    'void:hideObjects' : () {
           // return to editing state..
            
           //_this.projectbutton.el.show();
