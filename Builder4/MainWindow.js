@@ -227,6 +227,27 @@ MainWindow=new XObject({
          });
         
         
+        // objects (palate..)
+        this.rightpalete  =new Xcls_WindowRightPalete();
+        this.rightpalete.ref();  /// really?
+        ((Gtk.Container)(this.ojbectview.el.get_widget())).add(this.rightpalete.el);
+        //this.projectsettings.el.show_all();
+    
+        var stage = _this.objectview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+        /*this.projectsettings.buttonPressed.connect((btn) => {
+            if (btn == "save") {
+                 _this.window_rooview.view.renderJS(true);
+            }
+            if (btn == "apply") {
+                _this.window_rooview.view.renderJS(true);
+                return;
+            }
+            this.hideProjectEdit();
+             
+         });
+        */
         
         
         
