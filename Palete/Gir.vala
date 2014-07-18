@@ -65,6 +65,8 @@ namespace Palete {
 		this.is_array = false;
 		this.is_instance = false;
 		this.is_varargs = false;
+		this.desc = "";
+		
 		this.implements = new GLib.List<string>();
 		this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
 		this.includes   = new Gee.HashMap<string,string>();
