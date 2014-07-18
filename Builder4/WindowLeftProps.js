@@ -957,10 +957,7 @@ WindowLeftProps=new XObject({
                                                 var val = (string)gval;
                                                 var combo =        (Gtk.ComboBox)editable;
                                                 Gtk.TreeIter citer;
-                                                combo.get_active_iter(out citer);
-                                                val = Value (typeof (string));
-                                        	val.set_string (val);
-                                                
+                                                combo.get_active_iter(out citer);        
                                                 combo.get_model().set(citer, 0, val);      
                                            
                                         }
