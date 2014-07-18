@@ -252,7 +252,7 @@ MainWindow=new XObject({
         // objects (palate..)
         this.add_props  = new Xcls_WindowAddProps();
         this.add_props.ref();  /// really?
-        ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
+        ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
         //this.projectsettings.el.show_all();
     
         stage = _this.objectview.el.get_stage();
