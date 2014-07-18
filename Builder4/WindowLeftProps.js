@@ -40,10 +40,13 @@ WindowLeftProps=new XObject({
                 return @"<span  font_weight=\"bold\">$dval</span>";
             case '*': // special
                 return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
-    
+            case '$':
+                return @"<span   style=\"italic\">$dval</span>";
+            default:
+                return dval;
+        }
             
         
-        return  GLib.Markup.escape_text(dval);
         
         
         
