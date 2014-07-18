@@ -96,7 +96,7 @@ namespace JsRender {
             this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
 
 	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
-	    bjs_version_str = bjs_version_str == "" ? "1";
+	    bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
 		
             this.tree = new Node(); 
             // load items[0] ??? into tree...
