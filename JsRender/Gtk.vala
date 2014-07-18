@@ -82,11 +82,13 @@ namespace JsRender {
             //this.modOrder = obj.get_string_member("modOrder");
              
             // load items[0] ??? into tree...
-			
+	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
+	    bjs_version_str = bjs_version_str == "" ? "1";
+		
             var ar = obj.get_array_member("items");
             var tree_base = ar.get_object_element(0);
             this.tree = new Node();
-            this.tree.loadFromJson(tree_base);
+            this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
             
             
             
