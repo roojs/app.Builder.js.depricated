@@ -537,7 +537,7 @@ public class JsRender.Node : Object {
 				ar.foreach_element( (are, ix, el) => {
 					var node = new Node();
 					node.parent = this;
-					node.loadFromJson(el.get_object());
+					node.loadFromJson(el.get_object(), version);
 					this.items.add(node);
 				});
 				return;
