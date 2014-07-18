@@ -5,7 +5,21 @@
 
 /*
  * 
- 
+ * props:
+ * 
+ * key value view of properties.
+ * 
+ * Old standard..
+ * XXXXX : YYYYY  -- standard - should be rendered as XXXX : "YYYY" usually.
+ * |XXXXX : YYYYY  -- standard - should be rendered as XXXX : YYYY usually.
+ * 
+ * Newer code
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
 
 
 */
