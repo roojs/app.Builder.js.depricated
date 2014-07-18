@@ -1499,7 +1499,7 @@ public class Xcls_LeftProps : Object
                         case "props":
                             _this.node.props.set(newtext, _this.node.props.get(oldval));
                             _this.node.props.remove(oldval);
-                            _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
+                            _this.updateIter(iter,  ktype, newtext, _this.node.props.get(oldval));
                             break;
                      }
                      _this.changed();
