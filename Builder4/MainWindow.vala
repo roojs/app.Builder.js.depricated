@@ -32,7 +32,7 @@ public class Xcls_MainWindow : Object
     public Xcls_clutterembed clutterembed;
     public Xcls_rooview rooview;
     public Xcls_objectview objectview;
-    public Xcls_objectview objectview;
+    public Xcls_addpropsview addpropsview;
     public Xcls_projecteditview projecteditview;
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
@@ -781,7 +781,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_objectview( _this );
             child_1.ref();
             this.el.get_stage().add_child (  child_1.el  );
-            var child_2 = new Xcls_objectview( _this );
+            var child_2 = new Xcls_addpropsview( _this );
             child_2.ref();
             this.el.get_stage().add_child (  child_2.el  );
             var child_3 = new Xcls_projecteditview( _this );
@@ -917,7 +917,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_objectview : Object 
+    public class Xcls_addpropsview : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -926,10 +926,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_objectview(Xcls_MainWindow _owner )
+        public Xcls_addpropsview(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.objectview = this;
+            _this.addpropsview = this;
             this.el = new GtkClutter.Actor();
 
             // my vars

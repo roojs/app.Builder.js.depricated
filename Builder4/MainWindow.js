@@ -598,7 +598,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
-                                            id : "objectview",
+                                            id : "addpropsview",
                                             pack : "get_stage().add_child",
                                             init : {
                                                
