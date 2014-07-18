@@ -21,6 +21,9 @@ MainWindow=new XObject({
             return false;
         }
     },
+    'void:hideAddProps' : () {
+        _this.state = "edit";
+    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
