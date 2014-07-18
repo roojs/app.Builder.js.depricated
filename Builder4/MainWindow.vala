@@ -95,10 +95,7 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showAddListener()
-        {
-          this.state = "addlistener";
-        }
+    public void hideAddListener
     public void hideAddProps() {
             _this.state = "edit";
         }
@@ -282,9 +279,13 @@ public class Xcls_MainWindow : Object
             this.el.show_all();
         
         }
+    public void showAddListener()
+        {
+          this.state = "addlistener";
+        }
     public void showAddProps() {
             // edit->add props..
-            this.state = "props";
+            this.state = "addprops";
             
         
         }

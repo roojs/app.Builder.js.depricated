@@ -21,10 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:showAddListener' : ()
-    {
-      this.state = "addlistener";
-    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -217,9 +213,13 @@ MainWindow=new XObject({
         this.el.show_all();
     
     },
+    'void:showAddListener' : ()
+    {
+      this.state = "addlistener";
+    },
     'void:showAddProps' : () {
         // edit->add props..
-        this.state = "props";
+        this.state = "addprops";
         
     
     },
