@@ -57,11 +57,10 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
+    public string keySortFormat
     public string keyFormat(string val, string type) {
             
             // Glib.markup_escape_text(val);
