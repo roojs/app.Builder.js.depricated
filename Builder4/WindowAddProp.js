@@ -104,7 +104,7 @@ WindowAddProp=new XObject({
                     {
                     
                         GLib.Value value;
-                        this.get_value(iter, col, out value)
+                        this.get_value(iter, col, out value);'
                     
                         return (string)value;
                         

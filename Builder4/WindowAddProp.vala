@@ -184,7 +184,7 @@ typeof(string) // 5 element type (event|prop)
             {
             
                 GLib.Value value;
-                this.get_value(iter, col, out value)
+                this.get_value(iter, col, out value);'
             
                 return (string)value;
                 
