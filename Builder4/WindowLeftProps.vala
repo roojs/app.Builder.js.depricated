@@ -286,7 +286,7 @@ public class Xcls_LeftProps : Object
             
             
             // really need a way to sort the hashmap...
-            var m = this.model.el; 
+            var m = this.model.el;
             
             var miter = node.listeners.map_iterator();
             
@@ -346,6 +346,8 @@ public class Xcls_LeftProps : Object
             GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                 this.allow_edit  = true;
                 this.keyrender.el.editable = true;
+                this.keycol.el.clear_attributes();
+                this.keycol.el.set_attribute("text", 1);
                 this.view.el.set_cursor_on_cell(
                     path,
                     this.keycol.el,
@@ -354,8 +356,7 @@ public class Xcls_LeftProps : Object
                 );
                 return false;
             });
-             
-            
+              
             
         }
     public void startEditingValue( Gtk.TreePath path) {
@@ -1400,6 +1401,7 @@ public class Xcls_LeftProps : Object
 
             // init method 
              this.el.add_attribute(_this.keyrender.el , "markup", 2 );
+             this.el.add_attribute(_this.keyrender.el , "text", 1 );
               
         }
 

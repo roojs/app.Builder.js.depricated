@@ -309,8 +309,7 @@ WindowLeftProps=new XObject({
             );
             return false;
         });
-         
-        
+          
         
     },
     'void:startEditingValue' : ( Gtk.TreePath path) {
