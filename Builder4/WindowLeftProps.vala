@@ -328,7 +328,7 @@ public class Xcls_LeftProps : Object
            }
            print("clear selection\n");
            // clear selection?
-           this.model.el.set_sort_column_id(6); // sort by real key..
+           this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
            
            this.view.el.get_selection().unselect_all();
            
@@ -1353,7 +1353,7 @@ public class Xcls_LeftProps : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.TreeStore( 6,      typeof(string),  // 0 key type
+            this.el = new Gtk.TreeStore( 7,      typeof(string),  // 0 key type
      typeof(string),  // 1 key
      typeof(string),  // 2 key (display)
      typeof(string),  // 3 value

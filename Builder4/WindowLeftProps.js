@@ -281,7 +281,7 @@ WindowLeftProps=new XObject({
        }
        print("clear selection\n");
        // clear selection?
-       this.model.el.set_sort_column_id(6); // sort by real key..
+       this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
        
        this.view.el.get_selection().unselect_all();
        
@@ -731,7 +731,7 @@ WindowLeftProps=new XObject({
                         {
                             xtype: Gtk.TreeStore,
                             id : "model",
-                            n_columns : 6,
+                            n_columns : 7,
                             pack : "set_model",
                             changed : function(str, doRefresh) {
                                 if (!this.activePath) {
