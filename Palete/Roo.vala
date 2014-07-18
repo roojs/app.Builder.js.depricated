@@ -18,88 +18,25 @@ namespace Palete {
     }
 
 */
-    public class Gtk : Palete {
+    public class Roo : Palete {
 		
 		
-        public Gtk()
+        public Roo()
         {
 
 
             
             base();
-            this.name = "Gtk";
-			 
-			//this.load();
-            // various loader methods..
-              //this.map = [];
-            //this.load();
-            //this.proplist = {};
-            //this.comments = { }; 
-            // no parent...
+            this.name = "Roo";
+			  
         }
-      
-        public override void  load () {
+       public override void  load () {
 
-
-
-			
-     	    print("Palete Load called\n");
-    		string raw;
-			if (!FileUtils.test ("/usr/share/appBuilder/GtkUsage.txt", FileTest.EXISTS)) {
-				throw new Error.MISSING_FILE("/usr/share/appBuilder/GtkUsage.txt not found");
-				
-			}
-			
-            FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", out raw);
-          // print(data);
-            var data  = raw.split("\n");
-            var state = 0;
-            var cfg = new Gee.ArrayList<Usage>();
-            var left = new Gee.ArrayList<string>();
-            var right = new Gee.ArrayList<string>();
-			
-			for (var i = 0; i < data.length; i++) {
-				var d = data[i].strip();
-				//print("READ " + d + "\n");
-				if (
-					d.length < 1
-				    ||
-				     Regex.match_simple ("^\\s+$", d)
-				    ||
-					Regex.match_simple ("^\\s*/", d)
-			     ){
-                    continue;
-                }
-				
-                if (Regex.match_simple ("^left:", d)) { 
-                    state = 1;
-                    if (left.size > 0 ){
-                        cfg.add(new Usage( left, right));
-					}
-                    left = new Gee.ArrayList<string>();
-        			right = new Gee.ArrayList<string>();
-                    continue;
-                }
-                 if (Regex.match_simple ("^right:", d)) { 
-                    state = 2;
-                    continue;
-                }
-                if (state == 1) {
-					//print("add left: " + d + "\n");
-                    left.add(d);
-                    continue;
-                }
-				//print("add Right: " + d + "\n");
-                right.add(d);
-                //Seed.quit();
-               
-            }
-            if (left.size > 0 ){
-                  cfg.add(new Usage( left, right));
-            }
-            this.map = cfg;
+		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
+ 
              
         }
+	  
         
         public string doc(string what) {
             var ns = what.split(".")[0];
