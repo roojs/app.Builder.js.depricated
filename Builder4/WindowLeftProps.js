@@ -951,16 +951,17 @@ WindowLeftProps=new XObject({
                                         
                                         
                                              //   this.get('/LeftPanel.model').activePath  = path;
-                                            _this.model.el.get_value(iter,3, out gval);
+                                               _this.model.el.get_value(iter,3, out gval);
+                                            
+                                            
                                                 var val = (string)gval;
                                                 var combo =        (Gtk.ComboBox)editable;
-                                                Gtk.TreeIter iter;
-                                                combo.get_active_iter(out iter);
+                                                Gtk.TreeIter citer;
+                                                combo.get_active_iter(out citer);
                                                 val = Value (typeof (string));
                                         	val.set_string (val);
                                                 
-                                                iter.
-                                                ((Gtk.Entry)editable).set_text(val);       
+                                                combo.get_model().set(citer, 0, val);      
                                            
                                         }
                                     },
