@@ -1355,8 +1355,8 @@ public class Xcls_MainWindow : Object
                         _this.showAddListener();
                         break;
                         
-                    case "palete":
-                        _this.hidePalete();
+                    case "objects":
+                        _this.hideObjects();
                         _this.showAddListener();
                         break;
             
