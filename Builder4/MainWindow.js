@@ -651,6 +651,10 @@ MainWindow=new XObject({
                                                                 case "projectedit":
                                                                     _this.hideProjectEdit();
                                                                     break;
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                                                 default:
                                                                     break;
                                                             }

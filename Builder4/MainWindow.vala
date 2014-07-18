@@ -1091,6 +1091,10 @@ public class Xcls_MainWindow : Object
                     case "projectedit":
                         _this.hideProjectEdit();
                         break;
+                        
+                        
+                        
+                        
                     default:
                         break;
                 }
