@@ -32,7 +32,7 @@
                             "pack": "set_model",
                             "xtype": "ListStore",
                             "|columns": "typeof(string),  // 0 real key\ntypeof(string), // 1 real type\ntypeof(string), // 2 docs ?\ntypeof(string), // 3 visable desc\ntypeof(string), // 4 function desc\ntypeof(string) // 5 element type (event|prop)\n        ",
-                            "|string:getValue": "(Gtk.TreeIter iter, int col)\n{\n\n    GLib.Value value;\n    this.get_value(iter, col, out value);\n\n    return (string)value;\n    \n}",
+                            "|string:getValue": "(Gtk.TreeIter iter, int col)\n{\n\n    GLib.Value value;\n    this.el.get_value(iter, col, out value);\n\n    return (string)value;\n    \n}",
                             "|xns": "Gtk"
                         },
                         {
