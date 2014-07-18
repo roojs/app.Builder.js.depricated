@@ -491,6 +491,52 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    xtype: Clutter.Actor,
+                                                    listeners : {
+                                                        enter_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#333");
+                                                                return false;
+                                                        },
+                                                        leave_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#000");
+                                                            return false;
+                                                        },
+                                                        button_press_event : ( ) => {
+                                                            switch (_this.state) {
+                                                                case "edit":
+                                                                    _this.showProjectEdit();
+                                                                    break;  
+                                                                case "files":
+                                                                    // _this.showViewEditing();
+                                                                    break; 
+                                                                case "projectedit":
+                                                                    _this.hideProjectEdit();
+                                                                    break;
+                                                                default:
+                                                                    break;
+                                                            }
+                                                            return false;    
+                                                        
+                                                        
+                                                        }
+                                                    },
+                                                    id : "projecteditbutton",
+                                                    pack : "add_child",
+                                                    init : this.el.set_size(50,50);,
+                                                    reactive : true,
+                                                    items : [
+                                                        {
+                                                            xtype: Clutter.Text,
+                                                            line_alignment : Pango.Alignment.CENTER,
+                                                            pack : "add_child",
+                                                            x_align : Clutter.ActorAlign.CENTER,
+                                                            x_expand : false,
+                                                            y_align : Clutter.ActorAlign.CENTER,
+                                                            y_expand : false
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             layout_manager : {

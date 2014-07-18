@@ -35,6 +35,7 @@ public class Xcls_MainWindow : Object
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
     public Xcls_projecteditbutton projecteditbutton;
+    public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
     public Project.Project project;
@@ -717,6 +718,9 @@ public class Xcls_MainWindow : Object
             var child_2 = new Xcls_projecteditbutton( _this );
             child_2.ref();
             this.el.add_child (  child_2.el  );
+            var child_3 = new Xcls_projecteditbutton( _this );
+            child_3.ref();
+            this.el.add_child (  child_3.el  );
 
             // init method 
             {
@@ -919,6 +923,93 @@ public class Xcls_MainWindow : Object
 
             // ctor 
         public Xcls_Text18(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
+            this.el.line_alignment = Pango.Alignment.CENTER;
+            this.el.x_align = Clutter.ActorAlign.CENTER;
+            this.el.x_expand = false;
+            this.el.y_align = Clutter.ActorAlign.CENTER;
+            this.el.y_expand = false;
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_projecteditbutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.projecteditbutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            this.el.reactive = true;
+            var child_0 = new Xcls_Text20( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+            this.el.set_size(50,50);
+
+            // listeners 
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            } );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            } );
+            this.el.button_press_event.connect(   ( ) => {
+                switch (_this.state) {
+                    case "edit":
+                        _this.showProjectEdit();
+                        break;  
+                    case "files":
+                        // _this.showViewEditing();
+                        break; 
+                    case "projectedit":
+                        _this.hideProjectEdit();
+                        break;
+                    default:
+                        break;
+                }
+                return false;    
+            
+            
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text20 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text20(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
