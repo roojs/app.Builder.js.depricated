@@ -107,7 +107,7 @@ public class Xcls_MidPropTree : Object
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_namecol( _this );
             child_1.ref();
-            this.el.fa (  child_1.el  );
+            this.el.append_column (  child_1.el  );
 
             // init method 
             {  
