@@ -511,7 +511,7 @@ MainWindow=new XObject({
                                                         
                                                         // fall through cases..
                                                                 case "addprops":
-                                                                    _this.hidePalete();
+                                                                    _this.hideAddProps();
                                                         
                                                         // show            
                                                                 case "edit":
