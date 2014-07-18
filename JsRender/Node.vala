@@ -472,7 +472,7 @@ public class JsRender.Node : Object {
 			var n = 0;
 			for(var i = 0; i < this.items.size;i++) {
 
-				if (this.items.get(i).props.has_key("*prop")) {
+				if (this.items.get(i).props.has_key("* prop")) {
 					continue;
 				}
 				if (n > 0) {
