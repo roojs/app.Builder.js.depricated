@@ -41,6 +41,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
+    public Xcls_WindowRightPalete rightpalete;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
