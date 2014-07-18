@@ -1176,6 +1176,7 @@ public class Xcls_MainWindow : Object
                         break;
                                     
                     default:
+                        print("unhandled add objects from %s\n",_this.state);
                         break;
                 }
                 return false;    
