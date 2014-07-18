@@ -250,7 +250,7 @@ MainWindow=new XObject({
         
     
     },
-    'void:showPalete' : () {
+    'void:showObjects' : () {
     
          
          

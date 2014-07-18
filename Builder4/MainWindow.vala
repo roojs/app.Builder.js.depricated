@@ -315,7 +315,7 @@ public class Xcls_MainWindow : Object
             
         
         }
-    public void showPalete() {
+    public void showObjects() {
         
              
              
