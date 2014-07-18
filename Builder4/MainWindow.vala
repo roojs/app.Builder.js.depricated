@@ -322,7 +322,7 @@ public class Xcls_MainWindow : Object
             ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
             //this.projectsettings.el.show_all();
         
-            stage = _this.objectview.el.get_stage();
+            stage = _this.addpropsview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
             /*this.projectsettings.buttonPressed.connect((btn) => {
