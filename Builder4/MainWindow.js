@@ -690,7 +690,7 @@ MainWindow=new XObject({
                                                                     
                                                         // hide            
                                                                 case "objects":
-                                                                    _this.hideObjects);
+                                                                    _this.hideObjects();
                                                                     break;
                                                                     break;
                                                                                 
