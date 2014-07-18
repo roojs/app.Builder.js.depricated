@@ -91,6 +91,12 @@ public class Xcls_LeftProps : Object
                     return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
                 case '$':
                     return @"<span   style=\"italic\">$dval</span>";
+               case '|': // user defined methods
+                    return @"<span color=\"#008000\" font_weight=\"bold\">$dval</span>";
+                    
+                      
+                    
+                    
                 default:
                     return dval;
             }
