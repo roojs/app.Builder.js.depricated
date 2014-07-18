@@ -1189,11 +1189,12 @@ public class Xcls_MainWindow : Object
                         
                     case "palete":
                         _this.hidePalete();
-                        _this.showAddProps()
+                        _this.showAddListener()
                         break;
                         
                     case "addprops":
                         _this.hideAddProps();
+                        _this.showAddListener();
                         break;
                         
                     default:
