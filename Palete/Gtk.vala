@@ -111,7 +111,7 @@ namespace Palete {
 
 		// does not handle implements...
 		
-        public Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
+        public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
         {
             //print("Loading for " + ename);
             
