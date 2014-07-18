@@ -227,7 +227,7 @@ WindowLeftProps=new XObject({
                 2, this.keyFormat(miter.get_key() , "listener"),
                 3, miter.get_value(),
                 4, dis_val,
-                5, GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value())
+                5, "<tt>" +  GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>"
             ); 
          }
          
@@ -246,7 +246,7 @@ WindowLeftProps=new XObject({
                     2,  this.keyFormat(miter.get_key() , "prop"),
                     3, miter.get_value(),
                     4, dis_val,
-                     5, GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value())
+                     5, "<tt>" + GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>"
                 ); 
        }
        print("clear selection\n");
