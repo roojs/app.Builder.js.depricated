@@ -11,6 +11,33 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
+    'string:keySortFormat' : (string key) {
+        // listeners first - with 0
+        // specials
+        if (key[0] == '*') {
+            return "1 " + key;
+        }
+        // functions
+        
+        var bits = key.split(" ");
+        
+        if (key[0] == '|') {
+            return "2 " + bits[bits.length -1];
+        }
+        // signals
+        if (key[0] == '@') {
+            return "3 " + bits[bits.length -1];
+        }
+            
+        // props
+        if (key[0] == '#') {
+            return "4 " + bits[bits.length -1];
+        }
+    
+        
+    
+    
+    },
     id : "LeftProps",
     homogeneous : false,
     'string:keyFormat' : (string val, string type) {
