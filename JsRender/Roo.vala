@@ -95,15 +95,15 @@ namespace JsRender {
             this.title = this.jsonHasOrEmpty(obj, "title");
             this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
 
-	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs_version");
-	    bjs_version_str = bjs_version_str == "" ? "1"
+	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
+	    bjs_version_str = bjs_version_str == "" ? "1";
 		
             this.tree = new Node(); 
             // load items[0] ??? into tree...
 			if (obj.has_member("items") && obj.get_member("items").get_node_type() == Json.NodeType.ARRAY) {
 		        var ar = obj.get_array_member("items");
 		        var tree_base = ar.get_object_element(0);
-				this.tree.loadFromJson(tree_base, bjs_version == "2" ? 2 : 1);
+				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
 			}
             
 
