@@ -21,12 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:addProps' : () {
-        // edit->add props..
-        this.state = "props";
-        
-    
-    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -36,6 +30,12 @@ MainWindow=new XObject({
     	  
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
+    'void:addProps' : () {
+        // edit->add props..
+        this.state = "props";
+        
+    
+    },
     'void:hideProjectEdit' : () {
         // return to editing state..
            
@@ -264,7 +264,6 @@ MainWindow=new XObject({
             
         print("show view editing");
     },
-     : "",
     items : [
         {
             xtype: Gtk.VBox,

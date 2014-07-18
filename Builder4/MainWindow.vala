@@ -95,6 +95,7 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void hideProps
     public void addProps() {
             // edit->add props..
             this.state = "props";
