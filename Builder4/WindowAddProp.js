@@ -11,9 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowAddProp=new XObject({
     xtype: Gtk.ScrolledWindow,
-    activeElement : false,
     id : "MidPropTree",
-    pack : "pack_end,false,true,0",
     init : {
         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
       //  this.el.set_size_request ( 150, -1 );
