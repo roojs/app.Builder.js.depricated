@@ -1634,12 +1634,30 @@ public class Xcls_LeftProps : Object
             } );
             this.el.editing_started.connect( ( editable, path) => {
                 //_this.editing = true;
-                if (_this.allow_edit) {
-                    _this.allow_edit =false;
+                if (!_this.allow_edit) {
+                   
+                     print("val - editing_Started\n");
+                    this.el.editable = false; // make sure it's not editor...
+               
+                     
                     return;
                 }
-                print("val - editing_Started\n");
-                this.el.editable = false; // make sure it's not editor...
+                 _this.allow_edit =false;
+                
+               
+               
+               
+                 Gtk.TreeIter  iter;
+                _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                GLib.Value gval;
+                              
+            
+            
+                 //   this.get('/LeftPanel.model').activePath  = path;
+                _this.model.el.get_value(iter,3, out gval);
+                    var val = (string)gval;
+                             
+                    ((Gtk.Entry)editable).set_text(val);       
                
             } );
         }
