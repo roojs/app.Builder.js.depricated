@@ -364,7 +364,12 @@ public class Xcls_LeftProps : Object
                     }
                     if (use_textarea) {
                         print("Call show editor\n");
+                        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                            this.el.get_selection().select_path(path);
+                            return false;
+                        });
                         this.show_editor(file, node, type, key);
+                        
                         return;
                     }
                     // others... - fill in options for true/false?
