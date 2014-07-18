@@ -18,9 +18,9 @@
  * .ctor : Full contruct line...  
  * 
  * Newer code
- * ".Gee.ArrayList<Xcls_fileitem>:fileitems"  --  dot prefix (properties of the class?)
- * ".signal:void:open": "(JsRender.JsRender file)" -- properties (which are signals)
- *  "|void:clearFiles": "() .... some code...."  -- real functions
+ * ".Gee.ArrayList<Xcls_fileitem>:fileitems" ==> # type  name 
+ * ".signal:void:open": "(JsRender.JsRender file)" ==> @ type name
+ *  "|void:clearFiles": "() .... some code...."  | type name
  *
  * 
  * 
@@ -553,14 +553,42 @@ public class JsRender.Node : Object {
 			var v = value.get_value();
 			var sv =  Value (typeof (string));
 			v.transform(ref sv);
+
+			var rkey = key;
+			if (version == 1) {
+				rkey = this.upgradeKey(key, (string)sv);
+			}
+
 			
-			this.props.set(key,  (string)sv);
+			this.props.set(rkey,  (string)sv);
 		});
 		
 
 
 
 	}
+
+	public string upgradeKey(string key, string val)
+	{
+		// convert V1 to V2 
+		switch(key) {
+			case "*prop":
+			case "*args":
+			case ".ctor":
+			case "|init":
+				return "* " + key.substring(1);
+
+				
+
+		
+
+	}
+
+
+
+
+
+	
 	public Node  deepClone()
 	{
 		var n = new Node();
