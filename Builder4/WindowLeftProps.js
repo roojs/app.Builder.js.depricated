@@ -355,7 +355,7 @@ WindowLeftProps=new XObject({
                 });
                 
             },
-    'void:updateIter' : (Gtk.TreeIter iter,  string type, string key, string value);
+    'void:updateIter' : (Gtk.TreeIter iter,  string type, string key, string value) {
     
      
         //typeof(string),  // 0 key type

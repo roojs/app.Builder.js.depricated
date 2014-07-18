@@ -402,7 +402,7 @@ public class Xcls_LeftProps : Object
                     });
                     
                 }
-    public void updateIter(Gtk.TreeIter iter,  string type, string key, string value);
+    public void updateIter(Gtk.TreeIter iter,  string type, string key, string value) {
         
          
             //typeof(string),  // 0 key type
