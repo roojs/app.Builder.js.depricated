@@ -177,32 +177,32 @@ WindowLeftProps=new XObject({
     },
     'void:deleteSelected' : () {
         
-                Gtk.TreeIter iter;
-                Gtk.TreeModel mod;
-                
-                var s = this.view.el.get_selection();
-                s.get_selected(out mod, out iter);
-                     
-                      
-                GLib.Value gval;
-                mod.get_value(iter, 0 , out gval);
-                var type = (string)gval;
-                
-                mod.get_value(iter, 1 , out gval);
-                var key = (string)gval;
-                
-                switch(type) {
-                    case "listener":
-                        this.node.listeners.remove(key);
-                        break;
-                        
-                    case "prop":
-                        this.node.props.remove(key);
-                        break;
-                }
-                this.load(this.file, this.node);
-                
-                _this.changed();
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.el.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+                  
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
+            
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
+            
+            switch(type) {
+                case "listener":
+                    this.node.listeners.remove(key);
+                    break;
+                    
+                case "props":
+                    this.node.props.remove(key);
+                    break;
+            }
+            this.load(this.file, this.node);
+            
+            _this.changed();
     },
     'void:finish_editing' : () {
          // 
