@@ -1270,8 +1270,8 @@ public class Xcls_MainWindow : Object
                         _this.showAddProps();
                         break;
                    
-                    case "addlisteners":
-                        _this.hideAddListeners();
+                    case "addlistener":
+                        _this.hideAddListener();
                         _this.showAddProps();            
                         break;
                         

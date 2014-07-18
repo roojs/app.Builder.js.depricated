@@ -748,8 +748,8 @@ MainWindow=new XObject({
                                                                     _this.showAddProps();
                                                                     break;
                                                                
-                                                                case "addlisteners":
-                                                                    _this.hideAddListeners();
+                                                                case "addlistener":
+                                                                    _this.hideAddListener();
                                                                     _this.showAddProps();            
                                                                     break;
                                                                     
