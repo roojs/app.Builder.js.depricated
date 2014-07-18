@@ -121,7 +121,7 @@ public class Xcls_WindowAddProp : Object
             }
 
             // listeners 
-            this.el.cursor_changed.connect( () {
+            this.el.cursor_changed.connect( () => {
                     Gtk.TreeIter iter;
                     Gtk.TreeModel mode;
             
