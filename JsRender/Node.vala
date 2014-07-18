@@ -693,13 +693,13 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var i =  iter.get_key();
 			//, iter.get_value());
-			if ( i[0] != '*') {
+			if ( i[0] != '|') {
 				continue;
 			}
 		
-			if (i == "* init") { 
-				continue;
-			}
+			//if (i == "* init") { 
+			//	continue;
+			//}
 			var val = iter.get_value();
 			if (Regex.match_simple("^\\s*function", val)) { 
 				funcs += "\n<b>" + i.substring(1) +"</b> : " + val.split("\n")[0];
