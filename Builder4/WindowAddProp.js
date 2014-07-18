@@ -14,12 +14,10 @@ WindowAddProp=new XObject({
     activeElement : false,
     id : "MidPropTree",
     pack : "pack_end,false,true,0",
-    init : function() {
-        XObject.prototype.init.call(this);
-           XObject.prototype.init.call(this); 
+    init : {
         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        this.el.set_size_request ( 150, -1 );
-        this.shown = true;
+      //  this.el.set_size_request ( 150, -1 );
+        //this.shown = true;
     },
     shadow_type : Gtk.ShadowType.IN,
     items : [
