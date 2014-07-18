@@ -31,7 +31,8 @@ MainWindow=new XObject({
     	  
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
-    'void:hideAddListener' : _this.addpropsview.el.save_easing_state();
+    'void:hideAddListener' : () {
+         _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
     
@@ -45,7 +46,8 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
          _this.addpropsview.el.restore_easing_state();,
-    'void:hideAddProp' : _this.addpropsview.el.save_easing_state();
+    'void:hideAddProp' : () {
+         _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
     
