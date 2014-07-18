@@ -24,7 +24,32 @@
  *
  * Standardize this crap...
  * 
- * standard properties (use to set 
+ * standard properties (use to set)
+ *          If they are long values show the dialog..
+ * bool:is_xxx  :: can show a pulldown.. (true/false)
+ * string:html  
+ * |string:html  = string with value interpolated eg. baseURL + ".." 
+ * Clutter.ActorAlign:x_align  (typed)  -- shows pulldowns if type is ENUM? 
+ * |untypedvalue = javascript untyped value... 
+ * 
+ * object properties (not part of the GOjbect being wrapped?
+ * .Gee.ArrayList<Xcls_fileitem>:fileitems
+ * 
+ * signals
+ * !
+ * 
+ * methods
+ * |void:clearFiles
+ * |someJSmethod
+ * 
+ * specials
+ * *prop -- string
+ * *args  -- string
+ * *ctor -- string
+ * *init -- big string?
+ * 
+ * 
+ * 
  * 
  * 
  * 
