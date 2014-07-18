@@ -54,7 +54,7 @@ public class Xcls_WindowAddProp : Object
             this.model.el.clear();
         
             Gtk.TreeIter iter;
-            var elementList = palete.getPropertiesFor(etype, xtype);
+            var elementList = pal.getPropertiesFor(etype, xtype);
             
             
             print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
