@@ -252,7 +252,7 @@ public class Xcls_LeftProps : Object
              //typeof(string),  // 2 key (display)
              //typeof(string),  // 3 value
              //typeof(string),  // 4 value (display)
-        
+             //typeof(string),  // 5 both (tooltip)
             
             
             
@@ -273,7 +273,8 @@ public class Xcls_LeftProps : Object
                     1, miter.get_key(),
                     2, this.keyFormat(miter.get_key() , "listener"),
                     3, miter.get_value(),
-                    4, dis_val        
+                    4, dis_val,
+                    5, miter.get_key() + " " + miter.get_value()
                 ); 
              }
              
