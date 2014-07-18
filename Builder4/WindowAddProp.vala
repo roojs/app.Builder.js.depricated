@@ -25,7 +25,7 @@ public class Xcls_MidPropTree : Object
     public Xcls_model model;
 
         // my vars
-    public signal void select;
+    public signal void select(string );
 
         // ctor 
     public Xcls_MidPropTree()
