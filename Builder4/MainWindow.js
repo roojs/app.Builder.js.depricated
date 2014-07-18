@@ -738,8 +738,8 @@ MainWindow=new XObject({
                                                                     _this.showAddProps();
                                                                     break;
                                                                     
-                                                                case "palete":
-                                                                    _this.hidePalete();
+                                                                case "objects":
+                                                                    _this.hideObjects();
                                                                     _this.showAddProps();
                                                                     break;
                                                                     

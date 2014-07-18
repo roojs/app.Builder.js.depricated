@@ -1260,8 +1260,8 @@ public class Xcls_MainWindow : Object
                         _this.showAddProps();
                         break;
                         
-                    case "palete":
-                        _this.hidePalete();
+                    case "objects":
+                        _this.hideObjects();
                         _this.showAddProps();
                         break;
                         
