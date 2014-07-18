@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|void:updateIter": "",
+            "|void:updateIter": "(Gtk.TreeIter iter,  string type, sting key, string value);\n\n \n    //typeof(string),  // 0 key type\n     //typeof(string),  // 1 key\n     //typeof(string),  // 2 key (display)\n     //typeof(string),  // 3 value\n     //typeof(string),  // 4 value (display)\n     //typeof(string),  // 5 both (tooltip)\n     //typeof(string),  // 6 key (sort)\n    \n    var dl = value.split(\"\\n\");\n\n    var dis_val = dl.length > 0 ? (dl[0].strip()+ \"...\") : \"\";\n    if (type == \"listener\") {\n     \n       \n        \n        m.set(iter, \n                0, type,\n            1, key,\n            2, this.keyFormat(key ,type),\n            3, value,\n            4, dis_val,\n            5, \"<tt>\" +  GLib.Markup.escape_text(key + \" \" +value) + \"</tt>\",\n            6,  \"0 \" + key\n        ); \n        return;\n    }\n    \n\n\n    m.set(iter, \n            0, \"props\",\n            1, key,\n            2,  this.keyFormat(key , \"prop\"),\n            3, value,\n            4, dis_val,\n             5, \"<tt>\" + GLib.Markup.escape_text(key + \" \" + value) + \"</tt>\",\n             6,  this.keySortFormat(key)\n        ); \n}",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".bool:allow_edit": false,

@@ -60,7 +60,48 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public void updateIter
+    public void updateIter(Gtk.TreeIter iter,  string type, sting key, string value);
+        
+         
+            //typeof(string),  // 0 key type
+             //typeof(string),  // 1 key
+             //typeof(string),  // 2 key (display)
+             //typeof(string),  // 3 value
+             //typeof(string),  // 4 value (display)
+             //typeof(string),  // 5 both (tooltip)
+             //typeof(string),  // 6 key (sort)
+            
+            var dl = value.split("\n");
+        
+            var dis_val = dl.length > 0 ? (dl[0].strip()+ "...") : "";
+            if (type == "listener") {
+             
+               
+                
+                m.set(iter, 
+                        0, type,
+                    1, key,
+                    2, this.keyFormat(key ,type),
+                    3, value,
+                    4, dis_val,
+                    5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
+                    6,  "0 " + key
+                ); 
+                return;
+            }
+            
+        
+        
+            m.set(iter, 
+                    0, "props",
+                    1, key,
+                    2,  this.keyFormat(key , "prop"),
+                    3, value,
+                    4, dis_val,
+                     5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
+                     6,  this.keySortFormat(key)
+                ); 
+        }
     public string keyFormat(string val, string type) {
             
             // Glib.markup_escape_text(val);
