@@ -1473,15 +1473,7 @@ public class Xcls_LeftProps : Object
                 
                 this.el.editable = false;
               
-            /*
-             m.set(iter, 
-                            0, "listener",
-                            1, miter.get_key(),
-                            2, "<b>" + miter.get_key() + "</b>",
-                            3, miter.get_value()
-                        ); 
-            
-              */      
+             
             
                     Gtk.TreeIter  iter;
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
@@ -1500,10 +1492,14 @@ public class Xcls_LeftProps : Object
                         case "listener":
                             _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
                             _this.node.listeners.remove(oldval);
+                            
+                            _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
+                            
                             break;
                         case "prop":
                             _this.node.props.set(newtext, _this.node.props.get(oldval));
                             _this.node.props.remove(oldval);
+                            _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
                             break;
                      }
                      _this.changed();
