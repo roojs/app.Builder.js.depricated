@@ -80,22 +80,42 @@ public class Xcls_LeftProps : Object
             //* = special
             // all of these... - display value is last element..
             var ar = val.strip().split(" ");
+            
+            
             var dval = GLib.Markup.escape_text(ar[ar.length-1]);
+            
+            
+            
             
             switch(val[0]) {
                 case '@': // signal // just bold balck?
+                    if (dval[0] == '@') {
+                        dval = dval.substring(1);
+                    }
+                
                     return @"<span  font_weight=\"bold\">@ $dval</span>";        
                 case '#': // object properties?
+                    if (dval[0] == '#') {
+                        dval = dval.substring(1);
+                    }
                     return @"<span  font_weight=\"bold\">$dval</span>";
                 case '*': // special
+                    if (dval[0] == '*') {
+                        dval = dval.substring(1);
+                    }
                     return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
                 case '$':
+                    if (dval[0] == '$') {
+                        dval = dval.substring(1);
+                    }
                     return @"<span   style=\"italic\">$dval</span>";
                case '|': // user defined methods
+                    if (dval[0] == '|') {
+                        dval = dval.substring(1);
+                    }
                     return @"<span color=\"#008000\" font_weight=\"bold\">$dval</span>";
                     
                       
-                    
                     
                 default:
                     return dval;
