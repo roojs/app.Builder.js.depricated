@@ -85,9 +85,10 @@ public class Xcls_LeftProps : Object
             switch(val[0]) {
                 case '@': // signal // just bold balck?
                     return @"<span  font_weight=\"bold\">@ $dval</span>";        
-                case '#' // object properties?
+                case '#': // object properties?
                     return @"<span  font_weight=\"bold\">$dval</span>";
-                
+                case '*': // special
+                    return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
         
                 
             
