@@ -24,7 +24,7 @@ WindowAddProp=new XObject({
         //print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                // console.dump(elementList);
                
-        var miter = elementsList.map_iterator();
+        var miter = elementList.map_iterator();
         while (miter.next()) {
            var p = miter.get_value();
             
