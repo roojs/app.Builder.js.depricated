@@ -11,6 +11,33 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowAddProp=new XObject({
     xtype: Gtk.ScrolledWindow,
+    'void:show' : (Palete.Palete pal, string etype, string xtype) {
+        this.model.el.clear();
+    
+        Gtk.TreeIter iter;
+        var elementList = palete.getPropertiesFor(etype, xtype);
+        
+        
+        print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
+               // console.dump(elementList);
+               
+        var miter = elementsList.map_iterator();
+        while (miter.next()) {
+           var p = miter.get_value();
+            
+            this.model.el.append(out iter);
+    
+            this.model.el.set_values(iter,
+                    0,  p.name, 
+                    1, p.type
+                    2, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>\n" + p.desc,
+                    3, p.sig ? p.sig  : '',
+                    4, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>'",
+                    5, type
+            );
+        }
+                                 
+    },
     id : "MidPropTree",
     init : {
         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
