@@ -246,18 +246,9 @@ WindowLeftProps=new XObject({
         while(miter.next()) {
             m.append(out iter,null);
             
-            var dl = miter.get_value().split("\n");
-            var dis_val = dl.length > 0 ? (dl[0].strip()+ "...") : "";
+            this.updateIter(iter,  "listener", miter.get_key(), miter.get_value());
             
-            m.set(iter, 
-                    0, "listener",
-                1, miter.get_key(),
-                2, this.keyFormat(miter.get_key() , "listener"),
-                3, miter.get_value(),
-                4, dis_val,
-                5, "<tt>" +  GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>",
-                6,  "0 " + miter.get_key()
-            ); 
+             
          }
          
           
@@ -266,18 +257,8 @@ WindowLeftProps=new XObject({
         
        while(miter.next()) {
             m.append(out iter,null);
-            var dl = miter.get_value().split("\n");
-            var dis_val = dl.length > 0 ? dl[0] : "";
-    
-            m.set(iter, 
-                    0, "props",
-                    1, miter.get_key(),
-                    2,  this.keyFormat(miter.get_key() , "prop"),
-                    3, miter.get_value(),
-                    4, dis_val,
-                     5, "<tt>" + GLib.Markup.escape_text(miter.get_key() + " " + miter.get_value()) + "</tt>",
-                     6,  this.keySortFormat(miter.get_key())
-                ); 
+             this.updateIter(iter,  "prop", miter.get_key(), miter.get_value());
+             
        }
        print("clear selection\n");
        // clear selection?
