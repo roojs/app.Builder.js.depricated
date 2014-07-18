@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.bjs",
     "items": [
         {
+            "|void:show": "",
             ".signal:void:select": "(string key, string type, string skel, string etype)",
             "id": "MidPropTree",
             "xtype": "ScrolledWindow",

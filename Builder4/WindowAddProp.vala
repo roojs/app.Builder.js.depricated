@@ -51,6 +51,7 @@ public class Xcls_MidPropTree : Object
     }
 
     // userdefined functions 
+    public void show
 
     // skip |xns - no return type
     public class Xcls_TreeView2 : Object 
