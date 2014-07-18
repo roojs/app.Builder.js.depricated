@@ -1087,13 +1087,16 @@ public class Xcls_MainWindow : Object
                     case "edit":
                         _this.showAddProps()
                         break;
+                        
                     case "palete":
                         _this.hidePalete();
                         _this.showAddProps()
-                        break
+                        break;
+                        
                     case "addprops":
                         _this.hideAddProps();
                         break;
+                        
                     default:
                         break;
                         
