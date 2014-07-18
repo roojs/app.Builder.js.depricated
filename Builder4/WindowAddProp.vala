@@ -80,10 +80,8 @@ public class Xcls_MidPropTree : Object
             child_1.ref();
 
             // init method 
-            function() {
-            	XObject.prototype.init.call(this); 
-                                
-                   var description = new Pango.FontDescription.c_new();
+            {  
+                   var description = new Pango.FontDescription();
                  description.set_size(8000);
                 this.el.modify_font(description);     
                                 
