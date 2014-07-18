@@ -7,7 +7,7 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 /* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
-    new Xcls_MidPropTree();
+    new Xcls_WindowAddProp();
     WindowAddProp.show_all();
      Gtk.main ();
     return 0;
@@ -15,12 +15,12 @@ static int main (string[] args) {
 */
 
 
-public static Xcls_MidPropTree  WindowAddProp;
+public static Xcls_WindowAddProp  WindowAddProp;
 
-public class Xcls_MidPropTree : Object 
+public class Xcls_WindowAddProp : Object 
 {
     public Gtk.ScrolledWindow el;
-    private Xcls_MidPropTree  _this;
+    private Xcls_WindowAddProp  _this;
 
     public Xcls_model model;
     public Xcls_namecol namecol;
@@ -30,7 +30,7 @@ public class Xcls_MidPropTree : Object
     public signal void select(string key, string type, string skel, string etype);
 
         // ctor 
-    public Xcls_MidPropTree()
+    public Xcls_WindowAddProp()
     {
         _this = this;
         WindowAddProp = this;
@@ -85,13 +85,13 @@ public class Xcls_MidPropTree : Object
     public class Xcls_TreeView2 : Object 
     {
         public Gtk.TreeView el;
-        private Xcls_MidPropTree  _this;
+        private Xcls_WindowAddProp  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_TreeView2(Xcls_MidPropTree _owner )
+        public Xcls_TreeView2(Xcls_WindowAddProp _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
@@ -159,13 +159,13 @@ public class Xcls_MidPropTree : Object
     public class Xcls_model : Object 
     {
         public Gtk.ListStore el;
-        private Xcls_MidPropTree  _this;
+        private Xcls_WindowAddProp  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_MidPropTree _owner )
+        public Xcls_model(Xcls_WindowAddProp _owner )
         {
             _this = _owner;
             _this.model = this;
@@ -198,13 +198,13 @@ typeof(string) // 5 element type (event|prop)
     public class Xcls_namecol : Object 
     {
         public Gtk.TreeViewColumn el;
-        private Xcls_MidPropTree  _this;
+        private Xcls_WindowAddProp  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_namecol(Xcls_MidPropTree _owner )
+        public Xcls_namecol(Xcls_WindowAddProp _owner )
         {
             _this = _owner;
             _this.namecol = this;
@@ -229,13 +229,13 @@ typeof(string) // 5 element type (event|prop)
     public class Xcls_namerender : Object 
     {
         public Gtk.CellRendererText el;
-        private Xcls_MidPropTree  _this;
+        private Xcls_WindowAddProp  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_namerender(Xcls_MidPropTree _owner )
+        public Xcls_namerender(Xcls_WindowAddProp _owner )
         {
             _this = _owner;
             _this.namerender = this;
