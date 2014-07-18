@@ -161,8 +161,16 @@ public class Xcls_MidPropTree : Object
         }
 
         // userdefined functions 
-
-        // skip |getValue - no return type
+        public string getValue(treepath, col)
+            {
+                var tp = new Gtk.TreePath.from_string (treepath);
+                var iter = new Gtk.TreeIter();
+                this.el.get_iter (iter, tp);
+                var value = new GObject.Value('');
+                this.el.get_value(iter, col, value);
+                return value.value;
+                
+            }
 
         // skip |showData - no return type
 

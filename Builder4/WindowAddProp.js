@@ -70,7 +70,7 @@ WindowAddProp=new XObject({
                     xtype: Gtk.ListStore,
                     id : "model",
                     pack : "set_model",
-                    getValue : function(treepath, col)
+                    'string:getValue' : (treepath, col)
                     {
                         var tp = new Gtk.TreePath.from_string (treepath);
                         var iter = new Gtk.TreeIter();
