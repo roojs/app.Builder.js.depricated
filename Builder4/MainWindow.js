@@ -528,8 +528,53 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            line_alignment : Pango.Alignment.CENTER,
                                                             pack : "add_child",
+                                                            line_alignment : Pango.Alignment.CENTER,
+                                                            x_align : Clutter.ActorAlign.CENTER,
+                                                            x_expand : false,
+                                                            y_align : Clutter.ActorAlign.CENTER,
+                                                            y_expand : false
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: Clutter.Actor,
+                                                    listeners : {
+                                                        enter_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#333");
+                                                                return false;
+                                                        },
+                                                        leave_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#000");
+                                                            return false;
+                                                        },
+                                                        button_press_event : ( ) => {
+                                                            
+                                                            
+                                                            
+                                                            switch (_this.state) {
+                                                                case "edit":
+                                                                    _this.showPalete();
+                                                                    break;
+                                                                case "showpalete":
+                                                                    _this.hidePalete();
+                                                                default:
+                                                                    break;
+                                                            }
+                                                            return false;    
+                                                        
+                                                        
+                                                        }
+                                                    },
+                                                    id : "paleteshowbutton",
+                                                    pack : "add_child",
+                                                    init : this.el.set_size(50,50);,
+                                                    reactive : true,
+                                                    items : [
+                                                        {
+                                                            xtype: Clutter.Text,
+                                                            pack : "add_child",
+                                                            line_alignment : Pango.Alignment.CENTER,
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : false,
                                                             y_align : Clutter.ActorAlign.CENTER,
