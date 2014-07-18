@@ -21,6 +21,10 @@ MainWindow=new XObject({
             return false;
         }
     },
+    'void:showAddListener' : ()
+    {
+      this.state = "addlistener";
+    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
