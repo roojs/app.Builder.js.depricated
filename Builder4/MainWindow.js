@@ -539,6 +539,8 @@ MainWindow=new XObject({
                                                    
                                             _this.objectview.el.set_size((alloc.width -50)/2.0f,
                                                    alloc.height);
+                                            _this.addpropsview.el.set_size((alloc.width -50)/2.0f,
+                                                   alloc.height);
                                             
                                             
                                         }
