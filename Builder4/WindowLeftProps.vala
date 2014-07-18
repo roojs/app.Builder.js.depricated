@@ -94,10 +94,7 @@ public class Xcls_LeftProps : Object
                 default:
                     return dval;
             }
-                
-            
-            
-            
+              
             
         
         }

@@ -45,10 +45,7 @@ WindowLeftProps=new XObject({
             default:
                 return dval;
         }
-            
-        
-        
-        
+          
         
     
     },
