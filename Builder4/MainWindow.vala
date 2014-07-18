@@ -114,7 +114,7 @@ public class Xcls_MainWindow : Object
         
             el.restore_easing_state();
              _this.addpropsview.el.restore_easing_state();  
-         
+          }
     public void hideAddProp() {
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
@@ -130,7 +130,7 @@ public class Xcls_MainWindow : Object
         
             el.restore_easing_state();
              _this.addpropsview.el.restore_easing_state();  
-         
+         }
     public void hideObject() {
               // return to editing state..
                

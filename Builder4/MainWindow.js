@@ -45,7 +45,8 @@ MainWindow=new XObject({
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();,
+         _this.addpropsview.el.restore_easing_state();  
+      },
     'void:hideAddProp' : () {
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
@@ -60,7 +61,8 @@ MainWindow=new XObject({
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();,
+         _this.addpropsview.el.restore_easing_state();  
+     },
     'void:hideObject' : () {
           // return to editing state..
            
