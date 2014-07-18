@@ -493,7 +493,7 @@ public class Xcls_RightPalete : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.ListStore( 2, "typeof(string),typeof(string)" );
+            this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
 
             // my vars
 

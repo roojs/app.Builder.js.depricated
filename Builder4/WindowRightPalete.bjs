@@ -112,7 +112,7 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
-                                            "columns": "typeof(string),typeof(string)",
+                                            "|columns": "typeof(string),typeof(string)",
                                             "id": "model",
                                             "n_columns": 2,
                                             "pack": "set_model",
