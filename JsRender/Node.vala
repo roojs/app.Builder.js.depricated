@@ -39,8 +39,8 @@
  * @ void open 
  * 
  * methods
- * |void:clearFiles
- * |someJSmethod
+ * | void clearFiles
+ * | someJSmethod
  * 
  * specials
  * *prop -- string
