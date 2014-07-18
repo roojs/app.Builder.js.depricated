@@ -218,13 +218,8 @@ typeof(string) // 5 element type (event|prop)
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-            function() {
-                this.el = new Gtk.TreeViewColumn();
-                this.parent.el.append_column(this.el);
-                
-                
-                this.el.add_attribute(this.items[0].el , 'markup', 4  );
-            }
+              this.el.add_attribute(_this.namerender.el , 'markup', 4  );
+             
         }
 
         // userdefined functions 
