@@ -60,6 +60,7 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
+    public void updateIter
     public string keyFormat(string val, string type) {
             
             // Glib.markup_escape_text(val);

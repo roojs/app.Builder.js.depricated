@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
+            "|void:updateIter": "",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".bool:allow_edit": false,
