@@ -1316,7 +1316,7 @@ public class Xcls_LeftProps : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.TreeStore( 5,      typeof(string),  // 0 key type
+            this.el = new Gtk.TreeStore( 6,      typeof(string),  // 0 key type
      typeof(string),  // 1 key
      typeof(string),  // 2 key (display)
      typeof(string),  // 3 value

@@ -694,7 +694,7 @@ WindowLeftProps=new XObject({
                         {
                             xtype: Gtk.TreeStore,
                             id : "model",
-                            n_columns : 5,
+                            n_columns : 6,
                             pack : "set_model",
                             changed : function(str, doRefresh) {
                                 if (!this.activePath) {
