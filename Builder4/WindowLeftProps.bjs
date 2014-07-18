@@ -255,7 +255,7 @@
                                 {
                                     "id": "keycol",
                                     "pack": "append_column",
-                                    "title": "Key",
+                                    "title": "Name",
                                     "xtype": "TreeViewColumn",
                                     "|init": " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
                                     "|resizable": "true",
