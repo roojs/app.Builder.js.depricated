@@ -990,6 +990,17 @@ public class Xcls_MainWindow : Object
                     case "files":
                         _this.showViewEditing();
                         break; 
+                        
+                      case "addprop":
+                        _this.hideAddProp();
+                        _this.hideViewEditing();
+                        break;
+                        
+                     case "object":
+                        _this.hideObject();
+                        _this.hideViewEditing();
+                        break;    
+                        
                     default:
                         break;
                 }
