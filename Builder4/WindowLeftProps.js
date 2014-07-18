@@ -918,7 +918,7 @@ WindowLeftProps=new XObject({
                                                     case "listener":
                                                         _this.node.listeners.set(key, newtext);
                                                         break;
-                                                    case "prop":
+                                                    case "props":
                                                         _this.node.props.set(key,newtext);
                                                         break;
                                                  }
