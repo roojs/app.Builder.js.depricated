@@ -260,7 +260,7 @@ namespace JsRender {
         
         string toValaNS(Node item)
         {
-            var ns = item.get("|xns") ;
+            var ns = item.get("* xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
