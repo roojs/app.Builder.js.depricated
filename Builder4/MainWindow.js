@@ -87,20 +87,17 @@ MainWindow=new XObject({
     'void:hideObject' : () {
           // return to editing state..
            
-          //_this.projectbutton.el.show();
-         //_this.projecteditbutton.el.show();
          
+    
+    
          
-        //this.rooview.el.hide();
-         //this.edit_project.el.show();
-         
-         //_this.projecteditview.el.save_easing_state();
+         _this.objectview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
     
         
         el.set_scale(1.0f,1.0f);
-    //       _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.objectview.el.set_scale(0.0f,0.0f);
         _this.state = "edit";
     
      
