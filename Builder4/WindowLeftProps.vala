@@ -1268,7 +1268,7 @@ public class Xcls_LeftProps : Object
                  // right click.
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
-                    if (col.title == "value") {
+                    if (col.title == "Value") {
                         return false;
                     }
             
@@ -1289,8 +1289,8 @@ public class Xcls_LeftProps : Object
                 }
                 
                  
-                if (col.title != "value") {
-                    print("col title != value");
+                if (col.title != "Value") {
+                    print("col title != Value");
                     
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         this.el.get_selection().select_path(path);
