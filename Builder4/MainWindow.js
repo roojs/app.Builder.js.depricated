@@ -38,7 +38,30 @@ MainWindow=new XObject({
         _this.state = "edit";
     },
     'void:hidePalete' : () {
-        this.state = "edit";
+          // return to editing state..
+           
+          //_this.projectbutton.el.show();
+         //_this.projecteditbutton.el.show();
+         
+         
+        //this.rooview.el.hide();
+         //this.edit_project.el.show();
+         
+         _this.projecteditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+           _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+          _this.projecteditview.el.restore_easing_state();  
+     
     
     },
     'void:hideProjectEdit' : () {
