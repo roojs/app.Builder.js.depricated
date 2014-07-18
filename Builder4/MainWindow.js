@@ -678,23 +678,23 @@ MainWindow=new XObject({
                                                             switch (_this.state) {
                                                         
                                                          
-                                                                case "addprops":
-                                                                    _this.hideAddProps();
-                                                                    _this.showObjects();
+                                                                case "addprop":
+                                                                    _this.hideAddProp();
+                                                                    _this.showObject();
                                                                     break;
-                                                            case "addlisteners":
-                                                                    _this.hideAddListeners();
-                                                                    _this.showObjects();
+                                                            case "addlistener":
+                                                                    _this.hideAddListener();
+                                                                    _this.showObject();
                                                                     break;
                                                         
                                                         // show            
                                                                 case "edit":
-                                                                    _this.showObjects();
+                                                                    _this.showObject();
                                                                     break;
                                                                     
                                                         // hide            
                                                                 case "objects":
-                                                                    _this.hideObjects();
+                                                                    _this.hideObject();
                                                                     break;
                                                                     break;
                                                                                 
