@@ -1201,7 +1201,7 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProps();
+                        _this.showAddListener();
                         break;
                         
                     case "palete":
