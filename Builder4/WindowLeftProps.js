@@ -11,6 +11,27 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
+    'string:keyFormat' : (string val, string type) {
+        
+        // Glib.markup_escape_text(val);
+    
+        if (type == "listener") {
+            return "<span font_weight=\"bold\" color=\"#660000\">" + 
+                GLib.Markup.escape_text(val) +
+                 "</span>";
+        }
+        // property..
+        if (val.length < 1) {
+            return "<span  color=\"#FF0000\">--empty--</span>";
+        }
+        
+        //@ = signal
+        //$ = property with 
+        
+        
+        
+    
+    },
     id : "LeftProps",
     homogeneous : false,
     'void:addProp' : (string type, string key, string value) {
