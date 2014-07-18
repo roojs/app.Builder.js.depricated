@@ -37,6 +37,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditbutton projecteditbutton;
     public Xcls_paleteshowbutton paleteshowbutton;
     public Xcls_addpropertybutton addpropertybutton;
+    public Xcls_addpropertybutton addpropertybutton;
 
         // my vars
     public Project.Project project;
@@ -725,6 +726,9 @@ public class Xcls_MainWindow : Object
             var child_4 = new Xcls_addpropertybutton( _this );
             child_4.ref();
             this.el.add_child (  child_4.el  );
+            var child_5 = new Xcls_addpropertybutton( _this );
+            child_5.ref();
+            this.el.add_child (  child_5.el  );
 
             // init method 
             {
@@ -1121,6 +1125,101 @@ public class Xcls_MainWindow : Object
 
             // ctor 
         public Xcls_Text22(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
+            this.el.line_alignment = Pango.Alignment.CENTER;
+            this.el.x_align = Clutter.ActorAlign.CENTER;
+            this.el.x_expand = false;
+            this.el.y_align = Clutter.ActorAlign.CENTER;
+            this.el.y_expand = false;
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_addpropertybutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_addpropertybutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.addpropertybutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            this.el.reactive = true;
+            var child_0 = new Xcls_Text24( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+            this.el.set_size(50,50);
+
+            // listeners 
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            } );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            } );
+            this.el.button_press_event.connect(   ( ) => {
+                
+                
+                
+                switch (_this.state) {
+                    case "edit":
+                        _this.showAddProps()
+                        break;
+                        
+                    case "palete":
+                        _this.hidePalete();
+                        _this.showAddProps()
+                        break;
+                        
+                    case "addprops":
+                        _this.hideAddProps();
+                        break;
+                        
+                    default:
+                        break;
+                        
+                }
+                return false;    
+            
+            
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text24 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text24(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
