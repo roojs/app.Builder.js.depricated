@@ -584,7 +584,7 @@ public class JsRender.Node : Object {
 		if (key[0] == '.') {
 			var bits = key.substring(1).split(":");
 			if (bits[0] == "signal") {
-				return "@" + string.joinv(" ", bits).substring(bits[0]);
+				return "@" + string.joinv(" ", bits).substring(bits[0].length);
 			}
 			return "# " + string.joinv(" ", bits);			
 		}
@@ -598,7 +598,7 @@ public class JsRender.Node : Object {
 			return "| " + key.substring(1);
 		}
 		// vala function..
-		if  (Regex.match_simple ("^\\s*\\(", val)) {
+		if  (Regex.match_simple ("^(", val.strip())) {
 			return "| " + string.joinv(" ", bits);
 		}
 		// guessing it's a property..
