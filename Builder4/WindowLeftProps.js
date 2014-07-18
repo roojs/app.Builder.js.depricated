@@ -33,8 +33,9 @@ WindowLeftProps=new XObject({
         if (key[0] == '#') {
             return "4 " + bits[bits.length -1];
         }
+        // the rest..
+        return "5 " + bits[bits.length -1];    
     
-        
     
     
     },
