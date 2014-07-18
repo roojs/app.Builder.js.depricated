@@ -14,8 +14,7 @@ WindowRightPalete=new XObject({
     id : "RightPalete",
     pack : "pack_start,false,false",
     'void:show' : () {
-        _this.buttonbar.el.hide();
-        _this.viewbox.el.show();
+       
        // this.get('model').expanded();
          
     },

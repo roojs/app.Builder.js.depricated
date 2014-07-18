@@ -13,7 +13,7 @@
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
-            "|void:show": " () {\n    _this.buttonbar.el.hide();\n    _this.viewbox.el.show();\n   // this.get('model').expanded();\n     \n}\n",
+            "|void:show": " () {\n   \n   // this.get('model').expanded();\n     \n}\n",
             "|xns": "Gtk",
             "items": [
                 {

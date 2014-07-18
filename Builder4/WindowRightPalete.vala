@@ -49,8 +49,7 @@ public class Xcls_RightPalete : Object
 
     // userdefined functions 
     public void show () {
-            _this.buttonbar.el.hide();
-            _this.viewbox.el.show();
+           
            // this.get('model').expanded();
              
         }
