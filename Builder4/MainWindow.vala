@@ -42,6 +42,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
+    public Xcls_WindowAddProp add_props;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
@@ -62,6 +63,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.add_props = null;
         this.clutterfiles = null;
         this.left_props = null;
         this.projectsettings = null;

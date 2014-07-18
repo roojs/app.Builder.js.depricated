@@ -21,7 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    ',Xcls_WindowAddProp:add_props' : "null",
     border_width : 0,
     default_height : 500,
     default_width : 800,
