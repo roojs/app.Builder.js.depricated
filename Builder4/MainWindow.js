@@ -653,8 +653,20 @@ MainWindow=new XObject({
                                                                     break;
                                                                     
                                                                     
-                                                                    
-                                                                    
+                                                                      
+                                                                case "addprop":
+                                                                    _this.hideAddProp();
+                                                                    _this.showProjectEdit();
+                                                                    break;
+                                                                case "addlistener":
+                                                                    _this.hideAddListener();
+                                                                    _this.showProjectEdit();
+                                                                    break;
+                                                                     
+                                                                 case "object":
+                                                                    _this.hideObject();
+                                                                    _this.showProjectEdit();    
+                                                                    break;
                                                                 default:
                                                                     break;
                                                             }
