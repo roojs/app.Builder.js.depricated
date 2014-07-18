@@ -767,7 +767,8 @@ WindowLeftProps=new XObject({
                             id : "keycol",
                             pack : "append_column",
                             title : "key",
-                            init : this.el.add_attribute(_this.keyrender.el , "markup", 2 );,
+                            init : this.el.add_attribute(_this.keyrender.el , "markup", 2 );
+                             this.el.add_attribute(_this.keyrender.el , "text", 1 );,
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,

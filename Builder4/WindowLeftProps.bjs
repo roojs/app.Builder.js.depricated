@@ -257,7 +257,7 @@
                                     "pack": "append_column",
                                     "title": "key",
                                     "xtype": "TreeViewColumn",
-                                    "|init": " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n  ",
+                                    "|init": " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
                                     "|xns": "Gtk",
                                     "items": [
                                         {
