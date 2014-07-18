@@ -917,11 +917,11 @@ WindowLeftProps=new XObject({
                                                 switch(ktype) {
                                                     case "listener":
                                                         _this.node.listeners.set(key, newtext);
-                                                        _this.updateIter(iter,key,newtext);
+                                                        _this.updateIter(iter,ktype,key,newtext);
                                                         break;
                                                     case "props":
                                                         _this.node.props.set(key,newtext);
-                                                        _this.updateIter(iter,key,newtext);                
+                                                        _this.updateIter(iter,ktype, key,newtext);                
                                                         break;
                                                  }
                                         //         _this.load(_this.file,_this.node);
