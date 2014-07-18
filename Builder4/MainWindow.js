@@ -104,7 +104,7 @@ MainWindow=new XObject({
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-          //_this.projecteditview.el.restore_easing_state();  
+         _this.objectview.el.restore_easing_state();  
      
     
     },
