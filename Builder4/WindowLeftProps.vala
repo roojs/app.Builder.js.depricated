@@ -1659,9 +1659,9 @@ public class Xcls_LeftProps : Object
                 
                     var val = (string)gval;
                     var combo =        (Gtk.ComboBox)editable;
-                    Gtk.TreeIter citer;
-                    combo.get_active_iter(out citer);        
-                    combo.get_model().set(citer, 0, val);      
+            
+                   var entry =  (GtkEntry) combo.get_child();        
+                entry.set_text(val);
                
             } );
         }
