@@ -53,14 +53,14 @@ MainWindow=new XObject({
     
         
         el.set_scale(1.0f,1.0f);
-           _this.projecteditview.el.set_scale(1.0f,0.0f);
+    //       _this.projecteditview.el.set_scale(1.0f,0.0f);
         _this.state = "edit";
     
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-          _this.projecteditview.el.restore_easing_state();  
+          //_this.projecteditview.el.restore_easing_state();  
      
     
     },
