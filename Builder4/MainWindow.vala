@@ -1075,7 +1075,7 @@ public class Xcls_MainWindow : Object
                         break;
                         
             // hide            
-                    case "palete":
+                    case "palate":
                         _this.hidePalete();
                         break;
                         break;
