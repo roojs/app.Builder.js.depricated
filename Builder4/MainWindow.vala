@@ -295,8 +295,8 @@ public class Xcls_MainWindow : Object
             
             
               
-            // objects (palate..)
-            this.add_props  = new Xcls_WindowAddProps();
+            // Add properties
+            this.add_props  = new Xcls_WindowAddProp();
             this.add_props.ref();  /// really?
             ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
             //this.projectsettings.el.show_all();
