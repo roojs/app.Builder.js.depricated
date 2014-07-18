@@ -1362,7 +1362,6 @@ public class Xcls_MainWindow : Object
             
                     case "addlistener":
                         _this.hideAddListener();
-                        _this.showAddListener();
                         break;
             
                         

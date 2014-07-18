@@ -799,7 +799,6 @@ MainWindow=new XObject({
                                                         
                                                                 case "addlistener":
                                                                     _this.hideAddListener();
-                                                                    _this.showAddListener();
                                                                     break;
                                                         
                                                                     
