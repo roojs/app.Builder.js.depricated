@@ -94,6 +94,9 @@ namespace JsRender {
             this.permname = this.jsonHasOrEmpty(obj, "permname");
             this.title = this.jsonHasOrEmpty(obj, "title");
             this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
+
+	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs_version");
+		
             this.tree = new Node(); 
             // load items[0] ??? into tree...
 			if (obj.has_member("items") && obj.get_member("items").get_node_type() == Json.NodeType.ARRAY) {
