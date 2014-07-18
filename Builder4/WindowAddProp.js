@@ -18,21 +18,18 @@ WindowAddProp=new XObject({
         //this.shown = true;
     },
     shadow_type : Gtk.ShadowType.IN,
+     : "",
     items : [
         {
             xtype: Gtk.TreeView,
             listeners : {
-                cursor_changed : function (self) {
-                       var iter = new Gtk.TreeIter();
-                                        
-                                        //console.log('changed');
-                        var m = this.get('model');
-                	if (!this.selection){
-                		this.selection = this.el.get_selection();
-                	}
+                cursor_changed : () {
+                        Gtk.TreeIter iter;
+                        Gtk.TreeModel mode;
                 
-                        var s = this.selection;
-                        if (!s.get_selected(m.el, iter)) {
+                        var m = _this.model;
+                        var s = this.el.get_selection();
+                        if (!s.get_selected(out mod, out iter)) {
                 		return; 
                 	}
                         var tp = m.el.get_path(iter).to_string();
@@ -40,40 +37,17 @@ WindowAddProp=new XObject({
                         
                         // var val = "";
                         
-                        var key = m.getValue(tp, 0);
                         
-                        var type = m.getValue(tp, 1);
-                        var skel = m.getValue(tp, 3);
-                        var etype = m.getValue(tp, 5);
+                        var key = m.getValue(iter, 0);
+                        
+                        var type = m.getValue(iter, 1);
+                        var skel = m.getValue(iter, 3);
+                        var etype = m.getValue(iter, 5);
                         
                         
-                        this.get('/MidPropTree').hideWin();
-                
-                        if (type.toLowerCase() == 'function') {
-                            
-                            if (etype != 'events') {
-                                key = '|' + key;
-                            }
-                            
-                            this.get('/LeftPanel.model').add({
-                                key :  key, 
-                                type : type,
-                                val  : skel,
-                                etype : etype
-                            })  
-                            return;
-                        }
-                        // has dot in name, and is boolean???? this does not make sense..
-                        //if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
-                        //     key = '|' + key;
-                       // }
                         
-                        this.get('/LeftPanel.model').add( {
-                            key : key, 
-                            type : type,
-                            //skel  : skel,
-                            etype : etype
-                           }) //, 
+                        _this.select(key,type,skel, etype);
+                        
                 }
             },
             pack : "add",
