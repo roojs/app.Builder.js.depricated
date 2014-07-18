@@ -215,6 +215,10 @@ MainWindow=new XObject({
         
     
     },
+    'void:showPalete' : () {
+    
+        this.state = "palate";
+    },
     'void:showProjectEdit' : () {
         // make the browser smaller, and show the edit dialog
         

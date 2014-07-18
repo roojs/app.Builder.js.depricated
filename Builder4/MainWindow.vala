@@ -95,7 +95,7 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showPalete
+    public void hidePalete
     public void hideAddProps() {
             _this.state = "edit";
         }
@@ -280,6 +280,10 @@ public class Xcls_MainWindow : Object
             this.state = "props";
             
         
+        }
+    public void showPalete() {
+        
+            this.state = "palate";
         }
     public void showProjectEdit () {
             // make the browser smaller, and show the edit dialog
