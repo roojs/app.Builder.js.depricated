@@ -21,10 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:hidePalete' : () {
-        this.state = "edit";
-    
-    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -36,6 +32,10 @@ MainWindow=new XObject({
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideAddProps' : () {
         _this.state = "edit";
+    },
+    'void:hidePalete' : () {
+        this.state = "edit";
+    
     },
     'void:hideProjectEdit' : () {
         // return to editing state..
@@ -275,6 +275,7 @@ MainWindow=new XObject({
             
         print("show view editing");
     },
+     : "",
     items : [
         {
             xtype: Gtk.VBox,

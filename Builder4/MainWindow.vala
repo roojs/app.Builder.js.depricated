@@ -95,12 +95,12 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void hideAddProps() {
+            _this.state = "edit";
+        }
     public void hidePalete() {
             this.state = "edit";
         
-        }
-    public void hideAddProps() {
-            _this.state = "edit";
         }
     public void hideProjectEdit () {
             // return to editing state..
