@@ -25,6 +25,7 @@ public class Xcls_MidPropTree : Object
     public Xcls_model model;
 
         // my vars
+    public signal void select;
 
         // ctor 
     public Xcls_MidPropTree()
@@ -47,8 +48,6 @@ public class Xcls_MidPropTree : Object
           //  this.el.set_size_request ( 150, -1 );
             //this.shown = true;
         }
-
-        // listeners 
     }
 
     // userdefined functions 

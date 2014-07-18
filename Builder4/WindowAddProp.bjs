@@ -6,13 +6,12 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.bjs",
     "items": [
         {
+            ".signal:void:select": "",
             "id": "MidPropTree",
             "xtype": "ScrolledWindow",
             "|init": " {\n    this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n  //  this.el.set_size_request ( 150, -1 );\n    //this.shown = true;\n}\n",
             "|shadow_type": "Gtk.ShadowType.IN",
             "|xns": "Gtk",
-            "": "",
-            "listeners": {},
             "items": [
                 {
                     "listeners": {

@@ -18,7 +18,6 @@ WindowAddProp=new XObject({
         //this.shown = true;
     },
     shadow_type : Gtk.ShadowType.IN,
-     : "",
     items : [
         {
             xtype: Gtk.TreeView,
