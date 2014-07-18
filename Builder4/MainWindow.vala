@@ -422,14 +422,14 @@ public class Xcls_MainWindow : Object
             
             el.set_scale(0.5f,0.5f);
         
-            _this.objectview.el.set_scale(1.0f,1.0f);
+            _this.addpropsview.el.set_scale(1.0f,1.0f);
            
            
          
             //_this.clutterfiles.loadProject(_this.project);
         
             el.restore_easing_state();
-            _this.objectview.el.restore_easing_state();
+            _this.addpropsview.el.restore_easing_state();
             this.state = "object";
         }
     public void showObject() {
