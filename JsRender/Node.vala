@@ -123,7 +123,7 @@ public class JsRender.Node : Object {
 	}
 	public bool hasXnsType()
 	{
-		if (this.props.get("|xns") != null && this.props.get("xtype") != null) {
+		if (this.props.get("$ xns") != null && this.props.get("xtype") != null) {
 			return true;
 			
 		}
@@ -134,7 +134,7 @@ public class JsRender.Node : Object {
 		if (!this.hasXnsType ()) {
 			return "";
 		}
-		return this.props.get("* xns") + "." + this.props.get("xtype"); 
+		return this.props.get("$ xns") + "." + this.props.get("xtype"); 
 
 	}
 	
@@ -146,7 +146,7 @@ public class JsRender.Node : Object {
 			return k;
 		}
 		
-		k = this.props.get("* " + key);
+		k = this.props.get("$ " + key);
 		if (k != null) {
 			return k;
 		}
