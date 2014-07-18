@@ -42,10 +42,10 @@ namespace Palete {
         public  string parent;
         public  string value;
 
-		bool is_overlaid;
+	bool is_overlaid;
         public GLib.List<GirObject> params;
         public GLib.List<string> implements;
-		public GLib.List<string> inherits; // full list of all classes and interfaces...
+	public GLib.List<string> inherits; // full list of all classes and interfaces...
         public Gee.HashMap<string,GirObject> ctors;
         public Gee.HashMap<string,GirObject> methods;
         public Gee.HashMap<string,string>    includes;
@@ -55,30 +55,30 @@ namespace Palete {
         public Gee.HashMap<string,GirObject> signals;
         public string doctxt;
         public GirObject(string nodetype, string n)
-		{
-            this.nodetype = nodetype;
-            this.name = n;
-			this.ns = "";
-            this.parent = "";
-            this.type = "";
-			this.propertyof = "";
-            this.is_array = false;
-            this.is_instance = false;
-            this.is_varargs = false;
-            this.implements = new GLib.List<string>();
-			this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
-            this.includes   = new Gee.HashMap<string,string>();
-            
-            this.params = new GLib.List<GirObject>();
-            this.ctors      = new Gee.HashMap<string,GirObject>();
-            this.methods    =new Gee.HashMap<string,GirObject>();
-           
-            this.classes    = new Gee.HashMap<string,GirObject>();
-            this.props      = new Gee.HashMap<string,GirObject>();
-            this.consts     = new Gee.HashMap<string,GirObject>();
-            this.signals    = new Gee.HashMap<string,GirObject>();
-			this.is_overlaid = false;
-			this.paramset = null;
+	{
+		this.nodetype = nodetype;
+		this.name = n;
+		this.ns = "";
+		this.parent = "";
+		this.type = "";
+		this.propertyof = "";
+		this.is_array = false;
+		this.is_instance = false;
+		this.is_varargs = false;
+		this.implements = new GLib.List<string>();
+		this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
+		this.includes   = new Gee.HashMap<string,string>();
+
+		this.params = new GLib.List<GirObject>();
+		this.ctors      = new Gee.HashMap<string,GirObject>();
+		this.methods    =new Gee.HashMap<string,GirObject>();
+
+		this.classes    = new Gee.HashMap<string,GirObject>();
+		this.props      = new Gee.HashMap<string,GirObject>();
+		this.consts     = new Gee.HashMap<string,GirObject>();
+		this.signals    = new Gee.HashMap<string,GirObject>();
+		this.is_overlaid = false;
+		this.paramset = null;
         }
 
 		public string[] inheritsToStringArray()
