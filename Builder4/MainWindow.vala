@@ -1223,7 +1223,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text24(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
