@@ -57,7 +57,7 @@ MainWindow=new XObject({
      
     
     },
-    'void:hideAddProps' : () {
+    'void:hideAddProp' : () {
           // return to editing state..
            
           //_this.projectbutton.el.show();
@@ -316,7 +316,7 @@ MainWindow=new XObject({
         //_this.projecteditview.el.restore_easing_state();
         this.state = "addlistener";
     },
-    'void:showAddProps' : () {
+    'void:showAddProp' : () {
     
          
          

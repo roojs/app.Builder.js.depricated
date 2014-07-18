@@ -122,7 +122,7 @@ public class Xcls_MainWindow : Object
          
         
         }
-    public void hideAddProps() {
+    public void hideAddProp() {
               // return to editing state..
                
               //_this.projectbutton.el.show();
@@ -381,7 +381,7 @@ public class Xcls_MainWindow : Object
             //_this.projecteditview.el.restore_easing_state();
             this.state = "addlistener";
         }
-    public void showAddProps() {
+    public void showAddProp() {
         
              
              
