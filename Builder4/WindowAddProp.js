@@ -68,7 +68,6 @@ WindowAddProp=new XObject({
             items : [
                 {
                     xtype: Gtk.ListStore,
-                    xcolumns : "",
                     id : "model",
                     n_columns : 6,
                     pack : "set_model",

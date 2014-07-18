@@ -162,6 +162,8 @@ public class Xcls_MidPropTree : Object
 
         // userdefined functions 
 
+        // skip |xcolumns - no return type
+
         // skip |showData - no return type
         public string getValue(Gtk.TreeIter iter, int col)
             {

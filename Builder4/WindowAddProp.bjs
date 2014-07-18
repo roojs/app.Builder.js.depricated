@@ -26,7 +26,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "xcolumns": "",
+                            "|xcolumns": "",
                             "id": "model",
                             "n_columns": 6,
                             "pack": "set_model",
