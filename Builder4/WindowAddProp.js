@@ -116,13 +116,13 @@ WindowAddProp=new XObject({
                 },
                 {
                     xtype: Gtk.TreeViewColumn,
+                    xpack : "add_column",
                     id : "namecol",
-                    pack : false,
                     init : function() {
                         this.el = new Gtk.TreeViewColumn();
                         this.parent.el.append_column(this.el);
                         
-                        XObject.prototype.init.call(this);
+                        
                         this.el.add_attribute(this.items[0].el , 'markup', 4  );
                     },
                     items : [

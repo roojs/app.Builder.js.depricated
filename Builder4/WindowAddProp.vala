@@ -107,6 +107,7 @@ public class Xcls_MidPropTree : Object
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_namecol( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
 
             // init method 
             {  
@@ -221,7 +222,7 @@ typeof(string) // 5 element type (event|prop)
                 this.el = new Gtk.TreeViewColumn();
                 this.parent.el.append_column(this.el);
                 
-                XObject.prototype.init.call(this);
+                
                 this.el.add_attribute(this.items[0].el , 'markup', 4  );
             }
         }
