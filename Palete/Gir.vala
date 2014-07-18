@@ -41,6 +41,7 @@ namespace Palete {
         public bool  is_varargs;
         public  string parent;
         public  string value;
+        public  string desc;
 
 	bool is_overlaid;
         public GLib.List<GirObject> params;
