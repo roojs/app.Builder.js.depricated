@@ -31,34 +31,6 @@ WindowRightPalete=new XObject({
             id : "viewbox",
             items : [
                 {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true",
-                    items : [
-                        {
-                            xtype: Gtk.Label,
-                            pack : "add",
-                            label : "Palete"
-                        },
-                        {
-                            xtype: Gtk.Button,
-                            listeners : {
-                                clicked : () => {
-                                	_this.hide();
-                                }
-                            },
-                            pack : "pack_start,false,true",
-                            items : [
-                                {
-                                    xtype: Gtk.Image,
-                                    pack : "add",
-                                    stock : Gtk.STOCK_GOTO_LAST,
-                                    icon_size : Gtk.IconSize.MENU
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     xtype: Gtk.ScrolledWindow,
                     pack : "add",
                     init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);

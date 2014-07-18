@@ -24,36 +24,6 @@
                     "id": "viewbox",
                     "items": [
                         {
-                            "|xns": "Gtk",
-                            "xtype": "HBox",
-                            "pack": "pack_start,false,true",
-                            "items": [
-                                {
-                                    "|xns": "Gtk",
-                                    "xtype": "Label",
-                                    "pack": "add",
-                                    "label": "Palete"
-                                },
-                                {
-                                    "listeners": {
-                                        "clicked": "  () => {\n\t_this.hide();\n}"
-                                    },
-                                    "pack": "pack_start,false,true",
-                                    "xtype": "Button",
-                                    "|xns": "Gtk",
-                                    "items": [
-                                        {
-                                            "|xns": "Gtk",
-                                            "xtype": "Image",
-                                            "pack": "add",
-                                            "|stock": "Gtk.STOCK_GOTO_LAST",
-                                            "|icon_size": "Gtk.IconSize.MENU"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "pack": "add",
                             "xtype": "ScrolledWindow",
                             "|init": "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n   this.el.set_size_request(-1,200);\n \n",
