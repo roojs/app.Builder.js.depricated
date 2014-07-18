@@ -260,7 +260,9 @@ namespace Palete
             var obj = node.get_object ();
              
             var ret = new JsRender.Node();
-            ret.loadFromJson(obj);
+	    
+		
+            ret.loadFromJson(obj, 1);
             return ret;
         }
             
