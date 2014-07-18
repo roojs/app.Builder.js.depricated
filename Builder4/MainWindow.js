@@ -21,6 +21,10 @@ MainWindow=new XObject({
             return false;
         }
     },
+    'void:addProps' : () {
+        // edit->add props..
+    
+    },
     border_width : 0,
     default_height : 500,
     default_width : 800,

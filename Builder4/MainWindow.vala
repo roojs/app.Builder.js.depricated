@@ -95,7 +95,10 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void addProps
+    public void addProps() {
+            // edit->add props..
+        
+        }
     public void hideProjectEdit () {
             // return to editing state..
                
