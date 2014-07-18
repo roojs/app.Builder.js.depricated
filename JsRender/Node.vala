@@ -586,7 +586,7 @@ public class JsRender.Node : Object {
 			if (bits[0] == "signal") {
 				return "@" + string.joinv(" ", bits).substring(bits[0]);
 			}
-			return "# " + bits[0] + " " + bits[1];			
+			return "# " + string.joinv(" ", bits)			
 		}
 		if (key[1] != '|') {
 			return key;
