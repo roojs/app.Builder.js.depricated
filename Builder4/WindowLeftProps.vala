@@ -346,6 +346,7 @@ public class Xcls_LeftProps : Object
             GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                 this.allow_edit  = true;
                 this.keyrender.el.editable = true;
+                this.keyrender.el.text = "XXX";
                 this.view.el.set_cursor_on_cell(
                     path,
                     this.keycol.el,
