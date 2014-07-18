@@ -1089,12 +1089,12 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProps()
+                        _this.showAddProps();
                         break;
                         
                     case "palete":
                         _this.hidePalete();
-                        _this.showAddProps()
+                        _this.showAddProps();
                         break;
                         
                     case "addprops":
@@ -1184,12 +1184,12 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProps()
+                        _this.showAddProps();
                         break;
                         
                     case "palete":
                         _this.hidePalete();
-                        _this.showAddListener()
+                        _this.showAddListener();
                         break;
                         
                     case "addprops":
