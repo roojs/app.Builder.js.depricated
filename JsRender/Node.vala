@@ -594,11 +594,12 @@ public class JsRender.Node : Object {
 		var bits = key.substring(1).split(":");
 		// two types '$' or '|' << for methods..
 		// javascript 
-		if  (Regex.match_simple ("^function\\s*\\(", val.strip())) {
+		if  (Regex.match_simple ("^function\\s*(", val.strip())) {
 			return "| " + key.substring(1);
 		}
 		// vala function..
-		if  (Regex.match_simple ("^(", val.strip())) {
+		
+		if  (Regex.match_simple ("(", val.strip())) {
 			return "| " + string.joinv(" ", bits);
 		}
 		// guessing it's a property..
