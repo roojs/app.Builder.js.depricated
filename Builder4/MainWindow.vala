@@ -41,11 +41,11 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
-    public Xcls_RightPalete rightpalete;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_ProjectSettings projectsettings;
+    public Xcls_RightPalete rightpalete;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
@@ -61,10 +61,10 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.rightpalete = null;
         this.clutterfiles = null;
         this.left_props = null;
         this.projectsettings = null;
+        this.rightpalete = null;
         this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
@@ -298,10 +298,10 @@ public class Xcls_MainWindow : Object
             // objects (palate..)
             this.rightpalete  = new Xcls_RightPalete();
             this.rightpalete.ref();  /// really?
-            ((Gtk.Container)(this.ojbectview.el.get_widget())).add(this.rightpalete.el);
+            ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
             //this.projectsettings.el.show_all();
         
-            var stage = _this.objectview.el.get_stage();
+            stage = _this.objectview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
             /*this.projectsettings.buttonPressed.connect((btn) => {
