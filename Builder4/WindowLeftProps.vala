@@ -1292,7 +1292,7 @@ public class Xcls_LeftProps : Object
                     
                //Seed.print("click" + ev.type);
                 //console.dump(res);
-                return true;
+                return false;
             
                           
                

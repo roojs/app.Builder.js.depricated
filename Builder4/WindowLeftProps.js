@@ -671,7 +671,7 @@ WindowLeftProps=new XObject({
                                 
                            //Seed.print("click" + ev.type);
                             //console.dump(res);
-                            return true;
+                            return false;
                         
                                       
                            
