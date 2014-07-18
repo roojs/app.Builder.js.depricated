@@ -17,7 +17,7 @@ static int main (string[] args) {
 
 public static Xcls_RightPalete  WindowRightPalete;
 
-public class Xcls_RightPalete
+public class Xcls_RightPalete : Object 
 {
     public Gtk.VBox el;
     private Xcls_RightPalete  _this;
@@ -29,35 +29,29 @@ public class Xcls_RightPalete
 
         // my vars
     public Palete.Palete provider;
+    public signal void after_node_change(JSRender.Node? node);
+    public signal void before_node_change(JSRender.Node? node);
     public signal void drag_end();
 
         // ctor 
     public Xcls_RightPalete()
     {
-        this.el = new Gtk.VBox( true, 0 );
         _this = this;
         WindowRightPalete = this;
+        this.el = new Gtk.VBox( true, 0 );
 
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_buttonbar(_this);
+        var child_0 = new Xcls_buttonbar( _this );
+        child_0.ref();
         this.el.add (  child_0.el  );
-        var child_1 = new Xcls_viewbox(_this);
+        var child_1 = new Xcls_viewbox( _this );
+        child_1.ref();
         this.el.add (  child_1.el  );
     }
 
     // userdefined functions 
-
-    // skip .Palete.Palete:provider - already used 
-
-    // skip .signal:void:drag_end() - already used 
-
-    // skip id - not pipe 
-
-    // skip pack - not pipe 
-
-    // skip xtype - not pipe 
     public void hide () {
               _this.buttonbar.el.show();
               _this.viewbox.el.hide();
@@ -71,15 +65,7 @@ public class Xcls_RightPalete
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
-    public class Xcls_buttonbar
+    public class Xcls_buttonbar : Object 
     {
         public Gtk.VBox el;
         private Xcls_RightPalete  _this;
@@ -88,40 +74,28 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_buttonbar(Xcls_RightPalete _owner)
+        public Xcls_buttonbar(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
             _this.buttonbar = this;
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button3(_this);
+            var child_0 = new Xcls_Button3( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_Label5(_this);
+            var child_1 = new Xcls_Label5( _this );
+            child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip id - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Button3
+    public class Xcls_Button3 : Object 
     {
         public Gtk.Button el;
         private Xcls_RightPalete  _this;
@@ -130,15 +104,16 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Button3(Xcls_RightPalete _owner)
+        public Xcls_Button3(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image4(_this);
+            var child_0 = new Xcls_Image4( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
 
             // listeners 
@@ -149,23 +124,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Image4
+    public class Xcls_Image4 : Object 
     {
         public Gtk.Image el;
         private Xcls_RightPalete  _this;
@@ -174,10 +135,10 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Image4(Xcls_RightPalete _owner)
+        public Xcls_Image4(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Image();
             _this = _owner;
+            this.el = new Gtk.Image();
 
             // my vars
 
@@ -189,22 +150,8 @@ public class Xcls_RightPalete
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip |stock - already used 
-
-        // skip |icon_size - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label5
+    public class Xcls_Label5 : Object 
     {
         public Gtk.Label el;
         private Xcls_RightPalete  _this;
@@ -213,10 +160,10 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Label5(Xcls_RightPalete _owner)
+        public Xcls_Label5(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Label( "Palete" );
             _this = _owner;
+            this.el = new Gtk.Label( "Palete" );
 
             // my vars
 
@@ -236,27 +183,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip angle - already used 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_viewbox
+    public class Xcls_viewbox : Object 
     {
         public Gtk.VBox el;
         private Xcls_RightPalete  _this;
@@ -265,40 +194,28 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_viewbox(Xcls_RightPalete _owner)
+        public Xcls_viewbox(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
             _this.viewbox = this;
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox7(_this);
+            var child_0 = new Xcls_HBox7( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_ScrolledWindow11(_this);
+            var child_1 = new Xcls_ScrolledWindow11( _this );
+            child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip id - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_HBox7
+    public class Xcls_HBox7 : Object 
     {
         public Gtk.HBox el;
         private Xcls_RightPalete  _this;
@@ -307,37 +224,27 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_HBox7(Xcls_RightPalete _owner)
+        public Xcls_HBox7(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.HBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label8(_this);
+            var child_0 = new Xcls_Label8( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button9(_this);
+            var child_1 = new Xcls_Button9( _this );
+            child_1.ref();
             this.el.pack_start (  child_1.el , false,true );
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label8
+    public class Xcls_Label8 : Object 
     {
         public Gtk.Label el;
         private Xcls_RightPalete  _this;
@@ -346,10 +253,10 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Label8(Xcls_RightPalete _owner)
+        public Xcls_Label8(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Label( "Palete" );
             _this = _owner;
+            this.el = new Gtk.Label( "Palete" );
 
             // my vars
 
@@ -359,20 +266,8 @@ public class Xcls_RightPalete
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Button9
+    public class Xcls_Button9 : Object 
     {
         public Gtk.Button el;
         private Xcls_RightPalete  _this;
@@ -381,15 +276,16 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Button9(Xcls_RightPalete _owner)
+        public Xcls_Button9(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image10(_this);
+            var child_0 = new Xcls_Image10( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
 
             // listeners 
@@ -400,23 +296,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Image10
+    public class Xcls_Image10 : Object 
     {
         public Gtk.Image el;
         private Xcls_RightPalete  _this;
@@ -425,10 +307,10 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_Image10(Xcls_RightPalete _owner)
+        public Xcls_Image10(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.Image();
             _this = _owner;
+            this.el = new Gtk.Image();
 
             // my vars
 
@@ -440,22 +322,8 @@ public class Xcls_RightPalete
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip |stock - already used 
-
-        // skip |icon_size - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_ScrolledWindow11
+    public class Xcls_ScrolledWindow11 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_RightPalete  _this;
@@ -464,16 +332,17 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow11(Xcls_RightPalete _owner)
+        public Xcls_ScrolledWindow11(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.ScrolledWindow( null, null );
             _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_TreeView12(_this);
+            var child_0 = new Xcls_TreeView12( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
 
             // init method 
@@ -484,25 +353,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
-        // skip |shadow_type - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeView12
+    public class Xcls_TreeView12 : Object 
     {
         public Gtk.TreeView el;
         private Xcls_RightPalete  _this;
@@ -512,19 +365,21 @@ public class Xcls_RightPalete
         public string dragData;
 
             // ctor 
-        public Xcls_TreeView12(Xcls_RightPalete _owner)
+        public Xcls_TreeView12(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.TreeView();
             _this = _owner;
+            this.el = new Gtk.TreeView();
 
             // my vars
 
             // set gobject values
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
-            var child_0 = new Xcls_model(_this);
+            var child_0 = new Xcls_model( _this );
+            child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn14(_this);
+            var child_1 = new Xcls_TreeViewColumn14( _this );
+            child_1.ref();
             this.el.append_column (  child_1.el  );
 
             // init method 
@@ -623,31 +478,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip .string:dragData - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |enable_tree_lines - already used 
-
-        // skip |headers_visible - already used 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_model
+    public class Xcls_model : Object 
     {
         public Gtk.ListStore el;
         private Xcls_RightPalete  _this;
@@ -656,11 +489,11 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_RightPalete _owner)
+        public Xcls_model(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.ListStore( 2, "typeof(string),typeof(string)" );
             _this = _owner;
             _this.model = this;
+            this.el = new Gtk.ListStore( 2, "typeof(string),typeof(string)" );
 
             // my vars
 
@@ -668,16 +501,6 @@ public class Xcls_RightPalete
         }
 
         // userdefined functions 
-
-        // skip columns - already used 
-
-        // skip id - not pipe 
-
-        // skip n_columns - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
         public string getValue (Gtk.TreeIter iter, int col)  {
                 GLib.Value gval;
                  this.el.get_value(iter, col , out gval);
@@ -716,14 +539,8 @@ public class Xcls_RightPalete
             }
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn14
+    public class Xcls_TreeViewColumn14 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_RightPalete  _this;
@@ -732,15 +549,16 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn14(Xcls_RightPalete _owner)
+        public Xcls_TreeViewColumn14(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.TreeViewColumn();
             _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_txtrender(_this);
+            var child_0 = new Xcls_txtrender( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
             // init method 
@@ -750,23 +568,9 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_txtrender
+    public class Xcls_txtrender : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_RightPalete  _this;
@@ -775,11 +579,11 @@ public class Xcls_RightPalete
             // my vars
 
             // ctor 
-        public Xcls_txtrender(Xcls_RightPalete _owner)
+        public Xcls_txtrender(Xcls_RightPalete _owner )
         {
-            this.el = new Gtk.CellRendererText();
             _this = _owner;
             _this.txtrender = this;
+            this.el = new Gtk.CellRendererText();
 
             // my vars
 
@@ -788,18 +592,6 @@ public class Xcls_RightPalete
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }

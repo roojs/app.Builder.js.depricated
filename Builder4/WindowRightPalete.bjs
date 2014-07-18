@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-13",
+    "id": "file-gtk-18",
     "name": "WindowRightPalete",
     "parent": "",
     "title": false,
@@ -7,9 +7,9 @@
     "items": [
         {
             ".Palete.Palete:provider": "",
+            ".signal:void:after_node_change(JSRender.Node? node)": "",
+            ".signal:void:before_node_change(JSRender.Node? node)": "",
             ".signal:void:drag_end()": "",
-			".signal:void:before_node_change(JSRender.Node? node)": "",
-			".signal:void:after_node_change(JSRender.Node? node)": "",
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
