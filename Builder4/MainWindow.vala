@@ -875,7 +875,7 @@ public class Xcls_MainWindow : Object
                     new Clutter.AlignConstraint(
                         _this.clutterembed.el.get_stage(), 
                         Clutter.AlignAxis.X_AXIS,
-                        1.0f
+                        0.0f
                     )
                 );
                     
