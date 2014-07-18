@@ -50,7 +50,7 @@ test-leftprops:
 
 builder4:
 	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  
-		Test.GtkWriter.vala  -o /tmp/Builder4
+		Builder4/Main.vala  -o /tmp/Builder4
 
 
 datatest:
