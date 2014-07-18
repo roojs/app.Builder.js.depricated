@@ -598,10 +598,12 @@ public class JsRender.Node : Object {
 			return "| " + key.substring(1);
 		}
 		// vala function..
-		
+		print("check %s\n", val.strip().split("\n")[0]);
 		if  (Regex.match_simple ("^\\(", val.strip())) {
+			print("it's a method\n");
 			return "| " + string.joinv(" ", bits);
 		}
+		print("it's a property\n");
 		// guessing it's a property..
 		return "$ " + string.joinv(" ", bits);
 		
