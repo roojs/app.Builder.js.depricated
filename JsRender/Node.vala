@@ -53,6 +53,9 @@
  * * ctor -- string
  * * init -- big string?
  * 
+ * event handlers (listeners)
+ *   just shown 
+ * 
  * -----------------
  * special ID values
  *  +XXXX -- indicates it's a instance property / not glob...
