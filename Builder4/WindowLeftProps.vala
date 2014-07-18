@@ -207,7 +207,7 @@ public class Xcls_LeftProps : Object
                 m.set(iter, 
                         0, "listener",
                     1, miter.get_key(),
-                    2, "<b>" + miter.get_key() + "</b>",
+                    2, this.keyFormat(miter.get_key() , "listener"),
                     3, miter.get_value(),
                     4, dis_val        
                 ); 
@@ -225,7 +225,7 @@ public class Xcls_LeftProps : Object
                 m.set(iter, 
                         0, "props",
                         1, miter.get_key(),
-                        2,  miter.get_key() ,
+                        2,  this.keyFormat(miter.get_key() , "prop"),
                         3, miter.get_value(),
                         4, dis_val
                     ); 
@@ -1133,7 +1133,7 @@ public class Xcls_LeftProps : Object
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         this.el.get_selection().unselect_all();
                         return false;
-                    }
+                    });
                     return false; //not on a element.
                 }
                 
@@ -1155,7 +1155,7 @@ public class Xcls_LeftProps : Object
               
                         this.el.get_selection().select_path(path);
                         return false;
-                    }
+                    });
                     
                     return false;
                 }
@@ -1165,9 +1165,9 @@ public class Xcls_LeftProps : Object
                     print("col title != value");
                     
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                        this.el.get_selection().unselect_all();
-                        retur false;
-                    }
+                        this.el.get_selection().select_path(path);
+                        return false;
+                    });
                     
                     
                       //  XObject.error("column is not value?");
