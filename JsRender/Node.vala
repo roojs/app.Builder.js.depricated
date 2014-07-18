@@ -582,7 +582,7 @@ public class JsRender.Node : Object {
 				return "* " + key.substring(1);
 		}
 		if (key[0] == '.') {
-			var bits = key.substring(1).split(:);
+			var bits = key.substring(1).split(":");
 			if (bits[0] == "signal") {
 				return "@ " + bits[1] + " " bits[2];
 			}
@@ -591,7 +591,7 @@ public class JsRender.Node : Object {
 		if (key[1] != '|') {
 			return key;
 		}
-		var bits = key.substring(1).split(:);
+		var bits = key.substring(1).split(":");
 		// two types '$' or '|' << for methods..
 		// javascript 
 		if  (Regex.match_simple ("^\s*function\s*\(", val) {
