@@ -1262,22 +1262,22 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProps();
+                        _this.showAddProp();
                         break;
                         
                     case "objects":
                         _this.hideObjects();
-                        _this.showAddProps();
+                        _this.showAddProp();
                         break;
                    
                     case "addlistener":
                         _this.hideAddListener();
-                        _this.showAddProps();            
+                        _this.showAddProp();            
                         break;
                         
                         
                     case "addprops":
-                        _this.hideAddProps();
+                        _this.hideAddProp();
                         break;
                         
                     default:
