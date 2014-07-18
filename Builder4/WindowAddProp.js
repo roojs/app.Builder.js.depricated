@@ -58,8 +58,7 @@ WindowAddProp=new XObject({
                  description.set_size(8000);
                 this.el.modify_font(description);     
                                 
-                //this.selection = this.el.get_selection();
-                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                this.el.get_selection().set_mode( Gtk.SelectionMode.SINGLE);
              
             
                 
