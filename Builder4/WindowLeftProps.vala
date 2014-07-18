@@ -413,7 +413,7 @@ public class Xcls_LeftProps : Object
              //typeof(string),  // 5 both (tooltip)
              //typeof(string),  // 6 key (sort)
             
-            var dl = value.split("\n");
+            var dl = value.strip().split("\n");
         
             var dis_val = dl.length > 0 ? (dl[0].strip()+ "...") : "";
             if (type == "listener") {
