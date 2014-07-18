@@ -834,16 +834,18 @@ WindowLeftProps=new XObject({
                                                 print("ktype: %s\n",ktype);
                                                 switch(ktype) {
                                                     case "listener":
-                                                        _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
+                                                        var ov = _this.node.listeners.get(oldval);
+                                                        _this.node.listeners.set(newtext, ov);
                                                         _this.node.listeners.remove(oldval);
                                                         
-                                                        _this.updateIter(iter,  ktype, newtext, _this.node.listeners.get(oldval));
+                                                        _this.updateIter(iter,  ktype, newtext, ov);
                                                         
                                                         break;
                                                     case "props":
-                                                        _this.node.props.set(newtext, _this.node.props.get(oldval));
+                                                        var ov = _this.node.props.get(oldval);
+                                                        _this.node.props.set(newtext, ov);
                                                         _this.node.props.remove(oldval);
-                                                        _this.updateIter(iter,  ktype, newtext, _this.node.props.get(oldval));
+                                                        _this.updateIter(iter,  ktype, newtext, ov);
                                                         break;
                                                  }
                                                  _this.changed();
