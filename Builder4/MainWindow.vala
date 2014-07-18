@@ -95,6 +95,7 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void showAddListener
     public void hideAddProps() {
             _this.state = "edit";
         }
