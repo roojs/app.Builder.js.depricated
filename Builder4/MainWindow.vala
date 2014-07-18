@@ -1269,6 +1269,12 @@ public class Xcls_MainWindow : Object
                         _this.hideObjects();
                         _this.showAddProps();
                         break;
+                   
+                    case "addlisteners":
+                        _this.hideAddListeners();
+                        _this.showAddProps();            
+                        break;
+                        
                         
                     case "addprops":
                         _this.hideAddProps();
