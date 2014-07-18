@@ -1330,7 +1330,8 @@ public class Xcls_LeftProps : Object
      typeof(string),  // 2 key (display)
      typeof(string),  // 3 value
      typeof(string),   // 4 value (display)
-     typeof(string)   // 5 both (tooltip)     
+     typeof(string),   // 5 both (tooltip)     
+     typeof(string)   // 6 key (for sorting)
  );
 
             // my vars

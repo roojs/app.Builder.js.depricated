@@ -247,7 +247,7 @@
                                     "pack": "set_model",
                                     "xtype": "TreeStore",
                                     "|changed": "function(str, doRefresh) {\n    if (!this.activePath) {\n        return;\n    }\n    var iter = new Gtk.TreeIter();\n    this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));\n    \n    this.el.set_value(iter, 1, '' +str);\n    this.el.set_value(iter, 3, '' + this.toShort(str));\n    var type = this.getIterValue(iter, 4);\n\n    this.el.set_value(iter, 5, type + ' : ' + str);\n    // update the tree...  \n\n    this.get('/LeftTree.model').changed(this.toJS(), doRefresh); \n}\n",
-                                    "|columns": "     typeof(string),  // 0 key type\n     typeof(string),  // 1 key\n     typeof(string),  // 2 key (display)\n     typeof(string),  // 3 value\n     typeof(string),   // 4 value (display)\n     typeof(string)   // 5 both (tooltip)     \n",
+                                    "|columns": "     typeof(string),  // 0 key type\n     typeof(string),  // 1 key\n     typeof(string),  // 2 key (display)\n     typeof(string),  // 3 value\n     typeof(string),   // 4 value (display)\n     typeof(string),   // 5 both (tooltip)     \n     typeof(string)   // 6 key (for sorting)\n",
                                     "|toShort": "function(str) {\n    var a = typeof(str) == 'string' ? str.split(\"\\n\") : [];\n        return a.length > 1 ? a[0] + '....' : '' + str;\n}\n",
                                     "|xns": "Gtk"
                                 },
