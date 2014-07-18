@@ -7,8 +7,8 @@
     "items": [
         {
             ".Palete.Palete:provider": "",
-            ".signal:void:after_node_change(JSRender.Node? node)": "",
-            ".signal:void:before_node_change(JSRender.Node? node)": "",
+            ".signal:void:after_node_change(JsRender.Node? node)": "",
+            ".signal:void:before_node_change(JsRender.Node? node)": "",
             ".signal:void:drag_end()": "",
             "id": "RightPalete",
             "pack": "pack_start,false,false",

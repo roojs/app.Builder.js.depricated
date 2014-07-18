@@ -29,8 +29,8 @@ public class Xcls_RightPalete : Object
 
         // my vars
     public Palete.Palete provider;
-    public signal void after_node_change(JSRender.Node? node);
-    public signal void before_node_change(JSRender.Node? node);
+    public signal void after_node_change(JsRender.Node? node);
+    public signal void before_node_change(JsRender.Node? node);
     public signal void drag_end();
 
         // ctor 
