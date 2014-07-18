@@ -1,12 +1,12 @@
 
 namespace Palete 
 {
-    public errordomain Error {
-        INVALID_TYPE,
-        NEED_IMPLEMENTING,
+	public errordomain Error {
+		INVALID_TYPE,
+		NEED_IMPLEMENTING,
 		MISSING_FILE,
 		INVALID_VALUE
-    }
+	}
 
 	public class Usage : Object 
 	{
@@ -265,7 +265,68 @@ namespace Palete
             ret.loadFromJson(obj, 1);
             return ret;
         }
-            
+          public override void  loadUsageFile (string fname) {
+
+
+
+			
+     		print("Palete Load called\n");
+		string raw;
+		if (!FileUtils.test (fname, FileTest.EXISTS)) {
+			throw new Error.MISSING_FILE(fname + " not found");
+		}
+			
+    		FileUtils.get_contents(fname, out raw);
+          // print(data);
+            var data  = raw.split("\n");
+            var state = 0;
+            var cfg = new Gee.ArrayList<Usage>();
+            var left = new Gee.ArrayList<string>();
+            var right = new Gee.ArrayList<string>();
+			
+			for (var i = 0; i < data.length; i++) {
+				var d = data[i].strip();
+				//print("READ " + d + "\n");
+				if (
+					d.length < 1
+				    ||
+				     Regex.match_simple ("^\\s+$", d)
+				    ||
+					Regex.match_simple ("^\\s*/", d)
+			     ){
+                    continue;
+                }
+				
+                if (Regex.match_simple ("^left:", d)) { 
+                    state = 1;
+                    if (left.size > 0 ){
+                        cfg.add(new Usage( left, right));
+					}
+                    left = new Gee.ArrayList<string>();
+        			right = new Gee.ArrayList<string>();
+                    continue;
+                }
+                 if (Regex.match_simple ("^right:", d)) { 
+                    state = 2;
+                    continue;
+                }
+                if (state == 1) {
+					//print("add left: " + d + "\n");
+                    left.add(d);
+                    continue;
+                }
+				//print("add Right: " + d + "\n");
+                right.add(d);
+                //Seed.quit();
+               
+            }
+            if (left.size > 0 ){
+                  cfg.add(new Usage( left, right));
+            }
+            this.map = cfg;
+             
+        }
+          
         public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
 	public abstract void load();
 	public abstract Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type);
