@@ -382,10 +382,10 @@ public class Xcls_MainWindow : Object
              
              
             //this.rooview.el.hide();
-            //this.projectsettings.el.show_all();
-            //this.projectsettings.show(this.project);
+            this.add_props.el.show_all();
+            //this.rightpalete.show(this.project);
         
-            //_this.projecteditview.el.save_easing_state();
+            _this.addpropsview.el.save_easing_state();
                 
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -393,14 +393,14 @@ public class Xcls_MainWindow : Object
             
             el.set_scale(0.5f,0.5f);
         
-            //_this.projecteditview.el.set_scale(1.0f,1.0f);
+            _this.addpropsview.el.set_scale(1.0f,1.0f);
            
            
          
             //_this.clutterfiles.loadProject(_this.project);
         
             el.restore_easing_state();
-            //_this.projecteditview.el.restore_easing_state();
+            _this.addpropsview.el.restore_easing_state();
             this.state = "addlistener";
         }
     public void showAddProp() {
@@ -430,7 +430,7 @@ public class Xcls_MainWindow : Object
         
             el.restore_easing_state();
             _this.addpropsview.el.restore_easing_state();
-            this.state = "object";
+            this.state = "addprop";
         }
     public void showObject() {
         
