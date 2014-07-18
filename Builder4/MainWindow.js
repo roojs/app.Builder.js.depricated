@@ -566,7 +566,7 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
-                                                    id : "paleteshowbutton",
+                                                    id : "addpropertybutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,

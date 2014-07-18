@@ -215,7 +215,7 @@
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
                                                                 "button_press_event": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showPalete();\n            break;\n        case \"showpalete\":\n            _this.hidePalete();\n        default:\n            break;\n    }\n    return false;    \n\n\n}"
                                                             },
-                                                            "id": "paleteshowbutton",
+                                                            "id": "addpropertybutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
