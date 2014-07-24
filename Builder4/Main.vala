@@ -20,7 +20,7 @@ int main (string[] args) {
 
 	var w = new Xcls_MainWindow();
 	//w.ref();
-	//w.project = proj;
+	w.project = proj;
 	w.initChildren();
 	w.el.show_all();
 	Gtk.main();
