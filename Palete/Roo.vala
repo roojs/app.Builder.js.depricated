@@ -97,7 +97,7 @@ namespace Palete {
 		// does not handle implements...
 	public override GirObject? getClass(string ename)
 	{
-
+		this.load();
 		return this.classes.get(ename);
 		
 	}
