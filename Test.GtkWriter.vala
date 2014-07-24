@@ -118,7 +118,12 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	var p = Palete.factory("Roo");
-	p.getPropertiesFor("props", "Roo.form");
+	var li = p.getPropertiesFor("props", "Roo.form");
+	
+	
+
+
+	
 	//print ("Drop points for Gtk.ScrolledWindow are : " + 
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
 	//);
