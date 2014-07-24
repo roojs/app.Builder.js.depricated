@@ -50,11 +50,11 @@ namespace Palete {
 		}
 		return ret;
 	}
-	    
+	Gee.HashMap<string,GirObject> classes; 
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
-
+		this.classes = new Gee.HashMap<string,GirObject>;
 
             
 		var pa = new Json.Parser();
@@ -68,24 +68,9 @@ namespace Palete {
 			var cls = new GirObject("class", key);  
 			cls.members = this.propsFromJSONArray(o.get_object().get_array_member("props"));
 			cls.signals = this.propsFromJSONArray(o.get_object().get_array_member("events"));
+			this.classes.set(key, cls);
+		}
 			
-/*
-{
- "success": true,
- "data": {
-  "Array": {
-   "props": [],
-   "events": []
-  },
-  "Date": {
-   "props": [],
-   "events": []
-  },
-  
-  "Roo.Ajax": {
-	  ....
-}
-
     		
 		
              
