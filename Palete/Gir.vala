@@ -68,7 +68,8 @@ namespace Palete {
 		this.is_array = false;
 		this.is_instance = false;
 		this.is_varargs = false;
- 
+		this.doctxt = "";
+		
 		this.sig = "";
 		
 		this.implements = new GLib.List<string>();
