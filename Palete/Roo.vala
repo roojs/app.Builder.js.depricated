@@ -31,19 +31,26 @@ namespace Palete {
 			  
         }
 
-	Gee.HashMap<string,GirObject> propsFromJSONArray(string type, JSON.Array)
+	Gee.HashMap<string,GirObject> propsFromJSONArray(string type, JSON.JsonArray ar)
 	{
 
+		var ret = new Gee.HashMap<string,GirObject>();
 		
-		for (
+		for (var i =0 ; i < ar.get_length(); i++) {
+			var o = ar.get_object_element(i);
 			var name = o.get_string_member("name"); 
 			var prop = new GirObject(string, name );  
+		     
 			prop.type        = o.get_string_member("type");
 		        prop.doctxt  = o.get_string_member("desc");
-			prop.propertyof = o.has_member("member") ? o.get_string_member("memberOf");
+			prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 			prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
 		     
-			ret.set(name,prop);    
+			ret.set(name,prop);
+		}
+		return ret;
+	}
+	    
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
