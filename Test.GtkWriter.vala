@@ -114,10 +114,11 @@ void rooWindowClutter()
 int main (string[] args) {
     Gtk.init (ref args);
 	GtkClutter.init (ref args);
-    new JsRender.Lang_Class();
+	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
-	
+	var p = Palete.factory("Roo");
+	p.
 	//print ("Drop points for Gtk.ScrolledWindow are : " + 
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
 	//);
@@ -130,7 +131,7 @@ int main (string[] args) {
 	//testLeftTree("Editor");
 	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
 	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
-	rooWindowClutter(); Gtk.main();
+	//rooWindowClutter(); Gtk.main();
     
 	
 	return 0;
