@@ -118,9 +118,13 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	var p = Palete.factory("Roo");
-	var li = p.getPropertiesFor("props", "Roo.form");
+	var li = p.getClass("Roo.form").toJSON();;
 	
-	
+        var generator = new Json.Generator ();
+	 
+	generator.set_root (root);
+
+	string str = generator.to_data (null);
 
 
 	
