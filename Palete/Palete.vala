@@ -263,8 +263,8 @@ namespace Palete
 
 
 		ret.loadFromJson(obj, 1);
-            return ret;
-        }
+		return ret;
+	}
           public override void  loadUsageFile (string fname) {
 
 
