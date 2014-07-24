@@ -36,9 +36,9 @@ namespace Palete {
 		for (
 			var name = o.get_string_member("name"); 
 			var prop = new GirObject(string, name );  
-			prop.type = o.get_string_member("type");
-		        prop.desc = o.get_string_member("desc");
-		     
+			prop.type        = o.get_string_member("type");
+		        prop.doctxt  = o.get_string_member("desc");
+			prop.propertyof = o.get_string_member("memberOf");
 	    
         public override void  load () {
 
