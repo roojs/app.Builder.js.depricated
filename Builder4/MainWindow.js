@@ -318,7 +318,7 @@ MainWindow=new XObject({
         this.add_props.el.show_all();
         this.add_props.show(
             Palete.factory(this.project.xtype), 
-            "props",
+            "signals",
             ae.fqn()
         );
         //this.rightpalete.show(this.project);
