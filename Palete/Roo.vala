@@ -95,7 +95,13 @@ namespace Palete {
         }
 
 		// does not handle implements...
+	public override GirObject? getClass(string ename)
+	{
+
+		return this.classes.get(ename);
 		
+	}
+	    
         public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
         {
 		    //print("Loading for " + ename);
@@ -126,6 +132,8 @@ namespace Palete {
 		//cls.overlayParent();
 
 		switch  (type) {
+			
+			
 			case "props":
 				return cls.props;
 			case "signals":
