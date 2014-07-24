@@ -66,7 +66,7 @@ namespace Palete {
 
 		var clist =  node.get_object().get_object_member("data");
     		clist.foreach_member((o , key, value) => {
-			//print(key+"\n");
+			print(key+"\n");
 		 
 			var cls = new GirObject("class", key);  
 			cls.props = this.propsFromJSONArray("prop", value.get_object().get_array_member("props"));
