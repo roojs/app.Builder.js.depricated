@@ -30,7 +30,7 @@ namespace Palete {
             this.name = "Roo";
 			  
         }
-       public override void  load () {
+        public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
  
@@ -39,9 +39,15 @@ namespace Palete {
 	  
         
         public string doc(string what) {
-            var ns = what.split(".")[0];
+		return "";
+		/*var ns = what.split(".")[0];
+
+
+		
+		
             var gir =  Gir.factory(ns);
 			return   gir.doc(what);
+			*/
 			
             //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         }
@@ -100,27 +106,27 @@ namespace Palete {
 
              
         }
-		public string[] getInheritsFor(string ename)
-		{
-			string[] ret = {};
-			var es = ename.split(".");
-			var gir = Gir.factory(es[0]);
-			
-			var cls = gir.classes.get(es[1]);
-			if (cls == null) {
-				return ret;
-			}
-			return cls.inheritsToStringArray();
-			
-
+	public string[] getInheritsFor(string ename)
+	{
+		string[] ret = {};
+		var es = ename.split(".");
+		var gir = Gir.factory(es[0]);
+		
+		var cls = gir.classes.get(es[1]);
+		if (cls == null) {
+			return ret;
 		}
-       
+		return cls.inheritsToStringArray();
+		
 
-		public override void fillPack(JsRender.Node node,JsRender.Node parent)
-		{   
+	}
 
-			 return;
-		}
+
+	public override void fillPack(JsRender.Node node,JsRender.Node parent)
+	{   
+
+		 return;
+	}
  
 	
     }
