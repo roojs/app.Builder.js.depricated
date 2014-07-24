@@ -118,11 +118,12 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	var p = Palete.factory("Roo");
-	var li = p.getClass("Roo.form").toJSON();;
+	var cl = p.getClass("Roo.form").toJSON();;
 	var n = new Json.Node(Json.NodeType.OBJECT);
+	n.initObject(cl);
         var generator = new Json.Generator ();
 	 
-	generator.set_root (root);
+	generator.set_root (n);
 
 	string str = generator.to_data (null);
 
