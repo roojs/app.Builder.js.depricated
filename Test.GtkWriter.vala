@@ -112,15 +112,15 @@ void rooWindowClutter()
 }
 */
 int main (string[] args) {
-    Gtk.init (ref args);
-	GtkClutter.init (ref args);
+	Gtk.init (ref args);
+	//GtkClutter.init (ref args);
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	var p = Palete.factory("Roo");
 	var cl = p.getClass("Roo.form").toJSON();;
 	var n = new Json.Node(Json.NodeType.OBJECT);
-	n.initObject(cl);
+	n.init_object(cl);
         var generator = new Json.Generator ();
 	generator.indent = 4;
 	generator.pretty = true;
