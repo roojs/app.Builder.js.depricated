@@ -40,8 +40,12 @@ namespace Palete {
 		pa.load_from_file("/usr/share/appBuilder/rooprops.txt");
 		var node = pa.get_root();
 
-		
-            
+		var clist =  node.get_object().get_object_member("data");
+    		clist.foreach_member((o , key, value) => {
+			//print(key+"\n");
+			var props = o.get_object().get_array_member("props");
+			var props = o.get_object().get_array_member("events");
+			
 /*
 {
  "success": true,
