@@ -380,15 +380,17 @@ public class Xcls_MainWindow : Object
         
              
              
-             
-             
+            var ae =      this.left_tree.getActiveElement();
+            if (ae == null) {
+                return;
+            }
              
             //this.rooview.el.hide();
             this.add_props.el.show_all();
             this.add_props.show(
                 Palete.factory(this.project.xtype), 
                 "props",
-                this.left_tree.getActiveElement().fqn()
+                ae.fqn()
             );
             //this.rightpalete.show(this.project);
         
