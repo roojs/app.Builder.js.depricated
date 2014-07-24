@@ -171,7 +171,7 @@ namespace Palete {
 				
 				this.signals.set(iter.get_key(), iter.get_value());
             }	
-		}
+	}
 		
         public Json.Object toJSON()
         {
