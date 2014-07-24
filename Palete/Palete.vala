@@ -250,19 +250,19 @@ namespace Palete
         public JsRender.Node? loadTemplate(string path)
         {
 
-		    var pa = new Json.Parser();
-            pa.load_from_file(path);
-            var node = pa.get_root();
-            
-            if (node.get_node_type () != Json.NodeType.OBJECT) {
-		        return null;
-	        }
-            var obj = node.get_object ();
-             
-            var ret = new JsRender.Node();
-	    
-		
-            ret.loadFromJson(obj, 1);
+		var pa = new Json.Parser();
+		pa.load_from_file(path);
+		var node = pa.get_root();
+
+		if (node.get_node_type () != Json.NodeType.OBJECT) {
+			return null;
+		}
+		var obj = node.get_object ();
+
+		var ret = new JsRender.Node();
+
+
+		ret.loadFromJson(obj, 1);
             return ret;
         }
           public override void  loadUsageFile (string fname) {
