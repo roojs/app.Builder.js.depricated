@@ -415,6 +415,10 @@ public class Xcls_MainWindow : Object
     public void showAddProp() {
         
              
+             var ae =      this.left_tree.getActiveElement();
+            if (ae == null) {
+                return;
+            }
              
              
              

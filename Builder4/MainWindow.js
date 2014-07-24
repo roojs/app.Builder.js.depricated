@@ -344,6 +344,10 @@ MainWindow=new XObject({
     'void:showAddProp' : () {
     
          
+         var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
          
          
          
