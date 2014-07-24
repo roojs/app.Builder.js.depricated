@@ -332,28 +332,28 @@ namespace Palete {
         public Gir (string ns)  
         {
 
-			var gi = GI.Repository.get_default();
-			gi.require(ns, null, 0);
+		var gi = GI.Repository.get_default();
+		gi.require(ns, null, 0);
 			
-		    var ver = gi.get_version(ns);
-		    unowned GLib.SList<string>  pth = GI.Repository.get_search_path ();
-		    var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0", "/share/gir-1.0");
-		   //console.log(fn);
-		    var file  = gir_path + "/" + ns + "-" + ver + ".gir";
-			// print("ns: " + ns + "\n");
-			// print("ver: " + ver + "\n");
-		    // print(file);
+		var ver = gi.get_version(ns);
+		unowned GLib.SList<string>  pth = GI.Repository.get_search_path ();
+		var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0", "/share/gir-1.0");
+		//console.log(fn);
+		var file  = gir_path + "/" + ns + "-" + ver + ".gir";
+		// print("ns: " + ns + "\n");
+		// print("ver: " + ver + "\n");
+		// print(file);
 
 
-			base("Package",ns);
+		base("Package",ns);
 				this.ns = ns;
-            //this.nodes = new Gee.Hashmap<string,what>();
+    	    //this.nodes = new Gee.Hashmap<string,what>();
              
-            var doc = Xml.Parser.parse_file (file);
-            var root = doc->get_root_element();
-            this.walk( root, (GirObject) this );
-		
-            delete doc;
+		var doc = Xml.Parser.parse_file (file);
+		var root = doc->get_root_element();
+		this.walk( root, (GirObject) this );
+
+		delete doc;
         
         }
         public void walk(Xml.Node* element, GirObject? parent)
