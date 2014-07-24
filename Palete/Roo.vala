@@ -39,8 +39,26 @@ namespace Palete {
 		var pa = new Json.Parser();
 		pa.load_from_file("/usr/share/appBuilder/rooprops.txt");
 		var node = pa.get_root();
+
+		
             
-          
+/*
+{
+ "success": true,
+ "data": {
+  "Array": {
+   "props": [],
+   "events": []
+  },
+  "Date": {
+   "props": [],
+   "events": []
+  },
+  
+  "Roo.Ajax": {
+	  ....
+}
+
     		
 		
              
