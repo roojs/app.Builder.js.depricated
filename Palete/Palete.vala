@@ -23,7 +23,7 @@ namespace Palete
 
     static Gee.HashMap<string,Palete>? cache = null;
     
-	public static Palete factory(string xtype)
+    public static Palete factory(string xtype)
     {
         if (cache == null) {
             cache = new Gee.HashMap<string,Palete>();
