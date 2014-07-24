@@ -69,7 +69,7 @@ namespace Palete {
 			cls.members = this.propsFromJSONArray(o.get_object().get_array_member("props"));
 			cls.signals = this.propsFromJSONArray(o.get_object().get_array_member("events"));
 			this.classes.set(key, cls);
-		}
+		});
 			
     		
 		
