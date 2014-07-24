@@ -54,7 +54,7 @@ namespace Palete {
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
-		this.classes = new Gee.HashMap<string,GirObject>;
+		this.classes = new Gee.HashMap<string,GirObject>();
 
             
 		var pa = new Json.Parser();
