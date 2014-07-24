@@ -45,7 +45,7 @@ namespace Palete {
 		        prop.doctxt  = o.get_string_member("desc");
 			prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 			prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
-		     
+			print(type + ":" + name +"\n");
 			ret.set(name,prop);
 		}
 		return ret;
