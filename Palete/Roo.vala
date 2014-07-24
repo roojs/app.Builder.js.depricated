@@ -30,6 +30,16 @@ namespace Palete {
             this.name = "Roo";
 			  
         }
+
+	Gee.HashMap<string,GirObject> PropsFromJSONArray(string type, JSON.Array)
+	{
+		for (
+			var name = o.get_string_member("name"); 
+			var prop = new GirObject(string, name );  
+			prop.type = o.get_string_member("type");
+		        prop.desc = o.get_string_member("desc");
+		     
+	    
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
@@ -43,7 +53,14 @@ namespace Palete {
 		var clist =  node.get_object().get_object_member("data");
     		clist.foreach_member((o , key, value) => {
 			//print(key+"\n");
-			var props = o.get_object().get_array_member("props");
+		 
+			{
+		his.classes    = new Gee.HashMap<string,GirObject>();
+		this.props      = new Gee.HashMap<string,GirObject>();
+		this.consts     = new Gee.HashMap<string,GirObject>();
+		this.signals    = new Gee.HashMap<string,GirObject>();
+			var cls = new GirObject("class", key);  
+			cls.members o.get_object().get_array_member("props");
 			var props = o.get_object().get_array_member("events");
 			
 /*
