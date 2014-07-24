@@ -31,7 +31,7 @@ namespace Palete {
 			  
         }
 
-	Gee.HashMap<string,GirObject> propsFromJSONArray(string type, Json.JsonArray ar)
+	Gee.HashMap<string,GirObject> propsFromJSONArray(string type, Json.Array ar)
 	{
 
 		var ret = new Gee.HashMap<string,GirObject>();
