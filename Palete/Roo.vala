@@ -50,7 +50,7 @@ namespace Palete {
 		}
 		return ret;
 	}
-	public Gee.HashMap<string,GirObject> classes; 
+	 Gee.HashMap<string,GirObject> classes; 
         public override void  load () {
 
 		if (this.classes != null) {
