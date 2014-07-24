@@ -350,7 +350,11 @@ MainWindow=new XObject({
          
         //this.rooview.el.hide();
         this.add_props.el.show_all();
-        //this.rightpalete.show(this.project);
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "props",
+            ae.fqn()
+        );
     
         _this.addpropsview.el.save_easing_state();
             
