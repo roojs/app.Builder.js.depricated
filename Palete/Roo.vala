@@ -31,15 +31,19 @@ namespace Palete {
 			  
         }
 
-	Gee.HashMap<string,GirObject> PropsFromJSONArray(string type, JSON.Array)
+	Gee.HashMap<string,GirObject> propsFromJSONArray(string type, JSON.Array)
 	{
+
+		
 		for (
 			var name = o.get_string_member("name"); 
 			var prop = new GirObject(string, name );  
 			prop.type        = o.get_string_member("type");
 		        prop.doctxt  = o.get_string_member("desc");
-			prop.propertyof = o.get_string_member("memberOf");
-	    
+			prop.propertyof = o.has_member("member") ? o.get_string_member("memberOf");
+			prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
+		     
+			ret.set(name,prop);    
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
@@ -54,14 +58,9 @@ namespace Palete {
     		clist.foreach_member((o , key, value) => {
 			//print(key+"\n");
 		 
-			{
-		his.classes    = new Gee.HashMap<string,GirObject>();
-		this.props      = new Gee.HashMap<string,GirObject>();
-		this.consts     = new Gee.HashMap<string,GirObject>();
-		this.signals    = new Gee.HashMap<string,GirObject>();
 			var cls = new GirObject("class", key);  
-			cls.members o.get_object().get_array_member("props");
-			var props = o.get_object().get_array_member("events");
+			cls.members = this.propsFromJSONArray(o.get_object().get_array_member("props"));
+			cls.signals = this.propsFromJSONArray(o.get_object().get_array_member("events"));
 			
 /*
 {
