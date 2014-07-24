@@ -42,12 +42,12 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
-    public Xcls_WindowAddProp add_props;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_ProjectSettings projectsettings;
     public Xcls_RightPalete rightpalete;
+    public Xcls_WindowAddProp add_props;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
@@ -63,11 +63,11 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.add_props = null;
         this.clutterfiles = null;
         this.left_props = null;
         this.projectsettings = null;
         this.rightpalete = null;
+        this.add_props = null;
         this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
@@ -385,6 +385,11 @@ public class Xcls_MainWindow : Object
              
             //this.rooview.el.hide();
             this.add_props.el.show_all();
+            this.add_props.show(
+                Palete.factory(this.project.xtype), 
+                "props",
+                this.left_tree.getActiveElement().fqn()
+            );
             //this.rightpalete.show(this.project);
         
             _this.addpropsview.el.save_easing_state();
