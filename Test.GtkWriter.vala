@@ -119,7 +119,7 @@ int main (string[] args) {
 	Project.Project.loadAll();
 	var p = Palete.factory("Roo");
 	var li = p.getClass("Roo.form").toJSON();;
-	
+	var n = new Json.Node(Json.NodeType.OBJECT);
         var generator = new Json.Generator ();
 	 
 	generator.set_root (root);
