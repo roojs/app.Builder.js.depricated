@@ -105,12 +105,11 @@ namespace Palete {
 		    //}
 		    // use introspection to get lists..
 	 
-   		var es = ename.split(".");
-		var gir = Gir.factory(es[0]);
-
-		var cls = gir.classes.get(es[1]);
+   		
+		var cls = this.classes.get(es[1]);
+		var ret = new Gee.HashMap<string,GirObject>();
 		if (cls == null) {
-			var ret = new Gee.HashMap<string,GirObject>();
+			
 			return ret;
 			//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
 	
@@ -121,7 +120,7 @@ namespace Palete {
 		//cls.parseMethods(); // ?? needed for ??..
 		//cls.parseConstructors(); // ?? needed for ??..
 
-		cls.overlayParent();
+		//cls.overlayParent();
 
 		switch  (type) {
 			case "props":
@@ -129,9 +128,9 @@ namespace Palete {
 			case "signals":
 				return cls.signals;
 			case "methods":
-				return cls.methods;
+				return ret;
 			case "ctors":
-				return cls.ctors;
+				return ret;
 			default:
 				throw new Error.INVALID_VALUE( "getPropertiesFor called with: " + type);
 				//var ret = new Gee.HashMap<string,GirObject>();
