@@ -53,7 +53,7 @@ void testBuilderFile(string ptype, string dir,  string name, string test)
 	print("invalid test?\n");
 }
 
- 
+ /*
 void testLeftTree(string name)
 {
 	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
@@ -110,7 +110,7 @@ void rooWindowClutter()
 	w.el.show_all();
 		
 }
-
+*/
 int main (string[] args) {
     Gtk.init (ref args);
 	GtkClutter.init (ref args);
