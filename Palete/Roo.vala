@@ -39,7 +39,7 @@ namespace Palete {
 		for (var i =0 ; i < ar.get_length(); i++) {
 			var o = ar.get_object_element(i);
 			var name = o.get_string_member("name"); 
-			var prop = new GirObject(string, name );  
+			var prop = new GirObject(type, name );  
 		     
 			prop.type        = o.get_string_member("type");
 		        prop.doctxt  = o.get_string_member("desc");
