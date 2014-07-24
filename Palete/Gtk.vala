@@ -54,7 +54,16 @@ namespace Palete {
         }
 
 		// does not handle implements...
+	public override GirObject? getClass(string ename)
+	{
+
+		var es = ename.split(".");
+		var gir = Gir.factory(es[0]);
 		
+		return gir.classes.get(es[1]);
+		
+	}
+
         public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
         {
             //print("Loading for " + ename);
