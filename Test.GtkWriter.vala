@@ -122,10 +122,11 @@ int main (string[] args) {
 	var n = new Json.Node(Json.NodeType.OBJECT);
 	n.initObject(cl);
         var generator = new Json.Generator ();
-	 
+	generator.indent = 4;
+	generator.pretty = true;
 	generator.set_root (n);
 
-	string str = generator.to_data (null);
+	print(generator.to_data (null));
 
 
 	
