@@ -106,7 +106,7 @@ namespace Palete {
 		    // use introspection to get lists..
 	 
    		
-		var cls = this.classes.get(es[1]);
+		var cls = this.classes.get(ename);
 		var ret = new Gee.HashMap<string,GirObject>();
 		if (cls == null) {
 			
