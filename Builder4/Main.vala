@@ -10,9 +10,12 @@ int main (string[] args) {
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
-	//var proj = Project.Project.getProject("Pman.Core");
-	
-	//proj.scanDirs();
+	var proj = Project.Project.getProject("Pman.Core");
+	if (proj == null) {
+		print("could not load test project Pman.Core");
+		return 0;
+	}
+	proj.scanDirs();
 
 
 	var w = new Xcls_MainWindow();
