@@ -53,6 +53,9 @@ namespace Palete {
 	Gee.HashMap<string,GirObject> classes; 
         public override void  load () {
 
+		if (this.classes != null) {
+			return;
+		}
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
 		this.classes = new Gee.HashMap<string,GirObject>();
 
@@ -98,7 +101,7 @@ namespace Palete {
 		    //print("Loading for " + ename);
 		    
 
-
+		this.load();
 				// if (typeof(this.proplist[ename]) != 'undefined') {
 		        //print("using cache");
 		     //   return this.proplist[ename][type];
