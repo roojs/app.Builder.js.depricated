@@ -33,7 +33,16 @@ namespace Palete {
         public override void  load () {
 
 		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
- 
+
+
+            
+		var pa = new Json.Parser();
+		pa.load_from_file("/usr/share/appBuilder/rooprops.txt");
+		var node = pa.get_root();
+            
+          
+    		
+		
              
         }
 	  
