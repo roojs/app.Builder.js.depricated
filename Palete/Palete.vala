@@ -35,8 +35,8 @@ namespace Palete
             case "Gtk":
                 cache.set(xtype, new Gtk());
                 break;
-            //case "Roo":
-            //    cache.set(xtype, new Roo());
+            case "Roo":
+                cache.set(xtype, new Roo());
                 break;
             default:
                 throw new Error.INVALID_TYPE("invalid argument to Palete factory");
