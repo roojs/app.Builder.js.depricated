@@ -46,7 +46,7 @@ all: datatest;
 
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
-			Builder4/TestLeftProps.vala \
+			tests/TestLeftProps.vala \
 			Builder4/WindowLeftProps.vala \
 			-o /tmp/test-leftprops
 
