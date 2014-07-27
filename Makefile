@@ -44,15 +44,17 @@ BUILDER4= Builder4/Application.vala \
 #all:  builder4
 all: datatest;
 
+
+builder4:
+	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
+		Builder4/Main.vala  -o /tmp/Builder4
+
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
 			tests/TestLeftProps.vala \
 			Builder4/WindowLeftProps.vala \
 			-o /tmp/test-leftprops
 
-builder4:
-	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
-		Builder4/Main.vala  -o /tmp/Builder4
 
 test-palate:
 	valac -g$(FLAGS) $(PKGS) \
