@@ -59,6 +59,7 @@ test-leftprops:
 
 test-palate:
 	valac -g$(FLAGS) $(PKGS) \
+		Builder4/WindowRightPalete.vala \
 		tests/PaleteTest.vala -o /tmp/test-palete
 
 #fixme -- old...
