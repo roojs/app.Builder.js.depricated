@@ -51,9 +51,12 @@ test-leftprops:
 			-o /tmp/test-leftprops
 
 builder4:
-	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
+	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
 		Builder4/Main.vala  -o /tmp/Builder4
 
+test-palate:
+	valac -g$(FLAGS) $(PKGS) \
+		tests/PaleteTest.vala -o /tmp/test-palete
 
 datatest:
 	valac -g$(FLAGS) $(PKGS) \
