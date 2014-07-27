@@ -38,11 +38,10 @@ BUILDER4= Builder4/Application.vala \
 		Builder4/WindowAddProp.vala \
 
 
-# for testing 
-#all: test-leftprops
-
+# compile what... for testing 
 #all:  builder4
-all: datatest;
+#all: test-leftprops
+all: test-palate
 
 
 builder4:
