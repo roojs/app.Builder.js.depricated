@@ -49,17 +49,19 @@ builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
 		Builder4/Main.vala  -o /tmp/Builder4
 
+#-- tests 
+
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
 			tests/TestLeftProps.vala \
 			Builder4/WindowLeftProps.vala \
 			-o /tmp/test-leftprops
 
-
 test-palate:
 	valac -g$(FLAGS) $(PKGS) \
 		tests/PaleteTest.vala -o /tmp/test-palete
 
+#fixme -- old...
 datatest:
 	valac -g$(FLAGS) $(PKGS) \
 		Test.GtkWriter.vala \
