@@ -61,11 +61,7 @@ test-palate:
 datatest:
 	valac -g$(FLAGS) $(PKGS) \
 		Test.GtkWriter.vala \
-		JsRender/*.vala \
-		Project/*.vala \
-		Palete/*.vala \
 		-o /tmp/test
-#		Builder4/*.vala \
 
 clean:
 	rm -f /tmp/Builder4
