@@ -10,8 +10,10 @@ int main (string[] args) {
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
+/*
 	var p = Palete.factory("Roo");
 	var cl = p.getClass("Roo.form.Form").toJSON();;
+	
 	var n = new Json.Node(Json.NodeType.OBJECT);
 	n.set_object(cl);
     var generator = new Json.Generator ();
@@ -20,7 +22,7 @@ int main (string[] args) {
 	generator.set_root (n);
 
 	print(generator.to_data (null));
- 
+ */
     
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
@@ -31,9 +33,7 @@ int main (string[] args) {
  
 	left_props.load(tf, tf.tree); 
 
-		
-	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
-	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
+		 
 	 Gtk.main();
     
 	
