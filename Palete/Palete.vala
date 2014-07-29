@@ -79,7 +79,7 @@ namespace Palete
          * 
          */
         /*
-        gatherList: function (existing) {
+        listChildren: function (existing) {
             existing = existing || [];
            // existing.push('*top'); // always have top
             var ret  = []; 
@@ -119,6 +119,47 @@ namespace Palete
             
         },
         */
+	public string[] getChildList(string rval)
+        {
+
+		if (this.map == null) {
+			this.load();
+		}
+
+				
+				// should be a bit more than this..
+			// -> it should look for all elements that inherit 
+    		string[] ret = {};
+		var rt = new Gee.ArrayList<string>();
+		for (var i = 0; i < this.map.size; i++) {
+			var m = this.map.get(i);
+				
+        		if (m.left.index_of(rval) < 0) {
+				continue;
+			}
+			print("found LEFT, adding right\n");
+		
+			for(var ii =0; ii < m.right.size; ii++) {
+        			var l = m.right.get(ii);
+					
+			        if (ret.index_of(l) > -1) {
+			            continue;
+			        }
+				print("ADD " + string.joinv(", ", ret) + "\n");
+        			ret += l;
+				rt.add(l);
+    			}
+       			
+                
+    		}
+		print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
+		//console.log("DROP LIST:");
+		//console.dump(ret);
+		return ret;
+            
+        }
+
+	    
         public string[] getDropList(string rval)
         {
 
@@ -142,7 +183,7 @@ namespace Palete
 			for(var ii =0; ii < m.left.size; ii++) {
         			var l = m.left.get(ii);
 					
-			        if (rt.index_of(l) > -1) {
+			        if (ret.index_of(l) > -1) {
 			            continue;
 			        }
 				print("ADD " + string.joinv(", ", ret) + "\n");
@@ -152,6 +193,7 @@ namespace Palete
        			
                 
     		}
+		print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
 		//console.log("DROP LIST:");
 		//console.dump(ret);
 		return ret;
