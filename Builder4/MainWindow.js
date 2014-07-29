@@ -383,13 +383,17 @@ MainWindow=new XObject({
          
         // what's the active node on the left hand side..
         
-             
+        var n = _this.left_tree.getActiveElement();
+        if (n == null) {
+            return;
+        }
+        
          
          
          
         //this.rooview.el.hide();
         this.rightpalete.el.show_all();
-        
+        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
     
         
         //this.rightpalete.show(this.project);
