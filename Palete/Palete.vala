@@ -119,13 +119,15 @@ namespace Palete
             
         },
         */
-	public string[] getChildList(string rval)
+	public string[] getChildList(string in_rval)
         {
 
 		if (this.map == null) {
 			this.load();
 		}
-
+		// empty == *top
+		
+		var rval = in_rval == "" ? "*top" : in_rval; 
 				
 				// should be a bit more than this..
 			// -> it should look for all elements that inherit 
