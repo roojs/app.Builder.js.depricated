@@ -154,6 +154,21 @@ MainWindow=new XObject({
             this.left_props.load(this.left_tree.getActiveFile(), sel);
             switch (this.state) {
                 case "object": 
+                     var n = _this.left_tree.getActiveElement();
+                     if (n == null) {
+                        break;
+                    }
+                    this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
+                    break;
+            }
+                    
+        }
+        
+         
+         
+         
+    
+    
                     // load list..
             }
             
