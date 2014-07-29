@@ -178,7 +178,7 @@ namespace Palete
         		if (m.right.index_of(rval) < 0) {
 				continue;
 			}
-			print("found RIGHT, adding left\n");
+			//print("found RIGHT, adding left\n");
 		
 			for(var ii =0; ii < m.left.size; ii++) {
         			var l = m.left.get(ii);
@@ -186,14 +186,14 @@ namespace Palete
 			        if (rt.index_of(l) > -1) {
 			            continue;
 			        }
-				print("ADD " + string.joinv(", ", ret) + "\n");
+				//print("ADD " + string.joinv(", ", ret) + "\n");
         			ret += l;
 				rt.add(l);
     			}
        			
                 
     		}
-		print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
+		//print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
 		//console.log("DROP LIST:");
 		//console.dump(ret);
 		return ret;
