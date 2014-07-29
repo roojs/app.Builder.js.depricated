@@ -252,8 +252,10 @@ static void ___lambda4__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer s
 void xcls_window_xcls_menuitem7_init (Xcls_WindowXcls_MenuItem7* self, Xcls_Window* _owner) {
 	Xcls_Window* _tmp0_ = NULL;
 	Xcls_Window* _tmp1_ = NULL;
+	GtkMenuItem* el = NULL;
 	GtkMenuItem* _tmp2_ = NULL;
 	GtkMenuItem* _tmp3_ = NULL;
+	GtkMenuItem* _tmp4_ = NULL;
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (_owner != NULL);
 	_tmp0_ = _owner;
@@ -262,11 +264,14 @@ void xcls_window_xcls_menuitem7_init (Xcls_WindowXcls_MenuItem7* self, Xcls_Wind
 	self->_this = _tmp1_;
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new_with_label ("Delete Element");
 	g_object_ref_sink (_tmp2_);
+	el = _tmp2_;
+	_tmp3_ = _g_object_ref0 (el);
 	_g_object_unref0 (self->el);
-	self->el = _tmp2_;
+	self->el = _tmp3_;
 	g_print ("add activate\n");
-	_tmp3_ = self->el;
-	g_signal_connect_object (_tmp3_, "activate", (GCallback) ___lambda4__gtk_menu_item_activate, self, 0);
+	_tmp4_ = self->el;
+	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda4__gtk_menu_item_activate, self, 0);
+	_g_object_unref0 (el);
 }
 
 
