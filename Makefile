@@ -19,8 +19,7 @@ CORESRC= JsRender/*.vala \
 		Palete/*.vala \
 		Builder4/Applicaiton.vala
 
-BUILDER4=  \
-		Builder4/About.vala \
+BUILDER4=   Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/DialogNewComponent.vala \
 		Builder4/StandardErrorDialog.vala \
