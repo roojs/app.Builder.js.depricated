@@ -17,7 +17,7 @@ FLAGS= -g --vapidir=.
 CORESRC= JsRender/*.vala \
 		Project/*.vala \
 		Palete/*.vala \
-		Builder4/Applicaiton.vala
+		Builder4/Application.vala
 
 BUILDER4=   Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
