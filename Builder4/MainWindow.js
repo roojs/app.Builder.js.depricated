@@ -146,11 +146,18 @@ MainWindow=new XObject({
         this.left_tree.ref();
         this.tree.el.pack_start(this.left_tree.el,true, true,0);
         this.left_tree.node_selected.connect((sel) => {
+            
             if (sel == null) {
                 this.left_props.el.hide();
             } 
             this.left_props.el.show();
             this.left_props.load(this.left_tree.getActiveFile(), sel);
+            switch (this.state) {
+                case "object": 
+                    // load list..
+            }
+            
+            
             
         
         });
