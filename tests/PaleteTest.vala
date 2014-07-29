@@ -31,7 +31,7 @@ int main (string[] args) {
 	w.add(left_props.el);
 	w.show_all();
  
-	left_props.load(tf, tf.tree); 
+	left_props.load(Palete.factory("Roo"), "Roo.form.Form"); 
 
 		 
 	 Gtk.main();
