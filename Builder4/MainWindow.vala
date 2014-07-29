@@ -232,20 +232,7 @@ public class Xcls_MainWindow : Object
                         this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
                         break;
                 }
-                        
-            }
-            
-             
-             
-             
-        
-        
-                        // load list..
-                }
-                
-                
-                
-            
+                  
             });
             this.left_tree.before_node_change.connect((sel) => {
                 this.left_props.finish_editing();
