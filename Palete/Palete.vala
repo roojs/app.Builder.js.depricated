@@ -51,12 +51,12 @@ namespace Palete
        
         public string name;
 
-		public Gee.ArrayList<Usage> map;
+	public Gee.ArrayList<Usage> map;
 		
         public Palete()
         {
             // nothing?
-			this.map = null;
+		this.map = null;
         }
         
         
@@ -122,37 +122,37 @@ namespace Palete
         public string[] getDropList(string rval)
         {
 
-			if (this.map == null) {
-				this.load();
-			}
+		if (this.map == null) {
+			this.load();
+		}
 
 				
 				// should be a bit more than this..
 			// -> it should look for all elements that inherit 
-            string[] ret = {};
-			var rt = new Gee.ArrayList<string>();
-			for (var i = 0; i < this.map.size; i++) {
-				var m = this.map.get(i);
+    		string[] ret = {};
+		var rt = new Gee.ArrayList<string>();
+		for (var i = 0; i < this.map.size; i++) {
+			var m = this.map.get(i);
 				
-                if (m.right.index_of(rval) > -1) {
-					print("found RIGHT, adding left\n");
-					
-					for(var ii =0; ii < m.left.size; ii++) {
-                		var l = m.left.get(ii);
+        		if (m.right.index_of(rval) > -1) {
+				print("found RIGHT, adding left\n");
+			
+				for(var ii =0; ii < m.left.size; ii++) {
+                			var l = m.left.get(ii);
 						
-                        if (rt.index_of(l) > -1) {
-                            continue;
-                        }
+				        if (rt.index_of(l) > -1) {
+				            continue;
+				        }
 						//print("ADD " + string.joinv(", ", ret) + "\n");
-                        ret += l;
-						rt.add(l);
-                    }
-                }
+                			ret += l;
+					rt.add(l);
+            			}
+       			}
                 
-            }
-            //console.log("DROP LIST:");
-            //console.dump(ret);
-            return ret;
+    		}
+		//console.log("DROP LIST:");
+		//console.dump(ret);
+		return ret;
             
         }
         /**

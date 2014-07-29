@@ -154,35 +154,6 @@ WindowRightPalete=new XObject({
                                         return  (string)gval;
                                         
                                         
-                                    },
-                                    'void:load' : (GLib.List<string> tr, Gtk.TreeIter? iter)
-                                    {
-                                        if (iter == null) {
-                                            this.el.clear();
-                                        }
-                                        //console.log('Project tree load: ' + tr.length);
-                                    
-                                        Gtk.TreeIter citer;
-                                        //this.insert(citer,iter,0);
-                                        for(var i =0 ; i < tr.length(); i++) {
-                                            if (iter == null) {
-                                                
-                                                this.el.append(out citer);   
-                                            } else {
-                                                this.el.insert_before(out citer,iter);
-                                            }
-                                            
-                                            var r = tr.nth_data(i);
-                                            //Seed.print(r);
-                                            this.el.set_value(citer, 0,   r ); // title 
-                                            
-                                            //this.el.set_value(citer, 1,  new GObject.Value( r)); //id
-                                            //if (r.cn && r.cn.length) {
-                                            //    this.load(r.cn, citer);
-                                            //}
-                                        }
-                                        
-                                        
                                     }
                                 },
                                 {

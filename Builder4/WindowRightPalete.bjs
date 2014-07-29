@@ -51,7 +51,6 @@
                                             "xtype": "ListStore",
                                             "|columns": "typeof(string),typeof(string)",
                                             "|string:getValue": " (Gtk.TreeIter iter, int col)  {\n    GLib.Value gval;\n     this.el.get_value(iter, col , out gval);\n    return  (string)gval;\n    \n    \n}",
-                                            "|void:load": " (GLib.List<string> tr, Gtk.TreeIter? iter)\n{\n    if (iter == null) {\n        this.el.clear();\n    }\n    //console.log('Project tree load: ' + tr.length);\n\n    Gtk.TreeIter citer;\n    //this.insert(citer,iter,0);\n    for(var i =0 ; i < tr.length(); i++) {\n        if (iter == null) {\n            \n            this.el.append(out citer);   \n        } else {\n            this.el.insert_before(out citer,iter);\n        }\n        \n        var r = tr.nth_data(i);\n        //Seed.print(r);\n        this.el.set_value(citer, 0,   r ); // title \n        \n        //this.el.set_value(citer, 1,  new GObject.Value( r)); //id\n        //if (r.cn && r.cn.length) {\n        //    this.load(r.cn, citer);\n        //}\n    }\n    \n    \n}",
                                             "|xns": "Gtk"
                                         },
                                         {
