@@ -11,6 +11,9 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRightPalete=new XObject({
     xtype: Gtk.VBox,
+    'void:clear' : () {
+       this.model.el.clear();
+    },
     id : "RightPalete",
     pack : "pack_start,false,false",
     'void:load' : (Palete.Palete pal, string cls ) {
