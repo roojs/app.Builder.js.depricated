@@ -43,13 +43,12 @@ BUILDER4= Builder4/Application.vala \
 #all: test-leftprops
 all: test-palate
 
-
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
 		Builder4/Main.vala  -o /tmp/Builder4
 
 #-- tests 
-
+ 
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
 			tests/TestLeftProps.vala \
@@ -63,9 +62,9 @@ test-palate:
 
 #fixme -- old...
 datatest:
-	valac -g$(FLAGS) $(PKGS) \
-		Test.GtkWriter.vala \
-		-o /tmp/test
+	 valac $(FLAGS) $(PKGS) $(CORESRC) \
+		Test.GtkWriter.vala -o /tmp/test-data
+
 
 clean:
 	rm -f /tmp/Builder4
