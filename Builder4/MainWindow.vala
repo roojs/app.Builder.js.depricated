@@ -225,12 +225,12 @@ public class Xcls_MainWindow : Object
                 this.left_props.load(this.left_tree.getActiveFile(), sel);
                 switch (this.state) {
                     case "object": 
-                         var n = _this.left_tree.getActiveElement();
-                         if (n == null) {
+                          
+                         if (sel == null) {
                             this.rightpalete.clear();
                             break;
                         }
-                        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
+                        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
                         break;
                 }
                   
