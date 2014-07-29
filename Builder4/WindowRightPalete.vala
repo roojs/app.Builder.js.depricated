@@ -27,7 +27,6 @@ public class Xcls_RightPalete : Object
     public Xcls_txtrender txtrender;
 
         // my vars
-    public Palete.Palete provider;
     public signal void after_node_change(JsRender.Node? node);
     public signal void before_node_change(JsRender.Node? node);
     public signal void drag_end();
@@ -207,13 +206,7 @@ public class Xcls_RightPalete : Object
                     
             
                     _this.model.el.get_value(iter, 0, out value);
-                    if (_this.provider == null) {
-                        return;
-                    }
-                    //if (!this.get('/RightPalete').provider) {
-                    //    return false;
-                    //}
-                    //this.dropList = _this.provider.getDropList((string)value);
+                    
                     this.dragData = (string) value;
                      
                     

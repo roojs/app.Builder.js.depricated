@@ -70,13 +70,7 @@ WindowRightPalete=new XObject({
                                         
                                 
                                         _this.model.el.get_value(iter, 0, out value);
-                                        if (_this.provider == null) {
-                                            return;
-                                        }
-                                        //if (!this.get('/RightPalete').provider) {
-                                        //    return false;
-                                        //}
-                                        //this.dropList = _this.provider.getDropList((string)value);
+                                        
                                         this.dragData = (string) value;
                                          
                                         
