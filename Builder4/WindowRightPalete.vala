@@ -52,7 +52,7 @@ public class Xcls_RightPalete : Object
            
            // this.get('model').expanded();
             
-            var tr = pal.getDropList(cls);
+            var tr = pal.getChildList(cls);
             this.model.el.clear();
         
         
