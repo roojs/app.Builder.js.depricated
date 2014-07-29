@@ -218,6 +218,8 @@ public class Xcls_MainWindow : Object
             this.tree.el.pack_start(this.left_tree.el,true, true,0);
             this.left_tree.node_selected.connect((sel) => {
                 
+                print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
+                
                 if (sel == null) {
                     this.left_props.el.hide();
                 } 
