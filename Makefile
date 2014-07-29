@@ -56,7 +56,7 @@ test-leftprops:
 			-o /tmp/test-leftprops
 
 test-palate:
-	valac $(FLAGS) $(PKGS) \
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/WindowRightPalete.vala \
 		tests/PaleteTest.vala -o /tmp/test-palete
 
