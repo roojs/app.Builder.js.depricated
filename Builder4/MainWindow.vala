@@ -452,12 +452,17 @@ public class Xcls_MainWindow : Object
     public void showObject() {
         
              
-             
+            // what's the active node on the left hand side..
+            
+                 
              
              
              
             //this.rooview.el.hide();
             this.rightpalete.el.show_all();
+            
+        
+            
             //this.rightpalete.show(this.project);
         
             _this.objectview.el.save_easing_state();
