@@ -38,36 +38,34 @@ BUILDER4= Builder4/Application.vala \
 		Builder4/WindowAddProp.vala \
 
 
-# for testing 
-#all: test-leftprops
-
+# compile what... for testing 
 #all:  builder4
-all: datatest;
+#all: test-leftprops
+all: test-palate
+
+
+builder4:
+	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
+		Builder4/Main.vala  -o /tmp/Builder4
+
+#-- tests 
 
 test-leftprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC) \
-			Builder4/TestLeftProps.vala \
+			tests/TestLeftProps.vala \
 			Builder4/WindowLeftProps.vala \
 			-o /tmp/test-leftprops
 
-builder4:
-	 valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
-		Builder4/Main.vala  -o /tmp/Builder4
+test-palate:
+	valac -g$(FLAGS) $(PKGS) \
+		Builder4/WindowRightPalete.vala \
+		tests/PaleteTest.vala -o /tmp/test-palete
 
-
+#fixme -- old...
 datatest:
-	valac -g  --pkg gtk+-3.0 \
-		--pkg gtksourceview-3.0 \
-		--pkg libxml-2.0 \
-		--pkg json-glib-1.0 \
-		--pkg gee-1.0 \
-		--pkg gobject-introspection-1.0 \
+	valac -g$(FLAGS) $(PKGS) \
 		Test.GtkWriter.vala \
-		JsRender/*.vala \
-		Project/*.vala \
-		Palete/*.vala \
 		-o /tmp/test
-#		Builder4/*.vala \
 
 clean:
 	rm -f /tmp/Builder4
