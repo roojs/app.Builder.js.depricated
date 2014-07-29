@@ -13,10 +13,32 @@ WindowRightPalete=new XObject({
     xtype: Gtk.VBox,
     id : "RightPalete",
     pack : "pack_start,false,false",
-    'void:show' : () {
+    'void:show' : (Palete.Palete pal, string cls ) {
        
        // this.get('model').expanded();
-         
+        
+    
+        this.model.el.clear();
+    
+        //console.log('Project tree load: ' + tr.length);
+    
+        Gtk.TreeIter citer;
+        //this.insert(citer,iter,0);
+        for(var i =0 ; i < tr.length(); i++) {
+             this.model.el.append(out citer);   
+            
+            var r = tr.nth_data(i);
+            //Seed.print(r);
+            this.el.set_value(citer, 0,   r ); // title 
+            
+            //this.el.set_value(citer, 1,  new GObject.Value( r)); //id
+            //if (r.cn && r.cn.length) {
+            //    this.load(r.cn, citer);
+            //}
+        }
+        
+        
+    } 
     },
     items : [
         {
