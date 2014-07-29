@@ -39,9 +39,9 @@ BUILDER4=   Builder4/About.vala \
 
 
 # compile what... for testing 
-#all:  builder4
+all:  builder4
 #all: test-leftprops
-all: test-palate
+#all: test-palate
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
