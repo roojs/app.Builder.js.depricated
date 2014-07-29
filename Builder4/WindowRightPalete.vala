@@ -47,6 +47,7 @@ public class Xcls_RightPalete : Object
     }
 
     // userdefined functions 
+    public void clear
     public void load (Palete.Palete pal, string cls ) {
            
            // this.get('model').expanded();

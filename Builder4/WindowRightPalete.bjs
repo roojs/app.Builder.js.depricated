@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.bjs",
     "items": [
         {
+            "|void:clear": "",
             ".signal:void:after_node_change(JsRender.Node? node)": "",
             ".signal:void:before_node_change(JsRender.Node? node)": "",
             ".signal:void:drag_end()": "",
