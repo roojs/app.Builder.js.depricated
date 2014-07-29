@@ -469,7 +469,7 @@ public class Xcls_WindowLeftTree : Object
                 
                 if (this.el.get_selection().count_selected_rows() < 1) {
             
-            
+                    print("selected rows < 1\n");
                     //??this.model.load( false);
                     _this.node_selected(null);
                     
