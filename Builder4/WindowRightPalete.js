@@ -13,7 +13,7 @@ WindowRightPalete=new XObject({
     xtype: Gtk.VBox,
     id : "RightPalete",
     pack : "pack_start,false,false",
-    'void:show' : (Palete.Palete pal, string cls ) {
+    'void:load' : (Palete.Palete pal, string cls ) {
        
        // this.get('model').expanded();
         
