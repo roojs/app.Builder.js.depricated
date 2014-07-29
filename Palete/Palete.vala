@@ -142,7 +142,7 @@ namespace Palete
 			for(var ii =0; ii < m.right.size; ii++) {
         			var l = m.right.get(ii);
 					
-			        if (ret.index_of(l) > -1) {
+			        if (rt.index_of(l) > -1) {
 			            continue;
 			        }
 				print("ADD " + string.joinv(", ", ret) + "\n");
@@ -183,7 +183,7 @@ namespace Palete
 			for(var ii =0; ii < m.left.size; ii++) {
         			var l = m.left.get(ii);
 					
-			        if (ret.index_of(l) > -1) {
+			        if (rt.index_of(l) > -1) {
 			            continue;
 			        }
 				print("ADD " + string.joinv(", ", ret) + "\n");
