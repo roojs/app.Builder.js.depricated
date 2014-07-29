@@ -134,20 +134,22 @@ namespace Palete
 		for (var i = 0; i < this.map.size; i++) {
 			var m = this.map.get(i);
 				
-        		if (m.right.index_of(rval) > -1) {
-				print("found RIGHT, adding left\n");
-			
-				for(var ii =0; ii < m.left.size; ii++) {
-                			var l = m.left.get(ii);
-						
-				        if (rt.index_of(l) > -1) {
-				            continue;
-				        }
-						//print("ADD " + string.joinv(", ", ret) + "\n");
-                			ret += l;
-					rt.add(l);
-            			}
-       			}
+        		if (m.right.index_of(rval) < 0) {
+				continue;
+			}
+			print("found RIGHT, adding left\n");
+		
+			for(var ii =0; ii < m.left.size; ii++) {
+        			var l = m.left.get(ii);
+					
+			        if (rt.index_of(l) > -1) {
+			            continue;
+			        }
+				print("ADD " + string.joinv(", ", ret) + "\n");
+        			ret += l;
+				rt.add(l);
+    			}
+       			
                 
     		}
 		//console.log("DROP LIST:");
