@@ -20,16 +20,13 @@ WindowRightPalete=new XObject({
         var tr = pal.getDropList(cls);
         this.model.el.clear();
     
-        //console.log('Project tree load: ' + tr.length);
     
         Gtk.TreeIter citer;
-        //this.insert(citer,iter,0);
+    
         for(var i =0 ; i < tr.length; i++) {
              this.model.el.append(out citer);   
-            
-            var r = tr[i]
-            //Seed.print(r);
-            this.el.set_value(citer, 0,   r ); // title 
+             
+            this.model.el.set_value(citer, 0,   tr[i] ); // title 
             
         }
         

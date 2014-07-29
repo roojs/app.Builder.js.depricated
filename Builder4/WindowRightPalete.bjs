@@ -13,7 +13,7 @@
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
-            "|void:show": " (Palete.Palete pal, string cls ) {\n   \n   // this.get('model').expanded();\n    \n    var tr = pal.getDropList(cls);\n    this.model.el.clear();\n\n    //console.log('Project tree load: ' + tr.length);\n\n    Gtk.TreeIter citer;\n    //this.insert(citer,iter,0);\n    for(var i =0 ; i < tr.length; i++) {\n         this.model.el.append(out citer);   \n        \n        var r = tr[i]\n        //Seed.print(r);\n        this.el.set_value(citer, 0,   r ); // title \n        \n    }\n    \n    \n} \n\n",
+            "|void:show": " (Palete.Palete pal, string cls ) {\n   \n   // this.get('model').expanded();\n    \n    var tr = pal.getDropList(cls);\n    this.model.el.clear();\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < tr.length; i++) {\n         this.model.el.append(out citer);   \n         \n        this.model.el.set_value(citer, 0,   tr[i] ); // title \n        \n    }\n    \n    \n} \n\n",
             "|xns": "Gtk",
             "items": [
                 {
