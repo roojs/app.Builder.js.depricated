@@ -45,7 +45,7 @@ namespace Palete {
 		        prop.doctxt  = o.get_string_member("desc");
 			prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 			prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
-			print(type + ":" + name +"\n");
+			//print(type + ":" + name +"\n");
 			ret.set(name,prop);
 		}
 		return ret;
@@ -66,7 +66,7 @@ namespace Palete {
 
 		var clist =  node.get_object().get_object_member("data");
     		clist.foreach_member((o , key, value) => {
-			print("cls:" + key+"\n");
+			//print("cls:" + key+"\n");
 		 
 			var cls = new GirObject("class", key);  
 			cls.props = this.propsFromJSONArray("prop", value.get_object().get_array_member("props"));
