@@ -227,6 +227,7 @@ public class Xcls_MainWindow : Object
                     case "object": 
                          var n = _this.left_tree.getActiveElement();
                          if (n == null) {
+                            this.rightpalete.clear();
                             break;
                         }
                         this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
