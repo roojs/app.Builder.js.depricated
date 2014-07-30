@@ -17,7 +17,7 @@ Editor=new XObject({
         // set the node contents...
         
         
-        
+        // call the signal..
         this.save();
         
         if (!Editor.RightEditor.save()) {

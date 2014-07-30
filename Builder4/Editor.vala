@@ -63,7 +63,7 @@ public class Xcls_Editor : Object
             // set the node contents...
             
             
-            
+            // call the signal..
             this.save();
             
             if (!Editor.RightEditor.save()) {
