@@ -328,6 +328,8 @@ MainWindow=new XObject({
     
         stage = _this.codeeditview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
+        // editor.save...
+    
         
         
          
