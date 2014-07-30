@@ -120,7 +120,7 @@ public class Xcls_Editor : Object
                 val = node.props.get(key);
             }
             this.view.load(val);
-            this.key_edit.text = key;    
+            this.key_edit.el.text = key;    
         
         }
 
