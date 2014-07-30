@@ -28,6 +28,7 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
+    public string key;
     public bool dirty;
     public bool pos;
     public int pos_root_x;
@@ -44,6 +45,7 @@ public class Xcls_Editor : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars
+        this.key = "";
         this.dirty = false;
         this.pos = false;
         this.activeEditor = "";
@@ -56,17 +58,11 @@ public class Xcls_Editor : Object
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.add (  child_1.el  );
+
+        // listeners 
     }
 
     // userdefined functions 
-    public void show(JsRender.Node node, string ptype, string key)
-        {
-            this.ptype = ptype;
-            this.key  = key;
-            this.node = node;
-        
-        
-        }
     public bool saveContents  ()  {
             
             
@@ -96,6 +92,14 @@ public class Xcls_Editor : Object
             return true;
         
         } 
+    public void show(JsRender.Node node, string ptype, string key)
+        {
+            this.ptype = ptype;
+            this.key  = key;
+            this.node = node;
+        
+        
+        }
 
     // skip |xns - no return type
     public class Xcls_Toolbar2 : Object 
