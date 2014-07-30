@@ -13,7 +13,13 @@ Editor=new XObject({
     xtype: Gtk.VBox,
     pack : "add",
     'bool:saveContents' : ()  {
-    
+        
+        // set the node contents...
+        
+        
+        
+        this.save();
+        
         if (!Editor.RightEditor.save()) {
             // no hiding with errors.
             return true;

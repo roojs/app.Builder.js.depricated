@@ -59,7 +59,13 @@ public class Xcls_Editor : Object
 
     // userdefined functions 
     public bool saveContents  ()  {
-        
+            
+            // set the node contents...
+            
+            
+            
+            this.save();
+            
             if (!Editor.RightEditor.save()) {
                 // no hiding with errors.
                 return true;
