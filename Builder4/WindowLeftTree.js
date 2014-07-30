@@ -158,7 +158,10 @@ WindowLeftTree=new XObject({
                 drag_data_received : (ctx, x, y, sel, info, time)  => {
                       //print("Tree: drag-data-received");
                 
-                
+                        //print("GETTING POS");
+                            Gtk.TreePath path;
+                            Gtk.TreeViewDropPosition pos;
+                            var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
                      
                      
                         //console.log("LEFT-TREE: drag-motion");
@@ -166,10 +169,10 @@ WindowLeftTree=new XObject({
                         
                         // a drag from  elsewhere...- prevent drop..
                         if (src != this.el) {
-                            print("drag_data_recieved from another element");
+                            //print("drag_data_recieved from another element");
                             var selection_text = sel.get_text();
                             
-                            if (selection_text == null || selection_text.length < 1) {
+                            if (selection_text == null || selection_text.length < 1 || !isOver)) {
                                 // nothing valid foudn to drop...
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
@@ -181,7 +184,7 @@ WindowLeftTree=new XObject({
                                 return;            
                             
                             }
-                            
+                            // what's 
                             
                             //print("no drag data!");
                             // fix-me - this.. needs to handle comming from the palete...
@@ -216,10 +219,7 @@ WindowLeftTree=new XObject({
                             
                             
                 
-                            //print("GETTING POS");
-                            Gtk.TreePath path;
-                            Gtk.TreeViewDropPosition pos;
-                            var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
+                            
                             
                             //print("ISOVER? " + isOver);
                             if (!isOver) {
