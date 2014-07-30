@@ -86,11 +86,16 @@ public class Xcls_Editor : Object
              _this.save_button.el.sensitive = false;
              
              
+                
              
-             
-             
-             
-             
+            // find the text for the node..
+            if (ptype == "listener") {
+                val = this.node.listeners.set(key,str);
+            
+            } else {
+                val = this.node.props.set(key,str);
+            }
+        
              
             
             // call the signal..
