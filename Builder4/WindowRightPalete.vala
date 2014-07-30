@@ -218,6 +218,7 @@ public class Xcls_RightPalete : Object
             this.el.drag_data_get.connect(   (drag_context, selection_data, info, time) => {
              	//Seed.print('Palete: drag-data-get: ' + target_type);
                     if (this.dragData.length > 0 ) {
+                        print("setting drag data to %s", this.dragData);
                         selection_data.set_text(this.dragData ,this.dragData.length);
                     }
                     
