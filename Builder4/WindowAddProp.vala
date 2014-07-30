@@ -69,7 +69,7 @@ public class Xcls_WindowAddProp : Object
                 this.model.el.set(iter,
                         0,  p.name, 
                         1, p.type,
-                        2, "<span size=\"small\"><b>" + p.name +"</b> <i>"+p.type+"</i></span>\n" + 
+                        2, "<b>" + p.name +"</b> <i>"+p.type+"</i>\n" + 
                                 GLib.Markup.escape_text(p.doctxt),
                         3, p.sig,
                         4, "<span size=\"small\"><b>" + p.name +"</b> <i>"+p.type+"</i></span>",
