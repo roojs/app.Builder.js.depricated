@@ -106,9 +106,48 @@ public class Xcls_MainWindow : Object
     // userdefined functions 
     public void showCodeEdit(JsRender.Node node, string ptype, string key)
         {
+            // this is a bit different,
+            // it's not called via a button - but triggered by the prop edit class signal.
+            // so it has to hide any other state..
             
+            
+         
+         
+             
+             var ae =      this.left_tree.getActiveElement();
+            if (ae == null) {
+                return;
+            }
+             
+             
+             
+             
+            //this.rooview.el.hide();
+            this.add_props.el.show_all();
+            this.add_props.show(
+                Palete.factory(this.project.xtype), 
+                "props",
+                ae.fqn()
+            );
         
+            _this.addpropsview.el.save_easing_state();
+                
+            var el = _this.rooview.el;
+            el.save_easing_state();
+           
+            
+            el.set_scale(0.5f,0.5f);
         
+            _this.addpropsview.el.set_scale(1.0f,1.0f);
+           
+           
+         
+            //_this.clutterfiles.loadProject(_this.project);
+        
+            el.restore_easing_state();
+            _this.addpropsview.el.restore_easing_state();
+            this.state = "addprop";
+        }
         }
     public void hideAddListener() {
              _this.addpropsview.el.save_easing_state();
