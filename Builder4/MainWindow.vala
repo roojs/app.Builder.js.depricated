@@ -241,7 +241,7 @@ public class Xcls_MainWindow : Object
             this.left_tree.node_selected.connect((sel) => {
             
             this.left_tree.node_selected.before_node_change(() => {
-                if (this.state != 'codeedit') {
+                if (this.state != "codeedit") {
                     return true;
                 }
                 if (!this.code_editor.saveContents()) {
