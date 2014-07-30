@@ -159,7 +159,7 @@ public class Xcls_LeftProps : Object
                 //type = info.type.toLowerCase();
                 //var data = this.toJS();
                 
-            var type = in_type == "signals" ? "listerner" : in_type;
+            var type = in_type == "signals" ? "listener" : in_type;
             
             var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                     
