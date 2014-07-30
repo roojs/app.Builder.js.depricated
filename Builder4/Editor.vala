@@ -34,7 +34,7 @@ public class Xcls_Editor : Object
     public int pos_root_y;
     public signal void save();
     public string activeEditor;
-    public string active_path;
+    public string ptype;
 
         // ctor 
     public Xcls_Editor()
@@ -47,7 +47,7 @@ public class Xcls_Editor : Object
         this.dirty = false;
         this.pos = false;
         this.activeEditor = "";
-        this.active_path = "";
+        this.ptype = "";
 
         // set gobject values
         var child_0 = new Xcls_Toolbar2( _this );
