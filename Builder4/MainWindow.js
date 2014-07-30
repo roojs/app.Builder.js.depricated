@@ -653,7 +653,7 @@ MainWindow=new XObject({
                                             _this.addpropsview.el.set_size((alloc.width -50)/2.0f,
                                                    alloc.height);
                                             
-                                            _this.codeditview.el.set_size((alloc.width -50)/2.0f,
+                                            _this.codeeditview.el.set_size((alloc.width -50)/2.0f,
                                                    alloc.height);
                                         }
                                     },
