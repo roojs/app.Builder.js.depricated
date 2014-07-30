@@ -457,7 +457,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) => {
                                         
-                                            _this.addProp( "prop", "*pack","add");
+                                            _this.addProp( "prop", "pack","add", "*");
                                         }
                                     },
                                     label : "PACK",
