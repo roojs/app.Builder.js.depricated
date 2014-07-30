@@ -28,6 +28,7 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
+    public signal void save();
     public bool dirty;
     public bool pos;
     public int pos_root_x;
@@ -55,8 +56,6 @@ public class Xcls_Editor : Object
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.add (  child_1.el  );
-
-        // listeners 
     }
 
     // userdefined functions 
