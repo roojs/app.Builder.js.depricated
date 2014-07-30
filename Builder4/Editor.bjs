@@ -39,9 +39,9 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "|xns": "Gtk",
+                            "xpack": "add",
                             "xtype": "Entry",
-                            "pack": false
+                            "|xns": "Gtk"
                         }
                     ]
                 },

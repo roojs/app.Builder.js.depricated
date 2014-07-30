@@ -146,6 +146,7 @@ public class Xcls_Editor : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_Entry4( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
