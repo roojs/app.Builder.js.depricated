@@ -159,9 +159,11 @@ WindowLeftTree=new XObject({
                       //print("Tree: drag-data-received");
                 
                         //print("GETTING POS");
-                            Gtk.TreePath path;
-                            Gtk.TreeViewDropPosition pos;
-                            var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
+                        var  targetData = "";
+                        
+                        Gtk.TreePath path;
+                        Gtk.TreeViewDropPosition pos;
+                        var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
                      
                      
                         //console.log("LEFT-TREE: drag-motion");
@@ -240,7 +242,7 @@ WindowLeftTree=new XObject({
                             
                         }
                             
-                        var  targetData = "";
+                       
                         //var action = Gdk.DragAction.COPY;
                             // unless we are copying!!! ctl button..
                         var action = (ctx.get_actions() & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
