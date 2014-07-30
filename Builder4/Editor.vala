@@ -59,7 +59,7 @@ public class Xcls_Editor : Object
         this.el.pack_start (  child_0.el , false,true );
         var child_1 = new Xcls_HBox4( _this );
         child_1.ref();
-        this.el.add (  child_1.el  );
+        this.el.pack_start (  child_1.el , false,true );
         var child_2 = new Xcls_RightEditor( _this );
         child_2.ref();
         this.el.add (  child_2.el  );

@@ -39,7 +39,7 @@
                     ]
                 },
                 {
-                    "pack": "add",
+                    "pack": "pack_start,false,true",
                     "xtype": "HBox",
                     "|homogeneous": "false",
                     "|xns": "Gtk",
