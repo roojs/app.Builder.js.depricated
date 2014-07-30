@@ -104,7 +104,12 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showCodeEdit
+    public void showCodeEdit(node, ptype, key)
+        {
+        
+        
+        
+        }
     public void hideAddListener() {
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
