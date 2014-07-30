@@ -111,7 +111,7 @@ WindowLeftProps=new XObject({
             //type = info.type.toLowerCase();
             //var data = this.toJS();
             
-     
+     var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                 
         if (type == "listener") {
             if (this.node.listeners.has_key(key)) {
@@ -120,10 +120,10 @@ WindowLeftProps=new XObject({
             this.node.listeners.set(key,value);
         } else  {
         
-            if (this.node.props.has_key(key)) {
+            if (this.node.props.has_key(fkey)) {
                 return;
             }
-            this.node.props.set(key,value);
+            this.node.props.set(fkey,value);
         }
                
           
