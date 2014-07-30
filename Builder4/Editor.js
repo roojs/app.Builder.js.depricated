@@ -47,7 +47,9 @@ Editor=new XObject({
         this.ptype = ptype;
         this.key  = key;
         this.node = node;
-    
+        
+        // find the text for the node..
+        
     
     },
     items : [

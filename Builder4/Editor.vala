@@ -97,7 +97,9 @@ public class Xcls_Editor : Object
             this.ptype = ptype;
             this.key  = key;
             this.node = node;
-        
+            
+            // find the text for the node..
+            
         
         }
 
