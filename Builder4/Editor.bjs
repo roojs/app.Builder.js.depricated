@@ -39,9 +39,12 @@
                     ]
                 },
                 {
-                    "|xns": "Gtk",
+                    "|homogeneous": "false",
+                    "pack": false,
                     "xtype": "HBox",
-                    "pack": false
+                    "|xns": "Gtk",
+                    "": "",
+                    "listeners": {}
                 },
                 {
                     "|xns": "Gtk",

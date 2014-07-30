@@ -197,11 +197,13 @@ public class Xcls_Editor : Object
         public Xcls_HBox4(Xcls_Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox( false, 0 );
 
             // my vars
 
             // set gobject values
+
+            // listeners 
         }
 
         // userdefined functions 
