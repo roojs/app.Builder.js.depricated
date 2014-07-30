@@ -526,7 +526,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp("prop",  "|XXXX", "function() { }");
+                                            _this.addProp("prop",  "XXXX", "function() { }", "function");
                                         }
                                     },
                                     label : "Javascript Function",

@@ -138,7 +138,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"|XXXX\", \"function() { }\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"XXXX\", \"function() { }\", \"function\");\n}"
                                             },
                                             "label": "Javascript Function",
                                             "pack": "append",
