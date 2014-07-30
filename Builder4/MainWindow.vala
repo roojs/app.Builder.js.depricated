@@ -297,7 +297,14 @@ public class Xcls_MainWindow : Object
             this.left_props.show_editor.connect( (file, node, type,  key) => {
                 this.showCodeEdit(node, type,  key);
             });
-        
+            this.left_props.stop_editor.connect( () => {
+                var ret =  this.code_editor.saveContents();
+                if (!ret) {
+                    return;
+                }
+                this.hideCodeEdit();
+                return ret;
+            });
         
         
             // left projects..
