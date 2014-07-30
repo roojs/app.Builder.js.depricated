@@ -153,15 +153,17 @@ public class Xcls_LeftProps : Object
         
         
         }
-    public void addProp (string type, string key, string value, string value_type) {
+    public void addProp (string in_type, string key, string value, string value_type) {
               // info includes key, val, skel, etype..
               //console.dump(info);
                 //type = info.type.toLowerCase();
                 //var data = this.toJS();
                 
+            var type = in_type == "signals" ? "listerner" : in_type;
+            
             var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                     
-            if (type == "listener" || type == "signals") {
+            if (type == "listener") {
                 if (this.node.listeners.has_key(key)) {
                     return;
                 }
