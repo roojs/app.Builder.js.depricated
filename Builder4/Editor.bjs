@@ -19,6 +19,8 @@
             "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n  \n}\n ",
             "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
             "|xns": "Gtk",
+            "": "",
+            "listeners": {},
             "items": [
                 {
                     "pack": "pack_start,false,true",

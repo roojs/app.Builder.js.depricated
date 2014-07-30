@@ -55,6 +55,8 @@ public class Xcls_Editor : Object
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.add (  child_1.el  );
+
+        // listeners 
     }
 
     // userdefined functions 
