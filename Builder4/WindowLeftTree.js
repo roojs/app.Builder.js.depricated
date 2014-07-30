@@ -167,7 +167,22 @@ WindowLeftTree=new XObject({
                         // a drag from  elsewhere...- prevent drop..
                         if (src != this.el) {
                             print("drag_data_recieved from another element");
-                        
+                            var selection_text = sel.get_text();
+                            
+                            if (selection_text == null || selection_text.length < 1) {
+                                // nothing valid foudn to drop...
+                                if (this.drag_in_motion) {
+                                    Gdk.drag_status(ctx, 0, time);
+                                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                                    return;
+                                }
+                                Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                                // no drop action...
+                                return;            
+                            
+                            }
+                            
+                            
                             //print("no drag data!");
                             // fix-me - this.. needs to handle comming from the palete...
                             if (this.drag_in_motion) {
