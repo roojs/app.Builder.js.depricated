@@ -270,6 +270,18 @@ MainWindow=new XObject({
             this.left_props.addProp(etype, key, skel, type);
         });
         
+        // editor
+        
+        
+        this.code_edit  = new Xcls_Editor();
+        this.code_edit.ref();  /// really?
+        ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_edit.el);
+        //this.projectsettings.el.show_all();
+    
+        stage = _this.codeeditview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+        
         
         
         

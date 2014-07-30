@@ -43,9 +43,9 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
-    public Xcls_Editor code_editor;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
+    public Xcls_Editor code_editor;
     public Xcls_LeftProps left_props;
     public Xcls_ProjectSettings projectsettings;
     public Xcls_RightPalete rightpalete;
@@ -65,8 +65,8 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.code_editor = null;
         this.clutterfiles = null;
+        this.code_editor = null;
         this.left_props = null;
         this.projectsettings = null;
         this.rightpalete = null;
@@ -343,6 +343,18 @@ public class Xcls_MainWindow : Object
             _this.add_props.select.connect( (key,type,skel, etype) => {
                 this.left_props.addProp(etype, key, skel, type);
             });
+            
+            // editor
+            
+            
+            this.code_edit  = new Xcls_Editor();
+            this.code_edit.ref();  /// really?
+            ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_edit.el);
+            //this.projectsettings.el.show_all();
+        
+            stage = _this.codeeditview.el.get_stage();
+            stage.set_background_color(  Clutter.Color.from_string("#000"));
+            
             
             
             
