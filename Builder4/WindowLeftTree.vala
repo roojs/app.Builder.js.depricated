@@ -466,7 +466,7 @@ public class Xcls_WindowLeftTree : Object
                  
                  
                  if (!_this.before_node_change(null) ) {
-			 return true;
+			 
 		 }
                  
                  if (_this.model.file == null) {
