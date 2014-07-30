@@ -279,6 +279,8 @@ public class Xcls_WindowLeftTree : Object
                     
                     // a drag from  elsewhere...- prevent drop..
                     if (src != this.el) {
+                        print("drag_data_recieved from another element");
+                    
                         //print("no drag data!");
                         // fix-me - this.. needs to handle comming from the palete...
                         if (this.drag_in_motion) {
