@@ -59,7 +59,12 @@ public class Xcls_Editor : Object
     }
 
     // userdefined functions 
-    public void show
+    public void show(JsRender.Node node, string key, string type)
+        {
+        
+        
+        
+        }
     public bool saveContents  ()  {
             
             
