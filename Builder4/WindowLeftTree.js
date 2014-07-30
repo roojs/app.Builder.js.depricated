@@ -121,7 +121,7 @@ WindowLeftTree=new XObject({
                 drag_motion : ( ctx, x, y, time)  => {
                  
                     // the point of this is to detect where an item could be dropped..
-                    
+                        print("got drag motion");
                        this.drag_in_motion = true;
                        this.drag_x = x;
                        this.drag_y = y;
