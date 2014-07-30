@@ -128,8 +128,29 @@ public class Xcls_WindowAddProp : Object
             }
 
             // listeners 
-            this.el.row_activated.connect( function (self, path, column) {
+            this.el.row_activated.connect( (path, column)  => {
             
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+            
+                    var m = _this.model;
+                    
+                    m.el.get_iter(iter,path);
+                    
+                    
+                    // var val = "";
+                    
+                    
+                    var key = m.getValue(iter, 0);
+                    
+                    var type = m.getValue(iter, 1);
+                    var skel = m.getValue(iter, 3);
+                    var etype = m.getValue(iter, 5);
+                    
+                    
+                    _this.select(key,type,skel, etype);
+                    
+            }
             } );
         }
 
