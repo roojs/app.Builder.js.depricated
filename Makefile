@@ -64,7 +64,7 @@ test-palate:
 test-addprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/WindowAddProp.vala \
-		tests/AddPropTest.vala -o /tmp/test-palete
+		tests/AddPropTest.vala -o /tmp/test-addprops
 
 #fixme -- old...
 datatest:
