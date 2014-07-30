@@ -33,9 +33,9 @@ WindowAddProp=new XObject({
             this.model.el.set(iter,
                     0,  p.name, 
                     1, p.type,
-                    2, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>\n" + p.doctxt,
+                    2, "<span size=\"small\"><b>" + p.name +"</b> <i>"+p.type+"</i></span>\n" + p.doctxt,
                     3, p.sig,
-                    4, "<span size=\"small\"><b>" + p.name +"</b> ["+p.type+"]</span>",
+                    4, "<span size=\"small\"><b>" + p.name +"</b> <i>"+p.type+"</i></span>",
                     5, etype,
                     -1
             );
