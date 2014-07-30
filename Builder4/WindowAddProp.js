@@ -41,6 +41,7 @@ WindowAddProp=new XObject({
                     -1
             );
         }
+        this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
                                  
     },
     items : [
