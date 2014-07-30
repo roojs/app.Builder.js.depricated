@@ -87,7 +87,7 @@ Editor=new XObject({
                     },
                     id : "save_button",
                     label : "Save",
-                    xpack : "add"
+                    xpack : "pack_start,false,true"
                 },
                 {
                     xtype: Gtk.Entry,
