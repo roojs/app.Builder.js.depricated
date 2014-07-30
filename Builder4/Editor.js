@@ -11,9 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.VBox,
-    'void:show' : (JsRender.Node node, string key, string type)
+    'void:show' : (JsRender.Node node, string ptype, string key)
     {
-    
+        this.ptype = ptype;
+        this.key  = key;
+        this.node = node;
     
     
     },

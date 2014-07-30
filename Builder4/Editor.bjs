@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
-            "|void:show": "(JsRender.Node node, string key, string type)\n{\n\n\n\n}",
+            "|void:show": "(JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n\n\n}",
             ".bool:dirty": "false",
             ".bool:pos": "false",
             ".int:pos_root_x": "",

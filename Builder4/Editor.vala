@@ -59,9 +59,11 @@ public class Xcls_Editor : Object
     }
 
     // userdefined functions 
-    public void show(JsRender.Node node, string key, string type)
+    public void show(JsRender.Node node, string ptype, string key)
         {
-        
+            this.ptype = ptype;
+            this.key  = key;
+            this.node = node;
         
         
         }
