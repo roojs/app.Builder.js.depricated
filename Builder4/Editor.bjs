@@ -24,22 +24,6 @@
             "items": [
                 {
                     "pack": "pack_start,false,true",
-                    "xtype": "Toolbar",
-                    "|xns": "Gtk",
-                    "items": [
-                        {
-                            "listeners": {
-                                "clicked": " () => { \n    _this.saveContents();\n}\n \n"
-                            },
-                            "id": "save_button",
-                            "label": "Save",
-                            "xtype": "ToolButton",
-                            "|xns": "Gtk"
-                        }
-                    ]
-                },
-                {
-                    "pack": "pack_start,false,true",
                     "xtype": "HBox",
                     "|homogeneous": "false",
                     "|xns": "Gtk",
@@ -48,7 +32,7 @@
                             "listeners": {
                                 "clicked": " () => { \n    _this.saveContents();\n}\n \n"
                             },
-                            "id": "",
+                            "id": "save_button",
                             "label": "Save",
                             "xpack": "add",
                             "xtype": "Button",

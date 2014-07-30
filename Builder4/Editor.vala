@@ -54,15 +54,12 @@ public class Xcls_Editor : Object
         this.ptype = "";
 
         // set gobject values
-        var child_0 = new Xcls_Toolbar2( _this );
+        var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
-        var child_1 = new Xcls_HBox4( _this );
+        var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
-        this.el.pack_start (  child_1.el , false,true );
-        var child_2 = new Xcls_RightEditor( _this );
-        child_2.ref();
-        this.el.add (  child_2.el  );
+        this.el.add (  child_1.el  );
     }
 
     // userdefined functions 
@@ -127,19 +124,19 @@ public class Xcls_Editor : Object
         }
 
     // skip |xns - no return type
-    public class Xcls_Toolbar2 : Object 
+    public class Xcls_HBox2 : Object 
     {
-        public Gtk.Toolbar el;
+        public Gtk.HBox el;
         private Xcls_Editor  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Toolbar2(Xcls_Editor _owner )
+        public Xcls_HBox2(Xcls_Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Toolbar();
+            this.el = new Gtk.HBox( false, 0 );
 
             // my vars
 
@@ -155,7 +152,7 @@ public class Xcls_Editor : Object
     }
     public class Xcls_save_button : Object 
     {
-        public Gtk.ToolButton el;
+        public Gtk.Button el;
         private Xcls_Editor  _this;
 
 
@@ -166,62 +163,6 @@ public class Xcls_Editor : Object
         {
             _this = _owner;
             _this.save_button = this;
-            this.el = new Gtk.ToolButton( null, "Save" );
-
-            // my vars
-
-            // set gobject values
-
-            // listeners 
-            this.el.clicked.connect(  () => { 
-                _this.saveContents();
-            }
-             
-             );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_HBox4 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_Editor  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_HBox4(Xcls_Editor _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Button5( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button5 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_Editor  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button5(Xcls_Editor _owner )
-        {
-            _this = _owner;
             this.el = new Gtk.Button();
 
             // my vars

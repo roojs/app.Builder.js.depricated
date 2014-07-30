@@ -74,22 +74,6 @@ Editor=new XObject({
     },
     items : [
         {
-            xtype: Gtk.Toolbar,
-            pack : "pack_start,false,true",
-            items : [
-                {
-                    xtype: Gtk.ToolButton,
-                    listeners : {
-                        clicked : () => { 
-                            _this.saveContents();
-                        }
-                    },
-                    id : "save_button",
-                    label : "Save"
-                }
-            ]
-        },
-        {
             xtype: Gtk.HBox,
             pack : "pack_start,false,true",
             homogeneous : false,
@@ -101,7 +85,7 @@ Editor=new XObject({
                             _this.saveContents();
                         }
                     },
-                    id : "",
+                    id : "save_button",
                     label : "Save",
                     xpack : "add"
                 }
