@@ -96,6 +96,7 @@ Editor=new XObject({
             items : [
                 {
                     xtype: Gtk.Button,
+                    label : "Save",
                     xpack : "add"
                 }
             ]

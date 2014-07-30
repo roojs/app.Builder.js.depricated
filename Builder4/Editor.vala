@@ -227,6 +227,7 @@ public class Xcls_Editor : Object
             // my vars
 
             // set gobject values
+            this.el.label = "Save";
         }
 
         // userdefined functions 

@@ -45,6 +45,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "label": "Save",
                             "xpack": "add",
                             "xtype": "Button",
                             "|xns": "Gtk"
