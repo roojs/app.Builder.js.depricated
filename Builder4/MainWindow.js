@@ -321,9 +321,9 @@ MainWindow=new XObject({
         // editor
         
         
-        this.code_edit  = new Xcls_Editor();
-        this.code_edit.ref();  /// really?
-        ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_edit.el);
+        this.code_editor  = new Xcls_Editor();
+        this.code_editor.ref();  /// really?
+        ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);
         //this.projectsettings.el.show_all();
     
         stage = _this.codeeditview.el.get_stage();
