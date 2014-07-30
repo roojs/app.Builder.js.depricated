@@ -168,8 +168,17 @@ MainWindow=new XObject({
                         this.add_props.clear();
                         break;
                     }
-                    this.add_props.show(_this.left_tree.getActiveFile().palete(), "prop", sel.fqn());
+                    this.add_props.show(_this.left_tree.getActiveFile().palete(), "props", sel.fqn());
                     break;
+                    
+               case "listener":
+                    if (sel == null) {
+                        this.add_props.clear();
+                        break;
+                    }
+                    this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
+                    break;
+                                    
             }
               
         });
