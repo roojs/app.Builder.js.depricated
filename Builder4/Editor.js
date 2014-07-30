@@ -15,17 +15,14 @@ Editor=new XObject({
     'bool:saveContents' : ()  {
         
         // set the node contents...
-        
+         if (!Editor.RightEditor.save()) {
+            // no hiding with errors.
+            return false;
+        }
         
         // call the signal..
         this.save();
         
-        if (!Editor.RightEditor.save()) {
-            // no hiding with errors.
-            return true;
-        }
-        _this.active_path = "";
-        _this.el.hide();
         return true;
     
     },
