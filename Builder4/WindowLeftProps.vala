@@ -345,6 +345,7 @@ public class Xcls_LeftProps : Object
     public void startEditingValue( Gtk.TreePath path) {
                     
                     if (!this.stop_editor()) {
+                        print("stop editor failed");
                         return;
                     }
                     

@@ -297,6 +297,7 @@ WindowLeftProps=new XObject({
     'void:startEditingValue' : ( Gtk.TreePath path) {
                 
                 if (!this.stop_editor()) {
+                    print("stop editor failed");
                     return;
                 }
                 
