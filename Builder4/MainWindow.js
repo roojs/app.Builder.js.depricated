@@ -22,6 +22,8 @@ MainWindow=new XObject({
         }
     },
     'void:hideCodeEdit' : () {
+        this.code_editor.save();
+       
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
