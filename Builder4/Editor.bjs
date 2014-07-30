@@ -6,16 +6,16 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
-            ".signal:void:save": "()",
             ".bool:dirty": "false",
             ".bool:pos": "false",
             ".int:pos_root_x": "",
             ".int:pos_root_y": "",
+            ".signal:void:save": "()",
             ".string:activeEditor": "\"\"",
             ".string:active_path": "\"\"",
             "pack": "add",
             "xtype": "VBox",
-            "|bool:saveContents": "  ()  {\n    \n    // set the node contents...\n     if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return false;\n    }\n    \n    // call the signal..\n    this.save();\n    \n    return true;\n\n} ",
+            "|bool:saveContents": "  ()  {\n    \n    \n    \n    \n    \n    \n    \n   \n     \n     var str = Editor.buffer.toString();\n     \n     if (!Editor.buffer.checkSyntax()) {\n         print(\"check syntax failed\");\n         //this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n       \n    \n    // call the signal..\n    this.save();\n    \n    return true;\n\n} ",
             "|homogeneous": "true",
             "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n  \n}\n ",
             "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",

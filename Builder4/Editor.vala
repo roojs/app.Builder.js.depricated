@@ -28,11 +28,11 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
-    public signal void save();
     public bool dirty;
     public bool pos;
     public int pos_root_x;
     public int pos_root_y;
+    public signal void save();
     public string activeEditor;
     public string active_path;
 
@@ -61,11 +61,26 @@ public class Xcls_Editor : Object
     // userdefined functions 
     public bool saveContents  ()  {
             
-            // set the node contents...
-             if (!Editor.RightEditor.save()) {
-                // no hiding with errors.
-                return false;
-            }
+            
+            
+            
+            
+            
+            
+           
+             
+             var str = Editor.buffer.toString();
+             
+             if (!Editor.buffer.checkSyntax()) {
+                 print("check syntax failed");
+                 //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                 return false;
+             }
+             
+             // LeftPanel.model.changed(  str , false);
+             _this.dirty = false;
+             _this.save_button.el.sensitive = false;
+               
             
             // call the signal..
             this.save();

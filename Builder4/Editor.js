@@ -14,11 +14,26 @@ Editor=new XObject({
     pack : "add",
     'bool:saveContents' : ()  {
         
-        // set the node contents...
-         if (!Editor.RightEditor.save()) {
-            // no hiding with errors.
-            return false;
-        }
+        
+        
+        
+        
+        
+        
+       
+         
+         var str = Editor.buffer.toString();
+         
+         if (!Editor.buffer.checkSyntax()) {
+             print("check syntax failed");
+             //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+             return false;
+         }
+         
+         // LeftPanel.model.changed(  str , false);
+         _this.dirty = false;
+         _this.save_button.el.sensitive = false;
+           
         
         // call the signal..
         this.save();
