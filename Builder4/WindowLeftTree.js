@@ -194,6 +194,8 @@ WindowLeftTree=new XObject({
                             
                             var dropList = _this.model.file.palete().getDropList(selection_text);
                             
+                            print("dropList: %s\n", string.joinv(" , ", dropList));
+                            
                             targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                                 
                             print("targetDAta: " + targetData +"\n");
