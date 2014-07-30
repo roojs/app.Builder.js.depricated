@@ -26,12 +26,13 @@ int main (string[] args) {
     
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
-	var  left_props =new Xcls_WindowAddProp();
+	var  left_props =new Xcls_RightPalete();
 
 	w.add(left_props.el);
 	w.show_all();
-	left_props show(Palete.Palete pal, "props", "Roo.form.Form") {
-	
+ 
+	left_props.load(Palete.factory("Roo"), "Roo.form.Form"); 
+
 		 
 	 Gtk.main();
     

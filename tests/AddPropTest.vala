@@ -24,17 +24,18 @@ int main (string[] args) {
 	print(generator.to_data (null));
  */
     
+	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
-	var  left_props =new Xcls_RightPalete();
+	var  left_props =new Xcls_WindowAddProp();
 
 	w.add(left_props.el);
 	w.show_all();
- 
-	left_props.load(Palete.factory("Roo"), "Roo.form.Form"); 
-
+	left_props show(Palete.Palete pal, "props", "Roo.form.Form") {
+	
 		 
 	 Gtk.main();
+     
     
 	
 	return 0;
