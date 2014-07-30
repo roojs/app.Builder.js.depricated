@@ -69,7 +69,7 @@ Editor=new XObject({
             val = node.props.get(key);
         }
         this.view.load(val);
-        
+        this.key_edit.text = key;    
     
     },
     items : [
