@@ -137,10 +137,6 @@ Editor=new XObject({
                         this.el.grab_focus();
                         _this.save_button.el.sensitive = false;
                     },
-                    'void:save' : () {
-                    
-                        Editor.RightEditor.save();
-                    },
                     items : [
                         {
                             xtype: GtkSource.Buffer,

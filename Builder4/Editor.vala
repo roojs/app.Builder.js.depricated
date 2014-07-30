@@ -278,11 +278,6 @@ public class Xcls_Editor : Object
                 this.el.grab_focus();
                 _this.save_button.el.sensitive = false;
             }
-        public void save () {
-            
-                Editor.RightEditor.save();
-            }
-             
 
         // skip |xns - no return type
     }
