@@ -170,9 +170,15 @@ WindowLeftTree=new XObject({
                         // a drag from  elsewhere...- prevent drop..
                         if (src != this.el) {
                             //print("drag_data_recieved from another element");
+                            
+                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                                
+                            print("targetDAta: " + targetData +"\n");
+                            
+                            
                             var selection_text = sel.get_text();
                             
-                            if (selection_text == null || selection_text.length < 1 || !isOver)) {
+                            if (selection_text == null || selection_text.length < 1 || !isOver || targetData.length < 1)) {
                                 // nothing valid foudn to drop...
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
