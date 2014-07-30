@@ -171,14 +171,10 @@ WindowLeftTree=new XObject({
                         if (src != this.el) {
                             //print("drag_data_recieved from another element");
                             
-                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
-                                
-                            print("targetDAta: " + targetData +"\n");
-                            
                             
                             var selection_text = sel.get_text();
                             
-                            if (selection_text == null || selection_text.length < 1 || !isOver || targetData.length < 1)) {
+                            if (selection_text == null || selection_text.length < 1 || !isOver) {
                                 // nothing valid foudn to drop...
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
@@ -190,6 +186,19 @@ WindowLeftTree=new XObject({
                                 return;            
                             
                             }
+                            
+                            
+                            // dropList --- need to gather this ... 
+                            
+                            
+                            
+                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                                
+                            print("targetDAta: " + targetData +"\n");
+                            
+                            
+                            
+                            
                             // what's 
                             
                             //print("no drag data!");
