@@ -118,7 +118,7 @@ namespace Palete {
 		var cls = this.classes.get(ename);
 		var ret = new Gee.HashMap<string,GirObject>();
 		if (cls == null) {
-			
+			print("could not find class: %s", type);
 			return ret;
 			//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
 	
