@@ -31,7 +31,7 @@ int main (string[] args) {
 
 	w.add(left_props.el);
 	w.show_all();
-	left_props show(Palete.Palete pal, "props", "Roo.form.Form") {
+	left_props show(Palete.Palete pal, "props", "Roo.form.Form");
 	
 		 
 	 Gtk.main();
