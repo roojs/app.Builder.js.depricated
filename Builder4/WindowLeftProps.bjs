@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal:void:stop_editor": "()",
+            ".signal:bool:stop_editor": "()",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".bool:allow_edit": false,

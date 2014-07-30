@@ -33,7 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
-    public signal void stop_editor();
+    public signal bool stop_editor();
     public JsRender.JsRender file;
     public JsRender.Node node;
     public bool allow_edit;
