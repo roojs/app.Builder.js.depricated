@@ -160,7 +160,7 @@ public class Xcls_LeftProps : Object
                 
          var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                     
-            if (type == "listener") {
+            if (type == "listener" || type == "signals") {
                 if (this.node.listeners.has_key(key)) {
                     return;
                 }
