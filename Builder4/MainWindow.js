@@ -21,9 +21,9 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:showCodeEdit' : (node, ptype, key)
+    'void:showCodeEdit' : (JsRender.Node node, string ptype, string key)
     {
-    
+        
     
     
     },

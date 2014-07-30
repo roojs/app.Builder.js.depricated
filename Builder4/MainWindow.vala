@@ -104,9 +104,9 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showCodeEdit(node, ptype, key)
+    public void showCodeEdit(JsRender.Node node, string ptype, string key)
         {
-        
+            
         
         
         }
