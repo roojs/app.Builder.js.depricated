@@ -469,7 +469,7 @@ MainWindow=new XObject({
             key
         );
     
-        _this.codeditview.el.save_easing_state();
+        _this.codeeditview.el.save_easing_state();
             
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -477,14 +477,14 @@ MainWindow=new XObject({
         
         el.set_scale(0.5f,0.5f);
     
-        _this.codeditview.el.set_scale(1.0f,1.0f);
+        _this.codeeditview.el.set_scale(1.0f,1.0f);
        
        
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-        _this.codeditview.el.restore_easing_state();
+        _this.codeeditview.el.restore_easing_state();
         this.state = "codeedit";
     },
     'void:showObject' : () {
