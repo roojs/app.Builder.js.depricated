@@ -220,6 +220,11 @@ MainWindow=new XObject({
         this.left_props.ref();
         this.props.el.pack_start(this.left_props.el,true, true,0);
     
+        this.left_props.show_editor.connect( (file, node, type,  key) => {
+            this.showCodeEdit(node, type,  key);
+        });
+    
+    
     
         // left projects..
          this.left_projects = new Xcls_WindowLeftProjects();
