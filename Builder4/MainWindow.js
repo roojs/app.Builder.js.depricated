@@ -165,7 +165,7 @@ MainWindow=new XObject({
         this.tree.el.pack_start(this.left_tree.el,true, true,0);
         
        
-        this.left_tree.node_selected.before_node_change(() => {
+        this.left_tree.before_node_change.connect(() => {
             if (this.state != "codeedit") {
                 return true;
             }
