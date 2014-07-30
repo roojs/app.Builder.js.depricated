@@ -837,7 +837,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
                 //if (!_this.children_loaded) {  return; }
-                print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
+                //print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
             
             /*    _this.rooview.el.set_size(this.el.get_stage().width-50,
                         this.el.get_stage().height);
