@@ -11,6 +11,10 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowAddProp=new XObject({
     xtype: Gtk.ScrolledWindow,
+    'void:clear' : () {
+    
+    
+    },
     id : "WindowAddProp",
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
     shadow_type : Gtk.ShadowType.IN,

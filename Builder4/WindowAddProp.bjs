@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.bjs",
     "items": [
         {
+            "|void:clear": "() {\n\n\n}",
             ".signal:void:select": "(string key, string type, string skel, string etype)",
             "id": "WindowAddProp",
             "xtype": "ScrolledWindow",
