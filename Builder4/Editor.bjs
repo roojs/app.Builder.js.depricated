@@ -34,12 +34,12 @@
                             },
                             "id": "save_button",
                             "label": "Save",
-                            "xpack": "pack_start,false,false",
+                            "pack": "pack_start,false,false",
                             "xtype": "Button",
                             "|xns": "Gtk"
                         },
                         {
-                            "xpack": "add",
+                            "pack": "pack_end,true,true",
                             "xtype": "Entry",
                             "|xns": "Gtk"
                         }

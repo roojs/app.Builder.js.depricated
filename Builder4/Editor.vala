@@ -143,10 +143,10 @@ public class Xcls_Editor : Object
             // set gobject values
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.pack_start (  child_0.el , false,false );
             var child_1 = new Xcls_Entry4( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.pack_end (  child_1.el , true,true );
         }
 
         // userdefined functions 
