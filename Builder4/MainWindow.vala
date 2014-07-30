@@ -110,27 +110,30 @@ public class Xcls_MainWindow : Object
             // it's not called via a button - but triggered by the prop edit class signal.
             // so it has to hide any other state..
             
-            
-         
-         
-             
-             var ae =      this.left_tree.getActiveElement();
-            if (ae == null) {
-                return;
+            switch(this.state) {
+                case "object":
+                    this.hideObject();
+                    break;
+                case "addprop":
+                    this.hideAddProp();
+                    break;
+                case "addlistener":
+                    this.hideAddListener();
+                    break;
             }
-             
-             
+         
+         
              
              
             //this.rooview.el.hide();
-            this.add_props.el.show_all();
-            this.add_props.show(
-                Palete.factory(this.project.xtype), 
-                "props",
-                ae.fqn()
+            this.code_edit.el.show_all();
+            this.code_edit.show(
+                node
+                ptype,
+                key
             );
         
-            _this.addpropsview.el.save_easing_state();
+            _this.codeditview.el.save_easing_state();
                 
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -138,15 +141,15 @@ public class Xcls_MainWindow : Object
             
             el.set_scale(0.5f,0.5f);
         
-            _this.addpropsview.el.set_scale(1.0f,1.0f);
+            _this.codeditview.el.set_scale(1.0f,1.0f);
            
            
          
             //_this.clutterfiles.loadProject(_this.project);
         
             el.restore_easing_state();
-            _this.addpropsview.el.restore_easing_state();
-            this.state = "addprop";
+            _this.codeditview.el.restore_easing_state();
+            this.state = "codeedit";
         }
         }
     public void hideAddListener() {
