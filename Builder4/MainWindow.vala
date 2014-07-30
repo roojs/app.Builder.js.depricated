@@ -247,6 +247,7 @@ public class Xcls_MainWindow : Object
                 if (!this.code_editor.saveContents()) {
                     return false;
                 }
+                return false;
             
             });
             this.left_tree.node_selected.connect((sel) => {
@@ -292,7 +293,7 @@ public class Xcls_MainWindow : Object
                        
                                         
                 }
-                return true;
+                return  ;
                   
             });
             this.left_tree.before_node_change.connect((sel) => {
