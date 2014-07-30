@@ -228,6 +228,8 @@ public class Xcls_Editor : Object
 
             // set gobject values
             this.el.label = "Save";
+
+            // listeners 
         }
 
         // userdefined functions 

@@ -48,7 +48,9 @@
                             "label": "Save",
                             "xpack": "add",
                             "xtype": "Button",
-                            "|xns": "Gtk"
+                            "|xns": "Gtk",
+                            "": "",
+                            "listeners": {}
                         }
                     ]
                 },

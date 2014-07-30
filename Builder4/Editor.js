@@ -97,7 +97,8 @@ Editor=new XObject({
                 {
                     xtype: Gtk.Button,
                     label : "Save",
-                    xpack : "add"
+                    xpack : "add",
+                     : ""
                 }
             ]
         },
