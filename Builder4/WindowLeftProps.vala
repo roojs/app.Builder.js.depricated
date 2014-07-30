@@ -319,8 +319,9 @@ public class Xcls_LeftProps : Object
         }
     public void startEditingKey( Gtk.TreePath path) {
             
-             
-            this.stop_editor();
+             if (!this.stop_editor()) {
+                return;
+             }
           
             // others... - fill in options for true/false?
             
@@ -343,7 +344,9 @@ public class Xcls_LeftProps : Object
         }
     public void startEditingValue( Gtk.TreePath path) {
                     
-                     
+                    if (!this.stop_editor()) {
+                        return;
+                    }
                     
                     Gtk.TreeIter iter;
         
