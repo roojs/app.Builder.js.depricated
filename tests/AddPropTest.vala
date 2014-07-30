@@ -31,6 +31,7 @@ int main (string[] args) {
 
 	w.add(left_props.el);
 	w.show_all();
+	
 	left_props show(Palete.factory("Roo"), "props", "Roo.form.Form");
 	
 		 
