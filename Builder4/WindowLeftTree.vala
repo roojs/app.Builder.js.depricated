@@ -284,7 +284,7 @@ public class Xcls_WindowLeftTree : Object
                     if (src != this.el) {
                         //print("drag_data_recieved from another element");
                         
-                        
+                         
                         var selection_text = sel.get_text();
                         
                         if (selection_text == null || selection_text.length < 1 || !isOver) {
@@ -303,27 +303,24 @@ public class Xcls_WindowLeftTree : Object
                         
                         // dropList --- need to gather this ... 
                         
-                        
+                        var dropList = _this.model.file.palete().getDropList(selection_text);
                         
                         targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                             
                         print("targetDAta: " + targetData +"\n");
                         
-                        
-                        
-                        
-                        // what's 
-                        
-                        //print("no drag data!");
-                        // fix-me - this.. needs to handle comming from the palete...
-                        if (this.drag_in_motion) {
-                            Gdk.drag_status(ctx, 0, time);
-                            this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                        if (targetData.length < 1) {
+                         
+                            // invalid drop path..
+                            if (this.drag_in_motion) {
+                                Gdk.drag_status(ctx, 0, time);
+                                this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                                return;
+                            }
+                            Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                            // no drop action...
                             return;
                         }
-                        Gtk.drag_finish (ctx, false, false, time);        // drop failed..
-                        // no drop action...
-                        return;
                     }
                         
                     var  targetData = "";
