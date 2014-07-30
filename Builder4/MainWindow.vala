@@ -561,7 +561,6 @@ public class Xcls_MainWindow : Object
             _this.codeditview.el.restore_easing_state();
             this.state = "codeedit";
         }
-        }
     public void showObject() {
         
              

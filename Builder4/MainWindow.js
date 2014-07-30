@@ -486,7 +486,6 @@ MainWindow=new XObject({
         el.restore_easing_state();
         _this.codeditview.el.restore_easing_state();
         this.state = "codeedit";
-    }
     },
     'void:showObject' : () {
     
