@@ -352,7 +352,7 @@ WindowLeftTree=new XObject({
                      } 
                      
                      //var render = this.get('/LeftTree').getRenderer();                
-                   
+                    print("LEFT TREE -> view -> selection changed called\n");
                     
                     if (this.el.get_selection().count_selected_rows() < 1) {
                 
@@ -361,7 +361,7 @@ WindowLeftTree=new XObject({
                         _this.node_selected(null);
                         
                         return  ;
-                }
+                    }
                         
                         //console.log('changed');
                     var s = this.el.get_selection();
