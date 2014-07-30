@@ -158,12 +158,7 @@ public class Xcls_WindowLeftTree : Object
                 //console.log("button press?");
             
                 
-
-	       if (! _this.before_node_change(null) ) {
-		       return true;
-	       }
-
-		    
+                _this.before_node_change(null);
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return false;
@@ -456,22 +451,19 @@ public class Xcls_WindowLeftTree : Object
                 // do we always say failure, so we handle the reall drop?
                     Gtk.drag_finish (ctx, false, false,time); //delete_selection_data, time);
                    
-            } );Tr
+            } );
             this.el.cursor_changed.connect(  ( ) => {
             
             
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
-                 
-                 if (!_this.before_node_change(null) ) {
-			 this.blockChanges = true;
-			 this.el.get_selection().unselect_all();
-			 this.blockChanges = false;
-			 return;
-		 }
-                 
-                 
+                  if (!_this.before_node_change(null) ) {
+            	     this.blockChanges = true;
+            	     this.el.get_selection().unselect_all();
+            	     this.blockChanges = false;
+            	     return;
+                 }
                  if (_this.model.file == null) {
                      return;
                  } 

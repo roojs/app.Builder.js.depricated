@@ -345,10 +345,12 @@ WindowLeftTree=new XObject({
                      if (this.blockChanges) { // probably not needed.. 
                        return  ;
                      }
-                     
-                     
-                     _this.before_node_change(null);
-                     
+                      if (!_this.before_node_change(null) ) {
+                	     this.blockChanges = true;
+                	     this.el.get_selection().unselect_all();
+                	     this.blockChanges = false;
+                	     return;
+                     }
                      if (_this.model.file == null) {
                          return;
                      } 
