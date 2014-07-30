@@ -195,12 +195,15 @@ public class Xcls_LeftProps : Object
             
                 this.model.el.get_value(iter, 0 , out gval);
                 if ((string)gval != type) {
+                    print("not type: %s = %s\n", (string)gval , type);
                     return false;
                 }
                 this.model.el.get_value(iter, 1 , out gval);
                 if ((string)gval != fkey) {
+                    print("not key: %s = \n", (string)gval , fkey);
                     return false;
                 }
+                
                 this.startEditingValue(this.model.el.get_path(iter));
                 //s.select_iter(iter);
                 return true; 
