@@ -267,7 +267,7 @@ MainWindow=new XObject({
         
         
         _this.addpropsview.this.select.connect( (key,type,skel, etype) => {
-            this.left_props.addProp(type, key, "");
+            this.left_props.addProp(etype, key, "");
         });
         
         
