@@ -75,9 +75,7 @@ WindowAddProp=new XObject({
                         _this.select(key,type,skel, etype);
                         
                 }
-                }
             },
-            '<b>cursor_changed</b>' : "() => {\n        Gtk.TreeIter iter;\n        Gtk.TreeModel mod;\n\n        var m = _this.model;\n        var s = this.el.get_selection();\n        if (!s.get_selected(out mod, out iter)) {\n\t\treturn; \n\t}\n        var tp = m.el.get_path(iter).to_string();\n        \n        \n        // var val = \"\";\n        \n        \n        var key = m.getValue(iter, 0);\n        \n        var type = m.getValue(iter, 1);\n        var skel = m.getValue(iter, 3);\n        var etype = m.getValue(iter, 5);\n        \n        \n        \n        _this.select(key,type,skel, etype);\n        \n}",
             pack : "add",
             tooltip_column : 2,
             enable_tree_lines : true,

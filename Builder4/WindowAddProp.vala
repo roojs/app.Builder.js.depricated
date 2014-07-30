@@ -151,7 +151,7 @@ public class Xcls_WindowAddProp : Object
                     _this.select(key,type,skel, etype);
                     
             }
-            } );
+             );
         }
 
         // userdefined functions 
