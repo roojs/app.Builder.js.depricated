@@ -21,24 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:hideCodeEdit' : () {
-        this.code_editor.saveContents();
-       
-         _this.codeeditview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.codeeditview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.codeeditview.el.restore_easing_state();  
-     },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -79,6 +61,24 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
          _this.addpropsview.el.restore_easing_state();  
+     },
+    'void:hideCodeEdit' : () {
+        this.code_editor.saveContents();
+       
+         _this.codeeditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.codeeditview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.codeeditview.el.restore_easing_state();  
      },
     'void:hideObject' : () {
           // return to editing state..
@@ -464,7 +464,7 @@ MainWindow=new XObject({
         //this.rooview.el.hide();
         this.code_editor.el.show_all();
         this.code_editor.show(
-            node
+            node,
             ptype,
             key
         );

@@ -104,24 +104,6 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void hideCodeEdit() {
-            this.code_editor.saveContents();
-           
-             _this.codeeditview.el.save_easing_state();
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-            _this.codeeditview.el.set_scale(0.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-             _this.codeeditview.el.restore_easing_state();  
-         }
     public void hideAddListener() {
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
@@ -153,6 +135,24 @@ public class Xcls_MainWindow : Object
         
             el.restore_easing_state();
              _this.addpropsview.el.restore_easing_state();  
+         }
+    public void hideCodeEdit() {
+            this.code_editor.saveContents();
+           
+             _this.codeeditview.el.save_easing_state();
+            var el = _this.rooview.el;
+            el.save_easing_state();
+        
+            
+            el.set_scale(1.0f,1.0f);
+            _this.codeeditview.el.set_scale(0.0f,0.0f);
+            _this.state = "edit";
+        
+         
+            //_this.clutterfiles.loadProject(_this.project);
+        
+            el.restore_easing_state();
+             _this.codeeditview.el.restore_easing_state();  
          }
     public void hideObject() {
               // return to editing state..
@@ -538,7 +538,7 @@ public class Xcls_MainWindow : Object
             //this.rooview.el.hide();
             this.code_editor.el.show_all();
             this.code_editor.show(
-                node
+                node,
                 ptype,
                 key
             );
