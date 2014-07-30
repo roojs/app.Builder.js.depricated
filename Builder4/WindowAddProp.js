@@ -18,7 +18,7 @@ WindowAddProp=new XObject({
         this.model.el.clear();
     
         Gtk.TreeIter iter;
-        var elementList = pal.getPropertiesFor(etype, xtype);
+        var elementList = pal.getPropertiesFor( xtype,etype);
         
         
         //print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
