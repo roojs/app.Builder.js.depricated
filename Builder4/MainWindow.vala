@@ -241,6 +241,7 @@ public class Xcls_MainWindow : Object
            
             this.left_tree.before_node_change.connect(() => {
                 if (this.state != "codeedit") {
+                    this.left_props.finish_editing();
                     return true;
                 }
                 if (!this.code_editor.saveContents()) {
@@ -295,10 +296,7 @@ public class Xcls_MainWindow : Object
                 return  ;
                   
             });
-            this.left_tree.before_node_change.connect((sel) => {
-                this.left_props.finish_editing();
-                 
-            });
+            
             
             
         

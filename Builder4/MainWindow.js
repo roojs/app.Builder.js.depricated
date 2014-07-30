@@ -167,6 +167,7 @@ MainWindow=new XObject({
        
         this.left_tree.before_node_change.connect(() => {
             if (this.state != "codeedit") {
+                this.left_props.finish_editing();
                 return true;
             }
             if (!this.code_editor.saveContents()) {
@@ -221,10 +222,7 @@ MainWindow=new XObject({
             return  ;
               
         });
-        this.left_tree.before_node_change.connect((sel) => {
-            this.left_props.finish_editing();
-             
-        });
+        
         
         
     
