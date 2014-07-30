@@ -321,6 +321,12 @@ public class Xcls_WindowLeftTree : Object
                             // no drop action...
                             return;
                         }
+                        // valid drop path..
+                        
+                        
+                        
+                        return;
+                        
                     }
                         
                     var  targetData = "";

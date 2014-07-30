@@ -208,6 +208,12 @@ WindowLeftTree=new XObject({
                                 // no drop action...
                                 return;
                             }
+                            // valid drop path..
+                            
+                            
+                            
+                            return;
+                            
                         }
                             
                         var  targetData = "";
