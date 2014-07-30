@@ -339,9 +339,12 @@ WindowLeftProps=new XObject({
                     print("Call show editor\n");
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         this.view.el.get_selection().select_path(path);
+                        
+                        this.show_editor(file, node, type, key);
+                        
                         return false;
                     });
-                    this.show_editor(file, node, type, key);
+                   
                     
                     return;
                 }
