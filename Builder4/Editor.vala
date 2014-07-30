@@ -144,6 +144,8 @@ public class Xcls_Editor : Object
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
+            var child_1 = new Xcls_Entry4( _this );
+            child_1.ref();
         }
 
         // userdefined functions 
@@ -176,6 +178,29 @@ public class Xcls_Editor : Object
             }
              
              );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Entry4 : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_Editor  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Entry4(Xcls_Editor _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Entry();
+
+            // my vars
+
+            // set gobject values
         }
 
         // userdefined functions 
