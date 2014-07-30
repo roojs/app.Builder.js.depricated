@@ -156,9 +156,11 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.button_press_event.connect(   ( ev) => {
                 //console.log("button press?");
+                if (! _this.before_node_change(null) ) {
+                   return true;
+                }
             
                 
-                _this.before_node_change(null);
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return false;
