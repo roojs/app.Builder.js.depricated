@@ -39,17 +39,17 @@
                     ]
                 },
                 {
+                    "pack": "add",
+                    "xtype": "HBox",
                     "|homogeneous": "false",
-                    "pack": false,
-                    "xtype": "HBox",
                     "|xns": "Gtk",
-                    "": "",
-                    "listeners": {}
-                },
-                {
-                    "|xns": "Gtk",
-                    "xtype": "HBox",
-                    "pack": false
+                    "items": [
+                        {
+                            "xpack": "add",
+                            "xtype": "Button",
+                            "|xns": "Gtk"
+                        }
+                    ]
                 },
                 {
                     "id": "RightEditor",

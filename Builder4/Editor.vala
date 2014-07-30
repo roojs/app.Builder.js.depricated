@@ -59,11 +59,10 @@ public class Xcls_Editor : Object
         this.el.pack_start (  child_0.el , false,true );
         var child_1 = new Xcls_HBox4( _this );
         child_1.ref();
-        var child_2 = new Xcls_HBox5( _this );
+        this.el.add (  child_1.el  );
+        var child_2 = new Xcls_RightEditor( _this );
         child_2.ref();
-        var child_3 = new Xcls_RightEditor( _this );
-        child_3.ref();
-        this.el.add (  child_3.el  );
+        this.el.add (  child_2.el  );
     }
 
     // userdefined functions 
@@ -202,27 +201,28 @@ public class Xcls_Editor : Object
             // my vars
 
             // set gobject values
-
-            // listeners 
+            var child_0 = new Xcls_Button5( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
     }
-    public class Xcls_HBox5 : Object 
+    public class Xcls_Button5 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Button el;
         private Xcls_Editor  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_HBox5(Xcls_Editor _owner )
+        public Xcls_Button5(Xcls_Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Button();
 
             // my vars
 

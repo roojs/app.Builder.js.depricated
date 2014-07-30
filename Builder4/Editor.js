@@ -91,13 +91,14 @@ Editor=new XObject({
         },
         {
             xtype: Gtk.HBox,
+            pack : "add",
             homogeneous : false,
-            pack : false,
-             : ""
-        },
-        {
-            xtype: Gtk.HBox,
-            pack : false
+            items : [
+                {
+                    xtype: Gtk.Button,
+                    xpack : "add"
+                }
+            ]
         },
         {
             xtype: Gtk.ScrolledWindow,
