@@ -368,7 +368,7 @@ WindowLeftTree=new XObject({
                                 //??this.model.load( false);
                                 _this.node_selected(null);
                                 
-                                return  ;
+                                return false ;
                             }
                                 
                                 //console.log('changed');
@@ -385,6 +385,7 @@ WindowLeftTree=new XObject({
                             
                             var node = (JsRender.Node)value.dup_object();
                             _this.node_selected(node);
+                            return false;
                       });  
                     //_this.after_node_change(node);
                 

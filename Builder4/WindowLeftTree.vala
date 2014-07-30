@@ -481,7 +481,7 @@ public class Xcls_WindowLeftTree : Object
                             //??this.model.load( false);
                             _this.node_selected(null);
                             
-                            return  ;
+                            return false ;
                         }
                             
                             //console.log('changed');
@@ -498,6 +498,7 @@ public class Xcls_WindowLeftTree : Object
                         
                         var node = (JsRender.Node)value.dup_object();
                         _this.node_selected(node);
+                        return false;
                   });  
                 //_this.after_node_change(node);
             
