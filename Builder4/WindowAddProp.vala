@@ -148,7 +148,7 @@ public class Xcls_WindowAddProp : Object
                     var etype = m.getValue(iter, 5);
                     
                     
-                    _this.select(key,type,skel, etype);
+                    _this.select(key,etype == "signal" ? "" : type,skel, etype);
                     
             }
              );
