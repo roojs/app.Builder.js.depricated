@@ -234,6 +234,13 @@ public class Xcls_MainWindow : Object
                         }
                         this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
                         break;
+                   case "prop":
+                        if (sel == null) {
+                            this.add_props.clear();
+                            break;
+                        }
+                        this.add_props.show(_this.left_tree.getActiveFile().palete(), "prop", sel.fqn());
+                        break;
                 }
                   
             });
