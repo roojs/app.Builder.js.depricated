@@ -48,7 +48,15 @@ Editor=new XObject({
         this.key  = key;
         this.node = node;
         
+       string val = "";
         // find the text for the node..
+        if (ptype == "listener") {
+            val = node.listeners.get(key);
+        
+        } else {
+            val = node.props.get(key);
+        }
+        
         
     
     },
