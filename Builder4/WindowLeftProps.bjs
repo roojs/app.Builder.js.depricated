@@ -113,7 +113,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \".int:XXX\", \"0\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"XXX\", \"0\", \"int\");\n}"
                                             },
                                             "label": "Number",
                                             "pack": "append",

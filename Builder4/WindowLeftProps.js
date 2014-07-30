@@ -498,7 +498,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp("prop",  ".int:XXX", "0");
+                                            _this.addProp("prop",  "XXX", "0", "int");
                                         }
                                     },
                                     label : "Number",
