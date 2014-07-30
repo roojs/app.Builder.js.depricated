@@ -188,8 +188,7 @@ WindowLeftTree=new XObject({
                                 return;            
                             
                             }
-                            
-                            
+                             
                             // dropList --- need to gather this ... 
                             //print("get dropList for : %s\n",selection_text);            
                             var dropList = _this.model.file.palete().getDropList(selection_text);

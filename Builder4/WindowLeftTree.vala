@@ -301,17 +301,16 @@ public class Xcls_WindowLeftTree : Object
                             return;            
                         
                         }
-                        
-                        
+                         
                         // dropList --- need to gather this ... 
-                        print("get dropList for : %s\n",selection_text);            
+                        //print("get dropList for : %s\n",selection_text);            
                         var dropList = _this.model.file.palete().getDropList(selection_text);
                         
-                        print("dropList: %s\n", string.joinv(" , ", dropList));
+                        //print("dropList: %s\n", string.joinv(" , ", dropList));
                         
-                        targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                        targetData = _this.model.findDropNodeByPath( path.to_string(), dropList, pos);
                             
-                        print("targetDAta: " + targetData +"\n");
+                        //print("targetDAta: " + targetData +"\n");
                         
                         if (targetData.length < 1) {
                          
@@ -679,16 +678,15 @@ public class Xcls_WindowLeftTree : Object
                 //console.dump(this.treemap);
                 
                 while (path.length > 0) {
-                    print("LOOKING FOR PATH: %s\n" , path);
+                    //print("LOOKING FOR PATH: " + path);
                     var node_data = this.pathToNode(path);
                     
                     if (node_data == null) {
-                        print("node not found\n");
+                        print("node not found");
                         return null;
                     }
                     
                     var xname = node_data.fqn();
-		    print("node check %s\n", xname);
                     var match = "";
                     var prop = "";
                     
