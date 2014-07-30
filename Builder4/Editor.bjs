@@ -6,13 +6,14 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
-            ".string:key": "\"\"",
+            ".JsRender.Node:node": "null",
             ".bool:dirty": "false",
             ".bool:pos": "false",
             ".int:pos_root_x": "",
             ".int:pos_root_y": "",
             ".signal:void:save": "()",
             ".string:activeEditor": "\"\"",
+            ".string:key": "\"\"",
             ".string:ptype": "\"\"",
             "pack": "add",
             "xtype": "VBox",
@@ -20,8 +21,6 @@
             "|homogeneous": "true",
             "|void:show": "(JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n\n\n}",
             "|xns": "Gtk",
-            "": "",
-            "listeners": {},
             "items": [
                 {
                     "pack": "pack_start,false,true",

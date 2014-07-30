@@ -50,7 +50,6 @@ Editor=new XObject({
     
     
     },
-     : "",
     items : [
         {
             xtype: Gtk.Toolbar,

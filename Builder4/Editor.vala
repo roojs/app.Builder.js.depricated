@@ -28,13 +28,14 @@ public class Xcls_Editor : Object
     public Xcls_buffer buffer;
 
         // my vars
-    public string key;
+    public JsRender.Node node;
     public bool dirty;
     public bool pos;
     public int pos_root_x;
     public int pos_root_y;
     public signal void save();
     public string activeEditor;
+    public string key;
     public string ptype;
 
         // ctor 
@@ -45,10 +46,11 @@ public class Xcls_Editor : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars
-        this.key = "";
+        this.node = null;
         this.dirty = false;
         this.pos = false;
         this.activeEditor = "";
+        this.key = "";
         this.ptype = "";
 
         // set gobject values
@@ -58,8 +60,6 @@ public class Xcls_Editor : Object
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.add (  child_1.el  );
-
-        // listeners 
     }
 
     // userdefined functions 
