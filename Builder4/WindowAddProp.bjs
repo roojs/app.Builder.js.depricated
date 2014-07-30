@@ -24,6 +24,9 @@
                     "|headers_visible": "false",
                     "|init": "{  \n       var description = new Pango.FontDescription();\n     description.set_size(8000);\n    this.el.modify_font(description);     \n                    \n    this.el.get_selection().set_mode( Gtk.SelectionMode.SINGLE);\n \n\n    \n  \n    \n}\n",
                     "|xns": "Gtk",
+                    "listeners": {
+                        "row_activated": "function (self, path, column) {\n\n}"
+                    },
                     "items": [
                         {
                             "id": "model",

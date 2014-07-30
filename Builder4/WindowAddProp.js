@@ -68,6 +68,11 @@ WindowAddProp=new XObject({
               
                 
             },
+            listeners : {
+                row_activated : function (self, path, column) {
+                
+                }
+            },
             items : [
                 {
                     xtype: Gtk.ListStore,

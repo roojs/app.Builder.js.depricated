@@ -126,6 +126,11 @@ public class Xcls_WindowAddProp : Object
               
                 
             }
+
+            // listeners 
+            this.el.row_activated.connect( function (self, path, column) {
+            
+            } );
         }
 
         // userdefined functions 
