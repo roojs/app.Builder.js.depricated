@@ -200,7 +200,7 @@ public class Xcls_LeftProps : Object
                 }
                 this.model.el.get_value(iter, 1 , out gval);
                 if ((string)gval != fkey) {
-                    print("not key: %s = \n", (string)gval , fkey);
+                    print("not key: %s = %s\n", (string)gval , fkey);
                     return false;
                 }
                 
