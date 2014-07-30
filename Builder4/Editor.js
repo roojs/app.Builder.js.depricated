@@ -39,10 +39,10 @@ Editor=new XObject({
          
         // find the text for the node..
         if (ptype == "listener") {
-            val = this.node.listeners.set(key,str);
+            this.node.listeners.set(key,str);
         
         } else {
-            val = this.node.props.set(key,str);
+             this.node.props.set(key,str);
         }
     
          
