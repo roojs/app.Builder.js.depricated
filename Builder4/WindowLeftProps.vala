@@ -320,7 +320,7 @@ public class Xcls_LeftProps : Object
     public void startEditingKey( Gtk.TreePath path) {
             
              
-            
+            this.stop_editor();
           
             // others... - fill in options for true/false?
             
