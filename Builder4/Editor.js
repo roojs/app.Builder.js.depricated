@@ -101,7 +101,7 @@ Editor=new XObject({
                             
                             if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                                 print("SAVE: ctrl-S  pressed");
-                                this.save();
+                                _this.saveContents();
                                 return false;
                             }
                            // print(event.key.keyval)

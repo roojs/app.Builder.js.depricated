@@ -46,7 +46,7 @@
                     "items": [
                         {
                             "listeners": {
-                                "key_release_event": " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        this.save();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
+                                "key_release_event": " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        _this.saveContents();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
                             },
                             "id": "view",
                             "indent_width": 4,
