@@ -679,7 +679,7 @@ public class Xcls_WindowLeftTree : Object
                 //console.dump(this.treemap);
                 
                 while (path.length > 0) {
-                    //print("LOOKING FOR PATH: " + path);
+                    print("LOOKING FOR PATH: " + path);
                     var node_data = this.pathToNode(path);
                     
                     if (node_data == null) {
