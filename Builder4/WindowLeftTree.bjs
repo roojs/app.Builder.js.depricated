@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
-            ".signal:void:before_node_change(JsRender.Node? node)": "",
+            ".signal:bool:before_node_change(JsRender.Node? node)": "",
             ".signal:void:node_selected(JsRender.Node? node)": "",
             "id": "WindowLeftTree",
             "pack": "add",
