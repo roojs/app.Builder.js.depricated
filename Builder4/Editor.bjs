@@ -45,12 +45,14 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "listeners": {
+                                "clicked": " () => { \n    _this.saveContents();\n}\n \n"
+                            },
+                            "id": "",
                             "label": "Save",
                             "xpack": "add",
                             "xtype": "Button",
-                            "|xns": "Gtk",
-                            "": "",
-                            "listeners": {}
+                            "|xns": "Gtk"
                         }
                     ]
                 },

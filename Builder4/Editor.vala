@@ -230,6 +230,11 @@ public class Xcls_Editor : Object
             this.el.label = "Save";
 
             // listeners 
+            this.el.clicked.connect(  () => { 
+                _this.saveContents();
+            }
+             
+             );
         }
 
         // userdefined functions 
