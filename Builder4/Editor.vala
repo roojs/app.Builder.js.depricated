@@ -84,7 +84,14 @@ public class Xcls_Editor : Object
              // LeftPanel.model.changed(  str , false);
              _this.dirty = false;
              _this.save_button.el.sensitive = false;
-               
+             
+             
+             
+             
+             
+             
+             
+             
             
             // call the signal..
             this.save();
