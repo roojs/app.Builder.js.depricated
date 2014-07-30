@@ -104,6 +104,7 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void hideCodeEdit
     public void hideAddListener() {
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
