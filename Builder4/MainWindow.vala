@@ -237,6 +237,18 @@ public class Xcls_MainWindow : Object
             this.left_tree = new Xcls_WindowLeftTree();
             this.left_tree.ref();
             this.tree.el.pack_start(this.left_tree.el,true, true,0);
+            
+            this.left_tree.node_selected.connect((sel) => {
+            
+            this.left_tree.node_selected.before_node_change(() => {
+                if (this.state != 'codeedit') {
+                    return true;
+                }
+                if (!this.code_editor.saveContents()) {
+                    return false;
+                }
+            
+            });
             this.left_tree.node_selected.connect((sel) => {
                 
                 print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
@@ -274,9 +286,7 @@ public class Xcls_MainWindow : Object
                         break;
         
                    case "codeedit":
-                        if (!this.code_editor.saveContents()) {
-                            return false;
-                        }
+                       
                         this.hideCodeEdit();
                         break;
                        
