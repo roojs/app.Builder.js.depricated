@@ -126,8 +126,8 @@ public class Xcls_MainWindow : Object
              
              
             //this.rooview.el.hide();
-            this.code_edit.el.show_all();
-            this.code_edit.show(
+            this.code_editor.el.show_all();
+            this.code_editor.show(
                 node
                 ptype,
                 key
