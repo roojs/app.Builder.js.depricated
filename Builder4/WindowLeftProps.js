@@ -445,7 +445,7 @@ WindowLeftProps=new XObject({
                                     xtype: Gtk.MenuItem,
                                     listeners : {
                                         activate : ()  => {
-                                            _this.addProp( "prop", ".string:id", "");
+                                            _this.addProp( "prop", "id", "", "string");
                                         }
                                     },
                                     label : "ID",
