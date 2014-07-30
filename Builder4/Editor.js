@@ -65,7 +65,7 @@ Editor=new XObject({
                     xtype: Gtk.ToolButton,
                     listeners : {
                         clicked : () => { 
-                            Editor.RightEditor.save();
+                            _this.saveContents();
                         }
                     },
                     id : "save_button",

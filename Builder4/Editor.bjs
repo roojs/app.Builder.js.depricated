@@ -28,7 +28,7 @@
                     "items": [
                         {
                             "listeners": {
-                                "clicked": " () => { \n    Editor.RightEditor.save();\n}\n \n"
+                                "clicked": " () => { \n    _this.saveContents();\n}\n \n"
                             },
                             "id": "save_button",
                             "label": "Save",

@@ -144,7 +144,7 @@ public class Xcls_Editor : Object
 
             // listeners 
             this.el.clicked.connect(  () => { 
-                Editor.RightEditor.save();
+                _this.saveContents();
             }
              
              );
