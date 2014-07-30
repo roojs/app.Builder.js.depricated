@@ -226,7 +226,7 @@ MainWindow=new XObject({
         this.left_props.stop_editor.connect( () => {
             var ret =  this.code_editor.saveContents();
             if (!ret) {
-                return;
+                return false;
             }
             this.hideCodeEdit();
             return ret;

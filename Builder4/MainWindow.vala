@@ -300,7 +300,7 @@ public class Xcls_MainWindow : Object
             this.left_props.stop_editor.connect( () => {
                 var ret =  this.code_editor.saveContents();
                 if (!ret) {
-                    return;
+                    return false;
                 }
                 this.hideCodeEdit();
                 return ret;
