@@ -77,27 +77,6 @@ Editor=new XObject({
             xtype: Gtk.ScrolledWindow,
             id : "RightEditor",
             pack : "add",
-            'bool:save' : () {
-                 print("editor.rightbutton.save");
-                 if (_this.active_path.length  < 1 ) {
-                      print("skip - no active path");
-                    return true;
-                 }
-                 
-                 var str = Editor.buffer.toString();
-                 
-                 if (!Editor.buffer.checkSyntax()) {
-                     print("check syntax failed");
-                     //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-                     return false;
-                 }
-                 
-                 // LeftPanel.model.changed(  str , false);
-                 _this.dirty = false;
-                 _this.save_button.el.sensitive = false;
-                 print("set save button grey");
-                 return true;
-            },
             items : [
                 {
                     xtype: GtkSource.View,
