@@ -302,6 +302,11 @@ public class Xcls_MainWindow : Object
                         }
                         this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
                         break;
+        
+                   case "codeedit":
+                       this.hideCodeEdit();
+                       break;
+                       
                                         
                 }
                   
