@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
+            "|void:show": "",
             ".bool:dirty": "false",
             ".bool:pos": "false",
             ".int:pos_root_x": "",

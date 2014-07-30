@@ -59,6 +59,7 @@ public class Xcls_Editor : Object
     }
 
     // userdefined functions 
+    public void show
     public bool saveContents  ()  {
             
             
