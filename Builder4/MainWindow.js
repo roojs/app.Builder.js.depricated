@@ -200,11 +200,15 @@ MainWindow=new XObject({
                     break;
     
                case "codeedit":
-                   this.hideCodeEdit();
-                   break;
+                    if (!this.code_editor.saveContents()) {
+                        return false;
+                    }
+                    this.hideCodeEdit();
+                    break;
                    
                                     
             }
+            return true;
               
         });
         this.left_tree.before_node_change.connect((sel) => {
