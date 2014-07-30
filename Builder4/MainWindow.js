@@ -63,7 +63,7 @@ MainWindow=new XObject({
          _this.addpropsview.el.restore_easing_state();  
      },
     'void:hideCodeEdit' : () {
-        this.code_editor.saveContents();
+        //this.code_editor.saveContents();
        
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;

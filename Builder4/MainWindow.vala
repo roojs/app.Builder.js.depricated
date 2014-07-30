@@ -137,7 +137,7 @@ public class Xcls_MainWindow : Object
              _this.addpropsview.el.restore_easing_state();  
          }
     public void hideCodeEdit() {
-            this.code_editor.saveContents();
+            //this.code_editor.saveContents();
            
              _this.codeeditview.el.save_easing_state();
             var el = _this.rooview.el;
