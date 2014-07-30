@@ -467,12 +467,6 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_Button3( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button7( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-            var child_2 = new Xcls_Button11( _this );
-            child_2.ref();
-            this.el.add (  child_2.el  );
         }
 
         // userdefined functions 
@@ -499,11 +493,19 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_HBox4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
+            var child_1 = new Xcls_AddPropertyPopup( _this );
+            child_1.ref();
 
             // listeners 
-            this.el.button_press_event.connect(  ( event ) => {
-                _this.show_add_props("prop");
-                return false;
+            this.el.button_press_event.connect(   (self, ev) => {
+                _this.before_edit();
+                
+                    
+                var p = _this.AddPropertyPopup;
+                p.el.set_screen(Gdk.Screen.get_default());
+                p.el.show_all();
+                 p.el.popup(null, null, null, ev.button, ev.time);
+                 return true;
             } );
         }
 
@@ -577,237 +579,6 @@ public class Xcls_LeftProps : Object
         public Xcls_Label6(Xcls_LeftProps _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Property" );
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button7 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button7(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_HBox8( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-
-            // listeners 
-            this.el.button_press_event.connect(   ( event)  => {
-                
-            // 	if (!this.get('/Editor').save()) {
-            // 	    // popup!! - click handled.. 
-            // 	    return true;
-            //        }
-                _this.show_add_props("listener");
-                return false;
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_HBox8 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_HBox8(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Image9( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Label10( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Image9 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Image9(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars
-
-            // set gobject values
-            this.el.icon_size = Gtk.IconSize.MENU;
-            this.el.stock = Gtk.STOCK_ADD;
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Label10 : Object 
-    {
-        public Gtk.Label el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Label10(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Label( "Handler" );
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button11 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button11(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_HBox12( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_AddPropertyPopup( _this );
-            child_1.ref();
-
-            // listeners 
-            this.el.button_press_event.connect(   (self, ev) => {
-                _this.before_edit();
-                
-                    
-                var p = _this.AddPropertyPopup;
-                p.el.set_screen(Gdk.Screen.get_default());
-                p.el.show_all();
-                 p.el.popup(null, null, null, ev.button, ev.time);
-                 return true;
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_HBox12 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_HBox12(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Image13( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Label14( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Image13 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Image13(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars
-
-            // set gobject values
-            this.el.icon_size = Gtk.IconSize.MENU;
-            this.el.stock = Gtk.STOCK_ADD;
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Label14 : Object 
-    {
-        public Gtk.Label el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Label14(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
             this.el = new Gtk.Label( "Other" );
 
             // my vars
@@ -837,36 +608,268 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem16( _this );
+            var child_0 = new Xcls_MenuItem8( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_MenuItem17( _this );
+            var child_1 = new Xcls_MenuItem9( _this );
             child_1.ref();
             this.el.append (  child_1.el  );
-            var child_2 = new Xcls_MenuItem18( _this );
+            var child_2 = new Xcls_MenuItem10( _this );
             child_2.ref();
             this.el.append (  child_2.el  );
-            var child_3 = new Xcls_SeparatorMenuItem19( _this );
+            var child_3 = new Xcls_SeparatorMenuItem11( _this );
             child_3.ref();
             this.el.add (  child_3.el  );
-            var child_4 = new Xcls_MenuItem20( _this );
+            var child_4 = new Xcls_MenuItem12( _this );
             child_4.ref();
             this.el.append (  child_4.el  );
-            var child_5 = new Xcls_MenuItem21( _this );
+            var child_5 = new Xcls_MenuItem13( _this );
             child_5.ref();
             this.el.append (  child_5.el  );
-            var child_6 = new Xcls_MenuItem22( _this );
+            var child_6 = new Xcls_MenuItem14( _this );
             child_6.ref();
             this.el.append (  child_6.el  );
-            var child_7 = new Xcls_SeparatorMenuItem23( _this );
+            var child_7 = new Xcls_SeparatorMenuItem15( _this );
             child_7.ref();
             this.el.add (  child_7.el  );
-            var child_8 = new Xcls_MenuItem24( _this );
+            var child_8 = new Xcls_MenuItem16( _this );
             child_8.ref();
             this.el.append (  child_8.el  );
-            var child_9 = new Xcls_MenuItem25( _this );
+            var child_9 = new Xcls_MenuItem17( _this );
             child_9.ref();
             this.el.append (  child_9.el  );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem8 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem8(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "ID";
+            this.el.tooltip_markup = "Using this.get('*someid') will find any id in an application.";
+
+            // listeners 
+            this.el.activate.connect(  ()  => {
+                _this.addProp( "prop", ".string:id", "");
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem9 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem9(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "PACK";
+            this.el.tooltip_markup = "Add what type of packing is to be used";
+
+            // listeners 
+            this.el.activate.connect(   ( ) => {
+            
+                _this.addProp( "prop", "*pack","add");
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem10 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem10(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "INIT";
+            this.el.tooltip_markup = "Override the init method";
+
+            // listeners 
+            this.el.activate.connect(   ( ) => {
+            
+                _this.addProp( "prop",  "|init", "{\n\n}\n" );
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_SeparatorMenuItem11 : Object 
+    {
+        public Gtk.SeparatorMenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_SeparatorMenuItem11(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.SeparatorMenuItem();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem12 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem12(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "String";
+            this.el.tooltip_markup = "Add a user defined string property";
+
+            // listeners 
+            this.el.activate.connect(   (self) => {
+            
+                _this.addProp( "prop", ".string:XXXX", "");
+            
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem13 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem13(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Number";
+            this.el.tooltip_markup = "Add a user defined number property";
+
+            // listeners 
+            this.el.activate.connect(   ( ) =>{
+            
+                _this.addProp("prop",  ".int:XXX", "0");
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem14 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem14(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Boolean";
+            this.el.tooltip_markup = "Add a user defined boolean property";
+
+            // listeners 
+            this.el.activate.connect(   ( ) =>{
+            
+                _this.addProp( "prop", ".bool:XXX", "true");
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_SeparatorMenuItem15 : Object 
+    {
+        public Gtk.SeparatorMenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_SeparatorMenuItem15(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.SeparatorMenuItem();
+
+            // my vars
+
+            // set gobject values
         }
 
         // userdefined functions 
@@ -890,12 +893,13 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.label = "ID";
-            this.el.tooltip_markup = "Using this.get('*someid') will find any id in an application.";
+            this.el.label = "Javascript Function";
+            this.el.tooltip_markup = "Add a user function boolean property";
 
             // listeners 
-            this.el.activate.connect(  ()  => {
-                _this.addProp( "prop", ".string:id", "");
+            this.el.activate.connect(   ( ) =>{
+            
+                _this.addProp("prop",  "|XXXX", "function() { }");
             } );
         }
 
@@ -913,239 +917,6 @@ public class Xcls_LeftProps : Object
 
             // ctor 
         public Xcls_MenuItem17(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "PACK";
-            this.el.tooltip_markup = "Add what type of packing is to be used";
-
-            // listeners 
-            this.el.activate.connect(   ( ) => {
-            
-                _this.addProp( "prop", "*pack","add");
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem18 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem18(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "INIT";
-            this.el.tooltip_markup = "Override the init method";
-
-            // listeners 
-            this.el.activate.connect(   ( ) => {
-            
-                _this.addProp( "prop",  "|init", "{\n\n}\n" );
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_SeparatorMenuItem19 : Object 
-    {
-        public Gtk.SeparatorMenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_SeparatorMenuItem19(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.SeparatorMenuItem();
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem20 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem20(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "String";
-            this.el.tooltip_markup = "Add a user defined string property";
-
-            // listeners 
-            this.el.activate.connect(   (self) => {
-            
-                _this.addProp( "prop", ".string:XXXX", "");
-            
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem21 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem21(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "Number";
-            this.el.tooltip_markup = "Add a user defined number property";
-
-            // listeners 
-            this.el.activate.connect(   ( ) =>{
-            
-                _this.addProp("prop",  ".int:XXX", "0");
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem22 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem22(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "Boolean";
-            this.el.tooltip_markup = "Add a user defined boolean property";
-
-            // listeners 
-            this.el.activate.connect(   ( ) =>{
-            
-                _this.addProp( "prop", ".bool:XXX", "true");
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_SeparatorMenuItem23 : Object 
-    {
-        public Gtk.SeparatorMenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_SeparatorMenuItem23(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.SeparatorMenuItem();
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem24 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem24(Xcls_LeftProps _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.MenuItem();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "Javascript Function";
-            this.el.tooltip_markup = "Add a user function boolean property";
-
-            // listeners 
-            this.el.activate.connect(   ( ) =>{
-            
-                _this.addProp("prop",  "|XXXX", "function() { }");
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_MenuItem25 : Object 
-    {
-        public Gtk.MenuItem el;
-        private Xcls_LeftProps  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_MenuItem25(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1582,7 +1353,7 @@ public class Xcls_LeftProps : Object
             this.el.editable = false;
             this.el.has_entry = true;
             this.el.text_column = 0;
-            var child_0 = new Xcls_ListStore33( _this );
+            var child_0 = new Xcls_ListStore25( _this );
             child_0.ref();
             this.el.model = child_0.el;
 
@@ -1670,7 +1441,7 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ListStore33 : Object 
+    public class Xcls_ListStore25 : Object 
     {
         public Gtk.ListStore el;
         private Xcls_LeftProps  _this;
@@ -1679,7 +1450,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_ListStore33(Xcls_LeftProps _owner )
+        public Xcls_ListStore25(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.ListStore( 1, typeof(string) );
@@ -1711,13 +1482,13 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem35( _this );
+            var child_0 = new Xcls_MenuItem27( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_SeparatorMenuItem36( _this );
+            var child_1 = new Xcls_SeparatorMenuItem28( _this );
             child_1.ref();
             this.el.append (  child_1.el  );
-            var child_2 = new Xcls_MenuItem37( _this );
+            var child_2 = new Xcls_MenuItem29( _this );
             child_2.ref();
             this.el.append (  child_2.el  );
         }
@@ -1726,7 +1497,7 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_MenuItem35 : Object 
+    public class Xcls_MenuItem27 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1735,7 +1506,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem35(Xcls_LeftProps _owner )
+        public Xcls_MenuItem27(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1760,7 +1531,7 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_SeparatorMenuItem36 : Object 
+    public class Xcls_SeparatorMenuItem28 : Object 
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -1769,7 +1540,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_SeparatorMenuItem36(Xcls_LeftProps _owner )
+        public Xcls_SeparatorMenuItem28(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -1783,7 +1554,7 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_MenuItem37 : Object 
+    public class Xcls_MenuItem29 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1792,7 +1563,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem37(Xcls_LeftProps _owner )
+        public Xcls_MenuItem29(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();

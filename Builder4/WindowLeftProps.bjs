@@ -34,66 +34,6 @@
                     "items": [
                         {
                             "listeners": {
-                                "button_press_event": " ( event ) => {\n    _this.show_add_props(\"prop\");\n    return false;\n}"
-                            },
-                            "pack": "add",
-                            "xtype": "Button",
-                            "|xns": "Gtk",
-                            "items": [
-                                {
-                                    "|xns": "Gtk",
-                                    "xtype": "HBox",
-                                    "pack": "add",
-                                    "items": [
-                                        {
-                                            "|xns": "Gtk",
-                                            "xtype": "Image",
-                                            "pack": "add",
-                                            "|stock": "Gtk.STOCK_ADD",
-                                            "|icon_size": "Gtk.IconSize.MENU"
-                                        },
-                                        {
-                                            "|xns": "Gtk",
-                                            "xtype": "Label",
-                                            "pack": "add",
-                                            "label": "Property"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "listeners": {
-                                "button_press_event": "  ( event)  => {\n    \n// \tif (!this.get('/Editor').save()) {\n// \t    // popup!! - click handled.. \n// \t    return true;\n//        }\n    _this.show_add_props(\"listener\");\n    return false;\n}"
-                            },
-                            "pack": "add",
-                            "xtype": "Button",
-                            "|xns": "Gtk",
-                            "items": [
-                                {
-                                    "|xns": "Gtk",
-                                    "xtype": "HBox",
-                                    "pack": "add",
-                                    "items": [
-                                        {
-                                            "|xns": "Gtk",
-                                            "xtype": "Image",
-                                            "pack": "add",
-                                            "|stock": "Gtk.STOCK_ADD",
-                                            "|icon_size": "Gtk.IconSize.MENU"
-                                        },
-                                        {
-                                            "|xns": "Gtk",
-                                            "xtype": "Label",
-                                            "pack": "add",
-                                            "label": "Handler"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "listeners": {
                                 "button_press_event": "  (self, ev) => {\n    _this.before_edit();\n    \n        \n    var p = _this.AddPropertyPopup;\n    p.el.set_screen(Gdk.Screen.get_default());\n    p.el.show_all();\n     p.el.popup(null, null, null, ev.button, ev.time);\n     return true;\n}"
                             },
                             "pack": "add",

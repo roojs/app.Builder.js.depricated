@@ -406,69 +406,6 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        button_press_event : ( event ) => {
-                            _this.show_add_props("prop");
-                            return false;
-                        }
-                    },
-                    pack : "add",
-                    items : [
-                        {
-                            xtype: Gtk.HBox,
-                            pack : "add",
-                            items : [
-                                {
-                                    xtype: Gtk.Image,
-                                    pack : "add",
-                                    stock : Gtk.STOCK_ADD,
-                                    icon_size : Gtk.IconSize.MENU
-                                },
-                                {
-                                    xtype: Gtk.Label,
-                                    pack : "add",
-                                    label : "Property"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        button_press_event : ( event)  => {
-                            
-                        // 	if (!this.get('/Editor').save()) {
-                        // 	    // popup!! - click handled.. 
-                        // 	    return true;
-                        //        }
-                            _this.show_add_props("listener");
-                            return false;
-                        }
-                    },
-                    pack : "add",
-                    items : [
-                        {
-                            xtype: Gtk.HBox,
-                            pack : "add",
-                            items : [
-                                {
-                                    xtype: Gtk.Image,
-                                    pack : "add",
-                                    stock : Gtk.STOCK_ADD,
-                                    icon_size : Gtk.IconSize.MENU
-                                },
-                                {
-                                    xtype: Gtk.Label,
-                                    pack : "add",
-                                    label : "Handler"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
                         button_press_event : (self, ev) => {
                             _this.before_edit();
                             
