@@ -266,7 +266,7 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
         
-        _this.addpropsview.this.select.connect( (key,type,skel, etype) => {
+        _this.addpropsview.select.connect( (key,type,skel, etype) => {
             this.left_props.addProp(etype, key, skel, type);
         });
         
