@@ -93,6 +93,7 @@ Editor=new XObject({
             xtype: Gtk.ScrolledWindow,
             id : "RightEditor",
             pack : "add",
+            init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
             items : [
                 {
                     xtype: GtkSource.View,

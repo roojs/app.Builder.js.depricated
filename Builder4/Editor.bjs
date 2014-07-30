@@ -42,6 +42,7 @@
                     "id": "RightEditor",
                     "pack": "add",
                     "xtype": "ScrolledWindow",
+                    "|init": "this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);",
                     "|xns": "Gtk",
                     "items": [
                         {

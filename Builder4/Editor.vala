@@ -202,6 +202,9 @@ public class Xcls_Editor : Object
             var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
+
+            // init method 
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
         // userdefined functions 
