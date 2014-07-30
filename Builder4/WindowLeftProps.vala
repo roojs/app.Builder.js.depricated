@@ -845,7 +845,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) =>{
             
-                _this.addProp( "prop", ".bool:XXX", "true");
+                _this.addProp( "prop", "XXX", "true", "bool");
             } );
         }
 

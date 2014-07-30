@@ -510,7 +510,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp( "prop", ".bool:XXX", "true");
+                                            _this.addProp( "prop", "XXX", "true", "bool");
                                         }
                                     },
                                     label : "Boolean",

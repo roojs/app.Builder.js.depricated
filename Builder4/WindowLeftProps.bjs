@@ -123,7 +123,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"prop\", \".bool:XXX\", \"true\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXX\", \"true\", \"bool\");\n}"
                                             },
                                             "label": "Boolean",
                                             "pack": "append",
