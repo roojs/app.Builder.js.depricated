@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.VBox,
     pack : "add",
-    'bool:save' : ()  {
+    'bool:saveContents' : ()  {
     
         if (!Editor.RightEditor.save()) {
             // no hiding with errors.

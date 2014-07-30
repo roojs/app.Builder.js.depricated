@@ -58,7 +58,7 @@ public class Xcls_Editor : Object
     }
 
     // userdefined functions 
-    public bool save  ()  {
+    public bool saveContents  ()  {
         
             if (!Editor.RightEditor.save()) {
                 // no hiding with errors.
