@@ -310,6 +310,10 @@ public class Xcls_MainWindow : Object
                 this.showCodeEdit(node, type,  key);
             });
             this.left_props.stop_editor.connect( () => {
+                if (this.state != "codeedit") {
+                    return true;
+                }
+            
                 var ret =  this.code_editor.saveContents();
                 if (!ret) {
                     return false;
