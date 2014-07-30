@@ -465,7 +465,9 @@ public class Xcls_WindowLeftTree : Object
                  }
                  
                  
-                 _this.before_node_change(null);
+                 if (!_this.before_node_change(null) ) {
+			 return true;
+		 }
                  
                  if (_this.model.file == null) {
                      return;
