@@ -55,11 +55,11 @@ WindowAddProp=new XObject({
                 row_activated : (path, column)  => {
                 
                         Gtk.TreeIter iter;
-                        Gtk.TreeModel mod;
+                
                 
                         var m = _this.model;
                         
-                        m.el.get_iter(iter,path);
+                        m.el.get_iter(out iter,path);
                         
                         
                         // var val = "";

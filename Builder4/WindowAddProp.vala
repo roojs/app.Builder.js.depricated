@@ -131,11 +131,11 @@ public class Xcls_WindowAddProp : Object
             this.el.row_activated.connect( (path, column)  => {
             
                     Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
+            
             
                     var m = _this.model;
                     
-                    m.el.get_iter(iter,path);
+                    m.el.get_iter(out iter,path);
                     
                     
                     // var val = "";
