@@ -57,9 +57,13 @@ public class Xcls_Editor : Object
         var child_0 = new Xcls_Toolbar2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
-        var child_1 = new Xcls_RightEditor( _this );
+        var child_1 = new Xcls_HBox4( _this );
         child_1.ref();
-        this.el.add (  child_1.el  );
+        var child_2 = new Xcls_HBox5( _this );
+        child_2.ref();
+        var child_3 = new Xcls_RightEditor( _this );
+        child_3.ref();
+        this.el.add (  child_3.el  );
     }
 
     // userdefined functions 
@@ -175,6 +179,52 @@ public class Xcls_Editor : Object
             }
              
              );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_HBox4 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_Editor  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox4(Xcls_Editor _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_HBox5 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_Editor  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox5(Xcls_Editor _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars
+
+            // set gobject values
         }
 
         // userdefined functions 

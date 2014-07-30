@@ -39,6 +39,16 @@
                     ]
                 },
                 {
+                    "|xns": "Gtk",
+                    "xtype": "HBox",
+                    "pack": false
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "HBox",
+                    "pack": false
+                },
+                {
                     "id": "RightEditor",
                     "pack": "add",
                     "xtype": "ScrolledWindow",

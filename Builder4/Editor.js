@@ -90,6 +90,14 @@ Editor=new XObject({
             ]
         },
         {
+            xtype: Gtk.HBox,
+            pack : false
+        },
+        {
+            xtype: Gtk.HBox,
+            pack : false
+        },
+        {
             xtype: Gtk.ScrolledWindow,
             id : "RightEditor",
             pack : "add",
