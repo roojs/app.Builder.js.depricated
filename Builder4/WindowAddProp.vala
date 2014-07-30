@@ -72,7 +72,7 @@ public class Xcls_WindowAddProp : Object
                         2, "<b>" + p.name +"</b> <i>"+p.type+"</i>\n" + 
                                 GLib.Markup.escape_text(p.doctxt),
                         3, p.sig,
-                        4, "<span size=\"small\"><b>" + p.name +"</b> <i>"+p.type+"</i></span>",
+                        4, "<b>" + p.name +"</b> <span size=\"small\"><i>"+p.type+"</i></span>",
                         5, etype,
                         -1
                 );
