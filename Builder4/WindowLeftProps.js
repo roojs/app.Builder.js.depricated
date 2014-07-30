@@ -398,7 +398,6 @@ WindowLeftProps=new XObject({
                  6,  this.keySortFormat(key)
             ); 
     },
-     : "",
     items : [
         {
             xtype: Gtk.HBox,

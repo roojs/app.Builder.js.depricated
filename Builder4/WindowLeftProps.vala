@@ -33,6 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
+    public signal void stop_editor();
     public JsRender.JsRender file;
     public JsRender.Node node;
     public bool allow_edit;
@@ -57,8 +58,6 @@ public class Xcls_LeftProps : Object
         var child_1 = new Xcls_EditProps( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
