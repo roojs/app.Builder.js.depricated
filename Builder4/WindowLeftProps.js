@@ -111,7 +111,7 @@ WindowLeftProps=new XObject({
             //type = info.type.toLowerCase();
             //var data = this.toJS();
             
-     var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
+        var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                 
         if (type == "listener" || type == "signals") {
             if (this.node.listeners.has_key(key)) {
@@ -147,7 +147,7 @@ WindowLeftProps=new XObject({
                 return false;
             }
             this.model.el.get_value(iter, 1 , out gval);
-            if ((string)gval != key) {
+            if ((string)gval != fkey) {
                 return false;
             }
             this.startEditingValue(this.model.el.get_path(iter));
