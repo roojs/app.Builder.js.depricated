@@ -39,6 +39,7 @@
                             "|xns": "Gtk"
                         },
                         {
+                            "id": "key",
                             "pack": "pack_end,true,true",
                             "xtype": "Entry",
                             "|xns": "Gtk"

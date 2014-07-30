@@ -91,6 +91,7 @@ Editor=new XObject({
                 },
                 {
                     xtype: Gtk.Entry,
+                    id : "key",
                     pack : "pack_end,true,true"
                 }
             ]

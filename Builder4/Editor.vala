@@ -23,6 +23,7 @@ public class Xcls_Editor : Object
     private Xcls_Editor  _this;
 
     public Xcls_save_button save_button;
+    public Xcls_key key;
     public Xcls_RightEditor RightEditor;
     public Xcls_view view;
     public Xcls_buffer buffer;
@@ -144,7 +145,7 @@ public class Xcls_Editor : Object
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
-            var child_1 = new Xcls_Entry4( _this );
+            var child_1 = new Xcls_key( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , true,true );
         }
@@ -185,7 +186,7 @@ public class Xcls_Editor : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Entry4 : Object 
+    public class Xcls_key : Object 
     {
         public Gtk.Entry el;
         private Xcls_Editor  _this;
@@ -194,9 +195,10 @@ public class Xcls_Editor : Object
             // my vars
 
             // ctor 
-        public Xcls_Entry4(Xcls_Editor _owner )
+        public Xcls_key(Xcls_Editor _owner )
         {
             _this = _owner;
+            _this.key = this;
             this.el = new Gtk.Entry();
 
             // my vars
