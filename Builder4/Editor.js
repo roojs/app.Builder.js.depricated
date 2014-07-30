@@ -56,7 +56,7 @@ Editor=new XObject({
         } else {
             val = node.props.get(key);
         }
-        
+        this.view.load(val);
         
     
     },

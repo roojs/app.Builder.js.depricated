@@ -106,7 +106,7 @@ public class Xcls_Editor : Object
             } else {
                 val = node.props.get(key);
             }
-            
+            this.view.load(val);
             
         
         }
