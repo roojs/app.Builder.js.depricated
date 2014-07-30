@@ -116,7 +116,7 @@ Editor=new XObject({
                     pack : "add",
                     auto_indent : true,
                     init : var description =   Pango.FontDescription.from_string("monospace");
-                        description.set_size(9000);
+                        description.set_size(8000);
                         this.el.override_font(description);,
                     insert_spaces_instead_of_tabs : true,
                     show_line_numbers : true,
