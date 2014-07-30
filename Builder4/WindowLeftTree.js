@@ -191,14 +191,14 @@ WindowLeftTree=new XObject({
                             
                             
                             // dropList --- need to gather this ... 
-                            print("get dropList for : %s\n",selection_text);            
+                            //print("get dropList for : %s\n",selection_text);            
                             var dropList = _this.model.file.palete().getDropList(selection_text);
                             
-                            print("dropList: %s\n", string.joinv(" , ", dropList));
+                            //print("dropList: %s\n", string.joinv(" , ", dropList));
                             
-                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                            targetData = _this.model.findDropNodeByPath( path.to_string(), dropList, pos);
                                 
-                            print("targetDAta: " + targetData +"\n");
+                            //print("targetDAta: " + targetData +"\n");
                             
                             if (targetData.length < 1) {
                              
