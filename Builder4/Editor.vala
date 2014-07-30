@@ -89,13 +89,6 @@ public class Xcls_Editor : Object
         
         } 
 
-    // skip |show_all - no return type
-    public void show_all  () {
-            this.el.show_all();
-        
-        }
-         
-
     // skip |xns - no return type
     public class Xcls_Toolbar2 : Object 
     {

@@ -42,20 +42,6 @@ Editor=new XObject({
     
     },
     homogeneous : true,
-    show_all : (event) => {
-        if (!Editor.RightEditor.save()) {
-            // no hiding with errors.
-            return true;
-        }
-        _this.el.hide();
-        _this.active_path = "";
-        return true;
-      
-    },
-    'void:show_all' : () {
-        this.el.show_all();
-    
-    },
     items : [
         {
             xtype: Gtk.Toolbar,
