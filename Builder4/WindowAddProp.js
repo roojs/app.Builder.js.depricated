@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 WindowAddProp=new XObject({
     xtype: Gtk.ScrolledWindow,
     'void:clear' : () {
-    
+        this.model.el.clear();
     
     },
     id : "WindowAddProp",

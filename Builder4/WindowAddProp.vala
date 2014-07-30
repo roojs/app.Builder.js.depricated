@@ -51,7 +51,7 @@ public class Xcls_WindowAddProp : Object
 
     // userdefined functions 
     public void clear() {
-        
+            this.model.el.clear();
         
         }
     public void show(Palete.Palete pal, string etype, string xtype) {
