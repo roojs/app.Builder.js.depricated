@@ -60,6 +60,11 @@ test-palate:
 		Builder4/WindowRightPalete.vala \
 		tests/PaleteTest.vala -o /tmp/test-palete
 
+test-addprops:
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		Builder4/WindowAddProp.vala \
+		tests/AddPropTest.vala -o /tmp/test-palete
+
 #fixme -- old...
 datatest:
 	 valac $(FLAGS) $(PKGS) $(CORESRC) \
