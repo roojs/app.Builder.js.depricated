@@ -458,6 +458,8 @@ public class Xcls_WindowLeftTree : Object
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
+                 
+                 
                  _this.before_node_change(null);
                  
                  if (_this.model.file == null) {
@@ -467,30 +469,36 @@ public class Xcls_WindowLeftTree : Object
                  //var render = this.get('/LeftTree').getRenderer();                
                 print("LEFT TREE -> view -> selection changed called\n");
                 
-                if (this.el.get_selection().count_selected_rows() < 1) {
+                
+                // -- it appears that the selection is not updated.
+                
+                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                     
             
-                    print("selected rows < 1\n");
-                    //??this.model.load( false);
-                    _this.node_selected(null);
-                    
-                    return  ;
-                }
-                    
-                    //console.log('changed');
-                var s = this.el.get_selection();
-                 Gtk.TreeIter iter;
-                 Gtk.TreeModel mod;
-                s.get_selected(out mod, out iter);
-                
-                
-                // var val = "";
-                GLib.Value value;
-                _this.model.el.get_value(iter, 2, out value);
-                _this.model.activePath = mod.get_path(iter).to_string();
-                
-                var node = (JsRender.Node)value.dup_object();
-                _this.node_selected(node);
-                
+                        if (this.el.get_selection().count_selected_rows() < 1) {
+            
+                            print("selected rows < 1\n");
+                            //??this.model.load( false);
+                            _this.node_selected(null);
+                            
+                            return  ;
+                        }
+                            
+                            //console.log('changed');
+                        var s = this.el.get_selection();
+                         Gtk.TreeIter iter;
+                         Gtk.TreeModel mod;
+                        s.get_selected(out mod, out iter);
+                        
+                        
+                        // var val = "";
+                        GLib.Value value;
+                        _this.model.el.get_value(iter, 2, out value);
+                        _this.model.activePath = mod.get_path(iter).to_string();
+                        
+                        var node = (JsRender.Node)value.dup_object();
+                        _this.node_selected(node);
+                  });  
                 //_this.after_node_change(node);
             
             //        _this.model.file.changed(node, "tree");
