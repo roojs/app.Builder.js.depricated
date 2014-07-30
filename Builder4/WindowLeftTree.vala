@@ -329,7 +329,7 @@ public class Xcls_WindowLeftTree : Object
                           
                         
                         if (this.drag_in_motion) { 
-                            Gdk.drag_status(ctx, action ,time);
+                            Gdk.drag_status(ctx, Gdk.DragAction.COPY ,time);
                             this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
                             return;
                         }
