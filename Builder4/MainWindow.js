@@ -163,7 +163,9 @@ MainWindow=new XObject({
                     }
                     this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
                     break;
-               case "prop":
+                     
+                    
+               case "addprop":
                     if (sel == null) {
                         this.add_props.clear();
                         break;
@@ -171,7 +173,7 @@ MainWindow=new XObject({
                     this.add_props.show(_this.left_tree.getActiveFile().palete(), "props", sel.fqn());
                     break;
                     
-               case "listener":
+               case "addlistener":
                     if (sel == null) {
                         this.add_props.clear();
                         break;

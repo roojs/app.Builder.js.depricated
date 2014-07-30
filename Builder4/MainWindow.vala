@@ -234,7 +234,9 @@ public class Xcls_MainWindow : Object
                         }
                         this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
                         break;
-                   case "prop":
+                         
+                        
+                   case "addprop":
                         if (sel == null) {
                             this.add_props.clear();
                             break;
@@ -242,7 +244,7 @@ public class Xcls_MainWindow : Object
                         this.add_props.show(_this.left_tree.getActiveFile().palete(), "props", sel.fqn());
                         break;
                         
-                   case "listener":
+                   case "addlistener":
                         if (sel == null) {
                             this.add_props.clear();
                             break;
