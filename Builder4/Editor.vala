@@ -43,7 +43,7 @@ public class Xcls_Editor : Object
     {
         _this = this;
         Editor = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.VBox( false, 0 );
 
         // my vars
         this.node = null;

@@ -53,7 +53,7 @@ Editor=new XObject({
         return true;
     
     },
-    homogeneous : true,
+    homogeneous : false,
     'void:show' : (JsRender.Node node, string ptype, string key)
     {
         this.ptype = ptype;
