@@ -262,7 +262,7 @@ public class Xcls_MainWindow : Object
             
             
         
-        
+            // left properties
         
             this.left_props =new Xcls_LeftProps();
             this.left_props.ref();
@@ -336,18 +336,16 @@ public class Xcls_MainWindow : Object
             stage = _this.addpropsview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
-            /*this.projectsettings.buttonPressed.connect((btn) => {
-                if (btn == "save") {
-                     _this.window_rooview.view.renderJS(true);
-                }
-                if (btn == "apply") {
-                    _this.window_rooview.view.renderJS(true);
-                    return;
-                }
-                this.hideProjectEdit();
-                 
-             });
-            */
+            
+            _this.addpropsview.this.select.connect( (key,type,skel, etype) => {
+                _this.
+            
+            });
+            
+            
+            
+            
+            
             
             //  roo view
             
