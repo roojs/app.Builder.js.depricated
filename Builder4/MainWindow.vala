@@ -356,9 +356,7 @@ public class Xcls_MainWindow : Object
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
             
-            
-            
-            
+             
             
             
             //  roo view

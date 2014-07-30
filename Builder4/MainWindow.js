@@ -282,9 +282,7 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
         
-        
-        
-        
+         
         
         
         //  roo view
