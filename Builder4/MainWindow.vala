@@ -338,7 +338,7 @@ public class Xcls_MainWindow : Object
             
             
             _this.addpropsview.this.select.connect( (key,type,skel, etype) => {
-                this.left_props.addProp(etype, key, skel);
+                this.left_props.addProp(etype, key, skel, type);
             });
             
             
