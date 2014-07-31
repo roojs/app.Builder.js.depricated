@@ -268,8 +268,8 @@ public class Xcls_DialogTemplateSelect : Object
                     var fn = Path.get_basename (str);
                     fn.replace(".json", "");
                     
-                    el.set_value(iter, 0, fn);
-                    el.set_value(iter, 1, str);
+                    el.set_value(iter, 0, str);
+                    el.set_value(iter, 1, fn);
                     
                 }
                           
