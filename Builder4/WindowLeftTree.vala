@@ -857,6 +857,7 @@ public class Xcls_WindowLeftTree : Object
                         this.el.get_value( iter_par, 2, out value);
                         parentNode =  (JsRender.Node)value.dup_object();
                         node.parent = parentNode;
+                        parentNode.items.add(node);
                     }
                     
                     // reparent node in tree...
