@@ -42,7 +42,7 @@ public class JsRender.NodeToJs : Object {
 		}
 		// oprops...	
 			
-		var spad = pad.substring(0, pad.length-4);
+		var spad = pad.substring(0, this.pad.length-4);
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
 		
@@ -56,8 +56,6 @@ public class JsRender.NodeToJs : Object {
 		
 	} 
 
-		
-	}
 
 	public string mungeChild(pad ,cnode)
 	{
