@@ -129,7 +129,7 @@ public class JsRender.NodeToJs : Object {
 				old = this.ar_props.get(sprop);
 			}
 			var nstr  = old += old.length > 0 ? ",\n" : "";
-			nstr += this.mungeChild( this.pad + "		",   pl.mungeToString ( ));
+			nstr += this.mungeChild( this.pad + "		",   pl);
 			
 	  		this.ar_props.set(sprop, nstr);
 			 
