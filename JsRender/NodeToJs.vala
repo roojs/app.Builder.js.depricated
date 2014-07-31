@@ -56,7 +56,16 @@ public class JsRender.NodeToJs : Object {
 		     
 	} 
 
+	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
+	{
+		var ret = "";
+		for (var i = 0; i < ar.size; i++) {
+			ret += i>0 ? sep : "";
+			ret += ar.get(i);
+		}
+		return ret;
 
+	}
 	public string mungeChild(string pad ,  Node cnode)
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad);
