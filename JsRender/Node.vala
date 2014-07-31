@@ -137,12 +137,12 @@ public class JsRender.Node : Object {
 		return this.props.get("$ xns") + "." + this.props.get("xtype"); 
 
 	}
-	public void setFqn(string fqn)
+	public void setFqn(string name)
 	{
-		var ar = fqn.split(".");
+		var ar = name.split(".");
 		this.props.set("xtype", ar[ar.length-1]);
-		this.props.set("$ xns", fqn.substring(0, -1 * (ar[ar.length-1].length)));
-		print("setFQN %s to %s", fqn , this.fqn);
+		this.props.set("$ xns", name.substring(0, -1 * (ar[ar.length-1].length)));
+		print("setFQN %s to %s", name , this.fqn());
 		               
 
 	}
