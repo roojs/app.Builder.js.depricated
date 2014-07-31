@@ -235,8 +235,11 @@ public class JsRender.NodeToJs : Object {
 	   		        || 
 				kk[0].down() == "boolean"
     	   		        || 
+				kk[0].down() == "bool"
+				|| 
 				kk[0].down() == "number"
-
+				|| 
+				kk[0].down() == "int"
 				) {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
