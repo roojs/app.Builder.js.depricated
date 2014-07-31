@@ -11,7 +11,7 @@
 
 public class JsRender.NodeToJs : Object {
 
-	JsRender.Node node;
+	 Node node;
 	Gee.ArrayList<string>  doubleStringProps;
 	string pad;
 	Gee.ArrayList<string> els;
@@ -20,7 +20,7 @@ public class JsRender.NodeToJs : Object {
 
 
 	
-	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
+	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
@@ -57,7 +57,7 @@ public class JsRender.NodeToJs : Object {
 	} 
 
 
-	public string mungeChild(string pad , JsRender.Node cnode)
+	public string mungeChild(string pad ,  Node cnode)
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad);
 		return x.munge();
