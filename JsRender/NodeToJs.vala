@@ -97,7 +97,7 @@ public class JsRender.NodeToJs : Object {
 				// it's a standard prop..
 				
 				// munge property..??
-				this.els.add( prop  + " : " + this.mungeChild (  pad + "	",  pl));
+				this.els.add( prop  + " : " + this.mungeChild (  this.pad + "	",  pl));
 				
 				
 				//keys.push(prop);
@@ -120,7 +120,7 @@ public class JsRender.NodeToJs : Object {
 				old = this.ar_props.get(sprop);
 			}
 			var nstr  = old += old.length > 0 ? ",\n" : "";
-			nstr += this.mungeChild( pad + "		",   pl.mungeToString ( ));
+			nstr += this.mungeChild( this.pad + "		",   pl.mungeToString ( ));
 			
 	  		this.ar_props.set(sprop, nstr);
 			 
@@ -235,7 +235,7 @@ public class JsRender.NodeToJs : Object {
 				var lines = str.split("\n");
 				var nstr = "" + str;
 				if (lines.length > 0) {
-					nstr =  string.joinv("\n" + pad, lines);
+					nstr =  string.joinv("\n" + this.pad, lines);
 				}
 				//print("==> " +  str + "\n");
 				this.els.add(left + nstr);
@@ -296,7 +296,7 @@ public class JsRender.NodeToJs : Object {
 			
 			
 			if (right.length > 0){
-				this.els.add(left + "[\n" +  pad + "	 " +  right + "\n" + pad + "]");
+				this.els.add(left + "[\n" +  this.pad + "	 " +  right + "\n" + this.pad + "]");
 			}
 		
 			
@@ -323,18 +323,18 @@ public class JsRender.NodeToJs : Object {
 			var str = liter.get_value().strip();
 			var lines = str.split("\n");
 			if (lines.length > 0) {
-				str = string.joinv("\n" + pad + "	   ", lines);
+				str = string.joinv("\n" + this.pad + "	   ", lines);
 			}
 			
 
 			
-			itms +=  pad + "	"  + liter.get_key().replace("|", "")  + " : " + str;
+			itms +=  this.pad + "	"  + liter.get_key().replace("|", "")  + " : " + str;
 
 			i++;
 		
 			
 		}
-		itms += "\n" + pad + "}";
+		itms += "\n" + this.pad + "}";
 		//print ( "ADD " + itms); 
 		this.els.add(itms);
 
@@ -359,12 +359,12 @@ public class JsRender.NodeToJs : Object {
 				 itms += ",\n";
 			}
 			n++;
-			itms +=	pad + "	"  +
-				this.mungeChild( pad + "		",  ele);
+			itms +=	this.pad + "	"  +
+				this.mungeChild( this.pad + "		",  ele);
 			
 			
 		}
-		itms +=  "\n"+  pad + "]"  + "\n";
+		itms +=  "\n"+  this.pad + "]"  + "\n";
 		this.els.add(itms);
 	}
 
