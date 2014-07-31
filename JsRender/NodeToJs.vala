@@ -183,7 +183,7 @@ public class JsRender.NodeToJs : Object {
 			func_regex = new Regex("^\\s+|\\s+$");
 		} catch (Error e) {
 			print("failed to build regex");
-			return "";
+			return;
 		}
 		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
