@@ -872,11 +872,11 @@ public class Xcls_WindowLeftTree : Object
                         
                     }
                     
-                    this.el.set(citer, 0, node.nodeTitle(), 1, node.nodeTip(), -1  );
+                    this.el.set(n_iter, 0, node.nodeTitle(), 1, node.nodeTip(), -1  );
                     var o = new GLib.Value(typeof(Object));
                     o.set_object((Object)node);
                     
-                    this.el.set_value(citer, 2, o);
+                    this.el.set_value(n_iter, 2, o);
                     
                     
             // load children - if it has any..
