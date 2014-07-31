@@ -283,6 +283,7 @@ public class JsRender.NodeToJs : Object {
 	
 		// handle the childitems  that are arrays.. eg. button[] = {  }...
 		
+		string left;
 		
 		var iter = this.ar_props.map_iterator();
 		while (iter.next()) {
