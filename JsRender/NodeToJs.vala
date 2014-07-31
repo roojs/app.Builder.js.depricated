@@ -26,7 +26,7 @@ public class JsRender.NodeToJs : Object {
 		this.doubleStringProps = doubleStringProps;
 		this.pad = pad;
 		this.els = new Gee.ArrayList<string>(); 
-		this.skip = new Gee.ArrayList<string>();
+		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
 
 	}
