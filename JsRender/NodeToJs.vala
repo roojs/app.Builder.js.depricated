@@ -34,6 +34,29 @@ public class JsRender.NodeToJs : Object {
 	public string munge ( )
 	{
 		//return this.mungeToString(this.node);
+
+
+			
+		if (this.els.size < 1) {
+			return "";
+		}
+		// oprops...	
+			
+		var spad = pad.substring(0, pad.length-4);
+		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
+		//print ("STR PROPS: " + str_props);
+		
+		return   "{\n" +
+			pad  + str_props + 
+			"\n" + spad +  "}";
+		   
+		   
+			   
+		
+		
+	} 
+
+		
 	}
 
 	public string mungeChild(pad ,cnode)
@@ -349,30 +372,8 @@ public class JsRender.NodeToJs : Object {
 
 		// finally output listeners...
 		
+	
 
-		
-
-
-
-			
-		if (els.size < 1) {
-			return "";
-		}
-		// oprops...	
-			
-		var spad = pad.substring(0, pad.length-4);
-		var str_props = gLibStringListJoin(",\n" + pad , els) ;
-		//print ("STR PROPS: " + str_props);
-		
-		return   "{\n" +
-			pad  + str_props + 
-			"\n" + spad +  "}";
-		   
-		   
-			   
-		
-		
-	} 
 
 	
 	 
