@@ -203,10 +203,10 @@ public class JsRender.NodeToJs : Object {
 			
 			string leftv = k;
 			// skip builder stuff. prefixed with  '.' .. just like unix fs..
-			if (kk[0] == '.') { // |. or . -- do not output..
+			if (kk[0][0] == '.') { // |. or . -- do not output..
 				continue;
 			}
-			 if (kk[0] == '*') {
+			 if (kk[0][0] == '*') {
 				// ignore '*prop';
 				continue;
 			 }
@@ -226,7 +226,7 @@ public class JsRender.NodeToJs : Object {
 			
 			 
 			// next.. is it a function.. or a raw string..
-			if (kk[0] == '|') {
+			if (kk[0][0] == '|' || kk[0][0] == '$' ) {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
 					continue;
