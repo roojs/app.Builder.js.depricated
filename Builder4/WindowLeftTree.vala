@@ -872,6 +872,11 @@ public class Xcls_WindowLeftTree : Object
                         
                     }
                     
+                    this.el.set(citer, 0, node.nodeTitle(), 1, node.nodeTip(), -1  );
+                    var o = new GLib.Value(typeof(Object));
+                    o.set_object((Object)node);
+                    
+                    this.el.set_value(citer, 2, o);
                     
                     
             // load children - if it has any..
@@ -890,6 +895,8 @@ public class Xcls_WindowLeftTree : Object
                     this.activePath = this.el.get_path(n_iter).to_string();
             
               // changed actually set's the node data..
+              
+              
                     this.updateNode(node, true);
                     
                     
