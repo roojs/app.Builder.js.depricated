@@ -842,12 +842,12 @@ public class Xcls_WindowLeftTree : Object
                         if ( pos  > 0 ) {
                          
                             this.el.insert_after(out n_iter,    iter_par  , iter_after);
-                            var ix = parentNode.index_of(relNode);
+                            var ix = parentNode.items.index_of(relNode);
                             parentNode.items.insert(ix+1, relNode);
                             
                         } else {
                             this.el.insert_before(out n_iter,  iter_par  , iter_after);
-                            var ix = parentNode.index_of(relNode);
+                            var ix = parentNode.items.index_of(relNode);
                             parentNode.items.insert(ix, relNode);
              
                         }
