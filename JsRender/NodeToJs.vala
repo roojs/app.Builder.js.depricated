@@ -142,13 +142,15 @@ public class JsRender.NodeToJs : Object {
  * 
  * standard properties (use to set)
  *          If they are long values show the dialog..
- * 
+ *
+ * someprop : ....
  * bool is_xxx  :: can show a pulldown.. (true/false)
  * string html  
  * $ string html  = string with value interpolated eg. baseURL + ".." 
  *  Clutter.ActorAlign x_align  (typed)  -- shows pulldowns if type is ENUM? 
  * $ untypedvalue = javascript untyped value...  
  * _ string html ... = translatable..
+
  * 
  * object properties (not part of the GOjbect being wrapped?
  * # Gee.ArrayList<Xcls_fileitem> fileitems
