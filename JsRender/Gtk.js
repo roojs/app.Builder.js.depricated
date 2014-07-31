@@ -376,7 +376,7 @@ Gtk = XObject.define(
                 strbuilder(pad + "public static singleton( )\n");
                 strbuilder(pad + "{\n");
                 strbuilder(ipad + "if (" + this.name + " == null) {\n");
-                strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();"); // what about args?
+                strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();\n"); // what about args?
                 strbuilder(ipad + "}\n");
                 strbuilder(ipad + "return " + this.name +";\n");
                 strbuilder(pad + "}\n");
