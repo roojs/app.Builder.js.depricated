@@ -372,7 +372,7 @@ public class JsRender.NodeToJs : Object {
 		
 	
 
-
+}
 	
 	 
 	
