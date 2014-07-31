@@ -829,11 +829,15 @@ WindowLeftTree=new XObject({
                                 
                             }
                             
+                            // add the node...
+                            
                             this.el.set(n_iter, 0, node.nodeTitle(), 1, node.nodeTip(), -1  );
                             var o = new GLib.Value(typeof(Object));
                             o.set_object((Object)node);
                             
                             this.el.set_value(n_iter, 2, o);
+                            
+                            
                             
                             
                     // load children - if it has any..
