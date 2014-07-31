@@ -20,7 +20,7 @@ public class JsRender.NodeToJs : Object {
 
 
 	
-	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps, pad) 
+	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
