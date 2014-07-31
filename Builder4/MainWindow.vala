@@ -306,7 +306,7 @@ public class Xcls_MainWindow : Object
             
              this.left_tree.changed.connect(() => {
                this.window_rooview.requestRedraw();
-            }
+            });
              
             
         
@@ -333,7 +333,7 @@ public class Xcls_MainWindow : Object
             });
              this.left_props.changed.connect(() => {
                this.window_rooview.requestRedraw();
-            }
+            });
             
         
         
