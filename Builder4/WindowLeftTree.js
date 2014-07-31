@@ -779,6 +779,9 @@ WindowLeftTree=new XObject({
                              if ( parent_str.length < 1) {
                                   this.el.append(out n_iter, null); // drop at top level..
                                   node.parent = null;
+                                  this.file.tree = node;
+                                  
+                                  
                             } else   if (pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                 
