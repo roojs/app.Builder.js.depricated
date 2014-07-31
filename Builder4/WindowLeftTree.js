@@ -800,12 +800,12 @@ WindowLeftTree=new XObject({
                                  
                                     this.el.insert_after(out n_iter,    iter_par  , iter_after);
                                     var ix = parentNode.items.index_of(relNode);
-                                    parentNode.items.insert(ix+1, relNode);
+                                    parentNode.items.insert(ix+1, node);
                                     
                                 } else {
                                     this.el.insert_before(out n_iter,  iter_par  , iter_after);
                                     var ix = parentNode.items.index_of(relNode);
-                                    parentNode.items.insert(ix, relNode);
+                                    parentNode.items.insert(ix, node);
                      
                                 }
                                 //node.parent = parentNode;
