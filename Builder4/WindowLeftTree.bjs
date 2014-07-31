@@ -17,6 +17,8 @@
             "|shadow_type": "Gtk.ShadowType.IN",
             "|string:getActivePath": " () {\n    var model = this.model;\n    var view = this.view.el;\n    if (view.get_selection().count_selected_rows() < 1) {\n        return \"\";\n    }\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n    view.get_selection().get_selected(out mod, out iter);\n    return mod.get_path(iter).to_string();\n}\n",
             "|xns": "Gtk",
+            "": "",
+            "listeners": {},
             "items": [
                 {
                     "listeners": {

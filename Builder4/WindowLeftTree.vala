@@ -57,6 +57,8 @@ public class Xcls_WindowLeftTree : Object
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
          
+
+        // listeners 
     }
 
     // userdefined functions 
