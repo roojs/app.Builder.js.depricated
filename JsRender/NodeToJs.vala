@@ -160,7 +160,7 @@ public class JsRender.NodeToJs : Object {
 			var k = piter.get_key();
 			var v = piter.get_value();
 			
-			if (skip.contains(k) ) {
+			if (this.skip.contains(k) ) {
 				continue;
 			}
 			if (  Regex.match_simple("\\[\\]$", k)) {
