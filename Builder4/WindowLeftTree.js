@@ -855,10 +855,7 @@ WindowLeftTree=new XObject({
                             //var olditer = this.activeIter;
                             this.activePath = this.el.get_path(n_iter).to_string();
                     
-                      // changed actually set's the node data..
-                      
-                      
-                            this.updateNode(node, true);
+                    
                             
                             
                             _this.view.el.set_cursor(this.el.get_path(n_iter), null, false);
