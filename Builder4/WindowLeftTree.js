@@ -799,11 +799,14 @@ WindowLeftTree=new XObject({
                                 if ( pos  > 0 ) {
                                  
                                     this.el.insert_after(out n_iter,    iter_par  , iter_after);
-                                    parentNode.insertAfter(node, relNode);
+                                    var ix = parentNode.index_of(relNode);
+                                    parentNode.items.insert(ix+1, relNode);
                                     
                                 } else {
                                     this.el.insert_before(out n_iter,  iter_par  , iter_after);
-                                    parentNode.insertBefore(node, relNode);
+                                    var ix = parentNode.index_of(relNode);
+                                    parentNode.items.insert(ix, relNode);
+                     
                                 }
                                 //node.parent = parentNode;
                             } else {
