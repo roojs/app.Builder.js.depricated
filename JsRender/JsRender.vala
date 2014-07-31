@@ -124,13 +124,16 @@ namespace JsRender {
 			var fname = dir + "/" + m5 + ".png";
 			
 			if (!return_default) {
+				print("getIconFileName return %s\n", fname);
 				return fname;
 			}
 			
 			if (FileUtils.test(fname, FileTest.EXISTS)) {
+				print("getIconFileName return %s\n", fname);
 				return fname;
 			}
 			// we need to create this somehow...
+			print("getIconFileName return %s\n", GLib.Environment.get_home_dir() + "/.Builder/test.jpg);
 			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
 
 		}
