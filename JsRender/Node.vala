@@ -137,7 +137,11 @@ public class JsRender.Node : Object {
 		return this.props.get("$ xns") + "." + this.props.get("xtype"); 
 
 	}
-	
+	public void setFqn(string fqn)
+	{
+
+
+	}
 	// wrapper around get props that returns empty string if not found.
 	public string get(string key)
 	{
