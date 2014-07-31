@@ -53,11 +53,7 @@ public class JsRender.NodeToJs : Object {
 		return   "{\n" +
 			pad  + str_props + 
 			"\n" + spad +  "}";
-		   
-		   
-			   
-		
-		
+		     
 	} 
 
 
