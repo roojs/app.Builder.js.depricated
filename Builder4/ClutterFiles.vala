@@ -22,6 +22,13 @@ public class Xcls_ClutterFiles : Object
     public Clutter.ScrollActor el;
     private Xcls_ClutterFiles  _this;
 
+    public static Xcls_ClutterFiles singleton()
+    {
+        if (ClutterFiles == null) {
+            ClutterFiles= new Xcls_ClutterFiles();
+        }
+        return ClutterFiles;
+    }
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
 
@@ -33,7 +40,6 @@ public class Xcls_ClutterFiles : Object
     public Xcls_ClutterFiles()
     {
         _this = this;
-        ClutterFiles = this;
         this.el = new Clutter.ScrollActor();
 
         // my vars
