@@ -141,7 +141,8 @@ public class JsRender.Node : Object {
 	{
 		var ar = name.split(".");
 		this.props.set("xtype", ar[ar.length-1]);
-		this.props.set("$ xns", name.substring(0, -1 * (ar[ar.length-1].length)));
+		var l = name.length - (ar[ar.length-1].length +1);
+		this.props.set("$ xns", name.substring(0, l));
 		print("setFQN %s to %s", name , this.fqn());
 		               
 
