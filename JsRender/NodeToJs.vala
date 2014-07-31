@@ -201,7 +201,7 @@ public class JsRender.NodeToJs : Object {
 
 			}
 			
-			string leftv = k[0] == '$' ? k.substring(2) : k;
+			string leftv = kk[0] == '$' ? k.substring(2) : k;
 			// skip builder stuff. prefixed with  '.' .. just like unix fs..
 			if (leftv[0] == '.') { // |. or . -- do not output..
 				continue;
@@ -226,7 +226,7 @@ public class JsRender.NodeToJs : Object {
 			
 			 
 			// next.. is it a function..
-			if (k[0] == '|') {
+			if (kk[0] == '|') {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
 					continue;
