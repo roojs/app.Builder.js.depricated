@@ -39,7 +39,7 @@ public class Xcls_DialogTemplateSelect : Object
     public Xcls_DialogTemplateSelect()
     {
         _this = this;
-        this.el = ;
+        this.el = new Dialog(Xcls_MainWindow.el);
 
         // my vars
 
