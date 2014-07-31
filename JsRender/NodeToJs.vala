@@ -15,18 +15,24 @@ public class JsRender.NodeToJs : Object {
 	Gee.ArrayList<string>  doubleStringProps;
 	string pad;
 	
-	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps) 
+	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps, pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
-		this.pad = "	";
+		this.pad = pad;
 	}
 	
 	public string munge ( )
 	{
-		return this.mungeToString(this.node);
+		//return this.mungeToString(this.node);
 	}
 
+	public string mungeChild(pad ,cnode)
+	{
+		var x = new  NodeToJs(cnode, this.doubleStringProps, pad);
+		return x.munge();
+	}
+	
 	
 
 	
@@ -57,11 +63,11 @@ public class JsRender.NodeToJs : Object {
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
 		
-		if (this.hasChildren()) {
+		if (cnode.hasChildren()) {
 			// look for '*props'
 		   
-			for (var ii =0; ii< this.items.size; ii++) {
-				var pl = this.items.get(ii);
+			for (var ii =0; ii< cnode.items.size; ii++) {
+				var pl = cnode.items.get(ii);
 				if (!pl.props.has_key("* prop")) {
 					//newitems.add(pl);
 					continue;
@@ -79,7 +85,7 @@ public class JsRender.NodeToJs : Object {
 					// it's a standard prop..
 					
 					// munge property..??
-					els.add( prop  + " : " + pl.mungeToString (  pad + "	",  doubleStringProps));
+					els.add( prop  + " : " + this.mungeChild (  pad + "	",  pl));
 					
 					
 					//keys.push(prop);
@@ -102,7 +108,7 @@ public class JsRender.NodeToJs : Object {
 					old = ar_props.get(sprop);
 				}
 				var nstr  = old += old.length > 0 ? ",\n" : "";
-				nstr += pl.mungeToString (  pad + "		",  doubleStringProps);
+				nstr += this.mungeChild( pad + "		",   pl.mungeToString ( ));
 				
 		  		ar_props.set(sprop, nstr);
 				 
