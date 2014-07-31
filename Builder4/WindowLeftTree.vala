@@ -1059,19 +1059,6 @@ public class Xcls_WindowLeftTree : Object
                 this.activePath= "";
                 //this.updateNode(false,true);
             }
-        public void updateNode(JsRender.Node? n, bool refresh)
-             {
-                //     print("MODEL CHANGED CALLED" + this.activePath);
-                 if (n != null && this.activePath.length > 0) {
-                    Gtk.TreeIter iter;
-                    this.el.get_iter(out iter, new Gtk.TreePath.from_string(this.activePath));
-                    this.el.set(iter, 0, n.nodeTitle(), 1, n.nodeTip(), -1);
-                    var v = new Value(typeof(Object));
-                    v.set_object((Object)n);
-                    this.el.set_value(iter, 2, v);
-                }
-                          
-            }
 
         // skip |xns - no return type
     }
