@@ -22,6 +22,12 @@ public class Xcls_DialogTemplateSelect : Object
     public Gtk.Dialog el;
     private Xcls_DialogTemplateSelect  _this;
 
+    public static singleton( )
+    {
+        if (DialogTemplateSelect == null) {
+            DialogTemplateSelect= new Xcls_DialogTemplateSelect();        }
+        return DialogTemplateSelect;
+    }
     public Xcls_combo combo;
     public Xcls_cellrenderer cellrenderer;
     public Xcls_model model;
@@ -31,9 +37,8 @@ public class Xcls_DialogTemplateSelect : Object
         // ctor 
     public Xcls_DialogTemplateSelect()
     {
-        this.el = new Gtk.Dialog();
         _this = this;
-        DialogTemplateSelect = this;
+        this.el = new Gtk.Dialog();
 
         // my vars
 
@@ -41,10 +46,11 @@ public class Xcls_DialogTemplateSelect : Object
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        var child_0 = new Xcls_VBox2(_this);
+        this.el.title = "Add Object";
+        var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add  (  child_0.el  );
-        var child_1 = new Xcls_Button8(_this);
+        var child_1 = new Xcls_Button8( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
 
@@ -56,14 +62,6 @@ public class Xcls_DialogTemplateSelect : Object
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip default_height - already used 
-
-    // skip default_width - already used 
-
-    // skip xtype - not pipe 
     public JsRender.Node? show (Palete.Palete pal, JsRender.Node node) {
             
         
@@ -89,19 +87,7 @@ public class Xcls_DialogTemplateSelect : Object
         
         }
 
-    // skip |modal - already used 
-
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip id - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
@@ -111,34 +97,22 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox2(Xcls_DialogTemplateSelect _owner)
+        public Xcls_VBox2(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox3(_this);
+            var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
         }
 
         // userdefined functions 
 
-        // skip xtype - not pipe 
-
-        // skip |pack - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_HBox3 : Object 
     {
@@ -149,18 +123,18 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox3(Xcls_DialogTemplateSelect _owner)
+        public Xcls_HBox3(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.HBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label4(_this);
+            var child_0 = new Xcls_Label4( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
-            var child_1 = new Xcls_combo(_this);
+            var child_1 = new Xcls_combo( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
 
@@ -169,21 +143,7 @@ public class Xcls_DialogTemplateSelect : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip listeners - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Label4 : Object 
     {
@@ -194,10 +154,10 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_Label4(Xcls_DialogTemplateSelect _owner)
+        public Xcls_Label4(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.Label( "Select Template : " );
             _this = _owner;
+            this.el = new Gtk.Label( "Select Template : " );
 
             // my vars
 
@@ -206,19 +166,7 @@ public class Xcls_DialogTemplateSelect : Object
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_combo : Object 
     {
@@ -229,19 +177,19 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_combo(Xcls_DialogTemplateSelect _owner)
+        public Xcls_combo(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.ComboBox();
             _this = _owner;
             _this.combo = this;
+            this.el = new Gtk.ComboBox();
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_cellrenderer(_this);
+            var child_0 = new Xcls_cellrenderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
-            var child_1 = new Xcls_model(_this);
+            var child_1 = new Xcls_model( _this );
             child_1.ref();
             this.el.set_model (  child_1.el  );
 
@@ -251,23 +199,7 @@ public class Xcls_DialogTemplateSelect : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_cellrenderer : Object 
     {
@@ -278,11 +210,11 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_cellrenderer(Xcls_DialogTemplateSelect _owner)
+        public Xcls_cellrenderer(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.CellRendererText();
             _this = _owner;
             _this.cellrenderer = this;
+            this.el = new Gtk.CellRendererText();
 
             // my vars
 
@@ -291,19 +223,7 @@ public class Xcls_DialogTemplateSelect : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_model : Object 
     {
@@ -314,11 +234,11 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_DialogTemplateSelect _owner)
+        public Xcls_model(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
             _this = _owner;
             _this.model = this;
+            this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
 
             // my vars
 
@@ -326,16 +246,6 @@ public class Xcls_DialogTemplateSelect : Object
         }
 
         // userdefined functions 
-
-        // skip id - not pipe 
-
-        // skip n_columns - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |columns - already used 
         public void loadData  (GLib.List<string> data) {
                 this.el.clear();                                    
                 Gtk.TreeIter iter;
@@ -364,12 +274,6 @@ public class Xcls_DialogTemplateSelect : Object
             }
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button8 : Object 
     {
@@ -380,10 +284,10 @@ public class Xcls_DialogTemplateSelect : Object
             // my vars
 
             // ctor 
-        public Xcls_Button8(Xcls_DialogTemplateSelect _owner)
+        public Xcls_Button8(Xcls_DialogTemplateSelect _owner )
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
@@ -393,18 +297,6 @@ public class Xcls_DialogTemplateSelect : Object
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }

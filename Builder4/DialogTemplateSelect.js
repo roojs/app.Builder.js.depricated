@@ -19,6 +19,7 @@ DialogTemplateSelect=new XObject({
     },
     default_height : 200,
     default_width : 400,
+    title : "Add Object",
     'JsRender.Node?:show' : (Palete.Palete pal, JsRender.Node node) {
         
     
