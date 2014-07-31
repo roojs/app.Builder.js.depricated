@@ -1071,7 +1071,7 @@ public class Xcls_WindowLeftTree : Object
                     node = node.deepClone();
                     this.dropNode(target_data, node);
                 }
-            
+                _this.changed();
                 this.activePath= "";
                 //this.updateNode(false,true);
             }

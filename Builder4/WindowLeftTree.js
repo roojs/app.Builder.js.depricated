@@ -1027,7 +1027,7 @@ WindowLeftTree=new XObject({
                             node = node.deepClone();
                             this.dropNode(target_data, node);
                         }
-                    
+                        _this.changed();
                         this.activePath= "";
                         //this.updateNode(false,true);
                     }
