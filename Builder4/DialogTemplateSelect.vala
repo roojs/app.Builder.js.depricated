@@ -22,10 +22,11 @@ public class Xcls_DialogTemplateSelect : Object
     public Gtk.Dialog el;
     private Xcls_DialogTemplateSelect  _this;
 
-    public static singleton( )
+    public static Xcls_DialogTemplateSelect singleton()
     {
         if (DialogTemplateSelect == null) {
-            DialogTemplateSelect= new Xcls_DialogTemplateSelect();        }
+            DialogTemplateSelect= new Xcls_DialogTemplateSelect();
+        }
         return DialogTemplateSelect;
     }
     public Xcls_combo combo;
@@ -46,7 +47,7 @@ public class Xcls_DialogTemplateSelect : Object
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        this.el.title = "Add Object";
+        this.el.title = "Add an Object";
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add  (  child_0.el  );
