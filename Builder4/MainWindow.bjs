@@ -10,7 +10,7 @@
                 "show": "  ( ) => {\n    // hide the file editing..\n   \n    this.hideViewEditing();\n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
-            ".Project.Project:project": "",
+            ".Project.Project:project": "null",
             ".Xcls_ClutterFiles:clutterfiles": "null",
             ".Xcls_Editor:code_editor": "null",
             ".Xcls_LeftProps:left_props": "null",

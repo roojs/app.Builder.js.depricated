@@ -22,6 +22,13 @@ public class Xcls_MainWindow : Object
     public Gtk.Window el;
     private Xcls_MainWindow  _this;
 
+    public static Xcls_MainWindow singleton()
+    {
+        if (MainWindow == null) {
+            MainWindow= new Xcls_MainWindow();
+        }
+        return MainWindow;
+    }
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
     public Xcls_mainpane mainpane;
@@ -61,10 +68,10 @@ public class Xcls_MainWindow : Object
     public Xcls_MainWindow()
     {
         _this = this;
-        MainWindow = this;
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.project = null;
         this.clutterfiles = null;
         this.code_editor = null;
         this.left_props = null;
