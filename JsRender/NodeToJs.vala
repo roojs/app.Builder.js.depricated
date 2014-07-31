@@ -187,8 +187,10 @@ public class JsRender.NodeToJs : Object {
 		}
 		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
-			var k = piter.get_key();
+			var kk = piter.get_key().split(" ");
 			var v = piter.get_value();
+			var k = kk[kk.length-1];
+
 			
 			if (this.skip.contains(k) ) {
 				continue;
