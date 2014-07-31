@@ -240,6 +240,7 @@ public class JsRender.NodeToJs : Object {
 				kk[0].down() == "number"
 				|| 
 				kk[0].down() == "int"
+				// ??? any others that are raw output..
 				) {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
