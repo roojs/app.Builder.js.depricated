@@ -217,14 +217,14 @@ public class JsRender.NodeToJs : Object {
 					nstr =  string.joinv("\n" + pad, lines);
 				}
 				//print("==> " +  str + "\n");
-				els.add(left + nstr);
+				this.els.add(left + nstr);
 				continue;
 			}
 			// standard..
 			
 			
 			if (Lang.isNumber(v) || Lang.isBoolean(v)) { // boolean or number...?
-				els.add(left + v.down() );
+				this.els.add(left + v.down() );
 				continue;
 			}
 			
