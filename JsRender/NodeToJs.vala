@@ -229,24 +229,28 @@ public class JsRender.NodeToJs : Object {
 			}
 			
 			// strings..
-			if (doubleStringProps.size < 1) {
-				els.add(left + this.quoteString(v));
+			if (this.doubleStringProps.size < 1) {
+				this.els.add(left + this.node.quoteString(v));
 				continue;
 			}
 		   
-			if (doubleStringProps.index_of(k) > -1) {
-				els.add(left + this.quoteString(v));
+			if (this.doubleStringProps.index_of(k) > -1) {
+				els.add(left + this.node.quoteString(v));
 				continue;
 			}
-			var vv = this.quoteString(v);
+			var vv = this.node.quoteString(v);
 			// single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-			els.add(left + "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
+			this.els.add(left + "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
 			
 
 		   
 		   
 		   
 		}
+	}
+	public void readArrayProps()
+	{
+	
 		// handle the childitems  that are arrays.. eg. button[] = {  }...
 		
 		
