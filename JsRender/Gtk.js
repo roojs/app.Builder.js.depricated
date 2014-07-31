@@ -370,6 +370,20 @@ Gtk = XObject.define(
             //}
             
             
+            // singleton
+            
+            if (!depth) {
+                strbuilder(pad + "public static singleton( )\n");
+                strbuilder(pad + "{\n");
+                strbuilder(ipad + "if (" + this.name + " == null) {\n");
+                strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();"); // what about args?
+                strbuilder(ipad + "}\n");
+                strbuilder(ipad + "return " + this.name +";\n");
+                strbuilder(pad + "}\n");
+                
+            }
+            
+            
             // properties - global..??
                 
                 //public bool paused = false;
@@ -465,7 +479,7 @@ Gtk = XObject.define(
             // public static?
             if (!depth) {
                 strbuilder(ipad + "_this = this;\n");
-                strbuilder(ipad + this.name  + " = this;\n");
+                //strbuilder(ipad + this.name  + " = this;\n");
             } else {
                 strbuilder(ipad + "_this = _owner;\n");
                 if (item.xvala_id !== false && item.xvala_id[0] != '*' && item.xvala_id[0] != '+' ) {
