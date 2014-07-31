@@ -347,10 +347,10 @@ public class Xcls_WindowLeftTree : Object
                         var node = new JsRender.Node();
                         node.setFqn(selection_text);
             
-                        
+                        _this.model.dropNode(targetData, node);
                         print("ADD new node!!!\n");
                             
-                        Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node);
+                        ///Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node);
                         
                         Gtk.drag_finish (ctx, false, false,time);
                         
