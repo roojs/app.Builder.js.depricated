@@ -12,24 +12,26 @@
 public class JsRender.NodeToJs : Object {
 
 	JsRender.Node node;
+	Gee.ArrayList<string> 
 	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps) 
 	{
 		this.node = node;
 	}
 
+	public string munge ( )
+	{
+		return this.mungeToString("" , this.node);
+	}
+
+
+
 	
-	public string munge ( string pad,  )
+	public string mungeToString ( string pad,  JsRender cnode)
 	{
 		
 		 
 		pad = pad.length < 1 ? "	" : pad;
 		
-		
-		 
-		
-		
-
-	   //var keys = this.keys();
 		
 		
 		
