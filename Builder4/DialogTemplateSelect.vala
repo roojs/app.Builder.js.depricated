@@ -39,7 +39,7 @@ public class Xcls_DialogTemplateSelect : Object
     public Xcls_DialogTemplateSelect()
     {
         _this = this;
-        this.el = new Gtk.Dialog();
+        this.el = ;
 
         // my vars
 
