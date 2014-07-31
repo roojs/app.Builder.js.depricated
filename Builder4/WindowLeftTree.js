@@ -874,10 +874,8 @@ WindowLeftTree=new XObject({
                             
                             
                             _this.view.el.set_cursor(this.el.get_path(n_iter), null, false);
-                            
-                            //Builder.MidPropTree._model.load(node);
-                            //Builder.MidPropTree._win.hideWin();
-                            //Builder.LeftPanel._model.load( node);
+                            _this.changed();
+                         
                             
                                 
                     },
