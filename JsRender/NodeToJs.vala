@@ -30,17 +30,17 @@ public class JsRender.NodeToJs : Object {
 	
 
 	
-	public string buildEls ( JsRender cnode)
+	public string buildEls ( JsRender cnode ,
+                        out  Gee.ArrayList<string> els,
+                        out  Gee.ArrayList<string> skip,
+        		out  Gee.HashMap<string,string> ar_props)
 	{
 		
 		 
-		pad = pad.length < 1 ? "	" : pad;
-		
-		
-		
-		
-		var els = new Gee.ArrayList<string>(); 
-		var skip = new Gee.ArrayList<string>();
+		els = new Gee.ArrayList<string>(); 
+		skip = new Gee.ArrayList<string>();
+		ar_props = new Gee.HashMap<string,string>();
+		/*
 		if (this.hasXnsType() ) {
 				// this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
 				
@@ -49,14 +49,13 @@ public class JsRender.NodeToJs : Object {
 			   //skip.add("xtype");
 			   
 		}
+		*/
 		//var newitems = new Gee.ArrayList<JsRender.Node>();
 
 		 
 		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
-		var ar_props = new Gee.HashMap<string,string>();
-
 		
 		if (this.hasChildren()) {
 			// look for '*props'
