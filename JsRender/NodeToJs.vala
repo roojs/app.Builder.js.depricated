@@ -35,8 +35,12 @@ public class JsRender.NodeToJs : Object {
 	{
 		//return this.mungeToString(this.node);
 
-
-			
+		this.checkChildren();
+		this.readProps();
+		this.readArrayProps();
+		this.readListeners();
+		this.iterChildren();
+		
 		if (this.els.size < 1) {
 			return "";
 		}
