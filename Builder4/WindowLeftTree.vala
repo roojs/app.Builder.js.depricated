@@ -835,7 +835,7 @@ public class Xcls_WindowLeftTree : Object
                         this.el.get_value( iter_par, 2, out value);
                         parentNode =  (JsRender.Node)value.dup_object();
                         
-                        GLib.Value value;
+                        
                         this.el.get_value( iter_after, 2, out value);
                         var relNode =  (JsRender.Node)value.dup_object();
                         
