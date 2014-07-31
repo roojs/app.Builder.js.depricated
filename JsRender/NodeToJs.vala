@@ -232,8 +232,11 @@ public class JsRender.NodeToJs : Object {
 				kk[0][0] == '$' 
 				|| 
 				kk[0] == "function"
-	   		    || 
-				kk[0] == "function"
+	   		        || 
+				kk[0].down() == "boolean"
+    	   		        || 
+				kk[0].down() == "number"
+
 				) {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
