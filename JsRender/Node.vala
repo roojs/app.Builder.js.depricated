@@ -210,16 +210,7 @@ public class JsRender.Node : Object {
 
 	}
 
-	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
-	{
-		var ret = "";
-		for (var i = 0; i < ar.size; i++) {
-			ret += i>0 ? sep : "";
-			ret += ar.get(i);
-		}
-		return ret;
-
-	}
+	
 	
 	public string mungeToString ( string pad,  Gee.ArrayList<string> doubleStringProps)
 	{
