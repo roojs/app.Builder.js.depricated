@@ -147,7 +147,8 @@ public class JsRender.NodeToJs : Object {
  * string html  
  * $ string html  = string with value interpolated eg. baseURL + ".." 
  *  Clutter.ActorAlign x_align  (typed)  -- shows pulldowns if type is ENUM? 
- * $ untypedvalue = javascript untyped value... 
+ * $ untypedvalue = javascript untyped value...  
+ * _ string html ... = translatable..
  * 
  * object properties (not part of the GOjbect being wrapped?
  * # Gee.ArrayList<Xcls_fileitem> fileitems
@@ -232,14 +233,7 @@ public class JsRender.NodeToJs : Object {
 				kk[0][0] == '$' 
 				|| 
 				kk[0] == "function"
-	   		        || 
-				kk[0].down() == "boolean"
-    	   		        || 
-				kk[0].down() == "bool"
-				|| 
-				kk[0].down() == "number"
-				|| 
-				kk[0].down() == "int"
+	   		       
 				// ??? any others that are raw output..
 				) {
 				// does not hapepnd with arrays.. 
@@ -270,7 +264,19 @@ public class JsRender.NodeToJs : Object {
 			// standard..
 			
 			
-			if (Lang.isNumber(v) || Lang.isBoolean(v)) { // boolean or number...?
+			if (
+				Lang.isNumber(v) 
+				|| 
+				Lang.isBoolean(v)
+				||
+				kk[0].down() == "boolean"
+    	   		        || 
+				kk[0].down() == "bool"
+				|| 
+				kk[0].down() == "number"
+				|| 
+				kk[0].down() == "int"
+			    ) { // boolean or number...?
 				this.els.add(left + v.down() );
 				continue;
 			}
