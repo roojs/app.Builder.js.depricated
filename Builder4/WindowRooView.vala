@@ -54,7 +54,9 @@ public class Xcls_WindowRooView : Object
     }
 
     // userdefined functions 
-    public void requestRedraw
+    public void requestRedraw() {
+            this.model.renderJS(false);
+        }
     public void createThumb() {
             
             

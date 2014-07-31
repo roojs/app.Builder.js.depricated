@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.bjs",
     "items": [
         {
-            "|void:requestRedraw": "",
+            "|void:requestRedraw": "() {\n    this.model.renderJS(false);\n}",
             ".JsRender.JsRender:file": "",
             "id": "WindowRooView",
             "pack": "add",

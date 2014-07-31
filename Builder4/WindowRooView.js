@@ -11,6 +11,9 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
     xtype: Gtk.VPaned,
+    'void:requestRedraw' : () {
+        this.model.renderJS(false);
+    },
     id : "WindowRooView",
     pack : "add",
     'void:createThumb' : () {
