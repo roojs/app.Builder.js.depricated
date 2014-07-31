@@ -373,7 +373,7 @@ Gtk = XObject.define(
             // singleton
             
             if (!depth) {
-                strbuilder(pad + "public static singleton()\n");
+                strbuilder(pad + "public static " + xlcs + " singleton()\n");
                 strbuilder(pad + "{\n");
                 strbuilder(ipad + "if (" + this.name + " == null) {\n");
                 strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();\n"); // what about args?
