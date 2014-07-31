@@ -226,7 +226,15 @@ public class JsRender.NodeToJs : Object {
 			
 			 
 			// next.. is it a function.. or a raw string..
-			if (kk[0][0] == '|' || kk[0][0] == '$' ) {
+			if (
+				kk[0][0] == '|' 
+				|| 
+				kk[0][0] == '$' 
+				|| 
+				kk[0] == "function"
+	   		    || 
+				kk[0] == "function"
+				) {
 				// does not hapepnd with arrays.. 
 				if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
 					continue;
