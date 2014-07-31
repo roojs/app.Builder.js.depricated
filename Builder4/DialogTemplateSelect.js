@@ -40,7 +40,7 @@ DialogTemplateSelect=new XObject({
         
         var ix = _this.combo.el.get_active();
         if (ix < 1 ) {
-            return null;
+            return node;
         }
          
         return pal.loadTemplate(opts.nth_data(ix));
