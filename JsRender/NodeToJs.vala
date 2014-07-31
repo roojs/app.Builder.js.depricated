@@ -107,7 +107,44 @@ public class JsRender.NodeToJs : Object {
 		}
 		 
 	}
-
+	/*
+ * Standardize this crap...
+ * 
+ * standard properties (use to set)
+ *          If they are long values show the dialog..
+ * 
+ * bool is_xxx  :: can show a pulldown.. (true/false)
+ * string html  
+ * $ string html  = string with value interpolated eg. baseURL + ".." 
+ *  Clutter.ActorAlign x_align  (typed)  -- shows pulldowns if type is ENUM? 
+ * $ untypedvalue = javascript untyped value... 
+ * 
+ * object properties (not part of the GOjbect being wrapped?
+ * # Gee.ArrayList<Xcls_fileitem> fileitems
+ * 
+ * signals
+ * @ void open 
+ * 
+ * methods -- always text editor..
+ * | void clearFiles
+ * | someJSmethod
+ * 
+ * specials
+ * * prop -- string
+ * * args  -- string
+ * * ctor -- string
+ * * init -- big string?
+ * 
+ * event handlers (listeners)
+ *   just shown 
+ * 
+ * -----------------
+ * special ID values
+ *  +XXXX -- indicates it's a instance property / not glob...
+ *  *XXXX -- skip writing glob property (used as classes that can be created...)
+ * 
+ * 
+ */
 	public void readProps()
 	{
 		string left;
