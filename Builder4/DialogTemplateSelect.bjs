@@ -9,7 +9,6 @@
             "listeners": {
                 "delete_event": "  (self, event)  =>{\n    this.el.hide();\n    return true;\n}"
             },
-            ".ctor": "new Gtk.Dialog(Xcls_MainWindow.el)",
             "default_height": 200,
             "default_width": 400,
             "title": "Add an Object",
