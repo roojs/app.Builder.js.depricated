@@ -777,8 +777,8 @@ WindowLeftTree=new XObject({
                              Gtk.TreeIter n_iter; 
                              
                              if ( parent_str.length < 1) {
-                                  this.el.append(out n_iter, null);
-                                   node.parent = null;
+                                  this.el.append(out n_iter, null); // drop at top level..
+                                  node.parent = null;
                             } else   if (pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                 
