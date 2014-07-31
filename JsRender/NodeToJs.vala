@@ -75,7 +75,7 @@ public class JsRender.NodeToJs : Object {
 	
 
 	
-	public string checkChildren () 
+	public void checkChildren () 
 	{
 		
 		 
