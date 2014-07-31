@@ -206,7 +206,7 @@ public class JsRender.NodeToJs : Object {
 			if (leftv[0] == '.') { // |. or . -- do not output..
 				continue;
 			}
-			 if (k[0] == '*') {
+			 if (kk[0] == '*') {
 				// ignore '*prop';
 				continue;
 			 }
