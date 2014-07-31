@@ -133,7 +133,7 @@ namespace JsRender {
 				return fname;
 			}
 			// we need to create this somehow...
-			print("getIconFileName return %s\n", GLib.Environment.get_home_dir() + "/.Builder/test.jpg);
+			print("getIconFileName return %s\n", GLib.Environment.get_home_dir() + "/.Builder/test.jpg");
 			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
 
 		}
