@@ -787,17 +787,25 @@ WindowLeftTree=new XObject({
                                 
                                 this.el.get_iter(out iter_after, tree_path );            
                                 this.el.iter_parent(out iter_par, iter_after);
-                                 
-                                if ( pos  > 0 ) {
-                                 
-                                    this.el.insert_after(out n_iter,    iter_par  , iter_after);
-                                } else {
-                                    this.el.insert_before(out n_iter,  iter_par  , iter_after);
-                                }
+                                
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
                                 parentNode =  (JsRender.Node)value.dup_object();
-                                node.parent = parentNode;
+                                
+                                GLib.Value value;
+                                this.el.get_value( iter_after, 2, out value);
+                                var relNode =  (JsRender.Node)value.dup_object();
+                                
+                                if ( pos  > 0 ) {
+                                 
+                                    this.el.insert_after(out n_iter,    iter_par  , iter_after);
+                                    parentNode.insertAfter(node, relNode);
+                                    
+                                } else {
+                                    this.el.insert_before(out n_iter,  iter_par  , iter_after);
+                                    parentNode.insertBefore(node, relNode);
+                                }
+                                //node.parent = parentNode;
                             } else {
                                //  print("appending to  " + parent_str);
                                 this.el.get_iter(out iter_par, tree_path);
