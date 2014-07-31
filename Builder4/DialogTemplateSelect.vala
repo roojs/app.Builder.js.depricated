@@ -65,9 +65,10 @@ public class Xcls_DialogTemplateSelect : Object
     // userdefined functions 
     public JsRender.Node? show (Palete.Palete pal, JsRender.Node node) {
             
-        
+            this.el.show_all();
             var opts = pal.listTemplates(node);
             if (opts.length() < 1) {
+                this.el.hide();
                 return node;
             }
             this.el.set_attached_to( Xcls_MainWindow.singleton().el);
@@ -77,9 +78,9 @@ public class Xcls_DialogTemplateSelect : Object
              _this.model.loadData(opts);
              _this.combo.el.set_active(0);
              
-            this.el.show_all();
+           
             this.el.run();
-            this.el.hide();
+            
             var ix = _this.combo.el.get_active();
             if (ix < 1 ) {
                 return null;

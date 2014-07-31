@@ -13,7 +13,7 @@
             "default_width": 400,
             "title": "Add an Object",
             "xtype": "Dialog",
-            "|JsRender.Node?:show": " (Palete.Palete pal, JsRender.Node node) {\n    \n\n    var opts = pal.listTemplates(node);\n    if (opts.length() < 1) {\n        return node;\n    }\n    this.el.set_attached_to( Xcls_MainWindow.singleton().el);\n \n    \n    //opts.unshift({ path: '' , name :'Just add Element' });\n     _this.model.loadData(opts);\n     _this.combo.el.set_active(0);\n     \n    this.el.show_all();\n    this.el.run();\n    this.el.hide();\n    var ix = _this.combo.el.get_active();\n    if (ix < 1 ) {\n        return null;\n    }\n     \n    return pal.loadTemplate(opts.nth_data(ix));\n\n}\n",
+            "|JsRender.Node?:show": " (Palete.Palete pal, JsRender.Node node) {\n    \n    this.el.show_all();\n    var opts = pal.listTemplates(node);\n    if (opts.length() < 1) {\n        this.el.hide();\n        return node;\n    }\n    this.el.set_attached_to( Xcls_MainWindow.singleton().el);\n \n    \n    //opts.unshift({ path: '' , name :'Just add Element' });\n     _this.model.loadData(opts);\n     _this.combo.el.set_active(0);\n     \n   \n    this.el.run();\n    \n    var ix = _this.combo.el.get_active();\n    if (ix < 1 ) {\n        return null;\n    }\n     \n    return pal.loadTemplate(opts.nth_data(ix));\n\n}\n",
             "|modal": "true",
             "|xns": "Gtk",
             "items": [
