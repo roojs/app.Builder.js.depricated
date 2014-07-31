@@ -1,11 +1,12 @@
 {
-    "id": "file-gtk-18",
+    "id": "file-gtk-19",
     "name": "WindowRooView",
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.bjs",
     "items": [
         {
+            "|void:requestRedraw": "",
             ".JsRender.JsRender:file": "",
             "id": "WindowRooView",
             "pack": "add",

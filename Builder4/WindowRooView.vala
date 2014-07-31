@@ -22,6 +22,13 @@ public class Xcls_WindowRooView : Object
     public Gtk.VPaned el;
     private Xcls_WindowRooView  _this;
 
+    public static Xcls_WindowRooView singleton()
+    {
+        if (WindowRooView == null) {
+            WindowRooView= new Xcls_WindowRooView();
+        }
+        return WindowRooView;
+    }
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
     public Xcls_inspectorcontainer inspectorcontainer;
@@ -33,7 +40,6 @@ public class Xcls_WindowRooView : Object
     public Xcls_WindowRooView()
     {
         _this = this;
-        WindowRooView = this;
         this.el = new Gtk.VPaned();
 
         // my vars
@@ -48,6 +54,7 @@ public class Xcls_WindowRooView : Object
     }
 
     // userdefined functions 
+    public void requestRedraw
     public void createThumb() {
             
             
