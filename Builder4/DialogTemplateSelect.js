@@ -27,6 +27,8 @@ DialogTemplateSelect=new XObject({
         if (opts.length() < 1) {
             return node;
         }
+        this.el.transient_for = Xcls_MainWindow.singleton().el;
+        this.el.model = true;
         
         //opts.unshift({ path: '' , name :'Just add Element' });
          _this.model.loadData(opts);
