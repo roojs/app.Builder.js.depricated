@@ -360,8 +360,8 @@ public class JsRender.NodeToJs : Object {
 		}
 		var itms = "items : [\n";
 		var n = 0;
-		for(var i = 0; i < this.items.size;i++) {
-			var ele = this.items.get(i);
+		for(var i = 0; i < this.node.items.size;i++) {
+			var ele = this.node.items.get(i);
 			if (ele.props.has_key("* prop")) {
 				continue;
 			}
