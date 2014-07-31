@@ -344,13 +344,13 @@ public class Xcls_WindowLeftTree : Object
                         
             
                         // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
+                        var node = new JsRender.Node();
+                        node.setFqn(selection_text);
             
-            
+                        
                         print("ADD new node!!!\n");
                             
-                        
-                          
-                        
+                        Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node)
                         
                         Gtk.drag_finish (ctx, false, false,time);
                         
