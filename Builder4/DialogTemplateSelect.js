@@ -29,7 +29,7 @@ DialogTemplateSelect=new XObject({
             return node;
         }
         this.el.set_attached_to( Xcls_MainWindow.singleton().el);
-     
+         this.el.set_transient_for( Xcls_MainWindow.singleton().el);
         
         //opts.unshift({ path: '' , name :'Just add Element' });
          _this.model.loadData(opts);
