@@ -858,7 +858,7 @@ public class Xcls_WindowLeftTree : Object
                             node.props.set("*prop", target_data[2]);
                         }
                         
-                        var new_node = DialogTemplateSelect.show(this.file.palete(), node);
+                        var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
                         node = new_node;
                         
                     }
