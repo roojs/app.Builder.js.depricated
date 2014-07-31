@@ -281,62 +281,71 @@ public class JsRender.NodeToJs : Object {
 			
 		}
 
-
-		if (this.listeners.size > 0) {
+	}
+	public void readListeners()
+	{
+		
+		if (this.node.listeners.size < 1) {
+			return;
+		}
 			// munge the listeners.
 			//print("ADDING listeners?");
-			
-			var liter = this.listeners.map_iterator();
 		
-			var itms = "listeners : {\n";
-			var i =0;
-			while (liter.next()) {
-				
-				itms += i >0 ? ",\n" : "";	
-				// 
-				var str = liter.get_value().strip();
-				var lines = str.split("\n");
-				if (lines.length > 0) {
-					str = string.joinv("\n" + pad + "	   ", lines);
-				}
-				
-
-				
-				itms +=  pad + "	"  + liter.get_key().replace("|", "")  + " : " + str;
-
-				i++;
+		var liter = this.node.listeners.map_iterator();
+	
+		var itms = "listeners : {\n";
+		var i =0;
+		while (liter.next()) {
 			
-				
+			itms += i >0 ? ",\n" : "";	
+			// 
+			var str = liter.get_value().strip();
+			var lines = str.split("\n");
+			if (lines.length > 0) {
+				str = string.joinv("\n" + pad + "	   ", lines);
 			}
-			itms += "\n" + pad + "}";
-			//print ( "ADD " + itms); 
-			els.add(itms);
+			
 
+			
+			itms +=  pad + "	"  + liter.get_key().replace("|", "")  + " : " + str;
+
+			i++;
+		
+			
 		}
+		itms += "\n" + pad + "}";
+		//print ( "ADD " + itms); 
+		this.els.add(itms);
 
+	}
 
+	public void iterChildren()
+	{
+		
 		
 		// finally munge the children...
-		if (this.items.size> 0) {
-			var itms = "items : [\n";
-			var n = 0;
-			for(var i = 0; i < this.items.size;i++) {
-
-				if (this.items.get(i).props.has_key("* prop")) {
-					continue;
-				}
-				if (n > 0) {
-					 itms += ",\n";
-				}
-				n++;
-				itms +=	pad + "	"  +
-					this.items.get(i).mungeToString( pad + "		",  doubleStringProps);
-				
-				
-			}
-			itms +=  "\n"+  pad + "]"  + "\n";
-			els.add(itms);
+		if (this.node.items.size < 0) {
+			return;
 		}
+		var itms = "items : [\n";
+		var n = 0;
+		for(var i = 0; i < this.items.size;i++) {
+			var ele = this.items.get(i);
+			if (ele.props.has_key("* prop")) {
+				continue;
+			}
+			if (n > 0) {
+				 itms += ",\n";
+			}
+			n++;
+			itms +=	pad + "	"  +
+				this.mungeChild( pad + "		",  ele);
+			
+			
+		}
+		itms +=  "\n"+  pad + "]"  + "\n";
+		this.els.add(itms);
+	}
 
 		// finally output listeners...
 		
