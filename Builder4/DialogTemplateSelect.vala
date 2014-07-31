@@ -70,7 +70,7 @@ public class Xcls_DialogTemplateSelect : Object
             if (opts.length() < 1) {
                 return node;
             }
-            this.el.transient_for = Xcls_MainWindow.singleton().el;
+            this.el.set_attached_to( Xcls_MainWindow.singleton().el);
          
             
             //opts.unshift({ path: '' , name :'Just add Element' });
@@ -84,8 +84,7 @@ public class Xcls_DialogTemplateSelect : Object
             if (ix < 1 ) {
                 return null;
             }
-            
-        
+             
             return pal.loadTemplate(opts.nth_data(ix));
         
         }
