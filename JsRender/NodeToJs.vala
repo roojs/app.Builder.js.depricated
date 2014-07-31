@@ -15,7 +15,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.ArrayList<string>  doubleStringProps;
 	string pad;
 	Gee.ArrayList<string> els;
-        Gee.ArrayList<string> skip;
+        //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 
 
@@ -192,9 +192,9 @@ public class JsRender.NodeToJs : Object {
 			var k = kk[kk.length-1];
 
 			
-			if (this.skip.contains(k) ) {
-				continue;
-			}
+			//if (this.skip.contains(k) ) {
+			//	continue;
+			//}
 			if (  Regex.match_simple("\\[\\]$", k)) {
 				
 				
