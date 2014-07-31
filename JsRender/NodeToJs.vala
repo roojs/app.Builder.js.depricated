@@ -183,7 +183,7 @@ public class JsRender.NodeToJs : Object {
 			if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
 				left = "'" + leftv + "'";
 			} else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
-				var val = this.quoteString(leftv);
+				var val = this.node.quoteString(leftv);
 				
 				left = "'" + val.substring(1, val.length-2).replace("'", "\\'") + "'";
 			} else {
