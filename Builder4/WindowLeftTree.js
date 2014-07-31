@@ -231,7 +231,7 @@ WindowLeftTree=new XObject({
                             
                             print("ADD new node!!!\n");
                                 
-                            Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node)
+                            Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node);
                             
                             Gtk.drag_finish (ctx, false, false,time);
                             
