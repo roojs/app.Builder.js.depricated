@@ -304,7 +304,10 @@ public class Xcls_MainWindow : Object
                   
             });
             
-            
+             this.left_tree.changed.connect(() => {
+               this.window_rooview.requestRedraw();
+            }
+             
             
         
             // left properties
@@ -328,6 +331,11 @@ public class Xcls_MainWindow : Object
                 this.hideCodeEdit();
                 return ret;
             });
+             this.left_props.changed.connect(() => {
+               this.window_rooview.requestRedraw();
+            }
+            
+        
         
         
             // left projects..

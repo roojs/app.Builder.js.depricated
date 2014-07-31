@@ -223,7 +223,10 @@ MainWindow=new XObject({
               
         });
         
-        
+         this.left_tree.changed.connect(() => {
+           this.window_rooview.requestRedraw();
+        }
+         
         
     
         // left properties
@@ -247,6 +250,11 @@ MainWindow=new XObject({
             this.hideCodeEdit();
             return ret;
         });
+         this.left_props.changed.connect(() => {
+           this.window_rooview.requestRedraw();
+        }
+        
+    
     
     
         // left projects..
