@@ -80,7 +80,7 @@ public class Xcls_DialogTemplateSelect : Object
              
            
             this.el.run();
-            
+            this.el.hide();    
             var ix = _this.combo.el.get_active();
             if (ix < 1 ) {
                 return node;
