@@ -118,7 +118,7 @@ public class JsRender.NodeToJs : Object {
 			print("failed to build regex");
 			return "";
 		}
-		var piter = this.props.map_iterator();
+		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
 			var k = piter.get_key();
 			var v = piter.get_value();
