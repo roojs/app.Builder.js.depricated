@@ -201,9 +201,9 @@ public class JsRender.NodeToJs : Object {
 
 			}
 			
-			string leftv = kk[0] == '$' ? k.substring(2) : k;
+			string leftv = k;
 			// skip builder stuff. prefixed with  '.' .. just like unix fs..
-			if (leftv[0] == '.') { // |. or . -- do not output..
+			if (kk[0] == '.') { // |. or . -- do not output..
 				continue;
 			}
 			 if (kk[0] == '*') {
