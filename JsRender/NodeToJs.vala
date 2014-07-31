@@ -57,7 +57,7 @@ public class JsRender.NodeToJs : Object {
 	} 
 
 
-	public string mungeChild(pad ,cnode)
+	public string mungeChild(string pad , JsRender.Node cnode)
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad);
 		return x.munge();
