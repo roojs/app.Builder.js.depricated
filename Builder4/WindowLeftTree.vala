@@ -22,6 +22,13 @@ public class Xcls_WindowLeftTree : Object
     public Gtk.ScrolledWindow el;
     private Xcls_WindowLeftTree  _this;
 
+    public static Xcls_WindowLeftTree singleton()
+    {
+        if (WindowLeftTree == null) {
+            WindowLeftTree= new Xcls_WindowLeftTree();
+        }
+        return WindowLeftTree;
+    }
     public Xcls_view view;
     public Xcls_model model;
     public Xcls_renderer renderer;
@@ -35,7 +42,6 @@ public class Xcls_WindowLeftTree : Object
     public Xcls_WindowLeftTree()
     {
         _this = this;
-        WindowLeftTree = this;
         this.el = new Gtk.ScrolledWindow( null, null );
 
         // my vars
