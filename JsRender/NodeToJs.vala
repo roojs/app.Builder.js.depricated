@@ -14,12 +14,21 @@ public class JsRender.NodeToJs : Object {
 	JsRender.Node node;
 	Gee.ArrayList<string>  doubleStringProps;
 	string pad;
+	Gee.ArrayList<string> els;
+        Gee.ArrayList<string> skip;
+	Gee.HashMap<string,string> ar_props;
+
+
 	
 	public NodeToJs(JsRender.Node node, Gee.ArrayList<string> doubleStringProps, pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
 		this.pad = pad;
+		this.els = new Gee.ArrayList<string>(); 
+		this.skip = new Gee.ArrayList<string>();
+		this.ar_props = new Gee.HashMap<string,string>();
+
 	}
 	
 	public string munge ( )
@@ -36,88 +45,71 @@ public class JsRender.NodeToJs : Object {
 	
 
 	
-	public string buildEls ( JsRender cnode ,
-                        out  Gee.ArrayList<string> els,
-                        out  Gee.ArrayList<string> skip,
-        		out  Gee.HashMap<string,string> ar_props)
+	public string checkChildren () 
 	{
 		
 		 
-		els = new Gee.ArrayList<string>(); 
-		skip = new Gee.ArrayList<string>();
-		ar_props = new Gee.HashMap<string,string>();
-		/*
-		if (this.hasXnsType() ) {
-				// this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
-				
-				
-			   //skip.add("|xns");
-			   //skip.add("xtype");
-			   
-		}
-		*/
-		//var newitems = new Gee.ArrayList<JsRender.Node>();
-
-		 
-		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
 		
-		if (cnode.hasChildren()) {
-			// look for '*props'
-		   
-			for (var ii =0; ii< cnode.items.size; ii++) {
-				var pl = cnode.items.get(ii);
-				if (!pl.props.has_key("* prop")) {
-					//newitems.add(pl);
-					continue;
-				}
-				
-				//print(JSON.stringify(pl,null,4));
-				// we have a prop...
-				//var prop = pl['*prop'] + '';
-				//delete pl['*prop'];
-				var prop = pl.get("* prop");
-				print("got prop "+ prop + "\n");
-				
-				// name ends in [];
-				if (! Regex.match_simple("\\[\\]$", prop)) {
-					// it's a standard prop..
-					
-					// munge property..??
-					els.add( prop  + " : " + this.mungeChild (  pad + "	",  pl));
-					
-					
-					//keys.push(prop);
-					continue;
-				}
-
-
-
-				
-				var sprop  = prop.replace("[]", "");
-				print("sprop is : " + sprop + "\n");
-				
-				// it's an array type..
-				var old = "";
-				if (!ar_props.has_key(sprop)) {
-					
-					ar_props.set(sprop, "");
-					
-				} else {
-					old = ar_props.get(sprop);
-				}
-				var nstr  = old += old.length > 0 ? ",\n" : "";
-				nstr += this.mungeChild( pad + "		",   pl.mungeToString ( ));
-				
-		  		ar_props.set(sprop, nstr);
-				 
-				
+		if (!this.node.hasChildren()) {
+			return;
+		}
+		// look for '*props'
+	   
+		for (var ii =0; ii< this.node.items.size; ii++) {
+			var pl = this.node.items.get(ii);
+			if (!pl.props.has_key("* prop")) {
+				//newitems.add(pl);
+				continue;
 			}
+			
+			//print(JSON.stringify(pl,null,4));
+			// we have a prop...
+			//var prop = pl['*prop'] + '';
+			//delete pl['*prop'];
+			var prop = pl.get("* prop");
+			print("got prop "+ prop + "\n");
+			
+			// name ends in [];
+			if (! Regex.match_simple("\\[\\]$", prop)) {
+				// it's a standard prop..
+				
+				// munge property..??
+				this.els.add( prop  + " : " + this.mungeChild (  pad + "	",  pl));
+				
+				
+				//keys.push(prop);
+				continue;
+			}
+
+
+
+			
+			var sprop  = prop.replace("[]", "");
+			print("sprop is : " + sprop + "\n");
+			
+			// it's an array type..
+			var old = "";
+			if (!this.ar_props.has_key(sprop)) {
+				
+				this.ar_props.set(sprop, "");
+				
+			} else {
+				old = this.ar_props.get(sprop);
+			}
+			var nstr  = old += old.length > 0 ? ",\n" : "";
+			nstr += this.mungeChild( pad + "		",   pl.mungeToString ( ));
+			
+	  		this.ar_props.set(sprop, nstr);
 			 
 			
 		}
+		 
+	}
 
+	public void readProps()
+	{
 		string left;
 		Regex func_regex ;
 		try {
