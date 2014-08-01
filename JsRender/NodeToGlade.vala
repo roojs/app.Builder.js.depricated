@@ -90,7 +90,12 @@ public class JsRender.NodeToGlade : Object {
     public string mungeChild(string pad ,  Node cnode)
 	{
 		var x = new  NodeToGlade(cnode,  pad);
-		return x.munge();
+		return x.mungeNode();
 	}
 	
+    
+    
+    
+    
+    
 }
