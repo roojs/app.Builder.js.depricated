@@ -27,14 +27,14 @@ int main (string[] args) {
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
 	var  left_props =new Xcls_GladeView();
-
+    left_props.el.show_all();
 	w.add(left_props.el);
-	w.show_all();
+	w.show_all();   
  
  
 	var p = left_props.el.get_project();
     
-    p.load("/home/alan/gitlive/app.Builder.js/tests/test.glade");
+    p.load_from_file("/home/alan/gitlive/app.Builder.js/tests/test.glade");
 	 
 	Gtk.main();
     
