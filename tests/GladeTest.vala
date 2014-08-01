@@ -31,7 +31,10 @@ int main (string[] args) {
 	w.add(left_props.el);
 	w.show_all();
  
-	left_props.load(Palete.factory("Roo"), "Roo.form.Form"); 
+ 
+	var p = left_props.el.get_project();
+    
+    
 
 		 
 	 Gtk.main();
