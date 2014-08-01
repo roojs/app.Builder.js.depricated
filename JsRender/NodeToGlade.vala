@@ -43,8 +43,7 @@
 public class JsRender.NodeToGlade : Object {
 
 	Node node;
-	Gee.ArrayList<string>  doubleStringProps;
-	string pad;
+ 	string pad;
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
@@ -53,8 +52,7 @@ public class JsRender.NodeToGlade : Object {
 	public NodeToGlade( Node node,   string pad) 
 	{
 		this.node = node;
-		this.doubleStringProps = doubleStringProps;
-		this.pad = pad;
+ 		this.pad = pad;
 		this.els = new Gee.ArrayList<string>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
@@ -89,9 +87,9 @@ public class JsRender.NodeToGlade : Object {
           
 		     
 	}
-    	public string mungeChild(string pad ,  Node cnode)
+    public string mungeChild(string pad ,  Node cnode)
 	{
-		var x = new  NodeToJs(cnode,  pad);
+		var x = new  NodeToGlade(cnode,  pad);
 		return x.munge();
 	}
 	
