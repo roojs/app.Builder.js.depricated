@@ -1,16 +1,17 @@
 {
-    "id": "file-gtk-28",
+    "id": "file-gtk-9",
     "name": "GladeView",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/GladeView.bjs",
     "items": [
         {
-            
+            ".ctor": "",
             "id": "GladeView",
-            "xtype": "DesignView",            
-    
+            "xtype": "DesignView",
             "|xns": "Glade"
         }
-    ]
+    ],
+    "permname": "",
+    "modOrder": ""
 }
