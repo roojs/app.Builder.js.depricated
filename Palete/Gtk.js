@@ -198,8 +198,8 @@ Gtk = XObject.define(
             var giname = es[0];
             giname = giname == 'Glade' ? 'Gladeui' : giname;
             
-            imports.gi[es[0]];
-            var bi = gi.find_by_name(es[0], es[1]);
+            imports.gi[giname ];
+            var bi = gi.find_by_name(giname , es[1]);
             
             if (!bi) {
                 print("COULND NOT FIND BY NAME");
