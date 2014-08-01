@@ -36,7 +36,7 @@ public class Xcls_GladeView : Object
     public Xcls_GladeView()
     {
         _this = this;
-        this.el = ;
+        this.el = new Glade.DesignView(new Glade.Project());
 
         // my vars
 

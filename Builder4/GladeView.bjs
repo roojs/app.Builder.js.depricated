@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/GladeView.bjs",
     "items": [
         {
-            ".ctor": "",
+            ".ctor": "new Glade.DesignView(new Glade.Project())",
             "id": "GladeView",
             "xtype": "DesignView",
             "|xns": "Glade"
