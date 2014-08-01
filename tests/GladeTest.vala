@@ -33,7 +33,7 @@ int main (string[] args) {
  
  
 	var p = left_props.el.get_project();
-    
+    print("LOADING\n");
     p.load_from_file("/home/alan/gitlive/app.Builder.js/tests/test.glade");
 	 
 	Gtk.main();
