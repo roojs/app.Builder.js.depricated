@@ -50,7 +50,7 @@ public class JsRender.NodeToGlade : Object {
 	Gee.HashMap<string,string> ar_props;
 
 
-	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
+	public NodeToGlade( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
