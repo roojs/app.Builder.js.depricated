@@ -1031,7 +1031,7 @@ namespace Glade {
         public static unowned Glade.Widget create_widget_real (bool query, ...);
         public GLib.Parameter default_params (bool @construct, uint n_params);
         public bool depends (Glade.Widget widget, Glade.Widget another);
-        public static unowned Glade.WidgetAdaptor from_catalog (Glade.Catalog catalog, Glade.XmlNode class_node, GLib.Module module);
+        // public static unowned Glade.WidgetAdaptor from_catalog (Glade.Catalog catalog, Glade.XmlNode class_node, GLib.Module module);
         public unowned Glade.WidgetAdaptor from_pspec (GLib.ParamSpec spec);
         public static unowned Glade.WidgetAdaptor get_by_name (string name);
         public static unowned Glade.WidgetAdaptor get_by_type (GLib.Type type);
@@ -1893,8 +1893,8 @@ namespace Glade {
     public static bool util_have_devhelp ();
     [CCode (cheader_filename = "gladeui/glade.h")]
     public static unowned string util_icon_name_to_filename (string value);
-    [CCode (cheader_filename = "gladeui/glade.h")]
-    public static unowned GLib.Module util_load_library (string library_name);
+    // [CCode (cheader_filename = "gladeui/glade.h")]
+    // public static unowned GLib.Module util_load_library (string library_name);
     [CCode (cheader_filename = "gladeui/glade.h")]
     public static bool util_object_is_loading (GLib.Object object);
     [CCode (cheader_filename = "gladeui/glade.h")]
@@ -1967,8 +1967,8 @@ namespace Glade {
     public static unowned string xml_get_value_string (Glade.XmlNode node, string name);
     [CCode (cheader_filename = "gladeui/glade.h")]
     public static unowned string xml_get_value_string_required (Glade.XmlNode node, string name, string xtra_info);
-    [CCode (cheader_filename = "gladeui/glade.h")]
-    public static bool xml_load_sym_from_node (Glade.XmlNode node_in, GLib.Module module, string tagname, void* sym_location);
+    // [CCode (cheader_filename = "gladeui/glade.h")]
+    // public static bool xml_load_sym_from_node (Glade.XmlNode node_in, GLib.Module module, string tagname, void* sym_location);
     [CCode (cheader_filename = "gladeui/glade.h")]
     public static unowned Glade.XmlNode xml_search_child (Glade.XmlNode node, string name);
     [CCode (cheader_filename = "gladeui/glade.h")]
