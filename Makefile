@@ -39,10 +39,11 @@ BUILDER4=   Builder4/About.vala \
 
 
 # compile what... for testing 
-all:  builder4
+#all:  builder4
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
+#all: test-glade
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
@@ -60,6 +61,12 @@ test-palate:
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/WindowRightPalete.vala \
 		tests/PaleteTest.vala -o /tmp/test-palete
+
+test-glade:
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		Builder4/GladeView.vala \
+		tests/GladeTest.vala -o /tmp/test-glade
+
 
 
 test-addprops:
