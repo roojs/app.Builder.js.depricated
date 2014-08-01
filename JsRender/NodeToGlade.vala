@@ -80,9 +80,13 @@ public class JsRender.NodeToGlade : Object {
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
 		
-		return   "{\n" +
-			pad  + str_props + 
-			"\n" + spad +  "}";
+        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+        <!-- Generated with glade 3.18.3 -->
+        <interface>
+          <requires lib=\"gtk+\" version="3.12\"/>" +
+          this.mungeNode(this.node) +
+          "</interface>";
+          
 		     
 	}
 }
