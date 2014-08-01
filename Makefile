@@ -43,7 +43,7 @@ BUILDER4=   Builder4/About.vala \
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
-#all: test-glade
+all: test-glade
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
