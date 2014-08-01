@@ -40,3 +40,49 @@
   </object>
 </interface>
 */
+public class JsRender.NodeToGlade : Object {
+
+	Node node;
+	Gee.ArrayList<string>  doubleStringProps;
+	string pad;
+	Gee.ArrayList<string> els;
+        //Gee.ArrayList<string> skip;
+	Gee.HashMap<string,string> ar_props;
+
+
+	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
+	{
+		this.node = node;
+		this.doubleStringProps = doubleStringProps;
+		this.pad = pad;
+		this.els = new Gee.ArrayList<string>(); 
+		//this.skip = new Gee.ArrayList<string>();
+		this.ar_props = new Gee.HashMap<string,string>();
+
+	}
+	
+	public string munge ( )
+	{
+		//return this.mungeToString(this.node);
+
+		this.checkChildren();
+		this.readProps();
+		this.readArrayProps();
+		this.readListeners();
+		this.iterChildren();
+		
+		if (this.els.size < 1) {
+			return "";
+		}
+		// oprops...	
+			
+		var spad = pad.substring(0, this.pad.length-4);
+		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
+		//print ("STR PROPS: " + str_props);
+		
+		return   "{\n" +
+			pad  + str_props + 
+			"\n" + spad +  "}";
+		     
+	}
+}
