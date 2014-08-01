@@ -61,23 +61,8 @@ public class JsRender.NodeToGlade : Object {
 	
 	public string munge ( )
 	{
-		//return this.mungeToString(this.node);
-
-		this.checkChildren();
-		this.readProps();
-		this.readArrayProps();
-		this.readListeners();
-		this.iterChildren();
-		
-		if (this.els.size < 1) {
-			return "";
-		}
-		// oprops...	
-			
-		var spad = pad.substring(0, this.pad.length-4);
-		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
-		//print ("STR PROPS: " + str_props);
-		
+	 
+		 
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <!-- Generated with glade 3.18.3 -->
         <interface>
