@@ -34,10 +34,9 @@ int main (string[] args) {
  
 	var p = left_props.el.get_project();
     
-    
-
-		 
-	 Gtk.main();
+    p.load("/home/alan/gitlive/app.Builder.js/tests/test.glade");
+	 
+	Gtk.main();
     
 	
 	return 0;
