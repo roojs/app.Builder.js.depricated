@@ -130,12 +130,15 @@ MainWindow=new XObject({
       
     },
     'void:hideViewEditing' : ( )   {
-         if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-             this.window_rooview.createThumb();
-         } else {
-              this.window_gladeview.createThumb();
+      
+        if (this.left_tree.getActiveFile() != null) {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                 this.window_rooview.createThumb();
+             } else {
+                  this.window_gladeview.createThumb();
+              }
           }
-              _this.projecteditbutton.el.hide();
+          _this.projecteditbutton.el.hide();
          this.editpane.el.hide();
         //this.rooview.el.hide();
          this.left_projects.el.show();
