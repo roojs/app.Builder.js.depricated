@@ -138,7 +138,7 @@ $pad</packing>\n";
 	    string id = item.get("id").length > 0 ? 
 			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), this.vcnt);
 
-	    var props = this.palete.getPropertiesFor(cls,  "props");
+	    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
              
             
             
