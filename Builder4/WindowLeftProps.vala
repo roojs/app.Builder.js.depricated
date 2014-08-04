@@ -1196,6 +1196,7 @@ public class Xcls_LeftProps : Object
                  //Gtk.TreePath path;
             
                  ;
+               //             _this.before_edit(); <<< we really need to stop the other editor..
                  
                 return _this.startEditingValue(path); // assumes selected row..
                     
