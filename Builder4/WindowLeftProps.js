@@ -922,14 +922,14 @@ WindowLeftProps=new XObject({
                                              _this.allow_edit =false;
                                             
                                            
-                                           
+                                             if (       this.el.has_entry ) {
                                            
                                              Gtk.TreeIter  iter;
                                             _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
                                             GLib.Value gval;
                                                           
                                         
-                                            if (       this.el.has_entry ) {
+                                          
                                              //   this.get('/LeftPanel.model').activePath  = path;
                                                _this.model.el.get_value(iter,3, out gval);
                                             
