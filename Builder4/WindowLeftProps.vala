@@ -1475,6 +1475,7 @@ public class Xcls_LeftProps : Object
             } );
             this.el.editing_started.connect( ( editable, path) => {
                 //_this.editing = true;
+                print("editing started called\n");
                 if (!_this.allow_edit) {
                    
                      print("val - editing_Started\n");
