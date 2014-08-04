@@ -131,12 +131,12 @@ $pad</packing>\n";
     
 	void  toValaName() 
 	{
-    	    this.vcnt++;
+    	    vcnt++;
 
 	    var cls = this.toValaNS(this.node) + item.get("xtype");
 
 	    string id = this.node.get("id").length > 0 ? 
-			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), this.vcnt);
+			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), vcnt);
 
 	    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
              
