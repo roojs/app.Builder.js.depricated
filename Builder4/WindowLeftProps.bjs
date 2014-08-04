@@ -235,7 +235,7 @@
                                             "xtype": "CellRendererCombo",
                                             "|editable": "false",
                                             "|has_entry": "true",
-                                            "|void:setOptions": "(string[] ar) {\n      var m = _this.valrendermodel;\n        m.clear();\n     Gtk.TreeIter iret;\n    for (var i =0; i < ar.length; i++) {\n            m.append(out iret);\n            m.set_value(iret, 0, ar[i]);\n    }\n\n}",
+                                            "|void:setOptions": "(string[] ar) {\n      var m = _this.valrendermodel.el;\n        m.clear();\n     Gtk.TreeIter iret;\n    for (var i =0; i < ar.length; i++) {\n            m.append(out iret);\n            m.set_value(iret, 0, ar[i]);\n    }\n\n}",
                                             "|xns": "Gtk",
                                             "items": [
                                                 {

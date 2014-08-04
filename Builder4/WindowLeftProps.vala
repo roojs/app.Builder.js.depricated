@@ -1484,7 +1484,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
         public void setOptions(string[] ar) {
-                  var m = _this.valrendermodel;
+                  var m = _this.valrendermodel.el;
                     m.clear();
                  Gtk.TreeIter iret;
                 for (var i =0; i < ar.length; i++) {

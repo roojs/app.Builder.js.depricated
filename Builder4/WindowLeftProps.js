@@ -942,7 +942,7 @@ WindowLeftProps=new XObject({
                                     editable : false,
                                     has_entry : true,
                                     'void:setOptions' : (string[] ar) {
-                                          var m = _this.valrendermodel;
+                                          var m = _this.valrendermodel.el;
                                             m.clear();
                                          Gtk.TreeIter iret;
                                         for (var i =0; i < ar.length; i++) {
