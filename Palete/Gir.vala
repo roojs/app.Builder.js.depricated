@@ -144,7 +144,7 @@ namespace Palete {
 		public void copyFrom(GirObject pcls, bool is_interface) 
 		{
 
-			this.inherits.append(pcls.fqn());
+			this.inherits.add(pcls.fqn());
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
                 if (null != this.methods.get(iter.get_key())) {
@@ -483,14 +483,14 @@ namespace Palete {
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
                     c.is_instance = true;
-                    parent.params.append(c);
+                    parent.params.add(c);
                     parent = c;
                     break;
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
-                    parent.params.append(c);
+                    parent.params.add(c);
                     parent = c;
                     break;
                 
