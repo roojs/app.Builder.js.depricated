@@ -82,7 +82,7 @@ public class JsRender.NodeToGlade : Object {
 	{
 		var cls = this.node.item.xvala_cls.replace(".", "");
 		var id = this.node.uid();
-		var ret = @"<object class=\"$cls\" id=\"$id\">\n";
+		var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
 		var props = Palate.factory("Gtk").getPropertiesFor(this.node.item.xvala_cls, "props");
             
@@ -97,17 +97,16 @@ public class JsRender.NodeToGlade : Object {
 			}
 			var k = pviter.get_key();
 			var val = GLib.Markup.escape_text(this.node.props.get(pviter.get_key()));
-			ret += @"<property name="$k">$val</property>\n"; // es
+			ret += @"$pad<property name="$k">$val</property>\n"; // es
 
                 }
 		// packing???
 		
-		ret +=" <packing>
-			<property name=\"expand\">False</property>
-			<property name=\"fill\">True</property>
-			<property name=\"position\">0</property>
-		      </packing>
-		";
+		ret += @"$pad<packing>
+$pad    <property name=\"expand\">False</property>
+$pad    <property name=\"fill\">True</property>
+$pad    <property name=\"position\">0</property>
+$pad</packing>\n";
 
 			
 		// children..
@@ -116,6 +115,10 @@ public class JsRender.NodeToGlade : Object {
 			return ret;
 		}
 		
+		for (var i = 0; i < this.node.items.length; i++ ) {
+			ret += "<child>\n" + this.mungeChild(
+			
+		}
 		
 		
 
