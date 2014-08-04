@@ -1383,7 +1383,6 @@ public class Xcls_LeftProps : Object
 
 
             // my vars
-        public void setOptions;
 
             // ctor 
         public Xcls_valrender(Xcls_LeftProps _owner )
@@ -1483,6 +1482,10 @@ public class Xcls_LeftProps : Object
         }
 
         // userdefined functions 
+        public void setOptions(string[] ar) {
+            
+            
+            }
 
         // skip |xns - no return type
     }

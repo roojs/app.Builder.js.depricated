@@ -936,6 +936,10 @@ WindowLeftProps=new XObject({
                                            
                                         }
                                     },
+                                    'void:setOptions' : (string[] ar) {
+                                    
+                                    
+                                    },
                                     id : "valrender",
                                     pack : "pack_start,true",
                                     text_column : 0,
