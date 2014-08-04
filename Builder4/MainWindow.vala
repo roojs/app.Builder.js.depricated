@@ -213,8 +213,11 @@ public class Xcls_MainWindow : Object
           
         }
     public void hideViewEditing  ( )   {
-            
-             this.window_rooview.createThumb();
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                 this.window_rooview.createThumb();
+             } else {
+                  this.window_gladeview.createThumb();
+              }
                   _this.projecteditbutton.el.hide();
              this.editpane.el.hide();
             //this.rooview.el.hide();
