@@ -414,7 +414,7 @@ public class Xcls_LeftProps : Object
                     }
 
 			 // if its' a combo... then show the options..
-			this.valrender.el.has_entry = false;
+			
 		                       
 		        print (type_ar[0].up());
 
@@ -424,16 +424,17 @@ public class Xcls_LeftProps : Object
 		                type_ar[0].up() == "BOOL"                        
 		            )) {
 				this.allow_edit  = true;
-				this.valrender.el.editable = false;
+				
 		                print("start editing try/false)???");
 		                this.valrender.el.has_entry = false;
 		                string[] opts =  { "true", "false" };
 		                this.valrender.setOptions(opts);
 		                this.valrender.el.has_entry = false;
+				this.valrender.el.editable = false;
 				return;
 		            }
 	        
-	    
+	    this.valrender.el.has_entry = false;
                     // others... - fill in options for true/false?
                    print("turn on editing %s \n" , mod.get_path(iter).to_string());
                     
