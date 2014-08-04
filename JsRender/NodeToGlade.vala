@@ -191,9 +191,10 @@ public class JsRender.NodeToGlade : Object {
 		    
 		print(generator.to_data(null));
 		*/
+		var pad = this.pad;
 		string[]  pbody  = {}; 
 		for (var i = 2; i < mdef.params.params.size; i++) {
-			
+			pbody += @"$pad    <property name=\"expand\">False</property>\n" +
 		
 		}
 
