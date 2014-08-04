@@ -167,6 +167,10 @@ public class JsRender.NodeToGlade : Object {
         }
 	public string packString()
 	{
+		var pk = this.node.get("* pack").split(",");
+
+
+		
 		var pack = @"$pad<packing>\n" +
 				@"$pad    <property name=\"expand\">False</property>\n" +
 				@"$pad    <property name=\"fill\">True</property>\n" +
