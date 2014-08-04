@@ -38,6 +38,7 @@ public class Xcls_MainWindow : Object
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
     public Xcls_rooview rooview;
+    public Xcls_rooview rooview;
     public Xcls_objectview objectview;
     public Xcls_codeeditview codeeditview;
     public Xcls_addpropsview addpropsview;
@@ -950,21 +951,24 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_rooview( _this );
             child_0.ref();
             this.el.get_stage().add_child (  child_0.el  );
-            var child_1 = new Xcls_objectview( _this );
+            var child_1 = new Xcls_rooview( _this );
             child_1.ref();
             this.el.get_stage().add_child (  child_1.el  );
-            var child_2 = new Xcls_codeeditview( _this );
+            var child_2 = new Xcls_objectview( _this );
             child_2.ref();
             this.el.get_stage().add_child (  child_2.el  );
-            var child_3 = new Xcls_addpropsview( _this );
+            var child_3 = new Xcls_codeeditview( _this );
             child_3.ref();
             this.el.get_stage().add_child (  child_3.el  );
-            var child_4 = new Xcls_projecteditview( _this );
+            var child_4 = new Xcls_addpropsview( _this );
             child_4.ref();
             this.el.get_stage().add_child (  child_4.el  );
-            var child_5 = new Xcls_buttonlayout( _this );
+            var child_5 = new Xcls_projecteditview( _this );
             child_5.ref();
             this.el.get_stage().add_child (  child_5.el  );
+            var child_6 = new Xcls_buttonlayout( _this );
+            child_6.ref();
+            this.el.get_stage().add_child (  child_6.el  );
 
             // init method 
                 var stage = this.el.get_stage();
@@ -1000,6 +1004,50 @@ public class Xcls_MainWindow : Object
                 _this.codeeditview.el.set_size((alloc.width -50)/2.0f,
                        alloc.height);
             } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_rooview : Object 
+    {
+        public GtkClutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_rooview(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.rooview = this;
+            this.el = new GtkClutter.Actor();
+
+            // my vars
+
+            // set gobject values
+
+            // init method 
+            {
+               
+               
+                this.el.add_constraint(
+                    new Clutter.AlignConstraint(
+                        _this.clutterembed.el.get_stage(), 
+                        Clutter.AlignAxis.X_AXIS,
+                        1.0f
+                    )
+                );
+                    
+                //this.el.set_position(100,100);
+                this.el.set_pivot_point(1.0f,1.0f);
+                
+                this.el.set_size(_this.clutterembed.el.get_stage().width-50,
+                        _this.clutterembed.el.get_stage().height);
+                        
+            }
         }
 
         // userdefined functions 
@@ -1250,7 +1298,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_BoxLayout17( _this );
+            var child_0 = new Xcls_BoxLayout18( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_projectbutton( _this );
@@ -1293,7 +1341,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_BoxLayout17 : Object 
+    public class Xcls_BoxLayout18 : Object 
     {
         public Clutter.BoxLayout el;
         private Xcls_MainWindow  _this;
@@ -1302,7 +1350,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_BoxLayout17(Xcls_MainWindow _owner )
+        public Xcls_BoxLayout18(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
@@ -1336,7 +1384,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text19( _this );
+            var child_0 = new Xcls_Text20( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1388,7 +1436,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text19 : Object 
+    public class Xcls_Text20 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1397,7 +1445,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text19(Xcls_MainWindow _owner )
+        public Xcls_Text20(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Open\nFiles",new Clutter.Color.from_string("#fff"));
@@ -1435,7 +1483,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text21( _this );
+            var child_0 = new Xcls_Text22( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1491,7 +1539,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text21 : Object 
+    public class Xcls_Text22 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1500,7 +1548,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text21(Xcls_MainWindow _owner )
+        public Xcls_Text22(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
@@ -1538,7 +1586,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text23( _this );
+            var child_0 = new Xcls_Text24( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1595,7 +1643,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text23 : Object 
+    public class Xcls_Text24 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1604,7 +1652,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text23(Xcls_MainWindow _owner )
+        public Xcls_Text24(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
@@ -1642,7 +1690,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text25( _this );
+            var child_0 = new Xcls_Text26( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1697,7 +1745,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text25 : Object 
+    public class Xcls_Text26 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1706,7 +1754,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text25(Xcls_MainWindow _owner )
+        public Xcls_Text26(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nProperty",new Clutter.Color.from_string("#fff"));
@@ -1744,7 +1792,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text27( _this );
+            var child_0 = new Xcls_Text28( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1800,7 +1848,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text27 : Object 
+    public class Xcls_Text28 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1809,7 +1857,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text27(Xcls_MainWindow _owner )
+        public Xcls_Text28(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));

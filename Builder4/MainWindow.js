@@ -734,6 +734,29 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
+                                            id : "rooview",
+                                            pack : "get_stage().add_child",
+                                            init : {
+                                               
+                                               
+                                                this.el.add_constraint(
+                                                    new Clutter.AlignConstraint(
+                                                        _this.clutterembed.el.get_stage(), 
+                                                        Clutter.AlignAxis.X_AXIS,
+                                                        1.0f
+                                                    )
+                                                );
+                                                    
+                                                //this.el.set_position(100,100);
+                                                this.el.set_pivot_point(1.0f,1.0f);
+                                                
+                                                this.el.set_size(_this.clutterembed.el.get_stage().width-50,
+                                                        _this.clutterembed.el.get_stage().height);
+                                                        
+                                            }
+                                        },
+                                        {
+                                            xtype: GtkClutter.Actor,
                                             id : "objectview",
                                             pack : "get_stage().add_child",
                                             init : {
