@@ -356,10 +356,13 @@ public class Xcls_LeftProps : Object
             
         }
     public boolean startEditingValue( Gtk.TreePath path) {
+        
+            // ONLY return true if editing is allowed - eg. combo..
+            
                     print("start editing?\n");
                     if (!this.stop_editor()) {
                         print("stop editor failed\n");
-                        return;
+                        return false;
                     }
                     
                     Gtk.TreeIter iter;
@@ -415,7 +418,7 @@ public class Xcls_LeftProps : Object
                     // others... - fill in options for true/false?
                    print("turn on editing %s \n" , mod.get_path(iter).to_string());
                     
-                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                   GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         
                         // at this point - work out the type...
                         // if its' a combo... then show the options..
