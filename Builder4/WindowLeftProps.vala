@@ -355,7 +355,7 @@ public class Xcls_LeftProps : Object
               
             
         }
-    public boolean startEditingValue( Gtk.TreePath path) {
+    public bool startEditingValue( Gtk.TreePath path) {
         
             // ONLY return true if editing is allowed - eg. combo..
             

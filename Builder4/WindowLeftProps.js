@@ -300,7 +300,7 @@ WindowLeftProps=new XObject({
           
         
     },
-    'boolean:startEditingValue' : ( Gtk.TreePath path) {
+    'bool:startEditingValue' : ( Gtk.TreePath path) {
     
         // ONLY return true if editing is allowed - eg. combo..
         
