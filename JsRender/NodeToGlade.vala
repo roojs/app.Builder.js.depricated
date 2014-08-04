@@ -112,7 +112,7 @@ $pad</packing>\n";
 			
 		// children..
 
-		if (!this.node.items.size()) {
+		if (this.node.items.size() < 1) {
 			return ret + @"$pad</object>" + pack;
 		}
 		
