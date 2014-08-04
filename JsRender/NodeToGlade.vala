@@ -250,13 +250,13 @@ public class JsRender.NodeToGlade : Object {
 		var pad = this.pad;
 		 
 		for (var i = 2; i < mdef.paramset.params.size; i++) {
-			var poff = i - 1;
+			var poff = i - 2;
 			if (pk.length < poff) {
 				break;
 			}
 			
 			var key = mdef.paramset.params.get(i).name;
-			var val = pk[poff];
+			var val = pk[poff+1];
 			pbody += @"$pad    <property name=\"$key\">$val</property>\n";
 		
 		}
