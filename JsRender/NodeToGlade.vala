@@ -88,6 +88,7 @@ public class JsRender.NodeToGlade : Object {
 			// things we can not do yet...
 			case "GtkTreeStore":
 			case "GtkListStore":
+			case "GtkTreeViewColumn":
 				return "";
 		}
 
