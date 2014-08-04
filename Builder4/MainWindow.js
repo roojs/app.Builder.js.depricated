@@ -350,7 +350,7 @@ MainWindow=new XObject({
         
          this.window_rooview  =new Xcls_WindowRooView();
         this.window_rooview.ref();
-        ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+        //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
         this.window_rooview.el.show_all();
     
         stage = _this.rooview.el.get_stage();
@@ -383,8 +383,10 @@ MainWindow=new XObject({
             
             if (file.xtype == "Roo" ) { 
                 this.window_rooview.loadFile(file);
+                ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
             } else {
                 this.window_gladeview.loadFile(file);
+                ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
             }
             print("OPEN : " + file.name);
     
