@@ -103,11 +103,11 @@ public class JsRender.NodeToGlade : Object {
                 }
 		// packing???
 		
-		var pack = @"$pad<packing>
-$pad    <property name=\"expand\">False</property>
-$pad    <property name=\"fill\">True</property>
-$pad    <property name=\"position\">0</property>
-$pad</packing>\n";
+		var pack = @"$pad<packing>" +
+			@"$pad    <property name=\"expand\">False</property>" +
+			@"$pad    <property name=\"fill\">True</property>" +
+			@"$pad    <property name=\"position\">0</property>" +
+			@"$pad</packing>\n";
 
 			
 		// children..
