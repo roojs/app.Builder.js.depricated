@@ -144,9 +144,9 @@ $pad</packing>\n";
             
             item.xvala_cls = cls;
             item.xvala_xcls = "Xcls_" + id;
-            item.xvala_id = this.node.get("id").length > 0  ? item.get("id") : "";
+            item.xvala_id = this.node.get("id").length > 0  ? this.node.get("id") : "";
 			                                                       
-            this.vitems.append(item);  
+            //this.vitems.append(item);  
             // loop children..
 			                                                       
             if (item.items.size < 1) {
