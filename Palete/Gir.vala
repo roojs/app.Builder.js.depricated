@@ -250,18 +250,18 @@ namespace Palete {
         public Json.Array toJSONArrayString(Gee.ArrayList<string> map)
         {
             var r = new Json.Array();
-            for(var i =0;i< map.length();i++) {
+            for(var i =0;i< map.size;i++) {
             
-                r.add_string_element(map.nth_data(i));
+                r.add_string_element(map.get(i));
             }
             return r;
         }
-		public Json.Array toJSONArrayObject(Gee.ArrayList<GirObject> map)
+	public Json.Array toJSONArrayObject(Gee.ArrayList<GirObject> map)
         {
             var r = new Json.Array();
-            for(var i =0;i< map.length();i++) {
+            for(var i =0;i< map.size;i++) {
             
-                r.add_object_element(map.nth_data(i).toJSON());
+                r.add_object_element(map.get(i).toJSON());
             }
             return r;
         }
