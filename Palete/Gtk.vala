@@ -368,7 +368,7 @@ namespace Palete {
 				}
 				var pack = meth.name;
 				for(var i =1; i < meth.paramset.params.size; i++) {
-					var ty = Gir.fqtype(meth.paramset.params.nth_data(i).type, meth.ns);
+					var ty = Gir.fqtype(meth.paramset.params.get(i).type, meth.ns);
 					pack += "," + Gir.guessDefaultValueForType(ty);
 				}
 				node.set("pack", pack);
