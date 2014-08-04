@@ -990,6 +990,11 @@ public class Xcls_MainWindow : Object
                // this.el.get_stage().set_size(alloc.width,alloc.height);
                 _this.rooview.el.set_size(alloc.width-50,
                         alloc.height);
+                        
+                _this.gladeview.el.set_size(alloc.width-50,
+                        alloc.height);
+                        
+                        
                 _this.clutterfiles.set_size(alloc.width-50,
                        alloc.height);
                 _this.projecteditview.el.set_size(alloc.width-50,
