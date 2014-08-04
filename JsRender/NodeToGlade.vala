@@ -93,10 +93,12 @@ public class JsRender.NodeToGlade : Object {
 				
         		// skip items we have already handled..
         		if  (!(this.node.props.get(pviter.get_key()) == null)) {
-				//print("- skip already handled\n " );
+				continue;
 			}
-			
-                    continue;
+			var k = pviter.get_key();
+			var val = this.node.props.get(pviter.get_key());
+			ret += @"<property name="$k">$val</property>"; // es
+                    
                 }
 			
 		// children..
