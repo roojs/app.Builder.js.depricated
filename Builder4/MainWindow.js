@@ -251,7 +251,7 @@ MainWindow=new XObject({
             return ret;
         });
          this.left_props.changed.connect(() => {
-              if (this.left_tree.file.xtype == "Roo" ) {
+              if (this.left_tree.getActiveFile().xtype == "Roo" ) {
                    this.window_rooview.requestRedraw();
                } else {
                   this.window_gladeview.loadFile(this.left_tree.getActiveFile());
@@ -283,7 +283,7 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
          this.projectsettings.buttonPressed.connect((btn) => {
-             if (this.left_tree.file.xtype == "Roo" ) {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
              
                 if (btn == "save") {
                      _this.window_rooview.view.renderJS(true);
