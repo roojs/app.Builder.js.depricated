@@ -326,9 +326,11 @@ public class Xcls_LeftProps : Object
                     return false;
                 }
                 // delay this?
+                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                 
-                
-                this.startEditingValue(this.model.el.get_path(iter));
+                    this.startEditingValue(this.model.el.get_path(iter));
+                    return false;
+                }
                 //s.select_iter(iter);
                 return true; 
             });
