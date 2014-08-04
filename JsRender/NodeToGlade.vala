@@ -193,7 +193,7 @@ public class JsRender.NodeToGlade : Object {
 			return "";
 		}
 		
-		var   = p.fqn();
+		var pfqn  = p.fqn();
 		if (pfqn == null) {
 			return "";
 		}
