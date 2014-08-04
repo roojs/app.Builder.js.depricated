@@ -270,6 +270,8 @@ WindowLeftProps=new XObject({
                 print("not key: %s = %s\n", (string)gval , fkey);
                 return false;
             }
+            // delay this?
+            
             
             this.startEditingValue(this.model.el.get_path(iter));
             //s.select_iter(iter);
