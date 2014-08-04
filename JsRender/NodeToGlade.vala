@@ -63,12 +63,12 @@ public class JsRender.NodeToGlade : Object {
 	{
 		this.fillValaName(this.node);
 		 
-		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + 
-			"<!-- Generated with glade 3.18.3 -->" +
-			"<interface>" + 
-			"    <requires lib=\"gtk+\" version=\"3.12\"/>" +
+		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
+			"<!-- Generated with glade 3.18.3 -->\n" +
+			"<interface>\n" + 
+			"    <requires lib=\"gtk+\" version=\"3.12\"/>\n" +
   			this.mungeNode() +
-  			"</interface>";
+  			"</interface>\n";
           
 		     
 	}
@@ -93,7 +93,7 @@ public class JsRender.NodeToGlade : Object {
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
 				
         		// skip items we have already handled..
-        		if  (!(this.node.props.get(pviter.get_key()) == null)) {
+        		if  (this.node.props.get(pviter.get_key()) == null) {
 				continue;
 			}
 			var k = pviter.get_key();
