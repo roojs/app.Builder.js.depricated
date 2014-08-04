@@ -145,7 +145,7 @@ public class Xcls_LeftProps : Object
                                 this.valrender.el.has_entry = false;
                                 this.valrender.el.editable = true;
                                  this.allow_edit  = true;
-                                 GLib.Timeout.add_full(GLib.Priority.DEFAULT,40 , () => {
+                                 GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
                                      this.view.el.set_cursor_on_cell(
                                         path,
                                         this.valcol.el,
