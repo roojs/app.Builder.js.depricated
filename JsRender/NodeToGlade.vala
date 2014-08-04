@@ -141,10 +141,10 @@ public class JsRender.NodeToGlade : Object {
 	    if (this.node.xvala_cls.length < 1) {
 		    vcnt++;
 
-		    var cls = this.toValaNS() + item.get("xtype");
+		    var cls = this.toValaNS() + this.node.get("xtype");
 
 		    string id = this.node.get("id").length > 0 ? 
-				this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), vcnt);
+				this.node.get("id") :  "%s%d".printf(this.node.get("xtype"), vcnt);
 
 		    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
 		     
