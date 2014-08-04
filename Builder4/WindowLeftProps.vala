@@ -1474,16 +1474,17 @@ public class Xcls_LeftProps : Object
                 GLib.Value gval;
                               
             
-            
+                if (       this.el.has_entry ) {
                  //   this.get('/LeftPanel.model').activePath  = path;
                    _this.model.el.get_value(iter,3, out gval);
                 
-                
+            
                     var val = (string)gval;
                     var combo =        (Gtk.ComboBox)editable;
             
                    var entry =  (Gtk.Entry) combo.get_child();        
                 entry.set_text(val);
+                }
                
             } );
         }
