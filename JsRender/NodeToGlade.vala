@@ -174,7 +174,10 @@ public class JsRender.NodeToGlade : Object {
 		var p_parts =pfqn.split("."); 
 		var ns = p_parts[0];
     		var gir =  Gir.factory(ns);
-		var cls = gir.classes.get(
+		var cls = gir.classes.get(p_parts[1]);
+		// find the function..
+		
+		
 			
             //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         }
