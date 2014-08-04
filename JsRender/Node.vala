@@ -287,8 +287,10 @@ public class JsRender.Node : Object {
 			case "*args":
 			case ".ctor":
 			case "|init":
-			case "pack":
+			
 				return "* " + key.substring(1);
+			case "pack":
+				return "* " + key;
 		}
 		if (key[0] == '.') {
 			var bits = key.substring(1).split(":");
