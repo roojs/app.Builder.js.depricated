@@ -390,7 +390,7 @@ WindowLeftProps=new XObject({
                     // if its' a combo... then show the options..
                     this.valrender.el.has_entry = true;
                     
-                                    
+                    this.valrender.el.editable = true;            
                 
                     
                     this.allow_edit  = true;
