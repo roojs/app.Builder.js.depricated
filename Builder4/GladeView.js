@@ -11,8 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
     xtype: Glade.DesignView,
-    id : "GladeView",
-     : ""
+    id : "GladeView"
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;

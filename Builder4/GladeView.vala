@@ -41,11 +41,10 @@ public class Xcls_GladeView : Object
         // my vars
 
         // set gobject values
-
-        // listeners 
     }
 
     // userdefined functions 
+    public void load
 
     // skip |xns - no return type
 }
