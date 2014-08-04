@@ -37,6 +37,7 @@ public class Xcls_LeftProps : Object
     public Xcls_keyrender keyrender;
     public Xcls_valcol valcol;
     public Xcls_valrender valrender;
+    public Xcls_valrendermodel valrendermodel;
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
@@ -1397,7 +1398,7 @@ public class Xcls_LeftProps : Object
             this.el.editable = false;
             this.el.has_entry = true;
             this.el.text_column = 0;
-            var child_0 = new Xcls_ListStore25( _this );
+            var child_0 = new Xcls_valrendermodel( _this );
             child_0.ref();
             this.el.model = child_0.el;
 
@@ -1495,7 +1496,7 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ListStore25 : Object 
+    public class Xcls_valrendermodel : Object 
     {
         public Gtk.ListStore el;
         private Xcls_LeftProps  _this;
@@ -1504,9 +1505,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_ListStore25(Xcls_LeftProps _owner )
+        public Xcls_valrendermodel(Xcls_LeftProps _owner )
         {
             _this = _owner;
+            _this.valrendermodel = this;
             this.el = new Gtk.ListStore( 1, typeof(string) );
 
             // my vars

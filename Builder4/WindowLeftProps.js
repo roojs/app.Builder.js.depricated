@@ -953,7 +953,7 @@ WindowLeftProps=new XObject({
                                     },
                                     model : {
                                         xtype: Gtk.ListStore,
-                                        id : "",
+                                        id : "valrendermodel",
                                         n_columns : 1,
                                         pack : false,
                                         columns : typeof(string)

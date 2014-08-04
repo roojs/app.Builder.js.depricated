@@ -239,7 +239,7 @@
                                             "|xns": "Gtk",
                                             "items": [
                                                 {
-                                                    "id": "",
+                                                    "id": "valrendermodel",
                                                     "*prop": "model",
                                                     "n_columns": 1,
                                                     "pack": false,
