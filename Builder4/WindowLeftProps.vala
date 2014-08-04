@@ -424,6 +424,7 @@ public class Xcls_LeftProps : Object
 		                type_ar[0].up() == "BOOL"                        
 		            )) {
 				this.allow_edit  = true;
+				this.valrender.el.editable = false;
 		                print("start editing try/false)???");
 		                this.valrender.el.has_entry = false;
 		                string[] opts =  { "true", "false" };
