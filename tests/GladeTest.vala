@@ -23,7 +23,7 @@ int main (string[] args) {
 
 	 
 	FileIOStream iostream;
-	var  f = File.new_tmp ("tpl-" + tf.name + ".glade", out iostream);
+	var  f = File.new_tmp ("tpl-XXXXXX.glade", out iostream);
 	var ostream = iostream.output_stream;
 	var dostream = new DataOutputStream (ostream);
 	dostream.put_string (x.munge());
