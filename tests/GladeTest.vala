@@ -14,7 +14,7 @@ int main (string[] args) {
 	
 	proj.scanDirs();
 	 
-	var tf = proj.files.get(proj.dir + "/" + name + ".bjs");
+	var tf = proj.files.get(proj.fn + "/WindowLeftProps.bjs");
 	tf.loadItems();
 	var w = new Xcls_MainWindow();
 
