@@ -662,6 +662,14 @@ WindowLeftProps=new XObject({
                                 return false; // ignore.. - key click.. ??? should we do this??
                             }
                             
+                            
+                            // if the cell can be edited with a pulldown
+                            // then we should return true... - and let the start_editing handle it?
+                            
+                            
+                            
+                            
+                            
                             // currently editing???
                         //    if (  this.activePath) {
                                 
