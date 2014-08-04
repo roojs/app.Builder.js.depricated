@@ -355,7 +355,7 @@ public class Xcls_LeftProps : Object
               
             
         }
-    public void startEditingValue( Gtk.TreePath path) {
+    public boolean startEditingValue( Gtk.TreePath path) {
                     print("start editing?\n");
                     if (!this.stop_editor()) {
                         print("stop editor failed\n");
