@@ -92,6 +92,7 @@
 public class JsRender.Node : Object {
 	
 
+	public static int uid_count = 0;
 	public Node parent;
 	public Gee.ArrayList<Node> items; // child items..
 	
@@ -114,7 +115,13 @@ public class JsRender.Node : Object {
 	}
 
 	
-	
+	public string uid()
+	{
+		if (this.props.get("id") == null) {
+			
+		}
+		return this.props.get("id");
+	}
 	
 	
 	public bool hasChildren()
