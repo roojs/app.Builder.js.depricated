@@ -61,6 +61,7 @@ public class JsRender.NodeToGlade : Object {
 	
 	public string munge ( )
 	{
+
 		this.fillValaName(this.node);
 		 
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
@@ -113,7 +114,7 @@ public class JsRender.NodeToGlade : Object {
 		// children..
 
 		if (this.node.items.size < 1) {
-			return ret + @"$pad</object>" + pack;
+			return ret + @"$pad</object>\n" + pack;
 		}
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
@@ -122,7 +123,7 @@ public class JsRender.NodeToGlade : Object {
 			ret += @"$pad   </child>\n";
 		}
 		
-		return ret + @"$pad</object>" + pack;
+		return ret + @"$pad</object>\n" + pack;
 		
 
 		 
