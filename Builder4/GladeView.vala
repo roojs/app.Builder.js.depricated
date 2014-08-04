@@ -44,7 +44,26 @@ public class Xcls_GladeView : Object
     }
 
     // userdefined functions 
-    public void load
+    public void load(JsRender.JsRender file)
+        {
+        
+        //        print("%s\n",tf.tree.toJsonString());
+        	var x = new JsRender.NodeToGlade(file.tree,  "");
+        
+        	 
+        	FileIOStream iostream;
+        	var  f = File.new_tmp ("tpl-XXXXXX.glade", out iostream);
+        	var ostream = iostream.output_stream;
+        	var dostream = new DataOutputStream (ostream);
+        	dostream.put_string (x.munge());
+        	this.el.show();
+        	 var p = left_props.el.get_project();
+                print("LOADING\n");
+                p.load_from_file(f.get_path ());
+                
+         
+        
+        }
 
     // skip |xns - no return type
 }

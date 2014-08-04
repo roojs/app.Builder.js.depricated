@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/GladeView.bjs",
     "items": [
         {
-            "|void:load": "",
+            "|void:load": "(JsRender.JsRender file)\n{\n\n//        print(\"%s\\n\",tf.tree.toJsonString());\n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n\n\t \n\tFileIOStream iostream;\n\tvar  f = File.new_tmp (\"tpl-XXXXXX.glade\", out iostream);\n\tvar ostream = iostream.output_stream;\n\tvar dostream = new DataOutputStream (ostream);\n\tdostream.put_string (x.munge());\n\tthis.el.show();\n\t var p = left_props.el.get_project();\n        print(\"LOADING\\n\");\n        p.load_from_file(f.get_path ());\n        \n \n\n}",
             ".ctor": "new Glade.DesignView(new Glade.Project())",
             "id": "GladeView",
             "xtype": "DesignView",
