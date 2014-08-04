@@ -100,11 +100,23 @@ public class JsRender.NodeToGlade : Object {
 			ret += @"<property name="$k">$val</property>\n"; // es
 
                 }
+		// packing???
 		
+		ret +=" <packing>
+			<property name=\"expand\">False</property>
+			<property name=\"fill\">True</property>
+			<property name=\"position\">0</property>
+		      </packing>
+		";
 
-		
 			
 		// children..
+
+		if (!this.node.items.length) {
+			return ret;
+		}
+		
+		
 		
 
 		
