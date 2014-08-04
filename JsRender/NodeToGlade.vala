@@ -86,9 +86,10 @@ public class JsRender.NodeToGlade : Object {
 
 		switch(cls) {
 			// things we can not do yet...
-			case "GtkTreeStore":
-			case "GtkListStore":
+			case "GtkTreeStore": // top level.. - named and referenced
+			case "GtkListStore": // top level.. - named and referenced
 			case "GtkTreeViewColumn":
+			case "GtkMenu": // top level..
 				return "";
 		}
 
@@ -209,6 +210,7 @@ public class JsRender.NodeToGlade : Object {
 		*/
 		string[]  pbody  = {};
 		switch(pk[0]) {
+
 			case "pack_start":
 				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
 				break;
@@ -216,9 +218,21 @@ public class JsRender.NodeToGlade : Object {
 			case "pack_end":
 				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
 				break;
+				
+			case "add":
+				//pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
+				 pbody += @"$pad    <property name=\"expand\">False</property>\n";
+				pbody += @"$pad    <property name=\"fill\">True</property>\n";
+				pbody += @"$pad    <property name=\"position\">1</property>\n";
+				var pack = @"$pad<packing>\n" +
+					string.joinv("", pbody) + 
+						@"$pad</packing>\n";
+				return pack;
+                
 			case "set_model":
 				print ("set_model not handled yet..");
 				return "";
+			
 			default:
 				print ("unknown pack type: %s", pk[0]);
 				break;
