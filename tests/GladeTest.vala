@@ -16,15 +16,10 @@ int main (string[] args) {
 	 
 	var tf = proj.files.get(proj.fn + "/WindowLeftProps.bjs");
 	tf.loadItems();
-	var w = new Xcls_MainWindow();
+	var x = new JsRender.NodeToGlade(tf.tree,  ""))
 
-	var  left_tree =new Xcls_WindowLeftTree();
 
-	w.vbox.el.pack_start(left_tree.el,true, true,0);
-    w.el.show_all();
- 
-	left_tree.model.loadFile(tf);
-    
+	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
 	var  left_props =new Xcls_GladeView();
