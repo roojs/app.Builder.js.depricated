@@ -442,15 +442,12 @@ public class Xcls_MainWindow : Object
               
             //  glade view
             
-             this.window_gladeview  =new Xcls_WindowRooView();
+            this.window_gladeview  =new Xcls_WindowRooView();
             this.window_gladeview.ref();
         
-            ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
-            this.window_gladeview.el.hide();
+            //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
+            ///this.window_gladeview.el.hide();
         
-            stage = _this.gladeview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            
            
             
             // clutter files
