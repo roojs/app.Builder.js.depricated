@@ -152,6 +152,7 @@ public class Xcls_LeftProps : Object
                                         this.valrender.el,
                                         true
                                     );
+                                    return false;
                                 });
                                 return true;
                         }

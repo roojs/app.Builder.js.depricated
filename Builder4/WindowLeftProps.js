@@ -96,6 +96,7 @@ WindowLeftProps=new XObject({
                                     this.valrender.el,
                                     true
                                 );
+                                return false;
                             });
                             return true;
                     }
