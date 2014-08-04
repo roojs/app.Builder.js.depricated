@@ -110,7 +110,7 @@ public class JsRender.Node : Object {
 		this.items = new Gee.ArrayList<Node>();
 		this.props = new Gee.HashMap<string,string>();
 		this.listeners = new Gee.HashMap<string,string>();
-
+ 
 		this.xvala_xcls = "";
 		this.parent = null;
 	}
