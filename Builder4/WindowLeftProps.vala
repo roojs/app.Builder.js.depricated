@@ -1083,7 +1083,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.button_press_event.connect(   ( ev)  => {
             
-                _this.before_edit();
+               
                 
                 
                 Gtk.TreeViewColumn col;
@@ -1094,8 +1094,10 @@ public class Xcls_LeftProps : Object
                     print("nothing selected on click");
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         this.el.get_selection().unselect_all();
+            
                         return false;
                     });
+                     _this.before_edit();
                     return false; //not on a element.
                 }
                 
