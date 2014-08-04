@@ -420,7 +420,7 @@ namespace Palete {
                     return;
                 
                 case "implements":
-                    parent.implements.append(n);
+                    parent.implements.add(n);
                     break;
                 
                 case "constructor":
