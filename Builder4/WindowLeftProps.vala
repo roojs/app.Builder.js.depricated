@@ -1105,6 +1105,7 @@ public class Xcls_LeftProps : Object
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
                     if (col.title == "Value") {
+                         _this.before_edit();
                         return false;
                     }
             
@@ -1120,7 +1121,7 @@ public class Xcls_LeftProps : Object
                         this.el.get_selection().select_path(path);
                         return false;
                     });
-                    
+                     _this.before_edit();
                     return false;
                 }
                 
@@ -1133,7 +1134,7 @@ public class Xcls_LeftProps : Object
                         return false;
                     });
                     
-                    
+                                 _this.before_edit();
                       //  XObject.error("column is not value?");
                     return false; // ignore.. - key click.. ??? should we do this??
                 }
