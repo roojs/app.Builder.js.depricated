@@ -247,7 +247,7 @@ namespace Palete {
             }
             return r;
         }
-        public Json.Array toJSONArrayString(GLib.List<string> map)
+        public Json.Array toJSONArrayString(Gee.ArrayList<string> map)
         {
             var r = new Json.Array();
             for(var i =0;i< map.length();i++) {
@@ -256,7 +256,7 @@ namespace Palete {
             }
             return r;
         }
-		public Json.Array toJSONArrayObject(GLib.List<GirObject> map)
+		public Json.Array toJSONArrayObject(Gee.ArrayList<GirObject> map)
         {
             var r = new Json.Array();
             for(var i =0;i< map.length();i++) {
