@@ -464,7 +464,11 @@ public class Xcls_MainWindow : Object
                 _this.showViewEditing();
                 this.left_tree.model.loadFile(file);
                 
-                this.window_rooview.loadFile(file);
+                if (file.xtype == "Roo" ) { 
+                    this.window_rooview.loadFile(file);
+                } else {
+                    this.window_gladeview.loadFile(file);
+                }
                 print("OPEN : " + file.name);
         
             });
