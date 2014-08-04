@@ -136,12 +136,12 @@ public class JsRender.NodeToGlade : Object {
             //}
             return ns + ".";
         }
-	void  fillValaName() 
+	public void  fillValaName(node) 
 	{
-	    if (this.node.xvala_cls.length < 1) {
+	    if (node.xvala_cls.length < 1) {
 		    vcnt++;
 
-		    var cls = this.toValaNS() + this.node.get("xtype");
+		    var cls = this.toValaNS(node) + node.get("xtype");
 
 		    string id = this.node.get("id").length > 0 ? 
 				this.node.get("id") :  "%s%d".printf(this.node.get("xtype"), vcnt);
