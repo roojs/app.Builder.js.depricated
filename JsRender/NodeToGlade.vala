@@ -256,7 +256,7 @@ public class JsRender.NodeToGlade : Object {
 			}
 			
 			var key = mdef.paramset.params.get(i).name;
-			var val = pk[poff+1];
+			var val = pk[poff];
 			pbody += @"$pad    <property name=\"$key\">$val</property>\n";
 		
 		}
