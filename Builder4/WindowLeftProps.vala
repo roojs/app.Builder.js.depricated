@@ -430,6 +430,7 @@ public class Xcls_LeftProps : Object
                                 this.valrender.setOptions(opts);
                                 
                                 this.valrender.el.has_entry = false;
+                                this.valrender.el.editable = true;
                                this.allow_edit  = true;
                                 return true;
                         }
@@ -443,7 +444,7 @@ public class Xcls_LeftProps : Object
                         // at this point - work out the type...
                         // if its' a combo... then show the options..
                         this.valrender.el.has_entry = true;
-                        this.valrender.el.editable = true;
+                        
                                         
                     
                         
