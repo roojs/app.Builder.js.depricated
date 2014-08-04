@@ -130,7 +130,7 @@ public class JsRender.NodeToGlade : Object {
 	}
 	string toValaNS()
         {
-            var ns = thiss.node.get("* xns") ;
+            var ns = this.node.get("* xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
