@@ -81,7 +81,7 @@ public class JsRender.NodeToGlade : Object {
 	public string mungeNode()
 	{
 		var pad = this.pad;
-		var cls = this.node.item.xvala_cls.replace(".", "");
+		var cls = this.node.xvala_cls.replace(".", "");
 		var id = this.node.uid();
 		var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
