@@ -118,7 +118,7 @@ $pad</packing>\n";
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 			ret += @"$pad   <child>\n";
-			ret += this.mungeChild(this.node.items.get(i), pad + "        ");
+			ret += this.mungeChild(pad + "        " , this.node.items.get(i) );
 			ret += @"$pad   </child>\n";
 		}
 		
@@ -129,6 +129,32 @@ $pad</packing>\n";
 
 	}
     
-    
+	void  toValaName(Node item) 
+	{
+    	    this.vcnt++;
+
+	    var cls = this.toValaNS(item) + item.get("xtype");
+
+	    string id = item.get("id").length > 0 ? item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
+
+	    var props = this.palete.getPropertiesFor(cls,  "props");
+             
+            
+            
+            item.xvala_cls = cls;
+            item.xvala_xcls = "Xcls_" + id;
+            item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
+			                                                       
+            this.vitems.append(item);  
+            // loop children..
+			                                                       
+            if (item.items.size < 1) {
+                return;
+            }
+            for(var i =0;i<item.items.size;i++) {
+                this.toValaName(item.items.get(i));
+            }
+			          
+        }
     
 }
