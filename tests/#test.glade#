@@ -22,7 +22,16 @@
         <property name="receives_default">True</property>
         <property name="relief">none</property>
         <child>
-          <placeholder/>
+          <object class="GtkBox" id="box2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
         </child>
       </object>
       <packing>
