@@ -351,7 +351,7 @@ MainWindow=new XObject({
          this.window_rooview  =new Xcls_WindowRooView();
         this.window_rooview.ref();
         //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
-        this.window_rooview.el.show_all();
+        //this.window_rooview.el.show_all();
     
         stage = _this.rooview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
@@ -384,9 +384,11 @@ MainWindow=new XObject({
             if (file.xtype == "Roo" ) { 
                 this.window_rooview.loadFile(file);
                 ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+                this.window_rooview.el.show_all();
             } else {
                 this.window_gladeview.loadFile(file);
                 ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
+                this.window_gladeview.el.show_all();
             }
             print("OPEN : " + file.name);
     
