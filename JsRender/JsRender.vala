@@ -67,7 +67,7 @@ namespace JsRender {
 		    }
 		    this.fullname = (this.parent.length > 0 ? (this.parent + ".") : "" ) + this.name;
 
-			this.doubleStringProps = new Gee.ArrayList<string>();
+		   this.doubleStringProps = new Gee.ArrayList<string>();
 		    
 		}
 		public static JsRender factory(string xt, Project.Project project, string path)
