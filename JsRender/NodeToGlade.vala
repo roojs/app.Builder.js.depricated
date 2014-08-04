@@ -141,8 +141,6 @@ $pad</packing>\n";
 
 		    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
 		     
-		    
-		    
 		    this.node.xvala_cls = cls;
 		    this.node.xvala_xcls = "Xcls_" + id;
 		    this.node.xvala_id = this.node.get("id").length > 0  ? this.node.get("id") : "";
