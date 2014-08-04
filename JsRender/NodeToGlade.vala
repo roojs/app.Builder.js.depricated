@@ -149,11 +149,11 @@ $pad</packing>\n";
             //this.vitems.append(item);  
             // loop children..
 			                                                       
-            if (item.items.size < 1) {
+            if (this.node.items.size < 1) {
                 return;
             }
-            for(var i =0;i<item.items.size;i++) {
-                this.toValaName(item.items.get(i));
+            for(var i =0;i<this.node.items.size;i++) {
+                this.toValaName(this.node.items.get(i));
             }
 			          
         }
