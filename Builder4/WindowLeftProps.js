@@ -336,7 +336,7 @@ WindowLeftProps=new XObject({
                 if (type == "listener") {
                     use_textarea = true;
                 }
-                if (key.length > 0 && key[0] == '|') {
+                if (key.length > 0 && key[0] == '$') {
                     use_textarea = true;
                 }
                 if (use_textarea) {

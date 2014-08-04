@@ -22,6 +22,13 @@ public class Xcls_LeftProps : Object
     public Gtk.VBox el;
     private Xcls_LeftProps  _this;
 
+    public static Xcls_LeftProps singleton()
+    {
+        if (WindowLeftProps == null) {
+            WindowLeftProps= new Xcls_LeftProps();
+        }
+        return WindowLeftProps;
+    }
     public Xcls_AddPropertyPopup AddPropertyPopup;
     public Xcls_EditProps EditProps;
     public Xcls_view view;
@@ -45,7 +52,6 @@ public class Xcls_LeftProps : Object
     public Xcls_LeftProps()
     {
         _this = this;
-        WindowLeftProps = this;
         this.el = new Gtk.VBox( false   , 0 );
 
         // my vars
@@ -384,7 +390,7 @@ public class Xcls_LeftProps : Object
                     if (type == "listener") {
                         use_textarea = true;
                     }
-                    if (key.length > 0 && key[0] == '|') {
+                    if (key.length > 0 && key[0] == '$') {
                         use_textarea = true;
                     }
                     if (use_textarea) {
