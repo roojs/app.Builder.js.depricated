@@ -423,7 +423,7 @@ public class Xcls_LeftProps : Object
 		                ||
 		                type_ar[0].up() == "BOOL"                        
 		            )) {
-				 this.allow_edit  = true;
+				this.allow_edit  = true;
 		                print("start editing try/false)???");
 		                this.valrender.el.has_entry = false;
 		                string[] opts =  { "true", "false" };
