@@ -47,7 +47,7 @@ public class JsRender.NodeToGlade : Object {
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
-
+	public static int vcnt = 0; 
 
 	public NodeToGlade( Node node,   string pad) 
 	{
