@@ -251,7 +251,7 @@ public class JsRender.NodeToGlade : Object {
 		 
 		for (var i = 2; i < mdef.paramset.params.size; i++) {
 			var poff = i - 2;
-			if (pk.length < poff) {
+			if (poff > (pk.length-1)) {
 				break;
 			}
 			
