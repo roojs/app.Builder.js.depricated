@@ -191,8 +191,23 @@ public class JsRender.NodeToGlade : Object {
 		    
 		print(generator.to_data(null));
 		*/
+		string[]  pbody  = {};
+		switch(pk[0]) {
+			case "pack_start";
+				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
+				break;
+			
+			case "pack_end";
+				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
+				break;
+
+			default:
+				print ("unknown pack type: %s", pk[0]);
+				
+		}
+			
 		var pad = this.pad;
-		string[]  pbody  = {}; 
+		 
 		for (var i = 2; i < mdef.paramset.params.size; i++) {
 			var poff = i - 1;
 			if (pk.length < poff) {
