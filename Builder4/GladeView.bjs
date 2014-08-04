@@ -9,7 +9,7 @@
             ".ctor": "new Glade.DesignView(new Glade.Project())",
             "id": "GladeView",
             "xtype": "DesignView",
-            "|void:loadFile": "(JsRender.JsRender file)\n{\n\n        // clear existing elements from project?\n        \n        var  p = this.el.get_project();\nvar    li = p.get_objects().copy();\n        for (var i =li.length()-1; i > -1; i--) {   \n            p.remove_object(li.nth_data(i)); \n        }\n\n//        print(\"%s\\n\",tf.tree.toJsonString());\n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n\n\t \n\tFileIOStream iostream;\n\tvar  f = File.new_tmp (\"tpl-XXXXXX.glade\", out iostream);\n\tvar ostream = iostream.output_stream;\n\tvar dostream = new DataOutputStream (ostream);\n\tdostream.put_string (x.munge());\n\tthis.el.show();\n\t print(\"LOADING %s\\n\",f.get_path ());\n        p.load_from_file(f.get_path ());\n        \n \n\n}",
+            "|void:loadFile": "(JsRender.JsRender file)\n{\n\n        // clear existing elements from project?\n        \n        var  p = this.el.get_project();\n        var    li = p.get_objects().copy();\n        // should remove all..\n        for (var i =0; ;  i < li.length(); i++) {   \n            p.remove_object(li.nth_data(i)); \n        }\n\n//        print(\"%s\\n\",tf.tree.toJsonString());\n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n\n\t \n\tFileIOStream iostream;\n\tvar  f = File.new_tmp (\"tpl-XXXXXX.glade\", out iostream);\n\tvar ostream = iostream.output_stream;\n\tvar dostream = new DataOutputStream (ostream);\n\tdostream.put_string (x.munge());\n\tthis.el.show();\n\t print(\"LOADING %s\\n\",f.get_path ());\n        p.load_from_file(f.get_path ());\n        \n \n\n}",
             "|xns": "Glade"
         }
     ],
