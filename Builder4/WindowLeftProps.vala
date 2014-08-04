@@ -413,7 +413,7 @@ public class Xcls_LeftProps : Object
                         });
                        
                         
-                        return;
+                        return false;
                     }
                     // others... - fill in options for true/false?
                    print("turn on editing %s \n" , mod.get_path(iter).to_string());
@@ -454,7 +454,7 @@ public class Xcls_LeftProps : Object
                         );
                         return false;
                     });
-                    
+                    return false;
                 }
     public void updateIter(Gtk.TreeIter iter,  string type, string key, string value) {
         
