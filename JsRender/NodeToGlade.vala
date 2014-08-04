@@ -96,10 +96,12 @@ public class JsRender.NodeToGlade : Object {
 				continue;
 			}
 			var k = pviter.get_key();
-			var val = this.node.props.get(pviter.get_key());
-			ret += @"<property name="$k">$val</property>"; // es
-                    
+			var val = GLib.Markup.escape_text(this.node.props.get(pviter.get_key()));
+			ret += @"<property name="$k">$val</property>\n"; // es
+
                 }
+
+		
 			
 		// children..
 		
