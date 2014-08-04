@@ -20,7 +20,7 @@ GladeView=new XObject({
             var  p = this.el.get_project();
             var    li = p.get_objects().copy();
             // should remove all..
-            for (var i =0; ;  i < li.length(); i++) {   
+            for (var i =0;    i < li.length(); i++) {   
                 p.remove_object(li.nth_data(i)); 
             }
     
