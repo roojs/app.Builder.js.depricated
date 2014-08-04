@@ -102,7 +102,7 @@ public class JsRender.NodeToGlade : Object {
                 }
 		// packing???
 		
-		ret += @"$pad    <packing>
+		var pack = @"$pad<packing>
 $pad    <property name=\"expand\">False</property>
 $pad    <property name=\"fill\">True</property>
 $pad    <property name=\"position\">0</property>
@@ -112,7 +112,7 @@ $pad</packing>\n";
 		// children..
 
 		if (!this.node.items.length) {
-			return ret;
+			return ret + pack;
 		}
 		
 		for (var i = 0; i < this.node.items.length; i++ ) {
