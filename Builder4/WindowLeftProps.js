@@ -271,7 +271,7 @@ WindowLeftProps=new XObject({
                 return false;
             }
             // delay this?
-            GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+            GLib.Timeout.add_full(GLib.Priority.DEFAULT,20 , () => {
             
                 this.startEditingValue(this.model.el.get_path(iter));
                 return false;
