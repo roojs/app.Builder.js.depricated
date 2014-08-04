@@ -937,7 +937,13 @@ WindowLeftProps=new XObject({
                                         }
                                     },
                                     'void:setOptions' : (string[] ar) {
-                                    
+                                          var m = this.el.model;
+                                            m.clear();
+                                         Gtk.TreeIter iret;
+                                        for (var i =0; i < ar.length; i++) {
+                                                m.append(out iret);
+                                                m.set_value(iret, 0, i);
+                                        }
                                     
                                     },
                                     id : "valrender",
