@@ -180,7 +180,14 @@ public class JsRender.NodeToGlade : Object {
 			print("could not find method : %s\n", pk[0]);
 			return "";
 		}
-	 
+		var generator = new Json.Generator ();
+	        var n = new Json.Node(Json.NodeType.OBJECT);
+		n.set_object(mdef.toJSON());
+		generator.set_root(n);
+		generator.indent = 4;
+		generator.pretty = true;
+		    
+		print(generator.to_data(null));
 		
 		var pack = @"$pad<packing>\n" +
 				@"$pad    <property name=\"expand\">False</property>\n" +
