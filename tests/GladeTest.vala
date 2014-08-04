@@ -18,7 +18,7 @@ int main (string[] args) {
 	var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
 	tf.loadItems();
 
-	print(tf.tree.toJsonString());
+	print("%s\n",tf.tree.toJsonString());
 	var x = new JsRender.NodeToGlade(tf.tree,  "");
 
 	print(x.munge());
