@@ -167,13 +167,14 @@ public class JsRender.NodeToGlade : Object {
         }
 	public string packString()
 	{
+		print
 		var pk = this.node.get("* pack").split(",");
 		// pack is part of the parent element..
 		var p = node.parent;
 		var pfqn  = p.fqn();
 		var p_parts =pfqn.split("."); 
 		var ns = p_parts[0];
-    		var gir =  Palate.Gir.factory(ns);
+    		var gir =  Palete.Gir.factory(ns);
 		var cls = gir.classes.get(p_parts[1]);
 		var mdef = cls.methods.get(pk[0]);
 		if (mdef == null) {
