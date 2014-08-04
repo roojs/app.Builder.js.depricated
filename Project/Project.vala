@@ -118,17 +118,17 @@ namespace Project {
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
-            var pa = new Json.Parser();
-            pa.load_from_file(jsonfile);
-            var node = pa.get_root();
+			var pa = new Json.Parser();
+			pa.load_from_file(jsonfile);
+			var node = pa.get_root();
 
 			
-            if (node == null || node.get_node_type () != Json.NodeType.OBJECT) {
+			if (node == null || node.get_node_type () != Json.NodeType.OBJECT) {
 				print("SKIP " + jsonfile + " - invalid format?\n");
-		        return;
-	        }
+				return;
+			}
 			
-            var obj = node.get_object ();
+    			var obj = node.get_object ();
 			var xtype =  obj.get_string_member("xtype");
 
 			var proj = factory(xtype, "");
