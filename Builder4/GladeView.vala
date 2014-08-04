@@ -58,7 +58,7 @@ public class Xcls_GladeView : Object
             var width = win.get_width();
             var height = win.get_height();
         
-            Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
+            Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, 0); // this.el.position?
         
             screenshot.save(filename,"png");
             return;
