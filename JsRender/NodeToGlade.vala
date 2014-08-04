@@ -80,8 +80,8 @@ public class JsRender.NodeToGlade : Object {
 	
     public string mungeNode()
 	{
-		var cls = "XXX";
-		var id = "";
+		var cls = this.node.item.xvala_cls;
+		var id = this.node.uid();
 		var ret = @"<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
 
