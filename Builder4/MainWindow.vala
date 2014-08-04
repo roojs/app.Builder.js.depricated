@@ -371,6 +371,8 @@ public class Xcls_MainWindow : Object
                         _this.window_rooview.view.renderJS(true);
                         return;
                     }
+                } else {
+                    // do nothing for gtk..
                 }
                 this.hideProjectEdit();
                  
