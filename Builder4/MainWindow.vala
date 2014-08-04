@@ -50,7 +50,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
-    public Xcls_GladeView gladeview;
+    public Xcls_GladeView window_gladeview;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_Editor code_editor;
@@ -72,7 +72,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.gladeview = null;
+        this.window_gladeview = null;
         this.project = null;
         this.clutterfiles = null;
         this.code_editor = null;
