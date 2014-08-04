@@ -61,16 +61,16 @@ namespace Project {
 		
 		public static void loadAll(bool force = false)
 		{
-            if (projects_loaded && !force) {
-                return;
-            }
-            
+			if (projects_loaded && !force) {
+				return;
+			}
+
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
 			var dir = File.new_for_path(dirname);
-		    if (!dir.query_exists()) {
-		        dir.make_directory();
-		        return;
-		    }
+		        if (!dir.query_exists()) {
+				dir.make_directory();
+				return;
+			}
 			projects = new  Gee.HashMap<string,Project>();
 			  
 		   
