@@ -152,7 +152,7 @@ public class JsRender.NodeToGlade : Object {
                 return;
             }
             for(var i =0;i<this.node.items.size;i++) {
-                this.toValaName(this.node.items.get(i));
+                this.fillValaName(this.node.items.get(i));
             }
 			          
         }
