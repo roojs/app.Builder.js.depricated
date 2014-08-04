@@ -61,7 +61,7 @@ public class JsRender.NodeToGlade : Object {
 	
 	public string munge ( )
 	{
-	 
+		this.fillValaName();
 		 
         return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + 
 		"<!-- Generated with glade 3.18.3 -->" +
