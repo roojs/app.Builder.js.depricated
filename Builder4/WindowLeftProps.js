@@ -331,6 +331,9 @@ WindowLeftProps=new XObject({
                 mod.get_value(iter, 0 , out gval);
                 var type = (string)gval;
                 
+                var type_ar = type.split(" ");
+                
+                
                 var use_textarea = false;
                 
                 if (type == "listener") {
