@@ -26,7 +26,7 @@ int main (string[] args) {
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
-	w.load(tf);
+	left_props.load(tf);
  
 	
 	Gtk.main();
