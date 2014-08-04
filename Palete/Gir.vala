@@ -116,8 +116,8 @@ namespace Palete {
 			
 			pcls.overlayParent( );
 			this.copyFrom(pcls,false);
-			for(var i=0; i < this.implements.length(); i++) {
-				var clsname = this.implements.nth_data(i);
+			for(var i=0; i < this.implements.size; i++) {
+				var clsname = this.implements.get(i);
 				var picls = this.clsToObject(clsname);
 				this.copyFrom(picls,true);
 			}
