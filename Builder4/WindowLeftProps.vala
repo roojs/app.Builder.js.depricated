@@ -1383,6 +1383,7 @@ public class Xcls_LeftProps : Object
 
 
             // my vars
+        public void setOptions;
 
             // ctor 
         public Xcls_valrender(Xcls_LeftProps _owner )
