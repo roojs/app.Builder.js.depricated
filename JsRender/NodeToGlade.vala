@@ -175,24 +175,12 @@ public class JsRender.NodeToGlade : Object {
 		var ns = p_parts[0];
     		var gir =  Gir.factory(ns);
 		var cls = gir.classes.get(p_parts[1]);
-		// find the function..
-		
-		
-			
-            //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
-        }
-
-		// does not handle implements...
-	public override GirObject? getClass(string ename)
-	{
-
-		var es = ename.split(".");
-		var gir = Gir.factory(es[0]);
-		
-		return gir.classes.get(es[1]);
-		
-	}
-
+		var mdef = cls.methods.get(pk[0]);
+		if (mdef == null) {
+			print("could not find method : %s\n", pk[0]);
+			return "";
+		}
+	 
 		
 		var pack = @"$pad<packing>\n" +
 				@"$pad    <property name=\"expand\">False</property>\n" +
