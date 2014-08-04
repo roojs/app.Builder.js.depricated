@@ -236,6 +236,7 @@
                                             "|editable": "false",
                                             "|has_entry": "true",
                                             "|xns": "Gtk",
+                                            "": "",
                                             "items": [
                                                 {
                                                     "*prop": "model",
