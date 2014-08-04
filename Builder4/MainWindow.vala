@@ -463,14 +463,16 @@ public class Xcls_MainWindow : Object
                 _this.project = file.project;
                 _this.showViewEditing();
                 this.left_tree.model.loadFile(file);
-                
+                var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
                 if (file.xtype == "Roo" ) { 
+                    ctr.add(this.window_rooview.el);
                     this.window_rooview.loadFile(file);
-                    ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+                    
                     this.window_rooview.el.show_all();
                 } else {
+                    ctr.add(this.window_gladeview.el);
                     this.window_gladeview.loadFile(file);
-                    ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
+        
                     this.window_gladeview.el.show_all();
                 }
                 print("OPEN : " + file.name);
