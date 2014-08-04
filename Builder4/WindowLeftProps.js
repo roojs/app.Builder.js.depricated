@@ -936,6 +936,11 @@ WindowLeftProps=new XObject({
                                            
                                         }
                                     },
+                                    id : "valrender",
+                                    pack : "pack_start,true",
+                                    text_column : 0,
+                                    editable : false,
+                                    has_entry : true,
                                     'void:setOptions' : (string[] ar) {
                                           var m = this.el.model;
                                             m.clear();
@@ -946,16 +951,12 @@ WindowLeftProps=new XObject({
                                         }
                                     
                                     },
-                                    id : "valrender",
-                                    pack : "pack_start,true",
-                                    text_column : 0,
-                                    editable : false,
-                                    has_entry : true,
                                     model : {
                                         xtype: Gtk.ListStore,
-                                        columns : typeof(string),
+                                        id : "",
                                         n_columns : 1,
-                                        pack : false
+                                        pack : false,
+                                        columns : typeof(string)
                                     }
                                 }
                             ]
