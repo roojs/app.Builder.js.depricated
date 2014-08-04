@@ -113,13 +113,16 @@ $pad</packing>\n";
 		// children..
 
 		if (!this.node.items.length) {
-			return ret + ~"$pad</object>" + pack;
+			return ret + @"$pad</object>" + pack;
 		}
 		
 		for (var i = 0; i < this.node.items.length; i++ ) {
-			ret += "<child>\n" + this.mungeChild(this.nodes.items.get(i), pad + "    ");
+			ret += @"$pad   <child>\n" 
+			ret += this.mungeChild(this.nodes.items.get(i), pad + "        ");
+			ret += @"$pad   </child>\n";
 		}
 		
+		return ret + @"$pad</object>" + pack;
 		
 
 		
