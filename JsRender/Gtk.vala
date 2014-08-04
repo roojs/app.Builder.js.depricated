@@ -607,9 +607,9 @@ namespace JsRender {
 				var args = new GLib.List<string>();
 				var argid = 1;
   
-				for (var i = 0; i < ctor_def.paramset.params.length(); i++)  {
+				for (var i = 0; i < ctor_def.paramset.params.size; i++)  {
 					// need piter.get_key(); -- string..
-					var val = ctor_def.paramset.params.nth_data(i);
+					var val = ctor_def.paramset.params.get(i);
 					var kn = val.name;
 					string pv = node.get(kn);
 					if (pv.length < 1) {
