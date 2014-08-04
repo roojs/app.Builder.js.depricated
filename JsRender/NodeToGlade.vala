@@ -188,7 +188,7 @@ public class JsRender.NodeToGlade : Object {
 		var pk = this.node.get("* pack").split(",");
 		// pack is part of the parent element..
 		var p = node.parent;
-		if (p ==) {
+		if (p == null || p.fqn() == null) {
 			return "";
 		}
 		var pfqn  = p.fqn();
