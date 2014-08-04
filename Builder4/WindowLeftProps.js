@@ -275,7 +275,7 @@ WindowLeftProps=new XObject({
             
                 this.startEditingValue(this.model.el.get_path(iter));
                 return false;
-            }
+            });
             //s.select_iter(iter);
             return true; 
         });
