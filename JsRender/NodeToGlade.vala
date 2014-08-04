@@ -98,7 +98,7 @@ public class JsRender.NodeToGlade : Object {
 			}
 			var k = pviter.get_key();
 			var val = GLib.Markup.escape_text(this.node.props.get(pviter.get_key()));
-			ret += @"$pad    <property name="$k">$val</property>\n"; // es
+			ret += @"$pad    <property name=\"$k\">$val</property>\n"; // es
 
                 }
 		// packing???
