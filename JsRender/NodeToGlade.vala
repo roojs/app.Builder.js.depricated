@@ -63,7 +63,7 @@ public class JsRender.NodeToGlade : Object {
 	{
 
 		this.fillValaName(this.node);
-		 
+		this.pad += "    ";
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
 			"<!-- Generated with glade 3.18.3 -->\n" +
 			"<interface>\n" + 
@@ -118,9 +118,9 @@ public class JsRender.NodeToGlade : Object {
 		}
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
-			ret += @"$pad   <child>\n";
+			ret += @"$pad    <child>\n";
 			ret += this.mungeChild(pad + "        " , this.node.items.get(i) );
-			ret += @"$pad   </child>\n";
+			ret += @"$pad    </child>\n";
 		}
 		
 		return ret + @"$pad</object>\n" + pack;
