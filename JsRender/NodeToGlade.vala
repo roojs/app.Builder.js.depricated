@@ -119,6 +119,12 @@ public class JsRender.NodeToGlade : Object {
 		}
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
+
+			var add = this.mungeChild(pad + "        " , this.node.items.get(i) );
+			if (add.length < 0) {
+				continue;
+			}
+			
 			ret += @"$pad    <child>\n";
 			ret += this.mungeChild(pad + "        " , this.node.items.get(i) );
 			ret += @"$pad    </child>\n";
