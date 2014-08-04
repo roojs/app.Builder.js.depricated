@@ -31,6 +31,7 @@ public class Xcls_GladeView : Object
     }
 
         // my vars
+    public JsRender.JsRender file;
 
         // ctor 
     public Xcls_GladeView()
@@ -39,6 +40,7 @@ public class Xcls_GladeView : Object
         this.el = new Glade.DesignView(new Glade.Project());
 
         // my vars
+        this.file = null;
 
         // set gobject values
     }

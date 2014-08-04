@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/GladeView.bjs",
     "items": [
         {
-            "JsRender.JsRender:file": "null",
+            ".JsRender.JsRender:file": "null",
             ".ctor": "new Glade.DesignView(new Glade.Project())",
             "id": "GladeView",
             "xtype": "DesignView",

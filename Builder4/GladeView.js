@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
     xtype: Glade.DesignView,
-    'JsRender.JsRender:file' : "null",
     id : "GladeView",
     'void:createThumb' : () {
         
