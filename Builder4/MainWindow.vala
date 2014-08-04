@@ -439,6 +439,17 @@ public class Xcls_MainWindow : Object
             stage = _this.rooview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
+              
+            //  glade view
+            
+             this.gladeview  =new Xcls_WindowRooView();
+            this.gladeview.ref();
+            ((Gtk.Container)(this.gladeviewctr.el.get_widget())).add(this.gladeview.el);
+            this.gladeview.el.show_all();
+        
+            stage = _this.gladeviewctr.el.get_stage();
+            stage.set_background_color(  Clutter.Color.from_string("#000"));
+            
            
             
             // clutter files
