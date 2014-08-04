@@ -734,7 +734,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
-                                            id : "rooview",
+                                            id : "gladeview",
                                             pack : "get_stage().add_child",
                                             init : {
                                                
