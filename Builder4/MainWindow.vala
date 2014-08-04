@@ -72,6 +72,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.gladeview = null;
         this.project = null;
         this.clutterfiles = null;
         this.code_editor = null;
