@@ -172,7 +172,10 @@ public class JsRender.Node : Object {
 		
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
-			this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
+			var kk = iter.get_key().split(" ");
+			if (kk[kk.length-1] == key) {
+				return iter.get_value();
+			}
 		}
 		
 		
@@ -188,7 +191,13 @@ public class JsRender.Node : Object {
 		if (k != null) {
 			return true;
 		}
-		
+		var iter = this.props.map_iterator();
+		while (iter.next()) {
+			var kk = iter.get_key().split(" ");
+			if (kk[kk.length-1] == key) {
+				return iter.get_value();
+			}
+		}
 		
 		return false;
 		
