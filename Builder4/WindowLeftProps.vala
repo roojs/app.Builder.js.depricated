@@ -422,7 +422,7 @@ public class Xcls_LeftProps : Object
                                 type_ar[0].up() == "BOOLEAN"
                                 ||
                                 type_ar[0].up() == "BOOL"                        
-                            ) {
+                            )) {
                                 this.valrender.el.has_entry = false;
                                 string[] opts =  { "true", "false");
                                 this.valrender.setOptions(opts);
