@@ -100,6 +100,7 @@ public class JsRender.NodeToGlade : Object {
 			ret += @"<property name="$k">$val</property>\n"; // es
 
                 }
+		
 
 		
 			
