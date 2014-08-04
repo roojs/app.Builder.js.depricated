@@ -78,8 +78,20 @@ public class JsRender.NodeToGlade : Object {
 		return x.mungeNode();
 	}
 	
-    public
-    
+    public string mungeNode()
+	{
+		var cls = "XXX";
+		var id = "";
+		var ret = @"<object class=\"$cls\" id=\"$id\">\n";
+		// properties..
+
+		// children..
+		
+
+		
+
+
+	}
     
     
     
