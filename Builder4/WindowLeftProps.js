@@ -103,7 +103,8 @@ WindowLeftProps=new XObject({
                                           
                     
                
-               
+                 string[] opts =  {  };
+                this.valrender.setOptions(opts);
                
                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                     

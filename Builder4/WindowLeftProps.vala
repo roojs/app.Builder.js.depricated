@@ -159,7 +159,8 @@ public class Xcls_LeftProps : Object
                                               
                         
                    
-                   
+                     string[] opts =  {  };
+                    this.valrender.setOptions(opts);
                    
                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         
