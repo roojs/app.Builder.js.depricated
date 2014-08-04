@@ -128,7 +128,7 @@ public class JsRender.NodeToGlade : Object {
 		 
 
 	}
-	string toValaNS()
+	string toValaNS(Node node)
         {
             var ns = this.node.get("* xns") ;
             //if (ns == "GtkSource") {
@@ -136,7 +136,7 @@ public class JsRender.NodeToGlade : Object {
             //}
             return ns + ".";
         }
-	public void  fillValaName(node) 
+	public void  fillValaName(Node node) 
 	{
 	    if (node.xvala_cls.length < 1) {
 		    vcnt++;
