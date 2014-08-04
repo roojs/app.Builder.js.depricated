@@ -670,6 +670,8 @@ WindowLeftProps=new XObject({
                             
                             
                             
+                            
+                            
                             // currently editing???
                         //    if (  this.activePath) {
                                 
@@ -718,11 +720,9 @@ WindowLeftProps=new XObject({
                         
                              ;
                              
-                            _this.startEditingValue(path); // assumes selected row..
+                            return _this.startEditingValue(path); // assumes selected row..
                                 
-                           //Seed.print("click" + ev.type);
-                            //console.dump(res);
-                            return false;
+                           
                         
                                       
                            

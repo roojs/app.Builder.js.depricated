@@ -1133,6 +1133,8 @@ public class Xcls_LeftProps : Object
                 
                 
                 
+                
+                
                 // currently editing???
             //    if (  this.activePath) {
                     
@@ -1181,11 +1183,9 @@ public class Xcls_LeftProps : Object
             
                  ;
                  
-                _this.startEditingValue(path); // assumes selected row..
+                return _this.startEditingValue(path); // assumes selected row..
                     
-               //Seed.print("click" + ev.type);
-                //console.dump(res);
-                return false;
+               
             
                           
                
