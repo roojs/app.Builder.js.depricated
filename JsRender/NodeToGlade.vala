@@ -116,8 +116,7 @@ $pad</packing>\n";
 		}
 		
 		for (var i = 0; i < this.node.items.length; i++ ) {
-			ret += "<child>\n" + this.mungeChild(
-			
+			ret += "<child>\n" + this.mungeChild(this.nodes.items.get(i), pad + "    ");
 		}
 		
 		
