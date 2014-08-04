@@ -17,8 +17,8 @@ GladeView=new XObject({
     
             // clear existing elements from project?
             
-            var p = this.el.get_project();
-            var li = p.get_objects();
+            var unowned p = this.el.get_project();
+             li = p.get_objects();
             for (var i =li.length()-1; i > -1; i--) {   
                 p.remove_object(li.nth_data(i)); 
             }
