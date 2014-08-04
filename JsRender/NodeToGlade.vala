@@ -135,7 +135,8 @@ $pad</packing>\n";
 
 	    var cls = this.toValaNS(this.item) + item.get("xtype");
 
-	    string id = item.get("id").length > 0 ? this.item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
+	    string id = item.get("id").length > 0 ? 
+			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), this.vcnt);
 
 	    var props = this.palete.getPropertiesFor(cls,  "props");
              
