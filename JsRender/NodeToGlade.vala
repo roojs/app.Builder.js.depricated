@@ -250,7 +250,7 @@ public class JsRender.NodeToGlade : Object {
 		var pad = this.pad;
 		 
 		for (var i = 2; i < mdef.paramset.params.size; i++) {
-			var poff = i - 2;
+			var poff = i - 1;
 			if (poff > (pk.length-1)) {
 				break;
 			}
