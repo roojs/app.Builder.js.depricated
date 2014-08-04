@@ -193,14 +193,16 @@ public class JsRender.NodeToGlade : Object {
 		*/
 		string[]  pbody  = {};
 		switch(pk[0]) {
-			case "pack_start";
+			case "pack_start":
 				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
 				break;
 			
-			case "pack_end";
+			case "pack_end":
 				pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
 				break;
-
+			case "set_model":
+				print ("set_model not handled yet..");
+				return "";
 			default:
 				print ("unknown pack type: %s", pk[0]);
 				break;
