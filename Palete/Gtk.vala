@@ -358,7 +358,7 @@ namespace Palete {
 			while (map.next()) {
 				var n = map.get_key();
 				var meth = map.get_value();
-				if (meth.paramset == null || meth.paramset.params.length() < 1) {
+				if (meth.paramset == null || meth.paramset.params.size < 1) {
 					continue;
 				}
 				var fp = meth.paramset.params.nth_data(0);
