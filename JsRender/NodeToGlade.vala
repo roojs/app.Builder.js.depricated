@@ -83,6 +83,14 @@ public class JsRender.NodeToGlade : Object {
 	{
 		var pad = this.pad;
 		var cls = this.node.xvala_cls.replace(".", "");
+
+		switch(cls) {
+			// things we can not do yet...
+			case "GtkListStore":
+				return "";
+		}
+
+		
 		var id = this.node.uid();
 		var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
