@@ -129,7 +129,7 @@ $pad</packing>\n";
 
 	}
     
-	void  toValaName() 
+	void  fillValaName() 
 	{
 	    if (this.node.xvala_cls.length < 1) {
 		    vcnt++;
