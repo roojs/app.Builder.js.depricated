@@ -18,16 +18,7 @@ int main (string[] args) {
 	var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
 	tf.loadItems();
 
-	print("%s\n",tf.tree.toJsonString());
-	var x = new JsRender.NodeToGlade(tf.tree,  "");
-
-	 
-	FileIOStream iostream;
-	var  f = File.new_tmp ("tpl-XXXXXX.glade", out iostream);
-	var ostream = iostream.output_stream;
-	var dostream = new DataOutputStream (ostream);
-	dostream.put_string (x.munge());
-	 
+	
 	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
@@ -35,12 +26,9 @@ int main (string[] args) {
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
+	w.load(tf);
  
- 
-	var p = left_props.el.get_project();
-    print("LOADING\n");
-    p.load_from_file(f.get_path ());
- 
+	
 	Gtk.main();
     
 	
