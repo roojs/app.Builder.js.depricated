@@ -131,21 +131,22 @@ $pad</packing>\n";
     
 	void  toValaName() 
 	{
-    	    vcnt++;
+	    if (this.node.xvala_cls.length < 1) {
+		    vcnt++;
 
-	    var cls = this.toValaNS(this.node) + item.get("xtype");
+		    var cls = this.toValaNS(this.node) + item.get("xtype");
 
-	    string id = this.node.get("id").length > 0 ? 
-			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), vcnt);
+		    string id = this.node.get("id").length > 0 ? 
+				this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), vcnt);
 
-	    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
-             
-            
-            
-            item.xvala_cls = cls;
-            item.xvala_xcls = "Xcls_" + id;
-            item.xvala_id = this.node.get("id").length > 0  ? this.node.get("id") : "";
-			                                                       
+		    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
+		     
+		    
+		    
+		    this.node.xvala_cls = cls;
+		    this.node.xvala_xcls = "Xcls_" + id;
+		    this.node.xvala_id = this.node.get("id").length > 0  ? this.node.get("id") : "";
+	    }                                                     
             //this.vitems.append(item);  
             // loop children..
 			                                                       
