@@ -1488,7 +1488,7 @@ public class Xcls_LeftProps : Object
                  Gtk.TreeIter iret;
                 for (var i =0; i < ar.length; i++) {
                         m.append(out iret);
-                        m.set_value(iret, 0, i);
+                        m.set_value(iret, 0, ar[i]);
                 }
             
             }
