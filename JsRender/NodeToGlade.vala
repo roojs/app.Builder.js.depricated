@@ -107,7 +107,7 @@ public class JsRender.NodeToGlade : Object {
 		var pack = "";
 		if (this.node.props.get("* pack") != null) {
 
-
+		
 			
 			var pack = @"$pad<packing>\n" +
 				@"$pad    <property name=\"expand\">False</property>\n" +
@@ -169,5 +169,10 @@ public class JsRender.NodeToGlade : Object {
             }
 			          
         }
+	public string packString()
+	{
+
+
+	}
     
 }
