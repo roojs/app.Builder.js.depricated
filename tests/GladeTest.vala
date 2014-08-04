@@ -13,11 +13,16 @@ int main (string[] args) {
 	var proj = Project.Project.getProject("Builder4");
 	
 	proj.scanDirs();
-	 
-	var tf = proj.files.get(proj.fn + "/WindowLeftProps.bjs");
+	print("load %s\n", proj.firstPath() + "/WindowLeftProps.bjs");
+	
+	var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
 	tf.loadItems();
-	var x = new JsRender.NodeToGlade(tf.tree,  ""))
 
+	print(tf.tree.toJsonString());
+	var x = new JsRender.NodeToGlade(tf.tree,  "");
+
+	print(x.munge());
+	return 0;
 
 	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
