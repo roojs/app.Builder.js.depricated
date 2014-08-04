@@ -73,7 +73,8 @@ GladeView=new XObject({
             
      
     
-    }
+    },
+     : ""
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;
