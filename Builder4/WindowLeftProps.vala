@@ -382,12 +382,14 @@ public class Xcls_LeftProps : Object
                 
                     mod.get_value(iter, 1 , out gval);
                     var key = (string)gval;
+                    var type_ar = key.split(" ");
+                    
+                    
                     
                     mod.get_value(iter, 0 , out gval);
                     var type = (string)gval;
                     
-                    var type_ar = type.split(" ");
-                    
+                   
                     
                     var use_textarea = false;
                     
