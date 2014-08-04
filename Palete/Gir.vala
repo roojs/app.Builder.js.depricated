@@ -193,11 +193,11 @@ namespace Palete {
 		
             // is_arary / is_instance / is_varargs..
             
-            if (this.implements.length() > 0) {
+            if (this.implements.size > 0) {
                 r.set_array_member("length", this.toJSONArrayString(this.implements));
             }
             
-            if (this.params.length() > 0) {
+            if (this.params.size > 0) {
                 r.set_array_member("params", this.toJSONArrayObject(this.params));
             }
             if (this.ctors.size > 0) {
