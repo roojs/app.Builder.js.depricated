@@ -11,6 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
     xtype: Glade.DesignView,
+    'JsRender.JsRender:file' : "null",
+    id : "GladeView",
     'void:createThumb' : () {
         
         
@@ -45,10 +47,9 @@ GladeView=new XObject({
         
          
     },
-    id : "GladeView",
     'void:loadFile' : (JsRender.JsRender file)
     {
-    
+        this.file = file;
             // clear existing elements from project?
             
             var  p = this.el.get_project();
@@ -73,8 +74,7 @@ GladeView=new XObject({
             
      
     
-    },
-     : ""
+    }
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;

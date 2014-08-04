@@ -41,8 +41,6 @@ public class Xcls_GladeView : Object
         // my vars
 
         // set gobject values
-
-        // listeners 
     }
 
     // userdefined functions 
@@ -82,7 +80,7 @@ public class Xcls_GladeView : Object
         }
     public void loadFile(JsRender.JsRender file)
         {
-        
+            this.file = file;
                 // clear existing elements from project?
                 
                 var  p = this.el.get_project();
