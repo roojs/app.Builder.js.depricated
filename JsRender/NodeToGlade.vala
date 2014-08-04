@@ -133,9 +133,9 @@ $pad</packing>\n";
 	{
     	    this.vcnt++;
 
-	    var cls = this.toValaNS(this.item) + item.get("xtype");
+	    var cls = this.toValaNS(this.node) + item.get("xtype");
 
-	    string id = item.get("id").length > 0 ? 
+	    string id = this.node.get("id").length > 0 ? 
 			this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), this.vcnt);
 
 	    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
@@ -144,7 +144,7 @@ $pad</packing>\n";
             
             item.xvala_cls = cls;
             item.xvala_xcls = "Xcls_" + id;
-            item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
+            item.xvala_id = this.node.get("id").length > 0  ? item.get("id") : "";
 			                                                       
             this.vitems.append(item);  
             // loop children..
