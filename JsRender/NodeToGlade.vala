@@ -72,13 +72,13 @@ public class JsRender.NodeToGlade : Object {
           
 		     
 	}
-    public string mungeChild(string pad ,  Node cnode)
+	public string mungeChild(string pad ,  Node cnode)
 	{
 		var x = new  NodeToGlade(cnode,  pad);
 		return x.mungeNode();
 	}
 	
-    public string mungeNode()
+	public string mungeNode()
 	{
 		var cls = this.node.item.xvala_cls.replace(".", "");
 		var id = this.node.uid();
@@ -86,16 +86,16 @@ public class JsRender.NodeToGlade : Object {
 		// properties..
 		var props = Palate.factory("Gtk").getPropertiesFor(this.node.item.xvala_cls, "props");
             
-            
-
-			var pviter = props.map_iterator();
-			while (pviter.next()) {
-
+    		var pviter = props.map_iterator();
+		while (pviter.next()) {
+			
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
 				
         		// skip items we have already handled..
-        		if  (!(citems.get(pviter.get_key()) == false)) {
-					//print("- skip already handled\n " );
+        		if  (!(this.node.props.get(pviter.get_key()) == null)) {
+				//print("- skip already handled\n " );
+			}
+			
                     continue;
                 }
 			
