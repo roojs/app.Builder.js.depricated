@@ -371,7 +371,7 @@ WindowLeftProps=new XObject({
                             ||
                             type_ar[0].up() == "BOOL"                        
                         )) {
-                            print("start editing try/false)???"
+                            print("start editing try/false)???");
                             this.valrender.el.has_entry = false;
                             string[] opts =  { "true", "false" };
                             this.valrender.setOptions(opts);
