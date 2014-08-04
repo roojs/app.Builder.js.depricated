@@ -362,15 +362,8 @@ WindowLeftProps=new XObject({
                 }
                 // others... - fill in options for true/false?
                print("turn on editing %s \n" , mod.get_path(iter).to_string());
-                
-               GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                    
-                    // at this point - work out the type...
-                    // if its' a combo... then show the options..
-                    this.valrender.el.has_entry = true;
-                    this.valrender.el.editable = true;
-                                    
-                    print (type_ar[0].up());
+               
+                   print (type_ar[0].up());
                     if (type_ar.length > 1 && (
                             type_ar[0].up() == "BOOLEAN"
                             ||
@@ -380,10 +373,24 @@ WindowLeftProps=new XObject({
                             this.valrender.el.has_entry = false;
                             string[] opts =  { "true", "false" };
                             this.valrender.setOptions(opts);
+                            
                             this.valrender.el.has_entry = false;
-                        }
+                           this.allow_edit  = true;
+                            return true;
+                    }
                                           
                     
+               
+               
+               
+               GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                    
+                    // at this point - work out the type...
+                    // if its' a combo... then show the options..
+                    this.valrender.el.has_entry = true;
+                    this.valrender.el.editable = true;
+                                    
+                
                     
                     this.allow_edit  = true;
                     
