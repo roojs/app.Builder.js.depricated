@@ -108,12 +108,8 @@ public class JsRender.NodeToGlade : Object {
 		if (this.node.props.get("* pack") != null) {
 
 		
+			pack = this.packString();
 			
-			var pack = @"$pad<packing>\n" +
-				@"$pad    <property name=\"expand\">False</property>\n" +
-				@"$pad    <property name=\"fill\">True</property>\n" +
-				@"$pad    <property name=\"position\">0</property>\n" +
-				@"$pad</packing>\n";
 
 		}	
 		// children..
