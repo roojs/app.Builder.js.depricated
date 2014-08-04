@@ -11,7 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
     xtype: Glade.DesignView,
-    'void:load' : (JsRender.JsRender file)
+    id : "GladeView",
+    'void:loadFile' : (JsRender.JsRender file)
     {
     
     //        print("%s\n",tf.tree.toJsonString());
@@ -30,8 +31,7 @@ GladeView=new XObject({
             
      
     
-    },
-    id : "GladeView"
+    }
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;

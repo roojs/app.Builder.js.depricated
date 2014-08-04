@@ -44,7 +44,7 @@ public class Xcls_GladeView : Object
     }
 
     // userdefined functions 
-    public void load(JsRender.JsRender file)
+    public void loadFile(JsRender.JsRender file)
         {
         
         //        print("%s\n",tf.tree.toJsonString());
