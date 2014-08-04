@@ -61,7 +61,7 @@ public class JsRender.NodeToGlade : Object {
 	
 	public string munge ( )
 	{
-		this.fillValaName();
+		this.fillValaName(this.node);
 		 
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + 
 			"<!-- Generated with glade 3.18.3 -->" +
@@ -130,7 +130,7 @@ public class JsRender.NodeToGlade : Object {
 	}
 	string toValaNS(Node node)
         {
-            var ns = this.node.get("* xns") ;
+            var ns = this.node.get("$ xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
