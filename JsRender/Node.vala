@@ -110,8 +110,9 @@ public class JsRender.Node : Object {
 		this.items = new Gee.ArrayList<Node>();
 		this.props = new Gee.HashMap<string,string>();
 		this.listeners = new Gee.HashMap<string,string>();
- 
+		this.xvala_cls = "";
 		this.xvala_xcls = "";
+		this.xvala_id = "";
 		this.parent = null;
 	}
 
@@ -286,6 +287,7 @@ public class JsRender.Node : Object {
 			case "*args":
 			case ".ctor":
 			case "|init":
+			case "pack":
 				return "* " + key.substring(1);
 		}
 		if (key[0] == '.') {
@@ -334,6 +336,8 @@ public class JsRender.Node : Object {
 	{
 		if (Node.gen == null) {
 			Node.gen = new Json.Generator();
+			gen.pretty =  true;
+			gen.indent = 4;
 		}
 		var n = new Json.Node(Json.NodeType.OBJECT);
 		n.set_object(this.toJsonObject () );
