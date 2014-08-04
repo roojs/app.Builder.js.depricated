@@ -26,7 +26,7 @@ GladeView=new XObject({
     	dostream.put_string (x.munge());
     	this.el.show();
     	 var p = this.el.get_project();
-            print("LOADING\n");
+            print("LOADING %s\n",f.get_path ());
             p.load_from_file(f.get_path ());
             
      
