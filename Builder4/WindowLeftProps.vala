@@ -1197,7 +1197,10 @@ public class Xcls_LeftProps : Object
             
                  ;
                //             _this.before_edit(); <<< we really need to stop the other editor..
-                 
+                 _this.keyrender.el.stop_editing(false);
+                _this.keyrender.el.editable  =false;
+                
+                       
                 return _this.startEditingValue(path); // assumes selected row..
                     
                
