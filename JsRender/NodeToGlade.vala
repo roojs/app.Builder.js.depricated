@@ -194,6 +194,7 @@ public class JsRender.NodeToGlade : Object {
 				@"$pad    <property name=\"fill\">True</property>\n" +
 				@"$pad    <property name=\"position\">0</property>\n" +
 				@"$pad</packing>\n";
+		return pack;
 
 	}
     
