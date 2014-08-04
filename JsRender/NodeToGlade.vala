@@ -128,7 +128,14 @@ public class JsRender.NodeToGlade : Object {
 		 
 
 	}
-    
+	 string toValaNS(Node item)
+        {
+            var ns = item.get("* xns") ;
+            //if (ns == "GtkSource") {
+                //return "Gtk.Source.";
+            //}
+            return ns + ".";
+        }
 	void  fillValaName() 
 	{
 	    if (this.node.xvala_cls.length < 1) {
