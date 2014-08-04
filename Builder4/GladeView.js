@@ -11,6 +11,40 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
     xtype: Glade.DesignView,
+    'void:createThumb' : () {
+        
+        
+        if (this.file == null) {
+            return;
+        }
+        var filename = this.file.getIconFileName(false);
+        
+        var  win = this.el.get_parent_window();
+        var width = win.get_width();
+        var height = win.get_height();
+    
+        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
+    
+        screenshot.save(filename,"png");
+        return;
+        
+        
+        
+        
+        
+         
+        
+        // should we hold until it's printed...
+        
+          
+    
+        
+        
+    
+    
+        
+         
+    },
     id : "GladeView",
     'void:loadFile' : (JsRender.JsRender file)
     {
@@ -39,8 +73,7 @@ GladeView=new XObject({
             
      
     
-    },
-     : ""
+    }
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;
