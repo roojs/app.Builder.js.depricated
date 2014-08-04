@@ -391,13 +391,13 @@ MainWindow=new XObject({
             this.left_tree.model.loadFile(file);
             var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
             if (file.xtype == "Roo" ) { 
-                ctr.foreach( (w) => { ctr.remove(w) });
+                ctr.foreach( (w) => { ctr.remove(w); });
                 ctr.add(this.window_rooview.el);
                 this.window_rooview.loadFile(file);
                 
                 this.window_rooview.el.show_all();
             } else {
-                ctr.foreach( (w) => { ctr.remove(w) });
+                ctr.foreach( (w) => { ctr.remove(w); });
                 ctr.add(this.window_gladeview.el);
                 this.window_gladeview.loadFile(file);
                 this.window_gladeview.el.show_all();
