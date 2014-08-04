@@ -254,7 +254,7 @@ MainWindow=new XObject({
               if (this.left_tree.file.xtype == "Roo" ) {
                    this.window_rooview.requestRedraw();
                } else {
-                  this.window_gladeview.loadFile(this.left_tree.file);
+                  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
               }
         });
         
