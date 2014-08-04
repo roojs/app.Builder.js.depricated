@@ -167,7 +167,11 @@ public class JsRender.NodeToGlade : Object {
         }
 	public string packString()
 	{
-
+		var pack = @"$pad<packing>\n" +
+				@"$pad    <property name=\"expand\">False</property>\n" +
+				@"$pad    <property name=\"fill\">True</property>\n" +
+				@"$pad    <property name=\"position\">0</property>\n" +
+				@"$pad</packing>\n";
 
 	}
     
