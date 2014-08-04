@@ -279,12 +279,15 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
          this.projectsettings.buttonPressed.connect((btn) => {
-            if (btn == "save") {
-                 _this.window_rooview.view.renderJS(true);
-            }
-            if (btn == "apply") {
-                _this.window_rooview.view.renderJS(true);
-                return;
+             if (this.left_tree.file.xtype == "Roo" ) {
+             
+                if (btn == "save") {
+                     _this.window_rooview.view.renderJS(true);
+                }
+                if (btn == "apply") {
+                    _this.window_rooview.view.renderJS(true);
+                    return;
+                }
             }
             this.hideProjectEdit();
              
