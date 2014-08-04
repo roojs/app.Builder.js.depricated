@@ -80,11 +80,25 @@ public class JsRender.NodeToGlade : Object {
 	
     public string mungeNode()
 	{
-		var cls = this.node.item.xvala_cls;
+		var cls = this.node.item.xvala_cls.replace(".", "");
 		var id = this.node.uid();
 		var ret = @"<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
+		var props = Palate.factory("Gtk").getPropertiesFor(this.node.item.xvala_cls, "props");
+            
+            
 
+			var pviter = props.map_iterator();
+			while (pviter.next()) {
+
+				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
+				
+        		// skip items we have already handled..
+        		if  (!(citems.get(pviter.get_key()) == false)) {
+					//print("- skip already handled\n " );
+                    continue;
+                }
+			
 		// children..
 		
 
