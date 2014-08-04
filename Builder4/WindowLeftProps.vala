@@ -429,8 +429,9 @@ public class Xcls_LeftProps : Object
 		                this.valrender.el.has_entry = false;
 		                string[] opts =  { "true", "false" };
 		                this.valrender.setOptions(opts);
+				this.valrender.el.editable = true;
 		                this.valrender.el.has_entry = false;
-				this.valrender.el.editable = false;
+				
 				return;
 		            }
 	        
