@@ -150,9 +150,9 @@ public class JsRender.NodeToGlade : Object {
 	string toValaNS(Node node)
         {
             var ns = this.node.get("$ xns") ;
-            //if (ns == "GtkSource") {
-                //return "Gtk.Source.";
-            //}
+            if (ns == "Glade") {
+                return "Gladeui.";
+            }
             return ns + ".";
         }
 	public void  fillValaName(Node node) 
