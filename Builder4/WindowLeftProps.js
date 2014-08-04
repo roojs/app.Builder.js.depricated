@@ -363,7 +363,8 @@ WindowLeftProps=new XObject({
                     // at this point - work out the type...
                     // if its' a combo... then show the options..
                     this.valrender.el.has_entry = true;
-                    
+                    this.valrender.el.editable = true;
+                                    
                     print (type_ar[0].up());
                     if (type_ar.length > 1 && (
                             type_ar[0].up() == "BOOLEAN"
@@ -374,6 +375,7 @@ WindowLeftProps=new XObject({
                             this.valrender.el.has_entry = false;
                             string[] opts =  { "true", "false" };
                             this.valrender.setOptions(opts);
+                            this.valrender.el.has_entry = false;
                         }
                                           
                     
@@ -383,7 +385,7 @@ WindowLeftProps=new XObject({
                     
                     
                     
-                    this.valrender.el.editable = true;
+    
                     this.view.el.set_cursor_on_cell(
                         path,
                         this.valcol.el,
