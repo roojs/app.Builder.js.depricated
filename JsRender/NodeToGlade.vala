@@ -168,7 +168,8 @@ public class JsRender.NodeToGlade : Object {
 	public string packString()
 	{
 		var pk = this.node.get("* pack").split(",");
-
+		// pack is part of the parent element..
+		
 
 		
 		var pack = @"$pad<packing>\n" +
