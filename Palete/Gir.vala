@@ -91,8 +91,8 @@ namespace Palete {
 		public string[] inheritsToStringArray()
 		{
 			string[] ret = {};
-			for(var i =0;i< this.inherits.length(); i++) {
-				ret += this.inherits.nth_data(i);
+			for(var i =0;i< this.inherits.size; i++) {
+				ret += this.inherits.get(i);
 			}
 			return ret;
 
