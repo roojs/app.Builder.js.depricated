@@ -112,7 +112,7 @@ $pad</packing>\n";
 		// children..
 
 		if (!this.node.items.length) {
-			return ret + ~"$pad</object>" pack;
+			return ret + ~"$pad</object>" + pack;
 		}
 		
 		for (var i = 0; i < this.node.items.length; i++ ) {
