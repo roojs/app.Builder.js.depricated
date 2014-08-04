@@ -170,6 +170,12 @@ public class JsRender.Node : Object {
 			return k;
 		}
 		
+		var iter = this.props.map_iterator();
+		while (iter.next()) {
+			this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
+		}
+		
+		
 		return "";
 		
 	}
@@ -287,8 +293,8 @@ public class JsRender.Node : Object {
 			case "*args":
 			case ".ctor":
 			case "|init":
-			
 				return "* " + key.substring(1);
+				
 			case "pack":
 				return "* " + key;
 		}
