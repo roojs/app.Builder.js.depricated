@@ -50,6 +50,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
+    public Xcls_GladeView gladeview;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_Editor code_editor;
