@@ -46,9 +46,9 @@ namespace Palete {
 	public  string sig;
 
 	bool is_overlaid;
-        public GLib.ArrayList<GirObject> params;
-        public GLib.ArrayList<string> implements;
-	public GLib.ArrayList<string> inherits; // full list of all classes and interfaces...
+        public Gee.ArrayList<GirObject> params;
+        public Gee.ArrayList<string> implements;
+	public Gee.ArrayList<string> inherits; // full list of all classes and interfaces...
         public Gee.HashMap<string,GirObject> ctors;
         public Gee.HashMap<string,GirObject> methods;
         public Gee.HashMap<string,string>    includes;
@@ -72,11 +72,11 @@ namespace Palete {
 		
 		this.sig = "";
 		
-		this.implements = new GLib.List<string>();
-		this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
+		this.implements = new Gee.ArrayList<string>();
+		this.inherits  = new Gee.ArrayList<string>(); // list of all ancestors. (interfaces and parents)
 		this.includes   = new Gee.HashMap<string,string>();
 
-		this.params = new GLib.List<GirObject>();
+		this.params = new Gee.ArrayList<GirObject>();
 		this.ctors      = new Gee.HashMap<string,GirObject>();
 		this.methods    =new Gee.HashMap<string,GirObject>();
 
