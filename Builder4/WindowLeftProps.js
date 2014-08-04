@@ -12,6 +12,115 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
+    'bool:startEditingValue' : ( Gtk.TreePath path) {
+    
+        // ONLY return true if editing is allowed - eg. combo..
+        
+                print("start editing?\n");
+                if (!this.stop_editor()) {
+                    print("stop editor failed\n");
+                    return false;
+                }
+                
+                Gtk.TreeIter iter;
+    
+                var mod = this.model.el;
+                mod.get_iter (out iter, path);
+                 
+                /*
+                    m.set(iter, 
+                            0, "listener",
+                            1, miter.get_key(),
+                            2, "<b>" + miter.get_key() + "</b>",
+                            3, miter.get_value()
+                        ); 
+                 
+                */
+                GLib.Value gval;
+                mod.get_value(iter, 3 , out gval);
+                var val = (string)gval;
+            
+                mod.get_value(iter, 1 , out gval);
+                var key = (string)gval;
+                var type_ar = key.split(" ");
+                
+                
+                
+                mod.get_value(iter, 0 , out gval);
+                var type = (string)gval;
+                
+               
+                
+                var use_textarea = false;
+                
+                if (type == "listener") {
+                    use_textarea = true;
+                }
+                if (key.length > 0 && key[0] == '$') {
+                    use_textarea = true;
+                }
+                if (use_textarea) {
+                    print("Call show editor\n");
+                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                        this.view.el.get_selection().select_path(path);
+                        
+                        this.show_editor(file, node, type, key);
+                        
+                        return false;
+                    });
+                   
+                    
+                    return false;
+                }
+                // others... - fill in options for true/false?
+               print("turn on editing %s \n" , mod.get_path(iter).to_string());
+               
+                   print (type_ar[0].up());
+                    if (type_ar.length > 1 && (
+                            type_ar[0].up() == "BOOLEAN"
+                            ||
+                            type_ar[0].up() == "BOOL"                        
+                        )) {
+                            print("start editing try/false)???");
+                            this.valrender.el.has_entry = false;
+                            string[] opts =  { "true", "false" };
+                            this.valrender.setOptions(opts);
+                            
+                            this.valrender.el.has_entry = false;
+                            this.valrender.el.editable = true;
+                             this.allow_edit  = true;
+                            return true;
+                    }
+                                          
+                    
+               
+               
+               
+               GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                    
+                    // at this point - work out the type...
+                    // if its' a combo... then show the options..
+                    this.valrender.el.has_entry = true;
+                    
+                    this.valrender.el.editable = true;            
+                
+                    
+                    this.allow_edit  = true;
+                    
+                    
+                    
+                    
+    
+                    this.view.el.set_cursor_on_cell(
+                        path,
+                        this.valcol.el,
+                        this.valrender.el,
+                        true
+                    );
+                    return false;
+                });
+                return false;
+            },
     homogeneous : false,
     'string:keyFormat' : (string val, string type) {
         
@@ -300,115 +409,6 @@ WindowLeftProps=new XObject({
           
         
     },
-    'bool:startEditingValue' : ( Gtk.TreePath path) {
-    
-        // ONLY return true if editing is allowed - eg. combo..
-        
-                print("start editing?\n");
-                if (!this.stop_editor()) {
-                    print("stop editor failed\n");
-                    return false;
-                }
-                
-                Gtk.TreeIter iter;
-    
-                var mod = this.model.el;
-                mod.get_iter (out iter, path);
-                 
-                /*
-                    m.set(iter, 
-                            0, "listener",
-                            1, miter.get_key(),
-                            2, "<b>" + miter.get_key() + "</b>",
-                            3, miter.get_value()
-                        ); 
-                 
-                */
-                GLib.Value gval;
-                mod.get_value(iter, 3 , out gval);
-                var val = (string)gval;
-            
-                mod.get_value(iter, 1 , out gval);
-                var key = (string)gval;
-                var type_ar = key.split(" ");
-                
-                
-                
-                mod.get_value(iter, 0 , out gval);
-                var type = (string)gval;
-                
-               
-                
-                var use_textarea = false;
-                
-                if (type == "listener") {
-                    use_textarea = true;
-                }
-                if (key.length > 0 && key[0] == '$') {
-                    use_textarea = true;
-                }
-                if (use_textarea) {
-                    print("Call show editor\n");
-                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                        this.view.el.get_selection().select_path(path);
-                        
-                        this.show_editor(file, node, type, key);
-                        
-                        return false;
-                    });
-                   
-                    
-                    return false;
-                }
-                // others... - fill in options for true/false?
-               print("turn on editing %s \n" , mod.get_path(iter).to_string());
-               
-                   print (type_ar[0].up());
-                    if (type_ar.length > 1 && (
-                            type_ar[0].up() == "BOOLEAN"
-                            ||
-                            type_ar[0].up() == "BOOL"                        
-                        )) {
-                            print("start editing try/false)???");
-                            this.valrender.el.has_entry = false;
-                            string[] opts =  { "true", "false" };
-                            this.valrender.setOptions(opts);
-                            
-                            this.valrender.el.has_entry = false;
-                            this.valrender.el.editable = true;
-                           this.allow_edit  = true;
-                            return true;
-                    }
-                                          
-                    
-               
-               
-               
-               GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                    
-                    // at this point - work out the type...
-                    // if its' a combo... then show the options..
-                    this.valrender.el.has_entry = true;
-                    
-                    this.valrender.el.editable = true;            
-                
-                    
-                    this.allow_edit  = true;
-                    
-                    
-                    
-                    
-    
-                    this.view.el.set_cursor_on_cell(
-                        path,
-                        this.valcol.el,
-                        this.valrender.el,
-                        true
-                    );
-                    return false;
-                });
-                return false;
-            },
     'void:updateIter' : (Gtk.TreeIter iter,  string type, string key, string value) {
     
         print("update Iter %s, %s\n", key,value);
