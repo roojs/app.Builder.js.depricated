@@ -9,7 +9,9 @@
             ".ctor": "new Glade.DesignView(new Glade.Project())",
             "id": "GladeView",
             "xtype": "DesignView",
-            "|xns": "Glade"
+            "|xns": "Glade",
+            "": "",
+            "listeners": {}
         }
     ],
     "permname": "",
