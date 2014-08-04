@@ -173,7 +173,7 @@ public class JsRender.NodeToGlade : Object {
 		var pfqn  = p.fqn();
 		var p_parts =pfqn.split("."); 
 		var ns = p_parts[0];
-    		var gir =  JsRender.Gir.factory(ns);
+    		var gir =  Palate.Gir.factory(ns);
 		var cls = gir.classes.get(p_parts[1]);
 		var mdef = cls.methods.get(pk[0]);
 		if (mdef == null) {
