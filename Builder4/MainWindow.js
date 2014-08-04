@@ -251,7 +251,11 @@ MainWindow=new XObject({
             return ret;
         });
          this.left_props.changed.connect(() => {
-           this.window_rooview.requestRedraw();
+              if (this.left_tree.file.xtype == "Roo" ) {
+                   this.window_rooview.requestRedraw();
+               } else {
+                  this.window_rooview.loadFile(this.left_tree.file);
+              }
         });
         
     
