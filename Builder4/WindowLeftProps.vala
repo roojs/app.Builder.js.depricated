@@ -414,15 +414,16 @@ public class Xcls_LeftProps : Object
                     }
 
 			 // if its' a combo... then show the options..
-		        this.valrender.el.has_entry = true;
-		        this.valrender.el.editable = true;
-		         this.allow_edit  = true;               
+			this.valrender.el.has_entry = false;
+		                       
 		        print (type_ar[0].up());
-		        if (type_ar.length > 1 && (
+
+			if (type_ar.length > 1 && (
 		                type_ar[0].up() == "BOOLEAN"
 		                ||
 		                type_ar[0].up() == "BOOL"                        
 		            )) {
+				 this.allow_edit  = true;
 		                print("start editing try/false)???");
 		                this.valrender.el.has_entry = false;
 		                string[] opts =  { "true", "false" };
@@ -438,7 +439,9 @@ public class Xcls_LeftProps : Object
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                         
                         // at this point - work out the type...
-                                     
+                        this.valrender.el.has_entry = true;
+		        this.valrender.el.editable = true;
+		                     
                         
                         this.view.el.set_cursor_on_cell(
                             path,
