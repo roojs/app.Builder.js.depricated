@@ -128,9 +128,9 @@ public class JsRender.NodeToGlade : Object {
 		 
 
 	}
-	 string toValaNS(Node item)
+	string toValaNS()
         {
-            var ns = item.get("* xns") ;
+            var ns = thiss.node.get("* xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
@@ -141,7 +141,7 @@ public class JsRender.NodeToGlade : Object {
 	    if (this.node.xvala_cls.length < 1) {
 		    vcnt++;
 
-		    var cls = this.toValaNS(this.node) + item.get("xtype");
+		    var cls = this.toValaNS() + item.get("xtype");
 
 		    string id = this.node.get("id").length > 0 ? 
 				this.item.get("id") :  "%s%d".printf(this.item.get("xtype"), vcnt);
