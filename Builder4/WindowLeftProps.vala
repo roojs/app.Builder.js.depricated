@@ -416,7 +416,18 @@ public class Xcls_LeftProps : Object
                         
                         // at this point - work out the type...
                         // if its' a combo... then show the options..
+                        this.valrender.el.has_entry = true;
                         
+                        if (type_ar.length > 1 && (
+                                type_ar[0].up() == "BOOLEAN"
+                                ||
+                                type_ar[0].up() == "BOOL"                        
+                            ) {
+                                this.valrender.el.has_entry = false;
+                                string[] opts =  { "true", "false");
+                                this.valrender.setOptions(opts);
+                            }
+                                              
                         
                         
                         this.allow_edit  = true;
