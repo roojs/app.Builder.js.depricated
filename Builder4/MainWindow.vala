@@ -1005,9 +1005,7 @@ public class Xcls_MainWindow : Object
                 _this.rooview.el.set_size(alloc.width-50,
                         alloc.height);
                         
-                _this.gladeview.el.set_size(alloc.width-50,
-                        alloc.height);
-                        
+                         
                         
                 _this.clutterfiles.set_size(alloc.width-50,
                        alloc.height);
