@@ -209,7 +209,7 @@ public class JsRender.NodeToGlade : Object {
 		}
 		
 		var pack = @"$pad<packing>\n" +
-				string.joinv("\n", pbody) + 
+				string.joinv("", pbody) + 
 				@"$pad</packing>\n";
 		return pack;
 
