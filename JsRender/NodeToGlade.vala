@@ -171,8 +171,24 @@ public class JsRender.NodeToGlade : Object {
 		// pack is part of the parent element..
 		var p = node.parent;
 		var pfqn  = p.fqn();
+		var p_parts =pfqn.split("."); 
+		var ns = p_parts[0];
+    		var gir =  Gir.factory(ns);
+		var cls = gir.classes.get(
+			
+            //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
+        }
 
+		// does not handle implements...
+	public override GirObject? getClass(string ename)
+	{
+
+		var es = ename.split(".");
+		var gir = Gir.factory(es[0]);
 		
+		return gir.classes.get(es[1]);
+		
+	}
 
 		
 		var pack = @"$pad<packing>\n" +
