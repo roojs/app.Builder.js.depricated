@@ -671,7 +671,7 @@ WindowLeftProps=new XObject({
                                     return false;
                                 });
                                 
-                                             _this.before_edit();
+                                _this.before_edit();
                                   //  XObject.error("column is not value?");
                                 return false; // ignore.. - key click.. ??? should we do this??
                             }
