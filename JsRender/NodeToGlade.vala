@@ -194,15 +194,22 @@ public class JsRender.NodeToGlade : Object {
 		var pad = this.pad;
 		string[]  pbody  = {}; 
 		for (var i = 2; i < mdef.params.params.size; i++) {
-			pbody += @"$pad    <property name=\"expand\">False</property>\n" +
+			var poff = i - 1;
+			if (pk.length < poff) {
+				break;
+			}
+			
+			var key = mdef.params.params.get(i).name;
+			var val = pk[poff];
+			pbody += @"$pad    <property name=\"$key\">$val</property>\n";
 		
 		}
-
+		if (pbody.length < 1) {
+			return "";
+		}
 		
 		var pack = @"$pad<packing>\n" +
-				@"$pad    <property name=\"expand\">False</property>\n" +
-				@"$pad    <property name=\"fill\">True</property>\n" +
-				@"$pad    <property name=\"position\">0</property>\n" +
+				string.joinv("\n", pbody) + 
 				@"$pad</packing>\n";
 		return pack;
 
