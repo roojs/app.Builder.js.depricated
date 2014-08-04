@@ -143,23 +143,23 @@ public class JsRender.NodeToGlade : Object {
 
 		    var cls = this.toValaNS(node) + node.get("xtype");
 
-		    string id = this.node.get("id").length > 0 ? 
-				this.node.get("id") :  "%s%d".printf(this.node.get("xtype"), vcnt);
+		    string id = node.get("id").length > 0 ? 
+				node.get("id") :  "%s%d".printf(node.get("xtype"), vcnt);
 
 		    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
 		     
-		    this.node.xvala_cls = cls;
-		    this.node.xvala_xcls = "Xcls_" + id;
-		    this.node.xvala_id = this.node.get("id").length > 0  ? this.node.get("id") : "";
+		    node.xvala_cls = cls;
+		    node.xvala_xcls = "Xcls_" + id;
+		    node.xvala_id = node.get("id").length > 0  ? node.get("id") : "";
 	    }                                                     
             //this.vitems.append(item);  
             // loop children..
 			                                                       
-            if (this.node.items.size < 1) {
+            if (node.items.size < 1) {
                 return;
             }
-            for(var i =0;i<this.node.items.size;i++) {
-                this.fillValaName(this.node.items.get(i));
+            for(var i =0;i<node.items.size;i++) {
+                this.fillValaName(node.items.get(i));
             }
 			          
         }
