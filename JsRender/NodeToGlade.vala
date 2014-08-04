@@ -203,6 +203,7 @@ public class JsRender.NodeToGlade : Object {
 
 			default:
 				print ("unknown pack type: %s", pk[0]);
+				break;
 				
 		}
 			
