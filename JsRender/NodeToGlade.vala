@@ -261,7 +261,7 @@ public class JsRender.NodeToGlade : Object {
 		
 		}
 		if (pbody.length < 1) {
-			var generator = new Json.Generator ();
+			/*var generator = new Json.Generator ();
 			var n = new Json.Node(Json.NodeType.OBJECT);
 			n.set_object(mdef.toJSON());
 			generator.set_root(n);
@@ -269,6 +269,8 @@ public class JsRender.NodeToGlade : Object {
 			generator.pretty = true;
 			    
 			print(generator.to_data(null));
+			*/
+			print("skip - packing - no arguments (" + pk[0] + ")\n");
 			return "";
 		}
 		
