@@ -8,7 +8,8 @@
         {
             "listeners": {
                 "show": "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}",
-                "delete_event": "  (   event) => {\n    return false;\n}"
+                "delete_event": "  (   event) => {\n    return false;\n}",
+                "destroy": "function (self) {\n\n}"
             },
             ".Project.Project:project": "null",
             ".Xcls_ClutterFiles:clutterfiles": "null",
@@ -27,7 +28,6 @@
             "border_width": 0,
             "default_height": 500,
             "default_width": 800,
-            "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "MainWindow",
             "xtype": "Window",
             "|init": " this.state = \"files\";\n\t  \n    //this.el.show_all();\n    \n    ",

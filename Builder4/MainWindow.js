@@ -19,12 +19,14 @@ MainWindow=new XObject({
         },
         delete_event : (   event) => {
             return false;
+        },
+        destroy : function (self) {
+        
         }
     },
     border_width : 0,
     default_height : 500,
     default_width : 800,
-    destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
     init : this.state = "files";
     	  

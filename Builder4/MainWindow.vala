@@ -110,6 +110,9 @@ public class Xcls_MainWindow : Object
         this.el.delete_event.connect(   (   event) => {
             return false;
         } );
+        this.el.destroy.connect( function (self) {
+        
+        } );
     }
 
     // userdefined functions 
