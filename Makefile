@@ -29,7 +29,6 @@ BUILDER4=   Builder4/About.vala \
 		Builder4/EditProject.vala \
 		Builder4/Editor.vala \
 		Builder4/ProjectSettings.vala \
-		Builder4/MainWindow.vala \
 		Builder4/WindowRightPalete.vala \
 		Builder4/WindowLeftTree.vala \
 		Builder4/WindowRooView.vala \
@@ -39,6 +38,8 @@ BUILDER4=   Builder4/About.vala \
 		Builder4/WindowAddProp.vala \
 		Builder4/GladeView.vala \
 
+#		Builder4/MainWindow.vala \
+		
 
 # compile what... for testing 
 all:  builder4
