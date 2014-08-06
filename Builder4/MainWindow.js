@@ -169,7 +169,7 @@ MainWindow=new XObject({
         this.left_tree = new Xcls_WindowLeftTree();
         this.left_tree.ref();
         this.tree.el.pack_start(this.left_tree.el,true, true,0);
-        
+        this.left_tree.el.show_all();
        
         this.left_tree.before_node_change.connect(() => {
             if (this.state != "codeedit") {
@@ -182,6 +182,7 @@ MainWindow=new XObject({
             return false;
         
         });
+        
         this.left_tree.node_selected.connect((sel) => {
             
             print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
@@ -240,7 +241,8 @@ MainWindow=new XObject({
         this.left_props =new Xcls_LeftProps();
         this.left_props.ref();
         this.props.el.pack_start(this.left_props.el,true, true,0);
-    
+        this.left_props.el.show_all();
+        
         this.left_props.show_editor.connect( (file, node, type,  key) => {
             this.showCodeEdit(node, type,  key);
         });
@@ -270,20 +272,20 @@ MainWindow=new XObject({
         // left projects..
          this.left_projects = new Xcls_WindowLeftProjects();
          this.left_projects.ref();
-        this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
-       
-        this.left_projects.project_selected.connect((proj) => {
+         this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
+         this.left_projects.el.show_all();
+         this.left_projects.project_selected.connect((proj) => {
             proj.scanDirs();
             _this.clutterfiles.loadProject(proj);
         
-        });
+         });
         
        
         // project edit..
         this.projectsettings  =new Xcls_ProjectSettings();
         this.projectsettings.ref();  /// really?
         ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
-        //this.projectsettings.el.show_all();
+        this.projectsettings.el.show_all();
     
         var stage = _this.projecteditview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
