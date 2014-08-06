@@ -21,7 +21,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-     : "",
     border_width : 0,
     default_height : 500,
     default_width : 800,
