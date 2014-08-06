@@ -105,7 +105,7 @@ public class Xcls_MainWindow : Object
         this.el.show.connect(   ( ) => {
             // hide the file editing..
            
-            this.hideViewEditing();
+            //this.hideViewEditing();
         } );
         this.el.delete_event.connect(   (   event) => {
             return false;

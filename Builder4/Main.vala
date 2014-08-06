@@ -25,6 +25,7 @@ int main (string[] args) {
 	w.el.show_all();
 	// it looks like showall after children causes segfault on ubuntu 14.4
 	w.initChildren();
+	w.hideViewEditing();
 	Gtk.main();
     
 	

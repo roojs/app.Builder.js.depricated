@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "show": "  ( ) => {\n    // hide the file editing..\n   \n    this.hideViewEditing();\n}",
+                "show": "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
             ".Project.Project:project": "null",

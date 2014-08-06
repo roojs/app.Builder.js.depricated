@@ -15,7 +15,7 @@ MainWindow=new XObject({
         show : ( ) => {
             // hide the file editing..
            
-            this.hideViewEditing();
+            //this.hideViewEditing();
         },
         delete_event : (   event) => {
             return false;
