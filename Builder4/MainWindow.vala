@@ -110,8 +110,7 @@ public class Xcls_MainWindow : Object
         this.el.delete_event.connect(   (   event) => {
             return false;
         } );
-        this.el.destroy.connect( => ()
-        {
+        this.el.destroy.connect( () =>  {
          Gtk.main_quit();
         } );
     }

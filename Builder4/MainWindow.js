@@ -20,8 +20,7 @@ MainWindow=new XObject({
         delete_event : (   event) => {
             return false;
         },
-        destroy : => ()
-        {
+        destroy : () =>  {
          Gtk.main_quit();
         }
     },
