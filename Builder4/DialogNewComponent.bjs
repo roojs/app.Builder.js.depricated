@@ -48,9 +48,9 @@
                                 },
                                 {
                                     "id": "name",
-                                    "pack": "add",
+                                    "pack": "attach_defaults,1,2,0,1",
                                     "xtype": "Entry",
-                                    "|visible": true,
+                                    "|visible": "true",
                                     "|xns": "Gtk"
                                 },
                                 {
