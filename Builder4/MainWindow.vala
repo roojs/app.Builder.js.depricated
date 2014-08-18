@@ -2040,8 +2040,6 @@ public class Xcls_MainWindow : Object
             this.el.x_expand = false;
             this.el.y_align = Clutter.ActorAlign.CENTER;
             this.el.y_expand = false;
-
-            // listeners 
         }
 
         // userdefined functions 
