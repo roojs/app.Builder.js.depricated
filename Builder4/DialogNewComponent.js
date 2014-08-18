@@ -166,7 +166,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Entry,
                             id : "title",
-                            pack : "add",
+                            pack : "attach_defaults,1,2,1,2",
                             visible : true
                         },
                         {

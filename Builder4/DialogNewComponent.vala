@@ -236,7 +236,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.attach_defaults (  child_2.el , 0,1,1,2 );
             var child_3 = new Xcls_title( _this );
             child_3.ref();
-            this.el.add (  child_3.el  );
+            this.el.attach_defaults (  child_3.el , 1,2,1,2 );
             var child_4 = new Xcls_Label8( _this );
             child_4.ref();
             this.el.add (  child_4.el  );
