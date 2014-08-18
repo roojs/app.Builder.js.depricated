@@ -61,7 +61,7 @@ namespace JsRender {
 		    try {
 		        Regex regex = new Regex ("\\.(bjs|js)$");
 
-		        this.name = regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "");
+		        this.name = ar.length > 0 ? regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "") : "";
 		    } catch (Error e) {
 		        this.name = "???";
 		    }
