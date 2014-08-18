@@ -300,7 +300,7 @@
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
                                                                 "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n    \n    \n    return false;    \n\n\n}"
                                                             },
-                                                            "id": "addfilebutton",
+                                                            "id": "addprojectbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
