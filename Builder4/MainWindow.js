@@ -111,6 +111,7 @@ MainWindow=new XObject({
            
           _this.projectbutton.el.show();
          _this.projecteditbutton.el.show();
+    
          
          
         //this.rooview.el.hide();

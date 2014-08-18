@@ -195,6 +195,7 @@ public class Xcls_MainWindow : Object
                
               _this.projectbutton.el.show();
              _this.projecteditbutton.el.show();
+        
              
              
             //this.rooview.el.hide();
