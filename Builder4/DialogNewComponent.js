@@ -218,7 +218,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Label,
                             label : "Order (for tabs)",
-                            pack : "add",
+                            pack : "attach_defaults,0,1,5,6",
                             x_options : 4,
                             xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
