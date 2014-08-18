@@ -239,7 +239,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.attach_defaults (  child_3.el , 1,2,1,2 );
             var child_4 = new Xcls_Label8( _this );
             child_4.ref();
-            this.el.add (  child_4.el  );
+            this.el.attach_defaults (  child_4.el , 0.1,2,3 );
             var child_5 = new Xcls_region( _this );
             child_5.ref();
             this.el.add (  child_5.el  );
