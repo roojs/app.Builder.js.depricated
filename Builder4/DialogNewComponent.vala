@@ -168,7 +168,14 @@ public class Xcls_DialogNewComponent : Object
     }
 
     // userdefined functions 
-    public void updateFileFromEntry
+    public void updateFileFromEntry() {
+        
+                _this.file.title = _this.title.el.get_text();
+                _this.file.region = _this.region.el.get_text();            
+                _this.file.parent = _this.parent.el.get_text();                        
+                _this.file.permname = _this.permname.el.get_text();                                    
+                _this.file.modOrder = _this.modOrder.el.get_text();                                                
+        }    
     public void show(JsRender.JsRender c) 
         {
             this.project = c.project;

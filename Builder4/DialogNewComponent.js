@@ -110,6 +110,14 @@ DialogNewComponent=new XObject({
           
         }
     },
+    'void:updateFileFromEntry' : () {
+    
+            _this.file.title = _this.title.el.get_text();
+            _this.file.region = _this.region.el.get_text();            
+            _this.file.parent = _this.parent.el.get_text();                        
+            _this.file.permname = _this.permname.el.get_text();                                    
+            _this.file.modOrder = _this.modOrder.el.get_text();                                                
+    },
     default_height : 200,
     default_width : 500,
     id : "DialogNewComponent",
