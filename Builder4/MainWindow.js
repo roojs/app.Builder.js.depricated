@@ -141,6 +141,11 @@ MainWindow=new XObject({
                   this.window_gladeview.createThumb();
               }
           }
+          
+        _this.addprojectbutton.el.show();   
+        _this.addfilebutton.el.show();       
+       
+          
           _this.projecteditbutton.el.hide();
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
