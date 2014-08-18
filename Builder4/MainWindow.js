@@ -145,7 +145,9 @@ MainWindow=new XObject({
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
           _this.addlistenerbutton.el.hide();            
-          
+        // show the add file button..
+        
+              
           
          this.editpane.el.hide();
         //this.rooview.el.hide();
