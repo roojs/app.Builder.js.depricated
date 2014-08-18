@@ -52,47 +52,38 @@ DialogNewComponent=new XObject({
         
                 if (!isNew) {
                      this.updateFileFromEntry();
-                    _this.file.title = _this.title.el.get_text();
-                    _this.file.region = _this.region.el.get_text();            
-                    _this.file.parent = _this.parent.el.get_text();                        
-                    _this.file.permname = _this.permname.el.get_text();                                    
-                    _this.file.modOrder = _this.modOrder.el.get_text();                                                
+                                                                
                 
                     _this.file.save();
                     this.el.hide();
                     return;
                 }
                 var fn = this.name.el.get_text();
+               var dir = _this.project.firstPath();
                
-               var f =  JsRender.JsRender.factory(
-                        _this.file.project.xtype,  
-                        _this.file.project, 
-                        fn);
-        
-                this.updateFileFromEntry();
-                
-        	var dir = _this.project.firstPath();
-        	//FIXME...
-                //for (var i in this.project.paths) {
-         	//	dir = i;
-        	//	break;
-        	//}
-        
-         
-                
-                // what about .js ?
-                if (GLib.FileUtils.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
+                if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
                     return;
                 }
+               
+               var f =  JsRender.JsRender.factory(
+                        _this.file.project.xtype,  
+                        _this.file.project, 
+                        dir + "/" + fn + ".bjs");
+        
+                this.updateFileFromEntry();
+                
+        	 
+                // what about .js ?
+               
                 this.el.hide();
                 
                 
                 //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                  
-                var nf = _this.project.create(dir + "/" + _this.file.name + ".bjs");
+                //var nf = _this.project.create(dir + "/" + _this.file.name + ".bjs");
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
