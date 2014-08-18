@@ -1238,8 +1238,8 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            init : this.el.set_size(50,50);,
                                                             pack : "add_child",
+                                                            init : this.el.set_size(50,50);,
                                                             line_alignment : Pango.Alignment.CENTER,
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : false,
