@@ -1239,7 +1239,7 @@ MainWindow=new XObject({
                                                         {
                                                             xtype: Clutter.Text,
                                                             pack : "add_child",
-                                                            init : this.el.set_size(50,50);,
+                                                            init : this.el.set_size(50.0f,50.0f);,
                                                             line_alignment : Pango.Alignment.CENTER,
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : false,
@@ -1272,13 +1272,13 @@ MainWindow=new XObject({
                                                     },
                                                     id : "addfilebutton",
                                                     pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
+                                                    init : this.el.set_size(50.0f,50.0f);,
                                                     reactive : true,
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            init : this.el.set_size(50,50);,
                                                             pack : "add_child",
+                                                            init : this.el.set_size(50.0f,50.0f);,
                                                             line_alignment : Pango.Alignment.CENTER,
                                                             x_align : Clutter.ActorAlign.CENTER,
                                                             x_expand : false,
