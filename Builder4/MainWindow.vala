@@ -2012,7 +2012,7 @@ public class Xcls_MainWindow : Object
                     return false;
                 }
                 
-                var f = JsRender.factory(_this.project.xtype,  _this.project, "");
+                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
                 Xcls_DialogNewComponent.singleton().show(f);
                 
                 return false;    
