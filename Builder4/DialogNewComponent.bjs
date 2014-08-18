@@ -107,12 +107,12 @@
                                 },
                                 {
                                     "label": "Permission Name",
-                                    "pack": "add",
+                                    "pack": "attach_defaults,0,1,4,5",
                                     "x_options": 4,
                                     "xalign": 0.9,
                                     "xtype": "Label",
                                     "|justify": "Gtk.Justification.RIGHT",
-                                    "|visible": true,
+                                    "|visible": "true",
                                     "|xns": "Gtk"
                                 },
                                 {
