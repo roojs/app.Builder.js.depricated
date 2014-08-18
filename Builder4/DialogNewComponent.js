@@ -73,6 +73,9 @@ DialogNewComponent=new XObject({
                         _this.file.project, 
                         dir + "/" + fn + ".bjs");
         
+                _this.file = f;
+                
+                
                 this.updateFileFromEntry();
                 
         	 
@@ -87,7 +90,7 @@ DialogNewComponent=new XObject({
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
-                _this.success(_this.project, nf);
+                _this.success(_this.project, _this.file);
                 /*
         
                 -- fixme -- needs to be a signal..
