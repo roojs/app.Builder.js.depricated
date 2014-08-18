@@ -72,7 +72,7 @@
                                 },
                                 {
                                     "label": "Region",
-                                    "pack": "attach_defaults,0.1,2,3",
+                                    "pack": "attach_defaults,0,1,2,3",
                                     "tooltip_text": "center, north, south, east, west",
                                     "x_options": 4,
                                     "xalign": 0.9,
@@ -83,9 +83,9 @@
                                 },
                                 {
                                     "id": "region",
-                                    "pack": "add",
+                                    "pack": "attach_defaults,1,2,2,3",
                                     "xtype": "Entry",
-                                    "|visible": true,
+                                    "|visible": "true",
                                     "|xns": "Gtk"
                                 },
                                 {

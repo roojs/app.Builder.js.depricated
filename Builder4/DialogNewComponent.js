@@ -172,7 +172,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Label,
                             label : "Region",
-                            pack : "attach_defaults,0.1,2,3",
+                            pack : "attach_defaults,0,1,2,3",
                             tooltip_text : "center, north, south, east, west",
                             x_options : 4,
                             xalign : 0.9,
@@ -182,7 +182,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Entry,
                             id : "region",
-                            pack : "add",
+                            pack : "attach_defaults,1,2,2,3",
                             visible : true
                         },
                         {
