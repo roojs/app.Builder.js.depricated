@@ -308,7 +308,7 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    "xinit": "this.el.set_size(50,50);",
+                                                                    "|init": "this.el.set_size(50,50);",
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"New\\nProject\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
