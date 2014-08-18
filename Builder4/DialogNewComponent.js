@@ -34,26 +34,43 @@ DialogNewComponent=new XObject({
                 
                 var isNew = _this.file.name.length  > 0 ? false : true;
                 
-                if (_this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
+                if (!isNew && this.file.name != _this.name.el.get_text()) {
                     StandardErrorDialog.show(
                         "Sorry changing names does not work yet. "
                     );
                      
                     return;
                 }
-        
+                
+                 
+                
+              
                 // FIXME - this may be more complicated...
                 //for (var i in this.def) {
                 //    this.file[i] =  this.get(i).el.get_text();
                 //}
         
                 if (!isNew) {
+                
+                    _this.file.title = _this.title.el.get_text();
+                    _this.file.region = _this.region.el.get_text();            
+                    _this.file.parent = _this.parent.el.get_text();                        
+                    _this.file.permname = _this.permname.el.get_text();                                    
+                    _this.file.modOrder = _this.modOrder.el.get_text();                                                
+                
                     _this.file.save();
                     this.el.hide();
                     return;
                 }
+                var fn = this.name.el.get_text();
+               
+               var f =  JsRender.JsRender.factory(
+                        _this.file.project.xtype,  
+                        _this.file.project, 
+                        fn);
         
-            
+                this.updateFileFromEntry();
+                
         	var dir = _this.project.firstPath();
         	//FIXME...
                 //for (var i in this.project.paths) {
