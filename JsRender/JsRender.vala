@@ -70,6 +70,8 @@ namespace JsRender {
 		   this.doubleStringProps = new Gee.ArrayList<string>();
 		    
 		}
+		// not sure why xt is needed... -> project contains xtype..
+		
 		public static JsRender factory(string xt, Project.Project project, string path)
 		{
 	 
