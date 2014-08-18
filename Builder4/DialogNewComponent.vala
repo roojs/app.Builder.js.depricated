@@ -260,7 +260,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.attach_defaults (  child_10.el , 0,1,5,6 );
             var child_11 = new Xcls_modOrder( _this );
             child_11.ref();
-            this.el.add (  child_11.el  );
+            this.el.attach_defaults (  child_11.el , 1,2,5,6 );
         }
 
         // userdefined functions 

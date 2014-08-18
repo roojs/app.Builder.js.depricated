@@ -134,9 +134,9 @@
                                 },
                                 {
                                     "id": "modOrder",
-                                    "pack": "add",
+                                    "pack": "attach_defaults,1,2,5,6",
                                     "xtype": "Entry",
-                                    "|visible": true,
+                                    "|visible": "true",
                                     "|xns": "Gtk"
                                 }
                             ]

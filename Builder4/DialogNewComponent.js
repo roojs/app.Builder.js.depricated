@@ -227,7 +227,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Entry,
                             id : "modOrder",
-                            pack : "add",
+                            pack : "attach_defaults,1,2,5,6",
                             visible : true
                         }
                     ]
