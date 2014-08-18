@@ -1912,7 +1912,7 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
+            this.el.set_size(50.0f,50.0f);
 
             // listeners 
             this.el.enter_event.connect( (  event)  => {
