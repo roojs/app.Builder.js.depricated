@@ -334,7 +334,7 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nListener\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nFile\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
                                                                     "|line_alignment": "Pango.Alignment.CENTER",

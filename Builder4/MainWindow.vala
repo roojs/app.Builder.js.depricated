@@ -2022,7 +2022,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text31(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
