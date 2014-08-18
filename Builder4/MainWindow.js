@@ -1262,6 +1262,10 @@ MainWindow=new XObject({
                                                         button_press_event : ( ) => {
                                                           
                                                             // create a new file in project..
+                                                            if (_this.project == null) {
+                                                                return false;
+                                                            }
+                                                            
                                                             var f = JsRender.factory(_this.project.xtype,  _this.project, "");
                                                             Xcls_DialogNewComponent.singleton().show(f);
                                                             
