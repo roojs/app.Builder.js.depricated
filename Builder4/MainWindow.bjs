@@ -325,7 +325,7 @@
                                                             "listeners": {
                                                                 "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n    \n    \n    return false;    \n\n\n}"
+                                                                "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    var f = JsRender.factory(project.xtype,  project, \"\");\n    Xcls_DialogNewComponent.singleton().show(f);\n    \n    return false;    \n\n\n}"
                                                             },
                                                             "id": "addfilebutton",
                                                             "pack": "add_child",
