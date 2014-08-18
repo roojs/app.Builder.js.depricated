@@ -730,11 +730,14 @@ public class Xcls_MainWindow : Object
           //   this.rooview.el.show();
              this.left_projects.el.hide();
             
-               _this.projecteditbutton.el.show();
-              _this.objectshowbutton.el.show();
-              _this.addpropbutton.el.show();      
-              _this.addlistenerbutton.el.show();   
-              
+            _this.addprojectbutton.el.hide();   
+            _this.addfilebutton.el.hide();       
+            
+           _this.projecteditbutton.el.show();
+          _this.objectshowbutton.el.show();
+          _this.addpropbutton.el.show();      
+          _this.addlistenerbutton.el.show();   
+          
               
             var el = _this.rooview.el;
                 el.save_easing_state();
