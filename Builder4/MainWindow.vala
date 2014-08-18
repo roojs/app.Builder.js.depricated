@@ -2008,7 +2008,7 @@ public class Xcls_MainWindow : Object
             this.el.button_press_event.connect(   ( ) => {
               
                 // create a new file in project..
-                var f = JsRender.factory(project.xtype,  project, "");
+                var f = JsRender.factory(_this.project.xtype,  _this.project, "");
                 Xcls_DialogNewComponent.singleton().show(f);
                 
                 return false;    
