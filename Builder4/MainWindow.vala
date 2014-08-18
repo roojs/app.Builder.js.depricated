@@ -48,6 +48,7 @@ public class Xcls_MainWindow : Object
     public Xcls_objectshowbutton objectshowbutton;
     public Xcls_addpropbutton addpropbutton;
     public Xcls_addlistenerbutton addlistenerbutton;
+    public Xcls_addlistenerbutton addlistenerbutton;
 
         // my vars
     public Project.Project project;
@@ -1312,6 +1313,9 @@ public class Xcls_MainWindow : Object
             var child_5 = new Xcls_addlistenerbutton( _this );
             child_5.ref();
             this.el.add_child (  child_5.el  );
+            var child_6 = new Xcls_addlistenerbutton( _this );
+            child_6.ref();
+            this.el.add_child (  child_6.el  );
 
             // init method 
             {
@@ -1854,6 +1858,109 @@ public class Xcls_MainWindow : Object
 
             // ctor 
         public Xcls_Text27(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
+            this.el.line_alignment = Pango.Alignment.CENTER;
+            this.el.x_align = Clutter.ActorAlign.CENTER;
+            this.el.x_expand = false;
+            this.el.y_align = Clutter.ActorAlign.CENTER;
+            this.el.y_expand = false;
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_addlistenerbutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_addlistenerbutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.addlistenerbutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            this.el.reactive = true;
+            var child_0 = new Xcls_Text29( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+            this.el.set_size(50,50);
+
+            // listeners 
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            } );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            } );
+            this.el.button_press_event.connect(   ( ) => {
+                
+                
+                
+                switch (_this.state) {
+                    case "edit":
+                        _this.showAddListener();
+                        break;
+                        
+                   
+                    case "addlistener":
+                        _this.hideAddListener();
+                        break;
+            
+                        
+                    case "addprop":
+                        _this.hideAddProp();
+                        _this.showAddListener();
+                        break;
+                     case "object":
+                        _this.hideObject();
+                        _this.showAddListener();
+                        break;
+                
+                      default:
+                        print("unhandled add listener from %s\n",_this.state);
+            
+                        break;
+                        
+                }
+                return false;    
+            
+            
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text29 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text29(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
