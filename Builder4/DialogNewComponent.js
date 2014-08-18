@@ -145,7 +145,6 @@ DialogNewComponent=new XObject({
         
         
     },
-     : "",
     items : [
         {
             xtype: Gtk.VBox,

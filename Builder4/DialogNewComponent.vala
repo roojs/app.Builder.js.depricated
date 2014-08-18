@@ -168,6 +168,7 @@ public class Xcls_DialogNewComponent : Object
     }
 
     // userdefined functions 
+    public void updateFileFromEntry
     public void show(JsRender.JsRender c) 
         {
             this.project = c.project;
