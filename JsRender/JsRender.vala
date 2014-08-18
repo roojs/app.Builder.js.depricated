@@ -56,6 +56,9 @@ namespace JsRender {
 		    this.tree = null;
 		    this.title = "";
 		    this.region = "";
+		    this.permname = "";
+		    this.modOrder = "";
+			
 		    // should use basename reallly...
 			
 		    var ar = this.path.split("/");
