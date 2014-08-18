@@ -107,7 +107,7 @@ public class Xcls_DialogNewComponent : Object
                 //}
         
                 if (!isNew) {
-                
+                     this.updateFileFromEntry();
                     _this.file.title = _this.title.el.get_text();
                     _this.file.region = _this.region.el.get_text();            
                     _this.file.parent = _this.parent.el.get_text();                        
