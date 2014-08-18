@@ -26,7 +26,7 @@
             "items": [
                 {
                     "xtype": "VBox",
-                    "|pack": "get_content_area().add\n\n",
+                    "|pack": "get_content_area().add",
                     "|xns": "Gtk",
                     "items": [
                         {

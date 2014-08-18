@@ -58,9 +58,7 @@ public class Xcls_DialogNewComponent : Object
         this.el.title = "New Component";
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
-        this.el.get_content_area().add
-
- (  child_0.el  );
+        this.el.get_content_area().add (  child_0.el  );
         var child_1 = new Xcls_Button16( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
