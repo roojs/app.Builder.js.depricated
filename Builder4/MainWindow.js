@@ -142,6 +142,11 @@ MainWindow=new XObject({
               }
           }
           _this.projecteditbutton.el.hide();
+          _this.objectshowbutton.el.hide();
+          _this.addpropbutton.el.hide();      
+          _this.addlistenerbutton.el.hide();            
+          
+          
          this.editpane.el.hide();
         //this.rooview.el.hide();
          this.left_projects.el.show();
