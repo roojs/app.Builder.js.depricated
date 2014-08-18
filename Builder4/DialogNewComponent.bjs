@@ -25,9 +25,9 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "|xns": "Gtk",
                     "xtype": "VBox",
-                    "|pack": "function(p,e) {\n                    p.el.get_content_area().add(e.el)\n                }\n",
+                    "|pack": "get_content_area().add\n\n",
+                    "|xns": "Gtk",
                     "items": [
                         {
                             "n_columns": 2,
