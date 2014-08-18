@@ -143,7 +143,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Label,
                             label : "Component Name",
-                            pack : "add",
+                            pack : "attach_Defaults,0,0,0,0)",
                             x_options : 4,
                             xalign : 0.9,
                             justify : Gtk.Justification.RIGHT
