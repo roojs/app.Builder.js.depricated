@@ -17,11 +17,18 @@ static int main (string[] args) {
 
 public static Xcls_DialogNewComponent  DialogNewComponent;
 
-public class Xcls_DialogNewComponent
+public class Xcls_DialogNewComponent : Object 
 {
     public Gtk.Dialog el;
-    private static Xcls_DialogNewComponent  _this;
+    private Xcls_DialogNewComponent  _this;
 
+    public static Xcls_DialogNewComponent singleton()
+    {
+        if (DialogNewComponent == null) {
+            DialogNewComponent= new Xcls_DialogNewComponent();
+        }
+        return DialogNewComponent;
+    }
     public Xcls_name name;
     public Xcls_title title;
     public Xcls_region region;
@@ -37,11 +44,11 @@ public class Xcls_DialogNewComponent
         // ctor 
     public Xcls_DialogNewComponent()
     {
-        this.el = new Gtk.Dialog();
         _this = this;
-        DialogNewComponent = this;
+        this.el = new Gtk.Dialog();
 
         // my vars
+        this.file = null;
 
         // set gobject values
         this.el.default_height = 200;
@@ -49,11 +56,17 @@ public class Xcls_DialogNewComponent
         this.el.deletable = false;
         this.el.modal = true;
         this.el.title = "New Component";
-        var child_0 = new Xcls_VBox2();
-        this.el.add (  child_0.el  );
-        var child_1 = new Xcls_Button16();
+        var child_0 = new Xcls_VBox2( _this );
+        child_0.ref();
+        this.el.function(p (  child_0.el , e) {
+                    p.el.get_content_area().add(e.el)
+                }
+ );
+        var child_1 = new Xcls_Button16( _this );
+        child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button17();
+        var child_2 = new Xcls_Button17( _this );
+        child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
         // listeners 
@@ -141,28 +154,6 @@ public class Xcls_DialogNewComponent
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip .JsRender.JsRender:file - already used 
-
-    // skip .Project.Project:project - already used 
-
-    // skip .signal:void:success - already used 
-
-    // skip default_height - already used 
-
-    // skip default_width - already used 
-
-    // skip id - not pipe 
-
-    // skip title - already used 
-
-    // skip xtype - not pipe 
-
-    // skip |deletable - already used 
-
-    // skip |modal - already used 
     public void show(JsRender.JsRender c) 
         {
             this.project = c.project;
@@ -194,119 +185,103 @@ public class Xcls_DialogNewComponent
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
-    public class Xcls_VBox2
+    public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_VBox2()
+        public Xcls_VBox2(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Table3();
+            var child_0 = new Xcls_Table3( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip |pack - already used 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Table3
+    public class Xcls_Table3 : Object 
     {
         public Gtk.Table el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Table3()
+        public Xcls_Table3(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Table( 3, 2, false );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label4();
+            var child_0 = new Xcls_Label4( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_name();
+            var child_1 = new Xcls_name( _this );
+            child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_Label6();
+            var child_2 = new Xcls_Label6( _this );
+            child_2.ref();
             this.el.add (  child_2.el  );
-            var child_3 = new Xcls_title();
+            var child_3 = new Xcls_title( _this );
+            child_3.ref();
             this.el.add (  child_3.el  );
-            var child_4 = new Xcls_Label8();
+            var child_4 = new Xcls_Label8( _this );
+            child_4.ref();
             this.el.add (  child_4.el  );
-            var child_5 = new Xcls_region();
+            var child_5 = new Xcls_region( _this );
+            child_5.ref();
             this.el.add (  child_5.el  );
-            var child_6 = new Xcls_Label10();
+            var child_6 = new Xcls_Label10( _this );
+            child_6.ref();
             this.el.add (  child_6.el  );
-            var child_7 = new Xcls_parent();
+            var child_7 = new Xcls_parent( _this );
+            child_7.ref();
             this.el.add (  child_7.el  );
-            var child_8 = new Xcls_Label12();
+            var child_8 = new Xcls_Label12( _this );
+            child_8.ref();
             this.el.add (  child_8.el  );
-            var child_9 = new Xcls_permname();
+            var child_9 = new Xcls_permname( _this );
+            child_9.ref();
             this.el.add (  child_9.el  );
-            var child_10 = new Xcls_Label14();
+            var child_10 = new Xcls_Label14( _this );
+            child_10.ref();
             this.el.add (  child_10.el  );
-            var child_11 = new Xcls_modOrder();
+            var child_11 = new Xcls_modOrder( _this );
+            child_11.ref();
             this.el.add (  child_11.el  );
         }
 
         // userdefined functions 
 
-        // skip n_columns - already used 
-
-        // skip n_rows - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |homogeneous - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label4
+    public class Xcls_Label4 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label4()
+        public Xcls_Label4(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Component Name" );
 
             // my vars
@@ -318,37 +293,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_name
+    public class Xcls_name : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_name()
+        public Xcls_name(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.name = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -358,31 +318,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label6
+    public class Xcls_Label6 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label6()
+        public Xcls_Label6(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Title" );
 
             // my vars
@@ -395,39 +344,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_title
+    public class Xcls_title : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_title()
+        public Xcls_title(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.title = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -437,31 +369,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label8
+    public class Xcls_Label8 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label8()
+        public Xcls_Label8(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Region" );
 
             // my vars
@@ -475,41 +396,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip tooltip_text - already used 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_region
+    public class Xcls_region : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_region()
+        public Xcls_region(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.region = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -519,31 +421,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label10
+    public class Xcls_Label10 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label10()
+        public Xcls_Label10(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Parent Name" );
 
             // my vars
@@ -556,39 +447,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_parent
+    public class Xcls_parent : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_parent()
+        public Xcls_parent(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.parent = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -598,31 +472,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label12
+    public class Xcls_Label12 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label12()
+        public Xcls_Label12(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Permission Name" );
 
             // my vars
@@ -635,39 +498,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_permname
+    public class Xcls_permname : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_permname()
+        public Xcls_permname(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.permname = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -677,31 +523,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Label14
+    public class Xcls_Label14 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label14()
+        public Xcls_Label14(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "Order (for tabs)" );
 
             // my vars
@@ -714,39 +549,22 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip x_options - not pipe 
-
-        // skip xalign - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |justify - already used 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_modOrder
+    public class Xcls_modOrder : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_modOrder()
+        public Xcls_modOrder(Xcls_DialogNewComponent _owner )
         {
-            this.el = new Gtk.Entry();
+            _this = _owner;
             _this.modOrder = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -756,31 +574,20 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |visible - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Button16
+    public class Xcls_Button16 : Object 
     {
         public Gtk.Button el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button16()
+        public Xcls_Button16(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Button();
 
             // my vars
@@ -792,28 +599,19 @@ public class Xcls_DialogNewComponent
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
-    public class Xcls_Button17
+    public class Xcls_Button17 : Object 
     {
         public Gtk.Button el;
+        private Xcls_DialogNewComponent  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button17()
+        public Xcls_Button17(Xcls_DialogNewComponent _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Button();
 
             // my vars
@@ -825,17 +623,5 @@ public class Xcls_DialogNewComponent
         // userdefined functions 
 
         // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
