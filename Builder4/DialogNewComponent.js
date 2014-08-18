@@ -188,7 +188,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Label,
                             label : "Parent Name",
-                            pack : "add",
+                            pack : "attach_defaults,0,1,3,4",
                             x_options : 4,
                             xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
@@ -197,7 +197,7 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Entry,
                             id : "parent",
-                            pack : "add",
+                            pack : "attach_defaults,1,2,3,4",
                             visible : true
                         },
                         {
