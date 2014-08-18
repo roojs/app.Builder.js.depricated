@@ -342,7 +342,9 @@
                                                                     "|x_expand": "false",
                                                                     "|xns": "Clutter",
                                                                     "|y_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|y_expand": "false"
+                                                                    "|y_expand": "false",
+                                                                    "": "",
+                                                                    "listeners": {}
                                                                 }
                                                             ]
                                                         }
