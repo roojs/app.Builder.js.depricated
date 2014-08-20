@@ -48,15 +48,12 @@ public class Xcls_ProjectSettings : Object
         var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,false,0 );
-        var child_1 = new Xcls_HBox6( _this );
+        var child_1 = new Xcls_Label6( _this );
         child_1.ref();
         this.el.pack_start (  child_1.el , false,false,0 );
-        var child_2 = new Xcls_Label8( _this );
+        var child_2 = new Xcls_ScrolledWindow7( _this );
         child_2.ref();
-        this.el.pack_start (  child_2.el , false,false,0 );
-        var child_3 = new Xcls_ScrolledWindow9( _this );
-        child_3.ref();
-        this.el.pack_start (  child_3.el , true,true,0 );
+        this.el.pack_start (  child_2.el , true,true,0 );
     }
 
     // userdefined functions 
@@ -215,71 +212,7 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_HBox6 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_ProjectSettings  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_HBox6(Xcls_ProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Button7( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button7 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_ProjectSettings  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button7(Xcls_ProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "Save";
-
-            // listeners 
-            this.el.button_press_event.connect( () => {
-                var buf =    _this.view.el.get_buffer();
-                Gtk.TextIter s;
-                Gtk.TextIter e;
-                buf.get_start_iter(out s);
-                buf.get_end_iter(out e);
-                _this.project.runhtml = buf.get_text(s,e,true);
-                
-                      
-                _this.buttonPressed("save");
-                    return false;
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Label8 : Object 
+    public class Xcls_Label6 : Object 
     {
         public Gtk.Label el;
         private Xcls_ProjectSettings  _this;
@@ -288,7 +221,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_Label8(Xcls_ProjectSettings _owner )
+        public Xcls_Label6(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "HTML To insert at end of <HEAD>" );
@@ -302,7 +235,7 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ScrolledWindow9 : Object 
+    public class Xcls_ScrolledWindow7 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ProjectSettings  _this;
@@ -311,7 +244,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow9(Xcls_ProjectSettings _owner )
+        public Xcls_ScrolledWindow7(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
