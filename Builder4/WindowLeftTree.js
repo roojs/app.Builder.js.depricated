@@ -937,8 +937,10 @@ WindowLeftTree=new XObject({
                         if (f.tree == null) {
                             f.loadItems( );
                         }
-                        
-                        
+                        // if it's still null?
+                        if (f.tree == null) {
+                            return;
+                        }
                         
                         /// this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
                         
