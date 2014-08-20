@@ -229,7 +229,7 @@ public class Xcls_ProjectSettings : Object
         {
             _this = _owner;
             _this.path = this;
-            this.el = new Gtk.Label( null );
+            this.el = new Gtk.Label( "" );
 
             // my vars
 
