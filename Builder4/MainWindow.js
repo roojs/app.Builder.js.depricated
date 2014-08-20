@@ -996,88 +996,27 @@ MainWindow=new XObject({
                                                         },
                                                         {
                                                             xtype: Clutter.Actor,
-                                                            listeners : {
-                                                                enter_event : (  event)  => {
-                                                                    this.el.background_color = new Clutter.Color.from_string("#333");
-                                                                        return false;
-                                                                },
-                                                                leave_event : (  event)  => {
-                                                                    this.el.background_color = new Clutter.Color.from_string("#000");
-                                                                    return false;
-                                                                },
-                                                                button_press_event : ( ) => {
-                                                                    
-                                                                    
-                                                                    
-                                                                    switch (_this.state) {
-                                                                        case "edit":
-                                                                            _this.showAddProp();
-                                                                            break;
-                                                                            
-                                                                        case "object":
-                                                                            _this.hideObject();
-                                                                            _this.showAddProp();
-                                                                            break;
-                                                                       
-                                                                        case "addlistener":
-                                                                            _this.hideAddListener();
-                                                                            _this.showAddProp();            
-                                                                            break;
-                                                                            
-                                                                            
-                                                                        case "addprop":
-                                                                            _this.hideAddProp();
-                                                                            break;
-                                                                            
-                                                                        default:
-                                                                            print("unhandled add property from %s\n",_this.state);
-                                                                            break;
-                                                                            
-                                                                    }
-                                                                    return false;    
-                                                                
-                                                                
-                                                                }
-                                                            },
-                                                            id : "addpropbutton",
                                                             pack : "add_child",
-                                                            init : this.el.set_size(50,50);,
-                                                            reactive : true,
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
                                                                 {
-                                                                    xtype: Clutter.Text,
-                                                                    pack : "add_child",
-                                                                    line_alignment : Pango.Alignment.CENTER,
-                                                                    x_align : Clutter.ActorAlign.CENTER,
-                                                                    x_expand : false,
-                                                                    y_align : Clutter.ActorAlign.CENTER,
-                                                                    y_expand : false
-                                                                },
-                                                                {
-                                                                    xtype: Clutter.Actor,
-                                                                    pack : "add_child",
-                                                                    init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                                    items : [
-                                                                        {
-                                                                            xtype: Gtk.Button,
-                                                                            listeners : {
-                                                                                clicked : () => {
-                                                                                    // create a new file in project..
-                                                                                    if (_this.project == null) {
-                                                                                        return  ;
-                                                                                    }
-                                                                                    
-                                                                                    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                                                    _this.new_file_dialog.show(f);
-                                                                                    
-                                                                                    return  ;    
-                                                                                }
-                                                                            },
-                                                                            height_request : 50,
-                                                                            label : "Add\nFile",
-                                                                            pack : "false"
+                                                                    xtype: Gtk.Button,
+                                                                    listeners : {
+                                                                        clicked : () => {
+                                                                            // create a new file in project..
+                                                                            if (_this.project == null) {
+                                                                                return  ;
+                                                                            }
+                                                                            
+                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                                            _this.new_file_dialog.show(f);
+                                                                            
+                                                                            return  ;    
                                                                         }
-                                                                    ]
+                                                                    },
+                                                                    height_request : 50,
+                                                                    label : "Add\nFile",
+                                                                    pack : "false"
                                                                 }
                                                             ]
                                                         }
@@ -1125,88 +1064,27 @@ MainWindow=new XObject({
                                                         },
                                                         {
                                                             xtype: Clutter.Actor,
-                                                            listeners : {
-                                                                enter_event : (  event)  => {
-                                                                    this.el.background_color = new Clutter.Color.from_string("#333");
-                                                                        return false;
-                                                                },
-                                                                leave_event : (  event)  => {
-                                                                    this.el.background_color = new Clutter.Color.from_string("#000");
-                                                                    return false;
-                                                                },
-                                                                button_press_event : ( ) => {
-                                                                    
-                                                                    
-                                                                    
-                                                                    switch (_this.state) {
-                                                                        case "edit":
-                                                                            _this.showAddProp();
-                                                                            break;
-                                                                            
-                                                                        case "object":
-                                                                            _this.hideObject();
-                                                                            _this.showAddProp();
-                                                                            break;
-                                                                       
-                                                                        case "addlistener":
-                                                                            _this.hideAddListener();
-                                                                            _this.showAddProp();            
-                                                                            break;
-                                                                            
-                                                                            
-                                                                        case "addprop":
-                                                                            _this.hideAddProp();
-                                                                            break;
-                                                                            
-                                                                        default:
-                                                                            print("unhandled add property from %s\n",_this.state);
-                                                                            break;
-                                                                            
-                                                                    }
-                                                                    return false;    
-                                                                
-                                                                
-                                                                }
-                                                            },
-                                                            id : "addpropbutton",
                                                             pack : "add_child",
-                                                            init : this.el.set_size(50,50);,
-                                                            reactive : true,
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
                                                                 {
-                                                                    xtype: Clutter.Text,
-                                                                    pack : "add_child",
-                                                                    line_alignment : Pango.Alignment.CENTER,
-                                                                    x_align : Clutter.ActorAlign.CENTER,
-                                                                    x_expand : false,
-                                                                    y_align : Clutter.ActorAlign.CENTER,
-                                                                    y_expand : false
-                                                                },
-                                                                {
-                                                                    xtype: Clutter.Actor,
-                                                                    pack : "add_child",
-                                                                    init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                                    items : [
-                                                                        {
-                                                                            xtype: Gtk.Button,
-                                                                            listeners : {
-                                                                                clicked : () => {
-                                                                                    // create a new file in project..
-                                                                                    if (_this.project == null) {
-                                                                                        return  ;
-                                                                                    }
-                                                                                    
-                                                                                    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                                                    _this.new_file_dialog.show(f);
-                                                                                    
-                                                                                    return  ;    
-                                                                                }
-                                                                            },
-                                                                            height_request : 50,
-                                                                            label : "Add\nFile",
-                                                                            pack : "false"
+                                                                    xtype: Gtk.Button,
+                                                                    listeners : {
+                                                                        clicked : () => {
+                                                                            // create a new file in project..
+                                                                            if (_this.project == null) {
+                                                                                return  ;
+                                                                            }
+                                                                            
+                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                                            _this.new_file_dialog.show(f);
+                                                                            
+                                                                            return  ;    
                                                                         }
-                                                                    ]
+                                                                    },
+                                                                    height_request : 50,
+                                                                    label : "Add\nFile",
+                                                                    pack : "false"
                                                                 }
                                                             ]
                                                         }

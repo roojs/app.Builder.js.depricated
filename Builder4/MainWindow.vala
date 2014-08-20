@@ -44,9 +44,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditview projecteditview;
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
-    public Xcls_addpropbutton addpropbutton;
     public Xcls_editfilebutton editfilebutton;
-    public Xcls_addpropbutton addpropbutton;
     public Xcls_projecteditbutton projecteditbutton;
     public Xcls_objectshowbutton objectshowbutton;
     public Xcls_addpropbutton addpropbutton;
@@ -1442,7 +1440,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Text19( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_addpropbutton( _this );
+            var child_1 = new Xcls_Actor20( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
 
@@ -1522,7 +1520,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addpropbutton : Object 
+    public class Xcls_Actor20 : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1531,112 +1529,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_addpropbutton(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            _this.addpropbutton = this;
-            this.el = new Clutter.Actor();
-
-            // my vars
-
-            // set gobject values
-            this.el.reactive = true;
-            var child_0 = new Xcls_Text21( _this );
-            child_0.ref();
-            this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_Actor22( _this );
-            child_1.ref();
-            this.el.add_child (  child_1.el  );
-
-            // init method 
-            this.el.set_size(50,50);
-
-            // listeners 
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#333");
-                    return false;
-            } );
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
-                return false;
-            } );
-            this.el.button_press_event.connect(   ( ) => {
-                
-                
-                
-                switch (_this.state) {
-                    case "edit":
-                        _this.showAddProp();
-                        break;
-                        
-                    case "object":
-                        _this.hideObject();
-                        _this.showAddProp();
-                        break;
-                   
-                    case "addlistener":
-                        _this.hideAddListener();
-                        _this.showAddProp();            
-                        break;
-                        
-                        
-                    case "addprop":
-                        _this.hideAddProp();
-                        break;
-                        
-                    default:
-                        print("unhandled add property from %s\n",_this.state);
-                        break;
-                        
-                }
-                return false;    
-            
-            
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Text21 : Object 
-    {
-        public Clutter.Text el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Text21(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nProperty",new Clutter.Color.from_string("#fff"));
-
-            // my vars
-
-            // set gobject values
-            this.el.line_alignment = Pango.Alignment.CENTER;
-            this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = false;
-            this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = false;
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Actor22 : Object 
-    {
-        public Clutter.Actor el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Actor22(Xcls_MainWindow _owner )
+        public Xcls_Actor20(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -1644,7 +1537,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button23( _this );
+            var child_0 = new Xcls_Button21( _this );
             child_0.ref();
 
             // init method 
@@ -1655,7 +1548,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Button23 : Object 
+    public class Xcls_Button21 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1664,7 +1557,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Button23(Xcls_MainWindow _owner )
+        public Xcls_Button21(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1712,10 +1605,10 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text25( _this );
+            var child_0 = new Xcls_Text23( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_addpropbutton( _this );
+            var child_1 = new Xcls_Actor24( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
 
@@ -1750,7 +1643,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text25 : Object 
+    public class Xcls_Text23 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -1759,7 +1652,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text25(Xcls_MainWindow _owner )
+        public Xcls_Text23(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Edit\nFile\nProperties",new Clutter.Color.from_string("#fff"));
@@ -1781,7 +1674,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addpropbutton : Object 
+    public class Xcls_Actor24 : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1790,10 +1683,76 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_addpropbutton(Xcls_MainWindow _owner )
+        public Xcls_Actor24(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.addpropbutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Button25( _this );
+            child_0.ref();
+
+            // init method 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Button25 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button25(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+            this.el.height_request = 50;
+            this.el.label = "Add\nFile";
+
+            // listeners 
+            this.el.clicked.connect(  () => {
+                // create a new file in project..
+                if (_this.project == null) {
+                    return  ;
+                }
+                
+                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                _this.new_file_dialog.show(f);
+                
+                return  ;    
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_projecteditbutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.projecteditbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -1820,33 +1779,34 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
-                
-                
-                
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProp();
-                        break;
-                        
-                    case "object":
-                        _this.hideObject();
-                        _this.showAddProp();
-                        break;
-                   
-                    case "addlistener":
-                        _this.hideAddListener();
-                        _this.showAddProp();            
+                        _this.showProjectEdit();
+                        break;  
+                    case "files":
+                        // _this.showViewEditing();
+                        break; 
+                    case "projectedit":
+                        _this.hideProjectEdit();
                         break;
                         
                         
+                          
                     case "addprop":
                         _this.hideAddProp();
+                        _this.showProjectEdit();
                         break;
-                        
+                    case "addlistener":
+                        _this.hideAddListener();
+                        _this.showProjectEdit();
+                        break;
+                         
+                     case "object":
+                        _this.hideObject();
+                        _this.showProjectEdit();    
+                        break;
                     default:
-                        print("unhandled add property from %s\n",_this.state);
                         break;
-                        
                 }
                 return false;    
             
@@ -1870,7 +1830,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text27(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nProperty",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
@@ -1952,7 +1912,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_projecteditbutton : Object 
+    public class Xcls_objectshowbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1961,10 +1921,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
+        public Xcls_objectshowbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.projecteditbutton = this;
+            _this.objectshowbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -1991,33 +1951,34 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
+                
+                
+                
                 switch (_this.state) {
-                    case "edit":
-                        _this.showProjectEdit();
-                        break;  
-                    case "files":
-                        // _this.showViewEditing();
-                        break; 
-                    case "projectedit":
-                        _this.hideProjectEdit();
-                        break;
-                        
-                        
-                          
+            
+             
                     case "addprop":
                         _this.hideAddProp();
-                        _this.showProjectEdit();
+                        _this.showObject();
                         break;
-                    case "addlistener":
+                case "addlistener":
                         _this.hideAddListener();
-                        _this.showProjectEdit();
+                        _this.showObject();
                         break;
-                         
-                     case "object":
+            
+            // show            
+                    case "edit":
+                        _this.showObject();
+                        break;
+                        
+            // hide            
+                    case "object":
                         _this.hideObject();
-                        _this.showProjectEdit();    
                         break;
+                        break;
+                                    
                     default:
+                        print("unhandled add objects from %s\n",_this.state);
                         break;
                 }
                 return false;    
@@ -2042,7 +2003,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text31(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
@@ -2124,7 +2085,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_objectshowbutton : Object 
+    public class Xcls_addpropbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2133,10 +2094,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_objectshowbutton(Xcls_MainWindow _owner )
+        public Xcls_addpropbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.objectshowbutton = this;
+            _this.addpropbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -2167,31 +2128,29 @@ public class Xcls_MainWindow : Object
                 
                 
                 switch (_this.state) {
-            
-             
-                    case "addprop":
-                        _this.hideAddProp();
-                        _this.showObject();
-                        break;
-                case "addlistener":
-                        _this.hideAddListener();
-                        _this.showObject();
-                        break;
-            
-            // show            
                     case "edit":
-                        _this.showObject();
+                        _this.showAddProp();
                         break;
                         
-            // hide            
                     case "object":
                         _this.hideObject();
+                        _this.showAddProp();
                         break;
+                   
+                    case "addlistener":
+                        _this.hideAddListener();
+                        _this.showAddProp();            
                         break;
-                                    
+                        
+                        
+                    case "addprop":
+                        _this.hideAddProp();
+                        break;
+                        
                     default:
-                        print("unhandled add objects from %s\n",_this.state);
+                        print("unhandled add property from %s\n",_this.state);
                         break;
+                        
                 }
                 return false;    
             
@@ -2215,7 +2174,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text35(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Show\nPalate",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Add\nProperty",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
@@ -2297,7 +2256,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addpropbutton : Object 
+    public class Xcls_addlistenerbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2306,10 +2265,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_addpropbutton(Xcls_MainWindow _owner )
+        public Xcls_addlistenerbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.addpropbutton = this;
+            _this.addlistenerbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -2341,26 +2300,27 @@ public class Xcls_MainWindow : Object
                 
                 switch (_this.state) {
                     case "edit":
-                        _this.showAddProp();
+                        _this.showAddListener();
                         break;
                         
-                    case "object":
-                        _this.hideObject();
-                        _this.showAddProp();
-                        break;
                    
                     case "addlistener":
                         _this.hideAddListener();
-                        _this.showAddProp();            
                         break;
-                        
+            
                         
                     case "addprop":
                         _this.hideAddProp();
+                        _this.showAddListener();
                         break;
-                        
-                    default:
-                        print("unhandled add property from %s\n",_this.state);
+                     case "object":
+                        _this.hideObject();
+                        _this.showAddListener();
+                        break;
+                
+                      default:
+                        print("unhandled add listener from %s\n",_this.state);
+            
                         break;
                         
                 }
@@ -2386,7 +2346,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text39(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nProperty",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
@@ -2468,7 +2428,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addlistenerbutton : Object 
+    public class Xcls_addprojectbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2477,10 +2437,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_addlistenerbutton(Xcls_MainWindow _owner )
+        public Xcls_addprojectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.addlistenerbutton = this;
+            _this.addprojectbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars
@@ -2495,7 +2455,7 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_1.el  );
 
             // init method 
-            this.el.set_size(50,50);
+            this.el.set_size(50.0f,50.0f);
 
             // listeners 
             this.el.enter_event.connect( (  event)  => {
@@ -2507,35 +2467,11 @@ public class Xcls_MainWindow : Object
                 return false;
             } );
             this.el.button_press_event.connect(   ( ) => {
+              
+                // create a new file in project..
+                //Xcls_DialogNewComponent.singleton().show(
                 
                 
-                
-                switch (_this.state) {
-                    case "edit":
-                        _this.showAddListener();
-                        break;
-                        
-                   
-                    case "addlistener":
-                        _this.hideAddListener();
-                        break;
-            
-                        
-                    case "addprop":
-                        _this.hideAddProp();
-                        _this.showAddListener();
-                        break;
-                     case "object":
-                        _this.hideObject();
-                        _this.showAddListener();
-                        break;
-                
-                      default:
-                        print("unhandled add listener from %s\n",_this.state);
-            
-                        break;
-                        
-                }
                 return false;    
             
             
@@ -2558,7 +2494,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text43(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nListener",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","New\nProject",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
@@ -2568,6 +2504,9 @@ public class Xcls_MainWindow : Object
             this.el.x_expand = false;
             this.el.y_align = Clutter.ActorAlign.CENTER;
             this.el.y_expand = false;
+
+            // init method 
+            this.el.set_size(50.0f,50.0f);
         }
 
         // userdefined functions 
@@ -2640,157 +2579,6 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_addprojectbutton : Object 
-    {
-        public Clutter.Actor el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_addprojectbutton(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            _this.addprojectbutton = this;
-            this.el = new Clutter.Actor();
-
-            // my vars
-
-            // set gobject values
-            this.el.reactive = true;
-            var child_0 = new Xcls_Text47( _this );
-            child_0.ref();
-            this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_Actor48( _this );
-            child_1.ref();
-            this.el.add_child (  child_1.el  );
-
-            // init method 
-            this.el.set_size(50.0f,50.0f);
-
-            // listeners 
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#333");
-                    return false;
-            } );
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
-                return false;
-            } );
-            this.el.button_press_event.connect(   ( ) => {
-              
-                // create a new file in project..
-                //Xcls_DialogNewComponent.singleton().show(
-                
-                
-                return false;    
-            
-            
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Text47 : Object 
-    {
-        public Clutter.Text el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Text47(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","New\nProject",new Clutter.Color.from_string("#fff"));
-
-            // my vars
-
-            // set gobject values
-            this.el.line_alignment = Pango.Alignment.CENTER;
-            this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = false;
-            this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = false;
-
-            // init method 
-            this.el.set_size(50.0f,50.0f);
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Actor48 : Object 
-    {
-        public Clutter.Actor el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Actor48(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Actor();
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Button49( _this );
-            child_0.ref();
-
-            // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button49 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button49(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            this.el.height_request = 50;
-            this.el.label = "Add\nFile";
-
-            // listeners 
-            this.el.clicked.connect(  () => {
-                // create a new file in project..
-                if (_this.project == null) {
-                    return  ;
-                }
-                
-                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                _this.new_file_dialog.show(f);
-                
-                return  ;    
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
     public class Xcls_addfilebutton : Object 
     {
         public Clutter.Actor el;
@@ -2809,7 +2597,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Actor51( _this );
+            var child_0 = new Xcls_Actor47( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2821,7 +2609,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Actor51 : Object 
+    public class Xcls_Actor47 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2830,7 +2618,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Actor51(Xcls_MainWindow _owner )
+        public Xcls_Actor47(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2838,7 +2626,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button52( _this );
+            var child_0 = new Xcls_Button48( _this );
             child_0.ref();
 
             // init method 
@@ -2849,7 +2637,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Button52 : Object 
+    public class Xcls_Button48 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2858,7 +2646,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Button52(Xcls_MainWindow _owner )
+        public Xcls_Button48(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
