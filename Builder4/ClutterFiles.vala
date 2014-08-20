@@ -33,8 +33,8 @@ public class Xcls_ClutterFiles : Object
     public Xcls_filelayout_manager filelayout_manager;
 
         // my vars
-    public signal void open(JsRender.JsRender file);
     public Gee.ArrayList<Xcls_fileitem> fileitems;
+    public signal void open(JsRender.JsRender file);
 
         // ctor 
     public Xcls_ClutterFiles()
@@ -52,6 +52,11 @@ public class Xcls_ClutterFiles : Object
 
         // init method 
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+
+        // listeners 
+        this.el.scroll_event.connect( function (self, event) {
+        
+        } );
     }
 
     // userdefined functions 

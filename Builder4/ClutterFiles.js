@@ -53,6 +53,11 @@ ClutterFiles=new XObject({
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
     },
+    listeners : {
+        scroll_event : function (self, event) {
+        
+        }
+    },
     items : [
         {
             xtype: Clutter.Actor,
