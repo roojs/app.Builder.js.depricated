@@ -1002,16 +1002,35 @@ MainWindow=new XObject({
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     listeners : {
-                                                                        clicked : () => {
-                                                                            // create a new file in project..
-                                                                            if (_this.project == null) {
-                                                                                return  ;
+                                                                        clicked : ( ) => {
+                                                                            switch (_this.state) {
+                                                                                case "edit":
+                                                                                
+                                                                                    _this.hideViewEditing();
+                                                                                    break;  
+                                                                                case "files":
+                                                                                    _this.showViewEditing();
+                                                                                    break; 
+                                                                                    
+                                                                                  case "addprop":
+                                                                                    _this.hideAddProp();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;
+                                                                                case "addlistener":
+                                                                                    _this.hideAddListener();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;
+                                                                                     
+                                                                                 case "object":
+                                                                                    _this.hideObject();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;    
+                                                                                    
+                                                                                default:
+                                                                                    break;
                                                                             }
-                                                                            
-                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                                            _this.new_file_dialog.show(f);
-                                                                            
-                                                                            return  ;    
+                                                                            return false;    
+                                                                        
                                                                         }
                                                                     },
                                                                     height_request : 50,

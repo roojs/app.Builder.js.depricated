@@ -197,7 +197,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": " () => {\n    // create a new file in project..\n    if (_this.project == null) {\n        return  ;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
+                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n            _this.hideViewEditing();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.hideViewEditing();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.hideViewEditing();\n            break;    \n            \n        default:\n            break;\n    }\n    return false;    \n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
