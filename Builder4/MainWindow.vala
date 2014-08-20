@@ -52,6 +52,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
 
         // my vars
+    public Xcls_DialogNewComponent new_file_dialog;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_Editor code_editor;
@@ -74,6 +75,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.new_file_dialog = null;
         this.project = null;
         this.clutterfiles = null;
         this.code_editor = null;
