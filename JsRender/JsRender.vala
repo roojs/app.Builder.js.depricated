@@ -248,6 +248,7 @@ namespace JsRender {
 			ret.set_string_member("permname", this.permname  == null ? "" : this.permname);
 			ret.set_string_member("modOrder", this.modOrder  == null ? "" : this.modOrder);
 			var ar = new Json.Array();
+			// empty files do not have a tree.
 			if (this.tree != null) {
 				ar.add_object_element(this.tree.toJsonObject());
 			}
