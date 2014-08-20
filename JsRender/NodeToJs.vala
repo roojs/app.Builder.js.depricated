@@ -51,7 +51,7 @@ public class JsRender.NodeToJs : Object {
 		//print ("STR PROPS: " + str_props);
 		
 		return   "{\n" +
-			pad  + str_props + 
+			 + str_props + 
 			"\n" + this.pad +  "}";
 		     
 	} 
