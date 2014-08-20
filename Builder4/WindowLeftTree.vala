@@ -290,7 +290,7 @@ public class Xcls_WindowLeftTree : Object
                     if (_this.model.el.iter_n_children(null) < 1) {
                         isOver = true; //??? 
                         isEmpty = true;
-                        pos = 1;
+                        pos = Gtk.TreeViewDropPosition.INTO_OR_AFTER;
                     }
                     
                  
