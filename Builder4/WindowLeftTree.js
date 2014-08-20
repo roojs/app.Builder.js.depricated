@@ -745,7 +745,7 @@ WindowLeftTree=new XObject({
                         } else {
                             data.remove();
                         }
-                            print("removing node from Tree\n");    
+                        print("removing node from Tree\n");    
                         s.unselect_all();
                         this.el.remove(ref iter);
                     
