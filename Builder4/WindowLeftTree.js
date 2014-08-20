@@ -885,8 +885,8 @@ WindowLeftTree=new XObject({
                             if (node.items.size > 0) {
                                 this.load(node.items, n_iter);
                                 _this.view.el.expand_row(this.el.get_path(n_iter), true);
-                            } else if (node.parent != null && expand_parent != null && _this.view.el.is_row_expanded(expand_parent)) {
-                               _this.view.el.expand_row(this.el.get_path(iter_par),true);
+                            } else if (expand_parent != null && _this.view.el.is_row_expanded(expand_parent)) {
+                               _this.view.el.expand_row(expand_parent,true);
                             }
                     
                             //if (tp != null && (node.items.length() > 0 || pos > 1)) {
