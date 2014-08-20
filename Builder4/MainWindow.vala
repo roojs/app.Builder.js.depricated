@@ -526,6 +526,7 @@ public class Xcls_MainWindow : Object
             // new file dialog
             this.new_file_dialog = new Xcls_DialogNewComponent();
             this.new_file_dialog.el.set_transient_for(this.el);
+            
             this.new_file_dialog.success.connect((project,file) =>
             {
                 _this.project = project;
