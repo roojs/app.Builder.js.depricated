@@ -457,10 +457,7 @@ MainWindow=new XObject({
         
         });
         
-        
-    
-    
-    
+         
     
         //w.el.show_all();
         var tl = new Clutter.Timeline(6000);
@@ -1361,7 +1358,7 @@ MainWindow=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.Button,
-                                                                    pack : false
+                                                                    xpack : "add_child"
                                                                 }
                                                             ]
                                                         },
