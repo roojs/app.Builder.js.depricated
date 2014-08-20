@@ -227,7 +227,7 @@ WindowLeftTree=new XObject({
                             if (this.drag_in_motion) { 
                                 Gdk.drag_status(ctx, Gdk.DragAction.COPY ,time);
                 
-                                this.highlightDropPath(td_ar[0].length > 0 ? td_ar[0] : "", (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
+                                this.highlightDropPath(  td_ar[0]  , (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
                                 return;
                             }
                             // continue on to allow drop..
