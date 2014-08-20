@@ -247,6 +247,7 @@ MainWindow=new XObject({
         
          this.left_tree.changed.connect(() => {
            this.window_rooview.requestRedraw();
+           this.left_Tree.model.file.save();
         });
          
         

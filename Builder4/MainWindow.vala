@@ -335,6 +335,7 @@ public class Xcls_MainWindow : Object
             
              this.left_tree.changed.connect(() => {
                this.window_rooview.requestRedraw();
+               this.left_Tree.model.file.save();
             });
              
             
