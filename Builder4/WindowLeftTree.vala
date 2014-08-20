@@ -841,6 +841,10 @@ public class Xcls_WindowLeftTree : Object
             
                     Gtk.TreePath expand_parent = null;
                     
+                     var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
+                     node = new_node;
+                    
+                    
                      //print("pos is %d  \n".printf(pos));
                     
                      Gtk.TreeIter n_iter; 
@@ -899,8 +903,7 @@ public class Xcls_WindowLeftTree : Object
                     
                     //if (node.parent = null) {
                          
-                        var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
-                        node = new_node;
+                       
                         
                     //}
                     
