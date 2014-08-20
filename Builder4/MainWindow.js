@@ -1355,12 +1355,12 @@ MainWindow=new XObject({
                                                         {
                                                             xtype: GtkClutter.Actor,
                                                             pack : "add_child",
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el),
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     label : "Add File",
-                                                                    pack : "false",
-                                                                    init : ((Gtk.Container)( _owner.el.get_widget())).add ( this.el)
+                                                                    pack : "false"
                                                                 }
                                                             ]
                                                         }
