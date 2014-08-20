@@ -166,11 +166,6 @@
                                                             "|xns": "Clutter"
                                                         },
                                                         {
-                                                            "listeners": {
-                                                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-                                                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n            _this.hideViewEditing();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.hideViewEditing();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.hideViewEditing();\n            break;    \n            \n        default:\n            break;\n    }\n    return false;    \n\n}"
-                                                            },
                                                             "id": "projectbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
@@ -178,17 +173,6 @@
                                                             "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
-                                                                {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Open\\nFiles\",new Clutter.Color.from_string(\"#fff\"))",
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Text",
-                                                                    "|line_alignment": "Pango.Alignment.CENTER",
-                                                                    "|x_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|x_expand": "false",
-                                                                    "|xns": "Clutter",
-                                                                    "|y_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|y_expand": "false"
-                                                                },
                                                                 {
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",

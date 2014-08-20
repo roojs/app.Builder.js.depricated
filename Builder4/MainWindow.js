@@ -940,60 +940,11 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    listeners : {
-                                                        enter_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#333");
-                                                                return false;
-                                                        },
-                                                        leave_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#000");
-                                                            return false;
-                                                        },
-                                                        button_press_event : ( ) => {
-                                                            switch (_this.state) {
-                                                                case "edit":
-                                                                
-                                                                    _this.hideViewEditing();
-                                                                    break;  
-                                                                case "files":
-                                                                    _this.showViewEditing();
-                                                                    break; 
-                                                                    
-                                                                  case "addprop":
-                                                                    _this.hideAddProp();
-                                                                    _this.hideViewEditing();
-                                                                    break;
-                                                                case "addlistener":
-                                                                    _this.hideAddListener();
-                                                                    _this.hideViewEditing();
-                                                                    break;
-                                                                     
-                                                                 case "object":
-                                                                    _this.hideObject();
-                                                                    _this.hideViewEditing();
-                                                                    break;    
-                                                                    
-                                                                default:
-                                                                    break;
-                                                            }
-                                                            return false;    
-                                                        
-                                                        }
-                                                    },
                                                     id : "projectbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,
                                                     items : [
-                                                        {
-                                                            xtype: Clutter.Text,
-                                                            pack : "add_child",
-                                                            line_alignment : Pango.Alignment.CENTER,
-                                                            x_align : Clutter.ActorAlign.CENTER,
-                                                            x_expand : false,
-                                                            y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : false
-                                                        },
                                                         {
                                                             xtype: GtkClutter.Actor,
                                                             pack : "add_child",
