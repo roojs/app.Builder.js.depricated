@@ -363,9 +363,8 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    "|xns": "Clutter",
                                                                     "xtype": "Actor",
-                                                                    "pack": false
+                                                                    "|xns": "GtkClutter"
                                                                 },
                                                                 {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nFile\",new Clutter.Color.from_string(\"#fff\"))",

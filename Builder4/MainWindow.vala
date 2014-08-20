@@ -2116,6 +2116,7 @@ public class Xcls_MainWindow : Object
             this.el.reactive = true;
             var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
+            this.el.add (  child_0.el  );
             var child_1 = new Xcls_Text34( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
@@ -2154,7 +2155,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor33 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -2164,7 +2165,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor33(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
