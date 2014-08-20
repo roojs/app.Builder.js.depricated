@@ -218,7 +218,7 @@ namespace Palete
        			
                 
     		}
-		//print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
+		 print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
 		//console.log("DROP LIST:");
 		//console.dump(ret);
 		return ret;
