@@ -2191,6 +2191,9 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "Add File";
+
+            // init method 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el)
         }
 
         // userdefined functions 

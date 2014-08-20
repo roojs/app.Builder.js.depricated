@@ -1359,7 +1359,7 @@ MainWindow=new XObject({
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     label : "Add File",
-                                                                    xinit : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el)"
+                                                                    init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el)
                                                                 }
                                                             ]
                                                         }
