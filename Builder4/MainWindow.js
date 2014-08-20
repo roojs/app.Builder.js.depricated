@@ -144,12 +144,14 @@ MainWindow=new XObject({
           
         _this.addprojectbutton.el.show();   
         _this.addfilebutton.el.show();       
-       
+    
+          _this.editfilebutton.el.hide();   
           
           _this.projecteditbutton.el.hide();
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
-          _this.addlistenerbutton.el.hide();            
+          _this.addlistenerbutton.el.hide();  
+              
         // show the add file button..
         
               
