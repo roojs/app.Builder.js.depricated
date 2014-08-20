@@ -882,7 +882,7 @@ WindowLeftTree=new XObject({
                                 this.load(node.items, n_iter);
                                 _this.view.el.expand_row(this.el.get_path(n_iter), true);
                             } else if (node.parent != null && _this.view.el.is_row_expanded(this.el.get_path(iter_par))) {
-                               _this.view.el.expand_row(this.el.get_path(iter_par),true));
+                               _this.view.el.expand_row(this.el.get_path(iter_par),true);
                             }
                     
                             //if (tp != null && (node.items.length() > 0 || pos > 1)) {
