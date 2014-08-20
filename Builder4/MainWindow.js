@@ -1322,6 +1322,32 @@ MainWindow=new XObject({
                                                             x_expand : false,
                                                             y_align : Clutter.ActorAlign.CENTER,
                                                             y_expand : false
+                                                        },
+                                                        {
+                                                            xtype: Clutter.Actor,
+                                                            pack : "add_child",
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
+                                                            items : [
+                                                                {
+                                                                    xtype: Gtk.Button,
+                                                                    listeners : {
+                                                                        clicked : () => {
+                                                                            // create a new file in project..
+                                                                            if (_this.project == null) {
+                                                                                return  ;
+                                                                            }
+                                                                            
+                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                                            _this.new_file_dialog.show(f);
+                                                                            
+                                                                            return  ;    
+                                                                        }
+                                                                    },
+                                                                    height_request : 50,
+                                                                    label : "Add\nFile",
+                                                                    pack : "false"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 },
@@ -1332,7 +1358,7 @@ MainWindow=new XObject({
                                                     init : this.el.set_size(50.0f,50.0f);,
                                                     items : [
                                                         {
-                                                            xtype: GtkClutter.Actor,
+                                                            xtype: Clutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
