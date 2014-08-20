@@ -2167,6 +2167,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            this.el.height_request = 50;
             this.el.label = "Add\\nFile";
 
             // listeners 
