@@ -27,6 +27,7 @@ namespace Palete
 				if (s.length > m.length) {
 					continue;
 				}
+				// XXX:prop
 				if (m.substring(0, s.length+1) == (s + ":")) {
 					return true;
 				}
