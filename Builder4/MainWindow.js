@@ -618,7 +618,7 @@ MainWindow=new XObject({
          
         //this.rooview.el.hide();
         this.rightpalete.el.show_all();
-        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n.fqn());
+        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
     
         
         //this.rightpalete.show(this.project);
