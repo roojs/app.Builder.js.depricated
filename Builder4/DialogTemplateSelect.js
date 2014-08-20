@@ -43,7 +43,7 @@ DialogTemplateSelect=new XObject({
             return node;
         }
          
-        return pal.loadTemplate(opts.nth_data(ix));
+        return pal.loadTemplate(opts.nth_data(ix-1));
     
     },
     modal : true,

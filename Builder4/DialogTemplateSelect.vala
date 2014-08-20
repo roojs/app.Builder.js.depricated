@@ -86,7 +86,7 @@ public class Xcls_DialogTemplateSelect : Object
                 return node;
             }
              
-            return pal.loadTemplate(opts.nth_data(ix));
+            return pal.loadTemplate(opts.nth_data(ix-1));
         
         }
 
