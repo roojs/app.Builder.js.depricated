@@ -1336,11 +1336,11 @@ MainWindow=new XObject({
                                                         button_press_event : ( ) => {
                                                           
                                                             // create a new file in project..
-                                                            if (_this.project == null) {
+                                                            if (_this.project == null || _this.left_tree.model.file == null) {
                                                                 return false;
                                                             }
                                                             
-                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                            var f = _this.left_tree.model.file;
                                                             _this.new_file_dialog.show(f);
                                                             
                                                             return false;    

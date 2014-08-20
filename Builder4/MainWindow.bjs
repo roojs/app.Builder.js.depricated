@@ -353,7 +353,7 @@
                                                             "listeners": {
                                                                 "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
                                                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null) {\n        return false;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return false;    \n\n\n}"
+                                                                "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.left_tree.model.file == null) {\n        return false;\n    }\n    \n    var f = _this.left_tree.model.file;\n    _this.new_file_dialog.show(f);\n    \n    return false;    \n\n\n}"
                                                             },
                                                             "id": "editfilebutton",
                                                             "pack": "add_child",
