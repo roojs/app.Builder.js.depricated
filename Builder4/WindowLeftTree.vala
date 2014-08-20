@@ -288,7 +288,7 @@ public class Xcls_WindowLeftTree : Object
                     // if there are not items in the tree.. the we have to set isOver to true for anything..
                     
                     if (_this.model.iter_n_children(null) < 1) {
-                        isOver = 1; //??? 
+                        isOver = true; //??? 
                     }
                     
                  
