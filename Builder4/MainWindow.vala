@@ -51,7 +51,6 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
     public Xcls_addprojectbutton addprojectbutton;
     public Xcls_addfilebutton addfilebutton;
-    public Xcls_editfilebutton editfilebutton;
 
         // my vars
     public Project.Project project;
@@ -1369,9 +1368,6 @@ public class Xcls_MainWindow : Object
             var child_8 = new Xcls_addfilebutton( _this );
             child_8.ref();
             this.el.add_child (  child_8.el  );
-            var child_9 = new Xcls_editfilebutton( _this );
-            child_9.ref();
-            this.el.add_child (  child_9.el  );
 
             // init method 
             {
@@ -2167,91 +2163,6 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
-
-            // my vars
-
-            // set gobject values
-            this.el.line_alignment = Pango.Alignment.CENTER;
-            this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = false;
-            this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = false;
-
-            // init method 
-            this.el.set_size(50.0f,50.0f);
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_editfilebutton : Object 
-    {
-        public Clutter.Actor el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_editfilebutton(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            _this.editfilebutton = this;
-            this.el = new Clutter.Actor();
-
-            // my vars
-
-            // set gobject values
-            this.el.reactive = true;
-            var child_0 = new Xcls_Text35( _this );
-            child_0.ref();
-            this.el.add_child (  child_0.el  );
-
-            // init method 
-            this.el.set_size(50.0f,50.0f);
-
-            // listeners 
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#333");
-                    return false;
-            } );
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
-                return false;
-            } );
-            this.el.button_press_event.connect(   ( ) => {
-              
-                // create a new file in project..
-                if (_this.project == null || _this.left_tree.model.file == null) {
-                    return false;
-                }
-                 
-                _this.new_file_dialog.show(_this.left_tree.model.file);
-                
-                return false;    
-            
-            
-            } );
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Text35 : Object 
-    {
-        public Clutter.Text el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Text35(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Edit\nFile\nProperties",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
