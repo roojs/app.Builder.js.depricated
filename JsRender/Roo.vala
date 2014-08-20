@@ -94,7 +94,7 @@ namespace JsRender {
 		var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
 		bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
 
-		this.tree = new Node(); 
+		
 		// load items[0] ??? into tree...
 		if (obj.has_member("items") 
 			&& 
@@ -102,6 +102,7 @@ namespace JsRender {
 			&&
 			obj.get_array_member("items").get_length() > 0
 		) {
+			this.tree = new Node(); 
 			var ar = obj.get_array_member("items");
 			var tree_base = ar.get_object_element(0);
 			this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
