@@ -893,7 +893,7 @@ public class Xcls_WindowLeftTree : Object
                     if (node.parent == null) {
                         
                         if (target_data.length == 3 && target_data[2].length > 0) {
-                            node.props.set("*prop", target_data[2]);
+                            node.props.set("* prop", target_data[2]);
                         }
                         
                         var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
