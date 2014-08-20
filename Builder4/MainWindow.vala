@@ -2192,7 +2192,7 @@ public class Xcls_MainWindow : Object
             this.el.label = "Add File";
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el)
+            ((Gtk.Container)( _owner.el.get_widget())).add ( this.el)
         }
 
         // userdefined functions 
