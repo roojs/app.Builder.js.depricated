@@ -1321,6 +1321,49 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    xtype: Clutter.Actor,
+                                                    listeners : {
+                                                        enter_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#333");
+                                                                return false;
+                                                        },
+                                                        leave_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#000");
+                                                            return false;
+                                                        },
+                                                        button_press_event : ( ) => {
+                                                          
+                                                            // create a new file in project..
+                                                            if (_this.project == null) {
+                                                                return false;
+                                                            }
+                                                            
+                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                            _this.new_file_dialog.show(f);
+                                                            
+                                                            return false;    
+                                                        
+                                                        
+                                                        }
+                                                    },
+                                                    id : "addfilebutton",
+                                                    pack : "add_child",
+                                                    init : this.el.set_size(50.0f,50.0f);,
+                                                    reactive : true,
+                                                    items : [
+                                                        {
+                                                            xtype: Clutter.Text,
+                                                            pack : "add_child",
+                                                            init : this.el.set_size(50.0f,50.0f);,
+                                                            line_alignment : Pango.Alignment.CENTER,
+                                                            x_align : Clutter.ActorAlign.CENTER,
+                                                            x_expand : false,
+                                                            y_align : Clutter.ActorAlign.CENTER,
+                                                            y_expand : false
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             layout_manager : {

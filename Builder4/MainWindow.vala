@@ -50,6 +50,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
     public Xcls_addprojectbutton addprojectbutton;
     public Xcls_addfilebutton addfilebutton;
+    public Xcls_addfilebutton addfilebutton;
 
         // my vars
     public Project.Project project;
@@ -1361,6 +1362,9 @@ public class Xcls_MainWindow : Object
             var child_7 = new Xcls_addfilebutton( _this );
             child_7.ref();
             this.el.add_child (  child_7.el  );
+            var child_8 = new Xcls_addfilebutton( _this );
+            child_8.ref();
+            this.el.add_child (  child_8.el  );
 
             // init method 
             {
@@ -2068,6 +2072,92 @@ public class Xcls_MainWindow : Object
 
             // ctor 
         public Xcls_Text31(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
+
+            // my vars
+
+            // set gobject values
+            this.el.line_alignment = Pango.Alignment.CENTER;
+            this.el.x_align = Clutter.ActorAlign.CENTER;
+            this.el.x_expand = false;
+            this.el.y_align = Clutter.ActorAlign.CENTER;
+            this.el.y_expand = false;
+
+            // init method 
+            this.el.set_size(50.0f,50.0f);
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_addfilebutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_addfilebutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.addfilebutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            this.el.reactive = true;
+            var child_0 = new Xcls_Text33( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+            this.el.set_size(50.0f,50.0f);
+
+            // listeners 
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            } );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            } );
+            this.el.button_press_event.connect(   ( ) => {
+              
+                // create a new file in project..
+                if (_this.project == null) {
+                    return false;
+                }
+                
+                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                _this.new_file_dialog.show(f);
+                
+                return false;    
+            
+            
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text33 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text33(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
