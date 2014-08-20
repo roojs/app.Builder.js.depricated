@@ -395,7 +395,7 @@ public class JsRender.NodeToJs : Object {
 			}
 			n++;
 			itms +=	this.pad + "	"  +
-				this.mungeChild( this.pad + "		",  ele);
+				this.mungeChild( this.pad + "        ",  ele);
 			
 			
 		}
