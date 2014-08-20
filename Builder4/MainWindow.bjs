@@ -368,6 +368,7 @@
                                                                     "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
+                                                                            "label": "Add File",
                                                                             "pack": "add_child",
                                                                             "xtype": "Button",
                                                                             "|xns": "Gtk"
