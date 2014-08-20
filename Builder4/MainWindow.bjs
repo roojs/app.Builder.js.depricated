@@ -303,7 +303,7 @@
                                                                             "pack": "false",
                                                                             "width_request": 50,
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Add\\nProperty\"",
+                                                                            "|label": "\"Add\\nProp\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
