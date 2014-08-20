@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-9",
+    "id": "file-gtk-13",
     "name": "StandardErrorDialog",
     "parent": "",
     "title": false,
@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "delete_event": "  (self, event)  => {\n    this.el.hide();\n    return true;\n} \n",
+                "delete_event": "  (self, event)  => {\n    this.el.hide();\n    return true;\n    \n} \n",
                 "response": "  (self, response_id) => {\n   this.el.hide();\n}"
             },
             "text": "fixme",

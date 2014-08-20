@@ -15,6 +15,7 @@ StandardErrorDialog=new XObject({
         delete_event : (self, event)  => {
             this.el.hide();
             return true;
+            
         },
         response : (self, response_id) => {
            this.el.hide();

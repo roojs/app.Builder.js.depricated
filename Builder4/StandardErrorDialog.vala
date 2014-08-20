@@ -17,20 +17,26 @@ static int main (string[] args) {
 
 public static Xcls_StandardErrorDialog  StandardErrorDialog;
 
-public class Xcls_StandardErrorDialog
+public class Xcls_StandardErrorDialog : Object 
 {
     public Gtk.MessageDialog el;
-    private static Xcls_StandardErrorDialog  _this;
+    private Xcls_StandardErrorDialog  _this;
 
+    public static Xcls_StandardErrorDialog singleton()
+    {
+        if (StandardErrorDialog == null) {
+            StandardErrorDialog= new Xcls_StandardErrorDialog();
+        }
+        return StandardErrorDialog;
+    }
 
         // my vars
 
         // ctor 
     public Xcls_StandardErrorDialog()
     {
-        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "fixme" );
         _this = this;
-        StandardErrorDialog = this;
+        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, "fixme" );
 
         // my vars
 
@@ -42,6 +48,7 @@ public class Xcls_StandardErrorDialog
         this.el.delete_event.connect(   (self, event)  => {
             this.el.hide();
             return true;
+            
         } 
          );
         this.el.response.connect(   (self, response_id) => {
@@ -50,20 +57,6 @@ public class Xcls_StandardErrorDialog
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip text - already used 
-
-    // skip xtype - not pipe 
-
-    // skip |buttons - already used 
-
-    // skip |message_type - already used 
-
-    // skip |modal - already used 
-
-    // skip |use_markup - already used 
     public void show (string msg) {
         
             this.el.text =  msg;
@@ -74,12 +67,4 @@ public class Xcls_StandardErrorDialog
         }
 
     // skip |xns - no return type
-
-    // skip id - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
 }
