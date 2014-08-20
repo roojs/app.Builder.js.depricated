@@ -182,6 +182,10 @@ namespace JsRender {
 		print("--- JsRender.Roo.save");
 		this.saveBJS();
 
+		// no tree..
+		if (this.tree == null) {
+			return;
+		}
 		// now write the js file..
 		string js;
 		try {
@@ -201,7 +205,7 @@ namespace JsRender {
 		try {
 			FileUtils.set_contents(js, js_src, js_src.length);            
 		} catch (FileError e ) {
-		print("Save failed\n");
+			print("Save failed\n");
 		}
 		// for bootstrap - we can write the HTML to the templates directory..
             
