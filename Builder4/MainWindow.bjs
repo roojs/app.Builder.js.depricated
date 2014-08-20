@@ -222,11 +222,6 @@
                                                             ]
                                                         },
                                                         {
-                                                            "listeners": {
-                                                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-                                                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n            _this.showProjectEdit();\n            break;  \n        case \"files\":\n            // _this.showViewEditing();\n            break; \n        case \"projectedit\":\n            _this.hideProjectEdit();\n            break;\n            \n            \n              \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showProjectEdit();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showProjectEdit();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.showProjectEdit();    \n            break;\n        default:\n            break;\n    }\n    return false;    \n\n\n}"
-                                                            },
                                                             "id": "projecteditbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
@@ -235,17 +230,6 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Edit\\nProject\\nDetails\",new Clutter.Color.from_string(\"#fff\"))",
-                                                                    "|line_alignment": "Pango.Alignment.CENTER",
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Text",
-                                                                    "|x_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|x_expand": "false",
-                                                                    "|xns": "Clutter",
-                                                                    "|y_align": "Clutter.ActorAlign.CENTER",
-                                                                    "|y_expand": "false"
-                                                                },
-                                                                {
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
@@ -253,7 +237,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": " () => {\n    // create a new file in project..\n    if (_this.project == null) {\n        return  ;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
+                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n            _this.showProjectEdit();\n            break;  \n        case \"files\":\n            // _this.showViewEditing();\n            break; \n        case \"projectedit\":\n            _this.hideProjectEdit();\n            break;\n            \n            \n              \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showProjectEdit();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showProjectEdit();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.showProjectEdit();    \n            break;\n        default:\n            break;\n    }\n    return false;    \n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
