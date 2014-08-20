@@ -144,7 +144,7 @@ namespace JsRender {
         }
 		
         public override void save() {
-            base.save();
+            this.saveBJS();
             this.saveJS();
             this.saveVala();
         }
