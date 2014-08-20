@@ -856,6 +856,7 @@ public class Xcls_WindowLeftTree : Object
                         
                         this.el.get_iter(out iter_after, tree_path );            
                         this.el.iter_parent(out iter_par, iter_after);
+                        expand_parent = this.el.get_path(iter_par);
                         
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
@@ -882,6 +883,8 @@ public class Xcls_WindowLeftTree : Object
                        //  print("appending to  " + parent_str);
                         this.el.get_iter(out iter_par, tree_path);
                         this.el.append(out n_iter,   iter_par );
+                        expand_parent = this.el.get_path(iter_par);
+                        
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
                         parentNode =  (JsRender.Node)value.dup_object();
