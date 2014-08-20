@@ -275,7 +275,7 @@
                                                                             "pack": "false",
                                                                             "width_request": 50,
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Show\\nPalate\"",
+                                                                            "|label": "\"Show\\nPalete\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]

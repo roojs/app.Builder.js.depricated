@@ -10490,7 +10490,7 @@ Xcls_MainWindowXcls_Button29* xcls_mainwindow_xcls_button29_construct (GType obj
 #line 1877 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp4_ = self->el;
 #line 1877 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	gtk_button_set_label (_tmp4_, "Show\nPalate");
+	gtk_button_set_label (_tmp4_, "Show\nPalete");
 #line 1878 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp5_ = self->el;
 #line 1878 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
