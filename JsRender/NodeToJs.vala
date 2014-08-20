@@ -106,7 +106,7 @@ public class JsRender.NodeToJs : Object {
 				// it's a standard prop..
 				
 				// munge property..??
-				this.els.add( prop  + " : " + this.mungeChild (  this.pad + "	",  pl));
+				this.els.add( prop  + " : " + this.mungeChild (  this.pad + "    ",  pl));
 				
 				
 				//keys.push(prop);
