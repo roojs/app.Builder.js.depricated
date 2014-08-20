@@ -146,7 +146,7 @@ namespace JsRender {
 		}
 		 public abstract void save();
 
-		public void saveBjs()
+		public void saveBJS()
 		{
 		     
 		    var generator = new Json.Generator ();

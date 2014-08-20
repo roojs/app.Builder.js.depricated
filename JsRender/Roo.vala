@@ -180,7 +180,7 @@ namespace JsRender {
         {
             
             print("--- JsRender.Roo.save");
-            this.saveBjs();
+            this.saveBJS();
             
             // now write the js file..
             string js;
