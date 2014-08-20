@@ -369,8 +369,9 @@
                                                                     "items": [
                                                                         {
                                                                             "label": "Add File",
-                                                                            "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el)",
+                                                                            "pack": "false",
                                                                             "xtype": "Button",
+                                                                            "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el)",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
