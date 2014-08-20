@@ -1356,6 +1356,10 @@ MainWindow=new XObject({
                                                     reactive : true,
                                                     items : [
                                                         {
+                                                            xtype: Clutter.Actor,
+                                                            pack : false
+                                                        },
+                                                        {
                                                             xtype: Clutter.Text,
                                                             pack : "add_child",
                                                             init : this.el.set_size(50.0f,50.0f);,

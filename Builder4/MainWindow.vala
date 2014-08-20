@@ -2114,9 +2114,11 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_Text33( _this );
+            var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
-            this.el.add_child (  child_0.el  );
+            var child_1 = new Xcls_Text34( _this );
+            child_1.ref();
+            this.el.add_child (  child_1.el  );
 
             // init method 
             this.el.set_size(50.0f,50.0f);
@@ -2150,7 +2152,30 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Text33 : Object 
+    public class Xcls_Actor33 : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Actor33(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text34 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -2159,7 +2184,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text33(Xcls_MainWindow _owner )
+        public Xcls_Text34(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));

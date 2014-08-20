@@ -363,6 +363,11 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
+                                                                    "|xns": "Clutter",
+                                                                    "xtype": "Actor",
+                                                                    "pack": false
+                                                                },
+                                                                {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nFile\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
