@@ -369,13 +369,14 @@ public class JsRender.Node : Object {
 		var ret = new Json.Object();
 
 		// listeners...
-		var li = new Json.Object();
-		ret.set_object_member("listeners", li);
-		var liter = this.listeners.map_iterator();
-		while (liter.next()) {
-			li.set_string_member(liter.get_key(), liter.get_value());
+		if (this.listeners.size() > 0) {
+			var li = new Json.Object();
+			ret.set_object_member("listeners", li);
+			var liter = this.listeners.map_iterator();
+			while (liter.next()) {
+				li.set_string_member(liter.get_key(), liter.get_value());
+			}
 		}
-
 		//props
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
