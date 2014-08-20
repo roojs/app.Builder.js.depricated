@@ -695,7 +695,7 @@ public class Xcls_WindowLeftTree : Object
                 
                 print("findDropNodeByPath : got path length %d / %s\n", path.length, path);
                 
-                if (path == "0") {
+                if (path.length == 0) {
                     // top drop. // just return empty..
                     return "|%d".printf((int)pref) ;
                     
