@@ -335,7 +335,7 @@ public class Xcls_MainWindow : Object
             
              this.left_tree.changed.connect(() => {
                this.window_rooview.requestRedraw();
-               this.left_Tree.model.file.save();
+               this.left_tree.model.file.save();
             });
              
             
@@ -369,7 +369,7 @@ public class Xcls_MainWindow : Object
                    } else {
                       this.window_gladeview.loadFile(this.left_tree.getActiveFile());
                   }
-                  this.left_Tree.model.file.save();
+                  this.left_tree.model.file.save();
             });
             
         
