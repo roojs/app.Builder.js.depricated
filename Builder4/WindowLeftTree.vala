@@ -891,6 +891,7 @@ public class Xcls_WindowLeftTree : Object
                     // reparent node in tree...
                    
                     
+                    // why only on no parent???
                     
                     if (node.parent == null) {
                          

@@ -847,6 +847,7 @@ WindowLeftTree=new XObject({
                             // reparent node in tree...
                            
                             
+                            // why only on no parent???
                             
                             if (node.parent == null) {
                                  
