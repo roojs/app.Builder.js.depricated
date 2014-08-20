@@ -649,9 +649,8 @@ WindowLeftTree=new XObject({
                         //console.dump(this.treemap);
                         
                         if (path.length == 0) {
-                            // top drop.
-                            return last + "|%d".printf((int)pref) + "|" + prop;
-                    
+                            // top drop. // just return empty..
+                            return "|%d".printf((int)pref) ;
                             
                         }
                         
