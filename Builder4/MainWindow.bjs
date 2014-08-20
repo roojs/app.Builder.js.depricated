@@ -358,7 +358,7 @@
                                                                             "pack": "false",
                                                                             "width_request": 50,
                                                                             "xtype": "Button",
-                                                                            "|label": "\"New\\nProject\"",
+                                                                            "|label": "\"New\\nProj.\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
