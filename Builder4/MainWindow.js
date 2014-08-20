@@ -1290,7 +1290,7 @@ MainWindow=new XObject({
                                                             }
                                                             
                                                             var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                            this.new_file_dialog.show(f);
+                                                            _this.new_file_dialog.show(f);
                                                             
                                                             return false;    
                                                         
