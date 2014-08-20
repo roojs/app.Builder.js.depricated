@@ -206,6 +206,8 @@ public class JsRender.Node : Object {
 	public void  remove()
 	{
 		if (this.parent == null) {
+			
+			
 			return;
 		}
 		var nlist = new Gee.ArrayList<Node>();
