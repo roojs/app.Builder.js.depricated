@@ -35,7 +35,7 @@ DialogNewComponent=new XObject({
                 var isNew = _this.file.name.length  > 0 ? false : true;
                 
                 if (!isNew && this.file.name != _this.name.el.get_text()) {
-                    StandardErrorDialog.show(
+                    Xcls_StandardErrorDialog.singleton().show(
                         "Sorry changing names does not work yet. "
                     );
                      
@@ -62,7 +62,7 @@ DialogNewComponent=new XObject({
                 var dir = _this.project.firstPath();
                
                 if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
-                    StandardErrorDialog.show(
+                    Xcls_StandardErrorDialog.singleton().show(
                         "That file already exists"
                     ); 
                     return;
