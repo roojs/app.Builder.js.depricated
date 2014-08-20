@@ -115,7 +115,7 @@ public class Xcls_DialogNewComponent : Object
                     return;
                 }
                 var fn = this.name.el.get_text();
-               var dir = _this.project.firstPath();
+                var dir = _this.project.firstPath();
                
                 if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
@@ -131,8 +131,11 @@ public class Xcls_DialogNewComponent : Object
         
                 _this.file = f;
                 
+        
                 
                 this.updateFileFromEntry();
+                _this.file.save();
+                _this.file.project.addFile(_this.file);
                 
         	 
                 // what about .js ?
@@ -162,14 +165,6 @@ public class Xcls_DialogNewComponent : Object
     }
 
     // userdefined functions 
-    public void updateFileFromEntry() {
-        
-                _this.file.title = _this.title.el.get_text();
-                _this.file.region = _this.region.el.get_text();            
-                _this.file.parent = _this.parent.el.get_text();                        
-                _this.file.permname = _this.permname.el.get_text();                                    
-                _this.file.modOrder = _this.modOrder.el.get_text();                                                
-        }    
     public void show(JsRender.JsRender c) 
         {
             this.project = c.project;
@@ -199,6 +194,14 @@ public class Xcls_DialogNewComponent : Object
             
             
         }
+    public void updateFileFromEntry() {
+        
+                _this.file.title = _this.title.el.get_text();
+                _this.file.region = _this.region.el.get_text();            
+                _this.file.parent = _this.parent.el.get_text();                        
+                _this.file.permname = _this.permname.el.get_text();                                    
+                _this.file.modOrder = _this.modOrder.el.get_text();                                                
+        }    
 
     // skip |xns - no return type
     public class Xcls_VBox2 : Object 

@@ -59,7 +59,7 @@ DialogNewComponent=new XObject({
                     return;
                 }
                 var fn = this.name.el.get_text();
-               var dir = _this.project.firstPath();
+                var dir = _this.project.firstPath();
                
                 if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
@@ -75,8 +75,11 @@ DialogNewComponent=new XObject({
         
                 _this.file = f;
                 
+        
                 
                 this.updateFileFromEntry();
+                _this.file.save();
+                _this.file.project.addFile(_this.file);
                 
         	 
                 // what about .js ?
@@ -103,14 +106,6 @@ DialogNewComponent=new XObject({
           this.el.show_all();
           
         }
-    },
-    'void:updateFileFromEntry' : () {
-    
-            _this.file.title = _this.title.el.get_text();
-            _this.file.region = _this.region.el.get_text();            
-            _this.file.parent = _this.parent.el.get_text();                        
-            _this.file.permname = _this.permname.el.get_text();                                    
-            _this.file.modOrder = _this.modOrder.el.get_text();                                                
     },
     default_height : 200,
     default_width : 500,
@@ -146,6 +141,14 @@ DialogNewComponent=new XObject({
         //this.success = c.success;
         
         
+    },
+    'void:updateFileFromEntry' : () {
+    
+            _this.file.title = _this.title.el.get_text();
+            _this.file.region = _this.region.el.get_text();            
+            _this.file.parent = _this.parent.el.get_text();                        
+            _this.file.permname = _this.permname.el.get_text();                                    
+            _this.file.modOrder = _this.modOrder.el.get_text();                                                
     },
     items : [
         {
