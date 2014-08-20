@@ -943,7 +943,6 @@ MainWindow=new XObject({
                                                     id : "projectbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
@@ -997,7 +996,6 @@ MainWindow=new XObject({
                                                     id : "editfilebutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50.0f,50.0f);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
@@ -1034,7 +1032,6 @@ MainWindow=new XObject({
                                                     id : "projecteditbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
@@ -1137,7 +1134,6 @@ MainWindow=new XObject({
                                                     id : "objectshowbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,

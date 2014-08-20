@@ -170,7 +170,6 @@
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
-                                                            "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
@@ -198,7 +197,6 @@
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50.0f,50.0f);",
-                                                            "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
@@ -226,7 +224,6 @@
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
-                                                            "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
@@ -259,7 +256,6 @@
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
-                                                            "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {

@@ -1436,7 +1436,6 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor19( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
@@ -1552,7 +1551,6 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor22( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
@@ -1651,7 +1649,6 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor25( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
@@ -1771,7 +1768,6 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor28( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
