@@ -1021,6 +1021,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : 50,
                                                                     label : "Edit\nFile\nProperties"
                                                                 }
                                                             ]
