@@ -16,6 +16,7 @@ ProjectSettings=new XObject({
     homogeneous : false,
     'void:show' : (Project.Project project) {
         _this.project = project;
+        _this.path.el.label = project.firstPath();
         // get the active project.
          var lm = Gtk.SourceLanguageManager.get_default();
                     
