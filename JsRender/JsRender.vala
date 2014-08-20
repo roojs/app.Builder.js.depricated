@@ -335,6 +335,9 @@ namespace JsRender {
 		
 		public string mungeToString(string pad)
 		{
+			if (this.tree == null) {
+				return "";
+			}
 			var x = new NodeToJs(this.tree, this.doubleStringProps, pad);
 			return x.munge();
 			
