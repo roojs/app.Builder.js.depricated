@@ -2286,16 +2286,15 @@ public class Xcls_MainWindow : Object
             this.el.label = "Add\nFile";
 
             // listeners 
-            this.el.clicked.connect(  () => {
+            this.el.clicked.connect(   ( ) => {
+              
                 // create a new file in project..
-                if (_this.project == null) {
-                    return  ;
-                }
+                //Xcls_DialogNewComponent.singleton().show(
                 
-                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                _this.new_file_dialog.show(f);
                 
-                return  ;    
+                return false;    
+            
+            
             } );
         }
 
