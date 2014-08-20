@@ -1785,7 +1785,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 50;
-            this.el.label = "Add\nFile";
+            this.el.label = "Edit\nProject\nDetails";
 
             // listeners 
             this.el.clicked.connect(  () => {
