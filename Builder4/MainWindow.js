@@ -277,9 +277,11 @@ MainWindow=new XObject({
          this.left_props.changed.connect(() => {
               if (this.left_tree.getActiveFile().xtype == "Roo" ) {
                    this.window_rooview.requestRedraw();
+                   
                } else {
                   this.window_gladeview.loadFile(this.left_tree.getActiveFile());
               }
+              this.left_Tree.model.file.save();
         });
         
     
