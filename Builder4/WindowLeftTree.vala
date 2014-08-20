@@ -288,6 +288,7 @@ public class Xcls_WindowLeftTree : Object
                     // if there are not items in the tree.. the we have to set isOver to true for anything..
                     var isEmpty = false;
                     if (_this.model.el.iter_n_children(null) < 1) {
+                        print("got NO children?\n");
                         isOver = true; //??? 
                         isEmpty = true;
                         pos = Gtk.TreeViewDropPosition.INTO_OR_AFTER;
