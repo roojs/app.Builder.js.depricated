@@ -284,7 +284,13 @@ public class Xcls_WindowLeftTree : Object
                     Gtk.TreePath path;
                     Gtk.TreeViewDropPosition pos;
                     var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
-                 
+                    
+                    // if there are not items in the tree.. the we have to set isOver to true for anything..
+                    
+                    if (_this.model.iter_n_children(null) < 1) {
+                        isOver = 1; //??? 
+                    }
+                    
                  
                     //console.log("LEFT-TREE: drag-motion");
                     var src = Gtk.drag_get_source_widget(ctx);
