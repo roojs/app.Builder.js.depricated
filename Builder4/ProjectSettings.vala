@@ -235,6 +235,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // set gobject values
+            this.el.xalign = 0f;
         }
 
         // userdefined functions 

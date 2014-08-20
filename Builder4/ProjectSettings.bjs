@@ -54,6 +54,7 @@
                     "id": "path",
                     "label": "filename",
                     "pack": "pack_start,false,false,0",
+                    "xalign": 0,
                     "xtype": "Label",
                     "|xns": "Gtk"
                 },
