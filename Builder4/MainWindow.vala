@@ -1610,7 +1610,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 50;
-            this.el.label = "Edit\nFile\nDetails";
+            this.el.label = "File\nDetails";
             this.el.width_request = 50;
 
             // listeners 
@@ -1709,7 +1709,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 50;
-            this.el.label = "Edit\nProject\nDetails";
+            this.el.label = "Project\nDetails";
             this.el.width_request = 50;
 
             // listeners 

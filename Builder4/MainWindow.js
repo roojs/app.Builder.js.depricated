@@ -1023,7 +1023,7 @@ MainWindow=new XObject({
                                                                     height_request : 50,
                                                                     pack : "false",
                                                                     width_request : 50,
-                                                                    label : "Edit\nFile\nDetails"
+                                                                    label : "File\nDetails"
                                                                 }
                                                             ]
                                                         }
@@ -1081,7 +1081,7 @@ MainWindow=new XObject({
                                                                     height_request : 50,
                                                                     pack : "false",
                                                                     width_request : 50,
-                                                                    label : "Edit\nProject\nDetails"
+                                                                    label : "Project\nDetails"
                                                                 }
                                                             ]
                                                         }
