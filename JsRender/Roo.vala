@@ -444,7 +444,7 @@ namespace JsRender {
             }
             
             if (top.contains("Modal")) {
-                return this.toSourceModal(true);
+                return this.toSourceModal(false);
             }
             return this.toSourceLayout(false);
             
