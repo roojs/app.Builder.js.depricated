@@ -378,17 +378,20 @@ public class JsRender.Node : Object {
 			}
 		}
 		//props
-		var iter = this.props.map_iterator();
-		while (iter.next()) {
-			this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
+		if (this.props.size() > 0 ) {
+			var iter = this.props.map_iterator();
+			while (iter.next()) {
+				this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
+			}
 		}
+		if (this.items.size > 0) {
+			var ar = new Json.Array();
+			ret.set_array_member("items", ar);
 		
-		var ar = new Json.Array();
-		ret.set_array_member("items", ar);
-		
-		// children..
-		for(var i =0;i < this.items.size;i++) {
-			ar.add_object_element(this.items.get(i).toJsonObject());
+			// children..
+			for(var i =0;i < this.items.size;i++) {
+				ar.add_object_element(this.items.get(i).toJsonObject());
+			}
 		}
 		return ret;
 		
