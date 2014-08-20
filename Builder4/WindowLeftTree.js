@@ -849,12 +849,12 @@ WindowLeftTree=new XObject({
                             
                             // why only on no parent???
                             
-                            if (node.parent == null) {
+                            //if (node.parent = null) {
                                  
                                 var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
                                 node = new_node;
                                 
-                            }
+                            //}
                             
                             
                             // work out what kind of packing to use.. -- should be in 
