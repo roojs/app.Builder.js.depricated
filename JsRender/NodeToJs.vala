@@ -380,7 +380,7 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		// finally munge the children...
-		if (this.node.items.size < 0) {
+		if (this.node.items.size < 1) {
 			return;
 		}
 		var itms = "items : [\n";
