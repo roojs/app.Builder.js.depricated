@@ -17,6 +17,25 @@ namespace Palete
 			this.left = ileft;
 			this.right=  iright;
 		}
+		public bool leftHas(string s)
+		{
+			for(var i = 0 ; i < this.left.size; i++) {
+				var m = this.left.get(i);
+				if (s == m) {
+					return true;
+				}
+				if (s.length > m.length) {
+					continue;
+				}
+				if (m.substring(0, s.length+1) == (s + ":")) {
+					return true;
+				}
+			}
+			return false;
+				
+		}
+
+		
 	}
 
 	
@@ -119,6 +138,9 @@ namespace Palete
             
         },
         */
+	
+
+	    
 	public string[] getChildList(string in_rval)
         {
 
