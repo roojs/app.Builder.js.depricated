@@ -159,7 +159,7 @@ namespace Palete
 		for (var i = 0; i < this.map.size; i++) {
 			var m = this.map.get(i);
 				
-        		if (m.left.index_of(rval) < 0) {
+        		if (!m.leftHas(rval)) {
 				continue;
 			}
 			print("found LEFT, adding right\n");
