@@ -2170,7 +2170,7 @@ public class Xcls_MainWindow : Object
             this.el.label = "Add\\nFile";
 
             // listeners 
-            this.el.activate.connect(  () => {
+            this.el.clicked.connect(  () => {
                 // create a new file in project..
                 if (_this.project == null) {
                     return  ;

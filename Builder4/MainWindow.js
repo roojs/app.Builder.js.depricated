@@ -1335,7 +1335,7 @@ MainWindow=new XObject({
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     listeners : {
-                                                                        activate : () => {
+                                                                        clicked : () => {
                                                                             // create a new file in project..
                                                                             if (_this.project == null) {
                                                                                 return  ;
