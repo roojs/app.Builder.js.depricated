@@ -286,9 +286,11 @@ public class Xcls_WindowLeftTree : Object
                     var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
                     
                     // if there are not items in the tree.. the we have to set isOver to true for anything..
-                    
+                    var isEmpty = false;
                     if (_this.model.iter_n_children(null) < 1) {
                         isOver = true; //??? 
+                        isEmpty = true;
+                        pos = 1;
                     }
                     
                  
@@ -321,9 +323,9 @@ public class Xcls_WindowLeftTree : Object
                         
                         print("dropList: %s\n", string.joinv(" , ", dropList));
                         
-                        targetData = _this.model.findDropNodeByPath( path.to_string(), dropList, pos);
+                        targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
                             
-                        //print("targetDAta: " + targetData +"\n");
+                        print("targetDAta: " + targetData +"\n");
                         
                         if (targetData.length < 1) {
                          
