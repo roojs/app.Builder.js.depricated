@@ -1053,8 +1053,8 @@ MainWindow=new XObject({
                                                                         }
                                                                     },
                                                                     height_request : 50,
-                                                                    label : "Add\nFile",
-                                                                    pack : "false"
+                                                                    pack : "false",
+                                                                    label : "Edit\nFile\nProperties"
                                                                 }
                                                             ]
                                                         }
