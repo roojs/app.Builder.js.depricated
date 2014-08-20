@@ -203,7 +203,7 @@ WindowLeftTree=new XObject({
                             
                             print("dropList: %s\n", string.joinv(" , ", dropList));
                             
-                            targetData = _this.model.findDropNodeByPath( isEmpty ? "*top" : path.to_string(), dropList, pos);
+                            targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
                                 
                             print("targetDAta: " + targetData +"\n");
                             
