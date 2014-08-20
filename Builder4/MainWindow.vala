@@ -692,7 +692,10 @@ public class Xcls_MainWindow : Object
             // what's the active node on the left hand side..
             
             var n = _this.left_tree.getActiveElement();
-            if (n == null) {
+        
+            
+            
+            if (n == null && _this.left_tree.file.tree != null) {
                 return;
             }
             
