@@ -1324,10 +1324,6 @@ MainWindow=new XObject({
                                                 {
                                                     xtype: Clutter.Actor,
                                                     listeners : {
-                                                        leave_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#000");
-                                                            return false;
-                                                        },
                                                         button_press_event : ( ) => {
                                                           
                                                             // create a new file in project..
