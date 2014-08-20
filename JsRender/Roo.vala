@@ -435,8 +435,8 @@ namespace JsRender {
             
             // we have 2 types = dialogs and components
             // 
-            var top = this.guessName(this.tree);
-            if (top != null) {
+            var top = this.tree.fqn();
+            if (top == null) {
                 return "";
             }
             if (top.contains("Dialog")) {
