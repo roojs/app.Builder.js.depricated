@@ -368,9 +368,8 @@
                                                                     "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
-                                                                            "xinit": "",
                                                                             "label": "Add File",
-                                                                            "pack": "get_widget().add",
+                                                                            "xinit": "",
                                                                             "xtype": "Button",
                                                                             "|xns": "Gtk"
                                                                         }
