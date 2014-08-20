@@ -197,7 +197,7 @@ namespace JsRender {
 		try {
 			Regex regex = new Regex("\\.(bjs|js)$");
 
-			js = regex.replace(this.path,this.path.length , 0 , "");
+			js = regex.replace(this.path,this.path.length , 0 , ".js");
 		} catch (RegexError e) {
 			this.name = "???";
 			print("count not make filename from path");
