@@ -1323,22 +1323,6 @@ MainWindow=new XObject({
                                                 },
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    listeners : {
-                                                        button_press_event : ( ) => {
-                                                          
-                                                            // create a new file in project..
-                                                            if (_this.project == null) {
-                                                                return false;
-                                                            }
-                                                            
-                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                            _this.new_file_dialog.show(f);
-                                                            
-                                                            return false;    
-                                                        
-                                                        
-                                                        }
-                                                    },
                                                     id : "addfilebutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50.0f,50.0f);,
@@ -1352,7 +1336,12 @@ MainWindow=new XObject({
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     label : "Add File",
-                                                                    pack : "false"
+                                                                    pack : "false",
+                                                                    listeners : {
+                                                                        activate : function (self) {
+                                                                        
+                                                                        }
+                                                                    }
                                                                 }
                                                             ]
                                                         }
