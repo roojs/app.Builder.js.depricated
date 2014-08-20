@@ -52,9 +52,9 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
 
         // my vars
-    public Xcls_DialogNewComponent new_file_dialog;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
+    public Xcls_DialogNewComponent new_file_dialog;
     public Xcls_Editor code_editor;
     public Xcls_GladeView window_gladeview;
     public Xcls_LeftProps left_props;
@@ -75,9 +75,9 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.new_file_dialog = null;
         this.project = null;
         this.clutterfiles = null;
+        this.new_file_dialog = null;
         this.code_editor = null;
         this.window_gladeview = null;
         this.left_props = null;
@@ -519,7 +519,7 @@ public class Xcls_MainWindow : Object
         
             // new file dialog
             this.new_file_dialog = new Xcls_DialogNewComponent();
-            this.new_file_dialog.success.connect(project,file)
+            this.new_file_dialog.success.connect((project,file) =>
             {
                 _this.project = project;
                 _this.showViewEditing();
@@ -538,7 +538,7 @@ public class Xcls_MainWindow : Object
                     this.window_gladeview.el.show_all();
                 }
             
-            }
+            });
             
             
         

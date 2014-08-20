@@ -431,7 +431,7 @@ MainWindow=new XObject({
     
         // new file dialog
         this.new_file_dialog = new Xcls_DialogNewComponent();
-        this.new_file_dialog.success.connect(project,file)
+        this.new_file_dialog.success.connect((project,file) =>
         {
             _this.project = project;
             _this.showViewEditing();
@@ -450,7 +450,7 @@ MainWindow=new XObject({
                 this.window_gladeview.el.show_all();
             }
         
-        }
+        });
         
         
     
