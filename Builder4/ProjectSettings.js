@@ -88,7 +88,7 @@ ProjectSettings=new XObject({
         },
         {
             xtype: Gtk.Label,
-            xpack : "pack_start,false,false,0",
+            pack : "pack_start,false,false,0",
             id : "path"
         },
         {
