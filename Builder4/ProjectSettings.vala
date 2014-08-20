@@ -51,6 +51,7 @@ public class Xcls_ProjectSettings : Object
         this.el.pack_start (  child_0.el , false,false,0 );
         var child_1 = new Xcls_path( _this );
         child_1.ref();
+        this.el.add (  child_1.el  );
         var child_2 = new Xcls_Label7( _this );
         child_2.ref();
         this.el.pack_start (  child_2.el , false,false,0 );

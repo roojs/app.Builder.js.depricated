@@ -51,8 +51,8 @@
                     ]
                 },
                 {
+                    "xpack": "pack_start,false,false,0",
                     "id": "path",
-                    "pack": false,
                     "xtype": "Label",
                     "|xns": "Gtk"
                 },
