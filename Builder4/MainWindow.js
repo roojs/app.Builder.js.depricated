@@ -1358,7 +1358,7 @@ MainWindow=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.Button,
-                                                                    xpack : "add_child"
+                                                                    pack : "add_child"
                                                                 }
                                                             ]
                                                         },
