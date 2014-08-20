@@ -525,7 +525,9 @@ public class Xcls_MainWindow : Object
         
             // new file dialog
             this.new_file_dialog = new Xcls_DialogNewComponent();
+            // force it modal to the main window..
             this.new_file_dialog.el.set_transient_for(this.el);
+            this.new_file_dialog.el.set_modal(true);
             
             this.new_file_dialog.success.connect((project,file) =>
             {
