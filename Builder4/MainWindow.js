@@ -1359,7 +1359,7 @@ MainWindow=new XObject({
                                                                 {
                                                                     xtype: Gtk.Button,
                                                                     label : "Add File",
-                                                                    pack : "add_child"
+                                                                    pack : "get_widget().add"
                                                                 }
                                                             ]
                                                         }
