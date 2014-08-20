@@ -279,15 +279,10 @@
                                                             ]
                                                         },
                                                         {
-                                                            "listeners": {
-                                                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return false;    \n\n\n}"
-                                                            },
                                                             "id": "addpropbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
-                                                            "|reactive": "true",
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {

@@ -1933,52 +1933,12 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor31( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
             // init method 
             this.el.set_size(50,50);
-
-            // listeners 
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
-                return false;
-            } );
-            this.el.button_press_event.connect(   ( ) => {
-                
-                
-                
-                switch (_this.state) {
-                    case "edit":
-                        _this.showAddProp();
-                        break;
-                        
-                    case "object":
-                        _this.hideObject();
-                        _this.showAddProp();
-                        break;
-                   
-                    case "addlistener":
-                        _this.hideAddListener();
-                        _this.showAddProp();            
-                        break;
-                        
-                        
-                    case "addprop":
-                        _this.hideAddProp();
-                        break;
-                        
-                    default:
-                        print("unhandled add property from %s\n",_this.state);
-                        break;
-                        
-                }
-                return false;    
-            
-            
-            } );
         }
 
         // userdefined functions 

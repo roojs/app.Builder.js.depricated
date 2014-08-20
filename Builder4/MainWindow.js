@@ -1189,49 +1189,9 @@ MainWindow=new XObject({
                                                 },
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    listeners : {
-                                                        leave_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#000");
-                                                            return false;
-                                                        },
-                                                        button_press_event : ( ) => {
-                                                            
-                                                            
-                                                            
-                                                            switch (_this.state) {
-                                                                case "edit":
-                                                                    _this.showAddProp();
-                                                                    break;
-                                                                    
-                                                                case "object":
-                                                                    _this.hideObject();
-                                                                    _this.showAddProp();
-                                                                    break;
-                                                               
-                                                                case "addlistener":
-                                                                    _this.hideAddListener();
-                                                                    _this.showAddProp();            
-                                                                    break;
-                                                                    
-                                                                    
-                                                                case "addprop":
-                                                                    _this.hideAddProp();
-                                                                    break;
-                                                                    
-                                                                default:
-                                                                    print("unhandled add property from %s\n",_this.state);
-                                                                    break;
-                                                                    
-                                                            }
-                                                            return false;    
-                                                        
-                                                        
-                                                        }
-                                                    },
                                                     id : "addpropbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
