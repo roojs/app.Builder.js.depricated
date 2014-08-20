@@ -369,7 +369,7 @@ public class JsRender.Node : Object {
 		var ret = new Json.Object();
 
 		// listeners...
-		if (this.listeners.size() > 0) {
+		if (this.listeners.size > 0) {
 			var li = new Json.Object();
 			ret.set_object_member("listeners", li);
 			var liter = this.listeners.map_iterator();
@@ -378,7 +378,7 @@ public class JsRender.Node : Object {
 			}
 		}
 		//props
-		if (this.props.size() > 0 ) {
+		if (this.props.size > 0 ) {
 			var iter = this.props.map_iterator();
 			while (iter.next()) {
 				this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
