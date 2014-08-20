@@ -53,6 +53,11 @@
                 {
                     "|xns": "Gtk",
                     "xtype": "Label",
+                    "pack": false
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "Label",
                     "pack": "pack_start,false,false,0",
                     "label": "HTML To insert at end of <HEAD>"
                 },

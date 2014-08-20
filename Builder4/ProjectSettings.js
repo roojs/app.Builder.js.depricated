@@ -88,6 +88,10 @@ ProjectSettings=new XObject({
         },
         {
             xtype: Gtk.Label,
+            pack : false
+        },
+        {
+            xtype: Gtk.Label,
             pack : "pack_start,false,false,0",
             label : "HTML To insert at end of <HEAD>"
         },

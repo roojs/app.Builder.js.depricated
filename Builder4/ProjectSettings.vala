@@ -50,10 +50,12 @@ public class Xcls_ProjectSettings : Object
         this.el.pack_start (  child_0.el , false,false,0 );
         var child_1 = new Xcls_Label6( _this );
         child_1.ref();
-        this.el.pack_start (  child_1.el , false,false,0 );
-        var child_2 = new Xcls_ScrolledWindow7( _this );
+        var child_2 = new Xcls_Label7( _this );
         child_2.ref();
-        this.el.pack_start (  child_2.el , true,true,0 );
+        this.el.pack_start (  child_2.el , false,false,0 );
+        var child_3 = new Xcls_ScrolledWindow8( _this );
+        child_3.ref();
+        this.el.pack_start (  child_3.el , true,true,0 );
     }
 
     // userdefined functions 
@@ -224,6 +226,29 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Label6(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
+            this.el = new Gtk.Label( null );
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Label7 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Label7(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
             this.el = new Gtk.Label( "HTML To insert at end of <HEAD>" );
 
             // my vars
@@ -235,7 +260,7 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ScrolledWindow7 : Object 
+    public class Xcls_ScrolledWindow8 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ProjectSettings  _this;
@@ -244,7 +269,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow7(Xcls_ProjectSettings _owner )
+        public Xcls_ScrolledWindow8(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
