@@ -363,7 +363,7 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nFile\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Edit\\nFile\\nProperties\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
                                                                     "|init": "this.el.set_size(50.0f,50.0f);",

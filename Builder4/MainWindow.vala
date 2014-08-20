@@ -2160,7 +2160,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text33(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Edit\nFile\nProperties",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
