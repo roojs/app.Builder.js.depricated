@@ -693,7 +693,9 @@ public class Xcls_MainWindow : Object
             
             var n = _this.left_tree.getActiveElement();
         
-            
+            if (_this.left_tree.file == null) {
+                return;
+            }
             
             if (n == null && _this.left_tree.file.tree != null) {
                 return;
