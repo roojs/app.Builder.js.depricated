@@ -2167,7 +2167,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.label = "Add File";
+            this.el.label = "Add\\nFile";
 
             // listeners 
             this.el.activate.connect(  () => {

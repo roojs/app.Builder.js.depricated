@@ -1347,7 +1347,7 @@ MainWindow=new XObject({
                                                                             return false;    
                                                                         }
                                                                     },
-                                                                    label : "Add File",
+                                                                    label : "Add\\nFile",
                                                                     pack : "false"
                                                                 }
                                                             ]
