@@ -313,7 +313,7 @@ public class Xcls_WindowLeftTree : Object
                         //print("get dropList for : %s\n",selection_text);            
                         var dropList = _this.model.file.palete().getDropList(selection_text);
                         
-                        //print("dropList: %s\n", string.joinv(" , ", dropList));
+                        print("dropList: %s\n", string.joinv(" , ", dropList));
                         
                         targetData = _this.model.findDropNodeByPath( path.to_string(), dropList, pos);
                             
