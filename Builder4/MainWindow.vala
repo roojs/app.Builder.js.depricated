@@ -515,7 +515,30 @@ public class Xcls_MainWindow : Object
         
             });
         
-        
+            // new file dialog
+            this.new_file_dialog = new Xcls_DialogNewComponent();
+            this.new_file_dialog.success.connect(project,file)
+            {
+                _this.project = project;
+                _this.showViewEditing();
+                this.left_tree.model.loadFile(file);
+                var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
+                if (file.xtype == "Roo" ) { 
+                    ctr.foreach( (w) => { ctr.remove(w); });
+                    ctr.add(this.window_rooview.el);
+                    this.window_rooview.loadFile(file);
+                    
+                    this.window_rooview.el.show_all();
+                } else {
+                    ctr.foreach( (w) => { ctr.remove(w); });
+                    ctr.add(this.window_gladeview.el);
+                    this.window_gladeview.loadFile(file);
+                    this.window_gladeview.el.show_all();
+                }
+            
+            }
+            
+            
         
         
         
