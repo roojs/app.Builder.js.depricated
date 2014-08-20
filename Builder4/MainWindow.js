@@ -979,7 +979,7 @@ MainWindow=new XObject({
                                                                                 default:
                                                                                     break;
                                                                             }
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         }
                                                                     },
@@ -1009,12 +1009,12 @@ MainWindow=new XObject({
                                                                           
                                                                             // create a new file in project..
                                                                             if (_this.project == null || _this.left_tree.model.file == null) {
-                                                                                return false;
+                                                                                return  ;
                                                                             }
                                                                              
                                                                             _this.new_file_dialog.show(_this.left_tree.model.file);
                                                                             
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }
@@ -1071,7 +1071,7 @@ MainWindow=new XObject({
                                                                                 default:
                                                                                     break;
                                                                             }
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }
@@ -1174,7 +1174,7 @@ MainWindow=new XObject({
                                                                                     print("unhandled add objects from %s\n",_this.state);
                                                                                     break;
                                                                             }
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }

@@ -1524,7 +1524,7 @@ public class Xcls_MainWindow : Object
                     default:
                         break;
                 }
-                return false;    
+                return  ;    
             
             } );
         }
@@ -1616,12 +1616,12 @@ public class Xcls_MainWindow : Object
               
                 // create a new file in project..
                 if (_this.project == null || _this.left_tree.model.file == null) {
-                    return false;
+                    return  ;
                 }
                  
                 _this.new_file_dialog.show(_this.left_tree.model.file);
                 
-                return false;    
+                return  ;    
             
             
             } );
@@ -1740,7 +1740,7 @@ public class Xcls_MainWindow : Object
                     default:
                         break;
                 }
-                return false;    
+                return  ;    
             
             
             } );
@@ -1905,7 +1905,7 @@ public class Xcls_MainWindow : Object
                         print("unhandled add objects from %s\n",_this.state);
                         break;
                 }
-                return false;    
+                return  ;    
             
             
             } );
