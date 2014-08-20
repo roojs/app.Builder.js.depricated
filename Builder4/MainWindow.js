@@ -1080,6 +1080,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : 50,
                                                                     label : "Edit\nProject\nDetails"
                                                                 }
                                                             ]
@@ -1183,6 +1184,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : 50,
                                                                     label : "Show\nPalate"
                                                                 }
                                                             ]
@@ -1239,6 +1241,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : 50,
                                                                     label : "Add\nProperty"
                                                                 }
                                                             ]
@@ -1329,6 +1332,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : 50,
                                                                     label : "New\nProject"
                                                                 }
                                                             ]
@@ -1362,8 +1366,9 @@ MainWindow=new XObject({
                                                                         }
                                                                     },
                                                                     height_request : 50,
-                                                                    label : "Add\nFile",
-                                                                    pack : "false"
+                                                                    pack : "false",
+                                                                    width_request : 50,
+                                                                    label : "Add\nFile"
                                                                 }
                                                             ]
                                                         }

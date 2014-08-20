@@ -1710,6 +1710,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.height_request = 50;
             this.el.label = "Edit\nProject\nDetails";
+            this.el.width_request = 50;
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
@@ -1874,6 +1875,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.height_request = 50;
             this.el.label = "Show\nPalate";
+            this.el.width_request = 50;
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
@@ -1994,6 +1996,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.height_request = 50;
             this.el.label = "Add\nProperty";
+            this.el.width_request = 50;
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
@@ -2231,6 +2234,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.height_request = 50;
             this.el.label = "New\nProject";
+            this.el.width_request = 50;
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
@@ -2326,6 +2330,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.height_request = 50;
             this.el.label = "Add\nFile";
+            this.el.width_request = 50;
 
             // listeners 
             this.el.clicked.connect(  () => {
