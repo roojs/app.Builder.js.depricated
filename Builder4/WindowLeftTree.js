@@ -795,6 +795,7 @@ WindowLeftTree=new XObject({
                                 node.props.set("* prop", target_data[2]);
                             }
                     
+                            Gtk.TreePath expand_parent = null;
                             
                              //print("pos is %d  \n".printf(pos));
                             
