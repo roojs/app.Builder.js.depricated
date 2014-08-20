@@ -1362,16 +1362,6 @@ MainWindow=new XObject({
                                                                     pack : "add_child"
                                                                 }
                                                             ]
-                                                        },
-                                                        {
-                                                            xtype: Clutter.Text,
-                                                            pack : "add_child",
-                                                            init : this.el.set_size(50.0f,50.0f);,
-                                                            line_alignment : Pango.Alignment.CENTER,
-                                                            x_align : Clutter.ActorAlign.CENTER,
-                                                            x_expand : false,
-                                                            y_align : Clutter.ActorAlign.CENTER,
-                                                            y_expand : false
                                                         }
                                                     ]
                                                 }

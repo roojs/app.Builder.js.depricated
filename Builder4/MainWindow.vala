@@ -2114,9 +2114,6 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_Text35( _this );
-            child_1.ref();
-            this.el.add_child (  child_1.el  );
 
             // init method 
             this.el.set_size(50.0f,50.0f);
@@ -2194,37 +2191,6 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "Add File";
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Text35 : Object 
-    {
-        public Clutter.Text el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Text35(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));
-
-            // my vars
-
-            // set gobject values
-            this.el.line_alignment = Pango.Alignment.CENTER;
-            this.el.x_align = Clutter.ActorAlign.CENTER;
-            this.el.x_expand = false;
-            this.el.y_align = Clutter.ActorAlign.CENTER;
-            this.el.y_expand = false;
-
-            // init method 
-            this.el.set_size(50.0f,50.0f);
         }
 
         // userdefined functions 
