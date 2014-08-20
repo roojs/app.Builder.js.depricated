@@ -144,7 +144,7 @@ namespace JsRender {
 			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
 
 		}
-		 public abstract void save();
+		
 
 		public void saveBJS()
 		{
@@ -337,6 +337,7 @@ namespace JsRender {
 			
 		    
 		}
+		public abstract void save();
 		public abstract string toSource() ;
 		public abstract string toSourcePreview() ;
 		public abstract string toValaSource(bool testcompile) ;
