@@ -1357,7 +1357,13 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
-                                                            pack : "add_child"
+                                                            pack : "add_child",
+                                                            items : [
+                                                                {
+                                                                    xtype: Gtk.Button,
+                                                                    pack : false
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             xtype: Clutter.Text,

@@ -2117,7 +2117,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_Text34( _this );
+            var child_1 = new Xcls_Text35( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
 
@@ -2170,13 +2170,38 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_Button34( _this );
+            child_0.ref();
         }
 
         // userdefined functions 
 
         // skip |xns - no return type
     }
-    public class Xcls_Text34 : Object 
+    public class Xcls_Button34 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button34(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Text35 : Object 
     {
         public Clutter.Text el;
         private Xcls_MainWindow  _this;
@@ -2185,7 +2210,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Text34(Xcls_MainWindow _owner )
+        public Xcls_Text35(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px","Add\nFile",new Clutter.Color.from_string("#fff"));

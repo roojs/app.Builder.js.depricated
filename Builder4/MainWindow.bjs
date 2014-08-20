@@ -365,7 +365,14 @@
                                                                 {
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
-                                                                    "|xns": "GtkClutter"
+                                                                    "|xns": "GtkClutter",
+                                                                    "items": [
+                                                                        {
+                                                                            "pack": false,
+                                                                            "xtype": "Button",
+                                                                            "|xns": "Gtk"
+                                                                        }
+                                                                    ]
                                                                 },
                                                                 {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Add\\nFile\",new Clutter.Color.from_string(\"#fff\"))",
