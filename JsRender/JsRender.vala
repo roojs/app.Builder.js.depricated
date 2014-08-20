@@ -145,7 +145,8 @@ namespace JsRender {
 
 		}
 		 public abstract void save();
-		/*
+
+		public void saveBjs()
 		{
 		     
 		    var generator = new Json.Generator ();
@@ -162,7 +163,7 @@ namespace JsRender {
 		        print("Save failed");
 		    }
 		}
-		 */  
+		 
 		public void   saveHTML ()
 		{
 		    // NOOP
