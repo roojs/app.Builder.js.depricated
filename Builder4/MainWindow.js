@@ -1324,10 +1324,6 @@ MainWindow=new XObject({
                                                 {
                                                     xtype: Clutter.Actor,
                                                     listeners : {
-                                                        enter_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#333");
-                                                                return false;
-                                                        },
                                                         leave_event : (  event)  => {
                                                             this.el.background_color = new Clutter.Color.from_string("#000");
                                                             return false;

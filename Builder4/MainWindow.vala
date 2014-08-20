@@ -2119,10 +2119,6 @@ public class Xcls_MainWindow : Object
             this.el.set_size(50.0f,50.0f);
 
             // listeners 
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#333");
-                    return false;
-            } );
             this.el.leave_event.connect( (  event)  => {
                 this.el.background_color = new Clutter.Color.from_string("#000");
                 return false;
