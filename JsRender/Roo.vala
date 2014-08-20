@@ -176,33 +176,34 @@ namespace JsRender {
         },
     */
         
-       public  override  void save()
+	public  override  void save()
         {
             
-            print("--- JsRender.Roo.save");
-            this.saveBJS();
-            
-            // now write the js file..
-            string js;
-            try {
-                Regex regex = new Regex("\\.(bjs|js)$");
+		print("--- JsRender.Roo.save");
+		this.saveBJS();
 
-                js = regex.replace(this.path,this.path.length , 0 , "");
-            } catch (RegexError e) {
-                this.name = "???";
-                print("count not make filename from path");
-                return;
-            }
-            
-            //var d = new Date();
-            var js_src = this.toSource();            
-            //print("TO SOURCE in " + ((new Date()) - d) + "ms");
-            try {
-                FileUtils.set_contents(js, js_src, js_src.length);            
-            } catch (FileError e ) {
-                print("Save failed\n");
-            }
-            // for bootstrap - we can write the HTML to the templates directory..
+		// now write the js file..
+		string js;
+		try {
+			Regex regex = new Regex("\\.(bjs|js)$");
+
+			js = regex.replace(this.path,this.path.length , 0 , "");
+		} catch (RegexError e) {
+			this.name = "???";
+			print("count not make filename from path");
+			return;
+		}
+
+
+		//var d = new Date();
+		var js_src = this.toSource();            
+		//print("TO SOURCE in " + ((new Date()) - d) + "ms");
+		try {
+			FileUtils.set_contents(js, js_src, js_src.length);            
+		} catch (FileError e ) {
+		print("Save failed\n");
+		}
+		// for bootstrap - we can write the HTML to the templates directory..
             
             //var top = this.guessName(this.items[0]);
             //print ("TOP = " + top)
