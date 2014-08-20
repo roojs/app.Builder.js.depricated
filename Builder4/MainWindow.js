@@ -1326,7 +1326,6 @@ MainWindow=new XObject({
                                                     id : "addfilebutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50.0f,50.0f);,
-                                                    reactive : true,
                                                     items : [
                                                         {
                                                             xtype: GtkClutter.Actor,
@@ -1335,13 +1334,21 @@ MainWindow=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.Button,
-                                                                    label : "Add File",
-                                                                    pack : "false",
                                                                     listeners : {
-                                                                        activate : function (self) {
-                                                                        
+                                                                        activate : () => {
+                                                                            // create a new file in project..
+                                                                            if (_this.project == null) {
+                                                                                return false;
+                                                                            }
+                                                                            
+                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                                            _this.new_file_dialog.show(f);
+                                                                            
+                                                                            return false;    
                                                                         }
-                                                                    }
+                                                                    },
+                                                                    label : "Add File",
+                                                                    pack : "false"
                                                                 }
                                                             ]
                                                         }

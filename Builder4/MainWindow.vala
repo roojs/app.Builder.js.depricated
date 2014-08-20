@@ -2110,7 +2110,6 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = true;
             var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
@@ -2171,8 +2170,16 @@ public class Xcls_MainWindow : Object
             this.el.label = "Add File";
 
             // listeners 
-            this.el.activate.connect( function (self) {
-            
+            this.el.activate.connect(  () => {
+                // create a new file in project..
+                if (_this.project == null) {
+                    return false;
+                }
+                
+                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                _this.new_file_dialog.show(f);
+                
+                return false;    
             } );
         }
 
