@@ -835,7 +835,9 @@ public class Xcls_WindowLeftTree : Object
                     Gtk.TreeIter iter_par ;
                     
                    
-            
+                     if (target_data.length == 3 && target_data[2].length > 0) {
+                        node.props.set("* prop", target_data[2]);
+                    }
             
                     
                      //print("pos is %d  \n".printf(pos));
@@ -892,9 +894,7 @@ public class Xcls_WindowLeftTree : Object
                     
                     if (node.parent == null) {
                         
-                        if (target_data.length == 3 && target_data[2].length > 0) {
-                            node.props.set("* prop", target_data[2]);
-                        }
+                       
                         
                         var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
                         node = new_node;
