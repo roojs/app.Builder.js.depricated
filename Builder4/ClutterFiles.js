@@ -11,6 +11,46 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
+    listeners : {
+        scroll_event : ( event) => {
+           //Sprint("scroll event");
+                    var y = this.filelayout.el.y;
+                    var dir = event.direction;
+                    switch (dir) {
+                        case Clutter.ScrollDirection.UP:
+                            y += event.y /2;
+                            break;
+                        case Clutter.ScrollDirection.DOWN:
+                            y -= event.y /2 ;
+                            break;
+                        default:
+                            return false;
+                    }
+                    // range of scroll -- can go up -- eg.. -ve value.
+                    
+                    y = float.min(0, y);
+                    
+                    // to work out the max -ve number
+                    // height of filelayout
+                    // height of scrollactor..
+                    
+                    var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
+                     if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
+                        return  false;
+                    }
+                
+                
+                    
+                    
+                //    print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
+                  //          last_child_bottom - this.el.height,
+                   //         y));    
+                   // y = float.min(0, y);    //??
+                   // print("scroll event of %f  - new y = %f ".printf(event.y, y));
+                    this.filelayout.el.y = y;
+                    return true;
+        }
+    },
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
     init : this.fileitems = new Gee.ArrayList<Xcls_fileitem>();,
@@ -52,11 +92,6 @@ ClutterFiles=new XObject({
        this.el.set_size(this.el.get_stage().width-150,
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
-    },
-    listeners : {
-        scroll_event : function (self, event) {
-        
-        }
     },
     items : [
         {

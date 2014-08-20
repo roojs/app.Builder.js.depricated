@@ -6,6 +6,9 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
     "items": [
         {
+            "listeners": {
+                "scroll_event": "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n}"
+            },
             ".Gee.ArrayList<Xcls_fileitem>:fileitems": "",
             ".signal:void:open": "(JsRender.JsRender file)",
             "id": "ClutterFiles",
@@ -17,9 +20,6 @@
             "|void:loadProject": "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    var fiter = pr.files.map_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get_value());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get_value().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    this.el.show_all();\n}\n",
             "|void:set_size": "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
             "|xns": "Clutter",
-            "listeners": {
-                "scroll_event": "function (self, event) {\n\n}"
-            },
             "items": [
                 {
                     "id": "filelayout",
