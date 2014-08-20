@@ -279,7 +279,7 @@ namespace Project {
 		     
 		    var files = new Gee.HashMap<string,JsRender.JsRender>();
 
-			var fiter = this.files.map_iterator();
+		    var fiter = this.files.map_iterator();
 		    while(fiter.next()) {
 		        var fo = fiter.get_value();
 		        
