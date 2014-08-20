@@ -2116,7 +2116,7 @@ public class Xcls_MainWindow : Object
             this.el.reactive = true;
             var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.add_child (  child_0.el  );
             var child_1 = new Xcls_Text34( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );

@@ -1356,7 +1356,8 @@ MainWindow=new XObject({
                                                     reactive : true,
                                                     items : [
                                                         {
-                                                            xtype: GtkClutter.Actor
+                                                            xtype: GtkClutter.Actor,
+                                                            pack : "add_child"
                                                         },
                                                         {
                                                             xtype: Clutter.Text,

@@ -363,6 +363,7 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
+                                                                    "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|xns": "GtkClutter"
                                                                 },
