@@ -685,6 +685,7 @@ MainWindow=new XObject({
         _this.addprojectbutton.el.hide();   
         _this.addfilebutton.el.hide();       
         
+        _this.editfilebutton.el.show();   
        _this.projecteditbutton.el.show();
       _this.objectshowbutton.el.show();
       _this.addpropbutton.el.show();      
