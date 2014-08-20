@@ -29,6 +29,7 @@ public class Xcls_ProjectSettings : Object
         }
         return ProjectSettings;
     }
+    public Xcls_path path;
     public Xcls_view view;
 
         // my vars
@@ -48,7 +49,7 @@ public class Xcls_ProjectSettings : Object
         var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,false,0 );
-        var child_1 = new Xcls_Label6( _this );
+        var child_1 = new Xcls_path( _this );
         child_1.ref();
         var child_2 = new Xcls_Label7( _this );
         child_2.ref();
@@ -214,7 +215,7 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_Label6 : Object 
+    public class Xcls_path : Object 
     {
         public Gtk.Label el;
         private Xcls_ProjectSettings  _this;
@@ -223,9 +224,10 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_Label6(Xcls_ProjectSettings _owner )
+        public Xcls_path(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
+            _this.path = this;
             this.el = new Gtk.Label( null );
 
             // my vars
