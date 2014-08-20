@@ -398,6 +398,9 @@ namespace JsRender {
         public override string  toSourcePreview()
         {
             print("to source preview\n");
+	    if (this.tree == null) {
+		    return "";
+	    }
             var top = this.tree.fqn();
             //print(JSON.stringify(this.items, null,4));
                        
