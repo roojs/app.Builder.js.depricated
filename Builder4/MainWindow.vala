@@ -2114,7 +2114,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 50;
-            this.el.label = "Add\nEvent\nHandler";
+            this.el.label = "Add\nEvent\nCode";
 
             // listeners 
             this.el.clicked.connect(   ( ) => {

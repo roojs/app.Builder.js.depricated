@@ -330,7 +330,7 @@
                                                                             "height_request": 50,
                                                                             "pack": "false",
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Add\\nEvent\\nHandler\"",
+                                                                            "|label": "\"Add\\nEvent\\nCode\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
