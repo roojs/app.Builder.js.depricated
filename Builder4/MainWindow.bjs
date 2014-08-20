@@ -184,7 +184,7 @@
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
-                                                                            "width_request": "",
+                                                                            "width_request": 50,
                                                                             "xtype": "Button",
                                                                             "|label": "\"Open\\nFiles\"",
                                                                             "|xns": "Gtk"
