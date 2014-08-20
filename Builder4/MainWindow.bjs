@@ -293,7 +293,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return false;    \n\n\n}"
+                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return  ;    \n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
@@ -320,7 +320,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddListener();\n            break;\n            \n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            break;\n\n            \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showAddListener();\n            break;\n         case \"object\":\n            _this.hideObject();\n            _this.showAddListener();\n            break;\n    \n          default:\n            print(\"unhandled add listener from %s\\n\",_this.state);\n\n            break;\n            \n    }\n    return false;    \n\n\n}"
+                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddListener();\n            break;\n            \n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            break;\n\n            \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showAddListener();\n            break;\n         case \"object\":\n            _this.hideObject();\n            _this.showAddListener();\n            break;\n    \n          default:\n            print(\"unhandled add listener from %s\\n\",_this.state);\n\n            break;\n            \n    }\n    return  ;    \n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
@@ -347,7 +347,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n    \n    \n    return false;    \n\n\n}"
+                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n    \n    \n    return  ;    \n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",

@@ -1230,7 +1230,7 @@ MainWindow=new XObject({
                                                                                     break;
                                                                                     
                                                                             }
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }
@@ -1287,7 +1287,7 @@ MainWindow=new XObject({
                                                                                     break;
                                                                                     
                                                                             }
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }
@@ -1320,7 +1320,7 @@ MainWindow=new XObject({
                                                                             //Xcls_DialogNewComponent.singleton().show(
                                                                             
                                                                             
-                                                                            return false;    
+                                                                            return  ;    
                                                                         
                                                                         
                                                                         }
