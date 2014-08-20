@@ -1348,7 +1348,7 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
-                                                    id : "addfilebutton",
+                                                    id : "editfilebutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50.0f,50.0f);,
                                                     reactive : true,
