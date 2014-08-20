@@ -2168,7 +2168,7 @@ public class Xcls_MainWindow : Object
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el)
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
         }
 
         // userdefined functions 

@@ -365,7 +365,7 @@
                                                                 {
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el)",
+                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
                                                                     "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {

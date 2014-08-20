@@ -1355,7 +1355,7 @@ MainWindow=new XObject({
                                                         {
                                                             xtype: GtkClutter.Actor,
                                                             pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el),
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.Button,
