@@ -188,6 +188,33 @@
                                                                     "|xns": "Clutter",
                                                                     "|y_align": "Clutter.ActorAlign.CENTER",
                                                                     "|y_expand": "false"
+                                                                },
+                                                                {
+                                                                    "listeners": {
+                                                                        "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+                                                                        "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
+                                                                        "button_press_event": "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.left_tree.model.file == null) {\n        return false;\n    }\n     \n    _this.new_file_dialog.show(_this.left_tree.model.file);\n    \n    return false;    \n\n\n}"
+                                                                    },
+                                                                    "id": "editfilebutton",
+                                                                    "pack": "add_child",
+                                                                    "xtype": "Actor",
+                                                                    "|init": "this.el.set_size(50.0f,50.0f);",
+                                                                    "|reactive": "true",
+                                                                    "|xns": "Clutter",
+                                                                    "items": [
+                                                                        {
+                                                                            ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Edit\\nFile\\nProperties\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                            "pack": "add_child",
+                                                                            "xtype": "Text",
+                                                                            "|init": "this.el.set_size(50.0f,50.0f);",
+                                                                            "|line_alignment": "Pango.Alignment.CENTER",
+                                                                            "|x_align": "Clutter.ActorAlign.CENTER",
+                                                                            "|x_expand": "false",
+                                                                            "|xns": "Clutter",
+                                                                            "|y_align": "Clutter.ActorAlign.CENTER",
+                                                                            "|y_expand": "false"
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         },
