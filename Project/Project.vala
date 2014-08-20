@@ -87,24 +87,24 @@ namespace Project {
 					 }
             		 factoryFromFile(dirname + "/" + fn);
 				}
-            } catch(Error e) {
+   		 } catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
 			}
 		    
 
 		}
 
-        public static Gee.ArrayList<Project> allProjectsByName()
-        {
-            var ret = new Gee.ArrayList<Project>();
-            var iter = projects.map_iterator();
-		    while (iter.next()) {
-		        ret.add(iter.get_value());
-		    }
-            // fixme -- sort...
-            return ret;
-        
-        }
+		public static Gee.ArrayList<Project> allProjectsByName()
+		{
+		    var ret = new Gee.ArrayList<Project>();
+		    var iter = projects.map_iterator();
+			    while (iter.next()) {
+				ret.add(iter.get_value());
+			    }
+		    // fixme -- sort...
+		    return ret;
+		
+		}
 
 		public static Project?  getProject(string name) 
 		{
@@ -114,7 +114,7 @@ namespace Project {
 			return null;
 
 		}
-		
+		// load project data from project file.
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
@@ -137,7 +137,7 @@ namespace Project {
 			}
 			proj.name = obj.get_string_member("name");
 
-			var paths =obj.get_object_member("paths");
+			var paths = obj.get_object_member("paths");
 			paths.foreach_member((sobj, key, val) => {
 				proj.paths.set(key, "dir");
 			});
