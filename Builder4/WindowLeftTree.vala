@@ -605,7 +605,7 @@ public class Xcls_WindowLeftTree : Object
                     if (treepath.length > 0) {
                         this.el.set_drag_dest_row(  new  Gtk.TreePath.from_string( treepath ), pos);
                       } else {
-                            this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                        this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
                      }
                          
             }
