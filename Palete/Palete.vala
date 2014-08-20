@@ -24,11 +24,11 @@ namespace Palete
 				if (s == m) {
 					return true;
 				}
-				if (s.length > m.length) {
+				if (!m.contains(":")) {
 					continue;
 				}
-				// XXX:prop
-				if (m.substring(0, s.length+1) == (s + ":")) {
+				var ar = m.split(":");
+				if (ar[0] == s) {
 					return true;
 				}
 			}
