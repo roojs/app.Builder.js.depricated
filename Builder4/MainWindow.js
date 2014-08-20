@@ -985,6 +985,7 @@ MainWindow=new XObject({
                                                                     },
                                                                     height_request : 50,
                                                                     pack : "false",
+                                                                    width_request : "",
                                                                     label : "Open\nFiles"
                                                                 }
                                                             ]
