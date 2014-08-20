@@ -167,7 +167,7 @@ WindowLeftTree=new XObject({
                         
                         // if there are not items in the tree.. the we have to set isOver to true for anything..
                         var isEmpty = false;
-                        if (_this.model.iter_n_children(null) < 1) {
+                        if (_this.model.el.iter_n_children(null) < 1) {
                             isOver = true; //??? 
                             isEmpty = true;
                             pos = 1;
