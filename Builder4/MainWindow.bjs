@@ -214,7 +214,7 @@
                                                                             "pack": "false",
                                                                             "width_request": 50,
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Edit\\nFile\\nProperties\"",
+                                                                            "|label": "\"Edit\\nFile\\nDetails\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
