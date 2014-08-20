@@ -2188,16 +2188,39 @@ public class Xcls_MainWindow : Object
             this.el.label = "Add\nFile";
 
             // listeners 
-            this.el.clicked.connect(  () => {
-                // create a new file in project..
-                if (_this.project == null) {
-                    return  ;
+            this.el.clicked.connect(   ( ) => {
+                
+                
+                
+                switch (_this.state) {
+                    case "edit":
+                        _this.showAddListener();
+                        break;
+                        
+                   
+                    case "addlistener":
+                        _this.hideAddListener();
+                        break;
+            
+                        
+                    case "addprop":
+                        _this.hideAddProp();
+                        _this.showAddListener();
+                        break;
+                     case "object":
+                        _this.hideObject();
+                        _this.showAddListener();
+                        break;
+                
+                      default:
+                        print("unhandled add listener from %s\n",_this.state);
+            
+                        break;
+                        
                 }
-                
-                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                _this.new_file_dialog.show(f);
-                
-                return  ;    
+                return false;    
+            
+            
             } );
         }
 
