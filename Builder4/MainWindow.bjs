@@ -193,7 +193,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -238,7 +238,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -282,7 +282,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -326,7 +326,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -370,7 +370,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -414,7 +414,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
@@ -459,7 +459,7 @@
                                                                     "pack": "add_child",
                                                                     "xtype": "Actor",
                                                                     "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "Clutter",
+                                                                    "|xns": "GtkClutter",
                                                                     "items": [
                                                                         {
                                                                             "listeners": {

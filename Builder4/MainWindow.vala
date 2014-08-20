@@ -1522,7 +1522,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor20 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -1532,7 +1532,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor20(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -1676,7 +1676,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor24 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -1686,7 +1686,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor24(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -1848,7 +1848,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor28 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -1858,7 +1858,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor28(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -2021,7 +2021,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor32 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -2031,7 +2031,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor32(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -2192,7 +2192,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor36 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -2202,7 +2202,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor36(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -2364,7 +2364,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor40 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -2374,7 +2374,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor40(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 
@@ -2515,7 +2515,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_Actor44 : Object 
     {
-        public Clutter.Actor el;
+        public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
 
@@ -2525,7 +2525,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Actor44(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Actor();
+            this.el = new GtkClutter.Actor();
 
             // my vars
 

@@ -995,7 +995,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1063,7 +1063,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1151,7 +1151,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1240,7 +1240,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1327,7 +1327,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1415,7 +1415,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
@@ -1480,7 +1480,7 @@ MainWindow=new XObject({
                                                             y_expand : false
                                                         },
                                                         {
-                                                            xtype: Clutter.Actor,
+                                                            xtype: GtkClutter.Actor,
                                                             pack : "add_child",
                                                             init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
                                                             items : [
