@@ -330,7 +330,7 @@
                                                                             "height_request": 50,
                                                                             "pack": "false",
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Add\\nListener\"",
+                                                                            "|label": "\"Add\\nEvent\\nHandler\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]
