@@ -325,7 +325,7 @@ MainWindow=new XObject({
             }
             if (btn == "save" || btn == "apply") {
                 _this.project.save();
-                return;
+     
             }
             
             this.hideProjectEdit();

@@ -414,7 +414,7 @@ public class Xcls_MainWindow : Object
                 }
                 if (btn == "save" || btn == "apply") {
                     _this.project.save();
-                    return;
+         
                 }
                 
                 this.hideProjectEdit();
