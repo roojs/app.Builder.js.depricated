@@ -138,7 +138,7 @@ namespace Project {
 
 			var proj = factory(xtype, "");
 
-			proj.fn = jsonfile
+			proj.fn =  Path.get_basename(jsonfile).split(".")[0];
 
 
 			if (obj.has_member("runhtml")) {
