@@ -198,10 +198,9 @@ namespace Project {
 			}
 
     			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-    			var  s =  this.toJSON();
+    			var  s =  this.toJSON(false);
 			FileUtils.set_contents(dirname + "/" + this.fn + ".json", s, s.length);  
-    			 
-
+			
 			
 		}
 
