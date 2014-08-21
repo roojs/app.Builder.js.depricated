@@ -193,7 +193,7 @@ namespace Project {
 				var t = new DateTime.now_local ();
 				TimeVal tv;
 				t.to_timeval(out tv);
-				var str = "%d:%d".format(tv.tv_sec,tv.tv_usec);
+				var str = "%d:%d".printf(tv.tv_sec,tv.tv_usec);
 				
         			this.fn = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
