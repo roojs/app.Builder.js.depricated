@@ -237,14 +237,16 @@ namespace Project {
 			builder.set_member_name ("paths");
 
 
-			builder.begin_array ();
+			builder.begin_object ();
 
 
 			var iter = this.paths.map_iterator();
 			while (iter.next()) {
-				builder.add_string_value (iter.get_key());
+				builder.set_member_name (iter.get_key());
+				builder.add_string_Value("path");
 			}
-			builder.end_array ();
+			builder.end_end_object ();
+			
 			if (show_all) {
 				builder.set_member_name ("files");
 				builder.begin_array ();
