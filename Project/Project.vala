@@ -189,7 +189,7 @@ namespace Project {
 				// fixme..
             
 			if (this.fn.length < 0) {
-		        // make the filename..
+				// make the filename..
 				var t = new GLib.TimeVal();
 				GLib.get_current_time(t);
 				var str = '' + t.tv_sec + ':' + t.tv_usec;
@@ -197,12 +197,10 @@ namespace Project {
         			this.fn = GLib.compute_checksum_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
 
-            
+    			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
     			var  s =  this.toJSON();
-			FileUtils.set_contents(this.fn, s, s.length);  
+			FileUtils.set_contents(dirname + "/" + this.fn + ".json", s, s.length);  
     			 
-           
-         
 
 			
 		}
