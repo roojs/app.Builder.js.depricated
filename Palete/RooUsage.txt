@@ -338,7 +338,9 @@ right:
     Roo.bootstrap.ButtonGroup
     Roo.bootstrap.Column
     Roo.bootstrap.Form
-    Roo.bootstrap.Navbar
+    Roo.bootstrap.NavSimplebar
+    Roo.bootstrap.NavHeaderbar
+    Roo.bootstrap.NavSidebar
     Roo.bootstrap.Row
     Roo.bootstrap.Header
     Roo.bootstrap.Img
