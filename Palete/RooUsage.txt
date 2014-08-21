@@ -423,6 +423,7 @@ left:
     Roo.bootstrap.NavSidebar
 right:    
     Roo.bootstrap.NavGroup
+    Roo.bootstrap.Link
     Roo.bootstrap.Form
     Roo.bootstrap.Row
     Roo.bootstrap.Column
