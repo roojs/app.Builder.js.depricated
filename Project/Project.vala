@@ -209,35 +209,35 @@ namespace Project {
 		public string toJSON(bool show_all)
 		{
 		    
-		    var builder = new Json.Builder ();
-		    
-		    builder.begin_object ();
-		    
-		    builder.set_member_name ("name");
-		    builder.add_string_value (this.name);
+			var builder = new Json.Builder ();
 
-		    
-		    builder.set_member_name ("fn");
-		    builder.add_string_value (this.fn);
+			builder.begin_object ();
 
-		    builder.set_member_name ("xtype");
-		    builder.add_string_value (this.xtype);
+			builder.set_member_name ("name");
+			builder.add_string_value (this.name);
+
+
+			builder.set_member_name ("fn");
+			builder.add_string_value (this.fn);
+
+			builder.set_member_name ("xtype");
+			builder.add_string_value (this.xtype);
 
 			builder.set_member_name ("runhtml");
-		    builder.add_string_value (this.runhtml);
-		    
-		    // file ??? try/false?
-		    builder.set_member_name ("paths");
-		    
-		    
-		    builder.begin_array ();
-		    
-		    
-		    var iter = this.paths.map_iterator();
-		    while (iter.next()) {
-		        builder.add_string_value (iter.get_key());
-		    }
-		    builder.end_array ();
+			builder.add_string_value (this.runhtml);
+
+			// file ??? try/false?
+			builder.set_member_name ("paths");
+
+
+			builder.begin_array ();
+
+
+			var iter = this.paths.map_iterator();
+			while (iter.next()) {
+				builder.add_string_value (iter.get_key());
+			}
+			builder.end_array ();
 			if (show_all) {
 				builder.set_member_name ("files");
 				builder.begin_array ();
@@ -251,17 +251,17 @@ namespace Project {
 			}
 
 		
-		    builder.end_object ();
-		
-		    var  generator = new Json.Generator ();
-		    var  root = builder.get_root ();
-		    generator.set_root (root);
+			builder.end_object ();
+
+			var  generator = new Json.Generator ();
+			var  root = builder.get_root ();
+			generator.set_root (root);
 			if (show_all) {
 				generator.pretty = true;
 				generator.indent = 4;
 			}
 
-		    return  generator.to_data (null);
+			return  generator.to_data (null);
 			  
 		      
 		}
