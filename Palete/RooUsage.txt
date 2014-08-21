@@ -344,6 +344,7 @@ right:
     Roo.bootstrap.Row
     Roo.bootstrap.Header
     Roo.bootstrap.Img
+    Roo.bootstrap.Link
     Roo.bootstrap.Calendar  
     Roo.bootstrap.Popover
     Roo.bootstrap.Input
