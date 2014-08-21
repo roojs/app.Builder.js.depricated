@@ -243,7 +243,7 @@ namespace Project {
 			var iter = this.paths.map_iterator();
 			while (iter.next()) {
 				builder.set_member_name (iter.get_key());
-				builder.add_string_Value("path");
+				builder.add_string_value("path");
 			}
 			builder.end_end_object ();
 			
