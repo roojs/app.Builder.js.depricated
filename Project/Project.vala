@@ -121,6 +121,8 @@ namespace Project {
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
+			print("parse %s\n", jsonfile);
+
 			var pa = new Json.Parser();
 			pa.load_from_file(jsonfile);
 			var node = pa.get_root();
