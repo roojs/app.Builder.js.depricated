@@ -28,7 +28,7 @@ namespace Project {
 		public signal void on_changed (); 
 	
 		public string id;
-		public string fn = "";
+		public string fn = ""; // just a md5...
 		public string name = "";
 		public string runhtml = "";
 		public Gee.HashMap<string,string> paths;
