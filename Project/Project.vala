@@ -190,12 +190,12 @@ namespace Project {
             
 			if (this.fn.length < 0) {
 				// make the filename..
-				var t = new DateTime.now_local ()
+				var t = new DateTime.now_local ();
 				TimeVal tv;
 				t.to_timeval(out tv);
 				var str = "%d:%d".format(tv.tv_sec,tv.tv_usec);
 				
-        			this.fn = GLib.compute_checksum_for_string(GLib.ChecksumType.MD5, str, str.length);
+        			this.fn = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
 
     			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
