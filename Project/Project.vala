@@ -190,7 +190,7 @@ namespace Project {
 		{
 				// fixme..
             
-			if (this.fn.length < 0) {
+			if (this.fn.length < 1) {
 				// make the filename..
 				var t = new DateTime.now_local ();
 				TimeVal tv;
