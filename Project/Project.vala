@@ -190,9 +190,10 @@ namespace Project {
             
 			if (this.fn.length < 0) {
 				// make the filename..
-				var t = new GLib.TimeVal();
-				GLib.get_current_time(t);
-				var str = '' + t.tv_sec + ':' + t.tv_usec;
+				var t = new DateTime.now_local ()
+				TimeVal tv;
+				t.to_timeval(out tv);
+				var str = "%d:%d".format(tv.tv_sec,tv.tv_usec);
 				
         			this.fn = GLib.compute_checksum_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
