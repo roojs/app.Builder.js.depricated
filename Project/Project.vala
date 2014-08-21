@@ -245,7 +245,7 @@ namespace Project {
 				builder.set_member_name (iter.get_key());
 				builder.add_string_value("path");
 			}
-			builder.end_end_object ();
+			builder.end_object ();
 			
 			if (show_all) {
 				builder.set_member_name ("files");
