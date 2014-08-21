@@ -323,6 +323,11 @@ MainWindow=new XObject({
             } else {
                 // do nothing for gtk..
             }
+            if (btn == "save" || btn == "apply") {
+                _this.project.save();
+                return;
+            }
+            
             this.hideProjectEdit();
              
          });

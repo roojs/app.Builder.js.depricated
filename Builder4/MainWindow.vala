@@ -412,6 +412,11 @@ public class Xcls_MainWindow : Object
                 } else {
                     // do nothing for gtk..
                 }
+                if (btn == "save" || btn == "apply") {
+                    _this.project.save();
+                    return;
+                }
+                
                 this.hideProjectEdit();
                  
              });
