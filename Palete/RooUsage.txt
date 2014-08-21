@@ -418,7 +418,9 @@ right:
     Roo.bootstrap.MenuItem
     
 left:
-    Roo.bootstrap.Navbar
+    Roo.bootstrap.NavSimplebar
+    Roo.bootstrap.NavHeaderbar
+    Roo.bootstrap.NavSidebar
 right:    
     Roo.bootstrap.NavGroup
     Roo.bootstrap.Form
