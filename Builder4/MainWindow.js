@@ -1019,7 +1019,7 @@ MainWindow=new XObject({
                                                                                     _this.hideCodeEdit();  
                                                                                     break;
                                                                                     
-                                                                                 case  "projectedit";
+                                                                                 case  "projectedit":
                                                                                  // save?
                                                                                     _this.hideProjectEdit();
                                                                                     break;
