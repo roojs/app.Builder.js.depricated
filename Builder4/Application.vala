@@ -36,7 +36,7 @@ namespace Builder4
 		
 
 	}
-	public static  singleton()
+	public static Application  singleton()
 	{
 		if (!application) {
 			application = new Application();
@@ -45,5 +45,7 @@ namespace Builder4
 		}
 		return application;
 	}
+
+	public void init()
 	
 }
