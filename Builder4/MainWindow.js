@@ -501,6 +501,8 @@ MainWindow=new XObject({
             return;
         }
          
+       _this.backbutton.el.show();
+         
         //this.rooview.el.hide();
         this.add_props.el.show_all();
         this.add_props.show(
@@ -535,7 +537,7 @@ MainWindow=new XObject({
         if (ae == null) {
             return;
         }
-         
+         _this.backbutton.el.show();
          
          
          
@@ -583,7 +585,7 @@ MainWindow=new XObject({
                 break;
         }
      
-     
+       _this.backbutton.el.show();
          
          
         //this.rooview.el.hide();

@@ -591,6 +591,8 @@ public class Xcls_MainWindow : Object
                 return;
             }
              
+           _this.backbutton.el.show();
+             
             //this.rooview.el.hide();
             this.add_props.el.show_all();
             this.add_props.show(
@@ -625,7 +627,7 @@ public class Xcls_MainWindow : Object
             if (ae == null) {
                 return;
             }
-             
+             _this.backbutton.el.show();
              
              
              
