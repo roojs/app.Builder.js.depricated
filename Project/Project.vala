@@ -304,7 +304,7 @@ namespace Project {
 				files.add(fiter.get_value());
 			}
 		        files.sort((fa,fb) => {
-				return fa.name.collate(fb.name);
+				return ((JsRender.JsRender)fa).name.collate(((JsRender.JsRender)fb).name);
 
 			});
 			return files;
