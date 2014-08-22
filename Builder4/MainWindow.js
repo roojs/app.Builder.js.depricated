@@ -979,8 +979,9 @@ MainWindow=new XObject({
                                                                                      
                                                                                  case "object":
                                                                                     _this.hideObject();
-                                                                        
                                                                                     break;    
+                                                                                    
+                                                                                 
                                                                                     
                                                                                 default:
                                                                                     break;

@@ -1529,8 +1529,9 @@ public class Xcls_MainWindow : Object
                          
                      case "object":
                         _this.hideObject();
-            
                         break;    
+                        
+                     
                         
                     default:
                         break;
