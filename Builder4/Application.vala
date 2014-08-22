@@ -40,6 +40,7 @@ namespace Builder4
 	{
 		if (!application) {
 			application = new Application();
+			application.init();
 			
 		}
 		return application;
