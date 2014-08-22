@@ -35,7 +35,7 @@ MainWindow=new XObject({
     'void:hideAddListener' : () {
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
-         
+              _this.projecteditbutton.el.show();
          
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
