@@ -121,6 +121,19 @@ public class Xcls_ClutterFiles : Object
                 print("add to clutter file view: " + fiter.get_value().name + "\n");
                 this.filelayout.el.add_child(a.el);
             }
+            
+            var fiter = this.fileitems.map_iterator();
+            while (fiter.next()) {
+                var a = new Xcls_fileitem(this,fiter.get_value());
+                this.fileitems.add(a);
+        
+        //        a.ref();
+                print("add to clutter file view: " + fiter.get_value().name + "\n");
+                this.filelayout.el.add_child(a.el);
+            }
+            
+            
+            
             this.el.show_all();
         }
     public void set_size(float w, float h) 
