@@ -145,7 +145,10 @@ public class Xcls_MainWindow : Object
     public void hideAddProp() {
               _this.backbutton.el.hide();
              _this.projectbutton.el.show(); 
+                  _this.projecteditbutton.el.show();
+             
              _this.addpropsview.el.save_easing_state();
+             
             var el = _this.rooview.el;
             el.save_easing_state();
         
@@ -164,6 +167,7 @@ public class Xcls_MainWindow : Object
             //this.code_editor.saveContents();
                  _this.backbutton.el.hide();
                       _this.projectbutton.el.show(); 
+                           _this.projecteditbutton.el.show();
              _this.codeeditview.el.save_easing_state();
             var el = _this.rooview.el;
             el.save_easing_state();

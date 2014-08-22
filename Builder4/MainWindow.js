@@ -55,7 +55,10 @@ MainWindow=new XObject({
     'void:hideAddProp' : () {
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+         
          _this.addpropsview.el.save_easing_state();
+         
         var el = _this.rooview.el;
         el.save_easing_state();
     
@@ -74,6 +77,7 @@ MainWindow=new XObject({
         //this.code_editor.saveContents();
              _this.backbutton.el.hide();
                   _this.projectbutton.el.show(); 
+                       _this.projecteditbutton.el.show();
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
