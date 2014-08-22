@@ -629,7 +629,7 @@ MainWindow=new XObject({
             return;
         }
         
-         
+         _this.backbutton.el.show();
          
          
         //this.rooview.el.hide();
@@ -663,7 +663,7 @@ MainWindow=new XObject({
         
          _this.projectbutton.el.hide();
          _this.projecteditbutton.el.hide();
-         
+         _this.backbutton.el.show();
          
         //this.rooview.el.hide();
         this.projectsettings.el.show_all();
