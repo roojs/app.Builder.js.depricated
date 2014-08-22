@@ -5,6 +5,8 @@ namespace Builder4
 
 	public class AppSettings : Object
 	{
+
+		// what are we going to have as settings?
 		public string roo_html_dir { get; set; }
 		
 
