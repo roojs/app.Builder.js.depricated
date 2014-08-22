@@ -194,6 +194,34 @@
                                                             ]
                                                         },
                                                         {
+                                                            "id": "projectbutton",
+                                                            "pack": "add_child",
+                                                            "xtype": "Actor",
+                                                            "|init": "this.el.set_size(50,50);",
+                                                            "|xns": "Clutter",
+                                                            "items": [
+                                                                {
+                                                                    "pack": "add_child",
+                                                                    "xtype": "Actor",
+                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "|xns": "GtkClutter",
+                                                                    "items": [
+                                                                        {
+                                                                            "listeners": {
+                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n            _this.hideViewEditing();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.hideViewEditing();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.hideViewEditing();\n            break;    \n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
+                                                                            },
+                                                                            "height_request": 50,
+                                                                            "pack": "false",
+                                                                            "width_request": 50,
+                                                                            "xtype": "Button",
+                                                                            "|label": "\"Open\\nFiles\"",
+                                                                            "|xns": "Gtk"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
                                                             "id": "editfilebutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",

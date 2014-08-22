@@ -999,6 +999,60 @@ MainWindow=new XObject({
                                                 },
                                                 {
                                                     xtype: Clutter.Actor,
+                                                    id : "projectbutton",
+                                                    pack : "add_child",
+                                                    init : this.el.set_size(50,50);,
+                                                    items : [
+                                                        {
+                                                            xtype: GtkClutter.Actor,
+                                                            pack : "add_child",
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
+                                                            items : [
+                                                                {
+                                                                    xtype: Gtk.Button,
+                                                                    listeners : {
+                                                                        clicked : ( ) => {
+                                                                            switch (_this.state) {
+                                                                                case "edit":
+                                                                                
+                                                                                    _this.hideViewEditing();
+                                                                                    break;  
+                                                                                case "files":
+                                                                                    _this.showViewEditing();
+                                                                                    break; 
+                                                                                    
+                                                                                  case "addprop":
+                                                                                    _this.hideAddProp();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;
+                                                                                case "addlistener":
+                                                                                    _this.hideAddListener();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;
+                                                                                     
+                                                                                 case "object":
+                                                                                    _this.hideObject();
+                                                                                    _this.hideViewEditing();
+                                                                                    break;    
+                                                                                    
+                                                                                default:
+                                                                                    break;
+                                                                            }
+                                                                            return  ;    
+                                                                        
+                                                                        }
+                                                                    },
+                                                                    height_request : 50,
+                                                                    pack : "false",
+                                                                    width_request : 50,
+                                                                    label : "Open\nFiles"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: Clutter.Actor,
                                                     id : "editfilebutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50.0f,50.0f);,
