@@ -338,13 +338,13 @@ right:
     Roo.bootstrap.ButtonGroup
     Roo.bootstrap.Column
     Roo.bootstrap.Form
+    Roo.bootstrap.Navbar
     Roo.bootstrap.NavSimplebar
     Roo.bootstrap.NavHeaderbar
     Roo.bootstrap.NavSidebar
     Roo.bootstrap.Row
     Roo.bootstrap.Header
     Roo.bootstrap.Img
-    Roo.bootstrap.Link
     Roo.bootstrap.Calendar  
     Roo.bootstrap.Popover
     Roo.bootstrap.Input
@@ -409,6 +409,9 @@ right:
 left:
     Roo.bootstrap.Button:menu
     Roo.bootstrap.Navbar.Item:menu
+    Roo.bootstrap.NavSimplebar.Item:menu
+    Roo.bootstrap.NavHeaderbar.Item:menu
+    Roo.bootstrap.NavSidebar.Item:menu
 right:
     Roo.bootstrap.Menu
 
@@ -418,12 +421,12 @@ right:
     Roo.bootstrap.MenuItem
     
 left:
+    Roo.bootstrap.Navbar
     Roo.bootstrap.NavSimplebar
     Roo.bootstrap.NavHeaderbar
     Roo.bootstrap.NavSidebar
 right:    
     Roo.bootstrap.NavGroup
-    Roo.bootstrap.Link
     Roo.bootstrap.Form
     Roo.bootstrap.Row
     Roo.bootstrap.Column
@@ -434,7 +437,13 @@ left:
 right:
     Roo.bootstrap.Navbar.Item
     Roo.bootstrap.Navbar.Button
-        
+    Roo.bootstrap.NavSimplebar.Item
+    Roo.bootstrap.NavHeaderbar.Item
+    Roo.bootstrap.NavSidebar.Item
+    Roo.bootstrap.NavSimplebar.Button
+    Roo.bootstrap.NavHeaderbar.Button
+    Roo.bootstrap.NavSidebar.Button
+    
 left:
     Roo.bootstrap.Form
     Roo.bootstrap.Container
@@ -465,6 +474,9 @@ right:
 
 left:    
     Roo.bootstrap.Navbar.Item
+    Roo.bootstrap.NavSimplebar.Item
+    Roo.bootstrap.NavHeaderbar.Item
+    Roo.bootstrap.NavSidebar.Item
 right:
     Roo.bootstrap.Container
 
