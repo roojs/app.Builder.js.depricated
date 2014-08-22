@@ -503,6 +503,7 @@ MainWindow=new XObject({
          
        _this.backbutton.el.show();
         _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
         _this.projecteditbutton.el.hide();    
         
         
