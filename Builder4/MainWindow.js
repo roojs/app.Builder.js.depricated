@@ -135,6 +135,8 @@ MainWindow=new XObject({
       
     },
     'void:hideViewEditing' : ( )   {
+    
+    // show the file navigation...
       
         if (this.left_tree.getActiveFile() != null) {
              if (this.left_tree.getActiveFile().xtype == "Roo" ) {
@@ -153,7 +155,10 @@ MainWindow=new XObject({
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
           _this.addlistenerbutton.el.hide();  
-          _this.backbutton.el.hide();
+    
+    
+    
+          _this.backbutton.el.show();
               
         // show the add file button..
         

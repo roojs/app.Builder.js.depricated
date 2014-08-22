@@ -225,6 +225,8 @@ public class Xcls_MainWindow : Object
           
         }
     public void hideViewEditing  ( )   {
+        
+        // show the file navigation...
           
             if (this.left_tree.getActiveFile() != null) {
                  if (this.left_tree.getActiveFile().xtype == "Roo" ) {
@@ -243,7 +245,10 @@ public class Xcls_MainWindow : Object
               _this.objectshowbutton.el.hide();
               _this.addpropbutton.el.hide();      
               _this.addlistenerbutton.el.hide();  
-              _this.backbutton.el.hide();
+        
+        
+        
+              _this.backbutton.el.show();
                   
             // show the add file button..
             
