@@ -28,7 +28,7 @@ namespace Builder4
 	}
 	
 	
-	static Application application = null;
+	public static Application application = null;
 	
 	public class Application : Gtk.Application
 	{
