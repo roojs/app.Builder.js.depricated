@@ -964,6 +964,7 @@ MainWindow=new XObject({
                                                                                     _this.hideViewEditing();
                                                                                     break;  
                                                                                 case "files":
+                                                                                    // should only occur if there is an active file..
                                                                                     _this.showViewEditing();
                                                                                     break; 
                                                                                     

@@ -1514,6 +1514,7 @@ public class Xcls_MainWindow : Object
                         _this.hideViewEditing();
                         break;  
                     case "files":
+                        // should only occur if there is an active file..
                         _this.showViewEditing();
                         break; 
                         
