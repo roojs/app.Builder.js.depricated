@@ -296,7 +296,7 @@ namespace Project {
 		}
 		/**
 		 *
-		 * to tree - > should
+		 * to tree - > is this needed anymore???
 		 */
 	 
 		public GLib.List<JsRender.JsRender> toTree ()
