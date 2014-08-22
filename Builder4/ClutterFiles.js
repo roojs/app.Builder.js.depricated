@@ -80,7 +80,7 @@ ClutterFiles=new XObject({
             this.fileitems.add(a);
     
     //        a.ref();
-            print("add to clutter file view: " + fiter.get_value().name + "\n");
+            print("add to clutter file view: " + fiter.get().name + "\n");
             this.filelayout.el.add_child(a.el);
         }
         
