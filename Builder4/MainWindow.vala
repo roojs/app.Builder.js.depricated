@@ -1520,16 +1520,16 @@ public class Xcls_MainWindow : Object
                         
                       case "addprop":
                         _this.hideAddProp();
-                        _this.hideViewEditing();
+            
                         break;
                     case "addlistener":
                         _this.hideAddListener();
-                        _this.hideViewEditing();
+            
                         break;
                          
                      case "object":
                         _this.hideObject();
-                        _this.hideViewEditing();
+            
                         break;    
                         
                     default:
