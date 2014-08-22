@@ -14,7 +14,7 @@ namespace Builder4
 			var dir = File.new_for_path(dirname);
 		        if (!dir.query_exists()) {
 				dir.make_directory();
-				return;
+				 
 			}
 			var setting_file = dirname + "/builder.settings";
 			
