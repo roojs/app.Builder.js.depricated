@@ -33,7 +33,10 @@ MainWindow=new XObject({
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideAddListener' : () {
-              _this.backbutton.el.hide();
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+         
+         
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -51,6 +54,7 @@ MainWindow=new XObject({
       },
     'void:hideAddProp' : () {
           _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -69,6 +73,7 @@ MainWindow=new XObject({
     'void:hideCodeEdit' : () {
         //this.code_editor.saveContents();
              _this.backbutton.el.hide();
+                  _this.projectbutton.el.show(); 
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -89,7 +94,7 @@ MainWindow=new XObject({
            
          
           _this.backbutton.el.hide();
-    
+         _this.projectbutton.el.show(); 
          
          _this.objectview.el.save_easing_state();
         var el = _this.rooview.el;
@@ -723,7 +728,7 @@ MainWindow=new XObject({
         _this.addfilebutton.el.hide();       
         _this.backbutton.el.hide();
         
-              _this.projectbutton.el.show();         
+          _this.projectbutton.el.show();         
         _this.editfilebutton.el.show();   
        _this.projecteditbutton.el.show();
       _this.objectshowbutton.el.show();
