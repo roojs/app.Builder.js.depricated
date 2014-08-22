@@ -22,17 +22,17 @@ namespace Builder4
 		};
 	} 
 
-	public GLib.Settings settings;
+	public AppSettings settings;
 
 	
 	public Application ()
 	{
 		Object(
-		       application_id: "org.roojs.app-builder.",
+		       application_id: "org.roojs.app-builder",
 			flags: ApplicationFlags.FLAGS_NONE
 	        );
 		
-		this.settings = new GLib.Settings(this.application_id);
+		this.settings = new GLib.AppSettings();
 		
 
 	}
