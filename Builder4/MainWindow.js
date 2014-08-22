@@ -33,6 +33,7 @@ MainWindow=new XObject({
         //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideAddListener' : () {
+              _this.backbutton.el.hide();
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -49,6 +50,7 @@ MainWindow=new XObject({
          _this.addpropsview.el.restore_easing_state();  
       },
     'void:hideAddProp' : () {
+          _this.backbutton.el.hide();
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -66,7 +68,7 @@ MainWindow=new XObject({
      },
     'void:hideCodeEdit' : () {
         //this.code_editor.saveContents();
-       
+             _this.backbutton.el.hide();
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -86,7 +88,7 @@ MainWindow=new XObject({
           // return to editing state..
            
          
-    
+          _this.backbutton.el.hide();
     
          
          _this.objectview.el.save_easing_state();

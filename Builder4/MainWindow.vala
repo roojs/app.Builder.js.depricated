@@ -123,6 +123,7 @@ public class Xcls_MainWindow : Object
 
     // userdefined functions 
     public void hideAddListener() {
+                  _this.backbutton.el.hide();
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -139,6 +140,7 @@ public class Xcls_MainWindow : Object
              _this.addpropsview.el.restore_easing_state();  
           }
     public void hideAddProp() {
+              _this.backbutton.el.hide();
              _this.addpropsview.el.save_easing_state();
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -156,7 +158,7 @@ public class Xcls_MainWindow : Object
          }
     public void hideCodeEdit() {
             //this.code_editor.saveContents();
-           
+                 _this.backbutton.el.hide();
              _this.codeeditview.el.save_easing_state();
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -176,7 +178,7 @@ public class Xcls_MainWindow : Object
               // return to editing state..
                
              
-        
+              _this.backbutton.el.hide();
         
              
              _this.objectview.el.save_easing_state();
