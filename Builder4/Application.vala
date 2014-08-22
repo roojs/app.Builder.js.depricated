@@ -25,6 +25,12 @@ namespace Builder4
 			FileUtils.get_contents(setting_file, out data);
 			return Json.gobject_from_data (typeof (AppSettings), data) as AppSettings;
 		}
+		public void save()
+		{
+			
+		}
+
+		
 	}
 	
 	
