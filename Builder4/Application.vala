@@ -22,7 +22,7 @@ namespace Builder4
 				 return new AppSettings();
 			}
 			string data; 
-			FileUtils.get_contents(settting_file, out data);
+			FileUtils.get_contents(setting_file, out data);
 			return Json.gobject_from_data (typeof (AppSettings), data) as AppSettings;
 		}
 	}
