@@ -72,9 +72,11 @@ ClutterFiles=new XObject({
         // should unref.. them hopefully.
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
     
-        var fiter = pr.files.map_iterator();
+        
+    
+        var fiter = pr.sortedFiles().list_iterator();
         while (fiter.next()) {
-            var a = new Xcls_fileitem(this,fiter.get_value());
+            var a = new Xcls_fileitem(this,fiter.get());
             this.fileitems.add(a);
     
     //        a.ref();
