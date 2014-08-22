@@ -813,7 +813,7 @@ public class Xcls_MainWindow : Object
             _this.addfilebutton.el.hide();       
             _this.backbutton.el.hide();
             
-            
+                  _this.projectbutton.el.show();         
             _this.editfilebutton.el.show();   
            _this.projecteditbutton.el.show();
           _this.objectshowbutton.el.show();
