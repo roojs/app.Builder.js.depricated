@@ -39,7 +39,7 @@ namespace Builder4
 			var setting_file = dirname + "/builder.settings";
 			string data = Json.gobject_to_data (this, null);
 			print("saving application settings\n");
-			FileUtils.put_contents(setting_file, out data);
+			FileUtils.set_contents(setting_file,   data);
 		}
 
 		
