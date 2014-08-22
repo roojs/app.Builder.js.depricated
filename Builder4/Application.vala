@@ -23,11 +23,19 @@ namespace Builder4
 
 	public GLib.Settings settings;
 
+	
 	public Application ()
 	{
+		base(
 		this.settings = new GLib.Settings("AppBuilder");
 		
 
 	}
+	public static  singleton()
+	{
+		if (!application) {
+			application = new Application();
+		}
+		return application;
 	
 }
