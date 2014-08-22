@@ -502,7 +502,10 @@ MainWindow=new XObject({
         }
          
        _this.backbutton.el.show();
-         
+        _this.projectbutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+        
         //this.rooview.el.hide();
         this.add_props.el.show_all();
         this.add_props.show(
