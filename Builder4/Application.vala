@@ -4,7 +4,7 @@ namespace Builder4
 {
 	
 
-	class Application : Gtk.Application
+	public class Application : Gtk.Application
 	{
 		enum Target {
 		    INT32,
@@ -20,4 +20,14 @@ namespace Builder4
 		    { "application/x-rootwindow-drop", 0, Target.ROOTWIN }
 		};
 	} 
+
+	public GLib.Settings settings;
+
+	public Application ()
+	{
+		this.settings = new GLib.Settings("AppBuilder");
+		
+
+	}
+	
 }
