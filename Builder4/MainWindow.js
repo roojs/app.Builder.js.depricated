@@ -945,7 +945,7 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    id : "projectbutton",
+                                                    id : "backbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     items : [

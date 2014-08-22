@@ -43,7 +43,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addpropsview addpropsview;
     public Xcls_projecteditview projecteditview;
     public Xcls_buttonlayout buttonlayout;
-    public Xcls_projectbutton projectbutton;
+    public Xcls_backbutton backbutton;
     public Xcls_projectbutton projectbutton;
     public Xcls_editfilebutton editfilebutton;
     public Xcls_projecteditbutton projecteditbutton;
@@ -1351,7 +1351,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_BoxLayout17( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_projectbutton( _this );
+            var child_1 = new Xcls_backbutton( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
             var child_2 = new Xcls_projectbutton( _this );
@@ -1427,7 +1427,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_projectbutton : Object 
+    public class Xcls_backbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1436,10 +1436,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projectbutton(Xcls_MainWindow _owner )
+        public Xcls_backbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.projectbutton = this;
+            _this.backbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars

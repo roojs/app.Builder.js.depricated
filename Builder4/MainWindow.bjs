@@ -166,7 +166,7 @@
                                                             "|xns": "Clutter"
                                                         },
                                                         {
-                                                            "id": "projectbutton",
+                                                            "id": "backbutton",
                                                             "pack": "add_child",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
