@@ -8,7 +8,13 @@ namespace Builder4
 
 		// what are we going to have as settings?
 		public string roo_html_dir { get; set; }
-		
+
+		public AppSettings()
+		{
+			this.notify.connect(() => {
+				this.save();
+			}
+		}
 
 		public static AppSettings factory()
 		{
