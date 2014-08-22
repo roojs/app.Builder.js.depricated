@@ -151,6 +151,7 @@ MainWindow=new XObject({
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
           _this.addlistenerbutton.el.hide();  
+          _this.backbutton.el.hide();
               
         // show the add file button..
         
