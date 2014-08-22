@@ -5,10 +5,8 @@ namespace Builder4
 
 	public class AppSettings : Object
 	{
-		public string str { get; set; }
-		public MyEnum en { get; set; }
-		public int num { get; set; }
-
+		public string roo_html_dir { get; set; }
+		
 
 		public AppSettings ()
 		{       
