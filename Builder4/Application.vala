@@ -45,7 +45,7 @@ namespace Builder4
 		    { "text/plain", 0, Target.STRING },
 		    { "application/x-rootwindow-drop", 0, Target.ROOTWIN }
 		};
-		public AppSettings settings;
+		public AppSettings settings = null;
 
 	
 		public Application ()
@@ -63,7 +63,7 @@ namespace Builder4
 		}
 		public static Application  singleton()
 		{
-			if (!application) {
+			if (application==null) {
 				application = new Application();
  
 			
