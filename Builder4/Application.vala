@@ -3,7 +3,8 @@
 namespace Builder4
 {
 	
-
+	static Application application = null;
+	
 	public class Application : Gtk.Application
 	{
 		enum Target {
@@ -39,6 +40,7 @@ namespace Builder4
 	{
 		if (!application) {
 			application = new Application();
+			
 		}
 		return application;
 	}
