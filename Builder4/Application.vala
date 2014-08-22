@@ -8,10 +8,6 @@ namespace Builder4
 		public string roo_html_dir { get; set; }
 		
 
-		public AppSettings ()
-		{       
-			
-		}
 		public static AppSettings factory()
 		{
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
