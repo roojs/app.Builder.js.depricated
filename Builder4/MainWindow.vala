@@ -182,7 +182,7 @@ public class Xcls_MainWindow : Object
     public void hideObject() {
               // return to editing state..
                
-             
+                  _this.projecteditbutton.el.show();
               _this.backbutton.el.hide();
              _this.projectbutton.el.show(); 
              
