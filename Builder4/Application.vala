@@ -13,7 +13,7 @@ namespace Builder4
 		{
 			this.notify.connect(() => {
 				this.save();
-			}
+			});
 		}
 
 		public static AppSettings factory()
