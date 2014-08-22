@@ -1530,7 +1530,9 @@ public class Xcls_MainWindow : Object
                      case "object":
                         _this.hideObject();
                         break;    
-                        
+                     
+                     case "codeedit":
+                        _this.hideCodeEdit();  
                      
                         
                     default:

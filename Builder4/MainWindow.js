@@ -980,8 +980,10 @@ MainWindow=new XObject({
                                                                                  case "object":
                                                                                     _this.hideObject();
                                                                                     break;    
-                                                                                    
                                                                                  
+                                                                                 case "codeedit":
+                                                                                    _this.hideCodeEdit();  
+                                                                                    break;
                                                                                     
                                                                                 default:
                                                                                     break;
