@@ -54,9 +54,9 @@ namespace Builder4
 			       application_id: "org.roojs.app-builder",
 				flags: ApplicationFlags.FLAGS_NONE
 			);
-			if (File.Exists
+			 
 			
-			this.settings =AppSettings.factory();	
+			this.settings = AppSettings.factory();	
 			
 		
 
@@ -65,7 +65,7 @@ namespace Builder4
 		{
 			if (!application) {
 				application = new Application();
-				application.init();
+ 
 			
 			}
 			return application;
