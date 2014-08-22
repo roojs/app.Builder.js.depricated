@@ -295,7 +295,21 @@ namespace Project {
 		    return "";
 		}
 
-		
+		public Gee.ArrayList<JsRender.JsRender> sortedFiles()
+		{
+			var files = new Gee.ArrayList<JsRender.JsRender>();
+
+			var fiter = this.files.map_iterator();
+			while(fiter.next()) {
+				files.add(fiter.get_value());
+			}
+		        files.sort((fa,fb) => {
+				return fa.name.collate(fb.name);
+
+			});
+		    
+
+		}
 		
 		/**
 		 *
