@@ -28,7 +28,7 @@ namespace Builder4
 	public Application ()
 	{
 		Object(
-		       application_id: "AppBuilder",
+		       application_id: "org.roojs.app-builder.",
 			flags: ApplicationFlags.FLAGS_NONE
 	        );
 		
@@ -47,5 +47,9 @@ namespace Builder4
 	}
 
 	public void init()
+	{
+		
+
+		
 	
 }
