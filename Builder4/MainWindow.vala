@@ -238,9 +238,10 @@ public class Xcls_MainWindow : Object
               
             _this.addprojectbutton.el.show();   
             _this.addfilebutton.el.show();       
+              _this.backbutton.el.show();
         
               _this.editfilebutton.el.hide();   
-              
+              _this.projectbutton.el.hide();         
               _this.projecteditbutton.el.hide();
               _this.objectshowbutton.el.hide();
               _this.addpropbutton.el.hide();      
@@ -248,7 +249,7 @@ public class Xcls_MainWindow : Object
         
         
         
-              _this.backbutton.el.show();
+        
                   
             // show the add file button..
             
