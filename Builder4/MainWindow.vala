@@ -683,10 +683,11 @@ public class Xcls_MainWindow : Object
             }
          
            _this.backbutton.el.show();
-               _this.projectbutton.el.hide();
+           
+            _this.projectbutton.el.hide();
             _this.editfilebutton.el.hide();
             _this.projecteditbutton.el.hide();    
-            
+           // more?? 
              
             //this.rooview.el.hide();
             this.code_editor.el.show_all();
@@ -730,7 +731,10 @@ public class Xcls_MainWindow : Object
             }
             
              _this.backbutton.el.show();
-             
+               _this.projectbutton.el.hide();
+            _this.editfilebutton.el.hide();
+            _this.projecteditbutton.el.hide();    
+            
              
             //this.rooview.el.hide();
             this.rightpalete.el.show_all();
