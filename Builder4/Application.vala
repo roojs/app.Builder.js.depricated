@@ -27,7 +27,10 @@ namespace Builder4
 		}
 		public void save()
 		{
-			
+			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+			var setting_file = dirname + "/builder.settings";
+			string data = Json.gobject_to_data (this, null);
+			FileUtils.put_contents(setting_file, out data);
 		}
 
 		
