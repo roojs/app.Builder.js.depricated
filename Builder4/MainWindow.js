@@ -1015,6 +1015,7 @@ MainWindow=new XObject({
                                                                                     break;    
                                                                                  
                                                                                  case "codeedit":
+                                                                                    
                                                                                     _this.hideCodeEdit();  
                                                                                     break;
                                                                                     
