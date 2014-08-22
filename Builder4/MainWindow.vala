@@ -1533,7 +1533,7 @@ public class Xcls_MainWindow : Object
                      
                      case "codeedit":
                         _this.hideCodeEdit();  
-                     
+                        break;
                         
                     default:
                         break;
