@@ -26,8 +26,12 @@ namespace Builder4
 	
 	public Application ()
 	{
-		base(
-		this.settings = new GLib.Settings("AppBuilder");
+		Object(
+		       application_id: "AppBuilder",
+			flags: ApplicationFlags.FLAGS_NONE
+	        );
+		
+		this.settings = new GLib.Settings(this.application_id);
 		
 
 	}
