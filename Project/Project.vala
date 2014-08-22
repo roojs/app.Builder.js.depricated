@@ -307,7 +307,7 @@ namespace Project {
 				return fa.name.collate(fb.name);
 
 			});
-		    
+			return files;
 
 		}
 		
