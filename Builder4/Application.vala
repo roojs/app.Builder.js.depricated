@@ -3,23 +3,6 @@
 namespace Builder4
 {
 
-	public static string initConfigDirectory()
-	{
-		var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-		
-	        if (!FileUtils.test(dirname,FileTest.IS_DIR)) {
-			var dir = File.new_for_path(dirname);
-			dir.make_directory();	 
-		}
-		if (!FileUtils.test(dirname + "/resources",FileTest.IS_DIR)) {
-			var dir = File.new_for_path(dirname + "/resources");
-			dir.make_directory();	 
-		}
-
-		
-		return dirname;
-	}
-	
 	public class AppSettings : Object
 	{
 
@@ -85,7 +68,7 @@ namespace Builder4
 				flags: ApplicationFlags.FLAGS_NONE
 			);
 					 
-			initConfigDirectory();
+			configDirectory();
 			this.settings = AppSettings.factory();	
 
 			this.initResources(); 
@@ -106,6 +89,23 @@ namespace Builder4
 		}
 
 		
+		public static string configDirectory()
+		{
+			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+		
+			if (!FileUtils.test(dirname,FileTest.IS_DIR)) {
+				var dir = File.new_for_path(dirname);
+				dir.make_directory();	 
+			}
+			if (!FileUtils.test(dirname + "/resources",FileTest.IS_DIR)) {
+				var dir = File.new_for_path(dirname + "/resources");
+				dir.make_directory();	 
+			}
+
+		
+			return dirname;
+		}
+	
 
 		public void initResources(bool force = false)
 		{
@@ -118,6 +118,12 @@ namespace Builder4
 			for (var i = 0; i < res.length; i++ ) { 
 				this.checkResource(res[i], force);
 			}
+			this.fetchResourceFrom (
+	                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=Palete/RooUsage.txt",
+	                        "RooUsage.txt",
+                		force
+                        );
+			
 
 		}
 		public void fetchResource(string res, bool force) {
