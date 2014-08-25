@@ -124,26 +124,16 @@ namespace Builder4
 			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
-			// fetch...
-			print("downloading %s\n", res);
-			var session = new Soup.Session ();
-		        var message = new Soup.Message ("GET", 
-                		"http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res
-                        );
-
-			    // send the HTTP request and wait for response
-		         session.send_message (message);
-
-			    // output the XML result to stdout
-			FileUtils.set_contents(
-	                       initConfigDirectory() + "/resources/" + res,
-	                      (string) message.response_body.data
-                        );
-
+			this.fetchResourceFrom(
+	                       "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res,
+	                       res,
+			       force
+                       )
+			
 
 		}
 
-		public void fetchOtherResource(string src, string res, bool force) {
+		public void fetchResourceFrom(string src, string res, bool force) {
 			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
