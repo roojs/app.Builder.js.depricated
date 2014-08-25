@@ -130,7 +130,7 @@ namespace Builder4
                         );
 			this.fetchResourceFrom (
 	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
-	                        "rooprops.json",
+	                        "roodata.json",
                 		force
                         );
 			
