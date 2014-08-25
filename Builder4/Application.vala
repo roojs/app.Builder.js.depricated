@@ -113,7 +113,7 @@ namespace Builder4
 
 		}
 		public void checkResource(string res) {
-			if (FileUtil.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+			if (FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
 			// fetch...
@@ -127,7 +127,7 @@ namespace Builder4
 		         session.send_message (message);
 
 			    // output the XML result to stdout
-			FileUtil.set_contents(initConfigDirectory() + "/resources/" + res,
+			FileUtils.set_contents(initConfigDirectory() + "/resources/" + res,
 			                      message.response_body.data
                       );
 
