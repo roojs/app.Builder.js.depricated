@@ -434,7 +434,6 @@ left:
     Roo.bootstrap.NavGroup
 right:
     Roo.bootstrap.NavItem
-    Roo.bootstrap.Navbar.Button
     Roo.bootstrap.NavSidebarItem
     
     
@@ -468,9 +467,7 @@ right:
 
 left:    
     Roo.bootstrap.NavItem
-    Roo.bootstrap.NavSimplebar.Item
-    Roo.bootstrap.NavHeaderbar.Item
-    Roo.bootstrap.NavSidebar.Item
+    Roo.bootstrap.NavSidebarItem
 right:
     Roo.bootstrap.Container
 
