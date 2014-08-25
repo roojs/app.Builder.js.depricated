@@ -118,24 +118,23 @@ namespace Builder4
 			}
 			// fetch...
 			
+			var session = new Soup.Session ();
+		        var message = new Soup.Message ("GET", 
+                		"http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res
+                        );
 
+			    // send the HTTP request and wait for response
+		         session.send_message (message);
 
+			    // output the XML result to stdout
+			FileUtil.set_contents(initConfigDirectory() + "/resources/" + res,
+			                      message.response_body.data
+                      );
 
-
-
-			
 
 		}
 
-				
 
-
-			
-			
-
-
-
-			
 		
 	} 
 
