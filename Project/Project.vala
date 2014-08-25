@@ -245,6 +245,12 @@ namespace Project {
 			builder.set_member_name ("runhtml");
 			builder.add_string_value (this.runhtml);
 
+
+			builder.set_member_name ("rootURL");
+			builder.add_string_value (this.rootURL);
+			
+			builder.set_member_name ("base_template");
+			builder.add_string_value (this.base_template);			
 			// file ??? try/false?
 			builder.set_member_name ("paths");
 
