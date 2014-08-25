@@ -165,7 +165,7 @@ namespace Builder4
 
 			    // output the XML result to stdout
 			FileUtils.set_contents(
-	                       initConfigDirectory() + "/resources/" + res,
+	                       configDirectory() + "/resources/" + res,
 	                      (string) message.response_body.data
                         );
 
