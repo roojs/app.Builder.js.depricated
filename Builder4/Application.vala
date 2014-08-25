@@ -128,6 +128,12 @@ namespace Builder4
 	                        "GtkUsage.txt",
                 		force
                         );
+			this.fetchResourceFrom (
+	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
+	                        "rooprops.json",
+                		force
+                        );
+			
 
 		}
 		public void fetchResource(string res, bool force) {
