@@ -61,7 +61,7 @@ namespace Palete {
 
             
 		var pa = new Json.Parser();
-		pa.load_from_file("/usr/share/appBuilder/roodata.json");
+		pa.load_from_file(Application.configDirectory() + "/resources/roodata.json");
 		var node = pa.get_root();
 
 		var clist =  node.get_object().get_object_member("data");
