@@ -510,6 +510,8 @@ public class Xcls_WindowRooView : Object
             
                 var runhtml = "<script type=\"text/javascript\">\n" ;
                 string builderhtml;
+                
+                
                 GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.js", out builderhtml);
             
                 runhtml += builderhtml + "\n";
@@ -521,6 +523,14 @@ public class Xcls_WindowRooView : Object
             
                 string inhtml;
                 var base_template = _this.file.project.base_template;
+                
+                if (base_template.length > 0 && !FileUtils.test(
+                    Builder4.Application.configDirectory() + "/resources/" +  base_template)  
+                    ) {
+                       print("invalid base_template name - using default:  %s\n", base_template);
+                       base_template = "";
+                
+                }
                 
                 GLib.FileUtils.get_contents(
                     Builder4.Application.configDirectory() + "/resources/" + 
