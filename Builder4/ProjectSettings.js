@@ -40,17 +40,6 @@ ProjectSettings=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : () => {
-                            _this.buttonPressed("cancel");
-                            return false;
-                        }
-                    },
-                    label : "Cancel",
-                    pack : "add"
-                },
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        button_press_event : () => {
                             var buf =    _this.view.el.get_buffer();
                            Gtk.TextIter s;
                              Gtk.TextIter e;
