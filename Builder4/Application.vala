@@ -119,7 +119,7 @@ namespace Builder4
 				return;
 			}
 			// fetch...
-			
+			print("downloading %s\n", res);
 			var session = new Soup.Session ();
 		        var message = new Soup.Message ("GET", 
                 		"http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res
