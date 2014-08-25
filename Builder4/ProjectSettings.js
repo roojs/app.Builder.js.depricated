@@ -97,6 +97,10 @@ ProjectSettings=new XObject({
                     xtype: Gtk.Label,
                     label : "HTML template file",
                     pack : "pack_start,false,false,0"
+                },
+                {
+                    xtype: Gtk.Entry,
+                    pack : false
                 }
             ]
         },

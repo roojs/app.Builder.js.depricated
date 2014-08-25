@@ -58,7 +58,7 @@ public class Xcls_ProjectSettings : Object
         var child_3 = new Xcls_HBox7( _this );
         child_3.ref();
         this.el.pack_start (  child_3.el , false,false,0 );
-        var child_4 = new Xcls_ScrolledWindow9( _this );
+        var child_4 = new Xcls_ScrolledWindow10( _this );
         child_4.ref();
         this.el.pack_start (  child_4.el , true,true,0 );
     }
@@ -255,6 +255,8 @@ public class Xcls_ProjectSettings : Object
             var child_0 = new Xcls_Label8( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_Entry9( _this );
+            child_1.ref();
         }
 
         // userdefined functions 
@@ -284,7 +286,30 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ScrolledWindow9 : Object 
+    public class Xcls_Entry9 : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Entry9(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Entry();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_ScrolledWindow10 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ProjectSettings  _this;
@@ -293,7 +318,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow9(Xcls_ProjectSettings _owner )
+        public Xcls_ScrolledWindow10(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );

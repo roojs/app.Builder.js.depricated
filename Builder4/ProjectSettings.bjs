@@ -66,6 +66,11 @@
                             "pack": "pack_start,false,false,0",
                             "xtype": "Label",
                             "|xns": "Gtk"
+                        },
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "Entry",
+                            "pack": false
                         }
                     ]
                 },
