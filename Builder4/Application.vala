@@ -130,7 +130,7 @@ namespace Builder4
 
 			    // output the XML result to stdout
 			FileUtils.set_contents(initConfigDirectory() + "/resources/" + res,
-			                      message.response_body.data
+			                      "%s".printf(message.response_body.data)
                       );
 
 
