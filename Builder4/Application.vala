@@ -75,7 +75,8 @@ namespace Builder4
 			 
 			
 			this.settings = AppSettings.factory();	
-			
+
+			this.initResources(); 
 		
 
 		}
