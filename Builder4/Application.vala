@@ -72,14 +72,17 @@ namespace Builder4
 			       application_id: "org.roojs.app-builder",
 				flags: ApplicationFlags.FLAGS_NONE
 			);
-			 
-			
+					 
+			this.initConfigDirectory();
 			this.settings = AppSettings.factory();	
 
 			this.initResources(); 
 		
 
 		}
+
+
+		
 		public static Application  singleton()
 		{
 			if (application==null) {
@@ -89,8 +92,21 @@ namespace Builder4
 			}
 			return application;
 		}
+
+		public string initConfigDirectory()
+		{
+			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+			var dir = File.new_for_path(dirname);
+		        if (!dir.query_exists()) {
+				dir.make_directory();
+				 
+			}
+			return dirname;
+		}
 	} 
 
+
+	
 	
 
 
