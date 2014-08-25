@@ -129,8 +129,9 @@ namespace Builder4
 		         session.send_message (message);
 
 			    // output the XML result to stdout
-			FileUtils.set_contents(initConfigDirectory() + "/resources/" + res,
-			                      "%s".printf(message.response_body.data)
+			FileUtils.set_contents(
+	                       initConfigDirectory() + "/resources/" + res,
+	                      (string) message.response_body.data
                       );
 
 
