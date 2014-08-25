@@ -56,6 +56,29 @@
                     "label": "HTML To insert at end of <HEAD>"
                 },
                 {
+                    "pack": "pack_start,false,false,0",
+                    "xtype": "HBox",
+                    "|homogeneous": "false",
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "listeners": {
+                                "button_press_event": "() => {\n    var buf =    _this.view.el.get_buffer();\n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    buf.get_start_iter(out s);\n    buf.get_end_iter(out e);\n    _this.project.runhtml = buf.get_text(s,e,true);\n    \n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
+                            },
+                            "label": "Save",
+                            "pack": "add",
+                            "xtype": "Button",
+                            "|xns": "Gtk"
+                        },
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "Label",
+                            "pack": "pack_start,false,false,0",
+                            "label": "HTML To insert at end of <HEAD>"
+                        }
+                    ]
+                },
+                {
                     "pack": "pack_start,true,true,0",
                     "xtype": "ScrolledWindow",
                     "|xns": "Gtk",
