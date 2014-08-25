@@ -156,6 +156,7 @@ namespace Builder4
 			// fetch...
 			print("downloading %s \nto : %s\n", src,res);
 			var session = new Soup.Session ();
+			session.user_agent = "App Builder ";
 		        var message = new Soup.Message ("GET", 
                 		src
                         );
