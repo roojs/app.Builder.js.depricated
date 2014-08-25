@@ -97,6 +97,11 @@ public class Xcls_ProjectSettings : Object
             //project.runhtml = project.runhtml || '';
             _this.view.el.get_buffer().set_text(project.runhtml);
             
+               
+            _this.rootURL.el.set_text( _this.project.rootURL );
+            _this.base_template.el.set_text(_this.project.base_template);    
+           
+            
             //this.el.show_all();
         }
 
