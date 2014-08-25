@@ -258,6 +258,7 @@ public class Xcls_ProjectSettings : Object
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_base_template( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
