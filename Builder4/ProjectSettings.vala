@@ -66,11 +66,10 @@ public class Xcls_ProjectSettings : Object
         var child_5 = new Xcls_ScrolledWindow13( _this );
         child_5.ref();
         this.el.pack_start (  child_5.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
+    public void save
     public void show (Project.Project project) {
             _this.project = project;
             _this.path.el.label = project.firstPath();
