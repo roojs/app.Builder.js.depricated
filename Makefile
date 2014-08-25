@@ -9,7 +9,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg gee-1.0 \
 		--pkg gobject-introspection-1.0 \
 		--pkg webkit2gtk-4.0 \
-		--pkg webkit2gtk-web-extension-4.0.vapi \
+		--pkg webkit2gtk-web-extension-4.0  \
 		--pkg clutter-gtk-1.0 \
 		--pkg gladeui-2.0 \
 		--pkg libsoup-2.4
