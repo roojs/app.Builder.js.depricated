@@ -31,7 +31,7 @@ public class Xcls_ProjectSettings : Object
     }
     public Xcls_path path;
     public Xcls_base_template base_template;
-    public Xcls_base_template base_template;
+    public Xcls_rootURL rootURL;
     public Xcls_view view;
 
         // my vars
@@ -336,7 +336,7 @@ public class Xcls_ProjectSettings : Object
             var child_0 = new Xcls_Label11( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_base_template( _this );
+            var child_1 = new Xcls_rootURL( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -357,7 +357,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Label11(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "HTML template file" );
+            this.el = new Gtk.Label( "root URL" );
 
             // my vars
 
@@ -368,7 +368,7 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_base_template : Object 
+    public class Xcls_rootURL : Object 
     {
         public Gtk.Entry el;
         private Xcls_ProjectSettings  _this;
@@ -377,10 +377,10 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_base_template(Xcls_ProjectSettings _owner )
+        public Xcls_rootURL(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            _this.base_template = this;
+            _this.rootURL = this;
             this.el = new Gtk.Entry();
 
             // my vars

@@ -112,12 +112,12 @@ ProjectSettings=new XObject({
             items : [
                 {
                     xtype: Gtk.Label,
-                    label : "HTML template file",
+                    label : "root URL",
                     pack : "pack_start,false,false,0"
                 },
                 {
                     xtype: Gtk.Entry,
-                    id : "base_template",
+                    id : "rootURL",
                     pack : "add"
                 }
             ]

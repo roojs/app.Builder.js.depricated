@@ -82,13 +82,13 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "label": "HTML template file",
+                            "label": "root URL",
                             "pack": "pack_start,false,false,0",
                             "xtype": "Label",
                             "|xns": "Gtk"
                         },
                         {
-                            "id": "base_template",
+                            "id": "rootURL",
                             "pack": "add",
                             "xtype": "Entry",
                             "|xns": "Gtk"
