@@ -19,7 +19,7 @@ namespace Builder4
 		public static AppSettings factory()
 		{
 			 
-			var setting_file = configDirectory() + "/builder.settings";
+			var setting_file = Application.configDirectory() + "/builder.settings";
 			
 			if (!FileUtils.test(setting_file, FileTest.EXISTS)) {
 				 return new AppSettings();
