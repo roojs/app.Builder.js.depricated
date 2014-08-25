@@ -36,7 +36,7 @@ MainWindow=new XObject({
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
               _this.projecteditbutton.el.show();
-         
+             _this.editfilebutton.el.show();   
          _this.addpropsview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -56,7 +56,7 @@ MainWindow=new XObject({
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
               _this.projecteditbutton.el.show();
-         
+             _this.editfilebutton.el.show();   
          _this.addpropsview.el.save_easing_state();
          
         var el = _this.rooview.el;
@@ -75,9 +75,10 @@ MainWindow=new XObject({
      },
     'void:hideCodeEdit' : () {
         //this.code_editor.saveContents();
-             _this.backbutton.el.hide();
-                  _this.projectbutton.el.show(); 
-                       _this.projecteditbutton.el.show();
+         _this.backbutton.el.hide();
+          _this.projectbutton.el.show(); 
+           _this.projecteditbutton.el.show();
+           _this.editfilebutton.el.show();   
          _this.codeeditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -99,7 +100,7 @@ MainWindow=new XObject({
               _this.projecteditbutton.el.show();
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
-         
+             _this.editfilebutton.el.show();   
          _this.objectview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -123,7 +124,7 @@ MainWindow=new XObject({
           _this.projectbutton.el.show();
          _this.projecteditbutton.el.show();
           _this.backbutton.el.hide();
-         
+             _this.editfilebutton.el.show();   
          
         //this.rooview.el.hide();
          //this.edit_project.el.show();
