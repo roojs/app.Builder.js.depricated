@@ -144,7 +144,7 @@ namespace Builder4
 	                       "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res,
 	                       res,
 			       force
-                       )
+                       );
 			
 
 		}
