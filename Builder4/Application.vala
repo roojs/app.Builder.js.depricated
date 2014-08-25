@@ -112,7 +112,20 @@ namespace Builder4
 			}
 
 		}
-		public void checkResource(string res 
+		public void checkResource(string res) {
+			if (FileUtil.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+				return;
+			}
+			// fetch...
+			
+
+
+
+
+
+			
+
+		}
 
 				
 
