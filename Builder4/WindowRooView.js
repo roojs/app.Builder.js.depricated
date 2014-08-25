@@ -321,7 +321,7 @@ WindowRooView=new XObject({
                                 var base_template = _this.file.project.base_template;
                                 
                                 if (base_template.length > 0 && !FileUtils.test(
-                                    Builder4.Application.configDirectory() + "/resources/" +  base_template)  
+                                    Builder4.Application.configDirectory() + "/resources/" +  base_template, FileTest.EXISTS)  
                                     ) {
                                        print("invalid base_template name - using default:  %s\n", base_template);
                                        base_template = "";
