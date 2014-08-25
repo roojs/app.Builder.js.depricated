@@ -116,7 +116,7 @@ namespace Builder4
 				"roo.builder.js"
 			};
 			for (var i = 0; i < res.length; i++ ) { 
-				this.checkResource(res[i], force);
+				this.fetchResource(res[i], force);
 			}
 			this.fetchResourceFrom (
 	                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=Palete/RooUsage.txt",
