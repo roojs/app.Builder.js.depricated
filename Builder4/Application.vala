@@ -120,7 +120,7 @@ namespace Builder4
 			}
 
 		}
-		public void checkResource(string res, bool force) {
+		public void fetchResource(string res, bool force) {
 			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
@@ -143,7 +143,28 @@ namespace Builder4
 
 		}
 
+		public void fetchOtherResource(string src, string res, bool force) {
+			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+				return;
+			}
+			// fetch...
+			print("downloading %s\n", res);
+			var session = new Soup.Session ();
+		        var message = new Soup.Message ("GET", 
+                		src
+                        );
 
+			    // send the HTTP request and wait for response
+		         session.send_message (message);
+
+			    // output the XML result to stdout
+			FileUtils.set_contents(
+	                       initConfigDirectory() + "/resources/" + res,
+	                      (string) message.response_body.data
+                        );
+
+
+		}
 		
 	} 
 
