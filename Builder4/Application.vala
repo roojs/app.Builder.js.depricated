@@ -18,13 +18,8 @@ namespace Builder4
 
 		public static AppSettings factory()
 		{
-			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-			var dir = File.new_for_path(dirname);
-		        if (!dir.query_exists()) {
-				dir.make_directory();
-				 
-			}
-			var setting_file = dirname + "/builder.settings";
+			 
+			var setting_file = initConfigDirectory() + "/builder.settings";
 			
 			if (!FileUtils.test(setting_file, FileTest.EXISTS)) {
 				 return new AppSettings();
