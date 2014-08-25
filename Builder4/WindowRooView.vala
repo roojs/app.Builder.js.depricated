@@ -510,7 +510,7 @@ public class Xcls_WindowRooView : Object
                      
                      var runhtml = "<script type=\"text/javascript\">\n" ;
                      string builderhtml;
-                     GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html.js", out builderhtml);
+                     GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/builder.html.js", out builderhtml);
                      
                      runhtml += builderhtml + "\n";
                      runhtml += "</script>\n" ;
@@ -520,7 +520,7 @@ public class Xcls_WindowRooView : Object
                     // need to modify paths
                     
                     string inhtml;
-                    GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out inhtml);
+                    GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.html", out inhtml);
                     
                     
                 
