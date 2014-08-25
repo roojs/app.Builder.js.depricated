@@ -6,11 +6,17 @@ namespace Builder4
 	public static string initConfigDirectory()
 	{
 		var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-		var dir = File.new_for_path(dirname);
-	        if (!dir.query_exists()) {
-			dir.make_directory();
-			 
+		
+	        if (!FileUtils.test(dirname,FileTest.IS_DIR) {
+			var dir = File.new_for_path(dirname);
+			dir.make_directory();	 
 		}
+		if (!FileUtils.test(dirname + "/resources",FileTest.IS_DIR) {
+			var dir = File.new_for_path(dirname + "/resources");
+			dir.make_directory();	 
+		}
+
+		
 		return dirname;
 	}
 	
