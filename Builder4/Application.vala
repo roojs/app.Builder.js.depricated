@@ -73,7 +73,7 @@ namespace Builder4
 				flags: ApplicationFlags.FLAGS_NONE
 			);
 					 
-			this.initConfigDirectory();
+			initConfigDirectory();
 			this.settings = AppSettings.factory();	
 
 			this.initResources(); 
@@ -93,7 +93,7 @@ namespace Builder4
 			return application;
 		}
 
-		public string initConfigDirectory()
+		public static string initConfigDirectory()
 		{
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
 			var dir = File.new_for_path(dirname);
