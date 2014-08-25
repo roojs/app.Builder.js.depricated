@@ -107,7 +107,7 @@ namespace Builder4
 
 		
 
-		public void initResources()
+		public void initResources(bool force = false)
 		{
 			// files to fetch from resources.
 			string[] res = { 
@@ -116,12 +116,12 @@ namespace Builder4
 				"roo.builder.js"
 			};
 			for (var i = 0; i < res.length; i++ ) { 
-				this.checkResource(res[i]);
+				this.checkResource(res[i], force);
 			}
 
 		}
-		public void checkResource(string res) {
-			if (FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+		public void checkResource(string res, force) {
+			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
 			// fetch...
