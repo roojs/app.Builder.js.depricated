@@ -14,6 +14,10 @@ ProjectSettings=new XObject({
     border_width : 5,
     id : "ProjectSettings",
     homogeneous : false,
+    'void:save' : ()
+    {
+    
+    },
     'void:show' : (Project.Project project) {
         _this.project = project;
         _this.path.el.label = project.firstPath();

@@ -69,7 +69,10 @@ public class Xcls_ProjectSettings : Object
     }
 
     // userdefined functions 
-    public void save
+    public void save()
+        {
+        
+        }
     public void show (Project.Project project) {
             _this.project = project;
             _this.path.el.label = project.firstPath();
