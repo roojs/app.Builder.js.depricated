@@ -120,7 +120,7 @@ namespace Builder4
 			}
 
 		}
-		public void checkResource(string res, force) {
+		public void checkResource(string res, bool force) {
 			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
