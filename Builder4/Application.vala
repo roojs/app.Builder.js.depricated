@@ -3,6 +3,17 @@
 namespace Builder4
 {
 
+	public static string initConfigDirectory()
+	{
+		var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+		var dir = File.new_for_path(dirname);
+	        if (!dir.query_exists()) {
+			dir.make_directory();
+			 
+		}
+		return dirname;
+	}
+	
 	public class AppSettings : Object
 	{
 
@@ -88,16 +99,7 @@ namespace Builder4
 			return application;
 		}
 
-		public static string initConfigDirectory()
-		{
-			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-			var dir = File.new_for_path(dirname);
-		        if (!dir.query_exists()) {
-				dir.make_directory();
-				 
-			}
-			return dirname;
-		}
+		
 
 		public void initResources()
 		{
