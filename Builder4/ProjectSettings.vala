@@ -71,7 +71,17 @@ public class Xcls_ProjectSettings : Object
     // userdefined functions 
     public void save()
         {
-        
+           var buf =    _this.view.el.get_buffer();
+           Gtk.TextIter s;
+             Gtk.TextIter e;
+            buf.get_start_iter(out s);
+            buf.get_end_iter(out e);
+              _this.project.runhtml = buf.get_text(s,e,true);
+              
+            _this.project.rootURL = _this.rootURL.el.get_text();
+            _this.project.base_template = _this.base_template.el.get_text();    
+            
+            
         }
     public void show (Project.Project project) {
             _this.project = project;
