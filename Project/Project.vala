@@ -151,7 +151,10 @@ namespace Project {
 			if (obj.has_member("base_template")) {
         			proj.base_template  = obj.get_string_member("base_template"); 
 			}
-			 
+			// might not exist?
+			if (obj.has_member("rootURL")) {
+        			proj.rootURL  = obj.get_string_member("rootURL"); 
+			}
 			
 			proj.name = obj.get_string_member("name");
 
