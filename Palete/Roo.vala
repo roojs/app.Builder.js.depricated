@@ -56,12 +56,12 @@ namespace Palete {
 		if (this.classes != null) {
 			return;
 		}
-		this.loadUsageFile(Application.configDirectory() + "/resources/RooUsage.txt");
+		this.loadUsageFile(Builder4.Application.configDirectory() + "/resources/RooUsage.txt");
 		this.classes = new Gee.HashMap<string,GirObject>();
 
             
 		var pa = new Json.Parser();
-		pa.load_from_file(Application.configDirectory() + "/resources/roodata.json");
+		pa.load_from_file(Builder4.Application.configDirectory() + "/resources/roodata.json");
 		var node = pa.get_root();
 
 		var clist =  node.get_object().get_object_member("data");
