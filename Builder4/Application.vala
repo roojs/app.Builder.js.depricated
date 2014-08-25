@@ -154,7 +154,7 @@ namespace Builder4
 				return;
 			}
 			// fetch...
-			print("downloading %s\n", res);
+			print("downloading %s \nto : %s\n", src,res);
 			var session = new Soup.Session ();
 		        var message = new Soup.Message ("GET", 
                 		src
