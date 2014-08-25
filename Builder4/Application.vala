@@ -104,7 +104,7 @@ namespace Builder4
 			// files to fetch from resources.
 			string[] res = { 
 				"bootstrap.builder.html",
-				"roo.builder.html"
+				"roo.builder.html",
 				"roo.builder.js"
 			};
 			for (var i = 0; i < res.length; i++ ) { 
