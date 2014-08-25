@@ -123,7 +123,11 @@ namespace Builder4
 	                        "RooUsage.txt",
                 		force
                         );
-			
+			this.fetchResourceFrom (
+	                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=Palete/GtkUsage.txt",
+	                        "GtkUsage.txt",
+                		force
+                        );
 
 		}
 		public void fetchResource(string res, bool force) {
