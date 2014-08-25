@@ -408,10 +408,8 @@ right:
 
 left:
     Roo.bootstrap.Button:menu
-    Roo.bootstrap.Navbar.Item:menu
-    Roo.bootstrap.NavSimplebar.Item:menu
-    Roo.bootstrap.NavHeaderbar.Item:menu
-    Roo.bootstrap.NavSidebar.Item:menu
+    Roo.bootstrap.NavItem:menu
+    Roo.bootstrap.NavSidebarItem:menu
 right:
     Roo.bootstrap.Menu
 
@@ -435,7 +433,7 @@ right:
 left:
     Roo.bootstrap.NavGroup
 right:
-    Roo.bootstrap.Navbar.Item
+    Roo.bootstrap.NavItem
     Roo.bootstrap.Navbar.Button
     Roo.bootstrap.NavSimplebar.Item
     Roo.bootstrap.NavHeaderbar.Item
@@ -473,7 +471,7 @@ right:
     Roo.bootstrap.Container
 
 left:    
-    Roo.bootstrap.Navbar.Item
+    Roo.bootstrap.NavItem
     Roo.bootstrap.NavSimplebar.Item
     Roo.bootstrap.NavHeaderbar.Item
     Roo.bootstrap.NavSidebar.Item
