@@ -138,7 +138,7 @@ namespace Builder4
 			FileUtils.set_contents(
 	                       initConfigDirectory() + "/resources/" + res,
 	                      (string) message.response_body.data
-                      );
+                        );
 
 
 		}
