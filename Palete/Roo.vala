@@ -56,7 +56,7 @@ namespace Palete {
 		if (this.classes != null) {
 			return;
 		}
-		this.loadUsageFile("/usr/share/appBuilder/RooUsage.txt");
+		this.loadUsageFile(Application.configDirectory() + "/resources/RooUsage.txt");
 		this.classes = new Gee.HashMap<string,GirObject>();
 
             
