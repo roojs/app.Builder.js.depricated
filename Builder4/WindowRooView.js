@@ -293,32 +293,35 @@ WindowRooView=new XObject({
                                  // set it to non-empty.
                                  
                             //     runhtml = runhtml.length ?  runhtml : '<script type="text/javascript"></script>'; 
-                                
                             
-                              //   this.runhtml  = this.runhtml || '';
-                                 
-                                 
-                                    // then we need to reload the browser using
-                                    // load_html_string..
-                                    
-                                    // then trigger a redraw once it's loaded..
-                                     this.pendingRedraw = true;
-                                     
-                                     var runhtml = "<script type=\"text/javascript\">\n" ;
-                                     string builderhtml;
-                                     GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/builder.html.js", out builderhtml);
-                                     
-                                     runhtml += builderhtml + "\n";
-                                     runhtml += "</script>\n" ;
-                                    
-                                    // fix to make sure they are the same..
-                                    this.runhtml = project.runhtml;
-                                    // need to modify paths
-                                    
-                                    string inhtml;
-                                    GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.html", out inhtml);
-                                    
-                                    
+                            
+                            //   this.runhtml  = this.runhtml || '';
+                             
+                             
+                                // then we need to reload the browser using
+                                // load_html_string..
+                            
+                                // then trigger a redraw once it's loaded..
+                                this.pendingRedraw = true;
+                            
+                                var runhtml = "<script type=\"text/javascript\">\n" ;
+                                string builderhtml;
+                                GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/builder.html.js", out builderhtml);
+                            
+                                runhtml += builderhtml + "\n";
+                                runhtml += "</script>\n" ;
+                            
+                                // fix to make sure they are the same..
+                                this.runhtml = project.runhtml;
+                                // need to modify paths
+                            
+                                string inhtml;
+                                var base_template = _this.file.project.base_template;
+                                
+                                GLib.FileUtils.get_contents(
+                                    Builder4.Application.configDirectory() + "/resources/" + 
+                                        (base_template.length > 0 ? base_template :  "roo.builder.html")
+                                        , out inhtml);
                                 
                                 
                                 this.renderedData = js;
