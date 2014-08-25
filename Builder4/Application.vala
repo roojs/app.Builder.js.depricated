@@ -98,6 +98,32 @@ namespace Builder4
 			}
 			return dirname;
 		}
+
+		public void initResources()
+		{
+			// files to fetch from resources.
+			string[] res = { 
+				"bootstrap.builder.html",
+				"roo.builder.html"
+				"roo.builder.js"
+			};
+			for (var i = 0; i < res.length; i++ ) { 
+				this.checkResource(res[i]);
+			}
+
+		}
+		public void checkResource(string res 
+
+				
+
+
+			
+			
+
+
+
+			
+		
 	} 
 
 
