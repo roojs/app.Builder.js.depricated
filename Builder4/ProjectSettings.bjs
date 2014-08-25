@@ -68,9 +68,11 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "|xns": "Gtk",
+                            "pack": false,
                             "xtype": "Entry",
-                            "pack": false
+                            "|xns": "Gtk",
+                            "id": "",
+                            "listeners": {}
                         }
                     ]
                 },
