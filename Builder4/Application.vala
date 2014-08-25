@@ -137,7 +137,7 @@ namespace Builder4
 
 		}
 		public void fetchResource(string res, bool force) {
-			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
 			this.fetchResourceFrom(
@@ -150,7 +150,7 @@ namespace Builder4
 		}
 
 		public void fetchResourceFrom(string src, string res, bool force) {
-			if (!force && FileUtils.test(initConfigDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
 				return;
 			}
 			// fetch...
