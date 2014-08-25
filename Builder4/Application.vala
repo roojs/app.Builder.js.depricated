@@ -7,11 +7,11 @@ namespace Builder4
 	{
 		var dirname = GLib.Environment.get_home_dir() + "/.Builder";
 		
-	        if (!FileUtils.test(dirname,FileTest.IS_DIR) {
+	        if (!FileUtils.test(dirname,FileTest.IS_DIR)) {
 			var dir = File.new_for_path(dirname);
 			dir.make_directory();	 
 		}
-		if (!FileUtils.test(dirname + "/resources",FileTest.IS_DIR) {
+		if (!FileUtils.test(dirname + "/resources",FileTest.IS_DIR)) {
 			var dir = File.new_for_path(dirname + "/resources");
 			dir.make_directory();	 
 		}
