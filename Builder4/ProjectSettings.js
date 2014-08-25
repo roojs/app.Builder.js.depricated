@@ -106,6 +106,23 @@ ProjectSettings=new XObject({
             ]
         },
         {
+            xtype: Gtk.HBox,
+            pack : "pack_start,false,false,0",
+            homogeneous : false,
+            items : [
+                {
+                    xtype: Gtk.Label,
+                    label : "HTML template file",
+                    pack : "pack_start,false,false,0"
+                },
+                {
+                    xtype: Gtk.Entry,
+                    id : "base_template",
+                    pack : "add"
+                }
+            ]
+        },
+        {
             xtype: Gtk.ScrolledWindow,
             pack : "pack_start,true,true,0",
             items : [

@@ -31,6 +31,7 @@ public class Xcls_ProjectSettings : Object
     }
     public Xcls_path path;
     public Xcls_base_template base_template;
+    public Xcls_base_template base_template;
     public Xcls_view view;
 
         // my vars
@@ -59,9 +60,12 @@ public class Xcls_ProjectSettings : Object
         var child_3 = new Xcls_HBox7( _this );
         child_3.ref();
         this.el.pack_start (  child_3.el , false,false,0 );
-        var child_4 = new Xcls_ScrolledWindow10( _this );
+        var child_4 = new Xcls_HBox10( _this );
         child_4.ref();
-        this.el.pack_start (  child_4.el , true,true,0 );
+        this.el.pack_start (  child_4.el , false,false,0 );
+        var child_5 = new Xcls_ScrolledWindow13( _this );
+        child_5.ref();
+        this.el.pack_start (  child_5.el , true,true,0 );
     }
 
     // userdefined functions 
@@ -312,7 +316,83 @@ public class Xcls_ProjectSettings : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_ScrolledWindow10 : Object 
+    public class Xcls_HBox10 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox10(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( false, 0 );
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Label11( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_base_template( _this );
+            child_1.ref();
+            this.el.add (  child_1.el  );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Label11 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Label11(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "HTML template file" );
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_base_template : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_base_template(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.base_template = this;
+            this.el = new Gtk.Entry();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_ScrolledWindow13 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ProjectSettings  _this;
@@ -321,7 +401,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow10(Xcls_ProjectSettings _owner )
+        public Xcls_ScrolledWindow13(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );

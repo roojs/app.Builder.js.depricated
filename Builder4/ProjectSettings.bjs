@@ -76,6 +76,26 @@
                     ]
                 },
                 {
+                    "pack": "pack_start,false,false,0",
+                    "xtype": "HBox",
+                    "|homogeneous": "false",
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "label": "HTML template file",
+                            "pack": "pack_start,false,false,0",
+                            "xtype": "Label",
+                            "|xns": "Gtk"
+                        },
+                        {
+                            "id": "base_template",
+                            "pack": "add",
+                            "xtype": "Entry",
+                            "|xns": "Gtk"
+                        }
+                    ]
+                },
+                {
                     "pack": "pack_start,true,true,0",
                     "xtype": "ScrolledWindow",
                     "|xns": "Gtk",
