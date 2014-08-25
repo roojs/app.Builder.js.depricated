@@ -348,9 +348,13 @@ WindowRooView=new XObject({
                                     "</head>");
                                     print("LOAD HTML " + html);
                                     
+                                     var rootURL = _this.file.project.rootURL;
+                               
+                                    
+                                    
                                     this.el.load_html( html , 
                                         //fixme - should be a config option!
-                                        "http://localhost/app.Builder/"
+                                        (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
                                     );
                                     
                             //     print( "before render" +    this.lastRedraw);
