@@ -32,6 +32,7 @@ namespace Project {
 		public string name = "";
 		public string runhtml = "";
 		public string base_template = "";
+		public string rootURL = "";
 		public Gee.HashMap<string,string> paths;
 		public Gee.HashMap<string,JsRender.JsRender> files ;
 		//tree : false,
