@@ -100,8 +100,8 @@ ProjectSettings=new XObject({
                 },
                 {
                     xtype: Gtk.Entry,
-                    pack : false,
-                    id : ""
+                    id : "base_template",
+                    pack : false
                 }
             ]
         },
