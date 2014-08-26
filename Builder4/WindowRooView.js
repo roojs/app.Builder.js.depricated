@@ -230,7 +230,7 @@ WindowRooView=new XObject({
                                 Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                 */
                                 GLib.Timeout.add_seconds(1,  ()  =>{
-                                     print("run refresh?");
+                                     //print("run refresh?");
                                      this.runRefresh(); 
                                      return true;
                                  });
