@@ -388,7 +388,9 @@ WindowRooView=new XObject({
                                         //fixme - should be a config option!
                                         (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
                                     );
-                                    
+                                    GLib.Timeout.add_seconds(1, () => {
+                                        this.el.run_javascript("Builder.saveHTML()");
+                                    });
                             //     print( "before render" +    this.lastRedraw);
                             //    print( "after render" +    (new Date()));
                                 
