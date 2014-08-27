@@ -439,8 +439,24 @@ public class Xcls_WindowRooView : Object
                 this.inspector.show();
             } );
             this.el.script_dialog.connect(  (dialog) => {
-                 print(dialog.get_message() + "\n");
-                 return false;
+                 var msg = dialog.get_message();
+                 if (msg.length < 4) {
+                    return false;
+                 }
+                 if (msg.substring(0,4) != "IPC:") {
+                     return false;
+                 }
+                 var ar = msg.split(":", 3);
+                if (ar.length < 3) {
+                    return false;
+                }
+                switch(ar[1]) {
+                    case "SAVEHTML":
+                        print("save HTML %s", ar[2]);
+                        return true;
+                    default:
+                        return false;
+                }
             } );
         }
 
