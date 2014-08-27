@@ -348,7 +348,7 @@ public class Xcls_EditProject : Object
             this.el.label = "OK";
 
             // listeners 
-            this.el.clicked.connect(  () => {
+            this.el.activate.connect(  () => {
              
               if (_this.xtype.getValue().length < 1) {
                     StandardErrorDialog.singleton().show("You have to set Project type");             

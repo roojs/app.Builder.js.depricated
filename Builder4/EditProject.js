@@ -148,7 +148,7 @@ EditProject=new XObject({
         {
             xtype: Gtk.Button,
             listeners : {
-                clicked : () => {
+                activate : () => {
                  
                   if (_this.xtype.getValue().length < 1) {
                         StandardErrorDialog.singleton().show("You have to set Project type");             
