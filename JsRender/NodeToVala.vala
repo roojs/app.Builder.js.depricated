@@ -66,7 +66,11 @@ public class JsRender.NodeToVala : Object {
 			"\n" + spad +  "}";
 		     
 	} 
-	
+	public string mungeChild(string pad ,  Node cnode)
+	{
+		var x = new  NodeToVala(cnode,  pad);
+		return x.munge();
+	}
 
 	public void globalVars()
 	{
@@ -483,13 +487,17 @@ public class JsRender.NodeToVala : Object {
 	void iterChildren()
 	{
             
-            if (this.depth > 0) {
-                this.ret+= thisinpad + "}\n";
-            }
-            
-            
+    		if (this.depth > 0) {
+			this.ret+= this.inpad + "}\n";
+    		}
+		
+		var iter = this.node.items.list_iterator();
+		var i = -1;
+		while (iter.next()) {
+    			this.ret += this.mungeChild(iter.get());
+		}
             // next loop throug children..
-            if (typeof(item.items) != 'undefined') {
+            
                 for(var i =0;i<item.items.length;i++) {
                     this.toValaItem(item.items[i], 1, strbuilder);
                 }
@@ -547,11 +555,7 @@ public class JsRender.NodeToVala : Object {
 		return ret;
 
 	}
-	public string mungeChild(string pad ,  Node cnode)
-	{
-		var x = new  NodeToVala(cnode,  pad);
-		return x.munge();
-	}
+	
 	
 	
 
