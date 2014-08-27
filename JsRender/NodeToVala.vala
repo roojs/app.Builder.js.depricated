@@ -455,7 +455,8 @@ public class JsRender.NodeToVala : Object {
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
-            		this.ret+= this.ipad + "this.el." + k + ".connect( " + this.padMultiline(this.ipad,vv) +");\n"; 
+            		this.ret+= this.ipad + "this.el." + k + ".connect( " + 
+					this.padMultiline(this.ipad,v) +");\n"; 
                     
                 }
 	}    
