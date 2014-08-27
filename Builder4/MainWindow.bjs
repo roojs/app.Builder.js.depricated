@@ -437,7 +437,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return  ;    \n\n\n}"
+                                                                                "clicked": "  ( ) => {\n    if (_this.project) {\n        return;\n    }\n    // confirm?\n    Project.Project.remove(_this.project);\n    _this.project = null;\n    \n    _this.left_projects.is_loaded =  false;\n    _this.left_projects.load();\n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
