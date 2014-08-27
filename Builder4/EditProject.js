@@ -59,10 +59,34 @@ EditProject=new XObject({
     	// shouild set path..
         _this.model.loadData();
         this.el.show_all();
-         this.el.run();
+        var id =  this.el.run();
+        this.el.hide();
+        
+         if (id < 1) {
+                this.el.hide();
+                return null;
+        }
+        if (_this.xtype.getValue().length < 1) {
+            StandardErrorDialog.show("You have to set Project type");             
+            return null;
+        }
+        if (_this.dir.el.get_filename().length < 1) {
+            StandardErrorDialog.show("You have to select a folder");             
+            return null;
+        }
+    
         this.el.hide();
         
         
+        var fn = _this.dir.el.get_filename();
+        
+        var project = Project.Project.factory(_this.xtype.getValue(), fn);
+        
+        
+        //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
+        
+        this.success(project);
+    
         
         //this.success = c.success;
     },
