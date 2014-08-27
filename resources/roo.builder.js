@@ -1,5 +1,8 @@
 //<script type="text/javascript">
- 
+
+
+// IPC: - via alert("IPC:{method}:{data}
+
 
 var MODULE = { isBuilder : true };
 // BC
@@ -11,7 +14,14 @@ Builder  = {
     scriptTag : false,
     
     id : 1,
-    
+
+
+
+
+
+	// this lot is to deal with draging // selecting? - not used at present
+	// 
+	
      
     findNode : function(ftg , method) {
         if (!ftg) {
