@@ -432,7 +432,7 @@ public class JsRender.NodeToVala : Object {
 		}
     		this.ret+= "\n" + ipad + "// init method \n";
 		
-    		this.ret+= this.padMultiline(ipad, this.node.get("init");
+    		this.ret+= this.padMultiline(ipad, this.node.get("init"));
 
          }
 	 void addListeners()
