@@ -1,5 +1,5 @@
 
-extern  WebKit.WebExtension get_webkit_extension();
+//extern  WebKit.WebExtension get_webkit_extension();
 
 namespace JsRender {
 
@@ -234,7 +234,7 @@ namespace JsRender {
 	//public void saveHTML ( WebKit.WebView webview) 
 	public void saveHTML (  )
 	{
-
+		/*
 		var we = get_webkit_extension();
 		var web_frame = we.get_page(this.webkit_page_id);
 
@@ -258,6 +258,7 @@ namespace JsRender {
 
 
 		return;
+		    
 		/*
             // wait a second.
             
