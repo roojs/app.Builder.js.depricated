@@ -94,10 +94,10 @@ Builder  = {
             while (currentElementChild) {
                 // Formatting code (indent the tree so it looks nice on the screen)
                 
-                if  (currentElementChild.node_name == '#text') {
-                    cb(currentElementChild.node_value);
+                if  (currentElementChild.nodeName == '#text') {
+                    cb(currentElementChild.nodeValue);
                     i++;
-                    currentElementChild=currentElement.child_nodes.item(i);
+                    currentElementChild=currentElement.childNodes.item(i);
                     continue;
                 }   
                 allText = false;
@@ -111,7 +111,7 @@ Builder  = {
                 // Recursively traverse the tree structure of the child node
                 this.traverseDOMTree(cb, currentElementChild, depth+1);
                 i++;
-                currentElementChild=currentElement.child_nodes.item(i);
+                currentElementChild=currentElement.childNodes.item(i);
             }
             if (!allText) {
                     // The remaining code is mostly for formatting the tree
