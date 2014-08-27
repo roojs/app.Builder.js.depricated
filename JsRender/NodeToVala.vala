@@ -186,9 +186,9 @@ public class JsRender.NodeToVala : Object {
     		var cargs_str = "";
     		// ctor..
     		this.ret += "\n" + ipad + "// ctor \n";
-		if (this.node.has("* args"))
-    		if (typeof(item['*args']) != 'undefined') {
-        		cargs_str = ", " + item['*args']
+		if (this.node.has("* args")) {
+    		
+        		cargs_str = ", " + item['* args']
         		var ar = item['*args'].split(",");
         		for (var ari =0; ari < ar.length; ari++) {
             	    cargs.push(ar[ari].trim().split(" ").pop());
