@@ -2430,7 +2430,7 @@ public class Xcls_MainWindow : Object
                     return;
                 }
                 _this.left_projects.is_loaded = false;    
-                _this.left_projects.el.show();
+                _this.left_projects.load();
                 _this.left_projects.selectProject(p);
                 return  ;    
             
