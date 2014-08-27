@@ -146,7 +146,7 @@ public class JsRender.NodeToVala : Object {
             
     		// Key = TYPE:name
 		var iter = this.node.props.map_iterator();
-		while (iter.next) {
+		while (iter.next()) {
     			var k = iter.get_key();
 
 			// what are "the private properties with type defs in the new format?
