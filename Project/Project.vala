@@ -318,7 +318,7 @@ namespace Project {
 		{
 		    var iter = this.paths.map_iterator();
 		    while (iter.next()) {
-		        if (iter.get_key() == path)) {
+		        if (iter.get_key() == path) {
 				return true;
 			}
 		    }
