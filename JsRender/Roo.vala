@@ -225,7 +225,7 @@ namespace JsRender {
 
 	string html;
 
-	public void saveHTML (WebKit.WebFrame frame) 
+	public void saveHTML (WebKit.WebPage frame) 
 	{
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
