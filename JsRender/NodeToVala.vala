@@ -132,7 +132,7 @@ public class JsRender.NodeToVala : Object {
             
             
     		// Key = TYPE:name
-		var iter = node.props.map_iterator();
+		var iter = this.node.props.map_iterator();
 		while (iter.next) {
     			var k = iter.get_key();
 
@@ -157,33 +157,41 @@ public class JsRender.NodeToVala : Object {
 	}
 	
             // if id of child is '+' then it's a property of this..
-            
-            if (typeof(item.items) != 'undefined') {
-                for(var i =0;i<item.items.length;i++) {
-                    var ci = item.items[i];
-                    if (ci.xvala_id[0] != '+') {
-                        continue; // skip generation of children?
+        void addPlusProperties()
+	{
+      		if (this.node.items.size < 1) {
+		      return;
+		}
+		var iter = this.node.items.list_iterator();
+		while (iter.next()) {
+			var ci = iter.get();
+                    
+            		if (ci.xvala_id[0] != '+') {
+                		continue; // skip generation of children?
                         
-                    }
-                    strbuilder(pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n");
+            		}
+	                this.ret += this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n");
                                
                     
                 }
-            }
-            
+	}
+
+	void addValaProps()
+	{
             
             
             // .vala props.. 
             
-            var cargs = []; 
-            var cargs_str = '';
-            // ctor..
-            strbuilder("\n" + ipad + "// ctor \n");
-            if (typeof(item['*args']) != 'undefined') {
-                cargs_str = ", " + item['*args']
-                var ar = item['*args'].split(",");
-                for (var ari =0; ari < ar.length; ari++) {
-                    cargs.push(ar[ari].trim().split(" ").pop());
+    		string[] cargs = {}' 
+    		var cargs_str = "";
+    		// ctor..
+    		this.ret += "\n" + ipad + "// ctor \n";
+		if (this.node.has("* args"))
+    		if (typeof(item['*args']) != 'undefined') {
+        		cargs_str = ", " + item['*args']
+        		var ar = item['*args'].split(",");
+        		for (var ari =0; ari < ar.length; ari++) {
+            	    cargs.push(ar[ari].trim().split(" ").pop());
                 }
                     
             }
