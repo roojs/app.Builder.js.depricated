@@ -202,10 +202,10 @@ public class JsRender.NodeToVala : Object {
 		if (this.node.has("* args")) {
     		
         		cargs_str = ", " + this.node.get("* args");
-        		var ar = this.node.get("* args");.split(",");
-        		for (var ari =0; ari < ar.length; ari++) {
-            			cargs +=  (ar[ari].trim().split(" ").pop();
-                       }
+        		//var ar = this.node.get("* args");.split(",");
+        		//for (var ari =0; ari < ar.length; ari++) {
+            		//	cargs +=  (ar[ari].trim().split(" ").pop();
+                      // }
                 }
 		
     		if (this.depth < 1) {
