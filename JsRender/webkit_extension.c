@@ -9,3 +9,8 @@ webkit_web_extension_initialize (WebKitWebExtension *extension)
 {
     glob_extension = extension;
 }
+
+WebKitWebExtension* get_webkit_extension()
+{
+	return glob_extension;
+}
