@@ -250,7 +250,7 @@ namespace JsRender {
 		var dn = GLib.Path.get_dirname(fn);
 
 		try {
-			FileUtils.set_contents(bn + '/temp, js_src, js_src.length);            
+			FileUtils.set_contents(dn + "/templates/" + bn , html, html.length);            
 		} catch (FileError e ) {
 			print("Save failed\n");
 		}
