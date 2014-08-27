@@ -9,7 +9,7 @@
             "listeners": {
                 "show": "  ( ) => {\n    this.load();\n}"
             },
-            "|Project.Project?:getSelectedProject": "() {    \n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.el.get_selection();\n    if (!s.get_selected(out mod, out iter)) {\n        return null;\n    }\n    \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    _this.project_selected(project);\n    ",
+            "|Project.Project?:getSelectedProject": "() {    \n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    if (!s.get_selected(out mod, out iter)) {\n        return null;\n    }\n    \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    return project;\n}",
             ".bool:is_loaded": "false",
             ".bool:is_loading": "false",
             ".signal:void:project_selected": "(Project.Project project)",

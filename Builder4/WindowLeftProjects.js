@@ -20,7 +20,7 @@ WindowLeftProjects=new XObject({
         Gtk.TreeIter iter;
         Gtk.TreeModel mod;
                 
-        var s = this.el.get_selection();
+        var s = this.view.el.get_selection();
         if (!s.get_selected(out mod, out iter)) {
             return null;
         }
@@ -30,7 +30,8 @@ WindowLeftProjects=new XObject({
         mod.get_value(iter, 1 , out gval);
         var project = (Project.Project)gval.get_object();
         
-        _this.project_selected(project);,
+        return project;
+    },
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     homogeneous : false,

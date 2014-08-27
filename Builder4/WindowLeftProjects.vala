@@ -68,7 +68,7 @@ public class Xcls_WindowLeftProjects : Object
             Gtk.TreeIter iter;
             Gtk.TreeModel mod;
                     
-            var s = this.el.get_selection();
+            var s = this.view.el.get_selection();
             if (!s.get_selected(out mod, out iter)) {
                 return null;
             }
@@ -78,8 +78,8 @@ public class Xcls_WindowLeftProjects : Object
             mod.get_value(iter, 1 , out gval);
             var project = (Project.Project)gval.get_object();
             
-            _this.project_selected(project);
-            
+            return project;
+        }
     public void load() {
              // clear list...
             
