@@ -1445,8 +1445,9 @@ MainWindow=new XObject({
                                                                             if (p == null) {
                                                                                 return;
                                                                             }
-                                                                            
-                                                                            
+                                                                            this.left_projects.is_loaded = false;    
+                                                                            this.left_projects.el.show();
+                                                                            this.left_projects.selectProject(p);
                                                                             return  ;    
                                                                         
                                                                         
