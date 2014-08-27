@@ -443,7 +443,7 @@
                                                                             "pack": "false",
                                                                             "width_request": 50,
                                                                             "xtype": "Button",
-                                                                            "|label": "\"Add\\nProp\"",
+                                                                            "|label": "\"Del\\nProp\"",
                                                                             "|xns": "Gtk"
                                                                         }
                                                                     ]

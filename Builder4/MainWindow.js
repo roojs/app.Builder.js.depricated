@@ -1548,7 +1548,7 @@ MainWindow=new XObject({
                                                                     height_request : 50,
                                                                     pack : "false",
                                                                     width_request : 50,
-                                                                    label : "Add\nProp"
+                                                                    label : "Del\nProp"
                                                                 }
                                                             ]
                                                         }

@@ -2619,7 +2619,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 50;
-            this.el.label = "Add\nProp";
+            this.el.label = "Del\nProp";
             this.el.width_request = 50;
 
             // listeners 
