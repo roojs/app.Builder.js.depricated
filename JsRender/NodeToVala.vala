@@ -413,7 +413,7 @@ public class JsRender.NodeToVala : Object {
             		
             		var pack = packing[0];
 			this.ret += this.ipad + "this.el." + pack + " (  child_" + "%d".printf(i) + ".el " +
-                               (packing.length ? ", " + 
+                               (packing.length > 0 ? ", " + 
                         		string.joinv(",", packing).substr(pack.length+1) : "") + " );\n";
 			
                               
