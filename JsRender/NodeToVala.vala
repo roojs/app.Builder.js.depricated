@@ -105,7 +105,7 @@ public class JsRender.NodeToVala : Object {
 	    }
             this.ret += pad + "public static " + xcls + " singleton()\n" + 
     			this.pad + "{\n" +
-        		this.ipad + "if (" + ??this.name + " == null) {\n");
+        		this.ipad + "if (" + ??this.name + " == null) {\n";
         		this.ipad + "    " + ??this.name + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
 			this.ipad + "return " + ??this.name +";\n" + 
@@ -150,9 +150,9 @@ public class JsRender.NodeToVala : Object {
     			var k = iter.get_key();
 
 			// what are "the private properties with type defs in the new format?
-		        if (k[0] != '????') {
-		            continue;
-		        }
+		        ///if (k[0] != '????') {
+		        ///    continue;
+		        ///}
 		        
         		var kk = k.substring(1);
                 
