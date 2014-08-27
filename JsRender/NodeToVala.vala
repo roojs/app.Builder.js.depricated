@@ -22,6 +22,7 @@ public class JsRender.NodeToVala : Object {
 	
 	string ret;
 
+	NodeToVala top;
 	
 	public NodeToVala( Node node,  int depth) 
 	{
@@ -32,6 +33,7 @@ public class JsRender.NodeToVala : Object {
 		this.ipad = this.inpad + "        ";
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
+		this.ret = "";
 		
 	}
 	
@@ -41,16 +43,10 @@ public class JsRender.NodeToVala : Object {
 		//return this.mungeToString(this.node);
 
 		this.globalVars();
-		this.readProps();
-		this.readArrayProps();
-		this.readListeners();
-		this.iterChildren();
-		
-		if (this.els.size < 1) {
-			return "";
-		}
-		// oprops...	
-			
+
+
+
+		return this.ret;
 		var spad = pad.substring(0, this.pad.length-4);
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
@@ -62,30 +58,28 @@ public class JsRender.NodeToVala : Object {
 	} 
 	
 
-	public munge()
-
-
- toValaItem : function(item, depth, strbuilder)
-        {
-        // print(JSON.stringify(item,null,4));
-            
-            
-            var citems = {};
-            
-            if (!depth) {
+	public void globalVars()
+	{
+		if (this.depth > 0) {
+			return;
+		}
                 // Global Vars..
-                strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
+                this.ret += inpad + "public static " + this.xcls + "  " + this.node.name + ";\n\n";
                  
                 
-            }
-            
+	}
+
+	void classHeader()
+	{
+	           
             // class header..
             // class xxx {   WrappedGtk  el; }
-            strbuilder(inpad + "public class " + xcls + " : Object \n" + inpad + "{\n");
-            strbuilder(pad + "public " + cls + " el;\n");
+            this.ret += inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{\n";
+	    this.ret +=  this.pad + "public " + this.cls + " el;\n");
+
             if (!depth) {
-				this.top_xcls = xcls;
-			}
+		this.top_xcls = xcls;
+	    }  
             strbuilder(pad + "private " + this.top_xcls + "  _this;\n\n");
             //}
             
