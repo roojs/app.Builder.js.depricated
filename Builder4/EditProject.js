@@ -35,7 +35,7 @@ EditProject=new XObject({
         
         var err_dialog = StandardErrorDialog.singleton();
         err_dialog.el.set_transient_for(_this.el);
-        err_dialog.el.el.set_modal(true);   
+        err_dialog.el.set_modal(true);   
     
         var id = -1;
         while (id < 0) {
