@@ -2640,7 +2640,7 @@ public class Xcls_MainWindow : Object
                 
                     
                  if (Gtk.ResponseType.OK != cd.show("Confirm", 
-                    "Are you sure you want to delete project %s".sprintf(project.name))) {
+                    "Are you sure you want to delete project %s".printf(project.name))) {
                     return;
                 }
                  
