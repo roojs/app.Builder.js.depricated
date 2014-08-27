@@ -145,10 +145,10 @@ public class JsRender.NodeToVala : Object {
                 
 		        var vv = kk.split(" ");
 		        if (vv[0] == 'signal') {
-		            strbuilder(pad + "public " + vv[0] + " " + vv[1] + " " + vv[2] + item[k] + ";\n");
+		            this.ret += this.pad + "public " + kk " "  + iter.get_value() + ";\n";
 		        } else {
 		        
-		            strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
+		            this.ret += this.pad + "public " + kk + ";\n";
 		        }
 		        citems[k] = true; 
 		        
