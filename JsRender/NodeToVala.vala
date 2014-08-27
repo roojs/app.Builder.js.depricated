@@ -90,9 +90,9 @@ public class JsRender.NodeToVala : Object {
             if (depth > 0) {
 		    return;
 	    }
-             this.ret += pad + "public static " + xcls + " singleton()\n");
-                strbuilder(pad + "{\n");
-                strbuilder(ipad + "if (" + this.name + " == null) {\n");
+            this.ret += pad + "public static " + xcls + " singleton()\n" + 
+            this.pad + "{\n" +
+                this.ipad + "if (" + this.name + " == null) {\n");
                 strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();\n"); // what about args?
                 strbuilder(ipad + "}\n");
                 strbuilder(ipad + "return " + this.name +";\n");
