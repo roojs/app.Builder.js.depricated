@@ -131,30 +131,27 @@ public class JsRender.NodeToVala : Object {
  	       this.ret += "\n" + this.ipad + "// my vars\n";
             
             
-            // Key = TYPE:name
-            for (var k in item) {
+    		// Key = TYPE:name
+		var iter = node.props.map_iterator();
+		while (iter.next) {
+    			var k = iter.get_key();
                 
+		        if (k[0] != '*') {
+		            continue;
+		        }
+		        
+        		var kk = k.substring(1);
                 
-                if (k[0] != '.') {
-                   
-                    continue;
-                }
-                if (k == '.ctor') {
-                    continue; 
-                }
-                
-                var kk = k.substring(1);
-                
-                var vv = kk.split(':');
-                if (vv[0] == 'signal') {
-                    strbuilder(pad + "public " + vv[0] + " " + vv[1] + " " + vv[2] + item[k] + ";\n");
-                } else {
-                
-                    strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
-                }
-                citems[k] = true; 
-                
-            }
+		        var vv = kk.split(':');
+		        if (vv[0] == 'signal') {
+		            strbuilder(pad + "public " + vv[0] + " " + vv[1] + " " + vv[2] + item[k] + ";\n");
+		        } else {
+		        
+		            strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
+		        }
+		        citems[k] = true; 
+		        
+		    }
             // if id of child is '+' then it's a property of this..
             
             if (typeof(item.items) != 'undefined') {
