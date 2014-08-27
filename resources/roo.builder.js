@@ -26,7 +26,7 @@ Builder  = {
             var ret = '';
             //Roo.select('body > div',true).each(function(el) {
             this.traverseDOMTree(function(s) { ret+=s; }, dom, 1);
-	    alert("IPC:SAVEHTML:" + dom);
+	    alert("IPC:SAVEHTML:" + ret);
             return ret;
         },
         
