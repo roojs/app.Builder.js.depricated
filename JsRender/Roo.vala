@@ -318,10 +318,10 @@ namespace JsRender {
 					    aname= "xbuilderid";
 					}
 					// skip
-					if (currentElement.attributes.item(i).value == "builderel") {
+					if (currentElement.attributes.item(i).node_value == "builderel") {
 					    return;
 					}
-					attr += (aname + "=\"" + currentElement.attributes.item(i).value + "\"" );
+					attr += (aname + "=\"" + currentElement.attributes.item(i).node_value + "\"" );
 			    }
 			    
 			    
