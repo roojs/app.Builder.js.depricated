@@ -342,7 +342,7 @@ namespace JsRender {
 		while (currentElementChild) {
 			// Formatting code (indent the tree so it looks nice on the screen)
 
-			if  (currentElementChild.node_name == "#text" {
+			if  (currentElementChild.node_name == "#text") {
 			    this.html = currentElementChild.node_value;
 			    i++;
 			    currentElementChild = currentElement.child_nodes.item(i);
@@ -368,7 +368,7 @@ namespace JsRender {
 				this.html+="  ";
 			}     
 		}
-		if (tagName.length > -) {
+		if (tagName.length > 0) {
 			this.html += "</"+tagName+">";
 		}
 
