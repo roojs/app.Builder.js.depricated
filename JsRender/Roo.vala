@@ -230,7 +230,7 @@ namespace JsRender {
 	public void saveHTML ( int page_id )
 	{
 
-		var we = new WebKit.WebExtension();
+		var we = get_webkit_extension();
 		var web_frame = we.get_page(page_id);
 
 		var top = this.tree.fqn();

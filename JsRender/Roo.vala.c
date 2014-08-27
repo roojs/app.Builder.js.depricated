@@ -1018,7 +1018,7 @@ void js_render_roo_saveHTML (JsRenderRoo* self, gint page_id) {
 #line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	g_return_if_fail (self != NULL);
 #line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
-	_tmp0_ = webkit_web_extension_new ();
+	_tmp0_ = get_webkit_extension ();
 #line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	we = _tmp0_;
 #line 234 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
