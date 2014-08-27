@@ -1,6 +1,4 @@
-
-//extern  WebKit.WebExtension get_webkit_extension();
-
+ 
 namespace JsRender {
 
     static int rid = 0; 
@@ -231,13 +229,10 @@ namespace JsRender {
 
 	string html;
 
-	//public void saveHTML ( WebKit.WebView webview) 
-	public void saveHTML (  )
+	 
+	public override void saveHTML ( string html )
 	{
-		/*
-		var we = get_webkit_extension();
-		var web_frame = we.get_page(this.webkit_page_id);
-
+		 
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
     		if (top != "Roo.bootstrap.Body") {
