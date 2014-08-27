@@ -41,7 +41,7 @@
                                     "id": "xtype",
                                     "pack": "pack_end,true,true,3",
                                     "xtype": "ComboBox",
-                                    "|init": " this.el.add_attribute(cellrender.el , \"markup\", 1 );  \n \n",
+                                    "|init": " this.el.add_attribute(_this.cellrender.el , \"markup\", 1 );  \n \n",
                                     "|setValue": " (v)    {\n        var el = this.el;\n        el.set_active(-1);\n        \n        for (var i =0;i < this.data.length; i++ ) {\n            if (v == this.data.nth_datA(i)) {\n                el.set_active(ix);\n                return false;\n            }\n        }\n    }",
                                     "|string:getValue": " () {\n     var ix = this.el.get_active();\n        if (ix < 0 ) {\n            return \"\";\n        }\n        switch(ix) {\n            case 0:\n                return \"Roo\";\n            case 1:\n                return \"Gtk\";\n        }\n        return \"\";\n}\n",
                                     "|xns": "Gtk",

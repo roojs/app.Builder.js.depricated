@@ -219,7 +219,7 @@ public class Xcls_EditProject : Object
             this.el.set_model (  child_1.el  );
 
             // init method 
-             this.el.add_attribute(cellrender.el , "markup", 1 );  
+             this.el.add_attribute(_this.cellrender.el , "markup", 1 );  
              
         }
 
