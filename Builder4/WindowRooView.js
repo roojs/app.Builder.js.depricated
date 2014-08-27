@@ -174,8 +174,8 @@ WindowRooView=new XObject({
                                 show : ( ) => {
                                     this.inspector.show();
                                 },
-                                script_alert : (dialog) => {
-                                     print(dialog.get_message());
+                                script_dialog : (dialog) => {
+                                     print(dialog.get_message() + "\n");
                                 }
                             },
                             id : "view",

@@ -438,8 +438,8 @@ public class Xcls_WindowRooView : Object
             this.el.show.connect(   ( ) => {
                 this.inspector.show();
             } );
-            this.el.script_alert.connect(  (dialog) => {
-                 print(dialog.get_message());
+            this.el.script_dialog.connect(  (dialog) => {
+                 print(dialog.get_message() + "\n");
             } );
         }
 
