@@ -216,7 +216,7 @@ public class JsRender.NodeToVala : Object {
                     //code 
                 
 			this.ret+= this.pad + "public " + this.xcls + "(" + 
-				this.top_xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+				this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
 		}
             
 
