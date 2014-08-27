@@ -440,6 +440,7 @@ public class Xcls_WindowRooView : Object
             } );
             this.el.script_dialog.connect(  (dialog) => {
                  print(dialog.get_message() + "\n");
+                 return false;
             } );
         }
 

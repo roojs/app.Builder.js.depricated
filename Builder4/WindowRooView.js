@@ -176,6 +176,7 @@ WindowRooView=new XObject({
                                 },
                                 script_dialog : (dialog) => {
                                      print(dialog.get_message() + "\n");
+                                     return false;
                                 }
                             },
                             id : "view",
