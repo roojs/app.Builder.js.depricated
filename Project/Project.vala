@@ -196,7 +196,7 @@ namespace Project {
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
     			 
 			FileUtils.unlink(dirname + "/" + project.fn + ".json");
-			projects.unset(project.name);
+			projects.unset(project.name,null);
 			
 
 		}
