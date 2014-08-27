@@ -65,7 +65,7 @@ public class JsRender.NodeToVala : Object {
 		}
                 // Global Vars..
                 this.ret += inpad + "public static " + this.xcls + "  " + this.node.name + ";\n\n";
-                 
+                this.top = this;
                 
 	}
 
