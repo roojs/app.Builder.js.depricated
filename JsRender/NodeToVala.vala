@@ -120,7 +120,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		// properties - global..??
 
-		var iter = this.node.items.map_iterator();
+		var iter = this.node.props.map_iterator();
 		while(iter.next()) {
 			var n = iter.get_value();
 			
