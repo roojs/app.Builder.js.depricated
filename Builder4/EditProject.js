@@ -162,7 +162,7 @@ EditProject=new XObject({
                         StandardErrorDialog.singleton().show("You have to select a folder");             
                         return;
                     }
-                    _this.dialog.el.response(1);
+                    _this.el.response(1);
                    
                 }
             },
