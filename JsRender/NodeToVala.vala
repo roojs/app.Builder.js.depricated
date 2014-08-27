@@ -126,8 +126,9 @@ public class JsRender.NodeToVala : Object {
                 
             }
 	}
-            
-            strbuilder("\n" + ipad + "// my vars\n");
+        void addMyVars()
+	{
+ 	       this.ret += "\n" + this.ipad + "// my vars\n";
             
             
             // Key = TYPE:name
