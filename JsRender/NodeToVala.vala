@@ -280,7 +280,7 @@ public class JsRender.NodeToVala : Object {
                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
 
             } else {
-                strbuilder(ipad + "this.el = new " + cls + "();\n" );
+                this.ret += this.ipad + "this.el = new " + thcls + "();\n" );
 
             }
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
