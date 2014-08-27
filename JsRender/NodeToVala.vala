@@ -20,7 +20,7 @@ public class JsRender.NodeToVala : Object {
 
 
 	
-	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
+	public NodeToVala( Node node,  string pad) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
