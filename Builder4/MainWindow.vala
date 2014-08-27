@@ -2626,12 +2626,13 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
-                if (_this.project == null) {
+                 var project =   _this.left_projects.getSelectedProject();
+                if (project == null) {
                     print("SKIP - no project\n");
                     return;
                 }
                 // confirm?
-                Project.Project.remove(_this.project);
+                Project.Project.remove(project);
                 _this.project = null;
                 
                 _this.left_projects.is_loaded =  false;

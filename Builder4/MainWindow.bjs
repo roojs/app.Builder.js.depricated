@@ -437,7 +437,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n    if (_this.project == null) {\n        print(\"SKIP - no project\\n\");\n        return;\n    }\n    // confirm?\n    Project.Project.remove(_this.project);\n    _this.project = null;\n    \n    _this.left_projects.is_loaded =  false;\n    _this.left_projects.load();\n    _this.clutterfiles.clearFiles();\n\n}"
+                                                                                "clicked": "  ( ) => {\n     var project =   _this.left_projects.getSelectedProject();\n    if (project == null) {\n        print(\"SKIP - no project\\n\");\n        return;\n    }\n    // confirm?\n    Project.Project.remove(project);\n    _this.project = null;\n    \n    _this.left_projects.is_loaded =  false;\n    _this.left_projects.load();\n    _this.clutterfiles.clearFiles();\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",
