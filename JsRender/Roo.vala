@@ -350,7 +350,7 @@ namespace JsRender {
 			}   
 			allText = false;
 			this.html += "\n";
-			for (j = 0; j < depth; j++) {
+			for (var j = 0; j < depth; j++) {
 				// &#166 is just a vertical line
 				this.html+="  ";
 			}               
