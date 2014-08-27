@@ -106,6 +106,7 @@ public class Xcls_WindowLeftProjects : Object
             
                 mod.get_value(iter, 1, out val);
                 if ( ( (Project.Project)val.get_object()) != project) {
+                    print("SKIP %s != %s", Project.Project)val.get_object()).name , project.name);
                     return false;//continue
                 }
                 sel.select_iter(iter);
