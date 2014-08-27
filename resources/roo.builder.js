@@ -4,7 +4,7 @@
 // IPC: - via alert("IPC:{method}:{data}
 
 
-Roo.XComponent.on("buildcomplete", Builder.saveHTML);
+Roo.XComponent.on("buildcomplete", function() { Builder.saveHTML(); } );
 
 var MODULE = { isBuilder : true };
 // BC
