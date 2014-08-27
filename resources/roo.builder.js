@@ -36,6 +36,7 @@ Builder  = {
                 
                 return;
             }
+	    console.log(currentElement);
             if (currentElement.class_name.match(/roo-dynamic/)) {
                 return;
             }
