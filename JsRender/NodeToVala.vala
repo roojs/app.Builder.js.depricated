@@ -34,6 +34,7 @@ public class JsRender.NodeToVala : Object {
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
+		this.top = top;
 		
 	}
 	
