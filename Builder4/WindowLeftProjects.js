@@ -16,6 +16,21 @@ WindowLeftProjects=new XObject({
             this.load();
         }
     },
+    'Project.Project?:getSelectedProject' : () {    
+        Gtk.TreeIter iter;
+        Gtk.TreeModel mod;
+                
+        var s = this.el.get_selection();
+        if (!s.get_selected(out mod, out iter)) {
+            return null;
+        }
+        
+        GLib.Value gval;
+    
+        mod.get_value(iter, 1 , out gval);
+        var project = (Project.Project)gval.get_object();
+        
+        _this.project_selected(project);,
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     homogeneous : false,
