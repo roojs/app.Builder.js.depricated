@@ -357,14 +357,14 @@ namespace JsRender {
 
 			    
 			// Recursively traverse the tree structure of the child node
-			this.traverseDOMTree(currentElementChild, depth+1);
+			this.traverseDOMTree((WebKit.DOM.HTMLElement) currentElementChild, depth+1);
 			i++;
 			currentElementChild=currentElement.child_nodes.item(i);
 		}
 		if (!allText) {
 			    // The remaining code is mostly for formatting the tree
 			this.html+="\n";
-			for (j = 0; j < depth - 1; j++) {
+			for (var j = 0; j < depth - 1; j++) {
 				this.html+="  ";
 			}     
 		}
