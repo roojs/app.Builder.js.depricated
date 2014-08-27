@@ -79,7 +79,7 @@ EditProject=new XObject({
                             xtype: Gtk.ComboBox,
                             id : "xtype",
                             pack : "pack_end,true,true,3",
-                            init : this.el.add_attribute(cellrender , "markup", 1 );,
+                            init : this.el.add_attribute(cellrender.el , "markup", 1 );,
                             setValue : (v)    {
                                     var el = this.el;
                                     el.set_active(-1);
