@@ -263,7 +263,7 @@ public class JsRender.NodeToVala : Object {
 
 		// see what the 
 
-		
+		/*
 				;
             } else if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
@@ -285,12 +285,13 @@ public class JsRender.NodeToVala : Object {
                     args.push(nv.length > 1 ? nv[1] : 'null'); 
                     
                 }
-                strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
-
+	                strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
+		return;
             } else {
+		    */
                 this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
 
-            }
+            
 	}
 
 	void addInitMyVars()
