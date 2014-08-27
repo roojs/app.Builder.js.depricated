@@ -1,12 +1,11 @@
 {
-    "id": "file-gtk-2",
+    "id": "file-gtk-3",
     "name": "DialogConfirm",
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.bjs",
     "items": [
         {
-            "|void:show_all": " () {\n    this.show(\"test\");\n}\n ",
             "listeners": {
                 "delete_event": " (event) => {\n    this.el.hide();\n    return true;\n}\n \n\n\n"
             },
@@ -16,8 +15,8 @@
             "|buttons": "Gtk.ButtonsType.YES_NO",
             "|message_type": "Gtk.MessageType.QUESTION",
             "|modal": "true",
-            "|void:show": "  (string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n    this.el.text =  msg;\n    this.el.show_all();\n\n}\n \n\n\n\n",
             "|use_markup": "true",
+            "|int:show": "  (string title, string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n     this.el.title = title;\n    this.el.text =  msg;\n    this.el.show_all();\n    return  this.el.run();\n    \n\n}\n \n\n\n\n",
             "|xns": "Gtk"
         }
     ],
