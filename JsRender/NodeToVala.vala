@@ -406,7 +406,7 @@ public class JsRender.NodeToVala : Object {
                 		continue;
             		}
                     
-            		string[]  packing = ci.has("pack") ? ci.get("pack").split(',') : { "add" };
+            		string[]  packing = ci.has("pack") ? ci.get("pack").split(",") : { "add" };
             		
             		var pack = packing[0];
 			this.ret += this.ipad + "this.el." + pack + " (  child_" + "%d".printf(i) + ".el " +
