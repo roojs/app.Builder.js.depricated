@@ -43,11 +43,11 @@ Builder  = {
             
             //Roo.log(currentElement);
             var j;
-            var nodeName = currentElement.node_name;
-            var tagName = currentElement.tag_name;
+            var nodeName = currentElement.nodeName;
+            var tagName = currentElement.tagName;
             
             if  (nodeName == '#text') {
-                cb(currentElement.node_value);
+                cb(currentElement.nodeValue);
                 return;
             
             }
@@ -79,7 +79,7 @@ Builder  = {
                     }
                     
                     
-                    cb("<"+currentElement.tag_name+ ( attr.length ? (' ' + attr.join(' ') ) : '') + ">");
+                    cb("<"+currentElement.tagName+ ( attr.length ? (' ' + attr.join(' ') ) : '') + ">");
                 } 
                 else {
                   cb("[unknown tag]");
@@ -89,7 +89,7 @@ Builder  = {
             }
             // Traverse the tree
             i = 0;
-            var currentElementChild = currentElement.child_nodes.item(i);
+            var currentElementChild = currentElement.childNodes.item(i);
             var allText = true;
             while (currentElementChild) {
                 // Formatting code (indent the tree so it looks nice on the screen)
