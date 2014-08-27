@@ -393,13 +393,13 @@ public class JsRender.NodeToVala : Object {
             		}
                     
             		this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
-					"( _this " + xargs + ");\n" );
+					"( _this " + xargs + ");\n" ;
 				    
             		this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
                     
-	                if (ci.has("* prop"])) {
+	                if (ci.has("* prop")) {
                 		this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
-                		continue
+                		continue;
             		}
             	    
             		if (!ci.has("pack") || ci.get("pack") == "false") {
