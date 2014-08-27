@@ -20,73 +20,73 @@ public static int main (string[] args) {
  */
 namespace Palete {
 	public errordomain GirError {
-        INVALID_TYPE,
-        NEED_IMPLEMENTING,
+		INVALID_TYPE,
+		NEED_IMPLEMENTING,
 		MISSING_FILE,
 		INVALID_VALUE
-    }
-    public class GirObject: Object {
-        public string name;
-	public string ns;
-	public string propertyof;
-        public string type;
-        public string nodetype;
-        public string  package;
-        
-        public GirObject paramset = null;
-        public GirObject return_value = null;
-            
-        public bool is_instance;
-        public bool is_array;
-        public bool  is_varargs;
-        public  string parent;
-        public  string value;
-	// to be filled in...
- 
-	public  string sig;
-
-	bool is_overlaid;
-        public Gee.ArrayList<GirObject> params;
-        public Gee.ArrayList<string> implements;
-	public Gee.ArrayList<string> inherits; // full list of all classes and interfaces...
-        public Gee.HashMap<string,GirObject> ctors;
-        public Gee.HashMap<string,GirObject> methods;
-        public Gee.HashMap<string,string>    includes;
-        public Gee.HashMap<string,GirObject> classes;
-        public Gee.HashMap<string,GirObject> props;
-        public Gee.HashMap<string,GirObject> consts;
-        public Gee.HashMap<string,GirObject> signals;
-        public string doctxt;
-        public GirObject(string nodetype, string n)
-	{
-		this.nodetype = nodetype;
-		this.name = n;
-		this.ns = "";
-		this.parent = "";
-		this.type = "";
-		this.propertyof = "";
-		this.is_array = false;
-		this.is_instance = false;
-		this.is_varargs = false;
-		this.doctxt = "";
+	}
+	public class GirObject: Object {
+		public string name;
+		public string ns;
+		public string propertyof;
+		public string type;
+		public string nodetype;
+		public string  package;
 		
-		this.sig = "";
+		public GirObject paramset = null;
+		public GirObject return_value = null;
+		    
+		public bool is_instance;
+		public bool is_array;
+		public bool  is_varargs;
+		public  string parent;
+		public  string value;
+		// to be filled in...
+	 
+		public  string sig;
+
+		bool is_overlaid;
+		public Gee.ArrayList<GirObject> params;
+		public Gee.ArrayList<string> implements;
+		public Gee.ArrayList<string> inherits; // full list of all classes and interfaces...
+		public Gee.HashMap<string,GirObject> ctors;
+		public Gee.HashMap<string,GirObject> methods;
+		public Gee.HashMap<string,string>    includes;
+		public Gee.HashMap<string,GirObject> classes;
+		public Gee.HashMap<string,GirObject> props;
+		public Gee.HashMap<string,GirObject> consts;
+		public Gee.HashMap<string,GirObject> signals;
+		public string doctxt;
+		public GirObject(string nodetype, string n)
+		{
+			this.nodetype = nodetype;
+			this.name = n;
+			this.ns = "";
+			this.parent = "";
+			this.type = "";
+			this.propertyof = "";
+			this.is_array = false;
+			this.is_instance = false;
+			this.is_varargs = false;
+			this.doctxt = "";
 		
-		this.implements = new Gee.ArrayList<string>();
-		this.inherits  = new Gee.ArrayList<string>(); // list of all ancestors. (interfaces and parents)
-		this.includes   = new Gee.HashMap<string,string>();
+			this.sig = "";
+		
+			this.implements = new Gee.ArrayList<string>();
+			this.inherits  = new Gee.ArrayList<string>(); // list of all ancestors. (interfaces and parents)
+			this.includes   = new Gee.HashMap<string,string>();
 
-		this.params = new Gee.ArrayList<GirObject>();
-		this.ctors      = new Gee.HashMap<string,GirObject>();
-		this.methods    =new Gee.HashMap<string,GirObject>();
+			this.params = new Gee.ArrayList<GirObject>();
+			this.ctors      = new Gee.HashMap<string,GirObject>();
+			this.methods    =new Gee.HashMap<string,GirObject>();
 
-		this.classes    = new Gee.HashMap<string,GirObject>();
-		this.props      = new Gee.HashMap<string,GirObject>();
-		this.consts     = new Gee.HashMap<string,GirObject>();
-		this.signals    = new Gee.HashMap<string,GirObject>();
-		this.is_overlaid = false;
-		this.paramset = null;
-        }
+			this.classes    = new Gee.HashMap<string,GirObject>();
+			this.props      = new Gee.HashMap<string,GirObject>();
+			this.consts     = new Gee.HashMap<string,GirObject>();
+			this.signals    = new Gee.HashMap<string,GirObject>();
+			this.is_overlaid = false;
+			this.paramset = null;
+		}
 
 		public string[] inheritsToStringArray()
 		{
@@ -147,134 +147,134 @@ namespace Palete {
 			this.inherits.add(pcls.fqn());
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
-                if (null != this.methods.get(iter.get_key())) {
+        		if (null != this.methods.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.methods.set(iter.get_key(), iter.get_value());
-            }
+    			}
 			
 			iter = pcls.props.map_iterator();
 			while(iter.next()) {
-                if (null != this.props.get(iter.get_key())) {
+       				 if (null != this.props.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.props.set(iter.get_key(), iter.get_value());
-            }
+			}		
 			
 			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
-                if (null != this.signals.get(iter.get_key())) {
-					continue;
-				}
+		        if (null != this.signals.get(iter.get_key())) {
+						continue;
+					}
 				
-				this.signals.set(iter.get_key(), iter.get_value());
-            }	
+					this.signals.set(iter.get_key(), iter.get_value());
+	    		}	
+		}
+		
+		public Json.Object toJSON()
+		{
+		    var r = new Json.Object();
+		    r.set_string_member("nodetype", this.nodetype);
+		    r.set_string_member("name", this.name);
+				if (this.propertyof.length > 0) {
+		        r.set_string_member("of", this.propertyof);
+		    }
+		    if (this.type.length > 0) {
+		        r.set_string_member("type", this.type);
+		    }
+		    if (this.parent != null && this.parent.length > 0) {
+		        r.set_string_member("parent", this.parent);
+		    }
+		    if (this.sig.length > 0) {
+		        r.set_string_member("sig", this.sig);
+		    }
+		
+		    // is_arary / is_instance / is_varargs..
+		    
+		    if (this.implements.size > 0) {
+		        r.set_array_member("length", this.toJSONArrayString(this.implements));
+		    }
+		    
+		    if (this.params.size > 0) {
+		        r.set_array_member("params", this.toJSONArrayObject(this.params));
+		    }
+		    if (this.ctors.size > 0) {
+		        r.set_object_member("ctors", this.toJSONObject(this.ctors));
+		    }
+		    if (this.methods.size > 0) {
+		        r.set_object_member("methods", this.toJSONObject(this.methods));
+		    }
+		    if (this.includes.size > 0) {
+		        r.set_object_member("includes", this.toJSONObjectString(this.includes));
+		    }
+		    if (this.classes.size > 0) {
+		        r.set_object_member("classes", this.toJSONObject(this.classes));
+		    }
+		    if (this.props.size > 0) {
+		        r.set_object_member("props", this.toJSONObject(this.props));
+		    }
+		    if (this.consts.size > 0) {
+		        r.set_object_member("consts", this.toJSONObject(this.consts));
+		    }
+		    if (this.signals.size > 0) {
+		        r.set_object_member("signals", this.toJSONObject(this.signals));
+		    }
+		    if (this.paramset != null) {
+		        r.set_object_member("params", this.paramset.toJSON());
+		    }
+		    if (this.return_value != null) {
+		        r.set_object_member("return_value", this.return_value.toJSON());
+		    }
+		    return r;
+		}
+		public Json.Object toJSONObject(Gee.HashMap<string,GirObject> map)
+		{
+		    var r = new Json.Object();
+		    var iter = map.map_iterator();
+		    while(iter.next()) {
+		        r.set_object_member(iter.get_key(), iter.get_value().toJSON());
+		    }
+		    return r;
+		}
+		public Json.Object  toJSONObjectString(Gee.HashMap<string,string> map)
+		{
+		    var r = new Json.Object();
+		    var iter = map.map_iterator();
+		    while(iter.next()) {
+		        r.set_string_member(iter.get_key(), iter.get_value());
+		    }
+		    return r;
+		}
+		public Json.Array toJSONArrayString(Gee.ArrayList<string> map)
+		{
+		    var r = new Json.Array();
+		    for(var i =0;i< map.size;i++) {
+		    
+		        r.add_string_element(map.get(i));
+		    }
+		    return r;
+		}
+		public Json.Array toJSONArrayObject(Gee.ArrayList<GirObject> map)
+		{
+		    var r = new Json.Array();
+		    for(var i =0;i< map.size;i++) {
+		    
+		        r.add_object_element(map.get(i).toJSON());
+		    }
+		    return r;
+		}
 	}
-		
-        public Json.Object toJSON()
-        {
-            var r = new Json.Object();
-            r.set_string_member("nodetype", this.nodetype);
-            r.set_string_member("name", this.name);
-			if (this.propertyof.length > 0) {
-                r.set_string_member("of", this.propertyof);
-            }
-            if (this.type.length > 0) {
-                r.set_string_member("type", this.type);
-            }
-	    if (this.parent != null && this.parent.length > 0) {
-                r.set_string_member("parent", this.parent);
-            }
-	    if (this.sig.length > 0) {
-                r.set_string_member("sig", this.sig);
-            }
-		
-            // is_arary / is_instance / is_varargs..
-            
-            if (this.implements.size > 0) {
-                r.set_array_member("length", this.toJSONArrayString(this.implements));
-            }
-            
-            if (this.params.size > 0) {
-                r.set_array_member("params", this.toJSONArrayObject(this.params));
-            }
-            if (this.ctors.size > 0) {
-                r.set_object_member("ctors", this.toJSONObject(this.ctors));
-            }
-            if (this.methods.size > 0) {
-                r.set_object_member("methods", this.toJSONObject(this.methods));
-            }
-            if (this.includes.size > 0) {
-                r.set_object_member("includes", this.toJSONObjectString(this.includes));
-            }
-            if (this.classes.size > 0) {
-                r.set_object_member("classes", this.toJSONObject(this.classes));
-            }
-            if (this.props.size > 0) {
-                r.set_object_member("props", this.toJSONObject(this.props));
-            }
-            if (this.consts.size > 0) {
-                r.set_object_member("consts", this.toJSONObject(this.consts));
-            }
-            if (this.signals.size > 0) {
-                r.set_object_member("signals", this.toJSONObject(this.signals));
-            }
-            if (this.paramset != null) {
-                r.set_object_member("params", this.paramset.toJSON());
-            }
-            if (this.return_value != null) {
-                r.set_object_member("return_value", this.return_value.toJSON());
-            }
-            return r;
-        }
-        public Json.Object toJSONObject(Gee.HashMap<string,GirObject> map)
-        {
-            var r = new Json.Object();
-            var iter = map.map_iterator();
-            while(iter.next()) {
-                r.set_object_member(iter.get_key(), iter.get_value().toJSON());
-            }
-            return r;
-        }
-        public Json.Object  toJSONObjectString(Gee.HashMap<string,string> map)
-        {
-            var r = new Json.Object();
-            var iter = map.map_iterator();
-            while(iter.next()) {
-                r.set_string_member(iter.get_key(), iter.get_value());
-            }
-            return r;
-        }
-        public Json.Array toJSONArrayString(Gee.ArrayList<string> map)
-        {
-            var r = new Json.Array();
-            for(var i =0;i< map.size;i++) {
-            
-                r.add_string_element(map.get(i));
-            }
-            return r;
-        }
-	public Json.Array toJSONArrayObject(Gee.ArrayList<GirObject> map)
-        {
-            var r = new Json.Array();
-            for(var i =0;i< map.size;i++) {
-            
-                r.add_object_element(map.get(i).toJSON());
-            }
-            return r;
-        }
-    }
-    
-     
+	    
+	     
+	    
     
     
+	public class Gir : GirObject {
     
-    public class Gir : GirObject {
-    
-        static  Gee.HashMap<string,Gir> cache = null;
-        //Gee.Hashmap<string,what> nodes;
+		static  Gee.HashMap<string,Gir> cache = null;
+		//Gee.Hashmap<string,what> nodes;
 		public static Gir factory(string ns) {
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
