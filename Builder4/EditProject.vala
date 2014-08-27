@@ -85,13 +85,16 @@ public class Xcls_EditProject : Object
             var id = -1;
             while (id < 0) {
                  id =  this.el.run();
+                 if (id < 1) {
+                        this.el.hide();
+                        return null;
+                }
+                 
+                 
+                 
             }
             this.el.hide();
             
-             if (id < 1) {
-                    this.el.hide();
-                    return null;
-            }
             
             
          
@@ -349,21 +352,6 @@ public class Xcls_EditProject : Object
 
             // set gobject values
             this.el.label = "OK";
-
-            // listeners 
-            this.el.clicked.connect(  () => {
-             
-              if (_this.xtype.getValue().length < 1) {
-                    StandardErrorDialog.singleton().show("You have to set Project type");             
-                    return;
-                }
-                if (_this.dir.el.get_filename().length < 1) {
-                    StandardErrorDialog.singleton().show("You have to select a folder");             
-                    return;
-                }
-                _this.el.response(1);
-               
-            } );
         }
 
         // userdefined functions 
