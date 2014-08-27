@@ -458,52 +458,8 @@ public class JsRender.NodeToVala : Object {
     		// end ctor..
     		this.ret+= this.pad + "}\n";
 	}
-	void addUserMethods()
-	{
-            
-  		this.ret+= "\n" + pad + "// userdefined functions \n";  
-            
-    		// user defined functions...
-   		var iter = this.node.props.map_iterator();
-		while(iter.next()) {
-    			var k = iter.get_key();
-			if (this.shouldIgnore(k)) {
-				continue;
-			}
-			// HOW TO DETERIME if its a method?            
-        		if (k[0] != '|') {
-             			//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
-            			continue;
-			}       
-        		// function in the format of {type} (args) { .... }
-                 
-        		var vv = iter.get_value();
-        		this.ret += this.pad + "public " + k + " " + this.padMultiline(this.ipad, vv) + "\n";
-			
-                
-            }
-	}
 
-	void iterChildren()
-	{
-            
-    		if (this.depth > 0) {
-			this.ret+= this.inpad + "}\n";
-    		}
-		
-		var iter = this.node.items.list_iterator();
-		var i = -1;
-		while (iter.next()) {
-    			this.ret += this.mungeChild(iter.get());
-		}
-             
-    		if (this.depth < 1) {
-        		this.ret+= this.inpad + "}\n";
-    		}
-            
-        }
 
-  
 	/*
  * Standardize this crap...
  * 
@@ -546,6 +502,53 @@ public class JsRender.NodeToVala : Object {
  * 
  */
 	 
+	void addUserMethods()
+	{
+            
+  		this.ret+= "\n" + pad + "// userdefined functions \n";  
+            
+    		// user defined functions...
+   		var iter = this.node.props.map_iterator();
+		while(iter.next()) {
+    			var k = iter.get_key();
+			if (this.shouldIgnore(k)) {
+				continue;
+			}
+			// HOW TO DETERIME if its a method?            
+        		if (k[0] != '|') {
+             			//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
+            			continue;
+			}       
+        		// function in the format of {type} (args) { .... }
+         		var kk = k.substring(2);
+        		var vv = iter.get_value();
+        		this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.ipad, vv) + "\n";
+			
+                
+            }
+	}
+
+	void iterChildren()
+	{
+            
+    		if (this.depth > 0) {
+			this.ret+= this.inpad + "}\n";
+    		}
+		
+		var iter = this.node.items.list_iterator();
+		var i = -1;
+		while (iter.next()) {
+    			this.ret += this.mungeChild(iter.get());
+		}
+             
+    		if (this.depth < 1) {
+        		this.ret+= this.inpad + "}\n";
+    		}
+            
+        }
+
+  
+	
 	
 
 }
