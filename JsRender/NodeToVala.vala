@@ -392,44 +392,40 @@ public class JsRender.NodeToVala : Object {
                 		continue
             		}
             	    
-            		if (!ci.has("pack") || ci.pack == "false") {
+            		if (!ci.has("pack") || ci.get("pack") == "false") {
                 		continue;
             		}
                     
-                    var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
-                    if (typeof(ci['|pack']) != 'undefined') {
-                        packing =ci['|pack'].split(',');
-                    }
-                    var pack = packing.shift();
-                    
-                    
-                    strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
-                               (packing.length ? ", " + packing.join(",") : "") + " );\n"
-                            );
+            		string[]  packing = ci.has("pack") ? ci.get("pack").split(',') : { "add" };
+            		
+            		var pack = packing[0];
+			this.ret += this.ipad + "this.el." + pack + " (  child_" + "%d".printf(i) + ".el " +
+                               (packing.length ? ", " + 
+                        		string.joinv(",", packing).substr(pack.length+1) : "") + " );\n";
+			
                               
-                    if (ci.xvala_id[0] != '+') {
-                        continue; // skip generation of children?
-                        
-                    }
-                    strbuilder(ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + i +  ";\n");
+            		if (ci.xvala_id[0] != '+') {
+                		continue; // skip generation of children?
+		                        
+            		}
+            		this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
                           
-                }
-            }
-            if (typeof(item['|init']) != 'undefined') {
-                
-                
-                    var v = item['|init']
-                    if (v.length > 1) {
-                        strbuilder("\n" + ipad + "// init method \n");            
-                         var vv = v;
-                         //print(JSON.stringify(vv));Seed.quit();
-                         vv = vv.replace(/^\n+/,'');
-                         vv = vv.replace(/\n+$/,'');
-                         vv = vv.replace(/\n/g,"\n" + ipad);
-                         strbuilder(ipad + vv  + "\n");
-                    }
-            }
-            
+		}
+	}
+
+	void addInit()
+	{
+
+	    
+    		if (!this.node.has("init")) {
+			    return;
+		}
+    		this.ret+= "\n" + ipad + "// init method \n";
+		
+    		this.ret+= this.padMultiline(ipad, this.node.get("init");
+		this.ignore("pack");
+		this.ignore("init");
+                                         
             citems['|pack'] = true;
             citems['|items'] = true;
             citems['|init'] = true;
