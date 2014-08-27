@@ -1512,7 +1512,7 @@ MainWindow=new XObject({
                                                                     xtype: Gtk.Button,
                                                                     listeners : {
                                                                         clicked : ( ) => {
-                                                                            if (_this.project) {
+                                                                            if (_this.project == null) {
                                                                                 return;
                                                                             }
                                                                             // confirm?

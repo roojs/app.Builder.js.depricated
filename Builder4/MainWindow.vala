@@ -2624,7 +2624,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
-                if (_this.project) {
+                if (_this.project == null) {
                     return;
                 }
                 // confirm?
