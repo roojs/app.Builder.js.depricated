@@ -24,7 +24,7 @@ public class JsRender.NodeToVala : Object {
 
 	NodeToVala top;
 	
-	public NodeToVala( Node node,  int depth) 
+	public NodeToVala( Node node,  int depth, NodeToVala? top) 
 	{
 		this.node = node;
 		this.depth = depth;
@@ -65,7 +65,7 @@ public class JsRender.NodeToVala : Object {
 		}
                 // Global Vars..
                 this.ret += inpad + "public static " + this.xcls + "  " + this.node.name + ";\n\n";
-                this.top = this;
+                
                 
 	}
 
