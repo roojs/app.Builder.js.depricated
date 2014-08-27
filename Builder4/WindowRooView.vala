@@ -593,7 +593,7 @@ public class Xcls_WindowRooView : Object
                         (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
                     );
                     GLib.Timeout.add_seconds(1, () => {
-                        this.el.run_javascript("Builder.saveHTML()");
+                        this.el.run_javascript("Builder.saveHTML()",null);
                     });
             //     print( "before render" +    this.lastRedraw);
             //    print( "after render" +    (new Date()));
