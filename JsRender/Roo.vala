@@ -248,153 +248,20 @@ namespace JsRender {
 		}
 		var bn = GLib.Path.get_basename(fn);
 		var dn = GLib.Path.get_dirname(fn);
-
+		if (!FileUtils.test(dn + "/templates", FileTest.IS_DIR)) {
+			print("Skip save - templates folder does not exist : %s\n", dn + "/templates");
+			return;
+		}
+		
 		try {
 			FileUtils.set_contents(dn + "/templates/" + bn , html, html.length);            
 		} catch (FileError e ) {
-			print("Save failed\n");
+			print("SaveHtml failed\n");
 		}
-
-		this.html = "";
-		
-    		var dom = web_frame.get_dom_document().body;
-    		//print(dom);
-            
-    		//Roo.select('body > div',true).each(function(el) {
-    		//this.traverseDOMTree(dom, 1);
-
-
-		return;
-		    
-		/*
-            // wait a second.
-            
-    		//GLib.timeout_add_seconds(0, 1, function() {
-                //    print("run refresh?");
-                var html = _this.traversedom(frame);
-                //print(html);
-                
-                //print(_this.path);
-                var dir = File.dirname(_this.path) +  File.SEPARATOR + 'templates';
-                //print(dir);
-                if (!File.isDirectory(dir)) {
-                    print("Skip no template sub-directory");
-                    return false;
-                }
-                var fn = dir + File.SEPARATOR + File.basename(_this.path).replace(/\.bjs$/, '.html');
-                //print(fn);
-                File.write(fn, html);
-                
-                
-                 return false; // only once..
-                
-                
-                
-            });
-            */
             
             
             
         }
-         /*
-        
-        public void traverseDOMTree(WebKit.DOM.HTMLElement currentElement, int depth) 
-	{
-		if (currentElement == null) {
-			return;
-		}
-
-		if (currentElement.class_name.contains("roo-dynamic")) {
-			return;
-		}
-
-		//Roo.log(currentElement);
-		var i =0;
-		var nodeName = currentElement.node_name;
-		var tagName = currentElement.tag_name;
-
-		if  (nodeName == "#text") {
-			this.html += currentElement.node_value;
-			return;
-		}
-
-
-
-		if(nodeName == "BR"){
-			this.html += "<BR/>";
-			return;
-		}
-		if (nodeName != "BODY") {
-
-			
-			// Prints the node tagName, such as <A>, <IMG>, etc
-			if (tagName.length > 0) {
-				string[] attr = {};
-
-				for(i = 0; i < currentElement.attributes.length;i++) {
-					var aname = currentElement.attributes.item(i).node_name;
-					if (aname=="id") {
-					    aname= "xbuilderid";
-					}
-					// skip
-					if (currentElement.attributes.item(i).node_value == "builderel") {
-					    return;
-					}
-					attr += (aname + "=\"" + currentElement.attributes.item(i).node_value + "\"" );
-			    }
-			    
-			    
-			    this.html +="<"+ currentElement.tag_name + 
-					( attr.length > 0 ? (" "  + string.joinv(" ", attr )) : "") +
-					">";
-			} 
-			else {
-				this.html+= "[unknown tag]";
-			}
-		} else {
-			tagName = "";
-		}
-		// Traverse the tree
-		i = 0;
-		var currentElementChild = currentElement.child_nodes.item(i);
-		var allText = true;
-		while (currentElementChild != null) {
-			// Formatting code (indent the tree so it looks nice on the screen)
-
-			if  (currentElementChild.node_name == "#text") {
-			    this.html = currentElementChild.node_value;
-			    i++;
-			    currentElementChild = currentElement.child_nodes.item(i);
-			    continue;
-			}   
-			allText = false;
-			this.html += "\n";
-			for (var j = 0; j < depth; j++) {
-				// &#166 is just a vertical line
-				this.html+="  ";
-			}               
-
-			    
-			// Recursively traverse the tree structure of the child node
-			this.traverseDOMTree((WebKit.DOM.HTMLElement) currentElementChild, depth+1);
-			i++;
-			currentElementChild=currentElement.child_nodes.item(i);
-		}
-		if (!allText) {
-			    // The remaining code is mostly for formatting the tree
-			this.html+="\n";
-			for (var j = 0; j < depth - 1; j++) {
-				this.html+="  ";
-			}     
-		}
-		if (tagName.length > 0) {
-			this.html += "</"+tagName+">";
-		}
-
-        }
-        
-        */
-        
         
          /**
          * convert xtype for munged output..
