@@ -13,13 +13,13 @@
             "border_width": 3,
             "default_height": 500,
             "default_width": 600,
+            "name": "EditProject",
             "title": "Project Properties",
             "xtype": "Dialog",
             "|Project.Project?:show": "() {\n      \n\n    //[ 'xtype'  ].forEach(function(k) {\n    //    _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);\n    //});\n\t// shouild set path..\n    _this.model.loadData();\n    this.el.show_all();\n    var id =  this.el.run();\n    this.el.hide();\n    \n     if (id < 1) {\n            this.el.hide();\n            return null;\n    }\n    if (_this.xtype.getValue().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to set Project type\");             \n        return null;\n    }\n    if (_this.dir.el.get_filename().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to select a folder\");             \n        return null;\n    }\n \n    var fn = _this.dir.el.get_filename();\n    \n    var project = Project.Project.factory(_this.xtype.getValue(), fn);\n    \n    \n    //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);\n    \n    return project;\n\n    \n    //this.success = c.success;\n}\n",
             "|deletable": "true",
             "|modal": "true",
             "|xns": "Gtk",
-            "name": "",
             "items": [
                 {
                     "xtype": "VBox",

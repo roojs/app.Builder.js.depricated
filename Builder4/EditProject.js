@@ -20,6 +20,7 @@ EditProject=new XObject({
     border_width : 3,
     default_height : 500,
     default_width : 600,
+    name : "EditProject",
     title : "Project Properties",
     'Project.Project?:show' : () {
           
@@ -60,7 +61,6 @@ EditProject=new XObject({
     },
     deletable : true,
     modal : true,
-    name : "",
     items : [
         {
             xtype: Gtk.VBox,

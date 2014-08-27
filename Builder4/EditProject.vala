@@ -51,7 +51,7 @@ public class Xcls_EditProject : Object
         this.el.default_width = 600;
         this.el.deletable = true;
         this.el.modal = true;
-        this.el.name = "";
+        this.el.name = "EditProject";
         this.el.title = "Project Properties";
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
