@@ -348,8 +348,15 @@ public class Xcls_EditProject : Object
             // listeners 
             this.el.clicked.connect(  () => {
              
-             
-               return true;
+              if (_this.xtype.getValue().length < 1) {
+                    StandardErrorDialog.singleton().show("You have to set Project type");             
+                    return true;
+                }
+                if (_this.dir.el.get_filename().length < 1) {
+                    StandardErrorDialog.singleton().show("You have to select a folder");             
+                    return true;
+                }
+               return false;
             } );
         }
 

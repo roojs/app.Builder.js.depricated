@@ -79,7 +79,7 @@
                 },
                 {
                     "listeners": {
-                        "clicked": " () => {\n \n \n   return true;\n}"
+                        "clicked": " () => {\n \n  if (_this.xtype.getValue().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to set Project type\");             \n        return true;\n    }\n    if (_this.dir.el.get_filename().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to select a folder\");             \n        return true;\n    }\n   return false;\n}"
                     },
                     "label": "OK",
                     "pack": "add_action_widget,1",
