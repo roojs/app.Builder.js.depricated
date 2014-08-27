@@ -254,7 +254,7 @@ namespace JsRender {
     		//print(dom);
             
     		//Roo.select('body > div',true).each(function(el) {
-    		this.traverseDOMTree(dom, 1);
+    		//this.traverseDOMTree(dom, 1);
 
 
 		return;
@@ -288,7 +288,7 @@ namespace JsRender {
             
             
         }
-         
+         /*
         
         public void traverseDOMTree(WebKit.DOM.HTMLElement currentElement, int depth) 
 	{
@@ -385,7 +385,7 @@ namespace JsRender {
 
         }
         
-        
+        */
         
         
          /**
