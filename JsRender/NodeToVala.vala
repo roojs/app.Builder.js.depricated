@@ -33,7 +33,6 @@ public class JsRender.NodeToVala : Object {
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
 		
-
 	}
 	
 	
@@ -45,14 +44,6 @@ public class JsRender.NodeToVala : Object {
         {
         // print(JSON.stringify(item,null,4));
             
-            var inpad = new Array( depth +1 ).join("    ");
-            
-            var pad = new Array( depth +2 ).join("    ");
-            var ipad = new Array( depth +3 ).join("    ");
-            
-            var cls = item.xvala_cls;
-            
-            var xcls = item.xvala_xcls;
             
             var citems = {};
             
