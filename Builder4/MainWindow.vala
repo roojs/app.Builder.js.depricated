@@ -52,6 +52,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
     public Xcls_addprojectbutton addprojectbutton;
     public Xcls_addfilebutton addfilebutton;
+    public Xcls_delpropbutton delpropbutton;
 
         // my vars
     public Project.Project project;
@@ -1421,6 +1422,9 @@ public class Xcls_MainWindow : Object
             var child_9 = new Xcls_addfilebutton( _this );
             child_9.ref();
             this.el.add_child (  child_9.el  );
+            var child_10 = new Xcls_delpropbutton( _this );
+            child_10.ref();
+            this.el.add_child (  child_10.el  );
 
             // init method 
             {
@@ -2532,6 +2536,125 @@ public class Xcls_MainWindow : Object
                 _this.new_file_dialog.show(f);
                 
                 return  ;    
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_delpropbutton : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_delpropbutton(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.delpropbutton = this;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Actor46( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+            this.el.set_size(50,50);
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Actor46 : Object 
+    {
+        public GtkClutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Actor46(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new GtkClutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Button47( _this );
+            child_0.ref();
+
+            // init method 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Button47 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button47(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+            this.el.height_request = 50;
+            this.el.label = "Add\nProp";
+            this.el.width_request = 50;
+
+            // listeners 
+            this.el.clicked.connect(   ( ) => {
+                
+                
+                
+                switch (_this.state) {
+                    case "edit":
+                        _this.showAddProp();
+                        break;
+                        
+                    case "object":
+                        _this.hideObject();
+                        _this.showAddProp();
+                        break;
+                   
+                    case "addlistener":
+                        _this.hideAddListener();
+                        _this.showAddProp();            
+                        break;
+                        
+                        
+                    case "addprop":
+                        _this.hideAddProp();
+                        break;
+                        
+                    default:
+                        print("unhandled add property from %s\n",_this.state);
+                        break;
+                        
+                }
+                return  ;    
+            
+            
             } );
         }
 

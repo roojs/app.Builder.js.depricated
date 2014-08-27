@@ -1496,6 +1496,63 @@ MainWindow=new XObject({
                                                             ]
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    xtype: Clutter.Actor,
+                                                    id : "delpropbutton",
+                                                    pack : "add_child",
+                                                    init : this.el.set_size(50,50);,
+                                                    items : [
+                                                        {
+                                                            xtype: GtkClutter.Actor,
+                                                            pack : "add_child",
+                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
+                                                            items : [
+                                                                {
+                                                                    xtype: Gtk.Button,
+                                                                    listeners : {
+                                                                        clicked : ( ) => {
+                                                                            
+                                                                            
+                                                                            
+                                                                            switch (_this.state) {
+                                                                                case "edit":
+                                                                                    _this.showAddProp();
+                                                                                    break;
+                                                                                    
+                                                                                case "object":
+                                                                                    _this.hideObject();
+                                                                                    _this.showAddProp();
+                                                                                    break;
+                                                                               
+                                                                                case "addlistener":
+                                                                                    _this.hideAddListener();
+                                                                                    _this.showAddProp();            
+                                                                                    break;
+                                                                                    
+                                                                                    
+                                                                                case "addprop":
+                                                                                    _this.hideAddProp();
+                                                                                    break;
+                                                                                    
+                                                                                default:
+                                                                                    print("unhandled add property from %s\n",_this.state);
+                                                                                    break;
+                                                                                    
+                                                                            }
+                                                                            return  ;    
+                                                                        
+                                                                        
+                                                                        }
+                                                                    },
+                                                                    height_request : 50,
+                                                                    pack : "false",
+                                                                    width_request : 50,
+                                                                    label : "Add\nProp"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
                                                 }
                                             ],
                                             layout_manager : {
