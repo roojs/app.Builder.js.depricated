@@ -302,7 +302,7 @@ public class JsRender.NodeToVala : Object {
              
             
             // initialize.. my vars..
-		this.str += "\n" + this.ipad + "// my vars\n";
+		this.ret += "\n" + this.ipad + "// my vars\n";
 		var iter = this.node.props.map_iterator();
 		while(iter.next()) {
     			var k = iter.get_key();
