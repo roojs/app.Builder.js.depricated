@@ -137,8 +137,8 @@ public class JsRender.NodeToVala : Object {
              		this.ret += this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";\n";
                 }
                 
-            }
 	}
+	 
         void addMyVars()
 	{
  	       this.ret += "\n" + this.ipad + "// my vars\n";
