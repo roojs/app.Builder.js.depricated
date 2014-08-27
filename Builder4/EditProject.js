@@ -53,7 +53,7 @@ EditProject=new XObject({
                 }
                
         }
-        }
+        
         this.el.hide();
         
         

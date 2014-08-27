@@ -103,7 +103,7 @@ public class Xcls_EditProject : Object
                     }
                    
             }
-            }
+            
             this.el.hide();
             
             
