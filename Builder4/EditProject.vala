@@ -108,6 +108,11 @@ public class Xcls_EditProject : Object
         	// shouild set path..
             _this.model.loadData();
             this.el.show_all();
+             this.el.run();
+            this.el.hide();
+            
+            
+            
             //this.success = c.success;
         }
 
