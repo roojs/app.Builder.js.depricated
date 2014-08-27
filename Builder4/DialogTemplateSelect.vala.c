@@ -349,15 +349,15 @@ typedef struct _Xcls_MainWindowXcls_addprojectbuttonClass Xcls_MainWindowXcls_ad
 typedef struct _Xcls_MainWindowXcls_addfilebutton Xcls_MainWindowXcls_addfilebutton;
 typedef struct _Xcls_MainWindowXcls_addfilebuttonClass Xcls_MainWindowXcls_addfilebuttonClass;
 
-#define XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON (xcls_mainwindow_xcls_delpropbutton_get_type ())
-#define XCLS_MAINWINDOW_XCLS_DELPROPBUTTON(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON, Xcls_MainWindowXcls_delpropbutton))
-#define XCLS_MAINWINDOW_XCLS_DELPROPBUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON, Xcls_MainWindowXcls_delpropbuttonClass))
-#define XCLS_MAINWINDOW_IS_XCLS_DELPROPBUTTON(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON))
-#define XCLS_MAINWINDOW_IS_XCLS_DELPROPBUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON))
-#define XCLS_MAINWINDOW_XCLS_DELPROPBUTTON_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROPBUTTON, Xcls_MainWindowXcls_delpropbuttonClass))
+#define XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON (xcls_mainwindow_xcls_delprojectbutton_get_type ())
+#define XCLS_MAINWINDOW_XCLS_DELPROJECTBUTTON(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON, Xcls_MainWindowXcls_delprojectbutton))
+#define XCLS_MAINWINDOW_XCLS_DELPROJECTBUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON, Xcls_MainWindowXcls_delprojectbuttonClass))
+#define XCLS_MAINWINDOW_IS_XCLS_DELPROJECTBUTTON(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON))
+#define XCLS_MAINWINDOW_IS_XCLS_DELPROJECTBUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON))
+#define XCLS_MAINWINDOW_XCLS_DELPROJECTBUTTON_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_MAINWINDOW_TYPE_XCLS_DELPROJECTBUTTON, Xcls_MainWindowXcls_delprojectbuttonClass))
 
-typedef struct _Xcls_MainWindowXcls_delpropbutton Xcls_MainWindowXcls_delpropbutton;
-typedef struct _Xcls_MainWindowXcls_delpropbuttonClass Xcls_MainWindowXcls_delpropbuttonClass;
+typedef struct _Xcls_MainWindowXcls_delprojectbutton Xcls_MainWindowXcls_delprojectbutton;
+typedef struct _Xcls_MainWindowXcls_delprojectbuttonClass Xcls_MainWindowXcls_delprojectbuttonClass;
 
 #define PROJECT_TYPE_PROJECT (project_project_get_type ())
 #define PROJECT_PROJECT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), PROJECT_TYPE_PROJECT, ProjectProject))
@@ -571,7 +571,7 @@ struct _Xcls_MainWindow {
 	Xcls_MainWindowXcls_addlistenerbutton* addlistenerbutton;
 	Xcls_MainWindowXcls_addprojectbutton* addprojectbutton;
 	Xcls_MainWindowXcls_addfilebutton* addfilebutton;
-	Xcls_MainWindowXcls_delpropbutton* delpropbutton;
+	Xcls_MainWindowXcls_delprojectbutton* delprojectbutton;
 	ProjectProject* project;
 	Xcls_ClutterFiles* clutterfiles;
 	Xcls_DialogNewComponent* new_file_dialog;
@@ -733,7 +733,7 @@ GType xcls_mainwindow_xcls_addpropbutton_get_type (void) G_GNUC_CONST;
 GType xcls_mainwindow_xcls_addlistenerbutton_get_type (void) G_GNUC_CONST;
 GType xcls_mainwindow_xcls_addprojectbutton_get_type (void) G_GNUC_CONST;
 GType xcls_mainwindow_xcls_addfilebutton_get_type (void) G_GNUC_CONST;
-GType xcls_mainwindow_xcls_delpropbutton_get_type (void) G_GNUC_CONST;
+GType xcls_mainwindow_xcls_delprojectbutton_get_type (void) G_GNUC_CONST;
 GType project_project_get_type (void) G_GNUC_CONST;
 GType xcls_clutterfiles_get_type (void) G_GNUC_CONST;
 GType xcls_dialognewcomponent_get_type (void) G_GNUC_CONST;

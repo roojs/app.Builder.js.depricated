@@ -52,7 +52,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addlistenerbutton addlistenerbutton;
     public Xcls_addprojectbutton addprojectbutton;
     public Xcls_addfilebutton addfilebutton;
-    public Xcls_delpropbutton delpropbutton;
+    public Xcls_delprojectbutton delprojectbutton;
 
         // my vars
     public Project.Project project;
@@ -250,7 +250,8 @@ public class Xcls_MainWindow : Object
             _this.addprojectbutton.el.show();   
             _this.addfilebutton.el.show();       
               _this.backbutton.el.show();
-        
+            _this.delprojectbutton.el.show();
+            
               _this.editfilebutton.el.hide();   
               _this.projectbutton.el.hide();         
               _this.projecteditbutton.el.hide();
@@ -1423,7 +1424,7 @@ public class Xcls_MainWindow : Object
             var child_9 = new Xcls_addfilebutton( _this );
             child_9.ref();
             this.el.add_child (  child_9.el  );
-            var child_10 = new Xcls_delpropbutton( _this );
+            var child_10 = new Xcls_delprojectbutton( _this );
             child_10.ref();
             this.el.add_child (  child_10.el  );
 
@@ -2544,7 +2545,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_delpropbutton : Object 
+    public class Xcls_delprojectbutton : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2553,10 +2554,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_delpropbutton(Xcls_MainWindow _owner )
+        public Xcls_delprojectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.delpropbutton = this;
+            _this.delprojectbutton = this;
             this.el = new Clutter.Actor();
 
             // my vars

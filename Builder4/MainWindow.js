@@ -159,7 +159,8 @@ MainWindow=new XObject({
         _this.addprojectbutton.el.show();   
         _this.addfilebutton.el.show();       
           _this.backbutton.el.show();
-    
+        _this.delprojectbutton.el.show();
+        
           _this.editfilebutton.el.hide();   
           _this.projectbutton.el.hide();         
           _this.projecteditbutton.el.hide();
@@ -1500,7 +1501,7 @@ MainWindow=new XObject({
                                                 },
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    id : "delpropbutton",
+                                                    id : "delprojectbutton",
                                                     pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     items : [
