@@ -594,7 +594,7 @@ public class Xcls_WindowRooView : Object
                     );
                     GLib.Timeout.add_seconds(1, () => {
                         this.el.run_javascript("Builder.saveHTML()",null);
-                        return true;
+                        return false;
                     });
             //     print( "before render" +    this.lastRedraw);
             //    print( "after render" +    (new Date()));
