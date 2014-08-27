@@ -191,8 +191,9 @@ MainWindow=new XObject({
         el.set_scale(0.0f,0.0f);
        
             _this.state = "files";
-    
-        _this.left_projects.selectProject(_this.project);
+        if (_this.project != null) {
+            _this.left_projects.selectProject(_this.project);
+            }
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
