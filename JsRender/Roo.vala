@@ -227,11 +227,11 @@ namespace JsRender {
 	string html;
 
 	//public void saveHTML ( WebKit.WebView webview) 
-	public void saveHTML ( int page_id )
+	public void saveHTML (  )
 	{
 
 		var we = get_webkit_extension();
-		var web_frame = we.get_page(page_id);
+		var web_frame = we.get_page(this.webkit_page_id);
 
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
