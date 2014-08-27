@@ -381,7 +381,7 @@
                                                                     "items": [
                                                                         {
                                                                             "listeners": {
-                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n    \n    \n    return  ;    \n\n\n}"
+                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n   var  pe =     Xcls_EditProject.singleton();\n    pe.el.set_transient_for(_this.el);\n    pe.el.set_modal(true);   \n   \n    var p  = pe.show();\n\n    if (p == null) {\n        return;\n    }\n    \n    \n    return  ;    \n\n\n}"
                                                                             },
                                                                             "height_request": 50,
                                                                             "pack": "false",

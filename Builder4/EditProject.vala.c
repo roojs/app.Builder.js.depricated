@@ -335,8 +335,8 @@ Xcls_EditProjectXcls_Button9* xcls_editproject_xcls_button9_construct (GType obj
 GType xcls_editproject_xcls_button10_get_type (void) G_GNUC_CONST;
 Xcls_EditProjectXcls_Button10* xcls_editproject_xcls_button10_new (Xcls_EditProject* _owner);
 Xcls_EditProjectXcls_Button10* xcls_editproject_xcls_button10_construct (GType object_type, Xcls_EditProject* _owner);
-static gboolean __lambda118_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda118__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static gboolean __lambda43_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda43__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 GType project_project_get_type (void) G_GNUC_CONST;
 ProjectProject* xcls_editproject_show (Xcls_EditProject* self);
 void xcls_editproject_xcls_model_loadData (Xcls_EditProjectXcls_model* self);
@@ -445,7 +445,7 @@ Xcls_EditProject* xcls_editproject_singleton (void) {
 }
 
 
-static gboolean __lambda118_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda43_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_ = NULL;
 #line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
@@ -464,9 +464,9 @@ static gboolean __lambda118_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEven
 }
 
 
-static gboolean ___lambda118__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda43__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda118_ ((Xcls_EditProject*) self, _sender, event);
+	result = __lambda43_ ((Xcls_EditProject*) self, _sender, event);
 #line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
 	return result;
 #line 473 "EditProject.vala.c"
@@ -592,7 +592,7 @@ Xcls_EditProject* xcls_editproject_construct (GType object_type) {
 #line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
 	_tmp22_ = self->el;
 #line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp22_, "destroy-event", (GCallback) ___lambda118__gtk_widget_destroy_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp22_, "destroy-event", (GCallback) ___lambda43__gtk_widget_destroy_event, self, 0);
 #line 41 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
 	_g_object_unref0 (child_2);
 #line 41 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"

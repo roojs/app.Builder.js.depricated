@@ -291,8 +291,8 @@ static void xcls_editor_xcls_hbox2_finalize (GObject* obj);
 enum  {
 	XCLS_EDITOR_XCLS_SAVE_BUTTON_DUMMY_PROPERTY
 };
-static void __lambda72_ (Xcls_EditorXcls_save_button* self);
-static void ___lambda72__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void __lambda73_ (Xcls_EditorXcls_save_button* self);
+static void ___lambda73__gtk_button_clicked (GtkButton* _sender, gpointer self);
 static void xcls_editor_xcls_save_button_finalize (GObject* obj);
 #define XCLS_EDITOR_XCLS_KEY_EDIT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_EDITOR_TYPE_XCLS_KEY_EDIT, Xcls_EditorXcls_key_editPrivate))
 enum  {
@@ -312,16 +312,16 @@ enum  {
 };
 Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (Xcls_Editor* _owner);
 Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type, Xcls_Editor* _owner);
-static gboolean __lambda74_ (Xcls_EditorXcls_view* self, GdkEventKey* event);
-static gboolean ___lambda74__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self);
+static gboolean __lambda75_ (Xcls_EditorXcls_view* self, GdkEventKey* event);
+static gboolean ___lambda75__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self);
 static void _vala_PangoFontDescription_free (PangoFontDescription* self);
 static void xcls_editor_xcls_view_finalize (GObject* obj);
 #define XCLS_EDITOR_XCLS_BUFFER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_EDITOR_TYPE_XCLS_BUFFER, Xcls_EditorXcls_bufferPrivate))
 enum  {
 	XCLS_EDITOR_XCLS_BUFFER_DUMMY_PROPERTY
 };
-static void __lambda73_ (Xcls_EditorXcls_buffer* self);
-static void ___lambda73__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self);
+static void __lambda74_ (Xcls_EditorXcls_buffer* self);
+static void ___lambda74__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self);
 static void xcls_editor_xcls_buffer_finalize (GObject* obj);
 static void xcls_editor_finalize (GObject* obj);
 
@@ -783,7 +783,7 @@ GType xcls_editor_xcls_hbox2_get_type (void) {
 }
 
 
-static void __lambda72_ (Xcls_EditorXcls_save_button* self) {
+static void __lambda73_ (Xcls_EditorXcls_save_button* self) {
 	Xcls_Editor* _tmp0_ = NULL;
 #line 179 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp0_ = self->priv->_this;
@@ -793,9 +793,9 @@ static void __lambda72_ (Xcls_EditorXcls_save_button* self) {
 }
 
 
-static void ___lambda72__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+static void ___lambda73__gtk_button_clicked (GtkButton* _sender, gpointer self) {
 #line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	__lambda72_ ((Xcls_EditorXcls_save_button*) self);
+	__lambda73_ ((Xcls_EditorXcls_save_button*) self);
 #line 800 "Editor.vala.c"
 }
 
@@ -844,7 +844,7 @@ Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_construct (GType objec
 #line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp6_ = self->el;
 #line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect_object (_tmp6_, "clicked", (GCallback) ___lambda72__gtk_button_clicked, self, 0);
+	g_signal_connect_object (_tmp6_, "clicked", (GCallback) ___lambda73__gtk_button_clicked, self, 0);
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return self;
 #line 851 "Editor.vala.c"
@@ -1112,7 +1112,7 @@ GType xcls_editor_xcls_righteditor_get_type (void) {
 }
 
 
-static gboolean __lambda74_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
+static gboolean __lambda75_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 	gboolean result = FALSE;
 	gboolean _tmp0_ = FALSE;
 	GdkEventKey* _tmp1_ = NULL;
@@ -1164,9 +1164,9 @@ static gboolean __lambda74_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 }
 
 
-static gboolean ___lambda74__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self) {
+static gboolean ___lambda75__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self) {
 	gboolean result;
-	result = __lambda74_ ((Xcls_EditorXcls_view*) self, event);
+	result = __lambda75_ ((Xcls_EditorXcls_view*) self, event);
 #line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return result;
 #line 1173 "Editor.vala.c"
@@ -1271,7 +1271,7 @@ Xcls_EditorXcls_view* xcls_editor_xcls_view_construct (GType object_type, Xcls_E
 #line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp15_ = self->el;
 #line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp15_, "key-release-event", (GCallback) ___lambda74__gtk_widget_key_release_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp15_, "key-release-event", (GCallback) ___lambda75__gtk_widget_key_release_event, self, 0);
 #line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	__vala_PangoFontDescription_free0 (description);
 #line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -1419,7 +1419,7 @@ GType xcls_editor_xcls_view_get_type (void) {
 }
 
 
-static void __lambda73_ (Xcls_EditorXcls_buffer* self) {
+static void __lambda74_ (Xcls_EditorXcls_buffer* self) {
 	gboolean _tmp0_ = FALSE;
 	Xcls_Editor* _tmp4_ = NULL;
 #line 356 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -1450,9 +1450,9 @@ static void __lambda73_ (Xcls_EditorXcls_buffer* self) {
 }
 
 
-static void ___lambda73__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self) {
+static void ___lambda74__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self) {
 #line 354 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	__lambda73_ ((Xcls_EditorXcls_buffer*) self);
+	__lambda74_ ((Xcls_EditorXcls_buffer*) self);
 #line 1457 "Editor.vala.c"
 }
 
@@ -1494,7 +1494,7 @@ Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type, Xc
 #line 354 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp5_ = self->el;
 #line 354 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect_object ((GtkTextBuffer*) _tmp5_, "changed", (GCallback) ___lambda73__gtk_text_buffer_changed, self, 0);
+	g_signal_connect_object ((GtkTextBuffer*) _tmp5_, "changed", (GCallback) ___lambda74__gtk_text_buffer_changed, self, 0);
 #line 343 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return self;
 #line 1501 "Editor.vala.c"

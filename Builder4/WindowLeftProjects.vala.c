@@ -489,9 +489,9 @@ Xcls_WindowLeftProjectsXcls_HBox2* xcls_windowleftprojects_xcls_hbox2_construct 
 GType xcls_windowleftprojects_xcls_scrolledwindow11_get_type (void) G_GNUC_CONST;
 Xcls_WindowLeftProjectsXcls_ScrolledWindow11* xcls_windowleftprojects_xcls_scrolledwindow11_new (Xcls_WindowLeftProjects* _owner);
 Xcls_WindowLeftProjectsXcls_ScrolledWindow11* xcls_windowleftprojects_xcls_scrolledwindow11_construct (GType object_type, Xcls_WindowLeftProjects* _owner);
-static void __lambda50_ (Xcls_WindowLeftProjects* self);
+static void __lambda51_ (Xcls_WindowLeftProjects* self);
 void xcls_windowleftprojects_load (Xcls_WindowLeftProjects* self);
-static void ___lambda50__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static void ___lambda51__gtk_widget_show (GtkWidget* _sender, gpointer self);
 void project_project_loadAll (gboolean force);
 GType project_project_get_type (void) G_GNUC_CONST;
 GeeArrayList* project_project_allProjectsByName (void);
@@ -499,8 +499,8 @@ GType js_render_js_render_get_type (void) G_GNUC_CONST;
 void xcls_windowleftprojects_selectProject (Xcls_WindowLeftProjects* self, ProjectProject* project);
 static Block9Data* block9_data_ref (Block9Data* _data9_);
 static void block9_data_unref (void * _userdata_);
-static gboolean __lambda51_ (Block9Data* _data9_, GtkTreeModel* mod, GtkTreePath* path, GtkTreeIter* iter);
-static gboolean ___lambda51__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self);
+static gboolean __lambda52_ (Block9Data* _data9_, GtkTreeModel* mod, GtkTreePath* path, GtkTreeIter* iter);
+static gboolean ___lambda52__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self);
 #define XCLS_WINDOWLEFTPROJECTS_XCLS_HBOX2_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTPROJECTS_TYPE_XCLS_HBOX2, Xcls_WindowLeftProjectsXcls_HBox2Private))
 enum  {
 	XCLS_WINDOWLEFTPROJECTS_XCLS_HBOX2_DUMMY_PROPERTY
@@ -519,8 +519,8 @@ enum  {
 GType xcls_windowleftprojects_xcls_hbox4_get_type (void) G_GNUC_CONST;
 Xcls_WindowLeftProjectsXcls_HBox4* xcls_windowleftprojects_xcls_hbox4_new (Xcls_WindowLeftProjects* _owner);
 Xcls_WindowLeftProjectsXcls_HBox4* xcls_windowleftprojects_xcls_hbox4_construct (GType object_type, Xcls_WindowLeftProjects* _owner);
-static gboolean __lambda48_ (Xcls_WindowLeftProjectsXcls_Button3* self, GdkEventButton* event);
-static gboolean ___lambda48__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda49_ (Xcls_WindowLeftProjectsXcls_Button3* self, GdkEventButton* event);
+static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_windowleftprojects_xcls_button3_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTPROJECTS_XCLS_HBOX4_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTPROJECTS_TYPE_XCLS_HBOX4, Xcls_WindowLeftProjectsXcls_HBox4Private))
 enum  {
@@ -550,8 +550,8 @@ enum  {
 GType xcls_windowleftprojects_xcls_hbox8_get_type (void) G_GNUC_CONST;
 Xcls_WindowLeftProjectsXcls_HBox8* xcls_windowleftprojects_xcls_hbox8_new (Xcls_WindowLeftProjects* _owner);
 Xcls_WindowLeftProjectsXcls_HBox8* xcls_windowleftprojects_xcls_hbox8_construct (GType object_type, Xcls_WindowLeftProjects* _owner);
-static gboolean __lambda49_ (Xcls_WindowLeftProjectsXcls_Button7* self, GdkEventButton* event);
-static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda50_ (Xcls_WindowLeftProjectsXcls_Button7* self, GdkEventButton* event);
+static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_windowleftprojects_xcls_button7_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTPROJECTS_XCLS_HBOX8_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTPROJECTS_TYPE_XCLS_HBOX8, Xcls_WindowLeftProjectsXcls_HBox8Private))
 enum  {
@@ -590,16 +590,16 @@ Xcls_WindowLeftProjectsXcls_model* xcls_windowleftprojects_xcls_model_construct 
 GType xcls_windowleftprojects_xcls_treeviewcolumn14_get_type (void) G_GNUC_CONST;
 Xcls_WindowLeftProjectsXcls_TreeViewColumn14* xcls_windowleftprojects_xcls_treeviewcolumn14_new (Xcls_WindowLeftProjects* _owner);
 Xcls_WindowLeftProjectsXcls_TreeViewColumn14* xcls_windowleftprojects_xcls_treeviewcolumn14_construct (GType object_type, Xcls_WindowLeftProjects* _owner);
-static void __lambda47_ (Xcls_WindowLeftProjectsXcls_view* self);
-static void ___lambda47__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self);
+static void __lambda48_ (Xcls_WindowLeftProjectsXcls_view* self);
+static void ___lambda48__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self);
 static void _vala_PangoFontDescription_free (PangoFontDescription* self);
 static void xcls_windowleftprojects_xcls_view_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTPROJECTS_XCLS_MODEL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTPROJECTS_TYPE_XCLS_MODEL, Xcls_WindowLeftProjectsXcls_modelPrivate))
 enum  {
 	XCLS_WINDOWLEFTPROJECTS_XCLS_MODEL_DUMMY_PROPERTY
 };
-static gint ___lambda46_ (Xcls_WindowLeftProjectsXcls_model* self, GtkTreeModel* mod, GtkTreeIter* a, GtkTreeIter* b);
-static gint ____lambda46__gtk_tree_iter_compare_func (GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, gpointer self);
+static gint ___lambda47_ (Xcls_WindowLeftProjectsXcls_model* self, GtkTreeModel* mod, GtkTreeIter* a, GtkTreeIter* b);
+static gint ____lambda47__gtk_tree_iter_compare_func (GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, gpointer self);
 static void xcls_windowleftprojects_xcls_model_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTPROJECTS_XCLS_TREEVIEWCOLUMN14_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTPROJECTS_TYPE_XCLS_TREEVIEWCOLUMN14, Xcls_WindowLeftProjectsXcls_TreeViewColumn14Private))
 enum  {
@@ -623,16 +623,16 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static void __lambda50_ (Xcls_WindowLeftProjects* self) {
+static void __lambda51_ (Xcls_WindowLeftProjects* self) {
 #line 56 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	xcls_windowleftprojects_load (self);
 #line 630 "WindowLeftProjects.vala.c"
 }
 
 
-static void ___lambda50__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda51__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	__lambda50_ ((Xcls_WindowLeftProjects*) self);
+	__lambda51_ ((Xcls_WindowLeftProjects*) self);
 #line 637 "WindowLeftProjects.vala.c"
 }
 
@@ -710,7 +710,7 @@ Xcls_WindowLeftProjects* xcls_windowleftprojects_construct (GType object_type) {
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_tmp11_ = self->el;
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp11_, "show", (GCallback) ___lambda50__gtk_widget_show, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp11_, "show", (GCallback) ___lambda51__gtk_widget_show, self, 0);
 #line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_g_object_unref0 (child_1);
 #line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -943,7 +943,7 @@ static void block9_data_unref (void * _userdata_) {
 }
 
 
-static gboolean __lambda51_ (Block9Data* _data9_, GtkTreeModel* mod, GtkTreePath* path, GtkTreeIter* iter) {
+static gboolean __lambda52_ (Block9Data* _data9_, GtkTreeModel* mod, GtkTreePath* path, GtkTreeIter* iter) {
 	Xcls_WindowLeftProjects* self;
 	gboolean result = FALSE;
 	GValue val = {0};
@@ -1004,9 +1004,9 @@ static gboolean __lambda51_ (Block9Data* _data9_, GtkTreeModel* mod, GtkTreePath
 }
 
 
-static gboolean ___lambda51__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self) {
+static gboolean ___lambda52__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self) {
 	gboolean result;
-	result = __lambda51_ (self, model, path, iter);
+	result = __lambda52_ (self, model, path, iter);
 #line 98 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	return result;
 #line 1013 "WindowLeftProjects.vala.c"
@@ -1064,7 +1064,7 @@ void xcls_windowleftprojects_selectProject (Xcls_WindowLeftProjects* self, Proje
 #line 98 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_tmp9_ = _tmp8_->el;
 #line 98 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	gtk_tree_model_foreach ((GtkTreeModel*) _tmp9_, ___lambda51__gtk_tree_model_foreach_func, _data9_);
+	gtk_tree_model_foreach ((GtkTreeModel*) _tmp9_, ___lambda52__gtk_tree_model_foreach_func, _data9_);
 #line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	block9_data_unref (_data9_);
 #line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -1197,7 +1197,7 @@ GType xcls_windowleftprojects_xcls_hbox2_get_type (void) {
 }
 
 
-static gboolean __lambda48_ (Xcls_WindowLeftProjectsXcls_Button3* self, GdkEventButton* event) {
+static gboolean __lambda49_ (Xcls_WindowLeftProjectsXcls_Button3* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_WindowLeftProjects* _tmp0_ = NULL;
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -1214,9 +1214,9 @@ static gboolean __lambda48_ (Xcls_WindowLeftProjectsXcls_Button3* self, GdkEvent
 }
 
 
-static gboolean ___lambda48__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda48_ ((Xcls_WindowLeftProjectsXcls_Button3*) self, event);
+	result = __lambda49_ ((Xcls_WindowLeftProjectsXcls_Button3*) self, event);
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	return result;
 #line 1223 "WindowLeftProjects.vala.c"
@@ -1271,7 +1271,7 @@ Xcls_WindowLeftProjectsXcls_Button3* xcls_windowleftprojects_xcls_button3_constr
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_tmp7_ = self->el;
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda48__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda49__gtk_widget_button_press_event, self, 0);
 #line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_g_object_unref0 (child_0);
 #line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -1629,7 +1629,7 @@ GType xcls_windowleftprojects_xcls_label6_get_type (void) {
 }
 
 
-static gboolean __lambda49_ (Xcls_WindowLeftProjectsXcls_Button7* self, GdkEventButton* event) {
+static gboolean __lambda50_ (Xcls_WindowLeftProjectsXcls_Button7* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_WindowLeftProjects* _tmp0_ = NULL;
 #line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -1646,9 +1646,9 @@ static gboolean __lambda49_ (Xcls_WindowLeftProjectsXcls_Button7* self, GdkEvent
 }
 
 
-static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda49_ ((Xcls_WindowLeftProjectsXcls_Button7*) self, event);
+	result = __lambda50_ ((Xcls_WindowLeftProjectsXcls_Button7*) self, event);
 #line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	return result;
 #line 1655 "WindowLeftProjects.vala.c"
@@ -1703,7 +1703,7 @@ Xcls_WindowLeftProjectsXcls_Button7* xcls_windowleftprojects_xcls_button7_constr
 #line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_tmp7_ = self->el;
 #line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda49__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda50__gtk_widget_button_press_event, self, 0);
 #line 262 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_g_object_unref0 (child_0);
 #line 262 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -2174,7 +2174,7 @@ GType xcls_windowleftprojects_xcls_scrolledwindow11_get_type (void) {
 }
 
 
-static void __lambda47_ (Xcls_WindowLeftProjectsXcls_view* self) {
+static void __lambda48_ (Xcls_WindowLeftProjectsXcls_view* self) {
 	Xcls_WindowLeftProjects* _tmp0_ = NULL;
 	gboolean _tmp1_ = FALSE;
 	GtkTreeIter iter = {0};
@@ -2271,9 +2271,9 @@ static void __lambda47_ (Xcls_WindowLeftProjectsXcls_view* self) {
 }
 
 
-static void ___lambda47__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self) {
+static void ___lambda48__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self) {
 #line 432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	__lambda47_ ((Xcls_WindowLeftProjectsXcls_view*) self);
+	__lambda48_ ((Xcls_WindowLeftProjectsXcls_view*) self);
 #line 2278 "WindowLeftProjects.vala.c"
 }
 
@@ -2399,7 +2399,7 @@ Xcls_WindowLeftProjectsXcls_view* xcls_windowleftprojects_xcls_view_construct (G
 #line 432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_tmp20_ = self->el;
 #line 432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-	g_signal_connect_object (_tmp20_, "cursor-changed", (GCallback) ___lambda47__gtk_tree_view_cursor_changed, self, 0);
+	g_signal_connect_object (_tmp20_, "cursor-changed", (GCallback) ___lambda48__gtk_tree_view_cursor_changed, self, 0);
 #line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	_g_object_unref0 (selection);
 #line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
@@ -2465,7 +2465,7 @@ GType xcls_windowleftprojects_xcls_view_get_type (void) {
 }
 
 
-static gint ___lambda46_ (Xcls_WindowLeftProjectsXcls_model* self, GtkTreeModel* mod, GtkTreeIter* a, GtkTreeIter* b) {
+static gint ___lambda47_ (Xcls_WindowLeftProjectsXcls_model* self, GtkTreeModel* mod, GtkTreeIter* a, GtkTreeIter* b) {
 	gint result = 0;
 	GValue ga = {0};
 	GValue gb = {0};
@@ -2548,9 +2548,9 @@ static gint ___lambda46_ (Xcls_WindowLeftProjectsXcls_model* self, GtkTreeModel*
 }
 
 
-static gint ____lambda46__gtk_tree_iter_compare_func (GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, gpointer self) {
+static gint ____lambda47__gtk_tree_iter_compare_func (GtkTreeModel* model, GtkTreeIter* a, GtkTreeIter* b, gpointer self) {
 	gint result;
-	result = ___lambda46_ ((Xcls_WindowLeftProjectsXcls_model*) self, model, a, b);
+	result = ___lambda47_ ((Xcls_WindowLeftProjectsXcls_model*) self, model, a, b);
 #line 480 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 	return result;
 #line 2557 "WindowLeftProjects.vala.c"
@@ -2596,7 +2596,7 @@ Xcls_WindowLeftProjectsXcls_model* xcls_windowleftprojects_xcls_model_construct 
 #line 480 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
 		_tmp5_ = self->el;
 #line 480 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"
-		gtk_tree_sortable_set_sort_func ((GtkTreeSortable*) _tmp5_, 0, ____lambda46__gtk_tree_iter_compare_func, g_object_ref (self), g_object_unref);
+		gtk_tree_sortable_set_sort_func ((GtkTreeSortable*) _tmp5_, 0, ____lambda47__gtk_tree_iter_compare_func, g_object_ref (self), g_object_unref);
 #line 2601 "WindowLeftProjects.vala.c"
 	}
 #line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.vala"

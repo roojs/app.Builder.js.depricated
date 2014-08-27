@@ -340,8 +340,8 @@ Xcls_ClutterFiles* xcls_clutterfiles_new (void);
 Xcls_ClutterFiles* xcls_clutterfiles_construct (GType object_type);
 Xcls_ClutterFilesXcls_filelayout* xcls_clutterfiles_xcls_filelayout_new (Xcls_ClutterFiles* _owner);
 Xcls_ClutterFilesXcls_filelayout* xcls_clutterfiles_xcls_filelayout_construct (GType object_type, Xcls_ClutterFiles* _owner);
-static gboolean __lambda70_ (Xcls_ClutterFiles* self, ClutterScrollEvent* event);
-static gboolean ___lambda70__clutter_actor_scroll_event (ClutterActor* _sender, ClutterScrollEvent* event, gpointer self);
+static gboolean __lambda71_ (Xcls_ClutterFiles* self, ClutterScrollEvent* event);
+static gboolean ___lambda71__clutter_actor_scroll_event (ClutterActor* _sender, ClutterScrollEvent* event, gpointer self);
 void xcls_clutterfiles_clearFiles (Xcls_ClutterFiles* self);
 GType project_project_get_type (void) G_GNUC_CONST;
 void xcls_clutterfiles_loadProject (Xcls_ClutterFiles* self, ProjectProject* pr);
@@ -379,12 +379,12 @@ Xcls_ClutterFilesXcls_typetitle* xcls_clutterfiles_xcls_typetitle_new (Xcls_Clut
 Xcls_ClutterFilesXcls_typetitle* xcls_clutterfiles_xcls_typetitle_construct (GType object_type, Xcls_ClutterFiles* _owner, JsRenderJsRender* file);
 Xcls_ClutterFilesXcls_title* xcls_clutterfiles_xcls_title_new (Xcls_ClutterFiles* _owner, JsRenderJsRender* file);
 Xcls_ClutterFilesXcls_title* xcls_clutterfiles_xcls_title_construct (GType object_type, Xcls_ClutterFiles* _owner, JsRenderJsRender* file);
-static gboolean __lambda67_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event);
-static gboolean ___lambda67__clutter_actor_enter_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self);
 static gboolean __lambda68_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event);
-static gboolean ___lambda68__clutter_actor_leave_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self);
-static gboolean __lambda69_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterButtonEvent* event);
-static gboolean ___lambda69__clutter_actor_button_press_event (ClutterActor* _sender, ClutterButtonEvent* event, gpointer self);
+static gboolean ___lambda68__clutter_actor_enter_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self);
+static gboolean __lambda69_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event);
+static gboolean ___lambda69__clutter_actor_leave_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self);
+static gboolean __lambda70_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterButtonEvent* event);
+static gboolean ___lambda70__clutter_actor_button_press_event (ClutterActor* _sender, ClutterButtonEvent* event, gpointer self);
 static void xcls_clutterfiles_xcls_fileitem_finalize (GObject* obj);
 #define XCLS_CLUTTERFILES_XCLS_BOXLAYOUT5_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_CLUTTERFILES_TYPE_XCLS_BOXLAYOUT5, Xcls_ClutterFilesXcls_BoxLayout5Private))
 enum  {
@@ -450,7 +450,7 @@ Xcls_ClutterFiles* xcls_clutterfiles_singleton (void) {
 }
 
 
-static gboolean __lambda70_ (Xcls_ClutterFiles* self, ClutterScrollEvent* event) {
+static gboolean __lambda71_ (Xcls_ClutterFiles* self, ClutterScrollEvent* event) {
 	gboolean result = FALSE;
 	gfloat y = 0.0F;
 	Xcls_ClutterFilesXcls_filelayout* _tmp0_ = NULL;
@@ -619,9 +619,9 @@ static gboolean __lambda70_ (Xcls_ClutterFiles* self, ClutterScrollEvent* event)
 }
 
 
-static gboolean ___lambda70__clutter_actor_scroll_event (ClutterActor* _sender, ClutterScrollEvent* event, gpointer self) {
+static gboolean ___lambda71__clutter_actor_scroll_event (ClutterActor* _sender, ClutterScrollEvent* event, gpointer self) {
 	gboolean result;
-	result = __lambda70_ ((Xcls_ClutterFiles*) self, event);
+	result = __lambda71_ ((Xcls_ClutterFiles*) self, event);
 #line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return result;
 #line 628 "ClutterFiles.vala.c"
@@ -683,7 +683,7 @@ Xcls_ClutterFiles* xcls_clutterfiles_construct (GType object_type) {
 #line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp8_ = self->el;
 #line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	g_signal_connect_object ((ClutterActor*) _tmp8_, "scroll-event", (GCallback) ___lambda70__clutter_actor_scroll_event, self, 0);
+	g_signal_connect_object ((ClutterActor*) _tmp8_, "scroll-event", (GCallback) ___lambda71__clutter_actor_scroll_event, self, 0);
 #line 40 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_0);
 #line 40 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
@@ -1196,7 +1196,7 @@ GType xcls_clutterfiles_xcls_filelayout_manager_get_type (void) {
 }
 
 
-static gboolean __lambda67_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event) {
+static gboolean __lambda68_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event) {
 	gboolean result = FALSE;
 	ClutterActor* _tmp0_ = NULL;
 	ClutterColor _tmp1_ = {0};
@@ -1216,16 +1216,16 @@ static gboolean __lambda67_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossi
 }
 
 
-static gboolean ___lambda67__clutter_actor_enter_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self) {
+static gboolean ___lambda68__clutter_actor_enter_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self) {
 	gboolean result;
-	result = __lambda67_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
+	result = __lambda68_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
 #line 247 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return result;
 #line 1225 "ClutterFiles.vala.c"
 }
 
 
-static gboolean __lambda68_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event) {
+static gboolean __lambda69_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossingEvent* event) {
 	gboolean result = FALSE;
 	ClutterActor* _tmp0_ = NULL;
 	ClutterColor _tmp1_ = {0};
@@ -1245,16 +1245,16 @@ static gboolean __lambda68_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterCrossi
 }
 
 
-static gboolean ___lambda68__clutter_actor_leave_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self) {
+static gboolean ___lambda69__clutter_actor_leave_event (ClutterActor* _sender, ClutterCrossingEvent* event, gpointer self) {
 	gboolean result;
-	result = __lambda68_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
+	result = __lambda69_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
 #line 251 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return result;
 #line 1254 "ClutterFiles.vala.c"
 }
 
 
-static gboolean __lambda69_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterButtonEvent* event) {
+static gboolean __lambda70_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterButtonEvent* event) {
 	gboolean result = FALSE;
 	Xcls_ClutterFiles* _tmp0_ = NULL;
 	JsRenderJsRender* _tmp1_ = NULL;
@@ -1274,9 +1274,9 @@ static gboolean __lambda69_ (Xcls_ClutterFilesXcls_fileitem* self, ClutterButton
 }
 
 
-static gboolean ___lambda69__clutter_actor_button_press_event (ClutterActor* _sender, ClutterButtonEvent* event, gpointer self) {
+static gboolean ___lambda70__clutter_actor_button_press_event (ClutterActor* _sender, ClutterButtonEvent* event, gpointer self) {
 	gboolean result;
-	result = __lambda69_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
+	result = __lambda70_ ((Xcls_ClutterFilesXcls_fileitem*) self, event);
 #line 255 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return result;
 #line 1283 "ClutterFiles.vala.c"
@@ -1442,15 +1442,15 @@ Xcls_ClutterFilesXcls_fileitem* xcls_clutterfiles_xcls_fileitem_construct (GType
 #line 247 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp29_ = self->el;
 #line 247 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	g_signal_connect_object (_tmp29_, "enter-event", (GCallback) ___lambda67__clutter_actor_enter_event, self, 0);
+	g_signal_connect_object (_tmp29_, "enter-event", (GCallback) ___lambda68__clutter_actor_enter_event, self, 0);
 #line 251 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp30_ = self->el;
 #line 251 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	g_signal_connect_object (_tmp30_, "leave-event", (GCallback) ___lambda68__clutter_actor_leave_event, self, 0);
+	g_signal_connect_object (_tmp30_, "leave-event", (GCallback) ___lambda69__clutter_actor_leave_event, self, 0);
 #line 255 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp31_ = self->el;
 #line 255 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	g_signal_connect_object (_tmp31_, "button-press-event", (GCallback) ___lambda69__clutter_actor_button_press_event, self, 0);
+	g_signal_connect_object (_tmp31_, "button-press-event", (GCallback) ___lambda70__clutter_actor_button_press_event, self, 0);
 #line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_3);
 #line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"

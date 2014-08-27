@@ -247,9 +247,9 @@ Xcls_WindowAddPropXcls_model* xcls_windowaddprop_xcls_model_construct (GType obj
 Xcls_WindowAddPropXcls_namecol* xcls_windowaddprop_xcls_namecol_new (Xcls_WindowAddProp* _owner);
 Xcls_WindowAddPropXcls_namecol* xcls_windowaddprop_xcls_namecol_construct (GType object_type, Xcls_WindowAddProp* _owner);
 static void _vala_PangoFontDescription_free (PangoFontDescription* self);
-static void __lambda65_ (Xcls_WindowAddPropXcls_TreeView2* self, GtkTreePath* path, GtkTreeViewColumn* column);
+static void __lambda66_ (Xcls_WindowAddPropXcls_TreeView2* self, GtkTreePath* path, GtkTreeViewColumn* column);
 gchar* xcls_windowaddprop_xcls_model_getValue (Xcls_WindowAddPropXcls_model* self, GtkTreeIter* iter, gint col);
-static void ___lambda65__gtk_tree_view_row_activated (GtkTreeView* _sender, GtkTreePath* path, GtkTreeViewColumn* column, gpointer self);
+static void ___lambda66__gtk_tree_view_row_activated (GtkTreeView* _sender, GtkTreePath* path, GtkTreeViewColumn* column, gpointer self);
 static void xcls_windowaddprop_xcls_treeview2_finalize (GObject* obj);
 #define XCLS_WINDOWADDPROP_XCLS_MODEL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWADDPROP_TYPE_XCLS_MODEL, Xcls_WindowAddPropXcls_modelPrivate))
 enum  {
@@ -641,7 +641,7 @@ static void _vala_PangoFontDescription_free (PangoFontDescription* self) {
 }
 
 
-static void __lambda65_ (Xcls_WindowAddPropXcls_TreeView2* self, GtkTreePath* path, GtkTreeViewColumn* column) {
+static void __lambda66_ (Xcls_WindowAddPropXcls_TreeView2* self, GtkTreePath* path, GtkTreeViewColumn* column) {
 	GtkTreeIter iter = {0};
 	Xcls_WindowAddPropXcls_model* m = NULL;
 	Xcls_WindowAddProp* _tmp0_ = NULL;
@@ -766,9 +766,9 @@ static void __lambda65_ (Xcls_WindowAddPropXcls_TreeView2* self, GtkTreePath* pa
 }
 
 
-static void ___lambda65__gtk_tree_view_row_activated (GtkTreeView* _sender, GtkTreePath* path, GtkTreeViewColumn* column, gpointer self) {
+static void ___lambda66__gtk_tree_view_row_activated (GtkTreeView* _sender, GtkTreePath* path, GtkTreeViewColumn* column, gpointer self) {
 #line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.vala"
-	__lambda65_ ((Xcls_WindowAddPropXcls_TreeView2*) self, path, column);
+	__lambda66_ ((Xcls_WindowAddPropXcls_TreeView2*) self, path, column);
 #line 773 "WindowAddProp.vala.c"
 }
 
@@ -882,7 +882,7 @@ Xcls_WindowAddPropXcls_TreeView2* xcls_windowaddprop_xcls_treeview2_construct (G
 #line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.vala"
 	_tmp18_ = self->el;
 #line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.vala"
-	g_signal_connect_object (_tmp18_, "row-activated", (GCallback) ___lambda65__gtk_tree_view_row_activated, self, 0);
+	g_signal_connect_object (_tmp18_, "row-activated", (GCallback) ___lambda66__gtk_tree_view_row_activated, self, 0);
 #line 98 "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.vala"
 	_g_object_unref0 (child_1);
 #line 98 "/home/alan/gitlive/app.Builder.js/Builder4/WindowAddProp.vala"
