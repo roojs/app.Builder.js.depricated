@@ -65,7 +65,9 @@ public class Xcls_DialogConfirm : Object
              this.el.title = title;
             this.el.text =  msg;
             this.el.show_all();
-            return  this.el.run();
+            var ret =   this.el.run();
+            this.el.hide();
+            return ret;
             
         
         }
