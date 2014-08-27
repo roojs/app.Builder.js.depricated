@@ -234,20 +234,29 @@ public class JsRender.NodeToVala : Object {
 
 	void addWrappedCtor()
 	{
-            // wrapped ctor..
-            // this may need to look up properties to fill in the arguments..
-            // introspection does not workk..... - as things like gtkmessagedialog
-            /*
-            if (cls == 'Gtk.Table') {
-                
-                var methods = this.palete.getPropertiesFor(cls, 'methods');
-                
-                print(JSON.stringify(this.palete.proplist[cls], null,4));
-                Seed.quit();
-            }
-            */
-            if (typeof(item['.ctor']) != 'undefined') {
-                strbuilder(ipad + "this.el = " + item['.ctor']+ ";\n" );
+		// wrapped ctor..
+		// this may need to look up properties to fill in the arguments..
+		// introspection does not workk..... - as things like gtkmessagedialog
+		/*
+		if (cls == 'Gtk.Table') {
+
+		var methods = this.palete.getPropertiesFor(cls, 'methods');
+
+		print(JSON.stringify(this.palete.proplist[cls], null,4));
+		Seed.quit();
+		}
+		*/
+		if (this.node.has("* ctor")) {
+			
+            
+        		this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
+			return;
+		}
+		// the ctor arguments...
+		
+
+		
+				;
             } else if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
                 for(var i =0;i< ctors[cls].length;i++) {
