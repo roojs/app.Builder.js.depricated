@@ -280,99 +280,121 @@ public class JsRender.NodeToVala : Object {
                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
 
             } else {
-                this.ret += this.ipad + "this.el = new " + thcls + "();\n" );
+                this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
 
             }
+	}
+
+	void addInitMyVars()
+	{
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
             
              
             
             // initialize.. my vars..
-            strbuilder("\n" + ipad + "// my vars\n");
-            for (var k in item) {
-                if (k[0] != '.') {
-                    continue;
-                }
-                if (k == '.ctor') {
-                    continue; 
-                }
+		this.str += "\n" + ipad + "// my vars\n";
+		var iter = this.node.props.map_iterator();
+		while(iter.next()) {
+    			var k = iter.get_key();
+			
+        		if (k[0] != '.') {
+            			continue;
+        		}
+			
                 
-                var kk = k.substring(1);
-                var v = item[k];
-                var vv = kk.split(':');
-                if (v.length < 1 || vv[0] == "signal") {
-                    continue;
-                }
-                strbuilder(ipad + "this." + vv[1] + " = " +   v +";\n");
+        		var kk = k.substring(2);
+        		var v = iter.get_value();
+        		var vv = kk.split(' ');
+        		if (v.length < 1 || vv[0] == "signal") {
+            			continue;
+        		}       
+        		this.ret += this.ipad + "this." + vv[1] + " = " +   v +";\n";
                 
-            }
-           
-           
+    		}
+	}
+	void addWrappedProperties()
+	{
+   		var pal = Roo.Palete.factory("Gtk");
             // what are the properties of this class???
-            strbuilder("\n" + ipad + "// set gobject values\n");
-            var props = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'props');
+  		this.ret += "\n" + this.ipad + "// set gobject values\n";
+
+		var props = pal.getPropertiesFor(this.node.fqn(), "props");
+		
             
             
             
-            props.forEach(function(p) {
+    		props.forEach(function(p) {
                
-                if (typeof(citems[p.name]) != 'undefined') {
-                    return;
-                }
-                     
-                if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
-                    citems[p.name] = true;
-                    
-                    var val = JSON.stringify(item[p.name]);
-                    if (['xalign','yalign'].indexOf(p.name) > -1) {
-                        val +='f';
-                    }
-                    strbuilder(ipad + "this.el." + p.name + " = " + val + ";\n");
-                    return;
-                }
-                if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
-                    citems['|' + p.name] = true;
-                    //if (p.ctor_only ) {
-                    //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
-                    //} else {
-                        strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
-                    //}
-                    return;
-                }
-               // got a property..
-               
-               
-            });
+		        if (typeof(citems[p.name]) != 'undefined') {
+		            return;
+		        }
+		             
+		        if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
+		            citems[p.name] = true;
+		            
+		            var val = JSON.stringify(item[p.name]);
+		            if (['xalign','yalign'].indexOf(p.name) > -1) {
+		                val +='f';
+		            }
+		            strbuilder(ipad + "this.el." + p.name + " = " + val + ";\n");
+		            return;
+		        }
+		        if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
+		            citems['|' + p.name] = true;
+		            //if (p.ctor_only ) {
+		            //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
+		            //} else {
+		                strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
+		            //}
+		            return;
+		        }
+		       // got a property..
+		       
+		       
+		    });
+	}
+
+	void addChildren()
+	{
                 //code
-            // add all the child items.. 
-            if (typeof(item.items) != 'undefined') {
-                for(var i =0;i<item.items.length;i++) {
-                    var ci = item.items[i];
-                    if (ci.xvala_id[0] == '*') {
-                        continue; // skip generation of children?
-                    }
+		if (this.node.items.size < 1) {
+			return;
+		}
+             
+    		var iter = this.node.items.list_iterator();
+		var i = -1;
+		while (iter.next()) {
+			i++;
+                
+            		var ci = iter.get_value();
+
+			if (ci.xvala_id[0] == '*') {
+                		continue; // skip generation of children?
+            		}
                     
-                    var xargs = "";
-                    if (typeof(ci['*args']) != 'undefined') {
+            		var xargs = "";
+            		if (ci.has("* args")) {
                         
-                        var ar = ci['*args'].split(',');
-                        for (var ari = 0 ; ari < ar.length; ari++ ) {
-                            xargs += "," + ar[ari].trim().split(" ").pop();
-                        }
-                    }
+                		var ar = ci.get("*args").split(',');
+                		for (var ari = 0 ; ari < ar.length; ari++ ) {
+                    			xargs += "," + ar[ari].trim().split(" ").pop();
+                		}
+            		}
                     
-                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "( _this " + xargs + ");\n" );
-                    strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
+            		this.ret+== this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
+					"( _this " + xargs + ");\n" );
+				    
+            		this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
                     
-                    if (typeof(ci['*prop']) != 'undefined') {
-                        strbuilder(ipad + "this.el." + ci['*prop'] + " = child_" + i + ".el;\n" );
-                        continue
-                    }
-                    
-                    if (ci.pack === false || ci.pack == "false") {
-                        continue;
-                    }
+	                if (ci.has("* prop"])) {
+                		this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
+                		continue
+            		}
+            	    
+            		if (!ci.has("pack") || ci.pack == "false") {
+                		continue;
+            		}
                     
                     var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     if (typeof(ci['|pack']) != 'undefined') {
