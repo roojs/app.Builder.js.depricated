@@ -326,7 +326,7 @@ namespace JsRender {
 			    
 			    
 			    this.html +="<"+ currentElement.tag_name + 
-					( attr.length ? (" "  + string.joinv(" ", attr )) : "") +
+					( attr.length > 0 ? (" "  + string.joinv(" ", attr )) : "") +
 					">";
 			} 
 			else {
@@ -339,7 +339,7 @@ namespace JsRender {
 		i = 0;
 		var currentElementChild = currentElement.child_nodes.item(i);
 		var allText = true;
-		while (currentElementChild) {
+		while (currentElementChild != null) {
 			// Formatting code (indent the tree so it looks nice on the screen)
 
 			if  (currentElementChild.node_name == "#text") {
