@@ -183,7 +183,7 @@ public class JsRender.NodeToVala : Object {
                 		continue; // skip generation of children?
                         
             		}
-	                this.ret += this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n");
+	                this.ret += this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n";
                                
                     
                 }
@@ -195,7 +195,7 @@ public class JsRender.NodeToVala : Object {
             
             // .vala props.. 
             
-    		string[] cargs = {}' 
+    		string[] cargs = {};
     		var cargs_str = "";
     		// ctor..
     		this.ret += "\n" + ipad + "// ctor \n";
