@@ -9,6 +9,7 @@
             "listeners": {
                 "show": "  ( ) => {\n    this.load();\n}"
             },
+            "|Project.Project?:getSelectedProject": "",
             ".bool:is_loaded": "false",
             ".bool:is_loading": "false",
             ".signal:void:project_selected": "(Project.Project project)",

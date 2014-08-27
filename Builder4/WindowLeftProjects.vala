@@ -64,6 +64,7 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
+    public Project.Project? getSelectedProject
     public void load() {
              // clear list...
             
