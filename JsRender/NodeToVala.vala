@@ -157,7 +157,7 @@ public class JsRender.NodeToVala : Object {
         		var kk = k.substring(1);
                 
 		        var vv = kk.split(" ");
-		        if (vv[0] == '@') {
+		        if (vv[0] == "@") {
 		            this.ret += this.pad + "public signal " + kk  + " "  + iter.get_value() + ";\n";
 		        } else {
 		        
