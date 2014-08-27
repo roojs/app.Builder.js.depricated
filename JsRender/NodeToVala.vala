@@ -150,9 +150,11 @@ public class JsRender.NodeToVala : Object {
 		        
 		            this.ret += this.pad + "public " + kk + ";\n";
 		        }
-		        citems[k] = true; 
+			this.skipProp.set(k, true);
+			
 		        
-		    }
+		}
+	}
             // if id of child is '+' then it's a property of this..
             
             if (typeof(item.items) != 'undefined') {
