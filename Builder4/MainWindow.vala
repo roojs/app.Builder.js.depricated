@@ -2633,7 +2633,7 @@ public class Xcls_MainWindow : Object
                 
                 _this.left_projects.is_loaded =  false;
                 _this.left_projects.load();
-            
+                _this.clutterfiles.clearFiles();
             
             } );
         }
