@@ -116,11 +116,11 @@ public class Xcls_EditProject : Object
                     return null;
             }
             if (_this.xtype.getValue().length < 1) {
-                StandardErrorDialog.show("You have to set Project type");             
+                StandardErrorDialog.singleton().show("You have to set Project type");             
                 return null;
             }
             if (_this.dir.el.get_filename().length < 1) {
-                StandardErrorDialog.show("You have to select a folder");             
+                StandardErrorDialog.singleton().show("You have to select a folder");             
                 return null;
             }
         
