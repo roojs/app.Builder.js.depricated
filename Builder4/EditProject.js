@@ -38,14 +38,7 @@ EditProject=new XObject({
                 this.el.hide();
                 return null;
         }
-        if (_this.xtype.getValue().length < 1) {
-            StandardErrorDialog.singleton().show("You have to set Project type");             
-            return null;
-        }
-        if (_this.dir.el.get_filename().length < 1) {
-            StandardErrorDialog.singleton().show("You have to select a folder");             
-            return null;
-        }
+       
      
         var fn = _this.dir.el.get_filename();
         
