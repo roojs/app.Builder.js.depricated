@@ -176,7 +176,7 @@ public class JsRender.NodeToVala : Object {
                 }
 	}
 
-	void addValaProps()
+	void addValaCtor()
 	{
             
             
@@ -188,17 +188,15 @@ public class JsRender.NodeToVala : Object {
     		this.ret += "\n" + ipad + "// ctor \n";
 		if (this.node.has("* args")) {
     		
-        		cargs_str = ", " + item['* args']
-        		var ar = item['*args'].split(",");
+        		cargs_str = ", " + this.node.get("* args");
+        		var ar = this.node.get("* args");.split(",");
         		for (var ari =0; ari < ar.length; ari++) {
-            	    cargs.push(ar[ari].trim().split(" ").pop());
+            			cargs +=  (ar[ari].trim().split(" ").pop();
+                       }
                 }
-                    
-            }
-            
-			if (!depth) {
-        		strbuilder(pad + "public " + xcls + "(" + cargs_str.substring(1) +")\n" + pad + "{\n");
-			} else {
+    		if (this.depth < 1) {
+        		this.pad + "public " + this.xcls + "(" + cargs_str.substring(1) +")\n" + this.pad + "{\n";
+		} else {
                 
                     //code 
                 
