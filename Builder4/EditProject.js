@@ -14,43 +14,14 @@ EditProject=new XObject({
     listeners : {
         destroy_event : (self, event) => {
              this.el.hide();
-                        return false;
-        },
-        response : (self, id) => {
-             if (id < 1) {
-                    this.el.hide();
-                    return;
-            }
-            if (_this.xtype.getValue().length < 1) {
-                StandardErrorDialog.show("You have to set Project type");             
-                return;
-            }
-            if (_this.dir.el.get_filename().length < 1) {
-                StandardErrorDialog.show("You have to select a folder");             
-                return;
-            }
-        
-            this.el.hide();
-            
-            
-            var fn = _this.dir.el.get_filename();
-            
-            var project = Project.Project.factory(_this.xtype.getValue(), fn);
-            
-            
-            //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
-            
-            this.success(project);
-        
+            return false;
         }
     },
     border_width : 3,
     default_height : 500,
     default_width : 600,
     title : "Project Properties",
-    deletable : true,
-    modal : true,
-    'void:show' : () {
+    'Project.Project?:show' : () {
           
     
         //[ 'xtype'  ].forEach(function(k) {
@@ -87,6 +58,8 @@ EditProject=new XObject({
         
         //this.success = c.success;
     },
+    deletable : true,
+    modal : true,
     items : [
         {
             xtype: Gtk.VBox,

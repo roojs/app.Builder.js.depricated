@@ -67,39 +67,12 @@ public class Xcls_EditProject : Object
         // listeners 
         this.el.destroy_event.connect(  (self, event) => {
              this.el.hide();
-                        return false;
-        } );
-        this.el.response.connect(   (self, id) => {
-             if (id < 1) {
-                    this.el.hide();
-                    return;
-            }
-            if (_this.xtype.getValue().length < 1) {
-                StandardErrorDialog.show("You have to set Project type");             
-                return;
-            }
-            if (_this.dir.el.get_filename().length < 1) {
-                StandardErrorDialog.show("You have to select a folder");             
-                return;
-            }
-        
-            this.el.hide();
-            
-            
-            var fn = _this.dir.el.get_filename();
-            
-            var project = Project.Project.factory(_this.xtype.getValue(), fn);
-            
-            
-            //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
-            
-            this.success(project);
-        
+            return false;
         } );
     }
 
     // userdefined functions 
-    public void show() {
+    public Project.Project? show() {
               
         
             //[ 'xtype'  ].forEach(function(k) {
