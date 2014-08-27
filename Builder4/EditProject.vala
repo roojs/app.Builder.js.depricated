@@ -153,7 +153,7 @@ public class Xcls_EditProject : Object
         public Xcls_HBox3(Xcls_EditProject _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox( false, 0 );
 
             // my vars
 

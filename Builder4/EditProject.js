@@ -69,6 +69,7 @@ EditProject=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
+                    homogeneous : false,
                     pack : "pack_start,false,true,3",
                     items : [
                         {
