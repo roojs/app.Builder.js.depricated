@@ -14,7 +14,7 @@
             "title": "Please Confirm d",
             "xtype": "MessageDialog",
             "|buttons": "Gtk.ButtonsType.YES_NO",
-            "|int:show": "  (string title, string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n     this.el.title = title;\n    this.el.text =  msg;\n    this.el.show_all();\n    var ret =   this.el.run();\n    this.el.hide();\n    return ret;\n    \n\n}\n \n\n\n\n",
+            "|int:show": "  (string title, string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n     this.el.title = title;\n    this.el.text =  msg;\n    this.el.show_all();\n    var ret =   this.el.run();\n    print(\"ret got %d\", ret);\n    this.el.hide();\n    return ret;\n    \n\n}\n \n\n\n\n",
             "|message_type": "Gtk.MessageType.QUESTION",
             "|modal": "true",
             "|use_markup": "true",
