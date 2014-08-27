@@ -44,9 +44,15 @@ public class JsRender.NodeToVala : Object {
 		//return this.mungeToString(this.node);
 
 		this.globalVars();
-
-
-
+		this.classHeader();
+		this.addSingleton();
+		this.addTopProperties();
+		this.addMyVars();
+		this.addPlusProperties();
+		this.addValaCtor();
+		this.addUnderThis();
+		this.addWrappedCtor();
+		
 		return this.ret;
 		var spad = pad.substring(0, this.pad.length-4);
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
