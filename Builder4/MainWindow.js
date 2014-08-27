@@ -1515,6 +1515,7 @@ MainWindow=new XObject({
                                                                     listeners : {
                                                                         clicked : ( ) => {
                                                                             if (_this.project == null) {
+                                                                                print("SKIP - no project\n");
                                                                                 return;
                                                                             }
                                                                             // confirm?

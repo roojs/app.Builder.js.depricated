@@ -2627,6 +2627,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect(   ( ) => {
                 if (_this.project == null) {
+                    print("SKIP - no project\n");
                     return;
                 }
                 // confirm?
