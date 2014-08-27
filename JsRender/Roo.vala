@@ -279,7 +279,7 @@ namespace JsRender {
         }
          
         
-        traverseDOMTree : function(WebKit.DOMHTMLElement currentElement, int depth) 
+        public void traverseDOMTree(WebKit.DOMHTMLElement currentElement, int depth) 
 	{
 		if (currentElement == null) {
 			return;
