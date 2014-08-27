@@ -82,7 +82,7 @@
                         "clicked": " () => {\n \n  if (_this.xtype.getValue().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to set Project type\");             \n        return;\n    }\n    if (_this.dir.el.get_filename().length < 1) {\n        StandardErrorDialog.singleton().show(\"You have to select a folder\");             \n        return;\n    }\n    _this.dialog.el.response(1);\n   \n}"
                     },
                     "label": "OK",
-                    "pack": "add_action_widget,1",
+                    "pack": "add_action_widget,-1",
                     "xtype": "Button",
                     "|xns": "Gtk"
                 },
