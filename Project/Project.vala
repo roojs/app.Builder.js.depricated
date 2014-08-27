@@ -168,6 +168,18 @@ namespace Project {
 		
 		public static Project factory(string xtype, string path)
 		{
+
+			// check to see if it's already loaded..
+
+			 
+	 		var iter = projects.map_iterator();
+			while (iter.next()) {
+				if (iter.get_value().path == path) {
+					return iter.get_value();
+				 }
+			}
+
+
 			switch(xtype) {
 				case "Gtk":
 					return new Gtk(path);
