@@ -20,7 +20,7 @@ public class JsRender.NodeToVala : Object {
 	string cls;
 	string xcls;
 	
-	
+	string ret;
 
 	
 	public NodeToVala( Node node,  int depth) 
@@ -36,8 +36,33 @@ public class JsRender.NodeToVala : Object {
 	}
 	
 	
+	public string munge ( )
+	{
+		//return this.mungeToString(this.node);
 
+		this.globalVars();
+		this.readProps();
+		this.readArrayProps();
+		this.readListeners();
+		this.iterChildren();
+		
+		if (this.els.size < 1) {
+			return "";
+		}
+		// oprops...	
+			
+		var spad = pad.substring(0, this.pad.length-4);
+		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
+		//print ("STR PROPS: " + str_props);
+		
+		return   "{\n" +
+			this.pad  + str_props + 
+			"\n" + spad +  "}";
+		     
+	} 
+	
 
+	public munge()
 
 
  toValaItem : function(item, depth, strbuilder)
