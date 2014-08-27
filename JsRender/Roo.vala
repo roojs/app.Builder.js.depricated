@@ -218,6 +218,7 @@ namespace JsRender {
     		GLib.Timeout.add_seconds (1, () => {
 			this.saveHTML();
 			print(this.html);
+			return false;
 
 		});
             //var top = this.guessName(this.items[0]);
