@@ -174,7 +174,7 @@ namespace Project {
 			 
 	 		var iter = projects.map_iterator();
 			while (iter.next()) {
-				if (iter.get_value().path == path) {
+				if (iter.get_value().hasPath( path)) {
 					return iter.get_value();
 				 }
 			}
