@@ -312,7 +312,7 @@ namespace JsRender {
 			if (tagName.length > 0) {
 				string[] attr = {};
 
-				for(var i = 0; i < currentElement.attributes.length;i++) {
+				for(i = 0; i < currentElement.attributes.length;i++) {
 					var aname = currentElement.attributes.item(i).name;
 					if (aname=="id") {
 					    aname= "xbuilderid";
