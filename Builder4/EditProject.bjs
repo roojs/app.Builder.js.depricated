@@ -78,13 +78,13 @@
                     ]
                 },
                 {
+                    "listeners": {
+                        "clicked": " () => {\n \n \n   return true;\n}"
+                    },
                     "label": "OK",
                     "pack": "add_action_widget,1",
                     "xtype": "Button",
-                    "|xns": "Gtk",
-                    "listeners": {
-                        "clicked": "function (self) {\n\n}"
-                    }
+                    "|xns": "Gtk"
                 },
                 {
                     "|xns": "Gtk",

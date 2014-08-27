@@ -353,8 +353,10 @@ public class Xcls_EditProject : Object
             this.el.label = "OK";
 
             // listeners 
-            this.el.clicked.connect( function (self) {
-            
+            this.el.clicked.connect(  () => {
+             
+             
+               return true;
             } );
         }
 
