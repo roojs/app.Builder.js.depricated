@@ -457,46 +457,34 @@ public class JsRender.NodeToVala : Object {
 	void addUserMethods()
 	{
             
-  	      this.ret+= "\n" + pad + "// userdefined functions \n";  
+  		this.ret+= "\n" + pad + "// userdefined functions \n";  
             
-            // user defined functions...
-            
-            for (var k in item) {
-                if (typeof(citems[k]) != 'undefined') {
-                    //strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
-                    continue;
-                }
-                if (k[0] != '|') {
-                     //strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
-                    continue;
-                }
-                // function in the format of {type} (args) { .... }
+    		// user defined functions...
+   		var iter = this.node.props.map_iterator();
+		while(iter.next()) {
+    			var k = iter.get_key();
+			if (this.shouldIgnore(k)) {
+				continue;
+			}
+			// HOW TO DETERIME if its a method?            
+        		if (k[0] != '|') {
+             			//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
+            			continue;
+			}       
+        		// function in the format of {type} (args) { .... }
                  
-                var vv = item[k];
-                //print(JSON.stringify(vv));Seed.quit();
-                vv = vv.replace(/^\n+/,'');
-                vv = vv.replace(/\n+$/,'');
-                vv = vv.replace(/\n/g,"\n" + ipad);
-                
-                var vva = k.split(':');
-                if (vva.length  < 2) {
-                    strbuilder("\n" + pad + "// skip " + k + " - no return type\n"); 
-                    continue;
-                }
-                var rtype = vva.shift().substring(1);
-                var body = vv;
-                var fname = vva.shift() || '???';
-                
-                strbuilder(pad + "public " + rtype + " " + fname + body + "\n");
-                
-                
+        		var vv = iter.get_value();
+        		this.ret += this.pad + "public " + k + " " + this.padMultiline(this.ipad, vv) + "\n";
+			
                 
             }
+	}
+
+	void iterChildren()
+	{
             
-            
-            
-            if (depth > 0) {
-                strbuilder(inpad + "}\n");
+            if (this.depth > 0) {
+                this.ret+= thisinpad + "}\n";
             }
             
             
