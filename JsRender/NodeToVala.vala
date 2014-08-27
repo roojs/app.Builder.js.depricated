@@ -57,13 +57,7 @@ public class JsRender.NodeToVala : Object {
 		this.addWrappedCtor();
 		
 		return this.ret;
-		var spad = pad.substring(0, this.pad.length-4);
-		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
-		//print ("STR PROPS: " + str_props);
-		
-		return   "{\n" +
-			this.pad  + str_props + 
-			"\n" + spad +  "}";
+		 
 		     
 	} 
 	public string mungeChild(  Node cnode)
