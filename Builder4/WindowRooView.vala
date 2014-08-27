@@ -280,7 +280,9 @@ public class Xcls_WindowRooView : Object
             // listeners 
             this.el.clicked.connect(  () => {
               _this.view.redraws = 99;
+                this.el.web_context.clear_cache();  
               _this.view.renderJS(true);
+            
             } );
         }
 

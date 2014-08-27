@@ -132,7 +132,9 @@ WindowRooView=new XObject({
                             listeners : {
                                 clicked : () => {
                                   _this.view.redraws = 99;
+                                    this.el.web_context.clear_cache();  
                                   _this.view.renderJS(true);
+                                
                                 }
                             },
                             label : "Full Redraw",
