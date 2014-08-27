@@ -53,6 +53,7 @@ namespace Project {
 			if (path.length > 0) {
 				this.paths.set(path, "dir");
 			}
+			
 		    
 		    
 		}
@@ -189,7 +190,16 @@ namespace Project {
 			throw new Error.INVALID_TYPE("invalid project type");
 				
 		}
-		 
+		 public static void  remove(Project project)
+		{
+			// delete the file..
+			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+    			 
+			FileUtils.unlink(dirname + "/" + project.fn + ".json");
+			projects.unset(project.name);
+			
+
+		}
 		/*
 		public load
 		 
