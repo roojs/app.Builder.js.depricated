@@ -17,12 +17,10 @@ DialogConfirm=new XObject({
             return true;
         }
     },
+    name : "DialogConfirm",
     text : "Tests",
     title : "Please Confirm d",
     buttons : Gtk.ButtonsType.YES_NO,
-    message_type : Gtk.MessageType.QUESTION,
-    modal : true,
-    use_markup : true,
     'int:show' : (string title, string msg) {
          //if (!this.el) { this.init(); } 
          //this.success = success;
@@ -32,7 +30,10 @@ DialogConfirm=new XObject({
         return  this.el.run();
         
     
-    }
+    },
+    message_type : Gtk.MessageType.QUESTION,
+    modal : true,
+    use_markup : true
 });
 DialogConfirm.init();
 XObject.cache['/DialogConfirm'] = DialogConfirm;

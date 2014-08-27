@@ -42,6 +42,7 @@ public class Xcls_DialogConfirm : Object
 
         // set gobject values
         this.el.modal = true;
+        this.el.name = "DialogConfirm";
         this.el.title = "Please Confirm d";
         this.el.use_markup = true;
 
