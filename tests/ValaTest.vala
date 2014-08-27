@@ -10,6 +10,12 @@ int main (string[] args) {
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
+	var p = Project.getProject("BuilderTest");
+
+	// loop through and create vala files..
+	
+	
+	
 /*
 	var p = Palete.factory("Roo");
 	var cl = p.getClass("Roo.form.Form").toJSON();;
