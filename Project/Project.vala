@@ -43,16 +43,16 @@ namespace Project {
 		
 		public Project (string path) {
 		    
-		    this.name = GLib.Path.get_basename(path); // default..
-		    
-		    this.is_scanned = false;
-		    this.paths = new Gee.HashMap<string,string>();
-		    this.files = new Gee.HashMap<string,JsRender.JsRender>();
-		    //XObject.extend(this, cfg);
-		    //this.files = { }; 
-		    if (path.length > 0) {
+			this.name = GLib.Path.get_basename(path); // default..
+
+			this.is_scanned = false;
+			this.paths = new Gee.HashMap<string,string>();
+			this.files = new Gee.HashMap<string,JsRender.JsRender>();
+			//XObject.extend(this, cfg);
+			//this.files = { }; 
+			if (path.length > 0) {
 				this.paths.set(path, "dir");
-		    }
+			}
 		    
 		    
 		}
