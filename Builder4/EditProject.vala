@@ -351,6 +351,11 @@ public class Xcls_EditProject : Object
 
             // set gobject values
             this.el.label = "OK";
+
+            // listeners 
+            this.el.clicked.connect( function (self) {
+            
+            } );
         }
 
         // userdefined functions 

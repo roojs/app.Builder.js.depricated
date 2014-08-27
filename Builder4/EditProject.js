@@ -152,8 +152,13 @@ EditProject=new XObject({
         },
         {
             xtype: Gtk.Button,
+            label : "OK",
             pack : "add_action_widget,1",
-            label : "OK"
+            listeners : {
+                clicked : function (self) {
+                
+                }
+            }
         },
         {
             xtype: Gtk.Button,
