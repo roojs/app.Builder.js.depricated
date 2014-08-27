@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "destroy_event": " (self, event) => {\n     this.el.hide();\n    return false;\n}"
+                "destroy_event": " (self, event) => {\n  _this.dialog.el.response(0);\n//     this.el.hide();\n    return false;\n}"
             },
             ".signal:void:success(Project.Project project)": "",
             "border_width": 3,
