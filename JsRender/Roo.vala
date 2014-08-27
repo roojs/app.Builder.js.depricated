@@ -1,5 +1,5 @@
 
-extern  WebKitWebExtension get_webkit_extension();
+extern  WebKit.WebExtension get_webkit_extension();
 
 namespace JsRender {
 
