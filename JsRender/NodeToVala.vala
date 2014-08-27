@@ -105,11 +105,11 @@ public class JsRender.NodeToVala : Object {
 	    }
             this.ret += pad + "public static " + xcls + " singleton()\n" + 
     			this.pad + "{\n" +
-        		this.ipad + "if (" + ??this.name + " == null) {\n" +
-        		this.ipad + "    " + ??this.name + "= new "+ this.xcls + "();\n" + // what about args?
+        		//this.ipad + "if (" + ??this.name + " == null) {\n" +
+        		//this.ipad + "    " + ??this.name + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
-			this.ipad + "return " + ??this.name +";\n" + 
-        		this.pad + "}\n"
+			//this.ipad + "return " + ??this.name +";\n" + 
+        		this.pad + "}\n";
 	}
             
 
