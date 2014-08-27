@@ -313,6 +313,19 @@ namespace Project {
 		  
 		    return "";
 		}
+
+		public bool hasPath(string path)
+		{
+		    var iter = this.paths.map_iterator();
+		    while (iter.next()) {
+		        if (iter.get_key() == path)) {
+				return true;
+			}
+		    }
+		  
+		    return false;
+		}
+
 		
 		// returns the first path
 		public string getName()
