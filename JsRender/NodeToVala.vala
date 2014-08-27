@@ -334,7 +334,7 @@ public class JsRender.NodeToVala : Object {
 		        }
 		             
 		        if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
-		            citems[p.name] = true;
+		            this.ignore(p.name);
 		            
 		            var val = JSON.stringify(item[p.name]);
 		            if (['xalign','yalign'].indexOf(p.name) > -1) {
