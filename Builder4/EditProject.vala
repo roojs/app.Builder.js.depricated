@@ -123,10 +123,7 @@ public class Xcls_EditProject : Object
                 StandardErrorDialog.singleton().show("You have to select a folder");             
                 return null;
             }
-        
-            this.el.hide();
-            
-            
+         
             var fn = _this.dir.el.get_filename();
             
             var project = Project.Project.factory(_this.xtype.getValue(), fn);
