@@ -79,8 +79,8 @@ public class JsRender.NodeToVala : Object {
 	    this.ret +=  this.pad + "public " + this.cls + " el;\n");
 
               
-            strbuilder(pad + "private " + this.top_xcls + "  _this;\n\n");
-            //}
+            this.ret + = pad + "private " + this.top.xcls + "  _this;\n\n");
+            
             
             
             // singleton
