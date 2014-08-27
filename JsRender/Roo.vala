@@ -279,7 +279,7 @@ namespace JsRender {
         }
          
         
-        public void traverseDOMTree(WebKit.DOMHTMLElement currentElement, int depth) 
+        public void traverseDOMTree(WebKit.DOM.HTMLElement currentElement, int depth) 
 	{
 		if (currentElement == null) {
 			return;
@@ -290,7 +290,7 @@ namespace JsRender {
 		}
 
 		//Roo.log(currentElement);
-		var j;
+		var j =0;
 		var nodeName = currentElement.node_name;
 		var tagName = currentElement.tag_name;
 
