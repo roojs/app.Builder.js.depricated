@@ -344,6 +344,7 @@ namespace JsRender {
 		    
 		}
 		public abstract void save();
+		public abstract void saveHTML(string html);
 		public abstract string toSource() ;
 		public abstract string toSourcePreview() ;
 		public abstract string toValaSource(bool testcompile) ;
