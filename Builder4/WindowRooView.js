@@ -173,6 +173,9 @@ WindowRooView=new XObject({
                                 },
                                 show : ( ) => {
                                     this.inspector.show();
+                                },
+                                resource_request_starting : function (self, web_frame, web_resource, request, response) {
+                                
                                 }
                             },
                             id : "view",
