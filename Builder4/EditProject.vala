@@ -97,6 +97,7 @@ public class Xcls_EditProject : Object
                         continue;
                     }
                     if (_this.dir.el.get_filename().length < 1) {
+                        StandardErrorDialog.singleton().
                         StandardErrorDialog.singleton().show("You have to select a folder");             
                         id = -1;
                         continue;
