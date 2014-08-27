@@ -19,6 +19,7 @@
             "|deletable": "true",
             "|modal": "true",
             "|xns": "Gtk",
+            "name": "",
             "items": [
                 {
                     "xtype": "VBox",

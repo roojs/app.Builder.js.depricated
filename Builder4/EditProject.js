@@ -60,6 +60,7 @@ EditProject=new XObject({
     },
     deletable : true,
     modal : true,
+    name : "",
     items : [
         {
             xtype: Gtk.VBox,
