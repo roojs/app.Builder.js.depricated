@@ -51,7 +51,7 @@
                                 },
                                 {
                                     "listeners": {
-                                        "clicked": " () => {\n  _this.view.redraws = 99;\n    this.el.web_context.clear_cache();  \n  _this.view.renderJS(true);\n\n}"
+                                        "clicked": " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  _this.view.renderJS(true);\n\n}"
                                     },
                                     "label": "Full Redraw",
                                     "pack": "pack_start,false,false,0",
