@@ -1527,7 +1527,7 @@ MainWindow=new XObject({
                                                                             }
                                                                             
                                                                                 
-                                                                             if (Gtk.ResponseType.OK != cd.show("Confirm", 
+                                                                             if (Gtk.ResponseType.YES != cd.show("Confirm", 
                                                                                 "Are you sure you want to delete project %s".printf(project.name))) {
                                                                                 return;
                                                                             }
