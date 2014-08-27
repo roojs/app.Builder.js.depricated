@@ -66,9 +66,9 @@ public class JsRender.NodeToVala : Object {
 			"\n" + spad +  "}";
 		     
 	} 
-	public string mungeChild(string pad ,  Node cnode)
+	public string mungeChild(  Node cnode)
 	{
-		var x = new  NodeToVala(cnode,  pad, this.top);
+		var x = new  NodeToVala(cnode,  this.pad, this.top);
 		return x.munge();
 	}
 
