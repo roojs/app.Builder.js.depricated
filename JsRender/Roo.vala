@@ -235,6 +235,17 @@ namespace JsRender {
     		}
     		print("SAVE HTML -- ");
     		//print(frame);
+// now write the js file..
+		string js;
+		try {
+			Regex regex = new Regex("\\.(bjs|js)$");
+
+			js = regex.replace(this.path,this.path.length , 0 , ".html");
+		} catch (RegexError e) {
+			this.name = "???";
+			print("count not make filename from path");
+			return;
+		}
 
 
 
