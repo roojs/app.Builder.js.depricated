@@ -20,7 +20,7 @@ namespace Project {
 
 	// static array of all projects.
 	public Gee.HashMap<string,Project>  projects;
-    public bool  projects_loaded = false;
+	public bool  projects_loaded = false;
 
 	
 	public class Project : Object {

@@ -50,7 +50,7 @@ EditProject=new XObject({
         var fn = _this.dir.el.get_filename();
         
         var project = Project.Project.factory(_this.xtype.getValue(), fn);
-        
+        project.save();
         Project.projects.set(project.name,project);
         
         //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
