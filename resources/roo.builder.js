@@ -19,10 +19,10 @@ Builder  = {
   
         saveHTML :  function( ) 
 	{
-            print("TRAVERSE DOM?");
+            //print("TRAVERSE DOM?");
             
             var dom = document.body;
-            print(dom);
+            //print(dom);
             var ret = '';
             //Roo.select('body > div',true).each(function(el) {
             this.traverseDOMTree(function(s) { ret+=s; }, dom, 1);
