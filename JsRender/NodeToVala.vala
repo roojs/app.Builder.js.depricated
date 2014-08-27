@@ -451,8 +451,8 @@ public class JsRender.NodeToVala : Object {
             
             
             
-            // end ctor..
-            this.ret+= this.pad + "}\n";
+    		// end ctor..
+    		this.ret+= this.pad + "}\n";
 	}
 	void addUserMethods()
 	{
