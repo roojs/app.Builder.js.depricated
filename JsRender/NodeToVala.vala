@@ -92,7 +92,7 @@ public class JsRender.NodeToVala : Object {
 	    this.ret +=  this.pad + "public " + this.cls + " el;\n";
 
               
-            this.ret + = this.pad + "private " + this.top.xcls + "  _this;\n\n";
+            this.ret += this.pad + "private " + this.top.xcls + "  _this;\n\n";
             
             
             
@@ -105,7 +105,7 @@ public class JsRender.NodeToVala : Object {
 	    }
             this.ret += pad + "public static " + xcls + " singleton()\n" + 
     			this.pad + "{\n" +
-        		this.ipad + "if (" + ??this.name + " == null) {\n";
+        		this.ipad + "if (" + ??this.name + " == null) {\n" +
         		this.ipad + "    " + ??this.name + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
 			this.ipad + "return " + ??this.name +";\n" + 
