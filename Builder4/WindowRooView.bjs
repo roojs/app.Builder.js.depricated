@@ -70,8 +70,7 @@
                                 {
                                     "listeners": {
                                         "drag_drop": "  ( ctx, x, y,time, ud) => {\n    return false;\n    /*\n\tprint(\"TARGET: drag-drop\");\n        var is_valid_drop_site = true;\n        \n         \n        Gtk.drag_get_data\n        (\n                w,         // will receive 'drag-data-received' signal \n                ctx,        /* represents the current state of the DnD \n                this.get('/Window').atoms[\"STRING\"],    /* the target type we want \n                time            /* time stamp \n        );\n                        \n                        \n                        /* No target offered by source => error \n                       \n\n\treturn  is_valid_drop_site;\n\t*/\n}",
-                                        "show": "  ( ) => {\n    this.inspector.show();\n}",
-                                        "resource_request_starting": "(resource, req) => {\n    print(\"got load start\");\n\n}"
+                                        "show": "  ( ) => {\n    this.inspector.show();\n}"
                                     },
                                     ".GLib.DateTime:lastRedraw": "null",
                                     ".WebKit.WebInspector:inspector": "",
