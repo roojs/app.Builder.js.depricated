@@ -550,8 +550,16 @@ public class JsRender.NodeToVala : Object {
             
         }
 
-  
-	
+	string padMultiline(string pad, string str)
+	{
+		return str;
+	}
+	void ignore(string i) {
+	}
+	bool shouldIgnore(string i)
+	{
+		return true;
+	}
 	
 
 }
