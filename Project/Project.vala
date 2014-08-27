@@ -43,7 +43,7 @@ namespace Project {
 		
 		public Project (string path) {
 		    
-		    //this.name = name;
+		    this.name = GLib.get_basename(path); // default..
 		    
 		    this.is_scanned = false;
 		    this.paths = new Gee.HashMap<string,string>();
