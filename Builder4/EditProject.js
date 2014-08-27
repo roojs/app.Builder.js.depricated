@@ -51,6 +51,7 @@ EditProject=new XObject({
         
         var project = Project.Project.factory(_this.xtype.getValue(), fn);
         
+        Project.projects.set(project.name,project);
         
         //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
         
