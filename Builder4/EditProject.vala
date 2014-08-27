@@ -35,7 +35,6 @@ public class Xcls_EditProject : Object
     public Xcls_dir dir;
 
         // my vars
-    public signal void success(Project.Project project);
 
         // ctor 
     public Xcls_EditProject()
