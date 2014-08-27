@@ -331,7 +331,7 @@ public class JsRender.NodeToVala : Object {
 		var props = pal.getPropertiesFor(this.node.fqn(), "props");
 		
             
-            
+            /*
             
     		props.forEach(function(p) {
                
@@ -362,6 +362,7 @@ public class JsRender.NodeToVala : Object {
 		       
 		       
 		    });
+	    */
 	}
 
 	void addChildren()
