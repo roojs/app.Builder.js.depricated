@@ -213,12 +213,7 @@ namespace JsRender {
 			print("Save failed\n");
 		}
 		// for bootstrap - we can write the HTML to the templates directory..
-    		GLib.Timeout.add_seconds (1, () => {
-			this.saveHTML();
-			print(this.html);
-			return false;
-
-		});
+    		 
             //var top = this.guessName(this.items[0]);
             //print ("TOP = " + top)
              
