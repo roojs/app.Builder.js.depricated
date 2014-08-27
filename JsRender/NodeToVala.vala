@@ -79,14 +79,18 @@ public class JsRender.NodeToVala : Object {
 	    this.ret +=  this.pad + "public " + this.cls + " el;\n");
 
               
-            this.ret + = pad + "private " + this.top.xcls + "  _this;\n\n");
+            this.ret + = this.pad + "private " + this.top.xcls + "  _this;\n\n");
             
             
             
             // singleton
-            
-            if (!depth) {
-                strbuilder(pad + "public static " + xcls + " singleton()\n");
+	}
+	void addSingleton() 
+	{
+            if (depth > 0) {
+		    return;
+	    }
+             this.ret += pad + "public static " + xcls + " singleton()\n");
                 strbuilder(pad + "{\n");
                 strbuilder(ipad + "if (" + this.name + " == null) {\n");
                 strbuilder(ipad + "    " + this.name + "= new "+ xcls + "();\n"); // what about args?
