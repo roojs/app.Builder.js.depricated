@@ -111,20 +111,21 @@ public class JsRender.NodeToVala : Object {
 		while(iter.next()) {
 			var n = iter.get_value();
 			
-                    if (n.xvala_id.length < 0) {
-                        continue;
+            		if (n.xvala_id.length < 0) {
+                		continue;
                         
-                    }
-                    if (this.vitems[i].xvala_id[0] == '*') {
-                        continue;
-                    }
-                    if (this.vitems[i].xvala_id[0] == '+') {
-                        continue;
-                    }
-                    strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id + ";\n");
+            		}
+            		if (n.xvala_id[0] == '*') {
+                		continue;
+            		}
+            		if (n.xvala_id[0] == '+') {
+                		continue;
+            		}
+             		this.ret += this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";\n";
                 }
                 
             }
+	}
             
             strbuilder("\n" + ipad + "// my vars\n");
             
