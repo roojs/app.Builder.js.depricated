@@ -163,6 +163,7 @@ EditProject=new XObject({
                 },
                 {
                     xtype: Gtk.FileChooserWidget,
+                    create_folders : false,
                     id : "dir",
                     pack : "pack_end,true,true,5",
                     action : Gtk.FileChooserAction.SELECT_FOLDER,

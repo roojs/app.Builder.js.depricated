@@ -67,6 +67,7 @@
                             ]
                         },
                         {
+                            "|create_folders": "false",
                             "id": "dir",
                             "pack": "pack_end,true,true,5",
                             "xtype": "FileChooserWidget",

@@ -345,6 +345,7 @@ public class Xcls_EditProject : Object
             // my vars
 
             // set gobject values
+            this.el.create_folders = false;
             this.el.select_multiple = false;
         }
 
