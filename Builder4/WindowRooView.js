@@ -174,7 +174,8 @@ WindowRooView=new XObject({
                                 show : ( ) => {
                                     this.inspector.show();
                                 },
-                                resource_request_starting : function (self, web_frame, web_resource, request, response) {
+                                resource_request_starting : (resource, req) => {
+                                    print("got load start");
                                 
                                 }
                             },
