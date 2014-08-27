@@ -438,6 +438,9 @@ public class Xcls_WindowRooView : Object
             this.el.show.connect(   ( ) => {
                 this.inspector.show();
             } );
+            this.el.script_alert.connect( function (self, frame, message) {
+            
+            } );
         }
 
         // userdefined functions 
