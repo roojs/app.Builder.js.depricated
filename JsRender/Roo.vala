@@ -326,7 +326,7 @@ namespace JsRender {
 			    
 			    
 			    this.html +="<"+ currentElement.tag_name + 
-					( attr.length ? (' ' + string.joinv(" ", attr )) : '') +
+					( attr.length ? (" "  + string.joinv(" ", attr )) : "") +
 					">";
 			} 
 			else {
