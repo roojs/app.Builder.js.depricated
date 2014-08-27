@@ -43,6 +43,9 @@ public class JsRender.NodeToVala : Object {
 	{
 		//return this.mungeToString(this.node);
 
+		this.ignore("pack");
+		this.ignore("init");
+		
 		this.globalVars();
 		this.classHeader();
 		this.addSingleton();
@@ -423,13 +426,10 @@ public class JsRender.NodeToVala : Object {
     		this.ret+= "\n" + ipad + "// init method \n";
 		
     		this.ret+= this.padMultiline(ipad, this.node.get("init");
-		this.ignore("pack");
-		this.ignore("init");
-                                         
-            citems['|pack'] = true;
-            citems['|items'] = true;
-            citems['|init'] = true;
-            
+
+         }
+	 void addListeners()
+	 {
             if (item.listeners) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
             
