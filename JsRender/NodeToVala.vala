@@ -163,7 +163,7 @@ public class JsRender.NodeToVala : Object {
 		        
 		            this.ret += this.pad + "public " + kk + ";\n";
 		        }
-			this.skipProp.set(k, true);
+			this.ignore(k);
 			
 		        
 		}
