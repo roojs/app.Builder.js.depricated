@@ -164,10 +164,7 @@ namespace JsRender {
 		    }
 		}
 		 
-		public void   saveHTML ()
-		{
-		    // NOOP
-		}
+		 
 
 		public abstract void loadItems() throws GLib.Error;
 		
