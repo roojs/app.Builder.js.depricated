@@ -451,7 +451,7 @@ public class JsRender.NodeToVala : Object {
             
                 this.ret+= "\n" + ipad + "// listeners \n";
 
-		var iter = this.listeners.map_iterator();
+		var iter = this.node.listeners.map_iterator();
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
