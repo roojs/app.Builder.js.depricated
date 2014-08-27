@@ -188,7 +188,7 @@ WindowRooView=new XObject({
                                     }
                                     switch(ar[1]) {
                                         case "SAVEHTML":
-                                            print("save HTML %s", ar[2]);
+                                            _this.file.saveHTML(ar[2]);
                                             return true;
                                         default:
                                             return false;
