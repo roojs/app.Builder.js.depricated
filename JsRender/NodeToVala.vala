@@ -99,10 +99,11 @@ public class JsRender.NodeToVala : Object {
         		this.pad + "}\n"
 	}
             
-            // properties - global..??
-                
-                //public bool paused = false;
-                //public static StatusIconA statusicon;
+
+	void add
+
+	// properties - global..??
+            
             if (!depth) {
                 //strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
