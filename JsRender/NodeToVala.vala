@@ -92,7 +92,7 @@ public class JsRender.NodeToVala : Object {
 	    this.ret +=  this.pad + "public " + this.cls + " el;\n";
 
               
-            this.ret + = this.pad + "private " + this.top.xcls + "  _this;\n\n");
+            this.ret + = this.pad + "private " + this.top.xcls + "  _this;\n\n";
             
             
             
