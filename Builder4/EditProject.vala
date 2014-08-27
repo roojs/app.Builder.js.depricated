@@ -60,7 +60,7 @@ public class Xcls_EditProject : Object
  (  child_0.el  );
         var child_1 = new Xcls_Button9( _this );
         child_1.ref();
-        this.el.add_action_widget (  child_1.el , -1 );
+        this.el.add_action_widget (  child_1.el , 1 );
         var child_2 = new Xcls_Button10( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 0 );

@@ -167,7 +167,7 @@ EditProject=new XObject({
                 }
             },
             label : "OK",
-            pack : "add_action_widget,-1"
+            pack : "add_action_widget,1"
         },
         {
             xtype: Gtk.Button,
