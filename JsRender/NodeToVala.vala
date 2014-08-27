@@ -12,8 +12,7 @@
 public class JsRender.NodeToVala : Object {
 
 	 Node node;
-	Gee.ArrayList<string>  doubleStringProps;
-	string pad;
+	 
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
