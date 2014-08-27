@@ -392,7 +392,7 @@ public class JsRender.NodeToVala : Object {
                 		}
             		}
                     
-            		this.ret+== this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
+            		this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
 					"( _this " + xargs + ");\n" );
 				    
             		this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
