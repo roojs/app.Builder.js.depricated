@@ -48,6 +48,7 @@ public class Xcls_DialogConfirm : Object
 
         // listeners 
         this.el.delete_event.connect(  (event) => {
+            this.el.response(Gtk.ResponseType.CANCEL);
             this.el.hide();
             return true;
         }

@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "delete_event": " (event) => {\n    this.el.hide();\n    return true;\n}\n \n\n\n"
+                "delete_event": " (event) => {\n    this.el.response(Gtk.ResponseType.CANCEL);\n    this.el.hide();\n    return true;\n}\n \n\n\n"
             },
             "name": "DialogConfirm",
             "text": "Tests",

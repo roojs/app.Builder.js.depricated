@@ -13,6 +13,7 @@ DialogConfirm=new XObject({
     xtype: Gtk.MessageDialog,
     listeners : {
         delete_event : (event) => {
+            this.el.response(Gtk.ResponseType.CANCEL);
             this.el.hide();
             return true;
         }
