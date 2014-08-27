@@ -2629,7 +2629,7 @@ public class Xcls_MainWindow : Object
             this.el.clicked.connect(   ( ) => {
                  
                  var cd = Xcls_DialogConfirm.singleton();
-                 cd.el.set_transient_for(this.el);
+                 cd.el.set_transient_for(_this.el);
                 cd.el.set_modal(true);
             
                  var project =   _this.left_projects.getSelectedProject();
