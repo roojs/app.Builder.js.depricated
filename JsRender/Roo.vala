@@ -290,7 +290,7 @@ namespace JsRender {
 		}
 
 		//Roo.log(currentElement);
-		var j =0;
+		var i =0;
 		var nodeName = currentElement.node_name;
 		var tagName = currentElement.tag_name;
 
@@ -307,7 +307,7 @@ namespace JsRender {
 		}
 		if (nodeName != "BODY") {
 
-			var i = 0;
+			
 			// Prints the node tagName, such as <A>, <IMG>, etc
 			if (tagName.length > 0) {
 				string[] attr = {};
@@ -336,7 +336,7 @@ namespace JsRender {
 			tagName = "";
 		}
 		// Traverse the tree
-		var i = 0;
+		i = 0;
 		var currentElementChild = currentElement.child_nodes.item(i);
 		var allText = true;
 		while (currentElementChild) {
