@@ -11,7 +11,25 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	Project.Project.loadAll();
 	var p = Project.getProject("BuilderTest");
+	p.scanDirs();
+	var ar = p.sortedFiles();
+	for (
+public Gee.ArrayList<JsRender.JsRender> sortedFiles()
+		{
+			var files = new Gee.ArrayList<JsRender.JsRender>();
 
+			var fiter = this.files.map_iterator();
+			while(fiter.next()) {
+				files.add(fiter.get_value());
+			}
+		        files.sort((fa,fb) => {
+				return ((JsRender.JsRender)fa).name.collate(((JsRender.JsRender)fb).name);
+
+			});
+			return files;
+
+		}
+		
 	// loop through and create vala files..
 	
 	
