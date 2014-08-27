@@ -25,7 +25,7 @@ namespace JsRender {
 		public string permname;
 		public string modOrder;
 		public string xtype;
-		public int webkit_page_id;
+		public int webkit_page_id; // set by webkit view - used to extract extension/etc..
 		    
 		public Project.Project project;
 		//Project : false, // link to container project!
