@@ -22,6 +22,13 @@ public class Xcls_WindowLeftProjects : Object
     public Gtk.VBox el;
     private Xcls_WindowLeftProjects  _this;
 
+    public static Xcls_WindowLeftProjects singleton()
+    {
+        if (WindowLeftProjects == null) {
+            WindowLeftProjects= new Xcls_WindowLeftProjects();
+        }
+        return WindowLeftProjects;
+    }
     public Xcls_view view;
     public Xcls_model model;
     public Xcls_namecol namecol;
@@ -36,7 +43,6 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_WindowLeftProjects()
     {
         _this = this;
-        WindowLeftProjects = this;
         this.el = new Gtk.VBox( false, 0 );
 
         // my vars
@@ -104,15 +110,14 @@ public class Xcls_WindowLeftProjects : Object
                 }
                 sel.select_iter(iter);
                 this.project_selected(project);
-		found = true;
+                found = true;
                 return true;
                 
             
             });
-	    if (!found) {
-		    print("tried to select %s, could not find it", project.name);
-	    }
-            
+             if (!found) {
+        	    print("tried to select %s, could not find it", project.name);
+            }
         }
 
     // skip |xns - no return type

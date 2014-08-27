@@ -55,7 +55,7 @@ WindowLeftProjects=new XObject({
         
         sel.unselect_all();
         
-        
+        var found = false;
         _this.model.el.foreach((mod, path, iter) => {
             GLib.Value val;
         
@@ -65,11 +65,14 @@ WindowLeftProjects=new XObject({
             }
             sel.select_iter(iter);
             this.project_selected(project);
+            found = true;
             return true;
             
         
         });
-        
+         if (!found) {
+    	    print("tried to select %s, could not find it", project.name);
+        }
     },
     items : [
         {
