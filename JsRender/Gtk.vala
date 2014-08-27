@@ -148,7 +148,10 @@ namespace JsRender {
             this.saveJS();
             this.saveVala();
         }
-        
+	    // ignore these calls.
+        public override void saveHTML ( string html ) {}
+	    
+		    
         /** 
          *  saveJS
          * 
