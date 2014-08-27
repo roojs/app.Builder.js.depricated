@@ -135,14 +135,15 @@ public class JsRender.NodeToVala : Object {
 		var iter = node.props.map_iterator();
 		while (iter.next) {
     			var k = iter.get_key();
-                
-		        if (k[0] != '*') {
+
+			// what are "the private properties with type defs in the new format?
+		        if (k[0] != '????') {
 		            continue;
 		        }
 		        
         		var kk = k.substring(1);
                 
-		        var vv = kk.split(':');
+		        var vv = kk.split(" ");
 		        if (vv[0] == 'signal') {
 		            strbuilder(pad + "public " + vv[0] + " " + vv[1] + " " + vv[2] + item[k] + ";\n");
 		        } else {
