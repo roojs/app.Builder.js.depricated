@@ -377,7 +377,7 @@ public class JsRender.NodeToVala : Object {
 		while (iter.next()) {
 			i++;
                 
-            		var ci = iter.get_value();
+            		var ci = iter.get();
 
 			if (ci.xvala_id[0] == '*') {
                 		continue; // skip generation of children?
