@@ -11,11 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRightPalete=new XObject({
     xtype: Gtk.VBox,
+    id : "RightPalete",
+    pack : "pack_start,false,false",
     'void:clear' : () {
        this.model.el.clear();
     },
-    id : "RightPalete",
-    pack : "pack_start,false,false",
     'void:load' : (Palete.Palete pal, string cls ) {
        
        // this.get('model').expanded();
@@ -32,7 +32,7 @@ WindowRightPalete=new XObject({
             this.model.el.set_value(citer, 0,   tr[i] ); // title 
             
         }
-        
+        this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
         
     },
     items : [

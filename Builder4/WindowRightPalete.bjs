@@ -1,19 +1,19 @@
 {
-    "id": "file-gtk-18",
+    "id": "file-gtk-19",
     "name": "WindowRightPalete",
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.bjs",
     "items": [
         {
-            "|void:clear": "() {\n   this.model.el.clear();\n}",
             ".signal:void:after_node_change(JsRender.Node? node)": "",
             ".signal:void:before_node_change(JsRender.Node? node)": "",
             ".signal:void:drag_end()": "",
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
-            "|void:load": " (Palete.Palete pal, string cls ) {\n   \n   // this.get('model').expanded();\n    \n    var tr = pal.getChildList(cls);\n    this.model.el.clear();\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < tr.length; i++) {\n         this.model.el.append(out citer);   \n         \n        this.model.el.set_value(citer, 0,   tr[i] ); // title \n        \n    }\n    \n    \n} \n\n",
+            "|void:clear": "() {\n   this.model.el.clear();\n}",
+            "|void:load": " (Palete.Palete pal, string cls ) {\n   \n   // this.get('model').expanded();\n    \n    var tr = pal.getChildList(cls);\n    this.model.el.clear();\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < tr.length; i++) {\n         this.model.el.append(out citer);   \n         \n        this.model.el.set_value(citer, 0,   tr[i] ); // title \n        \n    }\n    this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n} \n\n",
             "|xns": "Gtk",
             "items": [
                 {

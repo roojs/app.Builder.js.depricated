@@ -22,6 +22,13 @@ public class Xcls_RightPalete : Object
     public Gtk.VBox el;
     private Xcls_RightPalete  _this;
 
+    public static Xcls_RightPalete singleton()
+    {
+        if (WindowRightPalete == null) {
+            WindowRightPalete= new Xcls_RightPalete();
+        }
+        return WindowRightPalete;
+    }
     public Xcls_viewbox viewbox;
     public Xcls_model model;
     public Xcls_txtrender txtrender;
@@ -35,7 +42,6 @@ public class Xcls_RightPalete : Object
     public Xcls_RightPalete()
     {
         _this = this;
-        WindowRightPalete = this;
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars
@@ -66,7 +72,7 @@ public class Xcls_RightPalete : Object
                 this.model.el.set_value(citer, 0,   tr[i] ); // title 
                 
             }
-            
+            this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
         } 
 
