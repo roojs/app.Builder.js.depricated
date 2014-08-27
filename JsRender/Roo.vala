@@ -225,8 +225,13 @@ namespace JsRender {
 
 	string html;
 
-	public void saveHTML (WebKit.WebPage web_frame) 
+	public void saveHTML (WebKit.WebView webview) 
 	{
+
+	 
+		webview.get_page_id ();
+
+
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
     		if (top != "Roo.bootstrap.Body") {
