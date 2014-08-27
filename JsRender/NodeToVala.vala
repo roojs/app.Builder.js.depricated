@@ -89,7 +89,7 @@ public class JsRender.NodeToVala : Object {
             // class header..
             // class xxx {   WrappedGtk  el; }
             this.ret += inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{\n";
-	    this.ret +=  this.pad + "public " + this.cls + " el;\n");
+	    this.ret +=  this.pad + "public " + this.cls + " el;\n";
 
               
             this.ret + = this.pad + "private " + this.top.xcls + "  _this;\n\n");
