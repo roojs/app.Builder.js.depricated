@@ -8,7 +8,7 @@ G_MODULE_EXPORT void
 webkit_web_extension_initialize (WebKitWebExtension *extension)
 {
 
-	print("extension initialized\n");
+	printf("extension initialized\n");
 	glob_extension = g_object_ref(extension);
 }
 
