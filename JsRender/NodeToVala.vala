@@ -155,6 +155,7 @@ public class JsRender.NodeToVala : Object {
 		        
 		}
 	}
+	
             // if id of child is '+' then it's a property of this..
             
             if (typeof(item.items) != 'undefined') {
