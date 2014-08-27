@@ -17,7 +17,6 @@ PKGS=   --pkg gtk+-3.0 \
 FLAGS= -g --vapidir=. 
 
 CORESRC=        JsRender/*.vala \
-		JsRender/webkit_extension.c \
 		Project/*.vala \
 		Palete/*.vala \
 		Builder4/Application.vala
