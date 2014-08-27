@@ -194,31 +194,40 @@ public class JsRender.NodeToVala : Object {
             			cargs +=  (ar[ari].trim().split(" ").pop();
                        }
                 }
+		
     		if (this.depth < 1) {
-        		this.pad + "public " + this.xcls + "(" + cargs_str.substring(1) +")\n" + this.pad + "{\n";
+        		this.ret += this.pad + "public " + this.xcls + "(" + 
+				    cargs_str.substring(1) +")\n" + this.pad + "{\n";
 		} else {
                 
                     //code 
                 
-				strbuilder(pad + "public " + xcls + "(" + this.top_xcls + " _owner " + cargs_str + ")\n" + pad + "{\n");
-			}
+			this.ret+= this.pad + "public " + this.xcls + "(" + 
+				this.top_xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+		}
             
-            
-            
+
+	}
+	void addUnderThis()
+	{
             // public static?
-            if (!depth) {
-                strbuilder(ipad + "_this = this;\n");
-                //strbuilder(ipad + this.name  + " = this;\n");
-            } else {
-                strbuilder(ipad + "_this = _owner;\n");
-                if (item.xvala_id !== false && item.xvala_id[0] != '*' && item.xvala_id[0] != '+' ) {
-                    strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
-                   
-                }
+    		if (depth < 1) {
+			this.ret += this.ipad + "_this = this;\n";
+			return;
+		}
+		this.ret+= this.ipad + "_this = _owner;\n";
+
+		if (this.node.xvala_id != "" && this.node.xvala_id[0] != '*' && this.node.xvala_id[0] != '+' ) {
+    			this.ret+= this.ipad + "_this." + node.xvala_id  + " = this;\n";
+           
+		}
                 
                 
-            }
-            
+   
+	}
+
+	void addWrappedCtor()
+	{
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
