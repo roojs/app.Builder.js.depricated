@@ -82,7 +82,7 @@ EditProject=new XObject({
         
         //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
         
-        this.success(project);
+        return project;
     
         
         //this.success = c.success;
