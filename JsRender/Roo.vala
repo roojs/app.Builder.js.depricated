@@ -294,7 +294,7 @@ namespace JsRender {
 		var nodeName = currentElement.node_name;
 		var tagName = currentElement.tag_name;
 
-		if  (nodeName == '#text') {
+		if  (nodeName == "#text") {
 			this.html += currentElement.node_value;
 			return;
 		}
@@ -342,7 +342,7 @@ namespace JsRender {
 		while (currentElementChild) {
 			// Formatting code (indent the tree so it looks nice on the screen)
 
-			if  (currentElementChild.node_name == '#text') {
+			if  (currentElementChild.node_name == "#text" {
 			    this.html = currentElementChild.node_value;
 			    i++;
 			    currentElementChild = currentElement.child_nodes.item(i);
