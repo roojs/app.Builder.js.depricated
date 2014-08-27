@@ -114,7 +114,7 @@ EditProject=new XObject({
                                     xtype: Gtk.ListStore,
                                     columns : typeof(string),typeof(string),
                                     id : "model",
-                                    n_columns : 3,
+                                    n_columns : 2,
                                     pack : "set_model",
                                     'void:loadData' : ( ) {
                                             this.el.clear();
