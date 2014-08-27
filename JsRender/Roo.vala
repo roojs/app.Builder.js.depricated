@@ -223,16 +223,16 @@ namespace JsRender {
             
         }
 
-        /*
-        saveHTML : function(frame) {
-            var top = this.guessName(this.items[0]);
-            print ("TOP = " + top)
-            if (top != 'Roo.bootstrap.Body') {
-                return;
-            }
-            print("SAVE HTML -- ");
-            print(frame);
-            var _this = this;
+	public void saveHTML (frame) 
+	{
+		var top = this.tree.fqn();
+    		print ("TOP = " + top + "\n" );
+    		if (top != "Roo.bootstrap.Body") {
+        		return;
+    		}
+    		print("SAVE HTML -- ");
+    		//print(frame);
+            
             // wait a second.
             
             GLib.timeout_add_seconds(0, 1, function() {
