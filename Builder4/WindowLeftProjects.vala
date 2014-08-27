@@ -105,7 +105,7 @@ public class Xcls_WindowLeftProjects : Object
                 GLib.Value val;
             
                 mod.get_value(iter, 1, out val);
-                if ( ( (Project.Project)val.get_object()) != project) {
+                if ( ( (Project.Project)val.get_object()).fn != project.fn) {
                     print("SKIP %s != %s", Project.Project)val.get_object()).name , project.name);
                     return false;//continue
                 }
