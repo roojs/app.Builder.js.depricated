@@ -324,7 +324,7 @@ public class JsRender.NodeToVala : Object {
 	}
 	void addWrappedProperties()
 	{
-   		var pal = Roo.Palete.factory("Gtk");
+   		var pal = Palete.factory("Gtk");
             // what are the properties of this class???
   		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
