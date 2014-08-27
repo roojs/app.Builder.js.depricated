@@ -277,7 +277,8 @@ WindowRooView=new XObject({
                                  
                                  //this.get('/BottomPane').el.show();
                                  //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
-                            
+                                _this.file.webkit_page_id  = this.el.get_page_id();
+                                
                                 var js = _this.file.toSourcePreview();
                             
                                 if (js.length < 1) {
