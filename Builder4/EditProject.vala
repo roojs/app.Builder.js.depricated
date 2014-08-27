@@ -67,7 +67,7 @@ public class Xcls_EditProject : Object
 
         // listeners 
         this.el.destroy_event.connect(  (self, event) => {
-          _this.dialog.el.response(0);
+          this.el.response(0);
         //     this.el.hide();
             return false;
         } );

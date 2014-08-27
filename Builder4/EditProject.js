@@ -13,7 +13,7 @@ EditProject=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
         destroy_event : (self, event) => {
-          _this.dialog.el.response(0);
+          this.el.response(0);
         //     this.el.hide();
             return false;
         }
