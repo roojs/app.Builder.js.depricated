@@ -1515,11 +1515,24 @@ MainWindow=new XObject({
                                                                     xtype: Gtk.Button,
                                                                     listeners : {
                                                                         clicked : ( ) => {
+                                                                             
+                                                                             var cd = Xcls_DialogConfirm.singleton();
+                                                                             cd.el.set_transient_for(this.el);
+                                                                            cd.el.set_modal(true);
+                                                                        
                                                                              var project =   _this.left_projects.getSelectedProject();
                                                                             if (project == null) {
                                                                                 print("SKIP - no project\n");
                                                                                 return;
                                                                             }
+                                                                            
+                                                                                
+                                                                             if (Gtk.ResponseType.OK != cd.show("Confirm", 
+                                                                                "Are you sure you want to delete project %s".sprintf(project.name))) {
+                                                                                return;
+                                                                            }
+                                                                             
+                                                                        
                                                                             // confirm?
                                                                             Project.Project.remove(project);
                                                                             _this.project = null;
