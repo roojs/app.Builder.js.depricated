@@ -1,4 +1,6 @@
 
+#include <glib-object.h>
+#include <webkit2/webkit-web-extension.h>
 
 static WebKitWebExtension *glob_extension
 
