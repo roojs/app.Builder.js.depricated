@@ -78,9 +78,7 @@ public class JsRender.NodeToVala : Object {
             this.ret += inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{\n";
 	    this.ret +=  this.pad + "public " + this.cls + " el;\n");
 
-            if (!depth) {
-		this.top_xcls = xcls;
-	    }  
+              
             strbuilder(pad + "private " + this.top_xcls + "  _this;\n\n");
             //}
             
