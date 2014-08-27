@@ -66,7 +66,7 @@ public class Xcls_DialogConfirm : Object
             this.el.text =  msg;
             this.el.show_all();
             var ret =   this.el.run();
-            print("ret got %d", ret);
+            //print("ret got %d", ret);
             this.el.hide();
             return ret;
             
