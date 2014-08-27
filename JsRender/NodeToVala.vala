@@ -14,28 +14,28 @@ public class JsRender.NodeToVala : Object {
 	 Node node;
 
 	int depth;
-	
-	Gee.ArrayList<string> els;
-        //Gee.ArrayList<string> skip;
-	Gee.HashMap<string,string> ar_props;
-
-
-	
-	public NodeToVala( Node node,  int depth) 
-	{
-		this.node = node;
-		this.doubleStringProps = doubleStringProps;
-		this.pad = pad;
-		this.els = new Gee.ArrayList<string>(); 
-		//this.skip = new Gee.ArrayList<string>();
-		this.ar_props = new Gee.HashMap<string,string>();
-
-	}
 	string inpad;
 	string pad;
 	string ipad;
 	string cls;
 	string xcls;
+	
+	
+
+	
+	public NodeToVala( Node node,  int depth) 
+	{
+		this.node = node;
+		this.depth = depth;
+		this.inpad = string.nfill(depth*4, ' ');
+		this.pad = this.inpad + "    ";
+		this.ipad = this.inpad + "        ";
+		this.cls = node.xvala_cls;
+		this.xcls = node.xvala_xcls;
+		
+
+	}
+	
 	
 
 
