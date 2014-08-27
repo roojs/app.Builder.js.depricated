@@ -89,9 +89,11 @@ public class Xcls_EditProject : Object
                     this.el.hide();
                     return null;
             }
-           
+            
+            
          
             var fn = _this.dir.el.get_filename();
+            print("add %s\n" , fn);
             
             var project = Project.Project.factory(_this.xtype.getValue(), fn);
             project.save();
