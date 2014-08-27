@@ -386,7 +386,7 @@ public class JsRender.NodeToVala : Object {
             		var xargs = "";
             		if (ci.has("* args")) {
                         
-                		var ar = ci.get("*args").split(',');
+                		var ar = ci.get("*args").split(",");
                 		for (var ari = 0 ; ari < ar.length; ari++ ) {
                     			xargs += "," + ar[ari].trim().split(" ").pop();
                 		}
