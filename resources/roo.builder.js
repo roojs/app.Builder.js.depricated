@@ -17,7 +17,7 @@ Builder  = {
 
 
   
-        saveHTML :  function( ) 
+    saveHTML :  function( ) 
 	{
             //print("TRAVERSE DOM?");
             
@@ -25,8 +25,11 @@ Builder  = {
             //print(dom);
             var ret = '';
             //Roo.select('body > div',true).each(function(el) {
+            // if the tree is not ready yet?
+            
+            
             this.traverseDOMTree(function(s) { ret+=s; }, dom, 1);
-	    alert("IPC:SAVEHTML:" + ret);
+	        alert("IPC:SAVEHTML:" + ret);
             return ret;
         },
         
