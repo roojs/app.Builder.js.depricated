@@ -31,7 +31,10 @@ EditProject=new XObject({
     	// shouild set path..
         _this.model.loadData();
         this.el.show_all();
-        var id =  this.el.run();
+        var id = -1;
+        while (id < 0) {
+             id =  this.el.run();
+        }
         this.el.hide();
         
          if (id < 1) {
