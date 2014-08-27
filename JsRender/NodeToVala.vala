@@ -430,33 +430,34 @@ public class JsRender.NodeToVala : Object {
          }
 	 void addListeners()
 	 {
-            if (item.listeners) {
-            //    print(JSON.stringify(item.listeners));Seed.quit();
+    		if (this.node.listeners.size < 1) {
+			return;
+		}
+			    
             
-                strbuilder("\n" + ipad + "// listeners \n");  
-                // add all the signal handlers..
-                for (var k in item.listeners) {
-                    
-                    
-                    var v = item.listeners[k] ;
-                    
-                    var vv = v.replace(/\n/g,"\n" + ipad);
-                        
-                        
-                    
-                    strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
+            
+                this.ret+= "\n" + ipad + "// listeners \n";
+
+		var iter = this.listeners.map_iterator();
+		while (iter.next()) {
+			var k = iter.get_key();
+			var v = iter.get_value();
+            		this.ret+= this.ipad + "this.el." + k + ".connect( " + this.padMultiline(this.ipad,vv) +");\n"; 
                     
                 }
-            }    
-                
+	}    
+        void addEndCtor()
+	{
             
             
             
             // end ctor..
-            strbuilder(pad + "}\n");
+            this.ret+= this.pad + "}\n";
+	}
+	void addUserMethods()
+	{
             
-            
-            strbuilder("\n" + pad + "// userdefined functions \n");  
+  	      this.ret+= "\n" + pad + "// userdefined functions \n";  
             
             // user defined functions...
             
