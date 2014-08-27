@@ -32,6 +32,11 @@ EditProject=new XObject({
     	// shouild set path..
         _this.model.loadData();
         this.el.show_all();
+        
+        var err_dialog = StandardErrorDialog.singleton();
+        err_dialog.el.set_transient_for(_this.el);
+        err_dialog.el.el.set_modal(true);   
+    
         var id = -1;
         while (id < 0) {
              id =  this.el.run();
@@ -42,6 +47,7 @@ EditProject=new XObject({
     
              
               if (_this.xtype.getValue().length < 1) {
+                   
                     StandardErrorDialog.singleton().show("You have to set Project type");             
                     id = -1;
                     continue;
