@@ -64,6 +64,7 @@ EditProject=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
+            homogeneous : false,
             pack : get_content_area().add,
             items : [
                 {

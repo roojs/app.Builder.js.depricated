@@ -22,6 +22,7 @@
             "|xns": "Gtk",
             "items": [
                 {
+                    "|homogeneous": "false",
                     "xtype": "VBox",
                     "|pack": " get_content_area().add \n \n",
                     "|xns": "Gtk",

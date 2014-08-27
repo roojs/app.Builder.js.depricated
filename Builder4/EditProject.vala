@@ -124,7 +124,7 @@ public class Xcls_EditProject : Object
         public Xcls_VBox2(Xcls_EditProject _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars
 
