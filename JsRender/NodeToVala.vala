@@ -314,7 +314,7 @@ public class JsRender.NodeToVala : Object {
             // what are the properties of this class???
   		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
-		var iter = cls.map_iterator();
+		var iter = cls.props.map_iterator();
 		while (iter.next()) {
 			var p = iter.get();
 			if (!this.node.has(p)) {
