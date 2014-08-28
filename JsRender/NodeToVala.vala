@@ -301,13 +301,13 @@ public class JsRender.NodeToVala : Object {
         		var kk = k.substring(2);
         		var v = iter.get_value();
         		var vv = kk.split(" ");
-        		if (v.length < 1 || vv[0] == "signal") {
+        		if (v.length < 1 || vv[0] == "@") {
             			continue;
-        		}       
+        		}
         		this.ret += this.ipad + "this." + vv[1] + " = " +   v +";\n";
-                
     		}
 	}
+	
 	void addWrappedProperties()
 	{
    		var cls = Palete.Gir.factoryFqn(this.node.fqn());
