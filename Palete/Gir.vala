@@ -273,6 +273,24 @@ namespace Palete {
 		    }
 		    return r;
 		}
+
+		public GirObject fetchByFqn(string fqn) {
+		var cls = f.classes.get(bits[1]);
+		if (bits.length == 2 || f == null) {
+			return cls;
+		}
+
+		
+		if (cls != null) {
+			var method = cls.methods.get(bits[2]);
+			if (bits.length == 3 || method == null) {
+				return method;
+			}
+			
+		}
+		// fixme - other queires? - enums?
+		return null;
+		
 	}
 	    
 	     
@@ -321,7 +339,7 @@ namespace Palete {
 			if (bits.length == 1 || f ==null) {
 				return f;
 			}
-			return f.fetchByFqn(fqn.substring(bits[0]+1);
+			return f.fetchByFqn(fqn); // since classes are stored in fqn format...?
 			                    
 			
 		}
