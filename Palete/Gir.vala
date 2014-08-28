@@ -618,11 +618,31 @@ namespace Palete {
 		
 		c.name = Gir.fetchOverride(ns.name, cls.name, method.name, c.name);
 	}
+	static bool overrides_loaded = false;
+	static Gee.HashMap<string,string> overrides;
+	
 	public string fetchOveride(string ns, string cls, string method, string param)
 	{
 		// overrides should be in a file Gir.overides
 		// in that "Gtk.Label.new.str" : "label"
+		this.loadOverrides();
 
+
+	}
+	public void loadOverrides()
+	{
+		if (this.overrides_loaded) {
+			return;
+		}
+		
+		var pa = new Json.Parser();
+    		pa.load_from_file(this.path);
+    		var node = pa.get_root();
+            
+            if (node.get_node_type () != Json.NodeType.OBJECT) {
+		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+	        }
+            var obj = node.get_object ();
 		
 
 
