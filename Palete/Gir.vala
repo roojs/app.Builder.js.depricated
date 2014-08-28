@@ -312,10 +312,13 @@ namespace Palete {
 		public static GirObject?  factoryFqn(string fqn) {
 		{       
 			var bits = fqn.split(".");
-			var f = factory(bits[0]);
+			var f = (GirObject)factory(bits[0]);
 			if (f == null) {
 				return null;
 			}
+			if 
+
+			
 		}
 
 			
