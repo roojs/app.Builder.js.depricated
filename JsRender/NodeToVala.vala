@@ -333,8 +333,8 @@ public class JsRender.NodeToVala : Object {
 		            
 		       // got a property..
 		       
-		       
-		    });
+
+		}
 	    
 	}
 
