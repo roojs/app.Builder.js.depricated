@@ -634,7 +634,7 @@ namespace Palete {
 		if (this.overrides_loaded) {
 			return;
 		}
-		
+		Builder4.Application.configDirectory() + "/resources/Gir.overides"
 		var pa = new Json.Parser();
     		pa.load_from_file(this.path);
     		var node = pa.get_root();
