@@ -646,7 +646,13 @@ namespace Palete {
     		var obj = node.get_object ();
 		
 		
-
+		obj.foreach_member((o , key, value) => {
+			//print(key+"\n");
+			 
+			var v = obj.get_string_member(key);
+			
+			
+			this.props.set(rkey,  (string)sv);
 
 
 
