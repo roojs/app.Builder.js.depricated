@@ -256,7 +256,7 @@ public class JsRender.NodeToVala : Object {
 		// the ctor arguments...
 
 		// see what the 
-		var default_ctor = Palate.Gir.factoryFqn(this.node.fqn() + ".new");
+		var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
 		if (default_ctor.paramset.params.size > 0) {
 			string[] args  = {};
 			var iter =default_ctor.paramset.params.list_iterator();
@@ -309,7 +309,7 @@ public class JsRender.NodeToVala : Object {
 	}
 	void addWrappedProperties()
 	{
-   		var pal = Palete.factory("Gtk");
+   		var cls = Palete.Gir.factoryFqn(this.node.fqn());
             // what are the properties of this class???
   		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
