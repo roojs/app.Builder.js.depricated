@@ -290,7 +290,7 @@ namespace Palete {
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
 			}
-			var ret = cache.get(ns);
+			GirObject ret = cache.get(ns);
 			if (ret == null) {
 
 				var add = new Gir(ns);
