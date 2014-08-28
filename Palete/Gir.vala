@@ -492,8 +492,7 @@ namespace Palete {
 			c.ns = this.ns;
 			parent.params.add(c);
 			parent = c;
-			this.checkParamOverride(c);
-			    
+			this.checkParamOverride(c);   
                     break;
                 
                 case "property":
