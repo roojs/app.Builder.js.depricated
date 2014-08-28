@@ -22,6 +22,7 @@ public class JsRender.NodeToVala : Object {
 	
 	string ret;
 
+	Gee.ArrayList<string> ignoreList; 
 	NodeToVala top;
 	
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
@@ -35,7 +36,7 @@ public class JsRender.NodeToVala : Object {
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
 		this.top = top == null ? this : top;
-		
+		this.ignoreList = new Gee.ArrayList<string>();
 	}
 	
 	
@@ -329,7 +330,7 @@ public class JsRender.NodeToVala : Object {
 			}
 
 			
-			this.ret += ipad + "this.el." + p.name + " = " + v + ";\n";
+			this.ret += ipad + "this.el." + p  + " = " + v + ";\n";
 		            
 		       // got a property..
 		       
@@ -534,7 +535,10 @@ public class JsRender.NodeToVala : Object {
 	{
 		return str;
 	}
+	
 	void ignore(string i) {
+
+		
 	}
 	bool shouldIgnore(string i)
 	{
