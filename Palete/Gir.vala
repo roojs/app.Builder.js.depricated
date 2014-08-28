@@ -598,6 +598,28 @@ namespace Palete {
 		}
     
     
-    } 
+	}
+	public void checkParamOveride(GirObject c)
+	{
+		var parset = c.parent();
+		if (parset.nodetype != "Paramset") {
+			return;
+		}
+		var method = parset.parent();
+		if (method.nodetype != "Ctor") {
+			return;
+		}
+		var cls = method.parent();
+		if (cls.nodetype != "Class") {
+			return;
+		}
+
+		var ns = cls.parent();
+		
+		c.name = GirObject.fetchOverride(ns.name, cls.name, method.name, c.name);
+	}
+
+		
+
         
 }
