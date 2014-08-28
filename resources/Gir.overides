@@ -1,0 +1,20 @@
+{
+    "Gtk.Label.new.str":  "label" ,
+    "Gtk.MessageDialog.new.parent" : "transient_for",
+    
+    "Gtk.MessageDialog.new.type" : "message_type",
+    "Gtk.MessageDialog.new.message_format" : "text",
+    
+    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
+    "Gtk.ScrolledWindow": [ "hadjustment:null", "vadjustment:null" ],
+    "Gtk.SourceBuffer": [ "table:null" ],
+    "Gtk.Table": [ "n_rows", "n_columns" , "homogeneous" ],
+    "Gtk.ToolButton": [ "icon_widget:null", "label:null" ],
+    "Gtk.HBox": [ "homogeneous:true", "spacing:0" ],
+    "Gtk.VBox": [ "homogeneous:true", "spacing:0" ],
+    "Gtk.ListStore": [ "n_columns", "columns" ],
+    "Gtk.TreeStore": [ "n_columns", "columns" ],
+    "Gtk.FileChooserWidget" : [ "action"],
+    "Gtk.Window" : [ "type"],
+    "Clutter.FlowLayout" : [ "orientation"],
+}
