@@ -605,23 +605,23 @@ namespace Palete {
                 }
                 this.walk(iter, parent);
             }
-            
-       
-        public string doc(string what)
-		{
-			var ar = what.split(".");
-			var cls = this.classes.get(ar[1]);
-			if (ar.length == 2) {
-				return cls.doctxt != null ? cls.doctxt : "";
-			}
-			// return the property.. by default..
-			var pr = cls.props.get(ar[2]);
-			return pr.doctxt != null ? pr.doctxt : "";
 
-		}
-    
-    
 	}
+        public string doc(string what)
+	{
+		var ar = what.split(".");
+		var cls = this.classes.get(ar[1]);
+		if (ar.length == 2) {
+			return cls.doctxt != null ? cls.doctxt : "";
+		}
+		// return the property.. by default..
+		var pr = cls.props.get(ar[2]);
+		return pr.doctxt != null ? pr.doctxt : "";
+
+	}
+
+
+
 	public void checkParamOverride(GirObject c)
 	{
 		var parset = c.gparent;
