@@ -275,7 +275,7 @@ namespace Palete {
 		}
 
 		public GirObject fetchByFqn(string fqn) {
-			print("Searching (%s)%s for %s\n", this.nodetype, this.name, fqn);
+			//print("Searching (%s)%s for %s\n", this.nodetype, this.name, fqn);
 			var bits = fqn.split(".");
 			
 			var ret = this.classes.get(bits[0]);
@@ -286,7 +286,7 @@ namespace Palete {
 				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 
-			var ret = this.ctors.get(bits[0]);			
+			ret = this.ctors.get(bits[0]);			
 	       		if (ret != null) {
 				if (bits.length < 2) {
 					return ret;
