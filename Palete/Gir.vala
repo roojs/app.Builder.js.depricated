@@ -627,6 +627,11 @@ namespace Palete {
 		// overrides should be in a file Gir.overides
 		// in that "Gtk.Label.new.str" : "label"
 		this.loadOverrides();
+		var key = "%s.%s.%s.%s".pring(ns,cls,method,param);
+		if (!overrides.has_key(key)) {
+			return param;
+		}
+		return overrides.get(key);
 
 
 	}
