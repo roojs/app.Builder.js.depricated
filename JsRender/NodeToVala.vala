@@ -321,19 +321,17 @@ public class JsRender.NodeToVala : Object {
 			}
 	     		this.ignore(p.name);
 			var v =this.node.get(p);
+
+			// what's the type.. - if it's a string.. then we quote it..
+			if (p.type == "utf8") {
+				 v = "\"" +  v.escape("") + "\"";
+			}
+
 			
-			this.ret += ipad + "this.el." + p.name + " = " + val + ";\n");
+			this.ret += ipad + "this.el." + p.name + " = " + v + ";\n";
 		            return;
 		        }
-		        if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
-		            citems['|' + p.name] = true;
-		            //if (p.ctor_only ) {
-		            //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
-		            //} else {
-		                strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
-		            //}
-		            return;
-		        }
+		        
 		       // got a property..
 		       
 		       
