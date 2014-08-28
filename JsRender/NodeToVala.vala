@@ -266,6 +266,7 @@ public class JsRender.NodeToVala : Object {
 					args += "null";
 					continue;
 				}
+				this.ignore(n);
 				args += this.node.get(n);
 
 			}
