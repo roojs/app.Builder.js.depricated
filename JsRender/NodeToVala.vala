@@ -329,14 +329,12 @@ public class JsRender.NodeToVala : Object {
 
 			
 			this.ret += ipad + "this.el." + p.name + " = " + v + ";\n";
-		            return;
-		        }
-		        
+		            
 		       // got a property..
 		       
 		       
 		    });
-	    */
+	    
 	}
 
 	void addChildren()
