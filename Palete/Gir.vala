@@ -459,11 +459,12 @@ namespace Palete {
                     break;
                 */
                 case "signal": // Glib:signal
-                    var c = new GirObject("Signal",n.replace("-", "_"));
-					c.ns = this.ns;
-                    parent.signals.set(n.replace("-", "_"),c);
-                    parent = c;
-                    break;
+	            	var c = new GirObject("Signal",n.replace("-", "_"));
+			c.gparent = parent;
+			c.ns = this.ns;
+            		parent.signals.set(n.replace("-", "_"),c);
+            		parent = c;
+            		break;
                     
                 
               
@@ -478,30 +479,34 @@ namespace Palete {
                     //break;
                 
                 case "method":
-                    var c = new GirObject("Method",n);
-					c.ns = this.ns;
-					c.propertyof = parent.name;
-                    parent.methods.set(n,c);
-                    parent = c;
-                    break;
+            		var c = new GirObject("Method",n);
+			c.gparent = parent;
+			c.ns = this.ns;
+			c.propertyof = parent.name;
+            		parent.methods.set(n,c);
+            		parent = c;
+            		break;
                 
                 case "parameters":
                     var c = new GirObject("Paramset",n);
+		    c.gparent = parent;
 		    c.ns = this.ns;
                     parent.paramset = c;
                     parent =  c;
                     break;
                 
                 case "instance-parameter":
-                    var c = new GirObject("Param",n);
-					c.ns = this.ns;
-                    c.is_instance = true;
-                    parent.params.add(c);
-                    parent = c;
-                    break;
+            		var c = new GirObject("Param",n);
+			c.gparent = parent;
+			c.ns = this.ns;
+            		c.is_instance = true;
+            		parent.params.add(c);
+            		parent = c;
+            		break;
                 
                 case "parameter":
 			var c = new GirObject("Param",n);
+			c.gparent = parent;
 			c.ns = this.ns;
 			parent.params.add(c);
 			parent = c;
@@ -510,16 +515,18 @@ namespace Palete {
                 
                 case "property":
                 case "field":
-                    var c = new GirObject("Prop",n.replace("-", "_"));
-					c.ns = this.ns;
-					c.propertyof = parent.name;
-                    parent.props.set(n.replace("-", "_"),c);
-                    parent = c;
-                    break;
+            		var c = new GirObject("Prop",n.replace("-", "_"));
+			c.gparent = parent;
+			c.ns = this.ns;
+			c.propertyof = parent.name;
+            		parent.props.set(n.replace("-", "_"),c);
+            		parent = c;
+            		break;
                 
                 case "function":
                     var c = new GirObject("Function",n);
-					c.ns = this.ns;
+		    c.gparent = parent;
+		    c.ns = this.ns;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
@@ -534,6 +541,7 @@ namespace Palete {
                 
                 case "constant":
                     var c = new GirObject("Const",n);
+		    c.gparent = parent;
                     c.value = element->get_prop("value");
 					c.ns = this.ns;
                     parent.consts.set(n,c);
@@ -542,20 +550,22 @@ namespace Palete {
                     //break;
                 
                 case "enumeration":
-                    var c = new GirObject("Enum",n);
-					c.ns = this.ns;
-                    parent.consts.set(n,c);
+            		var c = new GirObject("Enum",n);
+			c.gparent = parent;
+			c.ns = this.ns;
+            		parent.consts.set(n,c);
 					
-                    parent = c;
-                    break;
+			parent = c;
+			break;
                 
                 case "member":
-                    var c = new GirObject("EnumMember",n);
-					c.ns = this.ns;
-                    c.value = element->get_prop("value");
-                    parent.consts.set(n,c);
-                    return;
-                    break;
+            		var c = new GirObject("EnumMember",n);
+			c.gparent = parent;
+			c.ns = this.ns;
+            		c.value = element->get_prop("value");
+            		parent.consts.set(n,c);
+            		return;
+            		break;
                 
                 
                 case "doc-deprecated":
