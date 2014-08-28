@@ -46,9 +46,9 @@ namespace Palete {
         }
         
         public string doc(string what) {
-            var ns = what.split(".")[0];
-            var gir =  Gir.factory(ns);
-			return   gir.doc(what);
+    		var ns = what.split(".")[0];
+    		var gir =  Gir.factory(ns);
+		return   gir.doc(what);
 			
             //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         }
