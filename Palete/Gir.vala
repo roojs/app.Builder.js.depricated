@@ -303,6 +303,10 @@ namespace Palete {
 	    			}	
 
 				ret = cache.get(ns);
+			}
+			if (cls != null) {
+				ret = ret.classes.get(cls);
+			}
 
 			return ret;
 			
