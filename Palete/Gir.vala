@@ -276,7 +276,8 @@ namespace Palete {
 
 		public GirObject fetchByFqn(string fqn) {
 			var bits = fqn.split(".");
-			var cls = this.classes.get(bits[1]);
+			
+			var cls = this.classes.get(bits[0] + bits[1]);
 			
 			if (bits.length == 2 || f == null) {
 				return cls;
