@@ -291,7 +291,7 @@ namespace Palete {
 				if (bits.length < 2) {
 					return ret;
 				}
-				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 
 			ret = this.methods.get(bits[0]);			
@@ -299,21 +299,21 @@ namespace Palete {
 				if (bits.length < 2) {
 					return ret;
 				}
-				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 			ret = this.props.get(bits[0]);			
 	       		if (ret != null) {
 				if (bits.length < 2) {
 					return ret;
 				}
-				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 			ret = this.consts.get(bits[0]);			
 	       		if (ret != null) {
 				if (bits.length < 2) {
 					return ret;
 				}
-				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 
 			ret = this.signals.get(bits[0]);			
@@ -321,10 +321,10 @@ namespace Palete {
 				if (bits.length < 2) {
 					return ret;
 				}
-				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
 			if (this.paramset == null) {
-				return;
+				return null;
 			}
 			var iter = this.paramset.params.list_iterator();
 			while (iter.next()) {
