@@ -1,5 +1,7 @@
 {
     "Gtk.Label.new.str":  "label" ,
+    "Gtk.Label.new_with_mnemonic.str":  "label" ,
+    
     "Gtk.MessageDialog.new.parent" : "transient_for",
     
     "Gtk.MessageDialog.new.type" : "message_type",
