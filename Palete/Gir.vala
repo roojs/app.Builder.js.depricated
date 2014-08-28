@@ -632,7 +632,7 @@ namespace Palete {
 	}
 	public void loadOverrides()
 	{
-		if (this.overrides_loaded) {
+		if (overrides_loaded) {
 			return;
 		}
 		
@@ -643,6 +643,9 @@ namespace Palete {
     		if (node.get_node_type () != Json.NodeType.OBJECT) {
 		        throw new GirError.INVALID_FORMAT ("Error loading gir.overides : Unexpected element type %s", node.type_name ());
 	        }
+		overrides = new Gee.HashMap<string,string>();
+		
+		
     		var obj = node.get_object ();
 		
 		
@@ -652,10 +655,11 @@ namespace Palete {
 			var v = obj.get_string_member(key);
 			
 			
-			this.props.set(rkey,  (string)sv);
+			overrides.set(rkey,  (string)sv);
 
-
-
+		});
+	
+		overrides_loaded = true;
 
 		
 
