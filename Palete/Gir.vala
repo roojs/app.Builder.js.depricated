@@ -23,7 +23,8 @@ namespace Palete {
 		INVALID_TYPE,
 		NEED_IMPLEMENTING,
 		MISSING_FILE,
-		INVALID_VALUE
+		INVALID_VALUE,
+		INVALID_FORMAT
 	}
 	public class GirObject: Object {
 		public string name;
@@ -634,15 +635,16 @@ namespace Palete {
 		if (this.overrides_loaded) {
 			return;
 		}
-		Builder4.Application.configDirectory() + "/resources/Gir.overides"
+		
 		var pa = new Json.Parser();
-    		pa.load_from_file(this.path);
+    		pa.load_from_file(Builder4.Application.configDirectory() + "/resources/Gir.overides");
     		var node = pa.get_root();
             
-            if (node.get_node_type () != Json.NodeType.OBJECT) {
-		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+    		if (node.get_node_type () != Json.NodeType.OBJECT) {
+		        throw new GirError.INVALID_FORMAT ("Error loading gir.overides : Unexpected element type %s", node.type_name ());
 	        }
-            var obj = node.get_object ();
+    		var obj = node.get_object ();
+		
 		
 
 
