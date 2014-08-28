@@ -77,7 +77,9 @@ namespace Palete {
 			this.doctxt = "";
 		
 			this.sig = "";
-		
+
+			this.gparent = null;
+			
 			this.implements = new Gee.ArrayList<string>();
 			this.inherits  = new Gee.ArrayList<string>(); // list of all ancestors. (interfaces and parents)
 			this.includes   = new Gee.HashMap<string,string>();
@@ -402,6 +404,7 @@ namespace Palete {
 			parent.classes.set(n, c);
 			c.ns = this.ns;
 			c.parent = element->get_prop("parent");
+			c.gparent = parent;
 			if (c.parent == null) {
 				c.parent = "";
 			}
@@ -410,6 +413,7 @@ namespace Palete {
                 
                 case "interface":
                     var c = new GirObject("Interface", parent.name + "." + n);
+		    c.gparent = parent;
                     parent.classes.set(n, c);
 					c.ns = this.ns;
 					c.ns = parent.name;
@@ -427,18 +431,21 @@ namespace Palete {
                 
                 case "implements":
                     parent.implements.add(n);
+			
                     break;
                 
                 case "constructor":
                     var c = new GirObject("Ctor",n);
 		    c.ns = this.ns;
+		    c.gparent = parent;
                     parent.ctors.set(n,c);
                     parent  = c;
                     break;
                 
                 case "return-value":
                     var c = new GirObject("Return", "return-value");
-					c.ns = this.ns;
+		    c.gparent = parent;
+		    c.ns = this.ns;
                     parent.return_value = c;
                     parent =  c;
                     break;
