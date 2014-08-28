@@ -313,25 +313,16 @@ public class JsRender.NodeToVala : Object {
             // what are the properties of this class???
   		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
-		var props = pal.getPropertiesFor(this.node.fqn(), "props");
-		
-            
-            /*
-            
-    		props.forEach(function(p) {
-               
-		        if (typeof(citems[p.name]) != 'undefined') {
-		            return;
-		        }
-		             
-		        if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
-		            this.ignore(p.name);
-		            
-		            var val = JSON.stringify(item[p.name]);
-		            if (['xalign','yalign'].indexOf(p.name) > -1) {
-		                val +='f';
-		            }
-		            strbuilder(ipad + "this.el." + p.name + " = " + val + ";\n");
+		var iter = cls.map_iterator();
+		while (iter.next()) {
+			var p = iter.get();
+			if (!this.node.has(p)) {
+				continue;
+			}
+	     		this.ignore(p.name);
+			var v =this.node.get(p);
+			
+			this.ret += ipad + "this.el." + p.name + " = " + val + ";\n");
 		            return;
 		        }
 		        if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
