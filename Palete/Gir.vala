@@ -277,7 +277,34 @@ namespace Palete {
 		public GirObject fetchByFqn(string fqn) {
 			var bits = fqn.split(".");
 			
-			var cls = this.classes.get(bits[0] + bits[1]);
+			if (this.nodetype == "Package") {
+				
+				var cls = this.classes.get(bits[0] + "." + bits[1]);
+				if (cls == null || bits.length < 3) {
+					return cls;
+				}
+				return cls.fetchByFqn(fqn.substring(bits[0].length + bits[1].length +2));
+			}
+	              	
+			var ret = this.ctors.get(bits[0]);			
+	       		if (ret != null) {
+				if (bits.length < 2) {
+					return ret;
+				}
+				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+			}
+
+			ret = this.methods.get(bits[0]);			
+	       		if (ret != null) {
+				if (bits.length < 2) {
+					return ret;
+				}
+				return ret.fetchByFqn(fqn.substring(bits[0]+1));
+			}
+
+					
+				
+						                      
 			
 			if (bits.length == 2 || f == null) {
 				return cls;
