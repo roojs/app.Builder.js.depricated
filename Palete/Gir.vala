@@ -640,7 +640,7 @@ namespace Palete {
 		var ns = cls.gparent;
 		
 		
-		c.name = Gir.fetchOverride(ns.name, cls.name, method.name, c.name);
+		c.name = this.fetchOverride(ns.name, cls.name, method.name, c.name);
 	}
 	static bool overrides_loaded = false;
 	static Gee.HashMap<string,string> overrides;
