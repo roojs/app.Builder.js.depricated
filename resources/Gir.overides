@@ -9,4 +9,8 @@
     "Gtk.Table.new.rows" : "n_rows",
     "Gtk.Table.new.columns" : "n_columns",
     
+    
+    
+    "" : ""
+    
 }
