@@ -257,6 +257,12 @@ public class JsRender.NodeToVala : Object {
 
 		// see what the 
 		var default_ctor = Palate.Gir.factoryFqn(this.node.fqn() + ".new");
+		if (default_ctor.paramset.params.size) {
+
+
+
+			
+		}
 		
 		
 
