@@ -256,8 +256,8 @@ public class JsRender.NodeToVala : Object {
 		// the ctor arguments...
 
 		// see what the 
-
-		this.node.fqn();
+		var default_ctor = Palate.Gir.factoryFqn(this.node.fqn() + ".new");
+		
 		
 
 		
