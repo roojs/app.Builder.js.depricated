@@ -320,8 +320,8 @@ public class JsRender.NodeToVala : Object {
 			if (!this.node.has(p)) {
 				continue;
 			}
-	     		this.ignore(p.name);
-			var v =this.node.get(p);
+	     		this.ignore(p);
+			var v = this.node.get(p);
 
 			// what's the type.. - if it's a string.. then we quote it..
 			if (p.type == "utf8") {
