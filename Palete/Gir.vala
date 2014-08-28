@@ -286,7 +286,7 @@ namespace Palete {
 
 
 		
-		public static Gir  factory(string ns) {
+		public static ?Gir  factory(string ns) {
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
 			}
@@ -311,7 +311,9 @@ namespace Palete {
 		}
 		public static Gir  factoryFqn(string fqn) {
 		{       
-			
+			var bits = fqn.split(".");
+			var f = factory(bits[0]);
+			if (
 		}
 
 			
