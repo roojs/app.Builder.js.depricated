@@ -193,7 +193,7 @@ public class JsRender.Node : Object {
 		}
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
-			var kk = iter.get_key().split(" ");
+			var kk = iter.get_key().strip().split(" ");
 			if (kk[kk.length-1] == key) {
 				return true;
 			}
