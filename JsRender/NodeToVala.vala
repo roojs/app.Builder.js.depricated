@@ -294,7 +294,9 @@ public class JsRender.NodeToVala : Object {
     			var k = iter.get_key();
 			
         		var ar  = k.strip().split(" ");
-			if (cls.props.has_key(ar[ar.length-1]));
+			if (cls.props.has_key(ar[ar.length-1])) {
+				continue;
+			}
                 
         		var kk = k.substring(2);
         		var v = iter.get_value();
