@@ -113,7 +113,8 @@ namespace Builder4
 			string[] res = { 
 				"bootstrap.builder.html",
 				"roo.builder.html",
-				"roo.builder.js"
+				"roo.builder.js",
+				"Gir.overides"
 			};
 			for (var i = 0; i < res.length; i++ ) { 
 				this.fetchResource(res[i], force);
