@@ -275,20 +275,22 @@ namespace Palete {
 		}
 
 		public GirObject fetchByFqn(string fqn) {
-		var cls = f.classes.get(bits[1]);
-		if (bits.length == 2 || f == null) {
-			return cls;
-		}
+			var bits = fqn.split(".");
+			var cls = this.classes.get(bits[1]);
+			
+			if (bits.length == 2 || f == null) {
+				return cls;
+			}
 
 		
-		if (cls != null) {
-			var method = cls.methods.get(bits[2]);
-			if (bits.length == 3 || method == null) {
-				return method;
-			}
+			if (cls != null) {
+				var method = cls.methods.get(bits[2]);
+				if (bits.length == 3 || method == null) {
+					return method;
+				}
 			
-		}
-		// fixme - other queires? - enums?
+			}
+			// fixme - other queires? - enums?
 		return null;
 		
 	}
