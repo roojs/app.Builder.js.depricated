@@ -616,9 +616,22 @@ namespace Palete {
 
 		var ns = cls.parent();
 		
-		c.name = GirObject.fetchOverride(ns.name, cls.name, method.name, c.name);
+		c.name = Gir.fetchOverride(ns.name, cls.name, method.name, c.name);
 	}
+	public string fetchOveride(string ns, string cls, string method, string param)
+	{
+		// overrides should be in a file Gir.overides
+		// in that "Gtk.Label.new.str" : "label"
 
+		
+
+
+
+
+
+		
+
+	}
 		
 
         
