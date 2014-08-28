@@ -606,7 +606,7 @@ namespace Palete {
                 this.walk(iter, parent);
             }
             
-        }
+       
         public string doc(string what)
 		{
 			var ar = what.split(".");
