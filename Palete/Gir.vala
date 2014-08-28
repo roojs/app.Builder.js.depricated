@@ -425,7 +425,7 @@ namespace Palete {
                 
                 case "constructor":
                     var c = new GirObject("Ctor",n);
-					c.ns = this.ns;
+		    c.ns = this.ns;
                     parent.ctors.set(n,c);
                     parent  = c;
                     break;
@@ -474,7 +474,7 @@ namespace Palete {
                 
                 case "parameters":
                     var c = new GirObject("Paramset",n);
-					c.ns = this.ns;
+		    c.ns = this.ns;
                     parent.paramset = c;
                     parent =  c;
                     break;
