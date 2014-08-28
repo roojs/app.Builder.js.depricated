@@ -692,7 +692,7 @@ namespace Palete {
 		
 
 	}
-		
+   }	
 
         
 }
