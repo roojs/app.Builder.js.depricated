@@ -278,15 +278,14 @@ namespace Palete {
 			print("Searching (%s)%s for %s\n", this.nodetype, this.name, fqn);
 			var bits = fqn.split(".");
 			
-			if (this.nodetype == "Package") {
-				
-				var cls = this.classes.get(bits[0] + "." + bits[1]);
-				if (cls == null || bits.length < 3) {
-					return cls;
+			var ret = this.classes.get(bits[0]);
+			if (ret != null) {
+				if (bits.length < 2) {
+					return ret;
 				}
-				return cls.fetchByFqn(fqn.substring(bits[0].length + bits[1].length +2));
+				return ret.fetchByFqn(fqn.substring(bits[0].length+1));
 			}
-	              	
+
 			var ret = this.ctors.get(bits[0]);			
 	       		if (ret != null) {
 				if (bits.length < 2) {
