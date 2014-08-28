@@ -285,7 +285,7 @@ public class JsRender.NodeToVala : Object {
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
             
-             
+     		var cls = Palete.Gir.factoryFqn(this.node.fqn());
             
             // initialize.. my vars..
 		this.ret += "\n" + this.ipad + "// my vars\n";
@@ -293,10 +293,8 @@ public class JsRender.NodeToVala : Object {
 		while(iter.next()) {
     			var k = iter.get_key();
 			
-        		if (k[0] != '.') {
-            			continue;
-        		}
-			
+        		var ar  = k.strip().split(" ");
+			if (cls.props.has_key(ar[ar.length-1]));
                 
         		var kk = k.substring(2);
         		var v = iter.get_value();
