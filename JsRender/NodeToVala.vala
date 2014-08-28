@@ -258,42 +258,22 @@ public class JsRender.NodeToVala : Object {
 		// see what the 
 		var default_ctor = Palate.Gir.factoryFqn(this.node.fqn() + ".new");
 		if (default_ctor.paramset.params.size > 0) {
+			string[] args  = {};
 			var iter =default_ctor.paramset.params.list_iterator();
 			while (iter.next()) {
-				if (!this.node.has(iter.get().name)) {
-					
+				var n = iter.get().name;
+				if (!this.node.has(n)) {
+					args += "null";
+					continue;
+				}
+				args += this.node.get(n);
 
 			}
+			this.ret += this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );\n" ;
 
-
-			
 		}
 		
 		
-
-		
-		/*
-			
-                    
-                    
-                    if (typeof(item[nv[0]]) != 'undefined' && typeof(item[nv[0]]) != 'object' ) {
-                        citems[nv[0]] = true;
-                        args.push(JSON.stringify(item[nv[0]]));
-                        continue;
-                    }
-                    if (typeof(item['|' + nv[0]]) != 'undefined' && typeof(item['|' + nv[0]]) != 'object' ) {
-                        citems[nv[0]] = true;
-                        citems['|' + nv[0]] = true;
-                        args.push(item['|' + nv[0]]);
-                        continue;
-                    }
-                    args.push(nv.length > 1 ? nv[1] : 'null'); 
-                    
-                }
-	                strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
-		return;
-            } else {
-		    */
                 this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
 
             
