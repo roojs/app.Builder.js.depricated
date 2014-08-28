@@ -337,7 +337,7 @@ namespace Palete {
 				 
 			// fixme - other queires? - enums?
 			return null;
-		
+		}
 	}
 	    
 	     
