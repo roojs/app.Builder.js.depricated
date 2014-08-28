@@ -290,7 +290,7 @@ namespace Palete {
 			while(iter.next()) {
             	
 				iter.get_value().overlayParent();
-            }	
+    			}	
 
 			return cache.get(ns);
 			
