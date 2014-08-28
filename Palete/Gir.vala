@@ -291,19 +291,20 @@ namespace Palete {
 				cache = new Gee.HashMap<string,Gir>();
 			}
 			var ret = cache.get(ns);
-			if (ret != null) {
-				return ret;
-			}
-			var add = new Gir(ns);
-			cache.set(ns, add);
-			
-			var iter = add.classes.map_iterator();
-			while(iter.next()) {
-            	
-				iter.get_value().overlayParent();
-    			}	
+			if (ret == null) {
 
-			return cache.get(ns);
+				var add = new Gir(ns);
+				cache.set(ns, add);
+			
+				var iter = add.classes.map_iterator();
+				while(iter.next()) {
+		    	
+					iter.get_value().overlayParent();
+	    			}	
+
+				ret = cache.get(ns);
+
+			return ret;
 			
 		}
 		/**

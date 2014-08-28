@@ -72,7 +72,7 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
                 // Global Vars..
-                this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.name + ";\n\n";
+                this.ret += this.inpad + "public static " + this.xcls + "  " ; //+ this.node.name + ";\n\n";
                 
                 
 	}
@@ -257,6 +257,10 @@ public class JsRender.NodeToVala : Object {
 
 		// see what the 
 
+		this.node.fqn();
+		
+
+		
 		/*
 				;
             } else if (typeof(ctors[cls]) !== 'undefined') {
