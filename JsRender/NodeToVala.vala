@@ -324,7 +324,7 @@ public class JsRender.NodeToVala : Object {
 			var v = this.node.get(p);
 
 			// what's the type.. - if it's a string.. then we quote it..
-			if (p.type == "utf8") {
+			if (iter.get_value().type == "utf8") {
 				 v = "\"" +  v.escape("") + "\"";
 			}
 
