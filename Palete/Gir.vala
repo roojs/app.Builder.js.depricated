@@ -309,6 +309,12 @@ namespace Palete {
 			return ret;
 			
 		}
+		public static Gir  factoryFqn(string fqn) {
+		{       
+			
+		}
+
+			
 		/**
 		 * guess the fqn of a type == eg. gboolean or Widget etc...
 		 */
