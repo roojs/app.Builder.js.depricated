@@ -489,7 +489,7 @@ namespace Palete {
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
-					c.ns = this.ns;
+		    c.ns = this.ns;
                     parent.params.add(c);
                     parent = c;
                     break;
