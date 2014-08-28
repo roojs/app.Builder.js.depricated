@@ -257,8 +257,13 @@ public class JsRender.NodeToVala : Object {
 
 		// see what the 
 		var default_ctor = Palate.Gir.factoryFqn(this.node.fqn() + ".new");
-		if (default_ctor.paramset.params.size) {
+		if (default_ctor.paramset.params.size > 0) {
+			var iter =default_ctor.paramset.params.list_iterator();
+			while (iter.next()) {
+				if (!this.node.has(iter.get().name)) {
+					
 
+			}
 
 
 			
@@ -268,12 +273,8 @@ public class JsRender.NodeToVala : Object {
 
 		
 		/*
-				;
-            } else if (typeof(ctors[cls]) !== 'undefined') {
-                var args = [];
-                for(var i =0;i< ctors[cls].length;i++) {
+			
                     
-                    var nv = ctors[cls][i].split(':');
                     
                     if (typeof(item[nv[0]]) != 'undefined' && typeof(item[nv[0]]) != 'object' ) {
                         citems[nv[0]] = true;
