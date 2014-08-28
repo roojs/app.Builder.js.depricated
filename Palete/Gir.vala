@@ -392,15 +392,15 @@ namespace Palete {
                     //break; // not handled..
                 
                 case "class":
-                    var c = new GirObject("Class", parent.name + "." + n);
-                    parent.classes.set(n, c);
-					c.ns = this.ns;
-                    c.parent = element->get_prop("parent");
-					if (c.parent == null) {
-						c.parent = "";
-					}
-                    parent =  c;
-                    break;
+			var c = new GirObject("Class", parent.name + "." + n);
+			parent.classes.set(n, c);
+			c.ns = this.ns;
+			c.parent = element->get_prop("parent");
+			if (c.parent == null) {
+				c.parent = "";
+			}
+			parent =  c;
+			break;
                 
                 case "interface":
                     var c = new GirObject("Interface", parent.name + "." + n);
