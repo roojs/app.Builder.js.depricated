@@ -11,9 +11,15 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
 
-	var g = Palete.Gir.factory("Gtk");
-	var test = g.classes.get("Dialog");
+	//var g = Palete.Gir.factory("Gtk");
+	//var test = g.classes.get("Label");
 	
+	var test = Palete.Gir.factoryFqn("Gtk.Label.new");
+	if (test == null) {
+		print("could not find Gtk.Label.new\n");
+		return 0;
+	}
+
 	
 	var generator = new Json.Generator ();
 	var n = new Json.Node(Json.NodeType.OBJECT);
