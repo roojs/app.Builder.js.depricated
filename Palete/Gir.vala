@@ -324,8 +324,12 @@ namespace Palete {
 				return f;
 			}
 			var cls = f.classes.get(bits[1]);
-			if (
+			if (cls != null) {
 
+				
+			}
+			// fixme - other queires? - enums?
+			return null;
 			
 		}
 
