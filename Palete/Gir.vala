@@ -386,7 +386,7 @@ namespace Palete {
 			if (bits.length == 1 || f ==null) {
 				return f;
 			}
-			return f.fetchByFqn(fqn); // since classes are stored in fqn format...?
+			return f.fetchByFqn(fqn.substring(bits[0].length+1)); // since classes are stored in fqn format...?
 			                    
 			
 		}
