@@ -316,7 +316,7 @@ public class JsRender.NodeToVala : Object {
 
 		var iter = cls.props.map_iterator();
 		while (iter.next()) {
-			var p = iter.get_value();
+			var p = iter.get_key();
 			if (!this.node.has(p)) {
 				continue;
 			}
