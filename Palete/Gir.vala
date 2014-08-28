@@ -624,20 +624,21 @@ namespace Palete {
 	}
 	public void checkParamOveride(GirObject c)
 	{
-		var parset = c.parent();
-		if (parset.nodetype != "Paramset") {
+		var parset = c.gparent;
+		if (parset == null || parset.nodetype != "Paramset") {
 			return;
 		}
-		var method = parset.parent();
-		if (method.nodetype != "Ctor") {
+		var method = parset.gparent;
+		if (method == null || method.nodetype != "Ctor") {
 			return;
 		}
-		var cls = method.parent();
-		if (cls.nodetype != "Class") {
+		var cls = method.gparent;
+		if (cls == null || cls.nodetype != "Class") {
 			return;
 		}
 
-		var ns = cls.parent();
+		var ns = cls.gparent;
+		
 		
 		c.name = Gir.fetchOverride(ns.name, cls.name, method.name, c.name);
 	}
