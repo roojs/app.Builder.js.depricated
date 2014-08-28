@@ -317,15 +317,19 @@ namespace Palete {
 			}
 			
 			var f = (GirObject)factory(bits[0]);
-			if (f == null) {
-				return null;
-			}
-			if (bits.length == 1) {
+			
+			if (bits.length == 1 || f ==null) {
 				return f;
 			}
 			var cls = f.classes.get(bits[1]);
-			if (cls != null) {
+			if (bits.length == 2 || f == null) {
+				return cls;
+			}
 
+			
+			if (cls != null) {
+				var method = cls.methods.get(bits[2]);
+				
 				
 			}
 			// fixme - other queires? - enums?
