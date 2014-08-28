@@ -275,6 +275,7 @@ namespace Palete {
 		}
 
 		public GirObject fetchByFqn(string fqn) {
+			print("Searching (%s)%s for %s\n", this.nodetype, this.name, fqn);
 			var bits = fqn.split(".");
 			
 			if (this.nodetype == "Package") {
@@ -355,7 +356,7 @@ namespace Palete {
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
 			}
-			GirObject ret = cache.get(ns);
+			var ret = cache.get(ns);
 			if (ret == null) {
 
 				var add = new Gir(ns);
