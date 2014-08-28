@@ -302,24 +302,9 @@ namespace Palete {
 				return ret.fetchByFqn(fqn.substring(bits[0]+1));
 			}
 
-					
-				
-						                      
-			
-			if (bits.length == 2 || f == null) {
-				return cls;
-			}
-
-		
-			if (cls != null) {
-				var method = cls.methods.get(bits[2]);
-				if (bits.length == 3 || method == null) {
-					return method;
-				}
-			
-			}
+				 
 			// fixme - other queires? - enums?
-		return null;
+			return null;
 		
 	}
 	    
