@@ -47,6 +47,8 @@ namespace Palete {
 		public  string sig;
 
 		bool is_overlaid;
+
+		public  GirObject gparent;
 		public Gee.ArrayList<GirObject> params;
 		public Gee.ArrayList<string> implements;
 		public Gee.ArrayList<string> inherits; // full list of all classes and interfaces...
@@ -58,6 +60,9 @@ namespace Palete {
 		public Gee.HashMap<string,GirObject> consts;
 		public Gee.HashMap<string,GirObject> signals;
 		public string doctxt;
+
+
+		
 		public GirObject(string nodetype, string n)
 		{
 			this.nodetype = nodetype;
