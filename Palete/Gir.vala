@@ -642,8 +642,8 @@ namespace Palete {
 		
 		c.name = this.fetchOverride(ns.name, cls.name, method.name, c.name);
 	}
-	static bool overrides_loaded = false;
-	static Gee.HashMap<string,string> overrides;
+	public static bool overrides_loaded = false;
+	public static Gee.HashMap<string,string> overrides;
 	
 	public string fetchOverride(string ns, string cls, string method, string param)
 	{
