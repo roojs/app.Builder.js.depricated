@@ -622,7 +622,7 @@ namespace Palete {
     
     
 	}
-	public void checkParamOveride(GirObject c)
+	public void checkParamOverride(GirObject c)
 	{
 		var parset = c.gparent;
 		if (parset == null || parset.nodetype != "Paramset") {
@@ -645,7 +645,7 @@ namespace Palete {
 	static bool overrides_loaded = false;
 	static Gee.HashMap<string,string> overrides;
 	
-	public string fetchOveride(string ns, string cls, string method, string param)
+	public string fetchOverride(string ns, string cls, string method, string param)
 	{
 		// overrides should be in a file Gir.overides
 		// in that "Gtk.Label.new.str" : "label"
