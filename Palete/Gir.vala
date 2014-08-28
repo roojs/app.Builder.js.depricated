@@ -651,6 +651,7 @@ namespace Palete {
 		// in that "Gtk.Label.new.str" : "label"
 		this.loadOverrides();
 		var key = "%s.%s.%s.%s".printf(ns,cls,method,param);
+		print("Chekcing for key %s", key);
 		if (!overrides.has_key(key)) {
 			return param;
 		}
@@ -683,7 +684,7 @@ namespace Palete {
 			var v = obj.get_string_member(key);
 			
 			
-			overrides.set(rkey,  (string)sv);
+			overrides.set(key, v);
 
 		});
 	
