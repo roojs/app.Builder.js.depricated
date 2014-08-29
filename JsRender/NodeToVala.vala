@@ -39,6 +39,7 @@ public class JsRender.NodeToVala : Object {
 		this.ret = "";
 		this.top = top == null ? this : top;
 		this.ignoreList = new Gee.ArrayList<string>();
+		this.myvars = new Gee.ArrayList<string>();
 		this.vitems = new GLib.List<Node>();
 	}
 
