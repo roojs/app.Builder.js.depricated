@@ -134,7 +134,9 @@ public class JsRender.NodeToVala : Object {
 		}
                 // Global Vars..
                 //this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
-		this.ret += this.inpad + "static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
+
+		
+		this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
                 
                 
 	}
@@ -161,10 +163,10 @@ public class JsRender.NodeToVala : Object {
 	    }
             this.ret += pad + "public static " + xcls + " singleton()\n" + 
     			this.pad + "{\n" +
-        		this.ipad + "if (" + this.node.xvala_id  + " == null) {\n" +
-        		this.ipad + "    " + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
+        		this.ipad + "if (_" + this.node.xvala_id  + " == null) {\n" +
+        		this.ipad + "    _" + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
-			this.ipad + "return " + this.node.xvala_id +";\n" + 
+			this.ipad + "return _" + this.node.xvala_id +";\n" + 
         		this.pad + "}\n";
 	}
             
@@ -210,7 +212,7 @@ public class JsRender.NodeToVala : Object {
 		        ///    continue;
 		        ///}
 		        
-        		var kk = k.substring(1);
+        		var kk = k;
                 
 		        var vv = kk.split(" ");
 		        if (vv[0] == "@") {
