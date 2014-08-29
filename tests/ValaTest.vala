@@ -7,7 +7,6 @@
 int main (string[] args) {
 	Gtk.init (ref args);
 	//GtkClutter.init (ref args);
-	var app =  Builder4.Application.singleton();
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
@@ -21,8 +20,8 @@ int main (string[] args) {
 	while (iter.next()) {
 		var f= iter.get();
 		f.loadItems();
-		var nv = new JsRender.NodeToVala( f.tree, 0, null);
-		print("\n%s\n",nv.munge());
+		var str= JsRender.NodeToVala.mungeFile(JsRender(f);
+		print("\n%s\n",str);
 		return 0;
 	}
     
