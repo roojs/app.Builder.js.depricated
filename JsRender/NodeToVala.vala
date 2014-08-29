@@ -41,7 +41,8 @@ public class JsRender.NodeToVala : Object {
 
 	public int vcnt = 0;
 	
-	public void  toValaName(Node item) {
+	public void  toValaName(Node item) 
+	{
     		this.vcnt++;
 
 		var cls = this.toValaNS(item) + item.get("xtype");
