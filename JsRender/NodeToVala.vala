@@ -381,7 +381,7 @@ public class JsRender.NodeToVala : Object {
      		var cls = Palete.Gir.factoryFqn(this.node.fqn());
             
             // initialize.. my vars..
-		this.ret += "\n" + this.ipad + "// my vars\n";
+		this.ret += "\n" + this.pad + "// my vars\n";
 		var iter = this.node.props.map_iterator();
 		while(iter.next()) {
     			var k = iter.get_key();
