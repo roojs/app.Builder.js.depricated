@@ -54,12 +54,11 @@ public class JsRender.NodeToVala : Object {
 
 		var cls = this.toValaNS(item) + item.get("xtype");
 
-		string id = item.get("id").length > 0 ? item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
+		string id = item.get("id").length > 0 ?
+			item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
 
-			var props = this.palete.getPropertiesFor(cls,  "props");
+		//var props = this.palete.getPropertiesFor(cls,  "props");
              
-            
-            
 		item.xvala_cls = cls;
 		item.xvala_xcls = "Xcls_" + id;
 		item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
