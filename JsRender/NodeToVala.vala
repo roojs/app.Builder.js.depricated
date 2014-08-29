@@ -235,12 +235,15 @@ public class JsRender.NodeToVala : Object {
 				continue;
 		        } 
 			var kname = vv[vv.length-1];
-			if ( kname == "xns" || kname 
+			if ( kname == "xns" || kname == "xns") {
+				continue;
+			}
 			// is it a class property...
 			if (cls.props.has_key(vv[vv.length-1])) {
 				continue;
 			}
 			
+			    
 			this.ret += this.pad + "public " + k + ";\n";
 		        
 			this.ignore(k);
