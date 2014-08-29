@@ -7,6 +7,7 @@
 int main (string[] args) {
 	Gtk.init (ref args);
 	//GtkClutter.init (ref args);
+	var app =  Builder4.Application.singleton();
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
