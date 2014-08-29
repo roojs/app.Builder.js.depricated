@@ -20,7 +20,7 @@ int main (string[] args) {
 	while (iter.next()) {
 		var f= iter.get();
 		f.loadItems();
-		var str= JsRender.NodeToVala.mungeFile(JsRender(f);
+		var str= JsRender.NodeToVala.mungeFile(f);
 		print("\n%s\n",str);
 		return 0;
 	}
