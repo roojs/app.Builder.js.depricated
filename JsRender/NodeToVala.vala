@@ -247,7 +247,7 @@ public class JsRender.NodeToVala : Object {
 			
 			    
 			this.ret += this.pad + "public " + 
-				(k[0] == '$') ? k.substring(2) : k ) + ";\n";
+				(k[0] == '$' ? k.substring(2) : k ) + ";\n";
 		        
 			this.ignore(k);
 			
