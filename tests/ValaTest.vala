@@ -19,6 +19,7 @@ int main (string[] args) {
 	var iter = ar.list_iterator();
 	while (iter.next()) {
 		var f= iter.get();
+		new JsRender.NodeToVala(
 		
 		//f.save();
 	} 
