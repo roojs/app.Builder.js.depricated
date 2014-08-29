@@ -127,7 +127,7 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
                 // Global Vars..
-                this.ret += this.inpad + "public static " + this.xcls + "  "  this.xvala_id+ ";\n\n";
+                this.ret += this.inpad + "public static " + this.xcls + "  " + this.xvala_id+ ";\n\n";
                 
                 
 	}
