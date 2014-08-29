@@ -44,7 +44,7 @@ public class JsRender.NodeToVala : Object {
 	public int vcnt = 0;
 	string toValaNS(Node item)
         {
-            var ns = item.get("* xns") ;
+            var ns = item.get("$ xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
@@ -75,13 +75,14 @@ public class JsRender.NodeToVala : Object {
 			          
         }
 
-	static string mungeFile(JsRender file) 
+	public static string mungeFile(JsRender file) 
 	{
 		var n = new NodeToVala(file.tree, 0, null);
 		n.vcnt = 0;
 		n.toValaName(file.tree);
-		this.cls = file.tree.xvala_cls;
-		this.xcls = file.tree.xvala_xcls;
+		print("top cls %s / xlcs %s\n ",file.tree.xvala_cls,file.tree.xvala_cls); 
+		n.cls = file.tree.xvala_cls;
+		n.xcls = file.tree.xvala_xcls;
 		return n.munge();
 		
 
