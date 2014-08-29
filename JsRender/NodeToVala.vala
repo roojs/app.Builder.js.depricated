@@ -38,8 +38,10 @@ public class JsRender.NodeToVala : Object {
 		this.top = top == null ? this : top;
 		this.ignoreList = new Gee.ArrayList<string>();
 	}
+
+	public int vcnt = 0;
 	
-	void  toValaName(Node item) {
+	public void  toValaName(Node item) {
     		this.vcnt++;
 
 		var cls = this.toValaNS(item) + item.get("xtype");
@@ -69,6 +71,7 @@ public class JsRender.NodeToVala : Object {
 	static string mungeFile(JsRender.JsRender file) 
 	{
 		var n = new NodeToVala(file.tree, 0, null);
+		n.vcnt = 0;
 		n.toValaName(file.tree);
 		return n.munge();
 		
