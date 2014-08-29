@@ -23,6 +23,7 @@ public class JsRender.NodeToVala : Object {
 	string ret;
 
 	Gee.ArrayList<string> ignoreList; 
+	GLib.List<Node> vitems; // top level items
 	NodeToVala top;
 	
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
