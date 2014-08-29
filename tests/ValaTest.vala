@@ -11,10 +11,6 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
 
-	//var g = Palete.Gir.factory("Gtk");
-	//var test = g.classes.get("Label");
-	
-
 	
 	Project.Project.loadAll();
 	var p = Project.Project.getProject("BuilderTest");
@@ -23,7 +19,8 @@ int main (string[] args) {
 	var iter = ar.list_iterator();
 	while (iter.next()) {
 		var f= iter.get();
-		f.save();
+		
+		//f.save();
 	} 
     
 	
