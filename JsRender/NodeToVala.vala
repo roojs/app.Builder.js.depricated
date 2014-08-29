@@ -221,17 +221,14 @@ public class JsRender.NodeToVala : Object {
 		var iter = this.node.props.map_iterator();
 		while (iter.next()) {
     			var k = iter.get_key();
-			if (this.sh(k);
+			if (this.shouldIgnore(k)) {
+				continue;
+			}
 
 			
-			// what are "the private properties with type defs in the new format?
-		        ///if (k[0] != '????') {
-		        ///    continue;
-		        ///}
-		        
-        		var kk = k;
+        		
                 
-		        var vv = kk.split(" ");
+		        var vv = k.split(" ");
 		        if (vv[0] == "@") {
 		    		this.ret += this.pad + "public signal " + kk  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
