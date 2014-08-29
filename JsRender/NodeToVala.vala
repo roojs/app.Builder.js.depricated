@@ -39,6 +39,41 @@ public class JsRender.NodeToVala : Object {
 		this.ignoreList = new Gee.ArrayList<string>();
 	}
 	
+	void  toValaName(Node item) {
+    		this.vcnt++;
+
+		var cls = this.toValaNS(item) + item.get("xtype");
+
+		string id = item.get("id").length > 0 ? item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
+
+			var props = this.palete.getPropertiesFor(cls,  "props");
+             
+            
+            
+		item.xvala_cls = cls;
+		item.xvala_xcls = "Xcls_" + id;
+		item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
+				                                               
+		this.vitems.append(item);  
+		// loop children..
+				                                               
+		if (item.items.size < 1) {
+			return;
+		}
+		for(var i =0;i<item.items.size;i++) {
+			this.toValaName(item.items.get(i));
+		}
+			          
+        }
+
+	static string mungeFile(JsRender.JsRender file) 
+	{
+		var n = new NodeToVala(file.tree, 0, null);
+		n.toValaName(file.tree);
+		return n.munge();
+		
+
+	}
 	
 	public string munge ( )
 	{
