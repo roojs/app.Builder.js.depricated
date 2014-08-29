@@ -14,22 +14,6 @@ int main (string[] args) {
 	//var g = Palete.Gir.factory("Gtk");
 	//var test = g.classes.get("Label");
 	
-	var test = Palete.Gir.factoryFqn("Gtk.Label.new");
-	if (test == null) {
-		print("could not find Gtk.Label.new\n");
-		return 0;
-	}
-
-	
-	var generator = new Json.Generator ();
-	var n = new Json.Node(Json.NodeType.OBJECT);
-	n.set_object(test.toJSON());
-	generator.set_root(n);
-	generator.indent = 4;
-	generator.pretty = true;
-    
-	print(generator.to_data(null));
-	return 0;
 
 	
 	Project.Project.loadAll();
@@ -44,4 +28,26 @@ int main (string[] args) {
     
 	
 	return 0;
+}
+
+
+void testGir() {
+
+
+	var test = Palete.Gir.factoryFqn("Gtk.Label.new");
+	if (test == null) {
+		print("could not find Gtk.Label.new\n");
+		return;
+	}
+
+	
+	var generator = new Json.Generator ();
+	var n = new Json.Node(Json.NodeType.OBJECT);
+	n.set_object(test.toJSON());
+	generator.set_root(n);
+	generator.indent = 4;
+	generator.pretty = true;
+    
+	print(generator.to_data(null));
+	
 }
