@@ -238,7 +238,7 @@ public class JsRender.NodeToVala : Object {
 			if (cls.props.has_key(vv[vv.length-1])) {
 				continue;
 			}
-			
+			this.myvars.add(k);
 
 			
 			    
