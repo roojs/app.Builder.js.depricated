@@ -23,7 +23,7 @@ public class JsRender.NodeToVala : Object {
 	string ret;
 
 	Gee.ArrayList<string> ignoreList; 
-	Gee.ArrayList<string> myVars;
+	Gee.ArrayList<string> myvars;
 	GLib.List<Node> vitems; // top level items
 	NodeToVala top;
 	
@@ -204,7 +204,7 @@ public class JsRender.NodeToVala : Object {
 	 
         void addMyVars()
 	{
- 		this.ret += "\n" + this.pad + "// my vars\n";
+ 		this.ret += "\n" + this.ipad + "// my vars\n";
             
 
  
