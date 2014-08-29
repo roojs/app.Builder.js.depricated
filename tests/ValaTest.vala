@@ -19,8 +19,9 @@ int main (string[] args) {
 	var iter = ar.list_iterator();
 	while (iter.next()) {
 		var f= iter.get();
+		f.loadItems();
 		var nv = new JsRender.NodeToVala( f.tree, 0, null);
-		print("%s\n",nv.munge());
+		print("\n%s\n",nv.munge());
 		return 0;
 	}
     
