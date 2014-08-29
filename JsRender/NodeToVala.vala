@@ -202,7 +202,7 @@ public class JsRender.NodeToVala : Object {
 	 
         void addMyVars()
 	{
- 		this.ret += "\n" + this.ipad + "// my vars\n";
+ 		this.ret += "\n" + this.pad + "// my vars\n";
             
 
  
@@ -228,7 +228,7 @@ public class JsRender.NodeToVala : Object {
 			
 		        var vv = k.split(" ");
 		        if (vv[0] == "@") {
-		    		this.ret += this.pad + "public signal" + k.substrring(1)  + " "  + iter.get_value() + ";\n";
+		    		this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
 				continue;
 		        } 
