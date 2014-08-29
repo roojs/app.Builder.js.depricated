@@ -97,6 +97,9 @@ public class JsRender.NodeToVala : Object {
 
 		this.ignore("pack");
 		this.ignore("init");
+		this.ignore("xns");
+		this.ignore("xtype");
+
 		
 		this.globalVars();
 		this.classHeader();
@@ -218,7 +221,7 @@ public class JsRender.NodeToVala : Object {
 		var iter = this.node.props.map_iterator();
 		while (iter.next()) {
     			var k = iter.get_key();
-
+			if (this.sh(k);
 
 			
 			// what are "the private properties with type defs in the new format?
@@ -644,3 +647,5 @@ public class JsRender.NodeToVala : Object {
 	 
 	
 	
+
+
