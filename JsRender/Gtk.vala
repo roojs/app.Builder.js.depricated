@@ -211,10 +211,10 @@ namespace JsRender {
         
         int vcnt = 0;
 
-		Palete.Gtk palete;
-		GLib.List<Node> vitems;
-		string xvala_xcls;
-		
+	Palete.Gtk palete;
+	GLib.List<Node> vitems;
+	string xvala_xcls;
+	
         public override string toValaSource(bool testcompile)
         {
             var ret = "";
