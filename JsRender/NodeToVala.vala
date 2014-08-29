@@ -23,6 +23,7 @@ public class JsRender.NodeToVala : Object {
 	string ret;
 
 	Gee.ArrayList<string> ignoreList; 
+	Gee.ArrayList<string> myVars;
 	GLib.List<Node> vitems; // top level items
 	NodeToVala top;
 	
@@ -397,7 +398,7 @@ public class JsRender.NodeToVala : Object {
         		if (v.length < 1 || ar[0] == "@") {
             			continue;
         		}
-//FIXME -- check for raw string.. "$ string XXXX"
+//FIXME -- check for raw string.. "string XXXX"
 			
 			// if it's a string...
 			
