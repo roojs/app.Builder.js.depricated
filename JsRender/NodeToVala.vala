@@ -127,7 +127,7 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
                 // Global Vars..
-                this.ret += this.inpad + "public static " + this.xcls + "  " ; //+ this.node.name + ";\n\n";
+                this.ret += this.inpad + "public static " + this.xcls + "  "  this.xvala_id+ ";\n\n";
                 
                 
 	}
@@ -249,7 +249,8 @@ public class JsRender.NodeToVala : Object {
     		// ctor..
     		this.ret += "\n" + ipad + "// ctor \n";
 		if (this.node.has("* args")) {
-    		
+    			// not sure what this is supposed to be ding..
+			
         		cargs_str = ", " + this.node.get("* args");
         		//var ar = this.node.get("* args");.split(",");
         		//for (var ari =0; ari < ar.length; ari++) {
@@ -259,7 +260,7 @@ public class JsRender.NodeToVala : Object {
 		
     		if (this.depth < 1) {
         		this.ret += this.pad + "public " + this.xcls + "(" + 
-				    cargs_str.substring(1) +")\n" + this.pad + "{\n";
+				    cargs_str +")\n" + this.pad + "{\n";
 		} else {
                 
                     //code 
@@ -312,7 +313,7 @@ public class JsRender.NodeToVala : Object {
 
 		// see what the 
 		var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
-		if (default_ctor.paramset.params.size > 0) {
+		if (default_ctor.paramset != null && default_ctor.paramset.params.size > 0) {
 			string[] args  = {};
 			var iter =default_ctor.paramset.params.list_iterator();
 			while (iter.next()) {
