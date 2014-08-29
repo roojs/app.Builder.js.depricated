@@ -80,6 +80,8 @@ public class JsRender.NodeToVala : Object {
 		var n = new NodeToVala(file.tree, 0, null);
 		n.vcnt = 0;
 		n.toValaName(file.tree);
+		this.cls = file.tree.xvala_cls;
+		this.xcls = file.tree.xvala_xcls;
 		return n.munge();
 		
 
@@ -127,7 +129,7 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
                 // Global Vars..
-                this.ret += this.inpad + "public static " + this.xcls + "  " + this.xvala_id+ ";\n\n";
+                this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
                 
                 
 	}
