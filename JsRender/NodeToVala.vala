@@ -199,14 +199,28 @@ public class JsRender.NodeToVala : Object {
 	 
         void addMyVars()
 	{
- 	       this.ret += "\n" + this.ipad + "// my vars\n";
+ 		this.ret += "\n" + this.ipad + "// my vars\n";
             
-            
+
+ 
+   		var cls = Palete.Gir.factoryFqn(this.node.fqn());
+           
+		
+	 
+
+
+
+
+
+
+		
     		// Key = TYPE:name
 		var iter = this.node.props.map_iterator();
 		while (iter.next()) {
     			var k = iter.get_key();
 
+
+			
 			// what are "the private properties with type defs in the new format?
 		        ///if (k[0] != '????') {
 		        ///    continue;
@@ -216,11 +230,17 @@ public class JsRender.NodeToVala : Object {
                 
 		        var vv = kk.split(" ");
 		        if (vv[0] == "@") {
-		            this.ret += this.pad + "public signal " + kk  + " "  + iter.get_value() + ";\n";
-		        } else {
+		    		this.ret += this.pad + "public signal " + kk  + " "  + iter.get_value() + ";\n";
+				this.ignore(k);
+				continue;
+		        } 
+
+			if cls.props.has_key(vv[vv.length-1])) {
+				continue;
+			}
+			
+			this.ret += this.pad + "public " + kk + ";\n";
 		        
-		            this.ret += this.pad + "public " + kk + ";\n";
-		        }
 			this.ignore(k);
 			
 		        
@@ -372,6 +392,10 @@ public class JsRender.NodeToVala : Object {
         		this.ret += this.ipad + "this." + vv[1] + " = " +   v +";\n";
     		}
 	}
+
+	
+
+
 	
 	void addWrappedProperties()
 	{
