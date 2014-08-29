@@ -389,7 +389,7 @@ public class JsRender.NodeToVala : Object {
 			
         		var v = this.node.props.get(k);
 			// ignore signals.. 
-        		if (v.length < 1 || ar[0] == "@") {
+        		if (v.length < 1) {
             			continue;
         		}
 //FIXME -- check for raw string.. "string XXXX"
