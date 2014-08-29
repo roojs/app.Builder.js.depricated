@@ -44,7 +44,7 @@ public class JsRender.NodeToVala : Object {
 	public int vcnt = 0;
 	string toValaNS(Node item)
         {
-            var ns = item.get("$ xns") ;
+            var ns = item.get("xns") ;
             //if (ns == "GtkSource") {
                 //return "Gtk.Source.";
             //}
@@ -61,7 +61,7 @@ public class JsRender.NodeToVala : Object {
 
 		item.xvala_cls = cls;
 		item.xvala_xcls = "Xcls_" + id;
-		item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
+		item.xvala_id =  id;
 				                                               
 		this.vitems.append(item);  
 		// loop children..
@@ -79,7 +79,10 @@ public class JsRender.NodeToVala : Object {
 	{
 		var n = new NodeToVala(file.tree, 0, null);
 		n.vcnt = 0;
+		
 		n.toValaName(file.tree);
+		
+		
 		print("top cls %s / xlcs %s\n ",file.tree.xvala_cls,file.tree.xvala_cls); 
 		n.cls = file.tree.xvala_cls;
 		n.xcls = file.tree.xvala_xcls;
@@ -130,7 +133,8 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
                 // Global Vars..
-                this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
+                //this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
+		this.ret += this.inpad + "static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
                 
                 
 	}
@@ -157,10 +161,10 @@ public class JsRender.NodeToVala : Object {
 	    }
             this.ret += pad + "public static " + xcls + " singleton()\n" + 
     			this.pad + "{\n" +
-        		//this.ipad + "if (" + ??this.name + " == null) {\n" +
-        		//this.ipad + "    " + ??this.name + "= new "+ this.xcls + "();\n" + // what about args?
+        		this.ipad + "if (" + this.node.xvala_id  + " == null) {\n" +
+        		this.ipad + "    " + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
-			//this.ipad + "return " + ??this.name +";\n" + 
+			this.ipad + "return " + this.node.xvala_id +";\n" + 
         		this.pad + "}\n";
 	}
             
