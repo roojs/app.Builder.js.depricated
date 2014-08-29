@@ -226,8 +226,6 @@ public class JsRender.NodeToVala : Object {
 			}
 
 			
-        		
-                
 		        var vv = k.split(" ");
 		        if (vv[0] == "@") {
 		    		this.ret += this.pad + "public signal" + k.substrring(1)  + " "  + iter.get_value() + ";\n";
@@ -235,9 +233,11 @@ public class JsRender.NodeToVala : Object {
 				continue;
 		        } 
 			var kname = vv[vv.length-1];
-			if ( kname == "xns" || kname == "xns") {
+
+			if (this.shouldIgnore(kname)) {
 				continue;
 			}
+			
 			// is it a class property...
 			if (cls.props.has_key(vv[vv.length-1])) {
 				continue;
