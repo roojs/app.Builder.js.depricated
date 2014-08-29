@@ -391,10 +391,10 @@ public class JsRender.NodeToVala : Object {
 				continue;
 			}
                 
-        		var kk = k.substring(2);
+ 
         		var v = iter.get_value();
-        		var vv = kk.split(" ");
-        		if (v.length < 1 || vv[0] == "@") {
+ 
+        		if (v.length < 1 || ar[0] == "@") {
             			continue;
         		}
         		this.ret += this.ipad + "this." + vv[vv.length-1] + " = " +   v +";\n";
