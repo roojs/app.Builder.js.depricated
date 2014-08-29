@@ -284,7 +284,7 @@ public class JsRender.NodeToVala : Object {
     		string[] cargs = {};
     		var cargs_str = "";
     		// ctor..
-    		this.ret += "\n" + ipad + "// ctor \n";
+    		this.ret += "\n" + this.pad + "// ctor \n";
 		if (this.node.has("* args")) {
     			// not sure what this is supposed to be ding..
 			
