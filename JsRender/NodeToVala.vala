@@ -374,21 +374,20 @@ public class JsRender.NodeToVala : Object {
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
             
-     		var cls = Palete.Gir.factoryFqn(this.node.fqn());
+     		
             
             // initialize.. my vars..
 		this.ret += "\n" + this.pad + "// my vars\n";
-		var iter = this.node.props.map_iterator();
+		
+		var iter = this.myvars.list_iterator();
 		while(iter.next()) {
-    			var k = iter.get_key();
+			
+    			var k = iter.get();
 			
         		var ar  = k.strip().split(" ");
 			var kname = ar[ar.length-1];
-			if (cls.props.has_key(kname)) {
-				continue;
-			}
-                
-        		var v = iter.get_value();
+			
+        		var v = this.node.props.get(k);
 			// ignore signals.. 
         		if (v.length < 1 || ar[0] == "@") {
             			continue;
