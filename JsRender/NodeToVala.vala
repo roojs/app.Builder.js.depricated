@@ -397,7 +397,7 @@ public class JsRender.NodeToVala : Object {
         		if (v.length < 1 || vv[0] == "@") {
             			continue;
         		}
-        		this.ret += this.ipad + "this." + vv[1] + " = " +   v +";\n";
+        		this.ret += this.ipad + "this." + vv[vv.length-1] + " = " +   v +";\n";
     		}
 	}
 
