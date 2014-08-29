@@ -234,7 +234,7 @@ public class JsRender.NodeToVala : Object {
 				this.ignore(k);
 				continue;
 		        } 
-
+			// is it a class property...
 			if cls.props.has_key(vv[vv.length-1])) {
 				continue;
 			}
