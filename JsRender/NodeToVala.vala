@@ -56,6 +56,15 @@ public class JsRender.NodeToVala : Object {
 		this.addValaCtor();
 		this.addUnderThis();
 		this.addWrappedCtor();
+
+		this.addInitMyVars();
+		this.addWrappedProperties();
+		this.addChildren();
+		this.addInit();
+		this.addListeners();
+		this.addEndCtor();
+		this.addUserMethods();
+		this.iterChildren();
 		
 		return this.ret;
 		 
@@ -537,12 +546,12 @@ public class JsRender.NodeToVala : Object {
 	}
 	
 	void ignore(string i) {
-
+		this.ignoreList.add(i);
 		
 	}
 	bool shouldIgnore(string i)
 	{
-		return true;
+		return ignoreList.contains(i);
 	}
 	
 
