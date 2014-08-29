@@ -19,10 +19,10 @@ int main (string[] args) {
 	var iter = ar.list_iterator();
 	while (iter.next()) {
 		var f= iter.get();
-		new JsRender.NodeToVala(
-		
-		//f.save();
-	} 
+		var nv = new JsRender.NodeToVala( p.tree, 0, null);
+		print("%s\n",nv.munge());
+		return 0;
+	}
     
 	
 	return 0;
