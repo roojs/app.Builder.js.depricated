@@ -393,7 +393,7 @@ public class JsRender.NodeToVala : Object {
 			}
                 
         		var v = iter.get_value();
- 
+			// ignore signals.. 
         		if (v.length < 1 || ar[0] == "@") {
             			continue;
         		}
