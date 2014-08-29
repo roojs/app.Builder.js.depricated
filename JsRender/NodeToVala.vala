@@ -230,7 +230,7 @@ public class JsRender.NodeToVala : Object {
                 
 		        var vv = k.split(" ");
 		        if (vv[0] == "@") {
-		    		this.ret += this.pad + "public signal " + kk  + " "  + iter.get_value() + ";\n";
+		    		this.ret += this.pad + "public signal" + k.substrring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
 				continue;
 		        } 
