@@ -397,7 +397,8 @@ public class JsRender.NodeToVala : Object {
         		if (v.length < 1 || ar[0] == "@") {
             			continue;
         		}
-//FIXME -- check for string.. $ 
+//FIXME -- check for raw string.. "$ string XXXX"
+			
 			// if it's a string...
 			
         		this.ret += this.ipad + "this." + kname + " = " +   v +";\n";
