@@ -387,11 +387,11 @@ public class JsRender.NodeToVala : Object {
     			var k = iter.get_key();
 			
         		var ar  = k.strip().split(" ");
-			if (cls.props.has_key(ar[ar.length-1])) {
+			var kname = ar[ar.length-1];
+			if (cls.props.has_key(kname)) {
 				continue;
 			}
                 
- 
         		var v = iter.get_value();
  
         		if (v.length < 1 || ar[0] == "@") {
