@@ -628,9 +628,8 @@ public class JsRender.NodeToVala : Object {
 
 	string padMultiline(string pad, string str)
 	{
-		var ar = 
-
-		return str;
+		var ar = str.strip().split("\n");
+		return string.joinv("\n" + pad , ar);
 	}
 	
 	void ignore(string i) {
