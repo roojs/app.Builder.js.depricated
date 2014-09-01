@@ -628,6 +628,8 @@ public class JsRender.NodeToVala : Object {
 
 	string padMultiline(string pad, string str)
 	{
+		var ar = 
+
 		return str;
 	}
 	
