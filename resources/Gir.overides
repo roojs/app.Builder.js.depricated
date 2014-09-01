@@ -10,7 +10,7 @@
     "Gtk.SourceBuffer.new.table" : "tag_table",
     "Gtk.Table.new.rows" : "n_rows",
     "Gtk.Table.new.columns" : "n_columns",
-    
+    "Gtk.ListStore.new.columns" : "columns",
     
     
     "-" : ""
