@@ -33,7 +33,7 @@ public class JsRender.NodeToVala : Object {
 		
 		this.node = node;
 		this.depth = depth;
-		this.inpad = string.nfill(depth > 0 :4 : 0, ' ');
+		this.inpad = string.nfill(depth > 0 ? 4 : 0, ' ');
 		this.pad = this.inpad + "    ";
 		this.ipad = this.inpad + "        ";
 		this.cls = node.xvala_cls;
@@ -487,7 +487,7 @@ public class JsRender.NodeToVala : Object {
 			}
             		
             		var pack = packing[0];
-			this.ret += this.ipad + "this.el." + pack + " (  child_" + "%d".printf(i) + ".el " +
+			this.ret += this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
                                (packing.length > 1 ? 
                         		(", " + string.joinv(",", packing).substring(pack.length+1))
                  			:
