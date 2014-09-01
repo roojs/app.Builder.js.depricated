@@ -366,7 +366,7 @@ public class JsRender.NodeToVala : Object {
 
 			}
 			this.ret += this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );\n" ;
-
+			return;
 		}
 		
 		
