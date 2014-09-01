@@ -220,9 +220,13 @@ public class JsRender.NodeToVala : Object {
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
-
+			var vv = k.split(" ");
+			// user defined method
+			if (vv[0] == "|") {
+				continue;
+			}
 			
-		        var vv = k.split(" ");
+		        
 		        if (vv[0] == "@") {
 		    		this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
@@ -377,7 +381,7 @@ public class JsRender.NodeToVala : Object {
      		
             
             // initialize.. my vars..
-		this.ret += "\n" + this.pad + "// my vars (dec)\n";
+		this.ret += "\n" + this.ipad + "// my vars (dec)\n";
 		
 		var iter = this.myvars.list_iterator();
 		while(iter.next()) {
