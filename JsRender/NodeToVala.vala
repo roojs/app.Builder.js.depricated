@@ -605,7 +605,7 @@ public class JsRender.NodeToVala : Object {
         		// function in the format of {type} (args) { .... }
          		var kk = k.substring(2);
         		var vv = iter.get_value();
-        		this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.ipad, vv) + "\n";
+        		this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv) + "\n";
 			
                 
             }
