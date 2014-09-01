@@ -29,9 +29,11 @@ public class JsRender.NodeToVala : Object {
 	
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
 	{
+
+		
 		this.node = node;
 		this.depth = depth;
-		this.inpad = string.nfill(depth*4, ' ');
+		this.inpad = string.nfill(depth > 0 :4 : 0, ' ');
 		this.pad = this.inpad + "    ";
 		this.ipad = this.inpad + "        ";
 		this.cls = node.xvala_cls;
