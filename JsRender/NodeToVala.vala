@@ -351,8 +351,12 @@ public class JsRender.NodeToVala : Object {
 		// the ctor arguments...
 
 		// see what the 
-		var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
-		if (default_ctor.paramset != null && default_ctor.paramset.params.size > 0) {
+		var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".newv");
+		if (default_ctor == null) {
+			 default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
+
+		}
+		if (default_ctor != null && default_ctor.paramset != null && default_ctor.paramset.params.size > 0) {
 			string[] args  = {};
 			var iter =default_ctor.paramset.params.list_iterator();
 			while (iter.next()) {
@@ -397,7 +401,7 @@ public class JsRender.NodeToVala : Object {
         		var v = this.node.props.get(k);
 			// ignore signals.. 
         		if (v.length < 1) {
-            			continue;
+            			continue; 
         		}
 //FIXME -- check for raw string.. "string XXXX"
 			
