@@ -106,7 +106,9 @@ public class Xcls_DialogSaveModule : Object
                 }
                 break;
             }
-            _this.project.createFile(name, _this.data);
+            var f = _this.project.newFile(name);
+            f.tree=  _this.data;
+            f.save();
             // now we save it..
             this.el.hide();
             
