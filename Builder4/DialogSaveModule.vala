@@ -106,7 +106,7 @@ public class Xcls_DialogSaveModule : Object
                 }
                 break;
             }
-            var f = _this.project.newFile(name);
+            var f = project.newFile(name);
             f.tree =  _this.data.deepClone();
             f.save();
             
