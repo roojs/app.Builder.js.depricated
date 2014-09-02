@@ -37,7 +37,7 @@ DialogSaveModule=new XObject({
                 StandardErrorDialog.show(
                     (Gtk.Window) _this.el,
         
-                    "Template Nane must contain only letters and spaces. "
+                    "Template Nane must contain only letters dots"
                 );
                  return;
             }
