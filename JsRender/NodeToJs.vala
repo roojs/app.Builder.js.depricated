@@ -36,7 +36,7 @@ public class JsRender.NodeToJs : Object {
 		//return this.mungeToString(this.node);
 
 		if (this.node.props.get("* xinclude")) {
-			return this.xincludeToString();
+			return this.xIncludeToString();
 		}
 		
 		this.checkChildren();
@@ -409,7 +409,11 @@ public class JsRender.NodeToJs : Object {
 
 		// finally output listeners...
 		
-	
+	public void xIncludeToString()
+	{
+		
+
+	}
 
 }
 	
