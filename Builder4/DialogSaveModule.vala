@@ -98,12 +98,12 @@ public class Xcls_DialogSaveModule : Object
     }
 
     // userdefined functions 
-    public void show (Gtk.Window parent, JsRender.JsRender file, JsRender.Node data) {
+    public void show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
          
              
             this.el.set_transient_for(parent);
             this.data = data;
-            this.file = file;
+            this.project = project;
             this.name.el.set_text("");
             this.el.show_all();
         }
