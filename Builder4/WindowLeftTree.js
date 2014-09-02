@@ -1126,6 +1126,7 @@ WindowLeftTree=new XObject({
                                     return;
                           
                              }
+                             _this.getActiveElement().props.set("* xinclude", name);
                              
                             
                         }
