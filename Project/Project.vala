@@ -469,7 +469,7 @@ namespace Project {
 		{
 			return JsRender.JsRender.factory(this.xtype, 
 			                                 this, 
-			                                 this.firstPath + "/" + name + ".bjs");
+			                                 this.firstPath() + "/" + name + ".bjs");
 		}
 		
 		public JsRender.JsRender loadFileOnly (string path)
