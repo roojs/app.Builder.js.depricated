@@ -11,7 +11,7 @@
                 "response": "(self, response_id) => {\n\n    if (response_id < 1) {\n        this.el.hide();\n         return;\n    }\n    var name = _this.name.el.get_text();\n    if (name.length < 1) {\n        StandardErrorDialog.singleton().show(\n            (Gtk.Window) _this.el,\n            \"You must give the template a name. \"\n        );\n        return;\n    }\n    if (!Regex.match_simple (\"^[A-Za-z\\.]+$\", name) || \n        !Regex.match_simple (\"^[A-Za-z\\.]+$\", name) )\n    {\n        StandardErrorDialog.show(\n            (Gtk.Window) _this.el,\n\n            \"Template Nane must contain only letters dots\"\n        );\n         return;\n    }\n    \n    _this.palete.saveTemplate(name, _this.data);\n    // now we save it..\n    this.el.hide();\n    \n}"
             },
             ".JsRender.Node:data": "",
-            ".Palete.Palete:palete": "",
+            ".JsRender.JsRender:file": "",
             "default_height": 200,
             "default_width": 400,
             "xtype": "Dialog",

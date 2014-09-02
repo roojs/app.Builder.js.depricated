@@ -33,7 +33,7 @@ public class Xcls_DialogSaveModule : Object
 
         // my vars
     public JsRender.Node data;
-    public Palete.Palete palete;
+    public JsRender.JsRender file;
 
         // ctor 
     public Xcls_DialogSaveModule()
