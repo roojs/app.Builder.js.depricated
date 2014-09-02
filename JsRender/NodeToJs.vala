@@ -35,14 +35,17 @@ public class JsRender.NodeToJs : Object {
 	{
 		//return this.mungeToString(this.node);
 
-		if (this.node.props.get("* xinclude")) {
-			return this.xIncludeToString();
-		}
+	
 		
 		this.checkChildren();
 		this.readProps();
 		this.readArrayProps();
 		this.readListeners();
+
+		if (this.node.props.get("* xinclude")) {
+			return this.xIncludeToString();
+		}
+		
 		this.iterChildren();
 		
 		if (this.els.size < 1) {
