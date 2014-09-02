@@ -102,10 +102,45 @@ public class Xcls_DialogSaveModule : Object
          
              
             this.el.set_transient_for(parent);
+            this.el.modal = true;
+            
             this.data = data;
             this.project = project;
             this.name.el.set_text("");
             this.el.show_all();
+            
+            var response_id = this.el.run();
+            if (response_id < 1) {
+                this.el.hide();
+                 return;
+            }
+            var name = _this.name.el.get_text();
+            if (name.length < 1) {
+                StandardErrorDialog.singleton().show(
+                    (Gtk.Window) _this.el,
+                    "You must give the template a name. "
+                );
+                return;
+            }
+            if (!Regex.match_simple ("^[A-Za-z\.]+$", name) || 
+                !Regex.match_simple ("^[A-Za-z\.]+$", name) )
+            {
+                StandardErrorDialog.show(
+                    (Gtk.Window) _this.el,
+        
+                    "Template Nane must contain only letters dots"
+                );
+                 return;
+            }
+            
+            _this.project.createFile(name, _this.data);
+            // now we save it..
+            this.el.hide();
+            
+            
+            
+            
+            
         }
 
     // skip |xns - no return type
