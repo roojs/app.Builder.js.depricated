@@ -64,9 +64,6 @@ public class Xcls_StandardErrorDialog : Object
             this.el.text =  msg;
             this.el.show_all();
         }
-    public void show_all () {
-            this.show("TEST");
-        }
 
     // skip |xns - no return type
 }

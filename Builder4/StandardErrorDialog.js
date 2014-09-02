@@ -32,9 +32,6 @@ StandardErrorDialog=new XObject({
         this.el.modal = true;
         this.el.text =  msg;
         this.el.show_all();
-    },
-    'void:show_all' : () {
-        this.show("TEST");
     }
 });
 StandardErrorDialog.init();

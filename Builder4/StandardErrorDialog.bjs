@@ -17,7 +17,6 @@
             "|modal": "true",
             "|use_markup": "true",
             "|void:show": " (Gtk.Window win, string msg) {\n\n    this.el.set_transient_for(win);\n    this.el.modal = true;\n    this.el.text =  msg;\n    this.el.show_all();\n}\n",
-            "|void:show_all": " () {\n    this.show(\"TEST\");\n}\n",
             "|xns": "Gtk"
         }
     ],
