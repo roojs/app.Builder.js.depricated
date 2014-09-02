@@ -61,7 +61,7 @@ public class Xcls_DialogSaveModule : Object
 
         // listeners 
         this.el.delete_event.connect(  (self, event) => {
-            this.el.response(Gtk.Response.CANCEL);
+            this.el.response(Gtk.ResponseType.CANCEL);
             return true;
             
         } );
