@@ -94,19 +94,16 @@ public class Xcls_DialogSaveModule : Object
     }
 
     // userdefined functions 
-    public static void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+    public void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
          
             
          
-             var t =DialogSaveTemplate;
-            if (t == null) {
-               t =   new Xcls_DialogSaveTemplate();
-            }
-            t.el.set_transient_for(parent);
-            t.data = data;
-            t.palete = palete;
-            t.name.el.set_text("");
-            t.el.show_all();
+            
+            this.el.set_transient_for(parent);
+            this.data = data;
+            this.palete = palete;
+            this.name.el.set_text("");
+            this.el.show_all();
         }
 
     // skip |xns - no return type

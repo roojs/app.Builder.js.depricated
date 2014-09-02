@@ -16,7 +16,7 @@
             "default_width": 400,
             "xtype": "Dialog",
             "|modal": "true",
-            "|static void:show": " (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {\n \n    \n \n     var t =DialogSaveTemplate;\n    if (t == null) {\n       t =   new Xcls_DialogSaveTemplate();\n    }\n    t.el.set_transient_for(parent);\n    t.data = data;\n    t.palete = palete;\n    t.name.el.set_text(\"\");\n    t.el.show_all();\n}\n",
+            "|void:show": " (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {\n \n    \n \n    \n    this.el.set_transient_for(parent);\n    this.data = data;\n    this.palete = palete;\n    this.name.el.set_text(\"\");\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
             "items": [
                 {
