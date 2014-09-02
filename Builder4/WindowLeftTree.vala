@@ -627,6 +627,7 @@ public class Xcls_WindowLeftTree : Object
 
 
             // my vars
+        public Project.Project? project;
         public JsRender.JsRender? file;
         public string activePath;
 
@@ -638,6 +639,7 @@ public class Xcls_WindowLeftTree : Object
             this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
 
             // my vars
+            this.project = null;
             this.file = null;
             this.activePath = "";
 
@@ -645,8 +647,6 @@ public class Xcls_WindowLeftTree : Object
 
             // init method 
             print("model initialized");
-
-            // listeners 
         }
 
         // userdefined functions 

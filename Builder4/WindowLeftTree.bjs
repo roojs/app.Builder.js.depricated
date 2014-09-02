@@ -48,7 +48,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            ".Project.Project?:project": "",
+                            ".Project.Project?:project": "null",
                             ".JsRender.JsRender?:file": "null",
                             ".string:activePath": "\"\"",
                             "currentTree": false,
