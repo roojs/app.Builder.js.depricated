@@ -1129,13 +1129,26 @@ WindowLeftTree=new XObject({
                              _this.getActiveElement().props.set("* xinclude", name);
                              _this.getActiveElement().items.clear();
                         
-                            print("GET  vnode value?");
                         
+                            var s = _this.view.el.get_selection();
+                            
+                            print("GET  SELECTED?");
+                            Gtk.TreeIter iter;
+                            Gtk.TreeModel mod;
                         
-                            print("removing node from Tree\n");    
-                            s.unselect_all();
-                            this.el.clear(ref iter);
+                            
+                            if (!s.get_selected(out mod, out iter)) {
+                                return; // nothing seleted..
+                            }
+                            Gtk.TreeIter citer;
+                            for (var i = mod.iter_n_children(iter) -1; i--; i > -1) {
+                                mod.iter_nth_child(out citer, iter, i);
+                                
                         
+                                print("removing node from Tree\n");    
+                            
+                                this.el.remove(ref citer);
+                            }
                              
                             
                         }
