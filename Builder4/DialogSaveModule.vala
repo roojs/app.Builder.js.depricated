@@ -89,6 +89,7 @@ public class Xcls_DialogSaveModule : Object
                 );
                  return;
             }
+            
             _this.palete.saveTemplate(name, _this.data);
             // now we save it..
             this.el.hide();
