@@ -26,6 +26,7 @@ BUILDER4=   Builder4/About.vala \
 		Builder4/DialogNewComponent.vala \
 		Builder4/StandardErrorDialog.vala \
 		Builder4/DialogSaveTemplate.vala \
+		Builder4/DialogSaveModule.vala \
 		Builder4/DialogTemplateSelect.vala \
 		Builder4/EditProject.vala \
 		Builder4/Editor.vala \
