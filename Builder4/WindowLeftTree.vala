@@ -1285,18 +1285,18 @@ public class Xcls_WindowLeftTree : Object
 
             // listeners 
             this.el.activate.connect(   () => {
-            
+                var node = _this.getActiveElement();
                  var name = DialogSaveModule.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
                         _this.model.file.project(), 
-                        _this.getActiveElement()
+                        node
                  );
                  if (name.length < 1) {
                         return;
               
                  }
-                 _this.getActiveElement().props.set("* xinclude", name);
-                 _this.getActiveElement().items.clear();
+                 node.props.set("* xinclude", name);
+                 node.items.clear();
             
             
                 var s = _this.view.el.get_selection();
@@ -1319,7 +1319,7 @@ public class Xcls_WindowLeftTree : Object
                     this.el.remove(ref citer);
                 }
                 _this.changed();
-                
+                _this.node_selected(_this.
                  
                 
             } );
