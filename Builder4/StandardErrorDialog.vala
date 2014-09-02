@@ -57,8 +57,10 @@ public class Xcls_StandardErrorDialog : Object
     }
 
     // userdefined functions 
-    public void show (string msg) {
+    public void show (Gtk.Window win, string msg) {
         
+            this.el.set_transient_for(win);
+            this.el.modal = true;
             this.el.text =  msg;
             this.el.show_all();
         }

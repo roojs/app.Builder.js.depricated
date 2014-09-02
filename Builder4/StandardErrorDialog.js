@@ -26,8 +26,10 @@ StandardErrorDialog=new XObject({
     message_type : Gtk.MessageType.ERROR,
     modal : true,
     use_markup : true,
-    'void:show' : (string msg) {
+    'void:show' : (Gtk.Window win, string msg) {
     
+        this.el.set_transient_for(win);
+        this.el.modal = true;
         this.el.text =  msg;
         this.el.show_all();
     },
