@@ -1296,7 +1296,7 @@ public class Xcls_WindowLeftTree : Object
               
                  }
                  _this.getActiveElement().props.set("* xinclude", name);
-                 
+                 _this.getActiveElement().items.
                 
             } );
         }
