@@ -464,7 +464,12 @@ namespace Project {
 		    };
 		    return null;
 		}
-		    
+
+		public JsRender.JsRender newFile (string name)
+		{
+			return JsRender.JsRender.factory(this.xtype, this, this.firstPath + "/" + name);
+		}
+		
 		public JsRender.JsRender loadFileOnly (string path)
 		{
 		    var xt = this.xtype;
