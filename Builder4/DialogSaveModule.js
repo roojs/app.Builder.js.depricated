@@ -31,10 +31,12 @@ DialogSaveModule=new XObject({
                 );
                 return;
             }
-            if (!Regex.match_simple ("^[A-Za-z]+$", name) || 
-                !Regex.match_simple ("^[A-Za-z ]+$", name) )
+            if (!Regex.match_simple ("^[A-Za-z\.]+$", name) || 
+                !Regex.match_simple ("^[A-Za-z\.]+$", name) )
             {
                 StandardErrorDialog.show(
+                    (Gtk.Window) _this.el,
+        
                     "Template Nane must contain only letters and spaces. "
                 );
                  return;
