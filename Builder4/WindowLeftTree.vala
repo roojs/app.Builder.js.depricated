@@ -645,6 +645,8 @@ public class Xcls_WindowLeftTree : Object
 
             // init method 
             print("model initialized");
+
+            // listeners 
         }
 
         // userdefined functions 
@@ -978,10 +980,11 @@ public class Xcls_WindowLeftTree : Object
                  
                 }
             }
-        public void loadFile(JsRender.JsRender f) {
+        public void loadFile(JsRender.JsRender f, Project.Project project) {
                 //console.dump(f);
                 this.el.clear();
                 this.file = f;
+                this.project = project;
                 
             //    if (!f) {
             //        console.log('missing file');
