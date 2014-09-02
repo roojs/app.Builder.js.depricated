@@ -1311,7 +1311,7 @@ public class Xcls_WindowLeftTree : Object
                 }
                 print("removing node from Tree\n");    
                 s.unselect_all();
-                this.el.remove(ref iter);
+                this.el.clear(ref iter);
             
                  
                 
