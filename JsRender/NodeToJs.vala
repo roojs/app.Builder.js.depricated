@@ -35,6 +35,10 @@ public class JsRender.NodeToJs : Object {
 	{
 		//return this.mungeToString(this.node);
 
+		if (this.node.props.get("* xinclude")) {
+			return this.xincludeToString();
+		}
+		
 		this.checkChildren();
 		this.readProps();
 		this.readArrayProps();
