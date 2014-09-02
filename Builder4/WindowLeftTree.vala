@@ -1319,7 +1319,7 @@ public class Xcls_WindowLeftTree : Object
             
                     print("removing node from Tree\n");    
                 
-                    this.el.remove(ref citer);
+                    mod.remove(ref citer);
                 }
                 _this.changed();
                 _this.node_selected(node);
