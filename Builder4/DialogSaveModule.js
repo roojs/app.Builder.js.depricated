@@ -25,7 +25,8 @@ DialogSaveModule=new XObject({
             }
             var name = _this.name.el.get_text();
             if (name.length < 1) {
-                StandardErrorDialog.show(
+                StandardErrorDialog.singleton().show(
+                    (Gtk.Window) _this.el,
                     "You must give the template a name. "
                 );
                 return;
