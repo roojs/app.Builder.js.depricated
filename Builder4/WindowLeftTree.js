@@ -1149,6 +1149,8 @@ WindowLeftTree=new XObject({
                             
                                 this.el.remove(ref citer);
                             }
+                            _this.changed();
+                            
                              
                             
                         }
