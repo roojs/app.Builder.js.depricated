@@ -319,6 +319,10 @@ Builder  = {
             tree.el.attr('xtype', tree['xtype-bootstrap']);
         }
         
+        if (typeof(tree['flexy:include']) != 'undefined') {
+            //Roo.log("add flexy:if");
+            tree.el.attr('flexy:include', tree['flexy:include']);
+        }
         
         if (!tree.items || !tree.items.length) { return; }
         
