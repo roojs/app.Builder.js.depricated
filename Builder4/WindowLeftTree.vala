@@ -1297,18 +1297,10 @@ public class Xcls_WindowLeftTree : Object
                  }
                  _this.getActiveElement().props.set("* xinclude", name);
                  _this.getActiveElement().items.clear();
-                  this.activePath= "";      
+            
                 print("GET  vnode value?");
             
-                GLib.Value value;
-                this.el.get_value(iter, 2, out value);
-                var data = (JsRender.Node)(value.get_object());
-                print("removing node from Render\n");
-                if (data.parent == null) {
-                    this.file.tree = null;
-                } else {
-                    data.remove();
-                }
+            
                 print("removing node from Tree\n");    
                 s.unselect_all();
                 this.el.clear(ref iter);
