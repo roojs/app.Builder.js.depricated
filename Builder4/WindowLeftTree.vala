@@ -1286,11 +1286,11 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.activate.connect(   () => {
             
-                 DialogSaveModule.singleton().show(
+                 var name = DialogSaveModule.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
-                        _this.model.file.palete(), 
+                        _this.model.file.project(), 
                         _this.getActiveElement()
-                );
+                 );
                  
                 
             } );

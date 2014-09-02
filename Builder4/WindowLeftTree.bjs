@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-18",
+    "id": "file-gtk-19",
     "name": "WindowLeftTree",
     "parent": "",
     "title": false,
@@ -110,7 +110,7 @@
                         },
                         {
                             "listeners": {
-                                "activate": "  () => {\n\n     DialogSaveModule.singleton().show(\n            (Gtk.Window) _this.el.get_toplevel (), \n            _this.model.file.palete(), \n            _this.getActiveElement()\n    );\n     \n    \n}"
+                                "activate": "  () => {\n\n     var name = DialogSaveModule.singleton().show(\n            (Gtk.Window) _this.el.get_toplevel (), \n            _this.model.file.project(), \n            _this.getActiveElement()\n     );\n     \n    \n}"
                             },
                             "label": "Save as Module",
                             "pack": "add",
