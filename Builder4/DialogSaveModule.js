@@ -13,7 +13,7 @@ DialogSaveModule=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
         delete_event : (self, event) => {
-            this.el.hide();
+            this.el.response(Gtk.Response.CANCEL);
             return true;
             
         }
