@@ -107,6 +107,15 @@
                             "pack": "add",
                             "xtype": "MenuItem",
                             "|xns": "Gtk"
+                        },
+                        {
+                            "listeners": {
+                                "activate": "  () => {\n\n     DialogSaveTemplate.show((Gtk.Window) _this.el.get_toplevel (), _this.model.file.palete(), _this.getActiveElement());\n     \n    \n}"
+                            },
+                            "label": "Save as Template",
+                            "pack": "add",
+                            "xtype": "MenuItem",
+                            "|xns": "Gtk"
                         }
                     ]
                 }

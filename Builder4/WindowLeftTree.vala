@@ -1186,6 +1186,9 @@ public class Xcls_WindowLeftTree : Object
             var child_1 = new Xcls_MenuItem8( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_MenuItem9( _this );
+            child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // userdefined functions 
@@ -1235,6 +1238,38 @@ public class Xcls_WindowLeftTree : Object
 
             // ctor 
         public Xcls_MenuItem8(Xcls_WindowLeftTree _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Save as Template";
+
+            // listeners 
+            this.el.activate.connect(   () => {
+            
+                 DialogSaveTemplate.show((Gtk.Window) _this.el.get_toplevel (), _this.model.file.palete(), _this.getActiveElement());
+                 
+                
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_MenuItem9 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_WindowLeftTree  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem9(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();

@@ -1107,6 +1107,19 @@ WindowLeftTree=new XObject({
                     },
                     label : "Save as Template",
                     pack : "add"
+                },
+                {
+                    xtype: Gtk.MenuItem,
+                    listeners : {
+                        activate : () => {
+                        
+                             DialogSaveTemplate.show((Gtk.Window) _this.el.get_toplevel (), _this.model.file.palete(), _this.getActiveElement());
+                             
+                            
+                        }
+                    },
+                    label : "Save as Template",
+                    pack : "add"
                 }
             ]
         }
