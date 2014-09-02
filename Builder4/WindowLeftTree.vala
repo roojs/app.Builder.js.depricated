@@ -627,8 +627,8 @@ public class Xcls_WindowLeftTree : Object
 
 
             // my vars
-        public Project.Project? project;
         public JsRender.JsRender? file;
+        public Project.Project? project;
         public string activePath;
 
             // ctor 
@@ -639,8 +639,8 @@ public class Xcls_WindowLeftTree : Object
             this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
 
             // my vars
-            this.project = null;
             this.file = null;
+            this.project = null;
             this.activePath = "";
 
             // set gobject values
@@ -980,11 +980,11 @@ public class Xcls_WindowLeftTree : Object
                  
                 }
             }
-        public void loadFile(JsRender.JsRender f, Project.Project project) {
+        public void loadFile(JsRender.JsRender f) {
                 //console.dump(f);
                 this.el.clear();
                 this.file = f;
-                this.project = project;
+                
                 
             //    if (!f) {
             //        console.log('missing file');

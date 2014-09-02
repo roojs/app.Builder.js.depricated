@@ -934,11 +934,11 @@ WindowLeftTree=new XObject({
                          
                         }
                     },
-                    'void:loadFile' : (JsRender.JsRender f, Project.Project project) {
+                    'void:loadFile' : (JsRender.JsRender f) {
                         //console.dump(f);
                         this.el.clear();
                         this.file = f;
-                        this.project = project;
+                        
                         
                     //    if (!f) {
                     //        console.log('missing file');
