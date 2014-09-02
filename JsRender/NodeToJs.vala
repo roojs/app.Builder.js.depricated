@@ -65,7 +65,7 @@ public class JsRender.NodeToJs : Object {
 		// xinclude...
 
 
-		return "Roo.apply(" + this.node.props.get("* xinclude") + ", "+
+		return "Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), "+
 			 "{\n" +
 				this.pad  + str_props + 
 				"\n" + spad +  "})";
