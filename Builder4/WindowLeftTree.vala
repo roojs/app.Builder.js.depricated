@@ -1291,6 +1291,10 @@ public class Xcls_WindowLeftTree : Object
                         _this.model.file.project(), 
                         _this.getActiveElement()
                  );
+                 if (name.length < 1) {
+                        return;
+              
+                 }
                  
                 
             } );
