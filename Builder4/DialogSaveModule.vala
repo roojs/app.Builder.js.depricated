@@ -90,7 +90,7 @@ public class Xcls_DialogSaveModule : Object
                  return;
             }
             
-            _this.palete.saveTemplate(name, _this.data);
+            _this.project.createFile(name, _this.data);
             // now we save it..
             this.el.hide();
             
