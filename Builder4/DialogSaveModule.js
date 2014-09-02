@@ -16,42 +16,12 @@ DialogSaveModule=new XObject({
             this.el.hide();
             return true;
             
-        },
-        response : (self, response_id) => {
-        
-            if (response_id < 1) {
-                this.el.hide();
-                 return;
-            }
-            var name = _this.name.el.get_text();
-            if (name.length < 1) {
-                StandardErrorDialog.singleton().show(
-                    (Gtk.Window) _this.el,
-                    "You must give the template a name. "
-                );
-                return;
-            }
-            if (!Regex.match_simple ("^[A-Za-z\.]+$", name) || 
-                !Regex.match_simple ("^[A-Za-z\.]+$", name) )
-            {
-                StandardErrorDialog.show(
-                    (Gtk.Window) _this.el,
-        
-                    "Template Nane must contain only letters dots"
-                );
-                 return;
-            }
-            
-            _this.project.createFile(name, _this.data);
-            // now we save it..
-            this.el.hide();
-            
         }
     },
     default_height : 200,
     default_width : 400,
     modal : true,
-    'void:show' : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
+    'string:show' : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
         this.el.set_transient_for(parent);
@@ -62,35 +32,38 @@ DialogSaveModule=new XObject({
         this.name.el.set_text("");
         this.el.show_all();
         
-        var response_id = this.el.run();
-        if (response_id < 1) {
-            this.el.hide();
-             return;
-        }
-        var name = _this.name.el.get_text();
-        if (name.length < 1) {
-            StandardErrorDialog.singleton().show(
-                (Gtk.Window) _this.el,
-                "You must give the template a name. "
-            );
-            return;
-        }
-        if (!Regex.match_simple ("^[A-Za-z\.]+$", name) || 
-            !Regex.match_simple ("^[A-Za-z\.]+$", name) )
-        {
-            StandardErrorDialog.show(
-                (Gtk.Window) _this.el,
+        while (true) {
+            var response_id = this.el.run();
+            if (response_id < 1) {
+                this.el.hide();
+                 return;
+            }
+            
+            var name = _this.name.el.get_text();
+            if (name.length < 1) {
+                StandardErrorDialog.singleton().show(
+                    (Gtk.Window) _this.el,
+                    "You must give the template a name. "
+                );
+                continue;
+            }
+            if (!Regex.match_simple ("^[A-Za-z\.]+$", name) || 
+                !Regex.match_simple ("^[A-Za-z\.]+$", name) )
+            {
+                StandardErrorDialog.show(
+                    (Gtk.Window) _this.el,
     
-                "Template Nane must contain only letters dots"
-            );
-             return;
+                    "Template Nane must contain only letters dots"
+                );
+                continue
+            }
+            break;
         }
-        
         _this.project.createFile(name, _this.data);
         // now we save it..
         this.el.hide();
         
-        
+        return name;
         
         
         
