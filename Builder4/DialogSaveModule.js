@@ -60,8 +60,9 @@ DialogSaveModule=new XObject({
             break;
         }
         var f = _this.project.newFile(name);
-        f.tree=  _this.data;
+        f.tree =  _this.data.deepClone();
         f.save();
+        
         // now we save it..
         this.el.hide();
         
