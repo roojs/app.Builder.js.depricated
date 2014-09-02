@@ -1277,7 +1277,7 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // set gobject values
-            this.el.label = "Save as Template";
+            this.el.label = "Save as Module";
 
             // listeners 
             this.el.activate.connect(   () => {

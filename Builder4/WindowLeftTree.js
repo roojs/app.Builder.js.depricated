@@ -1118,7 +1118,7 @@ WindowLeftTree=new XObject({
                             
                         }
                     },
-                    label : "Save as Template",
+                    label : "Save as Module",
                     pack : "add"
                 }
             ]
