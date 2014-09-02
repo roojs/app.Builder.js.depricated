@@ -1120,7 +1120,7 @@ WindowLeftTree=new XObject({
                             var node = _this.getActiveElement();
                              var name = DialogSaveModule.singleton().show(
                                     (Gtk.Window) _this.el.get_toplevel (), 
-                                    _this.model.project, 
+                                    _this.model.file.project, 
                                     node
                              );
                              if (name.length < 1) {
