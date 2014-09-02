@@ -31,7 +31,7 @@ DialogSaveModule=new XObject({
         this.project = project;
         this.name.el.set_text("");
         this.el.show_all();
-        
+         var   name = "";
         while (true) {
             var response_id = this.el.run();
             if (response_id < 1) {
@@ -39,7 +39,7 @@ DialogSaveModule=new XObject({
                  return "";
             }
             
-            var name = _this.name.el.get_text();
+            name = _this.name.el.get_text();
             if (name.length < 1) {
                 StandardErrorDialog.singleton().show(
                     (Gtk.Window) _this.el,
