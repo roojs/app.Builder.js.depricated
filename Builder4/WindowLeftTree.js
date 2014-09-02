@@ -1113,7 +1113,11 @@ WindowLeftTree=new XObject({
                     listeners : {
                         activate : () => {
                         
-                             DialogSaveTemplate.show((Gtk.Window) _this.el.get_toplevel (), _this.model.file.palete(), _this.getActiveElement());
+                             DialogSaveModule.singleton().show(
+                                    (Gtk.Window) _this.el.get_toplevel (), 
+                                    _this.model.file.palete(), 
+                                    _this.getActiveElement()
+                            );
                              
                             
                         }

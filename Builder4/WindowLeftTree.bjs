@@ -110,7 +110,7 @@
                         },
                         {
                             "listeners": {
-                                "activate": "  () => {\n\n     DialogSaveTemplate.show((Gtk.Window) _this.el.get_toplevel (), _this.model.file.palete(), _this.getActiveElement());\n     \n    \n}"
+                                "activate": "  () => {\n\n     DialogSaveModule.singleton().show(\n            (Gtk.Window) _this.el.get_toplevel (), \n            _this.model.file.palete(), \n            _this.getActiveElement()\n    );\n     \n    \n}"
                             },
                             "label": "Save as Module",
                             "pack": "add",
