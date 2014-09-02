@@ -55,7 +55,7 @@ DialogSaveModule=new XObject({
     
                     "Template Nane must contain only letters dots"
                 );
-                continue
+                continue;
             }
             break;
         }
