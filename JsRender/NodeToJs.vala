@@ -42,7 +42,7 @@ public class JsRender.NodeToJs : Object {
 		this.readArrayProps();
 		this.readListeners();
 
-		if (!this.node.props.has("* xinclude")) {
+		if (!this.node.props.has_key("* xinclude")) {
 			this.iterChildren();
 		}
 		
@@ -57,7 +57,7 @@ public class JsRender.NodeToJs : Object {
 		var spad = pad.substring(0, this.pad.length-4);
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
-		if (!this.node.props.has("* xinclude")) {
+		if (!this.node.props.has_key("* xinclude")) {
 			return   "{\n" +
 				this.pad  + str_props + 
 				"\n" + spad +  "}";

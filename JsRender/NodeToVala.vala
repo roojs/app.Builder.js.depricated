@@ -227,7 +227,9 @@ public class JsRender.NodeToVala : Object {
 			if (vv[0] == "|") {
 				continue;
 			}
-			
+			if (vv[0] == "*") {
+				continue;
+			}
 		        
 		        if (vv[0] == "@") {
 		    		this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
