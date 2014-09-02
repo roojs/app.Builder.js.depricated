@@ -100,9 +100,7 @@ public class Xcls_DialogSaveModule : Object
     // userdefined functions 
     public void show (Gtk.Window parent, JsRender.JsRender file, JsRender.Node data) {
          
-            
-         
-            
+             
             this.el.set_transient_for(parent);
             this.data = data;
             this.file = file;

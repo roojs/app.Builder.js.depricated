@@ -53,9 +53,7 @@ DialogSaveModule=new XObject({
     modal : true,
     'void:show' : (Gtk.Window parent, JsRender.JsRender file, JsRender.Node data) {
      
-        
-     
-        
+         
         this.el.set_transient_for(parent);
         this.data = data;
         this.file = file;
