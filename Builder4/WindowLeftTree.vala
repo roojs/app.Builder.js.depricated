@@ -1319,7 +1319,7 @@ public class Xcls_WindowLeftTree : Object
                     this.el.remove(ref citer);
                 }
                 _this.changed();
-                _this.node_selected(_this.
+                _this.node_selected(node);
                  
                 
             } );
