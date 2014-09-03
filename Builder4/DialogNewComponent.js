@@ -25,6 +25,7 @@ DialogNewComponent=new XObject({
         
                 if (_this.name.el.get_text().length  < 1) {
                     StandardErrorDialog.show(
+                        this.el,
                         "You have to set Component name "
                     );
                      
@@ -64,6 +65,7 @@ DialogNewComponent=new XObject({
                
                 if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                     Xcls_StandardErrorDialog.singleton().show(
+                        this.el,
                         "That file already exists"
                     ); 
                     return;

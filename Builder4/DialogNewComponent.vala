@@ -81,6 +81,7 @@ public class Xcls_DialogNewComponent : Object
         
                 if (_this.name.el.get_text().length  < 1) {
                     StandardErrorDialog.show(
+                        this.el,
                         "You have to set Component name "
                     );
                      
@@ -120,6 +121,7 @@ public class Xcls_DialogNewComponent : Object
                
                 if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                     Xcls_StandardErrorDialog.singleton().show(
+                        this.el,
                         "That file already exists"
                     ); 
                     return;
