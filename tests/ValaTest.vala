@@ -44,6 +44,7 @@ int main (string[] args) {
 	while (iter.next()) {
 		var f= iter.get();
 		f.loadItems();
+
 		print("\n%s\n",f.toJsonString());
 		
 		var str= JsRender.NodeToVala.mungeFile(f);
