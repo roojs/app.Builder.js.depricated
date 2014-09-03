@@ -1143,7 +1143,7 @@ WindowLeftTree=new XObject({
                             }
                             Gtk.TreeIter citer;
                             var n_cn = mod.iter_n_children(iter) -1;
-                            for (var i = n_cn; i--; i > -1) {
+                            for (var i = n_cn; i > -1; i--) {
                                 mod.iter_nth_child(out citer, iter, i);
                                 
                         

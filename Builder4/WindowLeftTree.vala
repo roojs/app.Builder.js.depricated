@@ -1314,7 +1314,7 @@ public class Xcls_WindowLeftTree : Object
                 }
                 Gtk.TreeIter citer;
                 var n_cn = mod.iter_n_children(iter) -1;
-                for (int i = n_cn; i++; i > 10) {
+                for (var i = n_cn; i > -1; i--) {
                     mod.iter_nth_child(out citer, iter, i);
                     
             
