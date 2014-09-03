@@ -36,6 +36,7 @@ DialogNewComponent=new XObject({
                 
                 if (!isNew && this.file.name != _this.name.el.get_text()) {
                     Xcls_StandardErrorDialog.singleton().show(
+                        this.el,
                         "Sorry changing names does not work yet. "
                     );
                      
