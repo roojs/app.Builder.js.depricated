@@ -34,8 +34,6 @@ EditProject=new XObject({
         this.el.show_all();
         
         var err_dialog = StandardErrorDialog.singleton();
-        err_dialog.el.set_transient_for(_this.el);
-        err_dialog.el.set_modal(true);   
     
         var id = -1;
         while (id < 0) {
@@ -48,13 +46,13 @@ EditProject=new XObject({
              
               if (_this.xtype.getValue().length < 1) {
                    
-                    err_dialog.show("You have to set Project type");             
+                    err_dialog.show(_this.el,"You have to set Project type");             
                     id = -1;
                     continue;
                 }
                 if (_this.dir.el.get_filename().length < 1) {
      
-                    err_dialog.show("You have to select a folder");             
+                    err_dialog.show(_this.el,"You have to select a folder");             
                     id = -1;
                     continue;
                 }
