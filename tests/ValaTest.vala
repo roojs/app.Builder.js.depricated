@@ -3,7 +3,31 @@
 
 
 */
- 
+
+
+void diff(string original, string data)
+{
+	
+	FileUtils.set_contents("/tmp/test.out",data);
+	string[] spawn_args = {"diff", "-w" , "-u", original, "/tmp/test.out" };
+	
+	
+	string[] spawn_env = Environ.get ();
+	int ls_status;
+	Process.spawn_sync ("/",
+							spawn_args,
+							spawn_env,
+							SpawnFlags.SEARCH_PATH,
+							null,
+							null,
+							null,
+							out ls_status);
+	 
+
+}
+
+
+
 int main (string[] args) {
 	Gtk.init (ref args);
 	//GtkClutter.init (ref args);
