@@ -92,6 +92,10 @@ Builder  = {
             } else {
                 tagName = false;
             }
+            if (currentElement.hasAttribute('flexy:include')) {
+                cb( tagName ? "</"+tagName+">" : '');
+            }
+            
             // Traverse the tree
             i = 0;
             var currentElementChild = currentElement.childNodes.item(i);
