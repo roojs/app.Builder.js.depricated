@@ -13,7 +13,7 @@ int main (string[] args) {
 
 	
 	Project.Project.loadAll();
-	var p = Project.Project.getProject("BuilderTest");
+	var p = Project.Project.getProject("Builder5");
 	p.scanDirs();
 	var ar = p.sortedFiles();
 	var iter = ar.list_iterator();
