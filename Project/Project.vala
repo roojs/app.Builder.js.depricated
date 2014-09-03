@@ -467,9 +467,11 @@ namespace Project {
 
 		public JsRender.JsRender newFile (string name)
 		{
-			return JsRender.JsRender.factory(this.xtype, 
+			var ret =  JsRender.JsRender.factory(this.xtype, 
 			                                 this, 
 			                                 this.firstPath() + "/" + name + ".bjs");
+			this.addFile(ret);
+			return ret;
 		}
 		
 		public JsRender.JsRender loadFileOnly (string path)
