@@ -22,6 +22,13 @@ public class Xcls_DialogSaveTemplate : Object
     public Gtk.Dialog el;
     private Xcls_DialogSaveTemplate  _this;
 
+    public static Xcls_DialogSaveTemplate singleton()
+    {
+        if (DialogSaveTemplate == null) {
+            DialogSaveTemplate= new Xcls_DialogSaveTemplate();
+        }
+        return DialogSaveTemplate;
+    }
     public Xcls_name name;
 
         // my vars
@@ -31,9 +38,8 @@ public class Xcls_DialogSaveTemplate : Object
         // ctor 
     public Xcls_DialogSaveTemplate()
     {
-        this.el = new Gtk.Dialog();
         _this = this;
-        DialogSaveTemplate = this;
+        this.el = new Gtk.Dialog();
 
         // my vars
 
@@ -41,15 +47,15 @@ public class Xcls_DialogSaveTemplate : Object
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        var child_0 = new Xcls_HBox2(_this);
+        var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el. get_content_area().add
 
  (  child_0.el  );
-        var child_1 = new Xcls_Button5(_this);
+        var child_1 = new Xcls_Button5( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button6(_this);
+        var child_2 = new Xcls_Button6( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
@@ -68,6 +74,7 @@ public class Xcls_DialogSaveTemplate : Object
             var name = _this.name.el.get_text();
             if (name.length < 1) {
                 StandardErrorDialog.show(
+                    this.el,
                     "You must give the template a name. "
                 );
                 return;
@@ -76,6 +83,7 @@ public class Xcls_DialogSaveTemplate : Object
                 !Regex.match_simple ("^[A-Za-z ]+$", name) )
             {
                 StandardErrorDialog.show(
+                    this.el,
                     "Template Nane must contain only letters and spaces. "
                 );
                  return;
@@ -88,20 +96,6 @@ public class Xcls_DialogSaveTemplate : Object
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip .JsRender.Node:data - already used 
-
-    // skip .Palete.Palete:palete - already used 
-
-    // skip default_height - already used 
-
-    // skip default_width - already used 
-
-    // skip xtype - not pipe 
-
-    // skip |modal - already used 
     public static void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
          
             
@@ -118,16 +112,6 @@ public class Xcls_DialogSaveTemplate : Object
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip id - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
@@ -137,37 +121,25 @@ public class Xcls_DialogSaveTemplate : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox2(Xcls_DialogSaveTemplate _owner)
+        public Xcls_HBox2(Xcls_DialogSaveTemplate _owner )
         {
-            this.el = new Gtk.HBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label3(_this);
+            var child_0 = new Xcls_Label3( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_name(_this);
+            var child_1 = new Xcls_name( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip xtype - not pipe 
-
-        // skip |pack - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Label3 : Object 
     {
@@ -178,10 +150,10 @@ public class Xcls_DialogSaveTemplate : Object
             // my vars
 
             // ctor 
-        public Xcls_Label3(Xcls_DialogSaveTemplate _owner)
+        public Xcls_Label3(Xcls_DialogSaveTemplate _owner )
         {
-            this.el = new Gtk.Label( "Name" );
             _this = _owner;
+            this.el = new Gtk.Label( "Name" );
 
             // my vars
 
@@ -192,21 +164,7 @@ public class Xcls_DialogSaveTemplate : Object
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip listeners - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_name : Object 
     {
@@ -217,11 +175,11 @@ public class Xcls_DialogSaveTemplate : Object
             // my vars
 
             // ctor 
-        public Xcls_name(Xcls_DialogSaveTemplate _owner)
+        public Xcls_name(Xcls_DialogSaveTemplate _owner )
         {
-            this.el = new Gtk.Entry();
             _this = _owner;
             _this.name = this;
+            this.el = new Gtk.Entry();
 
             // my vars
 
@@ -230,19 +188,7 @@ public class Xcls_DialogSaveTemplate : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button5 : Object 
     {
@@ -253,10 +199,10 @@ public class Xcls_DialogSaveTemplate : Object
             // my vars
 
             // ctor 
-        public Xcls_Button5(Xcls_DialogSaveTemplate _owner)
+        public Xcls_Button5(Xcls_DialogSaveTemplate _owner )
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
@@ -266,19 +212,7 @@ public class Xcls_DialogSaveTemplate : Object
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button6 : Object 
     {
@@ -289,10 +223,10 @@ public class Xcls_DialogSaveTemplate : Object
             // my vars
 
             // ctor 
-        public Xcls_Button6(Xcls_DialogSaveTemplate _owner)
+        public Xcls_Button6(Xcls_DialogSaveTemplate _owner )
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
@@ -302,18 +236,6 @@ public class Xcls_DialogSaveTemplate : Object
 
         // userdefined functions 
 
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
