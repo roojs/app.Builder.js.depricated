@@ -41,7 +41,7 @@ Builder  = {
                 
                 return;
             }
-	    console.log(currentElement);
+            console.log(currentElement);
             if (currentElement.className.match(/roo-dynamic/)) {
                 return;
             }
@@ -337,6 +337,6 @@ Builder  = {
 Roo.onReady(function() { Builder.clearBootstrap(); });
 Roo.XComponent.on('buildcomplete', function() {
     Roo.log("xcomponent built!");
-    
-    Builder.applyFlexy(Roo.XComponent.modules[0].el);
+    var m = Roo.XComponent.modules;
+    Builder.applyFlexy(m[m.length-1].el);
 });
