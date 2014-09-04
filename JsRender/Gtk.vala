@@ -174,7 +174,7 @@ namespace JsRender {
              
     		var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
     		print("WRITE : " + fn);
-		FileUtils.set_contents(fn,  JsRender.NodeToVala.mungeFile(this));
+		FileUtils.set_contents(fn,  NodeToVala.mungeFile(this));
             
             
         }
