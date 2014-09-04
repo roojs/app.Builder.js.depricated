@@ -1,14 +1,14 @@
-static Xcls_About  _About;
+static About  _About;
 
-public class Xcls_About : Object 
+public class About : Object 
 {
     public Gtk.AboutDialog el;
-    private Xcls_About  _this;
+    private About  _this;
 
-    public static Xcls_About singleton()
+    public static About singleton()
     {
         if (_About == null) {
-            _About= new Xcls_About();
+            _About= new About();
         }
         return _About;
     }
@@ -16,7 +16,7 @@ public class Xcls_About : Object
         // my vars (def)
 
     // ctor 
-    public Xcls_About()
+    public About()
     {
         _this = this;
         this.el = new Gtk.AboutDialog();
@@ -35,7 +35,7 @@ public class Xcls_About : Object
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
-            //test
+         
         });
         this.el.response.connect( (rid) => {
             this.el.hide();
@@ -43,7 +43,7 @@ public class Xcls_About : Object
     }
 
     // user defined functions 
-    public  void show_all () {
+    public    void show_all () {
         this.el.show_all();
     }
 }

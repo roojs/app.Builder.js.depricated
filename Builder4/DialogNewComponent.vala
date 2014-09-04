@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/DialogNewComponent.vala  -o /tmp/DialogNewComponent
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_DialogNewComponent();
-    DialogNewComponent.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_DialogNewComponent  DialogNewComponent;
+static Xcls_DialogNewComponent  _DialogNewComponent;
 
 public class Xcls_DialogNewComponent : Object 
 {
@@ -24,10 +7,10 @@ public class Xcls_DialogNewComponent : Object
 
     public static Xcls_DialogNewComponent singleton()
     {
-        if (DialogNewComponent == null) {
-            DialogNewComponent= new Xcls_DialogNewComponent();
+        if (_DialogNewComponent == null) {
+            _DialogNewComponent= new Xcls_DialogNewComponent();
         }
-        return DialogNewComponent;
+        return _DialogNewComponent;
     }
     public Xcls_name name;
     public Xcls_title title;
@@ -36,26 +19,26 @@ public class Xcls_DialogNewComponent : Object
     public Xcls_permname permname;
     public Xcls_modOrder modOrder;
 
-        // my vars
-    public JsRender.JsRender file;
+        // my vars (def)
+    public signal void success (Project.Project pr, JsRender.JsRender file);
     public Project.Project project;
-    public signal void success(Project.Project pr, JsRender.JsRender file);
+    public JsRender.JsRender file;
 
-        // ctor 
+    // ctor 
     public Xcls_DialogNewComponent()
     {
         _this = this;
         this.el = new Gtk.Dialog();
 
-        // my vars
+        // my vars (dec)
         this.file = null;
 
         // set gobject values
+        this.el.title = "New Component";
         this.el.default_height = 200;
         this.el.default_width = 500;
         this.el.deletable = false;
         this.el.modal = true;
-        this.el.title = "New Component";
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
@@ -69,10 +52,10 @@ public class Xcls_DialogNewComponent : Object
         // listeners 
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
-            return true;   
-        }
-          );
-        this.el.response.connect(  (self, response_id) =>  { 
+            return true; 
+            //test  
+        });
+        this.el.response.connect( (self, response_id) =>  { 
           
         	if (response_id < 1) { // cancel!
                     this.el.hide();
@@ -160,68 +143,66 @@ public class Xcls_DialogNewComponent : Object
                     DialogNewComponent.success(_this.project, nf);
                 }
                 */
-        } );
+        });
         this.el.show.connect( (self)  => {
           this.el.show_all();
-          
-        } );
+          //test
+        });
     }
 
-    // userdefined functions 
-    public void show(JsRender.JsRender c) 
-        {
-            this.project = c.project;
-            
-            //if (!this.el) {
-                //this.init();
-             //}
-            
-            _this.name.el.set_text(c.name);
-            _this.title.el.set_text(c.title);
-            _this.parent.el.set_text(c.parent);    
-            _this.region.el.set_text(c.region);
-            _this.modOrder.el.set_text(c.modOrder);
-             _this.permname.el.set_text(c.permname);
-            
-            if (c.path.length > 0) {
-                this.el.set_title("Edit File Details - " + c.name);
-            } else {
-                this.el.set_title("Create New File");
-            }
-             
-            _this.file = c;
-            //console.log('show all');
-            this.el.show_all();
-            
-            //this.success = c.success;
-            
-            
-        }
-    public void updateFileFromEntry() {
+    // user defined functions 
+    public  void show (JsRender.JsRender c) 
+    {
+        this.project = c.project;
         
-                _this.file.title = _this.title.el.get_text();
-                _this.file.region = _this.region.el.get_text();            
-                _this.file.parent = _this.parent.el.get_text();                        
-                _this.file.permname = _this.permname.el.get_text();                                    
-                _this.file.modOrder = _this.modOrder.el.get_text();                                                
-        }    
-
-    // skip |xns - no return type
+        //if (!this.el) {
+            //this.init();
+         //}
+        
+        _this.name.el.set_text(c.name);
+        _this.title.el.set_text(c.title);
+        _this.parent.el.set_text(c.parent);    
+        _this.region.el.set_text(c.region);
+        _this.modOrder.el.set_text(c.modOrder);
+         _this.permname.el.set_text(c.permname);
+        
+        if (c.path.length > 0) {
+            this.el.set_title("Edit File Details - " + c.name);
+        } else {
+            this.el.set_title("Create New File");
+        }
+         
+        _this.file = c;
+        //console.log('show all');
+        this.el.show_all();
+        
+        //this.success = c.success;
+        
+        
+    }
+    public  void updateFileFromEntry () {
+    
+            _this.file.title = _this.title.el.get_text();
+            _this.file.region = _this.region.el.get_text();            
+            _this.file.parent = _this.parent.el.get_text();                        
+            _this.file.permname = _this.permname.el.get_text();                                    
+            _this.file.modOrder = _this.modOrder.el.get_text();                                                
+    }
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_VBox2(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Table3( _this );
@@ -229,9 +210,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.pack_start (  child_0.el , false,false,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Table3 : Object 
     {
@@ -239,15 +218,15 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Table3(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Table( 3, 2, false );
+            this.el = new Gtk.Table( 3, 2, true );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Label4( _this );
@@ -288,9 +267,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.attach_defaults (  child_11.el , 1,2,5,6 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label4 : Object 
     {
@@ -298,24 +275,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label4(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Component Name" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.xalign = 0.9f;
+            this.el.xalign = 0.900000f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_name : Object 
     {
@@ -323,24 +298,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_name(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.name = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label6 : Object 
     {
@@ -348,25 +321,23 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label6(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Title" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
             this.el.visible = true;
-            this.el.xalign = 0.9f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_title : Object 
     {
@@ -374,24 +345,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_title(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.title = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label8 : Object 
     {
@@ -399,26 +368,24 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label8(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Region" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
             this.el.tooltip_text = "center, north, south, east, west";
             this.el.visible = true;
-            this.el.xalign = 0.9f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_region : Object 
     {
@@ -426,24 +393,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_region(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.region = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label10 : Object 
     {
@@ -451,25 +416,23 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label10(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Parent Name" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
             this.el.visible = true;
-            this.el.xalign = 0.9f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_parent : Object 
     {
@@ -477,24 +440,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_parent(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.parent = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label12 : Object 
     {
@@ -502,25 +463,23 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label12(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Permission Name" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
             this.el.visible = true;
-            this.el.xalign = 0.9f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_permname : Object 
     {
@@ -528,24 +487,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_permname(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.permname = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label14 : Object 
     {
@@ -553,25 +510,23 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label14(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Order (for tabs)" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
             this.el.visible = true;
-            this.el.xalign = 0.9f;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_modOrder : Object 
     {
@@ -579,24 +534,22 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_modOrder(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             _this.modOrder = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.visible = true;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button16 : Object 
     {
@@ -604,23 +557,21 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button16(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "Cancel";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button17 : Object 
     {
@@ -628,22 +579,20 @@ public class Xcls_DialogNewComponent : Object
         private Xcls_DialogNewComponent  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button17(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "OK";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
 }

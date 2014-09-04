@@ -10,91 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 MainWindow=new XObject({
-    xtype: Gtk.Window,
-    listeners : {
-        show : ( ) => {
-            // hide the file editing..
-           
-            //this.hideViewEditing();
-        },
-        delete_event : (   event) => {
-            return false;
-        },
-        destroy : () =>  {
-         Gtk.main_quit();
-        }
-    },
-    border_width : 0,
-    default_height : 500,
-    default_width : 800,
-    id : "MainWindow",
-    init : this.state = "files";
-    	  
-        //this.el.show_all();,
-    type : Gtk.WindowType.TOPLEVEL,
-    'void:hideAddListener' : () {
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-              _this.projecteditbutton.el.show();
-             _this.editfilebutton.el.show();   
-         _this.addpropsview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.addpropsview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();  
-      },
-    'void:hideAddProp' : () {
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-              _this.projecteditbutton.el.show();
-             _this.editfilebutton.el.show();   
-         _this.addpropsview.el.save_easing_state();
-         
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.addpropsview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();  
-     },
-    'void:hideCodeEdit' : () {
-        //this.code_editor.saveContents();
-         _this.backbutton.el.hide();
-          _this.projectbutton.el.show(); 
-           _this.projecteditbutton.el.show();
-           _this.editfilebutton.el.show();   
-         _this.codeeditview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.codeeditview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.codeeditview.el.restore_easing_state();  
-     },
-    'void:hideObject' : () {
+    hideObject : () {
           // return to editing state..
            
               _this.projecteditbutton.el.show();
@@ -118,89 +34,137 @@ MainWindow=new XObject({
      
     
     },
-    'void:hideProjectEdit' : () {
-        // return to editing state..
-           
-          _this.projectbutton.el.show();
-         _this.projecteditbutton.el.show();
-          _this.backbutton.el.hide();
-             _this.editfilebutton.el.show();   
+    show : () {
+        this.left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+        this.el.show_all();
+    
+    },
+    showAddProp : () {
+    
+         
+         var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         _this.backbutton.el.show();
+           _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+         
          
         //this.rooview.el.hide();
-         //this.edit_project.el.show();
-            _this.projecteditview.el.save_easing_state();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "props",
+            ae.fqn()
+        );
+    
+        _this.addpropsview.el.save_easing_state();
+            
         var el = _this.rooview.el;
         el.save_easing_state();
-    
+       
         
-        el.set_scale(1.0f,1.0f);
-           _this.projecteditview.el.set_scale(1.0f,0.0f);
-        _this.state = "edit";
+        el.set_scale(0.5f,0.5f);
     
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-          _this.projecteditview.el.restore_easing_state();  
-      
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addprop";
     },
-    'void:hideViewEditing' : ( )   {
-    
-    // show the file navigation...
-      
-        if (this.left_tree.getActiveFile() != null) {
-             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                 this.window_rooview.createThumb();
-             } else {
-                  this.window_gladeview.createThumb();
-              }
-          }
-          
-        _this.addprojectbutton.el.show();   
-        _this.addfilebutton.el.show();       
-          _this.backbutton.el.show();
-        _this.delprojectbutton.el.show();
+    project : "null",
+    showProjectEdit : () {
+        // make the browser smaller, and show the edit dialog
         
-          _this.editfilebutton.el.hide();   
-          _this.projectbutton.el.hide();         
-          _this.projecteditbutton.el.hide();
-          _this.objectshowbutton.el.hide();
-          _this.addpropbutton.el.hide();      
-          _this.addlistenerbutton.el.hide();  
-    
-    
-    
-    
-              
-        // show the add file button..
         
-              
-          
-         this.editpane.el.hide();
+         _this.projectbutton.el.hide();
+         _this.projecteditbutton.el.hide();
+         
+         _this.editfilebutton.el.hide();
+         
+        
+         
+         
+         _this.backbutton.el.show();
+         
         //this.rooview.el.hide();
-         this.left_projects.el.show();
-        
+        this.projectsettings.el.show_all();
+        this.projectsettings.show(this.project);
+        _this.projecteditview.el.save_easing_state();
+            
         var el = _this.rooview.el;
         el.save_easing_state();
-          el.set_easing_duration(1000);
-        // show project / file view..
-        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
-        //_this.mainpane.el.set_position(0);
-        // rotate y 180..
-        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-        el.set_scale(0.0f,0.0f);
        
-            _this.state = "files";
-        if (_this.project != null) {
-            _this.left_projects.selectProject(_this.project);
-            }
+        
+        el.set_scale(0.5f,0.5f);
+    
+        _this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+        _this.state = "projectedit";
+         
+     
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-            
-        print("show view browsing");
+        _this.projecteditview.el.restore_easing_state();
+      //  print("show view browsing");
+        
     },
-    'void:initChildren' : () {
+    showAddListener : () {
+    
+         
+         
+        var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         
+       _this.backbutton.el.show();
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+        
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "signals",
+            ae.fqn()
+        );
+        //this.rightpalete.show(this.project);
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addlistener";
+    },
+    children_loaded : false,
+    setTitle : (string str) {
+        this.el.set_title(this.title + " - " + str);
+    },
+    initChildren : () {
         // this needs putting in a better place..
         
         print("init children");
@@ -503,80 +467,204 @@ MainWindow=new XObject({
     
     
     },
-    'void:setTitle' : (string str) {
-        this.el.set_title(this.title + " - " + str);
-    },
-    'void:show' : () {
-        this.left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-        this.el.show_all();
-    
-    },
-    'void:showAddListener' : () {
-    
+    border_width : 0,
+    default_height : 500,
+    left_projects : "null",
+    id : "MainWindow",
+    window_rooview : "null",
+    default_width : 800,
+    code_editor : "null",
+    hideAddProp : () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
          
-         
-        var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
-            return;
-        }
-         
-       _this.backbutton.el.show();
-        _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
-        
-        //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "signals",
-            ae.fqn()
-        );
-        //this.rightpalete.show(this.project);
-    
-        _this.addpropsview.el.save_easing_state();
-            
         var el = _this.rooview.el;
         el.save_easing_state();
-       
-        
-        el.set_scale(0.5f,0.5f);
     
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
-       
-       
+        
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addlistener";
+         _this.addpropsview.el.restore_easing_state();  
+     },
+    xtype : "Window",
+    hideCodeEdit : () {
+        //this.code_editor.saveContents();
+         _this.backbutton.el.hide();
+          _this.projectbutton.el.show(); 
+           _this.projecteditbutton.el.show();
+           _this.editfilebutton.el.show();   
+         _this.codeeditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.codeeditview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.codeeditview.el.restore_easing_state();  
+     },
+    type : Gtk.WindowType.TOPLEVEL,
+    left_tree : "null",
+    new_file_dialog : "null",
+    hideViewEditing : ( )   {
+    
+    // show the file navigation...
+      
+        if (this.left_tree.getActiveFile() != null) {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                 this.window_rooview.createThumb();
+             } else {
+                  this.window_gladeview.createThumb();
+              }
+          }
+          
+        _this.addprojectbutton.el.show();   
+        _this.addfilebutton.el.show();       
+          _this.backbutton.el.show();
+        _this.delprojectbutton.el.show();
+        
+          _this.editfilebutton.el.hide();   
+          _this.projectbutton.el.hide();         
+          _this.projecteditbutton.el.hide();
+          _this.objectshowbutton.el.hide();
+          _this.addpropbutton.el.hide();      
+          _this.addlistenerbutton.el.hide();  
+    
+    
+    
+    
+              
+        // show the add file button..
+        
+              
+          
+         this.editpane.el.hide();
+        //this.rooview.el.hide();
+         this.left_projects.el.show();
+        
+        var el = _this.rooview.el;
+        el.save_easing_state();
+          el.set_easing_duration(1000);
+        // show project / file view..
+        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
+        //_this.mainpane.el.set_position(0);
+        // rotate y 180..
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+        el.set_scale(0.0f,0.0f);
+       
+            _this.state = "files";
+        if (_this.project != null) {
+            _this.left_projects.selectProject(_this.project);
+            }
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+            
+        print("show view browsing");
     },
-    'void:showAddProp' : () {
+    projectsettings : "null",
+    xns : Gtk,
+    clutterfiles : "null",
+    hideAddListener : () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.addpropsview.el.restore_easing_state();  
+      },
+    left_props : "null",
+    state : "",
+    rightpalete : "null",
+    title : "\"Application Builder\"",
+    add_props : "null",
+    showViewEditing : ( )  {
+         this.editpane.el.show();
+      //   this.rooview.el.show();
+         this.left_projects.el.hide();
+        
+        _this.addprojectbutton.el.hide();   
+        _this.delprojectbutton.el.hide();
+        _this.addfilebutton.el.hide();       
+        _this.backbutton.el.hide();
+        
+          _this.projectbutton.el.show();         
+        _this.editfilebutton.el.show();   
+       _this.projecteditbutton.el.show();
+      _this.objectshowbutton.el.show();
+      _this.addpropbutton.el.show();      
+      _this.addlistenerbutton.el.show();   
+      
+          
+        var el = _this.rooview.el;
+            el.save_easing_state();
+      
+        
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+            el.set_scale(1.0f,1.0f);
+            _this.state = "edit";
+           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
+            _this.clutterfiles.el.hide();
+        
+        el.restore_easing_state();
+            
+        print("show view editing");
+    },
+    showObject : () {
     
          
-         var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
+        // what's the active node on the left hand side..
+        
+        var n = _this.left_tree.getActiveElement();
+    
+        if (_this.left_tree.model.file == null) {
             return;
         }
+        
+        if (n == null && _this.left_tree.model.file.tree != null) {
+            return;
+        }
+        
          _this.backbutton.el.show();
            _this.projectbutton.el.hide();
         _this.editfilebutton.el.hide();
         _this.projecteditbutton.el.hide();    
         
          
-         
         //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "props",
-            ae.fqn()
-        );
+        this.rightpalete.el.show_all();
+        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
     
-        _this.addpropsview.el.save_easing_state();
+        
+        //this.rightpalete.show(this.project);
+    
+        _this.objectview.el.save_easing_state();
             
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -584,17 +672,18 @@ MainWindow=new XObject({
         
         el.set_scale(0.5f,0.5f);
     
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
+        _this.objectview.el.set_scale(1.0f,1.0f);
        
        
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addprop";
+        _this.objectview.el.restore_easing_state();
+        this.state = "object";
     },
-    'void:showCodeEdit' : (JsRender.Node node, string ptype, string key)
+    window_gladeview : "null",
+    showCodeEdit : (JsRender.Node node, string ptype, string key)
     {
         // this is a bit different,
         // it's not called via a button - but triggered by the prop edit class signal.
@@ -645,930 +734,784 @@ MainWindow=new XObject({
         _this.codeeditview.el.restore_easing_state();
         this.state = "codeedit";
     },
-    'void:showObject' : () {
-    
-         
-        // what's the active node on the left hand side..
-        
-        var n = _this.left_tree.getActiveElement();
-    
-        if (_this.left_tree.model.file == null) {
-            return;
-        }
-        
-        if (n == null && _this.left_tree.model.file.tree != null) {
-            return;
-        }
-        
-         _this.backbutton.el.show();
-           _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
+    hideProjectEdit : () {
+        // return to editing state..
+           
+          _this.projectbutton.el.show();
+         _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+             _this.editfilebutton.el.show();   
          
         //this.rooview.el.hide();
-        this.rightpalete.el.show_all();
-        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
-    
-        
-        //this.rightpalete.show(this.project);
-    
-        _this.objectview.el.save_easing_state();
-            
+         //this.edit_project.el.show();
+            _this.projecteditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
-       
-        
-        el.set_scale(0.5f,0.5f);
     
-        _this.objectview.el.set_scale(1.0f,1.0f);
-       
-       
+        
+        el.set_scale(1.0f,1.0f);
+           _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.state = "edit";
+    
      
         //_this.clutterfiles.loadProject(_this.project);
     
         el.restore_easing_state();
-        _this.objectview.el.restore_easing_state();
-        this.state = "object";
-    },
-    'void:showProjectEdit' : () {
-        // make the browser smaller, and show the edit dialog
-        
-        
-         _this.projectbutton.el.hide();
-         _this.projecteditbutton.el.hide();
-         
-         _this.editfilebutton.el.hide();
-         
-        
-         
-         
-         _this.backbutton.el.show();
-         
-        //this.rooview.el.hide();
-        this.projectsettings.el.show_all();
-        this.projectsettings.show(this.project);
-        _this.projecteditview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-       
-        
-        el.set_scale(0.5f,0.5f);
-    
-        _this.projecteditview.el.set_scale(1.0f,1.0f);
-       
-        _this.state = "projectedit";
-         
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.projecteditview.el.restore_easing_state();
-      //  print("show view browsing");
-        
-    },
-    'void:showViewEditing' : ( )  {
-         this.editpane.el.show();
-      //   this.rooview.el.show();
-         this.left_projects.el.hide();
-        
-        _this.addprojectbutton.el.hide();   
-        _this.delprojectbutton.el.hide();
-        _this.addfilebutton.el.hide();       
-        _this.backbutton.el.hide();
-        
-          _this.projectbutton.el.show();         
-        _this.editfilebutton.el.show();   
-       _this.projecteditbutton.el.show();
-      _this.objectshowbutton.el.show();
-      _this.addpropbutton.el.show();      
-      _this.addlistenerbutton.el.show();   
+          _this.projecteditview.el.restore_easing_state();  
       
-          
-        var el = _this.rooview.el;
-            el.save_easing_state();
-      
-        
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-            el.set_scale(1.0f,1.0f);
-            _this.state = "edit";
-           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-            _this.clutterfiles.el.hide();
-        
-        el.restore_easing_state();
-            
-        print("show view editing");
+    },
+    listeners : {
+    	delete_event : (   event) => {
+    	       return false;
+    	        
+    	   },
+    	destroy : () =>  {
+    	    Gtk.main_quit();
+    	   },
+    	show : ( ) => {
+    	       // hide the file editing..
+    	      
+    	       //this.hideViewEditing();
+    	   }
     },
     items : [
-        {
-            xtype: Gtk.VBox,
-            homogeneous : false,
+    	{
             id : "vbox",
-            pack : "add",
+            xtype : "VBox",
+            xns : Gtk,
+            homogeneous : FALSE,
             items : [
-                {
-                    xtype: Gtk.HBox,
-                    homogeneous : true,
+            	{
+                    vexpand : false,
                     id : "topbar",
-                    pack : "pack_start,false,true,0",
+                    xtype : "HBox",
                     height_request : 20,
-                    vexpand : false
+                    xns : Gtk,
+                    homogeneous : FALSE
                 },
-                {
-                    xtype: Gtk.HPaned,
+            	{
                     id : "mainpane",
-                    pack : "pack_end,true,true,0",
                     position : 400,
+                    lastWidth : 0,
+                    xtype : "HPaned",
+                    xns : Gtk,
                     items : [
-                        {
-                            xtype: Gtk.VBox,
+                    	{
                             id : "leftpane",
-                            pack : "add1",
+                            xtype : "VBox",
+                            xns : Gtk,
                             items : [
-                                {
-                                    xtype: Gtk.VPaned,
+                            	{
                                     id : "editpane",
-                                    pack : "pack_start,false,true,0",
+                                    xtype : "VPaned",
+                                    xns : Gtk,
                                     items : [
-                                        {
-                                            xtype: Gtk.VBox,
+                                    	{
                                             id : "tree",
-                                            pack : "add1"
+                                            xtype : "VBox",
+                                            xns : Gtk
                                         },
-                                        {
-                                            xtype: Gtk.VBox,
+                                    	{
                                             id : "props",
-                                            pack : "add2"
+                                            xtype : "VBox",
+                                            xns : Gtk
                                         }
                                     ]
+
                                 }
                             ]
+
                         },
-                        {
-                            xtype: Gtk.VBox,
-                            pack : "add2",
+                    	{
+                            xtype : "VBox",
+                            xns : Gtk,
                             items : [
-                                {
-                                    xtype: GtkClutter.Embed,
-                                    listeners : {
-                                        size_allocate : (  alloc) => {
-                                            if (!_this.children_loaded) {  return; }
-                                            //print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
-                                        
-                                        /*    _this.rooview.el.set_size(this.el.get_stage().width-50,
-                                                    this.el.get_stage().height);
-                                            _this.clutterfiles.set_size(this.el.get_stage().width-50,
-                                                   this.el.get_stage().height);
-                                        */
-                                           // this.el.set_size_request(alloc.width,alloc.height);
-                                           // this.el.get_stage().set_size(alloc.width,alloc.height);
-                                            _this.rooview.el.set_size(alloc.width-50,
-                                                    alloc.height);
-                                                    
-                                                     
-                                                    
-                                            _this.clutterfiles.set_size(alloc.width-50,
-                                                   alloc.height);
-                                            _this.projecteditview.el.set_size(alloc.width-50,
-                                                   alloc.height / 2.0f);
-                                                   
-                                            _this.objectview.el.set_size((alloc.width -50)/2.0f,
-                                                   alloc.height);
-                                                   
-                                            _this.addpropsview.el.set_size((alloc.width -50)/2.0f,
-                                                   alloc.height);
-                                            
-                                            _this.codeeditview.el.set_size((alloc.width -50)/2.0f,
-                                                   alloc.height);
-                                        }
-                                    },
+                            	{
                                     id : "clutterembed",
-                                    pack : "pack_start,true,true,0",
-                                    init : var stage = this.el.get_stage();
-                                        stage.set_background_color(  Clutter.Color.from_string("#000"));,
+                                    xtype : "Embed",
+                                    xns : GtkClutter,
+                                    listeners : {
+                                    	size_allocate : (  alloc) => {
+                                    	       if (!_this.children_loaded) {  return; }
+                                    	       //print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
+                                    	   
+                                    	   /*    _this.rooview.el.set_size(this.el.get_stage().width-50,
+                                    	               this.el.get_stage().height);
+                                    	       _this.clutterfiles.set_size(this.el.get_stage().width-50,
+                                    	              this.el.get_stage().height);
+                                    	   */
+                                    	      // this.el.set_size_request(alloc.width,alloc.height);
+                                    	      // this.el.get_stage().set_size(alloc.width,alloc.height);
+                                    	      
+                                    	      
+                                    	      // get_scale?
+                                    	      
+                                    	   
+                                    	       
+                                    	                
+                                    	       _this.clutterfiles.set_size(alloc.width-50, alloc.height);
+                                    	       
+                                    	       // project view appears at top...
+                                    	       
+                                    	       _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+                                    	              
+                                    	              
+                                    	       
+                                    	       var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;
+                                    	       
+                                    	       var buttonsize = 50.0f / alloc.width;
+                                    	       
+                                    	       var palsize = avail < 300.0f ? avail : (300.0f / avail);
+                                    	       
+                                    	      // palate / props : fixed 300 pix
+                                    	               
+                                    	       _this.objectview.el.set_size(palsize, alloc.height);    
+                                    	       _this.addpropsview.el.set_size(palsize, alloc.height);
+                                    	       
+                                    	       
+                                    	       
+                                    	       
+                                    	       // code edit min 600
+                                    	       
+                                    	       var codesize = avail < 600.0f ? avail : (600.0f / avail);
+                                    	       
+                                    	       _this.codeeditview.el.set_size(codesize, alloc.height);
+                                    	       _this.rooview.el.set_size(alloc.width-50, alloc.height);    
+                                    	   
+                                    	       switch (_this.state) {
+                                    	           case "codeedit": 
+                                    	   
+                                    	              _this.rooview.el.set_scale( avail - codesize / avail,
+                                    	                          avail - codesize / avail
+                                    	              );
+                                    	              break;
+                                    	           case "addprop":
+                                    	           case "addlistener":        
+                                    	             case "object":   
+                                    	              _this.rooview.el.set_scale( avail - palsize / avail,
+                                    	                          avail - palsize / avail
+                                    	              );
+                                    	              break;
+                                    	       }
+                                    	       
+                                    	     }
+                                    },
                                     items : [
-                                        {
-                                            xtype: GtkClutter.Actor,
+                                    	{
                                             id : "rooview",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                               
-                                               
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        1.0f
-                                                    )
-                                                );
-                                                    
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(1.0f,1.0f);
-                                                
-                                                this.el.set_size(_this.clutterembed.el.get_stage().width-50,
-                                                        _this.clutterembed.el.get_stage().height);
-                                                        
-                                            }
+                                            xtype : "Actor",
+                                            xns : GtkClutter
                                         },
-                                        {
-                                            xtype: GtkClutter.Actor,
+                                    	{
                                             id : "objectview",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                               
-                                               /*
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                */
-                                                this.el.fixed_x = 50.0f;
-                                                this.el.fixed_y = 0.0f;
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.0f,0.0f);
-                                                this.el.set_scale(0.0f,1.0f);
-                                                this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
-                                                        _this.clutterembed.el.get_stage().height);
-                                                        
-                                            }
+                                            xtype : "Actor",
+                                            xns : GtkClutter
                                         },
-                                        {
-                                            xtype: GtkClutter.Actor,
+                                    	{
                                             id : "codeeditview",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                               
-                                               /*
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                */
-                                                this.el.fixed_x = 50.0f;
-                                                this.el.fixed_y = 0.0f;
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.0f,0.0f);
-                                                this.el.set_scale(0.0f,1.0f);
-                                                this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
-                                                        _this.clutterembed.el.get_stage().height);
-                                                        
-                                            }
+                                            xtype : "Actor",
+                                            xns : GtkClutter
                                         },
-                                        {
-                                            xtype: GtkClutter.Actor,
+                                    	{
                                             id : "addpropsview",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                               
-                                               /*
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                */
-                                                this.el.fixed_x = 50.0f;
-                                                this.el.fixed_y = 0.0f;
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.0f,0.0f);
-                                                this.el.set_scale(0.0f,1.0f);
-                                                this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
-                                                        _this.clutterembed.el.get_stage().height);
-                                                        
-                                            }
+                                            xtype : "Actor",
+                                            xns : GtkClutter
                                         },
-                                        {
-                                            xtype: GtkClutter.Actor,
+                                    	{
                                             id : "projecteditview",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                               
-                                               
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        1.0f
-                                                    )
-                                                );
-                                                    
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.0f,0.0f);
-                                                this.el.set_scale(1.0f,0.0f);
-                                                this.el.set_size(_this.clutterembed.el.get_stage().width-50,
-                                                        _this.clutterembed.el.get_stage().height /2);
-                                                        
-                                            }
+                                            xtype : "Actor",
+                                            xns : GtkClutter
                                         },
-                                        {
-                                            xtype: Clutter.Actor,
-                                            id : "buttonlayout",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                                
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                 
-                                                
-                                                //this.el.set_position(100,100);
-                                                this.el.set_pivot_point(0.5f,0.5f);
-                                                 this.el.set_size(50,
-                                                       _this.clutterembed.el.get_stage().height);
-                                                 
-                                            },
-                                            items : [
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "backbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            switch (_this.state) {
-                                                                                case "edit":
-                                                                                
-                                                                                    _this.hideViewEditing();
-                                                                                    break;  
-                                                                                case "files":
-                                                                                    // should only occur if there is an active file..
-                                                                                    _this.showViewEditing();
-                                                                                    break; 
-                                                                                    
-                                                                                  case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                        
-                                                                                    break;
-                                                                                case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                        
-                                                                                    break;
-                                                                                     
-                                                                                 case "object":
-                                                                                    _this.hideObject();
-                                                                                    break;    
-                                                                                 
-                                                                                 case "codeedit":
-                                                                                    
-                                                                                    _this.hideCodeEdit();  
-                                                                                    break;
-                                                                                    
-                                                                                 case  "projectedit":
-                                                                                 // save?
-                                                                                    _this.hideProjectEdit();
-                                                                                    break;
-                                                                                    
-                                                                                default:
-                                                                                    break;
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "<<"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "projectbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            switch (_this.state) {
-                                                                                case "edit":
-                                                                                
-                                                                                    _this.hideViewEditing();
-                                                                                    break;  
-                                                                                case "files":
-                                                                                    _this.showViewEditing();
-                                                                                    break; 
-                                                                                    
-                                                                                  case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                                    _this.hideViewEditing();
-                                                                                    break;
-                                                                                case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                                    _this.hideViewEditing();
-                                                                                    break;
-                                                                                     
-                                                                                 case "object":
-                                                                                    _this.hideObject();
-                                                                                    _this.hideViewEditing();
-                                                                                    break;    
-                                                                                    
-                                                                                default:
-                                                                                    break;
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Open\nFiles"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "editfilebutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50.0f,50.0f);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                          
-                                                                            // create a new file in project..
-                                                                            if (_this.project == null || _this.left_tree.model.file == null) {
-                                                                                return  ;
-                                                                            }
-                                                                             
-                                                                            _this.new_file_dialog.show(_this.left_tree.model.file);
-                                                                            
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "File\nDetails"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "projecteditbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            switch (_this.state) {
-                                                                                case "edit":
-                                                                                    _this.showProjectEdit();
-                                                                                    break;  
-                                                                                case "files":
-                                                                                    // _this.showViewEditing();
-                                                                                    break; 
-                                                                                case "projectedit":
-                                                                                    _this.hideProjectEdit();
-                                                                                    break;
-                                                                                    
-                                                                                    
-                                                                                      
-                                                                                case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                                    _this.showProjectEdit();
-                                                                                    break;
-                                                                                case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                                    _this.showProjectEdit();
-                                                                                    break;
-                                                                                     
-                                                                                 case "object":
-                                                                                    _this.hideObject();
-                                                                                    _this.showProjectEdit();    
-                                                                                    break;
-                                                                                default:
-                                                                                    break;
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Project\nDetails"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    listeners : {
-                                                        enter_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#333");
-                                                                return false;
-                                                        },
-                                                        leave_event : (  event)  => {
-                                                            this.el.background_color = new Clutter.Color.from_string("#000");
-                                                            return false;
-                                                        },
-                                                        button_press_event : ( ) => {
-                                                            
-                                                            
-                                                            
-                                                            switch (_this.state) {
-                                                        
-                                                         
-                                                                case "addprop":
-                                                                    _this.hideAddProp();
-                                                                    _this.showObject();
-                                                                    break;
-                                                            case "addlistener":
-                                                                    _this.hideAddListener();
-                                                                    _this.showObject();
-                                                                    break;
-                                                        
-                                                        // show            
-                                                                case "edit":
-                                                                    _this.showObject();
-                                                                    break;
-                                                                    
-                                                        // hide            
-                                                                case "object":
-                                                                    _this.hideObject();
-                                                                    break;
-                                                                    break;
-                                                                                
-                                                                default:
-                                                                    print("unhandled add objects from %s\n",_this.state);
-                                                                    break;
-                                                            }
-                                                            return false;    
-                                                        
-                                                        
-                                                        }
-                                                    },
-                                                    id : "objectshowbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            
-                                                                            
-                                                                            
-                                                                            switch (_this.state) {
-                                                                        
-                                                                         
-                                                                                case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                                    _this.showObject();
-                                                                                    break;
-                                                                            case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                                    _this.showObject();
-                                                                                    break;
-                                                                        
-                                                                        // show            
-                                                                                case "edit":
-                                                                                    _this.showObject();
-                                                                                    break;
-                                                                                    
-                                                                        // hide            
-                                                                                case "object":
-                                                                                    _this.hideObject();
-                                                                                    break;
-                                                                                    break;
-                                                                                                
-                                                                                default:
-                                                                                    print("unhandled add objects from %s\n",_this.state);
-                                                                                    break;
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Show\nPalete"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "addpropbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            
-                                                                            
-                                                                            
-                                                                            switch (_this.state) {
-                                                                                case "edit":
-                                                                                    _this.showAddProp();
-                                                                                    break;
-                                                                                    
-                                                                                case "object":
-                                                                                    _this.hideObject();
-                                                                                    _this.showAddProp();
-                                                                                    break;
-                                                                               
-                                                                                case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                                    _this.showAddProp();            
-                                                                                    break;
-                                                                                    
-                                                                                    
-                                                                                case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                                    break;
-                                                                                    
-                                                                                default:
-                                                                                    print("unhandled add property from %s\n",_this.state);
-                                                                                    break;
-                                                                                    
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Add\nProp"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "addlistenerbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                            
-                                                                            
-                                                                            
-                                                                            switch (_this.state) {
-                                                                                case "edit":
-                                                                                    _this.showAddListener();
-                                                                                    break;
-                                                                                    
-                                                                               
-                                                                                case "addlistener":
-                                                                                    _this.hideAddListener();
-                                                                                    break;
-                                                                        
-                                                                                    
-                                                                                case "addprop":
-                                                                                    _this.hideAddProp();
-                                                                                    _this.showAddListener();
-                                                                                    break;
-                                                                                 case "object":
-                                                                                    _this.hideObject();
-                                                                                    _this.showAddListener();
-                                                                                    break;
-                                                                            
-                                                                                  default:
-                                                                                    print("unhandled add listener from %s\n",_this.state);
-                                                                        
-                                                                                    break;
-                                                                                    
-                                                                            }
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Add\nEvent\nCode"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "addprojectbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50.0f,50.0f);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                          
-                                                                            // create a new file in project..
-                                                                            //Xcls_DialogNewComponent.singleton().show(
-                                                                           var  pe =     Xcls_EditProject.singleton();
-                                                                            pe.el.set_transient_for(_this.el);
-                                                                            pe.el.set_modal(true);   
-                                                                           
-                                                                            var p  = pe.show();
-                                                                        
-                                                                            if (p == null) {
-                                                                                return;
-                                                                            }
-                                                                            _this.left_projects.is_loaded = false;    
-                                                                            _this.left_projects.load();
-                                                                            _this.left_projects.selectProject(p);
-                                                                            return  ;    
-                                                                        
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "New\nProj."
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "addfilebutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50.0f,50.0f);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : () => {
-                                                                            // create a new file in project..
-                                                                            if (_this.project == null) {
-                                                                                return  ;
-                                                                            }
-                                                                            
-                                                                            var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
-                                                                            _this.new_file_dialog.show(f);
-                                                                            
-                                                                            return  ;    
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Add\nFile"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: Clutter.Actor,
-                                                    id : "delprojectbutton",
-                                                    pack : "add_child",
-                                                    init : this.el.set_size(50,50);,
-                                                    items : [
-                                                        {
-                                                            xtype: GtkClutter.Actor,
-                                                            pack : "add_child",
-                                                            init : ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);,
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.Button,
-                                                                    listeners : {
-                                                                        clicked : ( ) => {
-                                                                             
-                                                                             var cd = Xcls_DialogConfirm.singleton();
-                                                                             cd.el.set_transient_for(_this.el);
-                                                                            cd.el.set_modal(true);
-                                                                        
-                                                                             var project =   _this.left_projects.getSelectedProject();
-                                                                            if (project == null) {
-                                                                                print("SKIP - no project\n");
-                                                                                return;
-                                                                            }
-                                                                            
-                                                                                
-                                                                             if (Gtk.ResponseType.YES != cd.show("Confirm", 
-                                                                                "Are you sure you want to delete project %s".printf(project.name))) {
-                                                                                return;
-                                                                            }
-                                                                             
-                                                                        
-                                                                            // confirm?
-                                                                            Project.Project.remove(project);
-                                                                            _this.project = null;
-                                                                            
-                                                                            _this.left_projects.is_loaded =  false;
-                                                                            _this.left_projects.load();
-                                                                            _this.clutterfiles.clearFiles();
-                                                                        
-                                                                        }
-                                                                    },
-                                                                    height_request : 50,
-                                                                    pack : "false",
-                                                                    width_request : 50,
-                                                                    label : "Del\nProp"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
+                                    	{
                                             layout_manager : {
-                                                xtype: Clutter.BoxLayout,
-                                                orientation : Clutter.Orientation.VERTICAL
-                                            }
+                                                orientation : Clutter.Orientation.VERTICAL,
+                                                xtype : "BoxLayout",
+                                                xns : Clutter
+                                            },
+                                            id : "buttonlayout",
+                                            xtype : "Actor",
+                                            xns : Clutter,
+                                            items : [
+                                            	{
+                                                    id : "backbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "<<",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       switch (_this.state) {
+                                                                    	           case "edit":
+                                                                    	           
+                                                                    	               _this.hideViewEditing();
+                                                                    	               break;  
+                                                                    	           case "files":
+                                                                    	               // should only occur if there is an active file..
+                                                                    	               _this.showViewEditing();
+                                                                    	               break; 
+                                                                    	               
+                                                                    	             case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	   
+                                                                    	               break;
+                                                                    	           case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	   
+                                                                    	               break;
+                                                                    	                
+                                                                    	            case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               break;    
+                                                                    	            
+                                                                    	            case "codeedit":
+                                                                    	               
+                                                                    	               _this.hideCodeEdit();  
+                                                                    	               break;
+                                                                    	               
+                                                                    	            case  "projectedit":
+                                                                    	            // save?
+                                                                    	               _this.hideProjectEdit();
+                                                                    	               break;
+                                                                    	               
+                                                                    	           default:
+                                                                    	               break;
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "projectbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Open\nFiles",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       switch (_this.state) {
+                                                                    	           case "edit":
+                                                                    	           
+                                                                    	               _this.hideViewEditing();
+                                                                    	               break;  
+                                                                    	           case "files":
+                                                                    	               _this.showViewEditing();
+                                                                    	               break; 
+                                                                    	               
+                                                                    	             case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	               _this.hideViewEditing();
+                                                                    	               break;
+                                                                    	           case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	               _this.hideViewEditing();
+                                                                    	               break;
+                                                                    	                
+                                                                    	            case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               _this.hideViewEditing();
+                                                                    	               break;    
+                                                                    	               
+                                                                    	           default:
+                                                                    	               break;
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "editfilebutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "File\nDetails",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	     
+                                                                    	       // create a new file in project..
+                                                                    	       if (_this.project == null || _this.left_tree.model.file == null) {
+                                                                    	           return  ;
+                                                                    	       }
+                                                                    	        
+                                                                    	       _this.new_file_dialog.show(_this.left_tree.model.file);
+                                                                    	       
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "projecteditbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Project\nDetails",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       switch (_this.state) {
+                                                                    	           case "edit":
+                                                                    	               _this.showProjectEdit();
+                                                                    	               break;  
+                                                                    	           case "files":
+                                                                    	               // _this.showViewEditing();
+                                                                    	               break; 
+                                                                    	           case "projectedit":
+                                                                    	               _this.hideProjectEdit();
+                                                                    	               break;
+                                                                    	               
+                                                                    	               
+                                                                    	                 
+                                                                    	           case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	               _this.showProjectEdit();
+                                                                    	               break;
+                                                                    	           case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	               _this.showProjectEdit();
+                                                                    	               break;
+                                                                    	                
+                                                                    	            case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               _this.showProjectEdit();    
+                                                                    	               break;
+                                                                    	           default:
+                                                                    	               break;
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "objectshowbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    listeners : {
+                                                    	button_press_event : ( ) => {
+                                                    	       
+                                                    	       
+                                                    	       
+                                                    	       switch (_this.state) {
+                                                    	   
+                                                    	    
+                                                    	           case "addprop":
+                                                    	               _this.hideAddProp();
+                                                    	               _this.showObject();
+                                                    	               break;
+                                                    	       case "addlistener":
+                                                    	               _this.hideAddListener();
+                                                    	               _this.showObject();
+                                                    	               break;
+                                                    	   
+                                                    	   // show            
+                                                    	           case "edit":
+                                                    	               _this.showObject();
+                                                    	               break;
+                                                    	               
+                                                    	   // hide            
+                                                    	           case "object":
+                                                    	               _this.hideObject();
+                                                    	               break;
+                                                    	               break;
+                                                    	                           
+                                                    	           default:
+                                                    	               print("unhandled add objects from %s\n",_this.state);
+                                                    	               break;
+                                                    	       }
+                                                    	       return false;    
+                                                    	   
+                                                    	   
+                                                    	   },
+                                                    	enter_event : (  event)  => {
+                                                    	       this.el.background_color = new Clutter.Color.from_string("#333");
+                                                    	           return false;
+                                                    	   },
+                                                    	leave_event : (  event)  => {
+                                                    	       this.el.background_color = new Clutter.Color.from_string("#000");
+                                                    	       return false;
+                                                    	   }
+                                                    },
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Show\nPalete",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       
+                                                                    	       
+                                                                    	       
+                                                                    	       switch (_this.state) {
+                                                                    	   
+                                                                    	    
+                                                                    	           case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	               _this.showObject();
+                                                                    	               break;
+                                                                    	       case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	               _this.showObject();
+                                                                    	               break;
+                                                                    	   
+                                                                    	   // show            
+                                                                    	           case "edit":
+                                                                    	               _this.showObject();
+                                                                    	               break;
+                                                                    	               
+                                                                    	   // hide            
+                                                                    	           case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               break;
+                                                                    	               break;
+                                                                    	                           
+                                                                    	           default:
+                                                                    	               print("unhandled add objects from %s\n",_this.state);
+                                                                    	               break;
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "addpropbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Add\nProp",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       
+                                                                    	       
+                                                                    	       
+                                                                    	       switch (_this.state) {
+                                                                    	           case "edit":
+                                                                    	               _this.showAddProp();
+                                                                    	               break;
+                                                                    	               
+                                                                    	           case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               _this.showAddProp();
+                                                                    	               break;
+                                                                    	          
+                                                                    	           case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	               _this.showAddProp();            
+                                                                    	               break;
+                                                                    	               
+                                                                    	               
+                                                                    	           case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	               break;
+                                                                    	               
+                                                                    	           default:
+                                                                    	               print("unhandled add property from %s\n",_this.state);
+                                                                    	               break;
+                                                                    	               
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "addlistenerbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Add\nEvent\nCode",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	       
+                                                                    	       
+                                                                    	       
+                                                                    	       switch (_this.state) {
+                                                                    	           case "edit":
+                                                                    	               _this.showAddListener();
+                                                                    	               break;
+                                                                    	               
+                                                                    	          
+                                                                    	           case "addlistener":
+                                                                    	               _this.hideAddListener();
+                                                                    	               break;
+                                                                    	   
+                                                                    	               
+                                                                    	           case "addprop":
+                                                                    	               _this.hideAddProp();
+                                                                    	               _this.showAddListener();
+                                                                    	               break;
+                                                                    	            case "object":
+                                                                    	               _this.hideObject();
+                                                                    	               _this.showAddListener();
+                                                                    	               break;
+                                                                    	       
+                                                                    	             default:
+                                                                    	               print("unhandled add listener from %s\n",_this.state);
+                                                                    	   
+                                                                    	               break;
+                                                                    	               
+                                                                    	       }
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "addprojectbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "New\nProj.",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	     
+                                                                    	       // create a new file in project..
+                                                                    	       //Xcls_DialogNewComponent.singleton().show(
+                                                                    	      var  pe =     Xcls_EditProject.singleton();
+                                                                    	       pe.el.set_transient_for(_this.el);
+                                                                    	       pe.el.set_modal(true);   
+                                                                    	      
+                                                                    	       var p  = pe.show();
+                                                                    	   
+                                                                    	       if (p == null) {
+                                                                    	           return;
+                                                                    	       }
+                                                                    	       _this.left_projects.is_loaded = false;    
+                                                                    	       _this.left_projects.load();
+                                                                    	       _this.left_projects.selectProject(p);
+                                                                    	       return  ;    
+                                                                    	   
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "addfilebutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Add\nFile",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : () => {
+                                                                    	       // create a new file in project..
+                                                                    	       if (_this.project == null) {
+                                                                    	           return  ;
+                                                                    	       }
+                                                                    	       
+                                                                    	       var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                                                                    	       _this.new_file_dialog.show(f);
+                                                                    	       
+                                                                    	       return  ;    
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                },
+                                            	{
+                                                    id : "delprojectbutton",
+                                                    xtype : "Actor",
+                                                    xns : Clutter,
+                                                    items : [
+                                                    	{
+                                                            xtype : "Actor",
+                                                            xns : GtkClutter,
+                                                            items : [
+                                                            	{
+                                                                    xtype : "Button",
+                                                                    width_request : 50,
+                                                                    label : "Del\nProp",
+                                                                    xns : Gtk,
+                                                                    height_request : 50,
+                                                                    listeners : {
+                                                                    	clicked : ( ) => {
+                                                                    	        
+                                                                    	        var cd = DialogConfirm.singleton();
+                                                                    	        cd.el.set_transient_for(_this.el);
+                                                                    	       cd.el.set_modal(true);
+                                                                    	   
+                                                                    	        var project =   _this.left_projects.getSelectedProject();
+                                                                    	       if (project == null) {
+                                                                    	           print("SKIP - no project\n");
+                                                                    	           return;
+                                                                    	       }
+                                                                    	       
+                                                                    	           
+                                                                    	        if (Gtk.ResponseType.YES != cd.show("Confirm", 
+                                                                    	           "Are you sure you want to delete project %s".printf(project.name))) {
+                                                                    	           return;
+                                                                    	       }
+                                                                    	        
+                                                                    	   
+                                                                    	       // confirm?
+                                                                    	       Project.Project.remove(project);
+                                                                    	       _this.project = null;
+                                                                    	       
+                                                                    	       _this.left_projects.is_loaded =  false;
+                                                                    	       _this.left_projects.load();
+                                                                    	       _this.clutterfiles.clearFiles();
+                                                                    	   
+                                                                    	   }
+                                                                    }
+                                                                }
+                                                            ]
+
+                                                        }
+                                                    ]
+
+                                                }
+                                            ]
+
                                         }
                                     ]
+
                                 }
                             ]
+
                         }
                     ]
+
                 }
             ]
+
         }
     ]
+
 });
 MainWindow.init();
 XObject.cache['/MainWindow'] = MainWindow;

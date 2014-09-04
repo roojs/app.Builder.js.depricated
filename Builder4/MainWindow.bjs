@@ -1,450 +1,451 @@
 {
-    "id": "file-gtk-11",
-    "name": "MainWindow",
-    "parent": "",
-    "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.bjs",
-    "items": [
+    "name" : "MainWindow",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
         {
-            "listeners": {
-                "show": "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}",
-                "delete_event": "  (   event) => {\n    return false;\n}",
-                "destroy": "() =>  {\n Gtk.main_quit();\n}"
+            "listeners" : {
+                "delete_event" : "  (   event) => {\n    return false;\n     \n}",
+                "destroy" : "() =>  {\n Gtk.main_quit();\n}",
+                "show" : "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}"
             },
-            ".Project.Project:project": "null",
-            ".Xcls_ClutterFiles:clutterfiles": "null",
-            ".Xcls_DialogNewComponent:new_file_dialog": "null",
-            ".Xcls_Editor:code_editor": "null",
-            ".Xcls_GladeView:window_gladeview": "null",
-            ".Xcls_LeftProps:left_props": "null",
-            ".Xcls_ProjectSettings:projectsettings": "null",
-            ".Xcls_RightPalete:rightpalete": "null",
-            ".Xcls_WindowAddProp:add_props": "null",
-            ".Xcls_WindowLeftProjects:left_projects": "null",
-            ".Xcls_WindowLeftTree:left_tree": "null",
-            ".Xcls_WindowRooView:window_rooview": "null",
-            ".bool:children_loaded": "false",
-            ".string:state": "",
-            ".string:title": "\"Application Builder\"",
-            "border_width": 0,
-            "default_height": 500,
-            "default_width": 800,
-            "id": "MainWindow",
-            "xtype": "Window",
-            "|init": " this.state = \"files\";\n\t  \n    //this.el.show_all();\n    \n    ",
-            "|type": "Gtk.WindowType.TOPLEVEL",
-            "|void:hideAddListener": "() {\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n          _this.projecteditbutton.el.show();\n         _this.editfilebutton.el.show();   \n     _this.addpropsview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.addpropsview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.addpropsview.el.restore_easing_state();  \n  }",
-            "|void:hideAddProp": "() {\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n          _this.projecteditbutton.el.show();\n         _this.editfilebutton.el.show();   \n     _this.addpropsview.el.save_easing_state();\n     \n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.addpropsview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.addpropsview.el.restore_easing_state();  \n }",
-            "|void:hideCodeEdit": "() {\n    //this.code_editor.saveContents();\n     _this.backbutton.el.hide();\n      _this.projectbutton.el.show(); \n       _this.projecteditbutton.el.show();\n       _this.editfilebutton.el.show();   \n     _this.codeeditview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.codeeditview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.codeeditview.el.restore_easing_state();  \n }",
-            "|void:hideObject": "() {\n      // return to editing state..\n       \n          _this.projecteditbutton.el.show();\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n         _this.editfilebutton.el.show();   \n     _this.objectview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.objectview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.objectview.el.restore_easing_state();  \n \n\n}",
-            "|void:hideProjectEdit": " () {\n    // return to editing state..\n       \n      _this.projectbutton.el.show();\n     _this.projecteditbutton.el.show();\n      _this.backbutton.el.hide();\n         _this.editfilebutton.el.show();   \n     \n    //this.rooview.el.hide();\n     //this.edit_project.el.show();\n        _this.projecteditview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n       _this.projecteditview.el.set_scale(1.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n      _this.projecteditview.el.restore_easing_state();  \n  \n}\n",
-            "|void:hideViewEditing": "  ( )   {\n\n// show the file navigation...\n  \n    if (this.left_tree.getActiveFile() != null) {\n         if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n             this.window_rooview.createThumb();\n         } else {\n              this.window_gladeview.createThumb();\n          }\n      }\n      \n    _this.addprojectbutton.el.show();   \n    _this.addfilebutton.el.show();       \n      _this.backbutton.el.show();\n    _this.delprojectbutton.el.show();\n    \n      _this.editfilebutton.el.hide();   \n      _this.projectbutton.el.hide();         \n      _this.projecteditbutton.el.hide();\n      _this.objectshowbutton.el.hide();\n      _this.addpropbutton.el.hide();      \n      _this.addlistenerbutton.el.hide();  \n\n\n\n\n          \n    // show the add file button..\n    \n          \n      \n     this.editpane.el.hide();\n    //this.rooview.el.hide();\n     this.left_projects.el.show();\n    \n    var el = _this.rooview.el;\n    el.save_easing_state();\n      el.set_easing_duration(1000);\n    // show project / file view..\n    //_this.mainpane.lastWidth = _this.leftpane.el.get_position();\n    //_this.mainpane.el.set_position(0);\n    // rotate y 180..\n    el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);\n    el.set_scale(0.0f,0.0f);\n   \n        _this.state = \"files\";\n    if (_this.project != null) {\n        _this.left_projects.selectProject(_this.project);\n        }\n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n        \n    print(\"show view browsing\");\n}",
-            "|void:initChildren": " () {\n    // this needs putting in a better place..\n    \n    print(\"init children\");\n    this.left_tree = new Xcls_WindowLeftTree();\n    this.left_tree.ref();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n    this.left_tree.el.show_all();\n   \n    this.left_tree.before_node_change.connect(() => {\n        if (this.state != \"codeedit\") {\n            this.left_props.finish_editing();\n            return true;\n        }\n        if (!this.code_editor.saveContents()) {\n            return false;\n        }\n        return false;\n    \n    });\n    \n    this.left_tree.node_selected.connect((sel) => {\n        \n        print(\"node_selected called %s\\n\", (sel == null) ? \"NULL\" : \"a value\");\n        \n        if (sel == null) {\n            this.left_props.el.hide();\n        } \n        this.left_props.el.show();\n        this.left_props.load(this.left_tree.getActiveFile(), sel);\n        switch (this.state) {\n            case \"object\": \n                  \n                 if (sel == null) {\n                    this.rightpalete.clear();\n                    break;\n                }\n                this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());\n                break;\n                 \n                \n           case \"addprop\":\n                if (sel == null) {\n                    this.add_props.clear();\n                    break;\n                }\n                this.add_props.show(_this.left_tree.getActiveFile().palete(), \"props\", sel.fqn());\n                break;\n                \n           case \"addlistener\":\n                if (sel == null) {\n                    this.add_props.clear();\n                    break;\n                }\n                this.add_props.show(_this.left_tree.getActiveFile().palete(), \"signals\", sel.fqn());\n                break;\n\n           case \"codeedit\":\n               \n                this.hideCodeEdit();\n                break;\n               \n                                \n        }\n        return  ;\n          \n    });\n    \n     this.left_tree.changed.connect(() => {\n       this.window_rooview.requestRedraw();\n       this.left_tree.model.file.save();\n    });\n     \n    \n\n    // left properties\n\n    this.left_props =new Xcls_LeftProps();\n    this.left_props.ref();\n    this.props.el.pack_start(this.left_props.el,true, true,0);\n    this.left_props.el.show_all();\n    \n    this.left_props.show_editor.connect( (file, node, type,  key) => {\n        this.showCodeEdit(node, type,  key);\n    });\n    this.left_props.stop_editor.connect( () => {\n        if (this.state != \"codeedit\") {\n            return true;\n        }\n    \n        var ret =  this.code_editor.saveContents();\n        if (!ret) {\n            return false;\n        }\n        this.hideCodeEdit();\n        return ret;\n    });\n     this.left_props.changed.connect(() => {\n          if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n               this.window_rooview.requestRedraw();\n               \n           } else {\n              this.window_gladeview.loadFile(this.left_tree.getActiveFile());\n          }\n          this.left_tree.model.file.save();\n    });\n    \n\n\n\n    // left projects..\n     this.left_projects = new Xcls_WindowLeftProjects();\n     this.left_projects.ref();\n     this.leftpane.el.pack_start(this.left_projects.el,true, true,0);\n     this.left_projects.el.show_all();\n     this.left_projects.project_selected.connect((proj) => {\n        proj.scanDirs();\n        _this.clutterfiles.loadProject(proj);\n    \n     });\n    \n   \n    // project edit..\n    this.projectsettings  =new Xcls_ProjectSettings();\n    this.projectsettings.ref();  /// really?\n    ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);\n    //this.projectsettings.el.show_all();\n\n    var stage = _this.projecteditview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n     this.projectsettings.buttonPressed.connect((btn) => {\n         if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n         \n            if (btn == \"save\") {\n                 _this.window_rooview.view.renderJS(true);\n            }\n            if (btn == \"apply\") {\n                _this.window_rooview.view.renderJS(true);\n                return;\n            }\n        } else {\n            // do nothing for gtk..\n        }\n        if (btn == \"save\" || btn == \"apply\") {\n            _this.project.save();\n \n        }\n        \n        this.hideProjectEdit();\n         \n     });\n    \n    \n    // objects (palate..)\n    this.rightpalete  = new Xcls_RightPalete();\n    this.rightpalete.ref();  /// really?\n    ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.objectview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    /*this.projectsettings.buttonPressed.connect((btn) => {\n        if (btn == \"save\") {\n             _this.window_rooview.view.renderJS(true);\n        }\n        if (btn == \"apply\") {\n            _this.window_rooview.view.renderJS(true);\n            return;\n        }\n        this.hideProjectEdit();\n         \n     });\n    */\n    \n    \n      \n    // Add properties\n    this.add_props  = new Xcls_WindowAddProp();\n    this.add_props.ref();  /// really?\n    ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.addpropsview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n    _this.add_props.select.connect( (key,type,skel, etype) => {\n        this.left_props.addProp(etype, key, skel, type);\n    });\n    \n    // editor\n    \n    \n    this.code_editor  = new Xcls_Editor();\n    this.code_editor.ref();  /// really?\n    ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.codeeditview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    // editor.save...\n\n    _this.code_editor.save.connect( () => {\n        this.left_tree.model.file.save();\n    });\n    \n     \n    \n    \n    //  roo view\n    \n     this.window_rooview  =new Xcls_WindowRooView();\n    this.window_rooview.ref();\n    ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);\n    this.window_rooview.el.show_all();\n\n    stage = _this.rooview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n      \n    //  glade view\n    \n    this.window_gladeview  =new Xcls_GladeView();\n    this.window_gladeview.ref();\n\n    //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);\n    ///this.window_gladeview.el.hide();\n\n   \n    \n    // clutter files\n    \n    \n    this.clutterfiles = new Xcls_ClutterFiles();\n    this.clutterfiles.ref();\n    stage.add_child(this.clutterfiles.el);\n    this.clutterfiles.el.show_all();\n\n\n    this.clutterfiles.open.connect((file) => { \n        _this.project = file.project;\n        _this.showViewEditing();\n        this.left_tree.model.loadFile(file);\n        var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));\n        if (file.xtype == \"Roo\" ) { \n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_rooview.el);\n            this.window_rooview.loadFile(file);\n            \n            this.window_rooview.el.show_all();\n        } else {\n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_gladeview.el);\n            this.window_gladeview.loadFile(file);\n            this.window_gladeview.el.show_all();\n        }\n        print(\"OPEN : \" + file.name);\n\n    });\n\n    // new file dialog\n    this.new_file_dialog = new Xcls_DialogNewComponent();\n    // force it modal to the main window..\n    this.new_file_dialog.el.set_transient_for(this.el);\n    this.new_file_dialog.el.set_modal(true);\n    \n    this.new_file_dialog.success.connect((project,file) =>\n    {\n        _this.project = project;\n        _this.showViewEditing();\n        this.left_tree.model.loadFile(file);\n        var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));\n        if (file.xtype == \"Roo\" ) { \n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_rooview.el);\n            this.window_rooview.loadFile(file);\n            \n            this.window_rooview.el.show_all();\n        } else {\n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_gladeview.el);\n            this.window_gladeview.loadFile(file);\n            this.window_gladeview.el.show_all();\n        }\n    \n    });\n    \n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    this.children_loaded = true;\n\n\n\n\n}\n",
-            "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
-            "|void:show": "() {\n    this.left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(this.left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
-            "|void:showAddListener": "() {\n\n     \n     \n    var ae =      this.left_tree.getActiveElement();\n    if (ae == null) {\n        return;\n    }\n     \n   _this.backbutton.el.show();\n    _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n    \n    //this.rooview.el.hide();\n    this.add_props.el.show_all();\n    this.add_props.show(\n        Palete.factory(this.project.xtype), \n        \"signals\",\n        ae.fqn()\n    );\n    //this.rightpalete.show(this.project);\n\n    _this.addpropsview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.addpropsview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.addpropsview.el.restore_easing_state();\n    this.state = \"addlistener\";\n}",
-            "|void:showAddProp": "() {\n\n     \n     var ae =      this.left_tree.getActiveElement();\n    if (ae == null) {\n        return;\n    }\n     _this.backbutton.el.show();\n       _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n     \n     \n    //this.rooview.el.hide();\n    this.add_props.el.show_all();\n    this.add_props.show(\n        Palete.factory(this.project.xtype), \n        \"props\",\n        ae.fqn()\n    );\n\n    _this.addpropsview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.addpropsview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.addpropsview.el.restore_easing_state();\n    this.state = \"addprop\";\n}",
-            "|void:showCodeEdit": "(JsRender.Node node, string ptype, string key)\n{\n    // this is a bit different,\n    // it's not called via a button - but triggered by the prop edit class signal.\n    // so it has to hide any other state..\n    \n    switch(this.state) {\n        case \"object\":\n            this.hideObject();\n            break;\n        case \"addprop\":\n            this.hideAddProp();\n            break;\n        case \"addlistener\":\n            this.hideAddListener();\n            break;\n    }\n \n   _this.backbutton.el.show();\n   \n    _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n   // more?? \n     \n    //this.rooview.el.hide();\n    this.code_editor.el.show_all();\n    this.code_editor.show(\n        node,\n        ptype,\n        key\n    );\n\n    _this.codeeditview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.codeeditview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.codeeditview.el.restore_easing_state();\n    this.state = \"codeedit\";\n}\n",
-            "|void:showObject": "() {\n\n     \n    // what's the active node on the left hand side..\n    \n    var n = _this.left_tree.getActiveElement();\n\n    if (_this.left_tree.model.file == null) {\n        return;\n    }\n    \n    if (n == null && _this.left_tree.model.file.tree != null) {\n        return;\n    }\n    \n     _this.backbutton.el.show();\n       _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n     \n    //this.rooview.el.hide();\n    this.rightpalete.el.show_all();\n    this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? \"*top\" : n.fqn());\n\n    \n    //this.rightpalete.show(this.project);\n\n    _this.objectview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.objectview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.objectview.el.restore_easing_state();\n    this.state = \"object\";\n}",
-            "|void:showProjectEdit": " () {\n    // make the browser smaller, and show the edit dialog\n    \n    \n     _this.projectbutton.el.hide();\n     _this.projecteditbutton.el.hide();\n     \n     _this.editfilebutton.el.hide();\n     \n    \n     \n     \n     _this.backbutton.el.show();\n     \n    //this.rooview.el.hide();\n    this.projectsettings.el.show_all();\n    this.projectsettings.show(this.project);\n    _this.projecteditview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.projecteditview.el.set_scale(1.0f,1.0f);\n   \n    _this.state = \"projectedit\";\n     \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.projecteditview.el.restore_easing_state();\n  //  print(\"show view browsing\");\n    \n}\n",
-            "|void:showViewEditing": "  ( )  {\n     this.editpane.el.show();\n  //   this.rooview.el.show();\n     this.left_projects.el.hide();\n    \n    _this.addprojectbutton.el.hide();   \n    _this.delprojectbutton.el.hide();\n    _this.addfilebutton.el.hide();       \n    _this.backbutton.el.hide();\n    \n      _this.projectbutton.el.show();         \n    _this.editfilebutton.el.show();   \n   _this.projecteditbutton.el.show();\n  _this.objectshowbutton.el.show();\n  _this.addpropbutton.el.show();      \n  _this.addlistenerbutton.el.show();   \n  \n      \n    var el = _this.rooview.el;\n        el.save_easing_state();\n  \n    \n        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);\n        el.set_scale(1.0f,1.0f);\n        _this.state = \"edit\";\n       // _this.mainpane.el.set_position(_this.leftpane.lastWidth);\n        _this.clutterfiles.el.hide();\n    \n    el.restore_easing_state();\n        \n    print(\"show view editing\");\n}",
-            "|xns": "Gtk",
-            "items": [
+            "|     void hideObject" : "() {\n      // return to editing state..\n       \n          _this.projecteditbutton.el.show();\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n         _this.editfilebutton.el.show();   \n     _this.objectview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.objectview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.objectview.el.restore_easing_state();  \n \n\n}",
+            "|     void show" : "() {\n    this.left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(this.left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
+            "|     void showAddProp" : "() {\n\n     \n     var ae =      this.left_tree.getActiveElement();\n    if (ae == null) {\n        return;\n    }\n     _this.backbutton.el.show();\n       _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n     \n     \n    //this.rooview.el.hide();\n    this.add_props.el.show_all();\n    this.add_props.show(\n        Palete.factory(this.project.xtype), \n        \"props\",\n        ae.fqn()\n    );\n\n    _this.addpropsview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.addpropsview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.addpropsview.el.restore_easing_state();\n    this.state = \"addprop\";\n}",
+            "# Project.Project project" : "null",
+            "|     void showProjectEdit" : " () {\n    // make the browser smaller, and show the edit dialog\n    \n    \n     _this.projectbutton.el.hide();\n     _this.projecteditbutton.el.hide();\n     \n     _this.editfilebutton.el.hide();\n     \n    \n     \n     \n     _this.backbutton.el.show();\n     \n    //this.rooview.el.hide();\n    this.projectsettings.el.show_all();\n    this.projectsettings.show(this.project);\n    _this.projecteditview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.projecteditview.el.set_scale(1.0f,1.0f);\n   \n    _this.state = \"projectedit\";\n     \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.projecteditview.el.restore_easing_state();\n  //  print(\"show view browsing\");\n    \n}\n",
+            "|     void showAddListener" : "() {\n\n     \n     \n    var ae =      this.left_tree.getActiveElement();\n    if (ae == null) {\n        return;\n    }\n     \n   _this.backbutton.el.show();\n    _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n    \n    //this.rooview.el.hide();\n    this.add_props.el.show_all();\n    this.add_props.show(\n        Palete.factory(this.project.xtype), \n        \"signals\",\n        ae.fqn()\n    );\n    //this.rightpalete.show(this.project);\n\n    _this.addpropsview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.addpropsview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.addpropsview.el.restore_easing_state();\n    this.state = \"addlistener\";\n}",
+            "# bool children_loaded" : false,
+            "|     void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
+            "|     void initChildren" : " () {\n    // this needs putting in a better place..\n    \n    print(\"init children\");\n    this.left_tree = new Xcls_WindowLeftTree();\n    this.left_tree.ref();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n    this.left_tree.el.show_all();\n   \n    this.left_tree.before_node_change.connect(() => {\n        if (this.state != \"codeedit\") {\n            this.left_props.finish_editing();\n            return true;\n        }\n        if (!this.code_editor.saveContents()) {\n            return false;\n        }\n        return false;\n    \n    });\n    \n    this.left_tree.node_selected.connect((sel) => {\n        \n        print(\"node_selected called %s\\n\", (sel == null) ? \"NULL\" : \"a value\");\n        \n        if (sel == null) {\n            this.left_props.el.hide();\n        } \n        this.left_props.el.show();\n        this.left_props.load(this.left_tree.getActiveFile(), sel);\n        switch (this.state) {\n            case \"object\": \n                  \n                 if (sel == null) {\n                    this.rightpalete.clear();\n                    break;\n                }\n                this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());\n                break;\n                 \n                \n           case \"addprop\":\n                if (sel == null) {\n                    this.add_props.clear();\n                    break;\n                }\n                this.add_props.show(_this.left_tree.getActiveFile().palete(), \"props\", sel.fqn());\n                break;\n                \n           case \"addlistener\":\n                if (sel == null) {\n                    this.add_props.clear();\n                    break;\n                }\n                this.add_props.show(_this.left_tree.getActiveFile().palete(), \"signals\", sel.fqn());\n                break;\n\n           case \"codeedit\":\n               \n                this.hideCodeEdit();\n                break;\n               \n                                \n        }\n        return  ;\n          \n    });\n    \n     this.left_tree.changed.connect(() => {\n       this.window_rooview.requestRedraw();\n       this.left_tree.model.file.save();\n    });\n     \n    \n\n    // left properties\n\n    this.left_props =new Xcls_LeftProps();\n    this.left_props.ref();\n    this.props.el.pack_start(this.left_props.el,true, true,0);\n    this.left_props.el.show_all();\n    \n    this.left_props.show_editor.connect( (file, node, type,  key) => {\n        this.showCodeEdit(node, type,  key);\n    });\n    this.left_props.stop_editor.connect( () => {\n        if (this.state != \"codeedit\") {\n            return true;\n        }\n    \n        var ret =  this.code_editor.saveContents();\n        if (!ret) {\n            return false;\n        }\n        this.hideCodeEdit();\n        return ret;\n    });\n     this.left_props.changed.connect(() => {\n          if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n               this.window_rooview.requestRedraw();\n               \n           } else {\n              this.window_gladeview.loadFile(this.left_tree.getActiveFile());\n          }\n          this.left_tree.model.file.save();\n    });\n    \n\n\n\n    // left projects..\n     this.left_projects = new Xcls_WindowLeftProjects();\n     this.left_projects.ref();\n     this.leftpane.el.pack_start(this.left_projects.el,true, true,0);\n     this.left_projects.el.show_all();\n     this.left_projects.project_selected.connect((proj) => {\n        proj.scanDirs();\n        _this.clutterfiles.loadProject(proj);\n    \n     });\n    \n   \n    // project edit..\n    this.projectsettings  =new Xcls_ProjectSettings();\n    this.projectsettings.ref();  /// really?\n    ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);\n    //this.projectsettings.el.show_all();\n\n    var stage = _this.projecteditview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n     this.projectsettings.buttonPressed.connect((btn) => {\n         if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n         \n            if (btn == \"save\") {\n                 _this.window_rooview.view.renderJS(true);\n            }\n            if (btn == \"apply\") {\n                _this.window_rooview.view.renderJS(true);\n                return;\n            }\n        } else {\n            // do nothing for gtk..\n        }\n        if (btn == \"save\" || btn == \"apply\") {\n            _this.project.save();\n \n        }\n        \n        this.hideProjectEdit();\n         \n     });\n    \n    \n    // objects (palate..)\n    this.rightpalete  = new Xcls_RightPalete();\n    this.rightpalete.ref();  /// really?\n    ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.objectview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    /*this.projectsettings.buttonPressed.connect((btn) => {\n        if (btn == \"save\") {\n             _this.window_rooview.view.renderJS(true);\n        }\n        if (btn == \"apply\") {\n            _this.window_rooview.view.renderJS(true);\n            return;\n        }\n        this.hideProjectEdit();\n         \n     });\n    */\n    \n    \n      \n    // Add properties\n    this.add_props  = new Xcls_WindowAddProp();\n    this.add_props.ref();  /// really?\n    ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.addpropsview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n    _this.add_props.select.connect( (key,type,skel, etype) => {\n        this.left_props.addProp(etype, key, skel, type);\n    });\n    \n    // editor\n    \n    \n    this.code_editor  = new Xcls_Editor();\n    this.code_editor.ref();  /// really?\n    ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);\n    //this.projectsettings.el.show_all();\n\n    stage = _this.codeeditview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    // editor.save...\n\n    _this.code_editor.save.connect( () => {\n        this.left_tree.model.file.save();\n    });\n    \n     \n    \n    \n    //  roo view\n    \n     this.window_rooview  =new Xcls_WindowRooView();\n    this.window_rooview.ref();\n    ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);\n    this.window_rooview.el.show_all();\n\n    stage = _this.rooview.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n      \n    //  glade view\n    \n    this.window_gladeview  =new Xcls_GladeView();\n    this.window_gladeview.ref();\n\n    //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);\n    ///this.window_gladeview.el.hide();\n\n   \n    \n    // clutter files\n    \n    \n    this.clutterfiles = new Xcls_ClutterFiles();\n    this.clutterfiles.ref();\n    stage.add_child(this.clutterfiles.el);\n    this.clutterfiles.el.show_all();\n\n\n    this.clutterfiles.open.connect((file) => { \n        _this.project = file.project;\n        _this.showViewEditing();\n        this.left_tree.model.loadFile(file);\n        var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));\n        if (file.xtype == \"Roo\" ) { \n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_rooview.el);\n            this.window_rooview.loadFile(file);\n            \n            this.window_rooview.el.show_all();\n        } else {\n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_gladeview.el);\n            this.window_gladeview.loadFile(file);\n            this.window_gladeview.el.show_all();\n        }\n        print(\"OPEN : \" + file.name);\n\n    });\n\n    // new file dialog\n    this.new_file_dialog = new Xcls_DialogNewComponent();\n    // force it modal to the main window..\n    this.new_file_dialog.el.set_transient_for(this.el);\n    this.new_file_dialog.el.set_modal(true);\n    \n    this.new_file_dialog.success.connect((project,file) =>\n    {\n        _this.project = project;\n        _this.showViewEditing();\n        this.left_tree.model.loadFile(file);\n        var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));\n        if (file.xtype == \"Roo\" ) { \n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_rooview.el);\n            this.window_rooview.loadFile(file);\n            \n            this.window_rooview.el.show_all();\n        } else {\n            ctr.foreach( (w) => { ctr.remove(w); });\n            ctr.add(this.window_gladeview.el);\n            this.window_gladeview.loadFile(file);\n            this.window_gladeview.el.show_all();\n        }\n    \n    });\n    \n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    this.children_loaded = true;\n\n\n\n\n}\n",
+            "border_width" : 0,
+            "default_height" : 500,
+            "# Xcls_WindowLeftProjects left_projects" : "null",
+            "id" : "MainWindow",
+            "# Xcls_WindowRooView window_rooview" : "null",
+            "default_width" : 800,
+            "# Xcls_Editor code_editor" : "null",
+            "|     void hideAddProp" : "() {\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n          _this.projecteditbutton.el.show();\n         _this.editfilebutton.el.show();   \n     _this.addpropsview.el.save_easing_state();\n     \n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.addpropsview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.addpropsview.el.restore_easing_state();  \n }",
+            "xtype" : "Window",
+            "|     void hideCodeEdit" : "() {\n    //this.code_editor.saveContents();\n     _this.backbutton.el.hide();\n      _this.projectbutton.el.show(); \n       _this.projecteditbutton.el.show();\n       _this.editfilebutton.el.show();   \n     _this.codeeditview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.codeeditview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.codeeditview.el.restore_easing_state();  \n }",
+            "$ type" : "Gtk.WindowType.TOPLEVEL",
+            "# Xcls_WindowLeftTree left_tree" : "null",
+            "# Xcls_DialogNewComponent new_file_dialog" : "null",
+            "|     void hideViewEditing" : "  ( )   {\n\n// show the file navigation...\n  \n    if (this.left_tree.getActiveFile() != null) {\n         if (this.left_tree.getActiveFile().xtype == \"Roo\" ) {\n             this.window_rooview.createThumb();\n         } else {\n              this.window_gladeview.createThumb();\n          }\n      }\n      \n    _this.addprojectbutton.el.show();   \n    _this.addfilebutton.el.show();       \n      _this.backbutton.el.show();\n    _this.delprojectbutton.el.show();\n    \n      _this.editfilebutton.el.hide();   \n      _this.projectbutton.el.hide();         \n      _this.projecteditbutton.el.hide();\n      _this.objectshowbutton.el.hide();\n      _this.addpropbutton.el.hide();      \n      _this.addlistenerbutton.el.hide();  \n\n\n\n\n          \n    // show the add file button..\n    \n          \n      \n     this.editpane.el.hide();\n    //this.rooview.el.hide();\n     this.left_projects.el.show();\n    \n    var el = _this.rooview.el;\n    el.save_easing_state();\n      el.set_easing_duration(1000);\n    // show project / file view..\n    //_this.mainpane.lastWidth = _this.leftpane.el.get_position();\n    //_this.mainpane.el.set_position(0);\n    // rotate y 180..\n    el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);\n    el.set_scale(0.0f,0.0f);\n   \n        _this.state = \"files\";\n    if (_this.project != null) {\n        _this.left_projects.selectProject(_this.project);\n        }\n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n        \n    print(\"show view browsing\");\n}",
+            "# Xcls_ProjectSettings projectsettings" : "null",
+            "$ xns" : "Gtk",
+            "# Xcls_ClutterFiles clutterfiles" : "null",
+            "|     void hideAddListener" : "() {\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n          _this.projecteditbutton.el.show();\n         _this.editfilebutton.el.show();   \n     _this.addpropsview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.addpropsview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.addpropsview.el.restore_easing_state();  \n  }",
+            "# Xcls_LeftProps left_props" : "null",
+            "# string state" : "",
+            "# Xcls_RightPalete rightpalete" : "null",
+            "# string title" : "\"Application Builder\"",
+            "# Xcls_WindowAddProp add_props" : "null",
+            "* init" : " this.state = \"files\";\n\t  \n    //this.el.show_all();\n    \n    ",
+            "|     void showViewEditing" : "  ( )  {\n     this.editpane.el.show();\n  //   this.rooview.el.show();\n     this.left_projects.el.hide();\n    \n    _this.addprojectbutton.el.hide();   \n    _this.delprojectbutton.el.hide();\n    _this.addfilebutton.el.hide();       \n    _this.backbutton.el.hide();\n    \n      _this.projectbutton.el.show();         \n    _this.editfilebutton.el.show();   \n   _this.projecteditbutton.el.show();\n  _this.objectshowbutton.el.show();\n  _this.addpropbutton.el.show();      \n  _this.addlistenerbutton.el.show();   \n  \n      \n    var el = _this.rooview.el;\n        el.save_easing_state();\n  \n    \n        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);\n        el.set_scale(1.0f,1.0f);\n        _this.state = \"edit\";\n       // _this.mainpane.el.set_position(_this.leftpane.lastWidth);\n        _this.clutterfiles.el.hide();\n    \n    el.restore_easing_state();\n        \n    print(\"show view editing\");\n}",
+            "|     void showObject" : "() {\n\n     \n    // what's the active node on the left hand side..\n    \n    var n = _this.left_tree.getActiveElement();\n\n    if (_this.left_tree.model.file == null) {\n        return;\n    }\n    \n    if (n == null && _this.left_tree.model.file.tree != null) {\n        return;\n    }\n    \n     _this.backbutton.el.show();\n       _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n    \n     \n    //this.rooview.el.hide();\n    this.rightpalete.el.show_all();\n    this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? \"*top\" : n.fqn());\n\n    \n    //this.rightpalete.show(this.project);\n\n    _this.objectview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.objectview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.objectview.el.restore_easing_state();\n    this.state = \"object\";\n}",
+            "# Xcls_GladeView window_gladeview" : "null",
+            "|     void showCodeEdit" : "(JsRender.Node node, string ptype, string key)\n{\n    // this is a bit different,\n    // it's not called via a button - but triggered by the prop edit class signal.\n    // so it has to hide any other state..\n    \n    switch(this.state) {\n        case \"object\":\n            this.hideObject();\n            break;\n        case \"addprop\":\n            this.hideAddProp();\n            break;\n        case \"addlistener\":\n            this.hideAddListener();\n            break;\n    }\n \n   _this.backbutton.el.show();\n   \n    _this.projectbutton.el.hide();\n    _this.editfilebutton.el.hide();\n    _this.projecteditbutton.el.hide();    \n   // more?? \n     \n    //this.rooview.el.hide();\n    this.code_editor.el.show_all();\n    this.code_editor.show(\n        node,\n        ptype,\n        key\n    );\n\n    _this.codeeditview.el.save_easing_state();\n        \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(0.5f,0.5f);\n\n    _this.codeeditview.el.set_scale(1.0f,1.0f);\n   \n   \n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n    _this.codeeditview.el.restore_easing_state();\n    this.state = \"codeedit\";\n}\n",
+            "|     void hideProjectEdit" : " () {\n    // return to editing state..\n       \n      _this.projectbutton.el.show();\n     _this.projecteditbutton.el.show();\n      _this.backbutton.el.hide();\n         _this.editfilebutton.el.show();   \n     \n    //this.rooview.el.hide();\n     //this.edit_project.el.show();\n        _this.projecteditview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n       _this.projecteditview.el.set_scale(1.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n      _this.projecteditview.el.restore_easing_state();  \n  \n}\n",
+            "items" : [
                 {
-                    "|homogeneous": "false",
-                    "id": "vbox",
-                    "pack": "add",
-                    "xtype": "VBox",
-                    "|xns": "Gtk",
-                    "items": [
+                    "id" : "vbox",
+                    "* pack" : "add",
+                    "xtype" : "VBox",
+                    "$ xns" : "Gtk",
+                    "$ homogeneous" : false,
+                    "items" : [
                         {
-                            "|homogeneous": "true",
-                            "id": "topbar",
-                            "pack": "pack_start,false,true,0",
-                            "xtype": "HBox",
-                            "|height_request": 20,
-                            "|vexpand": "false  ",
-                            "|xns": "Gtk"
+                            "$ vexpand" : "false  ",
+                            "id" : "topbar",
+                            "* pack" : "pack_start,false,true,0",
+                            "xtype" : "HBox",
+                            "$ height_request" : 20,
+                            "$ xns" : "Gtk",
+                            "$ homogeneous" : false
                         },
                         {
-                            ".int:lastWidth": 0,
-                            "id": "mainpane",
-                            "pack": "pack_end,true,true,0",
-                            "position": 400,
-                            "xtype": "HPaned",
-                            "|xns": "Gtk",
-                            "items": [
+                            "id" : "mainpane",
+                            "position" : 400,
+                            "* pack" : "pack_end,true,true,0",
+                            "# int lastWidth" : 0,
+                            "xtype" : "HPaned",
+                            "$ xns" : "Gtk",
+                            "items" : [
                                 {
-                                    "id": "leftpane",
-                                    "pack": "add1",
-                                    "xtype": "VBox",
-                                    "|xns": "Gtk",
-                                    "items": [
+                                    "id" : "leftpane",
+                                    "xtype" : "VBox",
+                                    "* pack" : "add1",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
                                         {
-                                            "id": "editpane",
-                                            "pack": "pack_start,false,true,0",
-                                            "xtype": "VPaned",
-                                            "|xns": "Gtk",
-                                            "items": [
+                                            "id" : "editpane",
+                                            "xtype" : "VPaned",
+                                            "* pack" : "pack_start,false,true,0",
+                                            "$ xns" : "Gtk",
+                                            "items" : [
                                                 {
-                                                    "id": "tree",
-                                                    "pack": "add1",
-                                                    "xtype": "VBox",
-                                                    "|xns": "Gtk"
+                                                    "id" : "tree",
+                                                    "xtype" : "VBox",
+                                                    "* pack" : "add1",
+                                                    "$ xns" : "Gtk"
                                                 },
                                                 {
-                                                    "id": "props",
-                                                    "pack": "add2",
-                                                    "xtype": "VBox",
-                                                    "|xns": "Gtk"
+                                                    "id" : "props",
+                                                    "xtype" : "VBox",
+                                                    "* pack" : "add2",
+                                                    "$ xns" : "Gtk"
                                                 }
                                             ]
                                         }
                                     ]
                                 },
                                 {
-                                    "pack": "add2",
-                                    "xtype": "VBox",
-                                    "|xns": "Gtk",
-                                    "items": [
+                                    "* pack" : "add2",
+                                    "xtype" : "VBox",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
                                         {
-                                            "listeners": {
-                                                "size_allocate": "  (  alloc) => {\n    if (!_this.children_loaded) {  return; }\n    //print(\"size_allocation %d,%d\\n\".printf(alloc.width, alloc.height));\n\n/*    _this.rooview.el.set_size(this.el.get_stage().width-50,\n            this.el.get_stage().height);\n    _this.clutterfiles.set_size(this.el.get_stage().width-50,\n           this.el.get_stage().height);\n*/\n   // this.el.set_size_request(alloc.width,alloc.height);\n   // this.el.get_stage().set_size(alloc.width,alloc.height);\n    _this.rooview.el.set_size(alloc.width-50,\n            alloc.height);\n            \n             \n            \n    _this.clutterfiles.set_size(alloc.width-50,\n           alloc.height);\n    _this.projecteditview.el.set_size(alloc.width-50,\n           alloc.height / 2.0f);\n           \n    _this.objectview.el.set_size((alloc.width -50)/2.0f,\n           alloc.height);\n           \n    _this.addpropsview.el.set_size((alloc.width -50)/2.0f,\n           alloc.height);\n    \n    _this.codeeditview.el.set_size((alloc.width -50)/2.0f,\n           alloc.height);\n}"
+                                            "listeners" : {
+                                                "size_allocate" : "  (  alloc) => {\n    if (!_this.children_loaded) {  return; }\n    //print(\"size_allocation %d,%d\\n\".printf(alloc.width, alloc.height));\n\n/*    _this.rooview.el.set_size(this.el.get_stage().width-50,\n            this.el.get_stage().height);\n    _this.clutterfiles.set_size(this.el.get_stage().width-50,\n           this.el.get_stage().height);\n*/\n   // this.el.set_size_request(alloc.width,alloc.height);\n   // this.el.get_stage().set_size(alloc.width,alloc.height);\n   \n   \n   // get_scale?\n   \n\n    \n             \n    _this.clutterfiles.set_size(alloc.width-50, alloc.height);\n    \n    // project view appears at top...\n    \n    _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);\n           \n           \n    \n    var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;\n    \n    var buttonsize = 50.0f / alloc.width;\n    \n    var palsize = avail < 300.0f ? avail : (300.0f / avail);\n    \n   // palate / props : fixed 300 pix\n            \n    _this.objectview.el.set_size(palsize, alloc.height);    \n    _this.addpropsview.el.set_size(palsize, alloc.height);\n    \n    \n    \n    \n    // code edit min 600\n    \n    var codesize = avail < 600.0f ? avail : (600.0f / avail);\n    \n    _this.codeeditview.el.set_size(codesize, alloc.height);\n    _this.rooview.el.set_size(alloc.width-50, alloc.height);    \n\n    switch (_this.state) {\n        case \"codeedit\": \n\n           _this.rooview.el.set_scale( avail - codesize / avail,\n                       avail - codesize / avail\n           );\n           break;\n        case \"addprop\":\n        case \"addlistener\":        \n          case \"object\":   \n           _this.rooview.el.set_scale( avail - palsize / avail,\n                       avail - palsize / avail\n           );\n           break;\n    }\n    \n  }"
                                             },
-                                            "id": "clutterembed",
-                                            "pack": "pack_start,true,true,0",
-                                            "xtype": "Embed",
-                                            "|init": "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",
-                                            "|xns": "GtkClutter",
-                                            "items": [
+                                            "id" : "clutterembed",
+                                            "* init" : "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",
+                                            "xtype" : "Embed",
+                                            "* pack" : "pack_start,true,true,0",
+                                            "$ xns" : "GtkClutter",
+                                            "items" : [
                                                 {
-                                                    "id": "rooview",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n   \n   \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            1.0f\n        )\n    );\n        \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(1.0f,1.0f);\n    \n    this.el.set_size(_this.clutterembed.el.get_stage().width-50,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
-                                                    "|xns": "GtkClutter"
+                                                    "id" : "rooview",
+                                                    "* init" : "{\n   \n   \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            1.0f\n        )\n    );\n        \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(1.0f,1.0f);\n    \n    this.el.set_size(_this.clutterembed.el.get_stage().width-50,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "GtkClutter"
                                                 },
                                                 {
-                                                    "id": "objectview",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
-                                                    "|xns": "GtkClutter"
+                                                    "id" : "objectview",
+                                                    "* init" : "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "GtkClutter"
                                                 },
                                                 {
-                                                    "id": "codeeditview",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
-                                                    "|xns": "GtkClutter"
+                                                    "id" : "codeeditview",
+                                                    "* init" : "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "GtkClutter"
                                                 },
                                                 {
-                                                    "id": "addpropsview",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
-                                                    "|xns": "GtkClutter"
+                                                    "id" : "addpropsview",
+                                                    "* init" : "{\n   \n   /*\n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n    */\n    this.el.fixed_x = 50.0f;\n    this.el.fixed_y = 0.0f;\n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(0.0f,1.0f);\n    this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,\n            _this.clutterembed.el.get_stage().height);\n            \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "GtkClutter"
                                                 },
                                                 {
-                                                    "id": "projecteditview",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n   \n   \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            1.0f\n        )\n    );\n        \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(1.0f,0.0f);\n    this.el.set_size(_this.clutterembed.el.get_stage().width-50,\n            _this.clutterembed.el.get_stage().height /2);\n            \n}",
-                                                    "|xns": "GtkClutter"
+                                                    "id" : "projecteditview",
+                                                    "* init" : "{\n   \n   \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            1.0f\n        )\n    );\n        \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.0f,0.0f);\n    this.el.set_scale(1.0f,0.0f);\n    this.el.set_size(_this.clutterembed.el.get_stage().width-50,\n            _this.clutterembed.el.get_stage().height /2);\n            \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "GtkClutter"
                                                 },
                                                 {
-                                                    "id": "buttonlayout",
-                                                    "pack": "get_stage().add_child",
-                                                    "xtype": "Actor",
-                                                    "|init": "{\n    \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n     \n    \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.5f,0.5f);\n     this.el.set_size(50,\n           _this.clutterembed.el.get_stage().height);\n     \n}",
-                                                    "|xns": "Clutter",
-                                                    "items": [
+                                                    "id" : "buttonlayout",
+                                                    "* init" : "{\n    \n    this.el.add_constraint(\n        new Clutter.AlignConstraint(\n            _this.clutterembed.el.get_stage(), \n            Clutter.AlignAxis.X_AXIS,\n            0.0f\n        )\n    );\n     \n    \n    //this.el.set_position(100,100);\n    this.el.set_pivot_point(0.5f,0.5f);\n     this.el.set_size(50,\n           _this.clutterembed.el.get_stage().height);\n     \n}",
+                                                    "xtype" : "Actor",
+                                                    "* pack" : "get_stage().add_child",
+                                                    "$ xns" : "Clutter",
+                                                    "items" : [
                                                         {
-                                                            "|orientation": "Clutter.Orientation.VERTICAL",
-                                                            "*prop": "layout_manager",
-                                                            "xtype": "BoxLayout",
-                                                            "|xns": "Clutter"
+                                                            "$ orientation" : "Clutter.Orientation.VERTICAL",
+                                                            "xtype" : "BoxLayout",
+                                                            "$ xns" : "Clutter",
+                                                            "* prop" : "layout_manager"
                                                         },
                                                         {
-                                                            "id": "backbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "backbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            // should only occur if there is an active file..\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            break;    \n         \n         case \"codeedit\":\n            \n            _this.hideCodeEdit();  \n            break;\n            \n         case  \"projectedit\":\n         // save?\n            _this.hideProjectEdit();\n            break;\n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            // should only occur if there is an active file..\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            break;    \n         \n         case \"codeedit\":\n            \n            _this.hideCodeEdit();  \n            break;\n            \n         case  \"projectedit\":\n         // save?\n            _this.hideProjectEdit();\n            break;\n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"<<\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"<<\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "projectbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "projectbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n            _this.hideViewEditing();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.hideViewEditing();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.hideViewEditing();\n            break;    \n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n            _this.hideViewEditing();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.hideViewEditing();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.hideViewEditing();\n            break;    \n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Open\\nFiles\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Open\\nFiles\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "editfilebutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50.0f,50.0f);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "editfilebutton",
+                                                            "* init" : "this.el.set_size(50.0f,50.0f);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.left_tree.model.file == null) {\n        return  ;\n    }\n     \n    _this.new_file_dialog.show(_this.left_tree.model.file);\n    \n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.left_tree.model.file == null) {\n        return  ;\n    }\n     \n    _this.new_file_dialog.show(_this.left_tree.model.file);\n    \n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"File\\nDetails\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"File\\nDetails\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "projecteditbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "projecteditbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n            _this.showProjectEdit();\n            break;  \n        case \"files\":\n            // _this.showViewEditing();\n            break; \n        case \"projectedit\":\n            _this.hideProjectEdit();\n            break;\n            \n            \n              \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showProjectEdit();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showProjectEdit();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.showProjectEdit();    \n            break;\n        default:\n            break;\n    }\n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n            _this.showProjectEdit();\n            break;  \n        case \"files\":\n            // _this.showViewEditing();\n            break; \n        case \"projectedit\":\n            _this.hideProjectEdit();\n            break;\n            \n            \n              \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showProjectEdit();\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showProjectEdit();\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            _this.showProjectEdit();    \n            break;\n        default:\n            break;\n    }\n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Project\\nDetails\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Project\\nDetails\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "listeners": {
-                                                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-                                                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                                                "button_press_event": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n\n \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showObject();\n            break;\n    case \"addlistener\":\n            _this.hideAddListener();\n            _this.showObject();\n            break;\n\n// show            \n        case \"edit\":\n            _this.showObject();\n            break;\n            \n// hide            \n        case \"object\":\n            _this.hideObject();\n            break;\n            break;\n                        \n        default:\n            print(\"unhandled add objects from %s\\n\",_this.state);\n            break;\n    }\n    return false;    \n\n\n}"
+                                                            "listeners" : {
+                                                                "button_press_event" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n\n \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showObject();\n            break;\n    case \"addlistener\":\n            _this.hideAddListener();\n            _this.showObject();\n            break;\n\n// show            \n        case \"edit\":\n            _this.showObject();\n            break;\n            \n// hide            \n        case \"object\":\n            _this.hideObject();\n            break;\n            break;\n                        \n        default:\n            print(\"unhandled add objects from %s\\n\",_this.state);\n            break;\n    }\n    return false;    \n\n\n}",
+                                                                "enter_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+                                                                "leave_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}"
                                                             },
-                                                            "id": "objectshowbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "objectshowbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n\n \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showObject();\n            break;\n    case \"addlistener\":\n            _this.hideAddListener();\n            _this.showObject();\n            break;\n\n// show            \n        case \"edit\":\n            _this.showObject();\n            break;\n            \n// hide            \n        case \"object\":\n            _this.hideObject();\n            break;\n            break;\n                        \n        default:\n            print(\"unhandled add objects from %s\\n\",_this.state);\n            break;\n    }\n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n\n \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showObject();\n            break;\n    case \"addlistener\":\n            _this.hideAddListener();\n            _this.showObject();\n            break;\n\n// show            \n        case \"edit\":\n            _this.showObject();\n            break;\n            \n// hide            \n        case \"object\":\n            _this.hideObject();\n            break;\n            break;\n                        \n        default:\n            print(\"unhandled add objects from %s\\n\",_this.state);\n            break;\n    }\n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Show\\nPalete\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Show\\nPalete\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "addpropbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "addpropbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddProp();\n            break;\n            \n        case \"object\":\n            _this.hideObject();\n            _this.showAddProp();\n            break;\n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            _this.showAddProp();            \n            break;\n            \n            \n        case \"addprop\":\n            _this.hideAddProp();\n            break;\n            \n        default:\n            print(\"unhandled add property from %s\\n\",_this.state);\n            break;\n            \n    }\n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Add\\nProp\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Add\\nProp\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "addlistenerbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "addlistenerbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddListener();\n            break;\n            \n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            break;\n\n            \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showAddListener();\n            break;\n         case \"object\":\n            _this.hideObject();\n            _this.showAddListener();\n            break;\n    \n          default:\n            print(\"unhandled add listener from %s\\n\",_this.state);\n\n            break;\n            \n    }\n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddListener();\n            break;\n            \n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            break;\n\n            \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showAddListener();\n            break;\n         case \"object\":\n            _this.hideObject();\n            _this.showAddListener();\n            break;\n    \n          default:\n            print(\"unhandled add listener from %s\\n\",_this.state);\n\n            break;\n            \n    }\n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Add\\nEvent\\nCode\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Add\\nEvent\\nCode\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "addprojectbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50.0f,50.0f);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "addprojectbutton",
+                                                            "* init" : "this.el.set_size(50.0f,50.0f);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n   var  pe =     Xcls_EditProject.singleton();\n    pe.el.set_transient_for(_this.el);\n    pe.el.set_modal(true);   \n   \n    var p  = pe.show();\n\n    if (p == null) {\n        return;\n    }\n    _this.left_projects.is_loaded = false;    \n    _this.left_projects.load();\n    _this.left_projects.selectProject(p);\n    return  ;    \n\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n   var  pe =     Xcls_EditProject.singleton();\n    pe.el.set_transient_for(_this.el);\n    pe.el.set_modal(true);   \n   \n    var p  = pe.show();\n\n    if (p == null) {\n        return;\n    }\n    _this.left_projects.is_loaded = false;    \n    _this.left_projects.load();\n    _this.left_projects.selectProject(p);\n    return  ;    \n\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"New\\nProj.\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"New\\nProj.\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "addfilebutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50.0f,50.0f);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "addfilebutton",
+                                                            "* init" : "this.el.set_size(50.0f,50.0f);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": " () => {\n    // create a new file in project..\n    if (_this.project == null) {\n        return  ;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : " () => {\n    // create a new file in project..\n    if (_this.project == null) {\n        return  ;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Add\\nFile\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : true,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Add\\nFile\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "id": "delprojectbutton",
-                                                            "pack": "add_child",
-                                                            "xtype": "Actor",
-                                                            "|init": "this.el.set_size(50,50);",
-                                                            "|xns": "Clutter",
-                                                            "items": [
+                                                            "id" : "delprojectbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
+                                                            "xtype" : "Actor",
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
                                                                 {
-                                                                    "pack": "add_child",
-                                                                    "xtype": "Actor",
-                                                                    "|init": "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "|xns": "GtkClutter",
-                                                                    "items": [
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
                                                                         {
-                                                                            "listeners": {
-                                                                                "clicked": "  ( ) => {\n     \n     var cd = Xcls_DialogConfirm.singleton();\n     cd.el.set_transient_for(_this.el);\n    cd.el.set_modal(true);\n\n     var project =   _this.left_projects.getSelectedProject();\n    if (project == null) {\n        print(\"SKIP - no project\\n\");\n        return;\n    }\n    \n        \n     if (Gtk.ResponseType.YES != cd.show(\"Confirm\", \n        \"Are you sure you want to delete project %s\".printf(project.name))) {\n        return;\n    }\n     \n\n    // confirm?\n    Project.Project.remove(project);\n    _this.project = null;\n    \n    _this.left_projects.is_loaded =  false;\n    _this.left_projects.load();\n    _this.clutterfiles.clearFiles();\n\n}"
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n     \n     var cd = DialogConfirm.singleton();\n     cd.el.set_transient_for(_this.el);\n    cd.el.set_modal(true);\n\n     var project =   _this.left_projects.getSelectedProject();\n    if (project == null) {\n        print(\"SKIP - no project\\n\");\n        return;\n    }\n    \n        \n     if (Gtk.ResponseType.YES != cd.show(\"Confirm\", \n        \"Are you sure you want to delete project %s\".printf(project.name))) {\n        return;\n    }\n     \n\n    // confirm?\n    Project.Project.remove(project);\n    _this.project = null;\n    \n    _this.left_projects.is_loaded =  false;\n    _this.left_projects.load();\n    _this.clutterfiles.clearFiles();\n\n}"
                                                                             },
-                                                                            "height_request": 50,
-                                                                            "pack": "false",
-                                                                            "width_request": 50,
-                                                                            "xtype": "Button",
-                                                                            "|label": "\"Del\\nProp\"",
-                                                                            "|xns": "Gtk"
+                                                                            "* pack" : false,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"Del\\nProp\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
                                                                         }
                                                                     ]
                                                                 }
@@ -462,7 +463,5 @@
                 }
             ]
         }
-    ],
-    "permname": "",
-    "modOrder": ""
+    ]
 }

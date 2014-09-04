@@ -1,14 +1,14 @@
-static Xcls_DialogConfirm  _DialogConfirm;
+static DialogConfirm  _DialogConfirm;
 
-public class Xcls_DialogConfirm : Object 
+public class DialogConfirm : Object 
 {
     public Gtk.MessageDialog el;
-    private Xcls_DialogConfirm  _this;
+    private DialogConfirm  _this;
 
-    public static Xcls_DialogConfirm singleton()
+    public static DialogConfirm singleton()
     {
         if (_DialogConfirm == null) {
-            _DialogConfirm= new Xcls_DialogConfirm();
+            _DialogConfirm= new DialogConfirm();
         }
         return _DialogConfirm;
     }
@@ -16,7 +16,7 @@ public class Xcls_DialogConfirm : Object
         // my vars (def)
 
     // ctor 
-    public Xcls_DialogConfirm()
+    public DialogConfirm()
     {
         _this = this;
         this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO, "Tests", null );
@@ -34,12 +34,12 @@ public class Xcls_DialogConfirm : Object
             this.el.response(Gtk.ResponseType.CANCEL);
             this.el.hide();
             return true;
-            //test
+            
         });
     }
 
     // user defined functions 
-    public int show (string title, string msg) {
+    public   int show (string title, string msg) {
          //if (!this.el) { this.init(); } 
          //this.success = success;
          this.el.title = title;

@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/DialogSaveModule.vala  -o /tmp/DialogSaveModule
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_DialogSaveModule();
-    DialogSaveModule.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_DialogSaveModule  DialogSaveModule;
+static Xcls_DialogSaveModule  _DialogSaveModule;
 
 public class Xcls_DialogSaveModule : Object 
 {
@@ -24,24 +7,24 @@ public class Xcls_DialogSaveModule : Object
 
     public static Xcls_DialogSaveModule singleton()
     {
-        if (DialogSaveModule == null) {
-            DialogSaveModule= new Xcls_DialogSaveModule();
+        if (_DialogSaveModule == null) {
+            _DialogSaveModule= new Xcls_DialogSaveModule();
         }
-        return DialogSaveModule;
+        return _DialogSaveModule;
     }
     public Xcls_name name;
 
-        // my vars
-    public JsRender.Node data;
+        // my vars (def)
     public Project.Project project;
+    public JsRender.Node data;
 
-        // ctor 
+    // ctor 
     public Xcls_DialogSaveModule()
     {
         _this = this;
         this.el = new Gtk.Dialog();
 
-        // my vars
+        // my vars (dec)
 
         // set gobject values
         this.el.default_height = 200;
@@ -49,9 +32,7 @@ public class Xcls_DialogSaveModule : Object
         this.el.modal = true;
         var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
-        this.el. get_content_area().add
-
- (  child_0.el  );
+        this.el.get_content_area().add (  child_0.el  );
         var child_1 = new Xcls_Button5( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
@@ -60,81 +41,79 @@ public class Xcls_DialogSaveModule : Object
         this.el.add_action_widget (  child_2.el , 1 );
 
         // listeners 
-        this.el.delete_event.connect(  (self, event) => {
+        this.el.delete_event.connect( (self, event) => {
             this.el.response(Gtk.ResponseType.CANCEL);
             return true;
-            
-        } );
+            //test
+        });
     }
 
-    // userdefined functions 
+    // user defined functions 
     public string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
+     
          
-             
-            this.el.set_transient_for(parent);
-            this.el.modal = true;
-            
-            this.data = data;
-            this.project = project;
-            this.name.el.set_text("");
-            this.el.show_all();
-             var   name = "";
-            while (true) {
-                var response_id = this.el.run();
-                if (response_id < 1) {
-                    this.el.hide();
-                     return "";
-                }
-                
-                name = _this.name.el.get_text();
-                if (name.length < 1) {
-                    StandardErrorDialog.singleton().show(
-                        (Gtk.Window) _this.el,
-                        "You must give the template a name. "
-                    );
-                    continue;
-                }
-                if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
-                    !Regex.match_simple ("^[A-Za-z.]+$", name) )
-                {
-                    StandardErrorDialog.show(
-                        (Gtk.Window) _this.el,
+        this.el.set_transient_for(parent);
+        this.el.modal = true;
         
-                        "Template Nane must contain only letters dots"
-                    );
-                    continue;
-                }
-                break;
+        this.data = data;
+        this.project = project;
+        this.name.el.set_text("");
+        this.el.show_all();
+         var   name = "";
+        while (true) {
+            var response_id = this.el.run();
+            if (response_id < 1) {
+                this.el.hide();
+                 return "";
             }
-            var f = project.newFile(name);
-            f.tree =  _this.data.deepClone();
-            f.save();
             
-            // now we save it..
-            this.el.hide();
-            
-            return name;
-            
-            
-            
+            name = _this.name.el.get_text();
+            if (name.length < 1) {
+                StandardErrorDialog.singleton().show(
+                    (Gtk.Window) _this.el,
+                    "You must give the template a name. "
+                );
+                continue;
+            }
+            if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
+                !Regex.match_simple ("^[A-Za-z.]+$", name) )
+            {
+                StandardErrorDialog.show(
+                    (Gtk.Window) _this.el,
+    
+                    "Template Nane must contain only letters dots"
+                );
+                continue;
+            }
+            break;
         }
-
-    // skip |xns - no return type
+        var f = project.newFile(name);
+        f.tree =  _this.data.deepClone();
+        f.save();
+        
+        // now we save it..
+        this.el.hide();
+        
+        return name;
+        
+        
+        
+    }
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
         private Xcls_DialogSaveModule  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_HBox2(Xcls_DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Label3( _this );
@@ -145,9 +124,7 @@ public class Xcls_DialogSaveModule : Object
             this.el.add (  child_1.el  );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Label3 : Object 
     {
@@ -155,24 +132,20 @@ public class Xcls_DialogSaveModule : Object
         private Xcls_DialogSaveModule  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Label3(Xcls_DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Name" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
-
-            // listeners 
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_name : Object 
     {
@@ -180,23 +153,21 @@ public class Xcls_DialogSaveModule : Object
         private Xcls_DialogSaveModule  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_name(Xcls_DialogSaveModule _owner )
         {
             _this = _owner;
             _this.name = this;
             this.el = new Gtk.Entry();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button5 : Object 
     {
@@ -204,23 +175,21 @@ public class Xcls_DialogSaveModule : Object
         private Xcls_DialogSaveModule  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button5(Xcls_DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "Cancel";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button6 : Object 
     {
@@ -228,22 +197,20 @@ public class Xcls_DialogSaveModule : Object
         private Xcls_DialogSaveModule  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button6(Xcls_DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "OK";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
 }

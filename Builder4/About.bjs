@@ -1,26 +1,25 @@
 {
-    "id": "file-gtk-1",
-    "name": "About",
-    "parent": "",
-    "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/About.bjs",
-    "items": [
+    "name" : "About",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/About.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
         {
-            "listeners": {
-                "response": "(rid) => {\n    this.el.hide();\n}\n  ",
-                "delete_event": "(self, event) => {\n    this.el.hide();\n    return true;\n}\n "
+            "listeners" : {
+                "delete_event" : "(self, event) => {\n    this.el.hide();\n    return true;\n \n}\n ",
+                "response" : "(rid) => {\n    this.el.hide();\n}\n  "
             },
-            "authors": "Alan Knowles",
-            "copyright": "LGPL",
-            "license": "LGPL",
-            "program_name": "app.Builder.js",
-            "website": "http://www.akbkhome.com/blog.php",
-            "xtype": "AboutDialog",
-            "|modal": "true",
-            "|void:show_all": "() {\n    this.el.show_all();\n}\n ",
-            "|xns": "Gtk"
+            "|    void show_all" : "() {\n    this.el.show_all();\n}\n ",
+            "copyright" : "LGPL",
+            "xtype" : "AboutDialog",
+            "program_name" : "app.Builder.js",
+            "$ modal" : true,
+            "$ authors" : "{ \"Alan Knowles\" }",
+            "$ xns" : "Gtk",
+            "website" : "http://www.akbkhome.com/blog.php",
+            "license" : "LGPL"
         }
-    ],
-    "permname": "",
-    "modOrder": ""
+    ]
 }

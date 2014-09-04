@@ -10,18 +10,10 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveModule=new XObject({
-    xtype: Gtk.Dialog,
-    listeners : {
-        delete_event : (self, event) => {
-            this.el.response(Gtk.ResponseType.CANCEL);
-            return true;
-            
-        }
-    },
-    default_height : 200,
     default_width : 400,
-    modal : true,
-    'string:show' : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
+    project : "",
+    xtype : "Dialog",
+    show : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
         this.el.set_transient_for(parent);
@@ -71,34 +63,48 @@ DialogSaveModule=new XObject({
         
         
     },
+    default_height : 200,
+    modal : true,
+    data : "",
+    xns : Gtk,
+    listeners : {
+    	delete_event : (self, event) => {
+    	       this.el.response(Gtk.ResponseType.CANCEL);
+    	       return true;
+    	       //test
+    	   }
+    },
     items : [
-        {
-            xtype: Gtk.HBox,
+    	{
+            xtype : "HBox",
             pack : get_content_area().add,
+            xns : Gtk,
             items : [
-                {
-                    xtype: Gtk.Label,
+            	{
                     label : "Name",
-                    pack : "add"
+                    xtype : "Label",
+                    xns : Gtk
                 },
-                {
-                    xtype: Gtk.Entry,
+            	{
                     id : "name",
-                    pack : "add"
+                    xtype : "Entry",
+                    xns : Gtk
                 }
             ]
+
         },
-        {
-            xtype: Gtk.Button,
+    	{
             label : "Cancel",
-            pack : "add_action_widget,0"
+            xtype : "Button",
+            xns : Gtk
         },
-        {
-            xtype: Gtk.Button,
+    	{
             label : "OK",
-            pack : "add_action_widget,1"
+            xtype : "Button",
+            xns : Gtk
         }
     ]
+
 });
 DialogSaveModule.init();
 XObject.cache['/DialogSaveModule'] = DialogSaveModule;

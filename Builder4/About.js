@@ -10,24 +10,26 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 About=new XObject({
-    xtype: Gtk.AboutDialog,
-    listeners : {
-        response : (rid) => {
-            this.el.hide();
-        },
-        delete_event : (self, event) => {
-            this.el.hide();
-            return true;
-        }
-    },
-    authors : "Alan Knowles",
-    copyright : "LGPL",
-    license : "LGPL",
-    program_name : "app.Builder.js",
-    website : "http://www.akbkhome.com/blog.php",
-    modal : true,
-    'void:show_all' : () {
+    show_all : () {
         this.el.show_all();
+    },
+    copyright : "LGPL",
+    xtype : "AboutDialog",
+    program_name : "app.Builder.js",
+    modal : TRUE,
+    authors : { "Alan Knowles" },
+    xns : Gtk,
+    website : "http://www.akbkhome.com/blog.php",
+    license : "LGPL",
+    listeners : {
+    	delete_event : (self, event) => {
+    	       this.el.hide();
+    	       return true;
+    	    
+    	   },
+    	response : (rid) => {
+    	       this.el.hide();
+    	   }
     }
 });
 About.init();

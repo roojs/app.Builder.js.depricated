@@ -1,104 +1,105 @@
 {
-    "id": "file-gtk-2",
-    "name": "ClutterFiles",
-    "parent": "",
-    "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
-    "items": [
+    "name" : "ClutterFiles",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
         {
-            "listeners": {
-                "scroll_event": "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n}"
+            "listeners" : {
+                "scroll_event" : "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n          \n}"
             },
-            ".Gee.ArrayList<Xcls_fileitem>:fileitems": "",
-            ".signal:void:open": "(JsRender.JsRender file)",
-            "id": "ClutterFiles",
-            "scroll_mode": "Clutter.ScrollMode.VERTICAL",
-            "xtype": "ScrollActor",
-            "|init": "this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n",
-            "|reactive": "true",
-            "|void:clearFiles": "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n",
-            "|void:loadProject": "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show_all();\n}\n",
-            "|void:set_size": "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
-            "|xns": "Clutter",
-            "items": [
+            "# Gee.ArrayList<Xcls_fileitem> fileitems" : "",
+            "id" : "ClutterFiles",
+            "|  void clearFiles" : "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n",
+            "scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
+            "* init" : "this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n",
+            "xtype" : "ScrollActor",
+            "$ reactive" : true,
+            "|  void loadProject" : "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show_all();\n}\n",
+            "@ void open" : "(JsRender.JsRender file)",
+            "$ xns" : "Clutter",
+            "|  void set_size" : "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
+            "items" : [
                 {
-                    "id": "filelayout",
-                    "pack": "add_child",
-                    "xtype": "Actor",
-                    "|init": "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
-                    "|reactive": "true",
-                    "|xns": "Clutter",
-                    "items": [
+                    "id" : "filelayout",
+                    "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
+                    "xtype" : "Actor",
+                    "* pack" : "add_child",
+                    "$ reactive" : true,
+                    "$ xns" : "Clutter",
+                    "items" : [
                         {
-                            "*prop": "layout_manager",
-                            "column_spacing": 20,
-                            "id": "filelayout_manager",
-                            "row_spacing": 20,
-                            "xtype": "FlowLayout",
-                            "|homogeneous": "true",
-                            "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
-                            "|xns": "Clutter"
+                            "id" : "filelayout_manager",
+                            "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
+                            "xtype" : "FlowLayout",
+                            "$ xns" : "Clutter",
+                            "row_spacing" : 20,
+                            "* prop" : "layout_manager",
+                            "column_spacing" : 20,
+                            "$ homogeneous" : true
                         },
                         {
-                            "listeners": {
-                                "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                "button_press_event": "  (  event) => {\n    _this.open(this.file);\n    return false;\n}"
+                            "listeners" : {
+                                "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n}",
+                                "enter_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+                                "leave_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}"
                             },
-                            "*args": "JsRender.JsRender file",
-                            ".JsRender.JsRender:file": "",
-                            "id": "*fileitem",
-                            "pack": false,
-                            "xtype": "Actor",
-                            "|init": "this.file = file;\nthis.el.set_size(100,100);",
-                            "|reactive": "true",
-                            "|xns": "Clutter",
-                            "items": [
+                            "id" : "*fileitem",
+                            "* args" : "JsRender.JsRender file",
+                            "* init" : "this.file = file;\nthis.el.set_size(100,100);",
+                            "* pack" : true,
+                            "xtype" : "Actor",
+                            "# JsRender.JsRender file" : "",
+                            "$ reactive" : true,
+                            "$ xns" : "Clutter",
+                            "items" : [
                                 {
-                                    "*prop": "layout_manager",
-                                    "spacing": 4,
-                                    "xtype": "BoxLayout",
-                                    "|orientation": "Clutter.Orientation.VERTICAL",
-                                    "|xns": "Clutter"
+                                    "$ orientation" : "Clutter.Orientation.VERTICAL",
+                                    "spacing" : 4,
+                                    "xtype" : "BoxLayout",
+                                    "$ xns" : "Clutter",
+                                    "* prop" : "layout_manager"
                                 },
                                 {
-                                    "*args": "JsRender.JsRender file",
-                                    ".ctor": "new Clutter.Texture.from_file(file.getIconFileName(true))",
-                                    "id": "+image",
-                                    "pack": "add_child",
-                                    "xtype": "Texture",
-                                    "|margin_left": 5,
-                                    "|margin_right": 5,
-                                    "|margin_top": 5,
-                                    "|x_align": "Clutter.ActorAlign.START",
-                                    "|x_expand": "true",
-                                    "|xns": "Clutter",
-                                    "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false"
+                                    "$ margin_top" : 5,
+                                    "* ctor" : "new Clutter.Texture.from_file(file.getIconFileName(true))",
+                                    "$ margin_right" : 5,
+                                    "id" : "+image",
+                                    "* args" : "JsRender.JsRender file",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Texture",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ margin_left" : 5,
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
                                 },
                                 {
-                                    "*args": "JsRender.JsRender file",
-                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
-                                    "id": "+typetitle",
-                                    "pack": "add_child",
-                                    "xtype": "Text",
-                                    "|x_align": "Clutter.ActorAlign.START",
-                                    "|x_expand": "true",
-                                    "|xns": "Clutter",
-                                    "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false"
+                                    "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
+                                    "* args" : "JsRender.JsRender file",
+                                    "id" : "+typetitle",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Text",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
                                 },
                                 {
-                                    "*args": "JsRender.JsRender file",
-                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-                                    "id": "+title",
-                                    "pack": "add_child",
-                                    "xtype": "Text",
-                                    "|x_align": "Clutter.ActorAlign.START",
-                                    "|x_expand": "true",
-                                    "|xns": "Clutter",
-                                    "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false"
+                                    "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
+                                    "* args" : "JsRender.JsRender file",
+                                    "id" : "+title",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Text",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
                                 }
                             ]
                         }
@@ -106,7 +107,5 @@
                 }
             ]
         }
-    ],
-    "permname": "",
-    "modOrder": ""
+    ]
 }

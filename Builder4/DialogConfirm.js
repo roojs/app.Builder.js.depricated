@@ -10,19 +10,12 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogConfirm=new XObject({
-    xtype: Gtk.MessageDialog,
-    listeners : {
-        delete_event : (event) => {
-            this.el.response(Gtk.ResponseType.CANCEL);
-            this.el.hide();
-            return true;
-        }
-    },
-    name : "DialogConfirm",
+    message_type : Gtk.MessageType.QUESTION,
     text : "Tests",
     title : "Please Confirm d",
-    buttons : Gtk.ButtonsType.YES_NO,
-    'int:show' : (string title, string msg) {
+    xtype : "MessageDialog",
+    modal : TRUE,
+    show : (string title, string msg) {
          //if (!this.el) { this.init(); } 
          //this.success = success;
          this.el.title = title;
@@ -35,9 +28,19 @@ DialogConfirm=new XObject({
         
     
     },
-    message_type : Gtk.MessageType.QUESTION,
-    modal : true,
-    use_markup : true
+    buttons : Gtk.ButtonsType.YES_NO,
+    xns : Gtk,
+    flags : "Gtk.DialogFlags.MODAL",
+    use_markup : TRUE,
+    name : "DialogConfirm",
+    listeners : {
+    	delete_event : (event) => {
+    	       this.el.response(Gtk.ResponseType.CANCEL);
+    	       this.el.hide();
+    	       return true;
+    	       
+    	   }
+    }
 });
 DialogConfirm.init();
 XObject.cache['/DialogConfirm'] = DialogConfirm;
