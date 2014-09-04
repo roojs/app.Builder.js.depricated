@@ -1959,7 +1959,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button32( _this );
             child_0.ref();
-            this.el.FALSE (  child_0.el  );
+ 
 
             // init method 
 
