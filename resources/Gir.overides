@@ -14,8 +14,7 @@
     "Gtk.ListStore.newv.types" : "columns",
     "Gtk.TreeStore.newv.types" : "columns",
 	
-    
-    
+     
     "-" : ""
     
 }
