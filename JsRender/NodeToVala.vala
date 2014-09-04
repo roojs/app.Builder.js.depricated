@@ -458,6 +458,10 @@ public class JsRender.NodeToVala : Object {
 			if (!this.node.has(p)) {
 				continue;
 			}
+			if (this.shouldIgnoreWrapped(p)) {
+				continue;
+			}
+			
 	     		this.ignore(p);
 			var v = this.node.get(p);
 
