@@ -565,8 +565,9 @@ public class JsRender.NodeToVala : Object {
                 		this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
                 		continue;
             		}
-            	    
-            		if (!ci.has("pack") || ci.get("pack").down() == "false") {
+
+			// not sure why we have 'true' in pack?!?
+            		if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
                 		continue;
             		}
                     
