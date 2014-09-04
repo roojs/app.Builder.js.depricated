@@ -261,12 +261,12 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			// is it a class property...
-			if (cls.props.has_key(vv[vv.length-1])) {
+			if (cls.props.has_key(kname)) {
 				continue;
 			}
+			
 			this.myvars.add(k);
 
-			
 			    
 			this.ret += this.pad + "public " + 
 				(k[0] == '$' || k[0] == '#' ? k.substring(2) : k ) + ";\n";
