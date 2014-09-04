@@ -404,7 +404,7 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         // editor.save...
     
-        _this.codeeditview.save.connect( () => {
+        _this.code_editor.save.connect( () => {
             this.left_tree.model.file.save();
         });
         
