@@ -187,7 +187,7 @@ public class JsRender.Node : Object {
 	{
 		var k = this.props.get(key);
 		if (k != null) {
-			return k;
+			return key;
 		}
 		
 		k = this.props.get("$ " + key);
