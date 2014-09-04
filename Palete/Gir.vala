@@ -132,6 +132,14 @@ namespace Palete {
 			this.is_overlaid = true;
 			
 		}
+
+		public void overlayCtorProperties() {
+			
+
+		}
+
+
+		
 		public GirObject clsToObject(string in_pn)
 		{
 			var pn = in_pn;
