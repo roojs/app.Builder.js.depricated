@@ -455,7 +455,7 @@ namespace Palete {
 			// look at includes..
 			var iter = g.includes.map_iterator();
 			while(iter.next()) {
-				var ret = fqtype(type, iter.get_key());
+				var ret = fqtypeLookup(type, iter.get_key());
 				if (ret != type) {
 					return ret;
 				}
