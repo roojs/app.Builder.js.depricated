@@ -70,7 +70,7 @@ public class JsRender.NodeToVala : Object {
 			cls = "Gtk.Source" +  item.get("xtype").substring(6);
 		}
 		
-
+		item.xvala_cls = cls;
 		
 		
 		string id = item.get("id").length > 0 ?
@@ -78,7 +78,7 @@ public class JsRender.NodeToVala : Object {
 
 		
 		
-		item.xvala_cls = cls;
+		
 		if (id[0] == '*' || id[0] == '+') {
 			item.xvala_xcls = "Xcls_" + id.substring(1);
 		} else {
