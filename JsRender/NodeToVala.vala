@@ -322,7 +322,7 @@ public class JsRender.NodeToVala : Object {
             
 
 	}
-	void addUnderThis()
+	void addUnderThis() 
 	{
             // public static?
     		if (depth < 1) {
@@ -385,7 +385,16 @@ public class JsRender.NodeToVala : Object {
 					continue;
 				}
 				this.ignore(n);
-				args += this.node.get(n);
+				
+				var v = this.node.get(n);
+
+				if (iter.get().type == "utf8") {
+					v = "\"" +  v.escape("") + "\"";
+				}
+				
+
+				
+				args += v;
 
 			}
 			this.ret += this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );\n" ;
