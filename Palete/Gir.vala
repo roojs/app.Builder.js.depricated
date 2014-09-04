@@ -447,6 +447,8 @@ namespace Palete {
 				return ns + "." + type;
 			}
 			// enums..
+
+			
 			
 			// look at includes..
 			var iter = g.includes.map_iterator();
@@ -694,7 +696,7 @@ namespace Palete {
 			    parent = c;
 			    return;
 			    //break;
-			
+			case "bitfield":
 			case "enumeration":
 		    		var c = new GirObject("Enum",n);
 				c.gparent = parent;
@@ -719,7 +721,11 @@ namespace Palete {
 			
 			case "record": // struct?
 			    return;
-			case "bitfield": // ignore?
+			 // ignore?
+				// enum..
+					    
+				this.enums
+					    
 			    return;
 			case "prerequisite": // ignore?
 			    return;
