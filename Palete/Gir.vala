@@ -137,7 +137,7 @@ namespace Palete {
 
 		public void overlayCtorProperties() 
 		{
-
+			print("Check overlay Ctor %s\n", this.name);
 			if (!this.ctors.has_key("new")) {
 				return;
 			}
@@ -145,17 +145,21 @@ namespace Palete {
 			if (ctor.paramset == null || ctor.paramset.params.size < 1) {
 				return;
 			}
+			print("Found Ctor\n");
 			var iter = ctor.paramset.params.list_iterator();
 			while (iter.next()) {
 				var n = iter.get().name;
+				
 				if (this.props.has_key(n)) {
 					continue;
 				}
+				print("Adding prop %s\n", n);
 				// it's a new prop..
 				var c = new GirObject("Prop",n);
 				c.gparent = this;
 				c.ns = this.ns;
 				c.propertyof = this.name;
+				c.type = iter.get().type;
 				c.ctor_only = true;
 				this.set(n, c);
 			}
