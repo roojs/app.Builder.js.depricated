@@ -400,6 +400,17 @@ public class JsRender.NodeToVala : Object {
 			while (iter.next()) {
 				var n = iter.get().name;
 				if (!this.node.has(n)) {
+
+					if (iter.get().type.contains("int")) {
+						args += "0";
+						continue;
+					}
+					if (iter.get().type.contains("float")) {
+						args += "0f";
+						continue;
+					}
+					// any other types???
+					
 					args += "null";
 					continue;
 				}
