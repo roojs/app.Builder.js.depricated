@@ -86,7 +86,6 @@ test-vala:
 
 test-gir: 
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
-		Builder4/WindowAddProp.vala \
 		tests/GirTest.vala -o /tmp/test-gir
 
 
