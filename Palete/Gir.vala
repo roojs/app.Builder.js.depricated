@@ -721,10 +721,7 @@ namespace Palete {
 			
 			case "record": // struct?
 			    return;
-			 // ignore?
-				// enum..
-					    
-				this.enums
+			 
 					    
 			    return;
 			case "prerequisite": // ignore?
