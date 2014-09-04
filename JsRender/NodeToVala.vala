@@ -88,6 +88,7 @@ public class JsRender.NodeToVala : Object {
 		} else if (!item.props.has_key("id")) {
 			// use the file name..
 			item.xvala_xcls =  this.file.name;
+			// is id used?
 			item.xvala_id = this.file.name;
 
 		}
