@@ -45,10 +45,10 @@ int main (string[] args) {
 		var f= iter.get();
 		f.loadItems();
 
-		print("\n%s\n",f.toJsonString());
-		
-		var str= JsRender.NodeToVala.mungeFile(f);
-		print("\n%s\n",str);
+		//print("\n%s\n",f.toJsonString());
+		diff(p.firstPath() + "/" + f.name + ".vala", JsRender.NodeToVala.mungeFile(f));
+		//var str= 
+		//print("\n%s\n",str);
 		//return 0;
 	}
     

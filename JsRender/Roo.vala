@@ -573,9 +573,7 @@ namespace JsRender {
         {
             return "http://www.roojs.com/roojs1/docs/symbols/" + cls + ".html";
         }
-		public override  string toValaSource(bool testcompile) { 
-			return ""; // never called as roo does not output vala.. yet...
-		}
+		 
      
     }
 }
