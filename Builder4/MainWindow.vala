@@ -1473,7 +1473,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button20( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -1594,7 +1594,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button23( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -1705,7 +1705,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button26( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -1799,7 +1799,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button29( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -1959,7 +1959,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button32( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -2075,7 +2075,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button35( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -2189,7 +2189,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button38( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -2497,7 +2497,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button47( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -2529,7 +2529,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect( ( ) => {
                  
-                 var cd = Xcls_DialogConfirm.singleton();
+                 var cd = DialogConfirm.singleton();
                  cd.el.set_transient_for(_this.el);
                 cd.el.set_modal(true);
             
