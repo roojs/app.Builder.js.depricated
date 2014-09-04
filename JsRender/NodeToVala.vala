@@ -400,7 +400,9 @@ public class JsRender.NodeToVala : Object {
 				if (iter.get().type == "utf8") {
 					v = "\"" +  v.escape("") + "\"";
 				}
-				
+				if (v == "TRUE" || v == "FALSE") {
+					v = v.down();
+				}
 
 				
 				args += v;
