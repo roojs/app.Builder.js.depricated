@@ -53,9 +53,9 @@ public class JsRender.NodeToVala : Object {
 	string toValaNS(Node item)
         {
             var ns = item.get("xns") ;
-            //if (ns == "GtkSource") {
-                //return "Gtk.Source.";
-            //}
+            if (ns == "GtkSource") {
+                return "Gtk.Source";
+            }
             return ns + ".";
         }
 	public void  toValaName(Node item, int depth =0) 
@@ -64,11 +64,7 @@ public class JsRender.NodeToVala : Object {
 
 		var ns =  this.toValaNS(item) ;
 		var cls = ns + item.get("xtype");
-		// GtkSource.XXX -> Gtk.SourceXXXX
 		
-		if (ns == "GtkSource") {
-			cls = "Gtk.Source" +  item.get("xtype").substring(6);
-		}
 		
 		item.xvala_cls = cls;
 		
