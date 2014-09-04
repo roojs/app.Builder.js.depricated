@@ -192,7 +192,7 @@ public class JsRender.Node : Object {
 		
 		k = this.props.get("$ " + key);
 		if (k != null) {
-			return k;
+			return "$ " + key;
 		}
 		
 		var iter = this.props.map_iterator();
