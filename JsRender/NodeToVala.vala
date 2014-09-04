@@ -471,6 +471,9 @@ public class JsRender.NodeToVala : Object {
         		if (v.length < 1) {
             			continue; 
         		}
+			if (v == "FALSE" || v == "TRUE") {
+				v = v.down();
+			}
 //FIXME -- check for raw string.. "string XXXX"
 			
 			// if it's a string...
