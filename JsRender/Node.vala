@@ -199,7 +199,7 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var kk = iter.get_key().split(" ");
 			if (kk[kk.length-1] == key) {
-				return iter.get_value();
+				return iter.get_key();
 			}
 		}
 		
