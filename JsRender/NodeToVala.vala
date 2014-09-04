@@ -24,7 +24,7 @@ public class JsRender.NodeToVala : Object {
 
 	Gee.ArrayList<string> ignoreList; 
 	Gee.ArrayList<string> myvars;
-	GLib.List<Node> vitems; // top level items
+	Gee.ArrayList<Node> vitems; // top level items
 	NodeToVala top;
 	
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
@@ -42,7 +42,7 @@ public class JsRender.NodeToVala : Object {
 		this.top = top == null ? this : top;
 		this.ignoreList = new Gee.ArrayList<string>();
 		this.myvars = new Gee.ArrayList<string>();
-		this.vitems = new GLib.List<Node>();
+		this.vitems = new Gee.ArrayList<Node>();
 	}
 
 	public int vcnt = 0;
@@ -54,7 +54,7 @@ public class JsRender.NodeToVala : Object {
             //}
             return ns + ".";
         }
-	public void  toValaName(Node item) 
+	public void  toValaName(Node item, int depth =0) 
 	{
     		this.vcnt++;
 
@@ -67,7 +67,7 @@ public class JsRender.NodeToVala : Object {
 		item.xvala_xcls = "Xcls_" + id;
 		item.xvala_id =  id;
 				                                               
-		this.vitems.append(item);  
+		this.vitems.add(item);  
 		// loop children..
 				                                               
 		if (item.items.size < 1) {
@@ -188,8 +188,9 @@ public class JsRender.NodeToVala : Object {
 		var iter = this.vitems.list_iterator();
 		while(iter.next()) {
 			var n = iter.get();
-			
-            		if (n.xvala_id.length < 0) {
+
+			 
+            		if (!n.props.has_key("id") || n.xvala_id.length < 0) {
                 		continue;
                         
             		}
