@@ -153,7 +153,11 @@ namespace Palete {
 				if (this.props.has_key(n)) {
 					continue;
 				}
+				if (n == "...") {
+					continue;
+				}
 				print("Adding prop %s\n", n);
+				
 				// it's a new prop..
 				var c = new GirObject("Prop",n);
 				c.gparent = this;
