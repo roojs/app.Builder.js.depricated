@@ -1253,7 +1253,7 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.activate.connect(   () => {
             
-                 DialogSaveTemplate.singleton().show(
+                 Xcls_DialogSaveTemplate.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
                         _this.model.file.palete(), 
                         _this.getActiveElement()
