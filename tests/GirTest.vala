@@ -7,6 +7,7 @@ int main (string[] args) {
 
 	var test = Palete.Gir.factoryFqn("Gtk.MessageDialog.flags");
 	
+	print ("type %s\n", test.fqtype());
 	
 	var generator = new Json.Generator ();
 	var n = new Json.Node(Json.NodeType.OBJECT);
