@@ -185,7 +185,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		// properties - global..??
 
-		var iter = this.node.items.list_iterator();
+		var iter = this.vitems.list_iterator();
 		while(iter.next()) {
 			var n = iter.get();
 			
