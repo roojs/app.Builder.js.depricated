@@ -1289,7 +1289,7 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.activate.connect(   () => {
                 var node = _this.getActiveElement();
-                 var name = DialogSaveModule.singleton().show(
+                 var name = Xcls_DialogSaveModule.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
                         _this.model.file.project, 
                         node
