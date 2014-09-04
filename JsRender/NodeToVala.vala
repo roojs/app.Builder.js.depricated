@@ -247,7 +247,13 @@ public class JsRender.NodeToVala : Object {
 		    		this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
 				continue;
-		        } 
+		        }
+
+			if (vv.length < 2) {
+				// skip 'old js style properties without a type'
+				continue;
+			}
+			
 			var kname = vv[vv.length-1];
 
 			if (this.shouldIgnore(kname)) {
