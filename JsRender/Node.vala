@@ -182,6 +182,32 @@ public class JsRender.Node : Object {
 		return "";
 		
 	}
+	
+	public string get_key(string key)
+	{
+		var k = this.props.get(key);
+		if (k != null) {
+			return k;
+		}
+		
+		k = this.props.get("$ " + key);
+		if (k != null) {
+			return k;
+		}
+		
+		var iter = this.props.map_iterator();
+		while (iter.next()) {
+			var kk = iter.get_key().split(" ");
+			if (kk[kk.length-1] == key) {
+				return iter.get_value();
+			}
+		}
+		
+		
+		return "";
+		
+	}
+	
 	public void set(string key, string value) {
 		this.props.set(key,value);
 	}
