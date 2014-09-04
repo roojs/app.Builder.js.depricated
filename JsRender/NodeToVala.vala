@@ -22,7 +22,8 @@ public class JsRender.NodeToVala : Object {
 	
 	string ret;
 
-	Gee.ArrayList<string> ignoreList; 
+	Gee.ArrayList<string> ignoreList;
+	Gee.ArrayList<string> ignoreWrappedList; 
 	Gee.ArrayList<string> myvars;
 	Gee.ArrayList<Node> vitems; // top level items
 	NodeToVala top;
@@ -41,6 +42,7 @@ public class JsRender.NodeToVala : Object {
 		this.ret = "";
 		this.top = top == null ? this : top;
 		this.ignoreList = new Gee.ArrayList<string>();
+		this.ignoreWrappedList  = new Gee.ArrayList<string>();
 		this.myvars = new Gee.ArrayList<string>();
 		this.vitems = new Gee.ArrayList<Node>();
 	}
