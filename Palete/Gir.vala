@@ -137,7 +137,7 @@ namespace Palete {
 
 		public void overlayCtorProperties() 
 		{
-			print("Check overlay Ctor %s\n", this.name);
+			//print("Check overlay Ctor %s\n", this.name);
 			if (!this.ctors.has_key("new")) {
 				return;
 			}
@@ -145,7 +145,7 @@ namespace Palete {
 			if (ctor.paramset == null || ctor.paramset.params.size < 1) {
 				return;
 			}
-			print("Found Ctor\n");
+			//print("Found Ctor\n");
 			var iter = ctor.paramset.params.list_iterator();
 			while (iter.next()) {
 				var n = iter.get().name;
@@ -156,7 +156,7 @@ namespace Palete {
 				if (n == "...") {
 					continue;
 				}
-				print("Adding prop %s\n", n);
+				//print("Adding prop %s\n", n);
 				
 				// it's a new prop..
 				var c = new GirObject("Prop",n);
@@ -165,7 +165,7 @@ namespace Palete {
 				c.propertyof = this.name;
 				c.type = iter.get().type;
 				c.ctor_only = true;
-				this.set(n, c);
+				this.props.set(n, c);
 			}
 			
 
