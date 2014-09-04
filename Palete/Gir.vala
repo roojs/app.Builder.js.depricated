@@ -398,7 +398,7 @@ namespace Palete {
 					iter.get_value().overlayParent();
 	    			}
 				// loop again and add the ctor properties.
-				var iter = add.classes.map_iterator();
+				 iter = add.classes.map_iterator();
 				while(iter.next()) {
 					iter.get_value().overlayCtorProperties();
 	    			}	
