@@ -62,8 +62,14 @@ public class JsRender.NodeToVala : Object {
 	{
     		this.vcnt++;
 
+		var ns =  this.toValaNS(item) ;
+		var cls = ns + item.get("xtype");
+		// GtkSource.XXX -> Gtk.SourceXXXX
 		
-		var cls = this.toValaNS(item) + item.get("xtype");
+		if (ns == "GtkSource") {
+			cls = "Gtk.Source" +  item.get("xtype").substring(6);
+		}
+		
 
 		
 		
@@ -259,8 +265,8 @@ public class JsRender.NodeToVala : Object {
 				this.ignore(k);
 				continue;
 		        }
-
-			if (vv.length < 2) {
+			var min = (vv[0] == "$" || vv[0] == "#") ? 3 : 2; 
+			if (vv.length < min) {
 				// skip 'old js style properties without a type'
 				continue;
 			}
