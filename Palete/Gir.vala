@@ -381,7 +381,7 @@ namespace Palete {
 		}
 
 		public string fqtype() {
-			return fqtypeLookup(this.type, this.ns);
+			return Gir.fqtypeLookup(this.type, this.ns);
 		}
 	}
 	    

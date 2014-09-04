@@ -10,13 +10,25 @@ int main (string[] args) {
 	print ("type %s\n", test.fqtype());
 	
 	var generator = new Json.Generator ();
-	var n = new Json.Node(Json.NodeType.OBJECT);
-	n.set_object(test.toJSON());
-	generator.set_root(n);
 	generator.indent = 4;
 	generator.pretty = true;
     
+	var n = new Json.Node(Json.NodeType.OBJECT);
+	n.set_object(test.toJSON());
+	generator.set_root(n);
+	
 	print(generator.to_data(null));
+
+
+	test = Palete.Gir.factoryFqn(test.fqtype());
+	
+	n = new Json.Node(Json.NodeType.OBJECT);
+	n.set_object(test.toJSON());
+	generator.set_root(n);
+	
+	print(generator.to_data(null));
+
+	
 	 
 	return 0;
 }
