@@ -27,6 +27,7 @@ public class JsRender.NodeToVala : Object {
 	Gee.ArrayList<string> myvars;
 	Gee.ArrayList<Node> vitems; // top level items
 	NodeToVala top;
+	JsRender file;
 	
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
 	{
@@ -45,6 +46,7 @@ public class JsRender.NodeToVala : Object {
 		this.ignoreWrappedList  = new Gee.ArrayList<string>();
 		this.myvars = new Gee.ArrayList<string>();
 		this.vitems = new Gee.ArrayList<Node>();
+		this.file = null;
 	}
 
 	public int vcnt = 0;
