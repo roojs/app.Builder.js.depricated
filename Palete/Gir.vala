@@ -447,7 +447,9 @@ namespace Palete {
 				return ns + "." + type;
 			}
 			// enums..
-
+			if (g.consts.has_key(type)) {
+				return ns + "." + type;
+			}
 			
 			
 			// look at includes..
