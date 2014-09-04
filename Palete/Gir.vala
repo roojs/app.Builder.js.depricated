@@ -446,6 +446,8 @@ namespace Palete {
 			if (g.classes.has_key(type)) {
 				return ns + "." + type;
 			}
+			// enums..
+			
 			// look at includes..
 			var iter = g.includes.map_iterator();
 			while(iter.next()) {
