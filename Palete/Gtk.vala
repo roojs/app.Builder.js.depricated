@@ -4,87 +4,87 @@ namespace Palete {
 	
 	
 	
-    public class Introspect.El : Object
-    {
-        public enum eltype { 
-            NS,
-            CLASS,
-            METHOD,
-            PROP
-        }
+	public class Introspect.El : Object
+	{
+		public enum eltype { 
+			    NS,
+			    CLASS,
+			    METHOD,
+			    PROP
+		}
                 
             
-        public eltype type;
-    }
-
-
-    public class Gtk : Palete {
-		
-		
-        public Gtk()
-        {
-
-
-            
-            base();
-            this.name = "Gtk";
-			 
-			//this.load();
-            // various loader methods..
-              //this.map = [];
-            //this.load();
-            //this.proplist = {};
-            //this.comments = { }; 
-            // no parent...
-        }
-      
-        public override void  load () {
-
-		this.loadUsageFile(Builder4.Application.configDirectory() + "/resources/GtkUsage.txt");
- 
-             
-        }
-        
-        public string doc(string what) {
-    		var ns = what.split(".")[0];
-    		var gir =  Gir.factory(ns);
-		return   gir.doc(what);
-			
-            //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
-        }
-
-		// does not handle implements...
-	public override GirObject? getClass(string ename)
-	{
-
-		var es = ename.split(".");
-		var gir = Gir.factory(es[0]);
-		
-		return gir.classes.get(es[1]);
-		
+		public eltype type;
 	}
 
-        public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
-        {
-            //print("Loading for " + ename);
-            
+
+	public class Gtk : Palete {
+		
+		
+		public Gtk()
+		{
 
 
-			// if (typeof(this.proplist[ename]) != 'undefined') {
-                //print("using cache");
-             //   return this.proplist[ename][type];
-            //}
-            // use introspection to get lists..
- 
-            var es = ename.split(".");
-			var gir = Gir.factory(es[0]);
+		    
+		    base();
+		    this.name = "Gtk";
+				 
+				//this.load();
+		    // various loader methods..
+		      //this.map = [];
+		    //this.load();
+		    //this.proplist = {};
+		    //this.comments = { }; 
+		    // no parent...
+		}
+	      
+		public override void  load () {
+
+			this.loadUsageFile(Builder4.Application.configDirectory() + "/resources/GtkUsage.txt");
+	 
+		     
+		}
+		
+		public string doc(string what) {
+	    		var ns = what.split(".")[0];
+	    		var gir =  Gir.factory(ns);
+			return   gir.doc(what);
 			
+		    //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
+		}
+
+			// does not handle implements...
+		public override GirObject? getClass(string ename)
+		{
+
+			var es = ename.split(".");
+			var gir = Gir.factory(es[0]);
+		
+			return gir.classes.get(es[1]);
+		
+		}
+
+		public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
+		{
+			//print("Loading for " + ename);
+		    
+
+
+				// if (typeof(this.proplist[ename]) != 'undefined') {
+		        //print("using cache");
+			//   return this.proplist[ename][type];
+			//}
+			// use introspection to get lists..
+	 
+	    		var es = ename.split(".");
+			var gir = Gir.factory(es[0]);
+		
 			var cls = gir.classes.get(es[1]);
 			if (cls == null) {
 				var ret = new Gee.HashMap<string,GirObject>();
 				return ret;
 				//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
-				
+			
 			}
 
 			//cls.parseProps();
@@ -107,15 +107,15 @@ namespace Palete {
 					throw new Error.INVALID_VALUE( "getPropertiesFor called with: " + type);
 					//var ret = new Gee.HashMap<string,GirObject>();
 					//return ret;
-					
-			}
-					
 				
+			}
+				
+			
 			//cls.overlayInterfaces(gir);
-            
-            
-             
-        }
+		    
+		    
+		     
+		}
 		public string[] getInheritsFor(string ename)
 		{
 			string[] ret = {};
