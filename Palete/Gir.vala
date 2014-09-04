@@ -363,8 +363,8 @@ namespace Palete {
 			
 				var iter = add.classes.map_iterator();
 				while(iter.next()) {
-		    	
 					iter.get_value().overlayParent();
+					iter.get_value().overlayCtorProperties();
 	    			}	
 
 				ret = cache.get(ns);
@@ -451,8 +451,8 @@ namespace Palete {
 
 
 			base("Package",ns);
-					this.ns = ns;
-	    	    //this.nodes = new Gee.Hashmap<string,what>();
+			this.ns = ns;
+	    		//this.nodes = new Gee.Hashmap<string,what>();
 		     
 			var doc = Xml.Parser.parse_file (file);
 			var root = doc->get_root_element();
