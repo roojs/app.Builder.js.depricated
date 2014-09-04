@@ -245,7 +245,7 @@ public class JsRender.NodeToVala : Object {
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
-			var vv = k.split(" ");
+			var vv = k.strip().split(" ");
 			// user defined method
 			if (vv[0] == "|") {
 				continue;
