@@ -379,6 +379,10 @@ namespace Palete {
 			// fixme - other queires? - enums?
 			return null;
 		}
+
+		public string fqtype() {
+			return fqtypeLookup(this.type, this.ns);
+		}
 	}
 	    
 	     
@@ -462,9 +466,7 @@ namespace Palete {
     			}	
 			return type;
 		}
-		public string fqtype() {
-			return fqtypeLookup(this.type, this.ns);
-		}
+		
 
 
 		
