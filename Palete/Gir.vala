@@ -137,6 +137,7 @@ namespace Palete {
 
 		public void overlayCtorProperties() 
 		{
+
 			if (!this.ctors.has_key("new")) {
 				return;
 			}
