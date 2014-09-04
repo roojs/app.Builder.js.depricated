@@ -62,7 +62,7 @@ public class Xcls_MainWindow : Object
 
         // my vars (dec)
         this.project = null;
-        this.children_loaded = true;
+        this.children_loaded = false;
         this.left_projects = null;
         this.window_rooview = null;
         this.code_editor = null;
