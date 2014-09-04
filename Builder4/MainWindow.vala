@@ -1133,15 +1133,15 @@ public class Xcls_MainWindow : Object
     			print("guess view size %f\n", avail - codesize / avail);
                        //_this.rooview.el.set_scale( avail - codesize / avail,
                        //            avail - codesize / avail
-                       );
+                       //);
                        break;
                     case "addprop":
                     case "addlistener":        
                       case "object":   
 			print("guess view size %f\n", avail - palsize / avail);
-                       _this.rooview.el.set_scale( avail - palsize / avail,
-                                   avail - palsize / avail
-                       );
+                       //_this.rooview.el.set_scale( avail - palsize / avail,
+                       //            avail - palsize / avail
+                       //);
                        break;
                 }
                 
