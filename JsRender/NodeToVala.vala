@@ -410,7 +410,7 @@ public class JsRender.NodeToVala : Object {
 						continue;
 					}
 					if (iter.get().type.contains("bool")) {
-						args += "false";
+						args += "true"; // always default to true?
 						continue;
 					}
 					// any other types???
