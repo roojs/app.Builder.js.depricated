@@ -331,7 +331,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		this.ret+= this.ipad + "_this = _owner;\n";
 
-		if (this.node.props.has("id")
+		if (this.node.props.has_key("id")
 		    &&
 		    this.node.xvala_id != "" 
 		    && 
@@ -487,7 +487,7 @@ public class JsRender.NodeToVala : Object {
             		var xargs = "";
             		if (ci.has("* args")) {
                         
-                		var ar = ci.get("*args").split(",");
+                		var ar = ci.get("* args").split(",");
                 		for (var ari = 0 ; ari < ar.length; ari++ ) {
                     			xargs += "," + ar[ari]; //.trim().split(" ").pop();
                 		}
