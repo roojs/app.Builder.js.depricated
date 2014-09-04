@@ -426,7 +426,7 @@ public class JsRender.Node : Object {
 	 
 	public void jsonObjectsetMember(Json.Object o, string key, string val) {
 		if (Lang.isBoolean(val)) {
-			o.set_boolean_member(key, val == "false" ? false : true);
+			o.set_boolean_member(key, val.down() == "false" ? false : true);
 			return;
 		}
 		
