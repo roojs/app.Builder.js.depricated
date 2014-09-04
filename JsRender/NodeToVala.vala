@@ -62,8 +62,11 @@ public class JsRender.NodeToVala : Object {
 	{
     		this.vcnt++;
 
+		
 		var cls = this.toValaNS(item) + item.get("xtype");
 
+		
+		
 		string id = item.get("id").length > 0 ?
 			item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
 
@@ -80,6 +83,11 @@ public class JsRender.NodeToVala : Object {
 		item.xvala_id =  id;
 		if (depth > 0) {                        
 			this.vitems.add(item);
+		} else {
+			// use the file name..
+			item.xvala_xcls = "Xcls_" + name;
+			item.xvala_id = name;
+
 		}
 		// loop children..
 				                                               
