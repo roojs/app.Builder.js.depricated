@@ -409,6 +409,10 @@ public class JsRender.NodeToVala : Object {
 						args += "0f";
 						continue;
 					}
+					if (iter.get().type.contains("bool")) {
+						args += "false";
+						continue;
+					}
 					// any other types???
 					
 					args += "null";
