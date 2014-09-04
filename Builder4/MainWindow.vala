@@ -1110,7 +1110,7 @@ public class Xcls_MainWindow : Object
                 
                 var buttonsize = 50.0f / alloc.width;
                 
-                var palsize = avail < 300.0f ? avail : (300.0f / avail);
+                var palsize = avail < 300.0f ? avail : 300.0f;
                 print("set palsize size %f\n", palsize);
                // palate / props : fixed 300 pix
                         
@@ -1122,7 +1122,7 @@ public class Xcls_MainWindow : Object
                 
                 // code edit min 600
                 
-                var codesize = avail < 600.0f ? avail : (600.0f / avail);
+                var codesize = avail < 600.0f ? avail : 600.0f;
 		print("set code size %f\n", codesize);
 		    
                 _this.codeeditview.el.set_size(codesize, alloc.height);
