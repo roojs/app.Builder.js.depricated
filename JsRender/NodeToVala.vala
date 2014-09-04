@@ -384,6 +384,7 @@ public class JsRender.NodeToVala : Object {
 					args += "null";
 					continue;
 				}
+				this.ignoreWrapped(n);
 				this.ignore(n);
 				
 				var v = this.node.get(n);
