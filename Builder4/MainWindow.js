@@ -406,7 +406,6 @@ MainWindow=new XObject({
     
         _this.codeeditview.save.connect( () => {
             this.left_tree.model.file.save();
-        
         });
         
          

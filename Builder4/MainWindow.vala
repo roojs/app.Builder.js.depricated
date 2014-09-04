@@ -497,7 +497,6 @@ public class Xcls_MainWindow : Object
         
             _this.codeeditview.save.connect( () => {
                 this.left_tree.model.file.save();
-            
             });
             
              
