@@ -2518,7 +2518,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect( ( ) => {
                  
-                 var cd = Xcls_DialogConfirm.singleton();
+                 var cd = DialogConfirm.singleton();
                  cd.el.set_transient_for(_this.el);
                 cd.el.set_modal(true);
             
