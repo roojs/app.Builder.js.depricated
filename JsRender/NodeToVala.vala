@@ -563,7 +563,7 @@ public class JsRender.NodeToVala : Object {
                 		continue;
             		}
             	    
-            		if (!ci.has("pack") || ci.get("pack") == "false") {
+            		if (!ci.has("pack") || ci.get("pack").down() == "false") {
                 		continue;
             		}
                     
