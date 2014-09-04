@@ -214,11 +214,11 @@ namespace Palete {
 			
 			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
-		        if (null != this.signals.get(iter.get_key())) {
+				if (null != this.signals.get(iter.get_key())) {
 						continue;
-					}
-				
-					this.signals.set(iter.get_key(), iter.get_value());
+				}
+	
+				this.signals.set(iter.get_key(), iter.get_value());
 	    		}	
 		}
 		
