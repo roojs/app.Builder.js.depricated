@@ -156,7 +156,7 @@ namespace JsRender {
 		    node.set_object(this.toJsonObject());
 		    generator.set_root(node);
 		    
-		    print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
+		    print("WRITE :%s\n " , this.path);// + "\n" + JSON.stringify(write));
 		    try {
 		        generator.to_file(this.path);
 		    } catch(Error e) {
