@@ -275,7 +275,7 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			// is it a class property...
-			if (cls.props.has_key(kname)) {
+			if (cls.props.has_key(kname) && vv[0] != "#") {
 				continue;
 			}
 			
