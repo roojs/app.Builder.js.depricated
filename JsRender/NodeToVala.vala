@@ -491,6 +491,10 @@ public class JsRender.NodeToVala : Object {
 			if (v == "TRUE" || v == "FALSE") {
 				v = v.down();
 			}
+			if (iter.get_value().type == "float" && v[v.length-1] != 'f') {
+				v += 'f';
+			}
+			
 			
 			this.ret += ipad + "this.el." + p  + " = " + v + ";\n";
 		            
