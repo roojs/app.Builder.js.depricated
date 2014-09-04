@@ -82,7 +82,13 @@ test-addprops:
 test-vala: 
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/WindowAddProp.vala \
-		tests/ValaTest.vala -o /tmp/test-valatest
+		tests/ValaTest.vala -o /tmp/test-vala
+
+test-gir: 
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		Builder4/WindowAddProp.vala \
+		tests/GirTest.vala -o /tmp/test-gir
+
 
 #fixme -- old...
 datatest:
