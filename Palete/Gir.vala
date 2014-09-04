@@ -139,7 +139,24 @@ namespace Palete {
 				return;
 			}
 			var ctor = this.ctors.get("newv");
-			
+			if (ctor.paramset == null || ctor.paramset.params.size < 1) {
+				return;
+			}
+			var iter = ctor.paramset.params.list_iterator();
+			while (iter.next()) {
+				var n = iter.get().name;
+				if (this.props.has_key(n)) {
+					continue;
+				}
+				// it's a new prop..
+				var c = new GirObject("Prop",n);
+				c.gparent = this;
+				c.ns = this.ns;
+				c.propertyof = this.name;
+				this.set(n, c);
+			}
+				
+
 
 		}
 
