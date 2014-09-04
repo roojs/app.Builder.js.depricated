@@ -63,8 +63,16 @@ public class JsRender.NodeToVala : Object {
 		string id = item.get("id").length > 0 ?
 			item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
 
+		
+		
 		item.xvala_cls = cls;
-		item.xvala_xcls = "Xcls_" + id;
+		if (id[0] == '*' || id[0] == '+') {
+			item.xvala_xcls = "Xcls_" + id.substring(1);
+		} else {
+			item.xvala_xcls = "Xcls_" + id;
+		}
+			
+		
 		item.xvala_id =  id;
 		if (depth > 0) {                        
 			this.vitems.add(item);
@@ -323,7 +331,14 @@ public class JsRender.NodeToVala : Object {
 		}
 		this.ret+= this.ipad + "_this = _owner;\n";
 
-		if (this.node.xvala_id != "" && this.node.xvala_id[0] != '*' && this.node.xvala_id[0] != '+' ) {
+		if (this.node.props.has("id")
+		    &&
+		    this.node.xvala_id != "" 
+		    && 
+		    this.node.xvala_id[0] != '*' 
+		    && 
+		    this.node.xvala_id[0] != '+' 
+		    ) {
     			this.ret+= this.ipad + "_this." + node.xvala_id  + " = this;\n";
            
 		}
@@ -439,7 +454,7 @@ public class JsRender.NodeToVala : Object {
 				 v = "\"" +  v.escape("") + "\"";
 			}
 			if (v == "TRUE" || v == "FALSE") {
-				v = v.lower();
+				v = v.down();
 			}
 			
 			this.ret += ipad + "this.el." + p  + " = " + v + ";\n";
