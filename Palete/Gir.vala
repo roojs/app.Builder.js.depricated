@@ -137,10 +137,10 @@ namespace Palete {
 
 		public void overlayCtorProperties() 
 		{
-			if (!this.ctors.has_key("newv")) {
+			if (!this.ctors.has_key("new")) {
 				return;
 			}
-			var ctor = this.ctors.get("newv");
+			var ctor = this.ctors.get("new");
 			if (ctor.paramset == null || ctor.paramset.params.size < 1) {
 				return;
 			}
