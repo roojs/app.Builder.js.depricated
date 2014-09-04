@@ -679,11 +679,18 @@ public class JsRender.NodeToVala : Object {
 		this.ignoreList.add(i);
 		
 	}
+	void ignoreWrapped(string i) {
+		this.ignoreWrappedList.add(i);
+		
+	}
 	bool shouldIgnore(string i)
 	{
 		return ignoreList.contains(i);
 	}
-	
+	bool shouldIgnoreWrapped(string i)
+	{
+		return ignoreWrappedList.contains(i);
+	}
 
 }
 	
