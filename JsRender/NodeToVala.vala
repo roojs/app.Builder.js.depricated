@@ -500,9 +500,10 @@ public class JsRender.NodeToVala : Object {
 			
 	     		this.ignore(p);
 			var v = this.node.get(p);
+			
 
 			// what's the type.. - if it's a string.. then we quote it..
-			if (iter.get_value().type == "utf8") {
+			if (iter.get_value().type == "utf8" && !this.node.props.has_key("$ " + p)) {
 				 v = "\"" +  v.escape("") + "\"";
 			}
 			if (v == "TRUE" || v == "FALSE") {
