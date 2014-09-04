@@ -66,15 +66,16 @@ public class JsRender.NodeToVala : Object {
 		item.xvala_cls = cls;
 		item.xvala_xcls = "Xcls_" + id;
 		item.xvala_id =  id;
-				                                               
-		this.vitems.add(item);  
+		if (depth > 0) {                        
+			this.vitems.add(item);
+		}
 		// loop children..
 				                                               
 		if (item.items.size < 1) {
 			return;
 		}
 		for(var i =0;i<item.items.size;i++) {
-			this.toValaName(item.items.get(i));
+			this.toValaName(item.items.get(i), depth+1);
 		}
 			          
         }
@@ -437,7 +438,9 @@ public class JsRender.NodeToVala : Object {
 			if (iter.get_value().type == "utf8") {
 				 v = "\"" +  v.escape("") + "\"";
 			}
-
+			if (v == "TRUE" || v == "FALSE") {
+				v = v.lower();
+			}
 			
 			this.ret += ipad + "this.el." + p  + " = " + v + ";\n";
 		            
