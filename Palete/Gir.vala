@@ -40,7 +40,7 @@ namespace Palete {
 		public bool is_instance;
 		public bool is_array;
 		public bool  is_varargs;
-		public bool  ctor_only = true;
+		public bool  ctor_only; // specially added ctor properties..
 		public  string parent;
 		public  string value;
 		// to be filled in...
@@ -75,6 +75,7 @@ namespace Palete {
 			this.is_array = false;
 			this.is_instance = false;
 			this.is_varargs = false;
+			this.ctor_only  =false;
 			this.doctxt = "";
 		
 			this.sig = "";
