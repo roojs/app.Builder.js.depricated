@@ -49,6 +49,7 @@ all:  builder4
 #all: test-addprops
 #all: test-glade
 #all: test-vala
+#all: test-gir
 
 
 builder4:
