@@ -153,10 +153,10 @@ namespace Palete {
 				c.gparent = this;
 				c.ns = this.ns;
 				c.propertyof = this.name;
+				c.ctor_only = true;
 				this.set(n, c);
 			}
-				
-
+			
 
 		}
 
