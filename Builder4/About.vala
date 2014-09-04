@@ -1,85 +1,49 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/About.vala  -o /tmp/About
-*/
+static Xcls_About  _About;
 
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_AboutDialog1();
-    About.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_AboutDialog1  About;
-
-public class Xcls_AboutDialog1
+public class Xcls_About : Object 
 {
     public Gtk.AboutDialog el;
-    private static Xcls_AboutDialog1  _this;
+    private Xcls_About  _this;
 
-
-        // my vars
-
-        // ctor 
-    public Xcls_AboutDialog1()
+    public static Xcls_About singleton()
     {
-        this.el = new Gtk.AboutDialog();
-        _this = this;
-        About = this;
+        if (_About == null) {
+            _About= new Xcls_About();
+        }
+        return _About;
+    }
 
-        // my vars
+        // my vars (def)
+
+    // ctor 
+    public Xcls_About()
+    {
+        _this = this;
+        this.el = new Gtk.AboutDialog();
+
+        // my vars (dec)
 
         // set gobject values
-        this.el.copyright = "LGPL";
-        this.el.license = "LGPL";
-        this.el.modal = true;
         this.el.program_name = "app.Builder.js";
+        this.el.license = "LGPL";
+        this.el.authors = { "Alan Knowles" };
         this.el.website = "http://www.akbkhome.com/blog.php";
+        this.el.modal = true;
+        this.el.copyright = "LGPL";
 
         // listeners 
-        this.el.response.connect( (rid) => {
-            this.el.hide();
-        }
-           );
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
-        }
-          );
+            //test
+        });
+        this.el.response.connect( (rid) => {
+            this.el.hide();
+        });
     }
 
-    // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip authors - not pipe 
-
-    // skip copyright - already used 
-
-    // skip license - already used 
-
-    // skip program_name - already used 
-
-    // skip website - already used 
-
-    // skip xtype - not pipe 
-
-    // skip |modal - already used 
-    public void show_all() {
-            this.el.show_all();
-        }
-         
-
-    // skip |xns - no return type
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
+    // user defined functions 
+    public  void show_all () {
+        this.el.show_all();
+    }
 }
