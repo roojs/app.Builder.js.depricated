@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/DialogConfirm.vala  -o /tmp/DialogConfirm
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_DialogConfirm();
-    DialogConfirm.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_DialogConfirm  DialogConfirm;
+static Xcls_DialogConfirm  _DialogConfirm;
 
 public class Xcls_DialogConfirm : Object 
 {
@@ -24,55 +7,49 @@ public class Xcls_DialogConfirm : Object
 
     public static Xcls_DialogConfirm singleton()
     {
-        if (DialogConfirm == null) {
-            DialogConfirm= new Xcls_DialogConfirm();
+        if (_DialogConfirm == null) {
+            _DialogConfirm= new Xcls_DialogConfirm();
         }
-        return DialogConfirm;
+        return _DialogConfirm;
     }
 
-        // my vars
+        // my vars (def)
 
-        // ctor 
+    // ctor 
     public Xcls_DialogConfirm()
     {
         _this = this;
-        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO, "Tests" );
+        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO, "Tests", null );
 
-        // my vars
+        // my vars (dec)
 
         // set gobject values
-        this.el.modal = true;
-        this.el.name = "DialogConfirm";
         this.el.title = "Please Confirm d";
+        this.el.name = "DialogConfirm";
+        this.el.modal = true;
         this.el.use_markup = true;
 
         // listeners 
-        this.el.delete_event.connect(  (event) => {
+        this.el.delete_event.connect( (event) => {
             this.el.response(Gtk.ResponseType.CANCEL);
             this.el.hide();
             return true;
-        }
-         
-        
-        
-         );
+            //test
+        });
     }
 
-    // userdefined functions 
-    public int show  (string title, string msg) {
-             //if (!this.el) { this.init(); } 
-             //this.success = success;
-             this.el.title = title;
-            this.el.text =  msg;
-            this.el.show_all();
-            var ret =   this.el.run();
-            //print("ret got %d", ret);
-            this.el.hide();
-            return ret;
-            
+    // user defined functions 
+    public int show (string title, string msg) {
+         //if (!this.el) { this.init(); } 
+         //this.success = success;
+         this.el.title = title;
+        this.el.text =  msg;
+        this.el.show_all();
+        var ret =   this.el.run();
+        //print("ret got %d", ret);
+        this.el.hide();
+        return ret;
         
-        }
-         
-
-    // skip |xns - no return type
+    
+    }
 }
