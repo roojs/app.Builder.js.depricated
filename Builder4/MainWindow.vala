@@ -2304,7 +2304,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button41( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
@@ -2405,7 +2405,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Button44( _this );
             child_0.ref();
-            this.el.TRUE (  child_0.el  );
+ 
 
             // init method 
 
