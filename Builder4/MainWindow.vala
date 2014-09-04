@@ -1111,7 +1111,7 @@ public class Xcls_MainWindow : Object
                 var buttonsize = 50.0f / alloc.width;
                 
                 var palsize = avail < 300.0f ? avail : (300.0f / avail);
-                
+                print("set palsize size %f\n", palsize);
                // palate / props : fixed 300 pix
                         
                 _this.objectview.el.set_size(palsize, alloc.height);    
@@ -1123,20 +1123,22 @@ public class Xcls_MainWindow : Object
                 // code edit min 600
                 
                 var codesize = avail < 600.0f ? avail : (600.0f / avail);
-                
+		print("set code size %f\n", codesize);
+		    
                 _this.codeeditview.el.set_size(codesize, alloc.height);
                 _this.rooview.el.set_size(alloc.width-50, alloc.height);    
-            
+    		
                 switch (_this.state) {
                     case "codeedit": 
-            
-                       _this.rooview.el.set_scale( avail - codesize / avail,
-                                   avail - codesize / avail
+    			print("guess view size %f\n", avail - codesize / avail);
+                       //_this.rooview.el.set_scale( avail - codesize / avail,
+                       //            avail - codesize / avail
                        );
                        break;
                     case "addprop":
                     case "addlistener":        
                       case "object":   
+			print("guess view size %f\n", avail - palsize / avail);
                        _this.rooview.el.set_scale( avail - palsize / avail,
                                    avail - palsize / avail
                        );
