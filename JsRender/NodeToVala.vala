@@ -83,10 +83,10 @@ public class JsRender.NodeToVala : Object {
 		item.xvala_id =  id;
 		if (depth > 0) {                        
 			this.vitems.add(item);
-		} else {
+		} else if (!item.props.has("id")) {
 			// use the file name..
-			item.xvala_xcls = "Xcls_" + name;
-			item.xvala_id = name;
+			item.xvala_xcls = "Xcls_" + this.file.name;
+			item.xvala_id = this.file.name;
 
 		}
 		// loop children..
