@@ -400,7 +400,7 @@ public class Xcls_WindowLeftTree : Object
                         var node = new JsRender.Node();
                         node.setFqn(selection_text);
             
-                        _this.model.dropNode(targetData, node);
+                        _this.model.dropNode(targetData, node, true);
                         print("ADD new node!!!\n");
                             
                         ///Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node);
