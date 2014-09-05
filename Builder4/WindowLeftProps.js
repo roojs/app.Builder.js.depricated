@@ -36,114 +36,27 @@ WindowLeftProps=new XObject({
           
         
     },
-    updateIter : (Gtk.TreeIter iter,  string type, string key, string value) {
+    before_edit : ()
+    {
     
-        print("update Iter %s, %s\n", key,value);
-        //typeof(string),  // 0 key type
-         //typeof(string),  // 1 key
-         //typeof(string),  // 2 key (display)
-         //typeof(string),  // 3 value
-         //typeof(string),  // 4 value (display)
-         //typeof(string),  // 5 both (tooltip)
-         //typeof(string),  // 6 key (sort)
+        print("before edit - stop editing\n");
         
-        var dl = value.strip().split("\n");
+      // these do not appear to trigger save...
+        _this.keyrender.el.stop_editing(false);
+        _this.keyrender.el.editable  =false;
     
-        var dis_val = dl.length > 1 ? (dl[0].strip()+ "...") : dl[0];
+        _this.valrender.el.stop_editing(false);
+        _this.valrender.el.editable  =false;    
         
-        if (type == "listener") {
-         
-           
-            
-            this.model.el.set(iter, 
-                    0, type,
-                1, key,
-                2, this.keyFormat(key ,type),
-                3, value,
-                4, dis_val,
-                5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
-                6,  "0 " + key
-            ); 
-            return;
-        }
         
+    // technicall stop the popup editor..
     
-    
-        this.model.el.set(iter, 
-                0, "props",
-                1, key,
-                2,  this.keyFormat(key , "prop"),
-                3, value,
-                4, dis_val,
-                 5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
-                 6,  this.keySortFormat(key)
-            ); 
+    },
+    finish_editing : () {
+         // 
+        this.before_edit();
     },
     id : "LeftProps",
-    keyFormat : (string val, string type) {
-        
-        // Glib.markup_escape_text(val);
-    
-        if (type == "listener") {
-            return "<span font_weight=\"bold\" color=\"#660000\">" + 
-                GLib.Markup.escape_text(val) +
-                 "</span>";
-        }
-        // property..
-        if (val.length < 1) {
-            return "<span  color=\"#FF0000\">--empty--</span>";
-        }
-        
-        //@ = signal
-        //$ = property with 
-        //# - object properties
-        //* = special
-        // all of these... - display value is last element..
-        var ar = val.strip().split(" ");
-        
-        
-        var dval = GLib.Markup.escape_text(ar[ar.length-1]);
-        
-        
-        
-        
-        switch(val[0]) {
-            case '@': // signal // just bold balck?
-                if (dval[0] == '@') {
-                    dval = dval.substring(1);
-                }
-            
-                return @"<span  font_weight=\"bold\">@ $dval</span>";        
-            case '#': // object properties?
-                if (dval[0] == '#') {
-                    dval = dval.substring(1);
-                }
-                return @"<span  font_weight=\"bold\">$dval</span>";
-            case '*': // special
-                if (dval[0] == '*') {
-                    dval = dval.substring(1);
-                }
-                return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
-            case '$':
-                if (dval[0] == '$') {
-                    dval = dval.substring(1);
-                }
-                return @"<span   style=\"italic\">$dval</span>";
-           case '|': // user defined methods
-                if (dval[0] == '|') {
-                    dval = dval.substring(1);
-                }
-                return @"<span color=\"#008000\" font_weight=\"bold\">$dval</span>";
-                
-                  
-                
-            default:
-                return dval;
-        }
-          
-        
-    
-    },
     startEditingValue : ( Gtk.TreePath path) {
     
         // ONLY return true if editing is allowed - eg. combo..
@@ -276,37 +189,145 @@ WindowLeftProps=new XObject({
                 return false;
             },
     xtype : "VBox",
+    keyFormat : (string val, string type) {
+        
+        // Glib.markup_escape_text(val);
+    
+        if (type == "listener") {
+            return "<span font_weight=\"bold\" color=\"#660000\">" + 
+                GLib.Markup.escape_text(val) +
+                 "</span>";
+        }
+        // property..
+        if (val.length < 1) {
+            return "<span  color=\"#FF0000\">--empty--</span>";
+        }
+        
+        //@ = signal
+        //$ = property with 
+        //# - object properties
+        //* = special
+        // all of these... - display value is last element..
+        var ar = val.strip().split(" ");
+        
+        
+        var dval = GLib.Markup.escape_text(ar[ar.length-1]);
+        
+        
+        
+        
+        switch(val[0]) {
+            case '@': // signal // just bold balck?
+                if (dval[0] == '@') {
+                    dval = dval.substring(1);
+                }
+            
+                return @"<span  font_weight=\"bold\">@ $dval</span>";        
+            case '#': // object properties?
+                if (dval[0] == '#') {
+                    dval = dval.substring(1);
+                }
+                return @"<span  font_weight=\"bold\">$dval</span>";
+            case '*': // special
+                if (dval[0] == '*') {
+                    dval = dval.substring(1);
+                }
+                return @"<span   color=\"#0000CC\" font_weight=\"bold\">$dval</span>";            
+            case '$':
+                if (dval[0] == '$') {
+                    dval = dval.substring(1);
+                }
+                return @"<span   style=\"italic\">$dval</span>";
+           case '|': // user defined methods
+                if (dval[0] == '|') {
+                    dval = dval.substring(1);
+                }
+                return @"<span color=\"#008000\" font_weight=\"bold\">$dval</span>";
+                
+                  
+                
+            default:
+                return dval;
+        }
+          
+        
+    
+    },
     file : "",
     stop_editor : "()",
     show_editor : "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
-    deleteSelected : () {
+    keySortFormat : (string key) {
+        // listeners first - with 0
+        // specials
+        if (key[0] == '*') {
+            return "1 " + key;
+        }
+        // functions
         
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
+        var bits = key.split(" ");
+        
+        if (key[0] == '|') {
+            return "2 " + bits[bits.length -1];
+        }
+        // signals
+        if (key[0] == '@') {
+            return "3 " + bits[bits.length -1];
+        }
             
-            var s = this.view.el.get_selection();
-            s.get_selected(out mod, out iter);
-                 
-                  
-            GLib.Value gval;
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
+        // props
+        if (key[0] == '#') {
+            return "4 " + bits[bits.length -1];
+        }
+        // the rest..
+        return "5 " + bits[bits.length -1];    
+    
+    
+    
+    },
+    changed : "()",
+    xns : Gtk,
+    updateIter : (Gtk.TreeIter iter,  string type, string key, string value) {
+    
+        print("update Iter %s, %s\n", key,value);
+        //typeof(string),  // 0 key type
+         //typeof(string),  // 1 key
+         //typeof(string),  // 2 key (display)
+         //typeof(string),  // 3 value
+         //typeof(string),  // 4 value (display)
+         //typeof(string),  // 5 both (tooltip)
+         //typeof(string),  // 6 key (sort)
+        
+        var dl = value.strip().split("\n");
+    
+        var dis_val = dl.length > 1 ? (dl[0].strip()+ "...") : dl[0];
+        
+        if (type == "listener") {
+         
+           
             
-            mod.get_value(iter, 1 , out gval);
-            var key = (string)gval;
-            
-            switch(type) {
-                case "listener":
-                    this.node.listeners.remove(key);
-                    break;
-                    
-                case "props":
-                    this.node.props.remove(key);
-                    break;
-            }
-            this.load(this.file, this.node);
-            
-            _this.changed();
+            this.model.el.set(iter, 
+                    0, type,
+                1, key,
+                2, this.keyFormat(key ,type),
+                3, value,
+                4, dis_val,
+                5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
+                6,  "0 " + key
+            ); 
+            return;
+        }
+        
+    
+    
+        this.model.el.set(iter, 
+                0, "props",
+                1, key,
+                2,  this.keyFormat(key , "prop"),
+                3, value,
+                4, dis_val,
+                 5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
+                 6,  this.keySortFormat(key)
+            ); 
     },
     load : (JsRender.JsRender file, JsRender.Node? node) 
     {
@@ -369,51 +390,48 @@ WindowLeftProps=new XObject({
        
        
     },
-    changed : "()",
-    keySortFormat : (string key) {
-        // listeners first - with 0
-        // specials
-        if (key[0] == '*') {
-            return "1 " + key;
-        }
-        // functions
-        
-        var bits = key.split(" ");
-        
-        if (key[0] == '|') {
-            return "2 " + bits[bits.length -1];
-        }
-        // signals
-        if (key[0] == '@') {
-            return "3 " + bits[bits.length -1];
-        }
-            
-        // props
-        if (key[0] == '#') {
-            return "4 " + bits[bits.length -1];
-        }
-        // the rest..
-        return "5 " + bits[bits.length -1];    
-    
-    
-    
-    },
-    finish_editing : () {
-         // 
-        this.before_edit();
-    },
-    xns : Gtk,
     show_add_props : "(string type)",
+    deleteSelected : () {
+        
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.el.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+                  
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
+            
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
+            
+            switch(type) {
+                case "listener":
+                    this.node.listeners.remove(key);
+                    break;
+                    
+                case "props":
+                    this.node.props.remove(key);
+                    break;
+            }
+            this.load(this.file, this.node);
+            
+            _this.changed();
+    },
+    homogeneous : false,
     addProp : (string in_type, string key, string value, string value_type) {
           // info includes key, val, skel, etype..
           //console.dump(info);
             //type = info.type.toLowerCase();
             //var data = this.toJS();
-            
+              
         var type = in_type == "signals" ? "listener" : in_type;
-        
+         
+         
         var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
-                
+                  
         if (type == "listener") {
             if (this.node.listeners.has_key(key)) {
                 return;
@@ -468,23 +486,6 @@ WindowLeftProps=new XObject({
         
                   
     },
-    before_edit : ()
-    {
-    
-        print("before edit - stop editing\n");
-        
-      // these do not appear to trigger save...
-        _this.keyrender.el.stop_editing(false);
-        _this.keyrender.el.editable  =false;
-    
-        _this.valrender.el.stop_editing(false);
-        _this.valrender.el.editable  =false;    
-        
-        
-    // technicall stop the popup editor..
-    
-    },
-    homogeneous : false,
     node : "",
     items : [
     	{
@@ -654,8 +655,8 @@ WindowLeftProps=new XObject({
                     id : "view",
                     tooltip_column : 5,
                     xtype : "TreeView",
-                    enable_tree_lines : true,
-                    headers_visible : true,
+                    enable_tree_lines : TRUE,
+                    headers_visible : TRUE,
                     xns : Gtk,
                     listeners : {
                     	button_press_event : ( ev)  => {
@@ -824,7 +825,7 @@ WindowLeftProps=new XObject({
                             id : "keycol",
                             title : "Name",
                             xtype : "TreeViewColumn",
-                            resizable : true,
+                            resizable : TRUE,
                             xns : Gtk,
                             items : [
                             	{
@@ -894,7 +895,7 @@ WindowLeftProps=new XObject({
                             id : "valcol",
                             title : "Value",
                             xtype : "TreeViewColumn",
-                            resizable : true,
+                            resizable : TRUE,
                             xns : Gtk,
                             items : [
                             	{
@@ -907,8 +908,8 @@ WindowLeftProps=new XObject({
                                     },
                                     id : "valrender",
                                     xtype : "CellRendererCombo",
-                                    editable : false,
-                                    has_entry : true,
+                                    editable : FALSE,
+                                    has_entry : TRUE,
                                     xns : Gtk,
                                     text_column : 0,
                                     setOptions : (string[] ar) {
