@@ -910,7 +910,10 @@ public class Xcls_WindowLeftTree : Object
                         parentNode.items.insert(ix, node);
          
                     }
-                    //node.parent = parentNode;
+                    node.parent = parentNode;
+                    
+                    
+                    
                 } else {
                    //  print("appending to  " + parent_str);
                     this.el.get_iter(out iter_par, tree_path);
