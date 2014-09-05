@@ -463,11 +463,15 @@ public class JsRender.Node : Object {
 			//}
 			var val = iter.get_value();
 			if (Regex.match_simple("^\\s*function", val)) { 
-				funcs += "\n<b>" + i.substring(1) +"</b> : " + val.split("\n")[0];
+				funcs += "\n<b>" + 
+					GLib.Markup.escape_text(i.substring(1)) +"</b> : " + 
+					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;
 			}
 			if (Regex.match_simple("^\\s*\\(", val)) {
-				funcs += "\n<b>" + i.substring(1) +"</b> : " + val.split("\n")[0];
+				funcs += "\n<b>" + GLib.Markup.escape_text(i.substring(1)) +
+					"</b> : " + 
+					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;
 			}
 			
@@ -484,7 +488,7 @@ public class JsRender.Node : Object {
 		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
 		//if (sr) txt.push('<s>');
 
-		if (this.has("* prop"))   { txt += (this.get("* prop") + ":"); }
+		if (this.has("* prop"))   { txt += (GLib.Markup.escape_text(this.get("* prop")) + ":"); }
 		
 		//if (renderfull && c['|xns']) {
 			txt += this.fqn();
@@ -493,20 +497,20 @@ public class JsRender.Node : Object {
 		
 		//if (c.xtype)	  { txt.push(c.xtype); }
 			
-		if (this.has("id"))	 { txt += ("<b>[id=" + this.get("id") + "]</b>"); }
-		if (this.has("fieldLabel")){ txt += ("[" + this.get("fieldLabel") + "]"); }
-		if (this.has("boxLabel"))  { txt += ("[" + this.get("boxLabel") + "]"); }
+		if (this.has("id"))	 { txt += ("<b>[id=" + GLib.Markup.escape_text(this.get("id")) + "]</b>"); }
+		if (this.has("fieldLabel")){ txt += ("[" + GLib.Markup.escape_text(this.get("fieldLabel")) + "]"); }
+		if (this.has("boxLabel"))  { txt += ("[" + GLib.Markup.escape_text(this.get("boxLabel"))+ "]"); }
 		
 		
-		if (this.has("layout"))	{ txt += ("<i>" + this.get("layout") + "</i>"); }
-		if (this.has("title"))	 { txt += ("<b>" + this.get("title") + "</b>"); }
-		if (this.has("label"))	 { txt += ("<b>" + this.get("label")+ "</b>"); }
-		if (this.has("header"))   { txt += ("<b>" + this.get("header") + "</b>"); }
-		if (this.has("legend"))	 { txt += ("<b>" + this.get("legend") + "</b>"); }
-		if (this.has("text"))	  { txt += ("<b>" + this.get("text") + "</b>"); }
-		if (this.has("name"))	  { txt += ("<b>" + this.get("name")+ "</b>"); }
-		if (this.has("region"))	{ txt += ("<i>(" + this.get("region") + ")</i>"); }
-		if (this.has("dataIndex")){ txt += ("[" + this.get("dataIndex") + "]"); }
+		if (this.has("layout"))	{ txt += ("<i>" + GLib.Markup.escape_text(this.get("layout")) + "</i>"); }
+		if (this.has("title"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("title")) + "</b>"); }
+		if (this.has("label"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("label"))+ "</b>"); }
+		if (this.has("header"))   { txt += ("<b>" + GLib.Markup.escape_text(this.get("header")) + "</b>"); }
+		if (this.has("legend"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("legend")) + "</b>"); }
+		if (this.has("text"))	  { txt += ("<b>" + GLib.Markup.escape_text(this.get("text")) + "</b>"); }
+		if (this.has("name"))	  { txt += ("<b>" + GLib.Markup.escape_text(this.get("name"))+ "</b>"); }
+		if (this.has("region"))	{ txt += ("<i>(" + GLib.Markup.escape_text(this.get("region")) + ")</i>"); }
+		if (this.has("dataIndex")){ txt += ("[" + GLib.Markup.escape_text(this.get("dataIndex")) + "]"); }
 		
 		// for flat classes...
 		//if (typeof(c["*class"]"))!= "undefined")  { txt += ("<b>" +  c["*class"]+  "</b>"); }
