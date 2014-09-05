@@ -12,6 +12,17 @@ XObject = imports.XObject.XObject;
 WindowLeftTree=new XObject({
     before_node_change : "(JsRender.Node? node)",
     id : "WindowLeftTree",
+    getActivePath : () {
+        var model = this.model;
+        var view = this.view.el;
+        if (view.get_selection().count_selected_rows() < 1) {
+            return "";
+        }
+        Gtk.TreeIter iter;
+        Gtk.TreeModel mod;
+        view.get_selection().get_selected(out mod, out iter);
+        return mod.get_path(iter).to_string();
+    },
     shadow_type : Gtk.ShadowType.IN,
     xtype : "ScrolledWindow",
     changed : "()",
@@ -26,25 +37,14 @@ WindowLeftTree=new XObject({
          return _this.model.pathToNode(path);
          
     },
-    getActivePath : () {
-        var model = this.model;
-        var view = this.view.el;
-        if (view.get_selection().count_selected_rows() < 1) {
-            return "";
-        }
-        Gtk.TreeIter iter;
-        Gtk.TreeModel mod;
-        view.get_selection().get_selected(out mod, out iter);
-        return mod.get_path(iter).to_string();
-    },
     getActiveFile : () {
         return this.model.file;
     },
     items : [
     	{
             dragData : "",
-            dropList : "",
             drag_x : "",
+            dropList : "",
             id : "view",
             drag_y : "",
             selectNode : (string treepath_str) {
@@ -99,47 +99,6 @@ WindowLeftTree=new XObject({
             	         _this.LeftTreeMenu.el.popup(null, null, null,  3, ev.time);
             	        //   print("click:" + res.path.to_string());
             	         return true;
-            	   },
-            	drag_begin : ( ctx)  => {
-            	   	//print('SOURCE: drag-begin');
-            	           
-            	           
-            	           //this.targetData = "";
-            	           
-            	           // find what is selected in our tree...
-            	           
-            	           var s = _this.view.el.get_selection();
-            	           if (s.count_selected_rows() < 1) {
-            	               return;
-            	           }
-            	           Gtk.TreeIter iter;
-            	           Gtk.TreeModel mod;
-            	           s.get_selected(out mod, out iter);
-            	   
-            	           
-            	   
-            	           // set some properties of the tree for use by the dropped element.
-            	           GLib.Value value;
-            	           _this.model.el.get_value(iter, 2, out value);
-            	           var data = (JsRender.Node)(value.dup_object());
-            	           var xname = data.fqn();
-            	            print ("XNAME  IS " + xname+ "\n");
-            	           this.dragData = xname;
-            	           this.dropList = _this.model.file.palete().getDropList(xname);
-            	           
-            	           print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-            	           
-            	   
-            	           // make the drag icon a picture of the node that was selected
-            	           var path = _this.model.el.get_path(iter);
-            	   
-            	           //this.treepath = path.to_string();
-            	           
-            	           var pix = this.el.create_row_drag_icon ( path);
-            	           
-            	           Gtk.drag_set_icon_surface (ctx, pix) ;
-            	           
-            	           return;
             	   },
             	cursor_changed : ( ) => {
             	   
@@ -198,6 +157,47 @@ WindowLeftTree=new XObject({
             	       //Seed.print( value.get_string());
             	       return  ;
             	                   
+            	   },
+            	drag_begin : ( ctx)  => {
+            	   	//print('SOURCE: drag-begin');
+            	           
+            	           
+            	           //this.targetData = "";
+            	           
+            	           // find what is selected in our tree...
+            	           
+            	           var s = _this.view.el.get_selection();
+            	           if (s.count_selected_rows() < 1) {
+            	               return;
+            	           }
+            	           Gtk.TreeIter iter;
+            	           Gtk.TreeModel mod;
+            	           s.get_selected(out mod, out iter);
+            	   
+            	           
+            	   
+            	           // set some properties of the tree for use by the dropped element.
+            	           GLib.Value value;
+            	           _this.model.el.get_value(iter, 2, out value);
+            	           var data = (JsRender.Node)(value.dup_object());
+            	           var xname = data.fqn();
+            	            print ("XNAME  IS " + xname+ "\n");
+            	           this.dragData = xname;
+            	           this.dropList = _this.model.file.palete().getDropList(xname);
+            	           
+            	           print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+            	           
+            	   
+            	           // make the drag icon a picture of the node that was selected
+            	           var path = _this.model.el.get_path(iter);
+            	   
+            	           //this.treepath = path.to_string();
+            	           
+            	           var pix = this.el.create_row_drag_icon ( path);
+            	           
+            	           Gtk.drag_set_icon_surface (ctx, pix) ;
+            	           
+            	           return;
             	   },
             	drag_end : (drag_context) => {
             	   	//Seed.print('LEFT-TREE: drag-end');
@@ -511,34 +511,6 @@ WindowLeftTree=new XObject({
             },
             items : [
             	{
-                    currentTree : false,
-                    id : "model",
-                    file : "null",
-                    load : (Gee.ArrayList<JsRender.Node> tr, Gtk.TreeIter? iter) 
-                    {
-                        Gtk.TreeIter citer;
-                        //this.insert(citer,iter,0);
-                        for(var i =0 ; i < tr.size; i++) {
-                            if (iter != null) {
-                                this.el.insert(out citer,iter,-1); // why not append?
-                            } else {
-                                this.el.append(out citer,null);
-                            }
-                            
-                            this.el.set(citer, 0, tr.get(i).nodeTitle(),
-                                    1, tr.get(i).nodeTip(), -1
-                            );
-                            var o = new GLib.Value(typeof(Object));
-                            o.set_object((Object)tr.get(i));
-                            
-                            this.el.set_value(citer, 2, o);
-                            
-                            if (tr.get(i).items.size > 0) {
-                                this.load(tr.get(i).items, citer);
-                            }
-                         
-                        }
-                    },
                     moveNode : (string target_data, Gdk.DragAction action) 
                     {
                        
@@ -583,148 +555,6 @@ WindowLeftTree=new XObject({
                         this.activePath= "";
                         //this.updateNode(false,true);
                     },
-                    xtype : "TreeStore",
-                    deleteSelected : () {
-                        
-                        print("DELETE SELECTED?");
-                        //_this.view.blockChanges = true;
-                        print("GET SELECTION?");
-                    
-                        var s = _this.view.el.get_selection();
-                        
-                        print("GET  SELECTED?");
-                       Gtk.TreeIter iter;
-                        Gtk.TreeModel mod;
-                    
-                        
-                        if (!s.get_selected(out mod, out iter)) {
-                            return; // nothing seleted..
-                        }
-                          
-                    
-                    
-                        this.activePath= "";      
-                        print("GET  vnode value?");
-                    
-                        GLib.Value value;
-                        this.el.get_value(iter, 2, out value);
-                        var data = (JsRender.Node)(value.get_object());
-                        print("removing node from Render\n");
-                        if (data.parent == null) {
-                            this.file.tree = null;
-                        } else {
-                            data.remove();
-                        }
-                        print("removing node from Tree\n");    
-                        s.unselect_all();
-                        this.el.remove(ref iter);
-                    
-                        
-                        
-                        
-                        // 
-                        
-                        
-                    
-                    
-                        this.activePath= ""; // again!?!?      
-                        //this.changed(null,true);
-                        
-                        _this.changed();
-                        
-                        _this.view.blockChanges = false;
-                    },
-                    activePath : "\"\"",
-                    columns : typeof(string),typeof(string),typeof(Object),
-                    findDropNodeByPath : (string treepath_str, string[] targets, int in_pref = -1) {
-                    
-                        var path = treepath_str; // dupe it..
-                        
-                        int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
-                        
-                        var last = "";
-                        
-                        //console.dump(this.treemap);
-                        
-                        print("findDropNodeByPath : got path length %d / %s\n", path.length, path);
-                        
-                        if (path.length == 0) {
-                            // top drop. // just return empty..
-                            return "|%d".printf((int)pref) ;
-                            
-                        }
-                        
-                        
-                        while (path.length > 0) {
-                            //print("LOOKING FOR PATH: " + path);
-                            var node_data = this.pathToNode(path);
-                            
-                            if (node_data == null) {
-                                print("node not found");
-                                return null;
-                            }
-                            
-                            var xname = node_data.fqn();
-                            var match = "";
-                            var prop = "";
-                            
-                            for (var i =0; i < targets.length; i++)  {
-                                var tg = targets[i];
-                                if ((tg == xname)  ) {
-                                    match = tg;
-                                    break;
-                                }
-                                // if target is "xxxx:name"
-                                if (tg.contains(xname +":")) {
-                                    match = tg;
-                                    var ar = tg.split(":");
-                                    prop = ar[1];
-                                    break;
-                                }
-                            }
-                            
-                            if (match.length > 0) {
-                                if (last.length > 0) { // pref is after/before..
-                                    // then it's after last
-                                    if (pref > 1) {
-                                        return "";
-                                    }
-                                    return last + "|%d".printf((int)pref) + "|" + prop;
-                    
-                                    
-                                }
-                                return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
-                            }
-                            last = "" + path;
-                            var par = path.split(":");
-                            string [] ppar = {};
-                            for (var i = 0; i < par.length-1; i++) {
-                                ppar += par[i];
-                            }
-                            
-                            path = string.joinv(":", ppar);
-                    
-                    
-                        }
-                        
-                        return "";
-                                
-                    },
-                    pathToNode : (string path) {
-                     
-                         
-                         Gtk.TreeIter   iter;
-                         _this.model.el.get_iter_from_string(out iter, path);
-                         
-                         GLib.Value value;
-                         _this.model.el.get_value(iter, 2, out value);
-                         
-                         return (JsRender.Node)value.dup_object();
-                    
-                    },
-                    project : "null",
-                    n_columns : 3,
-                    xns : Gtk,
                     dropNode : (string target_data_str, JsRender.Node node, bool show_templates) {
                     //         print("drop Node");
                          // console.dump(node);
@@ -875,6 +705,52 @@ WindowLeftTree=new XObject({
                             
                                 
                     },
+                    currentTree : false,
+                    id : "model",
+                    file : "null",
+                    pathToNode : (string path) {
+                     
+                         
+                         Gtk.TreeIter   iter;
+                         _this.model.el.get_iter_from_string(out iter, path);
+                         
+                         GLib.Value value;
+                         _this.model.el.get_value(iter, 2, out value);
+                         
+                         return (JsRender.Node)value.dup_object();
+                    
+                    },
+                    xtype : "TreeStore",
+                    load : (Gee.ArrayList<JsRender.Node> tr, Gtk.TreeIter? iter) 
+                    {
+                        Gtk.TreeIter citer;
+                        //this.insert(citer,iter,0);
+                        for(var i =0 ; i < tr.size; i++) {
+                            if (iter != null) {
+                                this.el.insert(out citer,iter,-1); // why not append?
+                            } else {
+                                this.el.append(out citer,null);
+                            }
+                            
+                            this.el.set(citer, 0, tr.get(i).nodeTitle(),
+                                    1, tr.get(i).nodeTip(), -1
+                            );
+                            var o = new GLib.Value(typeof(Object));
+                            o.set_object((Object)tr.get(i));
+                            
+                            this.el.set_value(citer, 2, o);
+                            
+                            if (tr.get(i).items.size > 0) {
+                                this.load(tr.get(i).items, citer);
+                            }
+                         
+                        }
+                    },
+                    activePath : "\"\"",
+                    columns : typeof(string),typeof(string),typeof(Object),
+                    project : "null",
+                    n_columns : 3,
+                    xns : Gtk,
                     findDropNode : (string treepath_str, string[] targets) {
                     
                         // this is used by the dragdrop code in the roo version AFAIR..
@@ -980,6 +856,133 @@ WindowLeftTree=new XObject({
                             this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
                             */
                                 
+                    },
+                    updateSelected : () {
+                    
+                    },
+                    findDropNodeByPath : (string treepath_str, string[] targets, int in_pref = -1) {
+                    
+                        var path = treepath_str; // dupe it..
+                        
+                        int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
+                        
+                        var last = "";
+                        
+                        //console.dump(this.treemap);
+                        
+                        print("findDropNodeByPath : got path length %d / %s\n", path.length, path);
+                        
+                        if (path.length == 0) {
+                            // top drop. // just return empty..
+                            return "|%d".printf((int)pref) ;
+                            
+                        }
+                        
+                        
+                        while (path.length > 0) {
+                            //print("LOOKING FOR PATH: " + path);
+                            var node_data = this.pathToNode(path);
+                            
+                            if (node_data == null) {
+                                print("node not found");
+                                return null;
+                            }
+                            
+                            var xname = node_data.fqn();
+                            var match = "";
+                            var prop = "";
+                            
+                            for (var i =0; i < targets.length; i++)  {
+                                var tg = targets[i];
+                                if ((tg == xname)  ) {
+                                    match = tg;
+                                    break;
+                                }
+                                // if target is "xxxx:name"
+                                if (tg.contains(xname +":")) {
+                                    match = tg;
+                                    var ar = tg.split(":");
+                                    prop = ar[1];
+                                    break;
+                                }
+                            }
+                            
+                            if (match.length > 0) {
+                                if (last.length > 0) { // pref is after/before..
+                                    // then it's after last
+                                    if (pref > 1) {
+                                        return "";
+                                    }
+                                    return last + "|%d".printf((int)pref) + "|" + prop;
+                    
+                                    
+                                }
+                                return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
+                            }
+                            last = "" + path;
+                            var par = path.split(":");
+                            string [] ppar = {};
+                            for (var i = 0; i < par.length-1; i++) {
+                                ppar += par[i];
+                            }
+                            
+                            path = string.joinv(":", ppar);
+                    
+                    
+                        }
+                        
+                        return "";
+                                
+                    },
+                    deleteSelected : () {
+                        
+                        print("DELETE SELECTED?");
+                        //_this.view.blockChanges = true;
+                        print("GET SELECTION?");
+                    
+                        var s = _this.view.el.get_selection();
+                        
+                        print("GET  SELECTED?");
+                       Gtk.TreeIter iter;
+                        Gtk.TreeModel mod;
+                    
+                        
+                        if (!s.get_selected(out mod, out iter)) {
+                            return; // nothing seleted..
+                        }
+                          
+                    
+                    
+                        this.activePath= "";      
+                        print("GET  vnode value?");
+                    
+                        GLib.Value value;
+                        this.el.get_value(iter, 2, out value);
+                        var data = (JsRender.Node)(value.get_object());
+                        print("removing node from Render\n");
+                        if (data.parent == null) {
+                            this.file.tree = null;
+                        } else {
+                            data.remove();
+                        }
+                        print("removing node from Tree\n");    
+                        s.unselect_all();
+                        this.el.remove(ref iter);
+                    
+                        
+                        
+                        
+                        // 
+                        
+                        
+                    
+                    
+                        this.activePath= ""; // again!?!?      
+                        //this.changed(null,true);
+                        
+                        _this.changed();
+                        
+                        _this.view.blockChanges = false;
                     },
                     listAllTypes : function() {
                         var s = this.get('/LeftTree.view').selection;
