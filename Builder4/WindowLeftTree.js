@@ -22,7 +22,7 @@ WindowLeftTree=new XObject({
         return mod.get_path(iter).to_string();
     },
     id : "WindowLeftTree",
-    before_node_change : "()",
+    before_node_change : "(JsRender.Node? node)",
     shadow_type : Gtk.ShadowType.IN,
     getActiveFile : () {
         return this.model.file;
