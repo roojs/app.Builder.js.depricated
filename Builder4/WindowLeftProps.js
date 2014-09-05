@@ -428,8 +428,7 @@ WindowLeftProps=new XObject({
             //var data = this.toJS();
               
         var type = in_type == "signals" ? "listener" : in_type;
-         
-         
+          
         var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
                   
         if (type == "listener") {
