@@ -22,6 +22,7 @@ WindowLeftTree=new XObject({
         return mod.get_path(iter).to_string();
     },
     id : "WindowLeftTree",
+    before_node_change : "()",
     shadow_type : Gtk.ShadowType.IN,
     getActiveFile : () {
         return this.model.file;
@@ -38,7 +39,7 @@ WindowLeftTree=new XObject({
     },
     changed : "(JsRender.Node? node)",
     xns : Gtk,
-    'node)' : "",
+    node_selected : "(JsRender.Node? node)",
     items : [
     	{
             dragData : "",

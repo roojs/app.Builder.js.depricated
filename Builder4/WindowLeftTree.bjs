@@ -9,6 +9,7 @@
         {
             "|      string getActivePath" : " () {\n    var model = this.model;\n    var view = this.view.el;\n    if (view.get_selection().count_selected_rows() < 1) {\n        return \"\";\n    }\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n    view.get_selection().get_selected(out mod, out iter);\n    return mod.get_path(iter).to_string();\n}\n",
             "id" : "WindowLeftTree",
+            "@ bool before_node_change" : "()",
             "$ shadow_type" : "Gtk.ShadowType.IN",
             "* init" : " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
             "|      JsRender.JsRender getActiveFile" : "() {\n    return this.model.file;\n}\n",
@@ -17,7 +18,7 @@
             "|      JsRender.Node? getActiveElement" : " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     return _this.model.pathToNode(path);\n     \n}\n",
             "@ void changed" : "(JsRender.Node? node)",
             "$ xns" : "Gtk",
-            "@ void node_selected(JsRender.Node? node)" : "",
+            "@ void node_selected" : "(JsRender.Node? node)",
             "items" : [
                 {
                     "listeners" : {
