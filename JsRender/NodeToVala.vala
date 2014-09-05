@@ -504,8 +504,17 @@ public class JsRender.NodeToVala : Object {
 			
 	     		this.ignore(p);
 			var v = this.node.get(p);
+
+			var nodekey = this.node.get_key(p);
+
+			// user defined properties.
+			if (nodekey[0] == '#') {
+				continue;
+			}
+				
+
 			
-			var is_raw = this.node.props.has_key("$ " + p);
+			var is_raw = nodekey[0] == '$';
 			
 			// what's the type.. - if it's a string.. then we quote it..
 			if (iter.get_value().type == "utf8" && !is_raw) {
