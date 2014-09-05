@@ -1073,7 +1073,7 @@ public class Xcls_WindowLeftTree : Object
             if ((action & Gdk.DragAction.MOVE) > 0) {
                     print("REMOVING OLD NODE : " + target_data + "\n");
                     node.remove();
-                    this.dropNode(target_data, node);
+                    this.dropNode(target_data, node, false);
                     this.el.remove(ref old_iter);
                     
                     
@@ -1081,7 +1081,7 @@ public class Xcls_WindowLeftTree : Object
             } else {
                 print("DROPPING NODE // copy: " + target_data + "\n");
                 node = node.deepClone();
-                this.dropNode(target_data, node);
+                this.dropNode(target_data, node, false);
             }
             _this.changed();
             this.activePath= "";
