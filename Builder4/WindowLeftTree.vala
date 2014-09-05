@@ -896,7 +896,7 @@ public class Xcls_WindowLeftTree : Object
             
             _this.view.blockChanges = false;
         }
-        public      void dropNode (string target_data_str, JsRender.Node node) {
+        public      void dropNode (string target_data_str, JsRender.Node node, bool show_templates) {
         //         print("drop Node");
              // console.dump(node);
           //    console.dump(target_data);

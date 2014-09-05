@@ -787,7 +787,7 @@ WindowLeftTree=new XObject({
                         
                         _this.view.blockChanges = false;
                     },
-                    dropNode : (string target_data_str, JsRender.Node node) {
+                    dropNode : (string target_data_str, JsRender.Node node, bool show_templates) {
                     //         print("drop Node");
                          // console.dump(node);
                       //    console.dump(target_data);
