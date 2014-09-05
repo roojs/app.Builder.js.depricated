@@ -16,8 +16,8 @@
             "* pack" : "add",
             "xtype" : "ScrolledWindow",
             "|      JsRender.Node? getActiveElement" : " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     return _this.model.pathToNode(path);\n     \n}\n",
+            "@ void changed" : "(JsRender.Node? node)",
             "$ xns" : "Gtk",
-            "@ void changed()" : "(JsRender.Node? node)",
             "@ void node_selected(JsRender.Node? node)" : "",
             "items" : [
                 {

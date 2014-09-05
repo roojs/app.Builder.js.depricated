@@ -37,8 +37,8 @@ WindowLeftTree=new XObject({
          return _this.model.pathToNode(path);
          
     },
+    changed : "(JsRender.Node? node)",
     xns : Gtk,
-    'changed()' : "(JsRender.Node? node)",
     'node)' : "",
     items : [
     	{
