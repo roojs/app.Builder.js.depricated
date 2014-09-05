@@ -929,6 +929,8 @@ public class Xcls_WindowLeftTree : Object
         
                 Gtk.TreePath expand_parent = null;
                 
+                // we only need to show the template if it's come from else where?
+                
                  var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
                  node = new_node;
                 
