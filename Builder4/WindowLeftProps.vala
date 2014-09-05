@@ -998,6 +998,7 @@ public class Xcls_LeftProps : Object
             this.el.shadow_type = Gtk.ShadowType.IN;
             var child_0 = new Xcls_view( _this );
             child_0.ref();
+	    this.el.add (  child_0.el  );
             var child_1 = new Xcls_ContextMenu( _this );
             child_1.ref();
 
