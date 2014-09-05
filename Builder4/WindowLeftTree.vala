@@ -973,14 +973,19 @@ public class Xcls_WindowLeftTree : Object
             
              Gtk.TreeIter iter;
             Gtk.TreeModel mod;
-        
+            
+            
             
             if (!s.get_selected(out mod, out iter)) {
                 return; // nothing seleted..
             }
           
-              this.el.set(iter, 0, tr.get(i).nodeTitle(),
-                        1, tr.get(i).nodeTip(), -1
+          GLib.Value value;
+            this.el.get_value(iter, 2, out value);
+            var node = (JsRender.Node)(value.get_object());
+            
+              this.el.set(iter, 0, node.nodeTitle(),
+                        1, node.nodeTip(), -1
                 );
         }
         public        string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
