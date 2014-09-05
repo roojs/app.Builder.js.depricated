@@ -859,9 +859,18 @@ WindowLeftTree=new XObject({
                     },
                     updateSelected : () {
                       
+                       
+                        var s = _this.view.el.get_selection();
+                        
+                         Gtk.TreeIter iter;
+                        Gtk.TreeModel mod;
+                    
+                        
+                        if (!s.get_selected(out mod, out iter)) {
+                            return; // nothing seleted..
+                        }
                       
-                      
-                          this.el.set(citer, 0, tr.get(i).nodeTitle(),
+                          this.el.set(iter, 0, tr.get(i).nodeTitle(),
                                     1, tr.get(i).nodeTip(), -1
                             );
                     },
