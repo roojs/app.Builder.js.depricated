@@ -821,10 +821,10 @@ WindowLeftTree=new XObject({
                             Gtk.TreePath expand_parent = null;
                             
                             // we only need to show the template if it's come from else where?
-                            
-                             var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
-                             node = new_node;
-                            
+                             if (show_templates) {
+                                 var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
+                                 node = new_node;
+                            }        
                             
                              //print("pos is %d  \n".printf(pos));
                             
