@@ -13,7 +13,6 @@ public class Xcls_MainWindow : Object
         return _MainWindow;
     }
     public Xcls_vbox vbox;
-    public Xcls_topbar topbar;
     public Xcls_mainpane mainpane;
     public Xcls_leftpane leftpane;
     public Xcls_editpane editpane;
@@ -104,344 +103,7 @@ public class Xcls_MainWindow : Object
     }
 
     // user defined functions 
-    public      void hideViewEditing ( )   {
-    
-    // show the file navigation...
-      
-        if (this.left_tree.getActiveFile() != null) {
-             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                 this.window_rooview.createThumb();
-             } else {
-                  this.window_gladeview.createThumb();
-              }
-          }
-          
-        _this.addprojectbutton.el.show();   
-        _this.addfilebutton.el.show();       
-          _this.backbutton.el.show();
-        _this.delprojectbutton.el.show();
-        
-          _this.editfilebutton.el.hide();   
-          _this.projectbutton.el.hide();         
-          _this.projecteditbutton.el.hide();
-          _this.objectshowbutton.el.hide();
-          _this.addpropbutton.el.hide();      
-          _this.addlistenerbutton.el.hide();  
-    
-    
-    
-    
-              
-        // show the add file button..
-        
-              
-          
-         this.editpane.el.hide();
-        //this.rooview.el.hide();
-         this.left_projects.el.show();
-        
-        var el = _this.rooview.el;
-        el.save_easing_state();
-          el.set_easing_duration(1000);
-        // show project / file view..
-        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
-        //_this.mainpane.el.set_position(0);
-        // rotate y 180..
-        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-        el.set_scale(0.0f,0.0f);
-       
-            _this.state = "files";
-        if (_this.project != null) {
-            _this.left_projects.selectProject(_this.project);
-            }
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-            
-        print("show view browsing");
-    }
-    public      void hideObject () {
-          // return to editing state..
-           
-              _this.projecteditbutton.el.show();
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-             _this.editfilebutton.el.show();   
-         _this.objectview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.objectview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.objectview.el.restore_easing_state();  
-     
-    
-    }
-    public      void showViewEditing ( )  {
-         this.editpane.el.show();
-      //   this.rooview.el.show();
-         this.left_projects.el.hide();
-        
-        _this.addprojectbutton.el.hide();   
-        _this.delprojectbutton.el.hide();
-        _this.addfilebutton.el.hide();       
-        _this.backbutton.el.hide();
-        
-          _this.projectbutton.el.show();         
-        _this.editfilebutton.el.show();   
-       _this.projecteditbutton.el.show();
-      _this.objectshowbutton.el.show();
-      _this.addpropbutton.el.show();      
-      _this.addlistenerbutton.el.show();   
-      
-          
-        var el = _this.rooview.el;
-            el.save_easing_state();
-      
-        
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-            el.set_scale(1.0f,1.0f);
-            _this.state = "edit";
-           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-            _this.clutterfiles.el.hide();
-        
-        el.restore_easing_state();
-            
-        print("show view editing");
-    }
-    public      void hideAddListener () {
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-              _this.projecteditbutton.el.show();
-             _this.editfilebutton.el.show();   
-         _this.addpropsview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.addpropsview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();  
-      }
-    public      void showCodeEdit (JsRender.Node node, string ptype, string key)
-    {
-        // this is a bit different,
-        // it's not called via a button - but triggered by the prop edit class signal.
-        // so it has to hide any other state..
-        
-        switch(this.state) {
-            case "object":
-                this.hideObject();
-                break;
-            case "addprop":
-                this.hideAddProp();
-                break;
-            case "addlistener":
-                this.hideAddListener();
-                break;
-        }
-     
-       _this.backbutton.el.show();
-       
-        _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-       // more?? 
-         
-        //this.rooview.el.hide();
-        this.code_editor.el.show_all();
-        this.code_editor.show(
-            node,
-            ptype,
-            key
-        );
-    
-        _this.codeeditview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-        _this.clutterembed.setSizesAlloc("codedit");
-       
-        _this.codeeditview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.codeeditview.el.restore_easing_state();
-        this.state = "codeedit";
-    }
-    public      void showAddListener () {
-    
-         
-         
-        var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
-            return;
-        }
-         
-       _this.backbutton.el.show();
-        _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
-        
-        //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "signals",
-            ae.fqn()
-        );
-        //this.rightpalete.show(this.project);
-    
-        _this.addpropsview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-       
-          _this.clutterembed.setSizesAlloc("addlistener");
-    
-        
-      
-    
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addlistener";
-    }
-    public      void show () {
-        this.left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-        this.el.show_all();
-    
-    }
-    public      void setTitle (string str) {
-        this.el.set_title(this.title + " - " + str);
-    }
-    public      void hideProjectEdit () {
-        // return to editing state..
-           
-          _this.projectbutton.el.show();
-         _this.projecteditbutton.el.show();
-          _this.backbutton.el.hide();
-             _this.editfilebutton.el.show();   
-         
-        //this.rooview.el.hide();
-         //this.edit_project.el.show();
-            _this.projecteditview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-           _this.projecteditview.el.set_scale(1.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-          _this.projecteditview.el.restore_easing_state();  
-      
-    }
-    public      void showProjectEdit () {
-        // make the browser smaller, and show the edit dialog
-        
-        
-         _this.projectbutton.el.hide();
-         _this.projecteditbutton.el.hide();
-         
-         _this.editfilebutton.el.hide();
-         
-        
-         
-         
-         _this.backbutton.el.show();
-         
-        //this.rooview.el.hide();
-        this.projectsettings.el.show_all();
-        this.projectsettings.show(this.project);
-        _this.projecteditview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-       
-        
-        el.set_scale(0.5f,0.5f);
-    
-        _this.projecteditview.el.set_scale(1.0f,1.0f);
-       
-        _this.state = "projectedit";
-         
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.projecteditview.el.restore_easing_state();
-      //  print("show view browsing");
-        
-    }
-    public      void showAddProp () {
-    
-         
-         var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
-            return;
-        }
-         _this.backbutton.el.show();
-           _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
-         
-         
-        //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "props",
-            ae.fqn()
-        );
-    
-        _this.addpropsview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-        _this.clutterembed.setSizesAlloc("addprop");
-         
-         
-    
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addprop";
-    }
-    public      void hideCodeEdit () {
+    public       void hideCodeEdit () {
         //this.code_editor.saveContents();
          _this.backbutton.el.hide();
           _this.projectbutton.el.show(); 
@@ -462,7 +124,7 @@ public class Xcls_MainWindow : Object
         el.restore_easing_state();
          _this.codeeditview.el.restore_easing_state();  
      }
-    public void initChildren () {
+    public  void initChildren () {
         // this needs putting in a better place..
         
         print("init children");
@@ -765,7 +427,7 @@ public class Xcls_MainWindow : Object
     
     
     }
-    public      void hideAddProp () {
+    public       void hideAddProp () {
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
               _this.projecteditbutton.el.show();
@@ -786,7 +448,184 @@ public class Xcls_MainWindow : Object
         el.restore_easing_state();
          _this.addpropsview.el.restore_easing_state();  
      }
-    public      void showObject () {
+    public       void show () {
+        this.left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+        this.el.show_all();
+    
+    }
+    public       void showViewEditing ( )  {
+         this.editpane.el.show();
+      //   this.rooview.el.show();
+         this.left_projects.el.hide();
+        
+        _this.addprojectbutton.el.hide();   
+        _this.delprojectbutton.el.hide();
+        _this.addfilebutton.el.hide();       
+        _this.backbutton.el.hide();
+        
+          _this.projectbutton.el.show();         
+        _this.editfilebutton.el.show();   
+       _this.projecteditbutton.el.show();
+      _this.objectshowbutton.el.show();
+      _this.addpropbutton.el.show();      
+      _this.addlistenerbutton.el.show();   
+      
+          
+        var el = _this.rooview.el;
+            el.save_easing_state();
+      
+        
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+            el.set_scale(1.0f,1.0f);
+            _this.state = "edit";
+           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
+            _this.clutterfiles.el.hide();
+        
+        el.restore_easing_state();
+            
+        print("show view editing");
+    }
+    public       void hideProjectEdit () {
+        // return to editing state..
+           
+          _this.projectbutton.el.show();
+         _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+             _this.editfilebutton.el.show();   
+         
+        //this.rooview.el.hide();
+         //this.edit_project.el.show();
+            _this.projecteditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+           _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+          _this.projecteditview.el.restore_easing_state();  
+      
+    }
+    public       void hideAddListener () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.addpropsview.el.restore_easing_state();  
+      }
+    public       void showCodeEdit (JsRender.Node node, string ptype, string key)
+    {
+        // this is a bit different,
+        // it's not called via a button - but triggered by the prop edit class signal.
+        // so it has to hide any other state..
+        
+        switch(this.state) {
+            case "object":
+                this.hideObject();
+                break;
+            case "addprop":
+                this.hideAddProp();
+                break;
+            case "addlistener":
+                this.hideAddListener();
+                break;
+        }
+     
+       _this.backbutton.el.show();
+       
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+       // more?? 
+         
+        //this.rooview.el.hide();
+        this.code_editor.el.show_all();
+        this.code_editor.show(
+            node,
+            ptype,
+            key
+        );
+    
+        _this.codeeditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("codedit");
+       
+        _this.codeeditview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.codeeditview.el.restore_easing_state();
+        this.state = "codeedit";
+    }
+    public       void showAddListener () {
+    
+         
+         
+        var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         
+       _this.backbutton.el.show();
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+        
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "signals",
+            ae.fqn()
+        );
+        //this.rightpalete.show(this.project);
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+          _this.clutterembed.setSizesAlloc("addlistener");
+    
+        
+      
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addlistener";
+    }
+    public       void showObject () {
     
          
         // what's the active node on the left hand side..
@@ -832,6 +671,166 @@ public class Xcls_MainWindow : Object
         _this.objectview.el.restore_easing_state();
         this.state = "object";
     }
+    public       void hideObject () {
+          // return to editing state..
+           
+              _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+             _this.editfilebutton.el.show();   
+         _this.objectview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.objectview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.objectview.el.restore_easing_state();  
+     
+    
+    }
+    public       void showAddProp () {
+    
+         
+         var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         _this.backbutton.el.show();
+           _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+         
+         
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "props",
+            ae.fqn()
+        );
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("addprop");
+         
+         
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addprop";
+    }
+    public       void showProjectEdit () {
+        // make the browser smaller, and show the edit dialog
+        
+        
+         _this.projectbutton.el.hide();
+         _this.projecteditbutton.el.hide();
+         
+         _this.editfilebutton.el.hide();
+         
+        
+         
+         
+         _this.backbutton.el.show();
+         
+        //this.rooview.el.hide();
+        this.projectsettings.el.show_all();
+        this.projectsettings.show(this.project);
+        _this.projecteditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        _this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+        _this.state = "projectedit";
+         
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.projecteditview.el.restore_easing_state();
+      //  print("show view browsing");
+        
+    }
+    public       void setTitle (string str) {
+        this.el.set_title(this.title + " - " + str);
+    }
+    public       void hideViewEditing ( )   {
+    
+    // show the file navigation...
+      
+        if (this.left_tree.getActiveFile() != null) {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                 this.window_rooview.createThumb();
+             } else {
+                  this.window_gladeview.createThumb();
+              }
+          }
+          
+        _this.addprojectbutton.el.show();   
+        _this.addfilebutton.el.show();       
+          _this.backbutton.el.show();
+        _this.delprojectbutton.el.show();
+        
+          _this.editfilebutton.el.hide();   
+          _this.projectbutton.el.hide();         
+          _this.projecteditbutton.el.hide();
+          _this.objectshowbutton.el.hide();
+          _this.addpropbutton.el.hide();      
+          _this.addlistenerbutton.el.hide();  
+    
+    
+    
+    
+              
+        // show the add file button..
+        
+              
+          
+         this.editpane.el.hide();
+        //this.rooview.el.hide();
+         this.left_projects.el.show();
+        
+        var el = _this.rooview.el;
+        el.save_easing_state();
+          el.set_easing_duration(1000);
+        // show project / file view..
+        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
+        //_this.mainpane.el.set_position(0);
+        // rotate y 180..
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+        el.set_scale(0.0f,0.0f);
+       
+            _this.state = "files";
+        if (_this.project != null) {
+            _this.left_projects.selectProject(_this.project);
+            }
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+            
+        print("show view browsing");
+    }
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
@@ -850,36 +849,9 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_topbar( _this );
+            var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_mainpane( _this );
-            child_1.ref();
-            this.el.pack_end (  child_1.el , true,true,0 );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_topbar : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_topbar(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            _this.topbar = this;
-            this.el = new Gtk.HBox( true, 0 );
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.height_request = 20;
-            this.el.vexpand = false  ;
+            this.el.pack_end (  child_0.el , true,true,0 );
         }
 
         // user defined functions 
@@ -908,7 +880,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_leftpane( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
-            var child_1 = new Xcls_VBox9( _this );
+            var child_1 = new Xcls_VBox8( _this );
             child_1.ref();
             this.el.add2 (  child_1.el  );
         }
@@ -1012,7 +984,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_VBox9 : Object 
+    public class Xcls_VBox8 : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
@@ -1021,7 +993,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox9(Xcls_MainWindow _owner )
+        public Xcls_VBox8(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
@@ -1085,7 +1057,7 @@ public class Xcls_MainWindow : Object
         }
 
         // user defined functions 
-        public    void setSizes (  Gtk.Allocation alloc, string state) {
+        public     void setSizes (  Gtk.Allocation alloc, string state) {
             if (!_this.children_loaded) {  return; }
              
             _this.clutterfiles.set_size(alloc.width-50, alloc.height);
@@ -1133,7 +1105,7 @@ public class Xcls_MainWindow : Object
             }
                 
         }
-        public    void setSizesAlloc (string state) {
+        public     void setSizesAlloc (string state) {
         
             Gtk.Allocation alloc;
             this.el.get_allocation(out alloc);
@@ -1374,7 +1346,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_BoxLayout17( _this );
+            var child_0 = new Xcls_BoxLayout16( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_backbutton( _this );
@@ -1430,7 +1402,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_BoxLayout17 : Object 
+    public class Xcls_BoxLayout16 : Object 
     {
         public Clutter.BoxLayout el;
         private Xcls_MainWindow  _this;
@@ -1439,7 +1411,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_BoxLayout17(Xcls_MainWindow _owner )
+        public Xcls_BoxLayout16(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
@@ -1470,7 +1442,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor19( _this );
+            var child_0 = new Xcls_Actor18( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1480,7 +1452,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor19 : Object 
+    public class Xcls_Actor18 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1489,7 +1461,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor19(Xcls_MainWindow _owner )
+        public Xcls_Actor18(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -1497,7 +1469,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button20( _this );
+            var child_0 = new Xcls_Button19( _this );
             child_0.ref();
 
             // init method 
@@ -1506,7 +1478,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button20 : Object 
+    public class Xcls_Button19 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1515,7 +1487,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button20(Xcls_MainWindow _owner )
+        public Xcls_Button19(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1590,7 +1562,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor22( _this );
+            var child_0 = new Xcls_Actor21( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1600,7 +1572,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor22 : Object 
+    public class Xcls_Actor21 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1609,7 +1581,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor22(Xcls_MainWindow _owner )
+        public Xcls_Actor21(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -1617,7 +1589,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button23( _this );
+            var child_0 = new Xcls_Button22( _this );
             child_0.ref();
 
             // init method 
@@ -1626,7 +1598,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button23 : Object 
+    public class Xcls_Button22 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1635,7 +1607,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button23(Xcls_MainWindow _owner )
+        public Xcls_Button22(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1700,7 +1672,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor25( _this );
+            var child_0 = new Xcls_Actor24( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1710,7 +1682,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor25 : Object 
+    public class Xcls_Actor24 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1719,7 +1691,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor25(Xcls_MainWindow _owner )
+        public Xcls_Actor24(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -1727,7 +1699,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button26( _this );
+            var child_0 = new Xcls_Button25( _this );
             child_0.ref();
 
             // init method 
@@ -1736,7 +1708,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button26 : Object 
+    public class Xcls_Button25 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1745,7 +1717,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button26(Xcls_MainWindow _owner )
+        public Xcls_Button25(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1793,7 +1765,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor28( _this );
+            var child_0 = new Xcls_Actor27( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1803,7 +1775,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor28 : Object 
+    public class Xcls_Actor27 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1812,7 +1784,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor28(Xcls_MainWindow _owner )
+        public Xcls_Actor27(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -1820,7 +1792,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button29( _this );
+            var child_0 = new Xcls_Button28( _this );
             child_0.ref();
 
             // init method 
@@ -1829,7 +1801,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button29 : Object 
+    public class Xcls_Button28 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1838,7 +1810,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button29(Xcls_MainWindow _owner )
+        public Xcls_Button28(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1907,7 +1879,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor31( _this );
+            var child_0 = new Xcls_Actor30( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -1962,7 +1934,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor31 : Object 
+    public class Xcls_Actor30 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1971,7 +1943,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor31(Xcls_MainWindow _owner )
+        public Xcls_Actor30(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -1979,7 +1951,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button32( _this );
+            var child_0 = new Xcls_Button31( _this );
             child_0.ref();
 
             // init method 
@@ -1988,7 +1960,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button32 : Object 
+    public class Xcls_Button31 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -1997,7 +1969,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button32(Xcls_MainWindow _owner )
+        public Xcls_Button31(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -2067,7 +2039,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor34( _this );
+            var child_0 = new Xcls_Actor33( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2077,7 +2049,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor34 : Object 
+    public class Xcls_Actor33 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2086,7 +2058,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor34(Xcls_MainWindow _owner )
+        public Xcls_Actor33(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2094,7 +2066,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button35( _this );
+            var child_0 = new Xcls_Button34( _this );
             child_0.ref();
 
             // init method 
@@ -2103,7 +2075,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button35 : Object 
+    public class Xcls_Button34 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2112,7 +2084,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button35(Xcls_MainWindow _owner )
+        public Xcls_Button34(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -2180,7 +2152,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor37( _this );
+            var child_0 = new Xcls_Actor36( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2190,7 +2162,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor37 : Object 
+    public class Xcls_Actor36 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2199,7 +2171,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor37(Xcls_MainWindow _owner )
+        public Xcls_Actor36(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2207,7 +2179,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button38( _this );
+            var child_0 = new Xcls_Button37( _this );
             child_0.ref();
 
             // init method 
@@ -2216,7 +2188,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button38 : Object 
+    public class Xcls_Button37 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2225,7 +2197,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button38(Xcls_MainWindow _owner )
+        public Xcls_Button37(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -2294,7 +2266,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor40( _this );
+            var child_0 = new Xcls_Actor39( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2304,7 +2276,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor40 : Object 
+    public class Xcls_Actor39 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2313,7 +2285,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor40(Xcls_MainWindow _owner )
+        public Xcls_Actor39(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2321,7 +2293,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button41( _this );
+            var child_0 = new Xcls_Button40( _this );
             child_0.ref();
 
             // init method 
@@ -2330,7 +2302,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button41 : Object 
+    public class Xcls_Button40 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2339,7 +2311,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button41(Xcls_MainWindow _owner )
+        public Xcls_Button40(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -2394,7 +2366,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor43( _this );
+            var child_0 = new Xcls_Actor42( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2404,7 +2376,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor43 : Object 
+    public class Xcls_Actor42 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2413,7 +2385,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor43(Xcls_MainWindow _owner )
+        public Xcls_Actor42(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2421,7 +2393,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button44( _this );
+            var child_0 = new Xcls_Button43( _this );
             child_0.ref();
 
             // init method 
@@ -2430,7 +2402,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button44 : Object 
+    public class Xcls_Button43 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2439,7 +2411,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button44(Xcls_MainWindow _owner )
+        public Xcls_Button43(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -2485,7 +2457,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Actor46( _this );
+            var child_0 = new Xcls_Actor45( _this );
             child_0.ref();
             this.el.add_child (  child_0.el  );
 
@@ -2495,7 +2467,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Actor46 : Object 
+    public class Xcls_Actor45 : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -2504,7 +2476,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Actor46(Xcls_MainWindow _owner )
+        public Xcls_Actor45(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
@@ -2512,7 +2484,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button47( _this );
+            var child_0 = new Xcls_Button46( _this );
             child_0.ref();
 
             // init method 
@@ -2521,7 +2493,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button47 : Object 
+    public class Xcls_Button46 : Object 
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -2530,7 +2502,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button47(Xcls_MainWindow _owner )
+        public Xcls_Button46(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
