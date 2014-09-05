@@ -36,7 +36,6 @@ WindowLeftProps=new XObject({
           
         
     },
-    id : "LeftProps",
     updateIter : (Gtk.TreeIter iter,  string type, string key, string value) {
     
         print("update Iter %s, %s\n", key,value);
@@ -80,120 +79,7 @@ WindowLeftProps=new XObject({
                  6,  this.keySortFormat(key)
             ); 
     },
-    keySortFormat : (string key) {
-        // listeners first - with 0
-        // specials
-        if (key[0] == '*') {
-            return "1 " + key;
-        }
-        // functions
-        
-        var bits = key.split(" ");
-        
-        if (key[0] == '|') {
-            return "2 " + bits[bits.length -1];
-        }
-        // signals
-        if (key[0] == '@') {
-            return "3 " + bits[bits.length -1];
-        }
-            
-        // props
-        if (key[0] == '#') {
-            return "4 " + bits[bits.length -1];
-        }
-        // the rest..
-        return "5 " + bits[bits.length -1];    
-    
-    
-    
-    },
-    load : (JsRender.JsRender file, JsRender.Node? node) 
-    {
-        print("load leftprops\n");
-        this.before_edit();
-        this.node = node;
-        this.file = file;
-        
-     
-        this.model.el.clear();
-                  
-        //this.get('/RightEditor').el.hide();
-        if (node ==null) {
-            return ;
-        }
-         
-        
-    
-        //var provider = this.get('/LeftTree').getPaleteProvider();
-        Gtk.TreeIter iter;
-        
-        //typeof(string),  // 0 key type
-         //typeof(string),  // 1 key
-         //typeof(string),  // 2 key (display)
-         //typeof(string),  // 3 value
-         //typeof(string),  // 4 value (display)
-         //typeof(string),  // 5 both (tooltip)
-        
-        
-        
-        
-        // really need a way to sort the hashmap...
-        var m = this.model.el;
-        
-        var miter = node.listeners.map_iterator();
-        
-        while(miter.next()) {
-            m.append(out iter,null);
-            
-            this.updateIter(iter,  "listener", miter.get_key(), miter.get_value());
-            
-             
-         }
-         
-          
-        miter = node.props.map_iterator();
-        
-        
-       while(miter.next()) {
-            m.append(out iter,null);
-             this.updateIter(iter,  "prop", miter.get_key(), miter.get_value());
-             
-       }
-       print("clear selection\n");
-       // clear selection?
-       this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
-       
-       this.view.el.get_selection().unselect_all();
-       
-       
-       
-    },
-    before_edit : ()
-    {
-    
-        print("before edit - stop editing\n");
-        
-      // these do not appear to trigger save...
-        _this.keyrender.el.stop_editing(false);
-        _this.keyrender.el.editable  =false;
-    
-        _this.valrender.el.stop_editing(false);
-        _this.valrender.el.editable  =false;    
-        
-        
-    // technicall stop the popup editor..
-    
-    },
-    xtype : "VBox",
-    finish_editing : () {
-         // 
-        this.before_edit();
-    },
-    file : "",
-    stop_editor : "()",
-    show_editor : "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
-    changed : "()",
+    id : "LeftProps",
     keyFormat : (string val, string type) {
         
         // Glib.markup_escape_text(val);
@@ -258,8 +144,6 @@ WindowLeftProps=new XObject({
         
     
     },
-    xns : Gtk,
-    show_add_props : "(string type)",
     startEditingValue : ( Gtk.TreePath path) {
     
         // ONLY return true if editing is allowed - eg. combo..
@@ -300,13 +184,25 @@ WindowLeftProps=new XObject({
                
                 
                 var use_textarea = false;
+    
+                //------------ things that require the text editor...
                 
                 if (type == "listener") {
                     use_textarea = true;
                 }
-                if (key.length > 0 && (key[0] == '$' || key[0] == '|') ) {
+    
+                if (key.length > 0 && key[0] == '$') {
                     use_textarea = true;
                 }
+                if (key.length > 0 && key == "* init") {
+                    use_textarea = true;
+                }
+                if (val.length > 40) { // long value...
+                    use_textarea = true;
+                }
+                
+                
+                
                 if (use_textarea) {
                     print("Call show editor\n");
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
@@ -379,6 +275,10 @@ WindowLeftProps=new XObject({
                 });
                 return false;
             },
+    xtype : "VBox",
+    file : "",
+    stop_editor : "()",
+    show_editor : "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
     deleteSelected : () {
         
             Gtk.TreeIter iter;
@@ -408,7 +308,102 @@ WindowLeftProps=new XObject({
             
             _this.changed();
     },
-    homogeneous : false,
+    load : (JsRender.JsRender file, JsRender.Node? node) 
+    {
+        print("load leftprops\n");
+        this.before_edit();
+        this.node = node;
+        this.file = file;
+        
+     
+        this.model.el.clear();
+                  
+        //this.get('/RightEditor').el.hide();
+        if (node ==null) {
+            return ;
+        }
+         
+        
+    
+        //var provider = this.get('/LeftTree').getPaleteProvider();
+        Gtk.TreeIter iter;
+        
+        //typeof(string),  // 0 key type
+         //typeof(string),  // 1 key
+         //typeof(string),  // 2 key (display)
+         //typeof(string),  // 3 value
+         //typeof(string),  // 4 value (display)
+         //typeof(string),  // 5 both (tooltip)
+        
+        
+        
+        
+        // really need a way to sort the hashmap...
+        var m = this.model.el;
+        
+        var miter = node.listeners.map_iterator();
+        
+        while(miter.next()) {
+            m.append(out iter,null);
+            
+            this.updateIter(iter,  "listener", miter.get_key(), miter.get_value());
+            
+             
+         }
+         
+          
+        miter = node.props.map_iterator();
+        
+        
+       while(miter.next()) {
+            m.append(out iter,null);
+             this.updateIter(iter,  "prop", miter.get_key(), miter.get_value());
+             
+       }
+       print("clear selection\n");
+       // clear selection?
+       this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
+       
+       this.view.el.get_selection().unselect_all();
+       
+       
+       
+    },
+    changed : "()",
+    keySortFormat : (string key) {
+        // listeners first - with 0
+        // specials
+        if (key[0] == '*') {
+            return "1 " + key;
+        }
+        // functions
+        
+        var bits = key.split(" ");
+        
+        if (key[0] == '|') {
+            return "2 " + bits[bits.length -1];
+        }
+        // signals
+        if (key[0] == '@') {
+            return "3 " + bits[bits.length -1];
+        }
+            
+        // props
+        if (key[0] == '#') {
+            return "4 " + bits[bits.length -1];
+        }
+        // the rest..
+        return "5 " + bits[bits.length -1];    
+    
+    
+    
+    },
+    finish_editing : () {
+         // 
+        this.before_edit();
+    },
+    xns : Gtk,
+    show_add_props : "(string type)",
     addProp : (string in_type, string key, string value, string value_type) {
           // info includes key, val, skel, etype..
           //console.dump(info);
@@ -473,6 +468,23 @@ WindowLeftProps=new XObject({
         
                   
     },
+    before_edit : ()
+    {
+    
+        print("before edit - stop editing\n");
+        
+      // these do not appear to trigger save...
+        _this.keyrender.el.stop_editing(false);
+        _this.keyrender.el.editable  =false;
+    
+        _this.valrender.el.stop_editing(false);
+        _this.valrender.el.editable  =false;    
+        
+        
+    // technicall stop the popup editor..
+    
+    },
+    homogeneous : false,
     node : "",
     items : [
     	{
@@ -500,8 +512,8 @@ WindowLeftProps=new XObject({
                             xns : Gtk,
                             items : [
                             	{
-                                    stock : Gtk.STOCK_ADD,
                                     xtype : "Image",
+                                    stock : Gtk.STOCK_ADD,
                                     xns : Gtk,
                                     icon_size : Gtk.IconSize.MENU
                                 },
@@ -642,8 +654,8 @@ WindowLeftProps=new XObject({
                     id : "view",
                     tooltip_column : 5,
                     xtype : "TreeView",
-                    enable_tree_lines : TRUE,
-                    headers_visible : TRUE,
+                    enable_tree_lines : true,
+                    headers_visible : true,
                     xns : Gtk,
                     listeners : {
                     	button_press_event : ( ev)  => {
@@ -714,6 +726,53 @@ WindowLeftProps=new XObject({
                     	       
                     	       
                     	       
+                    	       // currently editing???
+                    	   //    if (  this.activePath) {
+                    	           
+                    	        //   this.activePath = false;
+                    	          // stop editing!!!!
+                    	        /*
+                    	           if (this.get('/Editor').dirty) {
+                    	               //if (!this.get('/Editor.buffer').checkSyntax()) {
+                    	               //   this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                    	               //   return true;
+                    	               //    // error Dialog
+                    	               //}
+                    	               if (!this.get('/Editor.view').save()) {
+                    	                   return true;
+                    	               }
+                    	           }   
+                    	           */
+                    	           
+                    	           //this.EditProps.editableColumn.items[0].el.stop_editing();
+                    	           //this.EditProps.editing = false;
+                    	       
+                    	       //    XObject.error("Currently editing?");
+                    	        //   return false;
+                    	      // }
+                    	       
+                    	      // var renderer = this.valrender.el; // set has_entry..
+                    	       
+                    	       //var type = this.get('/LeftPanel.model').getType(res.path.to_string());
+                    	           
+                    	       // get options for this type -- this is to support option lists etc..
+                    	       //var provider = this.get('/LeftTree').getPaleteProvider();
+                    	       //var opts = provider.findOptions(type);
+                    	       
+                    	   //    if (opts === false) {
+                    	           // it's text etnry
+                    	   //         this.get('/LeftPanel').editableColumn.setOptions([]);
+                    	   //        renderer.has_entry = true;
+                    	   //    } else {
+                    	   //         this.get('/LeftPanel').editableColumn.setOptions(opts);
+                    	   //        renderer.has_entry = false;
+                    	   //    }
+                    	   
+                    	       // we need to set the selected row..
+                    	       
+                    	        //Gtk.TreePath path;
+                    	   
+                    	        ;
                     	      //             _this.before_edit(); <<< we really need to stop the other editor..
                     	        _this.keyrender.el.stop_editing(false);
                     	       _this.keyrender.el.editable  =false;
@@ -765,7 +824,7 @@ WindowLeftProps=new XObject({
                             id : "keycol",
                             title : "Name",
                             xtype : "TreeViewColumn",
-                            resizable : TRUE,
+                            resizable : true,
                             xns : Gtk,
                             items : [
                             	{
@@ -835,7 +894,7 @@ WindowLeftProps=new XObject({
                             id : "valcol",
                             title : "Value",
                             xtype : "TreeViewColumn",
-                            resizable : TRUE,
+                            resizable : true,
                             xns : Gtk,
                             items : [
                             	{
@@ -848,7 +907,10 @@ WindowLeftProps=new XObject({
                                     },
                                     id : "valrender",
                                     xtype : "CellRendererCombo",
-                                    editable : FALSE,
+                                    editable : false,
+                                    has_entry : true,
+                                    xns : Gtk,
+                                    text_column : 0,
                                     setOptions : (string[] ar) {
                                           var m = _this.valrendermodel.el;
                                             m.clear();
@@ -859,9 +921,6 @@ WindowLeftProps=new XObject({
                                         }
                                     
                                     },
-                                    has_entry : TRUE,
-                                    xns : Gtk,
-                                    text_column : 0,
                                     listeners : {
                                     	editing_started : ( editable, path) => {
                                     	       //_this.editing = true;

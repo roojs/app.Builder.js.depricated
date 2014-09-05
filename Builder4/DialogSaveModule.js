@@ -11,8 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveModule=new XObject({
     default_width : 400,
-    project : "",
-    xtype : "Dialog",
     show : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
@@ -63,15 +61,16 @@ DialogSaveModule=new XObject({
         
         
     },
+    project : "",
+    xtype : "Dialog",
     default_height : 200,
-    modal : true,
+    modal : TRUE,
     data : "",
     xns : Gtk,
     listeners : {
     	delete_event : (self, event) => {
     	       this.el.response(Gtk.ResponseType.CANCEL);
     	       return true;
-    	       //test
     	   }
     },
     items : [

@@ -37,7 +37,7 @@ public class Xcls_DialogNewComponent : Object
         this.el.title = "New Component";
         this.el.default_height = 200;
         this.el.default_width = 500;
-        this.el.deletable = false;
+        this.el.deletable = true;
         this.el.modal = true;
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
@@ -151,7 +151,15 @@ public class Xcls_DialogNewComponent : Object
     }
 
     // user defined functions 
-    public  void show (JsRender.JsRender c) 
+    public   void updateFileFromEntry () {
+    
+            _this.file.title = _this.title.el.get_text();
+            _this.file.region = _this.region.el.get_text();            
+            _this.file.parent = _this.parent.el.get_text();                        
+            _this.file.permname = _this.permname.el.get_text();                                    
+            _this.file.modOrder = _this.modOrder.el.get_text();                                                
+    }
+    public   void show (JsRender.JsRender c) 
     {
         this.project = c.project;
         
@@ -179,14 +187,6 @@ public class Xcls_DialogNewComponent : Object
         //this.success = c.success;
         
         
-    }
-    public  void updateFileFromEntry () {
-    
-            _this.file.title = _this.title.el.get_text();
-            _this.file.region = _this.region.el.get_text();            
-            _this.file.parent = _this.parent.el.get_text();                        
-            _this.file.permname = _this.permname.el.get_text();                                    
-            _this.file.modOrder = _this.modOrder.el.get_text();                                                
     }
     public class Xcls_VBox2 : Object 
     {

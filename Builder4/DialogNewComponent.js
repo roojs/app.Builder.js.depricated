@@ -10,6 +10,21 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogNewComponent=new XObject({
+    updateFileFromEntry : () {
+    
+            _this.file.title = _this.title.el.get_text();
+            _this.file.region = _this.region.el.get_text();            
+            _this.file.parent = _this.parent.el.get_text();                        
+            _this.file.permname = _this.permname.el.get_text();                                    
+            _this.file.modOrder = _this.modOrder.el.get_text();                                                
+    },
+    success : "(Project.Project pr, JsRender.JsRender file)",
+    id : "DialogNewComponent",
+    default_width : 500,
+    deletable : TRUE,
+    project : "",
+    title : "New Component",
+    xtype : "Dialog",
     show : (JsRender.JsRender c) 
     {
         this.project = c.project;
@@ -39,21 +54,6 @@ DialogNewComponent=new XObject({
         
         
     },
-    id : "DialogNewComponent",
-    success : "(Project.Project pr, JsRender.JsRender file)",
-    default_width : 500,
-    deletable : FALSE,
-    updateFileFromEntry : () {
-    
-            _this.file.title = _this.title.el.get_text();
-            _this.file.region = _this.region.el.get_text();            
-            _this.file.parent = _this.parent.el.get_text();                        
-            _this.file.permname = _this.permname.el.get_text();                                    
-            _this.file.modOrder = _this.modOrder.el.get_text();                                                
-    },
-    project : "",
-    title : "New Component",
-    xtype : "Dialog",
     file : "null",
     default_height : 200,
     modal : TRUE,
@@ -202,8 +202,8 @@ DialogNewComponent=new XObject({
                         },
                     	{
                             label : "Region",
-                            visible : TRUE,
                             tooltip_text : "center, north, south, east, west",
+                            visible : TRUE,
                             xalign : 0.900000,
                             xtype : "Label",
                             justify : Gtk.Justification.RIGHT,

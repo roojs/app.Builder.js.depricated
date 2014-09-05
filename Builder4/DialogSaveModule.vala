@@ -1,14 +1,14 @@
-static Xcls_DialogSaveModule  _DialogSaveModule;
+static DialogSaveModule  _DialogSaveModule;
 
-public class Xcls_DialogSaveModule : Object 
+public class DialogSaveModule : Object 
 {
     public Gtk.Dialog el;
-    private Xcls_DialogSaveModule  _this;
+    private DialogSaveModule  _this;
 
-    public static Xcls_DialogSaveModule singleton()
+    public static DialogSaveModule singleton()
     {
         if (_DialogSaveModule == null) {
-            _DialogSaveModule= new Xcls_DialogSaveModule();
+            _DialogSaveModule= new DialogSaveModule();
         }
         return _DialogSaveModule;
     }
@@ -19,7 +19,7 @@ public class Xcls_DialogSaveModule : Object
     public JsRender.Node data;
 
     // ctor 
-    public Xcls_DialogSaveModule()
+    public DialogSaveModule()
     {
         _this = this;
         this.el = new Gtk.Dialog();
@@ -44,12 +44,11 @@ public class Xcls_DialogSaveModule : Object
         this.el.delete_event.connect( (self, event) => {
             this.el.response(Gtk.ResponseType.CANCEL);
             return true;
-            //test
         });
     }
 
     // user defined functions 
-    public string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
+    public  string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
         this.el.set_transient_for(parent);
@@ -102,13 +101,13 @@ public class Xcls_DialogSaveModule : Object
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
-        private Xcls_DialogSaveModule  _this;
+        private DialogSaveModule  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox2(Xcls_DialogSaveModule _owner )
+        public Xcls_HBox2(DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -129,13 +128,13 @@ public class Xcls_DialogSaveModule : Object
     public class Xcls_Label3 : Object 
     {
         public Gtk.Label el;
-        private Xcls_DialogSaveModule  _this;
+        private DialogSaveModule  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Label3(Xcls_DialogSaveModule _owner )
+        public Xcls_Label3(DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Name" );
@@ -150,13 +149,13 @@ public class Xcls_DialogSaveModule : Object
     public class Xcls_name : Object 
     {
         public Gtk.Entry el;
-        private Xcls_DialogSaveModule  _this;
+        private DialogSaveModule  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_name(Xcls_DialogSaveModule _owner )
+        public Xcls_name(DialogSaveModule _owner )
         {
             _this = _owner;
             _this.name = this;
@@ -172,13 +171,13 @@ public class Xcls_DialogSaveModule : Object
     public class Xcls_Button5 : Object 
     {
         public Gtk.Button el;
-        private Xcls_DialogSaveModule  _this;
+        private DialogSaveModule  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Button5(Xcls_DialogSaveModule _owner )
+        public Xcls_Button5(DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -194,13 +193,13 @@ public class Xcls_DialogSaveModule : Object
     public class Xcls_Button6 : Object 
     {
         public Gtk.Button el;
-        private Xcls_DialogSaveModule  _this;
+        private DialogSaveModule  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Button6(Xcls_DialogSaveModule _owner )
+        public Xcls_Button6(DialogSaveModule _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();

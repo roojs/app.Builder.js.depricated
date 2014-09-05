@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/MainWindow.vala  -o /tmp/MainWindow
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_MainWindow();
-    MainWindow.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_MainWindow  MainWindow;
+static Xcls_MainWindow  _MainWindow;
 
 public class Xcls_MainWindow : Object 
 {
@@ -24,10 +7,10 @@ public class Xcls_MainWindow : Object
 
     public static Xcls_MainWindow singleton()
     {
-        if (MainWindow == null) {
-            MainWindow= new Xcls_MainWindow();
+        if (_MainWindow == null) {
+            _MainWindow= new Xcls_MainWindow();
         }
-        return MainWindow;
+        return _MainWindow;
     }
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
@@ -54,44 +37,44 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
 
-        // my vars
+        // my vars (def)
     public Project.Project project;
-    public Xcls_ClutterFiles clutterfiles;
-    public Xcls_DialogNewComponent new_file_dialog;
-    public Xcls_Editor code_editor;
-    public Xcls_GladeView window_gladeview;
-    public Xcls_LeftProps left_props;
-    public Xcls_ProjectSettings projectsettings;
-    public Xcls_RightPalete rightpalete;
-    public Xcls_WindowAddProp add_props;
-    public Xcls_WindowLeftProjects left_projects;
-    public Xcls_WindowLeftTree left_tree;
-    public Xcls_WindowRooView window_rooview;
     public bool children_loaded;
+    public Xcls_WindowLeftProjects left_projects;
+    public Xcls_WindowRooView window_rooview;
+    public Xcls_Editor code_editor;
+    public Xcls_WindowLeftTree left_tree;
+    public Xcls_DialogNewComponent new_file_dialog;
+    public Xcls_ProjectSettings projectsettings;
+    public Xcls_ClutterFiles clutterfiles;
+    public Xcls_LeftProps left_props;
     public string state;
+    public Xcls_RightPalete rightpalete;
     public string title;
+    public Xcls_WindowAddProp add_props;
+    public Xcls_GladeView window_gladeview;
 
-        // ctor 
+    // ctor 
     public Xcls_MainWindow()
     {
         _this = this;
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
-        // my vars
+        // my vars (dec)
         this.project = null;
-        this.clutterfiles = null;
-        this.new_file_dialog = null;
-        this.code_editor = null;
-        this.window_gladeview = null;
-        this.left_props = null;
-        this.projectsettings = null;
-        this.rightpalete = null;
-        this.add_props = null;
-        this.left_projects = null;
-        this.left_tree = null;
-        this.window_rooview = null;
         this.children_loaded = false;
+        this.left_projects = null;
+        this.window_rooview = null;
+        this.code_editor = null;
+        this.left_tree = null;
+        this.new_file_dialog = null;
+        this.projectsettings = null;
+        this.clutterfiles = null;
+        this.left_props = null;
+        this.rightpalete = null;
         this.title = "Application Builder";
+        this.add_props = null;
+        this.window_gladeview = null;
 
         // set gobject values
         this.el.border_width = 0;
@@ -102,359 +85,313 @@ public class Xcls_MainWindow : Object
         this.el.add (  child_0.el  );
 
         // init method 
-         this.state = "files";
+
+        this.state = "files";
         	  
             //this.el.show_all();
-            
-            
-
         // listeners 
-        this.el.show.connect(   ( ) => {
+        this.el.delete_event.connect( (   event) => {
+            return false;
+        });
+        this.el.destroy.connect( () =>  {
+         Gtk.main_quit();
+        });
+        this.el.show.connect( ( ) => {
             // hide the file editing..
            
             //this.hideViewEditing();
-        } );
-        this.el.delete_event.connect(   (   event) => {
-            return false;
-        } );
-        this.el.destroy.connect( () =>  {
-         Gtk.main_quit();
-        } );
+        });
     }
 
-    // userdefined functions 
-    public void hideAddListener() {
-              _this.backbutton.el.hide();
-             _this.projectbutton.el.show(); 
-                  _this.projecteditbutton.el.show();
-                 _this.editfilebutton.el.show();   
-             _this.addpropsview.el.save_easing_state();
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-            _this.addpropsview.el.set_scale(0.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-             _this.addpropsview.el.restore_easing_state();  
-          }
-    public void hideAddProp() {
-              _this.backbutton.el.hide();
-             _this.projectbutton.el.show(); 
-                  _this.projecteditbutton.el.show();
-                 _this.editfilebutton.el.show();   
-             _this.addpropsview.el.save_easing_state();
-             
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-            _this.addpropsview.el.set_scale(0.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-             _this.addpropsview.el.restore_easing_state();  
-         }
-    public void hideCodeEdit() {
-            //this.code_editor.saveContents();
-             _this.backbutton.el.hide();
-              _this.projectbutton.el.show(); 
-               _this.projecteditbutton.el.show();
-               _this.editfilebutton.el.show();   
-             _this.codeeditview.el.save_easing_state();
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-            _this.codeeditview.el.set_scale(0.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-             _this.codeeditview.el.restore_easing_state();  
-         }
-    public void hideObject() {
-              // return to editing state..
-               
-                  _this.projecteditbutton.el.show();
-              _this.backbutton.el.hide();
-             _this.projectbutton.el.show(); 
-                 _this.editfilebutton.el.show();   
-             _this.objectview.el.save_easing_state();
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-            _this.objectview.el.set_scale(0.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-             _this.objectview.el.restore_easing_state();  
-         
-        
-        }
-    public void hideProjectEdit () {
-            // return to editing state..
-               
-              _this.projectbutton.el.show();
-             _this.projecteditbutton.el.show();
-              _this.backbutton.el.hide();
-                 _this.editfilebutton.el.show();   
-             
-            //this.rooview.el.hide();
-             //this.edit_project.el.show();
-                _this.projecteditview.el.save_easing_state();
-            var el = _this.rooview.el;
-            el.save_easing_state();
-        
-            
-            el.set_scale(1.0f,1.0f);
-               _this.projecteditview.el.set_scale(1.0f,0.0f);
-            _this.state = "edit";
-        
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-              _this.projecteditview.el.restore_easing_state();  
-          
-        }
-    public void hideViewEditing  ( )   {
-        
-        // show the file navigation...
-          
-            if (this.left_tree.getActiveFile() != null) {
-                 if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                     this.window_rooview.createThumb();
-                 } else {
-                      this.window_gladeview.createThumb();
-                  }
-              }
-              
-            _this.addprojectbutton.el.show();   
-            _this.addfilebutton.el.show();       
-              _this.backbutton.el.show();
-            _this.delprojectbutton.el.show();
-            
-              _this.editfilebutton.el.hide();   
-              _this.projectbutton.el.hide();         
-              _this.projecteditbutton.el.hide();
-              _this.objectshowbutton.el.hide();
-              _this.addpropbutton.el.hide();      
-              _this.addlistenerbutton.el.hide();  
-        
-        
-        
-        
-                  
-            // show the add file button..
-            
-                  
-              
-             this.editpane.el.hide();
-            //this.rooview.el.hide();
-             this.left_projects.el.show();
-            
-            var el = _this.rooview.el;
-            el.save_easing_state();
-              el.set_easing_duration(1000);
-            // show project / file view..
-            //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
-            //_this.mainpane.el.set_position(0);
-            // rotate y 180..
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-            el.set_scale(0.0f,0.0f);
+    // user defined functions 
+    public     void hideObject () {
+          // return to editing state..
            
-                _this.state = "files";
-            if (_this.project != null) {
-                _this.left_projects.selectProject(_this.project);
-                }
-            //_this.clutterfiles.loadProject(_this.project);
+              _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+             _this.editfilebutton.el.show();   
+         _this.objectview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
         
-            el.restore_easing_state();
-                
-            print("show view browsing");
+        el.set_scale(1.0f,1.0f);
+        _this.objectview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.objectview.el.restore_easing_state();  
+     
+    
+    }
+    public     void show () {
+        this.left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+        this.el.show_all();
+    
+    }
+    public     void showAddProp () {
+    
+         
+         var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
         }
-    public void initChildren () {
-            // this needs putting in a better place..
+         _this.backbutton.el.show();
+           _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+         
+         
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "props",
+            ae.fqn()
+        );
+    
+        _this.addpropsview.el.save_easing_state();
             
-            print("init children");
-            this.left_tree = new Xcls_WindowLeftTree();
-            this.left_tree.ref();
-            this.tree.el.pack_start(this.left_tree.el,true, true,0);
-            this.left_tree.el.show_all();
-           
-            this.left_tree.before_node_change.connect(() => {
-                if (this.state != "codeedit") {
-                    this.left_props.finish_editing();
-                    return true;
-                }
-                if (!this.code_editor.saveContents()) {
-                    return false;
-                }
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("addprop");
+         
+         
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addprop";
+    }
+    public     void showProjectEdit () {
+        // make the browser smaller, and show the edit dialog
+        
+        
+         _this.projectbutton.el.hide();
+         _this.projecteditbutton.el.hide();
+         
+         _this.editfilebutton.el.hide();
+         
+        
+         
+         
+         _this.backbutton.el.show();
+         
+        //this.rooview.el.hide();
+        this.projectsettings.el.show_all();
+        this.projectsettings.show(this.project);
+        _this.projecteditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        _this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+        _this.state = "projectedit";
+         
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.projecteditview.el.restore_easing_state();
+      //  print("show view browsing");
+        
+    }
+    public     void showAddListener () {
+    
+         
+         
+        var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         
+       _this.backbutton.el.show();
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+        
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "signals",
+            ae.fqn()
+        );
+        //this.rightpalete.show(this.project);
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+          _this.clutterembed.setSizesAlloc("addlistener");
+    
+        
+      
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addlistener";
+    }
+    public     void setTitle (string str) {
+        this.el.set_title(this.title + " - " + str);
+    }
+    public     void initChildren () {
+        // this needs putting in a better place..
+        
+        print("init children");
+        this.left_tree = new Xcls_WindowLeftTree();
+        this.left_tree.ref();
+        this.tree.el.pack_start(this.left_tree.el,true, true,0);
+        this.left_tree.el.show_all();
+       
+        this.left_tree.before_node_change.connect(() => {
+            if (this.state != "codeedit") {
+                this.left_props.finish_editing();
+                return true;
+            }
+            if (!this.code_editor.saveContents()) {
                 return false;
+            }
+            return false;
+        
+        });
+        
+        this.left_tree.node_selected.connect((sel) => {
             
-            });
+            print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
             
-            this.left_tree.node_selected.connect((sel) => {
-                
-                print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
-                
-                if (sel == null) {
-                    this.left_props.el.hide();
-                } 
-                this.left_props.el.show();
-                this.left_props.load(this.left_tree.getActiveFile(), sel);
-                switch (this.state) {
-                    case "object": 
-                          
-                         if (sel == null) {
-                            this.rightpalete.clear();
-                            break;
-                        }
-                        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
+            if (sel == null) {
+                this.left_props.el.hide();
+            } 
+            this.left_props.el.show();
+            this.left_props.load(this.left_tree.getActiveFile(), sel);
+            switch (this.state) {
+                case "object": 
+                      
+                     if (sel == null) {
+                        this.rightpalete.clear();
                         break;
-                         
-                        
-                   case "addprop":
-                        if (sel == null) {
-                            this.add_props.clear();
-                            break;
-                        }
-                        this.add_props.show(_this.left_tree.getActiveFile().palete(), "props", sel.fqn());
-                        break;
-                        
-                   case "addlistener":
-                        if (sel == null) {
-                            this.add_props.clear();
-                            break;
-                        }
-                        this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
-                        break;
-        
-                   case "codeedit":
-                       
-                        this.hideCodeEdit();
-                        break;
-                       
-                                        
-                }
-                return  ;
-                  
-            });
-            
-             this.left_tree.changed.connect(() => {
-               this.window_rooview.requestRedraw();
-               this.left_tree.model.file.save();
-            });
-             
-            
-        
-            // left properties
-        
-            this.left_props =new Xcls_LeftProps();
-            this.left_props.ref();
-            this.props.el.pack_start(this.left_props.el,true, true,0);
-            this.left_props.el.show_all();
-            
-            this.left_props.show_editor.connect( (file, node, type,  key) => {
-                this.showCodeEdit(node, type,  key);
-            });
-            this.left_props.stop_editor.connect( () => {
-                if (this.state != "codeedit") {
-                    return true;
-                }
-            
-                var ret =  this.code_editor.saveContents();
-                if (!ret) {
-                    return false;
-                }
-                this.hideCodeEdit();
-                return ret;
-            });
-             this.left_props.changed.connect(() => {
-                  if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                       this.window_rooview.requestRedraw();
-                       
-                   } else {
-                      this.window_gladeview.loadFile(this.left_tree.getActiveFile());
-                  }
-                  this.left_tree.model.file.save();
-            });
-            
-        
-        
-        
-            // left projects..
-             this.left_projects = new Xcls_WindowLeftProjects();
-             this.left_projects.ref();
-             this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
-             this.left_projects.el.show_all();
-             this.left_projects.project_selected.connect((proj) => {
-                proj.scanDirs();
-                _this.clutterfiles.loadProject(proj);
-            
-             });
-            
-           
-            // project edit..
-            this.projectsettings  =new Xcls_ProjectSettings();
-            this.projectsettings.ref();  /// really?
-            ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
-            //this.projectsettings.el.show_all();
-        
-            var stage = _this.projecteditview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            
-             this.projectsettings.buttonPressed.connect((btn) => {
-                 if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                 
-                    if (btn == "save") {
-                         _this.window_rooview.view.renderJS(true);
                     }
-                    if (btn == "apply") {
-                        _this.window_rooview.view.renderJS(true);
-                        return;
+                    this.rightpalete.load(_this.left_tree.getActiveFile().palete(), sel.fqn());
+                    break;
+                     
+                    
+               case "addprop":
+                    if (sel == null) {
+                        this.add_props.clear();
+                        break;
                     }
-                } else {
-                    // do nothing for gtk..
-                }
-                if (btn == "save" || btn == "apply") {
-                    _this.project.save();
+                    this.add_props.show(_this.left_tree.getActiveFile().palete(), "props", sel.fqn());
+                    break;
+                    
+               case "addlistener":
+                    if (sel == null) {
+                        this.add_props.clear();
+                        break;
+                    }
+                    this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
+                    break;
+    
+               case "codeedit":
+                   
+                    this.hideCodeEdit();
+                    break;
+                   
+                                    
+            }
+            return  ;
+              
+        });
+        
+         this.left_tree.changed.connect(() => {
+           this.window_rooview.requestRedraw();
+           this.left_tree.model.file.save();
+        });
          
-                }
-                
-                this.hideProjectEdit();
-                 
-             });
-            
-            
-            // objects (palate..)
-            this.rightpalete  = new Xcls_RightPalete();
-            this.rightpalete.ref();  /// really?
-            ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
-            //this.projectsettings.el.show_all();
         
-            stage = _this.objectview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            
-            /*this.projectsettings.buttonPressed.connect((btn) => {
+    
+        // left properties
+    
+        this.left_props =new Xcls_LeftProps();
+        this.left_props.ref();
+        this.props.el.pack_start(this.left_props.el,true, true,0);
+        this.left_props.el.show_all();
+        
+        this.left_props.show_editor.connect( (file, node, type,  key) => {
+            this.showCodeEdit(node, type,  key);
+        });
+        this.left_props.stop_editor.connect( () => {
+            if (this.state != "codeedit") {
+                return true;
+            }
+        
+            var ret =  this.code_editor.saveContents();
+            if (!ret) {
+                return false;
+            }
+            this.hideCodeEdit();
+            return ret;
+        });
+         this.left_props.changed.connect(() => {
+              if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                   this.window_rooview.requestRedraw();
+                   
+               } else {
+                  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
+              }
+              this.left_tree.model.file.save();
+        });
+        
+    
+    
+    
+        // left projects..
+         this.left_projects = new Xcls_WindowLeftProjects();
+         this.left_projects.ref();
+         this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
+         this.left_projects.el.show_all();
+         this.left_projects.project_selected.connect((proj) => {
+            proj.scanDirs();
+            _this.clutterfiles.loadProject(proj);
+        
+         });
+        
+       
+        // project edit..
+        this.projectsettings  =new Xcls_ProjectSettings();
+        this.projectsettings.ref();  /// really?
+        ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
+        //this.projectsettings.el.show_all();
+    
+        var stage = _this.projecteditview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+         this.projectsettings.buttonPressed.connect((btn) => {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+             
                 if (btn == "save") {
                      _this.window_rooview.view.renderJS(true);
                 }
@@ -462,413 +399,455 @@ public class Xcls_MainWindow : Object
                     _this.window_rooview.view.renderJS(true);
                     return;
                 }
-                this.hideProjectEdit();
-                 
-             });
-            */
+            } else {
+                // do nothing for gtk..
+            }
+            if (btn == "save" || btn == "apply") {
+                _this.project.save();
+     
+            }
             
-            
-              
-            // Add properties
-            this.add_props  = new Xcls_WindowAddProp();
-            this.add_props.ref();  /// really?
-            ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
-            //this.projectsettings.el.show_all();
-        
-            stage = _this.addpropsview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            
-            
-            _this.add_props.select.connect( (key,type,skel, etype) => {
-                this.left_props.addProp(etype, key, skel, type);
-            });
-            
-            // editor
-            
-            
-            this.code_editor  = new Xcls_Editor();
-            this.code_editor.ref();  /// really?
-            ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);
-            //this.projectsettings.el.show_all();
-        
-            stage = _this.codeeditview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            // editor.save...
-        
-            _this.code_editor.save.connect( () => {
-                this.left_tree.model.file.save();
-            });
-            
+            this.hideProjectEdit();
              
-            
-            
-            //  roo view
-            
-             this.window_rooview  =new Xcls_WindowRooView();
-            this.window_rooview.ref();
-            ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
-            this.window_rooview.el.show_all();
-        
-            stage = _this.rooview.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            
-              
-            //  glade view
-            
-            this.window_gladeview  =new Xcls_GladeView();
-            this.window_gladeview.ref();
-        
-            //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
-            ///this.window_gladeview.el.hide();
-        
-           
-            
-            // clutter files
-            
-            
-            this.clutterfiles = new Xcls_ClutterFiles();
-            this.clutterfiles.ref();
-            stage.add_child(this.clutterfiles.el);
-            this.clutterfiles.el.show_all();
+         });
         
         
-            this.clutterfiles.open.connect((file) => { 
-                _this.project = file.project;
-                _this.showViewEditing();
-                this.left_tree.model.loadFile(file);
-                var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
-                if (file.xtype == "Roo" ) { 
-                    ctr.foreach( (w) => { ctr.remove(w); });
-                    ctr.add(this.window_rooview.el);
-                    this.window_rooview.loadFile(file);
-                    
-                    this.window_rooview.el.show_all();
-                } else {
-                    ctr.foreach( (w) => { ctr.remove(w); });
-                    ctr.add(this.window_gladeview.el);
-                    this.window_gladeview.loadFile(file);
-                    this.window_gladeview.el.show_all();
-                }
-                print("OPEN : " + file.name);
+        // objects (palate..)
+        this.rightpalete  = new Xcls_RightPalete();
+        this.rightpalete.ref();  /// really?
+        ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
+        //this.projectsettings.el.show_all();
+    
+        stage = _this.objectview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
         
-            });
-        
-            // new file dialog
-            this.new_file_dialog = new Xcls_DialogNewComponent();
-            // force it modal to the main window..
-            this.new_file_dialog.el.set_transient_for(this.el);
-            this.new_file_dialog.el.set_modal(true);
-            
-            this.new_file_dialog.success.connect((project,file) =>
-            {
-                _this.project = project;
-                _this.showViewEditing();
-                this.left_tree.model.loadFile(file);
-                var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
-                if (file.xtype == "Roo" ) { 
-                    ctr.foreach( (w) => { ctr.remove(w); });
-                    ctr.add(this.window_rooview.el);
-                    this.window_rooview.loadFile(file);
-                    
-                    this.window_rooview.el.show_all();
-                } else {
-                    ctr.foreach( (w) => { ctr.remove(w); });
-                    ctr.add(this.window_gladeview.el);
-                    this.window_gladeview.loadFile(file);
-                    this.window_gladeview.el.show_all();
-                }
-            
-            });
-            
-             
-        
-            //w.el.show_all();
-            var tl = new Clutter.Timeline(6000);
-            tl.set_repeat_count(-1);
-            tl.start();
-            tl.ref();
-        
-            this.children_loaded = true;
-        
-        
-        
-        
-        }
-    public void setTitle (string str) {
-            this.el.set_title(this.title + " - " + str);
-        }
-    public void show() {
-            this.left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-            this.el.show_all();
-        
-        }
-    public void showAddListener() {
-        
-             
-             
-            var ae =      this.left_tree.getActiveElement();
-            if (ae == null) {
+        /*this.projectsettings.buttonPressed.connect((btn) => {
+            if (btn == "save") {
+                 _this.window_rooview.view.renderJS(true);
+            }
+            if (btn == "apply") {
+                _this.window_rooview.view.renderJS(true);
                 return;
             }
+            this.hideProjectEdit();
              
-           _this.backbutton.el.show();
-            _this.projectbutton.el.hide();
-            _this.editfilebutton.el.hide();
-            _this.projecteditbutton.el.hide();    
-            
-            
-            //this.rooview.el.hide();
-            this.add_props.el.show_all();
-            this.add_props.show(
-                Palete.factory(this.project.xtype), 
-                "signals",
-                ae.fqn()
-            );
-            //this.rightpalete.show(this.project);
+         });
+        */
         
-            _this.addpropsview.el.save_easing_state();
-                
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            
-            el.set_scale(0.5f,0.5f);
         
-            _this.addpropsview.el.set_scale(1.0f,1.0f);
-           
-           
+          
+        // Add properties
+        this.add_props  = new Xcls_WindowAddProp();
+        this.add_props.ref();  /// really?
+        ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
+        //this.projectsettings.el.show_all();
+    
+        stage = _this.addpropsview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+        
+        _this.add_props.select.connect( (key,type,skel, etype) => {
+            this.left_props.addProp(etype, key, skel, type);
+        });
+        
+        // editor
+        
+        
+        this.code_editor  = new Xcls_Editor();
+        this.code_editor.ref();  /// really?
+        ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);
+        //this.projectsettings.el.show_all();
+    
+        stage = _this.codeeditview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        // editor.save...
+    
+        _this.code_editor.save.connect( () => {
+            this.left_tree.model.file.save();
+        });
+        
          
-            //_this.clutterfiles.loadProject(_this.project);
         
-            el.restore_easing_state();
-            _this.addpropsview.el.restore_easing_state();
-            this.state = "addlistener";
-        }
-    public void showAddProp() {
         
-             
-             var ae =      this.left_tree.getActiveElement();
-            if (ae == null) {
-                return;
+        //  roo view
+        
+         this.window_rooview  =new Xcls_WindowRooView();
+        this.window_rooview.ref();
+        ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+        this.window_rooview.el.show_all();
+    
+        stage = _this.rooview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+          
+        //  glade view
+        
+        this.window_gladeview  =new Xcls_GladeView();
+        this.window_gladeview.ref();
+    
+        //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
+        ///this.window_gladeview.el.hide();
+    
+       
+        
+        // clutter files
+        
+        
+        this.clutterfiles = new Xcls_ClutterFiles();
+        this.clutterfiles.ref();
+        stage.add_child(this.clutterfiles.el);
+        this.clutterfiles.el.show_all();
+    
+    
+        this.clutterfiles.open.connect((file) => { 
+            _this.project = file.project;
+            _this.showViewEditing();
+            this.left_tree.model.loadFile(file);
+            var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
+            if (file.xtype == "Roo" ) { 
+                ctr.foreach( (w) => { ctr.remove(w); });
+                ctr.add(this.window_rooview.el);
+                this.window_rooview.loadFile(file);
+                
+                this.window_rooview.el.show_all();
+            } else {
+                ctr.foreach( (w) => { ctr.remove(w); });
+                ctr.add(this.window_gladeview.el);
+                this.window_gladeview.loadFile(file);
+                this.window_gladeview.el.show_all();
             }
-             _this.backbutton.el.show();
-               _this.projectbutton.el.hide();
-            _this.editfilebutton.el.hide();
-            _this.projecteditbutton.el.hide();    
-            
-             
-             
-            //this.rooview.el.hide();
-            this.add_props.el.show_all();
-            this.add_props.show(
-                Palete.factory(this.project.xtype), 
-                "props",
-                ae.fqn()
-            );
+            print("OPEN : " + file.name);
+    
+        });
+    
+        // new file dialog
+        this.new_file_dialog = new Xcls_DialogNewComponent();
+        // force it modal to the main window..
+        this.new_file_dialog.el.set_transient_for(this.el);
+        this.new_file_dialog.el.set_modal(true);
         
-            _this.addpropsview.el.save_easing_state();
-                
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            
-            el.set_scale(0.5f,0.5f);
-        
-            _this.addpropsview.el.set_scale(1.0f,1.0f);
-           
-           
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-            _this.addpropsview.el.restore_easing_state();
-            this.state = "addprop";
-        }
-    public void showCodeEdit(JsRender.Node node, string ptype, string key)
+        this.new_file_dialog.success.connect((project,file) =>
         {
-            // this is a bit different,
-            // it's not called via a button - but triggered by the prop edit class signal.
-            // so it has to hide any other state..
-            
-            switch(this.state) {
-                case "object":
-                    this.hideObject();
-                    break;
-                case "addprop":
-                    this.hideAddProp();
-                    break;
-                case "addlistener":
-                    this.hideAddListener();
-                    break;
-            }
-         
-           _this.backbutton.el.show();
-           
-            _this.projectbutton.el.hide();
-            _this.editfilebutton.el.hide();
-            _this.projecteditbutton.el.hide();    
-           // more?? 
-             
-            //this.rooview.el.hide();
-            this.code_editor.el.show_all();
-            this.code_editor.show(
-                node,
-                ptype,
-                key
-            );
-        
-            _this.codeeditview.el.save_easing_state();
+            _this.project = project;
+            _this.showViewEditing();
+            this.left_tree.model.loadFile(file);
+            var ctr= ((Gtk.Container)(this.rooview.el.get_widget()));
+            if (file.xtype == "Roo" ) { 
+                ctr.foreach( (w) => { ctr.remove(w); });
+                ctr.add(this.window_rooview.el);
+                this.window_rooview.loadFile(file);
                 
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            
-            el.set_scale(0.5f,0.5f);
-        
-            _this.codeeditview.el.set_scale(1.0f,1.0f);
-           
-           
-         
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-            _this.codeeditview.el.restore_easing_state();
-            this.state = "codeedit";
-        }
-    public void showObject() {
-        
-             
-            // what's the active node on the left hand side..
-            
-            var n = _this.left_tree.getActiveElement();
-        
-            if (_this.left_tree.model.file == null) {
-                return;
+                this.window_rooview.el.show_all();
+            } else {
+                ctr.foreach( (w) => { ctr.remove(w); });
+                ctr.add(this.window_gladeview.el);
+                this.window_gladeview.loadFile(file);
+                this.window_gladeview.el.show_all();
             }
-            
-            if (n == null && _this.left_tree.model.file.tree != null) {
-                return;
-            }
-            
-             _this.backbutton.el.show();
-               _this.projectbutton.el.hide();
-            _this.editfilebutton.el.hide();
-            _this.projecteditbutton.el.hide();    
-            
-             
-            //this.rooview.el.hide();
-            this.rightpalete.el.show_all();
-            this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
         
-            
-            //this.rightpalete.show(this.project);
+        });
         
-            _this.objectview.el.save_easing_state();
-                
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            
-            el.set_scale(0.5f,0.5f);
-        
-            _this.objectview.el.set_scale(1.0f,1.0f);
-           
-           
          
-            //_this.clutterfiles.loadProject(_this.project);
-        
-            el.restore_easing_state();
-            _this.objectview.el.restore_easing_state();
-            this.state = "object";
-        }
-    public void showProjectEdit () {
-            // make the browser smaller, and show the edit dialog
-            
-            
-             _this.projectbutton.el.hide();
-             _this.projecteditbutton.el.hide();
-             
-             _this.editfilebutton.el.hide();
-             
-            
-             
-             
-             _this.backbutton.el.show();
-             
-            //this.rooview.el.hide();
-            this.projectsettings.el.show_all();
-            this.projectsettings.show(this.project);
-            _this.projecteditview.el.save_easing_state();
-                
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            
-            el.set_scale(0.5f,0.5f);
-        
-            _this.projecteditview.el.set_scale(1.0f,1.0f);
-           
-            _this.state = "projectedit";
-             
+    
+        //w.el.show_all();
+        var tl = new Clutter.Timeline(6000);
+        tl.set_repeat_count(-1);
+        tl.start();
+        tl.ref();
+    
+        this.children_loaded = true;
+    
+    
+    
+    
+    }
+    public     void hideAddProp () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
          
-            //_this.clutterfiles.loadProject(_this.project);
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
         
-            el.restore_easing_state();
-            _this.projecteditview.el.restore_easing_state();
-          //  print("show view browsing");
-            
-        }
-    public void showViewEditing  ( )  {
-             this.editpane.el.show();
-          //   this.rooview.el.show();
-             this.left_projects.el.hide();
-            
-            _this.addprojectbutton.el.hide();   
-            _this.delprojectbutton.el.hide();
-            _this.addfilebutton.el.hide();       
-            _this.backbutton.el.hide();
-            
-              _this.projectbutton.el.show();         
-            _this.editfilebutton.el.show();   
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.addpropsview.el.restore_easing_state();  
+     }
+    public     void hideCodeEdit () {
+        //this.code_editor.saveContents();
+         _this.backbutton.el.hide();
+          _this.projectbutton.el.show(); 
            _this.projecteditbutton.el.show();
-          _this.objectshowbutton.el.show();
-          _this.addpropbutton.el.show();      
-          _this.addlistenerbutton.el.show();   
+           _this.editfilebutton.el.show();   
+         _this.codeeditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.codeeditview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.codeeditview.el.restore_easing_state();  
+     }
+    public     void hideViewEditing ( )   {
+    
+    // show the file navigation...
+      
+        if (this.left_tree.getActiveFile() != null) {
+             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                 this.window_rooview.createThumb();
+             } else {
+                  this.window_gladeview.createThumb();
+              }
+          }
           
+        _this.addprojectbutton.el.show();   
+        _this.addfilebutton.el.show();       
+          _this.backbutton.el.show();
+        _this.delprojectbutton.el.show();
+        
+          _this.editfilebutton.el.hide();   
+          _this.projectbutton.el.hide();         
+          _this.projecteditbutton.el.hide();
+          _this.objectshowbutton.el.hide();
+          _this.addpropbutton.el.hide();      
+          _this.addlistenerbutton.el.hide();  
+    
+    
+    
+    
               
-            var el = _this.rooview.el;
-                el.save_easing_state();
+        // show the add file button..
+        
+              
           
+         this.editpane.el.hide();
+        //this.rooview.el.hide();
+         this.left_projects.el.show();
+        
+        var el = _this.rooview.el;
+        el.save_easing_state();
+          el.set_easing_duration(1000);
+        // show project / file view..
+        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
+        //_this.mainpane.el.set_position(0);
+        // rotate y 180..
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+        el.set_scale(0.0f,0.0f);
+       
+            _this.state = "files";
+        if (_this.project != null) {
+            _this.left_projects.selectProject(_this.project);
+            }
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
             
-                el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-                el.set_scale(1.0f,1.0f);
-                _this.state = "edit";
-               // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-                _this.clutterfiles.el.hide();
+        print("show view browsing");
+    }
+    public     void hideAddListener () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.addpropsview.el.restore_easing_state();  
+      }
+    public     void showViewEditing ( )  {
+         this.editpane.el.show();
+      //   this.rooview.el.show();
+         this.left_projects.el.hide();
+        
+        _this.addprojectbutton.el.hide();   
+        _this.delprojectbutton.el.hide();
+        _this.addfilebutton.el.hide();       
+        _this.backbutton.el.hide();
+        
+          _this.projectbutton.el.show();         
+        _this.editfilebutton.el.show();   
+       _this.projecteditbutton.el.show();
+      _this.objectshowbutton.el.show();
+      _this.addpropbutton.el.show();      
+      _this.addlistenerbutton.el.show();   
+      
+          
+        var el = _this.rooview.el;
+            el.save_easing_state();
+      
+        
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+            el.set_scale(1.0f,1.0f);
+            _this.state = "edit";
+           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
+            _this.clutterfiles.el.hide();
+        
+        el.restore_easing_state();
             
-            el.restore_easing_state();
-                
-            print("show view editing");
+        print("show view editing");
+    }
+    public     void showObject () {
+    
+         
+        // what's the active node on the left hand side..
+        
+        var n = _this.left_tree.getActiveElement();
+    
+        if (_this.left_tree.model.file == null) {
+            return;
         }
-
-    // skip |xns - no return type
+        
+        if (n == null && _this.left_tree.model.file.tree != null) {
+            return;
+        }
+        
+         _this.backbutton.el.show();
+           _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+         
+        //this.rooview.el.hide();
+        this.rightpalete.el.show_all();
+        this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
+    
+        
+        //this.rightpalete.show(this.project);
+    
+        _this.objectview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+         _this.clutterembed.setSizesAlloc("object");
+        
+    
+        _this.objectview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.objectview.el.restore_easing_state();
+        this.state = "object";
+    }
+    public     void showCodeEdit (JsRender.Node node, string ptype, string key)
+    {
+        // this is a bit different,
+        // it's not called via a button - but triggered by the prop edit class signal.
+        // so it has to hide any other state..
+        
+        switch(this.state) {
+            case "object":
+                this.hideObject();
+                break;
+            case "addprop":
+                this.hideAddProp();
+                break;
+            case "addlistener":
+                this.hideAddListener();
+                break;
+        }
+     
+       _this.backbutton.el.show();
+       
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+       // more?? 
+         
+        //this.rooview.el.hide();
+        this.code_editor.el.show_all();
+        this.code_editor.show(
+            node,
+            ptype,
+            key
+        );
+    
+        _this.codeeditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("codedit");
+       
+        _this.codeeditview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.codeeditview.el.restore_easing_state();
+        this.state = "codeedit";
+    }
+    public     void hideProjectEdit () {
+        // return to editing state..
+           
+          _this.projectbutton.el.show();
+         _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+             _this.editfilebutton.el.show();   
+         
+        //this.rooview.el.hide();
+         //this.edit_project.el.show();
+            _this.projecteditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+           _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+          _this.projecteditview.el.restore_easing_state();  
+      
+    }
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_vbox(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.vbox = this;
             this.el = new Gtk.VBox( false, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_topbar( _this );
@@ -879,9 +858,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_end (  child_1.el , true,true,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_topbar : Object 
     {
@@ -889,25 +866,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_topbar(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.topbar = this;
             this.el = new Gtk.HBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.height_request = 20;
             this.el.vexpand = false  ;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_mainpane : Object 
     {
@@ -915,17 +890,17 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
         public int lastWidth;
 
-            // ctor 
+        // ctor 
         public Xcls_mainpane(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.mainpane = this;
             this.el = new Gtk.HPaned();
 
-            // my vars
+            // my vars (dec)
             this.lastWidth = 0;
 
             // set gobject values
@@ -938,9 +913,7 @@ public class Xcls_MainWindow : Object
             this.el.add2 (  child_1.el  );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_leftpane : Object 
     {
@@ -948,16 +921,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_leftpane(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.leftpane = this;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_editpane( _this );
@@ -965,9 +938,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , false,true,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_editpane : Object 
     {
@@ -975,16 +946,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_editpane(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.editpane = this;
             this.el = new Gtk.VPaned();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_tree( _this );
@@ -995,9 +966,7 @@ public class Xcls_MainWindow : Object
             this.el.add2 (  child_1.el  );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_tree : Object 
     {
@@ -1005,23 +974,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_tree(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.tree = this;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_props : Object 
     {
@@ -1029,23 +996,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_props(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.props = this;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_VBox9 : Object 
     {
@@ -1053,15 +1018,15 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_VBox9(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_clutterembed( _this );
@@ -1069,9 +1034,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , true,true,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_clutterembed : Object 
     {
@@ -1079,16 +1042,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_clutterembed(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.clutterembed = this;
             this.el = new GtkClutter.Embed();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_rooview( _this );
@@ -1111,47 +1074,71 @@ public class Xcls_MainWindow : Object
             this.el.get_stage().add_child (  child_5.el  );
 
             // init method 
-                var stage = this.el.get_stage();
-                stage.set_background_color(  Clutter.Color.from_string("#000"));
-                
-                
 
+            var stage = this.el.get_stage();
+                stage.set_background_color(  Clutter.Color.from_string("#000"));
             // listeners 
-            this.el.size_allocate.connect(   (  alloc) => {
-                if (!_this.children_loaded) {  return; }
-                //print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
-            
-            /*    _this.rooview.el.set_size(this.el.get_stage().width-50,
-                        this.el.get_stage().height);
-                _this.clutterfiles.set_size(this.el.get_stage().width-50,
-                       this.el.get_stage().height);
-            */
-               // this.el.set_size_request(alloc.width,alloc.height);
-               // this.el.get_stage().set_size(alloc.width,alloc.height);
-                _this.rooview.el.set_size(alloc.width-50,
-                        alloc.height);
-                        
-                         
-                        
-                _this.clutterfiles.set_size(alloc.width-50,
-                       alloc.height);
-                _this.projecteditview.el.set_size(alloc.width-50,
-                       alloc.height / 2.0f);
-                       
-                _this.objectview.el.set_size((alloc.width -50)/2.0f,
-                       alloc.height);
-                       
-                _this.addpropsview.el.set_size((alloc.width -50)/2.0f,
-                       alloc.height);
-                
-                _this.codeeditview.el.set_size((alloc.width -50)/2.0f,
-                       alloc.height);
-            } );
+            this.el.size_allocate.connect( (  alloc) => {
+                this.setSizes(alloc, _this.state); 
+                    
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
+        public   void setSizes (  Gtk.Allocation alloc, string state) {
+            if (!_this.children_loaded) {  return; }
+             
+            _this.clutterfiles.set_size(alloc.width-50, alloc.height);
+            
+            // project view appears at top...
+            
+            _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+                   
+                   
+            
+            var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;
+         
+            
+            var palsize = avail < 300.0f ? avail : 300.0f;
+            print("set palsize size %f\n", palsize);
+           // palate / props : fixed 300 pix
+                    
+            _this.objectview.el.set_size(palsize, alloc.height);    
+            _this.addpropsview.el.set_size(palsize, alloc.height);
+            
+             
+            
+            // code edit min 600
+            
+            var codesize = avail < 600.0f ? avail : 600.0f;
+            print("set code size %f\n", codesize);
+        
+            _this.codeeditview.el.set_size(codesize, alloc.height);
+            _this.rooview.el.set_size(alloc.width-50, alloc.height);    
+           
+            switch ( state) {
+                case "codeedit": 
+        
+        	var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
+        	
+        	
+                   _this.rooview.el.set_scale(scale,scale);
+                   break;
+                case "addprop":
+                case "addlistener":        
+                  case "object":   
+        	var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
+                   _this.rooview.el.set_scale(scale,scale);
+                   break;
+            }
+                
+        }
+        public   void setSizesAlloc (string state) {
+        
+            Gtk.Allocation alloc;
+            this.el.get_allocation(out alloc);
+            this.setSizes(alloc, state);
+        }
     }
     public class Xcls_rooview : Object 
     {
@@ -1159,20 +1146,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_rooview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.rooview = this;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
 
             // init method 
+
             {
                
                
@@ -1190,12 +1178,9 @@ public class Xcls_MainWindow : Object
                 this.el.set_size(_this.clutterembed.el.get_stage().width-50,
                         _this.clutterembed.el.get_stage().height);
                         
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_objectview : Object 
     {
@@ -1203,20 +1188,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_objectview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.objectview = this;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
 
             // init method 
+
             {
                
                /*
@@ -1236,12 +1222,9 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_codeeditview : Object 
     {
@@ -1249,20 +1232,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_codeeditview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.codeeditview = this;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
 
             // init method 
+
             {
                
                /*
@@ -1282,12 +1266,9 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_addpropsview : Object 
     {
@@ -1295,20 +1276,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_addpropsview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.addpropsview = this;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
 
             // init method 
+
             {
                
                /*
@@ -1328,12 +1310,9 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_projecteditview : Object 
     {
@@ -1341,20 +1320,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_projecteditview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.projecteditview = this;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
 
             // init method 
+
             {
                
                
@@ -1372,12 +1352,9 @@ public class Xcls_MainWindow : Object
                 this.el.set_size(_this.clutterembed.el.get_stage().width-50,
                         _this.clutterembed.el.get_stage().height /2);
                         
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_buttonlayout : Object 
     {
@@ -1385,16 +1362,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_buttonlayout(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.buttonlayout = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_BoxLayout17( _this );
@@ -1432,6 +1409,7 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_10.el  );
 
             // init method 
+
             {
                 
                 this.el.add_constraint(
@@ -1448,12 +1426,9 @@ public class Xcls_MainWindow : Object
                  this.el.set_size(50,
                        _this.clutterembed.el.get_stage().height);
                  
-            }
-        }
+            }        }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_BoxLayout17 : Object 
     {
@@ -1461,23 +1436,21 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_BoxLayout17(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.orientation = Clutter.Orientation.VERTICAL;
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_backbutton : Object 
     {
@@ -1485,16 +1458,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_backbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.backbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor19( _this );
@@ -1502,12 +1475,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor19 : Object 
     {
@@ -1515,27 +1486,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor19(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button20( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button20 : Object 
     {
@@ -1543,23 +1512,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button20(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "<<";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 switch (_this.state) {
                     case "edit":
                     
@@ -1598,12 +1567,10 @@ public class Xcls_MainWindow : Object
                 }
                 return  ;    
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_projectbutton : Object 
     {
@@ -1611,16 +1578,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_projectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.projectbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor22( _this );
@@ -1628,12 +1595,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor22 : Object 
     {
@@ -1641,27 +1606,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor22(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button23( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button23 : Object 
     {
@@ -1669,23 +1632,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button23(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Open\nFiles";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 switch (_this.state) {
                     case "edit":
                     
@@ -1714,12 +1677,10 @@ public class Xcls_MainWindow : Object
                 }
                 return  ;    
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_editfilebutton : Object 
     {
@@ -1727,16 +1688,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_editfilebutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.editfilebutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor25( _this );
@@ -1744,12 +1705,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50.0f,50.0f);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50.0f,50.0f);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor25 : Object 
     {
@@ -1757,27 +1716,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor25(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button26( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button26 : Object 
     {
@@ -1785,23 +1742,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button26(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "File\nDetails";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
               
                 // create a new file in project..
                 if (_this.project == null || _this.left_tree.model.file == null) {
@@ -1813,12 +1770,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_projecteditbutton : Object 
     {
@@ -1826,16 +1781,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_projecteditbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.projecteditbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor28( _this );
@@ -1843,12 +1798,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor28 : Object 
     {
@@ -1856,27 +1809,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor28(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button29( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button29 : Object 
     {
@@ -1884,23 +1835,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button29(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Project\nDetails";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 switch (_this.state) {
                     case "edit":
                         _this.showProjectEdit();
@@ -1933,12 +1884,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_objectshowbutton : Object 
     {
@@ -1946,16 +1895,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_objectshowbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.objectshowbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor31( _this );
@@ -1963,18 +1912,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
 
+            this.el.set_size(50,50);
             // listeners 
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#333");
-                    return false;
-            } );
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
-                return false;
-            } );
-            this.el.button_press_event.connect(   ( ) => {
+            this.el.button_press_event.connect( ( ) => {
                 
                 
                 
@@ -2008,12 +1949,18 @@ public class Xcls_MainWindow : Object
                 return false;    
             
             
-            } );
+            });
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#333");
+                    return false;
+            });
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
+                return false;
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor31 : Object 
     {
@@ -2021,27 +1968,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor31(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button32( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button32 : Object 
     {
@@ -2049,23 +1994,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button32(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Show\nPalete";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 
                 
                 
@@ -2099,12 +2044,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_addpropbutton : Object 
     {
@@ -2112,16 +2055,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_addpropbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.addpropbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor34( _this );
@@ -2129,12 +2072,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor34 : Object 
     {
@@ -2142,27 +2083,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor34(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button35( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button35 : Object 
     {
@@ -2170,23 +2109,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button35(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Add\nProp";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 
                 
                 
@@ -2218,12 +2157,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_addlistenerbutton : Object 
     {
@@ -2231,16 +2168,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_addlistenerbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.addlistenerbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor37( _this );
@@ -2248,12 +2185,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor37 : Object 
     {
@@ -2261,27 +2196,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor37(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button38( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button38 : Object 
     {
@@ -2289,23 +2222,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button38(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Add\nEvent\nCode";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                 
                 
                 
@@ -2338,12 +2271,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_addprojectbutton : Object 
     {
@@ -2351,16 +2282,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_addprojectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.addprojectbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor40( _this );
@@ -2368,12 +2299,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50.0f,50.0f);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50.0f,50.0f);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor40 : Object 
     {
@@ -2381,27 +2310,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor40(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button41( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button41 : Object 
     {
@@ -2409,23 +2336,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button41(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "New\nProj.";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
               
                 // create a new file in project..
                 //Xcls_DialogNewComponent.singleton().show(
@@ -2444,12 +2371,10 @@ public class Xcls_MainWindow : Object
                 return  ;    
             
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_addfilebutton : Object 
     {
@@ -2457,16 +2382,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_addfilebutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.addfilebutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor43( _this );
@@ -2474,12 +2399,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50.0f,50.0f);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50.0f,50.0f);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor43 : Object 
     {
@@ -2487,27 +2410,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor43(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button44( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button44 : Object 
     {
@@ -2515,23 +2436,23 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button44(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Add\nFile";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(  () => {
+            this.el.clicked.connect( () => {
                 // create a new file in project..
                 if (_this.project == null) {
                     return  ;
@@ -2541,12 +2462,10 @@ public class Xcls_MainWindow : Object
                 _this.new_file_dialog.show(f);
                 
                 return  ;    
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_delprojectbutton : Object 
     {
@@ -2554,16 +2473,16 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_delprojectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.delprojectbutton = this;
             this.el = new Clutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Actor46( _this );
@@ -2571,12 +2490,10 @@ public class Xcls_MainWindow : Object
             this.el.add_child (  child_0.el  );
 
             // init method 
-            this.el.set_size(50,50);
-        }
 
-        // userdefined functions 
+            this.el.set_size(50,50);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Actor46 : Object 
     {
@@ -2584,27 +2501,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Actor46(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new GtkClutter.Actor();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_Button47( _this );
             child_0.ref();
 
             // init method 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
-        }
 
-        // userdefined functions 
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button47 : Object 
     {
@@ -2612,25 +2527,25 @@ public class Xcls_MainWindow : Object
         private Xcls_MainWindow  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button47(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
+            this.el.width_request = 50;
             this.el.height_request = 50;
             this.el.label = "Del\nProp";
-            this.el.width_request = 50;
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
+            this.el.clicked.connect( ( ) => {
                  
-                 var cd = Xcls_DialogConfirm.singleton();
+                 var cd = DialogConfirm.singleton();
                  cd.el.set_transient_for(_this.el);
                 cd.el.set_modal(true);
             
@@ -2655,11 +2570,9 @@ public class Xcls_MainWindow : Object
                 _this.left_projects.load();
                 _this.clutterfiles.clearFiles();
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
 }
