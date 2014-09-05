@@ -858,7 +858,12 @@ WindowLeftTree=new XObject({
                                 
                     },
                     updateSelected : () {
-                    
+                      
+                      
+                      
+                          this.el.set(citer, 0, tr.get(i).nodeTitle(),
+                                    1, tr.get(i).nodeTip(), -1
+                            );
                     },
                     findDropNodeByPath : (string treepath_str, string[] targets, int in_pref = -1) {
                     

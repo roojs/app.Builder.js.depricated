@@ -967,7 +967,12 @@ public class Xcls_WindowLeftTree : Object
                     
         }
         public void updateSelected () {
-        
+          
+          
+          
+              this.el.set(citer, 0, tr.get(i).nodeTitle(),
+                        1, tr.get(i).nodeTip(), -1
+                );
         }
         public        string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
         
