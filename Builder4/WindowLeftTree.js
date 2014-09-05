@@ -17,9 +17,6 @@ WindowLeftTree=new XObject({
     changed : "()",
     xns : Gtk,
     node_selected : "(JsRender.Node? node)",
-    updateSelected : () {
-    
-    },
     getActiveElement : () { // return path to actie node.
     
          var path = this.getActivePath();

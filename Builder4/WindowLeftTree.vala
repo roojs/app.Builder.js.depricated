@@ -43,9 +43,6 @@ public class Xcls_WindowLeftTree : Object
         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);    }
 
     // user defined functions 
-    public void updateSelected () {
-    
-    }
     public       JsRender.Node? getActiveElement () { // return path to actie node.
     
          var path = this.getActivePath();
