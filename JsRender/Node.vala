@@ -491,6 +491,7 @@ public class JsRender.Node : Object {
 		if (this.has("* prop"))   { txt += (GLib.Markup.escape_text(this.get("* prop")) + ":"); }
 		
 		//if (renderfull && c['|xns']) {
+			var fqn = this.fqn(); 
 			txt += this.fqn();
 			
 		//}
