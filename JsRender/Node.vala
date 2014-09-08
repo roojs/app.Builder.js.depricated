@@ -482,7 +482,7 @@ public class JsRender.Node : Object {
 		return ret;
 
 	}
-	public string nodeTitle() {
+	public string nodeTitle(bool for_tip = false) {
   		string[] txt = {};
 
 		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
