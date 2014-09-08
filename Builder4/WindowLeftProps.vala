@@ -30,8 +30,8 @@ public class Xcls_LeftProps : Object
     public signal void show_editor (JsRender.JsRender file, JsRender.Node node, string type, string key);
     public signal void changed ();
     public signal void show_add_props (string type);
+    public Xcls_MainWindow main_window;
     public JsRender.Node node;
-    public MainWindow main_window;
 
     // ctor 
     public Xcls_LeftProps()

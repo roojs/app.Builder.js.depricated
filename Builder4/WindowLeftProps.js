@@ -487,8 +487,8 @@ WindowLeftProps=new XObject({
     
     },
     homogeneous : false,
-    node : "",
     main_window : "null",
+    node : "",
     items : [
     	{
             xtype : "HBox",

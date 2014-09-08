@@ -27,8 +27,8 @@
             "@ void show_add_props" : "(string type)",
             "|      string keySortFormat" : "(string key) {\n    // listeners first - with 0\n    // specials\n    if (key[0] == '*') {\n        return \"1 \" + key;\n    }\n    // functions\n    \n    var bits = key.split(\" \");\n    \n    if (key[0] == '|') {\n        return \"2 \" + bits[bits.length -1];\n    }\n    // signals\n    if (key[0] == '@') {\n        return \"3 \" + bits[bits.length -1];\n    }\n        \n    // props\n    if (key[0] == '#') {\n        return \"4 \" + bits[bits.length -1];\n    }\n    // the rest..\n    return \"5 \" + bits[bits.length -1];    \n\n\n\n}",
             "$ homogeneous" : "false   ",
+            "# Xcls_MainWindow main_window" : "null",
             "# JsRender.Node node" : "",
-            "# MainWindow main_window" : "null",
             "items" : [
                 {
                     "* pack" : "pack_start,false,true,0",
