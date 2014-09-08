@@ -119,7 +119,7 @@ public class Xcls_LeftProps : Object
         
         // max 80%...
         pane.set_position( 
-            (try_size /  pane.max_position)  > 0.8  ? 
+            (try_size /  pane.max_position)  > 0.8f  ? 
             pane.max_position * 0.2 :
             pane.max_position-try_size);
         
