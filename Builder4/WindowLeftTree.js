@@ -690,7 +690,7 @@ WindowLeftTree=new XObject({
                         var try_size = tr.size * 12;
                         
                         
-                        pane.set_position(pane.max_postion > try_size ? pane.max_postion / 2 :pane.max_postion-try_size);
+                        pane.set_position(pane.max_position > try_size ? pane.max_position / 2 :pane.max_position-try_size);
                         
                         
                     },
