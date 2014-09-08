@@ -11,6 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     allow_edit : false,
+    id : "LeftProps",
     load : (JsRender.JsRender file, JsRender.Node? node) 
     {
         print("load leftprops\n");
@@ -77,28 +78,15 @@ WindowLeftProps=new XObject({
         
         // max 80%...
         pane.set_position( 
-             (try_size * 1.0f /  (pane.max_position * 1.0f))  > 0.8f  ? 
+             ((try_size * 1.0f) /  (pane.max_position * 1.0f))  > 0.8f  ? 
             (int) (pane.max_position * 0.2f) :
             pane.max_position-try_size);
         
        
     },
-    id : "LeftProps",
-    before_edit : ()
-    {
-    
-        print("before edit - stop editing\n");
-        
-      // these do not appear to trigger save...
-        _this.keyrender.el.stop_editing(false);
-        _this.keyrender.el.editable  =false;
-    
-        _this.valrender.el.stop_editing(false);
-        _this.valrender.el.editable  =false;    
-        
-        
-    // technicall stop the popup editor..
-    
+    finish_editing : () {
+         // 
+        this.before_edit();
     },
     addProp : (string in_type, string key, string value, string value_type) {
           // info includes key, val, skel, etype..
@@ -164,38 +152,6 @@ WindowLeftProps=new XObject({
         
                   
     },
-    xtype : "VBox",
-    keySortFormat : (string key) {
-        // listeners first - with 0
-        // specials
-        if (key[0] == '*') {
-            return "1 " + key;
-        }
-        // functions
-        
-        var bits = key.split(" ");
-        
-        if (key[0] == '|') {
-            return "2 " + bits[bits.length -1];
-        }
-        // signals
-        if (key[0] == '@') {
-            return "3 " + bits[bits.length -1];
-        }
-            
-        // props
-        if (key[0] == '#') {
-            return "4 " + bits[bits.length -1];
-        }
-        // the rest..
-        return "5 " + bits[bits.length -1];    
-    
-    
-    
-    },
-    file : "",
-    stop_editor : "()",
-    show_editor : "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
     keyFormat : (string val, string type) {
         
         // Glib.markup_escape_text(val);
@@ -260,85 +216,38 @@ WindowLeftProps=new XObject({
         
     
     },
-    changed : "()",
-    deleteSelected : () {
-        
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.el.get_selection();
-            s.get_selected(out mod, out iter);
-                 
-                  
-            GLib.Value gval;
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
-            
-            mod.get_value(iter, 1 , out gval);
-            var key = (string)gval;
-            
-            switch(type) {
-                case "listener":
-                    this.node.listeners.remove(key);
-                    break;
-                    
-                case "props":
-                    this.node.props.remove(key);
-                    break;
-            }
-            this.load(this.file, this.node);
-            
-            _this.changed();
-    },
-    updateIter : (Gtk.TreeIter iter,  string type, string key, string value) {
-    
-        print("update Iter %s, %s\n", key,value);
-        //typeof(string),  // 0 key type
-         //typeof(string),  // 1 key
-         //typeof(string),  // 2 key (display)
-         //typeof(string),  // 3 value
-         //typeof(string),  // 4 value (display)
-         //typeof(string),  // 5 both (tooltip)
-         //typeof(string),  // 6 key (sort)
-        
-        var dl = value.strip().split("\n");
-    
-        var dis_val = dl.length > 1 ? (dl[0].strip()+ "...") : dl[0];
-        
-        if (type == "listener") {
-         
-           
-            
-            this.model.el.set(iter, 
-                    0, type,
-                1, key,
-                2, this.keyFormat(key ,type),
-                3, value,
-                4, dis_val,
-                5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
-                6,  "0 " + key
-            ); 
-            return;
+    xtype : "VBox",
+    keySortFormat : (string key) {
+        // listeners first - with 0
+        // specials
+        if (key[0] == '*') {
+            return "1 " + key;
         }
+        // functions
         
+        var bits = key.split(" ");
+        
+        if (key[0] == '|') {
+            return "2 " + bits[bits.length -1];
+        }
+        // signals
+        if (key[0] == '@') {
+            return "3 " + bits[bits.length -1];
+        }
+            
+        // props
+        if (key[0] == '#') {
+            return "4 " + bits[bits.length -1];
+        }
+        // the rest..
+        return "5 " + bits[bits.length -1];    
     
     
-        this.model.el.set(iter, 
-                0, "props",
-                1, key,
-                2,  this.keyFormat(key , "prop"),
-                3, value,
-                4, dis_val,
-                 5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
-                 6,  this.keySortFormat(key)
-            ); 
+    
     },
-    xns : Gtk,
-    finish_editing : () {
-         // 
-        this.before_edit();
-    },
-    show_add_props : "(string type)",
+    file : "",
+    stop_editor : "()",
+    show_editor : "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
     startEditingValue : ( Gtk.TreePath path) {
     
         // ONLY return true if editing is allowed - eg. combo..
@@ -472,6 +381,38 @@ WindowLeftProps=new XObject({
                 });
                 return false;
             },
+    changed : "()",
+    deleteSelected : () {
+        
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.el.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+                  
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
+            
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
+            
+            switch(type) {
+                case "listener":
+                    this.node.listeners.remove(key);
+                    break;
+                    
+                case "props":
+                    this.node.props.remove(key);
+                    break;
+            }
+            this.load(this.file, this.node);
+            
+            _this.changed();
+    },
+    xns : Gtk,
+    show_add_props : "(string type)",
     startEditingKey : ( Gtk.TreePath path) {
         
          if (!this.stop_editor()) {
@@ -499,6 +440,65 @@ WindowLeftProps=new XObject({
     },
     homogeneous : false,
     main_window : "null",
+    before_edit : ()
+    {
+    
+        print("before edit - stop editing\n");
+        
+      // these do not appear to trigger save...
+        _this.keyrender.el.stop_editing(false);
+        _this.keyrender.el.editable  =false;
+    
+        _this.valrender.el.stop_editing(false);
+        _this.valrender.el.editable  =false;    
+        
+        
+    // technicall stop the popup editor..
+    
+    },
+    updateIter : (Gtk.TreeIter iter,  string type, string key, string value) {
+    
+        print("update Iter %s, %s\n", key,value);
+        //typeof(string),  // 0 key type
+         //typeof(string),  // 1 key
+         //typeof(string),  // 2 key (display)
+         //typeof(string),  // 3 value
+         //typeof(string),  // 4 value (display)
+         //typeof(string),  // 5 both (tooltip)
+         //typeof(string),  // 6 key (sort)
+        
+        var dl = value.strip().split("\n");
+    
+        var dis_val = dl.length > 1 ? (dl[0].strip()+ "...") : dl[0];
+        
+        if (type == "listener") {
+         
+           
+            
+            this.model.el.set(iter, 
+                    0, type,
+                1, key,
+                2, this.keyFormat(key ,type),
+                3, value,
+                4, dis_val,
+                5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
+                6,  "0 " + key
+            ); 
+            return;
+        }
+        
+    
+    
+        this.model.el.set(iter, 
+                0, "props",
+                1, key,
+                2,  this.keyFormat(key , "prop"),
+                3, value,
+                4, dis_val,
+                 5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
+                 6,  this.keySortFormat(key)
+            ); 
+    },
     node : "",
     items : [
     	{
@@ -921,7 +921,6 @@ WindowLeftProps=new XObject({
                                     editable : FALSE,
                                     has_entry : TRUE,
                                     xns : Gtk,
-                                    text_column : 0,
                                     setOptions : (string[] ar) {
                                           var m = _this.valrendermodel.el;
                                             m.clear();
@@ -932,6 +931,7 @@ WindowLeftProps=new XObject({
                                         }
                                     
                                     },
+                                    text_column : 0,
                                     listeners : {
                                     	editing_started : ( editable, path) => {
                                     	       //_this.editing = true;
