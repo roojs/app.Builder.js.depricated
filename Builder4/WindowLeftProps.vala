@@ -115,7 +115,7 @@ public class Xcls_LeftProps : Object
        this.view.el.get_selection().unselect_all();
        
            var pane = _this.main_window.editpane.el;
-        var try_size = i * 12;
+        var try_size = i * 12.0f;
         
         // max 80%...
         pane.set_position( 
