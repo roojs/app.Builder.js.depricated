@@ -805,6 +805,13 @@ public class Xcls_WindowLeftTree : Object
                 }
              
             }
+            var pane = _this.main_window.editpane.el;
+            var try_size = tr.size * 12;
+            
+            
+            pane.el.set_position(pane.el.max_postion > try_size ? pane.el.max_postion / 2 :pane.el.max_postion-try_size);
+            
+            
         }
         public         void loadFile (JsRender.JsRender f) {
             //console.dump(f);
