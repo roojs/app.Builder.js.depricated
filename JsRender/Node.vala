@@ -504,7 +504,7 @@ public class JsRender.Node : Object {
 		
 		if (this.has("layout"))	{ txt += ("<i>" + GLib.Markup.escape_text(this.get("layout")) + "</i>"); }
 		if (this.has("title"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("title")) + "</b>"); }
-		if (this.has("html"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("title")) + "</b>"); }
+		if (this.has("html"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("html")) + "</b>"); }
 		if (this.has("label"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("label"))+ "</b>"); }
 		if (this.has("header"))   { txt += ("<b>" + GLib.Markup.escape_text(this.get("header")) + "</b>"); }
 		if (this.has("legend"))	 { txt += ("<b>" + GLib.Markup.escape_text(this.get("legend")) + "</b>"); }
