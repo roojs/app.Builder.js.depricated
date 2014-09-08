@@ -73,12 +73,12 @@ WindowLeftProps=new XObject({
        this.view.el.get_selection().unselect_all();
        
            var pane = _this.main_window.editpane.el;
-        var try_size = i * 12.0f;
+        var try_size = i * 12;
         
         // max 80%...
         pane.set_position( 
-            (try_size /  (pane.max_position * 1.0f))  > 0.8f  ? 
-            pane.max_position * 0.2f :
+             (try_size /  (pane.max_position * 1.0f))  > 0.8f  ? 
+            (int) (pane.max_position * 0.2f) :
             pane.max_position-try_size);
         
        
