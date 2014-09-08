@@ -448,7 +448,7 @@ public class JsRender.Node : Object {
 	}
 	public string nodeTip()
 	{
-		var ret = this.nodeTitle();
+		var ret = this.nodeTitle(true);
 		var funcs = "";
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
@@ -491,8 +491,9 @@ public class JsRender.Node : Object {
 		if (this.has("* prop"))   { txt += (GLib.Markup.escape_text(this.get("* prop")) + ":"); }
 		
 		//if (renderfull && c['|xns']) {
-			var fqn = this.fqn(); 
-			txt += this.fqn();
+		var fqn = this.fqn();
+		var fqn_ar = fqn.split(".");
+		txt += for_tip ? fqn : fqn_ar[fqn_ar.length -1];
 			
 		//}
 		
