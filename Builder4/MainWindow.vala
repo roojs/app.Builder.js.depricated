@@ -631,7 +631,7 @@ public class Xcls_MainWindow : Object
                 this.window_gladeview.el.show_all();
             }
             print("OPEN : " + file.name);
-            _this.editpane.el.set_position(_this.editpane.el.max_postion);
+            _this.editpane.el.set_position(_this.editpane.el.max_position);
              
     
         });
