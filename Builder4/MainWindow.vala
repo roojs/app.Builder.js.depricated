@@ -378,6 +378,7 @@ public class Xcls_MainWindow : Object
         print("init children");
         this.left_tree = new Xcls_WindowLeftTree();
         this.left_tree.ref();
+        this.left_tree.main_window = _this;
         this.tree.el.pack_start(this.left_tree.el,true, true,0);
         this.left_tree.el.show_all();
        
@@ -451,6 +452,7 @@ public class Xcls_MainWindow : Object
     
         this.left_props =new Xcls_LeftProps();
         this.left_props.ref();
+        this.left_props.main_window = _this;
         this.props.el.pack_start(this.left_props.el,true, true,0);
         this.left_props.el.show_all();
         
