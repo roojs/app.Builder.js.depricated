@@ -24,7 +24,7 @@ public class GtkView : Object
         // my vars (dec)
 
         // set gobject values
-        var child_0 = new Xcls_HBox2( _this );
+        var child_0 = new Xcls_container( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
     }
@@ -102,7 +102,7 @@ public class GtkView : Object
             this.addNode(parent, iter.get());
         }
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_container : Object 
     {
         public Gtk.HBox el;
         private GtkView  _this;
@@ -111,7 +111,7 @@ public class GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox2(GtkView _owner )
+        public Xcls_container(GtkView _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
