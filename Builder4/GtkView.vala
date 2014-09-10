@@ -35,7 +35,7 @@ public class Xcls_GtkView : Object
     
         Type? type = GLib.Type.from_name(node.fqn().replace(".", ""));
     
-        if (type == null) {
+        if (type == GLib.Type.INVALID) {
             return;
         }
         // some types can not be created -- eg. dialogs...
