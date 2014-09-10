@@ -13,7 +13,7 @@ GtkView=new XObject({
     xtype : "Viewport",
     id : "GtkView",
     xns : Gtk,
-    addNode : (Object parent, JsRender.Node node) {  
+    addNode : (Object? parent, JsRender.Node node) {  
     
         var type = GLib.Type.from_name(node.fqn());
         if (type < 1) {
@@ -22,6 +22,16 @@ GtkView=new XObject({
         // some types can not be created -- eg. dialogs...
         
         var  child = new Object(type);
+    
+        var pack = "";
+        if (parent  == null) {
+            pack = "add";
+            parent = this.container.el;
+        } 
+             
+        
+        
+        
         
         var iter = node.items.list_iterator();
         while (iter.next()) {
