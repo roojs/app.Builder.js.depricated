@@ -37,9 +37,9 @@ void loadit(string name ) {
 	var tf = proj.files.get(proj.firstPath() + "/" + name +".bjs");
 	tf.loadItems();
 
-	var xname = name + "xx";
+	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
-	w.set_title(xname);
+	w.set_title(tf.name);
 	w.ref();
 	var  left_props =new Xcls_GtkView();
 	left_props.el.show();
