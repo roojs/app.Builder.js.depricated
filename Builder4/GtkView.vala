@@ -45,20 +45,11 @@ public class Xcls_GtkView : Object
     
     //        print("%s\n",tf.tree.toJsonString());
     	var x = new JsRender.NodeToGlade(file.tree,  "");
-            Builder.from_string (x.munge())
-    	 
-    	FileIOStream iostream;
-    	var  f = File.new_tmp ("tpl-XXXXXX.glade", out iostream);
-    	var ostream = iostream.output_stream;
-    	var dostream = new DataOutputStream (ostream);
-    	dostream.put_string (x.munge());
-    	this.el.show();
-    	 print("LOADING %s\n",f.get_path ());
-            p.load_from_file(f.get_path ());
+            var builder = Builder.from_string (x.munge());
             
+    	var obj=  builder.get_object(file.tree.uid());
+            this.container.add(obj);        
      
-    
-    }
     
     }
     public void addNodeChildren (Object? parent, JsRender.Node node) { 
