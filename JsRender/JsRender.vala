@@ -351,7 +351,4 @@ namespace JsRender {
 	} 
 
 }
-
-
-
-
+ 
