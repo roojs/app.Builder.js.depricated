@@ -15,8 +15,8 @@ int main (string[] args) {
 	proj = Project.Project.getProject("Builder4");
 	
 	proj.scanDirs();
-	print("load %s\n", proj.firstPath() + "/WindowLeftProps.bjs");
-
+	
+	loadit("WindowLeftProps");
 	loadit("EditProject");
 
 	
@@ -27,7 +27,7 @@ int main (string[] args) {
 }
 
 void loadit(string name ) {
-	
+	print("load %s\n", proj.firstPath() + "/" + name  + ".bjs");
 	//var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
 	var tf = proj.files.get(proj.firstPath() + "/" + name +".bjs");
 	tf.loadItems();
