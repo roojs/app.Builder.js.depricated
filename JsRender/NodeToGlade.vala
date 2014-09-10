@@ -351,20 +351,26 @@ public class JsRender.NodeToGlade : Object {
 		ret+=" 
 		<child>
 		";
-		if (this.node.items.size > 0) {
-			ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false );
+		if (with_window) {
+			if (this.node.items.size > 0) {
+			
+				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false);
+			}
+		        
+
+			} else {
+				ret+="<placeholder/>";
+			}
 			ret+= "
-	<packing>
-		<property name=\"expand\">True</property>
-		<property name=\"fill\">True</property>
-		<property name=\"position\">1</property>
-      </packing>";
+			<packing>
+				<property name=\"expand\">True</property>
+				<property name=\"fill\">True</property>
+				<property name=\"position\">1</property>
+		      </packing>";
 
 		} else {
-			ret+="<placeholder/>";
+			ret+= this.mungeNode (true);
 		}
-				
-		
 
 		ret+="
 		    </child>
