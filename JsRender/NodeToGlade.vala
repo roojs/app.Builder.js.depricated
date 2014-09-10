@@ -331,7 +331,7 @@ public class JsRender.NodeToGlade : Object {
 				<property name=\"position\">0</property>
 		      </packing>
 		</child>
-		// add children...
+		 
 		<child>
 		";
 			if (this.node.items.size > 0) {
