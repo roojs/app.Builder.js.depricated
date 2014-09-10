@@ -53,79 +53,55 @@ public class Xcls_LeftProps : Object
     }
 
     // user defined functions 
-    public             void load (JsRender.JsRender file, JsRender.Node? node) 
+    public              void before_edit ()
     {
-        print("load leftprops\n");
-        this.before_edit();
-        this.node = node;
-        this.file = file;
-        
-     
-        this.model.el.clear();
-                  
-        //this.get('/RightEditor').el.hide();
-        if (node ==null) {
-            return ;
-        }
-         
-        
     
-        //var provider = this.get('/LeftTree').getPaleteProvider();
-        Gtk.TreeIter iter;
+        print("before edit - stop editing\n");
         
-        //typeof(string),  // 0 key type
-         //typeof(string),  // 1 key
-         //typeof(string),  // 2 key (display)
-         //typeof(string),  // 3 value
-         //typeof(string),  // 4 value (display)
-         //typeof(string),  // 5 both (tooltip)
-        
+      // these do not appear to trigger save...
+        _this.keyrender.el.stop_editing(false);
+        _this.keyrender.el.editable  =false;
+    
+        _this.valrender.el.stop_editing(false);
+        _this.valrender.el.editable  =false;    
         
         
-        
-        // really need a way to sort the hashmap...
-        var m = this.model.el;
-        
-        var miter = node.listeners.map_iterator();
-        var i = 0;
-        
-        while(miter.next()) {
-            i++;
-            m.append(out iter,null);
-            
-            this.updateIter(iter,  "listener", miter.get_key(), miter.get_value());
-            
-             
-         }
-         
-          
-        miter = node.props.map_iterator();
-        
-        
-       while(miter.next()) {
-               i++;
-            m.append(out iter,null);
-             this.updateIter(iter,  "prop", miter.get_key(), miter.get_value());
-             
-       }
-       print("clear selection\n");
-       // clear selection?
-       this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
-       
-       this.view.el.get_selection().unselect_all();
-       
-           var pane = _this.main_window.editpane.el;
-        var try_size = (i * 25) + 60; // est. 20px per line + 40px header
-        
-        // max 80%...
-        pane.set_position( 
-             ((try_size * 1.0f) /  (pane.max_position * 1.0f))  > 0.8f  ? 
-            (int) (pane.max_position * 0.2f) :
-            pane.max_position-try_size);
-        
-       
+    // technicall stop the popup editor..
+    
     }
-    public             bool startEditingValue ( Gtk.TreePath path) {
+    public              string keySortFormat (string key) {
+        // listeners first - with 0
+        // specials
+        if (key[0] == '*') {
+            return "1 " + key;
+        }
+        // functions
+        
+        var bits = key.split(" ");
+        
+        if (key[0] == '|') {
+            return "2 " + bits[bits.length -1];
+        }
+        // signals
+        if (key[0] == '@') {
+            return "3 " + bits[bits.length -1];
+        }
+            
+        // props
+        if (key[0] == '#') {
+            return "4 " + bits[bits.length -1];
+        }
+        // the rest..
+        return "5 " + bits[bits.length -1];    
+    
+    
+    
+    }
+    public              void finish_editing () {
+         // 
+        this.before_edit();
+    }
+    public              bool startEditingValue ( Gtk.TreePath path) {
     
         // ONLY return true if editing is allowed - eg. combo..
         
@@ -258,144 +234,79 @@ public class Xcls_LeftProps : Object
                 });
                 return false;
             }
-    public             void addProp (string in_type, string key, string value, string value_type) {
-          // info includes key, val, skel, etype..
-          //console.dump(info);
-            //type = info.type.toLowerCase();
-            //var data = this.toJS();
-              
-        var type = in_type == "signals" ? "listener" : in_type;
-          
-        var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
-                  
-        if (type == "listener") {
-            if (this.node.listeners.has_key(key)) {
-                return;
-            }
-            this.node.listeners.set(key,value);
-        } else  {
-        
-            if (this.node.props.has_key(fkey)) {
-                return;
-            }
-            this.node.props.set(fkey,value);
-        }
-               
-          
-        // add a row???
-        this.load(this.file, this.node);
-        
-        
-        
-        /// need to find the row which I've just added..
-        
-        
-        var s = this.view.el.get_selection();
-        s.unselect_all();
-        
-        print("trying to find new iter");
-      
-        this.model.el.foreach((model, path, iter) => {
-            GLib.Value gval;
-        
-            this.model.el.get_value(iter, 0 , out gval);
-            if ((string)gval != type) {
-                print("not type: %s = %s\n", (string)gval , type);
-                return false;
-            }
-            this.model.el.get_value(iter, 1 , out gval);
-            if ((string)gval != fkey) {
-                print("not key: %s = %s\n", (string)gval , fkey);
-                return false;
-            }
-            // delay this?
-            GLib.Timeout.add_full(GLib.Priority.DEFAULT,40 , () => {
-            
-                this.startEditingValue(this.model.el.get_path(iter));
-                return false;
-            });
-            //s.select_iter(iter);
-            return true; 
-        });
-        
-        
-        
-                  
-    }
-    public             void before_edit ()
+    public              void load (JsRender.JsRender file, JsRender.Node? node) 
     {
-    
-        print("before edit - stop editing\n");
+        print("load leftprops\n");
+        this.before_edit();
+        this.node = node;
+        this.file = file;
         
-      // these do not appear to trigger save...
-        _this.keyrender.el.stop_editing(false);
-        _this.keyrender.el.editable  =false;
-    
-        _this.valrender.el.stop_editing(false);
-        _this.valrender.el.editable  =false;    
-        
-        
-    // technicall stop the popup editor..
-    
-    }
-    public             string keySortFormat (string key) {
-        // listeners first - with 0
-        // specials
-        if (key[0] == '*') {
-            return "1 " + key;
-        }
-        // functions
-        
-        var bits = key.split(" ");
-        
-        if (key[0] == '|') {
-            return "2 " + bits[bits.length -1];
-        }
-        // signals
-        if (key[0] == '@') {
-            return "3 " + bits[bits.length -1];
-        }
-            
-        // props
-        if (key[0] == '#') {
-            return "4 " + bits[bits.length -1];
-        }
-        // the rest..
-        return "5 " + bits[bits.length -1];    
-    
-    
-    
-    }
-    public             void deleteSelected () {
-        
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.el.get_selection();
-            s.get_selected(out mod, out iter);
-                 
+     
+        this.model.el.clear();
                   
-            GLib.Value gval;
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
+        //this.get('/RightEditor').el.hide();
+        if (node ==null) {
+            return ;
+        }
+         
+        
+    
+        //var provider = this.get('/LeftTree').getPaleteProvider();
+        Gtk.TreeIter iter;
+        
+        //typeof(string),  // 0 key type
+         //typeof(string),  // 1 key
+         //typeof(string),  // 2 key (display)
+         //typeof(string),  // 3 value
+         //typeof(string),  // 4 value (display)
+         //typeof(string),  // 5 both (tooltip)
+        
+        
+        
+        
+        // really need a way to sort the hashmap...
+        var m = this.model.el;
+        
+        var miter = node.listeners.map_iterator();
+        var i = 0;
+        
+        while(miter.next()) {
+            i++;
+            m.append(out iter,null);
             
-            mod.get_value(iter, 1 , out gval);
-            var key = (string)gval;
+            this.updateIter(iter,  "listener", miter.get_key(), miter.get_value());
             
-            switch(type) {
-                case "listener":
-                    this.node.listeners.remove(key);
-                    break;
-                    
-                case "props":
-                    this.node.props.remove(key);
-                    break;
-            }
-            this.load(this.file, this.node);
-            
-            _this.changed();
+             
+         }
+         
+          
+        miter = node.props.map_iterator();
+        
+        
+       while(miter.next()) {
+               i++;
+            m.append(out iter,null);
+             this.updateIter(iter,  "prop", miter.get_key(), miter.get_value());
+             
+       }
+       print("clear selection\n");
+       // clear selection?
+       this.model.el.set_sort_column_id(6,Gtk.SortType.ASCENDING); // sort by real key..
+       
+       this.view.el.get_selection().unselect_all();
+       
+           var pane = _this.main_window.editpane.el;
+        var try_size = (i * 25) + 60; // est. 20px per line + 40px header
+        
+        // max 80%...
+        pane.set_position( 
+             ((try_size * 1.0f) /  (pane.max_position * 1.0f))  > 0.8f  ? 
+            (int) (pane.max_position * 0.2f) :
+            pane.max_position-try_size);
+        
+       
     }
-    public             string keyFormat (string val, string type) {
+    public              string keyFormat (string val, string type) {
         
         // Glib.markup_escape_text(val);
     
@@ -459,7 +370,125 @@ public class Xcls_LeftProps : Object
         
     
     }
-    public             void updateIter (Gtk.TreeIter iter,  string type, string key, string value) {
+    public              void deleteSelected () {
+        
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.el.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+                  
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
+            
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
+            
+            switch(type) {
+                case "listener":
+                    this.node.listeners.remove(key);
+                    break;
+                    
+                case "props":
+                    this.node.props.remove(key);
+                    break;
+            }
+            this.load(this.file, this.node);
+            
+            _this.changed();
+    }
+    public              void startEditingKey ( Gtk.TreePath path) {
+        
+         if (!this.stop_editor()) {
+            return;
+         }
+      
+        // others... - fill in options for true/false?
+        
+           
+        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+            this.allow_edit  = true;
+            this.keyrender.el.editable = true;
+         
+            this.view.el.set_cursor_on_cell(
+                path,
+                this.keycol.el,
+                this.keyrender.el,
+                true
+            );
+                   
+            return false;
+        });
+          
+        
+    }
+    public              void addProp (string in_type, string key, string value, string value_type) {
+          // info includes key, val, skel, etype..
+          //console.dump(info);
+            //type = info.type.toLowerCase();
+            //var data = this.toJS();
+              
+        var type = in_type == "signals" ? "listener" : in_type;
+          
+        var fkey = (value_type.length > 0 ? value_type + " " : "") + key;
+                  
+        if (type == "listener") {
+            if (this.node.listeners.has_key(key)) {
+                return;
+            }
+            this.node.listeners.set(key,value);
+        } else  {
+        
+            if (this.node.props.has_key(fkey)) {
+                return;
+            }
+            this.node.props.set(fkey,value);
+        }
+               
+          
+        // add a row???
+        this.load(this.file, this.node);
+        
+        
+        
+        /// need to find the row which I've just added..
+        
+        
+        var s = this.view.el.get_selection();
+        s.unselect_all();
+        
+        print("trying to find new iter");
+      
+        this.model.el.foreach((model, path, iter) => {
+            GLib.Value gval;
+        
+            this.model.el.get_value(iter, 0 , out gval);
+            if ((string)gval != type) {
+                print("not type: %s = %s\n", (string)gval , type);
+                return false;
+            }
+            this.model.el.get_value(iter, 1 , out gval);
+            if ((string)gval != fkey) {
+                print("not key: %s = %s\n", (string)gval , fkey);
+                return false;
+            }
+            // delay this?
+            GLib.Timeout.add_full(GLib.Priority.DEFAULT,40 , () => {
+            
+                this.startEditingValue(this.model.el.get_path(iter));
+                return false;
+            });
+            //s.select_iter(iter);
+            return true; 
+        });
+        
+        
+        
+                  
+    }
+    public              void updateIter (Gtk.TreeIter iter,  string type, string key, string value) {
     
         print("update Iter %s, %s\n", key,value);
         //typeof(string),  // 0 key type
@@ -501,35 +530,6 @@ public class Xcls_LeftProps : Object
                  5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
                  6,  this.keySortFormat(key)
             ); 
-    }
-    public             void startEditingKey ( Gtk.TreePath path) {
-        
-         if (!this.stop_editor()) {
-            return;
-         }
-      
-        // others... - fill in options for true/false?
-        
-           
-        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-            this.allow_edit  = true;
-            this.keyrender.el.editable = true;
-         
-            this.view.el.set_cursor_on_cell(
-                path,
-                this.keycol.el,
-                this.keyrender.el,
-                true
-            );
-                   
-            return false;
-        });
-          
-        
-    }
-    public             void finish_editing () {
-         // 
-        this.before_edit();
     }
     public class Xcls_HBox2 : Object 
     {
@@ -1487,7 +1487,7 @@ public class Xcls_LeftProps : Object
         }
 
         // user defined functions 
-        public             void setOptions (string[] ar) {
+        public              void setOptions (string[] ar) {
               var m = _this.valrendermodel.el;
                 m.clear();
              Gtk.TreeIter iret;
