@@ -77,13 +77,13 @@ public class JsRender.NodeToGlade : Object {
           
 		     
 	}
-	public string mungeChild(string pad ,  Node cnode, with_packing = false)
+	public string mungeChild(string pad ,  Node cnode, bool with_packing = false)
 	{
 		var x = new  NodeToGlade(cnode,  pad);
-		return x.mungeNode();
+		return x.mungeNode(with_packing);
 	}
 	
-	public string mungeNode()
+	public string mungeNode(bool with_packing)
 	{
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
