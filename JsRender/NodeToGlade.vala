@@ -143,7 +143,7 @@ public class JsRender.NodeToGlade : Object {
 		var id = this.node.uid();
 		var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
-		var props =  Palete.factory("Gtk").getPropertiesFor(this.node.xvala_cls, "props");
+		var props =  Palete.factory("Gtk").getPropertiesFor(this.node.fqn(), "props");
             
     		var pviter = props.map_iterator();
 		while (pviter.next()) {
