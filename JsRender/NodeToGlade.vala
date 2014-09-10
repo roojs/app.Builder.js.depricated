@@ -86,8 +86,8 @@ public class JsRender.NodeToGlade : Object {
 	public string mungeNode()
 	{
 		var pad = this.pad;
-		var cls = this.node.xvala_cls.replace(".", "");
-		var ns = this.node.xvala_cls.split(".")[0];
+		var cls = this.node.fqn().replace(".", "");
+		var ns = this.node.fqn().split(".")[0];
 		if (ns == "Clutter") {
 			return "";
 		}
