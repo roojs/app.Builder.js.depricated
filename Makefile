@@ -75,10 +75,10 @@ test-glade:
 		tests/GladeTest.vala -o /tmp/test-glade
 
 
-test-glade:
+test-gtkview:
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/GtkView.vala \
-		tests/GtkTest.vala -o /tmp/test-glade
+		tests/GtkView.vala -o /tmp/test-gtkview
 
 
 test-addprops:
