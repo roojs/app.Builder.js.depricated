@@ -364,15 +364,16 @@ public class JsRender.NodeToGlade : Object {
 			  
 
 			} 
-			
-			ret+= (children.length < 1) ? "<placeholder/>" : children;
-			
-			ret+= "
-			<packing>
+			children += (children.length > 0) ? "<packing>
 				<property name=\"expand\">True</property>
 				<property name=\"fill\">True</property>
 				<property name=\"position\">1</property>
-		      </packing>";
+		      </packing>" : "";
+			
+			ret+= (children.length > ) ? "<placeholder/>" : children;
+			
+			
+			
 
 		} else {
 			ret+= this.mungeNode (true);
