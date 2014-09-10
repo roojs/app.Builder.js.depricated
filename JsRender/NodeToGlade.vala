@@ -94,6 +94,9 @@ public class JsRender.NodeToGlade : Object {
 		if (ns == "GtkClutter") {
 			return "";
 		}
+		if (ns == "Webkit") {
+			return "";
+		}
 		switch(cls) {
 			// things we can not do yet...
 			case "GtkDialog": // top level.. - named and referenced
