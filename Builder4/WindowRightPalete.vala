@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/WindowRightPalete.vala  -o /tmp/WindowRightPalete
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_RightPalete();
-    WindowRightPalete.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_RightPalete  WindowRightPalete;
+static Xcls_RightPalete  _RightPalete;
 
 public class Xcls_RightPalete : Object 
 {
@@ -24,27 +7,27 @@ public class Xcls_RightPalete : Object
 
     public static Xcls_RightPalete singleton()
     {
-        if (WindowRightPalete == null) {
-            WindowRightPalete= new Xcls_RightPalete();
+        if (_RightPalete == null) {
+            _RightPalete= new Xcls_RightPalete();
         }
-        return WindowRightPalete;
+        return _RightPalete;
     }
     public Xcls_viewbox viewbox;
     public Xcls_model model;
     public Xcls_txtrender txtrender;
 
-        // my vars
-    public signal void after_node_change(JsRender.Node? node);
-    public signal void before_node_change(JsRender.Node? node);
-    public signal void drag_end();
+        // my vars (def)
+    public signal void after_node_change(JsRender.Node? node) ;
+    public signal void before_node_change(JsRender.Node? node) ;
+    public signal void drag_end() ;
 
-        // ctor 
+    // ctor 
     public Xcls_RightPalete()
     {
         _this = this;
         this.el = new Gtk.VBox( true, 0 );
 
-        // my vars
+        // my vars (dec)
 
         // set gobject values
         var child_0 = new Xcls_viewbox( _this );
@@ -52,47 +35,45 @@ public class Xcls_RightPalete : Object
         this.el.add (  child_0.el  );
     }
 
-    // userdefined functions 
-    public void clear() {
-           this.model.el.clear();
-        }
+    // user defined functions 
     public void load (Palete.Palete pal, string cls ) {
-           
-           // this.get('model').expanded();
+       
+       // this.get('model').expanded();
+        
+        var tr = pal.getChildList(cls);
+        this.model.el.clear();
+    
+    
+        Gtk.TreeIter citer;
+    
+        for(var i =0 ; i < tr.length; i++) {
+             this.model.el.append(out citer);   
+             
+            this.model.el.set_value(citer, 0,   tr[i] ); // title 
             
-            var tr = pal.getChildList(cls);
-            this.model.el.clear();
+        }
+        this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
         
-        
-            Gtk.TreeIter citer;
-        
-            for(var i =0 ; i < tr.length; i++) {
-                 this.model.el.append(out citer);   
-                 
-                this.model.el.set_value(citer, 0,   tr[i] ); // title 
-                
-            }
-            this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
-            
-        } 
-
-    // skip |xns - no return type
+    }
+    public void clear () {
+       this.model.el.clear();
+    }
     public class Xcls_viewbox : Object 
     {
         public Gtk.VBox el;
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_viewbox(Xcls_RightPalete _owner )
         {
             _this = _owner;
             _this.viewbox = this;
             this.el = new Gtk.VBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_ScrolledWindow3( _this );
@@ -100,9 +81,7 @@ public class Xcls_RightPalete : Object
             this.el.add (  child_0.el  );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_ScrolledWindow3 : Object 
     {
@@ -110,15 +89,15 @@ public class Xcls_RightPalete : Object
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_ScrolledWindow3(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
@@ -127,14 +106,11 @@ public class Xcls_RightPalete : Object
             this.el.add (  child_0.el  );
 
             // init method 
-              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-               this.el.set_size_request(-1,200);
-             
-        }
 
-        // userdefined functions 
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+               this.el.set_size_request(-1,200);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_TreeView4 : Object 
     {
@@ -142,16 +118,16 @@ public class Xcls_RightPalete : Object
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
         public string dragData;
 
-            // ctor 
+        // ctor 
         public Xcls_TreeView4(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.enable_tree_lines = true;
@@ -164,7 +140,8 @@ public class Xcls_RightPalete : Object
             this.el.append_column (  child_1.el  );
 
             // init method 
-             {
+
+            {
                 this.el.set_size_request(150,-1);
                                       //  set_reorderable: [1]
                                               
@@ -191,9 +168,16 @@ public class Xcls_RightPalete : Object
                // Gtk.drag_source_add_text_targets(this.el); 
              
             }
-
             // listeners 
-            this.el.drag_begin.connect(   ( ctx) => {
+            this.el.button_press_event.connect( ( event) => {
+            
+             //	if (!this.get('/Editor').save()) {
+             //	    // popup!! - click handled.. 
+            // 	    return true;
+            //        }
+                return false;
+            });
+            this.el.drag_begin.connect( ( ctx) => {
                 // we could fill this in now...
             //        Seed.print('SOURCE: drag-begin');
                     
@@ -220,8 +204,17 @@ public class Xcls_RightPalete : Object
                      
                     
                     return;
-            } );
-            this.el.drag_data_get.connect(   (drag_context, selection_data, info, time) => {
+            });
+            this.el.drag_end.connect( ( drag_context)  => {
+             	//Seed.print('SOURCE: drag-end');
+            	
+            	this.dragData = "";
+            	//this.dropList = null;
+            	_this.drag_end(); // call signal..
+            	//this.get('/LeftTree.view').highlight(false);
+            	 
+            });
+            this.el.drag_data_get.connect( (drag_context, selection_data, info, time) => {
              	//Seed.print('Palete: drag-data-get: ' + target_type);
                     if (this.dragData.length > 0 ) {
                         print("setting drag data to %s", this.dragData);
@@ -232,29 +225,10 @@ public class Xcls_RightPalete : Object
                     //this.el.dragData = "TEST from source widget";
                     
                     
-            } );
-            this.el.drag_end.connect( ( drag_context)  => {
-             	//Seed.print('SOURCE: drag-end');
-            	
-            	this.dragData = "";
-            	//this.dropList = null;
-            	_this.drag_end(); // call signal..
-            	//this.get('/LeftTree.view').highlight(false);
-            	 
-            } );
-            this.el.button_press_event.connect(  ( event) => {
-            
-             //	if (!this.get('/Editor').save()) {
-             //	    // popup!! - click handled.. 
-            // 	    return true;
-            //        }
-                return false;
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_model : Object 
     {
@@ -262,30 +236,28 @@ public class Xcls_RightPalete : Object
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_model(Xcls_RightPalete _owner )
         {
             _this = _owner;
             _this.model = this;
             this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
+        // user defined functions 
         public string getValue (Gtk.TreeIter iter, int col)  {
-                GLib.Value gval;
-                 this.el.get_value(iter, col , out gval);
-                return  (string)gval;
-                
-                
-            }
-
-        // skip |xns - no return type
+            GLib.Value gval;
+             this.el.get_value(iter, col , out gval);
+            return  (string)gval;
+            
+            
+        }
     }
     public class Xcls_TreeViewColumn6 : Object 
     {
@@ -293,15 +265,15 @@ public class Xcls_RightPalete : Object
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_TreeViewColumn6(Xcls_RightPalete _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_txtrender( _this );
@@ -309,13 +281,10 @@ public class Xcls_RightPalete : Object
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-             this.el.add_attribute(_this.txtrender.el , "markup", 0 );
-             
-        }
 
-        // userdefined functions 
+            this.el.add_attribute(_this.txtrender.el , "markup", 0 );        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_txtrender : Object 
     {
@@ -323,22 +292,20 @@ public class Xcls_RightPalete : Object
         private Xcls_RightPalete  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_txtrender(Xcls_RightPalete _owner )
         {
             _this = _owner;
             _this.txtrender = this;
             this.el = new Gtk.CellRendererText();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
 }
