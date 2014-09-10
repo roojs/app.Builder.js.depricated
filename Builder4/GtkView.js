@@ -23,9 +23,11 @@ GtkView=new XObject({
         
         
         if (type.is_a(typeof(Gtk.Window))) {
+            // fake window???
+        
              this.addNodeChildren(parent, node);
              return;
-         }
+        }
         
         var  child = new Object(type);
         
