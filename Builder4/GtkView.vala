@@ -45,7 +45,7 @@ public class Xcls_GtkView : Object
     	var str = x.munge();
             var builder = new Gtk.Builder.from_string (str,str.length);
             
-    	var obj=  builder.get_object(file.tree.uid());
+    	var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
             this.container.el.add(obj);
     }
     public class Xcls_container : Object 
