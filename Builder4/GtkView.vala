@@ -42,7 +42,7 @@ public class Xcls_GtkView : Object
                 return;
             }
             if (this.lastObj != null) {
-                this.container.remove(this.lastObj);
+                this.container.el.remove(this.lastObj);
             }
      
     	var x = new JsRender.NodeToGlade(file.tree,  "");
