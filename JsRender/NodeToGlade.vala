@@ -64,7 +64,17 @@ public class JsRender.NodeToGlade : Object {
 
 		this.fillValaName(this.node);
 		this.pad += "    ";
-		var res = this.mungeNode(false);
+
+		var cls = this.node.fqn().replace(".", "");
+		switch(cls) {
+			// things we can not do yet...
+			case "GtkDialog": // top level.. - named and referenced
+			case "GtkAboutDialog":
+			case "GtkWindow": // top level.. - named and referenced
+				return this.mungeOuter(true);
+		}
+				
+		var res = this.mungeOuter(false);
 		if (res.length < 1) {
 			return "";
 		}
@@ -99,7 +109,7 @@ public class JsRender.NodeToGlade : Object {
 		}
 		switch(cls) {
 			// things we can not do yet...
-			case "GtkDialog": // top level.. - named and referenced
+			/*case "GtkDialog": // top level.. - named and referenced
 			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
 				return this.mungeWindow();
@@ -109,7 +119,7 @@ public class JsRender.NodeToGlade : Object {
 					return this.mungeChild(pad + "        " , this.node.items.get(0), false );
 				}
 				return "";
-
+			*/
 			case "GtkView": // SourceView?
 			case "GtkTreeStore": // top level.. - named and referenced
 			case "GtkListStore": // top level.. - named and referenced
