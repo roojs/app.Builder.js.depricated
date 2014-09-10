@@ -30,6 +30,9 @@ public class GtkView : Object
     }
 
     // user defined functions 
+    public return_type XXXX () {
+    
+    }
     public void addNode (Object? parent, JsRender.Node node) {  
     
         var type = GLib.Type.from_name(node.fqn());

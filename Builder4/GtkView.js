@@ -13,6 +13,9 @@ GtkView=new XObject({
     xtype : "Viewport",
     id : "GtkView",
     xns : Gtk,
+    XXXX : () {
+    
+    },
     addNode : (Object? parent, JsRender.Node node) {  
     
         var type = GLib.Type.from_name(node.fqn());
