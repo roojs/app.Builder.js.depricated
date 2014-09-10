@@ -64,11 +64,15 @@ public class JsRender.NodeToGlade : Object {
 
 		this.fillValaName(this.node);
 		this.pad += "    ";
+		var res = this.mungeNode();
+		if (!res.length) {
+			return "";
+		}
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
 			"<!-- Generated with glade 3.18.3 -->\n" +
 			"<interface>\n" + 
 			"    <requires lib=\"gtk+\" version=\"3.12\"/>\n" +
-  			this.mungeNode() +
+  			res +
   			"</interface>\n";
           
 		     
