@@ -164,7 +164,7 @@ public class JsRender.NodeToGlade : Object {
 
 		var pack = "";
 		
-		if (with_packing && this.node.props.get("* pack") != null) {
+		if (with_packing && ) {
  
 			pack = this.packString();
 			
@@ -201,13 +201,22 @@ public class JsRender.NodeToGlade : Object {
 		
 		
 		
-		var pk = this.node.get("* pack").split(",");
+		
 		// pack is part of the parent element..
 		var p = node.parent;
+		var pk= "add";
 		var pfqn = "Gtk.Box";
 		if (p != null) {
 			pfqn  = p.fqn();
-		} 
+			if (this.node.props.get("* pack") != null) {
+				pk = this.node.get("* pack").split(",");
+			}
+		} else {
+			if (this.node.props.get("* pack") == null) {
+				return "";
+			}
+			pk = this.node.get("* pack").split(",");
+		]
 		
 		if (pfqn == null) {
 			return "";
