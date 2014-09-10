@@ -13,6 +13,7 @@ GtkView=new XObject({
     xtype : "Viewport",
     id : "GtkView",
     xns : Gtk,
+    addNode : "() {  }",
     items : [
     	{
             xtype : "HBox",
