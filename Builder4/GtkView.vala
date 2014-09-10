@@ -44,10 +44,24 @@ public class GtkView : Object
         if (parent  == null) {
             pack = "add";
             parent = this.container.el;
-        } 
-             
-        
-        
+        }
+        var node_pack = node.get("* pack");
+        string[] args = {}'
+        if (pack.length < 1 && node_pack.length > 0) {
+            var ar = pack.split(",");
+            pack = ar[0];
+            for (var i =1; i < ar.length; i++) {
+                args += ar[i];
+            }
+        }
+        switch(pack) {
+            case "add":
+                parent.add(child);
+                break;
+            default:
+                print("unknown pack: " + pack);
+                return;
+        }
         
         
         var iter = node.items.list_iterator();
