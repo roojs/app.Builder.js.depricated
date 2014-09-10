@@ -136,7 +136,7 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkCellRendererText":
 			case "GtkSourceBuffer":				
 			case "GtkClutterActor"://fixme..
-			case "GtkClutterEmbed"://fixme..
+			///case "GtkClutterEmbed"://fixme..
 				return "";
 		}
 
