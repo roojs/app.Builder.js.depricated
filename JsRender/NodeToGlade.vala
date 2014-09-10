@@ -94,6 +94,7 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkListStore": // top level.. - named and referenced
 			case "GtkTreeViewColumn": // part of liststore?!?!
 			case "GtkMenu": // top level..
+			case "GtkCellRendererText":
 				return "";
 		}
 
