@@ -212,7 +212,7 @@ public class JsRender.NodeToGlade : Object {
 			if (this.node.props.get("* pack") == null) {
 				return "";
 			}
-			
+			pk = this.node.get("* pack").split(",");
 		} else {
 			if (this.node.props.get("* pack") != null) {
 				pk = this.node.get("* pack").split(",");
