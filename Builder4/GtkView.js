@@ -39,7 +39,7 @@ GtkView=new XObject({
             parent = this.container.el;
         }
         var node_pack = node.get("* pack");
-        string[] args = {}'
+        string[] args = {};
         if (pack.length < 1 && node_pack.length > 0) {
             var ar = pack.split(",");
             pack = ar[0];
