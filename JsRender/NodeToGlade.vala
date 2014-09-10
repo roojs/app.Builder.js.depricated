@@ -213,7 +213,7 @@ public class JsRender.NodeToGlade : Object {
 		if (pfqn == null) {
 			return "";
 		}
-		if (pfqn == "Gtk.ScrollWindow") {
+		if (pfqn == "Gtk.ScrolledWindow") {
 			return "";
 		}
 		var p_parts =pfqn.split(".");
