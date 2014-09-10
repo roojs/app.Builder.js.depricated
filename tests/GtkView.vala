@@ -15,7 +15,8 @@ int main (string[] args) {
 	proj.scanDirs();
 	print("load %s\n", proj.firstPath() + "/WindowLeftProps.bjs");
 	
-	var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
+	//var tf = proj.files.get(proj.firstPath() + "/WindowLeftProps.bjs");
+	var tf = proj.files.get(proj.firstPath() + "/EditProject.bjs");
 	tf.loadItems();
 
 	
