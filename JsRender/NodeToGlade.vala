@@ -109,6 +109,7 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkMenu": // top level..
 			case "GtkCellRendererText":
 			case "GtkClutterActor"://fixme..
+			case "GtkClutterEmbed"://fixme..
 				return "";
 		}
 
