@@ -37,7 +37,8 @@ public class Xcls_GtkView : Object
     
         if (type == GLib.Type.INVALID) {
             print("INVALID: new %s / %s\n", node.fqn(), type.name());             
-            return;
+             this.addNodeChildren(parent, node);
+             return;
         }
         // some types can not be created -- eg. dialogs...
         
