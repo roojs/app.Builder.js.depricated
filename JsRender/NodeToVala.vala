@@ -493,6 +493,9 @@ public class JsRender.NodeToVala : Object {
 	void addWrappedProperties()
 	{
    		var cls = Palete.Gir.factoryFqn(this.node.fqn());
+		if (cls == null) {
+			return;
+		}
             // what are the properties of this class???
   		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
