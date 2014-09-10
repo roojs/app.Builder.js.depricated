@@ -15,12 +15,12 @@ int main (string[] args) {
 	proj = Project.Project.getProject("Builder4");
 	
 	proj.scanDirs();
-	loadit("DialogSaveTemplate");
+	//loadit("DialogSaveTemplate");
 	
-	//var iter = proj.sortedFiles().list_iterator();
-	//while (iter.next()) { 
-	//	loadit(iter.get().name);
-	//}
+	var iter = proj.sortedFiles().list_iterator();
+	while (iter.next()) { 
+		loadit(iter.get().name);
+	}
 	//loadit("WindowLeftProps");
 	//loadit("EditProject");
 
