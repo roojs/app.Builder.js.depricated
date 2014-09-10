@@ -208,14 +208,15 @@ public class JsRender.NodeToGlade : Object {
 		var pfqn = "Gtk.Box";
 		if (p != null) {
 			pfqn  = p.fqn();
-			if (this.node.props.get("* pack") != null) {
-				pk = this.node.get("* pack").split(",");
-			}
-		} else {
 			if (this.node.props.get("* pack") == null) {
 				return "";
 			}
-			pk = this.node.get("* pack").split(",");
+			
+		} else {
+			if (this.node.props.get("* pack") != null) {
+				pk = this.node.get("* pack").split(",");
+			}
+			
 		}
 		
 		if (pfqn == null) {
