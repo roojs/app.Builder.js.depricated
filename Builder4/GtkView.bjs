@@ -11,7 +11,6 @@
             "xtype" : "Viewport",
             "$ xns" : "Gtk",
             "| void addNode" : "(JsRender.JsRender file) {  \n{\n    \n\n\n        // clear existing elements from project?\n        \n\n        if (file.tree == null) {\n            return;\n        }\n\n//        print(\"%s\\n\",tf.tree.toJsonString());\n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n        var builder = Builder.from_string (x.munge());\n        \n\tvar obj=  builder.get_object(file.tree.uid());\n        this.container.add(obj);        \n \n\n}\n",
-            "| void addNodeChildren" : "(Object? parent, JsRender.Node node) { \n\n    var iter = node.items.list_iterator();\n    while (iter.next()) {\n        this.addNode(parent, iter.get());\n    }\n}\n",
             "items" : [
                 {
                     "id" : "container",

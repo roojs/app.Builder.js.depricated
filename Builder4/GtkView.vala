@@ -52,13 +52,6 @@ public class Xcls_GtkView : Object
      
     
     }
-    public void addNodeChildren (Object? parent, JsRender.Node node) { 
-    
-        var iter = node.items.list_iterator();
-        while (iter.next()) {
-            this.addNode(parent, iter.get());
-        }
-    }
     public class Xcls_container : Object 
     {
         public Gtk.HBox el;
