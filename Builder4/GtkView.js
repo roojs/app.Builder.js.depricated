@@ -16,7 +16,7 @@ GtkView=new XObject({
     addNode : (Object? parent, JsRender.Node node) {  
     
         Type? type = GLib.Type.from_name(node.fqn());
-        if (type -- null) {
+        if (type == null) {
             return;
         }
         // some types can not be created -- eg. dialogs...
