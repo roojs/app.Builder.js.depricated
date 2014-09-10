@@ -10,7 +10,7 @@
             "xtype" : "Viewport",
             "string id" : "GtkView",
             "$ xns" : "Gtk",
-            "| void addNode" : "(Object parent, JsRender node) {  \n\n\n\n}",
+            "| void addNode" : "(Object parent, JsRender.Node node) {  \n\n    \n\n}",
             "items" : [
                 {
                     "* pack" : "add",

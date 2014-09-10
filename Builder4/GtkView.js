@@ -13,9 +13,9 @@ GtkView=new XObject({
     xtype : "Viewport",
     id : "GtkView",
     xns : Gtk,
-    addNode : (Object parent, JsRender node) {  
+    addNode : (Object parent, JsRender.Node node) {  
     
-    
+        
     
     },
     items : [

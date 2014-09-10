@@ -30,9 +30,9 @@ public class GtkView : Object
     }
 
     // user defined functions 
-    public void addNode (Object parent, JsRender node) {  
+    public void addNode (Object parent, JsRender.Node node) {  
     
-    
+        
     
     }
     public class Xcls_HBox2 : Object 
