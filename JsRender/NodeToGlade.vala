@@ -251,9 +251,9 @@ public class JsRender.NodeToGlade : Object {
 				
 			case "add":
 				//pbody += @"$pad    <property name=\"pack_type\">start</property>\n";
-				 pbody += @"$pad    <property name=\"expand\">False</property>\n";
+				 pbody += @"$pad    <property name=\"expand\">True</property>\n";
 				pbody += @"$pad    <property name=\"fill\">True</property>\n";
-				pbody += @"$pad    <property name=\"position\">1</property>\n";
+				//pbody += @"$pad    <property name=\"position\">1</property>\n";
 				var pack = @"$pad<packing>\n" +
 					string.joinv("", pbody) + 
 						@"$pad</packing>\n";
