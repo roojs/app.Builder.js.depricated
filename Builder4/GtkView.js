@@ -10,7 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 GtkView=new XObject({
-    xtype : "ViewPort",
+    xtype : "Viewport",
     xns : Gtk
 });
 GtkView.init();

@@ -7,7 +7,7 @@
     "modOrder" : "",
     "items" : [
         {
-            "xtype" : "ViewPort",
+            "xtype" : "Viewport",
             "$ xns" : "Gtk"
         }
     ]

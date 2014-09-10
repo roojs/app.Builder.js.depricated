@@ -2,7 +2,7 @@ static GtkView  _GtkView;
 
 public class GtkView : Object 
 {
-    public Gtk.Window el;
+    public Gtk.Viewport el;
     private GtkView  _this;
 
     public static GtkView singleton()
@@ -19,7 +19,7 @@ public class GtkView : Object
     public GtkView()
     {
         _this = this;
-        this.el = new Gtk.Window( null );
+        this.el = new Gtk.Viewport( null, null );
 
         // my vars (dec)
 
