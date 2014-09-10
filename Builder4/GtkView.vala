@@ -81,7 +81,7 @@ public class GtkView : Object
                 return;
         }
         
-        
+        this.addNodeChildren(parent, node);
         
     
     }

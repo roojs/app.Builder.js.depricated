@@ -64,7 +64,7 @@ GtkView=new XObject({
                 return;
         }
         
-        
+        this.addNodeChildren(parent, node);
         
     
     },
