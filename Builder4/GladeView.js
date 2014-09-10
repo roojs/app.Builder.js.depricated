@@ -10,9 +10,8 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 GladeView=new XObject({
-    xtype: Glade.DesignView,
     id : "GladeView",
-    'void:createThumb' : () {
+    createThumb : () {
         
         
         if (this.file == null) {
@@ -46,9 +45,13 @@ GladeView=new XObject({
         
          
     },
-    'void:loadFile' : (JsRender.JsRender file)
+    loadFile : (JsRender.JsRender file)
     {
+        
+    
         this.file = file;
+        
+    
             // clear existing elements from project?
             
             var  p = this.el.get_project();
@@ -56,6 +59,10 @@ GladeView=new XObject({
             // should remove all..
             for (var i =0;    i < li.length(); i++) {   
                 p.remove_object(li.nth_data(i)); 
+            }
+    
+            if (file.tree == null) {
+                return;
             }
     
     //        print("%s\n",tf.tree.toJsonString());
@@ -73,7 +80,10 @@ GladeView=new XObject({
             
      
     
-    }
+    },
+    xtype : "DesignView",
+    file : "null",
+    xns : Glade
 });
 GladeView.init();
 XObject.cache['/GladeView'] = GladeView;
