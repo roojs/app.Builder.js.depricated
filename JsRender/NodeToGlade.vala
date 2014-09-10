@@ -139,8 +139,7 @@ public class JsRender.NodeToGlade : Object {
 
 		var pack = "";
 		if (this.node.props.get("* pack") != null) {
-
-		
+ 
 			pack = this.packString();
 			
 
