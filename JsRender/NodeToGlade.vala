@@ -66,15 +66,18 @@ public class JsRender.NodeToGlade : Object {
 		this.pad += "    ";
 
 		var cls = this.node.fqn().replace(".", "");
+		string res = "";
 		switch(cls) {
 			// things we can not do yet...
 			case "GtkDialog": // top level.. - named and referenced
 			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
-				return this.mungeOuter(true);
+				res =  this.mungeOuter(true);
+			default:
+				res = this.mungeOuter(false);				
 		}
 				
-		var res = this.mungeOuter(false);
+		
 		if (res.length < 1) {
 			return "";
 		}
