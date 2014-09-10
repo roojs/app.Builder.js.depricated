@@ -8,7 +8,13 @@
     "items" : [
         {
             "xtype" : "Viewport",
-            "$ xns" : "Gtk"
+            "$ xns" : "Gtk",
+            "items" : [
+                {
+                    "xtype" : "HBox",
+                    "$ xns" : "Gtk"
+                }
+            ]
         }
     ]
 }

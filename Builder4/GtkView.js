@@ -11,7 +11,14 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GtkView=new XObject({
     xtype : "Viewport",
-    xns : Gtk
+    xns : Gtk,
+    items : [
+    	{
+            xtype : "HBox",
+            xns : Gtk
+        }
+    ]
+
 });
 GtkView.init();
 XObject.cache['/GtkView'] = GtkView;
