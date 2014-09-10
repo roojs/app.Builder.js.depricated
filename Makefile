@@ -75,6 +75,12 @@ test-glade:
 		tests/GladeTest.vala -o /tmp/test-glade
 
 
+test-glade:
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		Builder4/GtkView.vala \
+		tests/GtkTest.vala -o /tmp/test-glade
+
+
 test-addprops:
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		Builder4/WindowAddProp.vala \
