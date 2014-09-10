@@ -88,7 +88,6 @@ GtkView=new XObject({
     items : [
     	{
             xtype : "HBox",
-            id : "container",
             xns : Gtk
         }
     ]

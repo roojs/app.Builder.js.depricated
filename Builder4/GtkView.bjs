@@ -16,8 +16,8 @@
                 {
                     "* pack" : "add",
                     "xtype" : "HBox",
-                    "string id" : "container",
-                    "$ xns" : "Gtk"
+                    "$ xns" : "Gtk",
+                    "* id" : "container"
                 }
             ]
         }
