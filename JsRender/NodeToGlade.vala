@@ -101,7 +101,8 @@ public class JsRender.NodeToGlade : Object {
 					return this.mungeChild(pad + "        " , this.node.items.get(0) );
 				}
 				return "";
-				
+
+			case "GtkView": // SourceView?
 			case "GtkTreeStore": // top level.. - named and referenced
 			case "GtkListStore": // top level.. - named and referenced
 			case "GtkTreeViewColumn": // part of liststore?!?!
