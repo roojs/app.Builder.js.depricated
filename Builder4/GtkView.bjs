@@ -8,6 +8,7 @@
     "items" : [
         {
             "xtype" : "Viewport",
+            "string id" : "GtkView",
             "$ xns" : "Gtk",
             "items" : [
                 {
