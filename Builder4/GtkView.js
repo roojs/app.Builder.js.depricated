@@ -78,7 +78,7 @@ GtkView=new XObject({
         
     
     },
-    addNodeChildren : () {
+    addNodeChildren : (Object? parent, JsRender.Node node) { 
     
         var iter = node.items.list_iterator();
         while (iter.next()) {

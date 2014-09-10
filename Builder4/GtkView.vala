@@ -95,7 +95,7 @@ public class GtkView : Object
         
     
     }
-    public void addNodeChildren () {
+    public void addNodeChildren (Object? parent, JsRender.Node node) { 
     
         var iter = node.items.list_iterator();
         while (iter.next()) {
