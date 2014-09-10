@@ -321,7 +321,8 @@ public class JsRender.NodeToGlade : Object {
 	<property name=\"can_focus\">False</property>
 	<property name=\"orientation\">vertical</property>
 ";
-		
+		if (with_window) { 		
+			ret+="
 	<child>
 		<object class=\"GtkLabel\" id=\"fake-window-label-1\">
 			<property name=\"visible\">True</property>
@@ -334,15 +335,19 @@ public class JsRender.NodeToGlade : Object {
 			<property name=\"position\">0</property>
 		</packing>
 	</child>
-		 
+	";
+		}
+		
+		ret+=" 
 		<child>
 		";
-			if (this.node.items.size > 0) {
-				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false );
-				ret+= "<packing>
-        <property name=\"expand\">True</property>
-        <property name=\"fill\">True</property>
-        <property name=\"position\">1</property>
+		if (this.node.items.size > 0) {
+			ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false );
+			ret+= "
+	<packing>
+		<property name=\"expand\">True</property>
+		<property name=\"fill\">True</property>
+		<property name=\"position\">1</property>
       </packing>";
 
 		} else {
@@ -353,6 +358,9 @@ public class JsRender.NodeToGlade : Object {
 
 		ret+="
 		    </child>
+	    ";
+	if (with_window) {
+		ret+="
 		    <child>
 		      <object class=\"GtkBox\" id=\"fake-footer\">
 			<property name=\"visible\">True</property>
@@ -370,7 +378,10 @@ public class JsRender.NodeToGlade : Object {
 			<property name=\"position\">2</property>
 		      </packing>
 		    </child>
-		</object>"; 
+	    ";
+	}
+		ret +="
+	</object>"; 
 
 	return ret;
 	}
