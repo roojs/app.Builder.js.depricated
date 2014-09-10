@@ -67,11 +67,11 @@ public class Xcls_GtkView : Object
         }
         switch(pack) {
             case "add":
-                ((Gtk.Container) parent).add(child);
+                ((Gtk.Container) parent).add((Gtk.Widget)child);
                 break;
             case "pack_start":
                 ((Gtk.Box) parent).pack_start(
-                    child, 
+                    (Gtk.Widget) child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
                     args.length > 2 ?  uint64.parse(args[2]) : 0
@@ -79,7 +79,7 @@ public class Xcls_GtkView : Object
                 break;
             case "pack_end":
                 ((Gtk.Box) parent).pack_end(
-                    child, 
+                    (Gtk.Widget)child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
                     args.length > 2 ?  uint64.parse(args[2]) : 0
