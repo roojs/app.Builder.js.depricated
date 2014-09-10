@@ -311,21 +311,24 @@ public class JsRender.NodeToGlade : Object {
 	}
 	public string  mungeWindow()
 	{
+		var label = this.node.fqn() + ": " + 
+			(this.node.has("title") ? this.node.get("title") : "No-title");
+		
 		var ret = "";
-		ret+= "<object class=\"GtkBox" id=\"box1\">
-		    <property name="visible">True</property>
-		    <property name="can_focus">False</property>
-		    <property name="orientation">vertical</property>
+		ret+= "<object class=\"GtkBox\" id=\"fake-window1\">
+		    <property name=\"visible\">True</property>
+		    <property name=\"can_focus\">False</property>
+		    <property name=\"orientation\">vertical</property>
 		<child>
-			<object class="GtkLabel" id="label1">
-				<property name="visible">True</property>
-				<property name="can_focus">False</property>
-				<property name="label" translatable="yes">label</property>
+			<object class=\"GtkLabel\" id=\"fake-window-label-1\">
+				<property name=\"visible\">True</property>
+				<property name=\"can_focus\">False</property>
+				<property name=\"label\" translatable=\"yes\">" + label + "</property>
 			</object>
 			<packing>
-				<property name="expand">False</property>
-				<property name="fill">True</property>
-				<property name="position">0</property>
+				<property name=\"expand\">False</property>
+				<property name=\"fill\">True</property>
+				<property name=\"position\">0</property>
 		      </packing>
 		</child>
 		// add children...
@@ -342,9 +345,9 @@ public class JsRender.NodeToGlade : Object {
 		ret+="
 		    </child>
 		    <child>
-		      <object class="GtkBox" id="box3">
-			<property name="visible">True</property>
-			<property name="can_focus">False</property>
+		      <object class=\"GtkBox\" id=\"fake-footer\">
+			<property name=\"visible\">True</property>
+			<property name=\"can_focus\">False</property>
 			<child>
 			  <placeholder/>
 			</child>
@@ -353,9 +356,9 @@ public class JsRender.NodeToGlade : Object {
 			</child>
 		      </object>
 		      <packing>
-			<property name="expand">False</property>
-			<property name="fill">True</property>
-			<property name="position">2</property>
+			<property name=\"expand\">False</property>
+			<property name=\"fill\">True</property>
+			<property name=\"position\">2</property>
 		      </packing>
 		    </child>
 		</object>"; 
