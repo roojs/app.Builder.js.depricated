@@ -70,7 +70,6 @@ GtkView=new XObject({
             this.addNode(child, iter.get());
         }
         
-        
     
     },
     items : [

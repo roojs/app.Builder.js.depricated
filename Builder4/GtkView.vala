@@ -87,7 +87,6 @@ public class GtkView : Object
             this.addNode(child, iter.get());
         }
         
-        
     
     }
     public class Xcls_HBox2 : Object 
