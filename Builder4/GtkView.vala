@@ -31,72 +31,34 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions 
-    public void addNode (Object? parent, JsRender.Node node) {  
-    
-        Type? type = GLib.Type.from_name(node.fqn().replace(".", "").strip());
-    
-        if (type == GLib.Type.INVALID) {
-            print("INVALID: new %s / %s\n", node.fqn().replace(".", "").strip(), type.name());             
-             this.addNodeChildren(parent, node);
-             return;
-        }
-        // some types can not be created -- eg. dialogs...
-        
-        
-        if (type.is_a(typeof(Gtk.Window))) {
-            // fake window???
-        
-             this.addNodeChildren(parent, node);
-             return;
-        }
-        print("new %s / %s\n", node.fqn(), type.name());     
-        var  child = Object.new(type);
-        
+    public void addNode (JsRender.JsRender file) {  
+    {
         
     
-        var pack = "";
-        if (parent  == null) {
-            pack = "add";
-            parent = this.container.el;
-        }
-        var node_pack = node.get("* pack");
-        string[] args = {};
-        if (pack.length < 1 && node_pack.length > 0) {
-            var ar = pack.split(",");
-            pack = ar[0];
-            for (var i =1; i < ar.length; i++) {
-                args += ar[i];
-            }
-        }
-        switch(pack) {
-            case "add":
-                ((Gtk.Container) parent).add((Gtk.Widget)child);
-                break;
-            case "pack_start":
-                ((Gtk.Box) parent).pack_start(
-                    (Gtk.Widget) child, 
-                    args.length > 0 && args[0].down() == "false" ? false : true,
-                    args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  (uint) uint64.parse(args[2]) : 0
-                );
-                break;
-            case "pack_end":
-                ((Gtk.Box) parent).pack_end(
-                    (Gtk.Widget) child, 
-                    args.length > 0 && args[0].down() == "false" ? false : true,
-                    args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  (uint)  uint64.parse(args[2]) : 0
-                );            
-                break;
-                
-                
-            default:
-                print("unknown pack: " + pack);
+    
+            // clear existing elements from project?
+            
+    
+            if (file.tree == null) {
                 return;
-        }
-        
-        this.addNodeChildren(child, node);
-        
+            }
+    
+    //        print("%s\n",tf.tree.toJsonString());
+    	var x = new JsRender.NodeToGlade(file.tree,  "");
+            Builder.from_string (x.munge())
+    	 
+    	FileIOStream iostream;
+    	var  f = File.new_tmp ("tpl-XXXXXX.glade", out iostream);
+    	var ostream = iostream.output_stream;
+    	var dostream = new DataOutputStream (ostream);
+    	dostream.put_string (x.munge());
+    	this.el.show();
+    	 print("LOADING %s\n",f.get_path ());
+            p.load_from_file(f.get_path ());
+            
+     
+    
+    }
     
     }
     public void addNodeChildren (Object? parent, JsRender.Node node) { 
