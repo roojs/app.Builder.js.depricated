@@ -134,6 +134,7 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkTreeViewColumn": // part of liststore?!?!
 			case "GtkMenu": // top level..
 			case "GtkCellRendererText":
+			case "GtkSourceBuffer":				
 			case "GtkClutterActor"://fixme..
 			case "GtkClutterEmbed"://fixme..
 				return "";
