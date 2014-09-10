@@ -248,7 +248,7 @@ public class JsRender.NodeToGlade : Object {
 		}
 			
 		var pad = this.pad;
-		 
+		 /*
 		for (var i = 2; i < mdef.paramset.params.size; i++) {
 			var poff = i - 1;
 			if (poff > (pk.length-1)) {
@@ -260,6 +260,7 @@ public class JsRender.NodeToGlade : Object {
 			pbody += @"$pad    <property name=\"$key\">$val</property>\n";
 		
 		}
+	     */
 		if (pbody.length < 1) {
 			/*var generator = new Json.Generator ();
 			var n = new Json.Node(Json.NodeType.OBJECT);
