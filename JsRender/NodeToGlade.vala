@@ -335,7 +335,13 @@ public class JsRender.NodeToGlade : Object {
 		<child>
 		";
 			if (this.node.items.size > 0) {
-				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), true );
+				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false );
+				ret+= "<packing>
+        <property name=\"expand\">True</property>
+        <property name=\"fill\">True</property>
+        <property name=\"position\">1</property>
+      </packing>";
+
 		} else {
 			ret+="<placeholder/>";
 		}
