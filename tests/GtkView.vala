@@ -19,14 +19,13 @@ int main (string[] args) {
 	tf.loadItems();
 
 	
-	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
 	var  left_props =new Xcls_GtkView();
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
-	left_props.load(tf);
+	left_props.addNode(tf.tree);
  
 	
 	Gtk.main();
