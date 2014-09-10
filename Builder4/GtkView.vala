@@ -73,7 +73,7 @@ public class GtkView : Object
                     child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  uint64.parse(args[2])
+                    args.length > 2 ?  uint64.parse(args[2]) : 0
                 );
                 break;
             case "pack_end":
@@ -81,7 +81,7 @@ public class GtkView : Object
                     child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  uint64.parse(args[2])
+                    args.length > 2 ?  uint64.parse(args[2]) : 0
                 );            
                 break;
                 
