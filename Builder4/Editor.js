@@ -117,6 +117,7 @@ Editor=new XObject({
                     insert_spaces_instead_of_tabs : TRUE,
                     xtype : "View",
                     highlight_current_line : true,
+                    auto_indent : TRUE,
                     xns : GtkSource,
                     load : (string str) {
                     
@@ -155,7 +156,6 @@ Editor=new XObject({
                         _this.save_button.el.sensitive = false;
                     },
                     indent_width : 4,
-                    auto_indent : TRUE,
                     show_line_numbers : TRUE,
                     listeners : {
                     	key_release_event : (event) => {
