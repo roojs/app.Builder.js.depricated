@@ -12,6 +12,7 @@ public class Xcls_GtkView : Object
         }
         return _GtkView;
     }
+    public Xcls_container container;
 
         // my vars (def)
 
@@ -114,6 +115,7 @@ public class Xcls_GtkView : Object
         public Xcls_container(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.container = this;
             this.el = new Gtk.HBox( true, 0 );
 
             // my vars (dec)

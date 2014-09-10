@@ -14,10 +14,10 @@
             "| void addNodeChildren" : "(Object? parent, JsRender.Node node) { \n\n    var iter = node.items.list_iterator();\n    while (iter.next()) {\n        this.addNode(parent, iter.get());\n    }\n}\n",
             "items" : [
                 {
+                    "id" : "container",
                     "* pack" : "add",
                     "xtype" : "HBox",
-                    "$ xns" : "Gtk",
-                    "* id" : "container"
+                    "$ xns" : "Gtk"
                 }
             ]
         }
