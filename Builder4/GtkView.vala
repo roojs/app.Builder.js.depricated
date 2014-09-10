@@ -24,6 +24,7 @@ public class Xcls_GtkView : Object
         this.el = new Gtk.Viewport( null, null );
 
         // my vars (dec)
+        this.lastObj = null;
 
         // set gobject values
         var child_0 = new Xcls_container( _this );

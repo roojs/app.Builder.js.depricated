@@ -11,7 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 GtkView=new XObject({
     id : "GtkView",
-    lastObj : "",
+    lastObj : "null",
     xtype : "Viewport",
     xns : Gtk,
     addNode : (JsRender.JsRender file) 
