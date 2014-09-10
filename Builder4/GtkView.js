@@ -16,23 +16,18 @@ GtkView=new XObject({
     addNode : (JsRender.JsRender file) {  
     {
         
-    
-    
-            // clear existing elements from project?
-            
+     
     
             if (file.tree == null) {
                 return;
             }
     
-    //        print("%s\n",tf.tree.toJsonString());
+     
     	var x = new JsRender.NodeToGlade(file.tree,  "");
             var builder = Builder.from_string (x.munge());
             
     	var obj=  builder.get_object(file.tree.uid());
-            this.container.add(obj);        
-     
-    
+            this.container.el.add(obj);
     },
     items : [
     	{
