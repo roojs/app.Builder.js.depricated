@@ -87,7 +87,9 @@ public class JsRender.NodeToGlade : Object {
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
 			"<!-- Generated with glade 3.18.3 -->\n" +
 			"<interface>\n" + 
-			"    <requires lib=\"gtk+\" version=\"3.12\"/>\n" +
+				<requires lib=\"gtk+\" version=\"3.12\"/>\n" +  
+				<requires lib=\"gtksourceview\" version=\"3.0\"/>
+
   			res +
   			"</interface>\n";
           
