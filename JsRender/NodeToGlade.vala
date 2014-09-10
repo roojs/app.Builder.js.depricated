@@ -62,7 +62,7 @@ public class JsRender.NodeToGlade : Object {
 	public string munge ( )
 	{
 
-		this.fillValaName(this.node);
+		 
 		this.pad += "    ";
 
 		var cls = this.node.fqn().replace(".", "");
