@@ -12,24 +12,6 @@ XObject = imports.XObject.XObject;
 WindowLeftProjects=new XObject({
     project_selected : "(Project.Project project)",
     id : "WindowLeftProjects",
-    getSelectedProject : () {    
-        Gtk.TreeIter iter;
-        Gtk.TreeModel mod;
-                
-        var s = this.view.el.get_selection();
-        if (!s.get_selected(out mod, out iter)) {
-            return null;
-        }
-        
-        GLib.Value gval;
-    
-        mod.get_value(iter, 1 , out gval);
-        var project = (Project.Project)gval.get_object();
-        
-        return project;
-    },
-    is_loaded : false,
-    xtype : "VBox",
     load : () {
          // clear list...
         
@@ -60,7 +42,24 @@ WindowLeftProjects=new XObject({
          m.set_sort_column_id(0, Gtk.SortType.ASCENDING);
          _this.is_loading = false;     
     },
-    is_loading : false,
+    is_loaded : false,
+    xtype : "VBox",
+    getSelectedProject : () {    
+        Gtk.TreeIter iter;
+        Gtk.TreeModel mod;
+                
+        var s = this.view.el.get_selection();
+        if (!s.get_selected(out mod, out iter)) {
+            return null;
+        }
+        
+        GLib.Value gval;
+    
+        mod.get_value(iter, 1 , out gval);
+        var project = (Project.Project)gval.get_object();
+        
+        return project;
+    },
     selectProject : (Project.Project project) {
         
         var sel = _this.view.el.get_selection();
@@ -87,8 +86,9 @@ WindowLeftProjects=new XObject({
     	    print("tried to select %s, could not find it", project.name);
         }
     },
+    is_loading : false,
     xns : Gtk,
-    homogeneous : false,
+    homogeneous : FALSE,
     show_new_project : "()",
     listeners : {
     	show : ( ) => {
@@ -104,8 +104,8 @@ WindowLeftProjects=new XObject({
             	{
                     id : "view",
                     xtype : "TreeView",
-                    enable_tree_lines : true,
-                    headers_visible : false,
+                    enable_tree_lines : TRUE,
+                    headers_visible : FALSE,
                     xns : Gtk,
                     listeners : {
                     	cursor_changed : () => {

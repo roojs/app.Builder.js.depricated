@@ -12,13 +12,13 @@
             },
             "@ void project_selected" : "(Project.Project project)",
             "id" : "WindowLeftProjects",
-            "| Project.Project? getSelectedProject" : "() {    \n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    if (!s.get_selected(out mod, out iter)) {\n        return null;\n    }\n    \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    return project;\n}",
+            "|  void load" : "() {\n     // clear list...\n    \n     if (_this.is_loaded) {\n         return;\n     }\n     _this.is_loading = true;\n        \n     _this.is_loaded = true;\n     \n     Project.Project.loadAll();\n     var projects = Project.Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter);\n        m.set(iter,   0,projects.get(i).name );\n        \n        var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.set_value(iter, 1, o);\n     \n     }\n     m.set_sort_column_id(0, Gtk.SortType.ASCENDING);\n     _this.is_loading = false;     \n}\n",
             "# bool is_loaded" : false,
-            "* pack" : "pack_end,false,true,0",
+            "* pack" : "add",
             "xtype" : "VBox",
-            "| void load" : "() {\n     // clear list...\n    \n     if (_this.is_loaded) {\n         return;\n     }\n     _this.is_loading = true;\n        \n     _this.is_loaded = true;\n     \n     Project.Project.loadAll();\n     var projects = Project.Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter);\n        m.set(iter,   0,projects.get(i).name );\n        \n        var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.set_value(iter, 1, o);\n     \n     }\n     m.set_sort_column_id(0, Gtk.SortType.ASCENDING);\n     _this.is_loading = false;     \n}\n",
+            "|  Project.Project? getSelectedProject" : "() {    \n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    if (!s.get_selected(out mod, out iter)) {\n        return null;\n    }\n    \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    return project;\n}",
+            "|  void selectProject" : "(Project.Project project) {\n    \n    var sel = _this.view.el.get_selection();\n    \n    sel.unselect_all();\n    \n    var found = false;\n    _this.model.el.foreach((mod, path, iter) => {\n        GLib.Value val;\n    \n        mod.get_value(iter, 1, out val);\n        if ( ( (Project.Project)val.get_object()).fn != project.fn) {\n            print(\"SKIP %s != %s\\n\", ((Project.Project)val.get_object()).name , project.name);\n            return false;//continue\n        }\n        sel.select_iter(iter);\n        this.project_selected(project);\n        found = true;\n        return true;\n        \n    \n    });\n     if (!found) {\n\t    print(\"tried to select %s, could not find it\", project.name);\n    }\n}\n",
             "# bool is_loading" : false,
-            "| void selectProject" : "(Project.Project project) {\n    \n    var sel = _this.view.el.get_selection();\n    \n    sel.unselect_all();\n    \n    var found = false;\n    _this.model.el.foreach((mod, path, iter) => {\n        GLib.Value val;\n    \n        mod.get_value(iter, 1, out val);\n        if ( ( (Project.Project)val.get_object()).fn != project.fn) {\n            print(\"SKIP %s != %s\\n\", ((Project.Project)val.get_object()).name , project.name);\n            return false;//continue\n        }\n        sel.select_iter(iter);\n        this.project_selected(project);\n        found = true;\n        return true;\n        \n    \n    });\n     if (!found) {\n\t    print(\"tried to select %s, could not find it\", project.name);\n    }\n}\n",
             "$ xns" : "Gtk",
             "$ homogeneous" : false,
             "@ void show_new_project" : "()",
@@ -53,14 +53,14 @@
                                 },
                                 {
                                     "* init" : "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 0  );\n ",
-                                    "* pack" : "append_column",
                                     "xtype" : "TreeViewColumn",
+                                    "* pack" : "append_column",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
                                             "id" : "namecol",
-                                            "xtype" : "CellRendererText",
                                             "* pack" : "pack_start,true",
+                                            "xtype" : "CellRendererText",
                                             "$ xns" : "Gtk"
                                         }
                                     ]

@@ -44,23 +44,7 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // user defined functions 
-    public Project.Project? getSelectedProject () {    
-        Gtk.TreeIter iter;
-        Gtk.TreeModel mod;
-                
-        var s = this.view.el.get_selection();
-        if (!s.get_selected(out mod, out iter)) {
-            return null;
-        }
-        
-        GLib.Value gval;
-    
-        mod.get_value(iter, 1 , out gval);
-        var project = (Project.Project)gval.get_object();
-        
-        return project;
-    }
-    public void load () {
+    public  void load () {
          // clear list...
         
          if (_this.is_loaded) {
@@ -90,7 +74,23 @@ public class Xcls_WindowLeftProjects : Object
          m.set_sort_column_id(0, Gtk.SortType.ASCENDING);
          _this.is_loading = false;     
     }
-    public void selectProject (Project.Project project) {
+    public  Project.Project? getSelectedProject () {    
+        Gtk.TreeIter iter;
+        Gtk.TreeModel mod;
+                
+        var s = this.view.el.get_selection();
+        if (!s.get_selected(out mod, out iter)) {
+            return null;
+        }
+        
+        GLib.Value gval;
+    
+        mod.get_value(iter, 1 , out gval);
+        var project = (Project.Project)gval.get_object();
+        
+        return project;
+    }
+    public  void selectProject (Project.Project project) {
         
         var sel = _this.view.el.get_selection();
         
