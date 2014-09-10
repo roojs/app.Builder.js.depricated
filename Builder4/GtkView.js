@@ -56,15 +56,15 @@ GtkView=new XObject({
                     (Gtk.Widget) child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  uint64.parse(args[2]) : 0
+                    args.length > 2 ?  (uint) uint64.parse(args[2]) : 0
                 );
                 break;
             case "pack_end":
                 ((Gtk.Box) parent).pack_end(
-                    (Gtk.Widget)child, 
+                    (Gtk.Widget) child, 
                     args.length > 0 && args[0].down() == "false" ? false : true,
                     args.length > 1 && args[1].down() == "false" ? false : true,
-                    args.length > 2 ?  uint64.parse(args[2]) : 0
+                    args.length > 2 ?  (uint)  uint64.parse(args[2]) : 0
                 );            
                 break;
                 
