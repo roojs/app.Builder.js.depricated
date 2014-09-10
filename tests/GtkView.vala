@@ -25,7 +25,7 @@ int main (string[] args) {
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
-	left_props.addNode(null,tf.tree);
+	left_props.addNode(tf);
 	
 	left_props.container.el.show_all();
 	
