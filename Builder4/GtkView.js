@@ -24,7 +24,7 @@ GtkView=new XObject({
     
      
     	var x = new JsRender.NodeToGlade(file.tree,  "");
-            var builder = Gtk.Builder.from_string (x.munge());
+            var builder = new Gtk.Builder.from_string (x.munge());
             
     	var obj=  builder.get_object(file.tree.uid());
             this.container.el.add(obj);

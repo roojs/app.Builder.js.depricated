@@ -10,7 +10,7 @@
             "id" : "GtkView",
             "xtype" : "Viewport",
             "$ xns" : "Gtk",
-            "| void addNode" : "(JsRender.JsRender file) \n{\n    \n \n\n        if (file.tree == null) {\n            return;\n        }\n\n \n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n        var builder = Gtk.Builder.from_string (x.munge());\n        \n\tvar obj=  builder.get_object(file.tree.uid());\n        this.container.el.add(obj);\n}\n",
+            "| void addNode" : "(JsRender.JsRender file) \n{\n    \n \n\n        if (file.tree == null) {\n            return;\n        }\n\n \n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n        var builder = new Gtk.Builder.from_string (x.munge());\n        \n\tvar obj=  builder.get_object(file.tree.uid());\n        this.container.el.add(obj);\n}\n",
             "items" : [
                 {
                     "id" : "container",
