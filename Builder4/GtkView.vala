@@ -15,7 +15,7 @@ public class Xcls_GtkView : Object
     public Xcls_container container;
 
         // my vars (def)
-    public string XXXX;
+    public Gtk.Widget lastObj;
 
     // ctor 
     public Xcls_GtkView()

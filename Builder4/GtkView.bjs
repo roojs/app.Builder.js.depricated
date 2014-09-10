@@ -8,10 +8,10 @@
     "items" : [
         {
             "id" : "GtkView",
+            "# Gtk.Widget lastObj" : "",
             "xtype" : "Viewport",
             "$ xns" : "Gtk",
             "| void addNode" : "(JsRender.JsRender file) \n{\n    \n \n\n        if (file.tree == null) {\n            return;\n        }\n        \n \n\tvar x = new JsRender.NodeToGlade(file.tree,  \"\");\n\tvar str = x.munge();\n        var builder = new Gtk.Builder.from_string (str,str.length);\n        \n\tvar obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;\n\tthis.lastObj = obj;\n        this.container.el.add(obj);\n}\n",
-            "string XXXX" : "",
             "items" : [
                 {
                     "id" : "container",
