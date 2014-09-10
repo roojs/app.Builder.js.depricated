@@ -198,7 +198,9 @@ public class JsRender.NodeToGlade : Object {
 	 
 	public string packString()
 	{
-		 
+		
+		
+		
 		var pk = this.node.get("* pack").split(",");
 		// pack is part of the parent element..
 		var p = node.parent;
@@ -211,7 +213,13 @@ public class JsRender.NodeToGlade : Object {
 		if (pfqn == null) {
 			return "";
 		}
-		var p_parts =pfqn.split("."); 
+		if (pfqn == "Gtk.ScrollWindow") {
+			return "";
+		}
+		var p_parts =pfqn.split(".");
+
+
+		
 		var ns = p_parts[0];
     		var gir =  Palete.Gir.factory(ns);
 		var cls = gir.classes.get(p_parts[1]);
