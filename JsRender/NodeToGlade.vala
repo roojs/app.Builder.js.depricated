@@ -164,7 +164,7 @@ public class JsRender.NodeToGlade : Object {
 
 		var pack = "";
 		
-		if (with_packing && ) {
+		if (with_packing   ) {
  
 			pack = this.packString();
 			
@@ -216,7 +216,7 @@ public class JsRender.NodeToGlade : Object {
 				return "";
 			}
 			pk = this.node.get("* pack").split(",");
-		]
+		}
 		
 		if (pfqn == null) {
 			return "";
