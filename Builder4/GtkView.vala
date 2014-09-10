@@ -87,6 +87,10 @@ public class GtkView : Object
     }
     public void addNodeChildren () {
     
+        var iter = node.items.list_iterator();
+        while (iter.next()) {
+            this.addNode(child, iter.get());
+        }
     }
     public class Xcls_HBox2 : Object 
     {
