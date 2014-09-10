@@ -30,6 +30,7 @@ public class GtkView : Object
     }
 
     // user defined functions 
+    public void addNode () {  }
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;

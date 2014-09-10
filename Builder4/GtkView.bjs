@@ -10,7 +10,7 @@
             "xtype" : "Viewport",
             "string id" : "GtkView",
             "$ xns" : "Gtk",
-            "addNode" : "() {  }",
+            "| void addNode" : "() {  }",
             "items" : [
                 {
                     "* pack" : "add",
