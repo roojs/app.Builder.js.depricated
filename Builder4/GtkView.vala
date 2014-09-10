@@ -58,6 +58,8 @@ public class GtkView : Object
             case "add":
                 parent.add(child);
                 break;
+            case "pack_start":
+                
             default:
                 print("unknown pack: " + pack);
                 return;
