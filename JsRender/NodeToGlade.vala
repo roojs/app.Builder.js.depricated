@@ -86,6 +86,8 @@ public class JsRender.NodeToGlade : Object {
 
 		switch(cls) {
 			// things we can not do yet...
+			case "GtkDialog": // top level.. - named and referenced
+			case "GtkWindow": // top level.. - named and referenced
 			case "GtkTreeStore": // top level.. - named and referenced
 			case "GtkListStore": // top level.. - named and referenced
 			case "GtkTreeViewColumn": // part of liststore?!?!
