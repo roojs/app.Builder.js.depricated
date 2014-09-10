@@ -83,7 +83,11 @@ public class JsRender.NodeToGlade : Object {
 	{
 		var pad = this.pad;
 		var cls = this.node.xvala_cls.replace(".", "");
-
+		var ns = this.node.xvala_cls.split(".")[0];
+		if (ns == "Clutter") {
+			return ""
+		}
+		
 		switch(cls) {
 			// things we can not do yet...
 			case "GtkDialog": // top level.. - named and referenced
