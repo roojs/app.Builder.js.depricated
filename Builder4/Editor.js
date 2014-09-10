@@ -76,6 +76,7 @@ Editor=new XObject({
     
     },
     pos : false,
+    id : "Editor",
     dirty : false,
     xns : Gtk,
     save : "()",
