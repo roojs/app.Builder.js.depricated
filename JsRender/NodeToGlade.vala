@@ -73,8 +73,10 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
 				res =  this.mungeOuter(true);
+				break;
 			default:
-				res = this.mungeOuter(false);				
+				res = this.mungeOuter(false);
+				break;
 		}
 				
 		
