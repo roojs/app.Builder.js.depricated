@@ -105,6 +105,10 @@ public class JsRender.NodeToVala : Object {
 
 	public static string mungeFile(JsRender file) 
 	{
+		if (file.tree == null) {
+			return '';
+		}
+
 		var n = new NodeToVala(file.tree, 0, null);
 		n.file = file;
 		n.vcnt = 0;
