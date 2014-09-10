@@ -28,6 +28,9 @@ GtkView=new XObject({
      
     	var x = new JsRender.NodeToGlade(file.tree,  "");
     	var str = x.munge();
+    	if (str.length < 1) {
+            	return;
+    	}
     	print("%s\n",str);
     	GLib.FileUtils.set_contents("/tmp/test-gtkview.glade", str);
             var builder = new Gtk.Builder.from_string (str,str.length);
