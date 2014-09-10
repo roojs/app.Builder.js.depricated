@@ -297,7 +297,7 @@ public class Editor : Object
             
             */
             
-            Editor.dirty = false;
+            _this.dirty = false;
             this.el.grab_focus();
             _this.save_button.el.sensitive = false;
         }
