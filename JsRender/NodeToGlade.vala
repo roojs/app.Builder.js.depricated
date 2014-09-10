@@ -193,41 +193,8 @@ public class JsRender.NodeToGlade : Object {
 		 
 
 	}
-	string toValaNS(Node node)
-        {
-            var ns = this.node.get("$ xns") ;
-            if (ns == "Glade") {
-                return "Gladeui.";
-            }
-            return ns + ".";
-        }
-	public void  fillValaName(Node node) 
-	{
-	    if (node.xvala_cls.length < 1) {
-		    vcnt++;
-
-		    var cls = this.toValaNS(node) + node.get("xtype");
-
-		    string id = node.get("id").length > 0 ? 
-				node.get("id") :  "%s%d".printf(node.get("xtype"), vcnt);
-
-		    var props = Palete.factory("Gtk").getPropertiesFor(cls,  "props");
-		     
-		    node.xvala_cls = cls;
-		    node.xvala_xcls = "Xcls_" + id;
-		    node.xvala_id = node.get("id").length > 0  ? node.get("id") : "";
-	    }                                                     
-            //this.vitems.append(item);  
-            // loop children..
-			                                                       
-            if (node.items.size < 1) {
-                return;
-            }
-            for(var i =0;i<node.items.size;i++) {
-                this.fillValaName(node.items.get(i));
-            }
-			          
-        }
+	 
+	 
 	public string packString()
 	{
 		 
