@@ -309,28 +309,31 @@ public class JsRender.NodeToGlade : Object {
 		return pack;
 
 	}
-	public string  mungeWindow()
+	public string  mungeOuter(bool with_window)
 	{
 		var label = this.node.fqn() + ": " + 
 			(this.node.has("title") ? this.node.get("title") : "No-title");
 		
 		var ret = "";
-		ret+= "<object class=\"GtkBox\" id=\"fake-window1\">
-		    <property name=\"visible\">True</property>
-		    <property name=\"can_focus\">False</property>
-		    <property name=\"orientation\">vertical</property>
-		<child>
-			<object class=\"GtkLabel\" id=\"fake-window-label-1\">
-				<property name=\"visible\">True</property>
-				<property name=\"can_focus\">False</property>
-				<property name=\"label\" translatable=\"yes\">" + label + "</property>
-			</object>
-			<packing>
-				<property name=\"expand\">False</property>
-				<property name=\"fill\">True</property>
-				<property name=\"position\">0</property>
-		      </packing>
-		</child>
+		ret+= "
+<object class=\"GtkBox\" id=\"fake-window1\">
+	<property name=\"visible\">True</property>
+	<property name=\"can_focus\">False</property>
+	<property name=\"orientation\">vertical</property>
+";
+		
+	<child>
+		<object class=\"GtkLabel\" id=\"fake-window-label-1\">
+			<property name=\"visible\">True</property>
+			<property name=\"can_focus\">False</property>
+			<property name=\"label\" translatable=\"yes\">" + label + "</property>
+		</object>
+		<packing>
+			<property name=\"expand\">False</property>
+			<property name=\"fill\">True</property>
+			<property name=\"position\">0</property>
+		</packing>
+	</child>
 		 
 		<child>
 		";
