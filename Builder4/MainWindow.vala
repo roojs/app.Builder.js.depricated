@@ -321,7 +321,7 @@ public class Xcls_MainWindow : Object
         // editor
         
         
-        this.code_editor  = new Xcls_Editor();
+        this.code_editor  = new  Editor();
         this.code_editor.ref();  /// really?
         ((Gtk.Container)(this.codeeditview.el.get_widget())).add(this.code_editor.el);
         //this.projectsettings.el.show_all();
