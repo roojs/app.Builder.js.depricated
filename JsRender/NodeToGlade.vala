@@ -94,7 +94,7 @@ public class JsRender.NodeToGlade : Object {
 		if (ns == "GtkClutter") {
 			return "";
 		}
-		if (ns == "Webkit") {
+		if (ns == "WebKit") {
 			return "";
 		}
 		switch(cls) {
