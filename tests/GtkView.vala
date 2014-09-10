@@ -4,7 +4,7 @@
 
 */
 
-public Project proj;
+public Project.Project proj;
 
 int main (string[] args) {
 	Gtk.init (ref args);
