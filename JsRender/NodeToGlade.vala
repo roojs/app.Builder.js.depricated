@@ -91,6 +91,7 @@ public class JsRender.NodeToGlade : Object {
 		switch(cls) {
 			// things we can not do yet...
 			case "GtkDialog": // top level.. - named and referenced
+			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
 				return this.mungeChild(pad + "        " , this.node.items.get(0) );
 				
