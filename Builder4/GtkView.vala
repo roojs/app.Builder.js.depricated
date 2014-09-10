@@ -91,7 +91,7 @@ public class GtkView : Object
                 return;
         }
         
-        this.addNodeChildren(parent, node);
+        this.addNodeChildren(child, node);
         
     
     }
