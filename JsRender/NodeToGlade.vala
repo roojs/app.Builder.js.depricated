@@ -102,6 +102,9 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkDialog": // top level.. - named and referenced
 			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
+				return this.mungeWindow();
+				
+					
 				if (this.node.items.size > 0) {
 					return this.mungeChild(pad + "        " , this.node.items.get(0), false );
 				}
@@ -306,5 +309,59 @@ public class JsRender.NodeToGlade : Object {
 		return pack;
 
 	}
-    
+	public string  mungeWindow()
+	{
+		var ret = "";
+		ret+= "<object class=\"GtkBox" id=\"box1\">
+		    <property name="visible">True</property>
+		    <property name="can_focus">False</property>
+		    <property name="orientation">vertical</property>
+		<child>
+			<object class="GtkLabel" id="label1">
+				<property name="visible">True</property>
+				<property name="can_focus">False</property>
+				<property name="label" translatable="yes">label</property>
+			</object>
+			<packing>
+				<property name="expand">False</property>
+				<property name="fill">True</property>
+				<property name="position">0</property>
+		      </packing>
+		</child>
+		// add children...
+		<child>
+		";
+			if (this.node.items.size > 0) {
+				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false );
+		} else {
+			ret+="<placeholder/>";
+		}
+				
+		
+
+		ret+="
+		    </child>
+		    <child>
+		      <object class="GtkBox" id="box3">
+			<property name="visible">True</property>
+			<property name="can_focus">False</property>
+			<child>
+			  <placeholder/>
+			</child>
+			<child>
+			  <placeholder/>
+			</child>
+		      </object>
+		      <packing>
+			<property name="expand">False</property>
+			<property name="fill">True</property>
+			<property name="position">2</property>
+		      </packing>
+		    </child>
+		</object>"; 
+
+	return ret;
+
+
+		
 }
