@@ -40,6 +40,7 @@ void loadit(string name ) {
 	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 	w.set_title(name);
+	w.ref();
 	var  left_props =new Xcls_GtkView();
 	left_props.el.show();
 	w.add(left_props.el);
