@@ -65,7 +65,7 @@ public class JsRender.NodeToGlade : Object {
 		this.fillValaName(this.node);
 		this.pad += "    ";
 		var res = this.mungeNode();
-		if (!res.length) {
+		if (res.length < 1) {
 			return "";
 		}
 		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + 
