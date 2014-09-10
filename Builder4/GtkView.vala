@@ -99,7 +99,7 @@ public class GtkView : Object
     
         var iter = node.items.list_iterator();
         while (iter.next()) {
-            this.addNode(child, iter.get());
+            this.addNode(parent, iter.get());
         }
     }
     public class Xcls_HBox2 : Object 
