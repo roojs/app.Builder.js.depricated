@@ -364,7 +364,7 @@ public class JsRender.NodeToGlade : Object {
 		</object>"; 
 
 	return ret;
-
+	}
 
 		
 }
