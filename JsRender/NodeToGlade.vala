@@ -355,8 +355,7 @@ public class JsRender.NodeToGlade : Object {
 			if (this.node.items.size > 0) {
 			
 				ret+= this.mungeChild(pad + "        " , this.node.items.get(0), false);
-			}
-		        
+			  
 
 			} else {
 				ret+="<placeholder/>";
