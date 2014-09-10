@@ -158,7 +158,7 @@ public class JsRender.NodeToGlade : Object {
 			}
 			
 			ret += @"$pad    <child>\n";
-			ret += this.mungeChild(pad + "        " , this.node.items.get(i) );
+			ret += this.mungeChild(pad + "        " , this.node.items.get(i) ,true );
 			ret += @"$pad    </child>\n";
 		}
 		
