@@ -31,7 +31,7 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions 
-    public void addNode (JsRender.JsRender file) {  
+    public void addNode (JsRender.JsRender file) 
     {
         
      
