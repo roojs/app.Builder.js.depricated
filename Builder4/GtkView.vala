@@ -36,7 +36,7 @@ public class Xcls_GtkView : Object
         Type? type = GLib.Type.from_name(node.fqn().replace(".", "").strip());
     
         if (type == GLib.Type.INVALID) {
-            print("INVALID: new %s / %s\n", node.fqn(), type.name());             
+            print("INVALID: new %s / %s\n", node.fqn().replace(".", "").strip(), type.name());             
              this.addNodeChildren(parent, node);
              return;
         }
