@@ -29,7 +29,7 @@ GtkView=new XObject({
              return;
         }
         
-        var  child = new Object(type);
+        var  child = Object.newv(type);
         
         
     

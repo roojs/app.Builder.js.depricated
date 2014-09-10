@@ -47,7 +47,7 @@ public class Xcls_GtkView : Object
              return;
         }
         
-        var  child = new Object(type);
+        var  child = Object.newv(type);
         
         
     
