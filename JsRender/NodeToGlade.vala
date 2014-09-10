@@ -158,7 +158,7 @@ public class JsRender.NodeToGlade : Object {
 			}
 			
 			ret += @"$pad    <child>\n";
-			ret += add
+			ret += add;
 			ret += @"$pad    </child>\n";
 		}
 		
