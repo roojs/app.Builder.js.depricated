@@ -40,6 +40,12 @@ public class GtkView : Object
         
         var  child = new Object(type);
         
+        var iter = node.items.list_iterator();
+        while (iter.next()) {
+            this.addNode(child, iter.get());
+        }
+        
+        
     
     }
     public class Xcls_HBox2 : Object 

@@ -23,6 +23,12 @@ GtkView=new XObject({
         
         var  child = new Object(type);
         
+        var iter = node.items.list_iterator();
+        while (iter.next()) {
+            this.addNode(child, iter.get());
+        }
+        
+        
     
     },
     items : [
