@@ -85,7 +85,7 @@ public class JsRender.NodeToGlade : Object {
 		var cls = this.node.xvala_cls.replace(".", "");
 		var ns = this.node.xvala_cls.split(".")[0];
 		if (ns == "Clutter") {
-			return ""
+			return "";
 		}
 		
 		switch(cls) {
