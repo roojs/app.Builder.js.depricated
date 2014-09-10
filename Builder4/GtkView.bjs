@@ -11,6 +11,7 @@
             "$ xns" : "Gtk",
             "items" : [
                 {
+                    "* pack" : "add",
                     "xtype" : "HBox",
                     "$ xns" : "Gtk"
                 }
