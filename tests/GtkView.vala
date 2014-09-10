@@ -38,7 +38,7 @@ void loadit(string name ) {
 	tf.loadItems();
 
 	
-	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
+	var w  = new Gtk.Window(   );
 	w.set_title("XXX" + name + "YYY");
 	w.ref();
 	var  left_props =new Xcls_GtkView();
