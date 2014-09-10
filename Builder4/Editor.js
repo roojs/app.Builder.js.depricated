@@ -10,26 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
-    show : (JsRender.Node node, string ptype, string key)
-    {
-        this.ptype = ptype;
-        this.key  = key;
-        this.node = node;
-        
-       string val = "";
-        // find the text for the node..
-        if (ptype == "listener") {
-            val = node.listeners.get(key);
-        
-        } else {
-            val = node.props.get(key);
-        }
-        this.view.load(val);
-        this.key_edit.el.text = key;    
-    
-    },
     activeEditor : "\"\"",
-    pos_root_x : "",
     saveContents : ()  {
         
         
@@ -71,10 +52,29 @@ Editor=new XObject({
         return true;
     
     },
+    pos_root_x : "",
     pos_root_y : "",
     ptype : "\"\"",
     key : "\"\"",
     xtype : "VBox",
+    show : (JsRender.Node node, string ptype, string key)
+    {
+        this.ptype = ptype;
+        this.key  = key;
+        this.node = node;
+        
+       string val = "";
+        // find the text for the node..
+        if (ptype == "listener") {
+            val = node.listeners.get(key);
+        
+        } else {
+            val = node.props.get(key);
+        }
+        this.view.load(val);
+        this.key_edit.el.text = key;    
+    
+    },
     pos : false,
     id : "Editor",
     dirty : false,
@@ -115,6 +115,9 @@ Editor=new XObject({
             	{
                     id : "view",
                     insert_spaces_instead_of_tabs : TRUE,
+                    xtype : "View",
+                    highlight_current_line : true,
+                    xns : GtkSource,
                     load : (string str) {
                     
                     // show the help page for the active node..
@@ -151,9 +154,6 @@ Editor=new XObject({
                         this.el.grab_focus();
                         _this.save_button.el.sensitive = false;
                     },
-                    xtype : "View",
-                    highlight_current_line : true,
-                    xns : GtkSource,
                     indent_width : 4,
                     auto_indent : TRUE,
                     show_line_numbers : TRUE,
@@ -174,7 +174,6 @@ Editor=new XObject({
                     items : [
                     	{
                             id : "buffer",
-                            xtype : "Buffer",
                             checkSyntax : () {
                              /*
                                 var str = this.toString();
@@ -202,7 +201,6 @@ Editor=new XObject({
                                 */
                                 return true;
                             },
-                            xns : GtkSource,
                             toString : () {
                                 
                                 Gtk.TextIter s;
@@ -213,6 +211,8 @@ Editor=new XObject({
                                 //print("TO STRING? " + ret);
                                 return ret;
                             },
+                            xtype : "Buffer",
+                            xns : GtkSource,
                             listeners : {
                             	changed : () => {
                             	       // check syntax??

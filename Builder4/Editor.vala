@@ -53,25 +53,7 @@ public class Editor : Object
     }
 
     // user defined functions 
-    public  void show (JsRender.Node node, string ptype, string key)
-    {
-        this.ptype = ptype;
-        this.key  = key;
-        this.node = node;
-        
-       string val = "";
-        // find the text for the node..
-        if (ptype == "listener") {
-            val = node.listeners.get(key);
-        
-        } else {
-            val = node.props.get(key);
-        }
-        this.view.load(val);
-        this.key_edit.el.text = key;    
-    
-    }
-    public  bool saveContents ()  {
+    public   bool saveContents ()  {
         
         
         
@@ -110,6 +92,24 @@ public class Editor : Object
         this.save();
         
         return true;
+    
+    }
+    public   void show (JsRender.Node node, string ptype, string key)
+    {
+        this.ptype = ptype;
+        this.key  = key;
+        this.node = node;
+        
+       string val = "";
+        // find the text for the node..
+        if (ptype == "listener") {
+            val = node.listeners.get(key);
+        
+        } else {
+            val = node.props.get(key);
+        }
+        this.view.load(val);
+        this.key_edit.el.text = key;    
     
     }
     public class Xcls_HBox2 : Object 
@@ -265,7 +265,7 @@ public class Editor : Object
         }
 
         // user defined functions 
-        public  void load (string str) {
+        public   void load (string str) {
         
         // show the help page for the active node..
            //this.get('/Help').show();
@@ -336,7 +336,7 @@ public class Editor : Object
         }
 
         // user defined functions 
-        public  bool checkSyntax () {
+        public   bool checkSyntax () {
          /*
             var str = this.toString();
             var res = "";
@@ -363,7 +363,7 @@ public class Editor : Object
             */
             return true;
         }
-        public  string toString () {
+        public   string toString () {
             
             Gtk.TextIter s;
             Gtk.TextIter e;
