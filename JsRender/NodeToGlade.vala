@@ -370,7 +370,7 @@ public class JsRender.NodeToGlade : Object {
 				<property name=\"position\">1</property>
 		      </packing>" : "";
 			
-			ret+= (children.length > ) ? "<placeholder/>" : children;
+			ret+= (children.length < 1 ) ? "<placeholder/>" : children;
 			
 			
 			
