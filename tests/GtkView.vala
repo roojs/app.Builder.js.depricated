@@ -27,7 +27,7 @@ int main (string[] args) {
 	w.show_all();   
 	left_props.addNode(null,tf.tree);
 	
-	left_props.container.show_all();
+	left_props.container.el.show_all();
 	
 	Gtk.main();
     
