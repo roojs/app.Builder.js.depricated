@@ -48,6 +48,7 @@ public class Xcls_GtkView : Object
     	var x = new JsRender.NodeToGlade(file.tree,  "");
     	var str = x.munge();
     	print("%s\n",str);
+    	GLib.FileUtils.set_contents("/tmp/test-gtkview.glade", str);
             var builder = new Gtk.Builder.from_string (str,str.length);
             
     	var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
