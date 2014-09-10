@@ -87,7 +87,7 @@ namespace JsRender {
 
 	    if (obj.has_member("items") 
 			&& 
-			obj.array_member("items").get_node_type() == Json.NodeType.ARRAY
+			obj.get_member("items").get_node_type() == Json.NodeType.ARRAY
 			&&
 			obj.get_array_member("items").get_length() > 0
 		) {
