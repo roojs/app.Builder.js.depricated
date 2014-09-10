@@ -15,7 +15,7 @@ int main (string[] args) {
 	proj = Project.Project.getProject("Builder4");
 	
 	proj.scanDirs();
-	loadit("DialogTemplateSave");
+	loadit("DialogSaveTemplate");
 	
 	//var iter = proj.sortedFiles().list_iterator();
 	//while (iter.next()) { 
