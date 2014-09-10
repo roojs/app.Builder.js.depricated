@@ -15,9 +15,13 @@ int main (string[] args) {
 	proj = Project.Project.getProject("Builder4");
 	
 	proj.scanDirs();
-	
-	loadit("WindowLeftProps");
-	loadit("EditProject");
+
+	var iter = proj.sortedFiles().list_iterator();
+	while (iter.next()) { 
+		loadit(iter.get().name);
+	}
+	//loadit("WindowLeftProps");
+	//loadit("EditProject");
 
 	
 	Gtk.main();
