@@ -17,14 +17,12 @@ int main (string[] args) {
 	proj.scanDirs();
 	//
 	
-	var iter = proj.sortedFiles().list_iterator();
-	while (iter.next()) { 
-		loadit(iter.get().name);
-	}
+	//var iter = proj.sortedFiles().list_iterator();
+	//while (iter.next()) {  loadit(iter.get().name);	}
 	//loadit("WindowLeftProps");
 	//loadit("EditProject");
 	//loadit("Editor");
-	
+	loadit("MainWindow");
 	Gtk.main();
     
 	
