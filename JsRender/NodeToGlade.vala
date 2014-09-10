@@ -204,8 +204,8 @@ public class JsRender.NodeToGlade : Object {
 		
 		// pack is part of the parent element..
 		var p = node.parent;
-		var pk= "add";
-		var pfqn = "Gtk.Box".split(",");
+		var pk= { "add" };
+		var pfqn = "Gtk.Box"
 		if (p != null) {
 			pfqn  = p.fqn();
 			if (this.node.props.get("* pack") != null) {
