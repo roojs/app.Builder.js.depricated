@@ -34,6 +34,7 @@ public class Xcls_GtkView : Object
     public void addNode (Object? parent, JsRender.Node node) {  
     
         Type? type = GLib.Type.from_name(node.fqn());
+    
         if (type == null) {
             return;
         }
@@ -46,7 +47,7 @@ public class Xcls_GtkView : Object
              this.addNodeChildren(parent, node);
              return;
         }
-        
+        print("new %s / %s\n", node.fqn(), type.name());     
         var  child = Object.new(type);
         
         
