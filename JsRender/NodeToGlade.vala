@@ -71,6 +71,7 @@ public class JsRender.NodeToGlade : Object {
 			// things we can not do yet...
 			case "GtkDialog": // top level.. - named and referenced
 			case "GtkAboutDialog":
+			case "GtkMessageDialog":
 			case "GtkWindow": // top level.. - named and referenced
 				res =  this.mungeOuter(true);
 				break;
