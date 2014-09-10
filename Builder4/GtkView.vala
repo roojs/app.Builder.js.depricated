@@ -1,14 +1,14 @@
-static GtkView  _GtkView;
+static Xcls_GtkView  _GtkView;
 
-public class GtkView : Object 
+public class Xcls_GtkView : Object 
 {
     public Gtk.Viewport el;
-    private GtkView  _this;
+    private Xcls_GtkView  _this;
 
-    public static GtkView singleton()
+    public static Xcls_GtkView singleton()
     {
         if (_GtkView == null) {
-            _GtkView= new GtkView();
+            _GtkView= new Xcls_GtkView();
         }
         return _GtkView;
     }
@@ -16,7 +16,7 @@ public class GtkView : Object
         // my vars (def)
 
     // ctor 
-    public GtkView()
+    public Xcls_GtkView()
     {
         _this = this;
         this.el = new Gtk.Viewport( null, null );
@@ -105,13 +105,13 @@ public class GtkView : Object
     public class Xcls_container : Object 
     {
         public Gtk.HBox el;
-        private GtkView  _this;
+        private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_container(GtkView _owner )
+        public Xcls_container(Xcls_GtkView _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );

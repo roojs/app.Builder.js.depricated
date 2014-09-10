@@ -10,6 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 GtkView=new XObject({
+    id : "GtkView",
     xtype : "Viewport",
     xns : Gtk,
     addNode : (Object? parent, JsRender.Node node) {  
