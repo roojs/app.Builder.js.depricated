@@ -22,7 +22,9 @@ GtkView=new XObject({
             if (file.tree == null) {
                 return;
             }
-            
+            if (this.lastObj != null) {
+                this.container.remove(this.lastObj);
+            }
      
     	var x = new JsRender.NodeToGlade(file.tree,  "");
     	var str = x.munge();
