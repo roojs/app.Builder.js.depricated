@@ -33,7 +33,7 @@ public class Xcls_GtkView : Object
     // user defined functions 
     public void addNode (Object? parent, JsRender.Node node) {  
     
-        Type? type = GLib.Type.from_name(node.fqn());
+        Type? type = GLib.Type.from_name(node.fqn().replace(".", ""));
     
         if (type == null) {
             return;

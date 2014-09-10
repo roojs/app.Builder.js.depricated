@@ -15,7 +15,7 @@ GtkView=new XObject({
     xns : Gtk,
     addNode : (Object? parent, JsRender.Node node) {  
     
-        Type? type = GLib.Type.from_name(node.fqn());
+        Type? type = GLib.Type.from_name(node.fqn().replace(".", ""));
     
         if (type == null) {
             return;
