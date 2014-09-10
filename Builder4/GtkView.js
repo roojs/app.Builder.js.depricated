@@ -31,6 +31,7 @@ GtkView=new XObject({
     	this.lastObj = obj;
             this.container.el.add(obj);
     },
+    XXXX : "",
     items : [
     	{
             id : "container",

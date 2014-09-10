@@ -15,6 +15,7 @@ public class Xcls_GtkView : Object
     public Xcls_container container;
 
         // my vars (def)
+    public string XXXX;
 
     // ctor 
     public Xcls_GtkView()
