@@ -21,7 +21,15 @@ GtkView=new XObject({
         }
         // some types can not be created -- eg. dialogs...
         
+        
+        if (type.is_a(typeof(Gtk.Window))) {
+             this.addNodeChildren(parent, node);
+             return;
+         }
+        
         var  child = new Object(type);
+        
+        
     
         var pack = "";
         if (parent  == null) {
