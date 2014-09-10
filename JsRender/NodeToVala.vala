@@ -242,7 +242,9 @@ public class JsRender.NodeToVala : Object {
  
    		var cls = Palete.Gir.factoryFqn(this.node.fqn());
            
-		
+		if (cls == null) {
+			return;
+		}
 	  
 		
     		// Key = TYPE:name
