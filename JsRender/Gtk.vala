@@ -171,7 +171,9 @@ namespace JsRender {
         
        void  saveVala()
         {
-             
+    		if (this.tree == null) {
+			return;
+		}
     		var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
     		print("WRITE :%s\n " , fn);
 		FileUtils.set_contents(fn,  NodeToVala.mungeFile(this));
