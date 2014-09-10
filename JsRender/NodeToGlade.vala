@@ -97,7 +97,7 @@ public class JsRender.NodeToGlade : Object {
 			case "GtkDialog": // top level.. - named and referenced
 			case "GtkAboutDialog":
 			case "GtkWindow": // top level.. - named and referenced
-				if (this.node.items.length > 0) {
+				if (this.node.items.size > 0) {
 					return this.mungeChild(pad + "        " , this.node.items.get(0) );
 				}
 				return "";
