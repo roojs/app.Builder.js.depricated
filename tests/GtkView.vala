@@ -22,7 +22,7 @@ int main (string[] args) {
 	
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
-	var  left_props =new Xcls_GladeView();
+	var  left_props =new Xcls_GtkView();
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
