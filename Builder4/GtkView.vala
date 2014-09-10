@@ -50,8 +50,8 @@ public class Xcls_GtkView : Object
     	print("%s\n",str);
     	GLib.FileUtils.set_contents("/tmp/test-gtkview.glade", str);
             var builder = new Gtk.Builder.from_string (str,str.length);
-            
-    	var obj = builder.get_objects().nth_data(0) as Gtk.Widget;
+            var objs = builder.get_objects();
+    	var obj = objs.nth_data(objs.length()-1) as Gtk.Widget;
     	
     	//var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
     	this.lastObj = obj;
