@@ -153,11 +153,11 @@ public class JsRender.NodeToGlade : Object {
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
 				
         		// skip items we have already handled..
-        		if  (this.node.props.get(pviter.get_key()) == null) {
+        		if  (!this.node.has(pviter.get_key())) {
 				continue;
 			}
 			var k = pviter.get_key();
-			var val = GLib.Markup.escape_text(this.node.props.get(pviter.get_key()));
+			var val = GLib.Markup.escape_text(this.node.get(pviter.get_key()));
 			ret += @"$pad    <property name=\"$k\">$val</property>\n"; // es
 
                 }
