@@ -10,9 +10,31 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
-    xtype: Gtk.VBox,
-    pack : "add",
-    'bool:saveContents' : ()  {
+    activeEditor : "\"\"",
+    pos_root_x : "",
+    show : (JsRender.Node node, string ptype, string key)
+    {
+        this.ptype = ptype;
+        this.key  = key;
+        this.node = node;
+        
+       string val = "";
+        // find the text for the node..
+        if (ptype == "listener") {
+            val = node.listeners.get(key);
+        
+        } else {
+            val = node.props.get(key);
+        }
+        this.view.load(val);
+        this.key_edit.el.text = key;    
+    
+    },
+    pos_root_y : "",
+    ptype : "\"\"",
+    key : "\"\"",
+    xtype : "VBox",
+    saveContents : ()  {
         
         
         
@@ -53,81 +75,48 @@ Editor=new XObject({
         return true;
     
     },
+    pos : false,
+    dirty : false,
+    xns : Gtk,
+    save : "()",
     homogeneous : false,
-    'void:show' : (JsRender.Node node, string ptype, string key)
-    {
-        this.ptype = ptype;
-        this.key  = key;
-        this.node = node;
-        
-       string val = "";
-        // find the text for the node..
-        if (ptype == "listener") {
-            val = node.listeners.get(key);
-        
-        } else {
-            val = node.props.get(key);
-        }
-        this.view.load(val);
-        this.key_edit.el.text = key;    
-    
-    },
+    node : "null",
     items : [
-        {
-            xtype: Gtk.HBox,
-            pack : "pack_start,false,true",
+    	{
+            xtype : "HBox",
+            xns : Gtk,
             homogeneous : false,
             items : [
-                {
-                    xtype: Gtk.Button,
-                    listeners : {
-                        clicked : () => { 
-                            _this.saveContents();
-                        }
-                    },
-                    id : "save_button",
+            	{
                     label : "Save",
-                    pack : "pack_start,false,false"
+                    id : "save_button",
+                    xtype : "Button",
+                    xns : Gtk,
+                    listeners : {
+                    	clicked : () => { 
+                    	       _this.saveContents();
+                    	   }
+                    }
                 },
-                {
-                    xtype: Gtk.Entry,
+            	{
                     id : "key_edit",
-                    pack : "pack_end,true,true"
+                    xtype : "Entry",
+                    xns : Gtk
                 }
             ]
+
         },
-        {
-            xtype: Gtk.ScrolledWindow,
+    	{
             id : "RightEditor",
-            pack : "add",
-            init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
+            xtype : "ScrolledWindow",
+            xns : Gtk,
             items : [
-                {
-                    xtype: GtkSource.View,
-                    listeners : {
-                        key_release_event : (event) => {
-                            
-                            if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
-                                print("SAVE: ctrl-S  pressed");
-                                _this.saveContents();
-                                return false;
-                            }
-                           // print(event.key.keyval)
-                            
-                            return false;
-                        
-                        }
-                    },
+            	{
                     id : "view",
-                    indent_width : 4,
-                    pack : "add",
-                    auto_indent : true,
-                    init : var description =   Pango.FontDescription.from_string("monospace");
-                        description.set_size(8000);
-                        this.el.override_font(description);,
                     insert_spaces_instead_of_tabs : true,
-                    show_line_numbers : true,
-                    'void:load' : (string str) {
+                    xtype : "View",
+                    highlight_current_line : true,
+                    load : (string str) {
                     
                     // show the help page for the active node..
                        //this.get('/Help').show();
@@ -163,25 +152,27 @@ Editor=new XObject({
                         this.el.grab_focus();
                         _this.save_button.el.sensitive = false;
                     },
+                    xns : GtkSource,
+                    indent_width : 4,
+                    auto_indent : true,
+                    show_line_numbers : true,
+                    listeners : {
+                    	key_release_event : (event) => {
+                    	       
+                    	       if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                    	           print("SAVE: ctrl-S  pressed");
+                    	           _this.saveContents();
+                    	           return false;
+                    	       }
+                    	      // print(event.key.keyval)
+                    	       
+                    	       return false;
+                    	   
+                    	   }
+                    },
                     items : [
-                        {
-                            xtype: GtkSource.Buffer,
-                            listeners : {
-                                changed : () => {
-                                    // check syntax??
-                                        if(this.checkSyntax()) {
-                                        Editor.save_button.el.sensitive = true;
-                                    }
-                                   // print("EDITOR CHANGED");
-                                    Editor.dirty = true;
-                                
-                                    // this.get('/LeftPanel.model').changed(  str , false);
-                                    return ;
-                                }
-                            },
-                            id : "buffer",
-                            pack : "set_buffer",
-                            'bool:checkSyntax' : () {
+                    	{
+                            checkSyntax : () {
                              /*
                                 var str = this.toString();
                                 var res = "";
@@ -208,7 +199,8 @@ Editor=new XObject({
                                 */
                                 return true;
                             },
-                            'string:toString' : () {
+                            id : "buffer",
+                            toString : () {
                                 
                                 Gtk.TextIter s;
                                 Gtk.TextIter e;
@@ -217,13 +209,31 @@ Editor=new XObject({
                                 var ret = this.el.get_text(s,e,true);
                                 //print("TO STRING? " + ret);
                                 return ret;
+                            },
+                            xtype : "Buffer",
+                            xns : GtkSource,
+                            listeners : {
+                            	changed : () => {
+                            	       // check syntax??
+                            	           if(this.checkSyntax()) {
+                            	           Editor.save_button.el.sensitive = true;
+                            	       }
+                            	      // print("EDITOR CHANGED");
+                            	       Editor.dirty = true;
+                            	   
+                            	       // this.get('/LeftPanel.model').changed(  str , false);
+                            	       return ;
+                            	   }
                             }
                         }
                     ]
+
                 }
             ]
+
         }
     ]
+
 });
 Editor.init();
 XObject.cache['/Editor'] = Editor;
