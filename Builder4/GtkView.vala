@@ -39,13 +39,14 @@ public class Xcls_GtkView : Object
             if (file.tree == null) {
                 return;
             }
-    
+            
      
     	var x = new JsRender.NodeToGlade(file.tree,  "");
     	var str = x.munge();
             var builder = new Gtk.Builder.from_string (str,str.length);
             
     	var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
+    	this.lastObj = obj;
             this.container.el.add(obj);
     }
     public class Xcls_container : Object 
