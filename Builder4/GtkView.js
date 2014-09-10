@@ -19,6 +19,8 @@ GtkView=new XObject({
         if (type < 1) {
             return;
         }
+        // some types can not be created -- eg. dialogs...
+        
         var  child = new Object(type);
         
     

@@ -10,7 +10,7 @@
             "xtype" : "Viewport",
             "string id" : "GtkView",
             "$ xns" : "Gtk",
-            "| void addNode" : "(Object parent, JsRender.Node node) {  \n\n    var type = GLib.Type.from_name(node.fqn());\n    if (type < 1) {\n        return;\n    }\n    var  child = new Object(type);\n    \n\n}",
+            "| void addNode" : "(Object parent, JsRender.Node node) {  \n\n    var type = GLib.Type.from_name(node.fqn());\n    if (type < 1) {\n        return;\n    }\n    // some types can not be created -- eg. dialogs...\n    \n    var  child = new Object(type);\n    \n\n}",
             "items" : [
                 {
                     "* pack" : "add",

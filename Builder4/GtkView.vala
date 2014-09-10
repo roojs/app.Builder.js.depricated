@@ -36,6 +36,8 @@ public class GtkView : Object
         if (type < 1) {
             return;
         }
+        // some types can not be created -- eg. dialogs...
+        
         var  child = new Object(type);
         
     
