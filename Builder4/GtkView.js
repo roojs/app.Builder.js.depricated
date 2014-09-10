@@ -32,7 +32,9 @@ GtkView=new XObject({
     	GLib.FileUtils.set_contents("/tmp/test-gtkview.glade", str);
             var builder = new Gtk.Builder.from_string (str,str.length);
             
-    	var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
+    	var obj = builder.get_objects().nth_data(0) as Gtk.Widget;
+    	
+    	//var obj=  builder.get_object(file.tree.uid()) as Gtk.Widget;
     	this.lastObj = obj;
             this.container.el.add(obj);
     },
