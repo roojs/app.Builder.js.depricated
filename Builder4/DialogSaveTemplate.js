@@ -45,7 +45,7 @@ DialogSaveTemplate=new XObject({
     	       }
     	       var name = _this.name.el.get_text();
     	       if (name.length < 1) {
-    	           StandardErrorDialog.show(
+    	           StandardErrorDialog.singleton().show(
     	               this.el,
     	               "You must give the template a name. "
     	           );
@@ -54,7 +54,7 @@ DialogSaveTemplate=new XObject({
     	       if (!Regex.match_simple ("^[A-Za-z]+$", name) || 
     	           !Regex.match_simple ("^[A-Za-z ]+$", name) )
     	       {
-    	           StandardErrorDialog.show(
+    	           StandardErrorDialog.singleton().show(
     	               this.el,
     	               "Template Nane must contain only letters and spaces. "
     	           );
