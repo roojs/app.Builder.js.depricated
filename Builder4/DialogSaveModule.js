@@ -11,6 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveModule=new XObject({
     default_width : 400,
+    project : "",
+    xtype : "Dialog",
+    default_height : 200,
+    modal : TRUE,
+    data : "",
     show : (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
@@ -40,8 +45,8 @@ DialogSaveModule=new XObject({
             if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
                 !Regex.match_simple ("^[A-Za-z.]+$", name) )
             {
-                StandardErrorDialog.show(
-                    (Gtk.Window) _this.el,
+                StandardErrorDialog.signleton().show(
+                     _this.el,
     
                     "Template Nane must contain only letters dots"
                 );
@@ -61,11 +66,6 @@ DialogSaveModule=new XObject({
         
         
     },
-    project : "",
-    xtype : "Dialog",
-    default_height : 200,
-    modal : TRUE,
-    data : "",
     xns : Gtk,
     listeners : {
     	delete_event : (self, event) => {

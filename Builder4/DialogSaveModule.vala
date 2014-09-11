@@ -48,7 +48,7 @@ public class DialogSaveModule : Object
     }
 
     // user defined functions 
-    public  string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
+    public   string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
         this.el.set_transient_for(parent);
@@ -77,8 +77,8 @@ public class DialogSaveModule : Object
             if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
                 !Regex.match_simple ("^[A-Za-z.]+$", name) )
             {
-                StandardErrorDialog.show(
-                    (Gtk.Window) _this.el,
+                StandardErrorDialog.signleton().show(
+                     _this.el,
     
                     "Template Nane must contain only letters dots"
                 );
