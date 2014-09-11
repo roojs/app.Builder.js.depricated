@@ -377,6 +377,7 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
+				print ("fillPack:first -- FOUND pack type is %s\n", type);
 
 				
 				var pack = meth.name;
@@ -384,7 +385,7 @@ namespace Palete {
 					var ty = Gir.fqtypeLookup(meth.paramset.params.get(i).type, meth.ns);
 					pack += "," + Gir.guessDefaultValueForType(ty);
 				}
-				node.set("pack", pack);
+				node.props.set("* pack", pack);
 				return;
 
 			}
