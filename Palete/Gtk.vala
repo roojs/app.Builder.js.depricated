@@ -406,9 +406,10 @@ namespace Palete {
 			}
 			var riter = res.map_iterator();
 			while(riter.next()) {
-				node.props.set("* pack", r:qiter.get_value());
+				node.props.set("* pack", riter.get_value());
 				return;
 			}
+			
 			
 		}
  
