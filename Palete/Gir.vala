@@ -187,6 +187,8 @@ namespace Palete {
 			
 		}
 		public string fqn() {
+			// not sure if fqn really is correct here...
+			// 
 			return this.type == "Class" ? this.name : (this.ns + this.name);
 		}
 		
