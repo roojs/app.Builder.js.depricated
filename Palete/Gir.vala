@@ -526,10 +526,10 @@ namespace Palete {
 		public void walk(Xml.Node* element, GirObject? parent)
 		{
 		    var n = element->get_prop("name");
-		    if (n == null) {
-			n = "";
+		    if (n == null || (element->ns->prefix != null && element->ns->prefix == "c") {
+				n = "";
 		    }
-		    print("%s:%s (%s ==> %s\n", element->ns->prefix , element->name , parent.name , n);
+		    //print("%s:%s (%s ==> %s\n", element->ns->prefix , element->name , parent.name , n);
 		    switch (element->name) {
 			case "repository":
 			    break;
