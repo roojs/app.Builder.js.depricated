@@ -49,7 +49,7 @@ public class DialogSaveTemplate : Object
     }
 
     // user defined functions 
-    public   void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+    public    void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
             this.el.set_transient_for(parent);
@@ -83,7 +83,7 @@ public class DialogSaveTemplate : Object
                 }
                 break;
             }
-            this.palete.saveTemplate(name, data);
+            palete.saveTemplate(name, data);
             
             // now we save it..
             this.el.hide();

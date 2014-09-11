@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveTemplate=new XObject({
     default_width : 400,
-    xtype : "Dialog",
     show : (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
@@ -46,7 +45,7 @@ DialogSaveTemplate=new XObject({
                 }
                 break;
             }
-            this.palete.saveTemplate(name, data);
+            palete.saveTemplate(name, data);
             
             // now we save it..
             this.el.hide();
@@ -55,6 +54,7 @@ DialogSaveTemplate=new XObject({
       
        
     },
+    xtype : "Dialog",
     default_height : 200,
     palete : "",
     modal : TRUE,
