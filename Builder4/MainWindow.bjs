@@ -403,7 +403,7 @@
                                                                     "items" : [
                                                                         {
                                                                             "listeners" : {
-                                                                                "clicked" : " () => {\n    // create a new file in project..\n    if (_this.project == null) {\n        return  ;\n    }\n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
+                                                                                "clicked" : " () => {\n    // create a new file in project..\n    \n    // what's the currently selected project...\n    \n    if (_this.project == null) {\n        return  ;\n    }\n    \n    \n    \n    var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, \"\");\n    _this.new_file_dialog.show(f);\n    \n    return  ;    \n}"
                                                                             },
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",

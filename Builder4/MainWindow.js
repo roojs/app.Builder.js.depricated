@@ -1415,9 +1415,14 @@ MainWindow=new XObject({
                                                                     listeners : {
                                                                     	clicked : () => {
                                                                     	       // create a new file in project..
+                                                                    	       
+                                                                    	       // what's the currently selected project...
+                                                                    	       
                                                                     	       if (_this.project == null) {
                                                                     	           return  ;
                                                                     	       }
+                                                                    	       
+                                                                    	       
                                                                     	       
                                                                     	       var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
                                                                     	       _this.new_file_dialog.show(f);
