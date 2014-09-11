@@ -358,8 +358,9 @@ namespace Palete {
 			
 			var map = methods.map_iterator();
 			while (map.next()) {
-				var n = map.get_key();
 				
+				var n = map.get_key();
+				print ("fillPack:checking method %s\n", n);
 				
 				var meth = map.get_value();
 				if (meth.paramset == null || meth.paramset.params.size < 1) {
