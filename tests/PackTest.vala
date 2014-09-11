@@ -11,20 +11,9 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	
 
-	Palete.Palete.
-
-	Project.Project.loadAll();
-	proj = Project.Project.getProject("Builder4");
-	
-	proj.scanDirs();
-	//
-	
-	//var iter = proj.sortedFiles().list_iterator();
-	//while (iter.next()) {  loadit(iter.get().name);	}
-	//loadit("WindowLeftProps");
-	//loadit("EditProject");
-	//loadit("Editor");
-	loadit("MainWindow");
+	var pal = Palete.Palete.factory("Gtk");
+	pal.
+	 
 	Gtk.main();
     
 	
