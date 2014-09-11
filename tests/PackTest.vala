@@ -19,7 +19,7 @@ int main (string[] args) {
 
 	parent.setFqn("Gtk.VBox");
 	node.setFqn("Gtk.ScolledWindow");
-	pal.fillPack(JsRender.Node node,JsRender.Node parent)
+	pal.fillPack( node, parent)
 	print("pack is %s\n", node.get("* pack");
 	 
 	
