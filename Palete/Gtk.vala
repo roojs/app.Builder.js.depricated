@@ -349,14 +349,18 @@ namespace Palete {
 
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
-
-			string inherits = " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
+			
+			string inherits = node.fqn() + " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
+			print ("Inherits
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
+			
 			
 			var map = methods.map_iterator();
 			while (map.next()) {
 				var n = map.get_key();
+				
+				
 				var meth = map.get_value();
 				if (meth.paramset == null || meth.paramset.params.size < 1) {
 					continue;
