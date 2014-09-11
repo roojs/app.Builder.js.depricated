@@ -239,6 +239,7 @@ MainWindow=new XObject({
     
         _this.code_editor.save.connect( () => {
             this.left_tree.model.file.save();
+             this.left_tree.model.updateSelected();
         });
         
          
