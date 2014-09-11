@@ -49,7 +49,7 @@ public class DialogSaveTemplate : Object
     }
 
     // user defined functions 
-    public  void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+    public   void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
             this.el.set_transient_for(parent);
@@ -73,7 +73,7 @@ public class DialogSaveTemplate : Object
                     );
                     continue;
                 }
-                if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9.]+$", name) )
+                if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9. ]+$", name) )
                 {
                     StandardErrorDialog.singleton().show(
                          _this.el,

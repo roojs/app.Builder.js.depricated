@@ -10,6 +10,8 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveTemplate=new XObject({
+    default_width : 400,
+    xtype : "Dialog",
     show : (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
@@ -34,7 +36,7 @@ DialogSaveTemplate=new XObject({
                     );
                     continue;
                 }
-                if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9.]+$", name) )
+                if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9. ]+$", name) )
                 {
                     StandardErrorDialog.singleton().show(
                          _this.el,
@@ -53,11 +55,9 @@ DialogSaveTemplate=new XObject({
       
        
     },
-    default_width : 400,
-    xtype : "Dialog",
     default_height : 200,
     palete : "",
-    modal : true,
+    modal : TRUE,
     data : "",
     xns : Gtk,
     listeners : {
