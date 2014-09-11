@@ -388,11 +388,28 @@ namespace Palete {
 					var ty = Gir.fqtypeLookup(meth.paramset.params.get(i).type, meth.ns);
 					pack += "," + Gir.guessDefaultValueForType(ty);
 				}
-				node.props.set("* pack", pack);
-				return;
+				res.set(meth.name, pack);
+				
+				
 
 			}
-
+			if (res.size < 1) {
+				return "";
+			}
+			if (res.has_key("pack_start")) {
+				node.props.set("* pack", res.get("pack_start"));
+				return;
+			}
+			if (res.has_key("add")) {
+				node.props.set("* pack", res.get("add"));
+				return;
+			}
+			var riter = res.map_iterator();
+			while(riter.next()) {
+				node.props.set("* pack", riter.get_value());
+				return;
+			}
+			
 			
 		}
  
