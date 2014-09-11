@@ -126,6 +126,7 @@ namespace Palete {
 				print("getInheritsFor:could not find cls: %s\n", ename);
 				return ret;
 			}
+			
 			return cls.inheritsToStringArray();
 			
 
@@ -357,7 +358,7 @@ namespace Palete {
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
 			
-			
+			var res = new Gee.HashMap<string,string>();
 			var map = methods.map_iterator();
 			while (map.next()) {
 				
