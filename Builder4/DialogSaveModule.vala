@@ -69,7 +69,7 @@ public class DialogSaveModule : Object
             name = _this.name.el.get_text();
             if (name.length < 1) {
                 StandardErrorDialog.singleton().show(
-                    (Gtk.Window) _this.el,
+                     _this.el,
                     "You must give the template a name. "
                 );
                 continue;
@@ -77,10 +77,9 @@ public class DialogSaveModule : Object
             if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
                 !Regex.match_simple ("^[A-Za-z.]+$", name) )
             {
-                StandardErrorDialog.signleton().show(
+                StandardErrorDialog.singleton().show(
                      _this.el,
-    
-                    "Template Nane must contain only letters dots"
+                    "Template Name must contain only letters dots"
                 );
                 continue;
             }
