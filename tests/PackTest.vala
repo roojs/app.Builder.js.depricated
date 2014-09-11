@@ -12,10 +12,16 @@ int main (string[] args) {
 	
 
 	var pal = Palete.Palete.factory("Gtk");
-	pal.
+
+	var node = new JsRender.Node();
+	
+	var parent = new JsRender.Node();
+
+	parent.setFqn("Gtk.VBox");
+	node.setFqn("Gtk.ScolledWindow");
+	pal.fillPack(JsRender.Node node,JsRender.Node parent)
+	print("pack is %s\n", node.get("* pack");
 	 
-	Gtk.main();
-    
 	
 	return 0;
 }
