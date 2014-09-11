@@ -119,7 +119,7 @@ namespace Palete {
 		public string[] getInheritsFor(string ename)
 		{
 			string[] ret = {};
-			var es = ename.split(".");
+			 
 			var cls = factoryFqn(ename);
 			 
 			if (cls == null || cls.type != "Class") {
