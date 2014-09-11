@@ -350,7 +350,8 @@ namespace Palete {
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
 			
-			string inherits = node.fqn() + " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
+			string inherits = node.fqn() + " " + string.joinv(" ", 
+                                      this.getInheritsFor (node.fqn())) + " ";
 			print ("fillPack:Inherits : %s\n", inherits);
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
@@ -377,7 +378,7 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
-				print ("fillPack:first -- FOUND pack type is %s\n", type);
+				print ("fillPack:first -- MATCHED" );
 
 				
 				var pack = meth.name;
