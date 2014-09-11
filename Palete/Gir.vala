@@ -187,7 +187,7 @@ namespace Palete {
 			
 		}
 		public string fqn() {
-			return this.ns + this.name;
+			return this.type == "Class" ? this.name : (this.ns + this.name);
 		}
 		
 		public void copyFrom(GirObject pcls, bool is_interface) 
