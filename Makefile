@@ -96,6 +96,10 @@ test-gir:
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		tests/GirTest.vala -o /tmp/test-gir
 
+test-pack: 
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		tests/PackTest.vala -o /tmp/test-pack
+
 
 #fixme -- old...
 datatest:
