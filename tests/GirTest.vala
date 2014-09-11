@@ -20,7 +20,7 @@ int main (string[] args) {
 	
 	print(generator.to_data(null));
 
-
+	/*
 	test = Palete.Gir.factoryFqn(test.fqtype());
 	
 	n = new Json.Node(Json.NodeType.OBJECT);
@@ -29,7 +29,7 @@ int main (string[] args) {
 	
 	print(generator.to_data(null));
 
-	
+	*/
 	 
 	return 0;
 }
