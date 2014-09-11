@@ -362,6 +362,7 @@ namespace Palete {
 					continue;
 				}
 				var fp = meth.paramset.params.get(0);
+				
 				var type = Gir.fqtypeLookup(fp.type, meth.ns);
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
