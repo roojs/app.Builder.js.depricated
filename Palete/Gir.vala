@@ -189,7 +189,8 @@ namespace Palete {
 		public string fqn() {
 			// not sure if fqn really is correct here...
 			// 
-			return this.nodetype == "Class" ? this.name : (this.ns + this.name);
+			return this.nodetype == "Class" || this.nodetype=="Interface"
+					? this.name : (this.ns + this.name);
 		}
 		
 		public void copyFrom(GirObject pcls, bool is_interface) 
@@ -493,6 +494,7 @@ namespace Palete {
 		
 
 		public static string guessDefaultValueForType(string type) {
+			print("guessDefaultValueForType: %s\n", type);
 			if (type.contains(".")) {
 				return "null";
 			}
