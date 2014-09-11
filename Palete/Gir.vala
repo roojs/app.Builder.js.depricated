@@ -494,7 +494,7 @@ namespace Palete {
 		
 
 		public static string guessDefaultValueForType(string type) {
-			print("guessDefaultValueForType: %s\n", type);
+			//print("guessDefaultValueForType: %s\n", type);
 			if (type.contains(".")) {
 				return "null";
 			}
@@ -672,9 +672,12 @@ namespace Palete {
 			    break;
 			
 			case "instance-parameter":
+					break;
+					// looks  like this is the C first arg, that is ignored (as it is 
+					// treated as 'this' )
 		    		var c = new GirObject("Param",n);
-				c.gparent = parent;
-				c.ns = this.ns;
+					c.gparent = parent;
+					c.ns = this.ns;
 		    		c.is_instance = true;
 		    		parent.params.add(c);
 		    		parent = c;
