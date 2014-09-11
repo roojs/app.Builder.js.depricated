@@ -377,6 +377,8 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
+
+				
 				var pack = meth.name;
 				for(var i =1; i < meth.paramset.params.size; i++) {
 					var ty = Gir.fqtypeLookup(meth.paramset.params.get(i).type, meth.ns);
