@@ -351,7 +351,7 @@ namespace Palete {
 		{   
 			
 			string inherits = node.fqn() + " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
-			print ("Inherits
+			print ("fillPack:Inherits : %s\n", inherits);
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
 			
