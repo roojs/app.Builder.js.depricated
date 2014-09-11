@@ -5,8 +5,9 @@ int main (string[] args) {
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
-	var test = Palete.Gir.factoryFqn("Gtk.MessageDialog.flags");
-	
+	//var test = Palete.Gir.factoryFqn("Gtk.MessageDialog.flags");	  
+	var test = Palete.Gir.factoryFqn("Gtk.ScrolledWindow");
+		
 	print ("type %s\n", test.fqtype());
 	
 	var generator = new Json.Generator ();
