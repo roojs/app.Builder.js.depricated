@@ -338,7 +338,11 @@ WindowRooView=new XObject({
                             	           return true;
                             	          
                             	       });
-                            	       
+                            	      this.inspector.close.connect(() => {
+                            	           
+                            	           this.inspector.show();
+                            	          
+                            	       }); 
                             	       this.inspector.show();
                             	   },
                             	drag_drop : ( ctx, x, y,time, ud) => {

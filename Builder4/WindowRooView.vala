@@ -406,7 +406,11 @@ public class Xcls_WindowRooView : Object
                     return true;
                    
                 });
-                
+               this.inspector.close.connect(() => {
+                    
+                    this.inspector.show();
+                   
+                }); 
                 this.inspector.show();
             });
             this.el.drag_drop.connect( ( ctx, x, y,time, ud) => {
