@@ -123,6 +123,7 @@ namespace Palete {
 			var cls = Gir.factoryFqn(ename);
 			 
 			if (cls == null || cls.nodetype != "Class") {
+				print("getInheritsFor:could not find cls: %s\n", ename);
 				return ret;
 			}
 			return cls.inheritsToStringArray();
@@ -351,6 +352,7 @@ namespace Palete {
 			
 			string inherits =  string.joinv(" ", 
                                       this.getInheritsFor (node.fqn())) + " ";
+			inherits += node.fqn() + " ";
 			print ("fillPack:Inherits : %s\n", inherits);
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
