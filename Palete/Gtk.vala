@@ -354,7 +354,7 @@ namespace Palete {
 			string inherits =  string.joinv(" ", 
                                       this.getInheritsFor (node.fqn())) + " ";
 			inherits += node.fqn() + " ";
-			print ("fillPack:Inherits : %s\n", inherits);
+			//print ("fillPack:Inherits : %s\n", inherits);
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn(), "methods");
 			
@@ -363,7 +363,7 @@ namespace Palete {
 			while (map.next()) {
 				
 				var n = map.get_key();
-				print ("fillPack:checking method %s\n", n);
+				//print ("fillPack:checking method %s\n", n);
 				
 				var meth = map.get_value();
 				if (meth.paramset == null || meth.paramset.params.size < 1) {
