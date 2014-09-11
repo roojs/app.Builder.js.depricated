@@ -2432,14 +2432,15 @@ public class Xcls_MainWindow : Object
                 // create a new file in project..
                 
                 // what's the currently selected project...
+                var proj = _this.left_projects.getSelectedProject();
                 
-                if (_this.project == null) {
+                if (proj == null) {
                     return  ;
                 }
                 
                 
                 
-                var f = JsRender.JsRender.factory(_this.project.xtype,  _this.project, "");
+                var f = JsRender.JsRender.factory(proj.xtype,  proj, "");
                 _this.new_file_dialog.show(f);
                 
                 return  ;    
