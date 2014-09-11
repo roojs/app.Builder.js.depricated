@@ -364,11 +364,16 @@ namespace Palete {
 				
 				var meth = map.get_value();
 				if (meth.paramset == null || meth.paramset.params.size < 1) {
+					print ("fillPack:c -- no params\n");
+				
 					continue;
 				}
 				var fp = meth.paramset.params.get(0);
 				
 				var type = Gir.fqtypeLookup(fp.type, meth.ns);
+				print ("fillPack:first param type is %s\n", type);
+
+				
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
