@@ -196,6 +196,16 @@ namespace Palete {
 		{
 
 			this.inherits.add(pcls.fqn());
+
+			var liter = pcls.inherits.list_iterator();
+			while(liter.next()) {
+        		if (this.inherits.contains(liter.get()) {
+					continue;
+				}
+				this.inherits.add(liter.get()); 
+            }
+			
+			
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
         		if (null != this.methods.get(iter.get_key())) {
@@ -243,7 +253,9 @@ namespace Palete {
 		    }
 		
 		    // is_arary / is_instance / is_varargs..
-		    
+
+		
+			
 		    if (this.implements.size > 0) {
 		        r.set_array_member("length", this.toJSONArrayString(this.implements));
 		    }
