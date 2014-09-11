@@ -120,9 +120,9 @@ namespace Palete {
 		{
 			string[] ret = {};
 			 
-			var cls = factoryFqn(ename);
+			var cls = Gir.factoryFqn(ename);
 			 
-			if (cls == null || cls.type != "Class") {
+			if (cls == null || cls.nodetype != "Class") {
 				return ret;
 			}
 			return cls.inheritsToStringArray();
@@ -349,7 +349,7 @@ namespace Palete {
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
 			
-			string inherits = node.fqn() + " " + string.joinv(" ", 
+			string inherits =  string.joinv(" ", 
                                       this.getInheritsFor (node.fqn())) + " ";
 			print ("fillPack:Inherits : %s\n", inherits);
 			// parent.fqn() method ( node.fqn()
