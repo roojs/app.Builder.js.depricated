@@ -406,7 +406,7 @@ public class Xcls_WindowRooView : Object
                     return true;
                    
                 });
-               this.inspector.close.connect(() => {
+               this.inspector.closed.connect(() => {
                     
                     this.inspector.show();
                    
