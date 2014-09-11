@@ -64,7 +64,7 @@ DialogSaveTemplate=new XObject({
     xns : Gtk,
     listeners : {
     	delete_event : (self, event) => {
-    	       this.el.hide();
+    	      this.el.response(Gtk.ResponseType.CANCEL);
     	       return true;
     	       
     	   }

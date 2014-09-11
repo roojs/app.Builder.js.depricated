@@ -42,7 +42,7 @@ public class DialogSaveTemplate : Object
 
         // listeners 
         this.el.delete_event.connect( (self, event) => {
-            this.el.hide();
+           this.el.response(Gtk.ResponseType.CANCEL);
             return true;
             
         });
