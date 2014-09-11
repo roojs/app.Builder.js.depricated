@@ -469,7 +469,7 @@ namespace Palete {
 				if (ret != type) {
 					return ret;
 				}
-    			}	
+    		}	
 			return type;
 		}
 		
