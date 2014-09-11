@@ -10,12 +10,11 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogSaveTemplate=new XObject({
-    default_width : 400,
     show : (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
      
-         var t =DialogSaveTemplate;
+        var t =DialogSaveTemplate;
         if (t == null) {
            t =   new Xcls_DialogSaveTemplate();
         }
@@ -25,6 +24,7 @@ DialogSaveTemplate=new XObject({
         t.name.el.set_text("");
         t.el.show_all();
     },
+    default_width : 400,
     xtype : "Dialog",
     default_height : 200,
     palete : "",

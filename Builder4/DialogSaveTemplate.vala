@@ -76,11 +76,11 @@ public class DialogSaveTemplate : Object
     }
 
     // user defined functions 
-    public static void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+    public  void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
      
-         var t =DialogSaveTemplate;
+        var t =DialogSaveTemplate;
         if (t == null) {
            t =   new Xcls_DialogSaveTemplate();
         }
