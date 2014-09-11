@@ -79,16 +79,51 @@ public class DialogSaveTemplate : Object
     public  void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
      
         
+            this.el.set_transient_for(parent);
+            this.el.modal = true;
+            
+            this.data = data;
+            this.project = project;
+            this.name.el.set_text("");
+            this.el.show_all();
+             var   name = "";
+            while (true) {
+                var response_id = this.el.run();
+                if (response_id < 1) {
+                    this.el.hide();
+                     return "";
+                }
+                
+                name = _this.name.el.get_text();
+                if (name.length < 1) {
+                    StandardErrorDialog.singleton().show(
+                         _this.el,
+                        "You must give the template a name. "
+                    );
+                    continue;
+                }
+                if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9.]+$", name) )
+                {
+                    StandardErrorDialog.singleton().show(
+                         _this.el,
+                        "Template Name must contain only letters dots"
+                    );
+                    continue;
+                }
+                break;
+            }
+            var f = project.newFile(name);
+            f.tree =  _this.data.deepClone();
+            f.save();
+            
+            // now we save it..
+            this.el.hide();
+            
+            return name;
      
-        var t =DialogSaveTemplate;
-        if (t == null) {
-           t =   new Xcls_DialogSaveTemplate();
-        }
-        t.el.set_transient_for(parent);
-        t.data = data;
-        t.palete = palete;
-        t.name.el.set_text("");
-        t.el.show_all();
+     
+     
+      
     }
     public class Xcls_HBox2 : Object 
     {
