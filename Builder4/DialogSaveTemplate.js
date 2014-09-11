@@ -23,7 +23,7 @@ DialogSaveTemplate=new XObject({
                 var response_id = this.el.run();
                 if (response_id < 1) {
                     this.el.hide();
-                     return "";
+                     return;
                 }
                 
                 name = _this.name.el.get_text();
