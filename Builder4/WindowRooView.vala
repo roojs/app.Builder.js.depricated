@@ -1,21 +1,4 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/WindowRooView.vala  -o /tmp/WindowRooView
-*/
-
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_WindowRooView();
-    WindowRooView.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_WindowRooView  WindowRooView;
+static Xcls_WindowRooView  _WindowRooView;
 
 public class Xcls_WindowRooView : Object 
 {
@@ -24,25 +7,25 @@ public class Xcls_WindowRooView : Object
 
     public static Xcls_WindowRooView singleton()
     {
-        if (WindowRooView == null) {
-            WindowRooView= new Xcls_WindowRooView();
+        if (_WindowRooView == null) {
+            _WindowRooView= new Xcls_WindowRooView();
         }
-        return WindowRooView;
+        return _WindowRooView;
     }
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
     public Xcls_inspectorcontainer inspectorcontainer;
 
-        // my vars
+        // my vars (def)
     public JsRender.JsRender file;
 
-        // ctor 
+    // ctor 
     public Xcls_WindowRooView()
     {
         _this = this;
         this.el = new Gtk.VPaned();
 
-        // my vars
+        // my vars (dec)
 
         // set gobject values
         var child_0 = new Xcls_VBox2( _this );
@@ -53,103 +36,101 @@ public class Xcls_WindowRooView : Object
         this.el.pack2 (  child_1.el , true,true );
     }
 
-    // userdefined functions 
-    public void createThumb() {
-            
-            
-            if (this.file == null) {
-                return;
-            }
-            var filename = this.file.getIconFileName(false);
-            
-            var  win = this.el.get_parent_window();
-            var width = win.get_width();
-            var height = win.get_height();
+    // user defined functions 
+    public void createThumb () {
         
-            Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
         
-            screenshot.save(filename,"png");
+        if (this.file == null) {
             return;
-            
-            
-            
-            
-            
-            
-            
-            var p = new WebKit.PrintOperation(_this.view.el);
-             
-            var ps = new Gtk.PrintSettings();
-            ps.set_printer("Print to File");
-            ps.set("output-file-format", "pdf");
-            ps.set("output-uri", "file://" + filename + ".pdf");
+        }
+        var filename = this.file.getIconFileName(false);
         
-            // find the printer...
-            
-            /*
-            var ar = Gtk.PaperSize.get_paper_sizes(false);
-            var psetup = new Gtk.PageSetup();
-            for(var i = 0; i < ar.length(); i++) {
-                if (ar.nth_data(i).get_name() =="iso_a4") {
-                    psetup.set_paper_size(ar.nth_data(i));
-                }
+        var  win = this.el.get_parent_window();
+        var width = win.get_width();
+        var height = win.get_height();
+    
+        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
+    
+        screenshot.save(filename,"png");
+        return;
+        
+        
+        
+        
+        
+        
+        
+        var p = new WebKit.PrintOperation(_this.view.el);
+         
+        var ps = new Gtk.PrintSettings();
+        ps.set_printer("Print to File");
+        ps.set("output-file-format", "pdf");
+        ps.set("output-uri", "file://" + filename + ".pdf");
+    
+        // find the printer...
+        
+        /*
+        var ar = Gtk.PaperSize.get_paper_sizes(false);
+        var psetup = new Gtk.PageSetup();
+        for(var i = 0; i < ar.length(); i++) {
+            if (ar.nth_data(i).get_name() =="iso_a4") {
+                psetup.set_paper_size(ar.nth_data(i));
             }
-            psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
-            
-             
-            p.set_page_setup(psetup);
-            */
-            p.set_print_settings(ps);
-            
-            p.finished.connect(() => {
-                print("creating thumbnail for " + filename + ".pdf\n"); 
-                var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
-            
-                s.write_to_png (filename);
-                
-               // var f = GLib.File.new_for_path (filename + ".pdf");
-               // f.delete();
-            });
-            
-            
-            p.print();
-            
-            // should we hold until it's printed...
-            
-              
+        }
+        psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
         
+         
+        p.set_page_setup(psetup);
+        */
+        p.set_print_settings(ps);
+        
+        p.finished.connect(() => {
+            print("creating thumbnail for " + filename + ".pdf\n"); 
+            var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
+        
+            s.write_to_png (filename);
             
-            
+           // var f = GLib.File.new_for_path (filename + ".pdf");
+           // f.delete();
+        });
         
         
-            
-             
-        }
-    public void loadFile(JsRender.JsRender file)
-        {
-            this.file = file;
-            this.view.renderJS(true);
-        }
-    public void requestRedraw() {
-            this.view.renderJS(false);
-        }
-
-    // skip |xns - no return type
+        p.print();
+        
+        // should we hold until it's printed...
+        
+          
+    
+        
+        
+    
+    
+        
+         
+    }
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    }
+    public void requestRedraw () {
+        this.view.renderJS(false);
+    }
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_VBox2(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( false, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             var child_0 = new Xcls_HBox3( _this );
@@ -160,9 +141,7 @@ public class Xcls_WindowRooView : Object
             this.el.pack_end (  child_1.el , true,true,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_HBox3 : Object 
     {
@@ -170,15 +149,15 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_HBox3(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.height_request = 20;
@@ -194,9 +173,7 @@ public class Xcls_WindowRooView : Object
             this.el.pack_start (  child_2.el , false,false,0 );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button4 : Object 
     {
@@ -204,15 +181,15 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button4(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "Redraw";
@@ -220,12 +197,10 @@ public class Xcls_WindowRooView : Object
             // listeners 
             this.el.clicked.connect( ( ) => {
                 _this.view.renderJS(  true);
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_AutoRedraw : Object 
     {
@@ -233,30 +208,28 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_AutoRedraw(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.AutoRedraw = this;
             this.el = new Gtk.CheckButton();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.active = true;
             this.el.label = "Auto Redraw On";
 
             // listeners 
-            this.el.toggled.connect(  (state) => {
+            this.el.toggled.connect( (state) => {
                 this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_Button6 : Object 
     {
@@ -264,31 +237,29 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_Button6(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "Full Redraw";
 
             // listeners 
-            this.el.clicked.connect(  () => {
+            this.el.clicked.connect( () => {
               _this.view.redraws = 99;
                 _this.view.el.web_context.clear_cache();  
               _this.view.renderJS(true);
             
-            } );
+            });
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_ScrolledWindow7 : Object 
     {
@@ -296,15 +267,15 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
@@ -313,13 +284,10 @@ public class Xcls_WindowRooView : Object
             this.el.add (  child_0.el  );
 
             // init method 
-              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-             
-        }
 
-        // userdefined functions 
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
     public class Xcls_view : Object 
     {
@@ -327,34 +295,35 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
-        public GLib.DateTime lastRedraw;
-        public WebKit.WebInspector inspector;
-        public bool pendingRedraw;
-        public bool refreshRequired;
-        public int redraws;
+            // my vars (def)
         public string renderedData;
+        public bool refreshRequired;
+        public WebKit.WebInspector inspector;
+        public int redraws;
+        public GLib.DateTime lastRedraw;
         public string runhtml;
+        public bool pendingRedraw;
 
-            // ctor 
+        // ctor 
         public Xcls_view(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.view = this;
             this.el = new WebKit.WebView();
 
-            // my vars
-            this.lastRedraw = null;
-            this.pendingRedraw = false;
+            // my vars (dec)
+            this.renderedData = "";
             this.refreshRequired = false;
             this.redraws = 0;
-            this.renderedData = "";
+            this.lastRedraw = null;
             this.runhtml = "";
+            this.pendingRedraw = false;
 
             // set gobject values
 
             // init method 
-             {
+
+            {
                 // this may not work!?
                 var settings =  this.el.get_settings();
                 settings.enable_developer_extras = true;
@@ -366,21 +335,7 @@ public class Xcls_WindowRooView : Object
                
                  
                 
-                this.inspector = this.el.get_inspector();
-                this.inspector.open_window.connect(() => {
                 
-                    print("inspector attach\n");
-                    var wv = this.inspector.get_web_view();
-                    if (wv != null) {
-                        print("got inspector web view\n");
-                        _this.inspectorcontainer.el.add(wv);
-                        wv.show();
-                    } else {
-                        print("no web view yet\n");
-                    }
-                    return true;
-                   
-                });
                 
             
                  // FIXME - base url of script..
@@ -413,9 +368,48 @@ public class Xcls_WindowRooView : Object
                 
                 
             }
-
             // listeners 
-            this.el.drag_drop.connect(   ( ctx, x, y,time, ud) => {
+            this.el.script_dialog.connect( (dialog) => {
+                 var msg = dialog.get_message();
+                 if (msg.length < 4) {
+                    return false;
+                 }
+                 if (msg.substring(0,4) != "IPC:") {
+                     return false;
+                 }
+                 var ar = msg.split(":", 3);
+                if (ar.length < 3) {
+                    return false;
+                }
+                switch(ar[1]) {
+                    case "SAVEHTML":
+                        _this.file.saveHTML(ar[2]);
+                        return true;
+                    default:
+                        return false;
+                }
+                
+            });
+            this.el.show.connect( ( ) => {
+                this.inspector = this.el.get_inspector();
+                this.inspector.open_window.connect(() => {
+                    
+                    print("inspector attach\n");
+                    var wv = this.inspector.get_web_view();
+                    if (wv != null) {
+                        print("got inspector web view\n");
+                        _this.inspectorcontainer.el.add(wv);
+                        wv.show();
+                    } else {
+                        print("no web view yet\n");
+                    }
+                    return true;
+                   
+                });
+                
+                this.inspector.show();
+            });
+            this.el.drag_drop.connect( ( ctx, x, y,time, ud) => {
                 return false;
                 /*
             	print("TARGET: drag-drop");
@@ -436,175 +430,149 @@ public class Xcls_WindowRooView : Object
             
             	return  is_valid_drop_site;
             	*/
-            } );
-            this.el.show.connect(   ( ) => {
-                this.inspector.show();
-            } );
-            this.el.script_dialog.connect(  (dialog) => {
-                 var msg = dialog.get_message();
-                 if (msg.length < 4) {
-                    return false;
-                 }
-                 if (msg.substring(0,4) != "IPC:") {
-                     return false;
-                 }
-                 var ar = msg.split(":", 3);
-                if (ar.length < 3) {
-                    return false;
-                }
-                switch(ar[1]) {
-                    case "SAVEHTML":
-                        _this.file.saveHTML(ar[2]);
-                        return true;
-                    default:
-                        return false;
-                }
-                
-            } );
+            });
         }
 
-        // userdefined functions 
-        public void renderJS(bool force) {
-            
-                // this is the public redraw call..
-                // we refresh in a loop privately..
-                var autodraw = _this.AutoRedraw.el.active;
-                if (!autodraw && !force) {
-                    print("Skipping redraw - no force, and autodraw off");
-                    return;
-                }
-                this.refreshRequired  = true;
-            }
+        // user defined functions 
         public void runRefresh () 
-            {
-                // this is run every 2 seconds from the init..
+        {
+            // this is run every 2 seconds from the init..
+        
+          
             
-              
-                
-                if (!this.refreshRequired) {
-                   // print("no refresh required");
-                    return;
-                }
-            
-                if (this.lastRedraw != null) {
-                   // do not redraw if last redraw was less that 5 seconds ago.
-                   if ((int64)(new DateTime.now_local()).difference(this.lastRedraw) < 5000 ) {
-                        return;
-                    }
-                }
-                
-                if (_this.file == null) {
-                    return;
-                }
-                
-                
-                 this.refreshRequired = false;
-               //  print("HTML RENDERING");
-                 
-                 
-                 //this.get('/BottomPane').el.show();
-                 //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
-                _this.file.webkit_page_id  = this.el.get_page_id();
-                
-                var js = _this.file.toSourcePreview();
-            
-                if (js.length < 1) {
-                    print("no data");
-                    return;
-                }
-            //    var  data = js[0];
-                this.redraws++;
-              
-                var project = _this.file.project;  
-            
-                 //print (project.fn);
-                 // set it to non-empty.
-                 
-            //     runhtml = runhtml.length ?  runhtml : '<script type="text/javascript"></script>'; 
-            
-            
-            //   this.runhtml  = this.runhtml || '';
-             
-             
-                // then we need to reload the browser using
-                // load_html_string..
-            
-                // then trigger a redraw once it's loaded..
-                this.pendingRedraw = true;
-            
-                var runhtml = "<script type=\"text/javascript\">\n" ;
-                string builderhtml;
-                
-                
-                GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.js", out builderhtml);
-            
-                runhtml += builderhtml + "\n";
-                runhtml += "</script>\n" ;
-            
-                // fix to make sure they are the same..
-                this.runhtml = project.runhtml;
-                // need to modify paths
-            
-                string inhtml;
-                var base_template = _this.file.project.base_template;
-                
-                if (base_template.length > 0 && !FileUtils.test(
-                    Builder4.Application.configDirectory() + "/resources/" +  base_template, FileTest.EXISTS)  
-                    ) {
-                       print("invalid base_template name - using default:  %s\n", base_template);
-                       base_template = "";
-                
-                }
-                
-                GLib.FileUtils.get_contents(
-                    Builder4.Application.configDirectory() + "/resources/" + 
-                        (base_template.length > 0 ? base_template :  "roo.builder.html")
-                        , out inhtml);
-                
-                
-                this.renderedData = js;
-            
-            
-                string js_src = js + "\n" +
-            	"Roo.onReady(function() {\n" +
-            	"if (" + _this.file.name +".show) " +  _this.file.name +".show({});\n" +
-            	"Roo.XComponent.build();\n" +
-            	"});\n";
-            	
-                print("render js: " + js);
-                //if (!this.ready) {
-              //      console.log('not loaded yet');
-                //}
-                this.lastRedraw = new DateTime.now_local();
-            
-                    var html = inhtml.replace("</head>", runhtml + this.runhtml + 
-                    
-                            "<script type=\"text/javascript\">\n" +
-                            js_src + "\n" + 
-                            "</script>" + 
-                                    
-                    "</head>");
-                    print("LOAD HTML " + html);
-                    
-                     var rootURL = _this.file.project.rootURL;
-               
-                    
-                    
-                    this.el.load_html( html , 
-                        //fixme - should be a config option!
-                        (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
-                    );
-                    // - no need for this, the builder javascript will call it when build is complete
-                    //GLib.Timeout.add_seconds(1, () => {
-                    //    this.el.run_javascript("Builder.saveHTML()",null);
-                    //    return false;
-                    //});
-            //     print( "before render" +    this.lastRedraw);
-            //    print( "after render" +    (new Date()));
-                
+            if (!this.refreshRequired) {
+               // print("no refresh required");
+                return;
             }
-
-        // skip |xns - no return type
+        
+            if (this.lastRedraw != null) {
+               // do not redraw if last redraw was less that 5 seconds ago.
+               if ((int64)(new DateTime.now_local()).difference(this.lastRedraw) < 5000 ) {
+                    return;
+                }
+            }
+            
+            if (_this.file == null) {
+                return;
+            }
+            
+            
+             this.refreshRequired = false;
+           //  print("HTML RENDERING");
+             
+             
+             //this.get('/BottomPane').el.show();
+             //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
+            _this.file.webkit_page_id  = this.el.get_page_id();
+            
+            var js = _this.file.toSourcePreview();
+        
+            if (js.length < 1) {
+                print("no data");
+                return;
+            }
+        //    var  data = js[0];
+            this.redraws++;
+          
+            var project = _this.file.project;  
+        
+             //print (project.fn);
+             // set it to non-empty.
+             
+        //     runhtml = runhtml.length ?  runhtml : '<script type="text/javascript"></script>'; 
+        
+        
+        //   this.runhtml  = this.runhtml || '';
+         
+         
+            // then we need to reload the browser using
+            // load_html_string..
+        
+            // then trigger a redraw once it's loaded..
+            this.pendingRedraw = true;
+        
+            var runhtml = "<script type=\"text/javascript\">\n" ;
+            string builderhtml;
+            
+            
+            GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+        
+            runhtml += builderhtml + "\n";
+            runhtml += "</script>\n" ;
+        
+            // fix to make sure they are the same..
+            this.runhtml = project.runhtml;
+            // need to modify paths
+        
+            string inhtml;
+            var base_template = _this.file.project.base_template;
+            
+            if (base_template.length > 0 && !FileUtils.test(
+                Builder4.Application.configDirectory() + "/resources/" +  base_template, FileTest.EXISTS)  
+                ) {
+                   print("invalid base_template name - using default:  %s\n", base_template);
+                   base_template = "";
+            
+            }
+            
+            GLib.FileUtils.get_contents(
+                Builder4.Application.configDirectory() + "/resources/" + 
+                    (base_template.length > 0 ? base_template :  "roo.builder.html")
+                    , out inhtml);
+            
+            
+            this.renderedData = js;
+        
+        
+            string js_src = js + "\n" +
+        	"Roo.onReady(function() {\n" +
+        	"if (" + _this.file.name +".show) " +  _this.file.name +".show({});\n" +
+        	"Roo.XComponent.build();\n" +
+        	"});\n";
+        	
+            print("render js: " + js);
+            //if (!this.ready) {
+          //      console.log('not loaded yet');
+            //}
+            this.lastRedraw = new DateTime.now_local();
+        
+                var html = inhtml.replace("</head>", runhtml + this.runhtml + 
+                
+                        "<script type=\"text/javascript\">\n" +
+                        js_src + "\n" + 
+                        "</script>" + 
+                                
+                "</head>");
+                print("LOAD HTML " + html);
+                
+                 var rootURL = _this.file.project.rootURL;
+           
+                
+                
+                this.el.load_html( html , 
+                    //fixme - should be a config option!
+                    (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
+                );
+                // - no need for this, the builder javascript will call it when build is complete
+                //GLib.Timeout.add_seconds(1, () => {
+                //    this.el.run_javascript("Builder.saveHTML()",null);
+                //    return false;
+                //});
+        //     print( "before render" +    this.lastRedraw);
+        //    print( "after render" +    (new Date()));
+            
+        }
+        public void renderJS (bool force) {
+        
+            // this is the public redraw call..
+            // we refresh in a loop privately..
+            var autodraw = _this.AutoRedraw.el.active;
+            if (!autodraw && !force) {
+                print("Skipping redraw - no force, and autodraw off");
+                return;
+            }
+            this.refreshRequired  = true;
+        }
     }
     public class Xcls_inspectorcontainer : Object 
     {
@@ -612,27 +580,24 @@ public class Xcls_WindowRooView : Object
         private Xcls_WindowRooView  _this;
 
 
-            // my vars
+            // my vars (def)
 
-            // ctor 
+        // ctor 
         public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.inspectorcontainer = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
 
             // init method 
-              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-             
-        }
 
-        // userdefined functions 
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
 
-        // skip |xns - no return type
+        // user defined functions 
     }
 }

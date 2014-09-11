@@ -10,10 +10,8 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
-    xtype: Gtk.VPaned,
     id : "WindowRooView",
-    pack : "add",
-    'void:createThumb' : () {
+    createThumb : () {
         
         
         if (this.file == null) {
@@ -84,194 +82,82 @@ WindowRooView=new XObject({
         
          
     },
-    'void:loadFile' : (JsRender.JsRender file)
+    loadFile : (JsRender.JsRender file)
     {
         this.file = file;
         this.view.renderJS(true);
     },
-    'void:requestRedraw' : () {
+    xtype : "VPaned",
+    file : "",
+    requestRedraw : () {
         this.view.renderJS(false);
     },
+    xns : Gtk,
     items : [
-        {
-            xtype: Gtk.VBox,
-            pack : "pack1,true,true",
+    	{
+            xtype : "VBox",
+            xns : Gtk,
             homogeneous : false,
             items : [
-                {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
-                    height_request : 20,
-                    homogeneous : true,
+            	{
                     vexpand : false,
+                    height_request : 20,
+                    xtype : "HBox",
+                    xns : Gtk,
+                    homogeneous : true,
                     items : [
-                        {
-                            xtype: Gtk.Button,
-                            listeners : {
-                                clicked : ( ) => {
-                                    _this.view.renderJS(  true);
-                                }
-                            },
+                    	{
                             label : "Redraw",
-                            pack : "pack_start,false,false,0"
-                        },
-                        {
-                            xtype: Gtk.CheckButton,
+                            xtype : "Button",
+                            xns : Gtk,
                             listeners : {
-                                toggled : (state) => {
-                                    this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
-                                }
-                            },
-                            active : true,
-                            id : "AutoRedraw",
+                            	clicked : ( ) => {
+                            	       _this.view.renderJS(  true);
+                            	   }
+                            }
+                        },
+                    	{
                             label : "Auto Redraw On",
-                            pack : "pack_start,false,false,0"
-                        },
-                        {
-                            xtype: Gtk.Button,
+                            id : "AutoRedraw",
+                            active : true,
+                            xtype : "CheckButton",
+                            xns : Gtk,
                             listeners : {
-                                clicked : () => {
-                                  _this.view.redraws = 99;
-                                    _this.view.el.web_context.clear_cache();  
-                                  _this.view.renderJS(true);
-                                
-                                }
-                            },
+                            	toggled : (state) => {
+                            	       this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
+                            	   }
+                            }
+                        },
+                    	{
                             label : "Full Redraw",
-                            pack : "pack_start,false,false,0"
+                            xtype : "Button",
+                            xns : Gtk,
+                            listeners : {
+                            	clicked : () => {
+                            	     _this.view.redraws = 99;
+                            	       _this.view.el.web_context.clear_cache();  
+                            	     _this.view.renderJS(true);
+                            	   
+                            	   }
+                            }
                         }
                     ]
+
                 },
-                {
-                    xtype: Gtk.ScrolledWindow,
-                    pack : "pack_end,true,true,0",
-                    init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
+            	{
                     shadow_type : Gtk.ShadowType.IN,
+                    xtype : "ScrolledWindow",
+                    xns : Gtk,
                     items : [
-                        {
-                            xtype: WebKit.WebView,
-                            listeners : {
-                                drag_drop : ( ctx, x, y,time, ud) => {
-                                    return false;
-                                    /*
-                                	print("TARGET: drag-drop");
-                                        var is_valid_drop_site = true;
-                                        
-                                         
-                                        Gtk.drag_get_data
-                                        (
-                                                w,         // will receive 'drag-data-received' signal 
-                                                ctx,        /* represents the current state of the DnD 
-                                                this.get('/Window').atoms["STRING"],    /* the target type we want 
-                                                time            /* time stamp 
-                                        );
-                                                        
-                                                        
-                                                        /* No target offered by source => error 
-                                                       
-                                
-                                	return  is_valid_drop_site;
-                                	*/
-                                },
-                                show : ( ) => {
-                                    this.inspector.show();
-                                },
-                                script_dialog : (dialog) => {
-                                     var msg = dialog.get_message();
-                                     if (msg.length < 4) {
-                                        return false;
-                                     }
-                                     if (msg.substring(0,4) != "IPC:") {
-                                         return false;
-                                     }
-                                     var ar = msg.split(":", 3);
-                                    if (ar.length < 3) {
-                                        return false;
-                                    }
-                                    switch(ar[1]) {
-                                        case "SAVEHTML":
-                                            _this.file.saveHTML(ar[2]);
-                                            return true;
-                                        default:
-                                            return false;
-                                    }
-                                    
-                                }
-                            },
+                    	{
+                            renderedData : "\"\"",
                             id : "view",
-                            pack : "add",
+                            refreshRequired : false,
                             redraws : 0,
-                            init : {
-                                // this may not work!?
-                                var settings =  this.el.get_settings();
-                                settings.enable_developer_extras = true;
-                                
-                                // this was an attempt to change the url perms.. did not work..
-                                // settings.enable_file_access_from_file_uris = true;
-                                // settings.enable_offline_web_application_cache - true;
-                                // settings.enable_universal_access_from_file_uris = true;
-                               
-                                 
-                                
-                                this.inspector = this.el.get_inspector();
-                                this.inspector.open_window.connect(() => {
-                                
-                                    print("inspector attach\n");
-                                    var wv = this.inspector.get_web_view();
-                                    if (wv != null) {
-                                        print("got inspector web view\n");
-                                        _this.inspectorcontainer.el.add(wv);
-                                        wv.show();
-                                    } else {
-                                        print("no web view yet\n");
-                                    }
-                                    return true;
-                                   
-                                });
-                                
-                            
-                                 // FIXME - base url of script..
-                                 // we need it so some of the database features work.
-                                this.el.load_html( "Render not ready" , 
-                                        //fixme - should be a config option!
-                                        // or should we catch stuff and fix it up..
-                                        "http://localhost/app.Builder/"
-                                );
-                                    
-                                    
-                               //this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                /*
-                                Gtk.drag_dest_set
-                                (
-                                        this.el,              //
-                                        Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                        null,            // list of targets
-                                        Gdk.DragAction.COPY         // what to do with data after dropped 
-                                );
-                                                        
-                               // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                */
-                                GLib.Timeout.add_seconds(1,  ()  =>{
-                                     //print("run refresh?");
-                                     this.runRefresh(); 
-                                     return true;
-                                 });
-                                
-                                
-                            },
-                            'void:renderJS' : (bool force) {
-                            
-                                // this is the public redraw call..
-                                // we refresh in a loop privately..
-                                var autodraw = _this.AutoRedraw.el.active;
-                                if (!autodraw && !force) {
-                                    print("Skipping redraw - no force, and autodraw off");
-                                    return;
-                                }
-                                this.refreshRequired  = true;
-                            },
-                            'void:runRefresh' : () 
+                            xtype : "WebView",
+                            inspector : "",
+                            redraws : 0,
+                            runRefresh : () 
                             {
                                 // this is run every 2 seconds from the init..
                             
@@ -398,20 +284,101 @@ WindowRooView=new XObject({
                             //     print( "before render" +    this.lastRedraw);
                             //    print( "after render" +    (new Date()));
                                 
+                            },
+                            xns : WebKit,
+                            lastRedraw : "null",
+                            runhtml : "\"\"",
+                            pendingRedraw : false,
+                            renderJS : (bool force) {
+                            
+                                // this is the public redraw call..
+                                // we refresh in a loop privately..
+                                var autodraw = _this.AutoRedraw.el.active;
+                                if (!autodraw && !force) {
+                                    print("Skipping redraw - no force, and autodraw off");
+                                    return;
+                                }
+                                this.refreshRequired  = true;
+                            },
+                            listeners : {
+                            	script_dialog : (dialog) => {
+                            	        var msg = dialog.get_message();
+                            	        if (msg.length < 4) {
+                            	           return false;
+                            	        }
+                            	        if (msg.substring(0,4) != "IPC:") {
+                            	            return false;
+                            	        }
+                            	        var ar = msg.split(":", 3);
+                            	       if (ar.length < 3) {
+                            	           return false;
+                            	       }
+                            	       switch(ar[1]) {
+                            	           case "SAVEHTML":
+                            	               _this.file.saveHTML(ar[2]);
+                            	               return true;
+                            	           default:
+                            	               return false;
+                            	       }
+                            	       
+                            	   },
+                            	show : ( ) => {
+                            	       this.inspector = this.el.get_inspector();
+                            	       this.inspector.open_window.connect(() => {
+                            	           
+                            	           print("inspector attach\n");
+                            	           var wv = this.inspector.get_web_view();
+                            	           if (wv != null) {
+                            	               print("got inspector web view\n");
+                            	               _this.inspectorcontainer.el.add(wv);
+                            	               wv.show();
+                            	           } else {
+                            	               print("no web view yet\n");
+                            	           }
+                            	           return true;
+                            	          
+                            	       });
+                            	       
+                            	       this.inspector.show();
+                            	   },
+                            	drag_drop : ( ctx, x, y,time, ud) => {
+                            	       return false;
+                            	       /*
+                            	   	print("TARGET: drag-drop");
+                            	           var is_valid_drop_site = true;
+                            	           
+                            	            
+                            	           Gtk.drag_get_data
+                            	           (
+                            	                   w,         // will receive 'drag-data-received' signal 
+                            	                   ctx,        /* represents the current state of the DnD 
+                            	                   this.get('/Window').atoms["STRING"],    /* the target type we want 
+                            	                   time            /* time stamp 
+                            	           );
+                            	                           
+                            	                           
+                            	                           /* No target offered by source => error 
+                            	                          
+                            	   
+                            	   	return  is_valid_drop_site;
+                            	   	*/
+                            	   }
                             }
                         }
                     ]
+
                 }
             ]
+
         },
-        {
-            xtype: Gtk.ScrolledWindow,
+    	{
             id : "inspectorcontainer",
-            pack : "pack2,true,true",
-            init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
-            shadow_type : Gtk.ShadowType.IN
+            shadow_type : Gtk.ShadowType.IN,
+            xtype : "ScrolledWindow",
+            xns : Gtk
         }
     ]
+
 });
 WindowRooView.init();
 XObject.cache['/WindowRooView'] = WindowRooView;
