@@ -42,8 +42,7 @@ DialogSaveModule=new XObject({
                 );
                 continue;
             }
-            if (!Regex.match_simple ("^[A-Za-z.]+$", name) || 
-                !Regex.match_simple ("^[A-Za-z.]+$", name) )
+            if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9.]+$", name) )
             {
                 StandardErrorDialog.singleton().show(
                      _this.el,
