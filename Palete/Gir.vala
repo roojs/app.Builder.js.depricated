@@ -199,7 +199,7 @@ namespace Palete {
 
 			var liter = pcls.inherits.list_iterator();
 			while(liter.next()) {
-        		if (this.inherits.contains(liter.get()) {
+        		if (this.inherits.contains(liter.get())) {
 					continue;
 				}
 				this.inherits.add(liter.get()); 
