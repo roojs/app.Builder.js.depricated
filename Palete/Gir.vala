@@ -526,7 +526,7 @@ namespace Palete {
 		public void walk(Xml.Node* element, GirObject? parent)
 		{
 		    var n = element->get_prop("name");
-		    if (n == null || (element->ns->prefix != null && element->ns->prefix == "c") {
+		    if (n == null || (element->ns->prefix != null && element->ns->prefix == "c")) {
 				n = "";
 		    }
 		    //print("%s:%s (%s ==> %s\n", element->ns->prefix , element->name , parent.name , n);
