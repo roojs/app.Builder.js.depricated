@@ -394,7 +394,7 @@ namespace Palete {
 
 			}
 			if (res.size < 1) {
-				return "";
+				return ;
 			}
 			if (res.has_key("pack_start")) {
 				node.props.set("* pack", res.get("pack_start"));
@@ -406,10 +406,9 @@ namespace Palete {
 			}
 			var riter = res.map_iterator();
 			while(riter.next()) {
-				node.props.set("* pack", riter.get_value());
+				node.props.set("* pack", r:qiter.get_value());
 				return;
 			}
-			
 			
 		}
  
