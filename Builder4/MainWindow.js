@@ -10,178 +10,12 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 MainWindow=new XObject({
-    hideProjectEdit : () {
-        // return to editing state..
-           
-          _this.projectbutton.el.show();
-         _this.projecteditbutton.el.show();
-          _this.backbutton.el.hide();
-             _this.editfilebutton.el.show();   
-         
-        //this.rooview.el.hide();
-         //this.edit_project.el.show();
-            _this.projecteditview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-           _this.projecteditview.el.set_scale(1.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-          _this.projecteditview.el.restore_easing_state();  
-      
-    },
-    hideObject : () {
-          // return to editing state..
-           
-              _this.projecteditbutton.el.show();
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-             _this.editfilebutton.el.show();   
-         _this.objectview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.objectview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.objectview.el.restore_easing_state();  
-     
-    
-    },
-    project : "null",
-    children_loaded : false,
-    hideCodeEdit : () {
-        //this.code_editor.saveContents();
-         _this.backbutton.el.hide();
-          _this.projectbutton.el.show(); 
-           _this.projecteditbutton.el.show();
-           _this.editfilebutton.el.show();   
-         _this.codeeditview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.codeeditview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.codeeditview.el.restore_easing_state();  
-     },
-    showProjectEdit : () {
-        // make the browser smaller, and show the edit dialog
-        
-        
-         _this.projectbutton.el.hide();
-         _this.projecteditbutton.el.hide();
-         
-         _this.editfilebutton.el.hide();
-         
-        
-         
-         
-         _this.backbutton.el.show();
-         
-        //this.rooview.el.hide();
-        this.projectsettings.el.show_all();
-        this.projectsettings.show(this.project);
-        _this.projecteditview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-       
-        
-        el.set_scale(0.5f,0.5f);
-    
-        _this.projecteditview.el.set_scale(1.0f,1.0f);
-       
-        _this.state = "projectedit";
-         
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.projecteditview.el.restore_easing_state();
-      //  print("show view browsing");
-        
-    },
-    showAddListener : () {
-    
-         
-         
-        var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
-            return;
-        }
-         
-       _this.backbutton.el.show();
-        _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
-        
-        //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "signals",
-            ae.fqn()
-        );
-        //this.rightpalete.show(this.project);
-    
-        _this.addpropsview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-       
-          _this.clutterembed.setSizesAlloc("addlistener");
-    
-        
-      
-    
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addlistener";
-    },
-    border_width : 0,
-    default_height : 500,
-    show : () {
-        this.left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-        this.el.show_all();
-    
-    },
-    left_projects : "null",
-    id : "MainWindow",
-    window_rooview : "null",
-    hideAddProp : () {
+    hideAddListener : () {
           _this.backbutton.el.hide();
          _this.projectbutton.el.show(); 
               _this.projecteditbutton.el.show();
              _this.editfilebutton.el.show();   
          _this.addpropsview.el.save_easing_state();
-         
         var el = _this.rooview.el;
         el.save_easing_state();
     
@@ -195,65 +29,7 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
          _this.addpropsview.el.restore_easing_state();  
-     },
-    setTitle : (string str) {
-        this.el.set_title(this.title + " - " + str);
-    },
-    default_width : 800,
-    xtype : "Window",
-    type : Gtk.WindowType.TOPLEVEL,
-    showCodeEdit : (JsRender.Node node, string ptype, string key)
-    {
-        // this is a bit different,
-        // it's not called via a button - but triggered by the prop edit class signal.
-        // so it has to hide any other state..
-        
-        switch(this.state) {
-            case "object":
-                this.hideObject();
-                break;
-            case "addprop":
-                this.hideAddProp();
-                break;
-            case "addlistener":
-                this.hideAddListener();
-                break;
-        }
-     
-       _this.backbutton.el.show();
-       
-        _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-       // more?? 
-         
-        //this.rooview.el.hide();
-        this.code_editor.el.show_all();
-        this.code_editor.show(
-            node,
-            ptype,
-            key
-        );
-    
-        _this.codeeditview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-        _this.clutterembed.setSizesAlloc("codedit");
-       
-        _this.codeeditview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.codeeditview.el.restore_easing_state();
-        this.state = "codeedit";
-    },
-    left_tree : "null",
-    code_editor : "null",
-    new_file_dialog : "null",
+      },
     initChildren : () {
         // this needs putting in a better place..
         
@@ -360,7 +136,7 @@ MainWindow=new XObject({
                } else {
                   this.window_gladeview.loadFile(this.left_tree.getActiveFile());
               }
-              this.left_tree.updateSelectedNode();
+              this.left_tree.model.updateSelected();
               this.left_tree.model.file.save();
         });
         
@@ -562,6 +338,303 @@ MainWindow=new XObject({
     
     
     },
+    project : "null",
+    children_loaded : false,
+    hideCodeEdit : () {
+        //this.code_editor.saveContents();
+         _this.backbutton.el.hide();
+          _this.projectbutton.el.show(); 
+           _this.projecteditbutton.el.show();
+           _this.editfilebutton.el.show();   
+         _this.codeeditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.codeeditview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.codeeditview.el.restore_easing_state();  
+     },
+    showAddProp : () {
+    
+         
+         var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         _this.backbutton.el.show();
+           _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+         
+         
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "props",
+            ae.fqn()
+        );
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("addprop");
+         
+         
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addprop";
+    },
+    showViewEditing : ( )  {
+         this.editpane.el.show();
+      //   this.rooview.el.show();
+         this.left_projects.el.hide();
+        
+        _this.addprojectbutton.el.hide();   
+        _this.delprojectbutton.el.hide();
+        _this.addfilebutton.el.hide();       
+        _this.backbutton.el.hide();
+        
+          _this.projectbutton.el.show();         
+        _this.editfilebutton.el.show();   
+       _this.projecteditbutton.el.show();
+      _this.objectshowbutton.el.show();
+      _this.addpropbutton.el.show();      
+      _this.addlistenerbutton.el.show();   
+      
+          
+        var el = _this.rooview.el;
+            el.save_easing_state();
+      
+        
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+            el.set_scale(1.0f,1.0f);
+            _this.state = "edit";
+           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
+            _this.clutterfiles.el.hide();
+        
+        el.restore_easing_state();
+            
+        print("show view editing");
+    },
+    border_width : 0,
+    hideProjectEdit : () {
+        // return to editing state..
+           
+          _this.projectbutton.el.show();
+         _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+             _this.editfilebutton.el.show();   
+         
+        //this.rooview.el.hide();
+         //this.edit_project.el.show();
+            _this.projecteditview.el.save_easing_state();
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+           _this.projecteditview.el.set_scale(1.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+          _this.projecteditview.el.restore_easing_state();  
+      
+    },
+    default_height : 500,
+    left_projects : "null",
+    id : "MainWindow",
+    showProjectEdit : () {
+        // make the browser smaller, and show the edit dialog
+        
+        
+         _this.projectbutton.el.hide();
+         _this.projecteditbutton.el.hide();
+         
+         _this.editfilebutton.el.hide();
+         
+        
+         
+         
+         _this.backbutton.el.show();
+         
+        //this.rooview.el.hide();
+        this.projectsettings.el.show_all();
+        this.projectsettings.show(this.project);
+        _this.projecteditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+        
+        el.set_scale(0.5f,0.5f);
+    
+        _this.projecteditview.el.set_scale(1.0f,1.0f);
+       
+        _this.state = "projectedit";
+         
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.projecteditview.el.restore_easing_state();
+      //  print("show view browsing");
+        
+    },
+    window_rooview : "null",
+    showAddListener : () {
+    
+         
+         
+        var ae =      this.left_tree.getActiveElement();
+        if (ae == null) {
+            return;
+        }
+         
+       _this.backbutton.el.show();
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+        
+        
+        //this.rooview.el.hide();
+        this.add_props.el.show_all();
+        this.add_props.show(
+            Palete.factory(this.project.xtype), 
+            "signals",
+            ae.fqn()
+        );
+        //this.rightpalete.show(this.project);
+    
+        _this.addpropsview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+       
+          _this.clutterembed.setSizesAlloc("addlistener");
+    
+        
+      
+    
+        _this.addpropsview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.addpropsview.el.restore_easing_state();
+        this.state = "addlistener";
+    },
+    default_width : 800,
+    xtype : "Window",
+    type : Gtk.WindowType.TOPLEVEL,
+    hideAddProp : () {
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+              _this.projecteditbutton.el.show();
+             _this.editfilebutton.el.show();   
+         _this.addpropsview.el.save_easing_state();
+         
+        var el = _this.rooview.el;
+        el.save_easing_state();
+    
+        
+        el.set_scale(1.0f,1.0f);
+        _this.addpropsview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+         _this.addpropsview.el.restore_easing_state();  
+     },
+    left_tree : "null",
+    code_editor : "null",
+    showCodeEdit : (JsRender.Node node, string ptype, string key)
+    {
+        // this is a bit different,
+        // it's not called via a button - but triggered by the prop edit class signal.
+        // so it has to hide any other state..
+        
+        switch(this.state) {
+            case "object":
+                this.hideObject();
+                break;
+            case "addprop":
+                this.hideAddProp();
+                break;
+            case "addlistener":
+                this.hideAddListener();
+                break;
+        }
+     
+       _this.backbutton.el.show();
+       
+        _this.projectbutton.el.hide();
+        _this.editfilebutton.el.hide();
+        _this.projecteditbutton.el.hide();    
+       // more?? 
+         
+        //this.rooview.el.hide();
+        this.code_editor.el.show_all();
+        this.code_editor.show(
+            node,
+            ptype,
+            key
+        );
+    
+        _this.codeeditview.el.save_easing_state();
+            
+        var el = _this.rooview.el;
+        el.save_easing_state();
+        _this.clutterembed.setSizesAlloc("codedit");
+       
+        _this.codeeditview.el.set_scale(1.0f,1.0f);
+       
+       
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
+        el.restore_easing_state();
+        _this.codeeditview.el.restore_easing_state();
+        this.state = "codeedit";
+    },
+    new_file_dialog : "null",
+    projectsettings : "null",
+    setTitle : (string str) {
+        this.el.set_title(this.title + " - " + str);
+    },
+    show : () {
+        this.left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+        this.el.show_all();
+    
+    },
+    xns : Gtk,
+    clutterfiles : "null",
+    left_props : "null",
+    state : "",
     hideViewEditing : ( )   {
     
     // show the file navigation...
@@ -618,75 +691,9 @@ MainWindow=new XObject({
             
         print("show view browsing");
     },
-    projectsettings : "null",
-    xns : Gtk,
-    clutterfiles : "null",
-    left_props : "null",
-    hideAddListener : () {
-          _this.backbutton.el.hide();
-         _this.projectbutton.el.show(); 
-              _this.projecteditbutton.el.show();
-             _this.editfilebutton.el.show();   
-         _this.addpropsview.el.save_easing_state();
-        var el = _this.rooview.el;
-        el.save_easing_state();
-    
-        
-        el.set_scale(1.0f,1.0f);
-        _this.addpropsview.el.set_scale(0.0f,0.0f);
-        _this.state = "edit";
-    
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-         _this.addpropsview.el.restore_easing_state();  
-      },
-    state : "",
     rightpalete : "null",
     title : "\"Application Builder\"",
     add_props : "null",
-    window_gladeview : "null",
-    showAddProp : () {
-    
-         
-         var ae =      this.left_tree.getActiveElement();
-        if (ae == null) {
-            return;
-        }
-         _this.backbutton.el.show();
-           _this.projectbutton.el.hide();
-        _this.editfilebutton.el.hide();
-        _this.projecteditbutton.el.hide();    
-        
-         
-         
-        //this.rooview.el.hide();
-        this.add_props.el.show_all();
-        this.add_props.show(
-            Palete.factory(this.project.xtype), 
-            "props",
-            ae.fqn()
-        );
-    
-        _this.addpropsview.el.save_easing_state();
-            
-        var el = _this.rooview.el;
-        el.save_easing_state();
-        _this.clutterembed.setSizesAlloc("addprop");
-         
-         
-    
-        _this.addpropsview.el.set_scale(1.0f,1.0f);
-       
-       
-     
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-        _this.addpropsview.el.restore_easing_state();
-        this.state = "addprop";
-    },
     showObject : () {
     
          
@@ -733,37 +740,30 @@ MainWindow=new XObject({
         _this.objectview.el.restore_easing_state();
         this.state = "object";
     },
-    showViewEditing : ( )  {
-         this.editpane.el.show();
-      //   this.rooview.el.show();
-         this.left_projects.el.hide();
-        
-        _this.addprojectbutton.el.hide();   
-        _this.delprojectbutton.el.hide();
-        _this.addfilebutton.el.hide();       
-        _this.backbutton.el.hide();
-        
-          _this.projectbutton.el.show();         
-        _this.editfilebutton.el.show();   
-       _this.projecteditbutton.el.show();
-      _this.objectshowbutton.el.show();
-      _this.addpropbutton.el.show();      
-      _this.addlistenerbutton.el.show();   
-      
-          
+    window_gladeview : "null",
+    hideObject : () {
+          // return to editing state..
+           
+              _this.projecteditbutton.el.show();
+          _this.backbutton.el.hide();
+         _this.projectbutton.el.show(); 
+             _this.editfilebutton.el.show();   
+         _this.objectview.el.save_easing_state();
         var el = _this.rooview.el;
-            el.save_easing_state();
-      
+        el.save_easing_state();
+    
         
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-            el.set_scale(1.0f,1.0f);
-            _this.state = "edit";
-           // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-            _this.clutterfiles.el.hide();
-        
+        el.set_scale(1.0f,1.0f);
+        _this.objectview.el.set_scale(0.0f,0.0f);
+        _this.state = "edit";
+    
+     
+        //_this.clutterfiles.loadProject(_this.project);
+    
         el.restore_easing_state();
-            
-        print("show view editing");
+         _this.objectview.el.restore_easing_state();  
+     
+    
     },
     listeners : {
     	delete_event : (   event) => {
@@ -824,12 +824,6 @@ MainWindow=new XObject({
                             items : [
                             	{
                                     id : "clutterembed",
-                                    setSizesAlloc : (string state) {
-                                    
-                                        Gtk.Allocation alloc;
-                                        this.el.get_allocation(out alloc);
-                                        this.setSizes(alloc, state);
-                                    },
                                     xtype : "Embed",
                                     setSizes : (  Gtk.Allocation alloc, string state) {
                                         if (!_this.children_loaded) {  return; }
@@ -880,6 +874,12 @@ MainWindow=new XObject({
                                             
                                     },
                                     xns : GtkClutter,
+                                    setSizesAlloc : (string state) {
+                                    
+                                        Gtk.Allocation alloc;
+                                        this.el.get_allocation(out alloc);
+                                        this.setSizes(alloc, state);
+                                    },
                                     listeners : {
                                     	size_allocate : (  alloc) => {
                                     	       this.setSizes(alloc, _this.state); 
