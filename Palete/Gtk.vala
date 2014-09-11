@@ -120,10 +120,9 @@ namespace Palete {
 		{
 			string[] ret = {};
 			var es = ename.split(".");
-			var gir = Gir.factory(es[0]);
-			
-			var cls = gir.classes.get(es[1]);
-			if (cls == null) {
+			var cls = factoryFqn(ename);
+			 
+			if (cls == null || cls.type != "Class") {
 				return ret;
 			}
 			return cls.inheritsToStringArray();
