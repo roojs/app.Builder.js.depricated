@@ -529,7 +529,7 @@ namespace Palete {
 		    if (n == null) {
 			n = "";
 		    }
-		    print(element->ns + ":" + element->name + " ("  + parent.name + "==>" + n +")\n");
+		    print(element->ns->prefix + ":" + element->name + " ("  + parent.name + "==>" + n +")\n");
 		    switch (element->name) {
 			case "repository":
 			    break;
