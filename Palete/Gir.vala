@@ -495,7 +495,7 @@ namespace Palete {
 
 		public static string guessDefaultValueForType(string type) {
 			//print("guessDefaultValueForType: %s\n", type);
-			if (type.contains(".")) {
+			if (type.length < 1 || type.contains(".")) {
 				return "null";
 			}
 			switch(type) {
