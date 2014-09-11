@@ -19,8 +19,8 @@ int main (string[] args) {
 
 	parent.setFqn("Gtk.VBox");
 	node.setFqn("Gtk.ScolledWindow");
-	pal.fillPack( node, parent)
-	print("pack is %s\n", node.get("* pack");
+	pal.fillPack( node, parent);
+	print("pack is %s\n", node.get("* pack"));
 	 
 	
 	return 0;
