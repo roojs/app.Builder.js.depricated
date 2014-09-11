@@ -380,14 +380,16 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
-				print ("fillPack:first -- MATCHED\n" );
-
+				
 				
 				var pack = meth.name;
 				for(var i =1; i < meth.paramset.params.size; i++) {
 					var ty = Gir.fqtypeLookup(meth.paramset.params.get(i).type, meth.ns);
 					pack += "," + Gir.guessDefaultValueForType(ty);
 				}
+
+				print ("fillPack:add pack:  --          %s\n",pack );
+
 				res.set(meth.name, pack);
 				
 				
