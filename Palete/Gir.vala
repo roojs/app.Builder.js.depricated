@@ -461,6 +461,10 @@ namespace Palete {
 			// look at includes..
 			var iter = g.includes.map_iterator();
 			while(iter.next()) {
+				// skip empty namespaces on include..?
+				if ( iter.get_key() == "") {
+					continue;
+				}
 				var ret = fqtypeLookup(type, iter.get_key());
 				if (ret != type) {
 					return ret;
