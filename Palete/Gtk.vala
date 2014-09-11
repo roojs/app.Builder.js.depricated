@@ -380,7 +380,7 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
-				print ("fillPack:first -- MATCHED" );
+				print ("fillPack:first -- MATCHED\n" );
 
 				
 				var pack = meth.name;
