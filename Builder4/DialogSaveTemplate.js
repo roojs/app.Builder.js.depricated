@@ -16,9 +16,7 @@ DialogSaveTemplate=new XObject({
             this.el.set_transient_for(parent);
             this.el.modal = true;
             
-            this.data = data;
-            this.project = project;
-            this.name.el.set_text("");
+              this.name.el.set_text("");
             this.el.show_all();
              var   name = "";
             while (true) {
