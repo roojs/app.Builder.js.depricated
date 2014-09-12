@@ -55,7 +55,8 @@ public class JsRender.NodeToGtk : Object {
 		}
 
 		var ret = Object.new(cls_gtype);
-		
+		ret.ref(); //??? problematic?
+		this.wrapped_object = ret;
 		
 		 
 		switch(cls) {
