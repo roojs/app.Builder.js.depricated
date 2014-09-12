@@ -132,7 +132,7 @@ public class JsRender.NodeToGtk : Object {
 		}
 		
 		if (do_pack) {
-			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, cls_gtype.name());
+			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
 		    
 
