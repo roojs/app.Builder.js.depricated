@@ -38,9 +38,9 @@ public class JsRender.NodeToGtk : Object {
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
 		
-		var b = new global::Gtk.Builder();
+		var gtkbuilder = new global::Gtk.Builder();
 
-		var gtype = b.get_type_from_name(cls);
+		var gtype = gtkbuilder.get_type_from_name(cls);
 		print("Type: %s ?= %s\n", this.node.fqn(), gtype.name());
 
 
@@ -72,21 +72,26 @@ public class JsRender.NodeToGtk : Object {
 		}
 
 		
-		var id = this.node.uid();
-		var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
+		//var id = this.node.uid();
+		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
+
 		var props = Palete.Gir.factoryFqn(this.node.fqn()).props;
-		//var props =  Palete.factory("Gtk").getPropertiesFor(this.node.fqn(), "props");
+		
               
     		var pviter = props.map_iterator();
 		while (pviter.next()) {
 			
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
-				
+			var k = pviter.get_key();
         		// skip items we have already handled..
-        		if  (!this.node.has(pviter.get_key())) {
+        		if  (!this.node.has(k)) {
 				continue;
 			}
+
+			
+			
+			ret.set_property(k, 
 			var k = pviter.get_key();
 			var val = GLib.Markup.escape_text(this.node.get(pviter.get_key()).strip());
 			ret += @"$pad    <property name=\"$k\">$val</property>\n"; // es
