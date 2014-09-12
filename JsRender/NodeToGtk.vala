@@ -154,7 +154,7 @@ public class JsRender.NodeToGtk : Object {
 
 	}
 
-	public GLib.Value toValue(string val, string type) {
+	public GLib.Value? toValue(string val, string type) {
 
 		type = type == "utf8" ? "string" : type;
 		var prop_gtype = gtkbuilder.get_type_from_name(type);
@@ -191,7 +191,15 @@ public class JsRender.NodeToGtk : Object {
 
 			default:
 
-
+			var sval =new GLib.Value(typeof(string));
+			sval.set_string(val));
+			
+			if (!sval.transform(ref val)) {
+				print("skip (failed to transform value %s type = (%s:%s)  from %s\n", 
+					cls + "." + k, type, prop_gtype.name(), this.node.get(k).strip());
+				return null;
+			}
+			
 	}
 	
 	 
