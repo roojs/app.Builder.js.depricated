@@ -138,7 +138,7 @@ public class JsRender.NodeToGtk : Object {
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 
-			 this.mungeChild(this.node.items.get(i) , true);
+			 this.mungeChild(this.node.items.get(i));
 			 
 		}
 		
