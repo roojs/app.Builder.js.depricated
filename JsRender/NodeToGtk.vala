@@ -57,31 +57,9 @@ public class JsRender.NodeToGtk : Object {
 		var ret = Object.new(gtype);
 		
 		
-		
-		var ns = this.node.fqn().split(".")[0];
-		if (ns == "Clutter") {
-			return "";
-		}
-		//if (ns == "GtkClutter") {
-		//	return "";
-		//}
-		if (ns == "WebKit") {
-			return "";
-		}
+		 
 		switch(cls) {
-			// things we can not do yet...
-			/*case "GtkDialog": // top level.. - named and referenced
-			case "GtkAboutDialog":
-			case "GtkWindow": // top level.. - named and referenced
-				return this.mungeWindow();
-				
-					
-				if (this.node.items.size > 0) {
-					return this.mungeChild(pad + "        " , this.node.items.get(0), false );
-				}
-				return "";
-			*/
-			//case "GtkView": // SourceView?
+			// fixme
 			case "GtkTreeStore": // top level.. - named and referenced
 			case "GtkListStore": // top level.. - named and referenced
 			case "GtkTreeViewColumn": // part of liststore?!?!
@@ -90,7 +68,7 @@ public class JsRender.NodeToGtk : Object {
 			case "GtkSourceBuffer":				
 			case "GtkClutterActor"://fixme..
 			///case "GtkClutterEmbed"://fixme..
-				return "";
+				return null;
 		}
 
 		
