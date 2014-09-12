@@ -191,14 +191,15 @@ public class JsRender.NodeToGtk : Object {
 
 			default:
 
-			var sval =new GLib.Value(typeof(string));
-			sval.set_string(val));
+				var sval =new GLib.Value(typeof(string));
+				sval.set_string(val));
 			
-			if (!sval.transform(ref val)) {
+				if (!sval.transform(ref ret)) {
 				
-				return null;
-			}
-			
+					return null;
+				}
+				return ret
+		}
 	}
 	
 	 
