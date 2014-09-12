@@ -153,6 +153,14 @@ public class JsRender.NodeToGtk : Object {
 		 
 
 	}
+
+	public GLib.Value toValue(string value, string type) {
+
+
+
+
+	}
+	
 	 
 	  
 		
