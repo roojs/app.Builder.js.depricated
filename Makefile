@@ -43,12 +43,12 @@ BUILDER4=   Builder4/About.vala \
 		
 
 # compile what... for testing 
-all:  builder4
+#all:  builder4
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
 #all: test-glade
-#all: test-gtkview
+all: test-gtkview
 #all: test-vala
 #all: test-gir
 #all: test-pack
