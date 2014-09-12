@@ -117,27 +117,17 @@ public class JsRender.NodeToGtk : Object {
 		if (!cls_gtype.is_a((typeof(Gtk.Buildable))) {
 			print("skipping pack - not a buildable..");
 			return ret;
-	
 		}
 		
 
-		var pack = "";
-		
-		if (with_packing   ) {
- 
-			pack = this.packString();
-			
-
-		}	
-		// children..
-
+		 
 		if (this.node.items.size < 1) {
-			return ret + @"$pad</object>\n" + pack;
+			return ret;
 		}
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 
-			var add = this.mungeChild(pad + "        " , this.node.items.get(i) , true);
+			var add = this.mungeChild(, this.node.items.get(i) , true);
 			if (add.length < 1) {
 				continue;
 			}
