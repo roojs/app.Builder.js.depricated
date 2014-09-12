@@ -44,6 +44,16 @@ public class JsRender.NodeToGtk : Object {
 		var gtype = b.get_type_from_name(cls);
 		print("Type: %s ?= %s\n", this.node.fqn(), gtype.name());
 
+
+		// if it's a window... 
+
+		if (gtype.is_a((typeof(Gtk.Window))) {
+			// what if it has none...
+			return this.mungeChild(this.items.get(0));
+		}
+
+		var ret = Object.new(gtype);
+		
 		
 		
 		var ns = this.node.fqn().split(".")[0];
