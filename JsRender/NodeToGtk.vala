@@ -89,6 +89,7 @@ public class JsRender.NodeToGtk : Object {
 				continue;
 			}
 			// find out the type of the property...
+			var type = pviter.get_value().type;
 			
 			
 			
