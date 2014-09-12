@@ -43,7 +43,7 @@ BUILDER4=   Builder4/About.vala \
 		
 
 # compile what... for testing 
-#all:  builder4
+all:  builder4
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
@@ -51,7 +51,7 @@ BUILDER4=   Builder4/About.vala \
 #all: test-gtkview
 #all: test-vala
 #all: test-gir
-all: test-pack
+#all: test-pack
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
