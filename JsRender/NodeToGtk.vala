@@ -95,7 +95,7 @@ public class JsRender.NodeToGtk : Object {
 			
 			var prop_gtype = gtkbuilder.get_type_from_name(cls);
 
-			if (prop_gtype = GLib.Type.INVALID) {
+			if (prop_gtype == GLib.Type.INVALID) {
 				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
 				continue;
 			}
