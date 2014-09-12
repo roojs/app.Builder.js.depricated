@@ -37,7 +37,7 @@ public class JsRender.NodeToGtk : Object {
 	{
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
-		
+		var ns = this.node.fqn().split(".")[0];
 		var gtkbuilder = new global::Gtk.Builder();
 
 		var gtype = gtkbuilder.get_type_from_name(cls);
@@ -90,10 +90,14 @@ public class JsRender.NodeToGtk : Object {
 			}
 			// find out the type of the property...
 			var type = pviter.get_value().type;
+			type = Palete.Gir.fqtypeLookup(type, ns);
 			
+
+
 			
+			var val = new GLib.Value(
 			
-			ret.set_property(k, 
+			ret.set_property(k,  
 			var k = pviter.get_key();
 			var val = GLib.Markup.escape_text(this.node.get(pviter.get_key()).strip());
 			ret += @"$pad    <property name=\"$k\">$val</property>\n"; // es
