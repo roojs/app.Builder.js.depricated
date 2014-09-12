@@ -104,7 +104,7 @@ public class JsRender.NodeToGlade : Object {
 	public string mungeNode(bool with_packing)
 	{
 		var pad = this.pad;
-		var b = new Gtk.Builder();
+		var b = new global::Gtk.Builder();
 		var gtype = b.get_type_from_name(this.node.fqn());
 		print("Type: %s ?= %s\n", this.node.fqn(), gtype.name());
 
