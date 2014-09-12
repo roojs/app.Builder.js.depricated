@@ -127,7 +127,9 @@ public class JsRender.NodeToGtk : Object {
 			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
 			return ret;
 		}
-		
+
+		((GtkBuildable)parent).add_child(builder, ret, "");
+		    
 
 		 
 		if (this.node.items.size < 1) {
