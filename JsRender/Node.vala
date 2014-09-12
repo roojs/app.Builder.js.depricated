@@ -342,7 +342,7 @@ public class JsRender.Node : Object {
 			}
 			return "# " + string.joinv(" ", bits);			
 		}
-		if (key[0] != '|') {
+		if (key[0] != '|' || key[1] == ' ') { // might be a v2 file..
 			return key;
 		}
 		var bits = key.substring(1).split(":");
