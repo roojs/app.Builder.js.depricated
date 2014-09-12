@@ -92,15 +92,15 @@ public class JsRender.NodeToGtk : Object {
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
 			
-			var gtype = gtkbuilder.get_type_from_name(cls);
+			var pgtype = gtkbuilder.get_type_from_name(cls);
 
-			if (gtype = GLib.Type.INVALID) {
+			if (pgtype = GLib.Type.INVALID) {
 				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
 				continue;
 			}
 			var sval =new GLib.Value(typeof(string));
 			sv.set_string(this.node.get(k).strip());
-			var val = new GLib.Value(gtype);
+			var val = new GLib.Value(pgtype);
 			if (!sv.transform(val)) {
 				print("skip (failed to transform value %s type = %s  from %s\n", 
 					cls + "." + k, type, this.node.get(k).strip());
@@ -112,6 +112,9 @@ public class JsRender.NodeToGtk : Object {
 
                 }
 		// packing???
+		// for now... - just try the builder style packing
+
+		if (ret.
 
 		var pack = "";
 		
