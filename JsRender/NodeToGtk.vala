@@ -98,8 +98,8 @@ public class JsRender.NodeToGtk : Object {
 
 			var val = this.toValue(this.node.get(k).strip(), type);
 			if (val == null) {
-				print("skip (failed to transform value %s type = (%s:%s)  from %s\n", 
-					cls + "." + k, type, prop_gtype.name(), this.node.get(k).strip());
+				print("skip (failed to transform value %s type = %s from %s\n", 
+					cls + "." + k, type,  this.node.get(k).strip());
 				continue;
 			}
 			
