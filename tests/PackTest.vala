@@ -11,7 +11,7 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	
 
-	var pal = Palete.Palete.factory("Gtk");
+	var pal = Palete.factory("Gtk");
 
 	var node = new JsRender.Node();
 	
