@@ -154,7 +154,7 @@ public class JsRender.NodeToGtk : Object {
 
 	}
 
-	public GLib.Value toValue(string value, string type) {
+	public GLib.Value toValue(string val, string type) {
 
 		type = type == "utf8" ? "string" : type;
 		var prop_gtype = gtkbuilder.get_type_from_name(type);
@@ -171,10 +171,18 @@ public class JsRender.NodeToGtk : Object {
 
 		switch(type) {
 			case "gboolean":
-				ret.set(val.down() == "false" ? false : true);
+				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
-			case "utf8"
 
+			case "gfloat":
+				ret.set_float(long.parse(val));
+				return ret;
+				
+			case "utf8":
+				ret.set(val);
+				return ret;
+
+			default:
 
 
 	}
