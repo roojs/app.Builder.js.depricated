@@ -96,7 +96,7 @@ public class JsRender.NodeToGtk : Object {
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
 			
-			var prop_gtype = gtkbuilder.get_type_from_name(cls);
+			var prop_gtype = gtkbuilder.get_type_from_name(type);
 
 			if (prop_gtype == GLib.Type.INVALID) {
 				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
