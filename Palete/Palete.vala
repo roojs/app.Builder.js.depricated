@@ -333,7 +333,7 @@ namespace Palete
 
 		ret.loadFromJson(obj, 1);
 		return ret;
-	}
+	 }
           public   void  loadUsageFile (string fname) {
 
 
