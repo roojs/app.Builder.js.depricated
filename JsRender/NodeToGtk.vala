@@ -138,17 +138,11 @@ public class JsRender.NodeToGtk : Object {
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 
-			var add = this.mungeChild(this.node.items.get(i) , true);
-			if (add.length < 1) {
-				continue;
-			}
-			
-			ret += @"$pad    <child>\n";
-			ret += add;
-			ret += @"$pad    </child>\n";
+			 this.mungeChild(this.node.items.get(i) , true);
+			 
 		}
 		
-		return ret + @"$pad</object>\n" + pack;
+		return retl
 		
 
 		 
