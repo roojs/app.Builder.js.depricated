@@ -11,7 +11,7 @@ public class JsRender.NodeToGtk : Object {
 	Gee.HashMap<string,string> ar_props;
 	public static int vcnt = 0; 
 
-	public NodeToGlade( Node node,   string pad) 
+	public NodeToGtk( Node node,   string pad) 
 	{
 		this.node = node;
  		this.pad = pad;
@@ -21,40 +21,11 @@ public class JsRender.NodeToGtk : Object {
 
 	}
 	
-	public string munge ( )
+	public Object munge ( )
 	{
 
+		 return this.mungeChild ();
 		 
-		this.pad += "    ";
-
-		var cls = this.node.fqn().replace(".", "");
-		string res = "";
-		switch(cls) {
-			// things we can not do yet...
-			case "GtkDialog": // top level.. - named and referenced
-			case "GtkAboutDialog":
-			case "GtkMessageDialog":
-			case "GtkWindow": // top level.. - named and referenced
-				res =  this.mungeOuter(true);
-				break;
-			default:
-				res = this.mungeOuter(false);
-				break;
-		}
-				
-		
-		if (res.length < 1) {
-			return "";
-		}
-		return  "<?xml version=\"1.0\" encoding=\"UTF-8\"?> 
-			<!-- Generated with appBuilder 4.1 -->
-			<interface> 
-				<requires lib=\"gtk+\" version=\"3.12\"/>
-				<!-- <requires lib=\"gtksourceview\" version=\"3.0\"/> -->
-			" +
-  			res +
-  			"</interface>\n";
-          
 		     
 	}
 	public string mungeChild(string pad ,  Node cnode, bool with_packing = false)
@@ -63,7 +34,7 @@ public class JsRender.NodeToGtk : Object {
 		return x.mungeNode(with_packing);
 	}
 	
-	public string mungeNode(bool with_packing)
+	public string mungeNode()
 	{
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
