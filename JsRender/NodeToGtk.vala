@@ -149,7 +149,13 @@ public class JsRender.NodeToGtk : Object {
 	public GLib.Value? toValue(string val, string type) {
 
 		var gtkbuilder = new global::Gtk.Builder();
-		type = type == "utf8" ? "string" : type;
+
+		if (type == "utf8") {
+			var qret = new GLib.Value(typeof(string));
+			qret.set_string(val);
+			return qret;
+		}
+		
 		var prop_gtype = gtkbuilder.get_type_from_name(type);
 		
 
