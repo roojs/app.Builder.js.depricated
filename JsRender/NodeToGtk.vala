@@ -92,15 +92,23 @@ public class JsRender.NodeToGtk : Object {
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
 			
+			var gtype = gtkbuilder.get_type_from_name(cls);
 
-
+			if (gtype = GLib.Type.INVALID) {
+				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
+				continue;
+			}
+			var sval =new GLib.Value(typeof(string));
+			sv.set_string(this.node.get(k).strip());
+			var val = new GLib.Value(gtype);
+			if (!sv.transform(val)) {
+				print("skip (failed to transform value %s type = %s  from %s\n", 
+					cls + "." + k, type, this.node.get(k).strip());
+				continue;
+			}
 			
-			var val = new GLib.Value(
+			ret.set_property(k, val);  
 			
-			ret.set_property(k,  
-			var k = pviter.get_key();
-			var val = GLib.Markup.escape_text(this.node.get(pviter.get_key()).strip());
-			ret += @"$pad    <property name=\"$k\">$val</property>\n"; // es
 
                 }
 		// packing???
