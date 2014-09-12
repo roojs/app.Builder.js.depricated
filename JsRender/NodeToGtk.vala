@@ -123,11 +123,11 @@ public class JsRender.NodeToGtk : Object {
 		if (parent == null) {
 			//print("skipping pack  %s is not a buildable..\n", cls);
 			do_pack = false;
-		}
-		if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
+		} else  if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
 			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
 			do_pack = false;
 		}
+		
 		if (do_pack) {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, "");
 		}
