@@ -5,7 +5,7 @@
 public class JsRender.NodeToGtk : Object {
 
 	Node node;
- 	
+ 	Object wrapped_object; 
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
