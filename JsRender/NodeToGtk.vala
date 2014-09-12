@@ -27,10 +27,10 @@ public class JsRender.NodeToGtk : Object {
 		 
 		     
 	}
-	public Object? mungeChild(  Node cnode, bool with_packing = false)
+	public Object? mungeChild(  Node cnode)
 	{
 		var x = new  NodeToGlade(cnode);
-		return x.mungeNode(with_packing);
+		return x.mungeNode(this);
 	}
 	
 	public Object? mungeNode(Object? parent)
@@ -127,7 +127,7 @@ public class JsRender.NodeToGtk : Object {
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 
-			var add = this.mungeChild(, this.node.items.get(i) , true);
+			var add = this.mungeChild(this.node.items.get(i) , true);
 			if (add.length < 1) {
 				continue;
 			}
