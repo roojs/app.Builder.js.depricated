@@ -332,7 +332,8 @@ namespace Palete
 
 
 		ret.loadFromJson(obj, 1);
-		ret.ref();
+		ret.ref(); // not sure if needed -- but we had a case where ret became uninitialized?
+		
 		return ret;
 	 }
           public   void  loadUsageFile (string fname) {
