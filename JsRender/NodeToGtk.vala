@@ -102,7 +102,7 @@ public class JsRender.NodeToGtk : Object {
 			var sval =new GLib.Value(typeof(string));
 			sval.set_string(this.node.get(k).strip());
 			var val = new GLib.Value(prop_gtype);
-			if (!sval.transform(val)) {
+			if (!sval.transform(ref val)) {
 				print("skip (failed to transform value %s type = %s  from %s\n", 
 					cls + "." + k, type, this.node.get(k).strip());
 				continue;
