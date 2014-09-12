@@ -46,7 +46,7 @@ public class JsRender.NodeToGtk : Object {
 
 		// if it's a window... 
 
-		if (cls_gtype.is_a((typeof(Gtk.Window))) {
+		if (cls_gtype.is_a(typeof(Gtk.Window))) {
 			// what if it has none...
 			if (this.node.items.size < 1) {
 				return null;
