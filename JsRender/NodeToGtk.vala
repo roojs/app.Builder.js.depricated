@@ -154,8 +154,8 @@ public class JsRender.NodeToGtk : Object {
 		
 
 		if (prop_gtype == GLib.Type.INVALID) {
-			print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
-			continue;
+			 
+			return null;
 		}
 		
 		
