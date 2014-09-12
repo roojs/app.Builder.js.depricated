@@ -40,13 +40,13 @@ public class JsRender.NodeToGtk : Object {
 		var ns = this.node.fqn().split(".")[0];
 		var gtkbuilder = new global::Gtk.Builder();
 
-		var gtype = gtkbuilder.get_type_from_name(cls);
-		print("Type: %s ?= %s\n", this.node.fqn(), gtype.name());
+		var cls_gtype = gtkbuilder.get_type_from_name(cls);
+		print("Type: %s ?= %s\n", this.node.fqn(), cls_gtype.name());
 
 
 		// if it's a window... 
 
-		if (gtype.is_a((typeof(Gtk.Window))) {
+		if (cls_gtype.is_a((typeof(Gtk.Window))) {
 			// what if it has none...
 			if (this.node.items.size < 1) {
 				return null;
@@ -54,7 +54,7 @@ public class JsRender.NodeToGtk : Object {
 			return this.mungeChild(this.node.items.get(0));
 		}
 
-		var ret = Object.new(gtype);
+		var ret = Object.new(cls_gtype);
 		
 		
 		 
@@ -92,15 +92,15 @@ public class JsRender.NodeToGtk : Object {
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
 			
-			var pgtype = gtkbuilder.get_type_from_name(cls);
+			var prop_gtype = gtkbuilder.get_type_from_name(cls);
 
-			if (pgtype = GLib.Type.INVALID) {
+			if (prop_gtype = GLib.Type.INVALID) {
 				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
 				continue;
 			}
 			var sval =new GLib.Value(typeof(string));
 			sv.set_string(this.node.get(k).strip());
-			var val = new GLib.Value(pgtype);
+			var val = new GLib.Value(prop_gtype);
 			if (!sv.transform(val)) {
 				print("skip (failed to transform value %s type = %s  from %s\n", 
 					cls + "." + k, type, this.node.get(k).strip());
@@ -114,7 +114,11 @@ public class JsRender.NodeToGtk : Object {
 		// packing???
 		// for now... - just try the builder style packing
 
-		if (ret.
+		if (!cls_gtype.is_a((typeof(Gtk.Buildable))) {
+			print("skipping pack - not a buildable..");
+	
+		}
+		
 
 		var pack = "";
 		
