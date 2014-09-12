@@ -33,7 +33,7 @@ public class JsRender.NodeToGtk : Object {
 		return x.mungeNode(with_packing);
 	}
 	
-	public Object? mungeNode()
+	public Object? mungeNode(Object? parent)
 	{
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
