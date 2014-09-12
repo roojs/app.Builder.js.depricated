@@ -116,7 +116,7 @@ public class JsRender.NodeToGtk : Object {
 		// for now... - just try the builder style packing
 
 		if (!cls_gtype.is_a((typeof(Gtk.Buildable))) {
-			print("skipping pack - not a buildable..");
+			print("skipping pack  %s is not a buildable..\n", cls);
 			return ret;
 		}
 		
