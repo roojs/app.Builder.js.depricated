@@ -48,7 +48,10 @@ public class JsRender.NodeToGtk : Object {
 
 		if (gtype.is_a((typeof(Gtk.Window))) {
 			// what if it has none...
-			return this.mungeChild(this.items.get(0));
+			if (this.node.items.size < 1) {
+				return null;
+			}
+			return this.mungeChild(this.node.items.get(0));
 		}
 
 		var ret = Object.new(gtype);
