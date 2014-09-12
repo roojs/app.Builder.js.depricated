@@ -36,12 +36,16 @@ void loadit(string name ) {
 	tf.loadItems();
 
 	
+	
+	var g = new JsRender.NodeToGtk(tf.tree);
+	var obj = g.munge() as Gtk.Widget;
+	if (obj == null) {
+		print("skip %s - munge returned null\n");
+		return;
+	}
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 	w.set_title(tf.name);
 	w.ref();
-	var g = new JsRender.NodeToGtk(tf.tree);
-	var obj = g.munge() as Gtk.Widget;
-	
 	w.add(obj);
 	w.show_all();   
 	
