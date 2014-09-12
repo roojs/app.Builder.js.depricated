@@ -88,7 +88,8 @@ public class JsRender.NodeToGtk : Object {
         		if  (!this.node.has(k)) {
 				continue;
 			}
-
+			// find out the type of the property...
+			
 			
 			
 			ret.set_property(k, 
