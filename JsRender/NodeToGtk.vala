@@ -102,7 +102,7 @@ public class JsRender.NodeToGtk : Object {
 					cls + "." + k, type,  this.node.get(k).strip());
 				continue;
 			}
-			print ("set_property ( %s , %s / %s)\n", k, this.node.get(k).strip(), val.to_string());
+			print ("set_property ( %s , %s / %s)\n", k, this.node.get(k).strip(), val.strdup_contents());
 			
 			
 			ret.set_property(k, val);  
