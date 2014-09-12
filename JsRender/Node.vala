@@ -335,7 +335,7 @@ public class JsRender.Node : Object {
 			case "pack":
 				return "* " + key;
 		}
-		if (key[0] == '.') {
+		if (key[0] == '.') { // v2 does not start with '.' ?
 			var bits = key.substring(1).split(":");
 			if (bits[0] == "signal") {
 				return "@" + string.joinv(" ", bits).substring(bits[0].length);
