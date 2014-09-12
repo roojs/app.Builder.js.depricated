@@ -40,7 +40,7 @@ void loadit(string name ) {
 	var g = new JsRender.NodeToGtk(tf.tree);
 	var obj = g.munge() as Gtk.Widget;
 	if (obj == null) {
-		print("skip %s - munge returned null\n");
+		print("skip %s - munge returned null\n", name);
 		return;
 	}
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
