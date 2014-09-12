@@ -45,6 +45,7 @@ public class JsRender.NodeToGtk : Object {
 
 		if (cls_gtype == GLib.Type.INVALID) {
 			print("SKIP - gtype is invalid\n");
+			return null;
 		}
 		// if it's a window... 
 
