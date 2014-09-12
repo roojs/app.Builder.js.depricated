@@ -21,20 +21,20 @@ public class JsRender.NodeToGtk : Object {
 
 	}
 	
-	public Object munge ( )
+	public Object? munge ( )
 	{
 
 		 return this.mungeNode ();
 		 
 		     
 	}
-	public string mungeChild(string pad ,  Node cnode, bool with_packing = false)
+	public Object? mungeChild(string pad ,  Node cnode, bool with_packing = false)
 	{
 		var x = new  NodeToGlade(cnode,  pad);
 		return x.mungeNode(with_packing);
 	}
 	
-	public Object mungeNode()
+	public Object? mungeNode()
 	{
 		var pad = this.pad;
 		var cls = this.node.fqn().replace(".", "");
