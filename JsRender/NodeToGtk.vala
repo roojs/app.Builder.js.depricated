@@ -114,21 +114,23 @@ public class JsRender.NodeToGtk : Object {
                 }
 		// packing???
 		// for now... - just try the builder style packing
-
+		var do_pack =true;
+		
 		if (!cls_gtype.is_a(typeof(global::Gtk.Buildable))) {
 			print("skipping pack  %s is not a buildable..\n", cls);
-			return ret;
+			do_pack = false;
 		}
 		if (parent == null) {
 			//print("skipping pack  %s is not a buildable..\n", cls);
-			return ret;
+			do_pack = false;
 		}
 		if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
 			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
-			return ret;
+			do_pack = false;
 		}
-
-		((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, "");
+		if (do_pack) {
+			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, "");
+		}
 		    
 
 		 
