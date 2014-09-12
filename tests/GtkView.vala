@@ -39,11 +39,10 @@ void loadit(string name ) {
 	var w  = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 	w.set_title(tf.name);
 	w.ref();
-	var  left_props =new Xcls_GtkView();
-	left_props.el.show();
-	w.add(left_props.el);
-	w.show_all();   
-	left_props.addNode(tf);
+	var g = new JsRender.NodeToGtk(tf.tree);
+	var obj = g.munge() as Gtk.Widget;
 	
-	left_props.container.el.show_all();
+	w.add(obj);
+	w.show_all();   
+	
 }
