@@ -95,17 +95,9 @@ public class JsRender.NodeToGtk : Object {
 			// find out the type of the property...
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
-			
-			var prop_gtype = gtkbuilder.get_type_from_name(type);
 
-			if (prop_gtype == GLib.Type.INVALID) {
-				print("skip %s type = %s  = no gtype\n", cls + "." + k, type);
-				continue;
-			}
-			var sval =new GLib.Value(typeof(string));
-			sval.set_string(this.node.get(k).strip());
-			var val = new GLib.Value(prop_gtype);
-			if (!sval.transform(ref val)) {
+			var val = this.toValue(this.node.get(k).strip(), type);
+			if (val == null) {
 				print("skip (failed to transform value %s type = (%s:%s)  from %s\n", 
 					cls + "." + k, type, prop_gtype.name(), this.node.get(k).strip());
 				continue;
