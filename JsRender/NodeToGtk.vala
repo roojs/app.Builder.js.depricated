@@ -23,7 +23,7 @@ public class JsRender.NodeToGtk : Object {
 	public Object? munge ( )
 	{
 
-		 return this.mungeNode ();
+		 return this.mungeNode (null);
 		 
 		     
 	}
