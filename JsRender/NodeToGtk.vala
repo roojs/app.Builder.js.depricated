@@ -179,7 +179,7 @@ public class JsRender.NodeToGtk : Object {
 				return ret;
 				
 			case "utf8":
-				ret.set(val);
+				ret.set_string(val);
 				return ret;
 
 			default:
