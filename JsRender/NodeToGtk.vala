@@ -173,6 +173,13 @@ public class JsRender.NodeToGtk : Object {
 			case "gboolean":
 				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
+			case "guint":
+				ret.set_uint(int.parse(val));
+				return ret;
+				
+			case "gint":
+				ret.set_int(int.parse(val));
+				return ret;
 
 			case "gfloat":
 				ret.set_float(long.parse(val));
