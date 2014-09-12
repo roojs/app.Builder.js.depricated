@@ -5,17 +5,16 @@
 public class JsRender.NodeToGtk : Object {
 
 	Node node;
- 	string pad;
+ 	
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 	public static int vcnt = 0; 
 
-	public NodeToGtk( Node node,   string pad) 
+	public NodeToGtk( Node node) 
 	{
 		this.node = node;
- 		this.pad = pad;
-		this.els = new Gee.ArrayList<string>(); 
+ 		this.els = new Gee.ArrayList<string>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
 
@@ -28,9 +27,9 @@ public class JsRender.NodeToGtk : Object {
 		 
 		     
 	}
-	public Object? mungeChild(string pad ,  Node cnode, bool with_packing = false)
+	public Object? mungeChild(  Node cnode, bool with_packing = false)
 	{
-		var x = new  NodeToGlade(cnode,  pad);
+		var x = new  NodeToGlade(cnode);
 		return x.mungeNode(with_packing);
 	}
 	
