@@ -43,7 +43,9 @@ public class JsRender.NodeToGtk : Object {
 		var cls_gtype = gtkbuilder.get_type_from_name(cls);
 		print("Type: %s ?= %s\n", this.node.fqn(), cls_gtype.name());
 
-
+		if (cls_gtype == GLib.Type.INVALID) {
+			print("SKIP - gtype is invalid\n");
+		}
 		// if it's a window... 
 
 		if (cls_gtype.is_a(typeof(global::Gtk.Window))) {
