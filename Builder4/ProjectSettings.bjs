@@ -1,121 +1,120 @@
 {
-    "id": "file-gtk-11",
-    "name": "ProjectSettings",
-    "parent": "",
-    "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.bjs",
-    "items": [
+    "name" : "ProjectSettings",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
         {
-            ".Project.Project:project": "",
-            ".signal:void:buttonPressed": "(string btn)",
-            "border_width": 5,
-            "id": "ProjectSettings",
-            "xtype": "VBox",
-            "|homogeneous": "false",
-            "|void:save": "()\n{\n   var buf =    _this.view.el.get_buffer();\n   Gtk.TextIter s;\n     Gtk.TextIter e;\n    buf.get_start_iter(out s);\n    buf.get_end_iter(out e);\n      _this.project.runhtml = buf.get_text(s,e,true);\n      \n    _this.project.rootURL = _this.rootURL.el.get_text();\n    _this.project.base_template = _this.base_template.el.get_text();    \n    \n    \n}",
-            "|void:show": " (Project.Project project) {\n    _this.project = project;\n    _this.path.el.label = project.firstPath();\n    // get the active project.\n     var lm = Gtk.SourceLanguageManager.get_default();\n                \n    ((Gtk.SourceBuffer)(_this.view.el.get_buffer())) .set_language(\n    \n        lm.get_language(\"html\"));\n  \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n       \n    _this.rootURL.el.set_text( _this.project.rootURL );\n    _this.base_template.el.set_text(_this.project.base_template);    \n   \n    \n    //this.el.show_all();\n}\n",
-            "|xns": "Gtk",
-            "items": [
+            "@ void buttonPressed" : "(string btn)",
+            "id" : "ProjectSettings",
+            "| void show" : " (Project.Project project) {\n    _this.project = project;\n    _this.path.el.label = project.firstPath();\n    // get the active project.\n     var lm = Gtk.SourceLanguageManager.get_default();\n                \n    ((Gtk.SourceBuffer)(_this.view.el.get_buffer())) .set_language(\n    \n        lm.get_language(\"html\"));\n  \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n       \n    _this.rootURL.el.set_text( _this.project.rootURL );\n    _this.base_template.el.set_text(_this.project.base_template);    \n   \n    \n    //this.el.show_all();\n}\n",
+            "# Project.Project project" : "",
+            "xtype" : "VBox",
+            "| void save" : "()\n{\n   var buf =    _this.view.el.get_buffer();\n   Gtk.TextIter s;\n     Gtk.TextIter e;\n    buf.get_start_iter(out s);\n    buf.get_end_iter(out e);\n      _this.project.runhtml = buf.get_text(s,e,true);\n      \n    _this.project.rootURL = _this.rootURL.el.get_text();\n    _this.project.base_template = _this.base_template.el.get_text();    \n    \n    \n}",
+            "$ xns" : "Gtk",
+            "border_width" : 5,
+            "$ homogeneous" : false,
+            "items" : [
                 {
-                    "pack": "pack_start,false,false,0",
-                    "xtype": "HBox",
-                    "|homogeneous": "false",
-                    "|xns": "Gtk",
-                    "items": [
+                    "* pack" : "pack_start,false,false,0",
+                    "xtype" : "HBox",
+                    "$ xns" : "Gtk",
+                    "$ homogeneous" : true,
+                    "items" : [
                         {
-                            "listeners": {
-                                "button_press_event": "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
+                            "listeners" : {
+                                "button_press_event" : "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
                             },
-                            "label": "Apply",
-                            "pack": "add",
-                            "xtype": "Button",
-                            "|xns": "Gtk"
+                            "label" : "Apply",
+                            "xtype" : "Button",
+                            "* pack" : "add",
+                            "$ xns" : "Gtk"
                         },
                         {
-                            "listeners": {
-                                "button_press_event": "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
+                            "listeners" : {
+                                "button_press_event" : "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
                             },
-                            "label": "Save",
-                            "pack": "add",
-                            "xtype": "Button",
-                            "|xns": "Gtk"
+                            "label" : "Save",
+                            "xtype" : "Button",
+                            "* pack" : "add",
+                            "$ xns" : "Gtk"
                         }
                     ]
                 },
                 {
-                    "id": "path",
-                    "label": "filename",
-                    "pack": "pack_start,false,false,0",
-                    "xalign": 0,
-                    "xtype": "Label",
-                    "|xns": "Gtk"
+                    "label" : "filename",
+                    "id" : "path",
+                    "xalign" : 0,
+                    "* pack" : "pack_start,false,false,0",
+                    "xtype" : "Label",
+                    "$ xns" : "Gtk"
                 },
                 {
-                    "|xns": "Gtk",
-                    "xtype": "Label",
-                    "pack": "pack_start,false,false,0",
-                    "label": "HTML To insert at end of <HEAD>"
+                    "label" : "HTML To insert at end of <HEAD>",
+                    "* pack" : "pack_start,false,false,0",
+                    "xtype" : "Label",
+                    "$ xns" : "Gtk"
                 },
                 {
-                    "pack": "pack_start,false,false,0",
-                    "xtype": "HBox",
-                    "|homogeneous": "false",
-                    "|xns": "Gtk",
-                    "items": [
+                    "* pack" : "pack_start,false,false,0",
+                    "xtype" : "HBox",
+                    "$ xns" : "Gtk",
+                    "$ homogeneous" : false,
+                    "items" : [
                         {
-                            "label": "HTML template file",
-                            "pack": "pack_start,false,false,0",
-                            "xtype": "Label",
-                            "|xns": "Gtk"
+                            "label" : "HTML template file",
+                            "xtype" : "Label",
+                            "* pack" : "pack_start,false,false,0",
+                            "$ xns" : "Gtk"
                         },
                         {
-                            "id": "base_template",
-                            "pack": "add",
-                            "xtype": "Entry",
-                            "|xns": "Gtk"
+                            "id" : "base_template",
+                            "xtype" : "Entry",
+                            "* pack" : "add",
+                            "$ xns" : "Gtk"
                         }
                     ]
                 },
                 {
-                    "pack": "pack_start,false,false,0",
-                    "xtype": "HBox",
-                    "|homogeneous": "false",
-                    "|xns": "Gtk",
-                    "items": [
+                    "* pack" : "pack_start,false,false,0",
+                    "xtype" : "HBox",
+                    "$ xns" : "Gtk",
+                    "$ homogeneous" : false,
+                    "items" : [
                         {
-                            "label": "root URL",
-                            "pack": "pack_start,false,false,0",
-                            "xtype": "Label",
-                            "|xns": "Gtk"
+                            "label" : "root URL",
+                            "xtype" : "Label",
+                            "* pack" : "pack_start,false,false,0",
+                            "$ xns" : "Gtk"
                         },
                         {
-                            "id": "rootURL",
-                            "pack": "add",
-                            "xtype": "Entry",
-                            "|xns": "Gtk"
+                            "id" : "rootURL",
+                            "xtype" : "Entry",
+                            "* pack" : "add",
+                            "$ xns" : "Gtk"
                         }
                     ]
                 },
                 {
-                    "pack": "pack_start,true,true,0",
-                    "xtype": "ScrolledWindow",
-                    "|xns": "Gtk",
-                    "items": [
+                    "* pack" : "pack_start,true,true,0",
+                    "xtype" : "ScrolledWindow",
+                    "$ xns" : "Gtk",
+                    "items" : [
                         {
-                            "listeners": {
-                                "key_release_event": " ( event) =>{\n    if (event.keyval != 115) {\n        return false;\n         \n    }\n    if   ( (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {\n        return false;\n    }\n     var buf =    this.el.get_buffer();\n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    buf.get_start_iter(out s);\n    buf.get_end_iter(out e);\n    _this.project.runhtml = buf.get_text(s,e,true);\n    \n          \n    _this.buttonPressed(\"save\");\n     \n    return false;\n         \n}"
+                            "listeners" : {
+                                "key_release_event" : " ( event) =>{\n    if (event.keyval != 115) {\n        return false;\n         \n    }\n    if   ( (event.state & Gdk.ModifierType.CONTROL_MASK ) < 1 ) {\n        return false;\n    }\n     var buf =    this.el.get_buffer();\n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    buf.get_start_iter(out s);\n    buf.get_end_iter(out e);\n    _this.project.runhtml = buf.get_text(s,e,true);\n    \n          \n    _this.buttonPressed(\"save\");\n     \n    return false;\n         \n}"
                             },
-                            "id": "view",
-                            "pack": "add",
-                            "xtype": "View",
-                            "|init": " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(9000);\n    this.el.override_font(description);",
-                            "|xns": "GtkSource"
+                            "id" : "view",
+                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(9000);\n    this.el.override_font(description);",
+                            "xtype" : "View",
+                            "* pack" : "add",
+                            "$ xns" : "GtkSource"
                         }
                     ]
                 }
             ]
         }
-    ],
-    "permname": "",
-    "modOrder": ""
+    ]
 }
