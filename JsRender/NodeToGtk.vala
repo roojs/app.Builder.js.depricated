@@ -112,7 +112,7 @@ public class JsRender.NodeToGtk : Object {
 
 					Value cur_val;
 					var ps = parent.child_get_property(ret, n, out cur_val);
-					
+					if (cur
 					
 					var type = props.get(k).type;
 					type = Palete.Gir.fqtypeLookup(type, ns);
