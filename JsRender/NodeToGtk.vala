@@ -161,12 +161,11 @@ public class JsRender.NodeToGtk : Object {
 		// -- handle buildable add_child..
 		if (    cls_gtype.is_a(typeof(global::Gtk.Buildable))
 		     && 
-			parent.get_type().is_a(typeof(global::Gtk.Buildable)) 
+			parent.get_type().is_a(typeof(global::Gtk.Buildable))
+		)
 		{
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 			return;
-		}
-			
 		}
 		// other packing?
 
@@ -181,7 +180,7 @@ public class JsRender.NodeToGtk : Object {
 		if (cls ="GtkViewColumn") { // other stores?
 			this.packTreeViewColumn();
 		}
-		if (cls_gtype.is_a(typeof(global::Gtk.CellRenderer) { // other stores?
+		if (cls_gtype.is_a(typeof(global::Gtk.CellRenderer))) { // other stores?
 			this.packCellRenderer();
 		}
 
