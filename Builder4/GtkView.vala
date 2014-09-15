@@ -45,7 +45,7 @@ public class Xcls_GtkView : Object
                 this.container.el.remove(this.lastObj);
             }
      
-    	var x = new JsRender.NodeToGlade(file.tree,  "");
+    	var x = new JsRender.NodeToGtk(file.tree,  "");
     	var str = x.munge();
     	if (str.length < 1) {
             	return;
