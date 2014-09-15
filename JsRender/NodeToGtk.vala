@@ -173,7 +173,8 @@ public class JsRender.NodeToGtk : Object {
 			this.packTreeStore();
 			return;
 		}
-		if (cls =="GtkViewColumn") { // other stores?
+		if (cls =="GtkTreeViewColumn") { // other stores?
+			//?? treeview column is actually buildab.e
 			this.packTreeViewColumn();
 			return;
 		}
