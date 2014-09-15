@@ -164,7 +164,8 @@ public class JsRender.NodeToGtk : Object {
 			parent.get_type().is_a(typeof(global::Gtk.Buildable))
 		)
 		{
-			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
+			((global::Gtk.Buildable)parent).add_child(gtkbuilder, 
+	                                          this.wrapped_object, null);
 			return;
 		}
 		// other packing?
