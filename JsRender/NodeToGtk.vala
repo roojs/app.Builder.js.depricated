@@ -102,7 +102,7 @@ public class JsRender.NodeToGtk : Object {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
 		if (parent && parent.get_type().is_a(typeof(global::Gtk.Container))) {
-			this.packContainerParams()
+			this.packContainerParams();
 		}
 		
 		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
@@ -182,44 +182,43 @@ public class JsRender.NodeToGtk : Object {
 			return;
 		}
 		
-			cls_methods != null
-			&&
-			parent.get_type().is_a(typeof(global::Gtk.Container))) {
-			var pack = this.node.props.get("* pack").split(",");
+		
+		 
+		var pack = this.node.props.get("* pack").split(",");
 
-			
-			if (cls_methods.has_key(pack[0])) {
-				var mparams = cls_methods.get(pack[0]).paramset.params;
-				for (var i = 1; i < mparams.size; i++ ) {
-					if (i > (pack.length -1)) {
-						continue;
-					}
-					
-					var k = mparams.get(i).name;
-
-					Value cur_val;
-					 
-					var type = mparams.get(i).type;
-					type = Palete.Gir.fqtypeLookup(type, ns);
-
-					var val = this.toValue(pack[i].strip(), type);
-					if (val == null) {
-						print("skip (failed to transform value %s type = %s from %s\n", 
-							cls + "." + k, type, pack[i].strip());
-						continue;
-					}
-					print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
-			
-					((global::Gtk.Container)parent).child_set_property((global::Gtk.Widget)ret, k, val);
-					 
+	
+		if (cls_methods.has_key(pack[0])) {
+			var mparams = cls_methods.get(pack[0]).paramset.params;
+			for (var i = 1; i < mparams.size; i++ ) {
+				if (i > (pack.length -1)) {
+					continue;
 				}
-				
+			
+				var k = mparams.get(i).name;
+
+				Value cur_val;
+				 
+				var type = mparams.get(i).type;
+				type = Palete.Gir.fqtypeLookup(type, ns);
+
+				var val = this.toValue(pack[i].strip(), type);
+				if (val == null) {
+					print("skip (failed to transform value %s type = %s from %s\n", 
+						cls + "." + k, type, pack[i].strip());
+					continue;
+				}
+				print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
+	
+				((global::Gtk.Container)parent).child_set_property((global::Gtk.Widget)ret, k, val);
+				 
 			}
-			
-
-
-			
+		
 		}
+	
+
+
+			
+	}
 		   
 
 	public GLib.Value? toValue(string val, string type) {
