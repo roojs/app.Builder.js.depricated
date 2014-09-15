@@ -253,37 +253,37 @@
                                             ]
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "id" : "ContextMenu",
-                            "xtype" : "Menu",
-                            "* pack" : false,
-                            "$ xns" : "Gtk",
-                            "items" : [
-                                {
-                                    "listeners" : {
-                                        "activate" : "  ( )  =>{\n  \n    var s = _this.view.el.get_selection();\n    Gtk.TreeIter iter;\n    Gtk.TreeModel model;\n    s.get_selected (out  model, out  iter);\n    _this.startEditingKey(model.get_path(iter));\n}"
-                                    },
-                                    "label" : "Edit",
-                                    "xtype" : "MenuItem",
-                                    "* pack" : "append",
-                                    "$ xns" : "Gtk"
                                 },
                                 {
-                                    "* pack" : "append",
-                                    "xtype" : "SeparatorMenuItem",
-                                    "$ xns" : "Gtk"
-                                },
-                                {
-                                    "listeners" : {
-                                        "activate" : "  ( )  =>{\n\t_this.deleteSelected();\n}"
-                                    },
-                                    "label" : "Delete",
-                                    "xtype" : "MenuItem",
-                                    "* pack" : "append",
-                                    "$ xns" : "Gtk"
+                                    "id" : "ContextMenu",
+                                    "xtype" : "Menu",
+                                    "* pack" : false,
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "listeners" : {
+                                                "activate" : "  ( )  =>{\n  \n    var s = _this.view.el.get_selection();\n    Gtk.TreeIter iter;\n    Gtk.TreeModel model;\n    s.get_selected (out  model, out  iter);\n    _this.startEditingKey(model.get_path(iter));\n}"
+                                            },
+                                            "label" : "Edit",
+                                            "xtype" : "MenuItem",
+                                            "* pack" : "append",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "* pack" : "append",
+                                            "xtype" : "SeparatorMenuItem",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "listeners" : {
+                                                "activate" : "  ( )  =>{\n\t_this.deleteSelected();\n}"
+                                            },
+                                            "label" : "Delete",
+                                            "xtype" : "MenuItem",
+                                            "* pack" : "append",
+                                            "$ xns" : "Gtk"
+                                        }
+                                    ]
                                 }
                             ]
                         }

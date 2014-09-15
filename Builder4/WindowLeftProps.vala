@@ -1014,8 +1014,6 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ContextMenu( _this );
-            child_1.ref();
 
             // init method 
 
@@ -1056,6 +1054,8 @@ public class Xcls_LeftProps : Object
             var child_2 = new Xcls_valcol( _this );
             child_2.ref();
             this.el.append_column (  child_2.el  );
+            var child_3 = new Xcls_ContextMenu( _this );
+            child_3.ref();
 
             // init method 
 

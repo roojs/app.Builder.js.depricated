@@ -1020,43 +1020,43 @@ WindowLeftProps=new XObject({
                                 }
                             ]
 
-                        }
-                    ]
+                        },
+                    	{
+                            id : "ContextMenu",
+                            xtype : "Menu",
+                            xns : Gtk,
+                            items : [
+                            	{
+                                    label : "Edit",
+                                    xtype : "MenuItem",
+                                    xns : Gtk,
+                                    listeners : {
+                                    	activate : ( )  =>{
+                                    	     
+                                    	       var s = _this.view.el.get_selection();
+                                    	       Gtk.TreeIter iter;
+                                    	       Gtk.TreeModel model;
+                                    	       s.get_selected (out  model, out  iter);
+                                    	       _this.startEditingKey(model.get_path(iter));
+                                    	   }
+                                    }
+                                },
+                            	{
+                                    xtype : "SeparatorMenuItem",
+                                    xns : Gtk
+                                },
+                            	{
+                                    label : "Delete",
+                                    xtype : "MenuItem",
+                                    xns : Gtk,
+                                    listeners : {
+                                    	activate : ( )  =>{
+                                    	   	_this.deleteSelected();
+                                    	   }
+                                    }
+                                }
+                            ]
 
-                },
-            	{
-                    id : "ContextMenu",
-                    xtype : "Menu",
-                    xns : Gtk,
-                    items : [
-                    	{
-                            label : "Edit",
-                            xtype : "MenuItem",
-                            xns : Gtk,
-                            listeners : {
-                            	activate : ( )  =>{
-                            	     
-                            	       var s = _this.view.el.get_selection();
-                            	       Gtk.TreeIter iter;
-                            	       Gtk.TreeModel model;
-                            	       s.get_selected (out  model, out  iter);
-                            	       _this.startEditingKey(model.get_path(iter));
-                            	   }
-                            }
-                        },
-                    	{
-                            xtype : "SeparatorMenuItem",
-                            xns : Gtk
-                        },
-                    	{
-                            label : "Delete",
-                            xtype : "MenuItem",
-                            xns : Gtk,
-                            listeners : {
-                            	activate : ( )  =>{
-                            	   	_this.deleteSelected();
-                            	   }
-                            }
                         }
                     ]
 
