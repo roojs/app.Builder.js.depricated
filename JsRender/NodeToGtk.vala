@@ -155,7 +155,7 @@ public class JsRender.NodeToGtk : Object {
 							cls + "." + k, type, pack[i].strip());
 						continue;
 					}
-					print ("set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
+					print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
 			
 			
 					ret.set_property(k, val);
