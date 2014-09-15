@@ -178,7 +178,13 @@ public class JsRender.NodeToGtk : Object {
 		if (cls ="GtkTreeStore") { // other stores?
 			this.packTreeStore();
 		}
-	
+		if (cls ="GtkViewColumn") { // other stores?
+			this.packTreeViewColumn();
+		}
+		if (cls_gtype.is_a(typeof(global::Gtk.CellRenderer) { // other stores?
+			this.packCellRenderer();
+		}
+		                   
 
 	}
 	public void packContainerParams()
