@@ -218,7 +218,7 @@ public class JsRender.NodeToGtk : Object {
 	public void packTreeViewColumn()
 	{
 		var parent = this.parentObj.wrapped_object;
-		if (!parent.get_type(is_a(typeof(global::Gtk.TreeView)))) {
+		if (!parent.get_type().is_a(typeof(global::Gtk.TreeView))) {
 			print("skip packGtkViewColumn pack - parent is not a treeview");
 			return;
 		}
