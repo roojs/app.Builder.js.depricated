@@ -19,8 +19,8 @@ WindowLeftTree=new XObject({
          return _this.model.pathToNode(path);
          
     },
-    id : "WindowLeftTree",
     before_node_change : "(JsRender.Node? node)",
+    id : "WindowLeftTree",
     shadow_type : Gtk.ShadowType.IN,
     getActiveFile : () {
         return this.model.file;
@@ -44,9 +44,10 @@ WindowLeftTree=new XObject({
     items : [
     	{
             dragData : "",
-            drag_x : "",
             dropList : "",
+            drag_x : "",
             id : "view",
+            headers_visible : true,
             drag_y : "",
             tooltip_column : 1,
             xtype : "TreeView",
@@ -100,47 +101,6 @@ WindowLeftTree=new XObject({
             	         _this.LeftTreeMenu.el.popup(null, null, null,  3, ev.time);
             	        //   print("click:" + res.path.to_string());
             	         return true;
-            	   },
-            	drag_begin : ( ctx)  => {
-            	   	//print('SOURCE: drag-begin');
-            	           
-            	           
-            	           //this.targetData = "";
-            	           
-            	           // find what is selected in our tree...
-            	           
-            	           var s = _this.view.el.get_selection();
-            	           if (s.count_selected_rows() < 1) {
-            	               return;
-            	           }
-            	           Gtk.TreeIter iter;
-            	           Gtk.TreeModel mod;
-            	           s.get_selected(out mod, out iter);
-            	   
-            	           
-            	   
-            	           // set some properties of the tree for use by the dropped element.
-            	           GLib.Value value;
-            	           _this.model.el.get_value(iter, 2, out value);
-            	           var data = (JsRender.Node)(value.dup_object());
-            	           var xname = data.fqn();
-            	            print ("XNAME  IS " + xname+ "\n");
-            	           this.dragData = xname;
-            	           this.dropList = _this.model.file.palete().getDropList(xname);
-            	           
-            	           print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-            	           
-            	   
-            	           // make the drag icon a picture of the node that was selected
-            	           var path = _this.model.el.get_path(iter);
-            	   
-            	           //this.treepath = path.to_string();
-            	           
-            	           var pix = this.el.create_row_drag_icon ( path);
-            	           
-            	           Gtk.drag_set_icon_surface (ctx, pix) ;
-            	           
-            	           return;
             	   },
             	cursor_changed : ( ) => {
             	   
@@ -199,6 +159,47 @@ WindowLeftTree=new XObject({
             	       //Seed.print( value.get_string());
             	       return  ;
             	                   
+            	   },
+            	drag_begin : ( ctx)  => {
+            	   	//print('SOURCE: drag-begin');
+            	           
+            	           
+            	           //this.targetData = "";
+            	           
+            	           // find what is selected in our tree...
+            	           
+            	           var s = _this.view.el.get_selection();
+            	           if (s.count_selected_rows() < 1) {
+            	               return;
+            	           }
+            	           Gtk.TreeIter iter;
+            	           Gtk.TreeModel mod;
+            	           s.get_selected(out mod, out iter);
+            	   
+            	           
+            	   
+            	           // set some properties of the tree for use by the dropped element.
+            	           GLib.Value value;
+            	           _this.model.el.get_value(iter, 2, out value);
+            	           var data = (JsRender.Node)(value.dup_object());
+            	           var xname = data.fqn();
+            	            print ("XNAME  IS " + xname+ "\n");
+            	           this.dragData = xname;
+            	           this.dropList = _this.model.file.palete().getDropList(xname);
+            	           
+            	           print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+            	           
+            	   
+            	           // make the drag icon a picture of the node that was selected
+            	           var path = _this.model.el.get_path(iter);
+            	   
+            	           //this.treepath = path.to_string();
+            	           
+            	           var pix = this.el.create_row_drag_icon ( path);
+            	           
+            	           Gtk.drag_set_icon_surface (ctx, pix) ;
+            	           
+            	           return;
             	   },
             	drag_end : (drag_context) => {
             	   	//Seed.print('LEFT-TREE: drag-end');
@@ -534,8 +535,8 @@ WindowLeftTree=new XObject({
                         }
                         return this.findDropNodeByPath(treepath_str,targets, -1);
                     },
-                    currentTree : false,
                     id : "model",
+                    currentTree : false,
                     loadFile : (JsRender.JsRender f) {
                         //console.dump(f);
                         this.el.clear();
