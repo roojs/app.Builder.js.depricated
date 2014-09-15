@@ -110,7 +110,7 @@ public class JsRender.NodeToGtk : Object {
 					
 					var k = mparams.get(i).name;
 
-					Value cur_val
+					Value cur_val;
 					var ps = parent.child_get_property(ret, n, out cur_val);
 					
 					
