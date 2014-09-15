@@ -174,7 +174,7 @@ public class JsRender.NodeToGtk : Object {
 			return;
 		}
 		if (cls =="GtkTreeViewColumn") { // other stores?
-			//?? treeview column is actually buildab.e
+			//?? treeview column is actually buildable -- but we do not use the builder???
 			this.packTreeViewColumn();
 			return;
 		}
