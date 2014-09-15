@@ -16,7 +16,7 @@ public class Xcls_GtkView : Object
 
         // my vars (def)
     public Gtk.Widget lastObj;
-    public string XXXX;
+    public JsRender.JsRender file;
 
     // ctor 
     public Xcls_GtkView()
@@ -26,6 +26,7 @@ public class Xcls_GtkView : Object
 
         // my vars (dec)
         this.lastObj = null;
+        this.file = null;
 
         // set gobject values
         var child_0 = new Xcls_container( _this );

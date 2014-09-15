@@ -38,8 +38,8 @@ GtkView=new XObject({
             obj.show_all();
     },
     xtype : "Viewport",
+    file : "null",
     xns : Gtk,
-    XXXX : "",
     'createThumb()' : () {
         
         
