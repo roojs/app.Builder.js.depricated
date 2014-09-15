@@ -33,9 +33,10 @@ public class JsRender.NodeToGtk : Object {
 		return x.mungeNode(this);
 	}
 	
-	public Object? mungeNode(Object? parent)
+	public Object? mungeNode(Object? parentObj)
 	{
-		 
+
+		var parent = parent != null ? parent.wrapped_object : null;
 		var cls = this.node.fqn().replace(".", "");
 		var ns = this.node.fqn().split(".")[0];
 		var gtkbuilder = new global::Gtk.Builder();
