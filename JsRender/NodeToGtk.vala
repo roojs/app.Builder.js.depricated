@@ -163,6 +163,27 @@ public class JsRender.NodeToGtk : Object {
 		if (parent == null) { // no parent.. can not pack.
 			return;
 		}
+		// our overrides
+		if (cls == "GtkMenu") {
+			this.packMenu();
+			return;
+		}
+
+		if (cls == "GtkTreeStore") { // other stores?
+			this.packTreeStore();
+			return;
+		}
+		if (cls =="GtkViewColumn") { // other stores?
+			this.packTreeViewColumn();
+			return;
+		}
+		if (cls_gtype.is_a(typeof(global::Gtk.CellRenderer))) { // other stores?
+			this.packCellRenderer();
+			return;
+		}
+
+
+		
 		// -- handle buildable add_child..
 		if (    cls_gtype.is_a(typeof(global::Gtk.Buildable))
 		     && 
@@ -175,20 +196,7 @@ public class JsRender.NodeToGtk : Object {
 		}
 		// other packing?
 
-		if (cls == "GtkMenu") {
-			this.packMenu();
-			return;
-		}
-
-		if (cls == "GtkTreeStore") { // other stores?
-			this.packTreeStore();
-		}
-		if (cls =="GtkViewColumn") { // other stores?
-			this.packTreeViewColumn();
-		}
-		if (cls_gtype.is_a(typeof(global::Gtk.CellRenderer))) { // other stores?
-			this.packCellRenderer();
-		}
+		
 
 	}
 
