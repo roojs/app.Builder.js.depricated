@@ -253,6 +253,12 @@ public class JsRender.NodeToGtk : Object {
 		if (this.parentObj == null) {
 			return;
 		}
+
+		if (!this.wrapped_object.get_type().is_a(typeof(global::Gtk.Wid))) {
+			print("skip packGtkViewColumn pack - parent is not a treeview");
+			return;
+		}
+		
 		var parent_gir = Palete.Gir.factoryFqn(this.parentObj.node.fqn());
 
 		var parent = this.parentObj.wrapped_object;
