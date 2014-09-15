@@ -173,10 +173,15 @@ public class JsRender.NodeToGtk : Object {
 		}
 		
 		// let's test just setting expand to false...
-		var cls_methods = parent_gir == null ? null : parent_gir.methods;
-
-			this.node.props.has_key("* pack") 
-			&&
+		var cls_methods = parent_gir.methods;
+		if (cls_methods == null) {
+			return;
+		}
+	
+		if (!this.node.props.has_key("* pack")) {
+			return;
+		}
+		
 			cls_methods != null
 			&&
 			parent.get_type().is_a(typeof(global::Gtk.Container))) {
