@@ -68,11 +68,11 @@ public class JsRender.NodeToGtk : Object {
 		 
 		switch(cls) {
 			// fixme
-			case "GtkTreeStore": // top level.. - named and referenced
+			//case "GtkTreeStore": // top level.. - named and referenced
 			case "GtkListStore": // top level.. - named and referenced
-			case "GtkTreeViewColumn": // part of liststore?!?!
-			case "GtkMenu": // top level..
-			case "GtkCellRendererText":
+			//case "GtkTreeViewColumn": // part of liststore?!?!
+			//case "GtkMenu": // top level..
+			//case "GtkCellRendererText":
 			case "GtkSourceBuffer":				
 			case "GtkClutterActor"://fixme..
 			///case "GtkClutterEmbed"://fixme..
