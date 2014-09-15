@@ -158,29 +158,18 @@ public class JsRender.NodeToGtk : Object {
 		if (parent == null) { // no parent.. can not pack.
 			return;
 		}
-		
+		// -- handle buildable add_child..
 		if (    cls_gtype.is_a(typeof(global::Gtk.Buildable))
-		     && parent.get_type().is_a(typeof(global::Gtk.Buildable))
+		     && 
+			parent.get_type().is_a(typeof(global::Gtk.Buildable)) 
+		{
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 			return;
-		    ) {
-			
 		}
-		if (parent == null) {
-			//print("skipping pack  %s is not a buildable..\n", cls);
-			do_pack = false;
-		} else  if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
-			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
-			do_pack = false;
+			
 		}
 
-		// at present we are setting the packing / fill / expand as
-		// arguments to pack_start etc...
-		// pack on a container..
-		
-		if (do_pack) {
-			
-		}
+	}
 	public void packContainerParams()
 	{
 	 
