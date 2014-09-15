@@ -429,6 +429,7 @@ right:
     Roo.bootstrap.Row
     Roo.bootstrap.Column
     Roo.bootstrap.Container
+    Roo.bootstrap.Img
 
 left:
     Roo.bootstrap.NavGroup
