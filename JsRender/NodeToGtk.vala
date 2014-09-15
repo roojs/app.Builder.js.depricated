@@ -209,7 +209,8 @@ public class JsRender.NodeToGtk : Object {
 				}
 				print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
 	
-				((global::Gtk.Container)parent).child_set_property((global::Gtk.Widget)ret, k, val);
+				((global::Gtk.Container)parent).child_set_property(
+					(global::Gtk.Widget)this.wrapped_object , k, val);
 				 
 			}
 		
