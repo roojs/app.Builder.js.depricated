@@ -314,8 +314,16 @@ namespace Palete {
 		    }
 		    return r;
 		}
+		public string asJSONString()
+		{
 
-		
+			var n = new Json.Node(Json.NodeType.OBJECT);
+			n.set_object(this.toJSON());
+			generator.set_root(n);
+	
+			return generator.to_data(null);
+		}
+
 
 		
 		public GirObject fetchByFqn(string fqn) {
