@@ -224,6 +224,7 @@ public class JsRender.NodeToGtk : Object {
 			return;
 		}
 		((global::Gtk.TreeView)parent).append_child((global::Gtk.TreeViewColumn)this.wrapped_object);
+		// init contains the add_attribute for what to render...
 		
 	}	
 
