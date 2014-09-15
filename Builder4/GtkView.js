@@ -33,8 +33,9 @@ GtkView=new XObject({
             	return;
     	}
     	this.lastObj = obj;
-    	this.lastObj = obj;
+            
             this.container.el.add(obj);
+            obj.show_all();
     },
     items : [
     	{

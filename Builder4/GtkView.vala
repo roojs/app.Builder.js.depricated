@@ -52,8 +52,9 @@ public class Xcls_GtkView : Object
             	return;
     	}
     	this.lastObj = obj;
-    	this.lastObj = obj;
+            
             this.container.el.add(obj);
+            obj.show_all();
     }
     public class Xcls_container : Object 
     {
