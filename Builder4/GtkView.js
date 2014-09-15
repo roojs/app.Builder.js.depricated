@@ -37,10 +37,7 @@ GtkView=new XObject({
             this.container.el.add(obj);
             obj.show_all();
     },
-    xtype : "Viewport",
-    file : "null",
-    xns : Gtk,
-    'createThumb()' : () {
+    createThumb : () {
         
         
         if (this.file == null) {
@@ -74,6 +71,9 @@ GtkView=new XObject({
         
          
     },
+    xtype : "Viewport",
+    file : "null",
+    xns : Gtk,
     items : [
     	{
             id : "container",

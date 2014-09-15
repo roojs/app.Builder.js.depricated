@@ -60,7 +60,7 @@ public class Xcls_GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
-    public void createThumb() () {
+    public void createThumb () {
         
         
         if (this.file == null) {
