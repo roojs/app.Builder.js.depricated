@@ -42,7 +42,7 @@ void loadit(string name ) {
 	left_props.el.show();
 	w.add(left_props.el);
 	w.show_all();   
-	left_props.load(tf);
+	left_props.addNode(tf);
  
 	
 /*
