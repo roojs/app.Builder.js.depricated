@@ -134,7 +134,7 @@ public class JsRender.NodeToGtk : Object {
 		if  (this.node.props.has_key("* pack")) {
 			var pack = this.node.props.get_value("* pack").split(",");
 			if (cls_methods.has_key(pack[0])) {
-				
+				print(cls_methods.get_value(pack[0]).asJSONString());
 
 			}
 			
