@@ -151,6 +151,11 @@ public class JsRender.NodeToGtk : Object {
 		var gtkbuilder = new global::Gtk.Builder();
 		var cls_gtype = gtkbuilder.get_type_from_name(cls);
 
+		if (this.parentObj == null) {
+			return;
+		}
+				
+		    
 		var parent = this.parentObj.wrapped_object;
 		
 		var do_pack =true;
