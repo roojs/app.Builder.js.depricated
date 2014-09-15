@@ -191,7 +191,7 @@ public class JsRender.NodeToGtk : Object {
 
 
 		var parent = this.parentObj.wrapped_object;
-		if (!parent.get_type(is_a(typeof(global::Gtk.Widget)))) {
+		if (!parent.get_type().is_a(typeof(global::Gtk.Widget))) {
 			print("skip menu pack - parent is not a widget");
 			return;
 		}
@@ -208,7 +208,7 @@ public class JsRender.NodeToGtk : Object {
 	public void packTreeStore()
 	{
 		var parent = this.parentObj.wrapped_object;
-		if (!parent.get_type(is_a(typeof(global::Gtk.TreeView)))) {
+		if (!parent.get_type().is_a(typeof(global::Gtk.TreeView))) {
 			print("skip treestore pack - parent is not a treeview");
 			return;
 		}
