@@ -107,7 +107,9 @@ public class JsRender.NodeToGtk : Object {
 
 		if  (do_pack && 
 				this.node.props.has_key("* pack") 
-				&& 
+				&&
+				cls_methods != null
+				&&
 				parent.get_type().is_a(typeof(global::Gtk.Container))) {
 			var pack = this.node.props.get("* pack").split(",");
 
