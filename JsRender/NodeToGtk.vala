@@ -169,7 +169,7 @@ public class JsRender.NodeToGtk : Object {
 		}
 		var parent_gir = Palete.Gir.factoryFqn(this.parentObj.node.fqn());
 
-		var parent = this.parentObj.parent;
+		var parent = this.parentObj.wrapped_object;
 		
 		if (parent_gir == null) {
 			return;
