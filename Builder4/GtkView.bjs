@@ -11,7 +11,7 @@
             "# Gtk.Widget lastObj" : "null",
             "xtype" : "Viewport",
             "$ xns" : "Gtk",
-            "| void addNode" : "(JsRender.JsRender file) \n{\n    \n \n\n        if (file.tree == null) {\n            return;\n        }\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = g.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n\tthis.lastObj = obj;\n        this.container.el.add(obj);\n}\n",
+            "| void addNode" : "(JsRender.JsRender file) \n{\n    \n \n\n        if (file.tree == null) {\n            return;\n        }\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n\tthis.lastObj = obj;\n        this.container.el.add(obj);\n}\n",
             "items" : [
                 {
                     "id" : "container",

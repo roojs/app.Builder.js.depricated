@@ -46,7 +46,7 @@ public class Xcls_GtkView : Object
             }
      
     	var x = new JsRender.NodeToGtk(file.tree);
-            var obj = g.munge() as Gtk.Widget;
+            var obj = x.munge() as Gtk.Widget;
             this.lastObj = null;
     	if (obj == null) {
             	return;
