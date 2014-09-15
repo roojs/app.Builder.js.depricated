@@ -79,8 +79,8 @@ public class JsRender.NodeToGtk : Object {
 		//var id = this.node.uid();
 		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
-
-		var props = Palete.Gir.factoryFqn(this.node.fqn()).props;
+		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
+		var props = cls_gir.props;
 		
               
     		var pviter = props.map_iterator();
@@ -131,7 +131,9 @@ public class JsRender.NodeToGtk : Object {
 		// let's test just setting expand to false...
 		
 		if  (this.node.props.has_key("* pack")) {
-			var pack = this.node.props.get_value("* pack")
+			var pack = this.node.props.get_value("* pack").split(",");
+			var meth = cls
+			
 
 
 			
