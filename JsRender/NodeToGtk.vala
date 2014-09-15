@@ -220,12 +220,14 @@ public class JsRender.NodeToGtk : Object {
 	{
 		var parent = this.parentObj.wrapped_object;
 		if (!parent.get_type(is_a(typeof(global::Gtk.TreeView)))) {
-			print("skip treestore pack - parent is not a treeview");
+			print("skip packGtkViewColumn pack - parent is not a treeview");
 			return;
 		}
-		((global::Gtk.TreeView)parent).set_model((global::Gtk.TreeModel)this.wrapped_object);
+		((global::Gtk.TreeView)parent).append_child((global::Gtk.TreeViewColumn)this.wrapped_object);
 		
 	}	
+
+
 
 
 
