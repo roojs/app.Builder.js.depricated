@@ -93,10 +93,11 @@ public class JsRender.NodeToGtk : Object {
 
 		// at present we are setting the packing / fill / expand as
 		// arguments to pack_start etc...
-		var parent_gir =Palete.Gir.factoryFqn(parentObject.node.fqn()); 
+		
+		var parent_gir = parentObject == null ? null : Palete.Gir.factoryFqn(parentObject.node.fqn()); 
 		
 		// let's test just setting expand to false...
-		var cls_methods = cls_gir.methods;
+		var cls_methods = parent_gir == null ? null : parent_gir.methods;
 
 		// pack on a container..
 		
