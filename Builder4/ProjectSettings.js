@@ -102,6 +102,7 @@ ProjectSettings=new XObject({
         },
     	{
             xtype : "HBox",
+            expand : false,
             xns : Gtk,
             homogeneous : FALSE,
             items : [

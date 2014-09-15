@@ -236,6 +236,7 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.expand = false;
             var child_0 = new Xcls_Label8( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
