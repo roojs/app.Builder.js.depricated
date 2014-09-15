@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     allow_edit : false,
-    id : "LeftProps",
     before_edit : ()
     {
     
@@ -28,6 +27,7 @@ WindowLeftProps=new XObject({
     // technicall stop the popup editor..
     
     },
+    id : "LeftProps",
     keySortFormat : (string key) {
         // listeners first - with 0
         // specials
@@ -526,8 +526,8 @@ WindowLeftProps=new XObject({
                             xns : Gtk,
                             items : [
                             	{
-                                    stock : Gtk.STOCK_ADD,
                                     xtype : "Image",
+                                    stock : Gtk.STOCK_ADD,
                                     xns : Gtk,
                                     icon_size : Gtk.IconSize.MENU
                                 },
