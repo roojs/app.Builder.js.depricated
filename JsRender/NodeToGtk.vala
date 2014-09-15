@@ -135,7 +135,7 @@ public class JsRender.NodeToGtk : Object {
 			var pack = this.node.props.get("* pack").split(",");
 			if (cls_methods.has_key(pack[0])) {
 				var mparams = cls_methods.get(pack[0]).paramset.params;
-				for (var i = 1; i < mparams.size(); i++ ) {
+				for (var i = 1; i < mparams.size; i++ ) {
 					if (i > (pack.length -1)) {
 						continue;
 					}
