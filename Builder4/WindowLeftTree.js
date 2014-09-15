@@ -1070,6 +1070,7 @@ WindowLeftTree=new XObject({
                     }
                 },
             	{
+                    title : "test",
                     xtype : "TreeViewColumn",
                     xns : Gtk,
                     items : [

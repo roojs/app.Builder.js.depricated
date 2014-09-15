@@ -1136,6 +1136,7 @@ public class Xcls_WindowLeftTree : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.title = "test";
             var child_0 = new Xcls_renderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
