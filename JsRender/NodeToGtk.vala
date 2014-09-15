@@ -223,7 +223,7 @@ public class JsRender.NodeToGtk : Object {
 			print("skip packGtkViewColumn pack - parent is not a treeview");
 			return;
 		}
-		((global::Gtk.TreeView)parent).append_child((global::Gtk.TreeViewColumn)this.wrapped_object);
+		((global::Gtk.TreeView)parent).append_column((global::Gtk.TreeViewColumn)this.wrapped_object);
 		// init contains the add_attribute for what to render...
 		
 	}	
