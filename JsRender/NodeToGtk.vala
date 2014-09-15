@@ -170,6 +170,9 @@ public class JsRender.NodeToGtk : Object {
 		}
 		// other packing?
 
+		if (cls == "GtkMenu") {
+			this.packMenu();
+		}
 	
 
 	}
