@@ -199,9 +199,9 @@ public class JsRender.NodeToGtk : Object {
 		
 		var p = this.wrapped_object;
 		((global::Gtk.Widget)parent).button_press_event.connect((s, ev) => { 
-			p.el.set_screen(Gdk.Screen.get_default());
-			p.el.show_all();
-			p.el.popup(null, null, null, ev.button, ev.time);
+			p.set_screen(Gdk.Screen.get_default());
+			p.show_all();
+			p.popup(null, null, null, ev.button, ev.time);
 			return true;
 		});
 	}
