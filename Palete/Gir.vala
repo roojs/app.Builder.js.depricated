@@ -289,7 +289,7 @@ namespace Palete {
 		        r.set_object_member("signals", this.toJSONObject(this.signals));
 		    }
 		    if (this.paramset != null) {
-		        r.set_object_member("params", this.paramset.toJSON());
+		        r.set_object_member("paramset", this.paramset.toJSON());
 		    }
 		    if (this.return_value != null) {
 		        r.set_object_member("return_value", this.return_value.toJSON());
