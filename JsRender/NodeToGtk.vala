@@ -92,6 +92,7 @@ public class JsRender.NodeToGtk : Object {
 
 		// at present we are setting the packing / fill / expand as
 		// arguments to pack_start etc...
+		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
 		
 		// let's test just setting expand to false...
 		var cls_methods = cls_gir.methods;
@@ -143,7 +144,6 @@ public class JsRender.NodeToGtk : Object {
 		//var id = this.node.uid();
 		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
 		// properties..
-		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
 		var props = cls_gir.props;
 		
               
