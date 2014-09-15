@@ -134,8 +134,29 @@ public class JsRender.NodeToGtk : Object {
 		if  (this.node.props.has_key("* pack")) {
 			var pack = this.node.props.get("* pack").split(",");
 			if (cls_methods.has_key(pack[0])) {
-				print(cls_methods.get(pack[0]).asJSONString());
+				var mparams = cls_methods.get(pack[0]).paramset.params;
+				for (var i = 1; i < mparams.size(); i++ ) {
+					if (i > (pack.length -1)) {
+						continue;
+					}
+					if (!props.has_key(mparams.get(i).name)) {
+						continue;
+					}
+					
+					var type = props.get(mparams.get(i).name).type;
+					type = Palete.Gir.fqtypeLookup(type, ns);
 
+					var val = this.toValue(pack[i].strip(), type);
+					if (val == null) {
+						print("skip (failed to transform value %s type = %s from %s\n", 
+							cls + "." + k, type,  this.node.get(k).strip());
+						continue;
+					}
+					print ("set_property ( %s , %s / %s)\n", k, this.node.get(k).strip(), val.strdup_contents());
+			
+			
+					ret.set_property(k, val);  
+				
 			}
 			
 
