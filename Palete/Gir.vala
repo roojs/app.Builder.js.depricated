@@ -187,26 +187,13 @@ namespace Palete {
 			
 		}
 		public string fqn() {
-			// not sure if fqn really is correct here...
-			// 
-			return this.nodetype == "Class" || this.nodetype=="Interface"
-					? this.name : (this.ns + this.name);
+			return this.ns + this.name;
 		}
 		
 		public void copyFrom(GirObject pcls, bool is_interface) 
 		{
 
 			this.inherits.add(pcls.fqn());
-
-			var liter = pcls.inherits.list_iterator();
-			while(liter.next()) {
-        		if (this.inherits.contains(liter.get())) {
-					continue;
-				}
-				this.inherits.add(liter.get()); 
-            }
-			
-			
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
         		if (null != this.methods.get(iter.get_key())) {
@@ -254,14 +241,9 @@ namespace Palete {
 		    }
 		
 		    // is_arary / is_instance / is_varargs..
-
-		
-			if (this.inherits.size > 0) {
-		        r.set_array_member("inherits", this.toJSONArrayString(this.inherits));
-		    }
 		    
 		    if (this.implements.size > 0) {
-		        r.set_array_member("implements", this.toJSONArrayString(this.implements));
+		        r.set_array_member("length", this.toJSONArrayString(this.implements));
 		    }
 		    
 		    if (this.params.size > 0) {
@@ -333,6 +315,9 @@ namespace Palete {
 		    return r;
 		}
 
+		
+
+		
 		public GirObject fetchByFqn(string fqn) {
 			//print("Searching (%s)%s for %s\n", this.nodetype, this.name, fqn);
 			var bits = fqn.split(".");
@@ -477,15 +462,11 @@ namespace Palete {
 			// look at includes..
 			var iter = g.includes.map_iterator();
 			while(iter.next()) {
-				// skip empty namespaces on include..?
-				if ( iter.get_key() == "") {
-					continue;
-				}
 				var ret = fqtypeLookup(type, iter.get_key());
 				if (ret != type) {
 					return ret;
 				}
-    		}	
+    			}	
 			return type;
 		}
 		
@@ -494,8 +475,7 @@ namespace Palete {
 		
 
 		public static string guessDefaultValueForType(string type) {
-			//print("guessDefaultValueForType: %s\n", type);
-			if (type.length < 1 || type.contains(".")) {
+			if (type.contains(".")) {
 				return "null";
 			}
 			switch(type) {
@@ -547,11 +527,10 @@ namespace Palete {
 		public void walk(Xml.Node* element, GirObject? parent)
 		{
 		    var n = element->get_prop("name");
-			// ignore null or c:include...
-		    if (n == null || (element->ns->prefix != null && element->ns->prefix == "c")) {
-				n = "";
+		    if (n == null) {
+			n = "";
 		    }
-		    //print("%s:%s (%s ==> %s\n", element->ns->prefix , element->name , parent.name , n);
+		    //print(element->name + " ("  + parent.name + "==>" + n +")\n");
 		    switch (element->name) {
 			case "repository":
 			    break;
@@ -672,12 +651,9 @@ namespace Palete {
 			    break;
 			
 			case "instance-parameter":
-					break;
-					// looks  like this is the C first arg, that is ignored (as it is 
-					// treated as 'this' )
 		    		var c = new GirObject("Param",n);
-					c.gparent = parent;
-					c.ns = this.ns;
+				c.gparent = parent;
+				c.ns = this.ns;
 		    		c.is_instance = true;
 		    		parent.params.add(c);
 		    		parent = c;
