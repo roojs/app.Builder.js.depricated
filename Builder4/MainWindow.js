@@ -258,7 +258,7 @@ MainWindow=new XObject({
           
         //  glade view
         
-        this.window_gladeview  =new Xcls_GladeView();
+        this.window_gladeview  =new Xcls_GtkView();
         this.window_gladeview.ref();
     
         //((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_gladeview.el);
