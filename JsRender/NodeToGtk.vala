@@ -139,11 +139,12 @@ public class JsRender.NodeToGtk : Object {
 					if (i > (pack.length -1)) {
 						continue;
 					}
-					if (!props.has_key(mparams.get(i).name)) {
+					var k = mparams.get(i).name
+					if (!props.has_key(k)) {
 						continue;
 					}
 					
-					var type = props.get(mparams.get(i).name).type;
+					var type = props.get(k).type;
 					type = Palete.Gir.fqtypeLookup(type, ns);
 
 					var val = this.toValue(pack[i].strip(), type);
