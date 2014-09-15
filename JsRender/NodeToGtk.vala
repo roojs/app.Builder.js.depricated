@@ -182,7 +182,7 @@ public class JsRender.NodeToGtk : Object {
 			return;
 		}
 		
-		
+		var ns = this.parentObj.node.fqn().split(".")[0];
 		 
 		var pack = this.node.props.get("* pack").split(",");
 
