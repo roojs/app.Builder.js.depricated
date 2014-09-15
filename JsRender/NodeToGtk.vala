@@ -139,7 +139,7 @@ public class JsRender.NodeToGtk : Object {
 					if (i > (pack.length -1)) {
 						continue;
 					}
-					var k = mparams.get(i).name
+					var k = mparams.get(i).name;
 					if (!props.has_key(k)) {
 						continue;
 					}
