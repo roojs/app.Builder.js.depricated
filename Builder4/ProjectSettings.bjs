@@ -82,6 +82,7 @@
                 {
                     "* pack" : "pack_start,false,false,0",
                     "xtype" : "HBox",
+                    "gboolean expand" : false,
                     "$ xns" : "Gtk",
                     "$ homogeneous" : false,
                     "items" : [
