@@ -204,7 +204,7 @@ public class JsRender.NodeToGtk : Object {
 				var val = this.toValue(pack[i].strip(), type);
 				if (val == null) {
 					print("skip (failed to transform value %s type = %s from %s\n", 
-						cls + "." + k, type, pack[i].strip());
+						this.parentObj.node.fqn()  + "." + k, type, pack[i].strip());
 					continue;
 				}
 				print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
