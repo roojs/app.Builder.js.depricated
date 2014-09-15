@@ -130,7 +130,8 @@ public class JsRender.NodeToGtk : Object {
 		
 		// let's test just setting expand to false...
 		var cls_methods = cls_gir.methods;
-		
+
+		/*
 		if  (this.node.props.has_key("* pack")) {
 			var pack = this.node.props.get("* pack").split(",");
 
@@ -167,7 +168,7 @@ public class JsRender.NodeToGtk : Object {
 
 			
 		}
-		
+		*/
 		if (do_pack) {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
