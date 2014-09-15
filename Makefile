@@ -38,9 +38,11 @@ BUILDER4=   Builder4/About.vala \
 		Builder4/ClutterFiles.vala \
 		Builder4/WindowLeftProjects.vala \
 		Builder4/WindowAddProp.vala \
-		Builder4/GladeView.vala \
+		Builder4/GtkView.vala \
 		Builder4/MainWindow.vala \
 		
+#	       Builder4/GladeView.vala \
+
 
 # compile what... for testing 
 all:  builder4
