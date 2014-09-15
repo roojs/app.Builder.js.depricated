@@ -204,7 +204,7 @@ namespace Palete {
 					continue;
 				}
 				this.inherits.add(liter.get()); 
-            }
+    			}	   
 			
 			
 			var iter = pcls.methods.map_iterator();
