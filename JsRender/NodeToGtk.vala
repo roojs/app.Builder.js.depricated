@@ -19,13 +19,13 @@ public class JsRender.NodeToGtk : Object {
  		this.els = new Gee.ArrayList<string>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
-
+		this.parentObj = null;
 	}
 	
 	public Object? munge ( )
 	{
 
-		 return this.mungeNode (null);
+		 return this.mungeNode ();
 		 
 		     
 	}
