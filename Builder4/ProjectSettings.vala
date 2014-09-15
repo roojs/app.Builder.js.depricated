@@ -105,6 +105,7 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.expand = false;
+            this.el.vexpand = false;
             var child_0 = new Xcls_Button3( _this );
             child_0.ref();
             this.el.add (  child_0.el  );

@@ -58,6 +58,7 @@ ProjectSettings=new XObject({
             expand : false,
             xns : Gtk,
             homogeneous : TRUE,
+            vexpand : false,
             items : [
             	{
                     label : "Apply",

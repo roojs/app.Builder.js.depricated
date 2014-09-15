@@ -23,6 +23,7 @@
                     "gboolean expand" : false,
                     "$ xns" : "Gtk",
                     "$ homogeneous" : true,
+                    "gboolean vexpand" : false,
                     "items" : [
                         {
                             "listeners" : {
