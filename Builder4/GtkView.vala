@@ -56,6 +56,40 @@ public class Xcls_GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
+    public return_type XXXX () {
+        
+        
+        if (this.file == null) {
+            return;
+        }
+        var filename = this.file.getIconFileName(false);
+        
+        var  win = this.el.get_parent_window();
+        var width = win.get_width();
+        var height = win.get_height();
+    
+        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?
+    
+        screenshot.save(filename,"png");
+        return;
+        
+        
+        
+        
+        
+         
+        
+        // should we hold until it's printed...
+        
+          
+    
+        
+        
+    
+    
+        
+         
+    }
     public class Xcls_container : Object 
     {
         public Gtk.HBox el;
