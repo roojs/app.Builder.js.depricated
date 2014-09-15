@@ -170,6 +170,7 @@ public class JsRender.NodeToGtk : Object {
 		}
 
 		if (cls == "GtkTreeStore") { // other stores?
+			// tree store is buildable??? --- 
 			this.packTreeStore();
 			return;
 		}
