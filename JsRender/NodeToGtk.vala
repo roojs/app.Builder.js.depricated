@@ -30,7 +30,7 @@ public class JsRender.NodeToGtk : Object {
 	public Object? mungeChild(  Node cnode)
 	{
 		var x = new  NodeToGtk(cnode);
-		return x.mungeNode(this.wrapped_object);
+		return x.mungeNode(this);
 	}
 	
 	public Object? mungeNode(Object? parent)
