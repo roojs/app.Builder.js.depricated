@@ -75,42 +75,7 @@ public class JsRender.NodeToGtk : Object {
 				return null;
 		}
 
-		
-		//var id = this.node.uid();
-		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
-		// properties..
-		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
-		var props = cls_gir.props;
-		
-              
-    		var pviter = props.map_iterator();
-		while (pviter.next()) {
-			
-				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
-			var k = pviter.get_key();
-        		// skip items we have already handled..
-        		if  (!this.node.has(k)) {
-				continue;
-			}
-			// find out the type of the property...
-			var type = pviter.get_value().type;
-			type = Palete.Gir.fqtypeLookup(type, ns);
 
-			var val = this.toValue(this.node.get(k).strip(), type);
-			if (val == null) {
-				print("skip (failed to transform value %s type = %s from %s\n", 
-					cls + "." + k, type,  this.node.get(k).strip());
-				continue;
-			}
-			print ("set_property ( %s , %s / %s)\n", k, this.node.get(k).strip(), val.strdup_contents());
-			
-			
-			ret.set_property(k, val);  
-			
-
-                }
-		// packing???
-		// for now... - just try the builder style packing
 		var do_pack =true;
 		
 		if (!cls_gtype.is_a(typeof(global::Gtk.Buildable))) {
@@ -173,6 +138,44 @@ public class JsRender.NodeToGtk : Object {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
 		    
+
+		
+		//var id = this.node.uid();
+		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
+		// properties..
+		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
+		var props = cls_gir.props;
+		
+              
+    		var pviter = props.map_iterator();
+		while (pviter.next()) {
+			
+				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
+			var k = pviter.get_key();
+        		// skip items we have already handled..
+        		if  (!this.node.has(k)) {
+				continue;
+			}
+			// find out the type of the property...
+			var type = pviter.get_value().type;
+			type = Palete.Gir.fqtypeLookup(type, ns);
+
+			var val = this.toValue(this.node.get(k).strip(), type);
+			if (val == null) {
+				print("skip (failed to transform value %s type = %s from %s\n", 
+					cls + "." + k, type,  this.node.get(k).strip());
+				continue;
+			}
+			print ("set_property ( %s , %s / %s)\n", k, this.node.get(k).strip(), val.strdup_contents());
+			
+			
+			ret.set_property(k, val);  
+			
+
+                }
+		// packing???
+		// for now... - just try the builder style packing
+		
 		
 		 
 		if (this.node.items.size < 1) {
