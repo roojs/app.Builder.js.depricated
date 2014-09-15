@@ -202,8 +202,9 @@ public class JsRender.NodeToGtk : Object {
 			p.el.set_screen(Gdk.Screen.get_default());
 			p.el.show_all();
 			p.el.popup(null, null, null, ev.button, ev.time);
+			return true;
 		});
-		return true;
+	}
 
 		
 		
