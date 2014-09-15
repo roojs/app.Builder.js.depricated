@@ -111,10 +111,8 @@ public class JsRender.NodeToGtk : Object {
 					var k = mparams.get(i).name;
 
 					Value cur_val;
-					var ps = parent.child_get_property(ret, n, out cur_val);
-					if (cur
-					
-					var type = props.get(k).type;
+					 
+					var type = mparams.get(i).type;
 					type = Palete.Gir.fqtypeLookup(type, ns);
 
 					var val = this.toValue(pack[i].strip(), type);
@@ -126,7 +124,7 @@ public class JsRender.NodeToGtk : Object {
 					print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
 			
 					parent.child_set_property(ret, k, val);
-					ret.set_property(k, val);
+					 
 				}
 				
 			}
