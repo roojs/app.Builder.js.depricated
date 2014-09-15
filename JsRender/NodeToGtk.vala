@@ -189,7 +189,24 @@ public class JsRender.NodeToGtk : Object {
 
 	public void packMenu()
 	{
-			
+
+
+		var parent = this.parentObj.wrapped_object;
+		if (!parent.get_type(is_a(typeof(global::Gtk.Widget)))) {
+			print("skip menu pack - parent is not a widget");
+			return;
+		}
+		
+		var p = this.wrapped_object;
+		((global::Gtk.Widget)parent).button_press_event((s, ev) => { 
+			p.el.set_screen(Gdk.Screen.get_default());
+			p.el.show_all();
+			p.el.popup(null, null, null, ev.button, ev.time);
+		});
+		return true;
+
+		
+		
 
 
 
