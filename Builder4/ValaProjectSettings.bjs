@@ -1,0 +1,133 @@
+{
+    "name" : "ValaProjectSettings",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/ValaProjectSettings.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
+        {
+            "utf8 title" : "Edit Compile Settings",
+            "xtype" : "Dialog",
+            "$ xns" : "Gtk",
+            "items" : [
+                {
+                    "xtype" : "Notebook",
+                    "$ xns" : "Gtk",
+                    "items" : [
+                        {
+                            "xtype" : "VBox",
+                            "* pack" : "add",
+                            "gboolean homogeneous" : false,
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "xtype" : "Label",
+                                    "$ xns" : "Gtk",
+                                    "utf8 label" : "compile flags"
+                                },
+                                {
+                                    "xtype" : "TextView",
+                                    "$ xns" : "Gtk"
+                                },
+                                {
+                                    "xtype" : "Label",
+                                    "$ xns" : "Gtk",
+                                    "utf8 label" : "packages"
+                                },
+                                {
+                                    "xtype" : "ScrolledWindow",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "xtype" : "TreeView",
+                                            "string id" : "packages_tree",
+                                            "$ xns" : "Gtk"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "xtype" : "Label",
+                                    "$ xns" : "Gtk",
+                                    "utf8 label" : "Available Directories"
+                                },
+                                {
+                                    "xtype" : "ScrolledWindow",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "xtype" : "TreeView",
+                                            "string id" : "packages_tree",
+                                            "$ xns" : "Gtk"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "* pack" : "add",
+                            "xtype" : "HPaned",
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "xtype" : "ScrolledWindow",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "xtype" : "TreeView",
+                                            "string id" : "set_tree",
+                                            "$ xns" : "Gtk"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "xtype" : "VBox",
+                                    "string id" : "set_vbox",
+                                    "gboolean homogeneous" : false,
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "xtype" : "Label",
+                                            "$ xns" : "Gtk",
+                                            "utf8 label" : "target filename"
+                                        },
+                                        {
+                                            "xtype" : "Entry",
+                                            "string id" : "pack_target",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "xtype" : "Label",
+                                            "$ xns" : "Gtk",
+                                            "utf8 label" : "compile flags"
+                                        },
+                                        {
+                                            "xtype" : "TextView",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "xtype" : "Label",
+                                            "$ xns" : "Gtk",
+                                            "utf8 label" : "Files to compile"
+                                        },
+                                        {
+                                            "xtype" : "ScrolledWindow",
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "xtype" : "TreeView",
+                                                    "string id" : "packages_tree",
+                                                    "$ xns" : "Gtk"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
