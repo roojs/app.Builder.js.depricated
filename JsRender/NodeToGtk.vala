@@ -206,7 +206,10 @@ public class JsRender.NodeToGtk : Object {
 		});
 	}
 
-		
+	public void packTreeStore()
+	{
+
+	}
 		
 
 
