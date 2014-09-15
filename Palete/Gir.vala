@@ -316,7 +316,9 @@ namespace Palete {
 		}
 		public string asJSONString()
 		{
-
+			var generator = new Json.Generator ();
+			generator.indent = 4;
+			generator.pretty = true;
 			var n = new Json.Node(Json.NodeType.OBJECT);
 			n.set_object(this.toJSON());
 			generator.set_root(n);
