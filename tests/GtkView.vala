@@ -45,7 +45,7 @@ void loadit(string name ) {
 	left_props.load(tf);
  
 	
-
+/*
 	
 	var g = new JsRender.NodeToGtk(tf.tree);
 	var obj = g.munge() as Gtk.Widget;
@@ -58,5 +58,5 @@ void loadit(string name ) {
 	w.ref();
 	w.add(obj);
 	w.show_all();   
-	
+*/	
 }
