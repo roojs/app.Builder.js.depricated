@@ -98,7 +98,7 @@ public class JsRender.NodeToGtk : Object {
 		var cls_methods = cls_gir.methods;
 
 		// pack on a container..
-		if  (this.node.props.has_key("* pack") &&parent.get_type().is_a((typeof(global::Gtk.Container)) {
+		if  (this.node.props.has_key("* pack") && parent.get_type().is_a((typeof(global::Gtk.Container)) {
 			var pack = this.node.props.get("* pack").split(",");
 
 			
@@ -124,7 +124,7 @@ public class JsRender.NodeToGtk : Object {
 					}
 					print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
 			
-					parent.child_set_property(ret, k, val);
+					((global::Gtk.Container)parent).child_set_property(ret, k, val);
 					 
 				}
 				
