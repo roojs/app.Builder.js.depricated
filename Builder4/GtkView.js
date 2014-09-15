@@ -16,7 +16,7 @@ GtkView=new XObject({
     {
         
      
-    
+            this.file = file;
             if (file.tree == null) {
                 return;
             }
@@ -37,7 +37,7 @@ GtkView=new XObject({
     },
     xtype : "Viewport",
     xns : Gtk,
-    XXXX : () {
+    'createThumb()' : () {
         
         
         if (this.file == null) {

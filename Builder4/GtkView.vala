@@ -37,7 +37,7 @@ public class Xcls_GtkView : Object
     {
         
      
-    
+            this.file = file;
             if (file.tree == null) {
                 return;
             }
@@ -56,7 +56,7 @@ public class Xcls_GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
-    public return_type XXXX () {
+    public void createThumb() () {
         
         
         if (this.file == null) {
