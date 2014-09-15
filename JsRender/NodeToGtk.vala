@@ -36,10 +36,10 @@ public class JsRender.NodeToGtk : Object {
 		return x.mungeNode();
 	}
 	
-	public Object? mungeNode(NodeToGtk? parentObj)
+	public Object? mungeNode()
 	{
 
-		var parent = parentObj != null ? parentObj.wrapped_object : null;
+		var parent = this.parentObj != null ? this.parentObj.wrapped_object : null;
 		var cls = this.node.fqn().replace(".", "");
 		var ns = this.node.fqn().split(".")[0];
 		var gtkbuilder = new global::Gtk.Builder();
@@ -96,12 +96,6 @@ public class JsRender.NodeToGtk : Object {
 
 		// at present we are setting the packing / fill / expand as
 		// arguments to pack_start etc...
-		
-		var parent_gir = parentObj == null ? null : Palete.Gir.factoryFqn(parentObj.node.fqn()); 
-		
-		// let's test just setting expand to false...
-		var cls_methods = parent_gir == null ? null : parent_gir.methods;
-
 		// pack on a container..
 		
 		if (do_pack) {
@@ -170,6 +164,17 @@ public class JsRender.NodeToGtk : Object {
 	public void packContainerParams()
 	{
 	 
+		if (this.parentObj == null) {
+			return;
+		}
+		var parent_gir = Palete.Gir.factoryFqn(this.parentObj.node.fqn());
+		if (parent_gir == null) {
+			return;
+		}
+		
+		// let's test just setting expand to false...
+		var cls_methods = parent_gir == null ? null : parent_gir.methods;
+
 			this.node.props.has_key("* pack") 
 			&&
 			cls_methods != null
