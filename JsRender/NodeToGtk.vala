@@ -149,18 +149,22 @@ public class JsRender.NodeToGtk : Object {
 		var cls = this.node.fqn().replace(".", "");
 		
 		var gtkbuilder = new global::Gtk.Builder();
-
 		var cls_gtype = gtkbuilder.get_type_from_name(cls);
 
+		var parent = this.parentObj.wrapped_object;
+		
 		var do_pack =true;
 
 		if (parent == null) { // no parent.. can not pack.
 			return;
 		}
 		
-		if (!cls_gtype.is_a(typeof(global::Gtk.Buildable))) {
-			print("skipping pack  %s is not a buildable..\n", cls);
-			do_pack = false;
+		if (    cls_gtype.is_a(typeof(global::Gtk.Buildable))
+		     && parent.get_type().is_a(typeof(global::Gtk.Buildable))
+			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
+			return;
+		    ) {
+			
 		}
 		if (parent == null) {
 			//print("skipping pack  %s is not a buildable..\n", cls);
@@ -175,7 +179,7 @@ public class JsRender.NodeToGtk : Object {
 		// pack on a container..
 		
 		if (do_pack) {
-			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
+			
 		}
 	public void packContainerParams()
 	{
