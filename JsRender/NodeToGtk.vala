@@ -79,28 +79,8 @@ public class JsRender.NodeToGtk : Object {
 				return null;
 		}
 
-
-		var do_pack =true;
+		this.packParent();
 		
-		if (!cls_gtype.is_a(typeof(global::Gtk.Buildable))) {
-			print("skipping pack  %s is not a buildable..\n", cls);
-			do_pack = false;
-		}
-		if (parent == null) {
-			//print("skipping pack  %s is not a buildable..\n", cls);
-			do_pack = false;
-		} else  if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
-			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
-			do_pack = false;
-		}
-
-		// at present we are setting the packing / fill / expand as
-		// arguments to pack_start etc...
-		// pack on a container..
-		
-		if (do_pack) {
-			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
-		}
 
 		// pack paramenters
 
@@ -164,7 +144,39 @@ public class JsRender.NodeToGtk : Object {
 		 
 
 	}
+	public void packParent() 
+	{
+		var cls = this.node.fqn().replace(".", "");
+		
+		var gtkbuilder = new global::Gtk.Builder();
 
+		var cls_gtype = gtkbuilder.get_type_from_name(cls);
+
+		var do_pack =true;
+
+		if (parent == null) { // no parent.. can not pack.
+			return;
+		}
+		
+		if (!cls_gtype.is_a(typeof(global::Gtk.Buildable))) {
+			print("skipping pack  %s is not a buildable..\n", cls);
+			do_pack = false;
+		}
+		if (parent == null) {
+			//print("skipping pack  %s is not a buildable..\n", cls);
+			do_pack = false;
+		} else  if (!parent.get_type().is_a(typeof(global::Gtk.Buildable))) {
+			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
+			do_pack = false;
+		}
+
+		// at present we are setting the packing / fill / expand as
+		// arguments to pack_start etc...
+		// pack on a container..
+		
+		if (do_pack) {
+			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
+		}
 	public void packContainerParams()
 	{
 	 
