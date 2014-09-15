@@ -172,6 +172,11 @@ public class JsRender.NodeToGtk : Object {
 
 		if (cls == "GtkMenu") {
 			this.packMenu();
+			return;
+		}
+
+		if (cls ="GtkTreeStore") { // other stores?
+			this.packTreeStore();
 		}
 	
 
