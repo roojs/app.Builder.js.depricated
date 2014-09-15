@@ -16,6 +16,7 @@ public class Xcls_GtkView : Object
 
         // my vars (def)
     public Gtk.Widget lastObj;
+    public string XXXX;
 
     // ctor 
     public Xcls_GtkView()
@@ -37,10 +38,12 @@ public class Xcls_GtkView : Object
     {
         
      
-            this.file = file;
+            this.file = null;
+            
             if (file.tree == null) {
                 return;
             }
+            this.file = file;
             if (this.lastObj != null) {
                 this.container.el.remove(this.lastObj);
             }
