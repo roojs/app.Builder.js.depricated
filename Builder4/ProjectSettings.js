@@ -51,12 +51,13 @@ ProjectSettings=new XObject({
     },
     xns : Gtk,
     border_width : 5,
-    homogeneous : false,
+    homogeneous : FALSE,
     items : [
     	{
             xtype : "HBox",
+            expand : false,
             xns : Gtk,
-            homogeneous : true,
+            homogeneous : TRUE,
             items : [
             	{
                     label : "Apply",
@@ -102,7 +103,7 @@ ProjectSettings=new XObject({
     	{
             xtype : "HBox",
             xns : Gtk,
-            homogeneous : false,
+            homogeneous : FALSE,
             items : [
             	{
                     label : "HTML template file",
@@ -120,7 +121,7 @@ ProjectSettings=new XObject({
     	{
             xtype : "HBox",
             xns : Gtk,
-            homogeneous : false,
+            homogeneous : FALSE,
             items : [
             	{
                     label : "root URL",

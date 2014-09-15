@@ -20,6 +20,7 @@
                 {
                     "* pack" : "pack_start,false,false,0",
                     "xtype" : "HBox",
+                    "gboolean expand" : false,
                     "$ xns" : "Gtk",
                     "$ homogeneous" : true,
                     "items" : [
@@ -28,8 +29,8 @@
                                 "button_press_event" : "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
                             },
                             "label" : "Apply",
-                            "xtype" : "Button",
                             "* pack" : "add",
+                            "xtype" : "Button",
                             "$ xns" : "Gtk"
                         },
                         {
@@ -37,8 +38,8 @@
                                 "button_press_event" : "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
                             },
                             "label" : "Save",
-                            "xtype" : "Button",
                             "* pack" : "add",
+                            "xtype" : "Button",
                             "$ xns" : "Gtk"
                         }
                     ]
@@ -53,8 +54,8 @@
                 },
                 {
                     "label" : "HTML To insert at end of <HEAD>",
-                    "* pack" : "pack_start,false,false,0",
                     "xtype" : "Label",
+                    "* pack" : "pack_start,false,false,0",
                     "$ xns" : "Gtk"
                 },
                 {
@@ -65,14 +66,14 @@
                     "items" : [
                         {
                             "label" : "HTML template file",
-                            "xtype" : "Label",
                             "* pack" : "pack_start,false,false,0",
+                            "xtype" : "Label",
                             "$ xns" : "Gtk"
                         },
                         {
                             "id" : "base_template",
-                            "xtype" : "Entry",
                             "* pack" : "add",
+                            "xtype" : "Entry",
                             "$ xns" : "Gtk"
                         }
                     ]
@@ -85,14 +86,14 @@
                     "items" : [
                         {
                             "label" : "root URL",
-                            "xtype" : "Label",
                             "* pack" : "pack_start,false,false,0",
+                            "xtype" : "Label",
                             "$ xns" : "Gtk"
                         },
                         {
                             "id" : "rootURL",
-                            "xtype" : "Entry",
                             "* pack" : "add",
+                            "xtype" : "Entry",
                             "$ xns" : "Gtk"
                         }
                     ]
