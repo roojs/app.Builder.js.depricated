@@ -124,12 +124,24 @@ public class JsRender.NodeToGtk : Object {
 			print("skipping pack parent:%s is not a buildable..\n", parent.get_type().name());
 			do_pack = false;
 		}
+
+		// at present we are setting the packing / fill / expand as
+		// arguments to pack_start etc...
+		
+		// let's test just setting expand to false...
+		
+		if  (this.node.props.has_key("* pack")) {
+			var pack = this.node.props.get_value("* pack")
+
+
+			
+		}
 		
 		if (do_pack) {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
 		    
-
+		
 		 
 		if (this.node.items.size < 1) {
 			return ret;
