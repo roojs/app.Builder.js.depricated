@@ -101,6 +101,10 @@ public class JsRender.NodeToGtk : Object {
 		if (do_pack) {
 			((global::Gtk.Buildable)parent).add_child(gtkbuilder, ret, null);
 		}
+
+		// pack paramenters
+
+		
 		if (parent != null && parent.get_type().is_a(typeof(global::Gtk.Container))) {
 			this.packContainerParams();
 		}
