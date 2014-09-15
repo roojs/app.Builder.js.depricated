@@ -215,7 +215,7 @@ public class JsRender.NodeToGtk : Object {
 		((global::Gtk.TreeView)parent).set_model((global::Gtk.TreeModel)this.wrapped_object);
 		
 	}
-	public void packGtkViewColumn()
+	public void packTreeViewColumn()
 	{
 		var parent = this.parentObj.wrapped_object;
 		if (!parent.get_type(is_a(typeof(global::Gtk.TreeView)))) {
