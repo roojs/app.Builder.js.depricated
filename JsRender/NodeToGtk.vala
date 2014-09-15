@@ -94,9 +94,9 @@ public class JsRender.NodeToGtk : Object {
 		// arguments to pack_start etc...
 		
 		// let's test just setting expand to false...
-		//var cls_methods = cls_gir.methods;
+		var cls_methods = cls_gir.methods;
 
-		/*
+		
 		if  (this.node.props.has_key("* pack")) {
 			var pack = this.node.props.get("* pack").split(",");
 
@@ -107,10 +107,12 @@ public class JsRender.NodeToGtk : Object {
 					if (i > (pack.length -1)) {
 						continue;
 					}
+					
 					var k = mparams.get(i).name;
-					if (!props.has_key(k)) {
-						continue;
-					}
+
+					Value cur_val
+					var ps = parent.child_get_property(ret, n, out cur_val);
+					
 					
 					var type = props.get(k).type;
 					type = Palete.Gir.fqtypeLookup(type, ns);
@@ -123,7 +125,7 @@ public class JsRender.NodeToGtk : Object {
 					}
 					print ("pack:set_property ( %s , %s / %s)\n", k, pack[i].strip(), val.strdup_contents());
 			
-			
+					parent.child_set_property(ret, k, val);
 					ret.set_property(k, val);
 				}
 				
