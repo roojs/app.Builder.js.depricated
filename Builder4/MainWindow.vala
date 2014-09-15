@@ -51,7 +51,7 @@ public class Xcls_MainWindow : Object
     public Xcls_RightPalete rightpalete;
     public string title;
     public Xcls_WindowAddProp add_props;
-    public Xcls_GladeView window_gladeview;
+    public Xcls_GtkView window_gladeview;
 
     // ctor 
     public Xcls_MainWindow()

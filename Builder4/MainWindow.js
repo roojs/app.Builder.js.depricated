@@ -501,7 +501,6 @@ MainWindow=new XObject({
       //  print("show view browsing");
         
     },
-    window_rooview : "null",
     showAddListener : () {
     
          
@@ -546,6 +545,7 @@ MainWindow=new XObject({
         _this.addpropsview.el.restore_easing_state();
         this.state = "addlistener";
     },
+    window_rooview : "null",
     default_width : 800,
     xtype : "Window",
     type : Gtk.WindowType.TOPLEVEL,
@@ -741,7 +741,6 @@ MainWindow=new XObject({
         _this.objectview.el.restore_easing_state();
         this.state = "object";
     },
-    window_gladeview : "null",
     hideObject : () {
           // return to editing state..
            
@@ -766,6 +765,7 @@ MainWindow=new XObject({
      
     
     },
+    window_gladeview : "null",
     listeners : {
     	delete_event : (   event) => {
     	       return false;
