@@ -129,10 +129,14 @@ public class JsRender.NodeToGtk : Object {
 		// arguments to pack_start etc...
 		
 		// let's test just setting expand to false...
+		var cls_methods = cls_gir.methods;
 		
 		if  (this.node.props.has_key("* pack")) {
 			var pack = this.node.props.get_value("* pack").split(",");
-			var meth = cls
+			if (cls_methods.has_key(pack[0])) {
+				
+
+			}
 			
 
 
