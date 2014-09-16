@@ -279,7 +279,7 @@ WindowRooView=new XObject({
                                     
                                 // force the inspector...        
                                     this.el.get_inspector().show();
-                                    this.el.get_inspector().attach();
+                                    
                                     
                                     // - no need for this, the builder javascript will call it when build is complete
                                     //GLib.Timeout.add_seconds(1, () => {
@@ -350,7 +350,11 @@ WindowRooView=new XObject({
                             	          
                             	       }); 
                             	       
-                            	      
+                            	        this.inspector.closed.connect(() => {
+                            	           
+                            	           this.inspector.show();
+                            	          
+                            	       }); 
                             	       
                             	       this.inspector.show();
                             	   },
