@@ -11,6 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
     id : "WindowRooView",
+    loadFile : (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    },
     createThumb : () {
         
         
@@ -82,11 +87,6 @@ WindowRooView=new XObject({
         
          
     },
-    loadFile : (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
-    },
     xtype : "VPaned",
     file : "",
     requestRedraw : () {
@@ -97,14 +97,14 @@ WindowRooView=new XObject({
     	{
             xtype : "VBox",
             xns : Gtk,
-            homogeneous : false,
+            homogeneous : FALSE,
             items : [
             	{
-                    vexpand : false,
+                    vexpand : FALSE,
                     height_request : 20,
                     xtype : "HBox",
                     xns : Gtk,
-                    homogeneous : true,
+                    homogeneous : TRUE,
                     items : [
                     	{
                             label : "Redraw",
@@ -119,7 +119,7 @@ WindowRooView=new XObject({
                     	{
                             label : "Auto Redraw On",
                             id : "AutoRedraw",
-                            active : true,
+                            active : TRUE,
                             xtype : "CheckButton",
                             xns : Gtk,
                             listeners : {
@@ -322,6 +322,7 @@ WindowRooView=new XObject({
                             	       }
                             	       
                             	   },
+                            	document_load_finished : ,
                             	show : ( ) => {
                             	       this.inspector = this.el.get_inspector();
                             	       this.inspector.open_window.connect(() => {

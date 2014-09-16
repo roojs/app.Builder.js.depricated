@@ -8,8 +8,8 @@
     "items" : [
         {
             "id" : "WindowRooView",
-            "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n    \n    \n    var p = new WebKit.PrintOperation(_this.view.el);\n     \n    var ps = new Gtk.PrintSettings();\n    ps.set_printer(\"Print to File\");\n    ps.set(\"output-file-format\", \"pdf\");\n    ps.set(\"output-uri\", \"file://\" + filename + \".pdf\");\n\n    // find the printer...\n    \n    /*\n    var ar = Gtk.PaperSize.get_paper_sizes(false);\n    var psetup = new Gtk.PageSetup();\n    for(var i = 0; i < ar.length(); i++) {\n        if (ar.nth_data(i).get_name() ==\"iso_a4\") {\n            psetup.set_paper_size(ar.nth_data(i));\n        }\n    }\n    psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);\n    \n     \n    p.set_page_setup(psetup);\n    */\n    p.set_print_settings(ps);\n    \n    p.finished.connect(() => {\n        print(\"creating thumbnail for \" + filename + \".pdf\\n\"); \n        var s = new Cairo.PdfSurface(filename + \".pdf\", 400,400);\n    \n        s.write_to_png (filename);\n        \n       // var f = GLib.File.new_for_path (filename + \".pdf\");\n       // f.delete();\n    });\n    \n    \n    p.print();\n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
             "| void loadFile" : "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
+            "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n    \n    \n    var p = new WebKit.PrintOperation(_this.view.el);\n     \n    var ps = new Gtk.PrintSettings();\n    ps.set_printer(\"Print to File\");\n    ps.set(\"output-file-format\", \"pdf\");\n    ps.set(\"output-uri\", \"file://\" + filename + \".pdf\");\n\n    // find the printer...\n    \n    /*\n    var ar = Gtk.PaperSize.get_paper_sizes(false);\n    var psetup = new Gtk.PageSetup();\n    for(var i = 0; i < ar.length(); i++) {\n        if (ar.nth_data(i).get_name() ==\"iso_a4\") {\n            psetup.set_paper_size(ar.nth_data(i));\n        }\n    }\n    psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);\n    \n     \n    p.set_page_setup(psetup);\n    */\n    p.set_print_settings(ps);\n    \n    p.finished.connect(() => {\n        print(\"creating thumbnail for \" + filename + \".pdf\\n\"); \n        var s = new Cairo.PdfSurface(filename + \".pdf\", 400,400);\n    \n        s.write_to_png (filename);\n        \n       // var f = GLib.File.new_for_path (filename + \".pdf\");\n       // f.delete();\n    });\n    \n    \n    p.print();\n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
             "* pack" : "add",
             "xtype" : "VPaned",
             "# JsRender.JsRender file" : "",
@@ -24,8 +24,8 @@
                     "items" : [
                         {
                             "$ vexpand" : false,
-                            "$ height_request" : 20,
                             "* pack" : "pack_start,false,true,0",
+                            "$ height_request" : 20,
                             "xtype" : "HBox",
                             "$ xns" : "Gtk",
                             "$ homogeneous" : true,
@@ -35,8 +35,8 @@
                                         "clicked" : "( ) => {\n    _this.view.renderJS(  true);\n}"
                                     },
                                     "label" : "Redraw",
-                                    "xtype" : "Button",
                                     "* pack" : "pack_start,false,false,0",
+                                    "xtype" : "Button",
                                     "$ xns" : "Gtk"
                                 },
                                 {
@@ -55,8 +55,8 @@
                                         "clicked" : " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  _this.view.renderJS(true);\n\n}"
                                     },
                                     "label" : "Full Redraw",
-                                    "xtype" : "Button",
                                     "* pack" : "pack_start,false,false,0",
+                                    "xtype" : "Button",
                                     "$ xns" : "Gtk"
                                 }
                             ]
@@ -71,6 +71,7 @@
                                 {
                                     "listeners" : {
                                         "script_dialog" : " (dialog) => {\n     var msg = dialog.get_message();\n     if (msg.length < 4) {\n        return false;\n     }\n     if (msg.substring(0,4) != \"IPC:\") {\n         return false;\n     }\n     var ar = msg.split(\":\", 3);\n    if (ar.length < 3) {\n        return false;\n    }\n    switch(ar[1]) {\n        case \"SAVEHTML\":\n            _this.file.saveHTML(ar[2]);\n            return true;\n        default:\n            return false;\n    }\n    \n}",
+                                        "document_load_finished" : "",
                                         "show" : "  ( ) => {\n    this.inspector = this.el.get_inspector();\n    this.inspector.open_window.connect(() => {\n        \n        print(\"inspector attach\\n\");\n        var wv = this.inspector.get_web_view();\n        if (wv != null) {\n            print(\"got inspector web view\\n\");\n            _this.inspectorcontainer.el.add(wv);\n            wv.show();\n        } else {\n            print(\"no web view yet\\n\");\n        }\n        return true;\n       \n    });\n   this.inspector.closed.connect(() => {\n        \n        this.inspector.show();\n       \n    }); \n    this.inspector.show();\n}",
                                         "drag_drop" : "  ( ctx, x, y,time, ud) => {\n    return false;\n    /*\n\tprint(\"TARGET: drag-drop\");\n        var is_valid_drop_site = true;\n        \n         \n        Gtk.drag_get_data\n        (\n                w,         // will receive 'drag-data-received' signal \n                ctx,        /* represents the current state of the DnD \n                this.get('/Window').atoms[\"STRING\"],    /* the target type we want \n                time            /* time stamp \n        );\n                        \n                        \n                        /* No target offered by source => error \n                       \n\n\treturn  is_valid_drop_site;\n\t*/\n}"
                                     },
@@ -96,8 +97,8 @@
                 },
                 {
                     "id" : "inspectorcontainer",
-                    "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                     "$ shadow_type" : "Gtk.ShadowType.IN",
+                    "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                     "xtype" : "ScrolledWindow",
                     "* pack" : "pack2,true,true",
                     "$ xns" : "Gtk"
