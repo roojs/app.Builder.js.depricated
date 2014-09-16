@@ -593,7 +593,7 @@ public class Xcls_WindowRooView : Object
                  this.el.destroy();
                  var nv =new  Xcls_view(_this);
                  nv.ref();
-                 ((Gtk.ScrolledWindow)p).add(nv.el);
+                 _this.viewcontainer.el.add(nv.el);
                  nv.renderJS(true); 
                  
                
