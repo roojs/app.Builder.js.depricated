@@ -314,7 +314,7 @@ WindowRooView=new XObject({
                                         _this.inspectorcontainer.el.add(wv);
                                         wv.show();
                                     } else {
-                                        this.inspector.close();
+                                        //this.inspector.close();
                                         while(Gtk.events_pending ()) {
                                             Gtk.main_iteration ();
                                         }
@@ -338,6 +338,7 @@ WindowRooView=new XObject({
                                 this.inspector.closed.connect(() => {
                                      print("inspector closed?!?");
                                      //this.inspector = null;
+                                     for (var i = 0 ; i < 1000; i__) {
                                      this.initInspector();
                                    
                                 }); 
