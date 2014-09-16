@@ -554,6 +554,7 @@ public class Xcls_WindowRooView : Object
             
             if (this.inspector == this.el.get_inspector()) {
                 this.inspector.show();
+                this.inspector.open_window();        
                 print("init inspecter called, and inspector is the same as existing\n");
                 return;
             }
