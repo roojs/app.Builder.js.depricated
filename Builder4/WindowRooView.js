@@ -298,7 +298,7 @@ WindowRooView=new XObject({
                                     print("init inspecter called, and inspector is the same as existing\n");
                                     return;
                                 }
-                                
+                                print("new inspector?\n");
                             
                                 this.inspector = this.el.get_inspector();
                                 this.inspector.ref();
