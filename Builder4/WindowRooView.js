@@ -331,9 +331,9 @@ WindowRooView=new XObject({
                                      print("inspector closed?!?");
                                      // if this happens destroy the webkit..
                                      // recreate it..
-                                    _this.viewcontainer.el.remove(this.el);
+                                    _this.viewbox.el.remove(this.viewcontainer.el);
                                      this.el.destroy();
-                                     var nv =new  Xcls_view(_this);
+                                     var nv =new  Xcls_viewcontainer(_this);
                                      nv.ref();
                                      _this.viewcontainer.el.add(nv.el);
                                      _this.view = nv;
