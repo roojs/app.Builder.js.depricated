@@ -276,6 +276,11 @@ WindowRooView=new XObject({
                                         //fixme - should be a config option!
                                         (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder/")
                                     );
+                                    
+                                // force the inspector...        
+                                    this.el.get_inspector().show();
+                                    
+                                    
                                     // - no need for this, the builder javascript will call it when build is complete
                                     //GLib.Timeout.add_seconds(1, () => {
                                     //    this.el.run_javascript("Builder.saveHTML()",null);
