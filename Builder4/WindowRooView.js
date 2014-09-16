@@ -327,13 +327,15 @@ WindowRooView=new XObject({
                                 });
                                 this.inspector.closed.connect(() => {
                                      print("inspector closed?!?");
+                                     // if this happens destroy the webkit..
+                                     // recreate it..
+                                     var p  = this.el.get_parent();
+                                     this.el.destroy();
+                                     var nv = Xcls_view(_this);
+                                     nv.ref();
+                                     p.add(nv.el);
                                      
-                                     //this.inspector = null;
-                                     for (var i = 0 ; i < 1000; i++) {
-                                        print("inspector closed ?!?!?\n");
-                                     }
-                                       
-                                     //this.initInspector();
+                                     
                                    
                                 }); 
                                 
