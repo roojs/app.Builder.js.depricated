@@ -17,6 +17,7 @@
             "$ xns" : "Gtk",
             "items" : [
                 {
+                    "id" : "viewbox",
                     "* pack" : "pack1,true,true",
                     "xtype" : "VBox",
                     "$ xns" : "Gtk",

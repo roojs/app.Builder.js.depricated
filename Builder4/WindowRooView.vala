@@ -12,6 +12,7 @@ public class Xcls_WindowRooView : Object
         }
         return _WindowRooView;
     }
+    public Xcls_viewbox viewbox;
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_viewcontainer viewcontainer;
     public Xcls_view view;
@@ -29,7 +30,7 @@ public class Xcls_WindowRooView : Object
         // my vars (dec)
 
         // set gobject values
-        var child_0 = new Xcls_VBox2( _this );
+        var child_0 = new Xcls_viewbox( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_inspectorcontainer( _this );
@@ -117,7 +118,7 @@ public class Xcls_WindowRooView : Object
     public void requestRedraw () {
         this.view.renderJS(false);
     }
-    public class Xcls_VBox2 : Object 
+    public class Xcls_viewbox : Object 
     {
         public Gtk.VBox el;
         private Xcls_WindowRooView  _this;
@@ -126,9 +127,10 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox2(Xcls_WindowRooView _owner )
+        public Xcls_viewbox(Xcls_WindowRooView _owner )
         {
             _this = _owner;
+            _this.viewbox = this;
             this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
