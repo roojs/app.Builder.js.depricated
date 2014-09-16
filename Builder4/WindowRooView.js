@@ -331,7 +331,7 @@ WindowRooView=new XObject({
                                      // recreate it..
                                      var p  = this.el.get_parent();
                                      this.el.destroy();
-                                     var nv = Xcls_view(_this);
+                                     var nv =new  Xcls_view(_this);
                                      nv.ref();
                                      p.add(nv.el);
                                      
