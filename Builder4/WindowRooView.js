@@ -315,12 +315,20 @@ WindowRooView=new XObject({
                                         wv.show();
                                     } else {
                                         this.inspector.close();
+                                        while(Gtk.events_pending ()) {
+                                            Gtk.main_iteration ();
+                                        }
                                         //this.inspector = null;
                                         print("no web view yet\n");
                                         var settings =  this.el.get_settings();
                                         settings.enable_developer_extras = true;
                                          this.inspector.show();
+                                         while(Gtk.events_pending ()) {
+                                            Gtk.main_iteration ();
+                                        }
                                          this.inspector.open_window();
+                            
+                                            
                                         //this.initInspector();
                                         return false;
                                     }
