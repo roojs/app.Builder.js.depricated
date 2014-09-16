@@ -588,7 +588,7 @@ public class Xcls_WindowRooView : Object
                         Gtk.main_iteration ();
                     }
                     settings =  this.el.get_settings();
-                    settings.enable_developer_extras = false;
+                    settings.enable_developer_extras = true;
                     this.inspector.show();
                     
                         
@@ -611,7 +611,7 @@ public class Xcls_WindowRooView : Object
                         Gtk.main_iteration ();
                     }
                   settings =  this.el.get_settings();
-                 settings.enable_developer_extras = false;
+                 settings.enable_developer_extras = true;
                     
                  this.initInspector();
                
