@@ -11,11 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
     id : "WindowRooView",
-    loadFile : (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
-    },
     createThumb : () {
         
         
@@ -86,6 +81,11 @@ WindowRooView=new XObject({
     
         
          
+    },
+    loadFile : (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
     },
     xtype : "VPaned",
     file : "",
@@ -350,20 +350,7 @@ WindowRooView=new XObject({
                             	          
                             	       }); 
                             	       
-                            	       this.inspector.attach.connect(() => {
-                            	            this.inspector = this.el.get_inspector();
-                            	           print("inspector attach\n");
-                            	           var wv = this.inspector.get_web_view();
-                            	           if (wv != null) {
-                            	               print("got inspector web view\n");
-                            	               _this.inspectorcontainer.el.add(wv);
-                            	               wv.show();
-                            	           } else {
-                            	               print("no web view yet\n");
-                            	           }
-                            	           return true;
-                            	          
-                            	       });    
+                            	      
                             	       
                             	       this.inspector.show();
                             	   },
