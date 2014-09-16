@@ -13,8 +13,8 @@ public class Xcls_WindowRooView : Object
         return _WindowRooView;
     }
     public Xcls_AutoRedraw AutoRedraw;
-    public Xcls_inspectorcontainer inspectorcontainer;
     public Xcls_view view;
+    public Xcls_inspectorcontainer inspectorcontainer;
 
         // my vars (def)
     public JsRender.JsRender file;
@@ -37,6 +37,11 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    }
     public void createThumb () {
         
         
@@ -107,11 +112,6 @@ public class Xcls_WindowRooView : Object
     
         
          
-    }
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -273,32 +273,6 @@ public class Xcls_WindowRooView : Object
         public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.shadow_type = Gtk.ShadowType.IN;
-
-            // init method 
-
-            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
-
-        // user defined functions 
-    }
-    public class Xcls_inspectorcontainer : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_WindowRooView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
-        {
-            _this = _owner;
-            _this.inspectorcontainer = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)
@@ -625,5 +599,31 @@ public class Xcls_WindowRooView : Object
             }
             this.refreshRequired  = true;
         }
+    }
+    public class Xcls_inspectorcontainer : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
+        {
+            _this = _owner;
+            _this.inspectorcontainer = this;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.shadow_type = Gtk.ShadowType.IN;
+
+            // init method 
+
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+
+        // user defined functions 
     }
 }
