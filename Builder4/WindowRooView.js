@@ -330,7 +330,7 @@ WindowRooView=new XObject({
                             
                                             
                                         //this.initInspector();
-                                        return false;
+                                        return true;
                                     }
                                     return true;
                                    

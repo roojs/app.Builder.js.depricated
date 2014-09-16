@@ -590,7 +590,7 @@ public class Xcls_WindowRooView : Object
         
                         
                     //this.initInspector();
-                    return false;
+                    return true;
                 }
                 return true;
                
