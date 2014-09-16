@@ -322,9 +322,14 @@ WindowRooView=new XObject({
                             	       }
                             	       
                             	   },
-                            	document_load_finished : ,
+                            	document_load_finished : ( ) => {
+                            	       this.inspector = this.el.get_inspector();
+                            	        
+                            	       this.inspector.show();
+                            	   },
                             	show : ( ) => {
                             	       this.inspector = this.el.get_inspector();
+                            	       this.inspector.ref();
                             	       this.inspector.open_window.connect(() => {
                             	           
                             	           print("inspector attach\n");
