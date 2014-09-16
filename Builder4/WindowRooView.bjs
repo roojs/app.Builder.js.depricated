@@ -62,11 +62,11 @@
                             ]
                         },
                         {
+                            "id" : "viewcontainer",
                             "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                             "$ shadow_type" : "Gtk.ShadowType.IN",
                             "* pack" : "pack_end,true,true,0",
                             "xtype" : "ScrolledWindow",
-                            "string id" : "viewcontainer",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {

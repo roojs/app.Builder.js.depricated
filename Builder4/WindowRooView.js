@@ -145,9 +145,9 @@ WindowRooView=new XObject({
 
                 },
             	{
+                    id : "viewcontainer",
                     shadow_type : Gtk.ShadowType.IN,
                     xtype : "ScrolledWindow",
-                    id : "viewcontainer",
                     xns : Gtk,
                     items : [
                     	{

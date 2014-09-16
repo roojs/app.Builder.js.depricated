@@ -13,6 +13,7 @@ public class Xcls_WindowRooView : Object
         return _WindowRooView;
     }
     public Xcls_AutoRedraw AutoRedraw;
+    public Xcls_viewcontainer viewcontainer;
     public Xcls_view view;
     public Xcls_inspectorcontainer inspectorcontainer;
 
@@ -273,6 +274,7 @@ public class Xcls_WindowRooView : Object
         public Xcls_viewcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
+            _this.viewcontainer = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)
