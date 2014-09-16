@@ -315,7 +315,7 @@ WindowRooView=new XObject({
                                         wv.show();
                                     } else {
                                         this.inspector.close();
-                                        this.inspector = null;
+                                        //this.inspector = null;
                                         print("no web view yet\n");
                                         var settings =  this.el.get_settings();
                                         settings.enable_developer_extras = true;
