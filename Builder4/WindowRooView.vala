@@ -579,8 +579,9 @@ public class Xcls_WindowRooView : Object
                     print("no web view yet\n");
                     var settings =  this.el.get_settings();
                     settings.enable_developer_extras = true;
-            
-                    this.initInspector();
+                     this.inspector.show();
+                     this.inspector.open_window();
+                    //this.initInspector();
                     return false;
                 }
                 return true;
