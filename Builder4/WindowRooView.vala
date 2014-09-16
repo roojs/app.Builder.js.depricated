@@ -600,7 +600,7 @@ public class Xcls_WindowRooView : Object
                  nv.ref();
                  _this.viewbox.el.pack_end(nv.el,true,true,0);
                  
-                   inv =new Xcls_inspectorcontainer(_this);
+                  var  inv =new Xcls_inspectorcontainer(_this);
                   inv.ref();
                   _this.viewbox.el.pack2(inv.el,true,true);
                  
