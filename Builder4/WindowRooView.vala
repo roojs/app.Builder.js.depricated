@@ -553,6 +553,7 @@ public class Xcls_WindowRooView : Object
         public void initInspector () {
             
             if (this.inspector == this.el.get_inspector()) {
+                print("init inspecter called, and inspector is the same as existing\n");
                 return;
             }
             
