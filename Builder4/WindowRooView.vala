@@ -584,15 +584,13 @@ public class Xcls_WindowRooView : Object
         }
         public void initInspector () {
             
-            if (this.inspector == null) {
-                this.inspector = this.el.get_inspector();    
-                this.inspector.ref();
-            
-            } else if (        this.inspector == this.el.get_inspector()) {
-                
+            if (this.inspector == this.el.get_inspector()) {
                 return;
-            
             }
+            
+        
+            this.inspector = this.el.get_inspector();    
+            this.inspector.ref();
             
             // got a new inspector...
                 

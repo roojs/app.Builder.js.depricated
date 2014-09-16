@@ -293,15 +293,13 @@ WindowRooView=new XObject({
                             xns : WebKit,
                             initInspector : () {
                                 
-                                if (this.inspector == null) {
-                                    this.inspector = this.el.get_inspector();    
-                                    this.inspector.ref();
-                                
-                                } else if (        this.inspector == this.el.get_inspector()) {
-                                    
+                                if (this.inspector == this.el.get_inspector()) {
                                     return;
-                                
                                 }
+                                
+                            
+                                this.inspector = this.el.get_inspector();    
+                                this.inspector.ref();
                                 
                                 // got a new inspector...
                                     
