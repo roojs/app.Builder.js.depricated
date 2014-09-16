@@ -316,6 +316,7 @@ WindowRooView=new XObject({
                                     } else {
                                         this.inspector = null;
                                         print("no web view yet\n");
+                                        this.initInspector();
                                         return false;
                                     }
                                     return true;
