@@ -13,8 +13,8 @@ public class Xcls_WindowRooView : Object
         return _WindowRooView;
     }
     public Xcls_AutoRedraw AutoRedraw;
-    public Xcls_view view;
     public Xcls_inspectorcontainer inspectorcontainer;
+    public Xcls_view view;
 
         // my vars (def)
     public JsRender.JsRender file;
@@ -34,14 +34,12 @@ public class Xcls_WindowRooView : Object
         var child_1 = new Xcls_inspectorcontainer( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
+        var child_2 = new Xcls_view( _this );
+        child_2.ref();
+        this.el.add (  child_2.el  );
     }
 
     // user defined functions 
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
-    }
     public void createThumb () {
         
         
@@ -112,6 +110,11 @@ public class Xcls_WindowRooView : Object
     
         
          
+    }
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -279,9 +282,32 @@ public class Xcls_WindowRooView : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_view( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
+
+            // init method 
+
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+
+        // user defined functions 
+    }
+    public class Xcls_inspectorcontainer : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
+        {
+            _this = _owner;
+            _this.inspectorcontainer = this;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.shadow_type = Gtk.ShadowType.IN;
 
             // init method 
 
@@ -583,31 +609,5 @@ public class Xcls_WindowRooView : Object
             }
             this.refreshRequired  = true;
         }
-    }
-    public class Xcls_inspectorcontainer : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_WindowRooView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
-        {
-            _this = _owner;
-            _this.inspectorcontainer = this;
-            this.el = new Gtk.ScrolledWindow( null, null );
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.shadow_type = Gtk.ShadowType.IN;
-
-            // init method 
-
-            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
-
-        // user defined functions 
     }
 }
