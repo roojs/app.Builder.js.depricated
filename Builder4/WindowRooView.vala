@@ -593,7 +593,7 @@ public class Xcls_WindowRooView : Object
                  print("inspector closed?!?");
                  // if this happens destroy the webkit..
                  // recreate it..
-                _this.viewbox.el.remove(this.viewcontainer.el);
+                _this.viewbox.el.remove(_this.viewcontainer.el);
                  this.el.destroy();
                  var nv =new Xcls_viewcontainer(_this);
                  nv.ref();
