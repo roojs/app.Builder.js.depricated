@@ -8,8 +8,8 @@
     "items" : [
         {
             "id" : "WindowRooView",
-            "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n    \n    \n    var p = new WebKit.PrintOperation(_this.view.el);\n     \n    var ps = new Gtk.PrintSettings();\n    ps.set_printer(\"Print to File\");\n    ps.set(\"output-file-format\", \"pdf\");\n    ps.set(\"output-uri\", \"file://\" + filename + \".pdf\");\n\n    // find the printer...\n    \n    /*\n    var ar = Gtk.PaperSize.get_paper_sizes(false);\n    var psetup = new Gtk.PageSetup();\n    for(var i = 0; i < ar.length(); i++) {\n        if (ar.nth_data(i).get_name() ==\"iso_a4\") {\n            psetup.set_paper_size(ar.nth_data(i));\n        }\n    }\n    psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);\n    \n     \n    p.set_page_setup(psetup);\n    */\n    p.set_print_settings(ps);\n    \n    p.finished.connect(() => {\n        print(\"creating thumbnail for \" + filename + \".pdf\\n\"); \n        var s = new Cairo.PdfSurface(filename + \".pdf\", 400,400);\n    \n        s.write_to_png (filename);\n        \n       // var f = GLib.File.new_for_path (filename + \".pdf\");\n       // f.delete();\n    });\n    \n    \n    p.print();\n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
             "| void loadFile" : "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
+            "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n    \n    \n    var p = new WebKit.PrintOperation(_this.view.el);\n     \n    var ps = new Gtk.PrintSettings();\n    ps.set_printer(\"Print to File\");\n    ps.set(\"output-file-format\", \"pdf\");\n    ps.set(\"output-uri\", \"file://\" + filename + \".pdf\");\n\n    // find the printer...\n    \n    /*\n    var ar = Gtk.PaperSize.get_paper_sizes(false);\n    var psetup = new Gtk.PageSetup();\n    for(var i = 0; i < ar.length(); i++) {\n        if (ar.nth_data(i).get_name() ==\"iso_a4\") {\n            psetup.set_paper_size(ar.nth_data(i));\n        }\n    }\n    psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);\n    \n     \n    p.set_page_setup(psetup);\n    */\n    p.set_print_settings(ps);\n    \n    p.finished.connect(() => {\n        print(\"creating thumbnail for \" + filename + \".pdf\\n\"); \n        var s = new Cairo.PdfSurface(filename + \".pdf\", 400,400);\n    \n        s.write_to_png (filename);\n        \n       // var f = GLib.File.new_for_path (filename + \".pdf\");\n       // f.delete();\n    });\n    \n    \n    p.print();\n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
             "* pack" : "add",
             "xtype" : "VPaned",
             "# JsRender.JsRender file" : "",
@@ -24,8 +24,8 @@
                     "items" : [
                         {
                             "$ vexpand" : false,
-                            "$ height_request" : 20,
                             "* pack" : "pack_start,false,true,0",
+                            "$ height_request" : 20,
                             "xtype" : "HBox",
                             "$ xns" : "Gtk",
                             "$ homogeneous" : true,
@@ -35,8 +35,8 @@
                                         "clicked" : "( ) => {\n    _this.view.renderJS(  true);\n}"
                                     },
                                     "label" : "Redraw",
-                                    "xtype" : "Button",
                                     "* pack" : "pack_start,false,false,0",
+                                    "xtype" : "Button",
                                     "$ xns" : "Gtk"
                                 },
                                 {
@@ -55,8 +55,8 @@
                                         "clicked" : " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  _this.view.renderJS(true);\n\n}"
                                     },
                                     "label" : "Full Redraw",
-                                    "xtype" : "Button",
                                     "* pack" : "pack_start,false,false,0",
+                                    "xtype" : "Button",
                                     "$ xns" : "Gtk"
                                 }
                             ]
@@ -85,6 +85,7 @@
                                     "# int redraws" : 0,
                                     "| void runRefresh" : " () \n{\n    // this is run every 2 seconds from the init..\n\n  \n    \n    if (!this.refreshRequired) {\n       // print(\"no refresh required\");\n        return;\n    }\n\n    if (this.lastRedraw != null) {\n       // do not redraw if last redraw was less that 5 seconds ago.\n       if ((int64)(new DateTime.now_local()).difference(this.lastRedraw) < 5000 ) {\n            return;\n        }\n    }\n    \n    if (_this.file == null) {\n        return;\n    }\n    \n    \n     this.refreshRequired = false;\n   //  print(\"HTML RENDERING\");\n     \n     \n     //this.get('/BottomPane').el.show();\n     //this.get('/BottomPane').el.set_current_page(2);// webkit inspector\n    _this.file.webkit_page_id  = this.el.get_page_id();\n    \n    var js = _this.file.toSourcePreview();\n\n    if (js.length < 1) {\n        print(\"no data\");\n        return;\n    }\n//    var  data = js[0];\n    this.redraws++;\n  \n    var project = _this.file.project;  \n\n     //print (project.fn);\n     // set it to non-empty.\n     \n//     runhtml = runhtml.length ?  runhtml : '<script type=\"text/javascript\"></script>'; \n\n\n//   this.runhtml  = this.runhtml || '';\n \n \n    // then we need to reload the browser using\n    // load_html_string..\n\n    // then trigger a redraw once it's loaded..\n    this.pendingRedraw = true;\n\n    var runhtml = \"<script type=\\\"text/javascript\\\">\\n\" ;\n    string builderhtml;\n    \n    \n    GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + \"/resources/roo.builder.js\", out builderhtml);\n\n    runhtml += builderhtml + \"\\n\";\n    runhtml += \"</script>\\n\" ;\n\n    // fix to make sure they are the same..\n    this.runhtml = project.runhtml;\n    // need to modify paths\n\n    string inhtml;\n    var base_template = _this.file.project.base_template;\n    \n    if (base_template.length > 0 && !FileUtils.test(\n        Builder4.Application.configDirectory() + \"/resources/\" +  base_template, FileTest.EXISTS)  \n        ) {\n           print(\"invalid base_template name - using default:  %s\\n\", base_template);\n           base_template = \"\";\n    \n    }\n    \n    GLib.FileUtils.get_contents(\n        Builder4.Application.configDirectory() + \"/resources/\" + \n            (base_template.length > 0 ? base_template :  \"roo.builder.html\")\n            , out inhtml);\n    \n    \n    this.renderedData = js;\n\n\n    string js_src = js + \"\\n\" +\n\t\"Roo.onReady(function() {\\n\" +\n\t\"if (\" + _this.file.name +\".show) \" +  _this.file.name +\".show({});\\n\" +\n\t\"Roo.XComponent.build();\\n\" +\n\t\"});\\n\";\n\t\n    print(\"render js: \" + js);\n    //if (!this.ready) {\n  //      console.log('not loaded yet');\n    //}\n    this.lastRedraw = new DateTime.now_local();\n\n        var html = inhtml.replace(\"</head>\", runhtml + this.runhtml + \n        \n                \"<script type=\\\"text/javascript\\\">\\n\" +\n                js_src + \"\\n\" + \n                \"</script>\" + \n                        \n        \"</head>\");\n        print(\"LOAD HTML \" + html);\n        \n         var rootURL = _this.file.project.rootURL;\n   \n        \n        \n        this.el.load_html( html , \n            //fixme - should be a config option!\n            (rootURL.length > 0 ? rootURL : \"http://localhost/app.Builder/\")\n        );\n        \n    // force the inspector...        \n        this.el.get_inspector().show();\n         this.el.get_inspector().open_window();\n        \n        // - no need for this, the builder javascript will call it when build is complete\n        //GLib.Timeout.add_seconds(1, () => {\n        //    this.el.run_javascript(\"Builder.saveHTML()\",null);\n        //    return false;\n        //});\n//     print( \"before render\" +    this.lastRedraw);\n//    print( \"after render\" +    (new Date()));\n    \n}\n",
                                     "$ xns" : "WebKit",
+                                    "| return_type XXXX" : "() {\n\n}\n",
                                     "# GLib.DateTime lastRedraw" : "null",
                                     "# string runhtml" : "\"\"",
                                     "# bool pendingRedraw" : false,
@@ -96,8 +97,8 @@
                 },
                 {
                     "id" : "inspectorcontainer",
-                    "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                     "$ shadow_type" : "Gtk.ShadowType.IN",
+                    "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                     "xtype" : "ScrolledWindow",
                     "* pack" : "pack2,true,true",
                     "$ xns" : "Gtk"
