@@ -325,12 +325,6 @@ WindowRooView=new XObject({
                                    
                                 }); 
                                 
-                                 this.inspector.closed.connect(() => {
-                                    
-                                    this.inspector.show();
-                                   
-                                }); 
-                                
                                 this.inspector.show();
                             },
                             lastRedraw : "null",

@@ -616,12 +616,6 @@ public class Xcls_WindowRooView : Object
                
             }); 
             
-             this.inspector.closed.connect(() => {
-                
-                this.inspector.show();
-               
-            }); 
-            
             this.inspector.show();
         }
         public void renderJS (bool force) {
