@@ -594,6 +594,9 @@ public class Xcls_WindowRooView : Object
                 _this.viewbox.el.remove(_this.viewcontainer.el);
                 _this.el.remove(_this.inspectorcontainer.el);        
                  this.el.destroy();
+                 _this.viewcontainer.el.destroy();
+                 _this.inspectorcontainer.el.destroy();
+                 
                  var nv =new Xcls_viewcontainer(_this);
                  nv.ref();
                  _this.viewbox.el.pack_end(nv.el,true,true,0);
