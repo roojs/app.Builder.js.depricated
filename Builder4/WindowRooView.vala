@@ -604,7 +604,7 @@ public class Xcls_WindowRooView : Object
                   inv.ref();
                   _this.el.pack2(inv.el,true,true);
                  
-                 
+                 _this.el.show_all();
         
                  _this.view.renderJS(true); 
                  
