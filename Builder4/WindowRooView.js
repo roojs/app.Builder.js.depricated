@@ -292,11 +292,19 @@ WindowRooView=new XObject({
                             },
                             xns : WebKit,
                             initInspector : () {
-                                this.inspector = this.el.get_inspector();
-                                this.inspector.ref();
                                 
+                                if (this.inspector == null) {
+                                    this.inspector = this.el.get_inspector();    
+                                    this.inspector.ref();
                                 
+                                } else if (        this.inspector == this.el.get_inspector()) {
+                                    
+                                    return;
                                 
+                                }
+                                
+                                // got a new inspector...
+                                    
                                 this.inspector.open_window.connect(() => {
                                      this.inspector = this.el.get_inspector();
                                     print("inspector attach\n");
