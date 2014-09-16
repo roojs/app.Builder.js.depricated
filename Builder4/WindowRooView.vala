@@ -34,6 +34,9 @@ public class Xcls_WindowRooView : Object
         var child_1 = new Xcls_inspectorcontainer( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
+        var child_2 = new Xcls_view( _this );
+        child_2.ref();
+        this.el.add (  child_2.el  );
     }
 
     // user defined functions 
@@ -305,9 +308,6 @@ public class Xcls_WindowRooView : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_view( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
 
             // init method 
 
