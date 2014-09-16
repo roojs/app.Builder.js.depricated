@@ -334,7 +334,7 @@ WindowRooView=new XObject({
                                      var nv =new  Xcls_view(_this);
                                      nv.ref();
                                      ((Gtk.ScrolledWindow)p).add(nv.el);
-                                     
+                                     nv.renderJs(true); 
                                      
                                    
                                 }); 
