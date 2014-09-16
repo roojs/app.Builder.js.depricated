@@ -321,7 +321,7 @@ WindowRooView=new XObject({
                                 });
                                 this.inspector.closed.connect(() => {
                                     print("inspector closed?!?");
-                                    this.inspector.show();
+                                     this.el.get_inspector().show();
                                    
                                 }); 
                                 
