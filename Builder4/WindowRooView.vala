@@ -598,7 +598,9 @@ public class Xcls_WindowRooView : Object
             this.inspector.closed.connect(() => {
                  print("inspector closed?!?");
                  //this.inspector = null;
-                 for (var i = 0 ; i < 1000; i__) {
+                 for (var i = 0 ; i < 1000; i++) {
+                    print("inspector closed ?!?!?\n");
+                 }
                  this.initInspector();
                
             }); 
