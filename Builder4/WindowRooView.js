@@ -11,6 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
     id : "WindowRooView",
+    loadFile : (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    },
     createThumb : () {
         
         
@@ -81,11 +86,6 @@ WindowRooView=new XObject({
     
         
          
-    },
-    loadFile : (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
     },
     xtype : "VPaned",
     file : "",
@@ -320,7 +320,7 @@ WindowRooView=new XObject({
                                    
                                 });
                                 this.inspector.closed.connect(() => {
-                                    
+                                    print("inspector closed?!?");
                                     this.inspector.show();
                                    
                                 }); 
