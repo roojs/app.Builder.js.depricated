@@ -575,25 +575,12 @@ public class Xcls_WindowRooView : Object
                     wv.show();
                 } else {
                     //this.inspector.close();
-                    while(Gtk.events_pending ()) {
-                        Gtk.main_iteration ();
-                    }
+                    
                     //this.inspector = null;
-                    print("no web view yet\n");
-        
-                    
-                     var settings =  this.el.get_settings();
-                    settings.enable_developer_extras = false;
-                    while(Gtk.events_pending ()) {
-                        Gtk.main_iteration ();
-                    }
-                    settings =  this.el.get_settings();
-                    settings.enable_developer_extras = true;
-                    
-                    
-                    this.inspector = null;  
-                    this.initInspector();
-                    return true;
+                   for (var i = 0 ; i < 1000; i++) {
+                         print("no web view yet?!?!?\n");
+                   }  
+         
                 }
                 return true;
                
@@ -605,14 +592,7 @@ public class Xcls_WindowRooView : Object
                  for (var i = 0 ; i < 1000; i++) {
                     print("inspector closed ?!?!?\n");
                  }
-                 var settings =  this.el.get_settings();
-                 settings.enable_developer_extras = false;
-                  while(Gtk.events_pending ()) {
-                        Gtk.main_iteration ();
-                    }
-                  settings =  this.el.get_settings();
-                 settings.enable_developer_extras = true;
-                   this.inspector.show();  
+                   
                  //this.initInspector();
                
             }); 
