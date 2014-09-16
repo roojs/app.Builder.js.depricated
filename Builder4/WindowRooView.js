@@ -331,8 +331,8 @@ WindowRooView=new XObject({
                                         settings.enable_developer_extras = true;
                                         this.inspector.show();
                                         
-                                            
-                                        //this.initInspector();
+                                        this.inspector = null;  
+                                        this.initInspector();
                                         return true;
                                     }
                                     return true;
