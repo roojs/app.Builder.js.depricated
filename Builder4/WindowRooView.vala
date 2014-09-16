@@ -574,6 +574,7 @@ public class Xcls_WindowRooView : Object
                     _this.inspectorcontainer.el.add(wv);
                     wv.show();
                 } else {
+                    this.inspector = null;
                     print("no web view yet\n");
                 }
                 return true;
