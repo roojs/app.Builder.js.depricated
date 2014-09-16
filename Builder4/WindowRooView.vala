@@ -391,38 +391,7 @@ public class Xcls_WindowRooView : Object
                 
             });
             this.el.show.connect( ( ) => {
-                this.inspector = this.el.get_inspector();
-                this.inspector.ref();
-                
-                
-                
-                this.inspector.open_window.connect(() => {
-                     this.inspector = this.el.get_inspector();
-                    print("inspector attach\n");
-                    var wv = this.inspector.get_web_view();
-                    if (wv != null) {
-                        print("got inspector web view\n");
-                        _this.inspectorcontainer.el.add(wv);
-                        wv.show();
-                    } else {
-                        print("no web view yet\n");
-                    }
-                    return true;
-                   
-                });
-                this.inspector.closed.connect(() => {
-                    
-                    this.inspector.show();
-                   
-                }); 
-                
-                 this.inspector.closed.connect(() => {
-                    
-                    this.inspector.show();
-                   
-                }); 
-                
-                this.inspector.show();
+                this.initInspector();;
             });
             this.el.drag_drop.connect( ( ctx, x, y,time, ud) => {
                 return false;
@@ -570,8 +539,7 @@ public class Xcls_WindowRooView : Object
                 );
                 
             // force the inspector...        
-                this.el.get_inspector().show();
-                 this.el.get_inspector().open_window();
+                  this.initInspector();
                 
                 // - no need for this, the builder javascript will call it when build is complete
                 //GLib.Timeout.add_seconds(1, () => {
