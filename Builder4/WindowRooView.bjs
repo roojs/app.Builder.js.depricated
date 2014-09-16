@@ -66,6 +66,7 @@
                             "$ shadow_type" : "Gtk.ShadowType.IN",
                             "* pack" : "pack_end,true,true,0",
                             "xtype" : "ScrolledWindow",
+                            "string id" : "viewcontainer",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {

@@ -136,7 +136,7 @@ public class Xcls_WindowRooView : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_ScrolledWindow7( _this );
+            var child_1 = new Xcls_viewcontainer( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , true,true,0 );
         }
@@ -261,7 +261,7 @@ public class Xcls_WindowRooView : Object
 
         // user defined functions 
     }
-    public class Xcls_ScrolledWindow7 : Object 
+    public class Xcls_viewcontainer : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_WindowRooView  _this;
@@ -270,7 +270,7 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner )
+        public Xcls_viewcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
