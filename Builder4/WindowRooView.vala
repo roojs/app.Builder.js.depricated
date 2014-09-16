@@ -580,8 +580,9 @@ public class Xcls_WindowRooView : Object
                
             });
             this.inspector.closed.connect(() => {
-                print("inspector closed?!?");
-                 this.el.get_inspector().show();
+                 print("inspector closed?!?");
+                 this.inspector = null;
+                 this.initInspector();
                
             }); 
             
