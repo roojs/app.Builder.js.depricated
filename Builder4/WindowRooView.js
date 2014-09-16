@@ -322,11 +322,6 @@ WindowRooView=new XObject({
                             	       }
                             	       
                             	   },
-                            	document_load_finished : ( ) => {
-                            	       this.inspector = this.el.get_inspector();
-                            	        
-                            	       this.inspector.show();
-                            	   },
                             	show : ( ) => {
                             	       this.inspector = this.el.get_inspector();
                             	       this.inspector.ref();

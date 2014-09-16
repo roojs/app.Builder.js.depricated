@@ -390,11 +390,6 @@ public class Xcls_WindowRooView : Object
                 }
                 
             });
-            this.el.document_load_finished.connect( ( ) => {
-                this.inspector = this.el.get_inspector();
-                 
-                this.inspector.show();
-            });
             this.el.show.connect( ( ) => {
                 this.inspector = this.el.get_inspector();
                 this.inspector.ref();
