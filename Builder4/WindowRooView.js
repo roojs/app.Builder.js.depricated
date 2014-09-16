@@ -323,12 +323,12 @@ WindowRooView=new XObject({
                             
                                         
                                          var settings =  this.el.get_settings();
-                                     settings.enable_developer_extras = false;
-                                      while(Gtk.events_pending ()) {
+                                        settings.enable_developer_extras = false;
+                                        while(Gtk.events_pending ()) {
                                             Gtk.main_iteration ();
                                         }
-                                      settings =  this.el.get_settings();
-                                     settings.enable_developer_extras = false;
+                                        settings =  this.el.get_settings();
+                                        settings.enable_developer_extras = false;
                                         this.inspector.show();
                                         
                                             
