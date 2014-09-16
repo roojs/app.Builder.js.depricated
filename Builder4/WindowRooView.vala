@@ -589,7 +589,7 @@ public class Xcls_WindowRooView : Object
                     }
                     settings =  this.el.get_settings();
                     settings.enable_developer_extras = true;
-                    this.inspector.show();
+                    
                     
                     this.inspector = null;  
                     this.initInspector();
