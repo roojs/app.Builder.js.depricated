@@ -338,8 +338,10 @@ WindowRooView=new XObject({
                                      nv.ref();
                                      _this.viewbox.el.pack_end(nv.el,true,true,0);
                                      
+                                       nv =new Xcls_inspectorcontainer(_this);
+                                      nv.ref();
+                                      _this.viewbox.el.pack2(nv.el,true,true);
                                      
-                                     pack2,true,true
                                      
                             
                                      _this.view.renderJS(true); 
