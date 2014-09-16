@@ -329,7 +329,7 @@ WindowRooView=new XObject({
                                 });
                                 this.inspector.closed.connect(() => {
                                      print("inspector closed?!?");
-                                     this.inspector = null;
+                                     //this.inspector = null;
                                      this.initInspector();
                                    
                                 }); 
