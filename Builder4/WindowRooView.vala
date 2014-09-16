@@ -514,7 +514,7 @@ public class Xcls_WindowRooView : Object
         	"Roo.XComponent.build();\n" +
         	"});\n";
         	
-            print("render js: " + js);
+           // print("render js: " + js);
             //if (!this.ready) {
           //      console.log('not loaded yet');
             //}
@@ -527,7 +527,7 @@ public class Xcls_WindowRooView : Object
                         "</script>" + 
                                 
                 "</head>");
-                print("LOAD HTML " + html);
+                //print("LOAD HTML " + html);
                 
                  var rootURL = _this.file.project.rootURL;
            

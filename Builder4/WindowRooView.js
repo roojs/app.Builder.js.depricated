@@ -253,7 +253,7 @@ WindowRooView=new XObject({
                             	"Roo.XComponent.build();\n" +
                             	"});\n";
                             	
-                                print("render js: " + js);
+                               // print("render js: " + js);
                                 //if (!this.ready) {
                               //      console.log('not loaded yet');
                                 //}
@@ -266,7 +266,7 @@ WindowRooView=new XObject({
                                             "</script>" + 
                                                     
                                     "</head>");
-                                    print("LOAD HTML " + html);
+                                    //print("LOAD HTML " + html);
                                     
                                      var rootURL = _this.file.project.rootURL;
                                
