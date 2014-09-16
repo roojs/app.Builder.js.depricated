@@ -37,6 +37,11 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    }
     public void createThumb () {
         
         
@@ -107,11 +112,6 @@ public class Xcls_WindowRooView : Object
     
         
          
-    }
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -394,7 +394,7 @@ public class Xcls_WindowRooView : Object
                 this.inspector = this.el.get_inspector();
                 this.inspector.ref();
                 this.inspector.open_window.connect(() => {
-                    
+                     this.inspector = this.el.get_inspector();
                     print("inspector attach\n");
                     var wv = this.inspector.get_web_view();
                     if (wv != null) {
