@@ -320,14 +320,17 @@ WindowRooView=new XObject({
                                         }
                                         //this.inspector = null;
                                         print("no web view yet\n");
-                                        var settings =  this.el.get_settings();
-                                        settings.enable_developer_extras = true;
-                                         this.inspector.show();
-                                         while(Gtk.events_pending ()) {
+                            
+                                        
+                                         var settings =  this.el.get_settings();
+                                     settings.enable_developer_extras = false;
+                                      while(Gtk.events_pending ()) {
                                             Gtk.main_iteration ();
                                         }
-                                         this.inspector.open_window();
-                            
+                                      settings =  this.el.get_settings();
+                                     settings.enable_developer_extras = false;
+                                        this.inspector.show();
+                                        
                                             
                                         //this.initInspector();
                                         return true;
