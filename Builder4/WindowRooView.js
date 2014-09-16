@@ -332,7 +332,7 @@ WindowRooView=new XObject({
                                      // if this happens destroy the webkit..
                                      // recreate it..
                                     _this.viewbox.el.remove(_this.viewcontainer.el);
-                                    _this.viewbox.el.remove(_this.inspectorcontainer.el);        
+                                    _this.el.remove(_this.inspectorcontainer.el);        
                                      this.el.destroy();
                                      var nv =new Xcls_viewcontainer(_this);
                                      nv.ref();
@@ -340,7 +340,7 @@ WindowRooView=new XObject({
                                      
                                       var  inv =new Xcls_inspectorcontainer(_this);
                                       inv.ref();
-                                      _this.viewbox.el.pack2(inv.el,true,true);
+                                      _this.el.pack2(inv.el,true,true);
                                      
                                      
                             
