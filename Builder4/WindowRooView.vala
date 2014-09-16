@@ -597,9 +597,9 @@ public class Xcls_WindowRooView : Object
                  this.el.destroy();
                  var nv =new  Xcls_viewcontainer(_this);
                  nv.ref();
-                 _this.viewcontainer.el.add(nv.el);
-                 _this.view = nv;
-                 nv.renderJS(true); 
+                 _this.viewbox.el.add(nv.el);
+        
+                 _this.view.renderJS(true); 
                  
                
             }); 
