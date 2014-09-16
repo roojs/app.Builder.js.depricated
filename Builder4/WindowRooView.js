@@ -101,6 +101,7 @@ WindowRooView=new XObject({
             items : [
             	{
                     vexpand : FALSE,
+                    id : "viewbox",
                     height_request : 20,
                     xtype : "HBox",
                     xns : Gtk,

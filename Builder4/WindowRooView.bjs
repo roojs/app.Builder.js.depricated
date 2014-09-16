@@ -24,6 +24,7 @@
                     "items" : [
                         {
                             "$ vexpand" : false,
+                            "id" : "viewbox",
                             "$ height_request" : 20,
                             "* pack" : "pack_start,false,true,0",
                             "xtype" : "HBox",
