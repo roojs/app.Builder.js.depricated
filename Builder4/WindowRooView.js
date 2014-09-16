@@ -345,7 +345,7 @@ WindowRooView=new XObject({
                                      
                                      inv.el.show_all();
                                      nv.el.show_all();
-                            
+                                     while(Gtk.events_pending ()) Gtk.main_iteration ();
                                      _this.view.renderJS(true); 
                                      
                                    
