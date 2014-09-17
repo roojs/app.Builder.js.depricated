@@ -437,20 +437,32 @@ namespace Palete
 		this.map = cfg;
 
         }
+
+	public JSCore.GlobalContext js_global_context =  null;
+
+	    
 	public string validateCode(string code, string language) 
 	{   
+
+
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			var goc = new JSCore.Class(  class_definition ); 
-			var cs = new JSCore.GlobalContext(goc);
-			JSCore.Value ex;
+			if (this.js_global_context == null) {
+				
 			
-			var ret = cs.check_script_syntax(
+				var goc = new JSCore.Class(  class_definition ); 
+				this.js_global_context = new JSCore.GlobalContext(goc);
+			}
+				JSCore.Value ex;
+			
+			var ret = this.js_global_context.check_script_syntax(
 	                           new JSCore.String.with_utf8_c_string(code),
 	                           null,
 	                           0,
 	                           out ex
            		);
+			print ("ret = %s" , ret ? "OK" : "BAD");
+			
 			return "";
 		}
 		return "";
