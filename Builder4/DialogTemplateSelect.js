@@ -102,7 +102,7 @@ DialogTemplateSelect=new XObject({
                                             el.set_value(iter, 1, fn);
                                             
                                         }
-                                        this.el..set_sort_column_id(1, Gtk.SortType.ASCENDING);          
+                                        this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          
                                                                          
                                     }
                                 }
