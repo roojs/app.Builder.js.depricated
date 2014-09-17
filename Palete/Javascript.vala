@@ -86,12 +86,16 @@ namespace Palete {
 			
 			JSCore.String js_string = exo.to_string_copy (ctx, null);
 			char *c_string = new char[1024];
-			
+			char *cv_string = new char[1024];
 			for (var i=0; i< property_names.get_count(); i++) {
 				js_string = property_names.get_name_at_index (i);
 				c_string = new char[1024];
+				cv_string = new char[1024];
 				js_string.get_utf8_c_string (c_string, 1023);
-				print ("\t%i: %s\n", i, (string)c_string);
+				var val = exo.get_property(ctx, js_string, null).to_number();
+				
+				
+				print ("\t%i: %s = %d\n", i, (string)c_string, val);
 				delete c_string;
 			}
 			res = "??";
