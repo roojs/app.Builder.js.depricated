@@ -80,7 +80,7 @@ namespace Palete {
 			}
 
 			var exo = ex.to_object(ctx, null);
-			unowned PropertyNameArray property_names = exo.copy_property_names (ctx);
+			unowned JSCore.PropertyNameArray property_names = exo.copy_property_names (ctx);
 
 			JSCore.String js_string = this.to_string_copy (ctx, null);
 			char *c_string = new char[1024];
