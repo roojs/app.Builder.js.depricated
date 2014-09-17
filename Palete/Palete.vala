@@ -400,8 +400,9 @@ namespace Palete
 	public string validateCode(string code, string language) 
 	{   
 		if (language == "javascript") {
-			
+			return "";
 		}
+		return "";
 
 	}
 
