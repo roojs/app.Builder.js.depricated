@@ -6,10 +6,21 @@ namespace Palete {
 
 	Javascript instance = null;
 	
-	class Javascript {
+	public class Javascript {
 		public JSCore.GlobalContext js_global_context =  null;
 
-		public static signleton
+		public static singleton()
+		{
+			if (instance == null) {
+				instance = new Javascript();
+			}
+			return instance;
+		}
+		public Javascript()
+		{
+
+			
+		}
 		
 
 	}
