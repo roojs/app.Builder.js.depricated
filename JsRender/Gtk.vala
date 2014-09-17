@@ -151,7 +151,8 @@ namespace JsRender {
 		
         public override void save() {
             this.saveBJS();
-            this.saveJS();
+            // this.saveJS(); - disabled at present.. project settings will probably enable this later..
+		
             this.saveVala();
         }
 	    // ignore these calls.
