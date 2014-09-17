@@ -289,18 +289,18 @@ namespace Palete
         public  GLib.List<string> listTemplates (JsRender.Node node)
         {
             
-            var gn = node.fqn();
+   		var gn = node.fqn();
             
-            var ret = new GLib.List<string>();
-            var dir= GLib.Environment.get_home_dir() + "/.Builder/" + gn;
-			if (!GLib.FileUtils.test(dir, GLib.FileTest.IS_DIR)) {
+    		var ret = new GLib.List<string>();
+    		var dir= GLib.Environment.get_home_dir() + "/.Builder/" + gn;
+		if (!GLib.FileUtils.test(dir, GLib.FileTest.IS_DIR)) {
         		return ret;
-			}
+		}
 			
 
 
 			            
-			var f = File.new_for_path(dir);
+		var f = File.new_for_path(dir);
         
             var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
              
