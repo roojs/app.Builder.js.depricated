@@ -12,7 +12,7 @@ int main (string[] args) {
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 
-	var r  = Palete.Palete.factory("Roo");
+	var r  = Palete.factory("Roo");
 	var res = r.validateCode(
  	          "if (true) { alert('test'); }",
 	       	 "javascript"
