@@ -618,7 +618,7 @@ public class Xcls_WindowRooView : Object
                  nv.el.show_all();
                  //while(Gtk.events_pending ()) Gtk.main_iteration ();
                  //_this.view.renderJS(true); 
-                 nv.refreshRequired  = true;
+                 _this.view.refreshRequired  = true;
                
             }); 
             
