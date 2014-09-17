@@ -400,8 +400,8 @@ namespace Palete
 	public string validateCode(string code, string language) 
 	{   
 		if (language == "javascript") {
-			var cd = new ClassDefinition();
-			var goc = new JSCore.Class(cd); 
+			//var cd = new ClassDefinition();
+			var goc = new JSCore.Class(JSCore.ClassDefinitionEmpty); 
 			var cs = new JSCore.GlobalContext(goc);
 			JSCore.Value ex;
 			
