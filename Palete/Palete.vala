@@ -397,6 +397,15 @@ namespace Palete
 		this.map = cfg;
 
         }
+	public string validateCode(string code, string language) 
+	{   
+		if (language == "javascript") {
+			
+		}
+
+	}
+
+	    
           
         public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
 	public abstract void load();
