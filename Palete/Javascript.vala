@@ -50,7 +50,7 @@ namespace Palete {
 		
 		public JSCore.GlobalContext js_global_context =  null;
 
-		public static singleton()
+		public static Javascript singleton()
 		{
 			if (instance == null) {
 				instance = new Javascript();
