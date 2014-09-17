@@ -17,7 +17,15 @@ int main (string[] args) {
  	          "if (true) { alert('test'); }",
 	       	 "javascript"
 	);
-	                         
+	var res = r.validateCode(
+ 	          "
+if (true) { 
+	alert('test'); 
+}
+
+{ a syntax error ",
+	       	 "javascript"
+	);                       
 	    
 	
 	return 0;
