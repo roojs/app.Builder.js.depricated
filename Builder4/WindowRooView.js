@@ -372,7 +372,7 @@ WindowRooView=new XObject({
                             listeners : {
                             	script_dialog : (dialog) => {
                             	       if (this.el == null)( {
-                            	           return;
+                            	           return true;
                             	       }
                             	       
                             	        var msg = dialog.get_message();
