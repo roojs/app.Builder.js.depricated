@@ -10,17 +10,13 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogTemplateSelect=new XObject({
-    xtype: Gtk.Dialog,
-    listeners : {
-        delete_event : (self, event)  =>{
-            this.el.hide();
-            return true;
-        }
-    },
-    default_height : 200,
     default_width : 400,
     title : "Add an Object",
-    'JsRender.Node?:show' : (Palete.Palete pal, JsRender.Node node) {
+    xtype : "Dialog",
+    default_height : 200,
+    modal : true,
+    xns : Gtk,
+    show : (Palete.Palete pal, JsRender.Node node) {
         
         this.el.show_all();
         var opts = pal.listTemplates(node);
@@ -46,39 +42,44 @@ DialogTemplateSelect=new XObject({
         return pal.loadTemplate(opts.nth_data(ix-1));
     
     },
-    modal : true,
+    listeners : {
+    	delete_event : (self, event)  =>{
+    	       this.el.hide();
+    	       return true;
+    	   }
+    },
     items : [
-        {
-            xtype: Gtk.VBox,
+    	{
+            xtype : "VBox",
             pack : get_content_area().add,
+            xns : Gtk,
             items : [
-                {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,false,0",
+            	{
+                    xtype : "HBox",
+                    xns : Gtk,
                     items : [
-                        {
-                            xtype: Gtk.Label,
+                    	{
                             label : "Select Template : ",
-                            pack : "pack_start,false,false"
+                            xtype : "Label",
+                            xns : Gtk
                         },
-                        {
-                            xtype: Gtk.ComboBox,
+                    	{
                             id : "combo",
-                            pack : "add",
-                            init : this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );,
+                            xtype : "ComboBox",
+                            xns : Gtk,
                             items : [
-                                {
-                                    xtype: Gtk.CellRendererText,
+                            	{
                                     id : "cellrenderer",
-                                    pack : "pack_start,true"
+                                    xtype : "CellRendererText",
+                                    xns : Gtk
                                 },
-                                {
-                                    xtype: Gtk.ListStore,
+                            	{
                                     id : "model",
-                                    n_columns : 2,
-                                    pack : "set_model",
+                                    xtype : "ListStore",
                                     columns : typeof(string),typeof(string),
-                                    'void:loadData' : (GLib.List<string> data) {
+                                    n_columns : 2,
+                                    xns : Gtk,
+                                    loadData : (GLib.List<string> data) {
                                         this.el.clear();                                    
                                         Gtk.TreeIter iter;
                                         var el = this.el;
@@ -106,17 +107,21 @@ DialogTemplateSelect=new XObject({
                                     }
                                 }
                             ]
+
                         }
                     ]
+
                 }
             ]
+
         },
-        {
-            xtype: Gtk.Button,
+    	{
             label : "OK",
-            pack : "add_action_widget,0"
+            xtype : "Button",
+            xns : Gtk
         }
     ]
+
 });
 DialogTemplateSelect.init();
 XObject.cache['/DialogTemplateSelect'] = DialogTemplateSelect;
