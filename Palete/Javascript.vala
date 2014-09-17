@@ -80,6 +80,18 @@ namespace Palete {
 			}
 
 			var exo = ex.to_object(ctx, null);
+			unowned PropertyNameArray property_names = exo.copy_property_names (ctx);
+
+			JSCore.String js_string = this.to_string_copy (ctx, null);
+			char *c_string = new char[1024];
+			
+			for (var i=0; i< property_names.get_count(); i++) {
+				js_string = property_names.get_name_at_index (i);
+				c_string = new char[1024];
+				js_string.get_utf8_c_string (c_string, 1023);
+				stream.printf ("\t%i: %s\n", i, (string)c_string);
+				delete c_string;
+			}
 			res = "??";
 			
 			return ret;
