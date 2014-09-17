@@ -46,7 +46,7 @@ BUILDER4=   Builder4/About.vala \
 
 
 # compile what... for testing 
-all:  builder4
+#all:  builder4
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
@@ -55,6 +55,7 @@ all:  builder4
 #all: test-vala
 #all: test-gir
 #all: test-pack
+all: test-codevalidate
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
@@ -102,6 +103,10 @@ test-gir:
 test-pack: 
 	valac $(FLAGS) $(PKGS) $(CORESRC)  \
 		tests/PackTest.vala -o /tmp/test-pack
+
+test-codevalidate:
+	valac $(FLAGS) $(PKGS) $(CORESRC)  \
+		tests/JsCoreTest.vala -o /tmp/test-codevalidate
 
 
 #fixme -- old...
