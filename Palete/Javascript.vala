@@ -75,9 +75,11 @@ namespace Palete {
 	                           out ex
            		);
 			res = ""; 
-			if (!ex.is_null(ctx)) {
-				res = "??";
+			if (ex.is_null(ctx)) {
+				return ret;
 			}
+			res = "??";
+			
 			return ret;
 		
 			
