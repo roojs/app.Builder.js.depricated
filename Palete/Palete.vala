@@ -405,7 +405,7 @@ namespace Palete
 			var cs = new JSCore.GlobalContext(goc);
 			JSCore.Value ex;
 			
-			var cs.check_script_syntax(
+			var ret = cs.check_script_syntax(
 	                           new JSCore.String.with_utf8_c_string(code),
 	                           null,
 	                           0,
