@@ -1,6 +1,31 @@
 
 namespace Palete 
 {
+ static const JSCore.ClassDefinition class_definition = {
+            0,
+            JSCore.ClassAttribute.None,
+            "App",
+            null,
+
+            null,
+            class_functions,
+
+            null,
+            null,
+
+            null,
+            null,
+            null,
+            null,
+
+            null,
+            null,
+            class_constructor,
+            null,
+            null
+            };
+
+
 	public errordomain Error {
 		INVALID_TYPE,
 		NEED_IMPLEMENTING,
