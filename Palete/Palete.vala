@@ -2,44 +2,6 @@
 namespace Palete 
 {
 
-	public static JSCore.Object class_constructor(JSCore.Context ctx, JSCore.Object constructor,  JSCore.Value[] arguments, out JSCore.Value exception) 
-            {
-                var c = new JSCore.Class (class_definition);
-                var o = new JSCore.Object (ctx, c, null);
-
-                /*
-                    Do something with object
-                */
-
-                return o;
-            }
-	static const JSCore.StaticFunction[] class_functions = {
-                 { null, null, 0 }
-            };
-	static const JSCore.ClassDefinition class_definition = {
-            0,
-            JSCore.ClassAttribute.None,
-            "App",
-            null,
-
-            null,
-            class_functions,
-
-            null,
-            null,
-
-            null,
-            null,
-            null,
-            null,
-
-            null,
-            null,
-            class_constructor,
-            null,
-            null
-            };
-
 
 	public errordomain Error {
 		INVALID_TYPE,
