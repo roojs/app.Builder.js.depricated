@@ -14,24 +14,11 @@ int main (string[] args) {
 
 	var r  = Palete.Palete.factory("Roo");
 	var res = r.validateCode(
- 	          "if (test) 
-	       	 "javascript",
+ 	          "if (true) { alert('test'); }",
+	       	 "javascript"
+	);
 	                         
-	
-	Project.Project.loadAll();
-	proj = Project.Project.getProject("Builder4");
-	
-	proj.scanDirs();
-	//
-	//loadit("ProjectSettings");
-	var iter = proj.sortedFiles().list_iterator();
-	while (iter.next()) {  loadit(iter.get().name);	}
-	//loadit("WindowLeftProps");
-	//loadit("EditProject");
-	//loadit("Editor");
-	//loadit("MainWindow");
-	Gtk.main();
-    
+	    
 	
 	return 0;
 }
