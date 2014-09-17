@@ -444,7 +444,7 @@ namespace Palete
 	public string validateCode(string code, string language) 
 	{   
 
-
+		print("validate code %s\n, 
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			if (this.js_global_context == null) {
