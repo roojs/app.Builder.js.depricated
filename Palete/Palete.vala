@@ -400,6 +400,10 @@ namespace Palete
 	public string validateCode(string code, string language) 
 	{   
 		if (language == "javascript") {
+			var cd = Seed.GlobalContext.create(;
+			var goc = new JSCore.Class(cd); 
+			var cs = new JSCore.GlobalContext(goc);
+			
 			return "";
 		}
 		return "";
