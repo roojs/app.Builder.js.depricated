@@ -438,8 +438,7 @@ namespace Palete
 
         }
 
-	public JSCore.GlobalContext js_global_context =  null;
-
+	
 	    
 	public string validateCode(string code, string language) 
 	{   
