@@ -76,8 +76,8 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public string dragData;
-        public string[] dropList;
         public int drag_x;
+        public string[] dropList;
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
@@ -172,6 +172,47 @@ public class Xcls_WindowLeftTree : Object
                  //   print("click:" + res.path.to_string());
                   return true;
             });
+            this.el.drag_begin.connect( ( ctx)  => {
+            	//print('SOURCE: drag-begin');
+                    
+                    
+                    //this.targetData = "";
+                    
+                    // find what is selected in our tree...
+                    
+                    var s = _this.view.el.get_selection();
+                    if (s.count_selected_rows() < 1) {
+                        return;
+                    }
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+            
+                    
+            
+                    // set some properties of the tree for use by the dropped element.
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    var data = (JsRender.Node)(value.dup_object());
+                    var xname = data.fqn();
+                     print ("XNAME  IS " + xname+ "\n");
+                    this.dragData = xname;
+                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+                    
+            
+                    // make the drag icon a picture of the node that was selected
+                    var path = _this.model.el.get_path(iter);
+            
+                    //this.treepath = path.to_string();
+                    
+                    var pix = this.el.create_row_drag_icon ( path);
+                    
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
+                    
+                    return;
+            });
             this.el.cursor_changed.connect( ( ) => {
             
             
@@ -229,47 +270,6 @@ public class Xcls_WindowLeftTree : Object
                 //Seed.print( value.get_string());
                 return  ;
                             
-            });
-            this.el.drag_begin.connect( ( ctx)  => {
-            	//print('SOURCE: drag-begin');
-                    
-                    
-                    //this.targetData = "";
-                    
-                    // find what is selected in our tree...
-                    
-                    var s = _this.view.el.get_selection();
-                    if (s.count_selected_rows() < 1) {
-                        return;
-                    }
-                    Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
-                    s.get_selected(out mod, out iter);
-            
-                    
-            
-                    // set some properties of the tree for use by the dropped element.
-                    GLib.Value value;
-                    _this.model.el.get_value(iter, 2, out value);
-                    var data = (JsRender.Node)(value.dup_object());
-                    var xname = data.fqn();
-                     print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = xname;
-                    this.dropList = _this.model.file.palete().getDropList(xname);
-                    
-                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-                    
-            
-                    // make the drag icon a picture of the node that was selected
-                    var path = _this.model.el.get_path(iter);
-            
-                    //this.treepath = path.to_string();
-                    
-                    var pix = this.el.create_row_drag_icon ( path);
-                    
-                    Gtk.drag_set_icon_surface (ctx, pix) ;
-                    
-                    return;
             });
             this.el.drag_end.connect( (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
@@ -1001,7 +1001,7 @@ public class Xcls_WindowLeftTree : Object
                 
                 // we only need to show the template if it's come from else where?
                  if (show_templates) {
-                     var new_node = Xcls_DialogTemplateSelect.singleton().show( this.file.palete(), node);
+                     var new_node = DialogTemplateSelect.singleton().show( this.file.palete(), node);
                      if (new_node != null) {
                          node = new_node;
                      }
