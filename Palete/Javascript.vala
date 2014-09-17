@@ -78,6 +78,8 @@ namespace Palete {
 			if (ex.is_null(ctx)) {
 				return ret;
 			}
+
+			var exo = ex.to_object(ctx, null);
 			res = "??";
 			
 			return ret;
