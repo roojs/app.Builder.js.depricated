@@ -95,7 +95,7 @@ namespace Palete {
 				var val = exo.get_property(ctx, js_string, null).to_number(ctx,null);
 				
 				
-				print ("\t%i: %s = %d\n", i, (string)c_string, val);
+				print ("\t%i: %s = %f\n", i, (string)c_string, val);
 				delete c_string;
 			}
 			res = "??";
