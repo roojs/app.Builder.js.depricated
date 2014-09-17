@@ -92,7 +92,7 @@ namespace Palete {
 				c_string = new char[1024];
 				cv_string = new char[1024];
 				js_string.get_utf8_c_string (c_string, 1023);
-				var val = exo.get_property(ctx, js_string, null).to_number();
+				var val = exo.get_property(ctx, js_string, null).to_number(ctx,null);
 				
 				
 				print ("\t%i: %s = %d\n", i, (string)c_string, val);
