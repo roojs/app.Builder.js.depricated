@@ -89,7 +89,7 @@ namespace Palete {
 				js_string = property_names.get_name_at_index (i);
 				c_string = new char[1024];
 				js_string.get_utf8_c_string (c_string, 1023);
-				stream.printf ("\t%i: %s\n", i, (string)c_string);
+				print ("\t%i: %s\n", i, (string)c_string);
 				delete c_string;
 			}
 			res = "??";
