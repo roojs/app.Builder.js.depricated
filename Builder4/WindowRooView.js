@@ -370,6 +370,10 @@ WindowRooView=new XObject({
                             },
                             listeners : {
                             	script_dialog : (dialog) => {
+                            	       if (this.el == null)( {
+                            	           return;
+                            	       }
+                            	       
                             	        var msg = dialog.get_message();
                             	        if (msg.length < 4) {
                             	           return false;

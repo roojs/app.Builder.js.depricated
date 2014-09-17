@@ -377,6 +377,10 @@ public class Xcls_WindowRooView : Object
             }
             // listeners 
             this.el.script_dialog.connect( (dialog) => {
+                if (this.el == null)( {
+                    return;
+                }
+                
                  var msg = dialog.get_message();
                  if (msg.length < 4) {
                     return false;
