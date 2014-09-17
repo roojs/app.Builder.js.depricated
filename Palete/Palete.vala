@@ -401,7 +401,7 @@ namespace Palete
 	{   
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			var goc = new JSCore.Class(  JSCore.ClassDefinitionEmpty()); 
+			var goc = new JSCore.Class(  JSCore.ClassDefinitionEmpty); 
 			var cs = new JSCore.GlobalContext(goc);
 			JSCore.Value ex;
 			
