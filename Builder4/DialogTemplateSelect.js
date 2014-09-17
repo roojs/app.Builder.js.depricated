@@ -41,7 +41,7 @@ DialogTemplateSelect=new XObject({
        Gtk.TreeIter iter;
         _this.combo.el.get_active_iter (out iter);
         Value vfname;
-        list_store.get_value (iter, 0, out vfname);
+        this.model.el.get_value (iter, 0, out vfname);
          
         return pal.loadTemplate((string)vfname);
     
