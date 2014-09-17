@@ -366,6 +366,9 @@ public class Xcls_WindowRooView : Object
                 */
                 GLib.Timeout.add_seconds(1,  ()  =>{
                      //print("run refresh?");
+                     if (this.el == null) {
+                        return false;
+                     }
                      this.runRefresh(); 
                      return true;
                  });
