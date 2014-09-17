@@ -332,11 +332,13 @@ WindowRooView=new XObject({
                                      this.el.stop_loading();
                                     _this.viewbox.el.remove(_this.viewcontainer.el);
                                     _this.el.remove(_this.inspectorcontainer.el);        
-                                     this.el.destroy();
-                                     this.el = null;
-                                     _this.viewcontainer.el.destroy();
-                                     _this.inspectorcontainer.el.destroy();
                                      
+                                     // destory seems to cause problems.
+                                     //this.el.destroy();
+                                    //_this.viewcontainer.el.destroy();
+                                     //_this.inspectorcontainer.el.destroy();
+                            
+                                     this.el = null;         
                                      var nv =new Xcls_viewcontainer(_this);
                                      nv.ref();
                                      _this.viewbox.el.pack_end(nv.el,true,true,0);
