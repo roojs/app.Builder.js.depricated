@@ -68,8 +68,12 @@ public class DialogTemplateSelect : Object
         if (ix < 1 ) {
             return node;
         }
+       Gtk.TreeIter iter;
+        _this.combo.el.get_active_iter (out iter);
+        Value vfname;
+        list_store.get_value (iter, 0, out vfname);
          
-        return pal.loadTemplate(opts.nth_data(ix-1));
+        return pal.loadTemplate((string)vfname);
     
     }
     public class Xcls_VBox2 : Object 
