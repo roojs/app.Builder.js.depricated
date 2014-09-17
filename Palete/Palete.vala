@@ -446,20 +446,8 @@ namespace Palete
 		print("validate code (%s) %s\n", language, code);
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			if (this.js_global_context == null) {
-				
-			
-				var goc = new JSCore.Class(  class_definition ); 
-				this.js_global_context = new JSCore.GlobalContext(goc);
-			}
-			JSCore.Value ex;
-			
-			var ret = this.js_global_context.check_script_syntax(
-	                           new JSCore.String.with_utf8_c_string(code),
-	                           null,
-	                           0,
-	                           out ex
-           		);
+			string res;
+			var ret = Javascript.singleton(code, out res);
 			print ("ret = %s" , ret ? "OK" : "BAD");
 			
 			return "";
