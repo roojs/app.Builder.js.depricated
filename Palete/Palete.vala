@@ -1,7 +1,10 @@
 
 namespace Palete 
 {
- static const JSCore.ClassDefinition class_definition = {
+	static const JSCore.StaticFunction[] class_functions = {
+                 { null, null, 0 }
+            };
+	static const JSCore.ClassDefinition class_definition = {
             0,
             JSCore.ClassAttribute.None,
             "App",
