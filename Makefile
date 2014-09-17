@@ -14,7 +14,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg libsoup-2.4
 
 
-FLAGS= -g --vapidir=. 
+FLAGS= -g --vapidir=./vapi 
 
 CORESRC=        JsRender/*.vala \
 		Project/*.vala \
