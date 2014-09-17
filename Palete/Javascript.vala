@@ -1,0 +1,11 @@
+
+
+
+
+namespace Palete {
+	
+	class Javascript {
+
+
+	}
+} 
