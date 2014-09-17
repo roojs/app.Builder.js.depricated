@@ -67,7 +67,7 @@ namespace Palete {
 		public bool validate(string code, out string res)
 		{
 			JSCore.Value ex;
-			var ctx = this.js_global_context;
+			var ctx = this.js_global_context.copy();
 			var ret = this.js_global_context.check_script_syntax(
 	                           new JSCore.String.with_utf8_c_string(code),
 	                           null,
