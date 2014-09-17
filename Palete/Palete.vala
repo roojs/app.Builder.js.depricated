@@ -453,7 +453,7 @@ namespace Palete
 				var goc = new JSCore.Class(  class_definition ); 
 				this.js_global_context = new JSCore.GlobalContext(goc);
 			}
-				JSCore.Value ex;
+			JSCore.Value ex;
 			
 			var ret = this.js_global_context.check_script_syntax(
 	                           new JSCore.String.with_utf8_c_string(code),
@@ -465,6 +465,8 @@ namespace Palete
 			
 			return "";
 		}
+
+		print ("not javascript\n");
 		return "";
 
 	}
