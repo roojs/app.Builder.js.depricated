@@ -362,14 +362,11 @@ public class ValaProjectSettings : Object
             var child_3 = new Xcls_build_compile_flags( _this );
             child_3.ref();
             this.el.pack_end (  child_3.el , false,false,0 );
-            var child_4 = new Xcls_TextView20( _this );
+            var child_4 = new Xcls_Label20( _this );
             child_4.ref();
-            this.el.pack_end (  child_4.el , false,true,0 );
-            var child_5 = new Xcls_Label21( _this );
+            this.el.pack_end (  child_4.el , false,false,0 );
+            var child_5 = new Xcls_ScrolledWindow21( _this );
             child_5.ref();
-            this.el.pack_end (  child_5.el , false,false,0 );
-            var child_6 = new Xcls_ScrolledWindow22( _this );
-            child_6.ref();
         }
 
         // user defined functions 
@@ -458,28 +455,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_TextView20 : Object 
-    {
-        public Gtk.TextView el;
-        private ValaProjectSettings  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_TextView20(ValaProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.TextView();
-
-            // my vars (dec)
-
-            // set gobject values
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Label21 : Object 
+    public class Xcls_Label20 : Object 
     {
         public Gtk.Label el;
         private ValaProjectSettings  _this;
@@ -488,7 +464,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Label21(ValaProjectSettings _owner )
+        public Xcls_Label20(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Files to compile" );
@@ -500,7 +476,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_ScrolledWindow22 : Object 
+    public class Xcls_ScrolledWindow21 : Object 
     {
         public Gtk.ScrolledWindow el;
         private ValaProjectSettings  _this;
@@ -509,7 +485,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow22(ValaProjectSettings _owner )
+        public Xcls_ScrolledWindow21(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
