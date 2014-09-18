@@ -600,7 +600,7 @@ public class Xcls_WindowRooView : Object
                  // recreate it..
                  this.el.stop_loading();
                  
-                 if !(_this.viewbox.el.get_type().is_a(typeof(Gtk.Container))) {
+                 if (!_this.viewbox.el.get_type().is_a(typeof(Gtk.Container))) {
                     return;
                  }
                  
