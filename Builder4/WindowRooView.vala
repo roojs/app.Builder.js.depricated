@@ -600,9 +600,10 @@ public class Xcls_WindowRooView : Object
                  // recreate it..
                  this.el.stop_loading();
                  
-                 if !(_this.viewcontainer.el.get_parent().get_type().is_a(typeof(Gtk.Container))) {
+                 if (_this.viewbox.el.get_parent() == null) {
                     return;
                  }
+                 
                  
                 _this.viewbox.el.remove(_this.viewcontainer.el);
                 _this.el.remove(_this.inspectorcontainer.el);        
