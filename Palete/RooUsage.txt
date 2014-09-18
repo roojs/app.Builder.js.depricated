@@ -498,5 +498,13 @@ right:
 left:
     Roo.mailer.Block
 right:
+    Roo.mailer.Column
+    Roo.bootstrap.Header
+    Roo.bootstrap.Container
+
+left:
     Roo.mailer.Column    
-    
+right:
+    Roo.mailer.Column
+    Roo.bootstrap.Header
+    Roo.bootstrap.Container
