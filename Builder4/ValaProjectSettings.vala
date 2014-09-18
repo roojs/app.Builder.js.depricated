@@ -356,6 +356,7 @@ public class ValaProjectSettings : Object
             this.el.pack_end (  child_1.el , false,false,0 );
             var child_2 = new Xcls_Label18( _this );
             child_2.ref();
+            this.el.pack_end (  child_2.el , false,false,0 );
             var child_3 = new Xcls_TextView19( _this );
             child_3.ref();
             var child_4 = new Xcls_Label20( _this );

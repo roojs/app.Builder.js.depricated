@@ -100,6 +100,7 @@
                                         },
                                         {
                                             "xtype" : "Label",
+                                            "* pack" : "pack_end,false,false,0",
                                             "$ xns" : "Gtk",
                                             "utf8 label" : "compile flags"
                                         },
