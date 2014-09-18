@@ -27,7 +27,7 @@ public class ValaProjectSettings : Object
         this.el.title = "Edit Compile Settings";
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
-        var child_1 = new Xcls_Button23( _this );
+        var child_1 = new Xcls_Button24( _this );
         child_1.ref();
     }
 
@@ -55,6 +55,9 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_HPaned12( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_Label23( _this );
+            child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // user defined functions 
@@ -527,7 +530,28 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_Button23 : Object 
+    public class Xcls_Label23 : Object 
+    {
+        public Gtk.Label el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label23(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( null );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button24 : Object 
     {
         public Gtk.Button el;
         private ValaProjectSettings  _this;
@@ -536,7 +560,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button23(ValaProjectSettings _owner )
+        public Xcls_Button24(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();

@@ -138,6 +138,11 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "* pack" : "add",
+                            "xtype" : "Label",
+                            "$ xns" : "Gtk"
                         }
                     ]
                 },
