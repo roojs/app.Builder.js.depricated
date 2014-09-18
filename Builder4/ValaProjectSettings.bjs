@@ -74,6 +74,7 @@
                             "* pack" : "add",
                             "xtype" : "HPaned",
                             "$ xns" : "Gtk",
+                            "gint min_position" : 300,
                             "items" : [
                                 {
                                     "xtype" : "ScrolledWindow",

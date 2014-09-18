@@ -284,6 +284,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.min_position = 300;
             var child_0 = new Xcls_ScrolledWindow13( _this );
             child_0.ref();
             var child_1 = new Xcls_set_vbox( _this );
