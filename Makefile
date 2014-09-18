@@ -15,7 +15,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg javascriptcore  \
 
 
-FLAGS= -g --vapidir=./vapi 
+FLAGS= -g --vapidir=./vapi -I/usr/include/webkitgtk-3.0/ 
 
 CORESRC=        JsRender/*.vala \
 		Project/*.vala \
