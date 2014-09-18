@@ -39,6 +39,11 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    }
     public void createThumb () {
         
         
@@ -109,11 +114,6 @@ public class Xcls_WindowRooView : Object
     
         
          
-    }
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -599,6 +599,11 @@ public class Xcls_WindowRooView : Object
                  // if this happens destroy the webkit..
                  // recreate it..
                  this.el.stop_loading();
+                 
+                 if !(_this.viewbox.el.get_type().is_a(typeof(Gtk.Container)) {
+                    return;
+                 }
+                 
                 _this.viewbox.el.remove(_this.viewcontainer.el);
                 _this.el.remove(_this.inspectorcontainer.el);        
                  
