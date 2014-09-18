@@ -27,6 +27,8 @@ public class ValaProjectSettings : Object
         this.el.title = "Edit Compile Settings";
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
+        var child_1 = new Xcls_Button23( _this );
+        child_1.ref();
     }
 
     // user defined functions 
@@ -517,6 +519,27 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button23 : Object 
+    {
+        public Gtk.Button el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button23(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars (dec)
 
