@@ -11,6 +11,7 @@ right:
  Roo.TreePanel
  Roo.bootstrap.Body
  Roo.bootstrap.Modal
+ Roo.mailer.Body
  
 
 // added with a property..  (*prop)
@@ -482,3 +483,19 @@ left:
     Roo.bootstrap.Input:after
 right:
     Roo.bootstrap.Button
+
+left:
+    Roo.mailer.Body
+right:
+    Roo.mailer.BodyContainer
+
+left:
+    Roo.mailer.BodyContainer    
+right:
+    Roo.mailer.Block
+    
+left:
+    Roo.mailer.Block
+right:
+    Roo.mailer.Column    
+    
