@@ -98,7 +98,7 @@
                                         {
                                             "xtype" : "Entry",
                                             "* pack" : "pack_end,false,false,0",
-                                            "string id" : "pack_target",
+                                            "string id" : "build_pack_target",
                                             "$ xns" : "Gtk"
                                         },
                                         {
@@ -110,7 +110,7 @@
                                         {
                                             "xtype" : "Entry",
                                             "* pack" : "pack_end,false,false,0",
-                                            "string id" : "compile_flags",
+                                            "string id" : "build_compile_flags",
                                             "$ xns" : "Gtk"
                                         },
                                         {

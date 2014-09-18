@@ -353,13 +353,13 @@ public class ValaProjectSettings : Object
             var child_0 = new Xcls_Label16( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_pack_target( _this );
+            var child_1 = new Xcls_build_pack_target( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,false,0 );
             var child_2 = new Xcls_Label18( _this );
             child_2.ref();
             this.el.pack_end (  child_2.el , false,false,0 );
-            var child_3 = new Xcls_compile_flags( _this );
+            var child_3 = new Xcls_build_compile_flags( _this );
             child_3.ref();
             this.el.pack_end (  child_3.el , false,false,0 );
             var child_4 = new Xcls_TextView20( _this );
@@ -395,7 +395,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_pack_target : Object 
+    public class Xcls_build_pack_target : Object 
     {
         public Gtk.Entry el;
         private ValaProjectSettings  _this;
@@ -404,7 +404,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_pack_target(ValaProjectSettings _owner )
+        public Xcls_build_pack_target(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Entry();
@@ -437,7 +437,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_compile_flags : Object 
+    public class Xcls_build_compile_flags : Object 
     {
         public Gtk.Entry el;
         private ValaProjectSettings  _this;
@@ -446,7 +446,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_compile_flags(ValaProjectSettings _owner )
+        public Xcls_build_compile_flags(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Entry();
