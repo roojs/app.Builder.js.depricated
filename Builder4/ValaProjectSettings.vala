@@ -76,6 +76,7 @@ public class ValaProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_Label4( _this );
             child_0.ref();
+            this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_TextView5( _this );
             child_1.ref();
             var child_2 = new Xcls_Label6( _this );
