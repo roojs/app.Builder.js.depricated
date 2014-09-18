@@ -82,12 +82,13 @@
                                 },
                                 {
                                     "xtype" : "VBox",
-                                    "string id" : "set_vbox",
                                     "gboolean homogeneous" : false,
+                                    "string id" : "set_vbox",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
                                             "xtype" : "Label",
+                                            "* pack" : "pack_start,false,false,0",
                                             "$ xns" : "Gtk",
                                             "utf8 label" : "target filename"
                                         },
