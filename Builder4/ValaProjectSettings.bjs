@@ -105,7 +105,7 @@
                                             "utf8 label" : "compile flags"
                                         },
                                         {
-                                            "* pack" : "pack_end,true,false,0",
+                                            "* pack" : "pack_end,false,true,0",
                                             "xtype" : "TextView",
                                             "$ xns" : "Gtk"
                                         },
