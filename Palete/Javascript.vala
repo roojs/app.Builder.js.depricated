@@ -1,5 +1,5 @@
 
-
+/*
 
 
 namespace Palete {
@@ -113,4 +113,5 @@ namespace Palete {
 	
 
 
-} 
+}
+*/ 

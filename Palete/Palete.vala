@@ -409,8 +409,8 @@ namespace Palete
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			string res;
-			var ret = Javascript.singleton().validate(code, out res);
-			print ("ret = %s\n%s" , ret ? "OK" : "BAD", res);
+//			var ret = Javascript.singleton().validate(code, out res);
+//			print ("ret = %s\n%s" , ret ? "OK" : "BAD", res);
 			
 			return "";
 		}
