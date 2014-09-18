@@ -77,8 +77,9 @@ public class ValaProjectSettings : Object
             var child_0 = new Xcls_Label4( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_TextView5( _this );
+            var child_1 = new Xcls_compile_flags( _this );
             child_1.ref();
+            this.el.pack_end (  child_1.el , false,false,0 );
             var child_2 = new Xcls_Label6( _this );
             child_2.ref();
             var child_3 = new Xcls_ScrolledWindow7( _this );
@@ -112,19 +113,19 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_TextView5 : Object 
+    public class Xcls_compile_flags : Object 
     {
-        public Gtk.TextView el;
+        public Gtk.Entry el;
         private ValaProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_TextView5(ValaProjectSettings _owner )
+        public Xcls_compile_flags(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.TextView();
+            this.el = new Gtk.Entry();
 
             // my vars (dec)
 
