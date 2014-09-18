@@ -79,6 +79,8 @@ namespace Palete {
 				return ret;
 			}
 
+	/// see : http://tlrobinson.net/blog/2008/10/command-line-interpreter-and-repl-for-jscocoa/
+			
 			var exo = ex.to_object(ctx, null);
 			unowned JSCore.PropertyNameArray property_names = exo.copy_property_names (ctx);
 
