@@ -361,6 +361,7 @@ public class ValaProjectSettings : Object
             child_3.ref();
             var child_4 = new Xcls_Label20( _this );
             child_4.ref();
+            this.el.pack_end (  child_4.el , false,false,0 );
             var child_5 = new Xcls_ScrolledWindow21( _this );
             child_5.ref();
         }
