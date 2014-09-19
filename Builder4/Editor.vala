@@ -366,6 +366,8 @@ public class Editor : Object
                      white
              );
             
+        
+            
             var line =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
