@@ -12,8 +12,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg clutter-gtk-1.0 \
 		--pkg gladeui-2.0 \
 		--pkg libsoup-2.4 \
-
-#		--pkg javascriptcore  \
+ 		--pkg javascriptcore  \
 
 
 FLAGS= -g --vapidir=./vapi 
@@ -47,7 +46,7 @@ BUILDER4=   Builder4/About.vala \
 
 
 # compile what... for testing 
-all:  builder4
+#all:  builder4
 #all: test-leftprops
 #all: test-palate
 #all: test-addprops
@@ -56,7 +55,7 @@ all:  builder4
 #all: test-vala
 #all: test-gir
 #all: test-pack
-#all: test-codevalidate
+all: test-codevalidate
 
 builder4:
 	valac $(FLAGS) $(PKGS) $(CORESRC) $(BUILDER4)  \
