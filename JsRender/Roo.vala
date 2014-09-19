@@ -233,8 +233,8 @@ namespace JsRender {
     		if (top != "Roo.bootstrap.Body") {
         		return;
     		}
-    		print("SAVE HTML -- ");
-    		//print(frame);
+    		print("SAVE HTML -- %s\n%s\n", fname, html);
+    		
 // now write the js file..
 		string fn;
 		try {
