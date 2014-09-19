@@ -167,6 +167,29 @@ public class GtkView : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_Terminal5( _this );
+            child_0.ref();
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Terminal5 : Object 
+    {
+        public Vte.Terminal el;
+        private GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Terminal5(GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Vte.Terminal();
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions 
