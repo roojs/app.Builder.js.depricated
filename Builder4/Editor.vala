@@ -227,6 +227,7 @@ public class Editor : Object
 
 
             // my vars (def)
+        public int error_line;
 
         // ctor 
         public Xcls_view(Editor _owner )
@@ -236,6 +237,7 @@ public class Editor : Object
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
+            this.error_line = -1;
 
             // set gobject values
             this.el.auto_indent = true;
