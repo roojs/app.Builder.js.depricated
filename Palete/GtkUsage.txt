@@ -102,7 +102,7 @@ right:
 	Gtk.FontButton 
 	GtkSource.View
 	WebKit.WebView
-    Gtk.ViewPort
+    Gtk.Viewport
 	Vte.Terminal
 	GtkClutter.Embed
 	Gdl.Dock
