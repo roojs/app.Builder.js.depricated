@@ -351,7 +351,7 @@ public class Editor : Object
         }
         public   bool checkSyntax () {
          
-            var p = Palete.factory(this.file.xtype);   
+            var p = Palete.factory(_this.file.xtype);   
             
             var str = this.toString();
             
