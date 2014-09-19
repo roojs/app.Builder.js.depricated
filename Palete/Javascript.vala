@@ -78,13 +78,11 @@ namespace Palete {
 				return -1;
 			}
 
-	/// see : http://tlrobinson.net/blog/2008/10/command-line-interpreter-and-repl-for-jscocoa/
-			
+	 		
 			var exo = ex.to_object(ctx, null);
 			unowned JSCore.PropertyNameArray property_names = exo.copy_property_names (ctx);
 
-			print("got %d props\n", (int)property_names.get_count());
-
+			
 			
 			 
 			var js_string = new JSCore.String.with_utf8_c_string("line");
@@ -97,7 +95,7 @@ namespace Palete {
 			var err_string = ex.to_string_copy (ctx, null);
 			err_string.get_utf8_c_string (c_string, 1023);
 			res = (string)c_string;
-			print ("Error on line %d\n%s\n", (int)line, res); 
+			//print ("Error on line %d\n%s\n", (int)line, res); 
 
 			
 			return (int)line;
