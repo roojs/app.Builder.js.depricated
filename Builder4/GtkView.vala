@@ -16,6 +16,7 @@ public class GtkView : Object
     public Xcls_container container;
 
         // my vars (def)
+    public JsRender.JsRender file;
 
     // ctor 
     public GtkView()
@@ -24,6 +25,7 @@ public class GtkView : Object
         this.el = new Gtk.VPaned();
 
         // my vars (dec)
+        this.file = null;
 
         // set gobject values
         var child_0 = new Xcls_GtkView( _this );
