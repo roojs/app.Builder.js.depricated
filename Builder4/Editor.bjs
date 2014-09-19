@@ -62,7 +62,7 @@
                             },
                             "gboolean show_line_marks" : true,
                             "id" : "view",
-                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    Gdk.Color pink;\n    Gdk.Color.parse ( out pink, \"pink\");\n    attrs.set_background (attrs, pink);\n    this.el.set_mark_attributes (\"error\", attrs, 1);",
+                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    Gdk.Color pink;\n    Gdk.Color.parse ( \"pink\", out pink);\n    attrs.set_background (attrs, pink);\n    this.el.set_mark_attributes (\"error\", attrs, 1);",
                             "$ insert_spaces_instead_of_tabs" : true,
                             "* pack" : "add",
                             "xtype" : "View",
