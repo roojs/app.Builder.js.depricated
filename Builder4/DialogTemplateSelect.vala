@@ -73,7 +73,7 @@ public class DialogTemplateSelect : Object
         Value vfname;
         this.model.el.get_value (iter, 0, out vfname);
         
-        if (vfname.length < 1) {
+        if ((string)vfname).length < 1) {
             return node;
         }
         return pal.loadTemplate((string)vfname);
