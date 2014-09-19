@@ -74,7 +74,8 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-        
+            // 30% for the panel.
+            this.el.set_position( (int)(this.el.max_postion / 0.7f));
      
             this.file = null;
             
