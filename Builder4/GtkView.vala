@@ -98,7 +98,6 @@ public class GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
-    s
     public class Xcls_GtkView : Object 
     {
         public Gtk.Viewport el;
@@ -169,6 +168,7 @@ public class GtkView : Object
             // set gobject values
             var child_0 = new Xcls_Terminal5( _this );
             child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // user defined functions 
