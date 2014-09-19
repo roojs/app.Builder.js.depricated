@@ -11,14 +11,15 @@ int main (string[] args) {
 	GtkClutter.init (ref args);
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
-
+	string res;
 	var r  = Palete.factory("Roo");
-	var res = r.validateCode(
+	var line  = r.validateCode(
  	          "if (true) { alert('test'); }",
                  "| function aaa",
-	       	 "javascript"
+	       	 "javascript",
+                 out res
 	);
-	  res = r.validateCode(
+	  line = r.validateCode(
  	          "
 if (true) { 
 	alert('test'); 
@@ -26,7 +27,8 @@ if (true) {
 
 { a syntax error ",
                "| function aaa",
-	       	 "javascript"
+	       	 "javascript",
+                out res
 	);                       
 	    
 	
