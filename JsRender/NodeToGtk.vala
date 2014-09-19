@@ -75,7 +75,7 @@ public class JsRender.NodeToGtk : Object {
 			//case "GtkCellRendererText":
 			case "GtkSourceBuffer":				
 			case "GtkClutterActor"://fixme..
-			 case "GtkClutterEmbed"://fixme.. -- we can not nest embedded.. need to solve..
+			case "GtkClutterEmbed"://fixme.. -- we can not nest embedded.. need to solve..
 					
 				return null;
 		}
