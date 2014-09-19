@@ -653,7 +653,7 @@ public class Xcls_MainWindow : Object
         el.restore_easing_state();
          _this.addpropsview.el.restore_easing_state();  
      }
-    public             void showCodeEdit (JsRender.Node node, string ptype, string key)
+    public             void showCodeEdit (JsRender.JsRender.file, JsRender.Node node, string ptype, string key)
     {
         // this is a bit different,
         // it's not called via a button - but triggered by the prop edit class signal.
@@ -681,6 +681,7 @@ public class Xcls_MainWindow : Object
         //this.rooview.el.hide();
         this.code_editor.el.show_all();
         this.code_editor.show(
+            file,
             node,
             ptype,
             key
