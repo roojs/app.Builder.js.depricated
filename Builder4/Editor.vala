@@ -257,7 +257,7 @@ public class Editor : Object
                 var attrs = new Gtk.SourceMarkAttributes();
                 var  pink = new Gdk.RGBA();
                 pink.parse ( "pink");
-                attrs.set_background (attrs, pink);
+                attrs.set_background ( pink);
                 this.el.set_mark_attributes ("error", attrs, 1);
             // listeners 
             this.el.key_release_event.connect( (event) => {
