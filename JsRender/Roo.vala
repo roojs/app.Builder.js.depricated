@@ -208,7 +208,7 @@ namespace JsRender {
 		var js_src = this.toSource();            
 		//print("TO SOURCE in " + ((new Date()) - d) + "ms");
 		try {
-			this.writeFile(js, js_src, js_src.length);            
+			this.writeFile(js, js_src);            
 		} catch (FileError e ) {
 			print("Save failed\n");
 		}
