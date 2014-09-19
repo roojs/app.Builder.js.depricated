@@ -6,7 +6,7 @@
 
 Roo.XComponent.on("buildcomplete", function() { 
 
-	Builder.saveHTML.defer(100); 
+	Builder.saveHTML.defer(100, Builder); 
 } );
 
 var MODULE = { isBuilder : true };
