@@ -89,10 +89,16 @@ namespace Palete {
 			var js_string = exo.to_string_copy (ctx, null);
 			js_string.get_utf8_c_string ("line", 4);
 			var line = exo.get_property(ctx, js_string, null).to_number(ctx,null);
-			print ("Error on line %f\n", i, (string)c_string, val);
-				delete c_string;
-			}
-			res = "??";
+			
+			
+
+			// see if we can convert exception string
+			char *c_string = new char[1024];
+			var err_string = ex.to_string_copy (ctx, null);
+			err_string.get_utf8_c_string (c_string, 1023);
+			res = (string)c_string;
+			print ("Error on line %f\n%s\n", line, res); 
+
 			
 			return line;
 		
