@@ -15,7 +15,7 @@
             "# string key" : "\"\"",
             "* pack" : "add",
             "xtype" : "VBox",
-            "|   void show" : "(JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n    \n   string val = \"\";\n    // find the text for the node..\n    if (ptype == \"listener\") {\n        val = node.listeners.get(key);\n    \n    } else {\n        val = node.props.get(key);\n    }\n    this.view.load(val);\n    this.key_edit.el.text = key;    \n\n}",
+            "|   void show" : "(JsRender.JsRender file, JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n    this.file = file;\n    \n   string val = \"\";\n    // find the text for the node..\n    if (ptype == \"listener\") {\n        val = node.listeners.get(key);\n    \n    } else {\n        val = node.props.get(key);\n    }\n    this.view.load(val);\n    this.key_edit.el.text = key;    \n\n}",
             "# bool pos" : false,
             "string id" : "Editor",
             "# bool dirty" : false,
