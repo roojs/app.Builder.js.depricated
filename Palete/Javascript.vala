@@ -86,7 +86,7 @@ namespace Palete {
 			print("got %d props\n", (int)property_names.get_count());
 
 			
-			var js_string = exo.to_string_copy (ctx, null);
+			 
 			js_string = new JSCore.String.with_utf8_c_string("line");
 			var line = exo.get_property(ctx, js_string, null).to_number(ctx,null);
 			
