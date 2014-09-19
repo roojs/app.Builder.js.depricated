@@ -24,7 +24,30 @@ public class GtkView : Object
         // my vars (dec)
 
         // set gobject values
+        var child_0 = new Xcls_Viewport2( _this );
+        child_0.ref();
     }
 
     // user defined functions 
+    public class Xcls_Viewport2 : Object 
+    {
+        public Gtk.Viewport el;
+        private GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Viewport2(GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Viewport( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
 }
