@@ -357,7 +357,7 @@ public class Editor : Object
             
             string res = "";
             Gdk.Color white;
-            Gdk.Color.parse("#fffff", white);
+            Gdk.Color.parse("#fffff", out white);
             this.view.el.modify_base(
                     Gtk.StateType.NORMAL, 
                      white
@@ -375,7 +375,7 @@ public class Editor : Object
                 return true;
             }
             Gdk.Color pink;
-            Gdk.Color.parse("#ffcccc", pink);
+            Gdk.Color.parse("#ffcccc", out  pink);
             
             
             
