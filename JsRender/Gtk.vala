@@ -15,7 +15,7 @@ namespace JsRender {
         
             base( project, path);
             this.xtype = "Gtk";
-             
+            this.language = "vala";
             
             
             //this.items = false;
