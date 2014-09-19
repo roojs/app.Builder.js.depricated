@@ -258,6 +258,10 @@ public class Editor : Object
                 var  pink = new Gdk.RGBA();
                 pink.parse ( "pink");
                 attrs.set_background ( pink);
+                attrs.query_tooltip_text.connect((attrs, mark) => {
+                    return mark.name;
+                });
+                
                 this.el.set_mark_attributes ("error", attrs, 1);
             // listeners 
             this.el.key_release_event.connect( (event) => {
