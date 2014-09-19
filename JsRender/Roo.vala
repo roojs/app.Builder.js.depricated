@@ -254,7 +254,7 @@ namespace JsRender {
 		}
 		
 		try {
-			this.writeFile(dn + "/templates/" + bn , html, html.length);            
+			this.writeFile(dn + "/templates/" + bn , html);            
 		} catch (FileError e ) {
 			print("SaveHtml failed\n");
 		}
