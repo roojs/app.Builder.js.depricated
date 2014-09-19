@@ -354,43 +354,34 @@ public class Editor : Object
             var str = this.toString();
             
             string res = "";
+            Gdk.Color white;
+            Gdk.Color.parse("#fffff", white);
+            this.view.el.modify_base(
+                    Gtk.StateType.NORMAL, 
+                     white
+             );
             
-            
-            p.validateCode(
+            var line =  p.validateCode(
                 str, 
                 ptype == "listener" ? "| function " : key, 
                 file.language, 
                 out res
             );
+            if (line < 0) {
             
             
-            
-         
-         /*
-            var str = this.toString();
-            var res = "";
-            /*
-            try {
-              //  print('var res = ' + str);
-                Seed.check_syntax('var res = ' + str);
-                
-               
-            } catch (e) {
-                
-                this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
-                   }));
-                print("SYNTAX ERROR IN EDITOR");   
-                print(e);
-                // print(str);
-                //console.dump(e);
-                return false;
+                return true;
             }
-             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-               }));
-            */
-            return true;
+            Gdk.Color pink;
+            Gdk.Color.parse("#ffcccc", pink);
+            
+            
+            
+            this.view.el.modify_base(
+                Gtk.StateType.NORMAL, 
+                 pink
+             );
+            return false;
         }
     }
 }
