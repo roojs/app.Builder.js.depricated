@@ -23,6 +23,7 @@ namespace JsRender {
 		public string title;  // a title.. ?? nickname.. ??? -
 
 		public string permname;
+		public string language;
 		public string modOrder;
 		public string xtype;
 		public uint64 webkit_page_id; // set by webkit view - used to extract extension/etc..
