@@ -19,12 +19,12 @@ public class Editor : Object
     public Xcls_buffer buffer;
 
         // my vars (def)
-    public JsRender.JsRender file;
     public string activeEditor;
     public int pos_root_x;
     public int pos_root_y;
     public string ptype;
     public string key;
+    public JsRender.JsRender file;
     public bool pos;
     public bool dirty;
     public signal void save ();
@@ -37,10 +37,10 @@ public class Editor : Object
         this.el = new Gtk.VBox( false, 0 );
 
         // my vars (dec)
-        this.file = null;
         this.activeEditor = "";
         this.ptype = "";
         this.key = "";
+        this.file = null;
         this.pos = false;
         this.dirty = false;
         this.node = null;
