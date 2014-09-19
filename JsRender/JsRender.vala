@@ -161,7 +161,8 @@ namespace JsRender {
 		    
 		    print("WRITE :%s\n " , this.path);// + "\n" + JSON.stringify(write));
 		    try {
-		        generator.to_file(this.path);
+			this.writeFile(this.path, generator.to_data(null));
+		        //generator.to_file(this.path);
 		    } catch(Error e) {
 		        print("Save failed");
 		    }
