@@ -336,6 +336,16 @@ public class Editor : Object
         }
 
         // user defined functions 
+        public   string toString () {
+            
+            Gtk.TextIter s;
+            Gtk.TextIter e;
+            this.el.get_start_iter(out s);
+            this.el.get_end_iter(out e);
+            var ret = this.el.get_text(s,e,true);
+            //print("TO STRING? " + ret);
+            return ret;
+        }
         public   bool checkSyntax () {
          /*
             var str = this.toString();
@@ -362,16 +372,6 @@ public class Editor : Object
                }));
             */
             return true;
-        }
-        public   string toString () {
-            
-            Gtk.TextIter s;
-            Gtk.TextIter e;
-            this.el.get_start_iter(out s);
-            this.el.get_end_iter(out e);
-            var ret = this.el.get_text(s,e,true);
-            //print("TO STRING? " + ret);
-            return ret;
         }
     }
 }
