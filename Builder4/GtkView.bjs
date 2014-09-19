@@ -6,5 +6,9 @@
     "permname" : "",
     "modOrder" : "",
     "items" : [
+        {
+            "xtype" : "VPaned",
+            "$ xns" : "Gtk"
+        }
     ]
 }
