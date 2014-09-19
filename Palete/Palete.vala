@@ -413,7 +413,7 @@ namespace Palete
 			var ret = Javascript.singleton().validate(code, out res);
 			
 			error_message = res;
-			return res;
+			return ret;
 		}
 
 		print ("not javascript\n");
