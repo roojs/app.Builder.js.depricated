@@ -253,6 +253,12 @@ public class Editor : Object
             var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
                 this.el.override_font(description);
+            
+                var attrs = new Gtk.SourceMarkAttributes();
+                Gtk.Color pink;
+                Gtk.Color.parse ( out pink, "pink");
+                attrs.set_background (attrs, pink);
+                this.el.set_mark_attributes ("error", attrs, 1);
             // listeners 
             this.el.key_release_event.connect( (event) => {
                 
