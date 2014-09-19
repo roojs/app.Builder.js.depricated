@@ -259,6 +259,7 @@ public class Editor : Object
                 pink.parse ( "pink");
                 attrs.set_background ( pink);
                 attrs.query_tooltip_text.connect((attrs, mark) => {
+                    print("tooltip query? %s\n", mark.name);
                     return mark.name;
                 });
                 
