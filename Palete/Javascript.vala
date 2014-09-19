@@ -63,7 +63,7 @@ namespace Palete {
 			
 
 		}
-		public bool validate(string code, out string res)
+		public int validate(string code, out string res)
 		{
 			JSCore.Value ex;
 			unowned   JSCore.GlobalContext ctx = this.js_global_context;
@@ -84,19 +84,12 @@ namespace Palete {
 			unowned JSCore.PropertyNameArray property_names = exo.copy_property_names (ctx);
 
 			print("got %d props\n", (int)property_names.get_count());
+
 			
-			JSCore.String js_string = exo.to_string_copy (ctx, null);
-			char *c_string = new char[1024];
-			char *cv_string = new char[1024];
-			for (var i=0; i< property_names.get_count(); i++) {
-				js_string = property_names.get_name_at_index (i);
-				c_string = new char[1024];
-				cv_string = new char[1024];
-				js_string.get_utf8_c_string (c_string, 1023);
-				var val = exo.get_property(ctx, js_string, null).to_number(ctx,null);
-				
-				
-				print ("\t%i: %s = %f\n", i, (string)c_string, val);
+			var js_string = exo.to_string_copy (ctx, null);
+			js_string.get_utf8_c_string ("line", 4);
+			var val = exo.get_property(ctx, js_string, null).to_number(ctx,null);
+			print ("Error on line %f\n", i, (string)c_string, val);
 				delete c_string;
 			}
 			res = "??";
