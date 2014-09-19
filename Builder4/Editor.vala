@@ -373,7 +373,7 @@ public class Editor : Object
             
               return true;
             }
-            var Gtk.TextIter iter;
+              Gtk.TextIter iter;
             this.el.get_iter_at_line, out iter, line);
             
             var m = this.el.create_source_mark(res, "error", iter);
