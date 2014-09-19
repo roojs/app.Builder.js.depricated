@@ -96,9 +96,10 @@ namespace Palete {
 			err_string.get_utf8_c_string (c_string, 1023);
 			res = (string)c_string;
 			//print ("Error on line %d\n%s\n", (int)line, res); 
-
 			
-			return (int)line;
+			var ret = (int) line;
+			
+			return ret > 0 ? ret -1 : 0;
 		
 			
 		}
