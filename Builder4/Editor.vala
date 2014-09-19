@@ -348,6 +348,24 @@ public class Editor : Object
             return ret;
         }
         public   bool checkSyntax () {
+         
+            var p = Palete.factory(this.file.xtype);   
+            
+            var str = this.toString();
+            
+            string res = "";
+            
+            
+            p.validateCode(
+                str, 
+                ptype == "listener" ? "| function " : key, 
+                file.language, 
+                out res
+            );
+            
+            
+            
+         
          /*
             var str = this.toString();
             var res = "";
