@@ -65,6 +65,32 @@ public class GtkView : Object
         
          
     }
+    public return_type XXXX (JsRender.JsRender file) 
+    {
+        
+     
+            this.file = null;
+            
+            if (file.tree == null) {
+                return;
+            }
+            this.file = file;
+            if (this.lastObj != null) {
+                this.container.el.remove(this.lastObj);
+            }
+     
+    	var x = new JsRender.NodeToGtk(file.tree);
+            var obj = x.munge() as Gtk.Widget;
+            this.lastObj = null;
+    	if (obj == null) {
+            	return;
+    	}
+    	this.lastObj = obj;
+            
+            this.container.el.add(obj);
+            obj.show_all();
+    }
+    s
     public class Xcls_GtkView : Object 
     {
         public Gtk.Viewport el;
