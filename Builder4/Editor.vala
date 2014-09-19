@@ -372,7 +372,7 @@ public class Editor : Object
                 _this.file.language, 
                 out res
             );
-            printf("got line %d\n");
+            printf("got line %d\n%s\n", line, res);
             if (line < 0) {
             
               return true;
