@@ -31,7 +31,7 @@ public class GtkView : Object
     }
 
     // user defined functions 
-    public return_type XXXX () {
+    public void createThumb () {
         
         
         if (this.file == null) {
