@@ -407,7 +407,7 @@ namespace Palete
 
 		print("validate code (%s) %s\n", language, code);
 		error_message = "";
-		if (language == "javascript" && property[0] == '|') {
+		if (language == "js" && property[0] == '|') {
 
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
