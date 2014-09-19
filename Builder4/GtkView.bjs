@@ -8,13 +8,7 @@
     "items" : [
         {
             "xtype" : "VPaned",
-            "$ xns" : "Gtk",
-            "items" : [
-                {
-                    "xtype" : "Viewport",
-                    "$ xns" : "Gtk"
-                }
-            ]
+            "$ xns" : "Gtk"
         }
     ]
 }
