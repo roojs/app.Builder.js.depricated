@@ -208,7 +208,7 @@ namespace JsRender {
 		var js_src = this.toSource();            
 		//print("TO SOURCE in " + ((new Date()) - d) + "ms");
 		try {
-			FileUtils.set_contents(js, js_src, js_src.length);            
+			this.writeFile(js, js_src, js_src.length);            
 		} catch (FileError e ) {
 			print("Save failed\n");
 		}
@@ -254,7 +254,7 @@ namespace JsRender {
 		}
 		
 		try {
-			FileUtils.set_contents(dn + "/templates/" + bn , html, html.length);            
+			this.writeFile(dn + "/templates/" + bn , html, html.length);            
 		} catch (FileError e ) {
 			print("SaveHtml failed\n");
 		}
