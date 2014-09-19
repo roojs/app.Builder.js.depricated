@@ -75,7 +75,7 @@ namespace Palete {
            		);
 			res = ""; 
 			if (ex.is_null(ctx)) {
-				return ret;
+				return -1;
 			}
 
 	/// see : http://tlrobinson.net/blog/2008/10/command-line-interpreter-and-repl-for-jscocoa/
@@ -88,13 +88,13 @@ namespace Palete {
 			
 			var js_string = exo.to_string_copy (ctx, null);
 			js_string.get_utf8_c_string ("line", 4);
-			var val = exo.get_property(ctx, js_string, null).to_number(ctx,null);
+			var line = exo.get_property(ctx, js_string, null).to_number(ctx,null);
 			print ("Error on line %f\n", i, (string)c_string, val);
 				delete c_string;
 			}
 			res = "??";
 			
-			return ret;
+			return line;
 		
 			
 		}
