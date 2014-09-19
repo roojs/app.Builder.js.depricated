@@ -402,21 +402,22 @@ namespace Palete
 
 	
 	    
-	public string validateCode(string code, string language) 
+	public int validateCode(string code, string language , out string error_message) 
 	{   
 
 		print("validate code (%s) %s\n", language, code);
+		error_message = "";
 		if (language == "javascript") {
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			string res;
 			var ret = Javascript.singleton().validate(code, out res);
-			print ("ret = %s\n%s" , ret> -1 ? "OK" : "BAD", res);
 			
-			return "";
+			error_message = res;
+			return res;
 		}
 
 		print ("not javascript\n");
-		return "";
+		return -1;
 
 	}
 
