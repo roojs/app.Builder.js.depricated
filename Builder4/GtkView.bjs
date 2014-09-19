@@ -7,16 +7,15 @@
     "modOrder" : "",
     "items" : [
         {
+            "id" : "GtkView",
             "# Gtk.Widget lastObj" : "null",
             "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n     \n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
             "| void loadFile" : "(JsRender.JsRender file) \n{\n    \n \n        this.file = null;\n        \n        if (file.tree == null) {\n            return;\n        }\n        this.file = file;\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n        \n        this.container.el.add(obj);\n        obj.show_all();\n}\n ",
             "xtype" : "VPaned",
             "# JsRender.JsRender file" : "null",
-            "string id" : "GtkView",
             "$ xns" : "Gtk",
             "items" : [
                 {
-                    "id" : "GtkView",
                     "# Gtk.Widget lastObj" : "null",
                     "xtype" : "Viewport",
                     "* pack" : "add1",

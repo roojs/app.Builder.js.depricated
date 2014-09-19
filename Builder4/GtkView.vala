@@ -1,18 +1,17 @@
-static GtkView  _GtkView;
+static Xcls_GtkView  _GtkView;
 
-public class GtkView : Object 
+public class Xcls_GtkView : Object 
 {
     public Gtk.VPaned el;
-    private GtkView  _this;
+    private Xcls_GtkView  _this;
 
-    public static GtkView singleton()
+    public static Xcls_GtkView singleton()
     {
         if (_GtkView == null) {
-            _GtkView= new GtkView();
+            _GtkView= new Xcls_GtkView();
         }
         return _GtkView;
     }
-    public Xcls_GtkView GtkView;
     public Xcls_container container;
 
         // my vars (def)
@@ -20,7 +19,7 @@ public class GtkView : Object
     public JsRender.JsRender file;
 
     // ctor 
-    public GtkView()
+    public Xcls_GtkView()
     {
         _this = this;
         this.el = new Gtk.VPaned();
@@ -30,7 +29,7 @@ public class GtkView : Object
         this.file = null;
 
         // set gobject values
-        var child_0 = new Xcls_GtkView( _this );
+        var child_0 = new Xcls_Viewport2( _this );
         child_0.ref();
         this.el.add1 (  child_0.el  );
         var child_1 = new Xcls_ScrolledWindow4( _this );
@@ -98,10 +97,10 @@ public class GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
-    public class Xcls_GtkView : Object 
+    public class Xcls_Viewport2 : Object 
     {
         public Gtk.Viewport el;
-        private GtkView  _this;
+        private Xcls_GtkView  _this;
 
 
             // my vars (def)
@@ -109,10 +108,9 @@ public class GtkView : Object
         public JsRender.JsRender file;
 
         // ctor 
-        public Xcls_GtkView(GtkView _owner )
+        public Xcls_Viewport2(Xcls_GtkView _owner )
         {
             _this = _owner;
-            _this.GtkView = this;
             this.el = new Gtk.Viewport( null, null );
 
             // my vars (dec)
@@ -130,13 +128,13 @@ public class GtkView : Object
     public class Xcls_container : Object 
     {
         public Gtk.HBox el;
-        private GtkView  _this;
+        private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_container(GtkView _owner )
+        public Xcls_container(Xcls_GtkView _owner )
         {
             _this = _owner;
             _this.container = this;
@@ -152,13 +150,13 @@ public class GtkView : Object
     public class Xcls_ScrolledWindow4 : Object 
     {
         public Gtk.ScrolledWindow el;
-        private GtkView  _this;
+        private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow4(GtkView _owner )
+        public Xcls_ScrolledWindow4(Xcls_GtkView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -176,13 +174,13 @@ public class GtkView : Object
     public class Xcls_Terminal5 : Object 
     {
         public Vte.Terminal el;
-        private GtkView  _this;
+        private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Terminal5(GtkView _owner )
+        public Xcls_Terminal5(Xcls_GtkView _owner )
         {
             _this = _owner;
             this.el = new Vte.Terminal();
