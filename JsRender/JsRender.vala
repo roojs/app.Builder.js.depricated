@@ -302,7 +302,7 @@ namespace JsRender {
 		/**
 		 *  non-atomic write (replacement for put contents, as it creates temporary files.
 		 */
-		public void writeFile(string path, string contents)
+		public void writeFile(string path, string contents) throws GLib.IOError
 		{
 
 			         
