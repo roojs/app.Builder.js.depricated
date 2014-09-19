@@ -208,7 +208,7 @@ public class Xcls_MainWindow : Object
         this.left_props.el.show_all();
         
         this.left_props.show_editor.connect( (file, node, type,  key) => {
-            this.showCodeEdit(node, type,  key);
+            this.showCodeEdit(file, node, type,  key);
         });
         this.left_props.stop_editor.connect( () => {
             if (this.state != "codeedit") {
