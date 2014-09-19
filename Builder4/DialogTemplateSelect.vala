@@ -64,15 +64,18 @@ public class DialogTemplateSelect : Object
        
         this.el.run();
         this.el.hide();    
-        var ix = _this.combo.el.get_active();
-        if (ix < 1 ) {
-            return node;
-        }
+        //var ix = _this.combo.el.get_active();
+        //if (ix < 1 ) {
+        //    return node;
+       // }
        Gtk.TreeIter iter;
         _this.combo.el.get_active_iter (out iter);
         Value vfname;
         this.model.el.get_value (iter, 0, out vfname);
-         
+        
+        if (vfname.length < 1) {
+            return node;
+        }
         return pal.loadTemplate((string)vfname);
     
     }
