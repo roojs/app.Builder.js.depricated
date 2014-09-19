@@ -198,6 +198,14 @@ public class JsRender.NodeToJs : Object {
 	{
 		string left;
 		Regex func_regex ;
+
+		if (this.node.props.has_key("$ xns")) {
+	 
+			this.els.add("'|xns' : '" + this.node.props.get("$ xns") + "'");
+
+		}
+
+		
 		try {
 			func_regex = new Regex("^\\s+|\\s+$");
 		} catch (Error e) {

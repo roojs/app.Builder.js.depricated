@@ -4,11 +4,6 @@
 // IPC: - via alert("IPC:{method}:{data}
 
 
-Roo.XComponent.on("buildcomplete", function() { 
-
-	Builder.saveHTML.defer(100, Builder); 
-} );
-
 var MODULE = { isBuilder : true };
 // BC
 var _this = MODULE;
@@ -331,6 +326,7 @@ Builder  = {
             tree.el.attr('flexy:include', tree['flexy:include']);
         }
         
+        tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
         if (!tree.items || !tree.items.length) { return; }
         
         for (var i = 0; i < tree.items.length; i++){
@@ -346,4 +342,6 @@ Roo.XComponent.on('buildcomplete', function() {
     Roo.log("xcomponent built!");
     var m = Roo.XComponent.modules;
     Builder.applyFlexy(m[m.length-1].el);
+    
+	Builder.saveHTML.defer(100, Builder);
 });
