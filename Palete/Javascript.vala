@@ -87,7 +87,7 @@ namespace Palete {
 
 			
 			 
-			js_string = new JSCore.String.with_utf8_c_string("line");
+			var js_string = new JSCore.String.with_utf8_c_string("line");
 			var line = exo.get_property(ctx, js_string, null).to_number(ctx,null);
 			
 			
