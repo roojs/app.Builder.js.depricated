@@ -365,8 +365,8 @@ public class Editor : Object
             
             var line =  p.validateCode(
                 str, 
-                ptype == "listener" ? "| function " : key, 
-                file.language, 
+                _this.ptype == "listener" ? "| function " : key, 
+                _this.file.language, 
                 out res
             );
             if (line < 0) {
