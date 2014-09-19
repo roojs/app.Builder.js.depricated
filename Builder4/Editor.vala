@@ -258,6 +258,7 @@ public class Editor : Object
                 var  pink = new Gdk.RGBA();
                 pink.parse ( "pink");
                 attrs.set_background ( pink);
+                attrs.set_icon_name ( "list-remove");    
                 attrs.query_tooltip_text.connect(( mark) => {
                     print("tooltip query? %s\n", mark.name);
                     return mark.name;

@@ -62,7 +62,7 @@
                             },
                             "gboolean show_line_marks" : true,
                             "id" : "view",
-                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    var  pink = new Gdk.RGBA();\n    pink.parse ( \"pink\");\n    attrs.set_background ( pink);\n    attrs.query_tooltip_text.connect(( mark) => {\n        print(\"tooltip query? %s\\n\", mark.name);\n        return mark.name;\n    });\n    \n    this.el.set_mark_attributes (\"error\", attrs, 1);\n    \n    ",
+                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    var  pink = new Gdk.RGBA();\n    pink.parse ( \"pink\");\n    attrs.set_background ( pink);\n    attrs.set_icon_name ( \"list-remove\");    \n    attrs.query_tooltip_text.connect(( mark) => {\n        print(\"tooltip query? %s\\n\", mark.name);\n        return mark.name;\n    });\n    \n    this.el.set_mark_attributes (\"error\", attrs, 1);\n    \n    ",
                             "$ insert_spaces_instead_of_tabs" : true,
                             "* pack" : "add",
                             "xtype" : "View",
