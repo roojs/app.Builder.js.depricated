@@ -278,10 +278,7 @@ public class Editor : Object
             this.el.get_buffer().set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
             
-            var lang = _this.file.language;
-            //?? is javascript going to work as js?
-            
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
             var buf = this.el.get_buffer();
             
             /* -- what does all this do? */
@@ -360,29 +357,29 @@ public class Editor : Object
             
             string res = "";
             Gdk.Color white;
-            Gdk.Color.parse("#fffff", out white);
-            _this.view.el.modify_base(
+            Gdk.Color.parse("#ffffff", out white);
+            this.view.el.modify_base(
                     Gtk.StateType.NORMAL, 
                      white
              );
             
             var line =  p.validateCode(
                 str, 
-                _this.ptype == "listener" ? "| function " : _this.key, 
+                _this.ptype == "listener" ? "| function " : key, 
                 _this.file.language, 
                 out res
             );
-            print("got line %d\n%s\n", line, res);
             if (line < 0) {
             
-              return true;
+            
+                return true;
             }
             Gdk.Color pink;
             Gdk.Color.parse("#ffcccc", out  pink);
             
             
             
-            _this.view.el.modify_base(
+            this.view.el.modify_base(
                 Gtk.StateType.NORMAL, 
                  pink
              );
