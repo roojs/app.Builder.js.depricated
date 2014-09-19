@@ -278,6 +278,8 @@ public class Editor : Object
             this.el.get_buffer().set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
             
+            var lang = _this.file.language;
+            
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
             var buf = this.el.get_buffer();
             
