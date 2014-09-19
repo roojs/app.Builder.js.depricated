@@ -15,6 +15,7 @@ int main (string[] args) {
 	var r  = Palete.factory("Roo");
 	var res = r.validateCode(
  	          "if (true) { alert('test'); }",
+                 "| function aaa",
 	       	 "javascript"
 	);
 	  res = r.validateCode(
@@ -24,6 +25,7 @@ if (true) {
 }
 
 { a syntax error ",
+               "| function aaa",
 	       	 "javascript"
 	);                       
 	    
