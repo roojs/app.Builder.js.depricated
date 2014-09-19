@@ -401,7 +401,7 @@ public class Editor : Object
            
             print("done mark line\n");
              
-            return false;
+            return true; // at present allow saving - even if it's invalid..
         }
     }
 }
