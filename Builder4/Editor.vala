@@ -255,8 +255,8 @@ public class Editor : Object
                 this.el.override_font(description);
             
                 var attrs = new Gtk.SourceMarkAttributes();
-                Gtk.Color pink;
-                Gtk.Color.parse ( out pink, "pink");
+                Gdk.Color pink;
+                Gdk.Color.parse ( out pink, "pink");
                 attrs.set_background (attrs, pink);
                 this.el.set_mark_attributes ("error", attrs, 1);
             // listeners 
