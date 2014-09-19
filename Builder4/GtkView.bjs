@@ -29,6 +29,11 @@
                             "$ xns" : "Gtk"
                         }
                     ]
+                },
+                {
+                    "* pack" : "add2",
+                    "xtype" : "ScrolledWindow",
+                    "$ xns" : "Gtk"
                 }
             ]
         }

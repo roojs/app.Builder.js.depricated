@@ -33,6 +33,9 @@ public class GtkView : Object
         var child_0 = new Xcls_GtkView( _this );
         child_0.ref();
         this.el.add1 (  child_0.el  );
+        var child_1 = new Xcls_ScrolledWindow4( _this );
+        child_1.ref();
+        this.el.add2 (  child_1.el  );
     }
 
     // user defined functions 
@@ -139,6 +142,27 @@ public class GtkView : Object
             _this = _owner;
             _this.container = this;
             this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_ScrolledWindow4 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ScrolledWindow4(GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)
 
