@@ -359,8 +359,11 @@ public class Editor : Object
             var str = this.toString();
             
             string res = "";
-             
+             Gtk.TextIter start;
+             Gtk.TextIter end;     
+            this.el.get_bounds (out start, out end);
         
+            this.el.remove_source_marks (start, end, null);
             
             var line =  p.validateCode(
                 str, 
