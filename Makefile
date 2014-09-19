@@ -13,6 +13,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg gladeui-2.0 \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore  \
+		--pkg  vte-2.91  \
 
 
 FLAGS= -g --vapidir=./vapi 
