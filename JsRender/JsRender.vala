@@ -299,8 +299,20 @@ namespace JsRender {
 		                      
 		                        
 		}
-		     
-		    
+		/**
+		 *  non-atomic write (replacement for put contents, as it creates temporary files.
+		 */
+		public void writeFile(string path, string contents)
+		{
+
+			         
+			var f = GLib.File.new_for_path(path);
+			var data_out = new GLib.DataOutputStream(
+                                          f.replace(null, false, Gio.FileCreateFlags.NONE, null)
+         	       );
+			data_out.put_string(string, null);
+			data_out.close(null);
+		}
 		/*
 		copyTo: function(path, cb)
 		{
