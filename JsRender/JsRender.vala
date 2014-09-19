@@ -49,32 +49,34 @@ namespace JsRender {
 		
 		public JsRender(Project.Project project, string path) {
 		    
-		    this.cn = new GLib.List<JsRender>();
-		    this.path = path;
-		    this.project = project;
-		    this.hasParent = false;
-		    this.parent = "";
-		    this.tree = null;
-		    this.title = "";
-		    this.region = "";
-		    this.permname = "";
-		    this.modOrder = "";
-			
-		    // should use basename reallly...
-			
-		    var ar = this.path.split("/");
-		        // name is in theory filename without .bjs (or .js eventually...)
-		    try {
-		        Regex regex = new Regex ("\\.(bjs|js)$");
+			this.cn = new GLib.List<JsRender>();
+			this.path = path;
+			this.project = project;
+			this.hasParent = false;
+			this.parent = "";
+			this.tree = null;
+			this.title = "";
+			this.region = "";
+			this.permname = "";
+			this.modOrder = "";
+			this.language = "";
 
-		        this.name = ar.length > 0 ? regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "") : "";
-		    } catch (Error e) {
-		        this.name = "???";
-		    }
-		    this.fullname = (this.parent.length > 0 ? (this.parent + ".") : "" ) + this.name;
+			
+			// should use basename reallly...
+			
+			var ar = this.path.split("/");
+			// name is in theory filename without .bjs (or .js eventually...)
+			try {
+				Regex regex = new Regex ("\\.(bjs|js)$");
 
-		   this.doubleStringProps = new Gee.ArrayList<string>();
-		    
+				this.name = ar.length > 0 ? regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "") : "";
+			} catch (Error e) {
+				this.name = "???";
+			}
+			this.fullname = (this.parent.length > 0 ? (this.parent + ".") : "" ) + this.name;
+
+			this.doubleStringProps = new Gee.ArrayList<string>();
+
 		}
 		// not sure why xt is needed... -> project contains xtype..
 		
