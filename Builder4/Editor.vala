@@ -362,18 +362,21 @@ public class Editor : Object
             var str = this.toString();
             
             string res = "";
-             Gtk.TextIter start;
-             Gtk.TextIter end;     
-            this.el.get_bounds (out start, out end);
-        
-            this.el.remove_source_marks (start, end, null);
             
+            if (this.error_line > -1) {
+                 Gtk.TextIter start;
+                 Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+        
+                this.el.remove_source_marks (start, end, null);
+            }
             var line =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
                 _this.file.language, 
                 out res
             );
+            this.error_line = line;
             print("got line %d\n%s\n", line, res);
             if (line < 0) {
             
