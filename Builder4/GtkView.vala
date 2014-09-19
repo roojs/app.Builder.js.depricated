@@ -65,7 +65,7 @@ public class GtkView : Object
         
          
     }
-    public return_type XXXX (JsRender.JsRender file) 
+    public void loadFile (JsRender.JsRender file) 
     {
         
      
