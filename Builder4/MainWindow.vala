@@ -1089,7 +1089,7 @@ public class Xcls_MainWindow : Object
             
             // code edit min 600
             
-            var codesize = avail < 600.0f ? avail : 600.0f;
+            var codesize = avail < 800.0f ? avail : 800.0f;
             print("set code size %f\n", codesize);
         
             _this.codeeditview.el.set_size(codesize, alloc.height);
