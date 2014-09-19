@@ -359,13 +359,7 @@ public class Editor : Object
             var str = this.toString();
             
             string res = "";
-            Gdk.Color white;
-            Gdk.Color.parse("#fffff", out white);
-            _this.view.el.modify_base(
-                    Gtk.StateType.NORMAL, 
-                     white
-             );
-            
+             
         
             
             var line =  p.validateCode(
@@ -379,15 +373,12 @@ public class Editor : Object
             
               return true;
             }
-            Gdk.Color pink;
-            Gdk.Color.parse("#ffcccc", out  pink);
+            var Gtk.TextIter iter;
+            this.el.get_iter_at_line, out iter, line);
+            
+            var m = this.el.create_source_mark(res, "error", iter);
             
             
-            
-            _this.view.el.modify_base(
-                Gtk.StateType.NORMAL, 
-                 pink
-             );
             return false;
         }
     }
