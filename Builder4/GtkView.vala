@@ -123,65 +123,6 @@ public class GtkView : Object
         }
 
         // user defined functions 
-        public void loadFile (JsRender.JsRender file) 
-        {
-            
-         
-                this.file = null;
-                
-                if (file.tree == null) {
-                    return;
-                }
-                this.file = file;
-                if (this.lastObj != null) {
-                    this.container.el.remove(this.lastObj);
-                }
-         
-        	var x = new JsRender.NodeToGtk(file.tree);
-                var obj = x.munge() as Gtk.Widget;
-                this.lastObj = null;
-        	if (obj == null) {
-                	return;
-        	}
-        	this.lastObj = obj;
-                
-                this.container.el.add(obj);
-                obj.show_all();
-        }
-        public void createThumb () {
-            
-            
-            if (this.file == null) {
-                return;
-            }
-            var filename = this.file.getIconFileName(false);
-            
-            var  win = this.el.get_parent_window();
-            var width = win.get_width();
-            var height = win.get_height();
-        
-            Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?
-        
-            screenshot.save(filename,"png");
-            return;
-            
-            
-            
-            
-            
-             
-            
-            // should we hold until it's printed...
-            
-              
-        
-            
-            
-        
-        
-            
-             
-        }
     }
     public class Xcls_container : Object 
     {
