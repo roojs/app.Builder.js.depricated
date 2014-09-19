@@ -1310,6 +1310,11 @@ public class Xcls_LeftProps : Object
                    
                     _this.model.el.set_value(iter, 1, newtext);
                     
+                    if (oldval == newtext) {
+                        return;
+                    }
+                    
+                    
                     print("ktype: %s\n",ktype);
                     switch(ktype) {
                         case "listener":
