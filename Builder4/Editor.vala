@@ -372,10 +372,10 @@ public class Editor : Object
                 _this.file.language, 
                 out res
             );
+            printf("got line %d\n");
             if (line < 0) {
             
-            
-                return true;
+              return true;
             }
             Gdk.Color pink;
             Gdk.Color.parse("#ffcccc", out  pink);
