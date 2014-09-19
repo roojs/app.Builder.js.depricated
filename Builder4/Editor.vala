@@ -279,8 +279,9 @@ public class Editor : Object
             var lm = Gtk.SourceLanguageManager.get_default();
             
             var lang = _this.file.language;
+            //?? is javascript going to work as js?
             
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
             var buf = this.el.get_buffer();
             
             /* -- what does all this do? */
