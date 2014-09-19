@@ -410,7 +410,7 @@ namespace Palete
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			string res;
 			var ret = Javascript.singleton().validate(code, out res);
-			print ("ret = %s\n%s" , ret ? "OK" : "BAD", res);
+			print ("ret = %s\n%s" , ret> -1 ? "OK" : "BAD", res);
 			
 			return "";
 		}
