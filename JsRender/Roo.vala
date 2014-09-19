@@ -233,7 +233,7 @@ namespace JsRender {
     		if (top != "Roo.bootstrap.Body") {
         		return;
     		}
-    		print("SAVE HTML -- %s\n%s\n", fname, html);
+    		
     		
 // now write the js file..
 		string fn;
@@ -252,7 +252,7 @@ namespace JsRender {
 			print("Skip save - templates folder does not exist : %s\n", dn + "/templates");
 			return;
 		}
-		
+		print("SAVE HTML -- %s\n%s\n", dn + "/templates/" + bn, html);
 		try {
 			this.writeFile(dn + "/templates/" + bn , html);            
 		} catch (FileError e ) {
