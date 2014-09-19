@@ -60,6 +60,7 @@
                             "listeners" : {
                                 "key_release_event" : " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        _this.saveContents();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
                             },
+                            "gboolean show_line_marks" : true,
                             "id" : "view",
                             "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n ",
                             "$ insert_spaces_instead_of_tabs" : true,

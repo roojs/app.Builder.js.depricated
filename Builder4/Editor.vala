@@ -240,6 +240,7 @@ public class Editor : Object
             // set gobject values
             this.el.auto_indent = true;
             this.el.indent_width = 4;
+            this.el.show_line_marks = true;
             this.el.insert_spaces_instead_of_tabs = true;
             this.el.show_line_numbers = true;
             this.el.highlight_current_line = true;
