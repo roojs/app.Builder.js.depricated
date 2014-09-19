@@ -32,6 +32,7 @@ public class GtkView : Object
         // set gobject values
         var child_0 = new Xcls_GtkView( _this );
         child_0.ref();
+        this.el.add1 (  child_0.el  );
     }
 
     // user defined functions 

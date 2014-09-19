@@ -18,6 +18,7 @@
                     "id" : "GtkView",
                     "# Gtk.Widget lastObj" : "null",
                     "xtype" : "Viewport",
+                    "* pack" : "add1",
                     "# JsRender.JsRender file" : "null",
                     "$ xns" : "Gtk",
                     "items" : [
