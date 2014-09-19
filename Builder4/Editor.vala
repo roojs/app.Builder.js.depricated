@@ -388,9 +388,12 @@ public class Editor : Object
             
               return true;
             }
-              Gtk.TextIter iter;
+            Gtk.TextIter iter;
+            print("get inter\n");
             this.el.get_iter_at_line( out iter, line);
+                    print("mark line\n");
             var m = this.el.create_source_mark(res, "error", iter);
+                    print("done mark line\n");
              
             return false;
         }
