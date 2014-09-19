@@ -104,8 +104,6 @@ public class Xcls_GtkView : Object
 
 
             // my vars (def)
-        public Gtk.Widget lastObj;
-        public JsRender.JsRender file;
 
         // ctor 
         public Xcls_Viewport2(Xcls_GtkView _owner )
@@ -114,8 +112,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.Viewport( null, null );
 
             // my vars (dec)
-            this.lastObj = null;
-            this.file = null;
 
             // set gobject values
             var child_0 = new Xcls_container( _this );

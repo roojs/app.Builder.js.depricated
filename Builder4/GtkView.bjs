@@ -16,10 +16,8 @@
             "$ xns" : "Gtk",
             "items" : [
                 {
-                    "# Gtk.Widget lastObj" : "null",
-                    "xtype" : "Viewport",
                     "* pack" : "add1",
-                    "# JsRender.JsRender file" : "null",
+                    "xtype" : "Viewport",
                     "$ xns" : "Gtk",
                     "items" : [
                         {
