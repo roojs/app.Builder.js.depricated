@@ -392,8 +392,11 @@ public class Editor : Object
             print("get inter\n");
             this.el.get_iter_at_line( out iter, line);
                     print("mark line\n");
-            var m = this.el.create_source_mark(res, "error", iter);
-                    print("done mark line\n");
+            var m = this.el.create_source_mark(null, "error", iter);
+            m.query_tooltip_text.connect((attrs, mark) => {
+                return res;
+            });
+            print("done mark line\n");
              
             return false;
         }
