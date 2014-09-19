@@ -83,14 +83,14 @@ namespace JsRender {
 		public static JsRender factory(string xt, Project.Project project, string path)
 		{
 	 
-		    switch (xt) {
-		        case "Gtk":
-		            return new Gtk(project, path);
-		        case "Roo":
-		            return new Roo(project, path);
-		    }
+			switch (xt) {
+				case "Gtk":
+	    				return new Gtk(project, path);
+				case "Roo":
+		    			return new Roo(project, path);
+			}
 			throw new Error.INVALID_FORMAT("JsRender Factory called with xtype=%s", xt);
-		    return null;    
+			return null;    
 		}
 
 		public string toJsonString()
