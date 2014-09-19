@@ -16,7 +16,7 @@ namespace Palete {
 		{
 		        var c = new JSCore.Class (class_definition);
 		        var o = new JSCore.Object (ctx, c, null);
-
+			exception = null;
 		        return o;
 		}
 		static const JSCore.StaticFunction[] class_functions = {
