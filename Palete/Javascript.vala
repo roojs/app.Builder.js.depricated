@@ -97,9 +97,9 @@ namespace Palete {
 			res = (string)c_string;
 			//print ("Error on line %d\n%s\n", (int)line, res); 
 			
-			var ret = (int) line;
+			var rline = (int) line;
 			
-			return ret > 0 ? ret -1 : 0;
+			return rline > 0 ? rline -1 : 0;
 		
 			
 		}
