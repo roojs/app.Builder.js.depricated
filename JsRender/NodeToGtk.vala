@@ -92,7 +92,7 @@ public class JsRender.NodeToGtk : Object {
 		
 		var cls_gir =Palete.Gir.factoryFqn(this.node.fqn()); 
 		if (cls_gir == null) {
-			return;
+			return null;
 		}
 		//var id = this.node.uid();
 		//var ret = @"$pad<object class=\"$cls\" id=\"$id\">\n";
