@@ -83,7 +83,7 @@ namespace JsRender {
 		public void renameTo(string name) 
 		{
 			
-			var bjs = GLib.File.get_dirname(this.path) +"/" +  name + ".bjs";
+			var bjs = GLib.Path.get_dirname(this.path) +"/" +  name + ".bjs";
 			if (FileUtils.test(bjs, FileTest.EXISTS)) {
 				throw new Error.RENAME_FILE_EXISTS("File exists %s\n",name);
 			}
