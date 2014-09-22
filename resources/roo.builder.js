@@ -39,7 +39,7 @@ Builder  = {
                 
                 return;
             }
-            console.log(currentElement);
+            //console.log(currentElement);
             if (currentElement.className.match(/roo-dynamic/)) {
                 return;
             }
@@ -278,7 +278,7 @@ Builder  = {
        }
        id = ''+ id;
        var bid = id.length ? 'builder-' + id : '';
-       console.log('{ "hover-node" :  "' + bid + '"}');
+       //console.log('{ "hover-node" :  "' + bid + '"}');
        this.lastID = id;
     },
     clearBootstrap : function()
@@ -325,7 +325,7 @@ Builder  = {
             //Roo.log("add flexy:if");
             tree.el.attr('flexy:include', tree['flexy:include']);
         }
-        
+        Roo.log("Add xtype")
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
         if (!tree.items || !tree.items.length) { return; }
         
