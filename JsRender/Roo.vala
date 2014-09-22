@@ -401,7 +401,7 @@ namespace JsRender {
 				
 		}
 		/// genericlly used..
-		ret += "rootURL = '';\nbaseURL = '';\n";
+		  
 		return ret;
             
        
