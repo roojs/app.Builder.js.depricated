@@ -266,8 +266,8 @@ namespace JsRender {
 	public Gee.ArrayList<string> findxincludes(Node node,   Gee.ArrayList<string> ret)
 	{
 		
-		if (node.prop.has_key("* xinclude")) {
-			ret.add(node.prop.get("* xinclude"));
+		if (node.props.has_key("* xinclude")) {
+			ret.add(node.props.get("* xinclude"));
 	        }
 		for (var i =0; i < node.items.size; i++) {
 			this.findxincludes(node.items.get(i), ret);
