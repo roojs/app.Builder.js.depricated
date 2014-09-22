@@ -11,10 +11,10 @@ right:
  Roo.TreePanel
  Roo.bootstrap.Body
  Roo.bootstrap.Modal
+ Roo.bootstrap.Container
  Roo.mailer.Body
  
- 
-
+  
 // added with a property..  (*prop)
  
 left: 
@@ -47,6 +47,7 @@ right:
 //  Roo.NestedLayoutPanel:region=center
 // Roo.GridPanel:region=center
 // Roo.TreePanel:region=center
+
            
 left:
   Roo.NestedLayoutPanel:layout 
