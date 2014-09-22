@@ -535,7 +535,7 @@ namespace JsRender {
             string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
             if (isPreview) {
-                parent = "false"; 
+                parent = "false"; // set to false to ensure this is the top level..
             }
             
           
