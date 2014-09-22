@@ -263,7 +263,7 @@ namespace JsRender {
             
         }
 
-	public Gee.ArrayList<string> findxincludes(Node node, out Gee.ArrayList<string>? ret)
+	public Gee.ArrayList<string> findxincludes(Node node,   Gee.ArrayList<string> ret)
 	{
 		
 		if (node.prop.has_key("* xinclude")) {
