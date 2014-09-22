@@ -522,45 +522,46 @@ namespace JsRender {
         {
           
             
-            if (isPreview) {
-            //       topItem.region = 'center';
-            //    topItem.background = false;
-            }
+    		if (isPreview) {
+    			//       topItem.region = 'center';
+    			//    topItem.background = false;
+    		}
             
-            var o = this.mungeToString("            ");   
-            var reg = new Regex("[^A-Za-z.]+");
+    		var o = this.mungeToString("            ");   
+    		var reg = new Regex("[^A-Za-z.]+");
             
-            string modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
+    		string modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
             
-            string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
+    		string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
-            if (isPreview) {
-                parent = "false"; // set to false to ensure this is the top level..
-            }
+    		if (isPreview) {
+			// set to false to ensure this is the top level..
+        		parent = "false"; 
+    		}
             
           
-            return 
-                this.outputHeader() + "\n" +
-                
-                this.name  +  " = new Roo.XComponent({\n" +
-                "    part     :  "+ this.pathToPart() + ",\n" +
-                        /// critical used by builder to associate modules/parts/persm
-                "    order    : '" +modkey+"',\n" +
-                "    region   : '" + this.region   +"',\n" +
-                "    parent   : "+ parent + ",\n" +
-                "    name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
-                "    disabled : " + (this.disabled ? "true" : "false") +", \n" +
-                "    permname : '" + (this.permname.length > 0 ? this.permname : "") +"', \n" +
-                    
-               // "    tree : function() { return this._tree(); },\n" +   //BC
-                "    _tree : function()\n" +
-                "    {\n" +
-                "        var _this = this;\n" + // bc
-                "        var MODULE = this;\n" + /// this looks like a better name.
-                "        return " + o + ";" +
-                "    }\n" +
-                "});\n";
-                 
+    		return 
+		        this.outputHeader() + "\n" +
+		        
+		        this.name  +  " = new Roo.XComponent({\n" +
+		        "    part     :  "+ this.pathToPart() + ",\n" +
+		                /// critical used by builder to associate modules/parts/persm
+		        "    order    : '" +modkey+"',\n" +
+		        "    region   : '" + this.region   +"',\n" +
+		        "    parent   : "+ parent + ",\n" +
+		        "    name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
+		        "    disabled : " + (this.disabled ? "true" : "false") +", \n" +
+		        "    permname : '" + (this.permname.length > 0 ? this.permname : "") +"', \n" +
+		            
+		       // "    tree : function() { return this._tree(); },\n" +   //BC
+		        "    _tree : function()\n" +
+		        "    {\n" +
+		        "        var _this = this;\n" + // bc
+		        "        var MODULE = this;\n" + /// this looks like a better name.
+		        "        return " + o + ";" +
+		        "    }\n" +
+		        "});\n";
+		         
              
             
         }
