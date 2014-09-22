@@ -310,8 +310,7 @@ namespace JsRender {
 				}
 				string xinc_str;
 				FileUtils.get_contents(js, out xinc_str);
-				prefix_data = "<script type=\"text/javascript\">\n" +
-					xinc_str + "\n</script>\n";
+				prefix_data += "\n" + xinc_str + "\n";
 				
 			}
 
