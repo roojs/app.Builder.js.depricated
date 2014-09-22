@@ -262,7 +262,9 @@ namespace JsRender {
             
             
         }
-        
+
+	public Gee.ArrayList<string> findxincludes()
+	    
         /**
 	 * javascript used in Webkit preview 
          */
@@ -276,7 +278,7 @@ namespace JsRender {
 		var top = this.tree.fqn();
 
 
-		var xinc = this.findxincludes();
+		var xinc = this.findxincludes(this.tree);
 
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
