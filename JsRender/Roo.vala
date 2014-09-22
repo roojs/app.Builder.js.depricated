@@ -304,7 +304,7 @@ namespace JsRender {
 				} catch (RegexError e) {
 					continue;
 				}
-				if (!File.test(js, FileTest.EXISTS)) {
+				if (!FileUtils.test(js, FileTest.EXISTS)) {
 					continue;
 				}
 				prefix_data = "<script type=\"text/javascript\">\n" +
