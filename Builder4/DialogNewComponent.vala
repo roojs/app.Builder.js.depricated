@@ -168,7 +168,7 @@ public class Xcls_DialogNewComponent : Object
             _this.file.permname = _this.permname.el.get_text();                                    
             _this.file.modOrder = _this.modOrder.el.get_text();
             
-            if (_this.file.name.length && _this.file.name != _this.name.el.get_text()) {
+            if (_this.file.name.length  > 0 && _this.file.name != _this.name.el.get_text()) {
                 _this.file.renameTo(_this.name.el.get_text());
             }
                                                         
