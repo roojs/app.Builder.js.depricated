@@ -540,7 +540,7 @@ namespace JsRender {
 			// set to false to ensure this is the top level..
         		parent = "false";
 			var topnode = this.tree.fqn();
-			if (GLib.Regex.match_simple("/^Roo\.bootstrap\./",topnode) &&
+			if (GLib.Regex.match_simple("/^Roo\\.bootstrap\\./",topnode) &&
 			    topnode != "Roo.bootsrap.Body"
 			) {
 				parent = "#bootstrap-body";
