@@ -310,20 +310,12 @@ namespace JsRender {
 					print("Failed to find file by name?\n");
 					continue;
 				}
-				string js;
-				try {
-					Regex regex = new Regex("\\.(bjs|js)$");
 
-					js = regex.replace(sf.path,sf.path.length , 0 , ".js");
-				} catch (RegexError e) {
-					continue;
-				}
-				if (!FileUtils.test(js, FileTest.EXISTS)) {
-					continue;
-
-				}
-				string xinc_str;
-				FileUtils.get_contents(js, out xinc_str);
+				sf.loadItems();
+				xinc_str = sf.toSourcePreview();
+				
+				//string xinc_str;
+				//FileUtils.get_contents(js, out xinc_str);
 				prefix_data += "\n" + xinc_str + "\n";
 				
 			}
