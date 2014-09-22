@@ -263,7 +263,7 @@ namespace JsRender {
             
         }
 
-	public Gee.ArrayList<string> findxincludes(Node node, Gee.ArrayList<string>? ret)
+	public Gee.ArrayList<string> findxincludes(Node node, out Gee.ArrayList<string>? ret)
 	{
 		if (ret == null) {
 			ret = new Gee.ArrayList<string>();
