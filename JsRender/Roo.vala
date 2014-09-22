@@ -539,8 +539,13 @@ namespace JsRender {
     		if (isPreview) {
 			// set to false to ensure this is the top level..
         		parent = "false";
-			var topnode = this.tree;
-			if (node.has_key("$ xns") && 
+			var topnode = this.tree.fqn();
+			if (GLib.Regex.match_simple("/^Roo\.bootstrap\./",topnode) &&
+			    topnode != "Roo.bootsrap.Body"
+			) {
+				parent = "#bootstrap";
+			}
+			 
 			    
     		}
             
