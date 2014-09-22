@@ -269,7 +269,7 @@ namespace JsRender {
 			ret = new Gee.ArrayList<string>();
 		}
 		if (node.prop.has_key("* xinclude")) {
-			ret.add(node.prop.get("* xinclude");
+			ret.add(node.prop.get("* xinclude"));
 	        }
 		for (var i =0; i < node.items.size; i++) {
 			this.findxincludes(node.items.get(i), ret);
