@@ -294,7 +294,7 @@ namespace JsRender {
 		var top = this.tree.fqn();
 
 
-		var xinc = this.tree.xIncludesFind();
+		var xinc = this.xIncludesFind();
 
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
