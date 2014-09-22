@@ -540,6 +540,7 @@ namespace JsRender {
 			// set to false to ensure this is the top level..
         		parent = "false";
 			var topnode = this.tree.fqn();
+			print("topnode = %s\n", topnode);
 			if (GLib.Regex.match_simple("/^Roo\\.bootstrap\\./",topnode) &&
 			    topnode != "Roo.bootstrap.Body"
 			) {
