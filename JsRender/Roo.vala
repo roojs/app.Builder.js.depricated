@@ -317,6 +317,8 @@ namespace JsRender {
 			}
 
 		}
+
+		
 		
 		//print(JSON.stringify(this.items, null,4));
 		       
