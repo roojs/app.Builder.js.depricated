@@ -53,11 +53,17 @@ namespace JsRender {
             return 'Gtk';
         },
         */
-GLib.FileUtils.remove(this.path);
-	public   override void		this.removeFiles() {
 
-		
-		if (FileUtils.test(this.p
+	public   override void		this.removeFiles() {
+		var js = GLib.File.get_dirname(this.path) + name + ".js";
+		if (FileUtils.test(js, FileTest.EXISTS)) {
+			GLib.FileUtils.remove(js);
+		}
+		var vala = GLib.File.get_dirname(this.path) + name + ".vala";
+		if (FileUtils.test(vala, FileTest.EXISTS)) {
+			GLib.FileUtils.remove(vala);
+		}
+	}
         
          public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
         {
