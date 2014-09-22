@@ -94,6 +94,9 @@ namespace JsRender {
 			this.path = bjs;
 			
 		}
+		
+
+		
 		// not sure why xt is needed... -> project contains xtype..
 		
 		public static JsRender factory(string xt, Project.Project project, string path)
@@ -376,6 +379,7 @@ namespace JsRender {
 		public abstract void saveHTML(string html);
 		public abstract string toSource() ;
 		public abstract string toSourcePreview() ;
+		public abstract string removeFiles() ;
 		  
 	} 
 
