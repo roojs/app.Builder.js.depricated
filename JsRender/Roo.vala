@@ -543,7 +543,7 @@ namespace JsRender {
 			if (GLib.Regex.match_simple("/^Roo\.bootstrap\./",topnode) &&
 			    topnode != "Roo.bootsrap.Body"
 			) {
-				parent = "#bootstrap";
+				parent = "#bootstrap-body";
 			}
 			 
 			    
