@@ -79,6 +79,19 @@ namespace JsRender {
 			this.doubleStringProps = new Gee.ArrayList<string>();
 
 		}
+		
+		public renameTo(string name) 
+		{
+			
+			var bjs = GLib.File.get_dirname(this.path) + name + ".bjs";
+			if (FileUtils.test(bjs, FileTest.EXISTS)) {
+				throw new Error.RENAME_FILE_EXISTS("File exists %s\n",name);
+			}
+			GLib.FileUtils.remove(this.path);
+           		this.name = name;
+			this.path = bjs;
+			
+		}
 		// not sure why xt is needed... -> project contains xtype..
 		
 		public static JsRender factory(string xt, Project.Project project, string path)
