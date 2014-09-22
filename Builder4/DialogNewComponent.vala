@@ -73,7 +73,7 @@ public class Xcls_DialogNewComponent : Object
                 // what does this do?
                 
                 var isNew = _this.file.name.length  > 0 ? false : true;
-                
+                /*
                 if (!isNew && this.file.name != _this.name.el.get_text()) {
                     Xcls_StandardErrorDialog.singleton().show(
                         this.el,
@@ -82,7 +82,7 @@ public class Xcls_DialogNewComponent : Object
                      
                     return;
                 }
-                
+                */
                  
                 
               
