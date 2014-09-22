@@ -296,6 +296,10 @@ namespace JsRender {
 			for(var i = 0; i < xinc.size; i++) {
 				print("check xinclude:  %s\n", xinc.get(i));
 				var sf = this.project.getByName(xinc.get(i));
+				if (sf == null) {
+					print("Failed to find file by name?\n");
+					continue;
+				}
 				string js;
 				try {
 					Regex regex = new Regex("\\.(bjs|js)$");
