@@ -263,27 +263,9 @@ namespace JsRender {
             
         }
         
-         /**
-         * convert xtype for munged output..
-         * 
+        /**
+	 * javascript used in Webkit preview 
          */
-        /*
-        mungeXtype : function(xtype, els)
-        {
-            var bits = xtype.split('.');
-            // assume it has lenght!
-            
-            els.push("xtype: '"+ bits.pop()+"'");
-            els.push('xns: '+ bits.join('.'));
-            if (xtype.match(/bootstrap/)) {
-                els.push("'xtype-bootstrap' : '"+ xtype +"'");
-            }
-                //code
-            
-            
-            
-        },
-        */
         
         public override string  toSourcePreview()
         {
