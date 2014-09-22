@@ -263,7 +263,20 @@ namespace JsRender {
             
         }
 
-	public Gee.ArrayList<string> findxincludes()
+	public Gee.ArrayList<string> findxincludes(Node node, Gee.ArrayList<string>? ret)
+	{
+		if (ret == null) {
+			ret = new Gee.ArrayList<string>();
+		}
+		if (node.prop.has_key("* xinclude")) {
+			ret.add(node.prop.get("* xinclude");
+	        }
+		for (var i =0; i < node.items.size; i++) {
+			this.findxincludes(node.items.get(i), ret);
+		}
+		return ret;
+			
+	}
 	    
         /**
 	 * javascript used in Webkit preview 
