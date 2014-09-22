@@ -400,7 +400,8 @@ namespace JsRender {
 				"');\n";
 				
 		}
-
+		/// genericlly used..
+		ret += "rootURL = '';\nbaseURL = '';\n";
 		return ret;
             
        
