@@ -385,13 +385,23 @@ namespace JsRender {
        
         public string outputHeader()
         {
-            string[] s = {
-                "//<script type=\"text/javascript\">",
-                "",
-                "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
-                ""
-            };
-            return string.joinv("\n",s);
+    		string[] s = {
+		        "//<script type=\"text/javascript\">",
+		        "",
+		        "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
+		        ""
+		   
+    		};  
+    		var ret=  string.joinv("\n",s);
+		var bits = this.name.split(".");
+		if (bits.length > 1) {
+			ret += "\nRoo.namespace(\'" + 
+				this.name.substring(0, this.name.length - (bits[bits.length-1] + 1)) +
+				"');\n";
+				
+		}
+
+		return ret;
             
        
         }
