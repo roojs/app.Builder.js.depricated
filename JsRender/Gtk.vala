@@ -55,11 +55,11 @@ namespace JsRender {
         */
 
 	public   override void	 removeFiles() {
-		var js = GLib.File.get_dirname(this.path) +"/" +  name + ".js";
+		var js = GLib.Path.get_dirname(this.path) +"/" +  name + ".js";
 		if (FileUtils.test(js, FileTest.EXISTS)) {
 			GLib.FileUtils.remove(js);
 		}
-		var vala = GLib.File.get_dirname(this.path) +"/" + name + ".vala";
+		var vala = GLib.Path.get_dirname(this.path) +"/" + name + ".vala";
 		if (FileUtils.test(vala, FileTest.EXISTS)) {
 			GLib.FileUtils.remove(vala);
 		}
