@@ -287,28 +287,42 @@ namespace JsRender {
         
         public override string  toSourcePreview()
         {
-            print("to source preview\n");
-	    if (this.tree == null) {
-		    return "";
-	    }
-            var top = this.tree.fqn();
-            //print(JSON.stringify(this.items, null,4));
-                       
-            if (top == null) {
-				print ("guessname returned false");
-                return "";
-            }
-            
-            
-            if (top.contains("Dialog")) {
-                return this.toSourceDialog(true);
-            }
-            
-            if (top.contains("Modal")) {
-                return this.toSourceModal(true);
-            }
-            
-            return this.toSourceLayout(true);
+		print("to source preview\n");
+		if (this.tree == null) {
+			return "";
+		}
+		var top = this.tree.fqn();
+
+
+		var xinc = this.tree.xIncludesFind();
+
+		var prefix_data = "";
+		if (xinc.size > 0 ) {
+			for(var i = 0; i < xinc.size; i++) {
+				this.project.
+				
+			}
+
+
+		}
+		
+		//print(JSON.stringify(this.items, null,4));
+		       
+		if (top == null) {
+			print ("guessname returned false");
+			return "";
+		}
+
+
+		if (top.contains("Dialog")) {
+			return this.toSourceDialog(true);
+		}
+
+		if (top.contains("Modal")) {
+			return this.toSourceModal(true);
+		}
+
+		return this.toSourceLayout(true);
             
             
             

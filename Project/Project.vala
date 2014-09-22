@@ -200,29 +200,7 @@ namespace Project {
 			
 
 		}
-		/*
-		public load
 		 
-		    
-		    load : function (o)  // is this used??
-		    {
-		        if (!this.fetchTree) {
-		            console.log("Project.getTree tree called on base object?!?!");
-		            return false;
-		        }
-		        
-		        if (this.files) {
-		            return o.success.apply(o.scope || this, [this]);
-		        }
-		        return this.fetchTree(o);
-		        
-		    },
-		*/
-	   // public Palete  getPalete ()
-		//{
-		        //print("Project.Base: GET PROVIDER FOR " + this.xtype);
-	   //         return  ProjectManager.getPalete(this.xtype);
-	   // }
 
 		public void save()
 		{
@@ -230,10 +208,11 @@ namespace Project {
             
 			if (this.fn.length < 1) {
 				// make the filename..
-				var t = new DateTime.now_local ();
-				TimeVal tv;
-				t.to_timeval(out tv);
-				var str = "%l:%l".printf(tv.tv_sec,tv.tv_usec);
+				//var t = new DateTime.now_local ();
+				//TimeVal tv;
+				//t.to_timeval(out tv);
+				//var str = "%l:%l".printf(tv.tv_sec,tv.tv_usec);
+				var str = this.firstPath();
 				
         			this.fn = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
@@ -452,7 +431,7 @@ namespace Project {
 		{
 		    
 			var fiter = files.map_iterator();
-		    while(fiter.next()) {
+			while(fiter.next()) {
 		     
 		        var f = fiter.get_value();
 		        
