@@ -396,7 +396,7 @@ namespace JsRender {
 		var bits = this.name.split(".");
 		if (bits.length > 1) {
 			ret += "\nRoo.namespace(\'" + 
-				this.name.substring(0, this.name.length - (bits[bits.length-1] + 1)) +
+				this.name.substring(0, this.name.length - (bits[bits.length-1].length + 1)) +
 				"');\n";
 				
 		}
