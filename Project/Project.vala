@@ -419,7 +419,7 @@ namespace Project {
 		        var f = fiter.get_value();
 		        
 		        
-		        //console.log(f.id + '?=' + id);
+		        print ("Project.getByName: %s ?= %s\n" ,f.name , name);
 		        if (f.name == name) {
 		            return f;
 		        }
