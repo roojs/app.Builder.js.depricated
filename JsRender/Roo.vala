@@ -299,7 +299,8 @@ namespace JsRender {
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
 			for(var i = 0; i < xinc.size; i++) {
-				this.project.
+				var sf = this.project.getByName(xinc.get(i).name);
+				
 				
 			}
 
