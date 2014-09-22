@@ -343,73 +343,7 @@ namespace Project {
 
 		}
 		
-		/**
-		 *
-		 * to tree - > is this needed anymore???
-		 */
-/*
-
-		public GLib.List<JsRender.JsRender> toTree ()
-		{
-		        
-		     
-		     
-		    var files = new Gee.HashMap<string,JsRender.JsRender>();
-
-		    var fiter = this.files.map_iterator();
-		    while(fiter.next()) {
-		        var fo = fiter.get_value();
-		        
-		        fo.hasParent = false;
-		        fo.cn = new GLib.List<JsRender.JsRender>();
-		        
-		        if (fo.fullname.length > 0) {
-		            files.set(fo.fullname, fo);
-		        }
-		    }
-		    
-		    var iter = files.map_iterator();
-		    while (iter.next()) {
-		        var f = iter.get_value();
-		        
-		        var par = f.parent;
-		        if (par.length < 1) {
-		            continue;
-		        }
-		        if (!files.has_key(par)) {
-		            continue;
-		        }
-		        files.get(par).cn.append(f);
-		        f.hasParent = true;
-		         
-		    };
-		        
-		    var ret = new GLib.List<JsRender.JsRender>();
-		    iter = files.map_iterator();
-		    while (iter.next()) {
-		        var f = iter.get_value();
-		            
-		        //   f.sortCn();
-		        if (f.hasParent) {
-		            continue;
-		        }
-		        if (files.has_key(f.fullname)) {
-		        
-		            ret.append(f);
-		        }
-		    }
-		    ret.sort( (a,b) => {
-		        return a.path > b.path ? 1 : -1;
-		    });
-		    
-		    
-		    //print(JSON.stringify(ret,null,4));
-		        
-		    return ret;  
-		         
-		        
-		}
-*/		
+	 
 		public JsRender.JsRender? getByName(string name)
 		{
 		    
