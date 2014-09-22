@@ -541,12 +541,11 @@ namespace JsRender {
         		parent = "false";
 			var topnode = this.tree.fqn();
 			if (GLib.Regex.match_simple("/^Roo\\.bootstrap\\./",topnode) &&
-			    topnode != "Roo.bootsrap.Body"
+			    topnode != "Roo.bootstrap.Body"
 			) {
-				parent = "#bootstrap-body";
+				parent = "\"#bootstrap-body\"";
 			}
-			 
-			    
+			  
     		}
             
           
