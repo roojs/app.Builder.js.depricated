@@ -88,6 +88,7 @@ namespace JsRender {
 				throw new Error.RENAME_FILE_EXISTS("File exists %s\n",name);
 			}
 			GLib.FileUtils.remove(this.path);
+			this.removeFiles();
 			// remove other files?
 			
            		this.name = name;
