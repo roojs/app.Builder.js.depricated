@@ -94,7 +94,7 @@ public class Xcls_DialogNewComponent : Object
                 if (!isNew) {
                     try {
                          this.updateFileFromEntry();
-                     } catch( JsRender.Error.RENAME_FILE_EXISTS) {
+                     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
                           Xcls_StandardErrorDialog.singleton().show(
                             this.el,
                             "The name you used already exists "
