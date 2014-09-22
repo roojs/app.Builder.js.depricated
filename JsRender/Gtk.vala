@@ -54,7 +54,10 @@ namespace JsRender {
         },
         */
 GLib.FileUtils.remove(this.path);
-			this.removeFiles();
+	public   override void		this.removeFiles() {
+
+		
+		if (FileUtils.test(this.p
         
          public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
         {
