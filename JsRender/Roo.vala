@@ -534,9 +534,14 @@ namespace JsRender {
             
     		string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
+		
+		
     		if (isPreview) {
 			// set to false to ensure this is the top level..
-        		parent = "false"; 
+        		parent = "false";
+			var topnode = this.tree;
+			if (node.has_key("$ xns") && 
+			    
     		}
             
           
