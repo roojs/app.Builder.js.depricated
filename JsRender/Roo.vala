@@ -265,9 +265,7 @@ namespace JsRender {
 
 	public Gee.ArrayList<string> findxincludes(Node node, out Gee.ArrayList<string>? ret)
 	{
-		if (ret == null) {
-			ret = new Gee.ArrayList<string>();
-		}
+		
 		if (node.prop.has_key("* xinclude")) {
 			ret.add(node.prop.get("* xinclude"));
 	        }
@@ -289,7 +287,7 @@ namespace JsRender {
 			return "";
 		}
 		var top = this.tree.fqn();
-
+		var xinc = new Gee.ArrayList<string>(); 
 
 		var xinc = this.findxincludes(this.tree);
 		print("got %d xincludes\n", xinc.size);
