@@ -74,9 +74,8 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-            // 30% for the panel.
-            this.el.set_position( (int)(this.el.max_postion / 0.7f));
-     
+        
+            this.el.set_position((int)(this.el.max_position * 0.7));
             this.file = null;
             
             if (file.tree == null) {
@@ -161,30 +160,250 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Terminal5( _this );
+            var child_0 = new Xcls_VBox5( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Terminal5 : Object 
+    public class Xcls_VBox5 : Object 
     {
-        public Vte.Terminal el;
+        public Gtk.VBox el;
         private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Terminal5(Xcls_GtkView _owner )
+        public Xcls_VBox5(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Vte.Terminal();
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_HBox6( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_HBox8( _this );
+            child_1.ref();
+            this.el.pack_start (  child_1.el , true,true,0 );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_HBox6 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HBox6(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_Button7( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , true,true,0 );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button7 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button7(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Compile";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_HBox8 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HBox8(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_TreeView9( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_ScrolledWindow13( _this );
+            child_1.ref();
+            this.el.pack_start (  child_1.el , true,true,0 );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_TreeView9 : Object 
+    {
+        public Gtk.TreeView el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_TreeView9(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_ListStore10( _this );
+            child_0.ref();
+            this.el.set_model (  child_0.el  );
+            var child_1 = new Xcls_column( _this );
+            child_1.ref();
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_ListStore10 : Object 
+    {
+        public Gtk.ListStore el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ListStore10(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ListStore( 1,   typeof(string) );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_column : Object 
+    {
+        public Gtk.TreeViewColumn el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_column(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "Compile output";
+            var child_0 = new Xcls_CellRendererText12( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_CellRendererText12 : Object 
+    {
+        public Gtk.CellRendererText el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_CellRendererText12(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.CellRendererText();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_ScrolledWindow13 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ScrolledWindow13(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_View14( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_View14 : Object 
+    {
+        public Gtk.SourceView el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_View14(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.SourceView();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.editable = false;
+            this.el.show_line_marks = true;
+            this.el.show_line_numbers = true;
         }
 
         // user defined functions 
