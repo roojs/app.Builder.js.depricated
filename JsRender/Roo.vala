@@ -306,9 +306,12 @@ namespace JsRender {
 				}
 				if (!FileUtils.test(js, FileTest.EXISTS)) {
 					continue;
+
 				}
+				string xinc_str;
+				FileUtils.get_contents(js, out xinc_str);
 				prefix_data = "<script type=\"text/javascript\">\n" +
-					FileUtils.get_contents(js) + "\n</script>\n";
+					xinc_str + "\n</script>\n";
 				
 			}
 
