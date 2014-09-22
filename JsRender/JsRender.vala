@@ -80,7 +80,7 @@ namespace JsRender {
 
 		}
 		
-		public renameTo(string name) 
+		public void renameTo(string name) 
 		{
 			
 			var bjs = GLib.File.get_dirname(this.path) +"/" +  name + ".bjs";
