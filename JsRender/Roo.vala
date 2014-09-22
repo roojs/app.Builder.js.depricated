@@ -312,7 +312,7 @@ namespace JsRender {
 				}
 
 				sf.loadItems();
-				var xinc_str = sf.toSourcePreview();
+				var xinc_str = sf.toSource();
 				
 				//string xinc_str;
 				//FileUtils.get_contents(js, out xinc_str);
