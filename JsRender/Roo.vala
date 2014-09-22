@@ -300,10 +300,21 @@ namespace JsRender {
 		if (xinc.size > 0 ) {
 			for(var i = 0; i < xinc.size; i++) {
 				var sf = this.project.getByName(xinc.get(i).name);
-				
+				string js;
+				try {
+					Regex regex = new Regex("\\.(bjs|js)$");
+
+					js = regex.replace(sf.path,sf.path.length , 0 , ".js");
+				} catch (RegexError e) {
+					continue;
+				}
+				if (!File.test(js, FileTest.EXISTS)) {
+					continue;
+				}
+				prefix_data = "<script type=\"text/javascript\">\n" +
+					FileUtils.get_contents(js) + "\n</script>\n";
 				
 			}
-
 
 		}
 		
@@ -316,14 +327,14 @@ namespace JsRender {
 
 
 		if (top.contains("Dialog")) {
-			return this.toSourceDialog(true);
+			return prefix_data + this.toSourceDialog(true);
 		}
 
 		if (top.contains("Modal")) {
-			return this.toSourceModal(true);
+			return prefix_data + this.toSourceModal(true);
 		}
 
-		return this.toSourceLayout(true);
+		return prefix_data + this.toSourceLayout(true);
             
             
             
