@@ -289,7 +289,7 @@ namespace JsRender {
 		var top = this.tree.fqn();
 		var xinc = new Gee.ArrayList<string>(); 
 
-		var xinc = this.findxincludes(this.tree);
+		this.findxincludes(this.tree, xinc);
 		print("got %d xincludes\n", xinc.size);
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
