@@ -92,7 +92,16 @@ public class Xcls_DialogNewComponent : Object
                 //}
         
                 if (!isNew) {
-                     this.updateFileFromEntry();
+                    try {
+                         this.updateFileFromEntry();
+                     } catch( JsRender.Error.RENAME_FILE_EXISTS) {
+                          Xcls_StandardErrorDialog.singleton().show(
+                            this.el,
+                            "The name you used already exists "
+                        );
+                        return;
+                         
+                     }
                                                                 
                 
                     _this.file.save();
