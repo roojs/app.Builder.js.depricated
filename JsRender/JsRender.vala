@@ -4,7 +4,8 @@ namespace JsRender {
 
 
 	public errordomain Error {
-		INVALID_FORMAT
+		INVALID_FORMAT,
+		RENAME_FILE_EXISTS
 	}
 		
 	public abstract class JsRender  : Object {
