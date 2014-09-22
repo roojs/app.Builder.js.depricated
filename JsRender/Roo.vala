@@ -294,8 +294,8 @@ namespace JsRender {
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
 			for(var i = 0; i < xinc.size; i++) {
-				print("check xinclude:  %s\n", xinc.get(i).name);
-				var sf = this.project.getByName(xinc.get(i).name);
+				print("check xinclude:  %s\n", xinc.get(i));
+				var sf = this.project.getByName(xinc.get(i));
 				string js;
 				try {
 					Regex regex = new Regex("\\.(bjs|js)$");
