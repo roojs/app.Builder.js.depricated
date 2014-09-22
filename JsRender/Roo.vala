@@ -292,10 +292,11 @@ namespace JsRender {
 
 
 		var xinc = this.findxincludes(this.tree);
-
+		print("got %d xincludes\n", xinc.size);
 		var prefix_data = "";
 		if (xinc.size > 0 ) {
 			for(var i = 0; i < xinc.size; i++) {
+				print("check xinclude:  %s\n", xinc.get(i).name);
 				var sf = this.project.getByName(xinc.get(i).name);
 				string js;
 				try {

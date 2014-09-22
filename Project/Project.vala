@@ -433,15 +433,15 @@ namespace Project {
 			var fiter = files.map_iterator();
 			while(fiter.next()) {
 		     
-		        var f = fiter.get_value();
-		        
-		        
-		        //console.log(f.id + '?=' + id);
-		        if (f.id == id) {
-		            return f;
-		        }
-		    };
-		    return null;
+				var f = fiter.get_value();
+				
+				
+				//console.log(f.id + '?=' + id);
+				if (f.id == id) {
+				    return f;
+				}
+			    };
+			return null;
 		}
 
 		public JsRender.JsRender newFile (string name)
