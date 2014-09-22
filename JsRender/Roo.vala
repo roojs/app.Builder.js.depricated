@@ -62,6 +62,16 @@ namespace JsRender {
 
     */
 		
+	public   override void		this.removeFiles() {
+		var html = GLib.File.get_dirname(this.path) +"/templates/" + name + ".html";
+		if (FileUtils.test(html, FileTest.EXISTS)) {
+			GLib.FileUtils.remove(html);
+		}
+		var js = GLib.File.get_dirname(this.path) +"/" + name + ".html";
+		if (FileUtils.test(js, FileTest.EXISTS)) {
+			GLib.FileUtils.remove(js);
+		}
+	}
 		
         public  override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
         {
