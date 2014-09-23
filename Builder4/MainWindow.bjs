@@ -401,8 +401,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Add\\nEvent\\nCode\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"Add Event Code\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
