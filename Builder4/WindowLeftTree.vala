@@ -316,7 +316,10 @@ public class Xcls_WindowLeftTree : Object
                  
                 
                 var tp = mod.get_path(iter).to_string();
+                // by default returns the path..
+                
                 data.set_text(tp,tp.length);
+                
                  print("return " + tp);
             });
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
