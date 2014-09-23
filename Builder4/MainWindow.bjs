@@ -168,8 +168,8 @@
                                                             "items" : [
                                                                 {
                                                                     "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                                                                    "xtype" : "Actor",
                                                                     "* pack" : "add_child",
+                                                                    "xtype" : "Actor",
                                                                     "$ xns" : "GtkClutter",
                                                                     "items" : [
                                                                         {
@@ -188,9 +188,32 @@
                                                             ]
                                                         },
                                                         {
-                                                            "* pack" : "add,null",
+                                                            "id" : "backbutton",
+                                                            "* init" : "this.el.set_size(50,50);",
                                                             "xtype" : "Actor",
-                                                            "$ xns" : "Clutter"
+                                                            "* pack" : "add_child",
+                                                            "$ xns" : "Clutter",
+                                                            "items" : [
+                                                                {
+                                                                    "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                                                                    "xtype" : "Actor",
+                                                                    "* pack" : "add_child",
+                                                                    "$ xns" : "GtkClutter",
+                                                                    "items" : [
+                                                                        {
+                                                                            "listeners" : {
+                                                                                "clicked" : "  ( ) => {\n    switch (_this.state) {\n        case \"edit\":\n        \n            _this.hideViewEditing();\n            break;  \n        case \"files\":\n            // should only occur if there is an active file..\n            _this.showViewEditing();\n            break; \n            \n          case \"addprop\":\n            _this.hideAddProp();\n\n            break;\n        case \"addlistener\":\n            _this.hideAddListener();\n\n            break;\n             \n         case \"object\":\n            _this.hideObject();\n            break;    \n         \n         case \"codeedit\":\n            \n            _this.hideCodeEdit();  \n            break;\n            \n         case  \"projectedit\":\n         // save?\n            _this.hideProjectEdit();\n            break;\n            \n        default:\n            break;\n    }\n    return  ;    \n\n}"
+                                                                            },
+                                                                            "* pack" : false,
+                                                                            "xtype" : "Button",
+                                                                            "width_request" : 50,
+                                                                            "$ label" : "\"<<\"",
+                                                                            "$ xns" : "Gtk",
+                                                                            "height_request" : 50
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             "id" : "projectbutton",
