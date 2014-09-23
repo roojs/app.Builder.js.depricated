@@ -215,7 +215,6 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"<<\"",
                                                                             "$ xns" : "Gtk",
                                                                             "height_request" : 50,
                                                                             "items" : [
