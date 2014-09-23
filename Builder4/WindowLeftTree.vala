@@ -477,6 +477,7 @@ public class Xcls_WindowLeftTree : Object
                         var selection_text = sel.get_text();
                         
                         // we need to strip FQN form selection text.
+                        print("sel text: %s\n", selection_text);
                         var bits = selection_text.split(":");
                         selection_text = selection_text.substring(bits[0].length+1);
                         
