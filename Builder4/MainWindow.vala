@@ -738,14 +738,15 @@ public class Xcls_MainWindow : Object
         _this.addfilebutton.el.show();       
           _this.backbutton.el.show();
         _this.delprojectbutton.el.show();
-        
+          _this.new_window.el.show();  
+              
           _this.editfilebutton.el.hide();   
           _this.projectbutton.el.hide();         
           _this.projecteditbutton.el.hide();
           _this.objectshowbutton.el.hide();
           _this.addpropbutton.el.hide();      
           _this.addlistenerbutton.el.hide();  
-          _this.new_window.el.hide();  
+    
     
     
     
