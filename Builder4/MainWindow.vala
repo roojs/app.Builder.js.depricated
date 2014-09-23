@@ -96,7 +96,12 @@ public class Xcls_MainWindow : Object
             return false;
         });
         this.el.destroy.connect( () =>  {
-         Gtk.main_quit();
+         MainWindow.singleton().no_windows--;
+         
+         if (MainWindow.singleton().no_windows < 1) {
+        
+             Gtk.main_quit();
+         }
         });
         this.el.show.connect( ( ) => {
             // hide the file editing..

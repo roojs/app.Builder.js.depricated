@@ -9,7 +9,7 @@
         {
             "listeners" : {
                 "delete_event" : "  (   event) => {\n    return false;\n}",
-                "destroy" : "() =>  {\n Gtk.main_quit();\n}",
+                "destroy" : "() =>  {\n MainWindow.singleton().no_windows--;\n \n if (MainWindow.singleton().no_windows < 1) {\n\n     Gtk.main_quit();\n }\n}",
                 "show" : "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}"
             },
             "|             void hideAddListener" : "() {\n      _this.backbutton.el.hide();\n     _this.projectbutton.el.show(); \n          _this.projecteditbutton.el.show();\n         _this.editfilebutton.el.show();   \n     _this.addpropsview.el.save_easing_state();\n    var el = _this.rooview.el;\n    el.save_easing_state();\n\n    \n    el.set_scale(1.0f,1.0f);\n    _this.addpropsview.el.set_scale(0.0f,0.0f);\n    _this.state = \"edit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n     _this.addpropsview.el.restore_easing_state();  \n  }",
