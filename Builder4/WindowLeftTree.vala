@@ -1006,7 +1006,7 @@ public class Xcls_WindowLeftTree : Object
                  
                     if (this.template_select == null) {
                         this.template_select = new DialogTemplateSelect();
-                        
+                     }
                  
                      var new_node = this.template_select.show(
                           (Gtk.Window) _this.el.get_toplevel (),
