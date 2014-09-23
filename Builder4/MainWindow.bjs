@@ -253,7 +253,7 @@
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
                                                                             "$ xns" : "Gtk",
-                                                                            "$ tooltip_text" : "\"File\\nDetails\"",
+                                                                            "$ tooltip_text" : "\"File Details\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
