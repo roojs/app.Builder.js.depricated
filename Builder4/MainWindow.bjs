@@ -329,8 +329,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Show\\nPalete\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"Show\\nPalete\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
