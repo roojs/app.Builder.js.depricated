@@ -19,8 +19,8 @@
             "items" : [
                 {
                     "id" : "viewbox",
-                    "* pack" : "add",
                     "xtype" : "VBox",
+                    "* pack" : "add",
                     "$ xns" : "Gtk",
                     "items" : [
                         {
@@ -56,14 +56,14 @@
                                         },
                                         {
                                             "* init" : " this.el.add_attribute(_this.txtrender.el , \"markup\", 0 );\n \n",
-                                            "* pack" : "append_column",
                                             "xtype" : "TreeViewColumn",
+                                            "* pack" : "append_column",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
                                                     "id" : "txtrender",
-                                                    "xtype" : "CellRendererText",
                                                     "* pack" : "pack_start,true",
+                                                    "xtype" : "CellRendererText",
                                                     "$ xns" : "Gtk"
                                                 }
                                             ]
