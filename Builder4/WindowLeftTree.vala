@@ -473,8 +473,14 @@ public class Xcls_WindowLeftTree : Object
                         //Gtk.TreeViewDropPosition.AFTER
                         //Gtk.TreeViewDropPosition.BEFORE
                         
-                        // what's in the selected data....
+                        // what's in the selected data.... - which is NodeFQN:path
                         var selection_text = sel.get_text();
+                        
+                        // we need to strip FQN form selection text.
+                        var bits = selection_text.split(":");
+                        selection_text = selection_text.substring(bits[0].length+1);
+                        
+                        
                         
                         
                         
