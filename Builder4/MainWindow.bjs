@@ -180,9 +180,16 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"<<\"",
                                                                             "$ xns" : "Gtk",
-                                                                            "height_request" : 50
+                                                                            "height_request" : 50,
+                                                                            "items" : [
+                                                                                {
+                                                                                    "utf8 icon_name" : "go-previous",
+                                                                                    "* pack" : "set_image",
+                                                                                    "xtype" : "Image",
+                                                                                    "$ xns" : "Gtk"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
@@ -215,7 +222,7 @@
                                                                                 {
                                                                                     "* pack" : "set_image",
                                                                                     "xtype" : "Image",
-                                                                                    "utf8 icon_name" : "go-previous",
+                                                                                    "utf8 icon_name" : "window-new",
                                                                                     "$ xns" : "Gtk"
                                                                                 }
                                                                             ]
