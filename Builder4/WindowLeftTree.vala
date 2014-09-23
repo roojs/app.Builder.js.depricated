@@ -608,10 +608,10 @@ public class Xcls_WindowLeftTree : Object
 
 
             // my vars (def)
+        public DialogTemplateSelect template_select;
         public JsRender.JsRender? file;
         public string activePath;
         public Project.Project? project;
-        public string XXXX;
 
         // ctor 
         public Xcls_model(Xcls_WindowLeftTree _owner )
@@ -621,6 +621,7 @@ public class Xcls_WindowLeftTree : Object
             this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
 
             // my vars (dec)
+            this.template_select = null;
             this.file = null;
             this.activePath = "";
             this.project = null;
@@ -1003,7 +1004,7 @@ public class Xcls_WindowLeftTree : Object
                 // we only need to show the template if it's come from else where?
                  if (show_templates) {
                  
-                    if (!this.template_select) {
+                    if (this.template_select == null) {
                         this.template_select = new DialogTemplateSelect();
                         
                  
