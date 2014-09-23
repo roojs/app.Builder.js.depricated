@@ -1641,7 +1641,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-              
+                Xcls_MainWindow.singleton().no_windows++;
                 var w = new Xcls_MainWindow();
                 w.ref();
                 w.is_top_window = false;
