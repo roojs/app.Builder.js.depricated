@@ -216,9 +216,9 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Open\\nFiles\"",
                                                                             "$ xns" : "Gtk",
                                                                             "height_request" : 50,
+                                                                            "$ tooltop_text" : "\"Open\\nFiles\"",
                                                                             "items" : [
                                                                                 {
                                                                                     "xtype" : "Image",
