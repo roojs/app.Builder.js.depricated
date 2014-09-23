@@ -39,10 +39,10 @@ public class Xcls_MainWindow : Object
 
         // my vars (def)
     public Project.Project project;
+    public int no_windows;
     public bool children_loaded;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
-    public ing no_windows;
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
@@ -63,10 +63,10 @@ public class Xcls_MainWindow : Object
 
         // my vars (dec)
         this.project = null;
+        this.no_windows = 1;
         this.children_loaded = false;
         this.left_projects = null;
         this.window_rooview = null;
-        this.no_windows = 1;
         this.left_tree = null;
         this.code_editor = null;
         this.new_file_dialog = null;
