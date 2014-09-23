@@ -26,7 +26,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditview projecteditview;
     public Xcls_buttonlayout buttonlayout;
     public Xcls_backbutton backbutton;
-    public Xcls_backbutton backbutton;
+    public Xcls_new_window new_window;
     public Xcls_projectbutton projectbutton;
     public Xcls_editfilebutton editfilebutton;
     public Xcls_projecteditbutton projecteditbutton;
@@ -1360,7 +1360,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_backbutton( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
-            var child_2 = new Xcls_backbutton( _this );
+            var child_2 = new Xcls_new_window( _this );
             child_2.ref();
             this.el.add_child (  child_2.el  );
             var child_3 = new Xcls_projectbutton( _this );
@@ -1555,7 +1555,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_backbutton : Object 
+    public class Xcls_new_window : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1564,10 +1564,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_backbutton(Xcls_MainWindow _owner )
+        public Xcls_new_window(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.backbutton = this;
+            _this.new_window = this;
             this.el = new Clutter.Actor();
 
             // my vars (dec)

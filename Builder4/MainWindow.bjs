@@ -188,7 +188,7 @@
                                                             ]
                                                         },
                                                         {
-                                                            "id" : "backbutton",
+                                                            "id" : "new_window",
                                                             "* init" : "this.el.set_size(50,50);",
                                                             "xtype" : "Actor",
                                                             "* pack" : "add_child",
