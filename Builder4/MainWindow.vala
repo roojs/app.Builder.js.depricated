@@ -1637,7 +1637,7 @@ public class Xcls_MainWindow : Object
             this.el.height_request = 50;
             var child_0 = new Xcls_Image23( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.set_image (  child_0.el  );
 
             // listeners 
             this.el.clicked.connect( ( ) => {

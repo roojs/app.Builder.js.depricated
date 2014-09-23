@@ -213,7 +213,7 @@
                                                                             "items" : [
                                                                                 {
                                                                                     "utf8 icon_name" : "window-new",
-                                                                                    "* pack" : "add",
+                                                                                    "* pack" : "set_image",
                                                                                     "xtype" : "Image",
                                                                                     "$ xns" : "Gtk"
                                                                                 }
