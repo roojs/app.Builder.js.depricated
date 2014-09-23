@@ -403,7 +403,15 @@
                                                                             "width_request" : 50,
                                                                             "$ label" : "\"Add\\nEvent\\nCode\"",
                                                                             "$ xns" : "Gtk",
-                                                                            "height_request" : 50
+                                                                            "height_request" : 50,
+                                                                            "items" : [
+                                                                                {
+                                                                                    "utf8 icon_name" : "appointment-new",
+                                                                                    "* pack" : "set_image",
+                                                                                    "xtype" : "Image",
+                                                                                    "$ xns" : "Gtk"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
