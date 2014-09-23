@@ -252,8 +252,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"File\\nDetails\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"File\\nDetails\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
