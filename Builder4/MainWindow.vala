@@ -1644,7 +1644,7 @@ public class Xcls_MainWindow : Object
                 Xcls_MainWindow.singleton().no_windows++;
                 var w = new Xcls_MainWindow();
                 w.ref();
-                w.is_top_window = false;
+               
                 w.el.show_all();
                 w.initChildren();
                 w.hideViewEditing();
