@@ -20,7 +20,7 @@ int main (string[] args) {
 	proj.scanDirs();
 	*/
 
-	var w = new Xcls_MainWindow();
+	var w = Xcls_MainWindow.singleton();
 	//w.ref();
 	//w.project = proj;
 	
