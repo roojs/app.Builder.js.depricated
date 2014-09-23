@@ -259,7 +259,7 @@
                                                                                 {
                                                                                     "* pack" : "set_image",
                                                                                     "xtype" : "Image",
-                                                                                    "utf8 icon_name" : "document-open",
+                                                                                    "utf8 icon_name" : "dialog-information",
                                                                                     "$ xns" : "Gtk"
                                                                                 }
                                                                             ]
