@@ -42,6 +42,7 @@ public class Xcls_MainWindow : Object
     public bool children_loaded;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
+    public boolean is_top_window;
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
@@ -65,6 +66,7 @@ public class Xcls_MainWindow : Object
         this.children_loaded = false;
         this.left_projects = null;
         this.window_rooview = null;
+        this.is_top_window = true;
         this.left_tree = null;
         this.code_editor = null;
         this.new_file_dialog = null;
