@@ -1702,6 +1702,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.icon_name = "go-previous";
         }
 
         // user defined functions 

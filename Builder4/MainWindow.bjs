@@ -215,6 +215,7 @@
                                                                                 {
                                                                                     "* pack" : "set_image",
                                                                                     "xtype" : "Image",
+                                                                                    "utf8 icon_name" : "go-previous",
                                                                                     "$ xns" : "Gtk"
                                                                                 }
                                                                             ]
