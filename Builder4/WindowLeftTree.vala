@@ -315,10 +315,17 @@ public class Xcls_WindowLeftTree : Object
                  s.get_selected(out mod, out iter);
                  
                 
+                
+                 GLib.Value value;
+                 _this.model.el.get_value(iter, 2, out value);
+                 var data = (JsRender.Node)(value.dup_object());
+                 var xname = data.fqn();
+                
+                
                 var tp = mod.get_path(iter).to_string();
                 // by default returns the path..
                 
-                data.set_text(tp,tp.length);
+                data.set_text(xname + ":" + tp,tp.length);
                 
                  print("return " + tp);
             });
