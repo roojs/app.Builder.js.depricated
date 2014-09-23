@@ -293,7 +293,7 @@
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
-                                                                                    "utf8 icon_name" : "folder-open",
+                                                                                    "utf8 icon_name" : "emblem-system",
                                                                                     "* pack" : "set_image",
                                                                                     "xtype" : "Image",
                                                                                     "$ xns" : "Gtk"

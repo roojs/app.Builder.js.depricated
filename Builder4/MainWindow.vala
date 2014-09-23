@@ -1978,7 +1978,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "folder-open";
+            this.el.icon_name = "emblem-system";
         }
 
         // user defined functions 
