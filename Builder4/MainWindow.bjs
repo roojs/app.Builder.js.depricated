@@ -330,7 +330,7 @@
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
                                                                             "$ xns" : "Gtk",
-                                                                            "$ tooltip_text" : "\"Show\\nPalete\"",
+                                                                            "$ tooltip_text" : "\"Add Child Element\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
