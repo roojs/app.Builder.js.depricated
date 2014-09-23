@@ -1001,7 +1001,16 @@ public class Xcls_WindowLeftTree : Object
                 
                 // we only need to show the template if it's come from else where?
                  if (show_templates) {
-                     var new_node = DialogTemplateSelect.singleton().show( this.file.palete(), node);
+                 
+                    if (!this.template_select) {
+                        this.template_select = new DialogTemplateSelect();
+                        
+                 
+                     var new_node = this.template_select.show(
+                          (Gtk.Window) _this.el.get_toplevel (),
+                              this.file.palete(),
+                           node);
+                           
                      if (new_node != null) {
                          node = new_node;
                      }
