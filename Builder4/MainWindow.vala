@@ -1836,7 +1836,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "dialog-information";
+            this.el.icon_name = "document-properties";
         }
 
         // user defined functions 
