@@ -2672,6 +2672,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
+            this.el.tooltip_text = "Open New Window";
             var child_0 = new Xcls_Image51( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
