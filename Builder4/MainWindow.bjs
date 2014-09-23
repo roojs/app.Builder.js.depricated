@@ -213,6 +213,7 @@
                                                                                 {
                                                                                     "* pack" : "add",
                                                                                     "xtype" : "Image",
+                                                                                    "utf8 icon_name" : "window-new",
                                                                                     "$ xns" : "Gtk"
                                                                                 }
                                                                             ]
