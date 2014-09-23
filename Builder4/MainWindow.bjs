@@ -365,8 +365,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Add\\nProp\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"Add Property\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
