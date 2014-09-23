@@ -540,7 +540,7 @@ public class Xcls_MainWindow : Object
          _this.projecteditbutton.el.show();
           _this.backbutton.el.hide();
              _this.editfilebutton.el.show();   
-          _this.new_window.el.show();  
+    
          
          
         //this.rooview.el.hide();
