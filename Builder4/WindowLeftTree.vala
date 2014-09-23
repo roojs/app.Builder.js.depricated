@@ -611,6 +611,7 @@ public class Xcls_WindowLeftTree : Object
         public JsRender.JsRender? file;
         public string activePath;
         public Project.Project? project;
+        public string XXXX;
 
         // ctor 
         public Xcls_model(Xcls_WindowLeftTree _owner )
