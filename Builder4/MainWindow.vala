@@ -96,9 +96,9 @@ public class Xcls_MainWindow : Object
             return false;
         });
         this.el.destroy.connect( () =>  {
-         MainWindow.singleton().no_windows--;
+         Xcls_MainWindow.singleton().no_windows--;
          
-         if (MainWindow.singleton().no_windows < 1) {
+         if (Xcls_MainWindow.singleton().no_windows < 1) {
         
              Gtk.main_quit();
          }
