@@ -318,8 +318,8 @@ public class Xcls_WindowLeftTree : Object
                 
                  GLib.Value value;
                  _this.model.el.get_value(iter, 2, out value);
-                 var data = (JsRender.Node)(value.dup_object());
-                 var xname = data.fqn();
+                 var ndata = (JsRender.Node)(value.dup_object());
+                 var xname = ndata.fqn();
                 
                 
                 var tp = mod.get_path(iter).to_string();
