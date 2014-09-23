@@ -182,7 +182,27 @@
                                                                             "width_request" : 50,
                                                                             "$ label" : "\"<<\"",
                                                                             "$ xns" : "Gtk",
-                                                                            "height_request" : 50
+                                                                            "height_request" : 50,
+                                                                            "items" : [
+                                                                                {
+                                                                                    "listeners" : {
+                                                                                        "clicked" : "( ) => {\n    Xcls_MainWindow.singleton().no_windows++;\n    var w = new Xcls_MainWindow();\n    w.ref();\n   \n    w.el.show_all();\n    w.initChildren();\n    w.hideViewEditing();\n\n\n}"
+                                                                                    },
+                                                                                    "* pack" : false,
+                                                                                    "xtype" : "Button",
+                                                                                    "width_request" : 50,
+                                                                                    "$ xns" : "Gtk",
+                                                                                    "height_request" : 50,
+                                                                                    "items" : [
+                                                                                        {
+                                                                                            "utf8 icon_name" : "window-new",
+                                                                                            "* pack" : "set_image",
+                                                                                            "xtype" : "Image",
+                                                                                            "$ xns" : "Gtk"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
@@ -199,27 +219,7 @@
                                                                     "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
                                                                     "* pack" : "add_child",
                                                                     "xtype" : "Actor",
-                                                                    "$ xns" : "GtkClutter",
-                                                                    "items" : [
-                                                                        {
-                                                                            "listeners" : {
-                                                                                "clicked" : "( ) => {\n    Xcls_MainWindow.singleton().no_windows++;\n    var w = new Xcls_MainWindow();\n    w.ref();\n   \n    w.el.show_all();\n    w.initChildren();\n    w.hideViewEditing();\n\n\n}"
-                                                                            },
-                                                                            "* pack" : false,
-                                                                            "xtype" : "Button",
-                                                                            "width_request" : 50,
-                                                                            "$ xns" : "Gtk",
-                                                                            "height_request" : 50,
-                                                                            "items" : [
-                                                                                {
-                                                                                    "utf8 icon_name" : "window-new",
-                                                                                    "* pack" : "set_image",
-                                                                                    "xtype" : "Image",
-                                                                                    "$ xns" : "Gtk"
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    ]
+                                                                    "$ xns" : "GtkClutter"
                                                                 }
                                                             ]
                                                         },
