@@ -210,7 +210,14 @@
                                                                             "width_request" : 50,
                                                                             "$ label" : "\"<<\"",
                                                                             "$ xns" : "Gtk",
-                                                                            "height_request" : 50
+                                                                            "height_request" : 50,
+                                                                            "items" : [
+                                                                                {
+                                                                                    "* pack" : "set_image",
+                                                                                    "xtype" : "Image",
+                                                                                    "$ xns" : "Gtk"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
