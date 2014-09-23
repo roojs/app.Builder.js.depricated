@@ -420,6 +420,8 @@ public class Xcls_WindowLeftTree : Object
                         
                     }
                         
+                   // ------------- a drag from self..
+                   
                    
                     //var action = Gdk.DragAction.COPY;
                         // unless we are copying!!! ctl button..
