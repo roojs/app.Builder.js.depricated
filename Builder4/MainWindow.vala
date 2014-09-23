@@ -1639,6 +1639,7 @@ public class Xcls_MainWindow : Object
               
                 var w = new Xcls_MainWindow();
                 w.ref();
+                w.is_top_window = false;
                 w.el.show_all();
                 w.initChildren();
                 w.hideViewEditing();
