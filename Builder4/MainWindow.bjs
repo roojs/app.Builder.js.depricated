@@ -474,7 +474,7 @@
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
                                                                             "$ xns" : "Gtk",
-                                                                            "$ tooltip_text" : "\"Add\\nFile\"",
+                                                                            "$ tooltip_text" : "\"Add File\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
