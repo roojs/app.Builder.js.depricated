@@ -2515,7 +2515,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
-            this.el.label = "New\nProj.";
+            this.el.tooltip_text = "New\nProj.";
             var child_0 = new Xcls_Image48( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
@@ -2640,7 +2640,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
-            this.el.label = "Add\nFile";
+            this.el.tooltip_text = "Add\nFile";
             var child_0 = new Xcls_Image52( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
@@ -2763,7 +2763,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
-            this.el.label = "Del\nProj";
+            this.el.tooltip_text = "Delelte Project";
             var child_0 = new Xcls_Image56( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

@@ -437,8 +437,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"New\\nProj.\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"New\\nProj.\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
@@ -473,8 +473,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Add\\nFile\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"Add\\nFile\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
@@ -509,8 +509,8 @@
                                                                             "* pack" : false,
                                                                             "xtype" : "Button",
                                                                             "width_request" : 50,
-                                                                            "$ label" : "\"Del\\nProj\"",
                                                                             "$ xns" : "Gtk",
+                                                                            "$ tooltip_text" : "\"Delelte Project\"",
                                                                             "height_request" : 50,
                                                                             "items" : [
                                                                                 {
