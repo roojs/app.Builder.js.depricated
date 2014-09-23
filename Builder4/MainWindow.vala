@@ -510,7 +510,7 @@ public class Xcls_MainWindow : Object
         _this.delprojectbutton.el.hide();
         _this.addfilebutton.el.hide();       
         _this.backbutton.el.hide();
-            _this.new_window.el.hide();      
+            _this.new_window.el.show();      
             
             
           _this.projectbutton.el.show();         
