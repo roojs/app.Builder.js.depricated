@@ -633,9 +633,157 @@ public class Xcls_WindowLeftTree : Object
                  
                  // handle drop around self..
                  
+                  var is_drag = info == Gdk.Atom.intern("STRING",true), 
+                            
+                        
+                //print("GETTING POS");
+                var  targetData = "";
+                
+                Gtk.TreePath path;
+                Gtk.TreeViewDropPosition pos;
+                var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
+                
+                // if there are not items in the tree.. the we have to set isOver to true for anything..
+                var isEmpty = false;
+                if (_this.model.el.iter_n_children(null) < 1) {
+                    print("got NO children?\n");
+                    isOver = true; //??? 
+                    isEmpty = true;
+                    pos = Gtk.TreeViewDropPosition.INTO_OR_AFTER;
+                }
+                
                  
                  
-                 
+                //var action = Gdk.DragAction.COPY;
+                    // unless we are copying!!! ctl button..
+                var action = (ctx.get_actions() & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+                
+                        
+                if (_this.model.el.iter_n_children(null) < 1) {
+                    // no children.. -- asume it's ok..
+                    
+                    targetData = "|%d|".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                     
+                    // continue through to allow drop...
+            
+                } else {
+                            
+                            
+                
+                            
+                            
+                            //print("ISOVER? " + isOver);
+                    if (!isOver) {
+                        
+                        Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                        return true; // not over apoint!?! - no action on drop or motion..
+                    }
+                            
+                    // drag node is parent of child..
+                    //console.log("SRC TREEPATH: " + src.treepath);
+                    //console.log("TARGET TREEPATH: " + data.path.to_string());
+                    
+                    // nned to check a  few here..
+                    //Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                    //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
+                    //Gtk.TreeViewDropPosition.AFTER
+                    //Gtk.TreeViewDropPosition.BEFORE
+                    
+                    // locally dragged items to not really use the 
+                    var selection_text = this.dragData;
+                    
+                    
+                    
+                    if (selection_text == null || selection_text.length < 1) {
+                        //print("Error  - drag selection text returned NULL");
+                      
+                         Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                         return true; /// -- fixme -- this is not really correct..
+                    }                
+                            
+                            // see if we are dragging into ourself?
+                            print ("got selection text of  " + selection_text);
+                            
+                            var target_path = path.to_string();
+                            //print("target_path="+target_path);
+                
+                            // 
+                            if (selection_text  == target_path) {
+                                print("self drag ?? == we should perhaps allow copy onto self..\n");
+                                if (this.drag_in_motion) {
+                                     Gdk.drag_status(ctx, 0 ,time);
+                                      this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                                      return;
+                                 }
+                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                
+                                 return; /// -- fixme -- this is not really correct..
+                
+                            }
+                            
+                            // check that 
+                            //print("DUMPING DATA");
+                            //console.dump(data);
+                            // path, pos
+                            
+                            //print(data.path.to_string() +' => '+  data.pos);
+                            
+                            // dropList is a list of xtypes that this node could be dropped on.
+                            // it is set up when we start to drag..
+                            
+                            
+                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                                
+                            print("targetDAta: " + targetData +"\n");
+                            
+                            if (targetData.length < 1) {
+                                //print("Can not find drop node path");
+                                if (this.drag_in_motion) {
+                                    Gdk.drag_status(ctx, 0, time);
+                                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                                    return;
+                                }
+                                Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                                return;
+                            }
+                            
+                            var td_ar = targetData.split("|");
+                              
+                            
+                            if (this.drag_in_motion) { 
+                                Gdk.drag_status(ctx, action ,time);
+                                this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
+                                return;
+                            }
+                            // continue on to allow drop..
+                        }
+                
+                        // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
+                
+                
+                         var delete_selection_data = false;
+                            
+                        if (ctx.get_actions() == Gdk.DragAction.ASK)  {
+                            /* Ask the user to move or copy, then set the ctx action. */
+                        }
+                
+                        if (ctx.get_actions() == Gdk.DragAction.MOVE) {
+                            delete_selection_data = true;
+                        }
+                        
+                            
+                                    // drag around.. - reorder..
+                        _this.model.moveNode(targetData, ctx.get_actions());
+                            
+                           
+                            
+                            
+                            
+                            // we can send stuff to souce here...
+                
+                
+                    // do we always say failure, so we handle the reall drop?
+                        Gtk.drag_finish (ctx, false, false,time); //delete_selection_data, time);
                  
                  
                  
