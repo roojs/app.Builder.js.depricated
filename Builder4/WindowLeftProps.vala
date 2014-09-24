@@ -1094,7 +1094,13 @@ public class Xcls_LeftProps : Object
              
                      _this.before_edit();
                      
-                     
+                     _this.keyrender.el.stop_editing(false);
+                     _this.keyrender.el.editable  =false;
+                
+                     _this.valuerender.el.stop_editing(false);
+                     _this.valuerender.el.editable  =false;
+                       
+                return _this.startEditingValue(path); 
                      
                     return false;
                 }
