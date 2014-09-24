@@ -385,7 +385,7 @@ public class Xcls_WindowLeftTree : Object
                             return;            
                         
                         }
-                        JsRender.Node dropNode = null;
+                        JsRender.Node dropNode = new JsRender.Node(); 
                         
                         var dropNodeType  = selection_text;
                         // for drop
@@ -395,8 +395,10 @@ public class Xcls_WindowLeftTree : Object
                             dropNode = new JsRender.Node();
                             dropNode.loadFromJson( pa.get_root(), 2);
                             dropNodeType = dropNode.fqn();
-                        }
+                        } else {
             
+                            dropNode.setFqn(selection_text);
+                        }
             
                          
                         // dropList --- need to gather this ... 
@@ -436,10 +438,9 @@ public class Xcls_WindowLeftTree : Object
                         
             
                         // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
-                        var node = new JsRender.Node();
-                        node.setFqn(selection_text);
+                        
             
-                        _this.model.dropNode(targetData, node, true);
+                        _this.model.dropNode(targetData, dropNode, true);
                         print("ADD new node!!!\n");
                             
                         ///Xcls_DialogTemplateSelect.singleton().show( _this.model.file.palete(), node);
