@@ -466,7 +466,7 @@ public class Xcls_WindowLeftTree : Object
                            
                            //data.set_text(tp,tp.length);   
                             
-                            data_data.set (data.get_target (), 8, (uchar[]) tp.to_utf8 ());
+                            data.set (data.get_target (), 8, (uchar[]) tp.to_utf8 ());
                         
                             
                            //  print("return " + tp);
