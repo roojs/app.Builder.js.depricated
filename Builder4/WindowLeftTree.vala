@@ -283,15 +283,17 @@ public class Xcls_WindowLeftTree : Object
             //        return true;
             });
             this.el.drag_motion.connect( ( ctx, x, y, time)  => {
-             
+               print("got drag motion\n");
                 var src = Gtk.drag_get_source_widget(ctx);
-                 
+               this.drag_x = x;
+               this.drag_y = y;     
+            
                if (src != this.el) {
                
              
              
                 // the point of this is to detect where an item could be dropped..
-                    print("got drag motion");
+               print("got drag motion\n");
                    this.drag_in_motion = true;
                    this.drag_x = x;
                    this.drag_y = y;
