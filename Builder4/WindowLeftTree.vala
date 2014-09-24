@@ -76,8 +76,8 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public string dragData;
-        public string[] dropList;
         public int drag_x;
+        public string[] dropList;
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
@@ -172,6 +172,50 @@ public class Xcls_WindowLeftTree : Object
                  //   print("click:" + res.path.to_string());
                   return true;
             });
+            this.el.drag_begin.connect( ( ctx)  => {
+            	//print('SOURCE: drag-begin');
+                    
+                    
+                    //this.targetData = "";
+                    
+                    // find what is selected in our tree...
+                    
+                    var s = _this.view.el.get_selection();
+                    if (s.count_selected_rows() < 1) {
+                        return;
+                    }
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+            
+                    
+            
+                    // set some properties of the tree for use by the dropped element.
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    var tp = mod.get_path(iter).to_string();
+                    var data = (JsRender.Node)(value.dup_object());
+                    var xname = data.fqn();
+                    print ("XNAME  IS " + xname+ "\n");
+                    this.dragData = tp;
+                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+                    
+            
+                    // make the drag icon a picture of the node that was selected
+                
+                    
+                // by default returns the path..
+                   var path = _this.model.el.get_path(iter);
+            
+                     
+                    var pix = this.el.create_row_drag_icon ( path);
+                    
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
+                    
+                    return;
+            });
             this.el.cursor_changed.connect( ( ) => {
             
             
@@ -230,50 +274,6 @@ public class Xcls_WindowLeftTree : Object
                 return  ;
                             
             });
-            this.el.drag_begin.connect( ( ctx)  => {
-            	//print('SOURCE: drag-begin');
-                    
-                    
-                    //this.targetData = "";
-                    
-                    // find what is selected in our tree...
-                    
-                    var s = _this.view.el.get_selection();
-                    if (s.count_selected_rows() < 1) {
-                        return;
-                    }
-                    Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
-                    s.get_selected(out mod, out iter);
-            
-                    
-            
-                    // set some properties of the tree for use by the dropped element.
-                    GLib.Value value;
-                    _this.model.el.get_value(iter, 2, out value);
-                    var tp = mod.get_path(iter).to_string();
-                    var data = (JsRender.Node)(value.dup_object());
-                    var xname = data.fqn();
-                    print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = tp;
-                    //this.dropList = _this.model.file.palete().getDropList(xname);
-                    
-                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-                    
-            
-                    // make the drag icon a picture of the node that was selected
-                
-                    
-                // by default returns the path..
-                   var path = _this.model.el.get_path(iter);
-            
-                     
-                    var pix = this.el.create_row_drag_icon ( path);
-                    
-                    Gtk.drag_set_icon_surface (ctx, pix) ;
-                    
-                    return;
-            });
             this.el.drag_end.connect( (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
                     this.dragData = "";
@@ -283,6 +283,12 @@ public class Xcls_WindowLeftTree : Object
             //        return true;
             });
             this.el.drag_motion.connect( ( ctx, x, y, time)  => {
+             
+                var src = Gtk.drag_get_source_widget(ctx);
+                 
+               if (src != this.el) {
+               
+             
              
                 // the point of this is to detect where an item could be dropped..
                     print("got drag motion");
@@ -298,47 +304,173 @@ public class Xcls_WindowLeftTree : Object
                             Gdk.Atom.intern("STRING",true),    // the target type we want 
                             time            // time stamp 
                     );
+                    return true;
+              }    
+            
+            
+            
+             //print("GETTING POS");
+                var  targetData = "";
+            
+                Gtk.TreePath path;
+                Gtk.TreeViewDropPosition pos;
+                var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
+            
+                // if there are not items in the tree.. the we have to set isOver to true for anything..
+                var isEmpty = false;
+                if (_this.model.el.iter_n_children(null) < 1) {
+                    print("got NO children?\n");
+                    isOver = true; //??? 
+                    isEmpty = true;
+                    pos = Gtk.TreeViewDropPosition.INTO_OR_AFTER;
+                }
+            
+            
+                // ------------- a drag from self..
+            
+            
+                //var action = Gdk.DragAction.COPY;
+                    // unless we are copying!!! ctl button..
+                var action = (ctx.get_actions() & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+            
+            
+                if (_this.model.el.iter_n_children(null) < 1) {
+                    // no children.. -- asume it's ok..
+                    
+                    targetData = "|%d|".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                       
+                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);        
+                    Gdk.drag_status(ctx, action ,time);
+                    return true;
+                    
+                    // continue through to allow drop...
+            
+                } 
+                    
+                    
+            
+                
+                
+                //print("ISOVER? " + isOver);
+                if (!isOver) {
+              
+                    Gdk.drag_status(ctx, 0 ,time);
+                     this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);                    
+                     return false;
+            
+                }
+                        
+                // drag node is parent of child..
+                //console.log("SRC TREEPATH: " + src.treepath);
+                //console.log("TARGET TREEPATH: " + data.path.to_string());
+                
+                // nned to check a  few here..
+                //Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
+                //Gtk.TreeViewDropPosition.AFTER
+                //Gtk.TreeViewDropPosition.BEFORE
+                
+                // locally dragged items to not really use the 
+                var selection_text = this.dragData;
+                
+                        
+                        
+                if (selection_text == null || selection_text.length < 1) {
+                            //print("Error  - drag selection text returned NULL");
+                         Gdk.drag_status(ctx, 0 ,time);
+                        this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                         return false;
+                 }
+                                   
+                        
+                        // see if we are dragging into ourself?
+                print ("got selection text of  " + selection_text);
+                
+                var target_path = path.to_string();
+                //print("target_path="+target_path);
+            
+                // 
+                if (selection_text  == target_path) {
+                    print("self drag ?? == we should perhaps allow copy onto self..\n");
+                            
+                     Gdk.drag_status(ctx, 0 ,time);
+                      this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                      return false;
+            //                 -- fixme -- this is not really correct..
+            
+                }
+                        
+                // check that 
+                //print("DUMPING DATA");
+                //console.dump(data);
+                // path, pos
+                
+                //print(data.path.to_string() +' => '+  data.pos);
+                
+                // dropList is a list of xtypes that this node could be dropped on.
+                // it is set up when we start to drag..
+                
+                
+                targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                    
+                print("targetDAta: " + targetData +"\n");
+                
+                if (targetData.length < 1) {
+                    //print("Can not find drop node path");
+                   
+                    Gdk.drag_status(ctx, 0, time);
+                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                    return false;
+                }
+                
+                var td_ar = targetData.split("|");
+                  
+                
+            
+                Gdk.drag_status(ctx, action ,time);
+                this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
                 return true;
+                   
                    
             });
             this.el.drag_data_get.connect( ( drag_context, data, info, time) => {
-            
-            
-                 //print("drag-data-get");
-                 var s = this.el.get_selection();
-                 if (s.count_selected_rows() < 1) {
-                        data.set_text("",0);     
-                         print("return empty string - no selection..");
-                        return;
-                    }
-                 
-                 Gtk.TreeIter iter;
-                 Gtk.TreeModel mod;
-                 
-                 s.get_selected(out mod, out iter);
-                 
-                
-                
-                 GLib.Value value;
-                 _this.model.el.get_value(iter, 2, out value);
-                 var ndata = (JsRender.Node)(value.dup_object());
-                 var xname = ndata.fqn();
-                
-                
-                var tp = mod.get_path(iter).to_string();
-                // by default returns the path..
-                
-               if ( info != Gdk.Atom.intern("STRING",true) ) {
-                    tp = ndata.toJsonString();
-               }   
-               
-               data.set_text(tp,tp.length);   
-                
-                
-            
-                
-               //  print("return " + tp);
-            });
+                        
+                        
+                             //print("drag-data-get");
+                             var s = this.el.get_selection();
+                             if (s.count_selected_rows() < 1) {
+                                    data.set_text("",0);     
+                                     print("return empty string - no selection..");
+                                    return;
+                                }
+                             
+                             Gtk.TreeIter iter;
+                             Gtk.TreeModel mod;
+                             
+                             s.get_selected(out mod, out iter);
+                             
+                            
+                            
+                             GLib.Value value;
+                             _this.model.el.get_value(iter, 2, out value);
+                             var ndata = (JsRender.Node)(value.dup_object());
+                             var xname = ndata.fqn();
+                            
+                            
+                            var tp = mod.get_path(iter).to_string();
+                            // by default returns the path..
+                            
+                           if ( info != Gdk.Atom.intern("STRING",true) ) {
+                                tp = ndata.toJsonString();
+                           }   
+                           
+                           data.set_text(tp,tp.length);   
+                            
+                            
+                        
+                            
+                           //  print("return " + tp);
+                        });
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
                   //print("Tree: drag-data-received");
             
