@@ -475,7 +475,7 @@ public class Xcls_WindowLeftTree : Object
                   print("Tree: drag-data-received\n");
             
             
-                    var is_drag = info == Gdk.Atom.intern("STRING",true);
+                    var is_drag = this.drag_in_motion;
                 
                     
             
