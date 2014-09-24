@@ -472,8 +472,9 @@ public class Xcls_WindowLeftTree : Object
                            //  print("return " + tp);
                         });
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
-                  print("Tree: drag-data-received\n");
-            
+                      print("Tree: drag-data-received\n");
+                    var selection_text = sel.get_text();
+                    print("selection_text= %s\n",selection_text);
             
                     var is_drag = this.drag_in_motion;
                 
@@ -507,8 +508,7 @@ public class Xcls_WindowLeftTree : Object
                     //print("drag_data_recieved from another element");
                     
                      
-                    var selection_text = sel.get_text();
-                    print("selection_text= %s\n",selection_text);
+                    
                     
                     if (selection_text == null || selection_text.length < 1 || !isOver) {
                         // nothing valid foudn to drop...
