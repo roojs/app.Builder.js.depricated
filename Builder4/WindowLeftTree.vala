@@ -437,7 +437,6 @@ public class Xcls_WindowLeftTree : Object
                             return;
                         }
                         // continue on to allow drop..
-                    }
                     
             
                         // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
