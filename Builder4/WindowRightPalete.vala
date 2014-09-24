@@ -206,7 +206,7 @@ public class Xcls_RightPalete : Object
                     return;
             });
             this.el.drag_end.connect( ( drag_context)  => {
-             	//Seed.print('SOURCE: drag-end');
+             	 print("SOURCE: drag-end\n");
             	
             	this.dragData = "";
             	//this.dropList = null;
