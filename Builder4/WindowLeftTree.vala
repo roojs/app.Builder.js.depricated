@@ -265,7 +265,8 @@ public class Xcls_WindowLeftTree : Object
                 
                     
                 // by default returns the path..
-                
+                   var path = _this.model.el.get_path(iter);
+            
                      
                     var pix = this.el.create_row_drag_icon ( path);
                     
