@@ -744,41 +744,41 @@ public class Xcls_WindowLeftTree : Object
                             
                             
                             // continue on to allow drop..
-                  
+              }
                     // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
             
             
-                     var delete_selection_data = false;
-                        
-                    if (ctx.get_actions() == Gdk.DragAction.ASK)  {
-                        /* Ask the user to move or copy, then set the ctx action. */
-                    }
-            
-                    if (ctx.get_actions() == Gdk.DragAction.MOVE) {
-                        delete_selection_data = true;
-                    }
+                 var delete_selection_data = false;
                     
-                        
-                                // drag around.. - reorder..
-                    _this.model.moveNode(targetData, ctx.get_actions());
-                        
-                       
-                        
-                        
-                        
-                        // we can send stuff to souce here...
+                if (ctx.get_actions() == Gdk.DragAction.ASK)  {
+                    /* Ask the user to move or copy, then set the ctx action. */
+                }
+            
+                if (ctx.get_actions() == Gdk.DragAction.MOVE) {
+                    delete_selection_data = true;
+                }
+                
+                    
+                            // drag around.. - reorder..
+                _this.model.moveNode(targetData, ctx.get_actions());
+                    
+                   
+                    
+                    
+                    
+                    // we can send stuff to souce here...
             
             
-                // do we always say failure, so we handle the reall drop?
-                    Gtk.drag_finish (ctx, false, false,time); //delete_selection_data, time);
+            // do we always say failure, so we handle the reall drop?
+                Gtk.drag_finish (ctx, false, false,time); //delete_selection_data, time);
+            
+                return true;
              
-                    return true;
-                 
-                 
-                 
-                 
-                 
-                 
+             
+             
+             
+             
+             
             });
         }
 
