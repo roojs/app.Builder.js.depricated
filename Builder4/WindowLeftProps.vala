@@ -1086,6 +1086,34 @@ public class Xcls_LeftProps : Object
                     return false; //not on a element.
                 }
                 
+                
+                 // right click.
+                 if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1) {    
+                    // show popup!.   
+                    if (col.title == "Value") {
+                         
+                        return false;
+                    }
+            
+                    var p = _this.ContextMenu;
+            
+                    p.el.set_screen(Gdk.Screen.get_default());
+                    p.el.show_all();
+                    p.el.popup(null, null, null,  ev.button, ev.time);
+                    //Seed.print("click:" + res.column.title);
+                    // select the 
+                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+              
+                        this.el.get_selection().select_path(path);
+                        return false;
+                    });
+                     _this.before_edit();
+                    return false;
+                }
+                
+                
+                
+                
                  // right click.
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
