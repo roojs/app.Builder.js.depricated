@@ -479,7 +479,7 @@ public class Xcls_WindowLeftTree : Object
                 
                     
             
-                    //print("GETTING POS");
+                    print("Is Drag %s\n", is_drag ? "Y": "N");
                     var  targetData = "";
                     
                     Gtk.TreePath path;
