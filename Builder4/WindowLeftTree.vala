@@ -633,8 +633,7 @@ public class Xcls_WindowLeftTree : Object
                  
                  // handle drop around self..
                  
-                  var is_drag = info == Gdk.Atom.intern("STRING",true);
-                            
+                              
                         
                 //print("GETTING POS");
                 var  targetData = "";
