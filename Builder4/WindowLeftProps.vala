@@ -1154,55 +1154,7 @@ public class Xcls_LeftProps : Object
                 
                 
                 
-                
-                
-                // currently editing???
-            //    if (  this.activePath) {
-                    
-                 //   this.activePath = false;
-                   // stop editing!!!!
-                 /*
-                    if (this.get('/Editor').dirty) {
-                        //if (!this.get('/Editor.buffer').checkSyntax()) {
-                        //   this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-                        //   return true;
-                        //    // error Dialog
-                        //}
-                        if (!this.get('/Editor.view').save()) {
-                            return true;
-                        }
-                    }   
-                    */
-                    
-                    //this.EditProps.editableColumn.items[0].el.stop_editing();
-                    //this.EditProps.editing = false;
-                
-                //    XObject.error("Currently editing?");
-                 //   return false;
-               // }
-                
-               // var renderer = this.valrender.el; // set has_entry..
-                
-                //var type = this.get('/LeftPanel.model').getType(res.path.to_string());
-                    
-                // get options for this type -- this is to support option lists etc..
-                //var provider = this.get('/LeftTree').getPaleteProvider();
-                //var opts = provider.findOptions(type);
-                
-            //    if (opts === false) {
-                    // it's text etnry
-            //         this.get('/LeftPanel').editableColumn.setOptions([]);
-            //        renderer.has_entry = true;
-            //    } else {
-            //         this.get('/LeftPanel').editableColumn.setOptions(opts);
-            //        renderer.has_entry = false;
-            //    }
-            
-                // we need to set the selected row..
-                
-                 //Gtk.TreePath path;
-            
-                 ;
+                  
                //             _this.before_edit(); <<< we really need to stop the other editor..
                  _this.keyrender.el.stop_editing(false);
                 _this.keyrender.el.editable  =false;
