@@ -503,7 +503,7 @@ public class Xcls_WindowLeftTree : Object
                         //Gtk.TreeViewDropPosition.AFTER
                         //Gtk.TreeViewDropPosition.BEFORE
                         
-                        // what's in the selected data.... - which is NodeFQN:path
+                        // locally dragged items to not really use the 
                         var selection_text = this.dragData;
                         
                         
