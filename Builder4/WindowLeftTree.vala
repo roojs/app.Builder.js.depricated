@@ -464,7 +464,7 @@ public class Xcls_WindowLeftTree : Object
                                 tp = ndata.toJsonString();
                            }   
                            
-                           data.set_text(tp,tp.length);   
+                           //data.set_text(tp,tp.length);   
                             
                             data_data.set (data.get_target (), 8, (uchar[]) tp.to_utf8 ());
                         
