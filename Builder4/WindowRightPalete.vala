@@ -216,16 +216,14 @@ public class Xcls_RightPalete : Object
             });
             this.el.drag_data_get.connect( (drag_context, selection_data, info, time) => {
              	//Seed.print('Palete: drag-data-get: ' + target_type);
-                    if (this.dragData.length < 1 ) {
-                        return; 
-                    }
-                    
-                        print("setting drag data to %s\n", this.dragData);
-                       // selection_data.set_text(this.dragData ,this.dragData.length);
-                        dataselectiondata.set (selection.get_target (), 8, (uchar[]) this.dragData.to_utf8 ());
-                    }
-                    
-                    
+                if (this.dragData.length < 1 ) {
+                    return; 
+                }
+                
+                print("setting drag data to %s\n", this.dragData);
+               // selection_data.set_text(this.dragData ,this.dragData.length);
+                dataselectiondata.set (selection.get_target (), 8, (uchar[]) this.dragData.to_utf8 ());
+            
                     //this.el.dragData = "TEST from source widget";
                     
                     
