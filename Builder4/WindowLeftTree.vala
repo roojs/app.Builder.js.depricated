@@ -303,7 +303,7 @@ public class Xcls_WindowLeftTree : Object
             this.el.drag_data_get.connect( ( drag_context, data, info, time) => {
             
             
-                 print("drag-data-get");
+                 //print("drag-data-get");
                  var s = this.el.get_selection();
                  if (s.count_selected_rows() < 1) {
                         data.set_text("",0);     
@@ -327,9 +327,16 @@ public class Xcls_WindowLeftTree : Object
                 var tp = mod.get_path(iter).to_string();
                 // by default returns the path..
                 
-                data.set_text(xname + ":" + tp,xname.length + tp.length + 1);
+               if ( info != Gdk.Atom.intern("STRING",true) ) {
+                    tp = node.toJsonString();
+               }   
+               
+               data.set_text(tp,tp.length);   
                 
-                 print("return " + tp);
+                
+            
+                
+               //  print("return " + tp);
             });
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
                   //print("Tree: drag-data-received");
