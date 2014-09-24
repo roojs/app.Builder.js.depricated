@@ -381,7 +381,7 @@ right:
 left:   
     Roo.bootstrap.Table:cm[]          
 right:
-    Roo.bootstrap.Table.ColumnModel
+    Roo.grid.ColumnModel
 
 left:
     Roo.bootstrap.Table:sm
