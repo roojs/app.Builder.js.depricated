@@ -371,11 +371,7 @@ public class Xcls_WindowLeftTree : Object
                         
                          
                         var selection_text = sel.get_text();
-            
-                        // for drop
-                        if (
-            
-            
+                        
                         
                         if (selection_text == null || selection_text.length < 1 || !isOver) {
                             // nothing valid foudn to drop...
@@ -389,6 +385,19 @@ public class Xcls_WindowLeftTree : Object
                             return;            
                         
                         }
+                        JsRender.Node dropNode = null;
+                        
+                        var dropNodeType  = selection_text;
+                        // for drop
+                        if (!is_drag && dropNodeType[0] == '{') {
+                            var pa = new Json.Parser();
+                            pa.load_from_data(dropNodeType);
+                            dropNode = new JsRender.Node();
+                            dropNode.loadFromJson( pa.get_root(), 2);
+                        
+                        }
+            
+            
                          
                         // dropList --- need to gather this ... 
                         //print("get dropList for : %s\n",selection_text);            
