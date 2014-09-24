@@ -1100,7 +1100,7 @@ public class Xcls_LeftProps : Object
                      _this.valuerender.el.stop_editing(false);
                      _this.valuerender.el.editable  =false;
                        
-                return _this.startEditingValue(path); 
+                    return _this.startEditingKey(path); 
                      
                     return false;
                 }
