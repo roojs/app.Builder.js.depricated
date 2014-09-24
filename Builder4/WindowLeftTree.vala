@@ -630,6 +630,20 @@ public class Xcls_WindowLeftTree : Object
             
                      return  false;
                  }
+                 
+                 // handle drop around self..
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
             });
         }
 
