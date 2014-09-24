@@ -386,7 +386,7 @@ public class Xcls_WindowLeftTree : Object
                             return;            
                         
                         }
-                        JsRender.Node dropNode = new JsRender.Node(); 
+                        var dropNode = new JsRender.Node(); 
                         
                         var dropNodeType  = selection_text;
                         var show_templates = true;
@@ -394,7 +394,7 @@ public class Xcls_WindowLeftTree : Object
                         if (!is_drag && dropNodeType[0] == '{') {
                             var pa = new Json.Parser();
                             pa.load_from_data(dropNodeType);
-                            dropNode = new JsRender.Node();
+                             
                             dropNode.loadFromJson( pa.get_root(), 2);
                             dropNodeType = dropNode.fqn();
                             show_templates = false;
