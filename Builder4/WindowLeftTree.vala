@@ -329,7 +329,7 @@ public class Xcls_WindowLeftTree : Object
                 // by default returns the path..
                 
                if ( info != Gdk.Atom.intern("STRING",true) ) {
-                    tp = node.toJsonString();
+                    tp = ndata.toJsonString();
                }   
                
                data.set_text(tp,tp.length);   
