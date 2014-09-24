@@ -512,6 +512,7 @@ public class Xcls_WindowLeftTree : Object
                     
                     if (selection_text == null || selection_text.length < 1 || !isOver) {
                         // nothing valid foudn to drop...
+                           print("empty sel text or not over");
                         if (is_drag) {
                             Gdk.drag_status(ctx, 0, time);
                             this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
@@ -541,7 +542,7 @@ public class Xcls_WindowLeftTree : Object
             
                      
                     // dropList --- need to gather this ... 
-                    //print("get dropList for : %s\n",selection_text);            
+                   print("get dropList for : %s\n",dropNodeType);            
                     var dropList = _this.model.file.palete().getDropList(dropNodeType);
                     
                     print("dropList: %s\n", string.joinv(" , ", dropList));
