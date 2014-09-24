@@ -370,7 +370,7 @@ public class Xcls_WindowLeftTree : Object
                         
                         if (selection_text == null || selection_text.length < 1 || !isOver) {
                             // nothing valid foudn to drop...
-                            if (this.drag_in_motion) {
+                            if (is_drag) {
                                 Gdk.drag_status(ctx, 0, time);
                                 this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
                                 return;
