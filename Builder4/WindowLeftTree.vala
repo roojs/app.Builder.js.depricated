@@ -253,7 +253,7 @@ public class Xcls_WindowLeftTree : Object
                     _this.model.el.get_value(iter, 2, out value);
                     var data = (JsRender.Node)(value.dup_object());
                     var xname = data.fqn();
-                     print ("XNAME  IS " + xname+ "\n");
+                    print ("XNAME  IS " + xname+ "\n");
                     this.dragData = xname;
                     this.dropList = _this.model.file.palete().getDropList(xname);
                     
@@ -263,7 +263,7 @@ public class Xcls_WindowLeftTree : Object
                     // make the drag icon a picture of the node that was selected
                     var path = _this.model.el.get_path(iter);
             
-                    //this.treepath = path.to_string();
+                    this.treepath = path.to_string();
                     
                     var pix = this.el.create_row_drag_icon ( path);
                     
