@@ -342,7 +342,7 @@ public class Xcls_WindowLeftTree : Object
                   //print("Tree: drag-data-received");
             
             
-                    var is_drag = info == Gdk.Atom.intern("STRING",true), 
+                    var is_drag = info == Gdk.Atom.intern("STRING",true);
                 
             
                     //print("GETTING POS");
@@ -633,7 +633,7 @@ public class Xcls_WindowLeftTree : Object
                  
                  // handle drop around self..
                  
-                  var is_drag = info == Gdk.Atom.intern("STRING",true), 
+                  var is_drag = info == Gdk.Atom.intern("STRING",true);
                             
                         
                 //print("GETTING POS");
