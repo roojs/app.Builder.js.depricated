@@ -528,13 +528,15 @@ public class Xcls_WindowLeftTree : Object
                     var dropNodeType  = selection_text;
                     var show_templates = true;
                     // for drop
-                    if (!is_drag && dropNodeType[0] == '{') {
+                    if (dropNodeType[0] == '{') {
                         var pa = new Json.Parser();
                         pa.load_from_data(dropNodeType);
                          
                         dropNode.loadFromJson( pa.get_root().get_object(), 2);
                         dropNodeType = dropNode.fqn();
                         show_templates = false;
+                        
+                        
                     } else {
             
                         dropNode.setFqn(selection_text);
