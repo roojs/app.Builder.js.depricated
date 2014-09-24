@@ -293,10 +293,8 @@ public class Xcls_WindowLeftTree : Object
              
              
                 // the point of this is to detect where an item could be dropped..
-               print("got drag motion\n");
+                    print("requesting drag data\n");
                    this.drag_in_motion = true;
-                   this.drag_x = x;
-                   this.drag_y = y;
                    
                         // request data that will be recieved by the recieve...              
                     Gtk.drag_get_data
