@@ -472,7 +472,7 @@ public class Xcls_WindowLeftTree : Object
                            //  print("return " + tp);
                         });
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
-                  print("Tree: drag-data-received");
+                  print("Tree: drag-data-received\n");
             
             
                     var is_drag = info == Gdk.Atom.intern("STRING",true);
