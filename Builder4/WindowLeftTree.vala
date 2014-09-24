@@ -332,6 +332,10 @@ public class Xcls_WindowLeftTree : Object
             this.el.drag_data_received.connect( (ctx, x, y, sel, info, time)  => {
                   //print("Tree: drag-data-received");
             
+            
+                    var is_drag = info == 
+                
+            
                     //print("GETTING POS");
                     var  targetData = "";
                     
@@ -358,6 +362,11 @@ public class Xcls_WindowLeftTree : Object
                         
                          
                         var selection_text = sel.get_text();
+            
+                        // for drop
+            
+            
+            
                         
                         if (selection_text == null || selection_text.length < 1 || !isOver) {
                             // nothing valid foudn to drop...
