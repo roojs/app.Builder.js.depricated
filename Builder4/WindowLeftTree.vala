@@ -251,20 +251,22 @@ public class Xcls_WindowLeftTree : Object
                     // set some properties of the tree for use by the dropped element.
                     GLib.Value value;
                     _this.model.el.get_value(iter, 2, out value);
+                    var tp = mod.get_path(iter).to_string();
                     var data = (JsRender.Node)(value.dup_object());
                     var xname = data.fqn();
                     print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = xname;
+                    this.dragData = tp;
                     this.dropList = _this.model.file.palete().getDropList(xname);
                     
                     print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
                     
             
                     // make the drag icon a picture of the node that was selected
-                    var path = _this.model.el.get_path(iter);
-            
-                    this.treepath = path.to_string();
+                
                     
+                // by default returns the path..
+                
+                     
                     var pix = this.el.create_row_drag_icon ( path);
                     
                     Gtk.drag_set_icon_surface (ctx, pix) ;
