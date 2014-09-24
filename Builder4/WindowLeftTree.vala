@@ -395,7 +395,7 @@ public class Xcls_WindowLeftTree : Object
                             var pa = new Json.Parser();
                             pa.load_from_data(dropNodeType);
                              
-                            dropNode.loadFromJson( pa.get_root(), 2);
+                            dropNode.loadFromJson( pa.get_root().get_object(), 2);
                             dropNodeType = dropNode.fqn();
                             show_templates = false;
                         } else {
