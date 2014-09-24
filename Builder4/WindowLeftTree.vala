@@ -606,21 +606,30 @@ public class Xcls_WindowLeftTree : Object
             });
             this.el.drag_drop.connect( (  ctx, x, y, time)  => {
                   //Seed.print("TARGET: drag-drop");
-                   this.drag_in_motion = false;   
-                    // request data that will be recieved by the recieve...              
-                Gtk.drag_get_data
-                (
-                        this.el,         // will receive 'drag-data-received' signal 
-                        ctx,        // represents the current state of the DnD 
-                        Gdk.Atom.intern("application/json",true),    // the target type we want 
-                        time            // time stamp 
-                );
-            
+               
+               
+                var src = Gtk.drag_get_source_widget(ctx);
                  
-                // No target offered by source => error
+               if (src != this.el) {
+               
+                
+                   
+                   this.drag_in_motion = false;   
+                        // request data that will be recieved by the recieve...              
+                    Gtk.drag_get_data
+                    (
+                            this.el,         // will receive 'drag-data-received' signal 
+                            ctx,        // represents the current state of the DnD 
+                            Gdk.Atom.intern("application/json",true),    // the target type we want 
+                            time            // time stamp 
+                    );
+            
+                     
+                    // No target offered by source => error
                
             
-                return  false;
+                     return  false;
+                 }
             });
         }
 
