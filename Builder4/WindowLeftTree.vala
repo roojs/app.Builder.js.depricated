@@ -508,7 +508,7 @@ public class Xcls_WindowLeftTree : Object
                     
                      
                     var selection_text = sel.get_text();
-                    
+                    print("selection_text= %s\n",selection_text);
                     
                     if (selection_text == null || selection_text.length < 1 || !isOver) {
                         // nothing valid foudn to drop...
