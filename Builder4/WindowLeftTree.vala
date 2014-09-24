@@ -394,14 +394,14 @@ public class Xcls_WindowLeftTree : Object
                             pa.load_from_data(dropNodeType);
                             dropNode = new JsRender.Node();
                             dropNode.loadFromJson( pa.get_root(), 2);
-                        
+                            dropNodeType = dropNode.fqn();
                         }
             
             
                          
                         // dropList --- need to gather this ... 
                         //print("get dropList for : %s\n",selection_text);            
-                        var dropList = _this.model.file.palete().getDropList(selection_text);
+                        var dropList = _this.model.file.palete().getDropList(dropNodeType);
                         
                         print("dropList: %s\n", string.joinv(" , ", dropList));
                         
