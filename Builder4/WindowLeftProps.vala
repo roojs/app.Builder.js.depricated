@@ -1117,10 +1117,10 @@ public class Xcls_LeftProps : Object
                  // right click.
                  if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                     // show popup!.   
-                    if (col.title == "Value") {
-                         _this.before_edit();
-                        return false;
-                    }
+                    //if (col.title == "Value") {
+                     //     _this.before_edit();
+                     //    return false;
+                     //}
             
                     var p = _this.ContextMenu;
             
