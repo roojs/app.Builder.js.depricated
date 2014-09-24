@@ -364,7 +364,7 @@ public class Xcls_WindowLeftTree : Object
                         var selection_text = sel.get_text();
             
                         // for drop
-            
+                        if (
             
             
                         
