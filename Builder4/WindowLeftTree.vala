@@ -331,6 +331,7 @@ public class Xcls_WindowLeftTree : Object
             
                 //var action = Gdk.DragAction.COPY;
                     // unless we are copying!!! ctl button..
+                
                 var action = (ctx.get_actions() & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
             
             
