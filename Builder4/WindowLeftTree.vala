@@ -501,6 +501,7 @@ public class Xcls_WindowLeftTree : Object
                     
                     // a drag from self - this should be handled by drop and motion.
                     if (src == this.el) {
+                        print("Source == this element should not happen.. ? \n");
                         return;
                     }
                     //print("drag_data_recieved from another element");
