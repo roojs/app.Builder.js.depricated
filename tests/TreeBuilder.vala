@@ -132,10 +132,11 @@ namespace Palete {
 		//
 	 
 	}
+}
 
 int main (string[] args) {
 
-	var a = new ValaSource(JsRender.);
+	var a = new ValaSource(file);
 	a.create_valac_tree();
 	return 0;
 }
