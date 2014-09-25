@@ -37,13 +37,14 @@ namespace Palete {
 	}
 
 	public class ValaSource : Vala.CodeVisitor {
-	
-		public Vala.CodeContext check (JsRender.Gtk file) {
+
+		Vala.CodeContext context;
+		
+		public ValaSource(JsRender.Gtk file) {
+			base();
 			// init context:
 
-
-			
-			var context = new Vala.CodeContext ();
+			context = new Vala.CodeContext ();
 			Vala.CodeContext.push (context);
 		
 			context.experimental = false;
@@ -109,7 +110,8 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("got errors");
-				return context;
+				Vala.CodeContext.pop (context);
+				return;
 			}
 
 
@@ -118,10 +120,12 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				print("check got errors");
-				return context;
+				Vala.CodeContext.pop (context);
+				return;
 			}
+			Vala.CodeContext.pop (context);
 			print("ALL OK?\n");
-			return context;
+			return;
 		}
 	//
 		// startpoint:
