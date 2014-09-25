@@ -22,7 +22,7 @@ namespace Palete {
 				return;
 				//stderr.printf ("My error: %s\n", message);
 			}
-			if (source.file != "~~~~~testfile.vala") {
+			if (source.file.filename != "~~~~~testfile.vala") {
 				return;
 			}
 			var pre = "";
