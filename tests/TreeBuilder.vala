@@ -11,8 +11,9 @@ namespace Palete {
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
 			if (source == null) {
-				stderr.printf ("My error: %s\n", message);
+				//stderr.printf ("My error: %s\n", message);
 			} else {
+				
 				stderr.printf ("%s: My error: %s\n", source.to_string (), message);
 		
 				//Vala.Report.report_source (source);
