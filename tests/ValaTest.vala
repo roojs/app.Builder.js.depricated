@@ -37,7 +37,7 @@ int main (string[] args) {
 
 	
 	Project.Project.loadAll();
-	var p = Project.Project.getProject("Builder5");
+	var p = Project.Project.getProject("Builder4");
 	p.scanDirs();
 	var ar = p.sortedFiles();
 	var iter = ar.list_iterator();
@@ -51,7 +51,7 @@ int main (string[] args) {
 
 		
 		//print("\n%s\n",f.toJsonString());
-		diff(p.firstPath() + "/" + f.name + ".vala", JsRender.NodeToVala.mungeFile(f));
+		//diff(p.firstPath() + "/" + f.name + ".vala", JsRender.NodeToVala.mungeFile(f));
 		//var str= 
 		//print("\n%s\n",str);
 		//return 0;
