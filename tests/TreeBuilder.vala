@@ -6,7 +6,14 @@ namespace Palete {
 	public class ValaSourceReport  : Vala.Report {
 
 
+		
+
 		Gee.HashMap<int,string> line_errors;
+
+		public ValaSourceReport()
+		{
+			this.line_errors = new Gee.HashMap<int,string> ();
+		}
 		
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
