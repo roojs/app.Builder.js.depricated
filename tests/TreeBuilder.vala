@@ -9,9 +9,9 @@ public class MyReport  : Vala.Report {
 			stderr.printf ("My error: %s\n", message);
 		} else {
 			stderr.printf ("%s: My error: %s\n", source.to_string (), message);
-			if (verbose_errors) {
-				this.report_source (source);
-			}
+		
+			this.report_source (source);
+			
 		}
 	}
 	
