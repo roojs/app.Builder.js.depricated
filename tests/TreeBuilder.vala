@@ -99,6 +99,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		// check context:
 		context.check ();
 		if (context.report.get_errors () > 0) {
+			print("check got errors");
 			return context;
 		}
 		return context;
