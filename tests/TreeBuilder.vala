@@ -3,7 +3,7 @@
 
 public class MyReport  : Vala.Report {
 	
-	public overide void err (Vala.SourceReference? source, string message) {
+	public override void err (Vala.SourceReference? source, string message) {
 		errors++;
 		if (source == null) {
 			stderr.printf ("My error: %s\n", message);
