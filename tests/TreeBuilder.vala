@@ -46,7 +46,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
 			source_file.add_using_directive (ns_ref);
 			context.root.add_using_directive (ns_ref);
-		}
+		//}
 
 		context.add_source_file (source_file);
 
