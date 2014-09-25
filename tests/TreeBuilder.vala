@@ -17,6 +17,7 @@ public class MyReport  : Vala.Report {
 	
 
 }
+
 public class TreeBuilder : Vala.CodeVisitor {
 	
 	public Vala.CodeContext create_valac_tree () {
@@ -30,7 +31,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		context.report.enable_warnings = true;
 		context.metadata_directories = { };
 		context.gir_directories = {};
-
+		context.erport = new MyReport();
 		
 		context.basedir = Posix.realpath (".");
 		
