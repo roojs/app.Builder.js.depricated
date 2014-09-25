@@ -3,7 +3,7 @@
 
 public class TreeBuilder : Vala.CodeVisitor {
 	
-	private Vala.CodeContext create_valac_tree (Settings settings) {
+	private Vala.CodeContext create_valac_tree () {
 		// init context:
 		var context = new Vala.CodeContext ();
 		Vala.CodeContext.push (context);
@@ -78,4 +78,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 int main (string[] args) {
 
 	var a = new TreeBuilder();
-	a.create_valac_tree(
+	a.create_valac_tree();
+}
+
+
