@@ -1,7 +1,11 @@
 
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
+public class MyReport  : Vala.Report {
 
+	
+
+}
 public class TreeBuilder : Vala.CodeVisitor {
 	
 	public Vala.CodeContext create_valac_tree () {
