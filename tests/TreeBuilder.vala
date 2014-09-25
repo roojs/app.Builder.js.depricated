@@ -48,21 +48,21 @@ public class TreeBuilder : Vala.CodeVisitor {
 		//	return context;
 		//}
 
-		var testcode = new Vala.SourceFile (
+		var source_file = new Vala.SourceFile (
             		context, 
             		Vala.SourceFileType.SOURCE, 
                        "/dev/null",
             		"void atest() { 
-			    var x = 1; 
+			    var x = 1; asdfasdf 
 			    a++;
 			}"
                     );
-		context.add_source_file (testcode);
+		//context.add_source_file (testcode);
 
 		
-		var source_file = new Vala.SourceFile (context, 
-                               Vala.SourceFileType.SOURCE, 
-                               "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
+		//var source_file = new Vala.SourceFile (context, 
+                //               Vala.SourceFileType.SOURCE, 
+                //               "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
 
 		//if (source_package == null) {
 		//source_package = register_package (new Package (settings.pkg_name, false, null));
