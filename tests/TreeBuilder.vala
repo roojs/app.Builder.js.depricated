@@ -66,10 +66,10 @@ public class TreeBuilder : Vala.CodeVisitor {
 			source_file.add_using_directive (ns_ref);
 			context.root.add_using_directive (ns_ref);
 		//}
-		context.add_external_package ("glib-2.0");
+
 		context.add_source_file (source_file);
 
-		
+		context.add_external_package ("glib-2.0");
 		//add_documented_files (context, settings.source_files);
 		
 		Vala.Parser parser = new Vala.Parser ();
