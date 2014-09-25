@@ -135,7 +135,7 @@ namespace Palete {
 
 int main (string[] args) {
 
-	var a = new TreeBuilder();
+	var a = new ValaSource();
 	a.create_valac_tree();
 	return 0;
 }
