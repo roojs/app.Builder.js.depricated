@@ -3,7 +3,7 @@
 
 namespace Palete {
 	
-	public class MyReport  : Vala.Report {
+	public class ValaSourceReport  : Vala.Report {
 	
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
@@ -20,7 +20,7 @@ namespace Palete {
 
 	}
 
-	public class TreeBuilder : Vala.CodeVisitor {
+	public class ValaSource : Vala.CodeVisitor {
 	
 		public Vala.CodeContext check (JsRender.Gtk file) {
 			// init context:
@@ -36,7 +36,7 @@ namespace Palete {
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
-			context.report = new MyReport();
+			context.report = new ValaSourceReport();
 		
 			context.basedir = Posix.realpath (".");
 		
