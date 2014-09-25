@@ -11,10 +11,13 @@ namespace Palete {
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
 			if (source == null) {
+				return;
 				//stderr.printf ("My error: %s\n", message);
-			} else {
-				
-				stderr.printf ("%s: My error: %s\n", source.to_string (), message);
+			}
+			if (source.
+			var line = source.begin.line;
+			
+			stderr.printf ("%s: My error: %s\n", source.to_string (), message);
 		
 				//Vala.Report.report_source (source);
 			
@@ -60,6 +63,7 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
+                                "~~~~~testfile.vala",
 		               file.toSource()
 	    		);
 			//context.add_source_file (testcode);
