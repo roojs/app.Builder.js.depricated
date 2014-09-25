@@ -58,7 +58,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 
 		//register_source_file (source_package, source_file);
 
-		context.add_external_package ("glib-2.0");
+		
 		
 		//if (context.profile == Vala.Profile.GOBJECT) {
 			// import the GLib namespace by default (namespace of backend-specific standard library)
@@ -66,7 +66,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 			source_file.add_using_directive (ns_ref);
 			context.root.add_using_directive (ns_ref);
 		//}
-
+		context.add_external_package ("glib-2.0");
 		context.add_source_file (source_file);
 
 		
