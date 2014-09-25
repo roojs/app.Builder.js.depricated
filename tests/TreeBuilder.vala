@@ -53,7 +53,7 @@ public class TreeBuilder : Vala.CodeVisitor {
             		Vala.SourceFileType.SOURCE, 
                        "/dev/null",
             		"void atest() { 
-			    var a = 1; 
+			    var x = 1; 
 			    a++;
 			}"
                     );
