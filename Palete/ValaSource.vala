@@ -116,6 +116,7 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
+				this.report.dump();
 				Vala.CodeContext.pop ();
 				return;
 			}
@@ -126,6 +127,7 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				print("check got errors");
+				this.report.dump();
 				Vala.CodeContext.pop ();
 				return;
 			}
