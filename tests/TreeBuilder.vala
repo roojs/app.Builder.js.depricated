@@ -48,6 +48,18 @@ public class TreeBuilder : Vala.CodeVisitor {
 		//	return context;
 		//}
 
+		var testcode = new Vala.SourceFile (
+            		context, 
+            		Vala.SourceFileType.SOURCE, 
+                       "/dev/null",
+            		"void atest() { 
+			    var a = 1; 
+			    a++;
+			}"
+                    );
+		context.add_source_file (testcode);
+
+		
 		var source_file = new Vala.SourceFile (context, 
                                Vala.SourceFileType.SOURCE, 
                                "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
