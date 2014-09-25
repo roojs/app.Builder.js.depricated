@@ -1,5 +1,5 @@
 
-#valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
+// valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 
 public class TreeBuilder : Vala.CodeVisitor {
