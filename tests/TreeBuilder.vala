@@ -68,6 +68,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		if (context.report.get_errors () > 0) {
 			return context;
 		}
+		return context;
 	}
 //
 	// startpoint:
