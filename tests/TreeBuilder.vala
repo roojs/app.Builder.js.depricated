@@ -31,7 +31,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		context.report.enable_warnings = true;
 		context.metadata_directories = { };
 		context.gir_directories = {};
-		context.erport = new MyReport();
+		context.report = new MyReport();
 		
 		context.basedir = Posix.realpath (".");
 		
