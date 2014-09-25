@@ -79,6 +79,7 @@ int main (string[] args) {
 
 	var a = new TreeBuilder();
 	a.create_valac_tree();
+	return 0;
 }
 
 
