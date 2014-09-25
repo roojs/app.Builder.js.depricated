@@ -74,7 +74,7 @@ namespace Palete {
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
                                 "~~~~~testfile.vala",
-		               NodeToVala.mungeFile(file)
+		               JsRender.NodeToVala.mungeFile(file)
 	    		);
 			//context.add_source_file (testcode);
 
