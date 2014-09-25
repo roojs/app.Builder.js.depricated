@@ -26,7 +26,33 @@ public class TreeBuilder : Vala.CodeVisitor {
 			context.profile = Vala.Profile.GOBJECT;
 		//	context.add_define ("GOBJECT");
 		//}
+		//add_depencies (context, settings.packages);
+		//if (reporter.errors > 0) {
+		//	return context;
+		//}
 
+		var source_file = new Vala.SourceFile (context, 
+                               Vala.SourceFileType.SOURCE, 
+                               "/home/alan/gitlive/app.Builder/tests/TreeBuilder.vala");
+
+		//if (source_package == null) {
+		//source_package = register_package (new Package (settings.pkg_name, false, null));
+		//}
+
+		//register_source_file (source_package, source_file);
+
+		//if (context.profile == Vala.Profile.GOBJECT) {
+			// import the GLib namespace by default (namespace of backend-specific standard library)
+			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
+			source_file.add_using_directive (ns_ref);
+			context.root.add_using_directive (ns_ref);
+		}
+
+		context.add_source_file (source_file);
+
+		
+		//add_documented_files (context, settings.source_files);
+		
 		Vala.Parser parser = new Vala.Parser ();
 		parser.parse (context);
 		gir_parser.parse (context);
@@ -43,6 +69,10 @@ public class TreeBuilder : Vala.CodeVisitor {
 			return context;
 		}
 	}
+//
+	// startpoint:
+	//
+ 
 }
 
 int main (string[] args) {
