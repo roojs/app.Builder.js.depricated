@@ -10,7 +10,7 @@ public class MyReport  : Vala.Report {
 		} else {
 			stderr.printf ("%s: My error: %s\n", source.to_string (), message);
 		
-			this.report_source (source);
+			Vala.Report.report_source (source);
 			
 		}
 	}
