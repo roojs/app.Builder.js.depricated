@@ -392,9 +392,9 @@ right:
 
 
 left:
-    Roo.bootstrap.Table:sm
+    Roo.bootstrap.Table:footer
 right:  
-    Roo.bootstrap.Table.RowSelectionModel    
+    Roo.bootstrap.PagingToolbar
 
 
 left:
