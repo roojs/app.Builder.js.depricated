@@ -2,7 +2,18 @@
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 public class MyReport  : Vala.Report {
-
+	
+	public overide void err (Vala.SourceReference? source, string message) {
+		errors++;
+		if (source == null) {
+			stderr.printf ("My error: %s\n", message);
+		} else {
+			stderr.printf ("%s: My error: %s\n", source.to_string (), message);
+			if (verbose_errors) {
+				this.report_source (source);
+			}
+		}
+	}
 	
 
 }
