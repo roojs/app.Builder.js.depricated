@@ -32,7 +32,13 @@ namespace Palete {
 			}
 			line_errors.set(source.begin.line, pre +  message);
 		}
-	
+		public void dump()
+		{
+			var iter = this.line_errors.map_iterator();
+			while (iter.next()) {
+				print ("%d : %s\n\n", iter.get_key(), iter.get_value());
+			}
+		}
 
 	}
 
