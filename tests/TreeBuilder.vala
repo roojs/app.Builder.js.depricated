@@ -34,7 +34,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 
 		var source_file = new Vala.SourceFile (context, 
                                Vala.SourceFileType.SOURCE, 
-                               "/home/alan/gitlive/app.Builder/tests/TreeBuilder.vala");
+                               "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
 
 		//if (source_package == null) {
 		//source_package = register_package (new Package (settings.pkg_name, false, null));
