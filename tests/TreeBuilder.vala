@@ -51,7 +51,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		var source_file = new Vala.SourceFile (
             		context, 
             		Vala.SourceFileType.SOURCE, 
-                       "",
+                       "test.vala",
             		"void atest() { 
 			    vasdvkls;dakf]';23l5r;l 
 			    a++;
