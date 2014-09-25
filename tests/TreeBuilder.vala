@@ -102,6 +102,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 			print("check got errors");
 			return context;
 		}
+		print("ALL OK?\n");
 		return context;
 	}
 //
