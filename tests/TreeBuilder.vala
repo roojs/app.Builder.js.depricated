@@ -40,7 +40,7 @@ namespace Palete {
 
 		Vala.CodeContext context;
 		
-		public ValaSource(JsRender.Gtk file) {
+		public ValaSource(JsRender.JsRender file) {
 			base();
 			// init context:
 
@@ -74,7 +74,7 @@ namespace Palete {
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
                                 "~~~~~testfile.vala",
-		               file.toSource()
+		               NodeToVala.mungeFile(file)
 	    		);
 			//context.add_source_file (testcode);
 
