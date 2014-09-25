@@ -58,6 +58,8 @@ public class TreeBuilder : Vala.CodeVisitor {
 
 		//register_source_file (source_package, source_file);
 
+		context.add_package ("glib-2.0");
+		
 		//if (context.profile == Vala.Profile.GOBJECT) {
 			// import the GLib namespace by default (namespace of backend-specific standard library)
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
