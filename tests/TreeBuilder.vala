@@ -55,7 +55,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		
 		Vala.Parser parser = new Vala.Parser ();
 		parser.parse (context);
-		gir_parser.parse (context);
+		//gir_parser.parse (context);
 		if (context.report.get_errors () > 0) {
 			print("got errors");
 			return context;
