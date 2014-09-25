@@ -109,7 +109,7 @@ namespace Palete {
 			parser.parse (context);
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
-				print("got errors");
+				print("parse got errors");
 				Vala.CodeContext.pop (context);
 				return;
 			}
@@ -135,7 +135,7 @@ namespace Palete {
 
 int main (string[] args) {
 
-	var a = new ValaSource();
+	var a = new ValaSource(JsRender.);
 	a.create_valac_tree();
 	return 0;
 }
