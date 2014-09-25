@@ -45,6 +45,11 @@ int main (string[] args) {
 		var f= iter.get();
 		f.loadItems();
 
+		// syntax check..
+		var a = new Palete.ValaSource(f);
+		
+
+		
 		//print("\n%s\n",f.toJsonString());
 		diff(p.firstPath() + "/" + f.name + ".vala", JsRender.NodeToVala.mungeFile(f));
 		//var str= 
