@@ -14,7 +14,11 @@ namespace Palete {
 				return;
 				//stderr.printf ("My error: %s\n", message);
 			}
-			if (source.
+			if (source.file != "~~~~~testfile.vala") {
+				return;
+			}
+			if (line_errors.has_key(source.begin.line)) {
+				line_errors(source.begin.line
 			var line = source.begin.line;
 			
 			stderr.printf ("%s: My error: %s\n", source.to_string (), message);
