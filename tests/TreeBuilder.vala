@@ -12,6 +12,7 @@ namespace Palete {
 
 		public ValaSourceReport()
 		{
+			base();
 			this.line_errors = new Gee.HashMap<int,string> ();
 		}
 		
