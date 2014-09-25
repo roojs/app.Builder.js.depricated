@@ -59,6 +59,7 @@ namespace Palete {
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
+			
 			context.report = new ValaSourceReport();
 		
 			context.basedir = Posix.realpath (".");
@@ -116,7 +117,7 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
-				context.report.dump();
+				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
 				return;
 			}
@@ -127,7 +128,7 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				print("check got errors");
-				context.report.dump();
+				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
 				return;
 			}
