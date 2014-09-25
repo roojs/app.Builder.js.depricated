@@ -60,9 +60,9 @@ public class TreeBuilder : Vala.CodeVisitor {
 		//context.add_source_file (testcode);
 
 		
-		//var source_file = new Vala.SourceFile (context, 
-                //               Vala.SourceFileType.SOURCE, 
-                //               "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
+		var source_file = new Vala.SourceFile (context, 
+                               Vala.SourceFileType.SOURCE, 
+                              "/home/alan/gitlive/app.Builder.js/tests/TreeBuilder.vala");
 
 		//if (source_package == null) {
 		//source_package = register_package (new Package (settings.pkg_name, false, null));
@@ -73,7 +73,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		context.add_external_package ("glib-2.0");
 		context.add_external_package ("gobject-2.0");
 		context.add_external_package ("libvala-0.24");
-		context.add_external_package ("posix");
+		//context.add_external_package ("posix");
 		//if (context.profile == Vala.Profile.GOBJECT) {
 			// import the GLib namespace by default (namespace of backend-specific standard library)
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
