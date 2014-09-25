@@ -15,24 +15,17 @@ public class TreeBuilder : Vala.CodeVisitor {
 		context.metadata_directories = { };
 		context.gir_directories = {};
 
-		if (settings.basedir == null) {
-			context.basedir = realpath (".");
-		} else {
-			context.basedir = realpath (settings.basedir);
-		}
-
-		if (settings.directory != null) {
-			context.directory = realpath (settings.directory);
-		} else {
-			context.directory = context.basedir;
-		}
-
+		
+		context.basedir = realpath (".");
+		
+		context.directory = context.basedir;
+		
 
 		// add default packages:
-		if (settings.profile == "gobject-2.0" || settings.profile == "gobject" || settings.profile == null) {
+		//if (settings.profile == "gobject-2.0" || settings.profile == "gobject" || settings.profile == null) {
 			context.profile = Vala.Profile.GOBJECT;
-			context.add_define ("GOBJECT");
-		}
+		//	context.add_define ("GOBJECT");
+		//}
 
 		Vala.Parser parser = new Vala.Parser ();
 		parser.parse (context);
