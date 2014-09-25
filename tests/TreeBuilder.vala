@@ -16,7 +16,7 @@ public class TreeBuilder : Vala.CodeVisitor {
 		context.gir_directories = {};
 
 		
-		context.basedir = realpath (".");
+		context.basedir = Posix.realpath (".");
 		
 		context.directory = context.basedir;
 		
