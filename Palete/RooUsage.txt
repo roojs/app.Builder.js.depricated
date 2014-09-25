@@ -383,10 +383,19 @@ left:
 right:
     Roo.grid.ColumnModel
 
+
+#-??? it this correct?
 left:
     Roo.bootstrap.Table:sm
 right:  
     Roo.bootstrap.Table.RowSelectionModel    
+
+
+left:
+    Roo.bootstrap.Table:sm
+right:  
+    Roo.bootstrap.Table.RowSelectionModel    
+
 
 left:
     Roo.bootstrap.TableBody
