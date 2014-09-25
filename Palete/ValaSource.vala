@@ -110,7 +110,7 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
-				Vala.CodeContext.pop (context);
+				Vala.CodeContext.pop ();
 				return;
 			}
 
@@ -120,10 +120,10 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				print("check got errors");
-				Vala.CodeContext.pop (context);
+				Vala.CodeContext.pop ();
 				return;
 			}
-			Vala.CodeContext.pop (context);
+			Vala.CodeContext.pop ();
 			print("ALL OK?\n");
 			return;
 		}
