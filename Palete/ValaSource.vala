@@ -146,11 +146,11 @@ namespace Palete {
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
 				return this.report.line_errors;
-				return;
+				
 			}
 			Vala.CodeContext.pop ();
 			print("ALL OK?\n");
-			return;
+			return this.report.line_errors;
 		}
 	//
 		// startpoint:
