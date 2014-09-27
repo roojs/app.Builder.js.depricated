@@ -51,12 +51,12 @@ namespace Palete {
 			
 
 		}
-		public checkFile(JsRender.JsRender file)
+		public Gee.HashMap<int,string> checkFile(JsRender.JsRender file)
 		{
-			this.checkString(JsRender.NodeToVala.mungeFile(file));
+			return this.checkString(JsRender.NodeToVala.mungeFile(file));
 		}
 
-		public checkFile(JsRender.JsRender file, JsRender.Node node, string prop, string val)
+		public Gee.HashMap<int,string> checkFile(JsRender.JsRender file, JsRender.Node node, string prop, string val)
 		{
 			var old = node.props.get_value(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
@@ -79,7 +79,7 @@ namespace Palete {
 			
 		}
 		
-		public checkString(string contents)
+		public Gee.HashMap<int,string> checkString(string contents)
 			// init context:
 
 			context = new Vala.CodeContext ();
@@ -134,7 +134,7 @@ namespace Palete {
 				print("parse got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
-				return;
+				return this.report.line_errors;
 			}
 
 
@@ -145,6 +145,7 @@ namespace Palete {
 				print("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
+				return this.report.line_errors;
 				return;
 			}
 			Vala.CodeContext.pop ();
