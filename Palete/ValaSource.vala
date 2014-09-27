@@ -59,10 +59,11 @@ namespace Palete {
 		public checkFile(JsRender.JsRender file, JsRender.Node node, string prop, string val)
 		{
 			var old = node.props.get_value(prop);
-			var newval = " /*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/ ";
+			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
 			node.props.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(file);
-			var 
+			var bits = tmpstring.split(newval);
+			
 			this.checkString();
 			node.props.set(prop, old);
 		}
