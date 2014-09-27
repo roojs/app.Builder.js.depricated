@@ -69,7 +69,7 @@ namespace Palete {
 			}
 			this.checkString();
 			node.props.set(prop, old);
-			
+			// modify report
 
 			
 		}
@@ -87,7 +87,7 @@ namespace Palete {
 			context.metadata_directories = { };
 			context.gir_directories = {};
 			
-			context.report = new ValaSourceReport();
+			context.report = new ValaSourceReport(this);
 		
 			context.basedir = Posix.realpath (".");
 		
