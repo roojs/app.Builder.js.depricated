@@ -56,7 +56,7 @@ namespace Palete {
 			return this.checkString(JsRender.NodeToVala.mungeFile(file));
 		}
 
-		public Gee.HashMap<int,string> checkFile(JsRender.JsRender file, JsRender.Node node, string prop, string val)
+		public Gee.HashMap<int,string> checkFileWithNodePropChange(JsRender.JsRender file, JsRender.Node node, string prop, string val)
 		{
 			var old = node.props.get_value(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
