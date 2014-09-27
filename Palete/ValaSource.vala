@@ -92,7 +92,7 @@ namespace Palete {
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
                                 "~~~~~testfile.vala",
-		               
+		               contents
 	    		);
 			 
 			context.add_external_package ("glib-2.0");
