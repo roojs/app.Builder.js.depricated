@@ -70,7 +70,12 @@ namespace Palete {
 			this.checkString();
 			node.props.set(prop, old);
 			// modify report
-
+			Gee.HashMap<int,string> ret;
+			var iter = this.report.line_errors.map_iterator();
+			while (iter.next()) {
+				 ret.set(iter.get_key() - offset, iter.get_value());
+			}
+			return ret;
 			
 		}
 		
