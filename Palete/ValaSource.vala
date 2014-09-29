@@ -83,6 +83,7 @@ namespace Palete {
 		}
 		
 		public Gee.HashMap<int,string> checkString(string contents)
+      {
 			// init context:
 
 			context = new Vala.CodeContext ();
