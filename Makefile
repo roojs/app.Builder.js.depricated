@@ -1,6 +1,6 @@
 
 #vapigen --library gobject-introspection-1.0 /usr/share/gir-1.0/GIRepository-2.0.gir
-
+VALAVER=`pkg-config --list-all  | grep libvala | sort -n | awk '{ print $1 }'`
 
 PKGS=   --pkg gtk+-3.0 \
 		--pkg gtksourceview-3.0 \
@@ -14,7 +14,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore  \
 		--pkg  vte-2.90  \
-		--pkg  libvala-0.22  \
+		--pkg ${VALAVER}  \
 		--pkg posix \
 
 FLAGS= -g --vapidir=./vapi 
