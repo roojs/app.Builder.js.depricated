@@ -69,7 +69,7 @@ namespace Palete {
 			var bits = tmpstring.split(newval);
 			var offset =0;
 			if (bits.length > 1) {
-				var offset = bits[0].split("\n").length;
+				offset = bits[0].split("\n").length;
 			}
 			this.checkString();
 			node.props.set(prop, old);
