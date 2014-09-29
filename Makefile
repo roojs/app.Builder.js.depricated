@@ -2,7 +2,7 @@
 #vapigen --library gobject-introspection-1.0 /usr/share/gir-1.0/GIRepository-2.0.gir
 
 
-VALAVER=$(shell pkg-config --list-all  | grep libvala | sort -n | awk '{ print $1 }')
+VALAVER=$(word 1, $(shell pkg-config --list-all  | grep libvala | sort -n | head))
 
 PKGS=   --pkg gtk+-3.0 \
 		--pkg gtksourceview-3.0 \
