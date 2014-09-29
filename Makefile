@@ -14,7 +14,7 @@ PKGS=   --pkg gtk+-3.0 \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore  \
 		--pkg  vte-2.90  \
-		--pkg  libvala-0.24  \
+		--pkg  libvala-0.22  \
 		--pkg posix \
 
 FLAGS= -g --vapidir=./vapi 
