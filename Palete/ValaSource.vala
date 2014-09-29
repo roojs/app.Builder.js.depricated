@@ -62,7 +62,7 @@ namespace Palete {
 		                   JsRender.Node node, 
                            string prop, string val)
 		{
-			var old = node.props.get_value(prop);
+			var old = node.props.get(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
 			node.props.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(file);
