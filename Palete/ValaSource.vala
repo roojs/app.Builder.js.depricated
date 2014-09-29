@@ -74,7 +74,7 @@ namespace Palete {
 			this.checkString(JsRender.NodeToVala.mungeFile(file));
 			node.props.set(prop, old);
 			// modify report
-			Gee.HashMap<int,string> ret;
+			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var iter = this.report.line_errors.map_iterator();
 			while (iter.next()) {
 				 ret.set(iter.get_key() - offset, iter.get_value());
