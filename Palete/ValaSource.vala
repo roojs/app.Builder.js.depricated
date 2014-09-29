@@ -45,7 +45,8 @@ namespace Palete {
 	public class ValaSource : Vala.CodeVisitor {
 
 		Vala.CodeContext context;
-		
+		ValaSourceReport report;
+
 		public ValaSource(JsRender.JsRender file) {
 			base();
 			
@@ -95,8 +96,8 @@ namespace Palete {
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
-			
-			context.report = new ValaSourceReport(this);
+			this.report = new ValaSourceReport();;
+			context.report = this.report;
 		
 			context.basedir = Posix.realpath (".");
 		
