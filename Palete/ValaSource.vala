@@ -8,7 +8,7 @@ namespace Palete {
 
 		
 
-		Gee.HashMap<int,string> line_errors;
+		public Gee.HashMap<int,string> line_errors;
 
 		public ValaSourceReport()
 		{
