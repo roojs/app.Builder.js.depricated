@@ -91,6 +91,7 @@ namespace Palete {
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var iter = this.report.line_errors.map_iterator();
 			while (iter.next()) {
+				 print("%d : %s\n",iter.get_key() - offset, iter.get_value());
 				 ret.set(iter.get_key() - offset, iter.get_value());
 			}
 			return ret;
