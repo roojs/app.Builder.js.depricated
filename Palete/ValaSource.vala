@@ -53,7 +53,7 @@ namespace Palete {
 			
 
 		}
-		public dumpCode(str) {
+		public void dumpCode(string str) {
 			var ls = str.split("\n");
 			for (var i=0;i < ls.length; i++) {
 				print("%d : %s\n", i, ls[i]);
