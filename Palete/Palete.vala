@@ -401,8 +401,8 @@ namespace Palete
         }
 
 	
-	    
-	public int validateCode(string code, string property, string language , out string error_message) 
+	  
+	public Gee.HashMap<int,string>  validateCode(string code, string property, string language , out string error_message) 
 	{   
 
 		print("validate code (%s) %s\n", language, code);
