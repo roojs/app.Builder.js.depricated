@@ -375,7 +375,7 @@ public class Editor : Object
             
             string res = "";
             
-            if (this.error_line > -1) {
+            if (this.error_line > 0) {
                  Gtk.TextIter start;
                  Gtk.TextIter end;     
                 this.el.get_bounds (out start, out end);
@@ -384,7 +384,7 @@ public class Editor : Object
             }
             
             
-            var validate res =  p.validateCode(
+            var validate_res =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
                 _this.file.language, 
@@ -392,18 +392,21 @@ public class Editor : Object
             );
             
             
-            this.error_line = line;
-            print("got line %d\n%s\n", line, res);
-            if (line < 0) {
-            
-              return true;
+            this.error_line = validate_res.size;
+        
+            if (this.error_line < 1) {
+                  return true;
             }
             Gtk.TextIter iter;
-            print("get inter\n");
-            this.el.get_iter_at_line( out iter, line);
-                    print("mark line\n");
-            var m = this.el.create_source_mark(res, "error", iter);
-           
+            var valiter = validate_res.map_iterator();
+            while (valiter.next()) {
+            
+                print("get inter\n");
+                this.el.get_iter_at_line( out iter, valiter.get_key());
+                        print("mark line\n");
+                this.el.create_source_mark(valiter.get_value(), "error", iter);
+            }   
+            
             print("done mark line\n");
              
             return true; // at present allow saving - even if it's invalid..
