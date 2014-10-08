@@ -416,8 +416,10 @@ namespace Palete
 			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
 
-			if line 
-			error_message = res;
+			if (line < 0) {
+				return ret;
+			}
+			ret.set(line, errmsg);
 			return ret;
 		}
 
