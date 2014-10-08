@@ -53,6 +53,13 @@ namespace Palete {
 			
 
 		}
+		public dumpCode(str) {
+			var ls = str.split("\n");
+			for (var i=0;i < ls.length; i++) {
+				print("%d : %s\n", i, ls[i]);
+			}
+		}
+		
 		public Gee.HashMap<int,string> checkFile()
 		{
 			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
@@ -71,6 +78,7 @@ namespace Palete {
 			if (bits.length > 1) {
 				offset = bits[0].split("\n").length;
 			}
+			this.dumpCode(tmpstring);
 			this.checkString(tmpstring);
 			node.props.set(prop, old);
 			// modify report
