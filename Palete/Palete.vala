@@ -435,6 +435,7 @@ namespace Palete
 			var ret = vs.checkFileWithNodePropChange(
 	           		node, 
                    		property, 
+                 	        ptype,
                			code
                          );
 			return ret;
