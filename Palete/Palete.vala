@@ -411,7 +411,7 @@ namespace Palete
                      ) 
 	{   
 
-		print("validate code (%s) %s\n", file.language, code);
+		//print("validate code (%s) %s\n", file.language, code);
 		 
 		
 		if (file.language == "js" && (ptype == "listener" || property[0] == '|')) {
@@ -442,7 +442,7 @@ namespace Palete
 		}
 		var ret = new Gee.HashMap<int,string>();
 
-		print ("not javascript\n");
+		//print ("not javascript\n");
 		return ret;
 
 	}
