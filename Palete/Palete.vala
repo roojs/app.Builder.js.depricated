@@ -413,9 +413,9 @@ namespace Palete
 
 		print("validate code (%s) %s\n", file.language, code);
 		 
-		var ret = new Gee.HashMap<int,string>();
+		
 		if (file.language == "js" && property[0] == '|') {
-
+			var ret = new Gee.HashMap<int,string>();
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			
@@ -433,14 +433,14 @@ namespace Palete
 
 			var vs = new ValaSource(file);
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			ret = vs.checkFileWithNodePropChange(
+			var ret = vs.checkFileWithNodePropChange(
 	           		node, 
                    		property, 
                			code
                          );
 			return ret;
 		}
-		
+		var ret = new Gee.HashMap<int,string>();
 
 		print ("not javascript\n");
 		return ret;
