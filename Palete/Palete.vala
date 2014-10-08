@@ -405,7 +405,7 @@ namespace Palete
 	public Gee.HashMap<int,string>  validateCode(
      			string code, 
 			string property, 
-             		
+             		string ptype,
                         JsRender.JsRender file,
              		JsRender.Node node
                      ) 
@@ -418,7 +418,7 @@ namespace Palete
 			var ret = new Gee.HashMap<int,string>();
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			
+			        _this.ptype == "listener" ? "| function " :
 			string errmsg;
 			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
