@@ -72,7 +72,7 @@ namespace Palete {
                            string val)
 		{
 
-			var hash =ptype == "listener" ? node.listener : node.props 
+			var hash =ptype == "listener" ? node.listener : node.props;
 			var old = hash.get(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
 			
