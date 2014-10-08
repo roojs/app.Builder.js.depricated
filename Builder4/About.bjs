@@ -8,7 +8,7 @@
     "items" : [
         {
             "listeners" : {
-                "delete_event" : "(self, event) => {\n    this.el.hide();\n    return true;\n \n}\n ",
+                "delete_event" : "(self, event) => {\n    this.el.hide();\n    return true;\n  \n}\n ",
                 "response" : "(rid) => {\n    this.el.hide();\n}\n  "
             },
             "|    void show_all" : "() {\n    this.el.show_all();\n}\n ",
