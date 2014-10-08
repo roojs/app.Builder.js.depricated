@@ -429,8 +429,8 @@ namespace Palete
 			ret.set(line, errmsg);
 			return ret;
 		}
-		if (file.language == "vala" ) { // not sure if we need to validate property
-
+		if (file.language == "valax" ) { // not sure if we need to validate property
+			
 			var vs = new ValaSource(file);
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			var ret = vs.checkFileWithNodePropChange(
