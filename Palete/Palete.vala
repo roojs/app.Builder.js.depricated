@@ -402,7 +402,13 @@ namespace Palete
 
 	
 	  
-	public Gee.HashMap<int,string>  validateCode(string code, string property, string language) 
+	public Gee.HashMap<int,string>  validateCode(
+     			string code, 
+			string property, 
+             		string language,
+                        JsRender.JsRender file,
+             		JsRender.JsRender node
+                     ) 
 	{   
 
 		print("validate code (%s) %s\n", language, code);
