@@ -403,8 +403,10 @@ public class Editor : Object
             while (valiter.next()) {
             
                 print("get inter\n");
-                this.el.get_iter_at_line( out iter, valiter.get_key());
-                        print("mark line\n");
+                var eline = valiter.get_key();
+                
+                this.el.get_iter_at_line( out iter, eline);
+                print("mark line\n");
                 this.el.create_source_mark(valiter.get_value(), "error", iter);
             }   
             
