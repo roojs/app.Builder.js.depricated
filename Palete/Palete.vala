@@ -411,11 +411,12 @@ namespace Palete
 
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			string res;
+			string ret = new Gee.HashMap<int,string>();
 			string errmsg;
-			var ret = Javascript.singleton().validate(
+			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
-			
+
+			if line 
 			error_message = res;
 			return ret;
 		}
