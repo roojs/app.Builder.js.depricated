@@ -71,7 +71,7 @@ namespace Palete {
 			if (bits.length > 1) {
 				offset = bits[0].split("\n").length;
 			}
-			this.checkString(JsRender.NodeToVala.mungeFile(file));
+			this.checkString(tmpstring);
 			node.props.set(prop, old);
 			// modify report
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
