@@ -414,11 +414,10 @@ namespace Palete
 		print("validate code (%s) %s\n", file.language, code);
 		 
 		
-		if (file.language == "js" && property[0] == '|') {
+		if (file.language == "js" && (ptype == "listener" || property[0] == '|')) {
 			var ret = new Gee.HashMap<int,string>();
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			        _this.ptype == "listener" ? "| function " :
 			string errmsg;
 			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
