@@ -398,19 +398,22 @@ public class Editor : Object
             if (this.error_line < 1) {
                   return true;
             }
+            var tlines = this.el.get_line_count ();
             Gtk.TextIter iter;
             var valiter = validate_res.map_iterator();
             while (valiter.next()) {
             
-                print("get inter\n");
+        //        print("get inter\n");
                 var eline = valiter.get_key();
-                
+                if (eline > tlines) {
+                    continue;
+                }
                 this.el.get_iter_at_line( out iter, eline);
-                print("mark line\n");
+                //print("mark line\n");
                 this.el.create_source_mark(valiter.get_value(), "error", iter);
             }   
             
-            print("done mark line\n");
+            //print("done mark line\n");
              
             return true; // at present allow saving - even if it's invalid..
         }
