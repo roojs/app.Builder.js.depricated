@@ -431,17 +431,14 @@ namespace Palete
 		}
 		if (file.language == "vala" ) { // not sure if we need to validate property
 
-			
+			var vs = new ValaSource();
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			
-			string errmsg;
-			var line = ValaSource.singleton().validate(
-                                  "var __aaa___ = " + code, out errmsg);
-
-			if (line < 0) {
-				return ret;
-			}
-			ret.set(line, errmsg);
+			var ret = vs.checkFileWithNodePropChange(
+                   		file, 
+	           		node, 
+                   		property, 
+               			code
+                         );
 			return ret;
 		}
 		
