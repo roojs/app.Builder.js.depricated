@@ -407,7 +407,7 @@ namespace Palete
 			string property, 
              		
                         JsRender.JsRender file,
-             		JsRender.JsRender node
+             		JsRender.Node node
                      ) 
 	{   
 
