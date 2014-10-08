@@ -67,11 +67,16 @@ namespace Palete {
 
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
 	                   JsRender.Node node, 
-                           string prop, string val)
+                           string prop,
+                           string ptype
+                           string val)
 		{
-			var old = node.props.get(prop);
+
+			var hash =ptype == "listener" ? node.listener : node.props 
+			var old = hash.get(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
-			node.props.set(prop, newval);
+			
+			hash.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
 			var bits = tmpstring.split(newval);
 			var offset =0;
@@ -81,7 +86,7 @@ namespace Palete {
 			this.dumpCode(tmpstring);
 			print("offset %d\n", offset);
 			this.checkString(tmpstring);
-			node.props.set(prop, old);
+			hash.set(prop, old);
 			// modify report
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var iter = this.report.line_errors.map_iterator();
