@@ -405,16 +405,16 @@ namespace Palete
 	public Gee.HashMap<int,string>  validateCode(
      			string code, 
 			string property, 
-             		string language,
+             		
                         JsRender.JsRender file,
              		JsRender.JsRender node
                      ) 
 	{   
 
-		print("validate code (%s) %s\n", language, code);
+		print("validate code (%s) %s\n", file.language, code);
 		 
 		var ret = new Gee.HashMap<int,string>();
-		if (language == "js" && property[0] == '|') {
+		if (file.language == "js" && property[0] == '|') {
 
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
