@@ -53,9 +53,9 @@ namespace Palete {
 			
 
 		}
-		public Gee.HashMap<int,string> checkFile(JsRender.JsRender file)
+		public Gee.HashMap<int,string> checkFile()
 		{
-			return this.checkString(JsRender.NodeToVala.mungeFile(file));
+			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
 		}
 
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
