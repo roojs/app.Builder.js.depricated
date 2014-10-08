@@ -43,8 +43,8 @@
                         },
                         {
                             "id" : "key_edit",
-                            "* pack" : "pack_end,true,true",
                             "xtype" : "Entry",
+                            "* pack" : "pack_end,true,true",
                             "$ xns" : "Gtk"
                         }
                     ]
