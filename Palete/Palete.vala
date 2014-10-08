@@ -431,10 +431,9 @@ namespace Palete
 		}
 		if (file.language == "vala" ) { // not sure if we need to validate property
 
-			var vs = new ValaSource();
+			var vs = new ValaSource(file);
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			var ret = vs.checkFileWithNodePropChange(
-                   		file, 
 	           		node, 
                    		property, 
                			code
