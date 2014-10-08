@@ -59,7 +59,7 @@ namespace Palete {
 
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
                            JsRender.JsRender file, 
-		                   JsRender.Node node, 
+	                   JsRender.Node node, 
                            string prop, string val)
 		{
 			var old = node.props.get(prop);
@@ -83,8 +83,8 @@ namespace Palete {
 			
 		}
 		
-		public Gee.HashMap<int,string> checkString(string contents)
-      {
+	public Gee.HashMap<int,string> checkString(string contents)
+       {
 			// init context:
 
 			context = new Vala.CodeContext ();
