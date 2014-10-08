@@ -62,6 +62,8 @@ public class Xcls_DialogNewComponent : Object
                     return;
                 }
         
+        
+        
                 if (_this.name.el.get_text().length  < 1) {
                     StandardErrorDialog.show(
                         this.el,
