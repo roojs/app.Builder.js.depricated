@@ -412,8 +412,9 @@ namespace Palete
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			string res;
+			string errmsg;
 			var ret = Javascript.singleton().validate(
-                                  "var __aaa___ = " + code, out res);
+                                  "var __aaa___ = " + code, out errmsg);
 			
 			error_message = res;
 			return ret;
