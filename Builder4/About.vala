@@ -45,6 +45,5 @@ public class About : Object
     // user defined functions 
     public    void show_all () {
         this.el.show_all();
-     
     }
 }
