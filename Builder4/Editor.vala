@@ -387,7 +387,7 @@ public class Editor : Object
             var validate_res =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
-                _this.file.language, 
+                _this.file.language
                 
             );
             
