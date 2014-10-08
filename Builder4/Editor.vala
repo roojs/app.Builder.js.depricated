@@ -384,11 +384,11 @@ public class Editor : Object
             }
             
             
-            var line =  p.validateCode(
+            var validate res =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
                 _this.file.language, 
-                out res
+                
             );
             
             
