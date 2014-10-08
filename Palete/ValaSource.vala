@@ -83,15 +83,15 @@ namespace Palete {
 			if (bits.length > 0) {
 				offset = bits[0].split("\n").length +1;
 			}
-			this.dumpCode(tmpstring);
-			print("offset %d\n", offset);
+			//this.dumpCode(tmpstring);
+			//print("offset %d\n", offset);
 			this.checkString(tmpstring);
 			hash.set(prop, old);
 			// modify report
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var iter = this.report.line_errors.map_iterator();
 			while (iter.next()) {
-				 print("%d : %s\n",iter.get_key() - offset, iter.get_value());
+				// print("%d : %s\n",iter.get_key() - offset, iter.get_value());
 				 ret.set(iter.get_key() - offset, iter.get_value());
 			}
 			return ret;
