@@ -81,7 +81,7 @@ namespace Palete {
 			var bits = tmpstring.split("/*--VALACHECK-START--*/");
 			var offset =0;
 			if (bits.length > 0) {
-				offset = bits[0].split("\n").length -3;
+				offset = bits[0].split("\n").length +1;
 			}
 			this.dumpCode(tmpstring);
 			print("offset %d\n", offset);
