@@ -74,7 +74,7 @@ namespace Palete {
 
 			var hash = ptype == "listener" ? node.listeners : node.props;
 			var old = hash.get(prop);
-			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
+			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-END--*/";
 			
 			hash.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
