@@ -80,7 +80,7 @@ namespace Palete {
 			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
 			var bits = tmpstring.split("/*--VALACHECK-START--*/");
 			var offset =0;
-			if (bits.length > 1) {
+			if (bits.length > 0) {
 				offset = bits[0].split("\n").length;
 			}
 			this.dumpCode(tmpstring);
