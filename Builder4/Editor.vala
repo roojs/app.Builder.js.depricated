@@ -386,14 +386,13 @@ public class Editor : Object
             
             var validate_res =  p.validateCode(
                 str, 
-                _this.ptype == "listener" ? "| function " : _this.key, 
+                 _this.key, 
                 _this.ptype,
                 _this.file,
                 _this.node
                 
             );
-            
-            
+             
             this.error_line = validate_res.size;
         
             if (this.error_line < 1) {
