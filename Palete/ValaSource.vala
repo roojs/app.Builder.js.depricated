@@ -59,14 +59,13 @@ namespace Palete {
 		}
 
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
-                           JsRender.JsRender file, 
 	                   JsRender.Node node, 
                            string prop, string val)
 		{
 			var old = node.props.get(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val + " /*--VALACHECK-START--*/";
 			node.props.set(prop, newval);
-			var tmpstring = JsRender.NodeToVala.mungeFile(file);
+			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
 			var bits = tmpstring.split(newval);
 			var offset =0;
 			if (bits.length > 1) {
