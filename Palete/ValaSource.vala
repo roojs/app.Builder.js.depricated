@@ -79,6 +79,7 @@ namespace Palete {
 				offset = bits[0].split("\n").length;
 			}
 			this.dumpCode(tmpstring);
+			print("offset %d\n", offset);
 			this.checkString(tmpstring);
 			node.props.set(prop, old);
 			// modify report
