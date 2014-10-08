@@ -157,7 +157,7 @@ namespace Palete {
 			}
 
 
-
+			/*
 			// check context:
 			context.check ();
 			if (context.report.get_errors () > 0) {
@@ -167,7 +167,9 @@ namespace Palete {
 				return this.report.line_errors;
 				
 			}
+			*/
 			Vala.CodeContext.pop ();
+			
 			print("ALL OK?\n");
 			return this.report.line_errors;
 		}
