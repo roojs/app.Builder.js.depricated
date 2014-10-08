@@ -406,12 +406,13 @@ namespace Palete
 	{   
 
 		print("validate code (%s) %s\n", language, code);
-		error_message = "";
+		 
+		var ret = new Gee.HashMap<int,string>();
 		if (language == "js" && property[0] == '|') {
 
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			string ret = new Gee.HashMap<int,string>();
+			
 			string errmsg;
 			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
@@ -424,7 +425,7 @@ namespace Palete
 		}
 
 		print ("not javascript\n");
-		return -1;
+		return ret;
 
 	}
 
