@@ -68,7 +68,7 @@ namespace Palete {
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
 	                   JsRender.Node node, 
                            string prop,
-                           string ptype
+                           string ptype,
                            string val)
 		{
 
