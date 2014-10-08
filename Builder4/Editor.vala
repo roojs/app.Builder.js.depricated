@@ -382,12 +382,16 @@ public class Editor : Object
         
                 this.el.remove_source_marks (start, end, null);
             }
+            
+            
             var line =  p.validateCode(
                 str, 
                 _this.ptype == "listener" ? "| function " : _this.key, 
                 _this.file.language, 
                 out res
             );
+            
+            
             this.error_line = line;
             print("got line %d\n%s\n", line, res);
             if (line < 0) {
