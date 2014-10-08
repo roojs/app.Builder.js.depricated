@@ -46,9 +46,10 @@ namespace Palete {
 
 		Vala.CodeContext context;
 		ValaSourceReport report;
-
+		JsRender.JsRender file; 
 		public ValaSource(JsRender.JsRender file) {
 			base();
+			this.file = file;
 			
 
 		}
