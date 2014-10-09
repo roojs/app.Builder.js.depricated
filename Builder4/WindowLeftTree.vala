@@ -756,10 +756,9 @@ public class Xcls_WindowLeftTree : Object
                 if (action == Gdk.DragAction.MOVE) {
                     delete_selection_data = true;
                 }
-                
-                    
+                  
                             // drag around.. - reorder..
-                _this.model.moveNode(targetData, ctx.get_actions());
+                _this.model.moveNode(targetData, action);
                     
                    
                     
