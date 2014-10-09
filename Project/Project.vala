@@ -20,6 +20,8 @@ namespace Project {
 
 	// static array of all projects.
 	public Gee.HashMap<string,Project>  projects;
+
+	
 	public bool  projects_loaded = false;
 
 	
@@ -111,7 +113,7 @@ namespace Project {
 		    return ret;
 		
 		}
-
+		/*
 		public static Project?  getProject(string name) 
 		{
 			if (projects.has_key(name)) {
@@ -120,6 +122,7 @@ namespace Project {
 			return null;
 
 		}
+		*/
 		// load project data from project file.
 		public static void   factoryFromFile(string jsonfile)
 		{
@@ -163,7 +166,7 @@ namespace Project {
 			paths.foreach_member((sobj, key, val) => {
 				proj.paths.set(key, "dir");
 			});
-			projects.set(proj.name,proj);
+			projects.set(proj.id,proj);
 		}
 		
 		
@@ -196,7 +199,7 @@ namespace Project {
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
     			 
 			FileUtils.unlink(dirname + "/" + project.fn + ".json");
-			projects.unset(project.name,null);
+			projects.unset(project.id,null);
 			
 
 		}
