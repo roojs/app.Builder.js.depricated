@@ -92,6 +92,8 @@ namespace Palete {
 			var iter = this.report.line_errors.map_iterator();
 			while (iter.next()) {
 				// print("%d : %s\n",iter.get_key() - offset, iter.get_value());
+				// we have to prefix the error with the fake line number 
+				// so that it's a unique mark..
 				 ret.set(iter.get_key() - offset, 
 			 	       "%d : %s".printf(iter.get_key() - offset,iter.get_value()));
 			}
