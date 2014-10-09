@@ -749,11 +749,11 @@ public class Xcls_WindowLeftTree : Object
             
                  var delete_selection_data = false;
                     
-                if (ctx.get_actions() == Gdk.DragAction.ASK)  {
+                if (action == Gdk.DragAction.ASK)  {
                     /* Ask the user to move or copy, then set the ctx action. */
                 }
             
-                if (ctx.get_actions() == Gdk.DragAction.MOVE) {
+                if (action == Gdk.DragAction.MOVE) {
                     delete_selection_data = true;
                 }
                 
