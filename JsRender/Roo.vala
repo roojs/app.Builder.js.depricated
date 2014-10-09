@@ -232,7 +232,7 @@ namespace JsRender {
             
         }
 
-	string html;
+	 
 
 	 
 	public override void saveHTML ( string html )
