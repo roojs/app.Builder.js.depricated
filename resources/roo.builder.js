@@ -63,7 +63,12 @@ Builder  = {
             }
             if (nodeName != 'BODY') {
                 
-            
+                if (currentElement.hasAttribute('flexy:include')) {
+
+
+                    cb( '<flexy:include src="'+currentElement.getAttribute('flexy:include')+'"></flexy:include>');
+                    return;
+                }
             
                 var i = 0;
               // Prints the node tagName, such as <A>, <IMG>, etc
@@ -90,9 +95,7 @@ Builder  = {
             } else {
                 tagName = false;
             }
-            if (currentElement.hasAttribute('flexy:include')) {
-                cb( tagName ? "</"+tagName+">" : '');
-            }
+            
             
             // Traverse the tree
             i = 0;
