@@ -87,12 +87,12 @@ namespace Project {
 		         
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
-		     		var fn = next_file.get_display_name();
-				if (!Regex.match_simple("\\.json$", fn)) {
-					continue;
-				}
-            			factoryFromFile(dirname + "/" + fn);
-				}
+			     		var fn = next_file.get_display_name();
+					if (!Regex.match_simple("\\.json$", fn)) {
+						continue;
+					}
+		    			factoryFromFile(dirname + "/" + fn);
+				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
 			}
