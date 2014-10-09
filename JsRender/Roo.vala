@@ -240,7 +240,7 @@ namespace JsRender {
 		 
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
-    		if (top != "Roo.bootstrap.Body") {
+    		if (top.index_of("Roo.bootstrap.") != 0) {
         		return;
     		}
     		
