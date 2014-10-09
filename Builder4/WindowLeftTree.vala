@@ -126,7 +126,7 @@ public class Xcls_WindowLeftTree : Object
             	    this.el,            /* widget will be drag-able */
             	    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
             	    Builder4.Application.targetList,            /* lists of target to support */
-            	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+            	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE    | GDK_ACTION_LINK           /* what to do with data after dropped */
                 );
             
                 // ?? needed??
