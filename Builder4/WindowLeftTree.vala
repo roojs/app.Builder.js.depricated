@@ -308,7 +308,7 @@ public class Xcls_WindowLeftTree : Object
               }    
             
             
-            
+              print("action: %d\n", ctx.get_actions());
              //print("GETTING POS");
                 var  targetData = "";
             
