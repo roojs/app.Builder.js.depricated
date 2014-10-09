@@ -113,16 +113,7 @@ namespace Project {
 		    return ret;
 		
 		}
-		/*
-		public static Project?  getProject(string name) 
-		{
-			if (projects.has_key(name)) {
-				return projects.get(name);
-			}
-			return null;
-
-		}
-		*/
+		 
 		// load project data from project file.
 		public static void   factoryFromFile(string jsonfile)
 		{
