@@ -553,9 +553,19 @@ public class Xcls_WindowLeftTree : Object
                     // dropList --- need to gather this ... 
                     print("get dropList for : %s\n",dropNodeType);            
                     var dropList = _this.model.file.palete().getDropList(dropNodeType);
-                    
+
+
+
+		    
                     print("dropList: %s\n", string.joinv(" , ", dropList));
-                    //print("button mask?: %d\n", this.el.get_modifier_mask());
+
+		    int dx,dy;
+		    Gdk.ModifierType  dmask;
+
+		    ctx.get_dest_window().get_device_position(ctx.get_device(), out dx, out dy, out dmask);
+
+		    
+                    print("button mask?: %d\n", dmask);
                     // if drag action is link ... then we can drop it anywahere...
                      //if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
                      //        targetData = "%s|%d|".printf( path.to_string(), pos); 
