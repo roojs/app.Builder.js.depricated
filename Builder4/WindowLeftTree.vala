@@ -566,14 +566,14 @@ public class Xcls_WindowLeftTree : Object
 
 		    
                     print("button mask?: %d\n", dmask);
-                    // if drag action is link ... then we can drop it anywahere...
+                    // if drag action is shift ... then we can drop it anywahere...
                      if ((dmask & GDK_SHIFT_MASK) > 0) {
-                     //        targetData = "%s|%d|".printf( path.to_string(), pos); 
-                     //} else {
+                              targetData = "%s|%d|".printf( path.to_string(), pos); 
+                      } else {
                     
                     
                         targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
-                   // }
+                  }
                     
                     
                         
