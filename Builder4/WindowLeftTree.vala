@@ -567,7 +567,7 @@ public class Xcls_WindowLeftTree : Object
 		    
                     print("button mask?: %d\n", dmask);
                     // if drag action is link ... then we can drop it anywahere...
-                     //if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
+                     if ((dmask & GDK_SHIFT_MASK) > 0) {
                      //        targetData = "%s|%d|".printf( path.to_string(), pos); 
                      //} else {
                     
