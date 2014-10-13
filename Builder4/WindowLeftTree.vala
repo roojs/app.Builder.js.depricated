@@ -558,7 +558,7 @@ public class Xcls_WindowLeftTree : Object
                     print("drag & LINK %d\n",ctx.get_actions() & Gdk.DragAction.LINK);
                     // if drag action is link ... then we can drop it anywahere...
                      if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
-                             targetData = "%s|%d%".printf( path.to_string(), pos); 
+                             targetData = "%s|%d|".printf( path.to_string(), pos); 
                      } else {
                     
                     
