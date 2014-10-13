@@ -308,7 +308,7 @@ public class Xcls_WindowLeftTree : Object
               }    
             
             
-              print("button mask?: %d\n", this.get_modifier_mask());
+              print("button mask?: %d\n", this.el.get_modifier_mask());
              //print("GETTING POS");
                 var  targetData = "";
             
@@ -555,7 +555,7 @@ public class Xcls_WindowLeftTree : Object
                     var dropList = _this.model.file.palete().getDropList(dropNodeType);
                     
                     print("dropList: %s\n", string.joinv(" , ", dropList));
-                    print("button mask?: %d\n", this.get_modifier_mask());
+                    print("button mask?: %d\n", this.el.get_modifier_mask());
                     // if drag action is link ... then we can drop it anywahere...
                      //if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
                      //        targetData = "%s|%d|".printf( path.to_string(), pos); 
