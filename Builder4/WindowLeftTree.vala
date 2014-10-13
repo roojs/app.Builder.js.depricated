@@ -557,8 +557,13 @@ public class Xcls_WindowLeftTree : Object
                     print("dropList: %s\n", string.joinv(" , ", dropList));
                     
                     // if drag action is link ... then we can drop it anywahere...
+                     if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
+                             targetData = path.to_string() + "";
+                     } else {
                     
-                    targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
+                    
+                        targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
+                    }
                     
                     
                         
