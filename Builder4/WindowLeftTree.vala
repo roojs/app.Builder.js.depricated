@@ -308,7 +308,7 @@ public class Xcls_WindowLeftTree : Object
               }    
             
             
-              print("action: %d\n", ctx.get_actions());
+              print("button mask?: %d\n", this.get_modifier_mask());
              //print("GETTING POS");
                 var  targetData = "";
             
