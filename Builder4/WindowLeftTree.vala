@@ -555,15 +555,15 @@ public class Xcls_WindowLeftTree : Object
                     var dropList = _this.model.file.palete().getDropList(dropNodeType);
                     
                     print("dropList: %s\n", string.joinv(" , ", dropList));
-                    print("drag & LINK %d\n",ctx.get_actions() & Gdk.DragAction.LINK);
+                    print("button mask?: %d\n", this.get_modifier_mask());
                     // if drag action is link ... then we can drop it anywahere...
-                     if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
-                             targetData = "%s|%d|".printf( path.to_string(), pos); 
-                     } else {
+                     //if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
+                     //        targetData = "%s|%d|".printf( path.to_string(), pos); 
+                     //} else {
                     
                     
                         targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
-                    }
+                   // }
                     
                     
                         
