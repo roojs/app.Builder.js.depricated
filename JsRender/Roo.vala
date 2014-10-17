@@ -240,8 +240,8 @@ namespace JsRender {
 		 
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
-    		if (top.index_of("Roo.bootstrap.") != 0 &&
-		    top.index_of("Roo.mailer.") != 0
+    		if (top.index_of("Roo.bootstrap.") < 0 &&
+		    top.index_of("Roo.mailer.") < 0
 		        ) {
         		return;
     		}
@@ -262,7 +262,7 @@ namespace JsRender {
 		var dn = GLib.Path.get_dirname(fn);
 
 		var targetdir = dn + (
-              		top.index_of("Roo.mailer.") != 0 ? "" : "/templates" );
+              		top.index_of("Roo.mailer.") < 0 ? "/templates" : "/templates" );
 	                      
 		
 		if (!FileUtils.test(targetdir, FileTest.IS_DIR)) {
