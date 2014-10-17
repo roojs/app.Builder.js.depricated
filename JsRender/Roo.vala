@@ -241,7 +241,7 @@ namespace JsRender {
 		var top = this.tree.fqn();
     		print ("TOP = " + top + "\n" );
     		if (top.index_of("Roo.bootstrap.") != 0 &&
-			top.index_of("Roo.mailer.") != 0
+		    top.index_of("Roo.mailer.") != 0
 		        ) {
         		return;
     		}
@@ -260,13 +260,18 @@ namespace JsRender {
 		}
 		var bn = GLib.Path.get_basename(fn);
 		var dn = GLib.Path.get_dirname(fn);
-		if (!FileUtils.test(dn + "/templates", FileTest.IS_DIR)) {
-			print("Skip save - templates folder does not exist : %s\n", dn + "/templates");
+
+		var targetdir = dn + (
+              		top.index_of("Roo.mailer.") ? "" : "/templates";
+	                      
+		
+		if (!FileUtils.test(targetdir, FileTest.IS_DIR)) {
+			print("Skip save - templates folder does not exist : %s\n", targetdir);
 			return;
 		}
-		print("SAVE HTML -- %s\n%s\n", dn + "/templates/" + bn, html);
+		print("SAVE HTML -- %s\n%s\n",targetdir + "/" +  bn, html);
 		try {
-			this.writeFile(dn + "/templates/" + bn , html);            
+			this.writeFile(targetdir + "/" +  bn , html);            
 		} catch (FileError e ) {
 			print("SaveHtml failed\n");
 		}
