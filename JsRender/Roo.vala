@@ -262,7 +262,7 @@ namespace JsRender {
 		var dn = GLib.Path.get_dirname(fn);
 
 		var targetdir = dn + (
-              		top.index_of("Roo.mailer.") < 0 ? "/templates" : "/templates" );
+              		top.index_of("Roo.mailer.") < 0 ? "/templates" : "" );
 	                      
 		
 		if (!FileUtils.test(targetdir, FileTest.IS_DIR)) {
