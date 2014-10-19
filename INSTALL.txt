@@ -2,7 +2,7 @@
 
 apt-cache search '^valac-[0-9.]+$' | sort -n -r | head -n 1 | awk ' { print "sudo apt-get install " $1  }' | sh
 apt-cache search '^valac-[0-9.]+-vapi$' | sort -n -r | head -n 1 | awk ' { print "sudo apt-get install " $1  }' | sh
-apt-cache search libvala-[0-9.]+-dev$' | sort -n -r | head -n1 | awk ' { print "sudo apt-get install " $1  }' | sh
+apt-cache search '^libvala-[0-9.]+-dev$' | sort -n -r | head -n1 | awk ' { print "sudo apt-get install " $1  }' | sh
 
  
 
