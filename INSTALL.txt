@@ -1,11 +1,6 @@
 
-GTK3
 
-git clone git://github.com/roojs/app.Builder.js.git
-cd app.Builder.js
-git clone git://github.com/roojs/gir-1.2-gtk-3.0.git gir-1.2
-sh install1.2.sh
+grep '\-dev' | sort -n -r | grep -v valadoc | head -n1 | awk ' { print "sudo apt-get install " $1  }' | sh
 
-seed gtkrun.js Builder3.js
-
+ 
 
