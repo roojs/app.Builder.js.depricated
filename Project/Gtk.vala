@@ -112,7 +112,7 @@ namespace Project {
 			ret.set_string_member("target_bin", this.target_bin);
 			ret.set_array_member("sources", this.writeArray(this.sources));
 			ret.set_array_member("packages", this.writeArray(this.packages));
-			
+			return ret;
 		}
 		public Json.Array writeArray(Gee.ArrayList<string> ar) {
 			var ret = new Json.Array();
