@@ -64,30 +64,10 @@ namespace Project {
 			}
 			
 			var obj = node.get_array ();
-			//this.modOrder = obj.get_string_member("modOrder");
-			this.name = obj.get_string_member("name");
-			this.parent = obj.get_string_member("parent");
-			//this.permname = obj.get_string_member("permname");
-			this.title = obj.get_string_member("title");
-			//this.modOrder = obj.get_string_member("modOrder");
-
-			// load items[0] ??? into tree...
-			var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
-			bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
-
-			if (obj.has_member("items") 
-				&& 
-				obj.get_member("items").get_node_type() == Json.NodeType.ARRAY
-				&&
-				obj.get_array_member("items").get_length() > 0
-			) {
-			    var ar = obj.get_array_member("items");
-			    var tree_base = ar.get_object_element(0);
-			    this.tree = new Node();
-			    this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
-
-			}
-
+			for(var i= 0;i<obj.get_length();i++) {
+				var el = obj.get_object_element(i);
+				var vs = new GtkValaSettings.new_from_json(el);
+				this.compilegroups.add(vs);
 
 			}
 			
