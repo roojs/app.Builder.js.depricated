@@ -103,20 +103,24 @@ namespace Project {
 			}
 			return ret;
 		}
+		
 		public Json.Object toJson()
 		{
 			var ret = new Json.Object();
 			ret.set_string_member("name", this.name);
 			ret.set_string_member("compile_flags", this.compile_flags);
-			ret.set_string_member("target_bin", this.compile_flags);
-			var liter = this.listeners.map_iterator();
-			while (liter.next()) {
-				li.set_string_member(liter.get_key(), liter.get_value());
-			}
-
+			ret.set_string_member("target_bin", this.target_bin);
+			ret.set_array_member("sources", this.writeArray(this.sources));
+			ret.set_array_member("packages", this.writeArray(this.packages));
+			
 		}
-
-		
+		public writeArray(Gee.ArrayList<string> ar) {
+			var ret = new Json.Array();
+			for(var i =0; i< ar.size; i++) {
+				ret.set_string_element(i,ar.get(i));
+			}
+			return ret;
+		}
 	}
  
    
