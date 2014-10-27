@@ -38,8 +38,8 @@ public class Xcls_MainWindow : Object
     public Xcls_new_window new_window;
 
         // my vars (def)
-    public Project.Project project;
     public int no_windows;
+    public Project.Project project;
     public bool children_loaded;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
@@ -62,8 +62,8 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars (dec)
-        this.project = null;
         this.no_windows = 1;
+        this.project = null;
         this.children_loaded = false;
         this.left_projects = null;
         this.window_rooview = null;
