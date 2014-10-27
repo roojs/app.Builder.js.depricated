@@ -66,7 +66,7 @@ namespace Project {
 			var obj = node.get_array ();
 			for(var i= 0;i<obj.get_length();i++) {
 				var el = obj.get_object_element(i);
-				var vs = new GtkValaSettings.new_from_json(el);
+				var vs = new GtkValaSettings.from_json(el);
 				this.compilegroups.add(vs);
 
 			}
@@ -82,7 +82,7 @@ namespace Project {
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
 		public string target_bin;
 
-		public GtkValaSettings.new_from_json(Json.Object el) {
+		public GtkValaSettings.from_json(Json.Object el) {
 			
 		}
 		
