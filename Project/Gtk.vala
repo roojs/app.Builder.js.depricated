@@ -117,7 +117,7 @@ namespace Project {
 		public Json.Array writeArray(Gee.ArrayList<string> ar) {
 			var ret = new Json.Array();
 			for(var i =0; i< ar.size; i++) {
-				ret.set_string_element(i,ar.get(i));
+				ret.add_string_element(ar.get(i));
 			}
 			return ret;
 		}
