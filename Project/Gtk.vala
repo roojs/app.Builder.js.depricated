@@ -85,6 +85,8 @@ namespace Project {
 		public string target_bin;
 
 		public GtkValaSettings.from_json(Json.Object el) {
+
+			
 			this.name = el.get_string_member("name");
 			this.compile_flags = el.get_string_member("compile_flags");
 			this.target_bin = el.get_string_member("target_bin");
@@ -103,7 +105,14 @@ namespace Project {
 		}
 		public Json.Object toJson()
 		{
-
+			var ret = new Json.Object();
+			ret.set_string_member("name", this.name);
+			ret.set_string_member("compile_flags", this.compile_flags);
+			ret.set_string_member("target_bin", this.compile_flags);
+			var liter = this.listeners.map_iterator();
+			while (liter.next()) {
+				li.set_string_member(liter.get_key(), liter.get_value());
+			}
 
 		}
 
