@@ -66,7 +66,7 @@ namespace Project {
 				var el = obj.get_object_element(i);
 				var vs = new GtkValaSettings.from_json(el);
 				if (vs.name != "_default_") {
-					vs.parent = fs.gegt("_default");
+					vs.parent = fs.get("_default");
 				}
 				this.compilegroups.set(vs.name,vs);
 			}
@@ -85,7 +85,7 @@ namespace Project {
 		public string target_bin;
 
 		public GtkValaSettings.from_json(Json.Object el) {
-			
+			this.name = el.get_member_string("name");
 		}
 		
 	}
