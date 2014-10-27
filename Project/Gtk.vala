@@ -66,7 +66,7 @@ namespace Project {
 				var el = obj.get_object_element(i);
 				var vs = new GtkValaSettings.from_json(el);
 				if (vs.name != "_default_") {
-					vs.parent = fs.get("_default");
+					vs.parent = this.compilegroups.get("_default");
 				}
 				this.compilegroups.set(vs.name,vs);
 			}
