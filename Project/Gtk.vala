@@ -45,7 +45,7 @@ namespace Project {
 			// load a builder.config JSON file.
 			// 
 			this.compilegroups = new  Gee.HashMap<string,GtkValaSettings>();
-
+			
 			
 			var fn = this.path + "/config.builder";
 			print("load: " + fn );
@@ -58,10 +58,12 @@ namespace Project {
 			pa.load_from_file(this.path + "/config.builder");
 			var node = pa.get_root();
 
-			if (node.get_node_type () != Json.NodeType.OBJECT) {
+			// should be an array really.
+			if (node.get_node_type () != Json.NodeType.ARRAY) {
 				throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 			}
-			var obj = node.get_object ();
+			
+			var obj = node.get_array ();
 			//this.modOrder = obj.get_string_member("modOrder");
 			this.name = obj.get_string_member("name");
 			this.parent = obj.get_string_member("parent");
