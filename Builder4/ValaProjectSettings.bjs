@@ -72,8 +72,8 @@
                         },
                         {
                             "gint position" : 300,
-                            "* pack" : "add",
                             "xtype" : "HPaned",
+                            "* pack" : "add",
                             "$ xns" : "Gtk",
                             "gint min_position" : 300,
                             "items" : [
@@ -90,8 +90,8 @@
                                 },
                                 {
                                     "xtype" : "VBox",
-                                    "gboolean homogeneous" : false,
                                     "string id" : "set_vbox",
+                                    "gboolean homogeneous" : false,
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
@@ -138,11 +138,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "* pack" : "add",
-                            "xtype" : "Label",
-                            "$ xns" : "Gtk"
                         }
                     ]
                 },
