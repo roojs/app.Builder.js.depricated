@@ -65,8 +65,10 @@ namespace Project {
 			for(var i= 0;i<obj.get_length();i++) {
 				var el = obj.get_object_element(i);
 				var vs = new GtkValaSettings.from_json(el);
+				if (vs.name != "_default_") {
+					vs.parent = fs.gegt("_default");
+				}
 				this.compilegroups.set(vs.name,vs);
-
 			}
 			
 		}
@@ -74,7 +76,9 @@ namespace Project {
 	}
 	// an object describing a build config (or generic ...)
 	public class GtkValaSettings : Object {
+		public string name;
 		public GtkValaSettings? parent;
+		
 		public string compile_flags; // generic to all.
 		public Gee.ArrayList<string> packages; // list of packages?? some might be genericly named?
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
