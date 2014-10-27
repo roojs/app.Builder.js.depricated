@@ -80,14 +80,14 @@ namespace Project {
 			var ar = new Json.Array();
 
 			if (this.compilegroups.has_key("_default_")) {
-				ar.add_object_member(this.compilegroups.get("_default_").toJson());
+				ar.add_object_element(this.compilegroups.get("_default_").toJson());
 			}
 			var iter = this.compilegroups.map_iterator();
 			while(iter.next()) {
 				if (iter.get_key() == "_default_") {
 					continue;
 				}
-				ar.add_object_member(iter.get_value().toJson());
+				ar.add_object_element(iter.get_value().toJson());
 			}
 
 			var generator = new Json.Generator ();
