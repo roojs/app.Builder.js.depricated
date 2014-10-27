@@ -82,7 +82,9 @@ namespace Project {
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
 		public string target_bin;
 
-		
+		public GtkValaSettings.new_from_json(Json.Object el) {
+			
+		}
 		
 	}
  
