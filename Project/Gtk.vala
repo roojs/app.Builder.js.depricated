@@ -47,7 +47,7 @@ namespace Project {
 			this.compilegroups = new  Gee.HashMap<string,GtkValaSettings>();
 			
 			
-			var fn = this.path + "/config.builder";
+			var fn = this.firstPath() + "/config.builder";
 			print("load: " + fn );
 			
 			if (!FileUtils.test(fn, FileTest.EXISTS)) {
@@ -55,7 +55,7 @@ namespace Project {
 			}
 
 			var pa = new Json.Parser();
-			pa.load_from_file(this.path + "/config.builder");
+			pa.load_from_file(fn);
 			var node = pa.get_root();
 
 			// should be an array really.
