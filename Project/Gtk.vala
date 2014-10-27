@@ -21,12 +21,7 @@
 
 namespace Project {
 	static int gtk_id = 1;
-
-	public errordomain Error {
-		INVALID_FORMAT,
-		RENAME_FILE_EXISTS
-	}
-	
+ 
 
 	public class Gtk : Project
 	{

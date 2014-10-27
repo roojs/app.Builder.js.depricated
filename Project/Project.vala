@@ -12,12 +12,12 @@
  */
 namespace Project {
 	 public errordomain Error {
-		    INVALID_TYPE,
-		    NEED_IMPLEMENTING,
-			MISSING_FILE,
-			INVALID_VALUE,
-		 INVALID_FORMAT
-		}
+		INVALID_TYPE,
+		NEED_IMPLEMENTING,
+		MISSING_FILE,
+		INVALID_VALUE,
+		INVALID_FORMAT
+	}
 
 	// static array of all projects.
 	public Gee.HashMap<string,Project>  projects;
