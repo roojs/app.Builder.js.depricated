@@ -31,7 +31,7 @@ public class Xcls_GtkView : Object
         // set gobject values
         var child_0 = new Xcls_Viewport2( _this );
         child_0.ref();
-        this.el.add1 (  child_0.el  );
+        this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_ScrolledWindow4( _this );
         child_1.ref();
         this.el.add2 (  child_1.el  );
