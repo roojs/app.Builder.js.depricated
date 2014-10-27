@@ -85,7 +85,9 @@ namespace Project {
 		public string target_bin;
 
 		public GtkValaSettings.from_json(Json.Object el) {
-			this.name = el.get_member_string("name");
+			this.name = el.get_string_member("name");
+			this.compile_flags = el.get_string_member("compile_flags");
+			this.target_bin = el.get_string_member("target_bin");
 		}
 		
 	}
