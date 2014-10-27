@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    "* pack" : "add",
+                    "* pack" : "pack2,true,true",
                     "xtype" : "VBox",
                     "$ xns" : "Gtk",
                     "items" : [

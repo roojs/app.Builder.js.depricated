@@ -34,7 +34,7 @@ public class Xcls_GtkView : Object
         this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_VBox4( _this );
         child_1.ref();
-        this.el.add (  child_1.el  );
+        this.el.pack2 (  child_1.el , true,true );
     }
 
     // user defined functions 
