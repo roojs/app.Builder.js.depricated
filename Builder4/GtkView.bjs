@@ -29,75 +29,68 @@
                     ]
                 },
                 {
-                    "* pack" : "pack2,true,true",
-                    "xtype" : "ScrolledWindow",
+                    "* pack" : "add",
+                    "xtype" : "VBox",
                     "$ xns" : "Gtk",
                     "items" : [
                         {
-                            "* pack" : "add",
-                            "xtype" : "VBox",
+                            "* pack" : "pack_start,false,false,0",
+                            "xtype" : "HBox",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
-                                    "* pack" : "pack_start,false,false,0",
-                                    "xtype" : "HBox",
+                                    "* pack" : "pack_start,true,true,0",
+                                    "xtype" : "Button",
+                                    "$ xns" : "Gtk",
+                                    "utf8 label" : "Compile"
+                                }
+                            ]
+                        },
+                        {
+                            "* pack" : "pack_start,true,true,0",
+                            "xtype" : "HBox",
+                            "gboolean homogeneous" : true,
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "* pack" : "add",
+                                    "xtype" : "TreeView",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
-                                            "* pack" : "pack_start,true,true,0",
-                                            "xtype" : "Button",
+                                            "gint n_columns" : 1,
+                                            "columns" : "  typeof(string)",
+                                            "* pack" : "set_model",
+                                            "xtype" : "ListStore",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "utf8 title" : "Compile output",
+                                            "xtype" : "TreeViewColumn",
+                                            "string id" : "column",
                                             "$ xns" : "Gtk",
-                                            "utf8 label" : "Compile"
+                                            "items" : [
+                                                {
+                                                    "* pack" : "pack_start,false",
+                                                    "xtype" : "CellRendererText",
+                                                    "$ xns" : "Gtk"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
                                     "* pack" : "pack_start,true,true,0",
-                                    "xtype" : "HBox",
-                                    "gboolean homogeneous" : true,
+                                    "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
+                                            "gboolean show_line_marks" : true,
                                             "* pack" : "add",
-                                            "xtype" : "TreeView",
-                                            "$ xns" : "Gtk",
-                                            "items" : [
-                                                {
-                                                    "gint n_columns" : 1,
-                                                    "columns" : "  typeof(string)",
-                                                    "* pack" : "set_model",
-                                                    "xtype" : "ListStore",
-                                                    "$ xns" : "Gtk"
-                                                },
-                                                {
-                                                    "utf8 title" : "Compile output",
-                                                    "xtype" : "TreeViewColumn",
-                                                    "string id" : "column",
-                                                    "$ xns" : "Gtk",
-                                                    "items" : [
-                                                        {
-                                                            "* pack" : "pack_start,false",
-                                                            "xtype" : "CellRendererText",
-                                                            "$ xns" : "Gtk"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "* pack" : "pack_start,true,true,0",
-                                            "xtype" : "ScrolledWindow",
-                                            "$ xns" : "Gtk",
-                                            "items" : [
-                                                {
-                                                    "gboolean show_line_marks" : true,
-                                                    "xtype" : "View",
-                                                    "* pack" : "add",
-                                                    "$ xns" : "GtkSource",
-                                                    "gboolean show_line_numbers" : true,
-                                                    "gboolean editable" : false
-                                                }
-                                            ]
+                                            "xtype" : "View",
+                                            "$ xns" : "GtkSource",
+                                            "gboolean show_line_numbers" : true,
+                                            "gboolean editable" : false
                                         }
                                     ]
                                 }
