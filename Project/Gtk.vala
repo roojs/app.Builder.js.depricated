@@ -77,6 +77,19 @@ namespace Project {
 			var fn = this.firstPath() + "/config.builder";
 			print("write: " + fn );
 
+			var ar = new Json.Array();
+			var iter = this.compilegroups.map_iter();
+			if (this.compilegroups.has_key("_default_")) {
+				ar.add_object_member(this.compilegroups.get("_default_").toJson());
+			}
+			
+			while(iter.next()) {
+				if (iter.get_key() == "_default_") {
+					continue;
+				}
+				ar.add_object_member(iter.get_value().toJson());
+			}
+
 			var generator = new Json.Generator ();
 			generator.indent = 4;
 			generator.pretty = true;
@@ -84,7 +97,7 @@ namespace Project {
 			node.set_array(ar);
 			generator.set_root(node);
 
-			var f = GLib.File.new_for_path(path);
+			var f = GLib.File.new_for_path(fn);
 			var data_out = new GLib.DataOutputStream(
                                           f.replace(null, false, GLib.FileCreateFlags.NONE, null)
          		);
