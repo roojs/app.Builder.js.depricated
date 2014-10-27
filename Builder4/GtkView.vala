@@ -155,7 +155,7 @@ public class Xcls_GtkView : Object
         public Xcls_VBox4(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
 
