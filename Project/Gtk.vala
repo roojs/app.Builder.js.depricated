@@ -77,7 +77,16 @@ namespace Project {
 			var fn = this.firstPath() + "/config.builder";
 			print("write: " + fn );
 
+			var generator = new Json.Generator ();
+			generator.indent = 4;
+			generator.pretty = true;
+			var node = new Json.Node(Json.NodeType.ARRAY);
+			node.set_array(ar);
+			generator.set_root(node);
 
+			
+			
+			return generator.to_data(null);
 			
 			
 
