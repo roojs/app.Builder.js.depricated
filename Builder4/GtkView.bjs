@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    "* pack" : "add2",
+                    "* pack" : "pack2,true,true",
                     "xtype" : "ScrolledWindow",
                     "$ xns" : "Gtk",
                     "items" : [
