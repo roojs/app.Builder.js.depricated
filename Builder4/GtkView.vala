@@ -211,7 +211,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Compile";
+            this.el.label = "Full Compile";
         }
 
         // user defined functions 
