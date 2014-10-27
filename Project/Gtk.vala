@@ -54,6 +54,9 @@ namespace Project {
 		public Gee.ArrayList<string> packages; // list of packages?? some might be genericly named?
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
 		public string target_bin;
+
+		
+		
 	}
  
    
