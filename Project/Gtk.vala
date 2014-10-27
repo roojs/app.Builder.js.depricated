@@ -84,9 +84,14 @@ namespace Project {
 			node.set_array(ar);
 			generator.set_root(node);
 
+			var f = GLib.File.new_for_path(path);
+			var data_out = new GLib.DataOutputStream(
+                                          f.replace(null, false, GLib.FileCreateFlags.NONE, null)
+         		);
+			data_out.put_string(generator.to_data(null), null);
+			data_out.close(null);
 			
-			
-			return generator.to_data(null);
+			return ;
 			
 			
 
