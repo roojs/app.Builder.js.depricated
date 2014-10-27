@@ -72,6 +72,16 @@ namespace Project {
 			}
 			
 		}
+		public void writeConfig()
+		{
+			var fn = this.firstPath() + "/config.builder";
+			print("write: " + fn );
+
+
+			
+			
+
+		}
 
 	}
 	// an object describing a build config (or generic ...)
