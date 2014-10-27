@@ -88,8 +88,19 @@ namespace Project {
 			this.name = el.get_string_member("name");
 			this.compile_flags = el.get_string_member("compile_flags");
 			this.target_bin = el.get_string_member("target_bin");
+			// sources and packages.
+			this.sources = this.readArray(el.get_array_member("sources"));
+			this.packages = this.readArray(el.get_array_member("packages"));
+			
 		}
-		
+		public Gee.ArrayList<string> readArray(Json.Array ar) 
+		{
+			var ret = new Gee.ArrayList<string>();
+			for(var i =0; i< ar.get_length(); i++) {
+				ret.add(ar.get_string_element(i));
+			}
+			return ret;
+		}
 	}
  
    
