@@ -15,7 +15,8 @@ namespace Project {
 		    INVALID_TYPE,
 		    NEED_IMPLEMENTING,
 			MISSING_FILE,
-			INVALID_VALUE
+			INVALID_VALUE,
+		 INVALID_FORMAT
 		}
 
 	// static array of all projects.
