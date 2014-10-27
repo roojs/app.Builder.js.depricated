@@ -45,7 +45,7 @@ namespace Project {
 			this.compilegroups = new  Gee.HashMap<string,GtkValaSettings>();
 			
 			
-			var fn = this.firstPath() + "/config.builder";
+			var fn = this.firstPath() + "/config1.builder";
 			print("load: " + fn );
 			
 			if (!FileUtils.test(fn, FileTest.EXISTS)) {
@@ -74,7 +74,7 @@ namespace Project {
 		}
 		public void writeConfig()
 		{
-			var fn = this.firstPath() + "/config.builder";
+			var fn = this.firstPath() + "/config1.builder";
 			print("write: " + fn );
 
 			var ar = new Json.Array();
