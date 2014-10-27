@@ -78,11 +78,11 @@ namespace Project {
 			print("write: " + fn );
 
 			var ar = new Json.Array();
-			var iter = this.compilegroups.map_iter();
+
 			if (this.compilegroups.has_key("_default_")) {
 				ar.add_object_member(this.compilegroups.get("_default_").toJson());
 			}
-			
+			var iter = this.compilegroups.map_iterator();
 			while(iter.next()) {
 				if (iter.get_key() == "_default_") {
 					continue;
