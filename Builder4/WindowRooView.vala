@@ -39,11 +39,6 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
-    }
     public void createThumb () {
         
         
@@ -114,6 +109,11 @@ public class Xcls_WindowRooView : Object
     
         
          
+    }
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);

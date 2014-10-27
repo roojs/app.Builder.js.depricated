@@ -8,8 +8,8 @@
     "items" : [
         {
             "id" : "WindowRooView",
-            "| void loadFile" : "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
             "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n    \n    \n    var p = new WebKit.PrintOperation(_this.view.el);\n     \n    var ps = new Gtk.PrintSettings();\n    ps.set_printer(\"Print to File\");\n    ps.set(\"output-file-format\", \"pdf\");\n    ps.set(\"output-uri\", \"file://\" + filename + \".pdf\");\n\n    // find the printer...\n    \n    /*\n    var ar = Gtk.PaperSize.get_paper_sizes(false);\n    var psetup = new Gtk.PageSetup();\n    for(var i = 0; i < ar.length(); i++) {\n        if (ar.nth_data(i).get_name() ==\"iso_a4\") {\n            psetup.set_paper_size(ar.nth_data(i));\n        }\n    }\n    psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);\n    \n     \n    p.set_page_setup(psetup);\n    */\n    p.set_print_settings(ps);\n    \n    p.finished.connect(() => {\n        print(\"creating thumbnail for \" + filename + \".pdf\\n\"); \n        var s = new Cairo.PdfSurface(filename + \".pdf\", 400,400);\n    \n        s.write_to_png (filename);\n        \n       // var f = GLib.File.new_for_path (filename + \".pdf\");\n       // f.delete();\n    });\n    \n    \n    p.print();\n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
+            "| void loadFile" : "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
             "* pack" : "add",
             "xtype" : "VPaned",
             "# JsRender.JsRender file" : "",
@@ -18,15 +18,15 @@
             "items" : [
                 {
                     "id" : "viewbox",
-                    "xtype" : "VBox",
                     "* pack" : "pack1,true,true",
+                    "xtype" : "VBox",
                     "$ xns" : "Gtk",
                     "$ homogeneous" : false,
                     "items" : [
                         {
                             "$ vexpand" : false,
-                            "* pack" : "pack_start,false,true,0",
                             "$ height_request" : 20,
+                            "* pack" : "pack_start,false,true,0",
                             "xtype" : "HBox",
                             "$ xns" : "Gtk",
                             "$ homogeneous" : true,
@@ -36,8 +36,8 @@
                                         "clicked" : "( ) => {\n    _this.view.renderJS(  true);\n}"
                                     },
                                     "label" : "Redraw",
-                                    "* pack" : "pack_start,false,false,0",
                                     "xtype" : "Button",
+                                    "* pack" : "pack_start,false,false,0",
                                     "$ xns" : "Gtk"
                                 },
                                 {
@@ -56,16 +56,16 @@
                                         "clicked" : " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  _this.view.renderJS(true);\n\n}"
                                     },
                                     "label" : "Full Redraw",
-                                    "* pack" : "pack_start,false,false,0",
                                     "xtype" : "Button",
+                                    "* pack" : "pack_start,false,false,0",
                                     "$ xns" : "Gtk"
                                 }
                             ]
                         },
                         {
                             "id" : "viewcontainer",
-                            "$ shadow_type" : "Gtk.ShadowType.IN",
                             "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+                            "$ shadow_type" : "Gtk.ShadowType.IN",
                             "* pack" : "pack_end,true,true,0",
                             "xtype" : "ScrolledWindow",
                             "$ xns" : "Gtk",
@@ -99,8 +99,8 @@
                 },
                 {
                     "id" : "inspectorcontainer",
-                    "$ shadow_type" : "Gtk.ShadowType.IN",
                     "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+                    "$ shadow_type" : "Gtk.ShadowType.IN",
                     "xtype" : "ScrolledWindow",
                     "* pack" : "pack2,true,true",
                     "$ xns" : "Gtk"
