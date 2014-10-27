@@ -536,7 +536,7 @@ namespace Palete {
 			unowned GLib.SList<string>  pth = GI.Repository.get_search_path ();
 			var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0", "/share/gir-1.0");
 			// 64bit...
-			gir_path = gir_path.replace("/lib/x86_64-linux-gnu/girepository-1.0/", "/share/gir-1.0");
+			gir_path = gir_path.replace("/lib/x86_64-linux-gnu/girepository-1.0", "/share/gir-1.0");
 			
 			//console.log(fn);
 
