@@ -44,9 +44,15 @@ namespace Project {
 		{
 			// load a builder.config JSON file.
 			// 
- 
-			print("load: " + this.path + );
+			this.compilegroups = new  Gee.HashMap<string,GtkValaSettings>();
 
+			
+			var fn = this.path + "/config.builder";
+			print("load: " + fn );
+			
+			if (!FileUtils.test(fn, FileTest.EXISTS)) {
+				return;
+			}
 
 			var pa = new Json.Parser();
 			pa.load_from_file(this.path + "/config.builder");
