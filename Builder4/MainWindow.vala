@@ -259,6 +259,11 @@ public class Xcls_MainWindow : Object
         // project edit..
         this.projectsettings  =new Xcls_ProjectSettings();
         this.projectsettings.ref();  /// really?
+        
+        this.vala_projectsettings  =new Xcls_ValaProjectSettings();
+        this.vala_projectsettings.ref();
+    
+        
         ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
         //this.projectsettings.el.show_all();
     
