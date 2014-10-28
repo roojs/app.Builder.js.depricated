@@ -46,13 +46,13 @@ public class Xcls_MainWindow : Object
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
-    public Xcls_ValaProjectSettings vala_projectsettings;
     public Xcls_ProjectSettings projectsettings;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public string state;
     public Xcls_RightPalete rightpalete;
     public string title;
+    public ValaProjectSettings vala_projectsettings;
     public Xcls_WindowAddProp add_props;
     public Xcls_GtkView window_gladeview;
 
@@ -71,12 +71,12 @@ public class Xcls_MainWindow : Object
         this.left_tree = null;
         this.code_editor = null;
         this.new_file_dialog = null;
-        this.vala_projectsettings = null;
         this.projectsettings = null;
         this.clutterfiles = null;
         this.left_props = null;
         this.rightpalete = null;
         this.title = "Application Builder";
+        this.vala_projectsettings = null;
         this.add_props = null;
         this.window_gladeview = null;
 
