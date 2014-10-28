@@ -63,7 +63,7 @@
                                     "items" : [
                                         {
                                             "xtype" : "TreeView",
-                                            "string id" : "packages_tree",
+                                            "string id" : "directory_tree",
                                             "$ xns" : "Gtk"
                                         }
                                     ]
@@ -72,8 +72,8 @@
                         },
                         {
                             "gint position" : 300,
-                            "xtype" : "HPaned",
                             "* pack" : "add",
+                            "xtype" : "HPaned",
                             "$ xns" : "Gtk",
                             "gint min_position" : 300,
                             "items" : [
@@ -90,8 +90,8 @@
                                 },
                                 {
                                     "xtype" : "VBox",
-                                    "string id" : "set_vbox",
                                     "gboolean homogeneous" : false,
+                                    "string id" : "set_vbox",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
