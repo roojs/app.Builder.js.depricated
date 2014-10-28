@@ -262,7 +262,7 @@ public class Xcls_MainWindow : Object
         this.projectsettings  =new Xcls_ProjectSettings();
         this.projectsettings.ref();  /// really?
         
-        this.vala_projectsettings  =new Xcls_ValaProjectSettings();
+        this.vala_projectsettings  =new ValaProjectSettings();
         this.vala_projectsettings.ref();
     
         
