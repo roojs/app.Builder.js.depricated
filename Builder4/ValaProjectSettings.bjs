@@ -63,7 +63,7 @@
                                     "items" : [
                                         {
                                             "xtype" : "TreeView",
-                                            "string id" : "directory_tree",
+                                            "string id" : "default_directory_tree",
                                             "$ xns" : "Gtk"
                                         }
                                     ]
