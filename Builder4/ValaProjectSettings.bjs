@@ -130,7 +130,7 @@
                                             "items" : [
                                                 {
                                                     "xtype" : "TreeView",
-                                                    "string id" : "packages_tree",
+                                                    "string id" : "files_tree",
                                                     "$ xns" : "Gtk"
                                                 }
                                             ]
