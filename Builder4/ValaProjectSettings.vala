@@ -14,7 +14,6 @@ public class ValaProjectSettings : Object
     }
 
         // my vars (def)
-    public utf8 title;
 
     // ctor 
     public ValaProjectSettings()
@@ -23,7 +22,6 @@ public class ValaProjectSettings : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars (dec)
-        this.title = Edit Compile Settings;
 
         // set gobject values
         var child_0 = new Xcls_Notebook2( _this );

@@ -7,7 +7,6 @@
     "modOrder" : "",
     "items" : [
         {
-            "utf8 title" : "Edit Compile Settings",
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
