@@ -2,7 +2,7 @@ static ValaProjectSettings  _ValaProjectSettings;
 
 public class ValaProjectSettings : Object 
 {
-    public Gtk.Dialog el;
+    public Gtk.VBox el;
     private ValaProjectSettings  _this;
 
     public static ValaProjectSettings singleton()
@@ -14,17 +14,18 @@ public class ValaProjectSettings : Object
     }
 
         // my vars (def)
+    public utf8 title;
 
     // ctor 
     public ValaProjectSettings()
     {
         _this = this;
-        this.el = new Gtk.Dialog();
+        this.el = new Gtk.VBox( true, 0 );
 
         // my vars (dec)
+        this.title = Edit Compile Settings;
 
         // set gobject values
-        this.el.title = "Edit Compile Settings";
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
         var child_1 = new Xcls_Button23( _this );

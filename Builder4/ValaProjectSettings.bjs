@@ -8,7 +8,7 @@
     "items" : [
         {
             "utf8 title" : "Edit Compile Settings",
-            "xtype" : "Dialog",
+            "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
             "items" : [
