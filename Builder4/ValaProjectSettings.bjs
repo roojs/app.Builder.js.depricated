@@ -9,6 +9,7 @@
         {
             "utf8 title" : "Edit Compile Settings",
             "xtype" : "Dialog",
+            "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
             "items" : [
                 {
