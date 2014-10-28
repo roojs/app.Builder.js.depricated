@@ -28,7 +28,7 @@ public class ValaProjectSettings : Object
         // set gobject values
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
-        this.el.pack_start (  child_0.el , false,false,0 );
+        this.el.pack_start (  child_0.el , true,true,0 );
     }
 
     // user defined functions 

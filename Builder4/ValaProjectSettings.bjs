@@ -13,7 +13,7 @@
             "$ xns" : "Gtk",
             "items" : [
                 {
-                    "* pack" : "pack_start,false,false,0",
+                    "* pack" : "pack_start,true,true,0",
                     "xtype" : "Notebook",
                     "$ xns" : "Gtk",
                     "items" : [
