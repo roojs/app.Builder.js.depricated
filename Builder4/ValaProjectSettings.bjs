@@ -45,7 +45,7 @@
                                     "items" : [
                                         {
                                             "xtype" : "TreeView",
-                                            "string id" : "packages_tree",
+                                            "string id" : "default_packages_tree",
                                             "$ xns" : "Gtk"
                                         }
                                     ]
