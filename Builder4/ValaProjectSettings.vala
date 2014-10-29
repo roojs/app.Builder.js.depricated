@@ -56,7 +56,7 @@ public class ValaProjectSettings : Object
             this.el.append_page (  child_0.el , _this.global_label.el );
             var child_1 = new Xcls_HPaned18( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.append_page (  child_1.el , _this.label_targets.el );
             var child_2 = new Xcls_lablel_global( _this );
             child_2.ref();
             var child_3 = new Xcls_lablel_targets( _this );

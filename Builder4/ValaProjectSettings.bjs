@@ -127,7 +127,7 @@
                         {
                             "gint position" : 300,
                             "xtype" : "HPaned",
-                            "* pack" : "add",
+                            "* pack" : "append_page,_this.label_targets.el",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
