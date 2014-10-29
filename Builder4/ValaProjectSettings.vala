@@ -252,18 +252,18 @@ public class ValaProjectSettings : Object
             // set gobject values
             this.el.title = "name";
             this.el.resizable = true;
-            var child_0 = new Xcls_CellRendererText11( _this );
+            var child_0 = new Xcls_packages_render( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
             // init method 
 
-            this.el.add_attribute(_this.keyrender.el , "markup", 2 );
-             this.el.add_attribute(_this.keyrender.el , "text", 1 );        }
+            this.el.add_attribute(_this.packages_render.el , "markup", 2 );
+             this.el.add_attribute(_this.packages_render.el , "text", 1 );        }
 
         // user defined functions 
     }
-    public class Xcls_CellRendererText11 : Object 
+    public class Xcls_packages_render : Object 
     {
         public Gtk.CellRendererText el;
         private ValaProjectSettings  _this;
@@ -272,7 +272,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_CellRendererText11(ValaProjectSettings _owner )
+        public Xcls_packages_render(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.CellRendererText();

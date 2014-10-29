@@ -60,7 +60,7 @@
                                                 },
                                                 {
                                                     "utf8 title" : "name",
-                                                    "* init" : " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
+                                                    "* init" : " this.el.add_attribute(_this.packages_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.packages_render.el , \"text\", 1 );\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
@@ -69,6 +69,7 @@
                                                         {
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "string id" : "packages_render",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
