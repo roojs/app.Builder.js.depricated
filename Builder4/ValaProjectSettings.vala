@@ -16,7 +16,7 @@ public class ValaProjectSettings : Object
     public Xcls_label_targets label_targets;
     public Xcls_packages_render packages_render;
     public Xcls_directory_render directory_render;
-    public Xcls_directory_render directory_render;
+    public Xcls_targets_render targets_render;
 
         // my vars (def)
 
@@ -611,7 +611,7 @@ public class ValaProjectSettings : Object
             // set gobject values
             this.el.title = "name";
             this.el.resizable = true;
-            var child_0 = new Xcls_directory_render( _this );
+            var child_0 = new Xcls_targets_render( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
@@ -622,7 +622,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_directory_render : Object 
+    public class Xcls_targets_render : Object 
     {
         public Gtk.CellRendererText el;
         private ValaProjectSettings  _this;
@@ -631,10 +631,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_directory_render(ValaProjectSettings _owner )
+        public Xcls_targets_render(ValaProjectSettings _owner )
         {
             _this = _owner;
-            _this.directory_render = this;
+            _this.targets_render = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)

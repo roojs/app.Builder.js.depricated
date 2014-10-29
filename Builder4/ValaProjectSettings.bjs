@@ -171,7 +171,7 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
-                                                            "id" : "directory_render",
+                                                            "id" : "targets_render",
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
