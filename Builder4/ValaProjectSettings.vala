@@ -250,6 +250,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.title = "name";
             this.el.resizable = true;
 
             // init method 
