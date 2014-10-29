@@ -151,8 +151,8 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
+                                            "id" : "set_tree",
                                             "xtype" : "TreeView",
-                                            "string id" : "set_tree",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
@@ -164,7 +164,7 @@
                                                 },
                                                 {
                                                     "utf8 title" : "name",
-                                                    "* init" : " this.el.add_attribute(_this.directory_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.directory_render.el , \"text\", 1 );\n  ",
+                                                    "* init" : " this.el.add_attribute(_this.targets_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.targets_render.el , \"text\", 1 );\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
