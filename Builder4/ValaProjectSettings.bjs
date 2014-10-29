@@ -69,8 +69,8 @@
                                                         {
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
-                                                            "string id" : "packages_render",
-                                                            "$ xns" : "Gtk"
+                                                            "$ xns" : "Gtk",
+                                                            "* id" : "packages_render"
                                                         }
                                                     ]
                                                 }
