@@ -312,7 +312,13 @@ public class ValaProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_set_tree( _this );
             child_0.ref();
-        }
+
+            // init method 
+
+            {  
+            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+            
+            }        }
 
         // user defined functions 
     }

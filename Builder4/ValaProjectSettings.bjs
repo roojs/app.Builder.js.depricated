@@ -73,11 +73,12 @@
                         },
                         {
                             "gint position" : 300,
-                            "* pack" : "add",
                             "xtype" : "HPaned",
+                            "* pack" : "add",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
+                                    "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
                                     "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
@@ -90,8 +91,8 @@
                                 },
                                 {
                                     "xtype" : "VBox",
-                                    "gboolean homogeneous" : false,
                                     "string id" : "set_vbox",
+                                    "gboolean homogeneous" : false,
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
