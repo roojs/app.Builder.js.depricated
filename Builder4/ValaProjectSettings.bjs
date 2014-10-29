@@ -196,9 +196,11 @@
                             ]
                         },
                         {
+                            "id" : "",
                             "* pack" : false,
                             "xtype" : "Label",
-                            "$ xns" : "Gtk"
+                            "$ xns" : "Gtk",
+                            "utf8 label" : "Global"
                         }
                     ]
                 }

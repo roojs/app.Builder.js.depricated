@@ -14,6 +14,7 @@ public class ValaProjectSettings : Object
     }
     public Xcls_packages_render packages_render;
     public Xcls_directory_render directory_render;
+    public Xcls_Label29 Label29;
 
         // my vars (def)
 
@@ -713,7 +714,8 @@ public class ValaProjectSettings : Object
         public Xcls_Label29(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( null );
+            _this.Label29 = this;
+            this.el = new Gtk.Label( "Global" );
 
             // my vars (dec)
 
