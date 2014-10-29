@@ -196,6 +196,7 @@
                             ]
                         },
                         {
+                            "* pack" : false,
                             "xtype" : "Label",
                             "$ xns" : "Gtk"
                         }
