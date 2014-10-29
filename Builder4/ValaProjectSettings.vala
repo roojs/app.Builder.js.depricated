@@ -205,7 +205,7 @@ public class ValaProjectSettings : Object
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn10( _this );
             child_1.ref();
-            this.el.remove_column (  child_1.el  );
+            this.el.append_column (  child_1.el  );
         }
 
         // user defined functions 
@@ -250,7 +250,11 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-        }
+
+            // init method 
+
+            this.el.add_attribute(_this.keyrender.el , "markup", 2 );
+             this.el.add_attribute(_this.keyrender.el , "text", 1 );        }
 
         // user defined functions 
     }

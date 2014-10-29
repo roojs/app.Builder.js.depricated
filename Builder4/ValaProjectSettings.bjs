@@ -59,7 +59,8 @@
                                                     "$ xns" : "Gtk"
                                                 },
                                                 {
-                                                    "* pack" : "remove_column",
+                                                    "* init" : " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
+                                                    "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "$ xns" : "Gtk"
                                                 }
