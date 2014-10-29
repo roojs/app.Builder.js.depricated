@@ -30,13 +30,13 @@
                                 },
                                 {
                                     "xtype" : "Entry",
-                                    "* pack" : "pack_end,false,false,0",
+                                    "* pack" : "pack_start,false,false,0",
                                     "string id" : "compile_flags",
                                     "$ xns" : "Gtk"
                                 },
                                 {
                                     "xtype" : "Label",
-                                    "* pack" : "pack_end,false,false,0",
+                                    "* pack" : "pack_start,false,false,0",
                                     "$ xns" : "Gtk",
                                     "utf8 label" : "packages"
                                 },
