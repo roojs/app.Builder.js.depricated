@@ -41,7 +41,7 @@
                                     "utf8 label" : "packages"
                                 },
                                 {
-                                    "* pack" : "pack_end,false,false,0",
+                                    "* pack" : "pack_end,true,true,0",
                                     "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
@@ -59,7 +59,7 @@
                                     "utf8 label" : "Available Directories"
                                 },
                                 {
-                                    "* pack" : "pack_end,false,true,0",
+                                    "* pack" : "pack_end,true,true,0",
                                     "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
