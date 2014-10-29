@@ -87,7 +87,7 @@ public class ValaProjectSettings : Object
             this.el.pack_start (  child_2.el , false,false,0 );
             var child_3 = new Xcls_ScrolledWindow7( _this );
             child_3.ref();
-            this.el.pack_end (  child_3.el , true,true,0 );
+            this.el.pack_start (  child_3.el , true,true,0 );
             var child_4 = new Xcls_Label12( _this );
             child_4.ref();
             this.el.pack_end (  child_4.el , false,false,0 );
