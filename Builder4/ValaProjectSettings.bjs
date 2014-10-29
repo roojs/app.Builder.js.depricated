@@ -18,7 +18,7 @@
                     "items" : [
                         {
                             "xtype" : "VBox",
-                            "* pack" : "add",
+                            "* pack" : "append_page,_this.global_label.el",
                             "gboolean homogeneous" : false,
                             "$ xns" : "Gtk",
                             "items" : [

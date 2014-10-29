@@ -52,7 +52,7 @@ public class ValaProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_VBox3( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.append_page (  child_0.el , _this.global_label.el );
             var child_1 = new Xcls_HPaned18( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
