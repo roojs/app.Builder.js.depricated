@@ -18,6 +18,7 @@ public class ValaProjectSettings : Object
     public Xcls_directory_render directory_render;
     public Xcls_targets_tree targets_tree;
     public Xcls_targets_render targets_render;
+    public Xcls_targets_render targets_render;
 
         // my vars (def)
 
@@ -825,6 +826,87 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_ListStore34( _this );
+            child_0.ref();
+            this.el.set_model (  child_0.el  );
+            var child_1 = new Xcls_TreeViewColumn35( _this );
+            child_1.ref();
+            this.el.append_column (  child_1.el  );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_ListStore34 : Object 
+    {
+        public Gtk.ListStore el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ListStore34(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
+     typeof(string) // ??
+      );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_TreeViewColumn35 : Object 
+    {
+        public Gtk.TreeViewColumn el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_TreeViewColumn35(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "name";
+            this.el.resizable = true;
+            var child_0 = new Xcls_targets_render( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false );
+
+            // init method 
+
+            this.el.add_attribute(_this.targets_render.el , "markup", 2 );
+             this.el.add_attribute(_this.targets_render.el , "text", 1 );        }
+
+        // user defined functions 
+    }
+    public class Xcls_targets_render : Object 
+    {
+        public Gtk.CellRendererText el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_targets_render(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.targets_render = this;
+            this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
 
