@@ -201,6 +201,13 @@
                             "xtype" : "Label",
                             "$ xns" : "Gtk",
                             "utf8 label" : "Global"
+                        },
+                        {
+                            "id" : "lablel_global",
+                            "xtype" : "Label",
+                            "* pack" : false,
+                            "$ xns" : "Gtk",
+                            "utf8 label" : "Global"
                         }
                     ]
                 }
