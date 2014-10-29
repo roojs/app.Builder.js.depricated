@@ -153,7 +153,32 @@
                                         {
                                             "xtype" : "TreeView",
                                             "string id" : "set_tree",
-                                            "$ xns" : "Gtk"
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "* pack" : "set_model",
+                                                    "xtype" : "ListStore",
+                                                    "$ n_columns" : 2,
+                                                    "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
+                                                    "$ xns" : "Gtk"
+                                                },
+                                                {
+                                                    "utf8 title" : "name",
+                                                    "* init" : " this.el.add_attribute(_this.directory_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.directory_render.el , \"text\", 1 );\n  ",
+                                                    "* pack" : "append_column",
+                                                    "xtype" : "TreeViewColumn",
+                                                    "gboolean resizable" : true,
+                                                    "$ xns" : "Gtk",
+                                                    "items" : [
+                                                        {
+                                                            "id" : "directory_render",
+                                                            "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
+                                                            "$ xns" : "Gtk"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
