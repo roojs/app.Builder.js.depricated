@@ -196,14 +196,14 @@
                             ]
                         },
                         {
-                            "id" : "lablel_global",
+                            "id" : "label_global",
                             "* pack" : false,
                             "xtype" : "Label",
                             "$ xns" : "Gtk",
                             "utf8 label" : "Global"
                         },
                         {
-                            "id" : "lablel_targets",
+                            "id" : "label_targets",
                             "xtype" : "Label",
                             "* pack" : false,
                             "$ xns" : "Gtk",
