@@ -196,7 +196,7 @@
                             ]
                         },
                         {
-                            "id" : "",
+                            "id" : "lablel_global",
                             "* pack" : false,
                             "xtype" : "Label",
                             "$ xns" : "Gtk",
