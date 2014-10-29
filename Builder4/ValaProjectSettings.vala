@@ -219,7 +219,9 @@ public class ValaProjectSettings : Object
         public Xcls_ListStore9(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 0, null );
+            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
+     typeof(string) // ??
+      );
 
             // my vars (dec)
 
