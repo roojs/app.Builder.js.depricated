@@ -91,7 +91,7 @@ public class ValaProjectSettings : Object
             this.el.pack_end (  child_4.el , false,false,0 );
             var child_5 = new Xcls_ScrolledWindow10( _this );
             child_5.ref();
-            this.el.add (  child_5.el  );
+            this.el.pack_end (  child_5.el , false,false,0 );
         }
 
         // user defined functions 
