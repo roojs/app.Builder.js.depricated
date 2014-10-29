@@ -64,7 +64,13 @@
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
-                                                    "$ xns" : "Gtk"
+                                                    "$ xns" : "Gtk",
+                                                    "items" : [
+                                                        {
+                                                            "xtype" : "CellRendererText",
+                                                            "$ xns" : "Gtk"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -92,6 +98,14 @@
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
+                                                    "$ xns" : "Gtk"
+                                                },
+                                                {
+                                                    "utf8 title" : "name",
+                                                    "* init" : " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
+                                                    "* pack" : "append_column",
+                                                    "xtype" : "TreeViewColumn",
+                                                    "gboolean resizable" : true,
                                                     "$ xns" : "Gtk"
                                                 }
                                             ]
