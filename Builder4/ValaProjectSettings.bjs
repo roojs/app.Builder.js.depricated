@@ -80,6 +80,7 @@
                                 {
                                     "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
                                     "xtype" : "ScrolledWindow",
+                                    "* pack" : "add1",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
@@ -91,6 +92,7 @@
                                 },
                                 {
                                     "xtype" : "VBox",
+                                    "* pack" : "add2",
                                     "string id" : "set_vbox",
                                     "gboolean homogeneous" : false,
                                     "$ xns" : "Gtk",
