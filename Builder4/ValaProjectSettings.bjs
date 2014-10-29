@@ -112,6 +112,7 @@
                                                         {
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "string id" : "directory_rrender",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
