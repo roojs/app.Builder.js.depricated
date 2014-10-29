@@ -398,18 +398,18 @@ public class ValaProjectSettings : Object
             // set gobject values
             this.el.title = "name";
             this.el.resizable = true;
-            var child_0 = new Xcls_directory_rrender( _this );
+            var child_0 = new Xcls_directory_render( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
             // init method 
 
-            this.el.add_attribute(_this.keyrender.el , "markup", 2 );
-             this.el.add_attribute(_this.keyrender.el , "text", 1 );        }
+            this.el.add_attribute(_this.directory_render.el , "markup", 2 );
+             this.el.add_attribute(_this.directory_rrender.el , "text", 1 );        }
 
         // user defined functions 
     }
-    public class Xcls_directory_rrender : Object 
+    public class Xcls_directory_render : Object 
     {
         public Gtk.CellRendererText el;
         private ValaProjectSettings  _this;
@@ -418,7 +418,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_directory_rrender(ValaProjectSettings _owner )
+        public Xcls_directory_render(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.CellRendererText();
