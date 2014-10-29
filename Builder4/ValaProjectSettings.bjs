@@ -80,6 +80,7 @@
                                                 {
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
+                                                    "$ columns" : "",
                                                     "$ xns" : "Gtk"
                                                 }
                                             ]
