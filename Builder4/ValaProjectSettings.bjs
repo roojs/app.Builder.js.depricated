@@ -62,6 +62,7 @@
                                                     "* init" : " this.el.add_attribute(_this.keyrender.el , \"markup\", 2 );\n this.el.add_attribute(_this.keyrender.el , \"text\", 1 );\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
+                                                    "gboolean resizable" : true,
                                                     "$ xns" : "Gtk"
                                                 }
                                             ]
