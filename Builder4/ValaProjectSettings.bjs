@@ -203,7 +203,7 @@
                             "utf8 label" : "Global"
                         },
                         {
-                            "id" : "lablel_global",
+                            "id" : "lablel_targets",
                             "xtype" : "Label",
                             "* pack" : false,
                             "$ xns" : "Gtk",

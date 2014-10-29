@@ -15,7 +15,7 @@ public class ValaProjectSettings : Object
     public Xcls_packages_render packages_render;
     public Xcls_directory_render directory_render;
     public Xcls_lablel_global lablel_global;
-    public Xcls_lablel_global lablel_global;
+    public Xcls_lablel_targets lablel_targets;
 
         // my vars (def)
 
@@ -59,7 +59,7 @@ public class ValaProjectSettings : Object
             this.el.add (  child_1.el  );
             var child_2 = new Xcls_lablel_global( _this );
             child_2.ref();
-            var child_3 = new Xcls_lablel_global( _this );
+            var child_3 = new Xcls_lablel_targets( _this );
             child_3.ref();
         }
 
@@ -727,7 +727,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_lablel_global : Object 
+    public class Xcls_lablel_targets : Object 
     {
         public Gtk.Label el;
         private ValaProjectSettings  _this;
@@ -736,10 +736,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_lablel_global(ValaProjectSettings _owner )
+        public Xcls_lablel_targets(ValaProjectSettings _owner )
         {
             _this = _owner;
-            _this.lablel_global = this;
+            _this.lablel_targets = this;
             this.el = new Gtk.Label( "Global" );
 
             // my vars (dec)
