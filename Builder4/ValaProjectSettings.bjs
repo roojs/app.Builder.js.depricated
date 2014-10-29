@@ -107,7 +107,14 @@
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
-                                                    "$ xns" : "Gtk"
+                                                    "$ xns" : "Gtk",
+                                                    "items" : [
+                                                        {
+                                                            "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
+                                                            "$ xns" : "Gtk"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
