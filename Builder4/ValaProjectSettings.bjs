@@ -41,6 +41,7 @@
                                     "utf8 label" : "packages"
                                 },
                                 {
+                                    "* pack" : "pack_end,false,false,0",
                                     "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
