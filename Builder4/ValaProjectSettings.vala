@@ -290,6 +290,7 @@ public class ValaProjectSettings : Object
             this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_set_vbox( _this );
             child_1.ref();
+            this.el.add2 (  child_1.el  );
         }
 
         // user defined functions 
