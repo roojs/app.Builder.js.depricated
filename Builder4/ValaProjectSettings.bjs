@@ -75,7 +75,14 @@
                                             "xtype" : "TreeView",
                                             "* pack" : "add",
                                             "string id" : "default_directory_tree",
-                                            "$ xns" : "Gtk"
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "* pack" : "set_model",
+                                                    "xtype" : "ListStore",
+                                                    "$ xns" : "Gtk"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
