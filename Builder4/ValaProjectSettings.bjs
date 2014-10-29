@@ -67,6 +67,7 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
+                                                            "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
                                                         }

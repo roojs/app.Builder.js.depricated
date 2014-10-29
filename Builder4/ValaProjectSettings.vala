@@ -254,6 +254,7 @@ public class ValaProjectSettings : Object
             this.el.resizable = true;
             var child_0 = new Xcls_CellRendererText11( _this );
             child_0.ref();
+            this.el.pack_start (  child_0.el , false );
 
             // init method 
 
