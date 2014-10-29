@@ -309,7 +309,7 @@ public class ValaProjectSettings : Object
         public Xcls_ListStore13(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 0,     typeof(string),  // 0 key type
+            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
      typeof(string) // ??
       );
 
