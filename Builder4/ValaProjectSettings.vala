@@ -90,10 +90,10 @@ public class ValaProjectSettings : Object
             this.el.pack_start (  child_3.el , true,true,0 );
             var child_4 = new Xcls_Label12( _this );
             child_4.ref();
-            this.el.pack_end (  child_4.el , false,false,0 );
+            this.el.pack_start (  child_4.el , false,false,0 );
             var child_5 = new Xcls_ScrolledWindow13( _this );
             child_5.ref();
-            this.el.pack_end (  child_5.el , true,true,0 );
+            this.el.pack_start (  child_5.el , true,true,0 );
         }
 
         // user defined functions 

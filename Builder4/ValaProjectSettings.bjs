@@ -80,12 +80,12 @@
                                 },
                                 {
                                     "xtype" : "Label",
-                                    "* pack" : "pack_end,false,false,0",
+                                    "* pack" : "pack_start,false,false,0",
                                     "$ xns" : "Gtk",
                                     "utf8 label" : "Available Directories"
                                 },
                                 {
-                                    "* pack" : "pack_end,true,true,0",
+                                    "* pack" : "pack_start,true,true,0",
                                     "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
