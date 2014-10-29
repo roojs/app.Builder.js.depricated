@@ -17,6 +17,20 @@
                     "$ xns" : "Gtk",
                     "items" : [
                         {
+                            "id" : "label_global",
+                            "* pack" : false,
+                            "xtype" : "Label",
+                            "$ xns" : "Gtk",
+                            "utf8 label" : "Global"
+                        },
+                        {
+                            "id" : "label_targets",
+                            "xtype" : "Label",
+                            "* pack" : false,
+                            "$ xns" : "Gtk",
+                            "utf8 label" : "Global"
+                        },
+                        {
                             "xtype" : "VBox",
                             "* pack" : "append_page,_this.label_global.el",
                             "gboolean homogeneous" : false,
@@ -68,8 +82,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "packages_render",
-                                                            "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "* pack" : "pack_start,false",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -112,8 +126,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "directory_render",
-                                                            "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "* pack" : "pack_start,false",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -126,14 +140,14 @@
                         },
                         {
                             "gint position" : 300,
-                            "xtype" : "HPaned",
                             "* pack" : "append_page,_this.label_targets.el",
+                            "xtype" : "HPaned",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
                                     "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
-                                    "xtype" : "ScrolledWindow",
                                     "* pack" : "add1",
+                                    "xtype" : "ScrolledWindow",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
@@ -194,20 +208,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "id" : "label_global",
-                            "* pack" : false,
-                            "xtype" : "Label",
-                            "$ xns" : "Gtk",
-                            "utf8 label" : "Global"
-                        },
-                        {
-                            "id" : "label_targets",
-                            "xtype" : "Label",
-                            "* pack" : false,
-                            "$ xns" : "Gtk",
-                            "utf8 label" : "Global"
                         }
                     ]
                 }
