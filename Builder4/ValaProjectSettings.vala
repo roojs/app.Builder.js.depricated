@@ -55,6 +55,8 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_HPaned18( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_Label29( _this );
+            child_2.ref();
         }
 
         // user defined functions 
@@ -691,6 +693,27 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Label29 : Object 
+    {
+        public Gtk.Label el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label29(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( null );
 
             // my vars (dec)
 
