@@ -244,7 +244,7 @@
                                                             "$ xns" : "Gtk",
                                                             "items" : [
                                                                 {
-                                                                    "id" : "targets_render",
+                                                                    "id" : "files_render",
                                                                     "xtype" : "CellRendererText",
                                                                     "* pack" : "pack_start,false",
                                                                     "$ xns" : "Gtk"
