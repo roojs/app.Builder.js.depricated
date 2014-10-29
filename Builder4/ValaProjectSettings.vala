@@ -100,7 +100,7 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             _this.label_targets = this;
-            this.el = new Gtk.Label( "Global" );
+            this.el = new Gtk.Label( "Targets" );
 
             // my vars (dec)
 

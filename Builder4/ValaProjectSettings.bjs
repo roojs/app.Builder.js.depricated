@@ -28,7 +28,7 @@
                             "xtype" : "Label",
                             "* pack" : false,
                             "$ xns" : "Gtk",
-                            "utf8 label" : "Global"
+                            "utf8 label" : "Targets"
                         },
                         {
                             "xtype" : "VBox",
