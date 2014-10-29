@@ -67,10 +67,10 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
+                                                            "id" : "packages_render",
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
-                                                            "$ xns" : "Gtk",
-                                                            "* id" : "packages_render"
+                                                            "$ xns" : "Gtk"
                                                         }
                                                     ]
                                                 }
@@ -111,10 +111,10 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
+                                                            "id" : "directory_render",
                                                             "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
-                                                            "$ xns" : "Gtk",
-                                                            "* id" : "directory_render"
+                                                            "$ xns" : "Gtk"
                                                         }
                                                     ]
                                                 }

@@ -12,6 +12,8 @@ public class ValaProjectSettings : Object
         }
         return _ValaProjectSettings;
     }
+    public Xcls_packages_render packages_render;
+    public Xcls_directory_render directory_render;
 
         // my vars (def)
 
@@ -275,6 +277,7 @@ public class ValaProjectSettings : Object
         public Xcls_packages_render(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.packages_render = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
@@ -421,6 +424,7 @@ public class ValaProjectSettings : Object
         public Xcls_directory_render(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.directory_render = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
