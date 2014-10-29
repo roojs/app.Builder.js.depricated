@@ -151,7 +151,7 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
-                                            "id" : "set_tree",
+                                            "id" : "targets_tree",
                                             "xtype" : "TreeView",
                                             "$ xns" : "Gtk",
                                             "items" : [

@@ -16,7 +16,7 @@ public class ValaProjectSettings : Object
     public Xcls_label_targets label_targets;
     public Xcls_packages_render packages_render;
     public Xcls_directory_render directory_render;
-    public Xcls_set_tree set_tree;
+    public Xcls_targets_tree targets_tree;
     public Xcls_targets_render targets_render;
 
         // my vars (def)
@@ -531,7 +531,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_set_tree( _this );
+            var child_0 = new Xcls_targets_tree( _this );
             child_0.ref();
 
             // init method 
@@ -543,7 +543,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_set_tree : Object 
+    public class Xcls_targets_tree : Object 
     {
         public Gtk.TreeView el;
         private ValaProjectSettings  _this;
@@ -552,10 +552,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_set_tree(ValaProjectSettings _owner )
+        public Xcls_targets_tree(ValaProjectSettings _owner )
         {
             _this = _owner;
-            _this.set_tree = this;
+            _this.targets_tree = this;
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
