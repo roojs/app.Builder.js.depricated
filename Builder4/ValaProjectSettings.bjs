@@ -7,7 +7,7 @@
     "modOrder" : "",
     "items" : [
         {
-            "| void show" : "() {\n\n}\n",
+            "| void show" : "(Project.Gtk project) {\n\n    this.project=  project;\n\n}\n",
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",

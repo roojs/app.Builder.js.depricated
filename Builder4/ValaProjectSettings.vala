@@ -37,7 +37,9 @@ public class ValaProjectSettings : Object
     }
 
     // user defined functions 
-    public void show () {
+    public void show (Project.Gtk project) {
+    
+        this.project=  project;
     
     }
     public class Xcls_Notebook2 : Object 
