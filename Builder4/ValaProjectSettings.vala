@@ -478,7 +478,18 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
         public void load (Gee.ArrayList items) {
+         
+         
+            Gtk.TreeIter citer;
         
+            for(var i =0 ; i < items.size; i++) {
+                 this.model.el.append(out citer);   
+                 
+                this.model.el.set_value(citer, 0,   items.get(i) ); // title 
+                this.model.el.set_value(citer, 1,   items.get(i) );
+            }
+            this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
+            
         }
     }
     public class Xcls_TreeViewColumn18 : Object 
