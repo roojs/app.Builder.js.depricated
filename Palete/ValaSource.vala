@@ -110,6 +110,9 @@ namespace Palete {
 		
 			context.experimental = false;
 			context.experimental_non_null = false;
+
+
+			// or context.get_vapi_path("glib-2.0"); // should return path..
 			context.vapi_directories = { "/usr/share/vala-0.24/vapi" };
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
@@ -139,7 +142,7 @@ namespace Palete {
 		               contents
 	    		);
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
-			// or context.get_vapi_path("glib-2.0"); // should return path..
+			
 			context.add_external_package ("glib-2.0");
 			context.add_external_package ("gobject-2.0");
 			context.add_external_package ("libvala-0.24");
