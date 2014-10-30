@@ -310,6 +310,9 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
+        public void load (Gee.ArrayList items) {
+        
+        }
     }
     public class Xcls_TreeViewColumn12 : Object 
     {
