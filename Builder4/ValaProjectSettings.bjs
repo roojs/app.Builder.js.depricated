@@ -11,6 +11,7 @@
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
+            "string XXXX" : "",
             "items" : [
                 {
                     "* pack" : "pack_start,true,true,0",
