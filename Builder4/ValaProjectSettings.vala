@@ -320,7 +320,9 @@ public class ValaProjectSettings : Object
          
         
         
-        
+            var pal = (Palete.Gtk) Palete.factory("Gtk");
+            //var pkgs = pal.packages();
+            
         
             Gtk.TreeIter citer;
         
