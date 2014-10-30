@@ -43,6 +43,16 @@ public class ValaProjectSettings : Object
     
         this.project=  project;
     
+        this.compile_flags.el.text = "";
+        this.default_packages_tree_store.el.clear();
+        
+        if (this.project.compilegroups.has_key("default")) {
+            var def = this.project.compilegroups.get("default");
+            this.compile_flags.el.text = def.compile_flags;
+        }
+       
+    
+    
     }
     public class Xcls_Notebook2 : Object 
     {
