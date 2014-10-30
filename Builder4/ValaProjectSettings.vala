@@ -16,6 +16,7 @@ public class ValaProjectSettings : Object
     public Xcls_label_targets label_targets;
     public Xcls_default_packages_tree_store default_packages_tree_store;
     public Xcls_packages_render packages_render;
+    public Xcls_default_directory_tree_store default_directory_tree_store;
     public Xcls_directory_render directory_render;
     public Xcls_targets_tree targets_tree;
     public Xcls_targets_render targets_render;
@@ -424,7 +425,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_ListStore17( _this );
+            var child_0 = new Xcls_default_directory_tree_store( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn18( _this );
@@ -434,7 +435,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_ListStore17 : Object 
+    public class Xcls_default_directory_tree_store : Object 
     {
         public Gtk.ListStore el;
         private ValaProjectSettings  _this;
@@ -443,9 +444,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ListStore17(ValaProjectSettings _owner )
+        public Xcls_default_directory_tree_store(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.default_directory_tree_store = this;
             this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
      typeof(string) // ??
       );
