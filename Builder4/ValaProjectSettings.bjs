@@ -72,7 +72,7 @@
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
-                                                    "| void load" : "(Gee.ArrayList items) {\n \n\n\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < items.size; i++) {\n         this.model.el.append(out citer);   \n         \n        this.model.el.set_value(citer, 0,   items.get(i) ); // title \n        this.model.el.set_value(citer, 1,   items.get(i) );\n    }\n    this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
+                                                    "| void load" : "(Gee.ArrayList items) {\n \n\n\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < items.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   items.get(i) ); // title \n        this.el.set_value(citer, 1,   items.get(i) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
                                                     "$ xns" : "Gtk"
                                                 },
