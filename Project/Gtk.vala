@@ -33,7 +33,7 @@ namespace Project {
 			this.xtype = "Gtk";
 	  		var gid = "project-gtk-%d".printf(gtk_id++);
 	  		this.id = gid;
-		  
+			this.loadConfig();
 		
 		}
 		public Gee.HashMap<string,GtkValaSettings> compilegroups;
