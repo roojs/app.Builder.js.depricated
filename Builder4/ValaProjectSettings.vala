@@ -540,12 +540,12 @@ public class ValaProjectSettings : Object
             Gtk.TreeIter citer;
         
             for(var i =0 ; i < items.size; i++) {
-                 this.model.el.append(out citer);   
+                 this.el.append(out citer);   
                  
-                this.model.el.set_value(citer, 0,   items.get(i) ); // title 
-                this.model.el.set_value(citer, 1,   items.get(i) );
+                this.el.set_value(citer, 0,   items.get(i) ); // title 
+                this.el.set_value(citer, 1,   items.get(i) );
             }
-            this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
+            this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
         }
     }
