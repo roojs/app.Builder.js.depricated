@@ -138,7 +138,7 @@ namespace Palete {
                                 "~~~~~testfile.vala",
 		               contents
 	    		);
-			 
+			 //Vala.Config.BUILD_VERSION
 			context.add_external_package ("glib-2.0");
 			context.add_external_package ("gobject-2.0");
 			context.add_external_package ("libvala-0.24");
