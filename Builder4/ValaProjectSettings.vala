@@ -458,6 +458,9 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
+        public void load () {
+        
+        }
     }
     public class Xcls_TreeViewColumn18 : Object 
     {

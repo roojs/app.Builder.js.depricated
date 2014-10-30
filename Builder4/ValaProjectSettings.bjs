@@ -117,6 +117,7 @@
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
+                                                    "| void load" : "() {\n\n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
                                                     "$ xns" : "Gtk"
                                                 },
