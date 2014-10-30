@@ -566,10 +566,8 @@ public class Xcls_MainWindow : Object
              _this.editfilebutton.el.show();   
     
          
-         
-        //this.rooview.el.hide();
-         //this.edit_project.el.show();
-            _this.projecteditview.el.save_easing_state();
+          
+        _this.projecteditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
     
