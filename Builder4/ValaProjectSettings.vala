@@ -17,7 +17,7 @@ public class ValaProjectSettings : Object
     public Xcls_compile_flags compile_flags;
     public Xcls_default_packages_tree_store default_packages_tree_store;
     public Xcls_packages_render packages_render;
-    public Xcls_packages_render packages_render;
+    public Xcls_packages_render_use packages_render_use;
     public Xcls_default_directory_tree_store default_directory_tree_store;
     public Xcls_directory_render directory_render;
     public Xcls_targets_tree targets_tree;
@@ -405,7 +405,7 @@ public class ValaProjectSettings : Object
             // set gobject values
             this.el.title = "use";
             this.el.resizable = true;
-            var child_0 = new Xcls_packages_render( _this );
+            var child_0 = new Xcls_packages_render_use( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
@@ -417,7 +417,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_packages_render : Object 
+    public class Xcls_packages_render_use : Object 
     {
         public Gtk.CellRendererText el;
         private ValaProjectSettings  _this;
@@ -426,10 +426,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_packages_render(ValaProjectSettings _owner )
+        public Xcls_packages_render_use(ValaProjectSettings _owner )
         {
             _this = _owner;
-            _this.packages_render = this;
+            _this.packages_render_use = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)

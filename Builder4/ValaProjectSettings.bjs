@@ -101,7 +101,7 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
-                                                            "id" : "packages_render",
+                                                            "id" : "packages_render_use",
                                                             "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
                                                             "$ xns" : "Gtk"
