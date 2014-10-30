@@ -458,7 +458,7 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void load () {
+        public void load (Gee.ArrayList items) {
         
         }
     }
