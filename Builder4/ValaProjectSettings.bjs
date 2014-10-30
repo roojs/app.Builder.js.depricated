@@ -91,6 +91,22 @@
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "utf8 title" : "name",
+                                                    "* init" : " this.el.add_attribute(_this.packages_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.packages_render.el , \"text\", 1 );\n  ",
+                                                    "* pack" : "append_column",
+                                                    "xtype" : "TreeViewColumn",
+                                                    "gboolean resizable" : true,
+                                                    "$ xns" : "Gtk",
+                                                    "items" : [
+                                                        {
+                                                            "id" : "packages_render",
+                                                            "xtype" : "CellRendererText",
+                                                            "* pack" : "pack_start,false",
+                                                            "$ xns" : "Gtk"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
