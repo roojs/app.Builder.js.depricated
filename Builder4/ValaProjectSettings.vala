@@ -30,6 +30,7 @@ public class ValaProjectSettings : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars (dec)
+        this.project = null;
 
         // set gobject values
         var child_0 = new Xcls_Notebook2( _this );

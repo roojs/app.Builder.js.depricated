@@ -10,7 +10,7 @@
             "| void show" : "(Project.Gtk project) {\n\n    this.project=  project;\n\n}\n",
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
-            "# Gtk.Project project" : "",
+            "# Gtk.Project project" : "null",
             "$ xns" : "Gtk",
             "items" : [
                 {
