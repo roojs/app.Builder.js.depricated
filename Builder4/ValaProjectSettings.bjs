@@ -94,7 +94,7 @@
                                                 },
                                                 {
                                                     "utf8 title" : "use",
-                                                    "* init" : " this.el.add_attribute(_this.packages_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.packages_render.el , \"text\", 1 );\n  ",
+                                                    "* init" : " this.el.add_attribute(_this.packages_render_use.el , \"value\", 2 );\n\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
