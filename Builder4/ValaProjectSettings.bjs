@@ -68,6 +68,7 @@
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
+                                                    "id" : "default_packages_tree_store",
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
