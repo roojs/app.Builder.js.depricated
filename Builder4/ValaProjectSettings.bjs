@@ -7,6 +7,7 @@
     "modOrder" : "",
     "items" : [
         {
+            "| void show" : "() {\n\n}\n",
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
@@ -18,15 +19,15 @@
                     "items" : [
                         {
                             "id" : "label_global",
-                            "* pack" : false,
                             "xtype" : "Label",
+                            "* pack" : false,
                             "$ xns" : "Gtk",
                             "utf8 label" : "Global"
                         },
                         {
                             "id" : "label_targets",
-                            "xtype" : "Label",
                             "* pack" : false,
+                            "xtype" : "Label",
                             "$ xns" : "Gtk",
                             "utf8 label" : "Targets"
                         },
@@ -82,8 +83,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "packages_render",
-                                                            "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -126,8 +127,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "directory_render",
-                                                            "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -140,14 +141,14 @@
                         },
                         {
                             "gint position" : 300,
-                            "* pack" : "append_page,_this.label_targets.el",
                             "xtype" : "HPaned",
+                            "* pack" : "append_page,_this.label_targets.el",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
                                     "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
-                                    "* pack" : "add1",
                                     "xtype" : "ScrolledWindow",
+                                    "* pack" : "add1",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
@@ -172,8 +173,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "targets_render",
-                                                            "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "* pack" : "pack_start,false",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -246,8 +247,8 @@
                                                             "items" : [
                                                                 {
                                                                     "id" : "files_render",
-                                                                    "xtype" : "CellRendererText",
                                                                     "* pack" : "pack_start,false",
+                                                                    "xtype" : "CellRendererText",
                                                                     "$ xns" : "Gtk"
                                                                 }
                                                             ]
