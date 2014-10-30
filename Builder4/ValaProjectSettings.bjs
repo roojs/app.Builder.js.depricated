@@ -97,7 +97,7 @@
                                                     "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"value\", 2 );\n }",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
-                                                    "gboolean resizable" : true,
+                                                    "gboolean resizable" : false,
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
