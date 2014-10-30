@@ -138,7 +138,8 @@ namespace Palete {
                                 "~~~~~testfile.vala",
 		               contents
 	    		);
-			 //Vala.Config.BUILD_VERSION
+			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
+			// or context.get_vapi_path("glib-2.0"); // should return path..
 			context.add_external_package ("glib-2.0");
 			context.add_external_package ("gobject-2.0");
 			context.add_external_package ("libvala-0.24");
