@@ -21,7 +21,7 @@ public class ValaProjectSettings : Object
     public Xcls_files_render files_render;
 
         // my vars (def)
-    public string XXXX;
+    public Gtk.Project project;
 
     // ctor 
     public ValaProjectSettings()
