@@ -109,6 +109,17 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "xtype" : "Menu",
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "* pack" : "add",
+                                                    "xtype" : "MenuItem",
+                                                    "$ xns" : "Gtk"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
