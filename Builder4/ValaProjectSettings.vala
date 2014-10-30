@@ -14,6 +14,7 @@ public class ValaProjectSettings : Object
     }
     public Xcls_label_global label_global;
     public Xcls_label_targets label_targets;
+    public Xcls_compile_flags compile_flags;
     public Xcls_default_packages_tree_store default_packages_tree_store;
     public Xcls_packages_render packages_render;
     public Xcls_default_directory_tree_store default_directory_tree_store;
@@ -206,6 +207,7 @@ public class ValaProjectSettings : Object
         public Xcls_compile_flags(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.compile_flags = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)

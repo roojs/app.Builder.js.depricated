@@ -45,9 +45,9 @@
                                     "utf8 label" : "compile flags"
                                 },
                                 {
+                                    "id" : "compile_flags",
                                     "xtype" : "Entry",
                                     "* pack" : "pack_start,false,false,0",
-                                    "string id" : "compile_flags",
                                     "$ xns" : "Gtk"
                                 },
                                 {
