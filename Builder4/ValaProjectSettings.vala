@@ -403,7 +403,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.title = "name";
+            this.el.title = "use";
             this.el.resizable = true;
             var child_0 = new Xcls_packages_render( _this );
             child_0.ref();

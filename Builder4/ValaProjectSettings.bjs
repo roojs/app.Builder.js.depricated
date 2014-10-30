@@ -93,7 +93,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "utf8 title" : "name",
+                                                    "utf8 title" : "use",
                                                     "* init" : " this.el.add_attribute(_this.packages_render.el , \"markup\", 2 );\n this.el.add_attribute(_this.packages_render.el , \"text\", 1 );\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
