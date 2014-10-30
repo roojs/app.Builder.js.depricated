@@ -45,10 +45,13 @@ public class ValaProjectSettings : Object
     
         this.compile_flags.el.text = "";
         this.default_packages_tree_store.el.clear();
+        this.default_directory_tree_store.el.clear();    
         
         if (this.project.compilegroups.has_key("default")) {
             var def = this.project.compilegroups.get("default");
             this.compile_flags.el.text = def.compile_flags;
+            this.default_packages_tree_store.load(def.packages);
+            this.default_directory_tree_store.load(def.sources);
         }
        
     
