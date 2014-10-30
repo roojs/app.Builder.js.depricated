@@ -534,7 +534,7 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void load (Gee.ArrayList items) {
+        public void load (Gee.ArrayList<string> items) {
          
          
             Gtk.TreeIter citer;
