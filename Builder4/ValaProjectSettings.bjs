@@ -101,6 +101,10 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
+                                                            "xtype" : "CellRendererToggle",
+                                                            "$ xns" : "Gtk"
+                                                        },
+                                                        {
                                                             "id" : "packages_render_use",
                                                             "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
