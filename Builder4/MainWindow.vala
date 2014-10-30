@@ -591,17 +591,20 @@ public class Xcls_MainWindow : Object
         
          _this.projectbutton.el.hide();
          _this.projecteditbutton.el.hide();
-         
          _this.editfilebutton.el.hide();
          
-        
-         
-         
-         _this.backbutton.el.show();
+        _this.backbutton.el.show();
          
         //this.rooview.el.hide();
-        this.projectsettings.el.show_all();
-        this.projectsettings.show(this.project);
+        
+        
+        if (this.project.xtype == "Roo") {
+            this.projectsettings.el.show_all();
+            this.projectsettings.show(this.project);
+        } else {
+            this.vala_projectsettings.el.show_all();
+            this.vala_projectsettings.show((Project.Gtk)this.project);
+        }
         _this.projecteditview.el.save_easing_state();
             
         var el = _this.rooview.el;
