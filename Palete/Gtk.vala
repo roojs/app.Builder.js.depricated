@@ -198,9 +198,10 @@ namespace Palete {
 			
 			
 		}
-		public packages()
+		public Gee.ArrayList<string> packages()
 		{
-
+			var ret = new Gee.ArrayList<string>();
+			return ret;
 		}
  
 	
