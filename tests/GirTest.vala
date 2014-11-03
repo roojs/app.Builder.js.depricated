@@ -5,7 +5,7 @@ int main (string[] args) {
 
 	// test the gir location code..
 
-	context = new Vala.CodeContext ();
+	var context = new Vala.CodeContext ();
 	Vala.CodeContext.push (context);
 
 	 
