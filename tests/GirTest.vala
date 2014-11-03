@@ -6,10 +6,7 @@ int main (string[] args) {
 	// test the gir location code..
 
 	var context = new Vala.CodeContext ();
-	Vala.CodeContext.push (context);
-
 	 
-
 	print(context.get_vapi_path("glib-2.0"));
 	
 	//GtkClutter.init (ref args);
