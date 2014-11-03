@@ -210,9 +210,7 @@ namespace Palete {
 			var context = new Vala.CodeContext ();
 			var dir =  Path.get_dirname (context.get_vapi_path("glib-2.0")));
 			 
-			projects = new  Gee.HashMap<string,Project>();
-			  
-		   
+			
 			try {
 				var file_enum = dir.enumerate_children(
                      			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
@@ -230,9 +228,9 @@ namespace Palete {
 		    			factoryFromFile(dirname + "/" + fn);
 				}       
    			} catch(Error e) {
-				print("oops - something went wrong scanning the projects\n");
+				print("oops - something went wrong scanning the packages\n");
 			}
-
+			package_cache  = ret;
 			
 			return ret;
 		}
