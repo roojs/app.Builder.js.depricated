@@ -285,6 +285,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.headers_visible = false;
             var child_0 = new Xcls_default_packages_tree_store( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
