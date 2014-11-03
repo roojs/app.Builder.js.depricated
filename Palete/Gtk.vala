@@ -20,6 +20,7 @@ namespace Palete {
 
 	public class Gtk : Palete {
 		
+		public Gee.ArrayList<string> package_cache;
 		
 		public Gtk()
 		{
@@ -198,7 +199,7 @@ namespace Palete {
 			
 			
 		}
-		public Gee.ArrayList<string> package_cache;
+		
 		
 		public Gee.ArrayList<string> packages()
 		{
