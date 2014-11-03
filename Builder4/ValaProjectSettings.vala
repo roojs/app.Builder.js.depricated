@@ -365,8 +365,7 @@ public class ValaProjectSettings : Object
 
             // init method 
 
-            this.el.add_attribute(_this.packages_render.el , "markup", 2 );
-             this.el.add_attribute(_this.packages_render.el , "text", 1 );        }
+            this.el.add_attribute(_this.packages_render.el , "text", 1 );        }
 
         // user defined functions 
     }
