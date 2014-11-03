@@ -104,7 +104,8 @@
                                                             "id" : "packages_render_use",
                                                             "xtype" : "CellRendererToggle",
                                                             "* pack" : "pack_start,false",
-                                                            "$ xns" : "Gtk"
+                                                            "$ xns" : "Gtk",
+                                                            "gboolean activatable" : true
                                                         }
                                                     ]
                                                 }

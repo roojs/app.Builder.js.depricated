@@ -436,6 +436,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.activatable = true;
         }
 
         // user defined functions 
