@@ -198,12 +198,36 @@ namespace Palete {
 			
 			
 		}
+		static public Gee.ArrayList<string> package_cache = null;
+		
 		public Gee.ArrayList<string> packages()
 		{
 			var ret = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
 			var dir =  Path.get_dirname (context.get_vapi_path("glib-2.0")));
-			
+			 
+			projects = new  Gee.HashMap<string,Project>();
+			  
+		   
+			try {
+				var file_enum = dir.enumerate_children(
+                     			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					GLib.FileQueryInfoFlags.NONE, 
+					null
+				);
+		        
+		         
+				FileInfo next_file; 
+				while ((next_file = file_enum.next_file(null)) != null) {
+			     		var fn = next_file.get_display_name();
+					if (!Regex.match_simple("\\.json$", fn)) {
+						continue;
+					}
+		    			factoryFromFile(dirname + "/" + fn);
+				}       
+   			} catch(Error e) {
+				print("oops - something went wrong scanning the projects\n");
+			}
 
 			
 			return ret;
