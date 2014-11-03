@@ -445,7 +445,7 @@ public class ValaProjectSettings : Object
 
             // listeners 
             this.el.toggled.connect( (  path) =>  { 
-                var m = _this.default_packages_tree_store;
+                var m = _this.default_packages_tree_store.el;
                Gtk.TreeIter iter;
                m.get_iter (out iter, path);
                GLib.Value val;
