@@ -442,6 +442,17 @@ public class ValaProjectSettings : Object
 
             // set gobject values
             this.el.activatable = true;
+
+            // listeners 
+            this.el.toggled.connect( (string path) { 
+                var m = _this.default_packages_tree_store;
+              Gtk.TreeIter iter;
+               m.get_iter (out iter, path);
+               GLib.Value val;
+               m.get_value(iter, 1, out val); 
+               m.get_value(iter, 1, ! ((bool) val)); 
+                
+            });
         }
 
         // user defined functions 
