@@ -95,6 +95,7 @@
                                                 {
                                                     "utf8 title" : "use",
                                                     "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 1 );\n }",
+                                                    "gint width" : 50,
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : false,
