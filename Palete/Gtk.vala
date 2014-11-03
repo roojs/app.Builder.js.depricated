@@ -199,14 +199,15 @@ namespace Palete {
 			
 			
 		}
-		
-		
 		public Gee.ArrayList<string> packages()
 		{
+			return this.package_list;
+		}
+		
+		public  loadPackages()
+		{
 
-			if (package_cache != null) {
-				return package_cache;
-			}
+			 
 			var ret = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
 			var dir =  Path.get_dirname (context.get_vapi_path("glib-2.0")));
@@ -233,7 +234,7 @@ namespace Palete {
 			}
 			package_cache  = ret;
 			
-			return ret;
+			 
 		}
  
 	
