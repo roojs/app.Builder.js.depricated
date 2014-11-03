@@ -78,7 +78,7 @@
                                                 },
                                                 {
                                                     "utf8 title" : "name",
-                                                    "* init" : " \n this.el.add_attribute(_this.packages_render.el , \"text\", 1 );\n  ",
+                                                    "* init" : " \n this.el.add_attribute(_this.packages_render.el , \"text\", 0 );\n  ",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
