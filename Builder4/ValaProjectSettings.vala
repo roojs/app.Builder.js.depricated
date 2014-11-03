@@ -413,7 +413,7 @@ public class ValaProjectSettings : Object
             // init method 
 
             {
-             this.el.add_attribute(_this.packages_render_use.el , "value", 2 );
+             this.el.add_attribute(_this.packages_render_use.el , "active", 2 );
              }        }
 
         // user defined functions 
