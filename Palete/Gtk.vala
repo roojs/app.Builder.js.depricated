@@ -201,7 +201,7 @@ namespace Palete {
 		}
 		public Gee.ArrayList<string> packages()
 		{
-			return this.package_list;
+			return this.package_cache;
 		}
 		
 		public void  loadPackages()
