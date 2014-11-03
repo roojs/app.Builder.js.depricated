@@ -202,6 +202,10 @@ namespace Palete {
 		
 		public Gee.ArrayList<string> packages()
 		{
+
+			if (package_cache != null) {
+				return package_cache;
+			}
 			var ret = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
 			var dir =  Path.get_dirname (context.get_vapi_path("glib-2.0")));
