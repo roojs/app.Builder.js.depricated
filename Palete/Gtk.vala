@@ -222,10 +222,10 @@ namespace Palete {
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
 			     		var fn = next_file.get_display_name();
-					if (!Regex.match_simple("\\.json$", fn)) {
+					if (!Regex.match_simple("\\.vapi$", fn)) {
 						continue;
 					}
-		    			factoryFromFile(dirname + "/" + fn);
+		    			ret.add(Path.get_basename(fn));
 				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the packages\n");
