@@ -58,6 +58,7 @@ public class ValaProjectSettings : Object
             this.default_directory_tree_store.load(def.sources);
         } else {
             this.default_packages_tree_store.load(new Gee.ArrayList<string>());
+                     
         }
     
     
