@@ -227,7 +227,7 @@ namespace Palete {
 					if (!Regex.match_simple("\\.vapi$", fn)) {
 						continue;
 					}
-		    			this.package_cache.add(Path.get_basename(fn));
+		    			this.package_cache.add(Path.get_basename(fn).replace(".vapi", ""));
 				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the packages\n");
