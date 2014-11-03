@@ -198,7 +198,7 @@ namespace Palete {
 			
 			
 		}
-		static public Gee.ArrayList<string> package_cache;
+		public Gee.ArrayList<string> package_cache;
 		
 		public Gee.ArrayList<string> packages()
 		{
