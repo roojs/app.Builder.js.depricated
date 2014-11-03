@@ -44,7 +44,10 @@ public class ValaProjectSettings : Object
 
     // user defined functions 
     public void show (Project.Gtk project) {
-    
+        
+        
+        print("ValaProjectSettings show\n");
+        
         this.project=  project;
     
         this.compile_flags.el.text = "";
