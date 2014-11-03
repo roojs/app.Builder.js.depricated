@@ -82,6 +82,7 @@
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
                                                     "gboolean resizable" : true,
+                                                    "gboolean expand" : true,
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
