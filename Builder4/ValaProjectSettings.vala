@@ -408,7 +408,9 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.max_width = 50;
             this.el.title = "use";
+            this.el.min_width = 50;
             this.el.resizable = false;
             var child_0 = new Xcls_packages_render_use( _this );
             child_0.ref();

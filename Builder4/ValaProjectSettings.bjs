@@ -97,8 +97,10 @@
                                                     "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 1 );\n }",
                                                     "* pack" : "append_column",
                                                     "xtype" : "TreeViewColumn",
+                                                    "gint max_width" : 50,
                                                     "gboolean resizable" : false,
                                                     "$ xns" : "Gtk",
+                                                    "gint min_width" : 50,
                                                     "items" : [
                                                         {
                                                             "listeners" : {
