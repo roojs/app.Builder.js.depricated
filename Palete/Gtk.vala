@@ -212,7 +212,7 @@ namespace Palete {
 			var context = new Vala.CodeContext ();
 			var dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
 			 
-			
+			var dir = File.new_for_path(dirname);
 			try {
 				var file_enum = dir.enumerate_children(
                      			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
