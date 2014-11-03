@@ -444,9 +444,10 @@ public class ValaProjectSettings : Object
             this.el.activatable = true;
 
             // listeners 
-            this.el.toggled.connect( (  path) =>  { 
+            this.el.toggled.connect( (  path_string) =>  { 
                 var m = _this.default_packages_tree_store.el;
                Gtk.TreeIter iter;
+               Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);
                m.get_iter (out iter, path);
                GLib.Value val;
                m.get_value(iter, 1, out val);
