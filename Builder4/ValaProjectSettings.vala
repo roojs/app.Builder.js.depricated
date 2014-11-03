@@ -329,7 +329,7 @@ public class ValaProjectSettings : Object
                  this.el.append(out citer);   
                  
                 this.el.set_value(citer, 0,   pkgs.get(i) ); // title 
-                this.el.set_value(citer, 1,   items.contacts(pkgs.get(i)) );
+                this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );
             }
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
