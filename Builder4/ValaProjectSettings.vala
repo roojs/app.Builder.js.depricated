@@ -326,7 +326,7 @@ public class ValaProjectSettings : Object
         
             var pal = (Palete.Gtk) Palete.factory("Gtk");
             var pkgs = pal.packages();
-            
+            print("ValaProjectSettings:packages load %d\n", pkgs.size);
         
             Gtk.TreeIter citer;
         
