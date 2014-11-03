@@ -449,8 +449,8 @@ public class ValaProjectSettings : Object
               Gtk.TreeIter iter;
                m.get_iter (out iter, path);
                GLib.Value val;
-               m.get_value(iter, 1, out val); 
-               m.get_value(iter, 1, ! ((bool) val)); 
+               m.get_value(iter, 1, out val);
+            
                 
             });
         }

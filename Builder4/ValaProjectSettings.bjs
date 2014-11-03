@@ -103,7 +103,7 @@
                                                     "items" : [
                                                         {
                                                             "listeners" : {
-                                                                "toggled" : "(string path) { \n    var m = _this.default_packages_tree_store;\n  Gtk.TreeIter iter;\n   m.get_iter (out iter, path);\n   GLib.Value val;\n   m.get_value(iter, 1, out val); \n   m.get_value(iter, 1, ! ((bool) val)); \n    \n}"
+                                                                "toggled" : "(string path) { \n    var m = _this.default_packages_tree_store;\n  Gtk.TreeIter iter;\n   m.get_iter (out iter, path);\n   GLib.Value val;\n   m.get_value(iter, 1, out val);\n\n    \n}"
                                                             },
                                                             "id" : "packages_render_use",
                                                             "xtype" : "CellRendererToggle",
