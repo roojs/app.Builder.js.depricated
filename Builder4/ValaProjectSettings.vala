@@ -325,11 +325,11 @@ public class ValaProjectSettings : Object
         
             Gtk.TreeIter citer;
         
-            for(var i =0 ; i < items.size; i++) {
+            for(var i =0 ; i < pkgs.size; i++) {
                  this.el.append(out citer);   
                  
-                this.el.set_value(citer, 0,   items.get(i) ); // title 
-                this.el.set_value(citer, 1,   items.get(i) );
+                this.el.set_value(citer, 0,   pkgs.get(i) ); // title 
+                this.el.set_value(citer, 1,   items.contacts(pkgs.get(i)) );
             }
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
