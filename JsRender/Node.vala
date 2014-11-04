@@ -493,7 +493,7 @@ public class JsRender.Node : Object {
 		//if (renderfull && c['|xns']) {
 		var fqn = this.fqn();
 		var fqn_ar = fqn.split(".");
-		txt += for_tip || !fqn.length ? fqn : fqn_ar[fqn_ar.length -1];
+		txt += for_tip || fqn.length < 1 ? fqn : fqn_ar[fqn_ar.length -1];
 			
 		//}
 		
