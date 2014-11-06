@@ -165,14 +165,14 @@
                                             ]
                                         },
                                         {
-                                            "* pack" : "add",
                                             "xtype" : "Menu",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
                                                     "* pack" : "add",
                                                     "xtype" : "MenuItem",
-                                                    "$ xns" : "Gtk"
+                                                    "$ xns" : "Gtk",
+                                                    "utf8 label" : "Add Directory"
                                                 }
                                             ]
                                         }

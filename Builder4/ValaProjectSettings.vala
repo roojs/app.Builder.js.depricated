@@ -503,7 +503,6 @@ public class ValaProjectSettings : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_Menu22( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
         }
 
         // user defined functions 
@@ -667,6 +666,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.label = "Add Directory";
         }
 
         // user defined functions 
