@@ -131,6 +131,7 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
+                                            "gboolean headers_visible" : false,
                                             "xtype" : "TreeView",
                                             "* pack" : "add",
                                             "string id" : "default_directory_tree",
