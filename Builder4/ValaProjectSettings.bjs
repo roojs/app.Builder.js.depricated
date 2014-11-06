@@ -167,6 +167,7 @@
                                         {
                                             "xtype" : "Menu",
                                             "$ xns" : "Gtk",
+                                            "* id" : "",
                                             "items" : [
                                                 {
                                                     "* pack" : "add",
