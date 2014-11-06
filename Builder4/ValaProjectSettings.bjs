@@ -167,7 +167,7 @@
                                         {
                                             "xtype" : "Menu",
                                             "$ xns" : "Gtk",
-                                            "* id" : "",
+                                            "* id" : "default_directory_menu",
                                             "items" : [
                                                 {
                                                     "* pack" : "add",

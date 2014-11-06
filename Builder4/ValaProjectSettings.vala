@@ -501,7 +501,7 @@ public class ValaProjectSettings : Object
             var child_0 = new Xcls_default_directory_tree( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Menu22( _this );
+            var child_1 = new Xcls_default_directory_menu( _this );
             child_1.ref();
         }
 
@@ -625,7 +625,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_Menu22 : Object 
+    public class Xcls_default_directory_menu : Object 
     {
         public Gtk.Menu el;
         private ValaProjectSettings  _this;
@@ -634,7 +634,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Menu22(ValaProjectSettings _owner )
+        public Xcls_default_directory_menu(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Menu();
