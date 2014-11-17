@@ -301,7 +301,7 @@ public class Xcls_ClutterFiles : Object
                                     pixbuf.get_rowstride ()
                 );
                 this.el.set_content(img);
-                this.el.set_size(80, (80.0 / pixbuf.get_width ()) * pixbuf.get_height () );
+                this.el.set_size(80, (80.0f / pixbuf.get_width ()) * pixbuf.get_height () );
             }        }
 
         // user defined functions 
