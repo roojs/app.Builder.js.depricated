@@ -301,10 +301,10 @@ public class Xcls_ClutterFiles : Object
                                     pixbuf.get_rowstride ()
                 );
                 this.el.set_content(img);
+                 // should probably do smarter scaling...
                 
                 
-                
-                this.el.set_size(80, 80.0f);
+                this.el.set_size(90, 90);
             }        }
 
         // user defined functions 
