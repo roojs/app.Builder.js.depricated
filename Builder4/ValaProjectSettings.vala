@@ -542,10 +542,10 @@ public class ValaProjectSettings : Object
                     //print("click" + ev.type);
                     return false;
                 }
-                Gtk.TreePath res;
-                if (!this.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
-                    return true;
-                }
+                //Gtk.TreePath res;
+                //if (!this.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
+                //    return true;
+                //}
                  
               //  this.el.get_selection().select_path(res);
                  
