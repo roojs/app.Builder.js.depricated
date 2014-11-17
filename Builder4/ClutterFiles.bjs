@@ -63,9 +63,9 @@
                                     "* prop" : "layout_manager"
                                 },
                                 {
+                                    "$ margin_right" : 5,
                                     "$ margin_top" : 5,
                                     "* ctor" : "new Clutter.Texture.from_file(file.getIconFileName(true))",
-                                    "$ margin_right" : 5,
                                     "id" : "+image",
                                     "* args" : "JsRender.JsRender file",
                                     "$ x_expand" : true,
@@ -79,8 +79,8 @@
                                 },
                                 {
                                     "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
-                                    "* args" : "JsRender.JsRender file",
                                     "id" : "+typetitle",
+                                    "* args" : "JsRender.JsRender file",
                                     "$ x_expand" : true,
                                     "* pack" : "add_child",
                                     "xtype" : "Text",
@@ -91,8 +91,8 @@
                                 },
                                 {
                                     "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-                                    "* args" : "JsRender.JsRender file",
                                     "id" : "+title",
+                                    "* args" : "JsRender.JsRender file",
                                     "$ x_expand" : true,
                                     "* pack" : "add_child",
                                     "xtype" : "Text",

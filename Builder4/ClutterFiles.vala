@@ -285,7 +285,7 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.margin_top = 5f;
-            this.el.y_expand = false;
+            this.el.y_expand = true;
         }
 
         // user defined functions 
@@ -310,7 +310,7 @@ public class Xcls_ClutterFiles : Object
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
-            this.el.y_expand = false;
+            this.el.y_expand = true;
         }
 
         // user defined functions 
@@ -335,7 +335,7 @@ public class Xcls_ClutterFiles : Object
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
-            this.el.y_expand = false;
+            this.el.y_expand = true;
         }
 
         // user defined functions 
