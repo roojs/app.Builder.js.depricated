@@ -734,7 +734,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Using this.get('*someid') will find any id in an application.";
-            this.el.label = "_this.{ID} (Vala)";
+            this.el.label = "id: _this.{ID} (Vala)";
 
             // listeners 
             this.el.activate.connect( ()  => {
@@ -762,7 +762,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Add what type of packing is to be used";
-            this.el.label = "Pack method (Vala)";
+            this.el.label = "pack: Pack method (Vala)";
 
             // listeners 
             this.el.activate.connect( ( ) => {
@@ -791,7 +791,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Override the init method";
-            this.el.label = "INIT";
+            this.el.label = "init: initialziation code (vala)";
 
             // listeners 
             this.el.activate.connect( ( ) => {

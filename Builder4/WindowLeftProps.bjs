@@ -73,7 +73,7 @@
                                             "listeners" : {
                                                 "activate" : " ()  => {\n    _this.addProp( \"prop\", \"id\", \"\", \"\");\n}"
                                             },
-                                            "label" : "_this.{ID} (Vala)",
+                                            "label" : "id: _this.{ID} (Vala)",
                                             "* pack" : "append",
                                             "xtype" : "MenuItem",
                                             "tooltip_markup" : "Using this.get('*someid') will find any id in an application.",
@@ -83,7 +83,7 @@
                                             "listeners" : {
                                                 "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
                                             },
-                                            "label" : "Pack method (Vala)",
+                                            "label" : "pack: Pack method (Vala)",
                                             "* pack" : "append",
                                             "xtype" : "MenuItem",
                                             "tooltip_markup" : "Add what type of packing is to be used",
@@ -93,7 +93,7 @@
                                             "listeners" : {
                                                 "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\",  \"init\", \"{\\n\\n}\\n\", \"*\" );\n}"
                                             },
-                                            "label" : "INIT",
+                                            "label" : "init: initialziation code (vala)",
                                             "* pack" : "append",
                                             "xtype" : "MenuItem",
                                             "tooltip_markup" : "Override the init method",
