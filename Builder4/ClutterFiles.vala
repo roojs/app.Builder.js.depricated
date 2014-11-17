@@ -279,7 +279,20 @@ public class Xcls_ClutterFiles : Object
             // my vars (dec)
 
             // set gobject values
-        }
+
+            // init method 
+
+            {
+                var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));
+                this.el.set_data(pixbuf.get_pixels(),   gdk_pixbuf_get_pixels (pixbuf),
+                                    pixbuf.has_alpha ()
+                                      ? Cogl.PixelFormat.RGBA_8888
+                                      : Cogl.PixelFormat.RGB_888,
+                                    pixbuf.get_width (),
+                        pixbuf.get_height (),
+                                    pixbuf.get_rowstride ()
+                );
+            }        }
 
         // user defined functions 
     }
