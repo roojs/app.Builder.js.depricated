@@ -761,7 +761,7 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.tooltip_markup = "Add what type of packing is to be used";
+            this.el.tooltip_markup = "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element";
             this.el.label = "pack: Pack method (Vala)";
 
             // listeners 
