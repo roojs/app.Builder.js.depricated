@@ -304,7 +304,7 @@ public class Xcls_ClutterFiles : Object
                  // should probably do smarter scaling...
                 
                 
-                this.el.set_size(90, 90);
+                this.el.set_size(90, 70);
             }        }
 
         // user defined functions 
