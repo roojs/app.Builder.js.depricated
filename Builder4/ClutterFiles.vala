@@ -264,7 +264,7 @@ public class Xcls_ClutterFiles : Object
     }
     public class Xcls_image : Object 
     {
-        public Clutter.Texture el;
+        public Clutter.Image el;
         private Xcls_ClutterFiles  _this;
 
 
@@ -279,13 +279,6 @@ public class Xcls_ClutterFiles : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.margin_right = 5f;
-            this.el.margin_left = 5f;
-            this.el.x_align = Clutter.ActorAlign.START;
-            this.el.x_expand = true;
-            this.el.y_align = Clutter.ActorAlign.START;
-            this.el.margin_top = 5f;
-            this.el.y_expand = true;
         }
 
         // user defined functions 
