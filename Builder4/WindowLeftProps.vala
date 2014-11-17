@@ -762,7 +762,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Add what type of packing is to be used";
-            this.el.label = "Pack method";
+            this.el.label = "Pack method (Vala)";
 
             // listeners 
             this.el.activate.connect( ( ) => {
