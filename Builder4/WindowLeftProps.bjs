@@ -73,7 +73,7 @@
                                             "listeners" : {
                                                 "activate" : " ()  => {\n    _this.addProp( \"prop\", \"id\", \"\", \"\");\n}"
                                             },
-                                            "label" : "ID",
+                                            "label" : "_this.{ID} (Vala)",
                                             "* pack" : "append",
                                             "xtype" : "MenuItem",
                                             "tooltip_markup" : "Using this.get('*someid') will find any id in an application.",

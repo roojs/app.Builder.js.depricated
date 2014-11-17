@@ -734,7 +734,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Using this.get('*someid') will find any id in an application.";
-            this.el.label = "ID";
+            this.el.label = "_this.{ID} (Vala)";
 
             // listeners 
             this.el.activate.connect( ()  => {
