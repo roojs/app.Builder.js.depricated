@@ -168,8 +168,8 @@
                                             ]
                                         },
                                         {
+                                            "id" : "default_directory_menu",
                                             "xtype" : "Menu",
-                                            "string id" : "default_directory_menu",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
