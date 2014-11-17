@@ -67,7 +67,7 @@
                                     "$ margin_top" : 5,
                                     "id" : "+image",
                                     "* args" : "JsRender.JsRender file",
-                                    "* init" : "{\n    var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));\n    this.el.set_data(pixbuf.get_pixels(),   \n                        pixbuf.has_alpha ()\n                          ? Cogl.PixelFormat.RGBA_8888\n                          : Cogl.PixelFormat.RGB_888,\n                        pixbuf.get_width (),\n            pixbuf.get_height (),\n                        pixbuf.get_rowstride ()\n    );\n}\n",
+                                    "* init" : "{\n    var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));\n    var img = new Clutter.Image();\n    img.set_data(pixbuf.get_pixels(),   \n                        pixbuf.has_alpha ()\n                          ? Cogl.PixelFormat.RGBA_8888\n                          : Cogl.PixelFormat.RGB_888,\n                        pixbuf.get_width (),\n            pixbuf.get_height (),\n                        pixbuf.get_rowstride ()\n    );\n    this.set_content(img);\n}\n",
                                     "$ x_expand" : true,
                                     "* pack" : "add_child",
                                     "xtype" : "Actor",

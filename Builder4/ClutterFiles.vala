@@ -291,7 +291,8 @@ public class Xcls_ClutterFiles : Object
 
             {
                 var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));
-                this.el.set_data(pixbuf.get_pixels(),   
+                var img = new Clutter.Image();
+                img.set_data(pixbuf.get_pixels(),   
                                     pixbuf.has_alpha ()
                                       ? Cogl.PixelFormat.RGBA_8888
                                       : Cogl.PixelFormat.RGB_888,
@@ -299,6 +300,7 @@ public class Xcls_ClutterFiles : Object
                         pixbuf.get_height (),
                                     pixbuf.get_rowstride ()
                 );
+                this.set_content(img);
             }        }
 
         // user defined functions 
