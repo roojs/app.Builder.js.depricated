@@ -83,7 +83,7 @@
                                             "listeners" : {
                                                 "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
                                             },
-                                            "label" : "PACK",
+                                            "label" : "Pack method",
                                             "* pack" : "append",
                                             "xtype" : "MenuItem",
                                             "tooltip_markup" : "Add what type of packing is to be used",
