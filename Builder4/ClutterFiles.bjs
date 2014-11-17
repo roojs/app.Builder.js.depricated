@@ -70,7 +70,7 @@
                                     "* init" : "{\n    var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));\n    this.el.set_data(pixbuf.get_pixels(),   \n                        pixbuf.has_alpha ()\n                          ? Cogl.PixelFormat.RGBA_8888\n                          : Cogl.PixelFormat.RGB_888,\n                        pixbuf.get_width (),\n            pixbuf.get_height (),\n                        pixbuf.get_rowstride ()\n    );\n}\n",
                                     "$ x_expand" : true,
                                     "* pack" : "add_child",
-                                    "xtype" : "Image",
+                                    "xtype" : "Actor",
                                     "$ y_align" : "Clutter.ActorAlign.START",
                                     "$ margin_left" : 5,
                                     "$ xns" : "Clutter",
