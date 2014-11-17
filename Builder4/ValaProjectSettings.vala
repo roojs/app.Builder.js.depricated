@@ -552,9 +552,9 @@ public class ValaProjectSettings : Object
                   //      this.get('/LeftTreeMenu').init(); 
                   //  }
                     
-                 _this.deafult_directory_menu.el.set_screen(Gdk.Screen.get_default());
-                 _this.deafult_directory_menu.el.show_all();
-                  _this.deafult_directory_menu.el.popup(null, null, null,  3, ev.time);
+                 _this.default_directory_menu.el.set_screen(Gdk.Screen.get_default());
+                 _this.default_directory_menu.el.show_all();
+                  _this.default_directory_menu.el.popup(null, null, null,  3, ev.time);
                  //   print("click:" + res.path.to_string());
                   return true;
             });
