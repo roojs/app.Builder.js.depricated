@@ -93,10 +93,10 @@
                                             "listeners" : {
                                                 "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
                                             },
-                                            "label" : "pack: Pack method (Vala)",
+                                            "label" : "ctor: Alterative to default contructor",
                                             "xtype" : "MenuItem",
                                             "* pack" : "append",
-                                            "tooltip_markup" : "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element",
+                                            "tooltip_markup" : "eg. \n\nnew Clutter.Image.from_file(.....)",
                                             "$ xns" : "Gtk"
                                         },
                                         {
