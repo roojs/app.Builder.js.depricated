@@ -76,7 +76,7 @@
                                             "label" : "id: _this.{ID} (Vala)",
                                             "xtype" : "MenuItem",
                                             "* pack" : "append",
-                                            "tooltip_markup" : "Using this.get('*someid') will find any id in an application.",
+                                            "tooltip_markup" : "Using _this.{ID} will map to this element",
                                             "$ xns" : "Gtk"
                                         },
                                         {
