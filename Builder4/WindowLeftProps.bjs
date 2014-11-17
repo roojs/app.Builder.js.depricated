@@ -91,7 +91,7 @@
                                         },
                                         {
                                             "listeners" : {
-                                                "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
+                                                "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"ctor\",\"\", \"*\");\n}"
                                             },
                                             "label" : "ctor: Alterative to default contructor",
                                             "xtype" : "MenuItem",
