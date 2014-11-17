@@ -542,7 +542,7 @@ public class ValaProjectSettings : Object
                     return false;
                 }
                 Gtk.TreePath res;
-                if (!_this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
+                if (!_this.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
                     return true;
                 }
                  
