@@ -20,15 +20,15 @@
                     "items" : [
                         {
                             "id" : "label_global",
-                            "* pack" : false,
                             "xtype" : "Label",
+                            "* pack" : false,
                             "$ xns" : "Gtk",
                             "utf8 label" : "Global"
                         },
                         {
                             "id" : "label_targets",
-                            "xtype" : "Label",
                             "* pack" : false,
+                            "xtype" : "Label",
                             "$ xns" : "Gtk",
                             "utf8 label" : "Targets"
                         },
@@ -46,8 +46,8 @@
                                 },
                                 {
                                     "id" : "compile_flags",
-                                    "* pack" : "pack_start,false,false,0",
                                     "xtype" : "Entry",
+                                    "* pack" : "pack_start,false,false,0",
                                     "$ xns" : "Gtk"
                                 },
                                 {
@@ -63,15 +63,15 @@
                                     "items" : [
                                         {
                                             "gboolean headers_visible" : false,
-                                            "xtype" : "TreeView",
                                             "* pack" : "add",
+                                            "xtype" : "TreeView",
                                             "string id" : "default_packages_tree",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
                                                     "id" : "default_packages_tree_store",
-                                                    "xtype" : "ListStore",
                                                     "* pack" : "set_model",
+                                                    "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
                                                     "| void load" : "(Gee.ArrayList<string> items) {\n \n\n\n    var pal = (Palete.Gtk) Palete.factory(\"Gtk\");\n    var pkgs = pal.packages();\n    print(\"ValaProjectSettings:packages load %d\\n\", pkgs.size);\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < pkgs.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   pkgs.get(i) ); // title \n        this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n      typeof(bool)",
@@ -88,8 +88,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "packages_render",
-                                                            "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -108,8 +108,8 @@
                                                                 "toggled" : "(  path_string) =>  { \n    var m = _this.default_packages_tree_store.el;\n   Gtk.TreeIter iter;\n   Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);\n   m.get_iter (out iter, path);\n   GLib.Value val;\n   m.get_value(iter, 1, out val);\n   m.set_value(iter, 1,  ((bool) val) ? false :true); \n    \n}"
                                                             },
                                                             "id" : "packages_render_use",
-                                                            "xtype" : "CellRendererToggle",
                                                             "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererToggle",
                                                             "$ xns" : "Gtk",
                                                             "gboolean activatable" : true
                                                         }
@@ -131,16 +131,19 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
+                                            "listeners" : {
+                                                "button_press_event" : " ( ev) => {\n    //console.log(\"button press?\");\n   \n    \n    if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {\n        //print(\"click\" + ev.type);\n        return false;\n    }\n    Gtk.TreePath res;\n    if (!_this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {\n        return true;\n    }\n     \n  //  this.el.get_selection().select_path(res);\n     \n      //if (!this.get('/LeftTreeMenu').el)  { \n      //      this.get('/LeftTreeMenu').init(); \n      //  }\n        \n     _this.deafult_directory_menu.el.set_screen(Gdk.Screen.get_default());\n     _this.deafult_directory_menu.el.show_all();\n      _this.deafult_directory_menu.el.popup(null, null, null,  3, ev.time);\n     //   print(\"click:\" + res.path.to_string());\n      return true;\n}"
+                                            },
                                             "gboolean headers_visible" : false,
-                                            "xtype" : "TreeView",
                                             "* pack" : "add",
+                                            "xtype" : "TreeView",
                                             "string id" : "default_directory_tree",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
                                                     "id" : "default_directory_tree_store",
-                                                    "xtype" : "ListStore",
                                                     "* pack" : "set_model",
+                                                    "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
                                                     "| void load" : "(Gee.ArrayList<string> items) {\n \n \n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < items.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   items.get(i) ); // title \n        this.el.set_value(citer, 1,   items.get(i) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
@@ -156,8 +159,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "directory_render",
-                                                            "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
+                                                            "xtype" : "CellRendererText",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -183,14 +186,14 @@
                         },
                         {
                             "gint position" : 300,
-                            "* pack" : "append_page,_this.label_targets.el",
                             "xtype" : "HPaned",
+                            "* pack" : "append_page,_this.label_targets.el",
                             "$ xns" : "Gtk",
                             "items" : [
                                 {
                                     "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
-                                    "* pack" : "add1",
                                     "xtype" : "ScrolledWindow",
+                                    "* pack" : "add1",
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
@@ -215,8 +218,8 @@
                                                     "items" : [
                                                         {
                                                             "id" : "targets_render",
-                                                            "* pack" : "pack_start,false",
                                                             "xtype" : "CellRendererText",
+                                                            "* pack" : "pack_start,false",
                                                             "$ xns" : "Gtk"
                                                         }
                                                     ]
@@ -289,8 +292,8 @@
                                                             "items" : [
                                                                 {
                                                                     "id" : "files_render",
-                                                                    "xtype" : "CellRendererText",
                                                                     "* pack" : "pack_start,false",
+                                                                    "xtype" : "CellRendererText",
                                                                     "$ xns" : "Gtk"
                                                                 }
                                                             ]

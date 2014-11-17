@@ -531,6 +531,33 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_TreeViewColumn20( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
+
+            // listeners 
+            this.el.button_press_event.connect( ( ev) => {
+                //console.log("button press?");
+               
+                
+                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
+                    //print("click" + ev.type);
+                    return false;
+                }
+                Gtk.TreePath res;
+                if (!_this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
+                    return true;
+                }
+                 
+              //  this.el.get_selection().select_path(res);
+                 
+                  //if (!this.get('/LeftTreeMenu').el)  { 
+                  //      this.get('/LeftTreeMenu').init(); 
+                  //  }
+                    
+                 _this.deafult_directory_menu.el.set_screen(Gdk.Screen.get_default());
+                 _this.deafult_directory_menu.el.show_all();
+                  _this.deafult_directory_menu.el.popup(null, null, null,  3, ev.time);
+                 //   print("click:" + res.path.to_string());
+                  return true;
+            });
         }
 
         // user defined functions 
