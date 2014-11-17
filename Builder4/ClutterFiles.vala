@@ -284,7 +284,7 @@ public class Xcls_ClutterFiles : Object
 
             {
                 var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));
-                this.el.set_data(pixbuf.get_pixels(),   gdk_pixbuf_get_pixels (pixbuf),
+                this.el.set_data(pixbuf.get_pixels(),   
                                     pixbuf.has_alpha ()
                                       ? Cogl.PixelFormat.RGBA_8888
                                       : Cogl.PixelFormat.RGB_888,
