@@ -71,7 +71,7 @@
                                     "items" : [
                                         {
                                             "listeners" : {
-                                                "activate" : " ()  => {\n    _this.addProp( \"prop\", \"id\", \"\", \"string\");\n}"
+                                                "activate" : " ()  => {\n    _this.addProp( \"prop\", \"id\", \"\", \"\");\n}"
                                             },
                                             "label" : "ID",
                                             "* pack" : "append",

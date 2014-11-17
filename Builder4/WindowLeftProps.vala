@@ -738,7 +738,7 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.activate.connect( ()  => {
-                _this.addProp( "prop", "id", "", "string");
+                _this.addProp( "prop", "id", "", "");
             });
         }
 
