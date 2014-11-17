@@ -84,6 +84,16 @@
                                                 "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
                                             },
                                             "label" : "pack: Pack method (Vala)",
+                                            "* pack" : "append",
+                                            "xtype" : "MenuItem",
+                                            "tooltip_markup" : "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "listeners" : {
+                                                "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
+                                            },
+                                            "label" : "pack: Pack method (Vala)",
                                             "xtype" : "MenuItem",
                                             "* pack" : "append",
                                             "tooltip_markup" : "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element",
@@ -96,7 +106,7 @@
                                             "label" : "init: initialziation code (vala)",
                                             "xtype" : "MenuItem",
                                             "* pack" : "append",
-                                            "tooltip_markup" : "Override the init method",
+                                            "tooltip_markup" : "This code is called after the ctor",
                                             "$ xns" : "Gtk"
                                         },
                                         {
