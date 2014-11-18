@@ -397,7 +397,7 @@ right:
     Roo.bootstrap.PagingToolbar
 
 left:
-    Roo.bootstrap.PagingToolbar
+    Roo.bootstrap.PagingToolbar:buttons[]
 right:  
     Roo.bootstrap.Button
 
