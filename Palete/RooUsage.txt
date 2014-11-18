@@ -396,6 +396,10 @@ left:
 right:  
     Roo.bootstrap.PagingToolbar
 
+left:
+    Roo.bootstrap.PagingToolbar:buttons[]
+right:  
+    Roo.bootstrap.Button
 
 left:
     Roo.bootstrap.TableBody
