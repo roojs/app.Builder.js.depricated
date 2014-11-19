@@ -71,6 +71,7 @@ namespace Project {
 				}
 				this.compilegroups.set(vs.name,vs);
 			}
+			print("%s\n",this.configToString ());
 			
 		}
 		public string configToString()
