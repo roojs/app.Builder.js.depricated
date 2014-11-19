@@ -110,7 +110,7 @@ namespace Project {
 			
 
 		}
-		string relPath(string target)
+		public string relPath(string target)
 		{
 			var basename = this.firstPath();
 			// eg. base = /home/xxx/fred/blogs
