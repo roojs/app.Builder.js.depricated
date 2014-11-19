@@ -8,8 +8,15 @@
             "../Palete"
         ],
         "packages" : [
-            "atk",
-            "atspi-2"
+            "clutter-gtk-1.0",
+            "gdk-3.0",
+            "gtk+-3.0",
+            "gtksourceview-3.0",
+            "libxml-2.0",
+            "json-glib-1.0",
+            "gobject-introspection-1.0",
+            "libsoup-2.4",
+            "posix"
         ]
     }
 ]
