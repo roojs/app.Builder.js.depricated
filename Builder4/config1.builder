@@ -5,7 +5,9 @@
         "target_bin" : "",
         "sources" : [
             "../Builder4",
-            "../Palete"
+            "../Palete",
+            "../Project",
+            "../JsRender"
         ],
         "packages" : [
             "clutter-gtk-1.0",
@@ -16,7 +18,8 @@
             "json-glib-1.0",
             "gobject-introspection-1.0",
             "libsoup-2.4",
-            "posix"
+            "posix",
+            "libvala-0.26"
         ]
     }
 ]
