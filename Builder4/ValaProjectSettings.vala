@@ -819,7 +819,7 @@ public class ValaProjectSettings : Object
                  //
                     Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
-                    if (!_this.default_directory_tree.get_selection().get_selected(out mod, out iter)) {
+                    if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {
                         return;
                     }
             
