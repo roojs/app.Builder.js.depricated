@@ -566,7 +566,13 @@ public class Xcls_MainWindow : Object
              _this.editfilebutton.el.show();   
     
          
-          
+           if (this.project.xtype == "Roo") {
+            
+            //this.projectsettings.show(this.project);
+        } else {
+    
+            this.vala_projectsettings.project.writeConfig();
+        }
         _this.projecteditview.el.save_easing_state();
         var el = _this.rooview.el;
         el.save_easing_state();
