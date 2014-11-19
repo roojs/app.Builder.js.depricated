@@ -1117,7 +1117,7 @@ public class ValaProjectSettings : Object
             
                      Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
-                    if (!_this.el.get_selection().get_selected(out mod, out iter)) {
+                    if (!this.el.get_selection().get_selected(out mod, out iter)) {
                            print("nothing selected\n");
                         return;
                     }
