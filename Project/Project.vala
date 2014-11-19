@@ -146,7 +146,7 @@ namespace Project {
 			});
 
 			
-			var proj = factory(xtype, key);
+			var proj = factory(xtype, fpath);
 
 			proj.fn =  Path.get_basename(jsonfile).split(".")[0];
 
