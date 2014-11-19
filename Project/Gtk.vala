@@ -123,7 +123,7 @@ namespace Project {
 		public string target_bin;
 
 
-		public GtkValaSettings(string path) 
+		public GtkValaSettings() 
 		{
 			this.compile_flags = "";
 			this.target_bin = "";
