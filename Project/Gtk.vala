@@ -99,18 +99,6 @@ namespace Project {
 			
 
 			 
-			var iter = this.compilegroups.map_iterator();
-			while(iter.next()) {
-				 
-				ar.add_object_element(iter.get_value().toJson());
-			}
-
-			var generator = new Json.Generator ();
-			generator.indent = 4;
-			generator.pretty = true;
-			var node = new Json.Node(Json.NodeType.ARRAY);
-			node.set_array(ar);
-			generator.set_root(node);
 
 			var f = GLib.File.new_for_path(fn);
 			var data_out = new GLib.DataOutputStream(
