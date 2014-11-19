@@ -1129,8 +1129,11 @@ public class ValaProjectSettings : Object
                    var fn =  (string) val;
                    
                    this.cursor = fn;
-                   
-                  // _this.default_directory_tree_store.load();
+                   var cg = _this.project.compilegroups.get(fn);
+                   this.build_pack_target.el.set_text(fn.target_bin);
+                   this.build_compile_flags.el.set_text(fn.compile_flags);
+                   // load the srouces
+            
             
               });
         }
