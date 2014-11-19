@@ -1036,7 +1036,7 @@ public class ValaProjectSettings : Object
                  //
                     Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
-                    if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {
+                    if (!_this.targets_tree.el.get_selection().get_selected(out mod, out iter)) {
                            print("nothing selected\n");
                         return;
                     }
@@ -1050,10 +1050,10 @@ public class ValaProjectSettings : Object
                    var fn =  (string) val;
                    
                    print("remove: %s\n", fn);
-                   if (!_this.project.compilegroups.get("_default_").sources.remove(fn)) {
+                   if (!_this.project.compilegroups.unset(fn)) {
                               print("remove failed");
-                          }
-                   _this.default_directory_tree_store.load();
+                  }
+                   _this.targets_tree_store.load();
             });
         }
 
