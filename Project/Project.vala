@@ -136,8 +136,17 @@ namespace Project {
 
 
 			var paths = obj.get_object_member("paths");
+			var i = 0;
+			var fpath = "";
+			paths.foreach_member((sobj, key, val) => {
+				if (i ==0 ) {
+					fpath = key;
+				}
+					
+			});
+
 			
-			var proj = factory(xtype, paths.get_string_element(0));
+			var proj = factory(xtype, key);
 
 			proj.fn =  Path.get_basename(jsonfile).split(".")[0];
 
