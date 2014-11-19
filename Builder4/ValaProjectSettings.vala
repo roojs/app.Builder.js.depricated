@@ -714,7 +714,8 @@ public class ValaProjectSettings : Object
                    }
                    chooser.close ();
                    // add the directory..
-                   _this.project.addGlobalDir(chooser.get_uri ())
+                   _this.project.addGlobalDir(chooser.get_uri ());
+                   _this.default_directory_tree.load();
             });
         }
 
