@@ -328,7 +328,7 @@
                                         },
                                         {
                                             "listeners" : {
-                                                "changed" : "() => {\n    _this.project.get(_this.targets_tree.cursor).target_bin = this.el.text;\n}"
+                                                "changed" : "() => {\n    _this.project.get(_this.targets_tree.cursor).compile_flags = this.el.text;\n}"
                                             },
                                             "id" : "build_compile_flags",
                                             "xtype" : "Entry",
