@@ -118,16 +118,19 @@ namespace Project {
 			var prefix = "";
 			while (true) {
 				if (    bb.length < target.length &&
-					target.substring(0, bb.length) == base.length) {
-					return prefix + target.substring(bb.length);
+					target.substring(0, bb.length) == bb) {
+					return prefix + target.substring(bb.length +1);
+				}
+				if (bb.length < 1) {
+					throw new Error.INVALID_FORMAT ("Could not work out relative path %s to %s",
+					                                basename, target);
 				}
 				bb = GLib.Path.get_dirname(bb);
 				prefix += "../";
-
+				
 			}
-			
-			
-			
+	
+	
 		}
 
 	}
