@@ -226,9 +226,11 @@
                                         {
                                             "id" : "targets_tree",
                                             "xtype" : "TreeView",
+                                            "* pack" : "add",
                                             "$ xns" : "Gtk",
                                             "items" : [
                                                 {
+                                                    "id" : "targets_tree_store",
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
