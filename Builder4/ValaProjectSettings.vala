@@ -26,6 +26,8 @@ public class ValaProjectSettings : Object
     public Xcls_targets_tree targets_tree;
     public Xcls_targets_tree_store targets_tree_store;
     public Xcls_targets_render targets_render;
+    public Xcls_build_pack_target build_pack_target;
+    public Xcls_build_compile_flags build_compile_flags;
     public Xcls_files_render files_render;
 
         // my vars (def)
@@ -1332,6 +1334,7 @@ public class ValaProjectSettings : Object
         public Xcls_build_pack_target(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.build_pack_target = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)
@@ -1374,6 +1377,7 @@ public class ValaProjectSettings : Object
         public Xcls_build_compile_flags(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.build_compile_flags = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)

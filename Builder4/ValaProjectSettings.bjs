@@ -312,9 +312,9 @@
                                             "utf8 label" : "target filename"
                                         },
                                         {
+                                            "id" : "build_pack_target",
                                             "xtype" : "Entry",
                                             "* pack" : "pack_start,false,false,0",
-                                            "string id" : "build_pack_target",
                                             "$ xns" : "Gtk"
                                         },
                                         {
@@ -324,9 +324,9 @@
                                             "utf8 label" : "compile flags"
                                         },
                                         {
+                                            "id" : "build_compile_flags",
                                             "xtype" : "Entry",
                                             "* pack" : "pack_start,false,false,0",
-                                            "string id" : "build_compile_flags",
                                             "$ xns" : "Gtk"
                                         },
                                         {
