@@ -327,6 +327,9 @@
                                             "utf8 label" : "compile flags"
                                         },
                                         {
+                                            "listeners" : {
+                                                "changed" : "() => {\n    _this.project.get(_this.targets_tree.cursor).target_bin = this.el.text;\n}"
+                                            },
                                             "id" : "build_compile_flags",
                                             "xtype" : "Entry",
                                             "* pack" : "pack_start,false,false,0",
