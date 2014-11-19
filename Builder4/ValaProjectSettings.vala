@@ -1391,7 +1391,10 @@ public class ValaProjectSettings : Object
 
             // listeners 
             this.el.changed.connect( () => {
-                _this.project.get(_this.targets_tree.cursor).compile_flags = this.el.text;
+                if (_this.targets_tree.cursor.length < 1) {
+                    return;
+                }
+                _this.project.compilegroups.get(_this.targets_tree.cursor).compile_flags = this.el.text;
             });
         }
 
