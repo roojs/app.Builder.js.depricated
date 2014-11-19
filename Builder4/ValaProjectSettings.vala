@@ -598,7 +598,7 @@ public class ValaProjectSettings : Object
             return;
             }
             
-             var def = this.project.compilegroups.get("default");
+             var def = _this.project.compilegroups.get("default");
              var items  = def.sources;
              
          
