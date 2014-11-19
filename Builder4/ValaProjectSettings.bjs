@@ -8,11 +8,11 @@
     "items" : [
         {
             "# Project.Gtk project" : "null",
+            "# Xcls_MainWindow window" : "null",
             "| void show" : "(Project.Gtk project) {\n    \n    \n    print(\"ValaProjectSettings show\\n\");\n    \n    this.project=  project;\n\n    this.compile_flags.el.text = \"\";\n    this.default_packages_tree_store.el.clear();\n    this.default_directory_tree_store.el.clear();    \n    \n    if (this.project.compilegroups.has_key(\"default\")) {\n        var def = this.project.compilegroups.get(\"default\");\n        this.compile_flags.el.text = def.compile_flags;\n        this.default_packages_tree_store.load(def.packages);\n        this.default_directory_tree_store.load(def.sources);\n    } else {\n        this.default_packages_tree_store.load(new Gee.ArrayList<string>());\n                 \n    }\n\n\n}\n",
             "xtype" : "VBox",
             "string id" : "ValaProjectSettings",
             "$ xns" : "Gtk",
-            "# MainWindow window" : "null",
             "items" : [
                 {
                     "* pack" : "pack_start,true,true,0",

@@ -27,7 +27,7 @@ public class ValaProjectSettings : Object
 
         // my vars (def)
     public Project.Gtk project;
-    public MainWindow window;
+    public Xcls_MainWindow window;
 
     // ctor 
     public ValaProjectSettings()
