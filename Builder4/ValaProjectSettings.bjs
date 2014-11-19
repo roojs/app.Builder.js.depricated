@@ -146,7 +146,7 @@
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
-                                                    "| void load" : "(Gee.ArrayList<string> items) {\n \n \n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < items.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   items.get(i) ); // title \n        this.el.set_value(citer, 1,   items.get(i) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
+                                                    "| void load" : "() {\n \n  this.el.clear();\n  \n  if (!_this.project.compilegroups.has_key(\"default\")) {\n    return;\n    }\n    \n     var def = this.project.compilegroups.get(\"default\");\n     var items  = def.sources;\n     \n \n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < items.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   items.get(i) ); // title \n        this.el.set_value(citer, 1,   items.get(i) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
                                                     "$ xns" : "Gtk"
                                                 },

@@ -588,8 +588,17 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void load (Gee.ArrayList<string> items) {
+        public void load () {
          
+          this.el.clear();
+          
+          if (!_this.project.compilegroups.has_key("default")) {
+            return;
+            }
+            
+             var def = this.project.compilegroups.get("default");
+             var items  = def.sources;
+             
          
             Gtk.TreeIter citer;
         
