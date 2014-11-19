@@ -148,7 +148,7 @@ namespace Project {
 
 		}
 
-public static string resolve_path_combine_path(string first, string second)
+public static   resolve_path_combine_path(string first, string second)
 		{
 			string ret = first;
 			if (first.length > 0 && second.length > 0 && !first.has_suffix("/") && !second.has_prefix("/"))
@@ -157,7 +157,7 @@ public static string resolve_path_combine_path(string first, string second)
 			}
 			return ret + second;
 		}
-public static string resolve_path_times(string part, int times, string? clue = null)
+public static   resolve_path_times(string part, int times, string? clue = null)
 		{
 			string ret = "";
 			for (int i = 0; i < times; i++)
@@ -170,12 +170,12 @@ public static string resolve_path_times(string part, int times, string? clue = n
 			}
 			return ret;
 		}
-public static string resolve_path(string _path, string? relative = null)
+		public   string resolve_path(string _path, string? relative = null)
 		{
 			string path = _path;
 			if (relative != null)
 			{
-				path = resolve_path_combine_path(path, relative);
+				path = this.resolve_path_combine_path(path, relative);
 			}
 			string[] parts = path.split("/");
 			string[] ret = {};
@@ -204,7 +204,7 @@ public static string resolve_path(string _path, string? relative = null)
 				ret += part;
 			}
 			
-			path =  resolve_path_combine_path(resolve_path_times("..", relative_parts, "/"), string.joinv("/", ret));
+			path =  this.resolve_path_combine_path(this.resolve_path_times("..", relative_parts, "/"), string.joinv("/", ret));
 			if (_path.has_prefix("/"))
 			{
 				path = "/" + path;
