@@ -18,6 +18,7 @@ public class ValaProjectSettings : Object
     public Xcls_default_packages_tree_store default_packages_tree_store;
     public Xcls_packages_render packages_render;
     public Xcls_packages_render_use packages_render_use;
+    public Xcls_default_directory_tree default_directory_tree;
     public Xcls_default_directory_tree_store default_directory_tree_store;
     public Xcls_directory_render directory_render;
     public Xcls_default_directory_menu default_directory_menu;
@@ -516,6 +517,7 @@ public class ValaProjectSettings : Object
         public Xcls_default_directory_tree(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.default_directory_tree = this;
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
