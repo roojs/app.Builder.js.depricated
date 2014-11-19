@@ -696,6 +696,21 @@ public class ValaProjectSettings : Object
 
             // set gobject values
             this.el.label = "Add Directory";
+
+            // listeners 
+            this.el.activate.connect( ()  => {
+                
+                var  chooser = new Gtk.FileChooserDialog (
+            	"Add a directory", _this.window, Gtk.FileChooserAction.SELECT_FOLDER ,
+            	"_Cancel",
+            	Gtk.ResponseType.CANCEL,
+            	"_Add",
+            	Gtk.ResponseType.ACCEPT);
+                if (chooser.run () != Gtk.ResponseType.ACCEPT) {
+                       return;
+                   }
+                   // add the directory..
+            });
         }
 
         // user defined functions 
