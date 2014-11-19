@@ -1214,8 +1214,13 @@ public class ValaProjectSettings : Object
                    GLib.Value gval;
                     _this.model.el.get_value(iter,0, out gval);
                     var oldval = (string)gval;
-                   
-                   
+                   if (oldval == newtext) {
+                      return;
+                    }
+                     var cg = _this.project.compilegroups.get(oldval);
+                    cg.name = newtext;
+                    _this.project.compilegroups.unset(oldval);
+                    _this.project.compilegroups.set(newtext, cg);
                
               });
         }
