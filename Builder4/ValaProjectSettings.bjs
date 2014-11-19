@@ -203,7 +203,7 @@
                                                     "* pack" : "add",
                                                     "xtype" : "MenuItem",
                                                     "$ xns" : "Gtk",
-                                                    "utf8 label" : "Add Directory"
+                                                    "utf8 label" : "Remove File/Directory"
                                                 }
                                             ]
                                         }

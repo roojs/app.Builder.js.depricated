@@ -809,7 +809,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Add Directory";
+            this.el.label = "Remove File/Directory";
 
             // listeners 
             this.el.activate.connect( ()  => {
