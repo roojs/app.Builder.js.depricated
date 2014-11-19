@@ -1340,6 +1340,11 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+
+            // listeners 
+            this.el.changed.connect( ()  => {
+                _this.project.get(_this.targets_tree.cursor).target_bin = this.el.text;
+            });
         }
 
         // user defined functions 

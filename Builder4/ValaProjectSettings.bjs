@@ -312,6 +312,9 @@
                                             "utf8 label" : "target filename"
                                         },
                                         {
+                                            "listeners" : {
+                                                "changed" : "()  => {\n    _this.project.get(_this.targets_tree.cursor).target_bin = this.el.text;\n}"
+                                            },
                                             "id" : "build_pack_target",
                                             "xtype" : "Entry",
                                             "* pack" : "pack_start,false,false,0",
