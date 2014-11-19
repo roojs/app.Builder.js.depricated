@@ -281,6 +281,9 @@
                                                     "$ xns" : "Gtk",
                                                     "items" : [
                                                         {
+                                                            "listeners" : {
+                                                                "edited" : "  (path, newtext) => {\n     \n     Gtk.TreeIter  iter;\n        _this.targets_tree_store.el.get_iter(out iter, new Gtk.TreePath.from_string(path));\n       GLib.Value gval;\n        _this.model.el.get_value(iter,0, out gval);\n        var oldval = (string)gval;\n       \n       \n   \n  }"
+                                                            },
                                                             "id" : "targets_render",
                                                             "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",

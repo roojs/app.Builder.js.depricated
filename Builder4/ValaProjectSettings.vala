@@ -1205,6 +1205,19 @@ public class ValaProjectSettings : Object
 
             // set gobject values
             this.el.editable = true;
+
+            // listeners 
+            this.el.edited.connect( (path, newtext) => {
+                 
+                 Gtk.TreeIter  iter;
+                    _this.targets_tree_store.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                   GLib.Value gval;
+                    _this.model.el.get_value(iter,0, out gval);
+                    var oldval = (string)gval;
+                   
+                   
+               
+              });
         }
 
         // user defined functions 
