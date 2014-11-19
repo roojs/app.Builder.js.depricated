@@ -175,7 +175,7 @@
                                             "items" : [
                                                 {
                                                     "listeners" : {
-                                                        "activate" : "()  => {\n    \n    var  chooser = new Gtk.FileChooserDialog (\n\t\"Add a directory\", _this.window.el, Gtk.FileChooserAction.SELECT_FOLDER ,\n\t\"_Cancel\",\n\tGtk.ResponseType.CANCEL,\n\t\"_Add\",\n\tGtk.ResponseType.ACCEPT);\n    if (chooser.run () != Gtk.ResponseType.ACCEPT) {\n        chooser.close ();\n           return;\n       }\n       chooser.close ();\n       // add the directory..\n       var fn = _this.project.relPath(tchooser.get_filename());\n       _this.project.compilegroups.get(\"_default_\").sources.add(fn);\n       _this.default_directory_tree_store.load();\n}"
+                                                        "activate" : "()  => {\n    \n    var  chooser = new Gtk.FileChooserDialog (\n\t\"Add a directory\", _this.window.el, Gtk.FileChooserAction.SELECT_FOLDER ,\n\t\"_Cancel\",\n\tGtk.ResponseType.CANCEL,\n\t\"_Add\",\n\tGtk.ResponseType.ACCEPT);\n    if (chooser.run () != Gtk.ResponseType.ACCEPT) {\n        chooser.close ();\n           return;\n       }\n       chooser.close ();\n       // add the directory..\n       var fn = _this.project.relPath(chooser.get_filename());\n       _this.project.compilegroups.get(\"_default_\").sources.add(fn);\n       _this.default_directory_tree_store.load();\n}"
                                                     },
                                                     "* pack" : "add",
                                                     "xtype" : "MenuItem",
