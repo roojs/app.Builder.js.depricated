@@ -264,7 +264,7 @@ public class Xcls_MainWindow : Object
         
         this.vala_projectsettings  =new ValaProjectSettings();
         this.vala_projectsettings.ref();
-    
+        this.vala_projectsettings.window = this;
         
         ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
         //this.projectsettings.el.show_all();
