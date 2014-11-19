@@ -1167,7 +1167,7 @@ public class ValaProjectSettings : Object
             
              var cg = _this.project.compilegroups;
              
-         
+           this.targets_tree.cursor = "";
             Gtk.TreeIter citer;
             var iter = cg.map_iterator();
            while(iter.next()) {
