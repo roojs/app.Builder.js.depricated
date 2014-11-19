@@ -454,7 +454,7 @@ public class ValaProjectSettings : Object
                m.set_value(iter, 1,  ((bool) val) ? false :true); 
                  GLib.Value fval;  
                m.get_value(iter, 0, out fval);
-               
+               var fn = (string)fval;
                 
                 var def = _this.project.compilegroups.get("_default_");
                 var items  = def.packages;
