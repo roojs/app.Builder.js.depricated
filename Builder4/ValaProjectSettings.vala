@@ -833,7 +833,9 @@ public class ValaProjectSettings : Object
                    var fn =  (string) val;
                    
                    print("remove: %s\n", fn);
-                   _this.project.compilegroups.get("_default_").sources.remove(fn);
+                   if (!_this.project.compilegroups.get("_default_").sources.remove(fn)) {
+                              print("remove failed");
+                          }
                    _this.default_directory_tree_store.load();
             });
         }
