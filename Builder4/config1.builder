@@ -8,6 +8,8 @@
             "../Palete"
         ],
         "packages" : [
+            "atk",
+            "atspi-2"
         ]
     }
 ]
