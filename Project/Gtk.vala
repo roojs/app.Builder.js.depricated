@@ -138,15 +138,42 @@ namespace Project {
 		}
 		public Gee.HashMap<string> files()
 		{
+			var ret = new Gee.HashMap<string>();
 			var def = this.compilegroups.get("_default_").sources;
 			for(var i =0 ;i < def.size; i++) {
-				var dir = this.resolve_path(
-	                            this.resolve_path_combine_path(this.firstPath(),def.get(i)));
+				var dirname = this.resolve_path(
+	                        this.resolve_path_combine_path(this.firstPath(),def.get(i)));
 				// scan the directory for files -- ending with vala || c
 				
+ 
+				var dir = File.new_for_path(dirname);
+				if (!dir.query_exists()) {
+					continue;
+				}
+		  
+		   
+				try {
+					var file_enum = dir.enumerate_children(
+		             			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+						GLib.FileQueryInfoFlags.NONE, 
+						null
+					);
+		        
+		         
+					FileInfo next_file; 
+					while ((next_file = file_enum.next_file(null)) != null) {
+				     		var fn = next_file.get_display_name();
+						if (!Regex.match_simple("\\.vala$", fn)) {
+							continue;
+						}
+		    				ret.add(dirname + "/" + fn);
+					}       
+	   			} catch(Error e) {
+					print("oops - something went wrong scanning the projects\n");
+				}
 
-
-
+			}
+			return ret;
 			
 
 		}
