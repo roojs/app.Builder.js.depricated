@@ -110,15 +110,22 @@ namespace Project {
 			
 
 		}
-		string relPath(string base, string target)
+		string relPath(string basename, string target)
 		{
 			// eg. base = /home/xxx/fred/blogs
 			// target = /home/xxx/fred/jones
+			var bb = basename;
+			var prefix = "";
 			while (true) {
-				if (target
+				if (    bb.length < target.length &&
+					target.substring(0, bb.length) == base.length) {
+					return prefix + target.substring(bb.length);
+				}
+				bb = GLib.Path.get_dirname(bb);
+				prefix += "../";
 
 			}
-
+			
 			
 			
 		}
