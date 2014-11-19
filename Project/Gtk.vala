@@ -140,7 +140,10 @@ namespace Project {
 		{
 			var def = this.compilegroups.get("_default_").sources;
 			for(var i =0 ;i < def.size; i++) {
-				var dir = def.get(i);
+				var dir = this.resolve_path(
+	                            this.resolve_path_combine_path(this.firstPath(),def.get(i)));
+				
+				
 
 
 
