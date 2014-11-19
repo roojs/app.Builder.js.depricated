@@ -49,7 +49,7 @@ namespace Project {
 			print("load: " + fn );
 			
 			if (!FileUtils.test(fn, FileTest.EXISTS)) {
-				this.compilegroups.set("_default", new GtkValaSettings() );
+				this.compilegroups.set("_default_", new GtkValaSettings() );
 				return;
 			}
 
@@ -67,7 +67,7 @@ namespace Project {
 				var el = obj.get_object_element(i);
 				var vs = new GtkValaSettings.from_json(el);
 				if (vs.name != "_default_") {
-					vs.parent = this.compilegroups.get("_default");
+					vs.parent = this.compilegroups.get("_default_");
 				}
 				this.compilegroups.set(vs.name,vs);
 			}
