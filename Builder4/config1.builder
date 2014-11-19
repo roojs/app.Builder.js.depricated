@@ -1,5 +1,23 @@
 [
     {
+        "name" : "Builder4",
+        "compile_flags" : "-g",
+        "target_bin" : "/tmp/Builder5",
+        "sources" : [
+        ],
+        "packages" : [
+        ]
+    },
+    {
+        "name" : "another group",
+        "compile_flags" : "",
+        "target_bin" : "",
+        "sources" : [
+        ],
+        "packages" : [
+        ]
+    },
+    {
         "name" : "_default_",
         "compile_flags" : "",
         "target_bin" : "",
