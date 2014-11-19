@@ -224,7 +224,7 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
-                                            "id" : "default_directory_menu",
+                                            "id" : "targets_tree_menu",
                                             "xtype" : "Menu",
                                             "* pack" : "add",
                                             "$ xns" : "Gtk",
