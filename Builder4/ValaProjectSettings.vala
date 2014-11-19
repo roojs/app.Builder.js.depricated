@@ -1221,7 +1221,7 @@ public class ValaProjectSettings : Object
                     cg.name = newtext;
                     _this.project.compilegroups.unset(oldval);
                     _this.project.compilegroups.set(newtext, cg);
-               
+                _this.targets_tree_store.load();
               });
         }
 
