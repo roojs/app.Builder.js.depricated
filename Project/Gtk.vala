@@ -142,7 +142,7 @@ namespace Project {
 			for(var i =0 ;i < def.size; i++) {
 				var dir = this.resolve_path(
 	                            this.resolve_path_combine_path(this.firstPath(),def.get(i)));
-				
+				// scan the directory for files -- ending with vala || c
 				
 
 
