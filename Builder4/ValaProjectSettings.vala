@@ -572,8 +572,7 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             _this.default_directory_tree_store = this;
-            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
-     typeof(string) // ??
+            this.el = new Gtk.ListStore( 1,     typeof(string)
       );
 
             // my vars (dec)
@@ -597,7 +596,7 @@ public class ValaProjectSettings : Object
                  this.el.append(out citer);   
                  
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
-                this.el.set_value(citer, 1,   items.get(i) );
+                //this.el.set_value(citer, 1,   items.get(i) );
             }
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
