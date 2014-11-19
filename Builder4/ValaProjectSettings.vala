@@ -452,6 +452,15 @@ public class ValaProjectSettings : Object
                GLib.Value val;
                m.get_value(iter, 1, out val);
                m.set_value(iter, 1,  ((bool) val) ? false :true); 
+                 GLib.Value fval;  
+               m.get_value(iter, 0, out fval);
+               
+                
+                var def = _this.project.compilegroups.get("_default_");
+                var items  = def.packages;
+                if ((bool)val) {
+                    // renive
+                    items.remove(
                 
             });
         }
