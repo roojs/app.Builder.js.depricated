@@ -1059,6 +1059,7 @@ public class ValaProjectSettings : Object
 
 
             // my vars (def)
+        public string cursor;
 
         // ctor 
         public Xcls_targets_tree(ValaProjectSettings _owner )
@@ -1112,7 +1113,24 @@ public class ValaProjectSettings : Object
                  // load the new values.
                  
             
+                     Gtk.TreeModel mod;
+                    Gtk.TreeIter iter;
+                    if (!_this.el.get_selection().get_selected(out mod, out iter)) {
+                           print("nothing selected\n");
+                        return;
+                    }
             
+                        
+                   // add the directory..
+                   
+                   
+                   GLib.Value val;
+                    mod.get_value(iter,0, out val);
+                   var fn =  (string) val;
+                   
+                   this.cursor = fn;
+                   
+                  // _this.default_directory_tree_store.load();
             
               });
         }
