@@ -703,7 +703,7 @@ public class ValaProjectSettings : Object
             this.el.activate.connect( ()  => {
                 
                 var  chooser = new Gtk.FileChooserDialog (
-            	"Add a directory", _this.window, Gtk.FileChooserAction.SELECT_FOLDER ,
+            	"Add a directory", _this.window.el, Gtk.FileChooserAction.SELECT_FOLDER ,
             	"_Cancel",
             	Gtk.ResponseType.CANCEL,
             	"_Add",
