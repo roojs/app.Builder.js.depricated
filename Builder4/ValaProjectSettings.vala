@@ -27,6 +27,7 @@ public class ValaProjectSettings : Object
 
         // my vars (def)
     public Project.Gtk project;
+    public MainWindow window;
 
     // ctor 
     public ValaProjectSettings()
@@ -36,6 +37,7 @@ public class ValaProjectSettings : Object
 
         // my vars (dec)
         this.project = null;
+        this.window = null;
 
         // set gobject values
         var child_0 = new Xcls_Notebook2( _this );
