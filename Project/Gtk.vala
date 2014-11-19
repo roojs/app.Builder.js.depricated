@@ -110,6 +110,18 @@ namespace Project {
 			
 
 		}
+		string relPath(string base, string target)
+		{
+			// eg. base = /home/xxx/fred/blogs
+			// target = /home/xxx/fred/jones
+			while (true) {
+				if (target
+
+			}
+
+			
+			
+		}
 
 	}
 	// an object describing a build config (or generic ...)
@@ -131,7 +143,7 @@ namespace Project {
 			this.sources = new Gee.ArrayList<string>();
 				
 		}
-
+		
 		
 		public GtkValaSettings.from_json(Json.Object el) {
 
