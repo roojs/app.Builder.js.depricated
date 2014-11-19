@@ -198,7 +198,7 @@
                                                 },
                                                 {
                                                     "listeners" : {
-                                                        "activate" : "()  => {\n    return;\n     //\n        Gtk.TreeModel mod;\n        Gtk.TreeIter iter;\n        if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {\n            return;\n        }\n\n            \n       // add the directory..\n       \n       \n       GLib.Value val;\n        mod.get_value(iter,0, out val);\n       var fn =  (string) val;\n       _this.project.compilegroups.get(\"_default_\").sources.remove(fn);\n       _this.default_directory_tree_store.load();\n}"
+                                                        "activate" : "()  => {\n    return;\n     //\n        Gtk.TreeModel mod;\n        Gtk.TreeIter iter;\n        if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {\n               print(\"nothing selected\\n\");\n            return;\n        }\n\n            \n       // add the directory..\n       \n       \n       GLib.Value val;\n        mod.get_value(iter,0, out val);\n       var fn =  (string) val;\n       \n       print(\"remove: %s\\n\", fn);\n       _this.project.compilegroups.get(\"_default_\").sources.remove(fn);\n       _this.default_directory_tree_store.load();\n}"
                                                     },
                                                     "* pack" : "add",
                                                     "xtype" : "MenuItem",

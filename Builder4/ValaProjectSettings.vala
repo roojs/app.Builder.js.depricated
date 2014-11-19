@@ -820,6 +820,7 @@ public class ValaProjectSettings : Object
                     Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
                     if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {
+                           print("nothing selected\n");
                         return;
                     }
             
@@ -830,6 +831,8 @@ public class ValaProjectSettings : Object
                    GLib.Value val;
                     mod.get_value(iter,0, out val);
                    var fn =  (string) val;
+                   
+                   print("remove: %s\n", fn);
                    _this.project.compilegroups.get("_default_").sources.remove(fn);
                    _this.default_directory_tree_store.load();
             });
