@@ -136,9 +136,9 @@ namespace Project {
 	
 	
 		}
-		public Gee.HashMap<string> files()
+		public Gee.ArrayList<string> files()
 		{
-			var ret = new Gee.HashMap<string>();
+			var ret = new Gee.ArrayList<string>();
 			var def = this.compilegroups.get("_default_").sources;
 			for(var i =0 ;i < def.size; i++) {
 				var dirname = this.resolve_path(
