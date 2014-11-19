@@ -136,6 +136,17 @@ namespace Project {
 	
 	
 		}
+		public Gee.HashMap<string> files()
+		{
+			var def = this.compilegroups.get("_default_").sources;
+			for(var i =0 ;i < def.size; i++) {
+				var dir = def.get(i);
+
+
+
+			
+
+		}
 
 	}
 	// an object describing a build config (or generic ...)
@@ -197,6 +208,8 @@ namespace Project {
 			}
 			return ret;
 		}
+		
+		
 	}
  
    
