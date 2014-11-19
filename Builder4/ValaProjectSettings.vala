@@ -1212,7 +1212,7 @@ public class ValaProjectSettings : Object
                  Gtk.TreeIter  iter;
                     _this.targets_tree_store.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
                    GLib.Value gval;
-                    _this.model.el.get_value(iter,0, out gval);
+                    _this.targets_tree_store.el.get_value(iter,0, out gval);
                     var oldval = (string)gval;
                    if (oldval == newtext) {
                       return;
