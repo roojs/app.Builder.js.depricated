@@ -1012,7 +1012,9 @@ public class ValaProjectSettings : Object
 
             // init method 
 
-            this.el.add_attribute(_this.targets_render.el , "text", 0 );        }
+            {
+                 this.el.add_attribute(_this.targets_render.el , "text", 0 );
+             }        }
 
         // user defined functions 
     }
