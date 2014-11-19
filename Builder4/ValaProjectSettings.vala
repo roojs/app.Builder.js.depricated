@@ -709,8 +709,10 @@ public class ValaProjectSettings : Object
             	"_Add",
             	Gtk.ResponseType.ACCEPT);
                 if (chooser.run () != Gtk.ResponseType.ACCEPT) {
+                    chooser.close ();
                        return;
                    }
+                   chooser.close ();
                    // add the directory..
             });
         }
