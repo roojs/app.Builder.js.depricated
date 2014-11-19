@@ -49,6 +49,7 @@ namespace Project {
 			print("load: " + fn );
 			
 			if (!FileUtils.test(fn, FileTest.EXISTS)) {
+				this.compilegroups.set("_default", new GtkValaSettings() );
 				return;
 			}
 
