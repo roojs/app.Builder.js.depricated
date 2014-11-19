@@ -148,6 +148,71 @@ namespace Project {
 
 		}
 
+public static string resolve_path_combine_path(string first, string second)
+		{
+			string ret = first;
+			if (first.length > 0 && second.length > 0 && !first.has_suffix("/") && !second.has_prefix("/"))
+			{
+				ret += "/";
+			}
+			return ret + second;
+		}
+public static string resolve_path_times(string part, int times, string? clue = null)
+		{
+			string ret = "";
+			for (int i = 0; i < times; i++)
+			{
+				if (clue != null && i > 0)
+				{
+					ret += clue;
+				}
+				ret += part;
+			}
+			return ret;
+		}
+public static string resolve_path(string _path, string? relative = null)
+		{
+			string path = _path;
+			if (relative != null)
+			{
+				path = resolve_path_combine_path(path, relative);
+			}
+			string[] parts = path.split("/");
+			string[] ret = {};
+			int relative_parts = 0;
+					
+			foreach (var part in parts)
+			{
+				if (part.length < 1 || part == ".")
+				{
+					continue;
+				}
+				
+				if (part == "..")
+				{
+					if (ret.length > 0)
+					{
+						ret = ret[0: ret.length -1];
+					}
+					else
+					{
+						relative_parts++;
+					}
+					continue;
+				}
+				
+				ret += part;
+			}
+			
+			path =  resolve_path_combine_path(resolve_path_times("..", relative_parts, "/"), string.joinv("/", ret));
+			if (_path.has_prefix("/"))
+			{
+				path = "/" + path;
+			}
+			return path;
+		}
+			
+
 	}
 	// an object describing a build config (or generic ...)
 	public class GtkValaSettings : Object {
