@@ -594,11 +594,8 @@ public class ValaProjectSettings : Object
          
           this.el.clear();
           
-          if (!_this.project.compilegroups.has_key("default")) {
-            return;
-            }
             
-             var def = _this.project.compilegroups.get("default");
+             var def = _this.project.compilegroups.get("_default_");
              var items  = def.sources;
              
          
