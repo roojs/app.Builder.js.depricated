@@ -1103,6 +1103,18 @@ public class ValaProjectSettings : Object
                  //   print("click:" + res.path.to_string());
                   return true;
             });
+            this.el.cursor_changed.connect( ( ) => {
+            
+                if (this.cursor != "") {
+                     // save the values..
+                 }
+                 
+                 // load the new values.
+                 
+            
+            
+            
+              });
         }
 
         // user defined functions 
