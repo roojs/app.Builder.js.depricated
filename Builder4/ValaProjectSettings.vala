@@ -813,21 +813,11 @@ public class ValaProjectSettings : Object
 
             // listeners 
             this.el.activate.connect( ()  => {
-                
-                var  chooser = new Gtk.FileChooserDialog (
-            	"Add a directory", _this.window.el, Gtk.FileChooserAction.SELECT_FOLDER ,
-            	"_Cancel",
-            	Gtk.ResponseType.CANCEL,
-            	"_Add",
-            	Gtk.ResponseType.ACCEPT);
-                if (chooser.run () != Gtk.ResponseType.ACCEPT) {
-                    chooser.close ();
-                       return;
-                   }
-                   chooser.close ();
+                return;
+                 //
                    // add the directory..
                    var fn = _this.project.relPath(chooser.get_filename());
-                   _this.project.compilegroups.get("_default_").sources.add(fn);
+                   _this.project.compilegroups.get("_default_").sources.remove(fn);
                    _this.default_directory_tree_store.load();
             });
         }
