@@ -142,8 +142,9 @@ namespace Project {
 		public string target_bin;
 
 
-		public GtkValaSettings() 
+		public GtkValaSettings(string name) 
 		{
+			this.name = name;
 			this.compile_flags = "";
 			this.target_bin = "";
 			this.packages = new Gee.ArrayList<string>();
