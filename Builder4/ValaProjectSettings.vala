@@ -815,7 +815,7 @@ public class ValaProjectSettings : Object
 
             // listeners 
             this.el.activate.connect( ()  => {
-                return;
+                
                  //
                     Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
