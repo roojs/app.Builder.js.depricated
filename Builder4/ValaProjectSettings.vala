@@ -1132,8 +1132,8 @@ public class ValaProjectSettings : Object
                    
                    this.cursor = fn;
                    var cg = _this.project.compilegroups.get(fn);
-                   _this.build_pack_target.el.set_text(fn.target_bin);
-                   _this.build_compile_flags.el.set_text(fn.compile_flags);
+                   _this.build_pack_target.el.set_text(cg.target_bin);
+                   _this.build_compile_flags.el.set_text(cg.compile_flags);
                    // load the srouces
             
             
