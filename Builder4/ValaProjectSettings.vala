@@ -1175,6 +1175,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.editable = true;
         }
 
         // user defined functions 

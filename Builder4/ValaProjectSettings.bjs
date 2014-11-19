@@ -281,7 +281,8 @@
                                                             "id" : "targets_render",
                                                             "xtype" : "CellRendererText",
                                                             "* pack" : "pack_start,false",
-                                                            "$ xns" : "Gtk"
+                                                            "$ xns" : "Gtk",
+                                                            "gboolean editable" : true
                                                         }
                                                     ]
                                                 }
