@@ -815,8 +815,19 @@ public class ValaProjectSettings : Object
             this.el.activate.connect( ()  => {
                 return;
                  //
+                    Gtk.TreeModel mod;
+                    Gtk.TreeIter iter;
+                    if (!_this.default_directory_tree.get_selection().get_selected(out mod, out iter)) {
+                        return;
+                    }
+            
+                        
                    // add the directory..
-                   var fn = _this.project.relPath(chooser.get_filename());
+                   
+                   
+                   GLib.Value val;
+                    mod.get_value(iter,0, out val);
+                   var fn =  (string) val;
                    _this.project.compilegroups.get("_default_").sources.remove(fn);
                    _this.default_directory_tree_store.load();
             });
