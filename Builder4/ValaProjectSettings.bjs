@@ -265,7 +265,7 @@
                                                     "xtype" : "ListStore",
                                                     "* pack" : "set_model",
                                                     "$ n_columns" : 2,
-                                                    "| void load" : "() {\n \n  this.el.clear();\n  \n    \n     var cg = _this.project.compilegroups;\n     \n \n    Gtk.TreeIter citer;\n    cg.foreach((key,val) => {\n        if (key == \"_default_\") {\n            continue;\n        }\n    \n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   key ); // title \n        //this.el.set_value(citer, 1,   items.get(i) );\n    });\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
+                                                    "| void load" : "() {\n \n  this.el.clear();\n  \n    \n     var cg = _this.project.compilegroups;\n     \n \n    Gtk.TreeIter citer;\n    var iter = cg.map_iterator();\n   while(iter.next()) {\n        var key = iter.get_key();\n        if (key == \"_default_\") {\n            continue;\n        }\n    \n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   key ); // title \n        //this.el.set_value(citer, 1,   items.get(i) );\n    });\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n     typeof(string) // ??\n     ",
                                                     "$ xns" : "Gtk"
                                                 },

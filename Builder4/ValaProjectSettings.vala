@@ -1112,7 +1112,9 @@ public class ValaProjectSettings : Object
              
          
             Gtk.TreeIter citer;
-            cg.foreach((key,val) => {
+            var iter = cg.map_iterator();
+           while(iter.next()) {
+                var key = iter.get_key();
                 if (key == "_default_") {
                     continue;
                 }
