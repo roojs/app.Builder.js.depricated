@@ -460,7 +460,10 @@ public class ValaProjectSettings : Object
                 var items  = def.packages;
                 if ((bool)val) {
                     // renive
-                    items.remove(
+                    items.remove(fn);
+                } else {
+                    items.add(fn);
+                }
                 
             });
         }
