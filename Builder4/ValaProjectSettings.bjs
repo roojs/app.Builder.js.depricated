@@ -74,7 +74,7 @@
                                                     "* pack" : "set_model",
                                                     "xtype" : "ListStore",
                                                     "$ n_columns" : 2,
-                                                    "| void load" : "(Gee.ArrayList<string> items) {\n \n\n\n    var pal = (Palete.Gtk) Palete.factory(\"Gtk\");\n    var pkgs = pal.packages();\n    print(\"ValaProjectSettings:packages load %d\\n\", pkgs.size);\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < pkgs.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   pkgs.get(i) ); // title \n        this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
+                                                    "| void load" : "() {\n \n    var def = _this.project.compilegroups.get(\"_default_\");\n     var items  = def.packages;\n    \n    this.el.clear();\n    var pal = (Palete.Gtk) Palete.factory(\"Gtk\");\n    var pkgs = pal.packages();\n    print(\"ValaProjectSettings:packages load %d\\n\", pkgs.size);\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < pkgs.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   pkgs.get(i) ); // title \n        this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
                                                     "$ columns" : "    typeof(string),  // 0 key type\n      typeof(bool)",
                                                     "$ xns" : "Gtk"
                                                 },

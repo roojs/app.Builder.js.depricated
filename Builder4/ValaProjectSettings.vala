@@ -326,10 +326,12 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void load (Gee.ArrayList<string> items) {
+        public void load () {
          
-        
-        
+            var def = _this.project.compilegroups.get("_default_");
+             var items  = def.packages;
+            
+            this.el.clear();
             var pal = (Palete.Gtk) Palete.factory("Gtk");
             var pkgs = pal.packages();
             print("ValaProjectSettings:packages load %d\n", pkgs.size);
