@@ -122,6 +122,17 @@ namespace Project {
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
 		public string target_bin;
 
+
+		public GtkValaSettings(string path) 
+		{
+			this.compile_flags = "";
+			this.target_bin = "";
+			this.packages = new Gee.ArrayList<string>();
+			this.sources = new Gee.ArrayList<string>();
+				
+		}
+
+		
 		public GtkValaSettings.from_json(Json.Object el) {
 
 			
