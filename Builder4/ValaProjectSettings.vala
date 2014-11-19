@@ -965,7 +965,26 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
         public void load () {
-        
+         
+          this.el.clear();
+          
+            
+             var cg = _this.project.compilegroups;
+             
+         
+            Gtk.TreeIter citer;
+            cg.foreach((key,val) => {
+                if (key == "_default_") {
+                    continue;
+                }
+            
+                 this.el.append(out citer);   
+                 
+                this.el.set_value(citer, 0,   key ); // title 
+                //this.el.set_value(citer, 1,   items.get(i) );
+            })
+            this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
+            
         }
     }
     public class Xcls_TreeViewColumn31 : Object 
