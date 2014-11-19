@@ -73,12 +73,30 @@ namespace Project {
 			}
 			
 		}
+		public string configToString()
+		{
+			var ar = new Json.Array();
+			var iter = this.compilegroups.map_iterator();
+			while(iter.next()) {
+				 
+				ar.add_object_element(iter.get_value().toJson());
+			}
+
+			var generator = new Json.Generator ();
+			generator.indent = 4;
+			generator.pretty = true;
+			var node = new Json.Node(Json.NodeType.ARRAY);
+			node.set_array(ar);
+			generator.set_root(node);
+			return generator.to_data(null);
+		}
+		
 		public void writeConfig()
 		{
 			var fn = this.firstPath() + "/config1.builder";
 			print("write: " + fn );
 
-			var ar = new Json.Array();
+			
 
 			 
 			var iter = this.compilegroups.map_iterator();
@@ -98,7 +116,7 @@ namespace Project {
 			var data_out = new GLib.DataOutputStream(
                                           f.replace(null, false, GLib.FileCreateFlags.NONE, null)
          		);
-			data_out.put_string(generator.to_data(null), null);
+			data_out.put_string(this.configToString(), null);
 			data_out.close(null);
 			
 			return ;
