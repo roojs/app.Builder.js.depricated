@@ -712,7 +712,8 @@ public class ValaProjectSettings : Object
                    }
                    chooser.close ();
                    // add the directory..
-                   _this.project.compilegroups.get("_default_").sources.add(chooser.get_uri ());
+                   var fn = _this.project.relPath(tchooser.get_filename());
+                   _this.project.compilegroups.get("_default_").sources.add(fn);
                    _this.default_directory_tree_store.load();
             });
         }
