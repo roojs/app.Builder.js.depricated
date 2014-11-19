@@ -224,6 +224,46 @@
                                     "$ xns" : "Gtk",
                                     "items" : [
                                         {
+                                            "id" : "default_directory_menu",
+                                            "xtype" : "Menu",
+                                            "* pack" : "add",
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "listeners" : {
+                                                        "activate" : "()  => {\n    \n    var  chooser = new Gtk.FileChooserDialog (\n\t\"Add a directory\", _this.window.el, Gtk.FileChooserAction.SELECT_FOLDER ,\n\t\"_Cancel\",\n\tGtk.ResponseType.CANCEL,\n\t\"_Add\",\n\tGtk.ResponseType.ACCEPT);\n    if (chooser.run () != Gtk.ResponseType.ACCEPT) {\n        chooser.close ();\n           return;\n       }\n       chooser.close ();\n       // add the directory..\n       var fn = _this.project.relPath(chooser.get_filename());\n       _this.project.compilegroups.get(\"_default_\").sources.add(fn);\n       _this.default_directory_tree_store.load();\n}"
+                                                    },
+                                                    "* pack" : "add",
+                                                    "xtype" : "MenuItem",
+                                                    "$ xns" : "Gtk",
+                                                    "utf8 label" : "Add Directory"
+                                                },
+                                                {
+                                                    "listeners" : {
+                                                        "activate" : "()  => {\n    \n    var  chooser = new Gtk.FileChooserDialog (\n\t\"Add a directory\", _this.window.el, Gtk.FileChooserAction.OPEN ,\n\t\"_Cancel\",\n\tGtk.ResponseType.CANCEL,\n\t\"_Add\",\n\tGtk.ResponseType.ACCEPT);\n    if (chooser.run () != Gtk.ResponseType.ACCEPT) {\n        chooser.close ();\n           return;\n       }\n       chooser.close ();\n       // add the directory..\n       var fn = _this.project.relPath(chooser.get_filename());\n       _this.project.compilegroups.get(\"_default_\").sources.add(fn);\n       _this.default_directory_tree_store.load();\n}"
+                                                    },
+                                                    "* pack" : "add",
+                                                    "xtype" : "MenuItem",
+                                                    "$ xns" : "Gtk",
+                                                    "utf8 label" : "Add File"
+                                                },
+                                                {
+                                                    "* pack" : "add",
+                                                    "xtype" : "SeparatorMenuItem",
+                                                    "$ xns" : "Gtk"
+                                                },
+                                                {
+                                                    "listeners" : {
+                                                        "activate" : "()  => {\n    \n     //\n        Gtk.TreeModel mod;\n        Gtk.TreeIter iter;\n        if (!_this.default_directory_tree.el.get_selection().get_selected(out mod, out iter)) {\n               print(\"nothing selected\\n\");\n            return;\n        }\n\n            \n       // add the directory..\n       \n       \n       GLib.Value val;\n        mod.get_value(iter,0, out val);\n       var fn =  (string) val;\n       \n       print(\"remove: %s\\n\", fn);\n       if (!_this.project.compilegroups.get(\"_default_\").sources.remove(fn)) {\n                  print(\"remove failed\");\n              }\n       _this.default_directory_tree_store.load();\n}"
+                                                    },
+                                                    "* pack" : "add",
+                                                    "xtype" : "MenuItem",
+                                                    "$ xns" : "Gtk",
+                                                    "utf8 label" : "Remove File/Directory"
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "id" : "targets_tree",
                                             "xtype" : "TreeView",
                                             "* pack" : "add",
