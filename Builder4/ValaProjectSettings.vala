@@ -1028,7 +1028,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Remove File/Directory";
+            this.el.label = "Remove Target";
 
             // listeners 
             this.el.activate.connect( ()  => {
