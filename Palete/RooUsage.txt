@@ -366,6 +366,7 @@ right:
     Roo.bootstrap.HtmlEditor
     Roo.bootstrap.MessageBar
     Roo.bootstrap.dash.NumberBox
+    Roo.bootstrap.Graph
 
 left:
     Roo.bootstrap.Progress
