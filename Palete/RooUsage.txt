@@ -534,5 +534,9 @@ left:
     Roo.bootstrap.dash.TabGroup
 right:
     Roo.bootstrap.dash.TabItem
+left:
+    Roo.bootstrap.dash.TabPane
+right:
+    Roo.bootstrap.Graph
 
 
