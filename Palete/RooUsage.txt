@@ -524,3 +524,13 @@ right:
     Roo.bootstrap.Container
     Roo.bootstrap.Image
     Roo.bootstrap.Link
+left:
+    Roo.bootstrap.dash.TabBox
+right:
+    Roo.bootstrap.dash.TabGroup
+left:
+    Roo.bootstrap.dash.TabGroup
+right:
+    Roo.bootstrap.dash.TabItem
+
+
