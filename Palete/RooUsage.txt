@@ -367,6 +367,7 @@ right:
     Roo.bootstrap.MessageBar
     Roo.bootstrap.dash.NumberBox
     Roo.bootstrap.Graph
+    Roo.bootstrap.dash.TabBox
 
 left:
     Roo.bootstrap.Progress
