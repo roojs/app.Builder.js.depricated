@@ -161,10 +161,16 @@ namespace Project {
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
 			     		var fn = next_file.get_display_name();
-					if (!Regex.match_simple("\\.vala$", fn)) {
+					if (Regex.match_simple("\\.vala$", fn)) {
+						ret.add(dirname + "/" + fn);
 						continue;
 					}
-	    			ret.add(dirname + "/" + fn);
+					if (Regex.match_simple("\\.c$", fn)) {
+						ret.add(dirname + "/" + fn);
+						continue;
+					}
+					// any other valid types???
+	    			
 				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
