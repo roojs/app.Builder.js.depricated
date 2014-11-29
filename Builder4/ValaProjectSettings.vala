@@ -1573,8 +1573,9 @@ public class ValaProjectSettings : Object
         public Xcls_ListStore47(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
-     typeof(string) // ??
+            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 file name
+     typeof(string), // type (dir orfile)
+     typeof(bool)  // is checked.
       );
 
             // my vars (dec)
