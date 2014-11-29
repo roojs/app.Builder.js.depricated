@@ -180,7 +180,11 @@ namespace Project {
 
 		public Gee.ArrayList<string> files(string path)
 		{
-			
+			var ret = new Gee.ArrayList<string>();
+
+
+
+			return ret;
 
 		}
 		
