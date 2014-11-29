@@ -26,6 +26,7 @@ public class ValaProjectSettings : Object
     public Xcls_targets_tree targets_tree;
     public Xcls_targets_tree_store targets_tree_store;
     public Xcls_targets_render targets_render;
+    public Xcls_packages_render_use packages_render_use;
     public Xcls_build_pack_target build_pack_target;
     public Xcls_build_compile_flags build_compile_flags;
     public Xcls_files_render files_render;
@@ -1079,6 +1080,9 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_TreeViewColumn35( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
+            var child_2 = new Xcls_TreeViewColumn37( _this );
+            child_2.ref();
+            this.el.append_column (  child_2.el  );
 
             // listeners 
             this.el.button_press_event.connect( ( ev) => {
@@ -1262,6 +1266,85 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
+    public class Xcls_TreeViewColumn37 : Object 
+    {
+        public Gtk.TreeViewColumn el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_TreeViewColumn37(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "use";
+            this.el.resizable = false;
+            this.el.fixed_width = 50;
+            var child_0 = new Xcls_packages_render_use( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false );
+
+            // init method 
+
+            {
+             this.el.add_attribute(_this.packages_render_use.el , "active", 1 );
+             }        }
+
+        // user defined functions 
+    }
+    public class Xcls_packages_render_use : Object 
+    {
+        public Gtk.CellRendererToggle el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_packages_render_use(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.packages_render_use = this;
+            this.el = new Gtk.CellRendererToggle();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.activatable = true;
+
+            // listeners 
+            this.el.toggled.connect( (  path_string) =>  { 
+                var m = _this.default_packages_tree_store.el;
+               Gtk.TreeIter iter;
+               Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);
+               m.get_iter (out iter, path);
+               GLib.Value val;
+               m.get_value(iter, 1, out val);
+               m.set_value(iter, 1,  ((bool) val) ? false :true); 
+                 GLib.Value fval;  
+               m.get_value(iter, 0, out fval);
+               var fn = (string)fval;
+                
+                var def = _this.project.compilegroups.get("_default_");
+                var items  = def.packages;
+                if ((bool)val) {
+                    // renive
+                    items.remove(fn);
+                } else {
+                    items.add(fn);
+                }
+                
+            });
+        }
+
+        // user defined functions 
+    }
     public class Xcls_set_vbox : Object 
     {
         public Gtk.VBox el;
@@ -1279,29 +1362,29 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Label38( _this );
+            var child_0 = new Xcls_Label40( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_build_pack_target( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Label40( _this );
+            var child_2 = new Xcls_Label42( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,false,0 );
             var child_3 = new Xcls_build_compile_flags( _this );
             child_3.ref();
             this.el.pack_start (  child_3.el , false,false,0 );
-            var child_4 = new Xcls_Label42( _this );
+            var child_4 = new Xcls_Label44( _this );
             child_4.ref();
             this.el.pack_start (  child_4.el , false,false,0 );
-            var child_5 = new Xcls_ScrolledWindow43( _this );
+            var child_5 = new Xcls_ScrolledWindow45( _this );
             child_5.ref();
             this.el.pack_start (  child_5.el , true,true,0 );
         }
 
         // user defined functions 
     }
-    public class Xcls_Label38 : Object 
+    public class Xcls_Label40 : Object 
     {
         public Gtk.Label el;
         private ValaProjectSettings  _this;
@@ -1310,7 +1393,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Label38(ValaProjectSettings _owner )
+        public Xcls_Label40(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "target filename" );
@@ -1352,7 +1435,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_Label40 : Object 
+    public class Xcls_Label42 : Object 
     {
         public Gtk.Label el;
         private ValaProjectSettings  _this;
@@ -1361,7 +1444,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Label40(ValaProjectSettings _owner )
+        public Xcls_Label42(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "compile flags" );
@@ -1403,7 +1486,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_Label42 : Object 
+    public class Xcls_Label44 : Object 
     {
         public Gtk.Label el;
         private ValaProjectSettings  _this;
@@ -1412,7 +1495,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Label42(ValaProjectSettings _owner )
+        public Xcls_Label44(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Files to compile" );
@@ -1424,7 +1507,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_ScrolledWindow43 : Object 
+    public class Xcls_ScrolledWindow45 : Object 
     {
         public Gtk.ScrolledWindow el;
         private ValaProjectSettings  _this;
@@ -1433,7 +1516,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow43(ValaProjectSettings _owner )
+        public Xcls_ScrolledWindow45(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -1464,17 +1547,17 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_ListStore45( _this );
+            var child_0 = new Xcls_ListStore47( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn46( _this );
+            var child_1 = new Xcls_TreeViewColumn48( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_ListStore45 : Object 
+    public class Xcls_ListStore47 : Object 
     {
         public Gtk.ListStore el;
         private ValaProjectSettings  _this;
@@ -1483,7 +1566,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ListStore45(ValaProjectSettings _owner )
+        public Xcls_ListStore47(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
@@ -1497,7 +1580,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_TreeViewColumn46 : Object 
+    public class Xcls_TreeViewColumn48 : Object 
     {
         public Gtk.TreeViewColumn el;
         private ValaProjectSettings  _this;
@@ -1506,7 +1589,7 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_TreeViewColumn46(ValaProjectSettings _owner )
+        public Xcls_TreeViewColumn48(ValaProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
