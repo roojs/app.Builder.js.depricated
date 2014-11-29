@@ -175,17 +175,7 @@ namespace Project {
 			
 
 		}
-
-		public Gee.ArrayList<string> files(string path)
-		{
-			var ret = new Gee.ArrayList<string>();
-
-
-
-			return ret;
-
-		}
-		
+ 
 
 		public   string  resolve_path_combine_path(string first, string second)
 		{
