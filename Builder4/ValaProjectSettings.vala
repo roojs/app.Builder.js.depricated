@@ -1603,6 +1603,7 @@ public class ValaProjectSettings : Object
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
                 this.el.set_value(citer, 1,   "dir"); // type         
                 this.el.set_value(citer, 2,   false ); // checked 
+                /*
                 var files = def.files(items.get(i));
                 
                  for(var j =0 ; j < files.size; j++) {
@@ -1613,7 +1614,7 @@ public class ValaProjectSettings : Object
                     this.el.set_value(citer, 2,   false ); // checked 
         
                 }
-            
+                */
                 
                 //this.el.set_value(citer, 1,   items.get(i) );
             }
