@@ -30,6 +30,7 @@ public class ValaProjectSettings : Object
     public Xcls_build_pack_target build_pack_target;
     public Xcls_build_compile_flags build_compile_flags;
     public Xcls_files_render files_render;
+    public Xcls_targets_render_use targets_render_use;
 
         // my vars (def)
     public Project.Gtk project;
@@ -1553,6 +1554,9 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_TreeViewColumn48( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
+            var child_2 = new Xcls_TreeViewColumn50( _this );
+            child_2.ref();
+            this.el.append_column (  child_2.el  );
         }
 
         // user defined functions 
@@ -1628,6 +1632,85 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_TreeViewColumn50 : Object 
+    {
+        public Gtk.TreeViewColumn el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_TreeViewColumn50(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "use";
+            this.el.resizable = false;
+            this.el.fixed_width = 50;
+            var child_0 = new Xcls_targets_render_use( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false );
+
+            // init method 
+
+            {
+             this.el.add_attribute(_this.packages_render_use.el , "active", 1 );
+             }        }
+
+        // user defined functions 
+    }
+    public class Xcls_targets_render_use : Object 
+    {
+        public Gtk.CellRendererToggle el;
+        private ValaProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_targets_render_use(ValaProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.targets_render_use = this;
+            this.el = new Gtk.CellRendererToggle();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.activatable = true;
+
+            // listeners 
+            this.el.toggled.connect( (  path_string) =>  { 
+                var m = _this.default_packages_tree_store.el;
+               Gtk.TreeIter iter;
+               Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);
+               m.get_iter (out iter, path);
+               GLib.Value val;
+               m.get_value(iter, 1, out val);
+               m.set_value(iter, 1,  ((bool) val) ? false :true); 
+                 GLib.Value fval;  
+               m.get_value(iter, 0, out fval);
+               var fn = (string)fval;
+                
+                var def = _this.project.compilegroups.get("_default_");
+                var items  = def.packages;
+                if ((bool)val) {
+                    // renive
+                    items.remove(fn);
+                } else {
+                    items.add(fn);
+                }
+                
+            });
         }
 
         // user defined functions 
