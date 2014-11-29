@@ -142,35 +142,35 @@ namespace Project {
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 				// scan the directory for files -- ending with vala || c
-				
- 
-				var dir = File.new_for_path(dirname);
-				if (!dir.query_exists()) {
-					return ret;
-				}
-		  
-		   
-				try {
-					var file_enum = dir.enumerate_children(
-		             			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
-						GLib.FileQueryInfoFlags.NONE, 
-						null
-					);
-		        
-		         
-					FileInfo next_file; 
-					while ((next_file = file_enum.next_file(null)) != null) {
-				     		var fn = next_file.get_display_name();
-						if (!Regex.match_simple("\\.vala$", fn)) {
-							continue;
-						}
-		    			ret.add(dirname + "/" + fn);
-					}       
-	   			} catch(Error e) {
-					print("oops - something went wrong scanning the projects\n");
-				}
+			
 
+			var dir = File.new_for_path(dirname);
+			if (!dir.query_exists()) {
+				return ret;
 			}
+	  
+	   
+			try {
+				var file_enum = dir.enumerate_children(
+	             			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					GLib.FileQueryInfoFlags.NONE, 
+					null
+				);
+	        
+	         
+				FileInfo next_file; 
+				while ((next_file = file_enum.next_file(null)) != null) {
+			     		var fn = next_file.get_display_name();
+					if (!Regex.match_simple("\\.vala$", fn)) {
+						continue;
+					}
+	    			ret.add(dirname + "/" + fn);
+				}       
+   			} catch(Error e) {
+				print("oops - something went wrong scanning the projects\n");
+			}
+
+			 
 			return ret;
 			
 
