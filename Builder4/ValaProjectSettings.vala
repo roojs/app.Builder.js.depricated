@@ -1601,16 +1601,16 @@ public class ValaProjectSettings : Object
                  this.el.append(out citer);   
                  
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
-                this.el.set_value(citer, 1,   "dir"); // title         
-                this.el.set_value(citer, 2,   false ); // title 
+                this.el.set_value(citer, 1,   "dir"); // type         
+                this.el.set_value(citer, 2,   false ); // checked 
                 var files = def.files(items.get(i));
                 
                  for(var j =0 ; j < files.size; j++) {
                     this.el.append(out citer);   
                  
                     this.el.set_value(citer, 0,   files.get(j) ); // title 
-                    this.el.set_value(citer, 1,   "file"); // title         
-                    this.el.set_value(citer, 2,   false ); // title 
+                    this.el.set_value(citer, 1,   "file"); // type         
+                    this.el.set_value(citer, 2,   false ); // checked 
         
                 }
             
