@@ -1592,7 +1592,7 @@ public class ValaProjectSettings : Object
           
             
              var def = _this.project.compilegroups.get("_default_");
-             var items  = def.sources;
+             var items  = def.sourceFiles();
              
          
             Gtk.TreeIter citer;
