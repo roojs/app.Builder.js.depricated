@@ -136,19 +136,17 @@ namespace Project {
 	
 	
 		}
-		public Gee.ArrayList<string> files()
+		public Gee.ArrayList<string> files(string in_path)
 		{
-			var ret = new Gee.ArrayList<string>();
-			var def = this.compilegroups.get("_default_").sources;
-			for(var i =0 ;i < def.size; i++) {
-				var dirname = this.resolve_path(
-	                        this.resolve_path_combine_path(this.firstPath(),def.get(i)));
+			var ret = new Gee.ArrayList<string>(); 
+			var dirname = this.resolve_path(
+	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 				// scan the directory for files -- ending with vala || c
 				
  
 				var dir = File.new_for_path(dirname);
 				if (!dir.query_exists()) {
-					continue;
+					return ret;
 				}
 		  
 		   
@@ -166,7 +164,7 @@ namespace Project {
 						if (!Regex.match_simple("\\.vala$", fn)) {
 							continue;
 						}
-		    				ret.add(dirname + "/" + fn);
+		    			ret.add(dirname + "/" + fn);
 					}       
 	   			} catch(Error e) {
 					print("oops - something went wrong scanning the projects\n");
