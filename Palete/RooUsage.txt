@@ -538,5 +538,6 @@ left:
     Roo.bootstrap.dash.TabPane
 right:
     Roo.bootstrap.Graph
+    Roo.bootstrap.Column
 
 
