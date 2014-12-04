@@ -542,3 +542,8 @@ right:
     Roo.bootstrap.Column
 
 
+left:
+    Roo.bootstrap.menu.Menu
+right:
+    Roo.bootstrap.menu.MenuItem
+    Roo.bootstrap.menu.MenuSeparator
