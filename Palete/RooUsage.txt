@@ -368,6 +368,7 @@ right:
     Roo.bootstrap.dash.NumberBox
     Roo.bootstrap.Graph
     Roo.bootstrap.dash.TabBox
+    Roo.bootstrap.menu.Menu
 
 left:
     Roo.bootstrap.Progress
