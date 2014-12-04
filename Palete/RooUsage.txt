@@ -437,11 +437,6 @@ left:
     Roo.bootstrap.Menu
 right:
     Roo.bootstrap.MenuItem
-
-left:
-    Roo.bootstrap.MenuItem
-right:
-    Roo.bootstrap.Button
     
 left:
     Roo.bootstrap.Navbar
