@@ -430,7 +430,6 @@ left:
     Roo.bootstrap.Button:menu
     Roo.bootstrap.NavItem:menu
     Roo.bootstrap.NavSidebarItem:menu
-    Roo.bootstrap.MenuItem
 right:
     Roo.bootstrap.Menu
 
