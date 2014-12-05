@@ -368,7 +368,7 @@ right:
     Roo.bootstrap.dash.NumberBox
     Roo.bootstrap.Graph
     Roo.bootstrap.dash.TabBox
-    Roo.bootstrap.dropdown.Menu
+    Roo.bootstrap.menu.Menu
 
 left:
     Roo.bootstrap.Progress
@@ -543,12 +543,12 @@ right:
 
 
 left:
-    Roo.bootstrap.dropdown.Menu
+    Roo.bootstrap.menu.Menu
 right:
-    Roo.bootstrap.dropdown.MenuItem
-    Roo.bootstrap.dropdown.MenuSeparator
+    Roo.bootstrap.menu.MenuItem
+    Roo.bootstrap.menu.MenuSeparator
 
 left:
-    Roo.bootstrap.dropdown.MenuItem
+    Roo.bootstrap.menu.MenuItem
 right:
-    Roo.bootstrap.dropdown.Menu
+    Roo.bootstrap.menu.Menu
