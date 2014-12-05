@@ -545,10 +545,10 @@ right:
 left:
     Roo.bootstrap.menu.Menu
 right:
-    Roo.bootstrap.menu.MenuItem
-    Roo.bootstrap.menu.MenuSeparator
+    Roo.bootstrap.menu.Item
+    Roo.bootstrap.menu.Separator
 
 left:
-    Roo.bootstrap.menu.MenuItem
+    Roo.bootstrap.menu.Item
 right:
     Roo.bootstrap.menu.Menu
