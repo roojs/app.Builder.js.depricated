@@ -2,9 +2,22 @@ dnl AC_PREREQ([2.65])
 
 
 AC_INIT([Builder4], [1], [alan@roojs.com])
-AM_INIT_AUTOMAKE([-Wall foreign])
+AC_CONFIG_MACRO_DIR([m4])
+AM_INIT_AUTOMAKE
+
 AC_CONFIG_FILES([
 	Makefile
 	src/Makefile
 ])
+LT_INIT
+AC_PROG_CC
+AM_PROG_VALAC
+
+pkg_modules="glib-2.0 >= 2.24.1
+             gobject-2.0 >= 2.24.1"
+PKG_CHECK_MODULES(BUILDER4, [$pkg_modules])
+AC_SUBST(BUILDER4_CFLAGS)
+AC_SUBST(BUILDER4_LIBS)
+
+
 AC_OUTPUT
