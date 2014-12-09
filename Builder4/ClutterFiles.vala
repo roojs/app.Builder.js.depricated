@@ -290,7 +290,17 @@ public class Xcls_ClutterFiles : Object
             // init method 
 
             {
-                var pixbuf = new Gdk.Pixbuf.from_file(file.getIconFileName(true));
+                Gdk.Pixbuf pixbuf;
+                var fname = file.getIconFileName(false);
+            
+                if (FileUtils.test(fname, FileTest.EXISTS)) {
+                    pixbuf = new Gdk.Pixbuf.from_file(fname);
+                } else {
+                    var     icon_theme = Gtk.IconTheme.get_default ();
+                   pixbuf = icon_theme.load_icon ("package-x-generic", 92, 0);
+            
+                }
+            
                 var img = new Clutter.Image();
                 img.set_data(pixbuf.get_pixels(),   
                                     pixbuf.has_alpha 
