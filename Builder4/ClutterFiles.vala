@@ -17,6 +17,7 @@ public class Xcls_ClutterFiles : Object
 
         // my vars (def)
     public Gee.ArrayList<Xcls_fileitem> fileitems;
+    public Gdk.Pixbuf missing_thumb_pixbuf;
     public signal void open (JsRender.JsRender file);
 
     // ctor 
@@ -26,6 +27,7 @@ public class Xcls_ClutterFiles : Object
         this.el = new Clutter.ScrollActor();
 
         // my vars (dec)
+        this.missing_thumb_pixbuf = null;
 
         // set gobject values
         this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
