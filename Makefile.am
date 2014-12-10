@@ -28,12 +28,6 @@ builder4_SOURCES = \
 		
 FLAGS= -g --vapidir=./vapi 
 
-INCLUDES = \
-	-include config.h \
-	$(SAMPALA_CFLAGS) \
-	-DLOCALEDIR=\""$(localedir)"\" \
-	-DPKGDATADIR=\""$(pkgdatadir)"\" \
-	-DPKGLIBDIR=\""$(pkglibdir)"\"
 
 VALAFLAGS = \
 	--vapidir=$(srcdir)/vapi -g \
