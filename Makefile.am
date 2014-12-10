@@ -2,7 +2,9 @@ bin_PROGRAMS = builder4
 
 builder4_SOURCES = \
 		JsRender/*.vala \
-		Project/*.vala \
+		Project/Gtk.vala \
+		Project/Project.vala \
+		Project/Roo.vala \
 		Palete/*.vala \
 		Builder4/Application.vala \
 		Builder4/About.vala \
@@ -24,7 +26,7 @@ builder4_SOURCES = \
 		Builder4/WindowAddProp.vala \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
-		Builder4/MainWindow.vala \
+		Builder4/MainWindow.vala 
 		
 FLAGS= -g --vapidir=./vapi 
 
