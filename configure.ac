@@ -2,7 +2,7 @@ dnl AC_PREREQ([2.65])
 
 
 AC_INIT([Builder4], [1], [alan@roojs.com])
-
+AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
 
 AC_CONFIG_FILES([
@@ -28,8 +28,7 @@ pkg_modules="glib-2.0 >= 2.24.1
  		 javascriptcore  
 		  vte-2.90  
 		 libvala
-		 posix 
-
+		 posix
 "
 PKG_CHECK_MODULES(BUILDER4, [$pkg_modules])
 AC_SUBST(BUILDER4_CFLAGS)
