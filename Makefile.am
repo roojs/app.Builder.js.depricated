@@ -1,7 +1,15 @@
 bin_PROGRAMS = builder4
 
 builder4_SOURCES = \
-		JsRender/*.vala \
+		JsRender/Gtk.vala \
+		JsRender/JsRender.vala \
+		JsRender/Lang.vala \
+		JsRender/NodeToGlade.vala \
+		JsRender/NodeToGtk.vala \
+		JsRender/NodeToJs.vala \
+		JsRender/NodeToVala.vala \
+		JsRender/Node.vala \
+		JsRender/Roo.vala \
 		Project/Gtk.vala \
 		Project/Project.vala \
 		Project/Roo.vala \
