@@ -26,6 +26,7 @@ builder4_SOURCES = \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala \
 		
+FLAGS= -g --vapidir=./vapi 
 
 INCLUDES = \
 	-include config.h \
@@ -35,17 +36,9 @@ INCLUDES = \
 	-DPKGLIBDIR=\""$(pkglibdir)"\"
 
 VALAFLAGS = \
-	--vapidir=$(srcdir)/../vapi --pkg config \
-	@SAMPALA_PACKAGES@
+	--vapidir=$(srcdir)/vapi -g \
+	@BUILDER4_PACKAGES@
 
-
-
-SUBDIRS = \
-	Builder4 \
-	JsRender \
-	Palate \
-	Project
-	
 
 EXTRA_DIST = autogen.sh
 
