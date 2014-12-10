@@ -5,7 +5,12 @@ builder4_SOURCES = \
 		Project/Gtk.vala \
 		Project/Project.vala \
 		Project/Roo.vala \
-		Palete/*.vala \
+		Palete/Gir.vala \
+		Palete/Gtk.vala \
+		Palete/Javascript.vala \
+		Palete/Palete.vala \
+		Palete/Roo.vala \
+		Palete/ValaSource.vala \
 		Builder4/Application.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
