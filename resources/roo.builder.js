@@ -35,7 +35,7 @@ Builder  = {
         
         
         traverseDOMTree : function(cb, currentElement, depth) {
-            if (!currentElement) {
+            if (!currentElement || !currentElement.className) {
                 
                 return;
             }
