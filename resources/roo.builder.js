@@ -35,12 +35,12 @@ Builder  = {
         
         
         traverseDOMTree : function(cb, currentElement, depth) {
-            if (!currentElement || !currentElement.className) {
+            if (!currentElement ) {
                 
                 return;
             }
             //console.log(currentElement);
-            if (currentElement.className.match(/roo-dynamic/)) {
+            if (currentElement.className && currentElement.className.match(/roo-dynamic/)) {
                 return;
             }
             
