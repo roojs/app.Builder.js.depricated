@@ -54,6 +54,9 @@ Builder  = {
                 return;
             
             }
+            if (nodeName.match(/^#/)) { // comments?
+                return;
+            }
              
             
             
