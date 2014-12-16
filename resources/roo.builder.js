@@ -62,7 +62,7 @@ Builder  = {
                 return;
             }
             if (nodeName != 'BODY') {
-                
+                Roo.log(currentElement);
                 if (currentElement.hasAttribute('flexy:include')) {
 
 
