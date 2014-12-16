@@ -63,7 +63,7 @@ Builder  = {
             }
             if (nodeName != 'BODY') {
                 
-                if (currentElement.hasAttribute('flexy:include')) {
+                if (currentElement && currentElement.hasAttribute('flexy:include')) {
 
 
                     cb( '<flexy:include src="'+currentElement.getAttribute('flexy:include')+'"></flexy:include>');
