@@ -342,6 +342,7 @@ right:
     Roo.bootstrap.Column
     Roo.bootstrap.Form
     Roo.bootstrap.Navbar
+    Roo.bootstrap.NavGroup
     Roo.bootstrap.NavSimplebar
     Roo.bootstrap.NavHeaderbar
     Roo.bootstrap.NavSidebar
