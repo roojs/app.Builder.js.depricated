@@ -450,6 +450,7 @@ right:
     Roo.bootstrap.Row
     Roo.bootstrap.Column
     Roo.bootstrap.Container
+    Roo.bootstrap.Button
 
 left:
     Roo.bootstrap.NavGroup
