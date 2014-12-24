@@ -1,13 +1,13 @@
 
  
 
-bin_PROGRAMS = builder4
+bin_PROGRAMS = builder
 
-builder4_VALAFLAGS = \
+builder_VALAFLAGS = \
 	-g --vapidir=./vapi --pkg posix  \
-	@BUILDER4_PACKAGES@
+	@BUILDER_PACKAGES@
 
-builder4_SOURCES = \
+builder_SOURCES = \
 		JsRender/Gtk.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
