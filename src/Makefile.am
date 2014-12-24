@@ -44,6 +44,6 @@ builder4_SOURCES = \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala 
 		
-builder4_VALAFLAGS= -g --vapidir=./vapi --pkg posix  \
+builder4_VALAFLAGS = -g --vapidir=./vapi --pkg posix  \
     @BUILDER4_PACKAGES@
 
