@@ -1,7 +1,7 @@
 
-AM_CFLAGS =\
-	 -Wall\
-	 -Wno-unused-but-set-variable\
+AM_CFLAGS = \
+	 -Wall \
+	 -Wno-unused-but-set-variable \
 	 -g
 
 bin_PROGRAMS = builder4
@@ -47,6 +47,6 @@ builder4_SOURCES = \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala 
 		
-builder4_VALAFLAGS= -g --vapidir=./vapi  \
+builder4_VALAFLAGS= -g --vapidir=./vapi --pkg posix  \
     @BUILDER4_PACKAGES@
 
