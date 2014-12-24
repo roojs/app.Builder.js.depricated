@@ -28,11 +28,13 @@ PKG_CHECK_MODULES(BUILDER4, [
 		 clutter-gtk-1.0 
 		 gladeui-2.0 
 		 libsoup-2.4 
- 		 javascriptcore  
-		  vte-2.90  
-		 libvala
+ 		 javascriptcoregtk-3.0  
+		 vte >= 0.28
+		 libvala => 0.24
 		 posix
 ])
+
+AM_INIT_AUTOMAKE([subdir-objects])
 
 AC_CONFIG_FILES([
     Makefile
