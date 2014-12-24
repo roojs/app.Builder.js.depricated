@@ -1,19 +1,22 @@
-dnl AC_PREREQ([2.65])
 
+dnl Process this file with autoconf to produce a configure script.
+AC_PREREQ([2.68])
 
-AC_INIT([Builder4], [1], [alan@roojs.com])
-AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE
+AC_INIT([builder4], [0.1.0])
 
-AC_CONFIG_FILES([
-	Makefile
-	src/Makefile
-])
-LT_INIT
+AC_CONFIG_HEADERS([config.h])
+
+AM_INIT_AUTOMAKE([1.11])
+AM_MAINTAINER_MODE([enable])
+
+AM_SILENT_RULES([yes])
+
 AC_PROG_CC
-AM_PROG_VALAC
 
-pkg_modules="glib-2.0 >= 2.24.1
+AM_PROG_VALAC([0.26.0])
+
+PKG_CHECK_MODULES(BUILDER4, [
+	glib-2.0 >= 2.24.1
              gobject-2.0 >= 2.24.1
 		 gtk+-3.0 
 		 gtksourceview-3.0 
@@ -29,10 +32,15 @@ pkg_modules="glib-2.0 >= 2.24.1
 		  vte-2.90  
 		 libvala
 		 posix
-"
-PKG_CHECK_MODULES(BUILDER4, [$pkg_modules])
-AC_SUBST(BUILDER4_CFLAGS)
-AC_SUBST(BUILDER4_LIBS)
+])
+
+AC_CONFIG_FILES([
+    Makefile
+    src/Makefile
+])
+
+  
+ 
 
 
 AC_OUTPUT
