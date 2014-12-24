@@ -51,4 +51,4 @@ builder_SOURCES = \
 
 
 VALAFLAGS = \
-	-g --pkg posix $(patsubst %,--pkg %, BUILDER_PACKAGES)
+	-g --pkg posix $(patsubst %,--pkg %, $(BUILDER_PACKAGES))
