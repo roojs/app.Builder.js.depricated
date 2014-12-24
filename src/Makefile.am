@@ -42,8 +42,9 @@ builder4_SOURCES = \
 		Builder4/WindowAddProp.vala \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
-		Builder4/MainWindow.vala 
-		
+		Builder4/MainWindow.vala
+
+
 builder4_VALAFLAGS = -g --vapidir=./vapi --pkg posix  \
     @BUILDER4_PACKAGES@
 
