@@ -3,8 +3,9 @@
 
 bin_PROGRAMS = builder4
 
-builder4_VALAFLAGS = -g --vapidir=./vapi --pkg posix  \
-    @BUILDER4_PACKAGES@
+builder4_VALAFLAGS = \
+	-g --vapidir=./vapi --pkg posix  \
+	@BUILDER4_PACKAGES@
 
 builder4_SOURCES = \
 		JsRender/Gtk.vala \
