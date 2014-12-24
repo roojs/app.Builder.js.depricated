@@ -110,8 +110,8 @@ else
             echo "Running autoheader..."
             autoheader
         fi
-        echo "Running automake --gnu $am_opt ..."
-        automake --add-missing --copy --gnu $am_opt
+        echo "Running automake  $am_opt ..."
+        automake --add-missing --copy  $am_opt
         echo "Running autoconf ..."
         autoconf
     )

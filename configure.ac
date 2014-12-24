@@ -6,7 +6,7 @@ AC_INIT([builder4], [0.1.0])
 
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([1.11])
+AM_INIT_AUTOMAKE([1.11 subdir-objects])
 AM_MAINTAINER_MODE([enable])
 
 AM_SILENT_RULES([yes])
@@ -34,8 +34,7 @@ PKG_CHECK_MODULES(BUILDER4, [
 		 
 ])
 
-AM_INIT_AUTOMAKE([subdir-objects])
-
+ 
 AC_CONFIG_FILES([
     Makefile
     src/Makefile
