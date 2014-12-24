@@ -114,9 +114,9 @@ else
         automake --add-missing --copy --gnu $am_opt
         echo "Running autoconf ..."
         autoconf
-      )
+    )
 fi
-done
+ 
 
 if test x$NOCONFIGURE = x; then
   echo Running $srcdir/configure "$@" ...
