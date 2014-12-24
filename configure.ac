@@ -30,8 +30,8 @@ PKG_CHECK_MODULES(BUILDER4, [
 		 libsoup-2.4 
  		 javascriptcoregtk-3.0  
 		 vte >= 0.28
-		 libvala => 0.24
-		 posix
+		 libvala-0.26
+		 
 ])
 
 AM_INIT_AUTOMAKE([subdir-objects])
