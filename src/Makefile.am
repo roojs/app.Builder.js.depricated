@@ -51,5 +51,4 @@ builder_SOURCES = \
 
 
 VALAFLAGS = \
-	-g --pkg posix  \
-	@BUILDER_PACKAGES@
+	-g --pkg posix 
