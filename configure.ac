@@ -15,26 +15,25 @@ AC_PROG_CC
 
 AM_PROG_VALAC([0.26.0])
 
+PKG_CHECK_MODULES(BUILDER, [
+	glib-2.0 >= 2.24.1
+             gobject-2.0 >= 2.24.1
+		 gtk+-3.0 
+		 gtksourceview-3.0 
+		 libxml-2.0 
+		 json-glib-1.0 
+		 gee-1.0 
+		 gobject-introspection-1.0 
+		 webkit2gtk-3.0 
+		 clutter-gtk-1.0 
+		 gladeui-2.0 
+		 libsoup-2.4 
+ 		 javascriptcoregtk-3.0  
+		 vte >= 0.28
+		 libvala-0.26
+		 
+])
 
-BUILDER_PACKAGES=" --pkg glib-2.0 >= 2.24.1
-          --pkg    gobject-2.0 >= 2.24.1
-		 --pkg gtk+-3.0 
-		 --pkg gtksourceview-3.0 
-		--pkg  libxml-2.0 
-		 --pkg json-glib-1.0 
-		--pkg  gee-1.0 
-		 --pkg gobject-introspection-1.0 
-		 --pkg webkit2gtk-3.0 
-		 --pkg clutter-gtk-1.0 
-		 --pkg gladeui-2.0 
-		 --pkg libsoup-2.4 
- 		 --pkg javascriptcoregtk-3.0  
-		 --pkg vte >= 0.28
-		--pkg  libvala-0.26 "
-
-PKG_CHECK_MODULES(BUILDER, [ BUILDER_PACKAGES ])
-
-AC_SUBST(BUILDER_PACKAGES)
  
 AC_CONFIG_FILES([
     Makefile
