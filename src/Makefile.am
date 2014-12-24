@@ -1,8 +1,5 @@
 
-AM_CFLAGS = \
-	 -Wall \
-	 -Wno-unused-but-set-variable \
-	 -g
+ 
 
 bin_PROGRAMS = builder4
 
