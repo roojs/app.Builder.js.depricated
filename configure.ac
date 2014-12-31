@@ -13,11 +13,13 @@ AM_SILENT_RULES([yes])
 
 AC_PROG_CC
 
-AM_PROG_VALAC([0.26.0])
+AM_PROG_VALAC([0.22.0])
+
+dnl we need to check these exist, then it will generate a compile string for them.
 
 PKG_CHECK_MODULES(BUILDER, [
-	glib-2.0 >= 2.24.1
-             gobject-2.0 >= 2.24.1
+		 glib-2.0 >= 2.24.1
+         gobject-2.0 >= 2.24.1
 		 gtk+-3.0 
 		 gtksourceview-3.0 
 		 libxml-2.0 
@@ -27,13 +29,28 @@ PKG_CHECK_MODULES(BUILDER, [
 		 webkit2gtk-3.0 
 		 clutter-gtk-1.0 
 		 gladeui-2.0 
-		 libsoup-2.4 
+		 libsoup-2.4
  		 javascriptcoregtk-3.0  
-		 vte >= 0.28
-		 libvala-0.26
 		 
+		 vte-2.90 
 ])
 
+dnl --- libvala
+PKG_CHECK_MODULES(LIBVALA_0_28_X, libvala-0.28 > 0.26.0, have_libvala_0_28_x="yes", have_libvala_0_28_x="no")
+AM_CONDITIONAL(HAVE_LIBVALA_0_28_X, test "$have_libvala_0_28_x" = "yes")
+
+PKG_CHECK_MODULES(LIBVALA_0_26_X, libvala-0.26 > 0.25.2, have_libvala_0_26_x="yes", have_libvala_0_26_x="no")
+AM_CONDITIONAL(HAVE_LIBVALA_0_26_X, test "$have_libvala_0_26_x" = "yes")
+
+PKG_CHECK_MODULES(LIBVALA_0_24_X, libvala-0.24 > 0.23.1, have_libvala_0_24_x="yes", have_libvala_0_24_x="no")
+AM_CONDITIONAL(HAVE_LIBVALA_0_24_X, test "$have_libvala_0_24_x" = "yes")
+
+PKG_CHECK_MODULES(LIBVALA_0_22_X, libvala-0.22 >= 0.17.4, have_libvala_0_22_x="yes", have_libvala_0_22_x="no")
+AM_CONDITIONAL(HAVE_LIBVALA_0_22_X, test "$have_libvala_0_22_x" = "yes")
+
+
+dnl --- vte -- fixme..
+ 
  
 AC_CONFIG_FILES([
     Makefile
@@ -41,7 +58,8 @@ AC_CONFIG_FILES([
 ])
 
   
- 
+AC_SUBST(BUILDER_CFLAGS)
+AC_SUBST(BUILDER_LIBS)
 
 
 AC_OUTPUT
