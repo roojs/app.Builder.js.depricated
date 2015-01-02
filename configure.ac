@@ -34,7 +34,9 @@ PKG_CHECK_MODULES(BUILDER, [
 		  
 ])
 
-dnl --- libvala
+dnl --- libvala -- needs to find matching really..
+
+
 PKG_CHECK_MODULES(LIBVALA_0_28_X, libvala-0.28 > 0.26.0, have_libvala_0_28_x="yes", have_libvala_0_28_x="no")
 AM_CONDITIONAL(HAVE_LIBVALA_0_28_X, test "$have_libvala_0_28_x" = "yes")
 
@@ -49,12 +51,6 @@ AM_CONDITIONAL(HAVE_LIBVALA_0_22_X, test "$have_libvala_0_22_x" = "yes")
 
 
 dnl --- vte -- fixme..
-dnl PKG_CHECK_MODULES(VTE_290, vte-2.90, have_vte_290_x="yes", have_vte_290_x="no")
-dnl AM_CONDITIONAL(HAVE_VTE_290, test "$have_vte_290_x" = "yes")
-
-dnl PKG_CHECK_MODULES(VTE_291, vte-2.91, have_vte_291_x="yes", have_vte_291_x="no")
-dnl AM_CONDITIONAL(HAVE_VTE_291, test "$have_vte_291_x" = "yes")
-
  
 
 PKG_CHECK_MODULES(HAVE_VTE, [vte-2.91],
