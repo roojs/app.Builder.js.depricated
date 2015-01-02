@@ -49,11 +49,19 @@ AM_CONDITIONAL(HAVE_LIBVALA_0_22_X, test "$have_libvala_0_22_x" = "yes")
 
 
 dnl --- vte -- fixme..
-PKG_CHECK_MODULES(VTE_290, vte-2.90, have_vte_290_x="yes", have_vte_290_x="no")
-AM_CONDITIONAL(HAVE_VTE_290, test "$have_vte_290_x" = "yes")
+dnl PKG_CHECK_MODULES(VTE_290, vte-2.90, have_vte_290_x="yes", have_vte_290_x="no")
+dnl AM_CONDITIONAL(HAVE_VTE_290, test "$have_vte_290_x" = "yes")
 
-PKG_CHECK_MODULES(VTE_291, vte-2.91, have_vte_291_x="yes", have_vte_291_x="no")
-AM_CONDITIONAL(HAVE_VTE_291, test "$have_vte_291_x" = "yes")
+dnl PKG_CHECK_MODULES(VTE_291, vte-2.91, have_vte_291_x="yes", have_vte_291_x="no")
+dnl AM_CONDITIONAL(HAVE_VTE_291, test "$have_vte_291_x" = "yes")
+
+PKG_CHECK_MODULES(VTE_290, vte-2.90,
+    AC_SUBST(HAVE_VTE_290, 1),
+    PKG_CHECK_MODULES(VTE_291, vte-2.91,
+        AC_SUBST(HAVE_VTE_291, 1)
+    )
+)
+ 
 
 
  
