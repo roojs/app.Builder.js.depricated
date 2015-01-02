@@ -55,14 +55,19 @@ dnl AM_CONDITIONAL(HAVE_VTE_290, test "$have_vte_290_x" = "yes")
 dnl PKG_CHECK_MODULES(VTE_291, vte-2.91, have_vte_291_x="yes", have_vte_291_x="no")
 dnl AM_CONDITIONAL(HAVE_VTE_291, test "$have_vte_291_x" = "yes")
 
-PKG_CHECK_MODULES(VTE_290, vte-2.90,
-    AC_SUBST(HAVE_VTE_290, 1),
-    PKG_CHECK_MODULES(VTE_291, vte-2.91,
-        AC_SUBST(HAVE_VTE_291, 1)
-    )
-)
  
 
+PKG_CHECK_MODULES(HAVE_VTE, [vte-2.91],
+                [vte_2_91_enabled=yes],
+                [vte_2_91_enabled=no])
+                
+if test $vte_2_91_enabled = yes; then
+        AC_DEFINE(HAVE_VTE_2_91,1,[libvte 2.91 support])
+else
+        PKG_CHECK_MODULES(HAVE_VTE, [vte-2.90],
+                [vte_2_90_enabled=yes])
+        AC_DEFINE(HAVE_VTE_2_90,1,[libvte 2.90 support])
+fi
 
  
 AC_CONFIG_FILES([
