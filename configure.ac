@@ -31,8 +31,7 @@ PKG_CHECK_MODULES(BUILDER, [
 		 gladeui-2.0 
 		 libsoup-2.4
  		 javascriptcoregtk-3.0  
-		 
-		 vte-2.90 
+		  
 ])
 
 dnl --- libvala
@@ -50,7 +49,13 @@ AM_CONDITIONAL(HAVE_LIBVALA_0_22_X, test "$have_libvala_0_22_x" = "yes")
 
 
 dnl --- vte -- fixme..
- 
+PKG_CHECK_MODULES(VTE_290, vte-2.90, have_vte_290_x="yes", have_vte_290_x="no")
+AM_CONDITIONAL(HAVE_VTE_290, test "$have_vte_290_x" = "yes")
+
+PKG_CHECK_MODULES(VTE_291, vte-2.91, have_vte_291_x="yes", have_vte_291_x="no")
+AM_CONDITIONAL(HAVE_VTE_291, test "$have_vte_291_x" = "yes")
+
+
  
 AC_CONFIG_FILES([
     Makefile
