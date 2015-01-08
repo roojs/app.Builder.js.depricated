@@ -31,11 +31,12 @@ PKG_CHECK_MODULES(BUILDER, [
 		 gladeui-2.0 
 		 libsoup-2.4
  		 javascriptcoregtk-3.0  
-		 
-		 vte-2.90 
+		  
 ])
 
-dnl --- libvala
+dnl --- libvala -- needs to find matching really..
+
+
 PKG_CHECK_MODULES(LIBVALA_0_28_X, libvala-0.28 > 0.26.0, have_libvala_0_28_x="yes", have_libvala_0_28_x="no")
 AM_CONDITIONAL(HAVE_LIBVALA_0_28_X, test "$have_libvala_0_28_x" = "yes")
 
@@ -51,6 +52,19 @@ AM_CONDITIONAL(HAVE_LIBVALA_0_22_X, test "$have_libvala_0_22_x" = "yes")
 
 dnl --- vte -- fixme..
  
+
+PKG_CHECK_MODULES(HAVE_VTE, [vte-2.91],
+                [vte_2_91_enabled=yes],
+                [vte_2_91_enabled=no])
+                
+if test $vte_2_91_enabled = yes; then
+        AC_DEFINE(HAVE_VTE_2_91,1,[libvte 2.91 support])
+else
+        PKG_CHECK_MODULES(HAVE_VTE, [vte-2.90],
+                [vte_2_90_enabled=yes])
+        AC_DEFINE(HAVE_VTE_2_90,1,[libvte 2.90 support])
+fi
+
  
 AC_CONFIG_FILES([
     Makefile
