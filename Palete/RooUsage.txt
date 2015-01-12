@@ -364,7 +364,6 @@ right:
     Roo.bootstrap.CheckBox
     Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox
-    Roo.bootstrap.ComboBox2
     Roo.bootstrap.Element
     Roo.bootstrap.HtmlEditor
     Roo.bootstrap.MessageBar
