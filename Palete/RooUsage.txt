@@ -363,6 +363,7 @@ right:
     Roo.bootstrap.CheckBox
     Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox
+    Roo.bootstrap.ComboBox2
     Roo.bootstrap.Element
     Roo.bootstrap.HtmlEditor
     Roo.bootstrap.MessageBar
@@ -468,6 +469,7 @@ right:
     Roo.bootstrap.TextArea
     Roo.bootstrap.Button
     Roo.bootstrap.ComboBox
+    Roo.bootstrap.ComboBox2
     Roo.bootstrap.Container
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
