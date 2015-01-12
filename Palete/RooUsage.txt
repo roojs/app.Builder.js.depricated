@@ -283,8 +283,7 @@ left:
   Roo.form.ComboBox:store
   Roo.View:store
   Roo.JsonView:store
-  Roo.bootstrap.ComboBox:store
-  Roo.bootstrap.ComboBox2:stroe
+  Roo.bootstrap.ComboBox:stroe
   Roo.bootstrap.Calendar:store
   Roo.bootstrap.Table:store
 right: 
@@ -469,7 +468,6 @@ right:
     Roo.bootstrap.TextArea
     Roo.bootstrap.Button
     Roo.bootstrap.ComboBox
-    Roo.bootstrap.ComboBox2
     Roo.bootstrap.Container
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
