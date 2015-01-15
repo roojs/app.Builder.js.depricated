@@ -390,7 +390,7 @@ public class Xcls_WindowLeftTree : Object
                 var target_path = path.to_string();            
                 print ("Drag  %s onto %s--%d\n ", selection_text, target_path, pos);
                 
-            
+                // pos : 3 = ontop - 0 = after, 1 = before
                 //print("target_path="+target_path);
             
                 // 
