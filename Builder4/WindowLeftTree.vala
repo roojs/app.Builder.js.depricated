@@ -997,7 +997,7 @@ public class Xcls_WindowLeftTree : Object
                         return null;
                     }
                     path = path.substring(0, path.last_index_of(":") -1);
-                    print("DROP  before or after : using %d\n",path);
+                    print("DROP  before or after : using %s\n",path);
                     continue;
                 }
             
