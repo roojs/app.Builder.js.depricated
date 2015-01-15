@@ -387,7 +387,7 @@ public class Xcls_WindowLeftTree : Object
                                    
                         
                         // see if we are dragging into ourself?
-                print ("got selection text of  " + selection_text);
+                print ("got selection text of  %s:%d\n ", selection_text, pos);
                 
                 var target_path = path.to_string();
                 //print("target_path="+target_path);
