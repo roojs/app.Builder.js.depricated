@@ -997,6 +997,7 @@ public class Xcls_WindowLeftTree : Object
                         return null;
                     }
                     path = path.substring(0, path.last_index_of(":"));
+                    last = treepath_str;
                     print("DROP  before or after : using %s\n",path);
                     continue;
                 }
@@ -1031,15 +1032,16 @@ public class Xcls_WindowLeftTree : Object
                 if (match.length > 0) {
                     if (last.length > 0) { // pref is after/before..
                         // then it's after last
-                        if (pref > 1) {
-                            return "";
-                        }
+                        //if (pref > 1) {
+                        //    return "";
+                        //}
                         return last + "|%d".printf((int)pref) + "|" + prop;
         
                         
                     }
                     return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
                 }
+                /*
                 last = "" + path;
                 var par = path.split(":");
                 string [] ppar = {};
@@ -1048,7 +1050,8 @@ public class Xcls_WindowLeftTree : Object
                 }
                 
                 path = string.joinv(":", ppar);
-        
+                */
+                break;
         
             }
             
