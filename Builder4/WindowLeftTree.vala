@@ -973,6 +973,8 @@ public class Xcls_WindowLeftTree : Object
         
             var path = treepath_str; // dupe it..
             
+            
+            // pref : 3 = ontop - 0 = after, 1 = before
             int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
             
             var last = "";
@@ -989,6 +991,16 @@ public class Xcls_WindowLeftTree : Object
             
             
             while (path.length > 0) {
+            
+                if (path.length == treepath_str.length && pref != Gtk.TreeViewDropPosition.INTO_OR_AFTER) {
+                    if (path.last_index_of(":") < 0 ) {
+                        return null;
+                    }
+                    path = path.substring(0, path.last_index_of(":") -1);
+                    print("DROP  before or after : using %d\n",path);
+                    continue;
+                }
+            
                 //print("LOOKING FOR PATH: " + path);
                 var node_data = this.pathToNode(path);
                 
