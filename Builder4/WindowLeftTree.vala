@@ -994,7 +994,7 @@ public class Xcls_WindowLeftTree : Object
             
                 if (path.length == treepath_str.length && pref != Gtk.TreeViewDropPosition.INTO_OR_AFTER) {
                     if (path.last_index_of(":") < 0 ) {
-                        return null;
+                        return "";
                     }
                     path = path.substring(0, path.last_index_of(":"));
                     last = treepath_str;
@@ -1007,7 +1007,7 @@ public class Xcls_WindowLeftTree : Object
                 
                 if (node_data == null) {
                     print("node not found");
-                    return null;
+                    return "";
                 }
                 
                 var xname = node_data.fqn();
