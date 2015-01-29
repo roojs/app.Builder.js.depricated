@@ -331,7 +331,7 @@ Builder  = {
             //Roo.log("add flexy:if");
             tree.el.attr('flexy:include', tree['flexy:include']);
         }
-        Roo.log("Add xtype")
+        //Roo.log("Add xtype")
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
         if (!tree.items || !tree.items.length) { return; }
         
