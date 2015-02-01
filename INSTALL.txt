@@ -8,14 +8,11 @@ apt-cache search '^libvala-[0-9.]+-dev$' | sort -n -r | head -n1 | awk ' { print
 apt-cache search '^libvte-[0-9.]+-dev$' | sort -n -r | head -n1 | awk ' { print "sudo apt-get install -y " $1  }' | sh
 
 
-libgtk-3-dev 
-No package 'gtk+-3.0' found
-No package 'gtksourceview-3.0' found
-No package 'libxml-2.0' found
-No package 'json-glib-1.0' found
-No package 'gee-1.0' found
-No package 'gobject-introspection-1.0' found
-No package 'webkit2gtk-3.0' found
+sudo  apt-get install libgtk-3-dev  libgtksourceview-3.0-dev libxml2-dev libjson-glib-dev libgee-dev  libgirepository1.0-dev
+# not sure why we are not using 4 yet?
+
+sudo apt-get install libwebkit2gtk-3.0-dev
+
 No package 'clutter-gtk-1.0' found
 No package 'gladeui-2.0' found
 No package 'libsoup-2.4' found
