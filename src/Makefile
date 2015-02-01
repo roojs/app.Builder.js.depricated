@@ -85,7 +85,7 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	JsRender/Roo.c Project/Gtk.c Project/Project.c Project/Roo.c \
 	Palete/Gir.c Palete/Gtk.c Palete/Javascript.c Palete/Palete.c \
 	Palete/Roo.c Palete/ValaSource.c Builder4/Application.c \
-	Builder4/About.c Builder4/DialogConfirm.c \
+	Builder4/Main.c Builder4/About.c Builder4/DialogConfirm.c \
 	Builder4/DialogNewComponent.c Builder4/StandardErrorDialog.c \
 	Builder4/DialogSaveTemplate.c Builder4/DialogSaveModule.c \
 	Builder4/DialogTemplateSelect.c Builder4/EditProject.c \
@@ -95,7 +95,8 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	Builder4/ClutterFiles.c Builder4/WindowLeftProjects.c \
 	Builder4/WindowAddProp.c Builder4/GtkView.c \
 	Builder4/ValaProjectSettings.c Builder4/MainWindow.c \
-	$(top_srcdir)/depcomp $(srcdir)/builder_vala.stamp
+	$(top_srcdir)/depcomp $(srcdir)/--pkg \
+	$(srcdir)/builder_vala.stamp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -117,7 +118,8 @@ am_builder_OBJECTS = JsRender/Gtk.$(OBJEXT) \
 	Palete/Gtk.$(OBJEXT) Palete/Javascript.$(OBJEXT) \
 	Palete/Palete.$(OBJEXT) Palete/Roo.$(OBJEXT) \
 	Palete/ValaSource.$(OBJEXT) Builder4/Application.$(OBJEXT) \
-	Builder4/About.$(OBJEXT) Builder4/DialogConfirm.$(OBJEXT) \
+	Builder4/Main.$(OBJEXT) Builder4/About.$(OBJEXT) \
+	Builder4/DialogConfirm.$(OBJEXT) \
 	Builder4/DialogNewComponent.$(OBJEXT) \
 	Builder4/StandardErrorDialog.$(OBJEXT) \
 	Builder4/DialogSaveTemplate.$(OBJEXT) \
@@ -135,7 +137,12 @@ am_builder_OBJECTS = JsRender/Gtk.$(OBJEXT) \
 	Builder4/ValaProjectSettings.$(OBJEXT) \
 	Builder4/MainWindow.$(OBJEXT)
 builder_OBJECTS = $(am_builder_OBJECTS)
-builder_LDADD = $(LDADD)
+am__DEPENDENCIES_1 =
+##am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+#am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+#am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1)
+builder_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -196,12 +203,12 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/alan/gitlive/app.Builder.js/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/alan/app.Builder.js/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AUTOCONF = ${SHELL} /home/alan/gitlive/app.Builder.js/missing autoconf
-AUTOHEADER = ${SHELL} /home/alan/gitlive/app.Builder.js/missing autoheader
-AUTOMAKE = ${SHELL} /home/alan/gitlive/app.Builder.js/missing automake-1.14
+AUTOCONF = ${SHELL} /home/alan/app.Builder.js/missing autoconf
+AUTOHEADER = ${SHELL} /home/alan/app.Builder.js/missing autoheader
+AUTOMAKE = ${SHELL} /home/alan/app.Builder.js/missing automake-1.14
 AWK = gawk
 BUILDER_CFLAGS = -pthread -I/usr/include/gtksourceview-3.0 -I/usr/include/gee-1.0 -I/usr/include/gobject-introspection-1.0 -I/usr/include/webkitgtk-3.0 -I/usr/include/clutter-gtk-1.0 -I/usr/include/clutter-1.0 -I/usr/include/cogl -I/usr/include/libdrm -I/usr/include/json-glib-1.0 -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/libsoup-2.4 -I/usr/include/libxml2 -I/usr/include/webkitgtk-3.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/libgladeui-2.0 
 BUILDER_LIBS = -lgtksourceview-3.0 -lgee -lgirepository-1.0 -lwebkit2gtk-3.0 -lclutter-gtk-1.0 -lclutter-1.0 -lcogl-path -lcogl-pango -lcogl -lgmodule-2.0 -pthread -lwayland-egl -lgbm -ldrm -lEGL -lXrandr -ljson-glib-1.0 -lwayland-cursor -lwayland-client -lxkbcommon -lwayland-server -lX11 -lXext -lXdamage -lXfixes -lXcomposite -lXi -lgladeui-2 -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lxml2 -lsoup-2.4 -lgio-2.0 -lgobject-2.0 -ljavascriptcoregtk-3.0 -lglib-2.0 
@@ -228,15 +235,15 @@ LIBOBJS =
 LIBS = 
 LIBVALA_0_22_X_CFLAGS = 
 LIBVALA_0_22_X_LIBS = 
-LIBVALA_0_24_X_CFLAGS = -I/usr/include/vala-0.24 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
-LIBVALA_0_24_X_LIBS = -lvala-0.24 -lgobject-2.0 -lglib-2.0 
+LIBVALA_0_24_X_CFLAGS = 
+LIBVALA_0_24_X_LIBS = 
 LIBVALA_0_26_X_CFLAGS = -I/usr/include/vala-0.26 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 LIBVALA_0_26_X_LIBS = -lvala-0.26 -lgobject-2.0 -lglib-2.0 
 LIBVALA_0_28_X_CFLAGS = 
 LIBVALA_0_28_X_LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} /home/alan/gitlive/app.Builder.js/missing makeinfo
+MAKEINFO = ${SHELL} /home/alan/app.Builder.js/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = builder
@@ -255,10 +262,10 @@ SHELL = /bin/bash
 STRIP = 
 VALAC = /usr/bin/valac
 VERSION = 4.0.0
-abs_builddir = /home/alan/gitlive/app.Builder.js/src
-abs_srcdir = /home/alan/gitlive/app.Builder.js/src
-abs_top_builddir = /home/alan/gitlive/app.Builder.js
-abs_top_srcdir = /home/alan/gitlive/app.Builder.js
+abs_builddir = /home/alan/app.Builder.js/src
+abs_srcdir = /home/alan/app.Builder.js/src
+abs_top_builddir = /home/alan/app.Builder.js
+abs_top_srcdir = /home/alan/app.Builder.js
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -277,7 +284,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/alan/gitlive/app.Builder.js/install-sh
+install_sh = ${SHELL} /home/alan/app.Builder.js/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -297,6 +304,36 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
+#builder_LIBVALA = --pkg libvala-0.22
+#builder_LIBVALA = --pkg libvala-0.24
+builder_LIBVALA = --pkg libvala-0.26
+#builder_LIBVALA = --pkg libvala-0.28
+#AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBVALA_0_22_X_CFLAGS)
+#AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBVALA_0_24_X_CFLAGS)
+AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBVALA_0_26_X_CFLAGS)
+#AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBVALA_0_28_X_CFLAGS)
+#LIBVALA_LIBS = $(LIBVALA_0_22_X_LIBS)
+#LIBVALA_LIBS = $(LIBVALA_0_24_X_LIBS)
+LIBVALA_LIBS = $(LIBVALA_0_26_X_LIBS)
+#LIBVALA_LIBS = $(LIBVALA_0_28_X_LIBS)
+builder_PKGS = \
+		--pkg glib-2.0  \
+        --pkg gobject-2.0  \
+		--pkg  gtk+-3.0 \
+		--pkg  gtksourceview-3.0 \
+		--pkg  libxml-2.0 \
+		--pkg json-glib-1.0 \
+		--pkg gee-1.0 \
+		--pkg gobject-introspection-1.0 \
+		--pkg webkit2gtk-3.0 \
+		--pkg clutter-gtk-1.0 \
+		--pkg gladeui-2.0 \
+		--pkg libsoup-2.4 \
+ 		--pkg javascriptcore \
+		$(builder_LIBVALA) \
+		--pkg vte-2.90 \
+		--pkg posix
+
 builder_SOURCES = \
 		JsRender/Gtk.vala \
 		JsRender/JsRender.vala \
@@ -317,6 +354,7 @@ builder_SOURCES = \
 		Palete/Roo.vala \
 		Palete/ValaSource.vala \
 		Builder4/Application.vala \
+		Builder4/Main.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/DialogNewComponent.vala \
@@ -336,11 +374,13 @@ builder_SOURCES = \
 		Builder4/WindowAddProp.vala \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
-		Builder4/MainWindow.vala
+		Builder4/MainWindow.vala 
 
-VALAFLAGS = \
-	-g --pkg posix $(patsubst %,--pkg %, $(BUILDER_PACKAGES))
+builder_VALAFLAGS = \
+	--vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
 
+builder_LDADD = $(BUILDER_LIBS) $(LIBVALA_LIBS) 
+CLEANFILES = *.h *.c *.vapi *.stamp
 all: all-am
 
 .SUFFIXES:
@@ -479,6 +519,8 @@ Builder4/$(DEPDIR)/$(am__dirstamp):
 	@: > Builder4/$(DEPDIR)/$(am__dirstamp)
 Builder4/Application.$(OBJEXT): Builder4/$(am__dirstamp) \
 	Builder4/$(DEPDIR)/$(am__dirstamp)
+Builder4/Main.$(OBJEXT): Builder4/$(am__dirstamp) \
+	Builder4/$(DEPDIR)/$(am__dirstamp)
 Builder4/About.$(OBJEXT): Builder4/$(am__dirstamp) \
 	Builder4/$(DEPDIR)/$(am__dirstamp)
 Builder4/DialogConfirm.$(OBJEXT): Builder4/$(am__dirstamp) \
@@ -545,6 +587,7 @@ include Builder4/$(DEPDIR)/DialogTemplateSelect.Po
 include Builder4/$(DEPDIR)/EditProject.Po
 include Builder4/$(DEPDIR)/Editor.Po
 include Builder4/$(DEPDIR)/GtkView.Po
+include Builder4/$(DEPDIR)/Main.Po
 include Builder4/$(DEPDIR)/MainWindow.Po
 include Builder4/$(DEPDIR)/ProjectSettings.Po
 include Builder4/$(DEPDIR)/StandardErrorDialog.Po
@@ -684,6 +727,11 @@ $(srcdir)/Builder4/Application.c: $(srcdir)/builder_vala.stamp
 	@if test -f $@; then :; else \
 	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/builder_vala.stamp; \
 	fi
+$(srcdir)/Builder4/Main.c: $(srcdir)/builder_vala.stamp
+	@if test -f $@; then :; else rm -f $(srcdir)/builder_vala.stamp; fi
+	@if test -f $@; then :; else \
+	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/builder_vala.stamp; \
+	fi
 $(srcdir)/Builder4/About.c: $(srcdir)/builder_vala.stamp
 	@if test -f $@; then :; else rm -f $(srcdir)/builder_vala.stamp; fi
 	@if test -f $@; then :; else \
@@ -784,9 +832,14 @@ $(srcdir)/Builder4/MainWindow.c: $(srcdir)/builder_vala.stamp
 	@if test -f $@; then :; else \
 	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/builder_vala.stamp; \
 	fi
-$(srcdir)/builder_vala.stamp: JsRender/Gtk.vala JsRender/JsRender.vala JsRender/Lang.vala JsRender/NodeToGlade.vala JsRender/NodeToGtk.vala JsRender/NodeToJs.vala JsRender/NodeToVala.vala JsRender/Node.vala JsRender/Roo.vala Project/Gtk.vala Project/Project.vala Project/Roo.vala Palete/Gir.vala Palete/Gtk.vala Palete/Javascript.vala Palete/Palete.vala Palete/Roo.vala Palete/ValaSource.vala Builder4/Application.vala Builder4/About.vala Builder4/DialogConfirm.vala Builder4/DialogNewComponent.vala Builder4/StandardErrorDialog.vala Builder4/DialogSaveTemplate.vala Builder4/DialogSaveModule.vala Builder4/DialogTemplateSelect.vala Builder4/EditProject.vala Builder4/Editor.vala Builder4/ProjectSettings.vala Builder4/WindowRightPalete.vala Builder4/WindowLeftTree.vala Builder4/WindowRooView.vala Builder4/WindowLeftProps.vala Builder4/ClutterFiles.vala Builder4/WindowLeftProjects.vala Builder4/WindowAddProp.vala Builder4/GtkView.vala Builder4/ValaProjectSettings.vala Builder4/MainWindow.vala
+$(srcdir)/--pkg: $(srcdir)/builder_vala.stamp
+	@if test -f $@; then :; else rm -f $(srcdir)/builder_vala.stamp; fi
+	@if test -f $@; then :; else \
+	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/builder_vala.stamp; \
+	fi
+$(srcdir)/builder_vala.stamp: JsRender/Gtk.vala JsRender/JsRender.vala JsRender/Lang.vala JsRender/NodeToGlade.vala JsRender/NodeToGtk.vala JsRender/NodeToJs.vala JsRender/NodeToVala.vala JsRender/Node.vala JsRender/Roo.vala Project/Gtk.vala Project/Project.vala Project/Roo.vala Palete/Gir.vala Palete/Gtk.vala Palete/Javascript.vala Palete/Palete.vala Palete/Roo.vala Palete/ValaSource.vala Builder4/Application.vala Builder4/Main.vala Builder4/About.vala Builder4/DialogConfirm.vala Builder4/DialogNewComponent.vala Builder4/StandardErrorDialog.vala Builder4/DialogSaveTemplate.vala Builder4/DialogSaveModule.vala Builder4/DialogTemplateSelect.vala Builder4/EditProject.vala Builder4/Editor.vala Builder4/ProjectSettings.vala Builder4/WindowRightPalete.vala Builder4/WindowLeftTree.vala Builder4/WindowRooView.vala Builder4/WindowLeftProps.vala Builder4/ClutterFiles.vala Builder4/WindowLeftProjects.vala Builder4/WindowAddProp.vala Builder4/GtkView.vala Builder4/ValaProjectSettings.vala Builder4/MainWindow.vala
 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
-	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(AM_VALAFLAGS) $(VALAFLAGS) -C JsRender/Gtk.vala JsRender/JsRender.vala JsRender/Lang.vala JsRender/NodeToGlade.vala JsRender/NodeToGtk.vala JsRender/NodeToJs.vala JsRender/NodeToVala.vala JsRender/Node.vala JsRender/Roo.vala Project/Gtk.vala Project/Project.vala Project/Roo.vala Palete/Gir.vala Palete/Gtk.vala Palete/Javascript.vala Palete/Palete.vala Palete/Roo.vala Palete/ValaSource.vala Builder4/Application.vala Builder4/About.vala Builder4/DialogConfirm.vala Builder4/DialogNewComponent.vala Builder4/StandardErrorDialog.vala Builder4/DialogSaveTemplate.vala Builder4/DialogSaveModule.vala Builder4/DialogTemplateSelect.vala Builder4/EditProject.vala Builder4/Editor.vala Builder4/ProjectSettings.vala Builder4/WindowRightPalete.vala Builder4/WindowLeftTree.vala Builder4/WindowRooView.vala Builder4/WindowLeftProps.vala Builder4/ClutterFiles.vala Builder4/WindowLeftProjects.vala Builder4/WindowAddProp.vala Builder4/GtkView.vala Builder4/ValaProjectSettings.vala Builder4/MainWindow.vala
+	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(builder_VALAFLAGS) $(VALAFLAGS) -C JsRender/Gtk.vala JsRender/JsRender.vala JsRender/Lang.vala JsRender/NodeToGlade.vala JsRender/NodeToGtk.vala JsRender/NodeToJs.vala JsRender/NodeToVala.vala JsRender/Node.vala JsRender/Roo.vala Project/Gtk.vala Project/Project.vala Project/Roo.vala Palete/Gir.vala Palete/Gtk.vala Palete/Javascript.vala Palete/Palete.vala Palete/Roo.vala Palete/ValaSource.vala Builder4/Application.vala Builder4/Main.vala Builder4/About.vala Builder4/DialogConfirm.vala Builder4/DialogNewComponent.vala Builder4/StandardErrorDialog.vala Builder4/DialogSaveTemplate.vala Builder4/DialogSaveModule.vala Builder4/DialogTemplateSelect.vala Builder4/EditProject.vala Builder4/Editor.vala Builder4/ProjectSettings.vala Builder4/WindowRightPalete.vala Builder4/WindowLeftTree.vala Builder4/WindowRooView.vala Builder4/WindowLeftProps.vala Builder4/ClutterFiles.vala Builder4/WindowLeftProjects.vala Builder4/WindowAddProp.vala Builder4/GtkView.vala Builder4/ValaProjectSettings.vala Builder4/MainWindow.vala
 	$(AM_V_at)mv -f $@-t $@
 
 ID: $(am__tagged_files)
@@ -900,6 +953,7 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
@@ -916,6 +970,7 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+	-rm -f $(srcdir)/--pkg
 	-rm -f $(srcdir)/Builder4/About.c
 	-rm -f $(srcdir)/Builder4/Application.c
 	-rm -f $(srcdir)/Builder4/ClutterFiles.c
@@ -927,6 +982,7 @@ maintainer-clean-generic:
 	-rm -f $(srcdir)/Builder4/EditProject.c
 	-rm -f $(srcdir)/Builder4/Editor.c
 	-rm -f $(srcdir)/Builder4/GtkView.c
+	-rm -f $(srcdir)/Builder4/Main.c
 	-rm -f $(srcdir)/Builder4/MainWindow.c
 	-rm -f $(srcdir)/Builder4/ProjectSettings.c
 	-rm -f $(srcdir)/Builder4/StandardErrorDialog.c
@@ -967,6 +1023,7 @@ maintainer-clean-generic:
 	-rm -f Builder4/EditProject.c
 	-rm -f Builder4/Editor.c
 	-rm -f Builder4/GtkView.c
+	-rm -f Builder4/Main.c
 	-rm -f Builder4/MainWindow.c
 	-rm -f Builder4/ProjectSettings.c
 	-rm -f Builder4/StandardErrorDialog.c

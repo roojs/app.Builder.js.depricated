@@ -1,0 +1,105 @@
+{
+    "name" : "GtkView",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/GtkView.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
+        {
+            "id" : "GtkView",
+            "# Gtk.Widget lastObj" : "null",
+            "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n     \n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
+            "| void loadFile" : "(JsRender.JsRender file) \n{\n    \n        this.el.set_position((int)(this.el.max_position * 0.7));\n        this.file = null;\n        \n        if (file.tree == null) {\n            return;\n        }\n        this.file = file;\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n        \n        this.container.el.add(obj);\n        obj.show_all();\n}\n ",
+            "xtype" : "VPaned",
+            "# JsRender.JsRender file" : "null",
+            "$ xns" : "Gtk",
+            "items" : [
+                {
+                    "* pack" : "pack1,true,true",
+                    "xtype" : "Viewport",
+                    "$ xns" : "Gtk",
+                    "items" : [
+                        {
+                            "id" : "container",
+                            "* pack" : "add",
+                            "xtype" : "HBox",
+                            "$ xns" : "Gtk"
+                        }
+                    ]
+                },
+                {
+                    "* pack" : "pack2,true,true",
+                    "xtype" : "VBox",
+                    "gboolean homogeneous" : false,
+                    "$ xns" : "Gtk",
+                    "items" : [
+                        {
+                            "* pack" : "pack_start,false,false,0",
+                            "xtype" : "HBox",
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "* pack" : "pack_start,true,true,0",
+                                    "xtype" : "Button",
+                                    "$ xns" : "Gtk",
+                                    "utf8 label" : "Full Compile"
+                                }
+                            ]
+                        },
+                        {
+                            "* pack" : "pack_start,true,true,0",
+                            "xtype" : "HBox",
+                            "gboolean homogeneous" : true,
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "* pack" : "add",
+                                    "xtype" : "TreeView",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "gint n_columns" : 1,
+                                            "columns" : "  typeof(string)",
+                                            "* pack" : "set_model",
+                                            "xtype" : "ListStore",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "utf8 title" : "Compile output",
+                                            "xtype" : "TreeViewColumn",
+                                            "string id" : "column",
+                                            "$ xns" : "Gtk",
+                                            "items" : [
+                                                {
+                                                    "* pack" : "pack_start,false",
+                                                    "xtype" : "CellRendererText",
+                                                    "$ xns" : "Gtk"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "* pack" : "pack_start,true,true,0",
+                                    "xtype" : "ScrolledWindow",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "gboolean show_line_marks" : true,
+                                            "* pack" : "add",
+                                            "xtype" : "View",
+                                            "$ xns" : "GtkSource",
+                                            "gboolean show_line_numbers" : true,
+                                            "gboolean editable" : false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
