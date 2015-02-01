@@ -1,0 +1,74 @@
+{
+    "name" : "DialogTemplateSelect",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
+        {
+            "listeners" : {
+                "delete_event" : "  (self, event)  =>{\n    this.el.hide();\n    return true;\n}"
+            },
+            "default_width" : 400,
+            "title" : "Add an Object",
+            "xtype" : "Dialog",
+            "default_height" : 200,
+            "$ modal" : true,
+            "$ xns" : "Gtk",
+            "| JsRender.Node? show" : " (Gtk.Window pwindow, Palete.Palete pal, JsRender.Node node) {\n    \n    this.el.show_all();\n    var opts = pal.listTemplates(node);\n    if (opts.length() < 1) {\n        this.el.hide();\n        return node;\n    }\n    this.el.set_attached_to( pwindow);\n     this.el.set_transient_for( pwindow);\n    \n    //opts.unshift({ path: '' , name :'Just add Element' });\n     _this.model.loadData(opts);\n     _this.combo.el.set_active(0);\n     \n   \n    this.el.run();\n    this.el.hide();    \n    //var ix = _this.combo.el.get_active();\n    //if (ix < 1 ) {\n    //    return node;\n   // }\n   Gtk.TreeIter iter;\n    _this.combo.el.get_active_iter (out iter);\n    Value vfname;\n    this.model.el.get_value (iter, 0, out vfname);\n    \n    if (((string)vfname).length < 1) {\n        return node;\n    }\n    return pal.loadTemplate((string)vfname);\n\n}\n",
+            "items" : [
+                {
+                    "xtype" : "VBox",
+                    "$ pack" : "get_content_area().add ",
+                    "$ xns" : "Gtk",
+                    "items" : [
+                        {
+                            "* pack" : "pack_start,false,false,0",
+                            "xtype" : "HBox",
+                            "$ xns" : "Gtk",
+                            "items" : [
+                                {
+                                    "label" : "Select Template : ",
+                                    "xtype" : "Label",
+                                    "* pack" : "pack_start,false,false",
+                                    "$ xns" : "Gtk"
+                                },
+                                {
+                                    "id" : "combo",
+                                    "* init" : "this.el.add_attribute(_this.cellrenderer.el , \"markup\", 1 );",
+                                    "xtype" : "ComboBox",
+                                    "* pack" : "add",
+                                    "$ xns" : "Gtk",
+                                    "items" : [
+                                        {
+                                            "id" : "cellrenderer",
+                                            "xtype" : "CellRendererText",
+                                            "* pack" : "pack_start,true",
+                                            "$ xns" : "Gtk"
+                                        },
+                                        {
+                                            "id" : "model",
+                                            "* pack" : "set_model",
+                                            "xtype" : "ListStore",
+                                            "$ columns" : "typeof(string),typeof(string)",
+                                            "n_columns" : 2,
+                                            "$ xns" : "Gtk",
+                                            "| void loadData" : "  (GLib.List<string> data) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n    el.append(out iter);\n    \n     \n    el.set_value(iter, 0, \"\");\n    el.set_value(iter, 1, \"Just add Element\");\n    \n    for (var i = 0; i < data.length();i++) {\n    \n\n        el.append(out iter);\n        var str = data.nth_data(i);\n        var fn = Path.get_basename (str);\n        fn.replace(\".json\", \"\");\n        \n        el.set_value(iter, 0, str);\n        el.set_value(iter, 1, fn);\n        \n    }\n    this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label" : "OK",
+                    "xtype" : "Button",
+                    "* pack" : "add_action_widget,0",
+                    "$ xns" : "Gtk"
+                }
+            ]
+        }
+    ]
+}

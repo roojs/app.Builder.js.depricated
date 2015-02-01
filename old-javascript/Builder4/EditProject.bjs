@@ -1,0 +1,97 @@
+{
+    "id": "file-gtk-8",
+    "name": "EditProject",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.bjs",
+    "items": [
+        {
+            "listeners": {
+                "destroy_event": " (self, event) => {\n  this.el.response(0);\n//     this.el.hide();\n    return false;\n}"
+            },
+            "border_width": 3,
+            "default_height": 500,
+            "default_width": 600,
+            "name": "EditProject",
+            "title": "Project Properties",
+            "xtype": "Dialog",
+            "|Project.Project?:show": "() {\n      \n\n    //[ 'xtype'  ].forEach(function(k) {\n    //    _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);\n    //});\n\t// shouild set path..\n    _this.model.loadData();\n    this.el.show_all();\n    \n    var err_dialog = StandardErrorDialog.singleton();\n\n    var id = -1;\n    while (id < 0) {\n         id =  this.el.run();\n         if (id < 1) {\n                this.el.hide();\n                return null;\n        }\n\n         \n          if (_this.xtype.getValue().length < 1) {\n               \n                err_dialog.show(_this.el,\"You have to set Project type\");             \n                id = -1;\n                continue;\n            }\n            if (_this.dir.el.get_filename().length < 1) {\n \n                err_dialog.show(_this.el,\"You have to select a folder\");             \n                id = -1;\n                continue;\n            }\n           \n    }\n    \n    this.el.hide();\n    \n    \n    \n \n    var fn = _this.dir.el.get_filename();\n    print(\"add %s\\n\" , fn);\n    \n    var project = Project.Project.factory(_this.xtype.getValue(), fn);\n    project.save();\n    Project.projects.set(project.name,project);\n    \n    //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);\n    \n    return project;\n\n    \n    //this.success = c.success;\n}\n",
+            "|deletable": "true",
+            "|modal": "true",
+            "|xns": "Gtk",
+            "items": [
+                {
+                    "|homogeneous": "false",
+                    "xtype": "VBox",
+                    "|pack": " get_content_area().add \n \n",
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "|homogeneous": "false",
+                            "pack": "pack_start,false,true,3",
+                            "xtype": "HBox",
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "|xns": "Gtk",
+                                    "xtype": "Label",
+                                    "pack": "pack_start,false,true,3",
+                                    "label": "Project type :"
+                                },
+                                {
+                                    "id": "xtype",
+                                    "pack": "pack_end,true,true,3",
+                                    "xtype": "ComboBox",
+                                    "|init": " this.el.add_attribute(_this.cellrender.el , \"markup\", 1 );  \n \n",
+                                    "|setValue": " (v)    {\n        var el = this.el;\n        el.set_active(-1);\n        \n        for (var i =0;i < this.data.length; i++ ) {\n            if (v == this.data.nth_datA(i)) {\n                el.set_active(ix);\n                return false;\n            }\n        }\n    }",
+                                    "|string:getValue": " () {\n     var ix = this.el.get_active();\n        if (ix < 0 ) {\n            return \"\";\n        }\n        switch(ix) {\n            case 0:\n                return \"Roo\";\n            case 1:\n                return \"Gtk\";\n        }\n        return \"\";\n}\n",
+                                    "|xns": "Gtk",
+                                    "items": [
+                                        {
+                                            "id": "cellrender",
+                                            "pack": "pack_start,true",
+                                            "xtype": "CellRendererText",
+                                            "|xns": "Gtk"
+                                        },
+                                        {
+                                            "|columns": "typeof(string),typeof(string)",
+                                            "id": "model",
+                                            "n_columns": 2,
+                                            "pack": "set_model",
+                                            "xtype": "ListStore",
+                                            "|void:loadData": "  ( ) {\n        this.el.clear();\n                      \n        Gtk.TreeIter iter;\n                \n        el.append(out iter);\n        \n        el.set_value(iter, 0, \"Roo\");\n        el.set_value(iter, 1, \"Roo Project\");\n         el.append(out iter);\n        \n        el.set_value(iter, 0, \"Gtk\");\n        el.set_value(iter, 1, \"Gtk Project\");\n         \n              \n                                     \n}\n",
+                                            "|xns": "Gtk"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "|create_folders": "false",
+                            "id": "dir",
+                            "pack": "pack_end,true,true,5",
+                            "xtype": "FileChooserWidget",
+                            "|action": "Gtk.FileChooserAction.SELECT_FOLDER",
+                            "|select_multiple": "false",
+                            "|xns": "Gtk"
+                        }
+                    ]
+                },
+                {
+                    "label": "OK",
+                    "pack": "add_action_widget,1",
+                    "xtype": "Button",
+                    "|xns": "Gtk"
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "Button",
+                    "pack": "add_action_widget,0",
+                    "label": "Cancel"
+                }
+            ]
+        }
+    ],
+    "permname": "",
+    "modOrder": ""
+}

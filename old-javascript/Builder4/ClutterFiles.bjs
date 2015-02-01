@@ -1,0 +1,112 @@
+{
+    "name" : "ClutterFiles",
+    "parent" : "",
+    "title" : "",
+    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
+    "permname" : "",
+    "modOrder" : "",
+    "items" : [
+        {
+            "listeners" : {
+                "scroll_event" : "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n          \n}"
+            },
+            "# Gee.ArrayList<Xcls_fileitem> fileitems" : "",
+            "id" : "ClutterFiles",
+            "|  void clearFiles" : "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n",
+            "scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
+            "* init" : "this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n",
+            "xtype" : "ScrollActor",
+            "$ reactive" : true,
+            "|  void loadProject" : "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show_all();\n}\n",
+            "# Gdk.Pixbuf missing_thumb_pixbuf" : "null",
+            "@ void open" : "(JsRender.JsRender file)",
+            "$ xns" : "Clutter",
+            "|  void set_size" : "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
+            "items" : [
+                {
+                    "id" : "filelayout",
+                    "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
+                    "xtype" : "Actor",
+                    "* pack" : "add_child",
+                    "$ reactive" : true,
+                    "$ xns" : "Clutter",
+                    "items" : [
+                        {
+                            "id" : "filelayout_manager",
+                            "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
+                            "xtype" : "FlowLayout",
+                            "$ xns" : "Clutter",
+                            "row_spacing" : 20,
+                            "* prop" : "layout_manager",
+                            "column_spacing" : 20,
+                            "$ homogeneous" : true
+                        },
+                        {
+                            "listeners" : {
+                                "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n}",
+                                "enter_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+                                "leave_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}"
+                            },
+                            "id" : "*fileitem",
+                            "* args" : "JsRender.JsRender file",
+                            "* init" : "this.file = file;\nthis.el.set_size(100,100);",
+                            "* pack" : true,
+                            "xtype" : "Actor",
+                            "# JsRender.JsRender file" : "",
+                            "$ reactive" : true,
+                            "$ xns" : "Clutter",
+                            "items" : [
+                                {
+                                    "$ orientation" : "Clutter.Orientation.VERTICAL",
+                                    "spacing" : 4,
+                                    "xtype" : "BoxLayout",
+                                    "$ xns" : "Clutter",
+                                    "* prop" : "layout_manager"
+                                },
+                                {
+                                    "$ margin_right" : 5,
+                                    "$ margin_top" : 5,
+                                    "id" : "+image",
+                                    "* args" : "JsRender.JsRender file",
+                                    "* init" : "{\n    Gdk.Pixbuf pixbuf;\n    var fname = file.getIconFileName(false);\n\n    if (FileUtils.test(fname, FileTest.EXISTS)) {\n        pixbuf = new Gdk.Pixbuf.from_file(fname);\n    } else {\n        if (_this.missing_thumb_pixbuf == null) {\n                var     icon_theme = Gtk.IconTheme.get_default ();\n                _this.missing_thumb_pixbuf = icon_theme.load_icon (\"package-x-generic\", 92, 0);\n                _this.missing_thumb_pixbuf.ref();\n            }\n            pixbuf = _this.missing_thumb_pixbuf;\n\n    }\n\n    var img = new Clutter.Image();\n    img.set_data(pixbuf.get_pixels(),   \n                        pixbuf.has_alpha \n                          ? Cogl.PixelFormat.RGBA_8888\n                          : Cogl.PixelFormat.RGB_888,\n                        pixbuf.get_width (),\n            pixbuf.get_height (),\n                        pixbuf.get_rowstride ()\n    );\n    this.el.set_content(img);\n     // should probably do smarter scaling...\n    \n    \n    this.el.set_size(90, 70);\n}\n",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Actor",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ margin_left" : 5,
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
+                                },
+                                {
+                                    "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
+                                    "id" : "+typetitle",
+                                    "* args" : "JsRender.JsRender file",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Text",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
+                                },
+                                {
+                                    "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
+                                    "id" : "+title",
+                                    "* args" : "JsRender.JsRender file",
+                                    "$ x_expand" : true,
+                                    "* pack" : "add_child",
+                                    "xtype" : "Text",
+                                    "$ y_align" : "Clutter.ActorAlign.START",
+                                    "$ xns" : "Clutter",
+                                    "$ y_expand" : true,
+                                    "$ x_align" : "Clutter.ActorAlign.START"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

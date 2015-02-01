@@ -1,0 +1,89 @@
+{
+    "id": "file-gtk-10",
+    "name": "Editor",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
+    "items": [
+        {
+            "listeners": {
+                "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}",
+                "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n\n    return false;\n}",
+                "show": "function (self) {\n    if (this.pos) {\n        this.el.set_uposition(this.pos.root_x,this.pos.root_y);\n    }\n}"
+            },
+            "height_request": 300,
+            "id": "EditorWindow",
+            "title": "Application Builder - Editor",
+            "width_request": 500,
+            "xtype": "Window",
+            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
+            "|xns": "Gtk",
+            "items": [
+                {
+                    "pack": "add",
+                    "xtype": "VBox",
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "pack": "pack_start,false,true",
+                            "xtype": "Toolbar",
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "listeners": {
+                                        "clicked": "function (self) {\n\n  this.get('/Editor.RightEditor').save();\n}"
+                                    },
+                                    "id": "save_button",
+                                    "label": "Save",
+                                    "xtype": "Button",
+                                    "|xns": "Gtk"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "RightEditor",
+                            "pack": "add",
+                            "xtype": "ScrolledWindow",
+                            "|save": "function() {\n    // make sure we have an active path..\n     if (!this.get('/Editor').activePath) {\n        return true;\n     }\n     \n     var str = this.get('/Editor.buffer').toString();\n     if (!this.get('/Editor.buffer').checkSyntax()) {\n         this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n     return true;\n}\n",
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "listeners": {
+                                        "key_release_event": "function (self, event) {\n    \n    if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        this.save();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n}"
+                                    },
+                                    "id": "view",
+                                    "indent_width": 4,
+                                    "pack": "add",
+                                    "xtype": "View",
+                                    "|auto_indent": true,
+                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n     var description = Pango.Font.description_from_string(\"monospace\")\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n",
+                                    "|insert_spaces_instead_of_tabs": true,
+                                    "|load": "function(str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = GtkSource.LanguageManager.get_default();\n    \n    this.el.get_buffer().set_language(lm.get_language('js'));\n    var buf = this.el.get_buffer();\n    var cursor = buf.get_mark(\"insert\");\n    var iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    this.get('/Editor').dirty = false;\n    this.el.grab_focus();\n     this.get('/Editor.save_button').el.sensitive = false;\n}",
+                                    "|save": "function() {\n    \n    return this.get('/Editor.RightEditor').save();\n}\n",
+                                    "|show_line_numbers": true,
+                                    "|xns": "GtkSource",
+                                    "items": [
+                                        {
+                                            "listeners": {
+                                                "changed": "function (self) {\n\n    if(this.checkSyntax()) {\n        this.get('/Editor.save_button').el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    this.get('/Editor').dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return false;\n}"
+                                            },
+                                            "id": "buffer",
+                                            "pack": "set_buffer",
+                                            "xtype": "Buffer",
+                                            "|checkSyntax": "function() {\n    var str = this.toString();\n    var res = '';\n    try {\n      //  print('var res = ' + str);\n        Seed.check_syntax('var res = ' + str);\n        \n       \n    } catch (e) {\n        \n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        print(\"SYNTAX ERROR IN EDITOR\");   \n        print(e);\n        // print(str);\n        //console.dump(e);\n        return false;\n    }\n     this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n        red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n       }));\n    \n    return true;\n}\n",
+                                            "|toString": "function() {\n    \n    var s = new Gtk.TextIter();\n    var e = new Gtk.TextIter();\n    this.el.get_start_iter(s);\n    this.el.get_end_iter(e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n",
+                                            "|xns": "GtkSource"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permname": "",
+    "modOrder": ""
+}
