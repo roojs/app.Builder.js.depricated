@@ -76,8 +76,8 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public string dragData;
-        public string[] dropList;
         public int drag_x;
+        public string[] dropList;
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
@@ -172,6 +172,50 @@ public class Xcls_WindowLeftTree : Object
                  //   print("click:" + res.path.to_string());
                   return true;
             });
+            this.el.drag_begin.connect( ( ctx)  => {
+            	//print('SOURCE: drag-begin');
+                    
+                    
+                    //this.targetData = "";
+                    
+                    // find what is selected in our tree...
+                    
+                    var s = _this.view.el.get_selection();
+                    if (s.count_selected_rows() < 1) {
+                        return;
+                    }
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+            
+                    
+            
+                    // set some properties of the tree for use by the dropped element.
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    var tp = mod.get_path(iter).to_string();
+                    var data = (JsRender.Node)(value.dup_object());
+                    var xname = data.fqn();
+                    print ("XNAME  IS " + xname+ "\n");
+                    this.dragData = tp;
+                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+                    
+            
+                    // make the drag icon a picture of the node that was selected
+                
+                    
+                // by default returns the path..
+                   var path = _this.model.el.get_path(iter);
+            
+                     
+                    var pix = this.el.create_row_drag_icon ( path);
+                    
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
+                    
+                    return;
+            });
             this.el.cursor_changed.connect( ( ) => {
             
             
@@ -230,50 +274,6 @@ public class Xcls_WindowLeftTree : Object
                 return  ;
                             
             });
-            this.el.drag_begin.connect( ( ctx)  => {
-            	//print('SOURCE: drag-begin');
-                    
-                    
-                    //this.targetData = "";
-                    
-                    // find what is selected in our tree...
-                    
-                    var s = _this.view.el.get_selection();
-                    if (s.count_selected_rows() < 1) {
-                        return;
-                    }
-                    Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
-                    s.get_selected(out mod, out iter);
-            
-                    
-            
-                    // set some properties of the tree for use by the dropped element.
-                    GLib.Value value;
-                    _this.model.el.get_value(iter, 2, out value);
-                    var tp = mod.get_path(iter).to_string();
-                    var data = (JsRender.Node)(value.dup_object());
-                    var xname = data.fqn();
-                    print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = tp;
-                    this.dropList = _this.model.file.palete().getDropList(xname);
-                    
-                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-                    
-            
-                    // make the drag icon a picture of the node that was selected
-                
-                    
-                // by default returns the path..
-                   var path = _this.model.el.get_path(iter);
-            
-                     
-                    var pix = this.el.create_row_drag_icon ( path);
-                    
-                    Gtk.drag_set_icon_surface (ctx, pix) ;
-                    
-                    return;
-            });
             this.el.drag_end.connect( (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
                     this.dragData = "";
@@ -308,7 +308,7 @@ public class Xcls_WindowLeftTree : Object
               }    
             
             
-              //print("button mask?: %d\n", this.el.get_modifier_mask());
+              print("action: %d\n", ctx.get_actions());
              //print("GETTING POS");
                 var  targetData = "";
             
@@ -387,9 +387,10 @@ public class Xcls_WindowLeftTree : Object
                                    
                         
                         // see if we are dragging into ourself?
-                print ("got selection text of  " + selection_text);
+                var target_path = path.to_string();            
+                print ("Drag  %s onto %s--%d\n ", selection_text, target_path, pos);
                 
-                var target_path = path.to_string();
+                // pos : 3 = ontop - 0 = after, 1 = before
                 //print("target_path="+target_path);
             
                 // 
@@ -553,27 +554,17 @@ public class Xcls_WindowLeftTree : Object
                     // dropList --- need to gather this ... 
                     print("get dropList for : %s\n",dropNodeType);            
                     var dropList = _this.model.file.palete().getDropList(dropNodeType);
-
-
-
-		    
+                    
                     print("dropList: %s\n", string.joinv(" , ", dropList));
-
-		    int dx,dy;
-		    Gdk.ModifierType  dmask;
-
-		    ctx.get_dest_window().get_device_position(ctx.get_device(), out dx, out dy, out dmask);
-
-		    
-                    print("button mask?: %d\n", dmask);
-                    // if drag action is shift ... then we can drop it anywahere...
-                     if ((dmask & Gdk.ModifierType.SHIFT_MASK) > 0) {
-                              targetData = "%s|%d|".printf( path.to_string(), pos); 
-                      } else {
+                    
+                    // if drag action is link ... then we can drop it anywahere...
+                     if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
+                             targetData = path.to_string() + "|%d".printf((int)pos);
+                     } else {
                     
                     
                         targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
-                  }
+                    }
                     
                     
                         
@@ -982,6 +973,8 @@ public class Xcls_WindowLeftTree : Object
         
             var path = treepath_str; // dupe it..
             
+            
+            // pref : 3 = ontop - 0 = after, 1 = before
             int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
             
             var last = "";
@@ -998,12 +991,23 @@ public class Xcls_WindowLeftTree : Object
             
             
             while (path.length > 0) {
+            
+                if (path.length == treepath_str.length && pref != Gtk.TreeViewDropPosition.INTO_OR_AFTER) {
+                    if (path.last_index_of(":") < 0 ) {
+                        return "";
+                    }
+                    path = path.substring(0, path.last_index_of(":"));
+                    last = treepath_str;
+                    print("DROP  before or after : using %s\n",path);
+                    continue;
+                }
+            
                 //print("LOOKING FOR PATH: " + path);
                 var node_data = this.pathToNode(path);
                 
                 if (node_data == null) {
                     print("node not found");
-                    return null;
+                    return "";
                 }
                 
                 var xname = node_data.fqn();
@@ -1028,15 +1032,16 @@ public class Xcls_WindowLeftTree : Object
                 if (match.length > 0) {
                     if (last.length > 0) { // pref is after/before..
                         // then it's after last
-                        if (pref > 1) {
-                            return "";
-                        }
+                        //if (pref > 1) {
+                        //    return "";
+                        //}
                         return last + "|%d".printf((int)pref) + "|" + prop;
         
                         
                     }
-                    return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
+                    return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER);// + "|" + prop;
                 }
+                /*
                 last = "" + path;
                 var par = path.split(":");
                 string [] ppar = {};
@@ -1045,7 +1050,8 @@ public class Xcls_WindowLeftTree : Object
                 }
                 
                 path = string.joinv(":", ppar);
-        
+                */
+                break;
         
             }
             
