@@ -1,6 +1,0 @@
-[submodule "roojs1"]
-	path = roojs1
-	url = http://public.akbkhome.com/roojs1
-[submodule "gir-1.1"]
-	path = gir-1.1
-	url = git://github.com/roojs/gir-1.1.git 
