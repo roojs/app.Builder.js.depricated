@@ -106,8 +106,7 @@ namespace Builder4
 		
 			return dirname;
 		}
-	
-
+	 
 		public void initResources(bool force = false)
 		{
 			// files to fetch from resources.
@@ -115,21 +114,14 @@ namespace Builder4
 				"bootstrap.builder.html",
 				"roo.builder.html",
 				"roo.builder.js",
-				"Gir.overides"
+				"Gir.overides",
+				"RooUsage.txt",
+				"GtkUsage.txt"
 			};
 			for (var i = 0; i < res.length; i++ ) { 
 				this.fetchResource(res[i], force);
 			}
-			this.fetchResourceFrom (
-	                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=Palete/RooUsage.txt",
-	                        "RooUsage.txt",
-                		force
-                        );
-			this.fetchResourceFrom (
-	                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=Palete/GtkUsage.txt",
-	                        "GtkUsage.txt",
-                		force
-                        );
+			
 			this.fetchResourceFrom (
 	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
 	                        "roodata.json",
