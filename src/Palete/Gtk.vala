@@ -41,7 +41,7 @@ namespace Palete {
 	      
 		public override void  load () {
 
-			this.loadUsageFile(Builder4.Application.configDirectory() + "/resources/GtkUsage.txt");
+			this.loadUsageFile(BuilderApplication.configDirectory() + "/resources/GtkUsage.txt");
 	 
 		     
 		}

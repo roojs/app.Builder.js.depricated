@@ -1,8 +1,5 @@
 
-
-namespace Builder4
-{
-
+ 
 	public class AppSettings : Object
 	{
 
@@ -19,7 +16,7 @@ namespace Builder4
 		public static AppSettings factory()
 		{
 			 
-			var setting_file = Application.configDirectory() + "/builder.settings";
+			var setting_file = BuilderApplication.configDirectory() + "/builder.settings";
 			
 			if (!FileUtils.test(setting_file, FileTest.EXISTS)) {
 				 return new AppSettings();
@@ -41,9 +38,9 @@ namespace Builder4
 	}
 	
 	
-	public static Application application = null;
+	public static BuilderApplication application = null;
 	
-	public class Application : Gtk.Application
+	public class BuilderApplication : Gtk.Application
 	{
 		enum Target {
 		    INT32,
@@ -62,7 +59,7 @@ namespace Builder4
 		public AppSettings settings = null;
 
 	
-		public Application ()
+		public BuilderApplication ()
 		{
 			Object(
 			       application_id: "org.roojs.app-builder",
@@ -79,10 +76,10 @@ namespace Builder4
 
 
 		
-		public static Application  singleton()
+		public static BuilderApplication  singleton()
 		{
 			if (application==null) {
-				application = new Application();
+				application = new BuilderApplication();
  
 			
 			}
@@ -173,7 +170,4 @@ namespace Builder4
 	
 	
 
-
-		
-	
-}
+ 

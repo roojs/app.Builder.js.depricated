@@ -860,7 +860,7 @@ namespace Palete {
 			}
 		
 			var pa = new Json.Parser();
-	    		pa.load_from_file(Builder4.Application.configDirectory() + "/resources/Gir.overides");
+	    		pa.load_from_file(BuilderApplication.configDirectory() + "/resources/Gir.overides");
 	    		var node = pa.get_root();
 		    
 	    		if (node.get_node_type () != Json.NodeType.OBJECT) {

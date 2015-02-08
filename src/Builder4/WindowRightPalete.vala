@@ -159,7 +159,7 @@ public class Xcls_RightPalete : Object
                 Gtk.drag_source_set (
                         this.el,            /* widget will be drag-able */
                         Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                        Builder4.Application.targetList,            /* lists of target to support */
+                        BuilderApplication.targetList,            /* lists of target to support */
                         Gdk.DragAction.COPY         /* what to do with data after dropped */
                 );
                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);

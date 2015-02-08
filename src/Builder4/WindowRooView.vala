@@ -39,6 +39,11 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
+    }
     public void createThumb () {
         
         
@@ -109,11 +114,6 @@ public class Xcls_WindowRooView : Object
     
         
          
-    }
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -490,7 +490,7 @@ public class Xcls_WindowRooView : Object
             string builderhtml;
             
             
-            GLib.FileUtils.get_contents(Builder4.Application.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+            GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
         
             runhtml += builderhtml + "\n";
             runhtml += "</script>\n" ;
@@ -503,7 +503,7 @@ public class Xcls_WindowRooView : Object
             var base_template = _this.file.project.base_template;
             
             if (base_template.length > 0 && !FileUtils.test(
-                Builder4.Application.configDirectory() + "/resources/" +  base_template, FileTest.EXISTS)  
+                BuilderApplication.configDirectory() + "/resources/" +  base_template, FileTest.EXISTS)  
                 ) {
                    print("invalid base_template name - using default:  %s\n", base_template);
                    base_template = "";
@@ -511,7 +511,7 @@ public class Xcls_WindowRooView : Object
             }
             
             GLib.FileUtils.get_contents(
-                Builder4.Application.configDirectory() + "/resources/" + 
+                BuilderApplication.configDirectory() + "/resources/" + 
                     (base_template.length > 0 ? base_template :  "roo.builder.html")
                     , out inhtml);
             
