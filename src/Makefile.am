@@ -54,7 +54,7 @@ builder_SOURCES = \
 		JsRender/Lang.vala \
 		JsRender/NodeToGlade.vala \
 		JsRender/NodeToGtk.vala \
-		21JsRender/NodeToJs.vala \
+		JsRender/NodeToJs.vala \
 		JsRender/NodeToVala.vala \
 		JsRender/Node.vala \
 		JsRender/Roo.vala \
