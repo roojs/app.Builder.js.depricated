@@ -67,8 +67,6 @@ builder_SOURCES = \
 		Palete/Palete.vala \
 		Palete/Roo.vala \
 		Palete/ValaSource.vala \
-		Builder4/Application.vala \
-		Builder4/Main.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/DialogNewComponent.vala \
