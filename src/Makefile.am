@@ -47,12 +47,14 @@ builder_PKGS = \
 
 
 builder_SOURCES = \
+		Application.vala \
+		Main.vala \
 		JsRender/Gtk.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
 		JsRender/NodeToGlade.vala \
 		JsRender/NodeToGtk.vala \
-		JsRender/NodeToJs.vala \
+		21JsRender/NodeToJs.vala \
 		JsRender/NodeToVala.vala \
 		JsRender/Node.vala \
 		JsRender/Roo.vala \
