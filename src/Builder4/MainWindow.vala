@@ -409,6 +409,7 @@ public class Xcls_MainWindow : Object
             }
             print("OPEN : " + file.name);
             _this.editpane.el.set_position(_this.editpane.el.max_position);
+            _this.setTitle(file.project.name + " : " +file.name);
              
     
         });
