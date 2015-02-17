@@ -2982,7 +2982,7 @@ gchar* js_render_roo_toSourceDialog (JsRenderRoo* self, gboolean isPreview) {
 #line 418 "/home/alan/gitlive/app.Builder.js/src/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
 #line 424 "/home/alan/gitlive/app.Builder.js/src/JsRender/Roo.vala"
-	_tmp0_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "   ");
+	_tmp0_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "    ");
 #line 424 "/home/alan/gitlive/app.Builder.js/src/JsRender/Roo.vala"
 	o = _tmp0_;
 #line 427 "/home/alan/gitlive/app.Builder.js/src/JsRender/Roo.vala"
