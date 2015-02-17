@@ -284,6 +284,7 @@ public class JsRender.NodeToJs : Object {
 				var nstr = "" + str;
 				if (lines.length > 0) {
 					nstr =  string.joinv("\n" + this.pad, lines);
+					//nstr =  string.joinv("\n", lines);
 				}
 				//print("==> " +  str + "\n");
 				this.els.add(left + nstr);
@@ -357,7 +358,8 @@ public class JsRender.NodeToJs : Object {
 			
 			
 			if (right.length > 0){
-				this.els.add(left + "[\n" +  this.pad + "	 " +  right + "\n" + this.pad + "]");
+				this.els.add(left + "[\n" +  this.pad + indent_str + indent_str +  
+				             right + "\n" + this.pad + "]");
 			}
 		
 			
@@ -384,10 +386,9 @@ public class JsRender.NodeToJs : Object {
 			var str = liter.get_value().strip();
 			var lines = str.split("\n");
 			if (lines.length > 0) {
-				str = string.joinv("\n" + this.pad + "	   ", lines);
+				//str = string.joinv("\n" + this.pad + "	   ", lines);
+				str = string.joinv("\n" + this.pad + indent_str + indent_str , lines);
 			}
-			
-
 			
 			itms +=  this.pad + indent_str  + liter.get_key().replace("|", "")  + " : " + str;
 

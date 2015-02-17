@@ -426,34 +426,34 @@ namespace JsRender {
  
             string[] adda = { " = {",
                 "",
-                "    dialog : false,",
-                "    callback:  false,",
+                " dialog : false,",
+                " callback:  false,",
                 "",   
-                "    show : function(data, cb)",
-                "    {",
-                "        if (!this.dialog) {",
-                "            this.create();",
-                "        }",
+                " show : function(data, cb)",
+                " {",
+                "  if (!this.dialog) {",
+                "   this.create();",
+                "  }",
                 "",
-                "        this.callback = cb;",
-                "        this.data = data;",
-                "        this.dialog.show(this.data._el);",
-                "        if (this.form) {",
-                "           this.form.reset();",
-                "           this.form.setValues(data);",
-                "           this.form.fireEvent('actioncomplete', this.form,  { type: 'setdata', data: data });",
-                "        }",
+                "  this.callback = cb;",
+                "  this.data = data;",
+                "  this.dialog.show(this.data._el);",
+                "  if (this.form) {",
+                "   this.form.reset();",
+                "   this.form.setValues(data);",
+                "   this.form.fireEvent('actioncomplete', this.form,  { type: 'setdata', data: data });",
+                "  }",
                 "",   
-                "    },",
+                " },",
                 "",
-                "    create : function()",
-                "    {",
-                "        var _this = this;",
-                "        this.dialog = Roo.factory(" 
+                " create : function()",
+                " {",
+                "   var _this = this;",
+                "   this.dialog = Roo.factory(" 
             };
             string[] addb = {  
-                        ");",
-                "    }",
+                   ");",
+                " }",
                 "};",
                 ""
             };
@@ -474,34 +474,34 @@ namespace JsRender {
             
             string[] adda = { " = {",
                 "",
-                "    dialog : false,",
-                "    callback:  false,",
+                " dialog : false,",
+                " callback:  false,",
                 "",   
-                "    show : function(data, cb)",
-                "    {",
-                "        if (!this.dialog) {",
-                "            this.create();",
-                "        }",
+                " show : function(data, cb)",
+                " {",
+                "  if (!this.dialog) {",
+                "   this.create();",
+                "  }",
                 "",
-                "        this.callback = cb;",
-                "        this.data = data;",
-                "        this.dialog.show(this.data._el);",
-                "        if (this.form) {",
-                "           this.form.reset();",
-                "           this.form.setValues(data);",
-                "           this.form.fireEvent('actioncomplete', this.form,  { type: 'setdata', data: data });",
-                "        }",
+                "  this.callback = cb;",
+                "  this.data = data;",
+                "  this.dialog.show(this.data._el);",
+                "  if (this.form) {",
+                "   this.form.reset();",
+                "   this.form.setValues(data);",
+                "   this.form.fireEvent('actioncomplete', this.form,  { type: 'setdata', data: data });",
+                "  }",
                 "",   
-                "    },",
+                " },",
                 "",
-                "    create : function()",
-                "    {",
-                "        var _this = this;",
-                "        this.dialog = Roo.factory("
+                " create : function()",
+                " {",
+                "  var _this = this;",
+                "  this.dialog = Roo.factory("
             };
             string[] addb =  {
-                ");",
-                "    }",
+                "  );",
+                " }",
                 "};",
                 ""
             };
@@ -572,22 +572,22 @@ namespace JsRender {
 		        this.outputHeader() + "\n" +
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
-		        "    part     :  "+ this.pathToPart() + ",\n" +
+		        "  part     :  "+ this.pathToPart() + ",\n" +
 		                /// critical used by builder to associate modules/parts/persm
-		        "    order    : '" +modkey+"',\n" +
-		        "    region   : '" + this.region   +"',\n" +
-		        "    parent   : "+ parent + ",\n" +
-		        "    name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
-		        "    disabled : " + (this.disabled ? "true" : "false") +", \n" +
-		        "    permname : '" + (this.permname.length > 0 ? this.permname : "") +"', \n" +
+		        "  order    : '" +modkey+"',\n" +
+		        "  region   : '" + this.region   +"',\n" +
+		        "  parent   : "+ parent + ",\n" +
+		        "  name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
+		        "  disabled : " + (this.disabled ? "true" : "false") +", \n" +
+		        "  permname : '" + (this.permname.length > 0 ? this.permname : "") +"', \n" +
 		            
 		       // "    tree : function() { return this._tree(); },\n" +   //BC
-		        "    _tree : function()\n" +
-		        "    {\n" +
-		        "        var _this = this;\n" + // bc
-		        "        var MODULE = this;\n" + /// this looks like a better name.
-		        "        return " + o + ";" +
-		        "    }\n" +
+		        "  _tree : function()\n" +
+		        "  {\n" +
+		        "   var _this = this;\n" + // bc
+		        "   var MODULE = this;\n" + /// this looks like a better name.
+		        "   return " + o + ";" +
+		        "  }\n" +
 		        "});\n";
 		         
              
