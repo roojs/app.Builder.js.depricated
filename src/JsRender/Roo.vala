@@ -421,7 +421,7 @@ namespace JsRender {
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             
             
-            var o = this.mungeToString("            ");   
+            var o = this.mungeToString("   ");   
 
  
             string[] adda = { " = {",
