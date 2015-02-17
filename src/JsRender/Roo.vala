@@ -545,7 +545,7 @@ namespace JsRender {
     			//    topItem.background = false;
     		}
             
-    		var o = this.mungeToString("            ");   
+    		var o = this.mungeToString("   ");   
     		var reg = new Regex("[^A-Za-z.]+");
             
     		string modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
