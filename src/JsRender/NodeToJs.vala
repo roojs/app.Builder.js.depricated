@@ -11,7 +11,9 @@
 
 public class JsRender.NodeToJs : Object {
 
-	 Node node;
+	static uint indent = 1;
+	 static string indent_str = " ";
+	Node node;
 	Gee.ArrayList<string>  doubleStringProps;
 	string pad;
 	Gee.ArrayList<string> els;
@@ -54,7 +56,7 @@ public class JsRender.NodeToJs : Object {
 		}
 		// oprops...	
 			
-		var spad = pad.substring(0, this.pad.length-4);
+		var spad = pad.substring(0, this.pad.length-indent);
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
 		if (!this.node.props.has_key("* xinclude")) {
@@ -122,7 +124,7 @@ public class JsRender.NodeToJs : Object {
 				// it's a standard prop..
 				
 				// munge property..??
-				this.els.add( prop  + " : " + this.mungeChild (  this.pad + "    ",  pl));
+				this.els.add( prop  + " : " + this.mungeChild (  this.pad + indent_str,  pl));
 				
 				
 				//keys.push(prop);
@@ -145,7 +147,7 @@ public class JsRender.NodeToJs : Object {
 				old = this.ar_props.get(sprop);
 			}
 			var nstr  = old += old.length > 0 ? ",\n" : "";
-			nstr += this.mungeChild( this.pad + "	        ",   pl);
+			nstr += this.mungeChild( this.pad + indent_str + indent_str + indent_str ,   pl);
 			
 	  		this.ar_props.set(sprop, nstr);
 			 
@@ -387,7 +389,7 @@ public class JsRender.NodeToJs : Object {
 			
 
 			
-			itms +=  this.pad + "	"  + liter.get_key().replace("|", "")  + " : " + str;
+			itms +=  this.pad + indent_str  + liter.get_key().replace("|", "")  + " : " + str;
 
 			i++;
 		
@@ -418,8 +420,8 @@ public class JsRender.NodeToJs : Object {
 				 itms += ",\n";
 			}
 			n++;
-			itms +=	this.pad + "	"  +
-				this.mungeChild( this.pad + "        ",  ele);
+			itms +=	this.pad + indent_str  +
+				this.mungeChild( this.pad + indent_str + indent_str ,  ele);
 			
 			
 		}
