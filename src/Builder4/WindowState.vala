@@ -23,10 +23,12 @@ public class WindowState : Object
     public Xcls_WindowAddProp   add_props;
     public Xcls_LeftProps       left_props;
     public Xcls_ProjectSettings projectsettings;
-    public ValaProjectSettings vala_projectsettings;
+    public ValaProjectSettings  vala_projectsettings;
+    public Xcls_RightPalete     rightpalete;
+
     
     code_editor
-    rightpalete
+     
 	window_rooview
         // my vars (def)
 
@@ -219,7 +221,19 @@ public class WindowState : Object
 
     }
 
-    
+    public void objectAddInit()
+    {
+
+	this.rightpalete  = new Xcls_RightPalete();
+    this.rightpalete.ref();  /// really?
+    ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
+    //this.projectsettings.el.show_all();
+
+    stage = _this.objectview.el.get_stage();
+    stage.set_background_color(  Clutter.Color.from_string("#000"));
+  
+
+    }
     
     // -----------  properties adding list...
     // listener uses the properties 
