@@ -25,9 +25,8 @@ public class WindowState : Object
     public Xcls_ProjectSettings projectsettings;
     public ValaProjectSettings  vala_projectsettings;
     public Xcls_RightPalete     rightpalete;
-
+    public Editor		code_editor;    
     
-    code_editor
      
 	window_rooview
         // my vars (def)
@@ -261,6 +260,9 @@ public class WindowState : Object
     {
 	
     }
+
+
+
     
     // ----------- Add / Edit listener
     // listener uses the properties 
@@ -276,3 +278,24 @@ public class WindowState : Object
     {
 	
     }
+
+    // -------------- codeEditor
+
+    public void codeEditInit()
+    {
+	this.code_editor  = new  Editor();
+	this.code_editor.ref();  /// really?
+	((Gtk.Container)(this.win.codeeditview.el.get_widget())).add(this.code_editor.el);
+	//this.projectsettings.el.show_all();
+
+	stage = _this.win.codeeditview.el.get_stage();
+	stage.set_background_color(  Clutter.Color.from_string("#000"));
+	// editor.save...
+
+	this.code_editor.save.connect( () => {
+	     this.left_tree.model.file.save();
+	     this.left_tree.model.updateSelected();
+	});
+    
+    }
+    
