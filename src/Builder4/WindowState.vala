@@ -42,9 +42,9 @@ public class WindowState : Object
 
 	// on clutter space...
 	this.projectEditInit();
-	
 	this.codeEditInit();
-
+	this.fileViewInit();
+	
 	// adding stuff
 	this.objectAddInit();
 	this.propsAddInit();
@@ -52,7 +52,11 @@ public class WindowState : Object
 	
 	// previews...
 	this.gtkViewInit();
-	this.webkitViewInit();    
+	this.webkitViewInit();
+
+	// dialogs
+
+	this.fileNewInit();
     }
 
 
