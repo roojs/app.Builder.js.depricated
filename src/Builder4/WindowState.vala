@@ -326,10 +326,31 @@ public class WindowState : Object
 	});
 
     }
+    public void fileNewInit()
+    {
+	this.new_file_dialog = new Xcls_DialogNewComponent();
+	// force it modal to the main window..
+	this.new_file_dialog.el.set_transient_for(this.el);
+	this.new_file_dialog.el.set_modal(true);
+	
+	this.new_file_dialog.success.connect((project,file) =>
+	{
+	this.clutterfiles = new Xcls_ClutterFiles();
+	this.clutterfiles.ref();
+	stage.add_child(this.clutterfiles.el);
+	this.clutterfiles.el.show_all();
+
+
+	this.clutterfiles.open.connect((file) => { 
+	    this.fileViewOpen(file);
+	});
+
+    }
+
     
     public void fileViewOpen(JsRender.JsRender file)
     {
-	this.project = file.project;
+	this.win.project = file.project;
 	this.previewShow();
         this.left_tree.model.loadFile(file);
 	
