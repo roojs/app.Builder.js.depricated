@@ -48,7 +48,7 @@ public class WindowState : Object
 	// adding stuff
 	this.objectAddInit();
 	this.propsAddInit();
-	this.listenerInit();
+ 
 	
 	// previews...
 	this.gtkViewInit();
