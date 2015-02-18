@@ -27,8 +27,8 @@ public class WindowState : Object
     public Xcls_RightPalete     rightpalete;
     public Editor		code_editor;    
     public Xcls_WindowRooView   window_rooview;
+    public Xcls_GtkView		window_gladeview;
      
-        // my vars (def)
 
     // ctor 
     public About(MainWindow win)
@@ -308,6 +308,14 @@ public class WindowState : Object
 
 	stage = this.win.rooview.el.get_stage();
 	stage.set_background_color(  Clutter.Color.from_string("#000"));
+    }
+
+    // ------ Gtk  - view
+
+    public void gtkViewInit()
+    {
+	this.window_gladeview  =new Xcls_GtkView();
+	this.window_gladeview.ref();
     }
       
 
