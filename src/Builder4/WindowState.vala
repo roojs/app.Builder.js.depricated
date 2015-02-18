@@ -19,11 +19,12 @@ public class WindowState : Object
     public State state;
 	
     public Xcls_WindowLeftTree left_tree;
-
+    public Xcls_WindowAddProp add_props;
+    
     left_props
     code_editor
     rightpalete
-	
+	window_rooview
         // my vars (def)
 
     // ctor 
@@ -56,7 +57,12 @@ public class WindowState : Object
 	this.left_tree.node_selected.connect((sel) => {
 	    this.leftTreeNodeSelected(sel);
 	});
-
+ 
+	this.left_tree.changed.connect(() => {
+	    this.window_rooview.requestRedraw();
+	    this.left_tree.model.file.save();
+        });
+     
     }
 
     public bool leftTreeBeforeChange(JsRender.Node? sel)
@@ -117,7 +123,7 @@ public class WindowState : Object
 	       
 		                
 	}
-	return  ;
+	 
 
     }
     // -----------  properties
@@ -125,18 +131,18 @@ public class WindowState : Object
     public void propsInit()
     {
 	// Add properties
-	    this.win.add_props  = new Xcls_WindowAddProp();
-	    this.add_props.ref();  /// really?
-	    ((Gtk.Container)(this.win.addpropsview.el.get_widget())).add(this.win.add_props.el);
-	    //this.projectsettings.el.show_all();
+	this.add_props  = new Xcls_WindowAddProp();
+	this.add_props.ref();  /// really?
+	((Gtk.Container)(this.win.addpropsview.el.get_widget())).add(this.win.add_props.el);
+	//this.projectsettings.el.show_all();
 
-	    var  stage = _this.win.addpropsview.el.get_stage();
-	    stage.set_background_color(  Clutter.Color.from_string("#000"));
-	
-	
-	    _this.win.add_props.select.connect( (key,type,skel, etype) => {
-		this.win.left_props.addProp(etype, key, skel, type);
-	    });
+	var  stage = _this.win.addpropsview.el.get_stage();
+	stage.set_background_color(  Clutter.Color.from_string("#000"));
+
+
+	_this.win.add_props.select.connect( (key,type,skel, etype) => {
+	this.win.left_props.addProp(etype, key, skel, type);
+	});
 	
     }
     public void propsShow()
