@@ -109,7 +109,8 @@ public class WindowState : Object
 		this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
 		break;
 	    case State.CODEEDIT:
-	    
+		// SAVE FIRST???
+		
 		this.codeEditHide();
 		break;
 	       
