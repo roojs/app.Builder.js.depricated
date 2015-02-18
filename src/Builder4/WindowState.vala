@@ -31,7 +31,7 @@ public class WindowState : Object
     public Xcls_DialogNewComponent new_file_dialog;     
 
     // ctor 
-    public About(MainWindow win)
+    public WindowState(MainWindow win)
     {
 	this.win = win;
 	// initialize
