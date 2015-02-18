@@ -109,8 +109,7 @@ public class WindowState : Object
 		this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
 		break;
 	    case State.CODEEDIT:
-	   case "codeedit":
-	       
+	    
 		this.codeEditHide();
 		break;
 	       
