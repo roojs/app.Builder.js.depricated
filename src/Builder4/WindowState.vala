@@ -315,10 +315,52 @@ public class WindowState : Object
     public void fileViewInit()
     {
 
+	this.clutterfiles = new Xcls_ClutterFiles();
+	this.clutterfiles.ref();
+	stage.add_child(this.clutterfiles.el);
+	this.clutterfiles.el.show_all();
 
+
+	this.clutterfiles.open.connect((file) => { 
+	    this.fileViewOpen();
+	   
+
+	});
 
     }
-    
+    public void fileViewOpen(JsRender.JsRender file)
+    {
+	this.project = file.project;
+	this.previewShow();
+        this.left_tree.model.loadFile(file);
+	
+	var ctr= ((Gtk.Container)(this.win.rooview.el.get_widget()));
+	var ctr_p= ((Gtk.Container)(this.win.projecteditview.el.get_widget()));
+	
+	if (file.xtype == "Roo" ) { 
+	    ctr.foreach( (w) => { ctr.remove(w); });
+	    ctr_p.foreach( (w) => { ctr_p.remove(w); });
+	    ctr.add(this.window_rooview.el);
+	    ctr_p.add(this.projectsettings.el);            
+	    this.window_rooview.loadFile(file);
+	    this.window_rooview.el.show_all();
+	    this.projectsettings.el.show_all();            
+
+	} else {
+	    ctr.foreach( (w) => { ctr.remove(w); });
+	    ctr_p.foreach( (w) => { ctr_p.remove(w); });            
+	    ctr.add(this.window_gladeview.el);
+	    ctr_p.add(this.vala_projectsettings.el);
+	    this.window_gladeview.loadFile(file);
+	    this.window_gladeview.el.show_all();
+	    this.vala_projectsettings.el.show_all();
+	}
+	print("OPEN : " + file.name);
+	this.editpane.el.set_position(_this.editpane.el.max_position);
+	this.win.setTitle(file.project.name + " : " +file.name);
+	     
+
+    }
 
     
     // ---------  webkit view
