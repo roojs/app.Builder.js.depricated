@@ -559,12 +559,13 @@ public class Xcls_WindowLeftTree : Object
                     
                     // if drag action is link ... then we can drop it anywahere...
                      if ((ctx.get_actions() & Gdk.DragAction.LINK) > 0) {
-                             targetData = path.to_string() + "|%d".printf((int)pos);
+                         // if path is null?? dragging into an empty tree?
+                         targetData = (path == null ? "" :  path.to_string()) + "|%d".printf((int)pos);
                      } else {
                     
                     
                         targetData = _this.model.findDropNodeByPath( isEmpty ? "" : path.to_string(), dropList, pos);
-                    }
+                     }
                     
                     
                         
