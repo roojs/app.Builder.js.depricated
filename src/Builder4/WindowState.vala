@@ -126,9 +126,9 @@ public class WindowState : Object
 	 
 
     }
-    // -----------  properties
+    // -----------  properties adding list...
     // listener uses the properties 
-    public void propsInit()
+    public void propsAddInit()
     {
 	// Add properties
 	this.add_props  = new Xcls_WindowAddProp();
@@ -139,17 +139,17 @@ public class WindowState : Object
 	var  stage = _this.win.addpropsview.el.get_stage();
 	stage.set_background_color(  Clutter.Color.from_string("#000"));
 
-
+	
 	this.add_props.select.connect( (key,type,skel, etype) => {
 	    this.left_props.addProp(etype, key, skel, type);
 	});
 	
     }
-    public void propsShow()
+    public void propsAddShow()
     {
 
     }
-    public propsHide()
+    public propsAddHide()
     {
 	
     }
