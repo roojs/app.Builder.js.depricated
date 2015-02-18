@@ -225,14 +225,13 @@ public class WindowState : Object
     {
 
 	this.rightpalete  = new Xcls_RightPalete();
-    this.rightpalete.ref();  /// really?
-    ((Gtk.Container)(this.objectview.el.get_widget())).add(this.rightpalete.el);
-    //this.projectsettings.el.show_all();
+	this.rightpalete.ref();  /// really?
+	((Gtk.Container)(this.win.objectview.el.get_widget())).add(this.rightpalete.el);
+	//this.projectsettings.el.show_all();
 
-    stage = _this.objectview.el.get_stage();
-    stage.set_background_color(  Clutter.Color.from_string("#000"));
-  
-
+	stage = _this.win.objectview.el.get_stage();
+	stage.set_background_color(  Clutter.Color.from_string("#000"));
+       
     }
     
     // -----------  properties adding list...
