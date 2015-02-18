@@ -196,9 +196,8 @@ public class WindowState : Object
 	var stage = this.win.projecteditview.el.get_stage();
 	stage.set_background_color(  Clutter.Color.from_string("#000"));
 	
-	 this.projectsettings.buttonPressed.connect((btn) => {
+	this.projectsettings.buttonPressed.connect((btn) => {
 	     if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-	     
 	        if (btn == "save") {
 	            this.window_rooview.view.renderJS(true);
 	        }
@@ -217,6 +216,8 @@ public class WindowState : Object
 	    this.projectEditHide();
 	     
 	 });
+
+    }
 
     
     
