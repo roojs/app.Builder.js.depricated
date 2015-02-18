@@ -133,15 +133,15 @@ public class WindowState : Object
 	// Add properties
 	this.add_props  = new Xcls_WindowAddProp();
 	this.add_props.ref();  /// really?
-	((Gtk.Container)(this.win.addpropsview.el.get_widget())).add(this.win.add_props.el);
+	((Gtk.Container)(this.win.addpropsview.el.get_widget())).add(this.add_props.el);
 	//this.projectsettings.el.show_all();
 
 	var  stage = _this.win.addpropsview.el.get_stage();
 	stage.set_background_color(  Clutter.Color.from_string("#000"));
 
 
-	_this.win.add_props.select.connect( (key,type,skel, etype) => {
-	this.win.left_props.addProp(etype, key, skel, type);
+	this.add_props.select.connect( (key,type,skel, etype) => {
+	    this.left_props.addProp(etype, key, skel, type);
 	});
 	
     }
