@@ -26,7 +26,7 @@ public class WindowState : Object
     public ValaProjectSettings  vala_projectsettings;
     public Xcls_RightPalete     rightpalete;
     public Editor		code_editor;    
-    
+    public Xcls_WindowRooView   window_rooview;
      
 	window_rooview
         // my vars (def)
@@ -298,4 +298,18 @@ public class WindowState : Object
 	});
     
     }
+
+    // ---------  webkit view
+    public void webkitViewInit()
+    {
+	this.window_rooview  =new Xcls_WindowRooView();
+	this.window_rooview.ref();
+	((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+	this.window_rooview.el.show_all();
+
+	stage = _this.rooview.el.get_stage();
+	stage.set_background_color(  Clutter.Color.from_string("#000"));
+    
+      
+
     
