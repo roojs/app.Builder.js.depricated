@@ -144,6 +144,8 @@ public class WindowState : Object
 	this.left_props.show_editor.connect( (file, node, type,  key) => {
 	    this.codeEditShow(file, node, type,  key);
 	});
+
+	
 	this.left_props.stop_editor.connect( () => {
 	    if (this.state != "codeedit") {
 	        return true;
@@ -153,10 +155,11 @@ public class WindowState : Object
 	    if (!ret) {
 	        return false;
 	    }
-	    this.hideCodeEdit();
+	    this.codeEditHide();
 	    return ret;
 	});
-	 this.left_props.changed.connect(() => {
+	
+	this.left_props.changed.connect(() => {
 	      if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 	           this.window_rooview.requestRedraw();
 	           
