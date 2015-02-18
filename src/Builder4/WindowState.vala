@@ -200,17 +200,17 @@ public class WindowState : Object
 	     if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 	     
 	        if (btn == "save") {
-	             _this.window_rooview.view.renderJS(true);
+	            this.window_rooview.view.renderJS(true);
 	        }
 	        if (btn == "apply") {
-	            _this.window_rooview.view.renderJS(true);
+	            this.window_rooview.view.renderJS(true);
 	            return;
 	        }
 	    } else {
 	        // do nothing for gtk..
 	    }
 	    if (btn == "save" || btn == "apply") {
-	        _this.project.save();
+	        this.win.project.save();
      
 	    }
 	    
