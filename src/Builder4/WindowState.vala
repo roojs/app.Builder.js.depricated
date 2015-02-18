@@ -322,9 +322,7 @@ public class WindowState : Object
 
 
 	this.clutterfiles.open.connect((file) => { 
-	    this.fileViewOpen();
-	   
-
+	    this.fileViewOpen(file);
 	});
 
     }
