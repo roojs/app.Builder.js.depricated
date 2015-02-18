@@ -111,7 +111,7 @@ public class WindowState : Object
 	    case State.CODEEDIT:
 	   case "codeedit":
 	       
-		this.hideCodeEdit();
+		this.codeEditHide();
 		break;
 	       
 		                
