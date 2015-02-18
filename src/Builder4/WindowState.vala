@@ -38,9 +38,15 @@ public class WindowState : Object
 
 	this.projectEditInit();
 	this.leftTreeInit();
+
+	// on clutter space...
 	this.propsListInit();
 	this.propsAddInit();
 	this.listenerInit();
+
+	// views...
+	this.gtkViewInit();
+	this.webkitViewInit();    
     }
 
 
