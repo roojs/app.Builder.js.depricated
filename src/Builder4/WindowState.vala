@@ -189,7 +189,7 @@ public class WindowState : Object
 	this.vala_projectsettings.ref();
 	this.vala_projectsettings.window = this;
 	
-	((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
+	((Gtk.Container)(this.win.projecteditview.el.get_widget())).add(this.projectsettings.el);
 	//this.projectsettings.el.show_all();
 
 	var stage = this.win.projecteditview.el.get_stage();
