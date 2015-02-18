@@ -10,6 +10,9 @@ public class WindowState : Object
 
     public enum State {
 	OBJECT,
+	PROP,
+	LISTENER,
+	CODEEDIT
     };
 
     public State state;
@@ -51,67 +54,68 @@ public class WindowState : Object
 
 	this.left_tree.node_selected.connect((sel) => {
 	
-	    print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
-	
-	    if (sel == null) {
-		this.left_props.el.hide();
-	    } 
-	    this.left_props.el.show();
-	    this.left_props.load(this.left_tree.getActiveFile(), sel);
-	    switch (this.state) {
-		case State.OBJECT: 
-		      
-		     if (sel == null) {
-		        this.rightpalete.clear();
-		        break;
-		    }
-		    this.rightpalete.load(this.left_tree.getActiveFile().palete(), sel.fqn());
-		    break;
-		     
-		    
-	       case "addprop":
-		    if (sel == null) {
-		        this.add_props.clear();
-		        break;
-		    }
-		    this.add_props.show(this.left_tree.getActiveFile().palete(), "props", sel.fqn());
-		    break;
-		    
-	       case "addlistener":
-		    if (sel == null) {
-		        this.add_props.clear();
-		        break;
-		    }
-		    this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
-		    break;
-
-	       case "codeedit":
-		   
-		    this.hideCodeEdit();
-		    break;
-		   
-		                    
-	    }
-	    return  ;
 	      
 	});
 
     }
 
-    public bool leftTreeBeforeChange(sel)
+    public bool leftTreeBeforeChange(JsRender.Node? sel)
     {
-	    if (this.state != "codeedit") {
-		this.left_props.finish_editing();
-		return true;
-	    }
-	    if (!this.code_editor.saveContents()) {
-		return false;
-	    }
+	if (this.state != "codeedit") {
+	    this.left_props.finish_editing();
+	    return true;
+	}
+	if (!this.code_editor.saveContents()) {
 	    return false;
+	}
+	return false;
     }
-    public void leftTreeNodeSelected()
+    public void leftTreeNodeSelected(JsRender.Node? sel)
     {
 
+	print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
+
+	if (sel == null) {
+	    this.left_props.el.hide();
+	} 
+	this.left_props.el.show();
+	this.left_props.load(this.left_tree.getActiveFile(), sel);
+	switch (this.state) {
+	    case State.OBJECT: 
+		  
+		 if (sel == null) {
+		    this.rightpalete.clear();
+		    break;
+		}
+		this.rightpalete.load(this.left_tree.getActiveFile().palete(), sel.fqn());
+		break;
+		 
+		
+	   case State.PROP:
+		if (sel == null) {
+		    this.add_props.clear();
+		    break;
+		}
+		this.add_props.show(this.left_tree.getActiveFile().palete(), "props", sel.fqn());
+		break;
+
+	    case State.LISTENER:
+	   
+		if (sel == null) {
+		    this.add_props.clear();
+		    break;
+		}
+		this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
+		break;
+	    case State.CODEEDIT:
+	   case "codeedit":
+	       
+		this.hideCodeEdit();
+		break;
+	       
+		                
+	}
+	return  ;
 
     }
     // -----------  properties
