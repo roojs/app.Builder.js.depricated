@@ -214,7 +214,7 @@ public class WindowState : Object
      
 	    }
 	    
-	    this.hideProjectEdit();
+	    this.projectEditHide();
 	     
 	 });
 
