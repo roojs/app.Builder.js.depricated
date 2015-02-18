@@ -22,6 +22,7 @@ public class WindowState : Object
     public Xcls_WindowLeftTree  left_tree;
     public Xcls_WindowAddProp   add_props;
     public Xcls_LeftProps       left_props;
+    public Xcls_ProjectSettings projectsettings;
     
     code_editor
     rightpalete
@@ -33,6 +34,8 @@ public class WindowState : Object
     {
 	this.win = win;
 	// initialize
+
+	this.projectEditInit();
 	this.leftTreeInit();
 	this.propsListInit();
 	this.propsAddInit();
@@ -175,7 +178,46 @@ public class WindowState : Object
 
     }
 
+    //-------------  projects edit
 
+    public void projectEditInit()
+    {
+	this.projectsettings  =new Xcls_ProjectSettings();
+	this.projectsettings.ref();  /// really?
+	
+	this.vala_projectsettings  =new ValaProjectSettings();
+	this.vala_projectsettings.ref();
+	this.vala_projectsettings.window = this;
+	
+	((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
+	//this.projectsettings.el.show_all();
+
+	var stage = this.win.projecteditview.el.get_stage();
+	stage.set_background_color(  Clutter.Color.from_string("#000"));
+	
+	 this.projectsettings.buttonPressed.connect((btn) => {
+	     if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+	     
+	        if (btn == "save") {
+	             _this.window_rooview.view.renderJS(true);
+	        }
+	        if (btn == "apply") {
+	            _this.window_rooview.view.renderJS(true);
+	            return;
+	        }
+	    } else {
+	        // do nothing for gtk..
+	    }
+	    if (btn == "save" || btn == "apply") {
+	        _this.project.save();
+     
+	    }
+	    
+	    this.hideProjectEdit();
+	     
+	 });
+
+    
     
     // -----------  properties adding list...
     // listener uses the properties 
