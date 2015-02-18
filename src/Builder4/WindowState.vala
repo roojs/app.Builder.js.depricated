@@ -2,6 +2,7 @@
  * as state management is a bit too complicated inside the builder
  * it's better to seperate this into this class
  * 
+ * This class has references to all the Class instances that make up the window..
  * 
  */
 public class WindowState : Object 
