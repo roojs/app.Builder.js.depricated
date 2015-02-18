@@ -53,8 +53,7 @@ public class WindowState : Object
 	});
 
 	this.left_tree.node_selected.connect((sel) => {
-	
-	      
+	    this.leftTreeNodeSelected(sel);
 	});
 
     }
@@ -70,6 +69,7 @@ public class WindowState : Object
 	}
 	return false;
     }
+    
     public void leftTreeNodeSelected(JsRender.Node? sel)
     {
 
