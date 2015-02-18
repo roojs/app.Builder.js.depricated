@@ -36,11 +36,12 @@ public class WindowState : Object
 	this.win = win;
 	// initialize
 
-	this.projectEditInit();
+	// left elements..
 	this.leftTreeInit();
 	this.propsListInit();
-	// on clutter space...
 
+	// on clutter space...
+	this.projectEditInit();
 	this.propsAddInit();
 	this.listenerInit();
 
