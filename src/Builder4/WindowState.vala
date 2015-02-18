@@ -310,6 +310,17 @@ public class WindowState : Object
     
     }
 
+    // ----------- file view
+
+    public void fileViewInit()
+    {
+
+
+
+    }
+    
+
+    
     // ---------  webkit view
     public void webkitViewInit()
     {
