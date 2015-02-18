@@ -82,6 +82,7 @@ public class WindowState : Object
 	this.left_props.el.show();
 	this.left_props.load(this.left_tree.getActiveFile(), sel);
 	switch (this.state) {
+	    
 	    case State.OBJECT: 
 		  
 		 if (sel == null) {
