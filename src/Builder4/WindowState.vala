@@ -17,11 +17,12 @@ public class WindowState : Object
     };
 
     public State state;
-	
-    public Xcls_WindowLeftTree left_tree;
-    public Xcls_WindowAddProp add_props;
+
     
-    left_props
+    public Xcls_WindowLeftTree  left_tree;
+    public Xcls_WindowAddProp   add_props;
+    public Xcls_LeftProps       left_props;
+    
     code_editor
     rightpalete
 	window_rooview
