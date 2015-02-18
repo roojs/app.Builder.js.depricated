@@ -329,6 +329,10 @@ public class WindowState : Object
 	this.window_gladeview  =new Xcls_GtkView();
 	this.window_gladeview.ref();
     }
-      
+
+
+
+    
+}
 
     
