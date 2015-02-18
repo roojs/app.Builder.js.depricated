@@ -16,10 +16,41 @@ public class WindowState : Object
     public About(MainWindow win)
     {
 	this.win = win;
+	// initialize
+	this.propsInit();
+	this.listenerInit();
+    }
+
+
+    // -----------  properties
+    // listener uses the properties 
+    public propsInit()
+    {
+	// Add properties
+	    this.win.add_props  = new Xcls_WindowAddProp();
+	    this.add_props.ref();  /// really?
+	    ((Gtk.Container)(this.addpropsview.el.get_widget())).add(this.add_props.el);
+	    //this.projectsettings.el.show_all();
+
+	    stage = _this.addpropsview.el.get_stage();
+	    stage.set_background_color(  Clutter.Color.from_string("#000"));
+	
+	
+	    _this.add_props.select.connect( (key,type,skel, etype) => {
+		this.left_props.addProp(etype, key, skel, type);
+	    });
+    }
+    public propsShow()
+    {
+
+    }
+    public propsHide()
+    {
+	
     }
     
     // ----------- Add / Edit listener
-
+    // listener uses the properties 
     public listenerInit()
     {
 
