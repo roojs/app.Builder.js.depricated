@@ -49,7 +49,8 @@ public class WindowState : Object
 	this.objectAddInit();
 	this.propsAddInit();
 	this.listenerInit();
-	// views...
+	
+	// previews...
 	this.gtkViewInit();
 	this.webkitViewInit();    
     }
