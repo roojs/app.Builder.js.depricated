@@ -33,7 +33,7 @@ public class WindowState : Object
 	this.win = win;
 	// initialize
 	this.leftTreeInit();
-	
+	this.propsListInit();
 	this.propsAddInit();
 	this.listenerInit();
     }
