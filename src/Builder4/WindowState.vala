@@ -32,7 +32,9 @@ public class WindowState : Object
     {
 	this.win = win;
 	// initialize
-	this.propsInit();
+	this.leftTreeInit();
+	
+	this.propsAddInit();
 	this.listenerInit();
     }
 
@@ -126,6 +128,14 @@ public class WindowState : Object
 	 
 
     }
+
+
+
+
+
+
+
+    
     // -----------  properties adding list...
     // listener uses the properties 
     public void propsAddInit()
