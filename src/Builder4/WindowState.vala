@@ -28,7 +28,7 @@ public class WindowState : Object
     public Editor		code_editor;    
     public Xcls_WindowRooView   window_rooview;
     public Xcls_GtkView		window_gladeview;
-     
+    public Xcls_DialogNewComponent new_file_dialog;     
 
     // ctor 
     public About(MainWindow win)
