@@ -281,10 +281,7 @@ public class WindowState : Object
     
     // ----------- Add / Edit listener
     // listener uses the properties 
-    public void listenerInit()
-    {
-
-    }
+    //public void listenerInit()     { }
     public void listenerShow()
     {
 
