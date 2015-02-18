@@ -38,9 +38,9 @@ public class WindowState : Object
 
 	this.projectEditInit();
 	this.leftTreeInit();
-
-	// on clutter space...
 	this.propsListInit();
+	// on clutter space...
+
 	this.propsAddInit();
 	this.listenerInit();
 
