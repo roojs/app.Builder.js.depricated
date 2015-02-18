@@ -132,7 +132,10 @@ public class WindowState : Object
 
 
 
-
+    public void propsListInit()
+    {
+    
+    }
 
 
     
@@ -159,22 +162,22 @@ public class WindowState : Object
     {
 
     }
-    public propsAddHide()
+    public void propsAddHide()
     {
 	
     }
     
     // ----------- Add / Edit listener
     // listener uses the properties 
-    public listenerInit()
+    public void listenerInit()
     {
 
     }
-    public listenerShow()
+    public void listenerShow()
     {
 
     }
-    public listenerHide()
+    public void listenerHide()
     {
 	
     }
