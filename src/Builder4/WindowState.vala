@@ -335,13 +335,6 @@ public class WindowState : Object
 	
 	this.new_file_dialog.success.connect((project,file) =>
 	{
-	this.clutterfiles = new Xcls_ClutterFiles();
-	this.clutterfiles.ref();
-	stage.add_child(this.clutterfiles.el);
-	this.clutterfiles.el.show_all();
-
-
-	this.clutterfiles.open.connect((file) => { 
 	    this.fileViewOpen(file);
 	});
 
