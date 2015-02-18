@@ -134,7 +134,41 @@ public class WindowState : Object
 
     public void propsListInit()
     {
-    
+	
+	this.left_props =new Xcls_LeftProps();
+	this.left_props.ref();
+	this.left_props.main_window = _this;
+	this.win.props.el.pack_start(this.left_props.el,true, true,0);
+	this.left_props.el.show_all();
+	
+	this.left_props.show_editor.connect( (file, node, type,  key) => {
+	    this.codeEditShow(file, node, type,  key);
+	});
+	this.left_props.stop_editor.connect( () => {
+	    if (this.state != "codeedit") {
+	        return true;
+	    }
+	
+	    var ret =  this.code_editor.saveContents();
+	    if (!ret) {
+	        return false;
+	    }
+	    this.hideCodeEdit();
+	    return ret;
+	});
+	 this.left_props.changed.connect(() => {
+	      if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+	           this.window_rooview.requestRedraw();
+	           
+	       } else {
+	          this.window_gladeview.loadFile(this.left_tree.getActiveFile());
+	      }
+	      this.left_tree.model.updateSelected();
+	      this.left_tree.model.file.save();
+	});
+	
+
+
     }
 
 
