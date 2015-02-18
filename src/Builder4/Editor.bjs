@@ -1,95 +1,95 @@
 {
-    "name" : "Editor",
-    "parent" : "",
-    "title" : "",
-    "path" : "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
-    "permname" : "",
-    "modOrder" : "",
-    "items" : [
+ "name" : "Editor",
+ "parent" : "",
+ "title" : "",
+ "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/Editor.bjs",
+ "permname" : "",
+ "modOrder" : "",
+ "items" : [
+  {
+   "# string activeEditor" : "\"\"",
+   "|   bool saveContents" : "  ()  {\n    \n    \n    \n    \n    \n    \n    \n   \n     \n     var str = _this.buffer.toString();\n     \n     if (!_this.buffer.checkSyntax()) {\n         print(\"check syntax failed\");\n         //this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n     \n     \n        \n     \n    // find the text for the node..\n    if (ptype == \"listener\") {\n        this.node.listeners.set(key,str);\n    \n    } else {\n         this.node.props.set(key,str);\n    }\n\n     \n    \n    // call the signal..\n    this.save();\n    \n    return true;\n\n} ",
+   "# int pos_root_x" : "",
+   "# int pos_root_y" : "",
+   "# string ptype" : "\"\"",
+   "# string key" : "\"\"",
+   "* pack" : "add",
+   "xtype" : "VBox",
+   "|   void show" : "(JsRender.JsRender file, JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n    this.file = file;\n    \n   string val = \"\";\n    // find the text for the node..\n    if (ptype == \"listener\") {\n        val = node.listeners.get(key);\n    \n    } else {\n        val = node.props.get(key);\n    }\n    this.view.load(val);\n    this.key_edit.el.text = key;    \n\n}",
+   "# JsRender.JsRender file" : "null",
+   "# bool pos" : false,
+   "string id" : "Editor",
+   "# bool dirty" : false,
+   "$ xns" : "Gtk",
+   "@ void save" : "()",
+   "$ homogeneous" : false,
+   "# JsRender.Node node" : "null",
+   "items" : [
+    {
+     "* pack" : "pack_start,false,true",
+     "xtype" : "HBox",
+     "$ xns" : "Gtk",
+     "$ homogeneous" : false,
+     "items" : [
+      {
+       "listeners" : {
+        "clicked" : " () => { \n    _this.saveContents();\n}\n \n"
+       },
+       "label" : "Save",
+       "id" : "save_button",
+       "* pack" : "pack_start,false,false",
+       "xtype" : "Button",
+       "$ xns" : "Gtk"
+      },
+      {
+       "id" : "key_edit",
+       "* pack" : "pack_end,true,true",
+       "xtype" : "Entry",
+       "$ xns" : "Gtk"
+      }
+     ]
+    },
+    {
+     "id" : "RightEditor",
+     "* init" : "this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);",
+     "xtype" : "ScrolledWindow",
+     "* pack" : "add",
+     "$ xns" : "Gtk",
+     "items" : [
+      {
+       "listeners" : {
+        "key_release_event" : " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        _this.saveContents();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
+       },
+       "gboolean show_line_marks" : true,
+       "id" : "view",
+       "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    var  pink = new Gdk.RGBA();\n    pink.parse ( \"pink\");\n    attrs.set_background ( pink);\n    attrs.set_icon_name ( \"process-stop\");    \n    attrs.query_tooltip_text.connect(( mark) => {\n        print(\"tooltip query? %s\\n\", mark.name);\n        return mark.name;\n    });\n    \n    this.el.set_mark_attributes (\"error\", attrs, 1);\n    \n    ",
+       "$ insert_spaces_instead_of_tabs" : true,
+       "* pack" : "add",
+       "xtype" : "View",
+       "gboolean highlight_current_line" : true,
+       "$ gboolean auto_indent" : true,
+       "$ xns" : "GtkSource",
+       "|   void load" : " (string str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    var lang = _this.file.language;\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));\n    var buf = this.el.get_buffer();\n    \n    /* -- what does all this do? */\n    /*\n    var cursor = buf.get_mark(\"insert\");\n    Gtk.TextIter iter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    //iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    */\n    \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}",
+       "indent_width" : 4,
+       "$ show_line_numbers" : true,
+       "items" : [
         {
-            "# string activeEditor" : "\"\"",
-            "|   bool saveContents" : "  ()  {\n    \n    \n    \n    \n    \n    \n    \n   \n     \n     var str = _this.buffer.toString();\n     \n     if (!_this.buffer.checkSyntax()) {\n         print(\"check syntax failed\");\n         //this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n     \n     \n        \n     \n    // find the text for the node..\n    if (ptype == \"listener\") {\n        this.node.listeners.set(key,str);\n    \n    } else {\n         this.node.props.set(key,str);\n    }\n\n     \n    \n    // call the signal..\n    this.save();\n    \n    return true;\n\n} ",
-            "# int pos_root_x" : "",
-            "# int pos_root_y" : "",
-            "# string ptype" : "\"\"",
-            "# string key" : "\"\"",
-            "* pack" : "add",
-            "xtype" : "VBox",
-            "|   void show" : "(JsRender.JsRender file, JsRender.Node node, string ptype, string key)\n{\n    this.ptype = ptype;\n    this.key  = key;\n    this.node = node;\n    this.file = file;\n    \n   string val = \"\";\n    // find the text for the node..\n    if (ptype == \"listener\") {\n        val = node.listeners.get(key);\n    \n    } else {\n        val = node.props.get(key);\n    }\n    this.view.load(val);\n    this.key_edit.el.text = key;    \n\n}",
-            "# JsRender.JsRender file" : "null",
-            "# bool pos" : false,
-            "string id" : "Editor",
-            "# bool dirty" : false,
-            "$ xns" : "Gtk",
-            "@ void save" : "()",
-            "$ homogeneous" : false,
-            "# JsRender.Node node" : "null",
-            "items" : [
-                {
-                    "* pack" : "pack_start,false,true",
-                    "xtype" : "HBox",
-                    "$ xns" : "Gtk",
-                    "$ homogeneous" : false,
-                    "items" : [
-                        {
-                            "listeners" : {
-                                "clicked" : " () => { \n    _this.saveContents();\n}\n \n"
-                            },
-                            "label" : "Save",
-                            "id" : "save_button",
-                            "* pack" : "pack_start,false,false",
-                            "xtype" : "Button",
-                            "$ xns" : "Gtk"
-                        },
-                        {
-                            "id" : "key_edit",
-                            "xtype" : "Entry",
-                            "* pack" : "pack_end,true,true",
-                            "$ xns" : "Gtk"
-                        }
-                    ]
-                },
-                {
-                    "id" : "RightEditor",
-                    "* init" : "this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);",
-                    "xtype" : "ScrolledWindow",
-                    "* pack" : "add",
-                    "$ xns" : "Gtk",
-                    "items" : [
-                        {
-                            "listeners" : {
-                                "key_release_event" : " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        _this.saveContents();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
-                            },
-                            "gboolean show_line_marks" : true,
-                            "id" : "view",
-                            "* init" : " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n    var attrs = new Gtk.SourceMarkAttributes();\n    var  pink = new Gdk.RGBA();\n    pink.parse ( \"pink\");\n    attrs.set_background ( pink);\n    attrs.set_icon_name ( \"process-stop\");    \n    attrs.query_tooltip_text.connect(( mark) => {\n        print(\"tooltip query? %s\\n\", mark.name);\n        return mark.name;\n    });\n    \n    this.el.set_mark_attributes (\"error\", attrs, 1);\n    \n    ",
-                            "$ insert_spaces_instead_of_tabs" : true,
-                            "* pack" : "add",
-                            "xtype" : "View",
-                            "gboolean highlight_current_line" : true,
-                            "$ gboolean auto_indent" : true,
-                            "$ xns" : "GtkSource",
-                            "|   void load" : " (string str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    var lang = _this.file.language;\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));\n    var buf = this.el.get_buffer();\n    \n    /* -- what does all this do? */\n    /*\n    var cursor = buf.get_mark(\"insert\");\n    Gtk.TextIter iter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    //iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    */\n    \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}",
-                            "indent_width" : 4,
-                            "$ show_line_numbers" : true,
-                            "items" : [
-                                {
-                                    "listeners" : {
-                                        "changed" : " () => {\n    // check syntax??\n        if(this.checkSyntax()) {\n        _this.save_button.el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    _this.dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return ;\n}\n\n \n"
-                                    },
-                                    "id" : "buffer",
-                                    "int error_line" : "-1",
-                                    "|   string toString" : "  () {\n    \n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    this.el.get_start_iter(out s);\n    this.el.get_end_iter(out e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n ",
-                                    "|   bool checkSyntax" : " () {\n \n    var p = Palete.factory(_this.file.xtype);   \n    \n    var str = this.toString();\n    \n    string res = \"\";\n    \n    if (this.error_line > 0) {\n         Gtk.TextIter start;\n         Gtk.TextIter end;     \n        this.el.get_bounds (out start, out end);\n\n        this.el.remove_source_marks (start, end, null);\n    }\n    \n    \n    var validate_res =  p.validateCode(\n        str, \n         _this.key, \n        _this.ptype,\n        _this.file,\n        _this.node\n        \n    );\n     \n    this.error_line = validate_res.size;\n\n    if (this.error_line < 1) {\n          return true;\n    }\n    var tlines = this.el.get_line_count ();\n    Gtk.TextIter iter;\n    var valiter = validate_res.map_iterator();\n    while (valiter.next()) {\n    \n//        print(\"get inter\\n\");\n        var eline = valiter.get_key();\n        if (eline > tlines) {\n            continue;\n        }\n        this.el.get_iter_at_line( out iter, eline);\n        //print(\"mark line\\n\");\n        this.el.create_source_mark(valiter.get_value(), \"error\", iter);\n    }   \n    \n    //print(\"done mark line\\n\");\n     \n    return true; // at present allow saving - even if it's invalid..\n}\n",
-                                    "* pack" : "set_buffer",
-                                    "xtype" : "Buffer",
-                                    "$ xns" : "GtkSource"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+         "listeners" : {
+          "changed" : " () => {\n    // check syntax??\n        if(this.checkSyntax()) {\n        _this.save_button.el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    _this.dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return ;\n}\n\n \n"
+         },
+         "id" : "buffer",
+         "int error_line" : "-1",
+         "|   string toString" : "  () {\n    \n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    this.el.get_start_iter(out s);\n    this.el.get_end_iter(out e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n ",
+         "|   bool checkSyntax" : " () {\n \n    var p = Palete.factory(_this.file.xtype);   \n    \n    var str = this.toString();\n    \n    string res = \"\";\n    \n    if (this.error_line > 0) {\n         Gtk.TextIter start;\n         Gtk.TextIter end;     \n        this.el.get_bounds (out start, out end);\n\n        this.el.remove_source_marks (start, end, null);\n    }\n    \n    \n    var validate_res =  p.validateCode(\n        str, \n         _this.key, \n        _this.ptype,\n        _this.file,\n        _this.node\n        \n    );\n     \n    this.error_line = validate_res.size;\n\n    if (this.error_line < 1) {\n          return true;\n    }\n    var tlines = this.el.get_line_count ();\n    Gtk.TextIter iter;\n    var valiter = validate_res.map_iterator();\n    while (valiter.next()) {\n    \n//        print(\"get inter\\n\");\n        var eline = valiter.get_key();\n        if (eline > tlines) {\n            continue;\n        }\n        this.el.get_iter_at_line( out iter, eline);\n        //print(\"mark line\\n\");\n        this.el.create_source_mark(valiter.get_value(), \"error\", iter);\n    }   \n    \n    //print(\"done mark line\\n\");\n     \n    return true; // at present allow saving - even if it's invalid..\n}\n",
+         "* pack" : "set_buffer",
+         "xtype" : "Buffer",
+         "$ xns" : "GtkSource"
         }
-    ]
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }
