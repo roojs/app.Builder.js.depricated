@@ -23,6 +23,7 @@ public class WindowState : Object
     public Xcls_WindowAddProp   add_props;
     public Xcls_LeftProps       left_props;
     public Xcls_ProjectSettings projectsettings;
+    public ValaProjectSettings vala_projectsettings;
     
     code_editor
     rightpalete
