@@ -46,6 +46,7 @@ public class WindowState : Object
         // on clutter space...
         this.projectEditInit();
         this.codeEditInit();
+        this.projectListInit();)
         this.fileViewInit();
         
         // adding stuff
