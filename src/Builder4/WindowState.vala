@@ -501,7 +501,7 @@ public class WindowState : Object
                     "signals",
                     ae.fqn()
                 );
-                _this.addpropsview.el.save_easing_state();
+                _this.addpropsview.el.save_easing_sttopate();
                     
                 var el = _this.rooview.el;
                 el.save_easing_state();
