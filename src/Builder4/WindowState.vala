@@ -393,7 +393,7 @@ public class WindowState : Object
     // ------ Gtk  - view
 
     public void gtkViewInit()
-    {D
+    {
         this.window_gladeview  =new Xcls_GtkView();
         this.window_gladeview.ref();
     }
