@@ -430,6 +430,20 @@ public class WindowState : Object
                   }
               }
         }
+
+        switch (this.state) {
+            case State.LISTENER:
+                this.win.rooview.el.save_easing_state();
+                this.addpropsview.el.save_easing_state();
+                
+                this.win.rooview.el.set_scale(1.0f,1.0f);
+                this.addpropsview.el.set_scale(0.0f,0.0f);
+                
+ 
+                this.win.rooview.el.restore_easing_state();
+                this.win.addpropsview.el.restore_easing_state();   
+        
+
         
         this.state = new_state;
 
@@ -455,7 +469,7 @@ public class WindowState : Object
                 el.set_scale(0.0f,0.0f);
 
  
-                if (_this.project != null) {
+                if (this.win.project != null) {
                     this.left_projects.selectProject(_this.project);
                 }
              
