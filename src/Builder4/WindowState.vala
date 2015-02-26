@@ -489,7 +489,8 @@ public class WindowState : Object
             case State.LISTENER:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
-                    this
+                    this.state = this.oldstate;
+                    this.buttonShowHide();
                     return;
                 }
                 this.add_props.el.show_all();
