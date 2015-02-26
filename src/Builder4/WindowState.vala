@@ -417,8 +417,16 @@ public class WindowState : Object
                  
                 
                 this.win.objectshowbutton.el.show(); // add objects
+                this.win.addpropbutton.el.show();  
+                this.win.addlistenerbutton.el.show();  
             
-        
+                this.win.addprojectbutton.el.hide();
+                this.win.addfilebutton.el.hide();
+                 this.win.delprojectbutton.el.hide();
+                 this.win.new_window.el.hide();
+
+            
+                
         
 
     }
