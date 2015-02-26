@@ -46,6 +46,7 @@ public class Xcls_MainWindow : Object
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
+    public WindowState windowstate;
     public Xcls_ProjectSettings projectsettings;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
@@ -71,6 +72,7 @@ public class Xcls_MainWindow : Object
         this.left_tree = null;
         this.code_editor = null;
         this.new_file_dialog = null;
+        this.windowstate = null;
         this.projectsettings = null;
         this.clutterfiles = null;
         this.left_props = null;
