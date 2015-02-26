@@ -14,7 +14,7 @@ public class WindowState : Object
         OBJECT,
         PROP,
         LISTENER,
-        CODEEDIT
+        CODE
     };
 
     public State state;
@@ -404,28 +404,49 @@ public class WindowState : Object
     public void buttonsShowHide()
     {
         // basically hide everything, then show the relivant..
+
+         this.win.backbutton.el.hide();
+    
+        this.win.projectbutton.el.hide(); // show file nav...
+        this.win.editfilebutton.el.hide();
+        this.win.projecteditbutton.el.hide();
+         
+        
+        this.win.objectshowbutton.el.hide(); // add objects
+        this.win.addpropbutton.el.hide();  
+        this.win.addlistenerbutton.el.hide(); 
+
+    
+    
+        this.win.addprojectbutton.el.hide();
+        this.win.addfilebutton.el.hide();
+        this.win.delprojectbutton.el.hide();
+        this.win.new_window.el.hide();
+
+        
         switch (this.state) {
             
             case State.PREVIEW:  // this is the default state when working...
-              
-                this.win.backbutton.el.hide();
-            
+               
                 this.win.projectbutton.el.show(); // show file nav...
-            
                 this.win.editfilebutton.el.show();
                 this.win.projecteditbutton.el.show();
                  
                 
                 this.win.objectshowbutton.el.show(); // add objects
                 this.win.addpropbutton.el.show();  
-                this.win.addlistenerbutton.el.show();  
+                this.win.addlistenerbutton.el.show(); 
+                break;
             
-                this.win.addprojectbutton.el.hide();
-                this.win.addfilebutton.el.hide();
-                 this.win.delprojectbutton.el.hide();
-                 this.win.new_window.el.hide();
-
-            
+           
+            case State.EDITCODE: 
+            case State.PROP:
+             case State.LISTENER
+                this.win.backbutton.el.show();
+                this.win.objectshowbutton.el.show(); // add objects
+                this.win.addpropbutton.el.show();  
+                this.win.addlistenerbutton.el.show(); 
+                
                 
         
 
