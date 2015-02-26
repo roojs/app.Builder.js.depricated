@@ -400,6 +400,16 @@ public class WindowState : Object
         this.window_gladeview.ref();
     }
 
+    public void switchState(state)
+    {
+        // leaving...
+        switch (this.state) {
+            
+            case State.PREVIEW:  // this is the default state when working...
+       
+
+    }
+    
     // -- buttons show hide.....
 
     public void buttonsShowHide()
