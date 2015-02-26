@@ -450,59 +450,8 @@ public class Xcls_MainWindow : Object
     public             void hideViewEditing ( )   {
     
     // show the file navigation...
-      
-        if (this.left_tree.getActiveFile() != null) {
-             if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                 this.window_rooview.createThumb();
-             } else {
-                  this.window_gladeview.createThumb();
-              }
-          }
-          
-        _this.addprojectbutton.el.show();   
-        _this.addfilebutton.el.show();       
-          _this.backbutton.el.show();
-        _this.delprojectbutton.el.show();
-          _this.new_window.el.show();  
-              
-          _this.editfilebutton.el.hide();   
-          _this.projectbutton.el.hide();         
-          _this.projecteditbutton.el.hide();
-          _this.objectshowbutton.el.hide();
-          _this.addpropbutton.el.hide();      
-          _this.addlistenerbutton.el.hide();  
+        this.windowstate.set(WindowState.State.FILES);
     
-    
-    
-    
-              
-        // show the add file button..
-        
-              
-          
-         this.editpane.el.hide();
-        //this.rooview.el.hide();
-         this.left_projects.el.show();
-        
-        var el = _this.rooview.el;
-        el.save_easing_state();
-          el.set_easing_duration(1000);
-        // show project / file view..
-        //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
-        //_this.mainpane.el.set_position(0);
-        // rotate y 180..
-        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-        el.set_scale(0.0f,0.0f);
-       
-            _this.state = "files";
-        if (_this.project != null) {
-            _this.left_projects.selectProject(_this.project);
-            }
-        //_this.clutterfiles.loadProject(_this.project);
-    
-        el.restore_easing_state();
-            
-        print("show view browsing");
     }
     public             void showObject () {
     
