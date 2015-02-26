@@ -137,7 +137,7 @@ public class Xcls_MainWindow : Object
       }
     public        void initChildren () {
         // this needs putting in a better place..
-        
+        this.windowstate = new WindowState(this);
         print("init children");
         this.left_tree = new Xcls_WindowLeftTree();
         this.left_tree.ref();
