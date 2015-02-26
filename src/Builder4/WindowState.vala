@@ -15,7 +15,8 @@ public class WindowState : Object
         PROP,
         LISTENER,
         CODE,
-        FILES
+        FILES,
+        PROJECT // project settings..
     };
 
     public State state;
@@ -452,7 +453,12 @@ public class WindowState : Object
                 this.win.objectview.el.set_scale(0.0f,0.0f);
                 this.win.objectview.el.restore_easing_state();    
                 break;
-                    
+
+           case State.PROJECT:
+                this.win.projecteditview.el.save_easing_state();
+                this.win.projecteditview.el.set_scale(0.0f,0.0f);
+                this.win.projecteditview.el.restore_easing_state();    
+                break;
         
         this.state = new_state;
 
