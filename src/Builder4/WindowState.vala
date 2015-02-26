@@ -400,7 +400,7 @@ public class WindowState : Object
         this.window_gladeview.ref();
     }
 
-    public void switchState(state)
+    public void switchState(State new_state)
     {
         // leaving...
         switch (this.state) {
