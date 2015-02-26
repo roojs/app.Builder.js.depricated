@@ -489,6 +489,7 @@ public class WindowState : Object
 
 
             case State.LISTENER:
+            case State.PROP:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
                     this.state = this.oldstate;
@@ -498,7 +499,7 @@ public class WindowState : Object
                 this.add_props.el.show_all();
                 this.add_props.show(
                     Palete.factory(this.win.project.xtype), 
-                    "signals",
+                    this.state == State.LISTENER ? "signals" : "props",
                     ae.fqn()
                 );
  
@@ -506,20 +507,14 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc("addlistener");
+                _this.clutterembed.setSizesAlloc( this.state == State.LISTENER  ? "addlistener" : "addprop");
                 this.win.rooview.el.restore_easing_state();
                 
               
                 this.win.addpropsview.el.save_easing_state();
                 this.win.addpropsview.el.set_scale(1.0f,1.0f);
                 this.win.addpropsview.el.restore_easing_state();
-                
- 
-            case State.PROP:
-                this.win.addpropsview.el.save_easing_state();
-                this.win.addpropsview.el.set_scale(0.0f,0.0f);
-                this.win.addpropsview.el.restore_easing_state();   
-                break;
+                 
                 
             case State.CODE:
                 this.win.codeeditview.el.save_easing_state();
