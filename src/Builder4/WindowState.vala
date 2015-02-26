@@ -517,8 +517,19 @@ public class WindowState : Object
                  
                 
             case State.CODE:
+
+                this.code_editor.el.show_all();
+                
+                // caller needs to call editor - show....
+                this.win.rooview.el.save_easing_state();
+                // -- FIXME? this needs to be State aware?
+                _this.clutterembed.setSizesAlloc( "codeedit");
+                this.win.rooview.el.restore_easing_state();
+                
+
+                
                 this.win.codeeditview.el.save_easing_state();
-                this.win.codeeditview.el.set_scale(0.0f,0.0f);
+                this.win.codeeditview.el.set_scale(1.0f,1.0f);
                 this.win.codeeditview.el.restore_easing_state();    
                 break;
 
