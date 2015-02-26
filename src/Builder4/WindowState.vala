@@ -563,6 +563,16 @@ public class WindowState : Object
                 break;
 
            case State.PROJECT:
+
+             if (this.win.project.xtype == "Roo") {
+                    this.projectsettings.el.show_all();
+                    this.projectsettings.show(this.project);
+                } else {
+                    this.vala_projectsettings.el.show_all();
+                    this.vala_projectsettings.show((Project.Gtk)this.project);
+                }
+
+                
                 this.win.projecteditview.el.save_easing_state();
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
