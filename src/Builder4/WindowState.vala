@@ -449,7 +449,14 @@ public class WindowState : Object
                 this.win.addpropbutton.el.show();  
                 this.win.addlistenerbutton.el.show(); 
                 
-                
+            case State.FILES:
+                this.win.backbutton.el.show();
+                     
+                this.win.addprojectbutton.el.show();
+                this.win.addfilebutton.el.show();
+                this.win.delprojectbutton.el.show();
+                this.win.new_window.el.show();
+  
         
 
     }
