@@ -14,7 +14,8 @@ public class WindowState : Object
         OBJECT,
         PROP,
         LISTENER,
-        CODE
+        CODE,
+        FILES
     };
 
     public State state;
@@ -448,6 +449,7 @@ public class WindowState : Object
                 this.win.objectshowbutton.el.show(); // add objects
                 this.win.addpropbutton.el.show();  
                 this.win.addlistenerbutton.el.show(); 
+                 break;
                 
             case State.FILES:
                 this.win.backbutton.el.show();
@@ -456,7 +458,7 @@ public class WindowState : Object
                 this.win.addfilebutton.el.show();
                 this.win.delprojectbutton.el.show();
                 this.win.new_window.el.show();
-  
+                break;
         
 
     }
