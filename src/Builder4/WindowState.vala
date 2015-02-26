@@ -408,12 +408,16 @@ public class WindowState : Object
             
             case State.PREVIEW:  // this is the default state when working...
               
-                 this.backbutton.el.hide();
-                 this.projectbutton.el.show(); 
-                 this.projecteditbutton.el.show();
-                 this.editfilebutton.el.show();  
+                this.win.backbutton.el.hide();
+            
+                this.win.projectbutton.el.show(); // show file nav...
+            
+                this.win.editfilebutton.el.show();
+                this.win.projecteditbutton.el.show();
+                 
                 
-        
+                this.win.objectshowbutton.el.show(); // add objects
+            
         
         
 
