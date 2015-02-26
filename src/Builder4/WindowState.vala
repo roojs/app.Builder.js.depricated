@@ -316,20 +316,21 @@ public class WindowState : Object
         
     }
 
-    // ----------- list of projectsettings
-    public void  projectListInit() {
+    // ----------- list of projects on left
+    public void  projectListInit() 
+    {
 
-     this.left_projects = new Xcls_WindowLeftProjects();
+        this.left_projects = new Xcls_WindowLeftProjects();
          this.left_projects.ref();
-         this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
+         this.win.leftpane.el.pack_start(this.left_projects.el,true, true,0);
          this.left_projects.el.show_all();
          this.left_projects.project_selected.connect((proj) => {
             proj.scanDirs();
             this.clutterfiles.loadProject(proj);
         
          });
-        
 
+    }
     // ----------- file view
 
     public void fileViewInit()
