@@ -439,9 +439,11 @@ public class WindowState : Object
                 break;
             
            
-            case State.EDITCODE: 
+            case State.CODE: 
             case State.PROP:
-             case State.LISTENER
+            case State.LISTENER:
+            case State.CODE:
+                
                 this.win.backbutton.el.show();
                 this.win.objectshowbutton.el.show(); // add objects
                 this.win.addpropbutton.el.show();  
