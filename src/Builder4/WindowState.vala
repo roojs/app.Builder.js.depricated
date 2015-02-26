@@ -432,19 +432,27 @@ public class WindowState : Object
         }
 
         switch (this.state) {
+            
            case State.LISTENER:
            case State.PROP:
                 this.addpropsview.el.save_easing_state();
-                
                 this.addpropsview.el.set_scale(0.0f,0.0f);
-                
- 
                 this.win.addpropsview.el.restore_easing_state();   
-        
+                break;
+                
+            case State.CODE:
+                this.win.codeeditview.el.save_easing_state();
+                this.win.codeeditview.el.set_scale(0.0f,0.0f);
+                this.win.codeeditview.el.restore_easing_state();    
                 break;
 
 
-         
+             case State.OBJECT:
+                this.win.objectview.el.save_easing_state();
+                this.win.objectview.el.set_scale(0.0f,0.0f);
+                this.win.objectview.el.restore_easing_state();    
+                break;
+                    
         
         this.state = new_state;
 
