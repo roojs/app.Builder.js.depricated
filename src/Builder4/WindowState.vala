@@ -434,14 +434,11 @@ public class WindowState : Object
         switch (this.state) {
            case State.LISTENER:
            case State.PROP:
-                this.win.rooview.el.save_easing_state();
                 this.addpropsview.el.save_easing_state();
                 
-                this.win.rooview.el.set_scale(1.0f,1.0f);
                 this.addpropsview.el.set_scale(0.0f,0.0f);
                 
  
-                this.win.rooview.el.restore_easing_state();
                 this.win.addpropsview.el.restore_easing_state();   
         
                 break;
@@ -456,7 +453,10 @@ public class WindowState : Object
         switch (this.state) {
             
             case State.PREVIEW:  // this is the default state when working...
-
+                 this.win.rooview.el.save_easing_state();
+                 this.win.rooview.el.set_scale(1.0f,1.0f);
+                 this.win.rooview.el.restore_easing_state();
+               
                 break
            case State.FILES:  // can only get here from PREVIEW state.. in theory..
                 
