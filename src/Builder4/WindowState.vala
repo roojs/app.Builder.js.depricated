@@ -526,8 +526,7 @@ public class WindowState : Object
                 _this.clutterembed.setSizesAlloc( "codeedit");
                 this.win.rooview.el.restore_easing_state();
                 
-
-                
+ 
                 this.win.codeeditview.el.save_easing_state();
                 this.win.codeeditview.el.set_scale(1.0f,1.0f);
                 this.win.codeeditview.el.restore_easing_state();    
@@ -535,6 +534,22 @@ public class WindowState : Object
 
 
              case State.OBJECT:
+                 var n = _this.left_tree.getActiveElement();
+
+                    if (_this.left_tree.model.file == null) {
+                        this.state = this.oldstate;
+                        this.buttonShowHide();
+                        return;
+                    }
+                    
+                    if (n == null && _this.left_tree.model.file.tree != null) {
+                        this.state = this.oldstate;
+                        this.buttonShowHide();
+                        return;
+                    }
+
+
+                
                 this.win.objectview.el.save_easing_state();
                 this.win.objectview.el.set_scale(0.0f,0.0f);
                 this.win.objectview.el.restore_easing_state();    
