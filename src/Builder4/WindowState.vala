@@ -423,16 +423,27 @@ public class WindowState : Object
         if (this.state == State.PREVIEW) {
             // try and do a snapshot..
             
-            if (this.left_tree.getActiveFile() != null) {
-                 if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                     this.window_rooview.createThumb();
-                 } else {
-                      this.window_gladeview.createThumb();
-                  }
-              }
+            
         }
 
+        
+
+
+        
         switch (this.state) {
+
+            case State.PREVIEW:
+                if (this.left_tree.getActiveFile() != null) {
+                     if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                         this.window_rooview.createThumb();
+                     } else {
+                          this.window_gladeview.createThumb();
+                      }
+                }
+                // normally we are going from preview to another state.
+                // and different windows hide the preview in differnt ways..
+                
+                break;
             
            case State.LISTENER:
            case State.PROP:
@@ -471,7 +482,41 @@ public class WindowState : Object
                  this.win.rooview.el.set_scale(1.0f,1.0f);
                  this.win.rooview.el.restore_easing_state();
                
-                break
+                break;
+
+
+            case State.LISTENER:
+                var ae =      this.left_tree.getActiveElement();
+                if (ae == null) {
+                    return;
+                }
+ 
+                
+            case State.PROP:
+                this.addpropsview.el.save_easing_state();
+                this.addpropsview.el.set_scale(0.0f,0.0f);
+                this.win.addpropsview.el.restore_easing_state();   
+                break;
+                
+            case State.CODE:
+                this.win.codeeditview.el.save_easing_state();
+                this.win.codeeditview.el.set_scale(0.0f,0.0f);
+                this.win.codeeditview.el.restore_easing_state();    
+                break;
+
+
+             case State.OBJECT:
+                this.win.objectview.el.save_easing_state();
+                this.win.objectview.el.set_scale(0.0f,0.0f);
+                this.win.objectview.el.restore_easing_state();    
+                break;
+
+           case State.PROJECT:
+                this.win.projecteditview.el.save_easing_state();
+                this.win.projecteditview.el.set_scale(0.0f,0.0f);
+                this.win.projecteditview.el.restore_easing_state();    
+                break;
+                
            case State.FILES:  // can only get here from PREVIEW state.. in theory..
                 
    
