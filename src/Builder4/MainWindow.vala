@@ -46,7 +46,6 @@ public class Xcls_MainWindow : Object
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
-    public string XXXX;
     public Xcls_ProjectSettings projectsettings;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
