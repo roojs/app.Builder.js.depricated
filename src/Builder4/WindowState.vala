@@ -10,6 +10,7 @@ public class WindowState : Object
     public MainWindow win;
 
     public enum State {
+        PREVIEW,
         OBJECT,
         PROP,
         LISTENER,
@@ -398,7 +399,28 @@ public class WindowState : Object
         this.window_gladeview.ref();
     }
 
+    // -- buttons show hide.....
 
+    public void buttonsShowHide()
+    {
+        // basically hide everything, then show the relivant..
+        switch (this.state) {
+            
+            case State.PREVIEW:  // this is the default state when working...
+              
+                 this.backbutton.el.hide();
+                 this.projectbutton.el.show(); 
+                 this.projecteditbutton.el.show();
+                 this.editfilebutton.el.show();  
+                
+        
+        
+        
+
+    }
+
+
+    
 
     
 }
