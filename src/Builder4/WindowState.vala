@@ -432,7 +432,8 @@ public class WindowState : Object
         }
 
         switch (this.state) {
-            case State.LISTENER:
+           case State.LISTENER:
+           case State.PROP:
                 this.win.rooview.el.save_easing_state();
                 this.addpropsview.el.save_easing_state();
                 
@@ -443,7 +444,10 @@ public class WindowState : Object
                 this.win.rooview.el.restore_easing_state();
                 this.win.addpropsview.el.restore_easing_state();   
         
+                break;
 
+
+         
         
         this.state = new_state;
 
