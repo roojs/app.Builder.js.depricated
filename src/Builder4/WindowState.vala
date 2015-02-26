@@ -470,6 +470,8 @@ public class WindowState : Object
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
                 break;
+        }
+        
         var oldstate  =this.state;
         this.state = new_state;
 
@@ -503,8 +505,9 @@ public class WindowState : Object
                     
                 var el = _this.rooview.el;
                 el.save_easing_state();
-               
-                  _this.clutterembed.setSizesAlloc("addlistener");
+                // -- FIXME? this needs to be State aware?
+                
+                _this.clutterembed.setSizesAlloc("addlistener");
 
                 
               
@@ -518,8 +521,8 @@ public class WindowState : Object
                 el.restore_easing_state();
                 _this.addpropsview.el.restore_easing_state();
             case State.PROP:
-                this.addpropsview.el.save_easing_state();
-                this.addpropsview.el.set_scale(0.0f,0.0f);
+                this.win.addpropsview.el.save_easing_state();
+                this.win.addpropsview.el.set_scale(0.0f,0.0f);
                 this.win.addpropsview.el.restore_easing_state();   
                 break;
                 
