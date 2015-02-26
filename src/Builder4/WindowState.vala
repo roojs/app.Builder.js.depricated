@@ -574,7 +574,7 @@ public class WindowState : Object
 
                  this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc( "projectedit");
+                _this.clutterembed.setSizesAlloc( "projectedit"); // was doing 0.5f....
                 this.win.rooview.el.restore_easing_state();
 
                 this.win.projecteditview.el.save_easing_state();
