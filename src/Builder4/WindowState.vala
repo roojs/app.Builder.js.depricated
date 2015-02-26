@@ -25,38 +25,38 @@ public class WindowState : Object
     public Xcls_ProjectSettings projectsettings;
     public ValaProjectSettings  vala_projectsettings;
     public Xcls_RightPalete     rightpalete;
-    public Editor        code_editor;    
+    public Editor               code_editor;    
     public Xcls_WindowRooView   window_rooview;
-    public Xcls_GtkView        window_gladeview;
+    public Xcls_GtkView         window_gladeview;
     public Xcls_DialogNewComponent new_file_dialog;     
 
     // ctor 
     public WindowState(MainWindow win)
     {
-    this.win = win;
-    // initialize
+        this.win = win;
+        // initialize
 
-    // left elements..
-    this.leftTreeInit();
-    this.propsListInit();
+        // left elements..
+        this.leftTreeInit();
+        this.propsListInit();
 
-    // on clutter space...
-    this.projectEditInit();
-    this.codeEditInit();
-    this.fileViewInit();
-    
-    // adding stuff
-    this.objectAddInit();
-    this.propsAddInit();
- 
-    
-    // previews...
-    this.gtkViewInit();
-    this.webkitViewInit();
+        // on clutter space...
+        this.projectEditInit();
+        this.codeEditInit();
+        this.fileViewInit();
+        
+        // adding stuff
+        this.objectAddInit();
+        this.propsAddInit();
+     
+        
+        // previews...
+        this.gtkViewInit();
+        this.webkitViewInit();
 
-    // dialogs
+        // dialogs
 
-    this.fileNewInit();
+        this.fileNewInit();
     }
 
 
