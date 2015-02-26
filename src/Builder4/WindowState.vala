@@ -442,7 +442,7 @@ public class WindowState : Object
             case State.CODE: 
             case State.PROP:
             case State.LISTENER:
-            case State.CODE:
+            case State.OBJECT
                 
                 this.win.backbutton.el.show();
                 this.win.objectshowbutton.el.show(); // add objects
