@@ -32,6 +32,7 @@ public class WindowState : Object
     public Xcls_GtkView         window_gladeview;
     public Xcls_DialogNewComponent new_file_dialog;     
 
+    public Xcls_WindowLeftProjects left_projects; // can not see where this is initialized.. 
     // ctor 
     public WindowState(MainWindow win)
     {
@@ -402,12 +403,53 @@ public class WindowState : Object
 
     public void switchState(State new_state)
     {
-        // going to...
+        if (this.state == State.PREVIEW) {
+            // try and do a snapshot..
+            
+            if (this.left_tree.getActiveFile() != null) {
+                 if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+                     this.window_rooview.createThumb();
+                 } else {
+                      this.window_gladeview.createThumb();
+                  }
+              }
+        }
+        
+        this.state = new_state;
+
+        this.buttonShowHide();
+        
         switch (this.state) {
             
             case State.PREVIEW:  // this is the default state when working...
-       
 
+                break
+           case State.FILES:  // can only get here from PREVIEW state.. in theory..
+                
+   
+             this.win.editpane.el.hide(); // holder for tree and properties..
+             
+             this.left_projects.el.show(); 
+            
+            var el = _this.rooview.el;
+            el.save_easing_state();
+              el.set_easing_duration(1000);
+            // show project / file view..
+            //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
+            //_this.mainpane.el.set_position(0);
+            // rotate y 180..
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+            el.set_scale(0.0f,0.0f);
+           
+                _this.state = "files";
+            if (_this.project != null) {
+                _this.left_projects.selectProject(_this.project);
+                }
+            //_this.clutterfiles.loadProject(_this.project);
+
+            el.restore_easing_state();
+                
+            print("show view browsing");
     }
     
     // -- buttons show hide.....
