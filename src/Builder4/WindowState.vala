@@ -470,6 +470,20 @@ public class WindowState : Object
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
                 break;
+
+          case State.FILES:
+
+
+       
+                this.win.rooview.el.save_easing_state();
+                this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+                this.win.rooview.el.set_scale(1.0f,1.0f);
+                this.win.rooview.el.restore_easing_state();  
+
+                 this.win.clutterfiles.el.hide();
+                break;
+
+                
         }
         
         var oldstate  =this.state;
