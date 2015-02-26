@@ -490,7 +490,7 @@ public class WindowState : Object
                 if (ae == null) {
                     return;
                 }
- 
+                
                 
             case State.PROP:
                 this.addpropsview.el.save_easing_state();
