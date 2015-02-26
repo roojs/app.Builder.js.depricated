@@ -470,9 +470,10 @@ public class WindowState : Object
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
                 break;
-        
+        var oldstate  =this.state;
         this.state = new_state;
 
+                
         this.buttonShowHide();
         
         switch (this.state) {
@@ -488,9 +489,15 @@ public class WindowState : Object
             case State.LISTENER:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
+                    this
                     return;
                 }
-                
+                this.add_props.el.show_all();
+                this.add_props.show(
+                    Palete.factory(this.win.project.xtype), 
+                    "signals",
+                    ae.fqn()
+                );
                 
             case State.PROP:
                 this.addpropsview.el.save_easing_state();
