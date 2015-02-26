@@ -447,8 +447,8 @@ public class WindowState : Object
             
            case State.LISTENER:
            case State.PROP:
-                this.addpropsview.el.save_easing_state();
-                this.addpropsview.el.set_scale(0.0f,0.0f);
+                this.win.addpropsview.el.save_easing_state();
+                this.win.addpropsview.el.set_scale(0.0f,0.0f);
                 this.win.addpropsview.el.restore_easing_state();   
                 break;
                 
@@ -499,7 +499,24 @@ public class WindowState : Object
                     "signals",
                     ae.fqn()
                 );
+                _this.addpropsview.el.save_easing_state();
+                    
+                var el = _this.rooview.el;
+                el.save_easing_state();
+               
+                  _this.clutterembed.setSizesAlloc("addlistener");
+
                 
+              
+
+                _this.addpropsview.el.set_scale(1.0f,1.0f);
+               
+               
+             
+                //_this.clutterfiles.loadProject(_this.project);
+
+                el.restore_easing_state();
+                _this.addpropsview.el.restore_easing_state();
             case State.PROP:
                 this.addpropsview.el.save_easing_state();
                 this.addpropsview.el.set_scale(0.0f,0.0f);
