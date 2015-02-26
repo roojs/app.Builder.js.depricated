@@ -572,7 +572,11 @@ public class WindowState : Object
                     this.vala_projectsettings.show((Project.Gtk)this.project);
                 }
 
-                
+                 this.win.rooview.el.save_easing_state();
+                // -- FIXME? this needs to be State aware?
+                _this.clutterembed.setSizesAlloc( "projectedit");
+                this.win.rooview.el.restore_easing_state();
+
                 this.win.projecteditview.el.save_easing_state();
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
