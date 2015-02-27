@@ -10,6 +10,8 @@ src/Makefile
 src/Makefile
 src/*.c
 src/*.o
+src/builder
+
 
 Makefile
 Makefile.in
