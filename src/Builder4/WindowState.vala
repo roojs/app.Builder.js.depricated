@@ -509,6 +509,7 @@ public class WindowState : Object
 
                  this.win.rooview.el.save_easing_state();
                  this.win.rooview.el.set_scale(1.0f,1.0f);
+                 this.win.rooview.el.el.set_opacity(0);
                  this.win.rooview.el.restore_easing_state();
                
                 break;
@@ -516,7 +517,7 @@ public class WindowState : Object
 
             case State.LISTENER:
 		// same as prop?
-	    case State.PROP:
+            case State.PROP:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
                     this.state = oldstate;
