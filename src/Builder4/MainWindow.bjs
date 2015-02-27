@@ -43,7 +43,6 @@
    "$ xns" : "Gtk",
    "# Xcls_ClutterFiles clutterfiles" : "null",
    "# Xcls_LeftProps left_props" : "null",
-   "# string state" : "",
    "|             void hideViewEditing" : "  ( )   {\n\n// show the file navigation...\n    this.windowstate.set(WindowState.State.FILES);\n\n}",
    "# Xcls_RightPalete rightpalete" : "null",
    "# string title" : "\"Application Builder\"",

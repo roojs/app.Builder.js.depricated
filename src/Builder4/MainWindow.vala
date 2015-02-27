@@ -50,7 +50,6 @@ public class Xcls_MainWindow : Object
     public Xcls_ProjectSettings projectsettings;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
-    public string state;
     public Xcls_RightPalete rightpalete;
     public string title;
     public ValaProjectSettings vala_projectsettings;
