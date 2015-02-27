@@ -2111,8 +2111,8 @@ public class Xcls_MainWindow : Object
                 
                 
                 var f = JsRender.JsRender.factory(proj.xtype,  proj, "");
-                this.project = proj;
-                this.windowstate.new_file_dialog.show(f);
+                _this.project = proj;
+                _this.windowstate.new_file_dialog.show(f);
                 
                 return  ;    
             });

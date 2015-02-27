@@ -467,7 +467,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : " () => {\n    // create a new file in project..\n    \n    // what's the currently selected project...\n    var proj = _this.left_projects.getSelectedProject();\n    \n    if (proj == null) {\n        return  ;\n    }\n    \n    \n    \n    var f = JsRender.JsRender.factory(proj.xtype,  proj, \"\");\n    this.project = proj;\n    this.windowstate.new_file_dialog.show(f);\n    \n    return  ;    \n}"
+                    "clicked" : " () => {\n    // create a new file in project..\n    \n    // what's the currently selected project...\n    var proj = _this.left_projects.getSelectedProject();\n    \n    if (proj == null) {\n        return  ;\n    }\n    \n    \n    \n    var f = JsRender.JsRender.factory(proj.xtype,  proj, \"\");\n    _this.project = proj;\n    _this.windowstate.new_file_dialog.show(f);\n    \n    return  ;    \n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
