@@ -151,7 +151,7 @@ public class WindowState : Object
             case State.CODE:
                  this.switchState(State.PREVIEW);
              
-            break;
+                break;
                
                             
         }
