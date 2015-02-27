@@ -18,7 +18,6 @@
    "* init" : " \n\t  \n    //this.el.show_all();\n    \n    ",
    "# Xcls_GtkView window_gladeview" : "null",
    "# Project.Project project" : "null",
-   "# Xcls_WindowLeftTree left_tree" : "null",
    "# string title" : "\"Application Builder\"",
    "xtype" : "Window",
    "# Xcls_RightPalete rightpalete" : "null",
@@ -36,7 +35,6 @@
    "# Xcls_WindowRooView window_rooview" : "null",
    "$ type" : "Gtk.WindowType.TOPLEVEL",
    "# Editor code_editor" : "null",
-   "# Xcls_DialogNewComponent new_file_dialog" : "null",
    "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [
     {

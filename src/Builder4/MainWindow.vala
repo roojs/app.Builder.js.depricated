@@ -41,7 +41,6 @@ public class Xcls_MainWindow : Object
     public Xcls_LeftProps left_props;
     public Xcls_GtkView window_gladeview;
     public Project.Project project;
-    public Xcls_WindowLeftTree left_tree;
     public string title;
     public Xcls_RightPalete rightpalete;
     public ValaProjectSettings vala_projectsettings;
@@ -52,7 +51,6 @@ public class Xcls_MainWindow : Object
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
     public Editor code_editor;
-    public Xcls_DialogNewComponent new_file_dialog;
 
     // ctor 
     public Xcls_MainWindow()
@@ -64,7 +62,6 @@ public class Xcls_MainWindow : Object
         this.left_props = null;
         this.window_gladeview = null;
         this.project = null;
-        this.left_tree = null;
         this.title = "Application Builder";
         this.rightpalete = null;
         this.vala_projectsettings = null;
@@ -75,7 +72,6 @@ public class Xcls_MainWindow : Object
         this.left_projects = null;
         this.window_rooview = null;
         this.code_editor = null;
-        this.new_file_dialog = null;
 
         // set gobject values
         this.el.border_width = 0;
