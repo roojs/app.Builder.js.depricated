@@ -711,14 +711,15 @@ public class WindowState : Object
         this.redraw_count = 2;
         if (rc = 0) {
             GLib.Timeout.add_seconds(1,  ()  =>{
-                 this.resizeCanvasQueue();
-                 return false;
+                 return this.resizeCanvasQueue();
             });
         }
     }
     public resizeCanvasQueue()
     {
+        print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
         this.redraw_count--;
+
         if (this.redraw_canvas > 0) {
              GLib.Timeout.add_seconds(1,  ()  =>{
                  return this.resizeCanvasQueue();
