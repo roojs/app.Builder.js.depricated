@@ -17,7 +17,7 @@ public class WindowState : Object
         CODE,
         FILES,
         PROJECT // project settings..
-    };
+    }
 
     public State state;
 
