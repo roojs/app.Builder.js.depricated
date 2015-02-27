@@ -618,7 +618,7 @@ public class WindowState : Object
                 break;
 
 
-
+        }
 
             
     }
