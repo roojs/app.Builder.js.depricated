@@ -282,7 +282,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n     this.windowstate.switchState(WindowState.State.PROJECT);\n   \n\n\n}"
+                    "clicked" : "  ( ) => {\n     _this.windowstate.switchState(WindowState.State.PROJECT);\n   \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",

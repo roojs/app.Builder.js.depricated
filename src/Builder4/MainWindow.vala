@@ -1481,7 +1481,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                 this.windowstate.switchState(WindowState.State.PROJECT);
+                 _this.windowstate.switchState(WindowState.State.PROJECT);
                
             
             
