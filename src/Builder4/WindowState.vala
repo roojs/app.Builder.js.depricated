@@ -691,7 +691,9 @@ public class WindowState : Object
 
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
-        if (!_this.children_loaded) {  return; }
+        if (!_this.children_loaded) { 
+            return; 
+        }
      
         this.win.clutterfiles.set_size(alloc.width-50, alloc.height);
         
@@ -724,17 +726,15 @@ public class WindowState : Object
             case State.CODE: 
 
 	            var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
-	
-	
-               this.win.rooview.el.set_scale(scale,scale);
-               break;
+	            this.win.rooview.el.set_scale(scale,scale);
+                break;
                 
             case State.PROP:
             case State.LISTENER:        
             case State.OBJECT:   
 	            var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
-               this.win.rooview.el.set_scale(scale,scale);
-               break;
+                this.win.rooview.el.set_scale(scale,scale);
+                break;
         }
     }
 
