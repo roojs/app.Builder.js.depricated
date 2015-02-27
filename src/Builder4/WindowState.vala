@@ -736,11 +736,15 @@ public class WindowState : Object
         //print("set code size %f\n", codesize);
 
 
-        this.win.rooview.el.set_size(alloc.width-50, alloc.height);    
+            
 
 
         
         switch ( this.state) {
+            case State.PREVIEW:
+                this.win.rooview.el.set_size(alloc.width-50, alloc.height);
+                break;
+    
             case State.FILES: 
                 this.clutterfiles.set_size(alloc.width-50, alloc.height);
                 break;
