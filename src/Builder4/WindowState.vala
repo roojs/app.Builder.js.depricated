@@ -682,7 +682,7 @@ public class WindowState : Object
                 this.win.delprojectbutton.el.show();
                 this.win.new_window.el.show();
                 break;
-        
+        }
 
     }
     public void resizeCanvasElementsA()
