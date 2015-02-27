@@ -305,7 +305,6 @@
               },
               {
                "listeners" : {
-                "button_press_event" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n\n \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showObject();\n            break;\n    case \"addlistener\":\n            _this.hideAddListener();\n            _this.showObject();\n            break;\n\n// show            \n        case \"edit\":\n            _this.showObject();\n            break;\n            \n// hide            \n        case \"object\":\n            _this.hideObject();\n            break;\n            break;\n                        \n        default:\n            print(\"unhandled add objects from %s\\n\",_this.state);\n            break;\n    }\n    return false;    \n\n\n}",
                 "enter_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
                 "leave_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}"
                },

@@ -1538,41 +1538,6 @@ public class Xcls_MainWindow : Object
 
             this.el.set_size(50,50);
             // listeners 
-            this.el.button_press_event.connect( ( ) => {
-                
-                
-                
-                switch (_this.state) {
-            
-             
-                    case "addprop":
-                        _this.hideAddProp();
-                        _this.showObject();
-                        break;
-                case "addlistener":
-                        _this.hideAddListener();
-                        _this.showObject();
-                        break;
-            
-            // show            
-                    case "edit":
-                        _this.showObject();
-                        break;
-                        
-            // hide            
-                    case "object":
-                        _this.hideObject();
-                        break;
-                        break;
-                                    
-                    default:
-                        print("unhandled add objects from %s\n",_this.state);
-                        break;
-                }
-                return false;    
-            
-            
-            });
             this.el.enter_event.connect( (  event)  => {
                 this.el.background_color = new Clutter.Color.from_string("#333");
                     return false;
