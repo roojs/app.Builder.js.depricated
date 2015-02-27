@@ -493,7 +493,7 @@ public class WindowState : Object
         this.state = new_state;
 
                 
-        this.buttonShowHide();
+        this.buttonsShowHide();
         
         switch (this.state) {
             
