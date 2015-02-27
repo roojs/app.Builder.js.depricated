@@ -1638,36 +1638,8 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect( ( ) => {
                 
-                
-                
-                switch (_this.state) {
-            
-             
-                    case "addprop":
-                        _this.hideAddProp();
-                        _this.showObject();
-                        break;
-                case "addlistener":
-                        _this.hideAddListener();
-                        _this.showObject();
-                        break;
-            
-            // show            
-                    case "edit":
-                        _this.showObject();
-                        break;
-                        
-            // hide            
-                    case "object":
-                        _this.hideObject();
-                        break;
-                        break;
-                                    
-                    default:
-                        print("unhandled add objects from %s\n",_this.state);
-                        break;
-                }
-                return  ;    
+                 this.windowstate.switchState(WindowState.State.OBJECT);
+              
             
             
             });
