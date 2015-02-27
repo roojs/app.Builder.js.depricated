@@ -8,6 +8,8 @@ src/Palete/*.o
 src/Project/*.o
 src/Makefile
 src/Makefile
+src/*.c
+src/*.o
 
 Makefile
 Makefile.in
