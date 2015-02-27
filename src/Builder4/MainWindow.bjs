@@ -395,7 +395,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n    \n    this.windowstate.switchState(WindowState.State.LISTENER);\n  \n\n\n}"
+                    "clicked" : "  ( ) => {\n    \n    _this.windowstate.switchState(WindowState.State.LISTENER);\n  \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
