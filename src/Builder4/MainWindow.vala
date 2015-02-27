@@ -2242,11 +2242,11 @@ public class Xcls_MainWindow : Object
             
                 // confirm?
                 Project.Project.remove(project);
-                _this.project = null;
+                this.project = null;
                 
-                _this.left_projects.is_loaded =  false;
-                _this.left_projects.load();
-                _this.clutterfiles.clearFiles();
+                this.windowstate.left_projects.is_loaded =  false;
+                this.windowstate.left_projects.load();
+                this.windowstate.clutterfiles.clearFiles();
             
             });
         }
