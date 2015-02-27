@@ -221,7 +221,7 @@ public class WindowState : Object
     
         this.vala_projectsettings  =new ValaProjectSettings();
         this.vala_projectsettings.ref();
-        this.vala_projectsettings.window = this;
+        this.vala_projectsettings.window = this.win;
     
         ((Gtk.Container)(this.win.projecteditview.el.get_widget())).add(this.projectsettings.el);
         //this.projectsettings.el.show_all();
