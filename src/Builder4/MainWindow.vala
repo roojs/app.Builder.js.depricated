@@ -1254,33 +1254,8 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                switch (_this.state) {
-                    case "edit":
-                    
-                        _this.hideViewEditing();
-                        break;  
-                    case "files":
-                        _this.showViewEditing();
-                        break; 
-                        
-                      case "addprop":
-                        _this.hideAddProp();
-                        _this.hideViewEditing();
-                        break;
-                    case "addlistener":
-                        _this.hideAddListener();
-                        _this.hideViewEditing();
-                        break;
-                         
-                     case "object":
-                        _this.hideObject();
-                        _this.hideViewEditing();
-                        break;    
-                        
-                    default:
-                        break;
-                }
-                return  ;    
+               this.windowstate.switchState(WindowState.State.PROJECT);
+                  
             
             });
         }
