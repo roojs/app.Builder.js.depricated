@@ -979,7 +979,7 @@ public class Xcls_MainWindow : Object
                 if (_this.project == null || _this.windowstate.left_tree.model.file == null) {
                     return  ;
                 }
-                 _this.windowstate.new_file_dialog.show(_this.left_tree.model.file);
+                 _this.windowstate.new_file_dialog.show(_this.windowstate.left_tree.model.file);
                  
                 return  ;    
             
