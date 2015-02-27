@@ -666,13 +666,13 @@ public class WindowState : Object
             case State.CODE: 
             case State.PROP:
             case State.LISTENER:
-            case State.OBJECT
+            case State.OBJECT:
                 
                 this.win.backbutton.el.show();
                 this.win.objectshowbutton.el.show(); // add objects
                 this.win.addpropbutton.el.show();  
                 this.win.addlistenerbutton.el.show(); 
-                 break;
+                break;
                 
             case State.FILES:
                 this.win.backbutton.el.show();
