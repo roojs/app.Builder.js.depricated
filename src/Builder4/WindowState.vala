@@ -510,7 +510,7 @@ public class WindowState : Object
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
                     this.state = oldstate;
-                    this.buttonShowHide();
+                    this.buttonsShowHide();
                     return;
                 }
                 this.add_props.el.show_all();
@@ -554,13 +554,13 @@ public class WindowState : Object
 
                 if (this.left_tree.model.file == null) {
                     this.state =oldstate;
-                    this.buttonShowHide();
+                    this.buttonsShowHide();
                     return;
                 }
                 
                 if (n == null && this.left_tree.model.file.tree != null) {
                     this.state = oldstate;
-                    this.buttonShowHide();
+                    this.buttonsShowHide();
                     return;
                 }
 
@@ -581,10 +581,10 @@ public class WindowState : Object
 
              if (this.win.project.xtype == "Roo") {
                     this.projectsettings.el.show_all();
-                    this.projectsettings.show(this.project);
+                    this.projectsettings.show(this.win.project);
                 } else {
                     this.vala_projectsettings.el.show_all();
-                    this.vala_projectsettings.show((Project.Gtk)this.project);
+                    this.vala_projectsettings.show((Project.Gtk)this.win.project);
                 }
 
                  this.win.rooview.el.save_easing_state();
@@ -612,7 +612,7 @@ public class WindowState : Object
 
  
                 if (this.win.project != null) {
-                    this.left_projects.selectProject(_this.project);
+                    this.left_projects.selectProject(this.win.project);
                 }
              
                 el.restore_easing_state();
