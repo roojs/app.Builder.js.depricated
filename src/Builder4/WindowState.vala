@@ -619,7 +619,7 @@ public class WindowState : Object
 
                 el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
                 el.set_opacity(0);
-                el.set_scale(0.0f,0.0f);
+                //el.set_scale(0.0f,0.0f);
 
  
                 if (this.win.project != null) {
