@@ -10,6 +10,7 @@ public class WindowState : Object
     public Xcls_MainWindow win;
 
     public enum State {
+	NONE,
         PREVIEW,
         OBJECT,
         PROP,
@@ -19,7 +20,7 @@ public class WindowState : Object
         PROJECT // project settings..
     }
 
-    public State state;
+    public State state = State.NONE;
 
     public bool children_loaded = false;
 
