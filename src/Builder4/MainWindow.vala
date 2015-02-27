@@ -38,21 +38,21 @@ public class Xcls_MainWindow : Object
     public Xcls_new_window new_window;
 
         // my vars (def)
-    public int no_windows;
-    public Project.Project project;
-    public Xcls_WindowLeftProjects left_projects;
-    public Xcls_WindowRooView window_rooview;
-    public Xcls_WindowLeftTree left_tree;
-    public Editor code_editor;
-    public Xcls_DialogNewComponent new_file_dialog;
-    public Xcls_ProjectSettings projectsettings;
     public Xcls_LeftProps left_props;
-    public Xcls_RightPalete rightpalete;
+    public Xcls_GtkView window_gladeview;
+    public Project.Project project;
+    public Xcls_WindowLeftTree left_tree;
     public string title;
+    public Xcls_RightPalete rightpalete;
     public ValaProjectSettings vala_projectsettings;
     public Xcls_WindowAddProp add_props;
+    public int no_windows;
+    public Xcls_ProjectSettings projectsettings;
     public WindowState windowstate;
-    public Xcls_GtkView window_gladeview;
+    public Xcls_WindowLeftProjects left_projects;
+    public Xcls_WindowRooView window_rooview;
+    public Editor code_editor;
+    public Xcls_DialogNewComponent new_file_dialog;
 
     // ctor 
     public Xcls_MainWindow()
@@ -61,21 +61,21 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars (dec)
-        this.no_windows = 1;
-        this.project = null;
-        this.left_projects = null;
-        this.window_rooview = null;
-        this.left_tree = null;
-        this.code_editor = null;
-        this.new_file_dialog = null;
-        this.projectsettings = null;
         this.left_props = null;
-        this.rightpalete = null;
+        this.window_gladeview = null;
+        this.project = null;
+        this.left_tree = null;
         this.title = "Application Builder";
+        this.rightpalete = null;
         this.vala_projectsettings = null;
         this.add_props = null;
+        this.no_windows = 1;
+        this.projectsettings = null;
         this.windowstate = null;
-        this.window_gladeview = null;
+        this.left_projects = null;
+        this.window_rooview = null;
+        this.code_editor = null;
+        this.new_file_dialog = null;
 
         // set gobject values
         this.el.border_width = 0;
@@ -124,14 +124,14 @@ public class Xcls_MainWindow : Object
     
     
     }
-    public             void setTitle (string str) {
-        this.el.set_title(this.title + " - " + str);
-    }
     public             void show () {
         this.left_tree =new Xcls_WindowLeftTree();
         _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
         this.el.show_all();
     
+    }
+    public             void setTitle (string str) {
+        this.el.set_title(this.title + " - " + str);
     }
     public class Xcls_vbox : Object 
     {
@@ -980,7 +980,7 @@ public class Xcls_MainWindow : Object
             this.el.clicked.connect( ( ) => {
               
                 // create a new file in project..
-                if (_this.project == null || _this.left_tree.model.file == null) {
+                if (_this.project == null || _this.windowstate.left_tree.model.file == null) {
                     return  ;
                 }
                  _this.windowstate.new_file_dialog.show(_this.left_tree.model.file);
