@@ -275,7 +275,7 @@ public class WindowState : Object
         ((Gtk.Container)(this.win.addpropsview.el.get_widget())).add(this.add_props.el);
         //this.projectsettings.el.show_all();
 
-        var  stage = _this.win.addpropsview.el.get_stage();
+        var  stage = this.win.addpropsview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
 
 
