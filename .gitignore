@@ -32,3 +32,5 @@ stamp-h?
 *.l[ao]
 *~
 compile
+fontconfig/*
+
