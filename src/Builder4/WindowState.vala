@@ -550,22 +550,22 @@ public class WindowState : Object
 
 
              case State.OBJECT:
-                 var n = _this.left_tree.getActiveElement();
+                 var n = this.left_tree.getActiveElement();
 
-                if (_this.left_tree.model.file == null) {
-                    this.state = this.oldstate;
+                if (this.left_tree.model.file == null) {
+                    this.state =oldstate;
                     this.buttonShowHide();
                     return;
                 }
                 
-                if (n == null && _this.left_tree.model.file.tree != null) {
-                    this.state = this.oldstate;
+                if (n == null && this.left_tree.model.file.tree != null) {
+                    this.state = oldstate;
                     this.buttonShowHide();
                     return;
                 }
 
                 this.rightpalete.el.show_all();
-                this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
+                this.rightpalete.load(this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
                 this.win.rooview.el.save_easing_state();
                 this.resizeCanvasElementsA();
@@ -573,7 +573,7 @@ public class WindowState : Object
 
                 
                 this.win.objectview.el.save_easing_state();
-                this.win.objectview.el.sset_scale(1.0f,1.0f);
+                this.win.objectview.el.set_scale(1.0f,1.0f);
                 this.win.objectview.el.restore_easing_state();    
                 break;
 
