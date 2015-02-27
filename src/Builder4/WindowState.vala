@@ -260,7 +260,7 @@ public class WindowState : Object
         ((Gtk.Container)(this.win.objectview.el.get_widget())).add(this.rightpalete.el);
         //this.projectsettings.el.show_all();
 
-        stage = _this.win.objectview.el.get_stage();
+        var stage = this.win.objectview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
            
     }
