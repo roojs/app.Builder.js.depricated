@@ -718,6 +718,12 @@ public class WindowState : Object
     public bool  resizeCanvasQueue()
     {
         print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
+
+        if (this.redraw_canvas < 1) {
+            return false; // should not really happen...
+        }
+
+
         this.redraw_count--;
 
         if (this.redraw_canvas > 0) {
