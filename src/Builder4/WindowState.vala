@@ -97,7 +97,7 @@ public class WindowState : Object
          
     }
 
-    public bool leftTreeBeforeChange(JsRender.Node? sel)
+    public bool leftTreeBeforeChange()
     {
         if (this.state != State.CODE) {
             this.left_props.finish_editing();
