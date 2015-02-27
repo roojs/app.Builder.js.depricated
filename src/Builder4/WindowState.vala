@@ -535,7 +535,7 @@ public class WindowState : Object
                 this.win.addpropsview.el.save_easing_state();
                 this.win.addpropsview.el.set_scale(1.0f,1.0f);
                 this.win.addpropsview.el.restore_easing_state();
-                 
+                break;
                 
             case State.CODE:
 
