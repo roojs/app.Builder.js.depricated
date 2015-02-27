@@ -76,7 +76,7 @@ public class WindowState : Object
      
         this.left_tree = new Xcls_WindowLeftTree();
         this.left_tree.ref();
-        this.left_tree.main_window = _this.win;
+        this.left_tree.main_window = this.win;
     
         this.win.tree.el.pack_start(this.left_tree.el,true, true,0);
         this.left_tree.el.show_all();
