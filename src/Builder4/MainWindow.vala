@@ -1984,9 +1984,11 @@ public class Xcls_MainWindow : Object
                 if (p == null) {
                     return;
                 }
-                _this.left_projects.is_loaded = false;    
-                _this.left_projects.load();
-                _this.left_projects.selectProject(p);
+                
+                
+                this.windowstate.left_projects.is_loaded = false;    
+                this.windowstate.left_projects.load();
+                this.windowstate.left_projects.selectProject(p);
                 return  ;    
             
             
