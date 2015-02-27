@@ -12,7 +12,7 @@
     "destroy" : "() =>  {\n Xcls_MainWindow.singleton().no_windows--;\n \n if (Xcls_MainWindow.singleton().no_windows < 1) {\n\n     Gtk.main_quit();\n }\n}",
     "show" : "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n}"
    },
-   "|        void initChildren" : " () {\n    // this needs putting in a better place..\n    this.windowstate = new WindowState(this);\n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    this.children_loaded = true;\n\n\n\n\n}\n",
+   "|        void initChildren" : " () {\n    // this needs putting in a better place..\n    this.windowstate = new WindowState(this);\n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    \n\n\n\n}\n",
    "# int no_windows" : 1,
    "# Project.Project project" : "null",
    "border_width" : 0,

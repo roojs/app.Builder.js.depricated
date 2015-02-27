@@ -119,8 +119,7 @@ public class Xcls_MainWindow : Object
         tl.start();
         tl.ref();
     
-        this.children_loaded = true;
-    
+        
     
     
     
