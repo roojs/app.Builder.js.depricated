@@ -483,8 +483,8 @@ public class WindowState : Object
           case State.FILES:
                 // hide files...
                 this.win.rooview.el.save_easing_state();
-                this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_easing_duration(1000);
+                this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_scale(1.0f,1.0f);
                 this.win.rooview.el.set_pivot_point(0.5f,0.5f);
                 this.win.rooview.el.set_opacity(0xff);
@@ -518,11 +518,12 @@ public class WindowState : Object
                  this.win.editpane.el.show(); // holder for tree and properties..
              
                  this.left_projects.el.hide(); 
-            
-
-                 this.win.rooview.el.save_easing_state();
-                 this.win.rooview.el.set_scale(1.0f,1.0f);
-                 this.win.rooview.el.restore_easing_state();
+                 if (oldstate != State.FILES) {
+                    // it's handled above..
+                    this.win.rooview.el.save_easing_state();
+                    this.win.rooview.el.set_scale(1.0f,1.0f);
+                    this.win.rooview.el.restore_easing_state();
+                 }
                
                 break;
 
