@@ -340,7 +340,7 @@ public class WindowState : Object
 
     public void fileViewInit()
     {
-        stage = _this.rooview.el.get_stage(); \\ seems odd... 
+        var stage = this.win.rooview.el.get_stage(); \\ seems odd... 
         this.clutterfiles = new Xcls_ClutterFiles();
         this.clutterfiles.ref();
         stage.add_child(this.clutterfiles.el);
