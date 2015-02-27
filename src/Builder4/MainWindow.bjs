@@ -28,7 +28,7 @@
    "|        void initChildren" : " () {\n    // this needs putting in a better place..\n    this.windowstate = new WindowState(this);\n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    \n\n\n\n}\n",
    "$ xns" : "Gtk",
    "# Xcls_ProjectSettings projectsettings" : "null",
-   "|             void show" : "() {\n    this.left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(this.left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
+   "|             void show" : "() {\n   \n    this.el.show_all();\n\n}",
    "# WindowState windowstate" : "null",
    "border_width" : 0,
    "# Xcls_WindowLeftProjects left_projects" : "null",
