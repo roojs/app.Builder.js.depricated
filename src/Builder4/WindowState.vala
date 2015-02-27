@@ -245,8 +245,7 @@ public class WindowState : Object
                 this.win.project.save();
          
             }
-            
-            this.projectEditHide();
+            this.switchState (State.PREVIEW); 
              
          });
 
