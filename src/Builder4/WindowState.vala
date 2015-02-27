@@ -709,7 +709,7 @@ public class WindowState : Object
     {
         var rc = this.redraw_count;        
         this.redraw_count = 2;
-        if (rc = 0) {
+        if (rc == 0) {
             GLib.Timeout.add_seconds(1,  ()  =>{
                  return this.resizeCanvasQueue();
             });
