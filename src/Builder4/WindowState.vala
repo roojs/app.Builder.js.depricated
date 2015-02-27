@@ -485,8 +485,9 @@ public class WindowState : Object
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_scale(1.0f,1.0f);
                 this.win.rooview.el.restore_easing_state();  
+                this.clutterfiles.el.hide();
+                 
 
-                 this.clutterfiles.el.hide();
                 break;
 
                 
@@ -501,6 +502,11 @@ public class WindowState : Object
         switch (this.state) {
             
             case State.PREVIEW:  // this is the default state when working...
+                 this.win.editpane.el.show(); // holder for tree and properties..
+             
+                 this.left_projects.el.hide(); 
+            
+
                  this.win.rooview.el.save_easing_state();
                  this.win.rooview.el.set_scale(1.0f,1.0f);
                  this.win.rooview.el.restore_easing_state();
@@ -679,7 +685,13 @@ public class WindowState : Object
                 this.win.addpropbutton.el.show();  
                 this.win.addlistenerbutton.el.show(); 
                 break;
-                
+            
+            case State.PROJECT: 
+                // anything else?
+                this.win.backbutton.el.show();
+                break;
+            
+    
             case State.FILES:
                 this.win.backbutton.el.show();
                      
