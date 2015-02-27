@@ -534,7 +534,7 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-                this.resizeCanvasElementsA();
+                this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
                 
               
@@ -549,7 +549,7 @@ public class WindowState : Object
                 
                 // caller needs to call editor - show....
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElementsA();
+                this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
                 
  
@@ -578,7 +578,7 @@ public class WindowState : Object
                 this.rightpalete.load(this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElementsA();
+                this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
 
                 
@@ -598,7 +598,7 @@ public class WindowState : Object
                 }
 
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElementsA();
+                this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
 
                 this.win.projecteditview.el.save_easing_state();
@@ -724,7 +724,7 @@ public class WindowState : Object
             return true; // do it again in 1 second...
         }
         // got down to 0 or -1....
-        this.resizeCanvasElementsA();
+        this.resizeCanvasElements();
         return false;
 
     }
