@@ -742,66 +742,12 @@ public class Xcls_MainWindow : Object
                 stage.set_background_color(  Clutter.Color.from_string("#000"));
             // listeners 
             this.el.size_allocate.connect( (  alloc) => {
-                this.setSizes(alloc, _this.state); 
+                this.windowstate.resizeCanvasElements(alloc); 
                     
             });
         }
 
         // user defined functions 
-        public           void setSizes (  Gtk.Allocation alloc, string state) {
-            if (!_this.children_loaded) {  return; }
-             
-            _this.clutterfiles.set_size(alloc.width-50, alloc.height);
-            
-            // project view appears at top...
-            
-            _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
-                   
-                   
-            
-            var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;
-         
-            
-            var palsize = avail < 300.0f ? avail : 300.0f;
-            print("set palsize size %f\n", palsize);
-           // palate / props : fixed 300 pix
-                    
-            _this.objectview.el.set_size(palsize, alloc.height);    
-            _this.addpropsview.el.set_size(palsize, alloc.height);
-            
-             
-            
-            // code edit min 600
-            
-            var codesize = avail < 800.0f ? avail : 800.0f;
-            print("set code size %f\n", codesize);
-        
-            _this.codeeditview.el.set_size(codesize, alloc.height);
-            _this.rooview.el.set_size(alloc.width-50, alloc.height);    
-           
-            switch ( state) {
-                case "codeedit": 
-        
-        	var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
-        	
-        	
-                   _this.rooview.el.set_scale(scale,scale);
-                   break;
-                case "addprop":
-                case "addlistener":        
-                  case "object":   
-        	var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
-                   _this.rooview.el.set_scale(scale,scale);
-                   break;
-            }
-                
-        }
-        public           void setSizesAlloc (string state) {
-        
-            Gtk.Allocation alloc;
-            this.el.get_allocation(out alloc);
-            this.setSizes(alloc, state);
-        }
     }
     public class Xcls_rooview : Object 
     {

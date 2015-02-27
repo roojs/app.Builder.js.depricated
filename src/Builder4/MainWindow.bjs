@@ -103,15 +103,13 @@
          "items" : [
           {
            "listeners" : {
-            "size_allocate" : "  (  alloc) => {\n    this.setSizes(alloc, _this.state); \n        \n}"
+            "size_allocate" : "  (  alloc) => {\n    this.windowstate.resizeCanvasElements(alloc); \n        \n}"
            },
            "id" : "clutterembed",
            "* init" : "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",
            "xtype" : "Embed",
            "* pack" : "pack_start,true,true,0",
-           "|           void setSizes" : "  (  Gtk.Allocation alloc, string state) {\n    if (!_this.children_loaded) {  return; }\n     \n    _this.clutterfiles.set_size(alloc.width-50, alloc.height);\n    \n    // project view appears at top...\n    \n    _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);\n           \n           \n    \n    var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;\n \n    \n    var palsize = avail < 300.0f ? avail : 300.0f;\n    print(\"set palsize size %f\\n\", palsize);\n   // palate / props : fixed 300 pix\n            \n    _this.objectview.el.set_size(palsize, alloc.height);    \n    _this.addpropsview.el.set_size(palsize, alloc.height);\n    \n     \n    \n    // code edit min 600\n    \n    var codesize = avail < 800.0f ? avail : 800.0f;\n    print(\"set code size %f\\n\", codesize);\n\n    _this.codeeditview.el.set_size(codesize, alloc.height);\n    _this.rooview.el.set_size(alloc.width-50, alloc.height);    \n   \n    switch ( state) {\n        case \"codeedit\": \n\n\tvar scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;\n\t\n\t\n           _this.rooview.el.set_scale(scale,scale);\n           break;\n        case \"addprop\":\n        case \"addlistener\":        \n          case \"object\":   \n\tvar scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;\n           _this.rooview.el.set_scale(scale,scale);\n           break;\n    }\n        \n}",
            "$ xns" : "GtkClutter",
-           "|           void setSizesAlloc" : "(string state) {\n\n    Gtk.Allocation alloc;\n    this.el.get_allocation(out alloc);\n    this.setSizes(alloc, state);\n}\n",
            "items" : [
             {
              "id" : "rooview",
