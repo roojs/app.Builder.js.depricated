@@ -87,7 +87,7 @@ builder_SOURCES = \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala \
-		Builder4/WindowState.vala \
+		Builder4/WindowState.vala
 
 
 builder_VALAFLAGS = \
