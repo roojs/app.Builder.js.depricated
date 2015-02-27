@@ -145,7 +145,7 @@ public class WindowState : Object
                     this.add_props.clear();
                     break;
                 }
-                this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
+                this.add_props.show(this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
                 break;
                 
             case State.CODE:
@@ -167,7 +167,7 @@ public class WindowState : Object
     
         this.left_props =new Xcls_LeftProps();
         this.left_props.ref();
-        this.left_props.main_window = _this;
+        this.left_props.main_window = this.win;
         this.win.props.el.pack_start(this.left_props.el,true, true,0);
         this.left_props.el.show_all();
     
@@ -176,7 +176,7 @@ public class WindowState : Object
             this.code_editor.show(
                 file,
                 node,
-                ptype,
+                type,
                 key
             );
             
