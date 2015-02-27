@@ -717,7 +717,7 @@ public class WindowState : Object
     }
     public bool  resizeCanvasQueue()
     {
-        print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
+        //print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
 
         if (this.redraw_count < 1) {
             return false; // should not really happen...
@@ -740,7 +740,7 @@ public class WindowState : Object
         Gtk.Allocation alloc;
         this.win.clutterembed.el.get_allocation(out alloc);
 
-	    print("WindowState.resizeCanvasElements\n");
+	   // print("WindowState.resizeCanvasElements\n");
 	    if (!this.children_loaded || this.win.clutterembed == null) {
 	        print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
