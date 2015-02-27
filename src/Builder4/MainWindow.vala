@@ -40,14 +40,12 @@ public class Xcls_MainWindow : Object
         // my vars (def)
     public int no_windows;
     public Project.Project project;
-    public bool children_loaded;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
     public Xcls_WindowLeftTree left_tree;
     public Editor code_editor;
     public Xcls_DialogNewComponent new_file_dialog;
     public Xcls_ProjectSettings projectsettings;
-    public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_RightPalete rightpalete;
     public string title;
@@ -65,14 +63,12 @@ public class Xcls_MainWindow : Object
         // my vars (dec)
         this.no_windows = 1;
         this.project = null;
-        this.children_loaded = false;
         this.left_projects = null;
         this.window_rooview = null;
         this.left_tree = null;
         this.code_editor = null;
         this.new_file_dialog = null;
         this.projectsettings = null;
-        this.clutterfiles = null;
         this.left_props = null;
         this.rightpalete = null;
         this.title = "Application Builder";
