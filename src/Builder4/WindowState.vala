@@ -522,7 +522,7 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc( this.state == State.LISTENER  ? "addlistener" : "addprop");
+                this.resizeCanvasElementsA();
                 this.win.rooview.el.restore_easing_state();
                 
               
@@ -537,8 +537,7 @@ public class WindowState : Object
                 
                 // caller needs to call editor - show....
                 this.win.rooview.el.save_easing_state();
-                // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc( "codeedit");
+                this.resizeCanvasElementsA();
                 this.win.rooview.el.restore_easing_state();
                 
  
@@ -566,9 +565,8 @@ public class WindowState : Object
                 this.rightpalete.el.show_all();
                 this.rightpalete.load(_this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
-                 this.win.rooview.el.save_easing_state();
-                // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc( "codeedit");
+                this.win.rooview.el.save_easing_state();
+                this.resizeCanvasElementsA();
                 this.win.rooview.el.restore_easing_state();
 
                 
@@ -588,8 +586,7 @@ public class WindowState : Object
                 }
 
                  this.win.rooview.el.save_easing_state();
-                // -- FIXME? this needs to be State aware?
-                _this.clutterembed.setSizesAlloc( "projectedit"); // was doing 0.5f....
+                this.resizeCanvasElementsA();
                 this.win.rooview.el.restore_easing_state();
 
                 this.win.projecteditview.el.save_easing_state();
