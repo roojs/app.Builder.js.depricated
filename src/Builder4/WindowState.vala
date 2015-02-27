@@ -710,7 +710,7 @@ public class WindowState : Object
         var rc = this.redraw_count;        
         this.redraw_count = 2;
         if (rc == 0) {
-            GLib.Timeout.add_seconds(1,  ()  =>{
+            GLib.Timeout.add(100,  ()  =>{
                  return this.resizeCanvasQueue();
             });
         }
@@ -719,14 +719,14 @@ public class WindowState : Object
     {
         print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
 
-        if (this.redraw_canvas < 1) {
+        if (this.redraw_count < 1) {
             return false; // should not really happen...
         }
 
 
         this.redraw_count--;
 
-        if (this.redraw_canvas > 0) {
+        if (this.redraw_count > 0) {
             return true; // do it again in 1 second...
         }
         // got down to 0 or -1....
