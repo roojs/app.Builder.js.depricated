@@ -21,6 +21,8 @@ public class WindowState : Object
 
     public State state;
 
+    public bool children_loaded = false;
+
     
     public Xcls_WindowLeftTree  left_tree;
     public Xcls_WindowAddProp   add_props;
@@ -62,6 +64,8 @@ public class WindowState : Object
         // dialogs
 
         this.fileNewInit();
+
+        this.children_loaded = true;
     }
 
 
@@ -471,10 +475,7 @@ public class WindowState : Object
                 this.win.projecteditview.el.restore_easing_state();    
                 break;
 
-          case State.FILES:
-
-
-       
+          case State.FILES:       
                 this.win.rooview.el.save_easing_state();
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_scale(1.0f,1.0f);
@@ -688,8 +689,54 @@ public class WindowState : Object
 
     }
 
+    public void resizeCanvasElements(Gtk.Allocation alloc)
+    {
+        if (!_this.children_loaded) {  return; }
+     
+        this.win.clutterfiles.set_size(alloc.width-50, alloc.height);
+        
+        // ------- project view appears at top...
+        _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+               
+        // ------- add property/object left - max 300px, min 50... (or disapear..)     
+        
+        var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;
+        var palsize = avail < 300.0f ? avail : 300.0f;
+        //print("set palsize size %f\n", palsize);
+        // palate / props : fixed 300 pix
+                
+        this.win.objectview.el.set_size(palsize, alloc.height);    
+        this.win.addpropsview.el.set_size(palsize, alloc.height);
+        
+         
+        
+        // -------- code edit min 600
+        
+        var codesize = avail < 800.0f ? avail : 800.0f;
+        //print("set code size %f\n", codesize);
 
-    
+        this.win.codeeditview.el.set_size(codesize, alloc.height);
+        this.win.rooview.el.set_size(alloc.width-50, alloc.height);    
+
+
+        
+        switch ( this.state) {
+            case State.CODE: 
+
+	            var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
+	
+	
+               this.win.rooview.el.set_scale(scale,scale);
+               break;
+                
+            case State.PROP:
+            case State.LISTENER:        
+            case State.OBJECT:   
+	            var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
+               this.win.rooview.el.set_scale(scale,scale);
+               break;
+        }
+    }
 
     
 }
