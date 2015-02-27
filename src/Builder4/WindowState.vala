@@ -703,6 +703,33 @@ public class WindowState : Object
         }
 
     }
+
+    public int redraw_count = 0;
+    public resizeCanvas() // called by window resize .. delays redraw
+    {
+        var rc = this.redraw_count;        
+        this.redraw_count = 2;
+        if (rc = 0) {
+            GLib.Timeout.add_seconds(1,  ()  =>{
+                 this.resizeCanvasQueue();
+                 return false;
+            });
+        }
+    }
+    public resizeCanvasQueue()
+    {
+        this.redraw_count--;
+        if (this.redraw_canvas > 0) {
+             GLib.Timeout.add_seconds(1,  ()  =>{
+                 return this.resizeCanvasQueue();
+             });
+            return false;
+        }
+        // got down to 0 or -1....
+        this.resizeCanvasElementsA();
+        return false;
+
+    }
     public void resizeCanvasElementsA()
     {
         Gtk.Allocation alloc;
@@ -711,7 +738,7 @@ public class WindowState : Object
     }
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
-	    //print("WindowState.resizeCanvasElements\n");
+	    print("WindowState.resizeCanvasElements\n");
 	    if (!this.children_loaded || this.win.clutterembed == null) {
 	        print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
