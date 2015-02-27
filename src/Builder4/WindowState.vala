@@ -728,14 +728,11 @@ public class WindowState : Object
         return false;
 
     }
-    public void resizeCanvasElementsA()
+    public void resizeCanvasElements()
     {
         Gtk.Allocation alloc;
         this.win.clutterembed.el.get_allocation(out alloc);
-        this.resizeCanvasElements(alloc);
-    }
-    public void resizeCanvasElements(Gtk.Allocation alloc)
-    {
+
 	    print("WindowState.resizeCanvasElements\n");
 	    if (!this.children_loaded || this.win.clutterembed == null) {
 	        print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
