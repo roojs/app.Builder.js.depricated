@@ -486,7 +486,7 @@ public class WindowState : Object
                 this.win.rooview.el.set_scale(1.0f,1.0f);
                 this.win.rooview.el.restore_easing_state();  
 
-                 this.win.clutterfiles.el.hide();
+                 this.clutterfiles.el.hide();
                 break;
 
                 
@@ -700,12 +700,12 @@ public class WindowState : Object
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
 	print("WindowState.resizeCanvasElements\n");
-	if (!this.children_loaded || this.win.clutterfiles == null) {
+	if (!this.children_loaded || this.win.clutterembed == null) {
 	    print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
         }
-     
-        this.win.clutterfiles.set_size(alloc.width-50, alloc.height);
+	    print("WindowState.resizeCanvasElements = running");
+        this.clutterfiles.set_size(alloc.width-50, alloc.height);
         
         // ------- project view appears at top...
         this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
