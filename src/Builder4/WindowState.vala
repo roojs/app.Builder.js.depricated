@@ -149,9 +149,8 @@ public class WindowState : Object
                 break;
                 
             case State.CODE:
-            // SAVE FIRST???
-                this.switchState(State.PREVIEW);
-                this.codeEditHide();
+                 this.switchState(State.PREVIEW);
+             
             break;
                
                             
