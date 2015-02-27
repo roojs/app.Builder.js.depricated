@@ -698,7 +698,7 @@ public class WindowState : Object
         this.win.clutterfiles.set_size(alloc.width-50, alloc.height);
         
         // ------- project view appears at top...
-        _this.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+        this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
                
         // ------- add property/object left - max 300px, min 50... (or disapear..)     
         
