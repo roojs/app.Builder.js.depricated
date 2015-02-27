@@ -489,9 +489,14 @@ public class WindowState : Object
                 this.win.rooview.el.set_opacity(0xff);
                 this.win.rooview.el.restore_easing_state();  
                 
-                this.clutterfiles.el.save_easing_state();
                 
-                this.clutterfiles.el.hide();
+                this.clutterfiles.el.save_easing_state();
+                this.clutterfiles.el.set_easing_duration(1000);
+                this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
+                this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+                this.clutterfiles.el.set_opacity(0);
+                
+                //this.clutterfiles.el.hide();
                  
 
                 break;
