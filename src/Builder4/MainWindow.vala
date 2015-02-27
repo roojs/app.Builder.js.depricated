@@ -91,9 +91,7 @@ public class Xcls_MainWindow : Object
 
         // init method 
 
-        this.state = "files";
-        	  
-            //this.el.show_all();
+        //this.el.show_all();
         // listeners 
         this.el.delete_event.connect( (   event) => {
             return false;

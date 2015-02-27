@@ -37,7 +37,7 @@
    "# string title" : "\"Application Builder\"",
    "# ValaProjectSettings vala_projectsettings" : "null",
    "# Xcls_WindowAddProp add_props" : "null",
-   "* init" : " this.state = \"files\";\n\t  \n    //this.el.show_all();\n    \n    ",
+   "* init" : " \n\t  \n    //this.el.show_all();\n    \n    ",
    "# WindowState windowstate" : "null",
    "# Xcls_GtkView window_gladeview" : "null",
    "items" : [
