@@ -509,7 +509,7 @@ public class WindowState : Object
 
 
             case State.LISTENER:
-
+		// same as prop?
 	    case State.PROP:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
