@@ -724,6 +724,7 @@ public class WindowState : Object
             return true; // do it again in 1 second...
         }
         // got down to 0 or -1....
+        this.redraw_count = 0;
         this.resizeCanvasElements();
         return false;
 
