@@ -185,7 +185,7 @@ public class WindowState : Object
 
    
         this.left_props.stop_editor.connect( () => {
-            if (this.state != "codeedit") {
+            if (this.state != State.CODE) {
                 return true;
             }
     
