@@ -699,7 +699,9 @@ public class WindowState : Object
     }
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
-        if (!this.children_loaded) { 
+	print("WindowState.resizeCanvasElements\n");
+	if (!this.children_loaded || this.win.clutterfiles == null) {
+	    print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
         }
      
