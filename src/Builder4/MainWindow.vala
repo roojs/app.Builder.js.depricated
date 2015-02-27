@@ -1986,9 +1986,9 @@ public class Xcls_MainWindow : Object
                 }
                 
                 
-                this.windowstate.left_projects.is_loaded = false;    
-                this.windowstate.left_projects.load();
-                this.windowstate.left_projects.selectProject(p);
+                _this.windowstate.left_projects.is_loaded = false;    
+                _this.windowstate.left_projects.load();
+                _this.windowstate.left_projects.selectProject(p);
                 return  ;    
             
             

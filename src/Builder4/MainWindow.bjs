@@ -431,7 +431,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n   var  pe =     Xcls_EditProject.singleton();\n    pe.el.set_transient_for(_this.el);\n    pe.el.set_modal(true);   \n   \n    var p  = pe.show();\n\n    if (p == null) {\n        return;\n    }\n    \n    \n    this.windowstate.left_projects.is_loaded = false;    \n    this.windowstate.left_projects.load();\n    this.windowstate.left_projects.selectProject(p);\n    return  ;    \n\n\n}"
+                    "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    //Xcls_DialogNewComponent.singleton().show(\n   var  pe =     Xcls_EditProject.singleton();\n    pe.el.set_transient_for(_this.el);\n    pe.el.set_modal(true);   \n   \n    var p  = pe.show();\n\n    if (p == null) {\n        return;\n    }\n    \n    \n    _this.windowstate.left_projects.is_loaded = false;    \n    _this.windowstate.left_projects.load();\n    _this.windowstate.left_projects.selectProject(p);\n    return  ;    \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
