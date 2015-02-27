@@ -317,7 +317,7 @@ public class WindowState : Object
         ((Gtk.Container)(this.win.codeeditview.el.get_widget())).add(this.code_editor.el);
         //this.projectsettings.el.show_all();
 
-        var stage = _this.win.codeeditview.el.get_stage();
+        var stage = this.win.codeeditview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         // editor.save...
 
@@ -377,8 +377,9 @@ public class WindowState : Object
     public void fileViewOpen(JsRender.JsRender file)
     {
         this.win.project = file.project;
-        this.previewShow();
-            this.left_tree.model.loadFile(file);
+	this.switchState (State.PREVIEW); 
+	
+        this.left_tree.model.loadFile(file);
     
         var ctr= ((Gtk.Container)(this.win.rooview.el.get_widget()));
         var ctr_p= ((Gtk.Container)(this.win.projecteditview.el.get_widget()));
@@ -402,7 +403,7 @@ public class WindowState : Object
             this.vala_projectsettings.el.show_all();
         }
         print("OPEN : " + file.name);
-        this.editpane.el.set_position(_this.editpane.el.max_position);
+        this.win.editpane.el.set_position(this.win.editpane.el.max_position);
         this.win.setTitle(file.project.name + " : " +file.name);
              
 
@@ -417,7 +418,7 @@ public class WindowState : Object
         ((Gtk.Container)(this.win.rooview.el.get_widget())).add(this.window_rooview.el);
         this.window_rooview.el.show_all();
 
-        stage = this.win.rooview.el.get_stage();
+        var stage = this.win.rooview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
     }
 
