@@ -7,7 +7,7 @@
  */
 public class WindowState : Object 
 {
-    public MainWindow win;
+    public Xcls_MainWindow win;
 
     public enum State {
         PREVIEW,
@@ -37,7 +37,7 @@ public class WindowState : Object
 
     public Xcls_WindowLeftProjects left_projects; // can not see where this is initialized.. 
     // ctor 
-    public WindowState(MainWindow win)
+    public WindowState(Xcls_MainWindow win)
     {
         this.win = win;
         // initialize
