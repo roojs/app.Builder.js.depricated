@@ -33,7 +33,8 @@ public class WindowState : Object
     public Editor               code_editor;    
     public Xcls_WindowRooView   window_rooview;
     public Xcls_GtkView         window_gladeview;
-    public Xcls_DialogNewComponent new_file_dialog;     
+    public Xcls_DialogNewComponent new_file_dialog;
+    public Xcls_ClutterFiles     clutterfiles;
 
     public Xcls_WindowLeftProjects left_projects; // can not see where this is initialized.. 
     // ctor 
@@ -316,7 +317,7 @@ public class WindowState : Object
         ((Gtk.Container)(this.win.codeeditview.el.get_widget())).add(this.code_editor.el);
         //this.projectsettings.el.show_all();
 
-        stage = _this.win.codeeditview.el.get_stage();
+        var stage = _this.win.codeeditview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         // editor.save...
 
