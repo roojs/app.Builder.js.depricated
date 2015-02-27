@@ -148,10 +148,10 @@ public class WindowState : Object
                 this.add_props.show(_this.left_tree.getActiveFile().palete(), "signals", sel.fqn());
                 break;
                 
-            case State.CODEEDIT:
+            case State.CODE:
             // SAVE FIRST???
-        
-            this.codeEditHide();
+                this.switchState(State.PREVIEW);
+                this.codeEditHide();
             break;
                
                             
@@ -424,14 +424,7 @@ public class WindowState : Object
 
     public void switchState(State new_state)
     {
-        if (this.state == State.PREVIEW) {
-            // try and do a snapshot..
-            
-            
-        }
-
         
-
 
         
         switch (this.state) {
@@ -457,6 +450,9 @@ public class WindowState : Object
                 break;
                 
             case State.CODE:
+
+
+                this.code_editor.saveContents();
                 this.win.codeeditview.el.save_easing_state();
                 this.win.codeeditview.el.set_scale(0.0f,0.0f);
                 this.win.codeeditview.el.restore_easing_state();    
