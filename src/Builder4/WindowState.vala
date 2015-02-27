@@ -724,8 +724,7 @@ public class WindowState : Object
         
         switch ( this.state) {
             case State.CODE: 
-
-	            var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
+                var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
 	            this.win.rooview.el.set_scale(scale,scale);
                 break;
                 
