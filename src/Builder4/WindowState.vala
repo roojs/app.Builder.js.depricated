@@ -509,7 +509,8 @@ public class WindowState : Object
 
 
             case State.LISTENER:
-            case State.PROP:
+
+	    case State.PROP:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
                     this.state = oldstate;
