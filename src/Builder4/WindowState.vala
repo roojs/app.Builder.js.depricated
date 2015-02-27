@@ -690,7 +690,7 @@ public class WindowState : Object
     public void resizeCanvasElementsA()
     {
         Gtk.Allocation alloc;
-        this.win.clutterembed.get_allocation(out alloc);
+        this.win.clutterembed.el.get_allocation(out alloc);
         this.resizeCanvasElements(alloc);
     }
     public void resizeCanvasElements(Gtk.Allocation alloc)
