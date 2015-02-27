@@ -526,7 +526,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.hideViewEditing();\n}"
+                    "clicked" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}"
                    },
                    "utf8 tooltip_text" : "Open New Window",
                    "xtype" : "Button",

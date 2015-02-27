@@ -1943,7 +1943,7 @@ public class Xcls_MainWindow : Object
             
                     w.el.show_all();
                     w.initChildren();
-                    w.hideViewEditing();
+                    w.windowstate.switchState(WindowState.State.FILES);
             });
         }
 
