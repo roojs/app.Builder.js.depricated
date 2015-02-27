@@ -196,7 +196,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.PROJECT);\n      \n\n}"
+                    "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILE);\n      \n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
