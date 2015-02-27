@@ -356,7 +356,7 @@ public class Xcls_MainWindow : Object
                 if (_this.windowstate == null) {
                     return;
                 }
-                _this.windowstate.resizeCanvasElements(alloc); 
+                _this.windowstate.resizeCanvas(); 
                     
             });
         }

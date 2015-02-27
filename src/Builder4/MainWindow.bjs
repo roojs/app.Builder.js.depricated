@@ -89,7 +89,7 @@
          "items" : [
           {
            "listeners" : {
-            "size_allocate" : "  (  alloc) => {\n    if (_this.windowstate == null) {\n        return;\n    }\n    _this.windowstate.resizeCanvasElements(alloc); \n        \n}"
+            "size_allocate" : "  (  alloc) => {\n    if (_this.windowstate == null) {\n        return;\n    }\n    _this.windowstate.resizeCanvas(); \n        \n}"
            },
            "id" : "clutterembed",
            "* init" : "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",
