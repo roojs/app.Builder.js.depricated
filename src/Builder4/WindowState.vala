@@ -509,7 +509,7 @@ public class WindowState : Object
             case State.PROP:
                 var ae =      this.left_tree.getActiveElement();
                 if (ae == null) {
-                    this.state = this.oldstate;
+                    this.state = oldstate;
                     this.buttonShowHide();
                     return;
                 }
