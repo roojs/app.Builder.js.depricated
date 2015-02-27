@@ -174,7 +174,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n  \n    this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
+                    "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
                    },
                    "utf8 tooltip_text" : "Back",
                    "* pack" : false,
@@ -210,7 +210,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n   this.windowstate.switchState(WindowState.State.PROJECT);\n      \n\n}"
+                    "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.PROJECT);\n      \n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
