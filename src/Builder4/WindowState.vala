@@ -193,7 +193,7 @@ public class WindowState : Object
             if (!ret) {
                 return false;
             }
-            this.codeEditHide();
+            this.switchState(State.PREVIEW);
             return ret;
         });
     
