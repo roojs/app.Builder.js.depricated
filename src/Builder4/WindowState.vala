@@ -711,16 +711,16 @@ public class WindowState : Object
     }
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
-	print("WindowState.resizeCanvasElements\n");
-	if (!this.children_loaded || this.win.clutterembed == null) {
-	    print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
+	    //print("WindowState.resizeCanvasElements\n");
+	    if (!this.children_loaded || this.win.clutterembed == null) {
+	        print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
         }
-	    print("WindowState.resizeCanvasElements = running");
-        this.clutterfiles.set_size(alloc.width-50, alloc.height);
+	    //print("WindowState.resizeCanvasElements = running");
+
         
         // ------- project view appears at top...
-        this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+
                
         // ------- add property/object left - max 300px, min 50... (or disapear..)     
         
@@ -729,30 +729,37 @@ public class WindowState : Object
         //print("set palsize size %f\n", palsize);
         // palate / props : fixed 300 pix
                 
-        this.win.objectview.el.set_size(palsize, alloc.height);    
-        this.win.addpropsview.el.set_size(palsize, alloc.height);
-        
-         
-        
+ 
         // -------- code edit min 600
         
         var codesize = avail < 800.0f ? avail : 800.0f;
         //print("set code size %f\n", codesize);
 
-        this.win.codeeditview.el.set_size(codesize, alloc.height);
+
         this.win.rooview.el.set_size(alloc.width-50, alloc.height);    
 
 
         
         switch ( this.state) {
+            case State.FILES: 
+                this.clutterfiles.set_size(alloc.width-50, alloc.height);
+                break;
+
+            case State.PROJECT: 
+                this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+                break;
+
             case State.CODE: 
+                this.win.codeeditview.el.set_size(codesize, alloc.height);
                 var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
 	            this.win.rooview.el.set_scale(scale,scale);
                 break;
                 
             case State.PROP:
             case State.LISTENER:        
-            case State.OBJECT:   
+            case State.OBJECT:  
+                this.win.objectview.el.set_size(palsize, alloc.height);    
+                this.win.addpropsview.el.set_size(palsize, alloc.height);
 	            var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
                 this.win.rooview.el.set_scale(scale,scale);
                 break;
