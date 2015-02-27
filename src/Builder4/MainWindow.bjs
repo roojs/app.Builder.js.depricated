@@ -91,7 +91,7 @@
          "items" : [
           {
            "listeners" : {
-            "size_allocate" : "  (  alloc) => {\n    this.windowstate.resizeCanvasElements(alloc); \n        \n}"
+            "size_allocate" : "  (  alloc) => {\n    _this.windowstate.resizeCanvasElements(alloc); \n        \n}"
            },
            "id" : "clutterembed",
            "* init" : "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",

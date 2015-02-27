@@ -360,7 +360,7 @@ public class Xcls_MainWindow : Object
                 stage.set_background_color(  Clutter.Color.from_string("#000"));
             // listeners 
             this.el.size_allocate.connect( (  alloc) => {
-                this.windowstate.resizeCanvasElements(alloc); 
+                _this.windowstate.resizeCanvasElements(alloc); 
                     
             });
         }
