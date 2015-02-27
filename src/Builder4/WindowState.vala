@@ -695,7 +695,7 @@ public class WindowState : Object
     }
     public void resizeCanvasElements(Gtk.Allocation alloc)
     {
-        if (!_this.children_loaded) { 
+        if (!this.children_loaded) { 
             return; 
         }
      
