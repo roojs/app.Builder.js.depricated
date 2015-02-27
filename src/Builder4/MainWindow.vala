@@ -89,11 +89,6 @@ public class Xcls_MainWindow : Object
         child_0.ref();
         this.el.add (  child_0.el  );
 
-        // init method 
-
-        this.state = "files";
-        	  
-            //this.el.show_all();
         // listeners 
         this.el.delete_event.connect( (   event) => {
             return false;
