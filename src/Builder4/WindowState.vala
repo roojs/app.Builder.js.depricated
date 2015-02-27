@@ -705,7 +705,7 @@ public class WindowState : Object
     }
 
     public int redraw_count = 0;
-    public resizeCanvas() // called by window resize .. delays redraw
+    public void resizeCanvas() // called by window resize .. delays redraw
     {
         var rc = this.redraw_count;        
         this.redraw_count = 2;
@@ -715,7 +715,7 @@ public class WindowState : Object
             });
         }
     }
-    public resizeCanvasQueue()
+    public bool  resizeCanvasQueue()
     {
         print("WindowState.resizeCanvasQueue %d\n", this.redraw_count);        
         this.redraw_count--;
