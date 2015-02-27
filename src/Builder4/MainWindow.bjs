@@ -395,7 +395,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n    \n    \n    \n    switch (_this.state) {\n        case \"edit\":\n            _this.showAddListener();\n            break;\n            \n       \n        case \"addlistener\":\n            _this.hideAddListener();\n            break;\n\n            \n        case \"addprop\":\n            _this.hideAddProp();\n            _this.showAddListener();\n            break;\n         case \"object\":\n            _this.hideObject();\n            _this.showAddListener();\n            break;\n    \n          default:\n            print(\"unhandled add listener from %s\\n\",_this.state);\n\n            break;\n            \n    }\n    return  ;    \n\n\n}"
+                    "clicked" : "  ( ) => {\n    \n    this.windowstate.switchState(WindowState.State.LISTENER);\n  \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
