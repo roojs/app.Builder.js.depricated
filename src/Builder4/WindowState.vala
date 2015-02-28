@@ -837,7 +837,7 @@ public class WindowState : Object
             case State.OBJECT:  
                 this.win.objectview.el.set_size(palsize, alloc.height);    
                 this.win.addpropsview.el.set_size(palsize, alloc.height);
-	            var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
+	        var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
                 this.win.rooview.el.set_scale(scale,scale);
                 break;
         }
