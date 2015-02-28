@@ -492,6 +492,7 @@ public class WindowState : Object
           case State.FILES:
                 // hide files...
                 this.win.rooview.el.save_easing_state();
+		this.win.rooview.el.show_all();
                 this.win.rooview.el.set_easing_duration(1000);
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_scale(1.0f,1.0f);
@@ -514,7 +515,7 @@ public class WindowState : Object
 
                 
         }
-        
+        this.resizeCanvasElements();
         var oldstate  =this.state;
         this.state = new_state;
         this.resizeCanvasElements();
@@ -526,11 +527,12 @@ public class WindowState : Object
             
             case State.PREVIEW:  // this is the default state when working...
                  this.win.editpane.el.show(); // holder for tree and properties..
-                 this.win.rooview.el.show();
+                 
              
                  this.left_projects.el.hide(); 
                  if (oldstate != State.FILES) {
                     // it's handled above..
+		    print ("changing state to previe without ")
                     this.win.rooview.el.save_easing_state();
                     this.win.rooview.el.set_scale(1.0f,1.0f);
                     this.win.rooview.el.restore_easing_state();
@@ -573,7 +575,7 @@ public class WindowState : Object
                 
                 // caller needs to call editor - show....
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElements();
+                //this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
                 
  
@@ -602,7 +604,7 @@ public class WindowState : Object
                 this.rightpalete.load(this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElements();
+               // this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
 
                 
@@ -622,7 +624,7 @@ public class WindowState : Object
                 }
 
                 this.win.rooview.el.save_easing_state();
-                this.resizeCanvasElements();
+               // this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
 
                 this.win.projecteditview.el.save_easing_state();
