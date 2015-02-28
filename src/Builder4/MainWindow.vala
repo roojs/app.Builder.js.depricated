@@ -1657,7 +1657,7 @@ public class Xcls_MainWindow : Object
                 // create a new file in project..
                 
                 // what's the currently selected project...
-                var proj = _this.left_projects.getSelectedProject();
+                var proj = _this.windowstate.left_projects.getSelectedProject();
                 
                 if (proj == null) {
                     return  ;
