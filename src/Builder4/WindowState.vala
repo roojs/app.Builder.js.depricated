@@ -562,9 +562,9 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-		this.resizeCanvasElements();
-
-		this.win.rooview.el.set_pivot_point(1.0f,0.5f);
+                this.resizeCanvasElements();
+        
+                this.win.rooview.el.set_pivot_point(1.0f,0.5f);
                 this.win.rooview.el.restore_easing_state();
                 
               
@@ -572,24 +572,8 @@ public class WindowState : Object
                 this.win.addpropsview.el.set_scale(1.0f,1.0f);
                 this.win.addpropsview.el.restore_easing_state();
                 break;
-                
-            case State.CODE:
-
-                this.code_editor.el.show_all();
-                
-                // caller needs to call editor - show....
-                this.win.rooview.el.save_easing_state();
-                //this.resizeCanvasElements();
-                this.win.rooview.el.restore_easing_state();
-                
- 
-                this.win.codeeditview.el.save_easing_state();
-                this.win.codeeditview.el.set_scale(1.0f,1.0f);
-                this.win.codeeditview.el.restore_easing_state();    
-                break;
-
-
-             case State.OBJECT:
+           
+            case State.OBJECT:
                  var n = this.left_tree.getActiveElement();
 
                 if (this.left_tree.model.file == null) {
@@ -616,6 +600,24 @@ public class WindowState : Object
                 this.win.objectview.el.set_scale(1.0f,1.0f);
                 this.win.objectview.el.restore_easing_state();    
                 break;
+	       
+	       
+            case State.CODE:
+
+                this.code_editor.el.show_all();
+                
+                // caller needs to call editor - show....
+                this.win.rooview.el.save_easing_state();
+                //this.resizeCanvasElements();
+                this.win.rooview.el.restore_easing_state();
+                
+ 
+                this.win.codeeditview.el.save_easing_state();
+                this.win.codeeditview.el.set_scale(1.0f,1.0f);
+                this.win.codeeditview.el.restore_easing_state();    
+                break;
+
+
 
            case State.PROJECT:
 
