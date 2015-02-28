@@ -533,7 +533,7 @@ public class WindowState : Object
                     // it's handled above..
 		    print ("changing state to preview from NOT files..");
                     this.win.rooview.el.save_easing_state();
-		            this.resizeCanvasElements();
+		    this.resizeCanvasElements();
 
                     this.win.rooview.el.set_scale(1.0f,1.0f);
                     this.win.rooview.el.restore_easing_state();
