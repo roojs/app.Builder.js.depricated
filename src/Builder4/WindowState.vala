@@ -643,12 +643,11 @@ public class WindowState : Object
              
                 this.left_projects.el.show(); 
             
-                var el = this.win.rooview.el;
-                el.save_easing_state();
-                el.set_easing_duration(1000);
-                el.set_pivot_point(0.5f,0.5f);
-                el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
-                el.set_opacity(0);
+                this.win.rooview.el.save_easing_state();
+                this.win.rooview.el.set_easing_duration(1000);
+                this.win.rooview.el.set_pivot_point(0.5f,0.5f);
+                this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+                this.win.rooview.el.set_opacity(0);
                 //el.set_scale(0.0f,0.0f);
 
  
