@@ -48,7 +48,6 @@ public class Xcls_MainWindow : Object
     public int no_windows;
     public Xcls_ProjectSettings projectsettings;
     public WindowState windowstate;
-    public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowRooView window_rooview;
     public Editor code_editor;
 
@@ -69,7 +68,6 @@ public class Xcls_MainWindow : Object
         this.no_windows = 1;
         this.projectsettings = null;
         this.windowstate = null;
-        this.left_projects = null;
         this.window_rooview = null;
         this.code_editor = null;
 
