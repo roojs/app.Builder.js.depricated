@@ -674,75 +674,6 @@ public class WindowState : Object
             
     }
     
-    // -- buttons show hide.....
-
-    public void buttonsShowHide()
-    {
-        // basically hide everything, then show the relivant..
-
-         this.win.backbutton.el.hide();
-    
-        this.win.projectbutton.el.hide(); // show file nav...
-        this.win.editfilebutton.el.hide();
-        this.win.projecteditbutton.el.hide();
-         
-        
-        this.win.objectshowbutton.el.hide(); // add objects
-        this.win.addpropbutton.el.hide();  
-        this.win.addlistenerbutton.el.hide(); 
-
-    
-    
-        this.win.addprojectbutton.el.hide();
-        this.win.addfilebutton.el.hide();
-        this.win.delprojectbutton.el.hide();
-        this.win.new_window.el.hide();
-
-        
-        switch (this.state) {
-            
-            case State.PREVIEW:  // this is the default state when working...
-               
-                this.win.projectbutton.el.show(); // show file nav...
-                this.win.editfilebutton.el.show();
-                this.win.projecteditbutton.el.show();
-                 
-                
-                this.win.objectshowbutton.el.show(); // add objects
-                this.win.addpropbutton.el.show();  
-                this.win.addlistenerbutton.el.show(); 
-                break;
-            
-           
-            case State.CODE: 
-            case State.PROP:
-            case State.LISTENER:
-            case State.OBJECT:
-                
-                this.win.backbutton.el.show();
-                this.win.objectshowbutton.el.show(); // add objects
-                this.win.addpropbutton.el.show();  
-                this.win.addlistenerbutton.el.show(); 
-                break;
-            
-            case State.PROJECT: 
-                // anything else?
-                this.win.backbutton.el.show();
-                break;
-            
-    
-            case State.FILES:
-                this.win.backbutton.el.show();
-                     
-                this.win.addprojectbutton.el.show();
-                this.win.addfilebutton.el.show();
-                this.win.delprojectbutton.el.show();
-                this.win.new_window.el.show();
-                break;
-        }
-
-    }
-
     public int redraw_count = 0;
     public void resizeCanvas() // called by window resize .. delays redraw
     {
@@ -841,6 +772,75 @@ public class WindowState : Object
                 this.win.rooview.el.set_scale(scale,scale);
                 break;
         }
+    }
+
+    // -- buttons show hide.....
+
+    public void buttonsShowHide()
+    {
+        // basically hide everything, then show the relivant..
+
+         this.win.backbutton.el.hide();
+    
+        this.win.projectbutton.el.hide(); // show file nav...
+        this.win.editfilebutton.el.hide();
+        this.win.projecteditbutton.el.hide();
+         
+        
+        this.win.objectshowbutton.el.hide(); // add objects
+        this.win.addpropbutton.el.hide();  
+        this.win.addlistenerbutton.el.hide(); 
+
+    
+    
+        this.win.addprojectbutton.el.hide();
+        this.win.addfilebutton.el.hide();
+        this.win.delprojectbutton.el.hide();
+        this.win.new_window.el.hide();
+
+        
+        switch (this.state) {
+            
+            case State.PREVIEW:  // this is the default state when working...
+               
+                this.win.projectbutton.el.show(); // show file nav...
+                this.win.editfilebutton.el.show();
+                this.win.projecteditbutton.el.show();
+                 
+                
+                this.win.objectshowbutton.el.show(); // add objects
+                this.win.addpropbutton.el.show();  
+                this.win.addlistenerbutton.el.show(); 
+                break;
+            
+           
+            case State.CODE: 
+            case State.PROP:
+            case State.LISTENER:
+            case State.OBJECT:
+                
+                this.win.backbutton.el.show();
+                this.win.objectshowbutton.el.show(); // add objects
+                this.win.addpropbutton.el.show();  
+                this.win.addlistenerbutton.el.show(); 
+                break;
+            
+            case State.PROJECT: 
+                // anything else?
+                this.win.backbutton.el.show();
+                break;
+            
+    
+            case State.FILES:
+                this.win.backbutton.el.show();
+                     
+                this.win.addprojectbutton.el.show();
+                this.win.addfilebutton.el.show();
+                this.win.delprojectbutton.el.show();
+                this.win.new_window.el.show();
+                break;
+        }
+
     }
 
     
