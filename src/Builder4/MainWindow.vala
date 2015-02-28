@@ -38,7 +38,6 @@ public class Xcls_MainWindow : Object
     public Xcls_new_window new_window;
 
         // my vars (def)
-    public Xcls_LeftProps left_props;
     public Xcls_GtkView window_gladeview;
     public Project.Project project;
     public string title;
@@ -49,7 +48,6 @@ public class Xcls_MainWindow : Object
     public Xcls_ProjectSettings projectsettings;
     public WindowState windowstate;
     public Xcls_WindowRooView window_rooview;
-    public Editor code_editor;
 
     // ctor 
     public Xcls_MainWindow()
@@ -58,7 +56,6 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars (dec)
-        this.left_props = null;
         this.window_gladeview = null;
         this.project = null;
         this.title = "Application Builder";
@@ -69,7 +66,6 @@ public class Xcls_MainWindow : Object
         this.projectsettings = null;
         this.windowstate = null;
         this.window_rooview = null;
-        this.code_editor = null;
 
         // set gobject values
         this.el.border_width = 0;

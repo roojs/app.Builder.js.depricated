@@ -14,7 +14,6 @@
    },
    "id" : "MainWindow",
    "default_width" : 800,
-   "# Xcls_LeftProps left_props" : "null",
    "* init" : " \n\t  \n    //this.el.show_all();\n    \n    ",
    "# Xcls_GtkView window_gladeview" : "null",
    "# Project.Project project" : "null",
@@ -33,7 +32,6 @@
    "border_width" : 0,
    "# Xcls_WindowRooView window_rooview" : "null",
    "$ type" : "Gtk.WindowType.TOPLEVEL",
-   "# Editor code_editor" : "null",
    "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [
     {
