@@ -532,7 +532,7 @@ public class WindowState : Object
                  this.left_projects.el.hide(); 
                  if (oldstate != State.FILES) {
                     // it's handled above..
-		    print ("changing state to previe without ")
+		    print ("changing state to preview from NOT files..");
                     this.win.rooview.el.save_easing_state();
                     this.win.rooview.el.set_scale(1.0f,1.0f);
                     this.win.rooview.el.restore_easing_state();
