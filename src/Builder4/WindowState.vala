@@ -360,7 +360,11 @@ public class WindowState : Object
         });
         this.clutterfiles.el.transitions_completed.connect(() => {
             if (this.state == State.FILES) {
-                this.pre
+                this.win.rooview.el.hide();
+            } else {
+                this.clutterfiles.el.hide();
+            }
+            
             
         }))
 
