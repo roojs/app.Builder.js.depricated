@@ -499,7 +499,7 @@ public class WindowState : Object
                 this.win.rooview.el.set_opacity(0xff);
                 this.win.rooview.el.restore_easing_state();  
                 
-                this.clutterfiles.el.show_all();
+               
                 this.clutterfiles.el.save_easing_state();
                 this.clutterfiles.el.set_easing_duration(1000);
                 this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
@@ -525,6 +525,7 @@ public class WindowState : Object
             
             case State.PREVIEW:  // this is the default state when working...
                  this.win.editpane.el.show(); // holder for tree and properties..
+                 this.win.rooview.el.show();
              
                  this.left_projects.el.hide(); 
                  if (oldstate != State.FILES) {
