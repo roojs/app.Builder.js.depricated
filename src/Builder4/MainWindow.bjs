@@ -15,7 +15,6 @@
    "id" : "MainWindow",
    "default_width" : 800,
    "* init" : " \n\t  \n    //this.el.show_all();\n    \n    ",
-   "# Xcls_GtkView window_gladeview" : "null",
    "# Project.Project project" : "null",
    "# string title" : "\"Application Builder\"",
    "xtype" : "Window",
@@ -26,7 +25,6 @@
    "|             void show" : "() {\n   \n    this.el.show_all();\n\n}",
    "# WindowState windowstate" : "null",
    "border_width" : 0,
-   "# Xcls_WindowRooView window_rooview" : "null",
    "$ type" : "Gtk.WindowType.TOPLEVEL",
    "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [

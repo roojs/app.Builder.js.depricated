@@ -38,12 +38,10 @@ public class Xcls_MainWindow : Object
     public Xcls_new_window new_window;
 
         // my vars (def)
-    public Xcls_GtkView window_gladeview;
     public Project.Project project;
     public string title;
     public int no_windows;
     public WindowState windowstate;
-    public Xcls_WindowRooView window_rooview;
 
     // ctor 
     public Xcls_MainWindow()
@@ -52,12 +50,10 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars (dec)
-        this.window_gladeview = null;
         this.project = null;
         this.title = "Application Builder";
         this.no_windows = 1;
         this.windowstate = null;
-        this.window_rooview = null;
 
         // set gobject values
         this.el.border_width = 0;
