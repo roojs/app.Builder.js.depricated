@@ -366,7 +366,7 @@ public class WindowState : Object
             }
             
             
-        }))
+        });
 
     }
     public void fileNewInit()
@@ -517,6 +517,7 @@ public class WindowState : Object
         
         var oldstate  =this.state;
         this.state = new_state;
+        this.resizeCanvasElements();
 
                 
         this.buttonsShowHide();
@@ -558,7 +559,6 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
-                this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
                 
               
