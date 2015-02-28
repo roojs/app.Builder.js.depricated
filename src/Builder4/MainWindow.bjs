@@ -21,7 +21,6 @@
    "xtype" : "Window",
    "# Xcls_RightPalete rightpalete" : "null",
    "# ValaProjectSettings vala_projectsettings" : "null",
-   "# Xcls_WindowAddProp add_props" : "null",
    "# int no_windows" : 1,
    "default_height" : 500,
    "|        void initChildren" : " () {\n    // this needs putting in a better place..\n    this.windowstate = new WindowState(this);\n     \n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n    \n\n\n\n}\n",

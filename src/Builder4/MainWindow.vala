@@ -43,7 +43,6 @@ public class Xcls_MainWindow : Object
     public string title;
     public Xcls_RightPalete rightpalete;
     public ValaProjectSettings vala_projectsettings;
-    public Xcls_WindowAddProp add_props;
     public int no_windows;
     public Xcls_ProjectSettings projectsettings;
     public WindowState windowstate;
@@ -61,7 +60,6 @@ public class Xcls_MainWindow : Object
         this.title = "Application Builder";
         this.rightpalete = null;
         this.vala_projectsettings = null;
-        this.add_props = null;
         this.no_windows = 1;
         this.projectsettings = null;
         this.windowstate = null;
