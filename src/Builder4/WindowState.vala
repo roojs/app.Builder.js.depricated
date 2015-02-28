@@ -655,7 +655,7 @@ public class WindowState : Object
                     this.left_projects.selectProject(this.win.project);
                 }
              
-                this.win.rooview.restore_easing_state();
+                this.win.rooview.el.restore_easing_state();
                 
                 this.clutterfiles.el.show_all();
                 this.clutterfiles.el.save_easing_state();
@@ -817,9 +817,13 @@ public class WindowState : Object
                 this.clutterfiles.set_size(alloc.width-50, alloc.height);
                 break;
 
-            case State.PROJECT: 
+            case State.PROJECT:
+	     
                 this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+		
+		this.win.rooview.el.save_easing_state();
 		this.win.rooview.el.set_size(alloc.width / 2.0f, alloc.height / 2.0f);
+		this.win.rooview.el.restore_easing_state();
                 break;
 
             case State.CODE: 
