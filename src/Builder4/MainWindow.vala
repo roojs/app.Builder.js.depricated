@@ -1782,7 +1782,7 @@ public class Xcls_MainWindow : Object
                  cd.el.set_transient_for(_this.el);
                 cd.el.set_modal(true);
             
-                 var project =   _this.left_projects.getSelectedProject();
+                 var project =   _this.windowstate.left_projects.getSelectedProject();
                 if (project == null) {
                     print("SKIP - no project\n");
                     return;
