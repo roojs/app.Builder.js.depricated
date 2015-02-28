@@ -201,10 +201,10 @@ public class WindowState : Object
     
         this.left_props.changed.connect(() => {
               if (this.left_tree.getActiveFile().xtype == "Roo" ) {
-                   this.win.window_rooview.requestRedraw();
+                   this.window_rooview.requestRedraw();
                    
                } else {
-                  this.win.window_gladeview.loadFile(this.left_tree.getActiveFile());
+                  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
               }
               this.left_tree.model.updateSelected();
               this.left_tree.model.file.save();
@@ -358,6 +358,11 @@ public class WindowState : Object
         this.clutterfiles.open.connect((file) => { 
             this.fileViewOpen(file);
         });
+        this.clutterfiles.el.transitions_completed.connect(() => {
+            if (this.state == State.FILES) {
+                this.pre
+            
+        }))
 
     }
     public void fileNewInit()
