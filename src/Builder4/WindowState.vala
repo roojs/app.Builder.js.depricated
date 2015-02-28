@@ -819,6 +819,7 @@ public class WindowState : Object
 
             case State.PROJECT: 
                 this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
+		this.win.rooview.el.set_size(alloc.width-50, alloc.height / 2.0f);
                 break;
 
             case State.CODE: 
