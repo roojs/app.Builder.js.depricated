@@ -518,7 +518,6 @@ public class WindowState : Object
         this.resizeCanvasElements();
         var oldstate  =this.state;
         this.state = new_state;
-        this.resizeCanvasElements();
 
                 
         this.buttonsShowHide();
@@ -534,6 +533,8 @@ public class WindowState : Object
                     // it's handled above..
 		    print ("changing state to preview from NOT files..");
                     this.win.rooview.el.save_easing_state();
+		            this.resizeCanvasElements();
+
                     this.win.rooview.el.set_scale(1.0f,1.0f);
                     this.win.rooview.el.restore_easing_state();
                  }
@@ -561,6 +562,9 @@ public class WindowState : Object
  
                 this.win.rooview.el.save_easing_state();
                 // -- FIXME? this needs to be State aware?
+		this.resizeCanvasElements();
+
+		this.win.rooview.el.set_pivot_point(1.0f,0.5f);
                 this.win.rooview.el.restore_easing_state();
                 
               
