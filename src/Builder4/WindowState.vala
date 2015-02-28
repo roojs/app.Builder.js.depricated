@@ -655,7 +655,7 @@ public class WindowState : Object
                     this.left_projects.selectProject(this.win.project);
                 }
              
-                el.restore_easing_state();
+                this.win.rooview.restore_easing_state();
                 
                 this.clutterfiles.el.show_all();
                 this.clutterfiles.el.save_easing_state();
