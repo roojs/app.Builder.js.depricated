@@ -41,9 +41,7 @@ public class Xcls_MainWindow : Object
     public Xcls_GtkView window_gladeview;
     public Project.Project project;
     public string title;
-    public ValaProjectSettings vala_projectsettings;
     public int no_windows;
-    public Xcls_ProjectSettings projectsettings;
     public WindowState windowstate;
     public Xcls_WindowRooView window_rooview;
 
@@ -57,9 +55,7 @@ public class Xcls_MainWindow : Object
         this.window_gladeview = null;
         this.project = null;
         this.title = "Application Builder";
-        this.vala_projectsettings = null;
         this.no_windows = 1;
-        this.projectsettings = null;
         this.windowstate = null;
         this.window_rooview = null;
 
