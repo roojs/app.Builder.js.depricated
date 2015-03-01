@@ -736,10 +736,7 @@ public class WindowState : Object
         var codesize = avail < 800.0f ? avail : 800.0f;
         //print("set code size %f\n", codesize);
 
-
             
-
-
         
         switch ( this.state) {
             case State.PREVIEW:
