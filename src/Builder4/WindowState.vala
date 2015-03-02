@@ -550,10 +550,8 @@ public class WindowState : Object
                     // it's handled above..
                     print ("changing state to preview from NOT files..");
                      
-                    this.resizeCanvasElements();
-
+ 
                     this.win.rooview.el.set_scale(1.0f,1.0f);
-                    this.win.rooview.el.restore_easing_state();
                  }
                
                 break;
@@ -579,16 +577,11 @@ public class WindowState : Object
  
                 
                 // -- FIXME? this needs to be State aware?
-                this.resizeCanvasElements();
-        
+         
                 this.win.rooview.el.set_pivot_point(1.0f,0.5f);
-                this.win.rooview.el.restore_easing_state();
-                
-              
-                
+                  
                 this.win.addpropsview.el.set_scale(1.0f,1.0f);
-                this.win.addpropsview.el.restore_easing_state();
-                break;
+                 break;
            
             case State.OBJECT:
                  var n = this.left_tree.getActiveElement();
@@ -613,13 +606,10 @@ public class WindowState : Object
                 this.rightpalete.load(this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
                 
-               // this.resizeCanvasElements();
-                this.win.rooview.el.restore_easing_state();
-
-                
+              
             
                 this.win.objectview.el.set_scale(1.0f,1.0f);
-                this.win.objectview.el.restore_easing_state();    
+                 
                 break;
 	       
 	       
@@ -628,9 +618,7 @@ public class WindowState : Object
                 this.code_editor.el.show_all();
                 
                 // caller needs to call editor - show....
-                 //this.resizeCanvasElements();
-                this.win.rooview.el.restore_easing_state();
-                
+                  
  
                  this.win.codeeditview.el.set_scale(1.0f,1.0f);
                  break;
@@ -648,11 +636,10 @@ public class WindowState : Object
                 }
 
                 
-                this.resizeCanvasElements();
+                
                 this.win.projecteditview.el.set_scale(1.0f,1.0f);
                 
-                this.win.projecteditview.el.restore_easing_state();
-                this.win.rooview.el.restore_easing_state();
+               
                 break;
                 
            case State.FILES:  // can only get here from PREVIEW state.. in theory..
