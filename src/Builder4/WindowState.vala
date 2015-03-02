@@ -751,7 +751,8 @@ public class WindowState : Object
                 this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
 		
                // this.win.rooview.el.save_easing_state();
-                this.win.rooview.el.set_scale(alloc.width / 2.0f, alloc.height / 2.0f);
+                //this.win.rooview.el.set_size(alloc.width / 2.0f, alloc.height / 2.0f);
+                this.win.rooview.el.set_scale(0.5f, 0.5f);
                 //this.win.rooview.el.restore_easing_state();
                 break;
 
