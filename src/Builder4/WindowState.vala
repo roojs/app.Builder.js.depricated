@@ -443,7 +443,13 @@ public class WindowState : Object
     public void switchState(State new_state)
     {
         
-
+        // save the easing state of everything..
+        this.win.addpropsview.el.save_easing_state();
+        this.win.codeeditview.el.save_easing_state();
+        this.win.objectview.el.save_easing_state();
+        this.win.projecteditview.el.save_easing_state();
+        this.win.rooview.el.save_easing_state();
+        this.clutterfiles.el.save_easing_state();
         
         switch (this.state) {
 
@@ -462,7 +468,7 @@ public class WindowState : Object
             
            case State.LISTENER:
            case State.PROP:
-                this.win.addpropsview.el.save_easing_state();
+                
                 this.win.addpropsview.el.set_scale(0.0f,0.0f);
                 this.win.addpropsview.el.restore_easing_state();   
                 break;
@@ -471,27 +477,27 @@ public class WindowState : Object
 
 
                 this.code_editor.saveContents();
-                this.win.codeeditview.el.save_easing_state();
+              
                 this.win.codeeditview.el.set_scale(0.0f,0.0f);
                 this.win.codeeditview.el.restore_easing_state();    
                 break;
 
 
              case State.OBJECT:
-                this.win.objectview.el.save_easing_state();
+               
                 this.win.objectview.el.set_scale(0.0f,0.0f);
                 this.win.objectview.el.restore_easing_state();    
                 break;
 
            case State.PROJECT:
-                this.win.projecteditview.el.save_easing_state();
+                
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                 this.win.projecteditview.el.restore_easing_state();    
                 break;
 
           case State.FILES:
                 // hide files...
-                this.win.rooview.el.save_easing_state();
+                
                 this.win.rooview.el.show_all();
                 this.win.rooview.el.set_easing_duration(1000);
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
@@ -501,8 +507,7 @@ public class WindowState : Object
                 this.win.rooview.el.restore_easing_state();  
                 
                
-                this.clutterfiles.el.save_easing_state();
-                this.clutterfiles.el.set_easing_duration(1000);
+                 this.clutterfiles.el.set_easing_duration(1000);
                 this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
                 this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
                 this.clutterfiles.el.set_opacity(0);
@@ -531,9 +536,9 @@ public class WindowState : Object
                  this.left_projects.el.hide(); 
                  if (oldstate != State.FILES) {
                     // it's handled above..
-		    print ("changing state to preview from NOT files..");
-                    this.win.rooview.el.save_easing_state();
-		    this.resizeCanvasElements();
+                    print ("changing state to preview from NOT files..");
+                     
+                    this.resizeCanvasElements();
 
                     this.win.rooview.el.set_scale(1.0f,1.0f);
                     this.win.rooview.el.restore_easing_state();
@@ -560,7 +565,7 @@ public class WindowState : Object
  
                     
  
-                this.win.rooview.el.save_easing_state();
+                
                 // -- FIXME? this needs to be State aware?
                 this.resizeCanvasElements();
         
@@ -568,7 +573,7 @@ public class WindowState : Object
                 this.win.rooview.el.restore_easing_state();
                 
               
-                this.win.addpropsview.el.save_easing_state();
+                
                 this.win.addpropsview.el.set_scale(1.0f,1.0f);
                 this.win.addpropsview.el.restore_easing_state();
                 break;
@@ -591,12 +596,12 @@ public class WindowState : Object
                 this.rightpalete.el.show_all();
                 this.rightpalete.load(this.left_tree.getActiveFile().palete(), n == null ? "*top" : n.fqn());
 
-                this.win.rooview.el.save_easing_state();
+                
                // this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
 
                 
-                this.win.objectview.el.save_easing_state();
+            
                 this.win.objectview.el.set_scale(1.0f,1.0f);
                 this.win.objectview.el.restore_easing_state();    
                 break;
@@ -607,8 +612,7 @@ public class WindowState : Object
                 this.code_editor.el.show_all();
                 
                 // caller needs to call editor - show....
-                this.win.rooview.el.save_easing_state();
-                //this.resizeCanvasElements();
+                 //this.resizeCanvasElements();
                 this.win.rooview.el.restore_easing_state();
                 
  
@@ -629,13 +633,12 @@ public class WindowState : Object
                     this.vala_projectsettings.show((Project.Gtk)this.win.project);
                 }
 
-                this.win.rooview.el.save_easing_state();
-               // this.resizeCanvasElements();
-                this.win.rooview.el.restore_easing_state();
-
-                this.win.projecteditview.el.save_easing_state();
+                
+                this.resizeCanvasElements();
                 this.win.projecteditview.el.set_scale(1.0f,1.0f);
-                this.win.projecteditview.el.restore_easing_state();    
+                
+                this.win.projecteditview.el.restore_easing_state();
+                this.win.rooview.el.restore_easing_state();
                 break;
                 
            case State.FILES:  // can only get here from PREVIEW state.. in theory..
@@ -645,8 +648,7 @@ public class WindowState : Object
              
                 this.left_projects.el.show(); 
             
-                this.win.rooview.el.save_easing_state();
-                this.win.rooview.el.set_easing_duration(1000);
+                 this.win.rooview.el.set_easing_duration(1000);
                 this.win.rooview.el.set_pivot_point(0.5f,0.5f);
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
                 this.win.rooview.el.set_opacity(0);
@@ -717,23 +719,16 @@ public class WindowState : Object
 	        print("WindowState.resizeCanvasElements = ingnore not loaded or no clutterfiles\n");
             return; 
         }
-	    //print("WindowState.resizeCanvasElements = running");
-
-        
-        // ------- project view appears at top...
-
-               
-        // ------- add property/object left - max 300px, min 50... (or disapear..)     
-        
+	    
         var avail = alloc.width < 50.0f ? 0 :  alloc.width - 50.0f;
         var palsize = avail < 300.0f ? avail : 300.0f;
-        //print("set palsize size %f\n", palsize);
-        // palate / props : fixed 300 pix
-                
+           
  
         // -------- code edit min 600
         
         var codesize = avail < 800.0f ? avail : 800.0f;
+        
+        
         //print("set code size %f\n", codesize);
 
             
@@ -751,18 +746,18 @@ public class WindowState : Object
 	     
                 this.win.projecteditview.el.set_size(alloc.width-50, alloc.height / 2.0f);
 		
-                this.win.rooview.el.save_easing_state();
+               // this.win.rooview.el.save_easing_state();
                 this.win.rooview.el.set_size(alloc.width / 2.0f, alloc.height / 2.0f);
-                this.win.rooview.el.restore_easing_state();
+                //this.win.rooview.el.restore_easing_state();
                 break;
 
             case State.CODE: 
                 this.win.codeeditview.el.set_size(codesize, alloc.height);
                 var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
-	            this.win.rooview.el.save_easing_state();
+	            //this.win.rooview.el.save_easing_state();
                  
                 this.win.rooview.el.set_scale(scale,scale);
-                this.win.rooview.el.restore_easing_state();
+               // this.win.rooview.el.restore_easing_state();
                 break;
                 
             case State.PROP:
@@ -775,9 +770,9 @@ public class WindowState : Object
             case State.OBJECT:  
                 this.win.objectview.el.set_size(palsize, alloc.height);    
                 var scale = avail > 0.0f ? (avail - palsize -10 ) / avail : 0.0f;
-                this.win.rooview.el.save_easing_state();
+                //this.win.rooview.el.save_easing_state();
                 this.win.rooview.el.set_scale(scale,scale);
-                this.win.rooview.el.restore_easing_state();
+               // this.win.rooview.el.restore_easing_state();
                 break;
         }
     }
