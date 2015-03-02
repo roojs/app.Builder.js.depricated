@@ -492,7 +492,7 @@ public class WindowState : Object
           case State.FILES:
                 // hide files...
                 this.win.rooview.el.save_easing_state();
-		this.win.rooview.el.show_all();
+                this.win.rooview.el.show_all();
                 this.win.rooview.el.set_easing_duration(1000);
                 this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.win.rooview.el.set_scale(1.0f,1.0f);
