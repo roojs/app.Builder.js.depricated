@@ -564,6 +564,8 @@ public class WindowState : Object
                 if (ae == null) {
                     this.state = oldstate;
                     this.buttonsShowHide();
+                    this.resizeCanvasElements();
+                    this.easingRestoreAll();
                     return;
                 }
                 this.add_props.el.show_all();
