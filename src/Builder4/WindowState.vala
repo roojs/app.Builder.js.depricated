@@ -439,17 +439,32 @@ public class WindowState : Object
         this.window_gladeview  =new Xcls_GtkView();
         this.window_gladeview.ref();
     }
-
-    public void switchState(State new_state)
+    
+    public void easingSaveAll()
     {
-        
-        // save the easing state of everything..
         this.win.addpropsview.el.save_easing_state();
         this.win.codeeditview.el.save_easing_state();
         this.win.objectview.el.save_easing_state();
         this.win.projecteditview.el.save_easing_state();
         this.win.rooview.el.save_easing_state();
         this.clutterfiles.el.save_easing_state();
+         
+    }
+    public void easingRestoreAll()
+    {
+        this.win.addpropsview.el.restore_easing_state();
+        this.win.codeeditview.el.restore_easing_state();
+        this.win.objectview.el.restore_easing_state();
+        this.win.projecteditview.el.restore_easing_state();
+        this.win.rooview.el.restore_easing_state();
+        this.clutterfiles.el.restore_easing_state();
+        
+    }
+    public void switchState(State new_state)
+    {
+        
+        // save the easing state of everything..
+        this.easingSaveAll();
         
         switch (this.state) {
 
@@ -470,8 +485,7 @@ public class WindowState : Object
            case State.PROP:
                 
                 this.win.addpropsview.el.set_scale(0.0f,0.0f);
-                this.win.addpropsview.el.restore_easing_state();   
-                break;
+                 break;
                 
             case State.CODE:
 
@@ -479,21 +493,18 @@ public class WindowState : Object
                 this.code_editor.saveContents();
               
                 this.win.codeeditview.el.set_scale(0.0f,0.0f);
-                this.win.codeeditview.el.restore_easing_state();    
-                break;
+                 break;
 
 
              case State.OBJECT:
                
                 this.win.objectview.el.set_scale(0.0f,0.0f);
-                this.win.objectview.el.restore_easing_state();    
-                break;
+                 break;
 
            case State.PROJECT:
                 
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
-                this.win.projecteditview.el.restore_easing_state();    
-                break;
+                 break;
 
           case State.FILES:
                 // hide files...
@@ -504,15 +515,14 @@ public class WindowState : Object
                 this.win.rooview.el.set_scale(1.0f,1.0f);
                 this.win.rooview.el.set_pivot_point(0.5f,0.5f);
                 this.win.rooview.el.set_opacity(0xff);
-                this.win.rooview.el.restore_easing_state();  
+               
                 
                
                  this.clutterfiles.el.set_easing_duration(1000);
                 this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
                 this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
                 this.clutterfiles.el.set_opacity(0);
-                this.clutterfiles.el.restore_easing_state();  
-
+ 
                 //this.clutterfiles.el.hide();
                  
 
@@ -520,12 +530,14 @@ public class WindowState : Object
 
                 
         }
-        this.resizeCanvasElements();
+       
         var oldstate  =this.state;
         this.state = new_state;
-
+        
+        
                 
         this.buttonsShowHide();
+        
         
         switch (this.state) {
             
@@ -584,12 +596,16 @@ public class WindowState : Object
                 if (this.left_tree.model.file == null) {
                     this.state =oldstate;
                     this.buttonsShowHide();
+                    this.resizeCanvasElements();
+                    this.easingRestoreAll();
                     return;
                 }
                 
                 if (n == null && this.left_tree.model.file.tree != null) {
                     this.state = oldstate;
                     this.buttonsShowHide();
+                    this.resizeCanvasElements();
+                    this.easingRestoreAll();
                     return;
                 }
 
@@ -616,10 +632,8 @@ public class WindowState : Object
                 this.win.rooview.el.restore_easing_state();
                 
  
-                this.win.codeeditview.el.save_easing_state();
-                this.win.codeeditview.el.set_scale(1.0f,1.0f);
-                this.win.codeeditview.el.restore_easing_state();    
-                break;
+                 this.win.codeeditview.el.set_scale(1.0f,1.0f);
+                 break;
 
 
 
@@ -659,22 +673,23 @@ public class WindowState : Object
                     this.left_projects.selectProject(this.win.project);
                 }
              
-                this.win.rooview.el.restore_easing_state();
                 
                 this.clutterfiles.el.show_all();
-                this.clutterfiles.el.save_easing_state();
+                 
                 this.clutterfiles.el.set_easing_duration(1000);
                 this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
                 this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 this.clutterfiles.el.set_opacity(0xff);
-                this.clutterfiles.el.restore_easing_state();  
+                
                 
                 
                 break;
 
 
         }
-
+        this.resizeCanvasElements();
+        this.easingRestoreAll();
+        
             
     }
     
