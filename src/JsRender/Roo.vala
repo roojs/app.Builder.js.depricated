@@ -338,7 +338,7 @@ namespace JsRender {
 				continue;
 			}
 			var str = iter.get_value();
-			if (this.doubleStringProps.indexOf(kname) > -1) {
+			if (this.doubleStringProps.index_of(kname) > -1) {
 				this.transStrings.set(str,  
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 				);
