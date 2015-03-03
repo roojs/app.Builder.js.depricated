@@ -526,6 +526,8 @@ namespace JsRender {
  
             string[] adda = { " = {",
                 "",
+                this.transStringsToJs() + ","
+                "",
                 " dialog : false,",
                 " callback:  false,",
                 "",   
