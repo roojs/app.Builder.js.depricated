@@ -367,7 +367,25 @@ namespace JsRender {
 			}
 		
 				
-		}    
+		}  
+		
+		function transStringsToJs()
+		{
+			string ret = " strings : {\n";
+			string[] kvs = {};
+			var iter = this.transStrings.map_iterator();
+			while (iter.next()) {
+				kvs += (this.tree.quoteString(iter.get_value()) + ':' + 
+					this.tree.quoteString(iter.get_key())
+					)
+			}
+		  
+				
+                
+              
+			
+		}
+		  
         /**
 	 * javascript used in Webkit preview 
          */
@@ -671,8 +689,7 @@ namespace JsRender {
 		        "  }\n" +
 		        "});\n";
 		         
-             
-            
+              
         }
             
         public new string? guessName (Node? ar) // turns the object into full name.
