@@ -375,11 +375,12 @@ namespace JsRender {
 			string[] kvs = {};
 			var iter = this.transStrings.map_iterator();
 			while (iter.next()) {
-				kvs += (this.tree.quoteString(iter.get_value()) + ':' + 
+				kvs += "  " + (this.tree.quoteString(iter.get_value()) + ":" + 
 					this.tree.quoteString(iter.get_key())
 					)
 			}
-		  
+			return " strings : {\n " + string.joinv(",\n", kvs) + "\n" + 
+				"}";
 				
                 
               
