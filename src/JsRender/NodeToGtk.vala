@@ -8,6 +8,8 @@ public class JsRender.NodeToGtk : Object {
  	Object wrapped_object; 
 	NodeToGtk parentObj;
 	
+	Gee.ArrayList<Object> children;
+	
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
