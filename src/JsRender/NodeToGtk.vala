@@ -141,6 +141,8 @@ public class JsRender.NodeToGtk : Object {
 			 
 		}
 		
+		this.afterChildren();
+		
 		return ret;
 		
 
@@ -175,7 +177,7 @@ public class JsRender.NodeToGtk : Object {
 		var par_type = this.parentObj.node.fqn().replace(".", "");
 		
 		if (par_type == "GtkNotebook") {
-			this.packIntoNotebook();
+			// do not pack
 			return;
 		}
 		
