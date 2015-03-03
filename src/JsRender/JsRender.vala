@@ -37,6 +37,9 @@ namespace JsRender {
 		public GLib.List<JsRender> cn; // child files.. (used by project ... should move code here..)
 
 		public bool hasParent; 
+		
+		public Gee.HashMap<string,string> transStrings; // map of md5 -> string.
+		
 
 		public signal void changed (Node? node, string source); 
 
@@ -181,7 +184,7 @@ namespace JsRender {
 		    
 		    print("WRITE :%s\n " , this.path);// + "\n" + JSON.stringify(write));
 		    try {
-			this.writeFile(this.path, generator.to_data(null));
+				this.writeFile(this.path, generator.to_data(null));
 		        //generator.to_file(this.path);
 		    } catch(Error e) {
 		        print("Save failed");
