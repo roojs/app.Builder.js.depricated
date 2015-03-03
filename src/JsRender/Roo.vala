@@ -217,7 +217,7 @@ namespace JsRender {
         {
             
 		print("--- JsRender.Roo.save");
-		print("toSourcePreview() - reset transStrings\n")
+		print("save() - reset transStrings\n");
 		this.transStrings = new Gee.HashMap<string,string>();
 		this.findTransStrings(this.tree);
 		
