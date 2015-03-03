@@ -53,7 +53,9 @@ namespace JsRender {
                 "value",
                 "text",
                 "emptyMsg",
-                "displayMsg" };
+                "displayMsg",
+                "html",
+                };
             for (var i=0;i<dsp.length;i++) {
                 this.doubleStringProps.add(dsp[i]);
             }
@@ -382,7 +384,7 @@ namespace JsRender {
 					this.tree.quoteString(iter.get_key())
 					);
 			}
-			return " strings : {\n " + string.joinv(",\n", kvs) + "\n" + 
+			return " strings : {\n" + string.joinv(",\n", kvs) + "\n" + 
 				" },";
 				
                 
