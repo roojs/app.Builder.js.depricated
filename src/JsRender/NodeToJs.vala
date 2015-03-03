@@ -327,9 +327,18 @@ public class JsRender.NodeToJs : Object {
 			//}
 		   
 			if (this.doubleStringProps.index_of(k) > -1) {
-				els.add(left + this.node.quoteString(v));
+				// then use the translated version...
+				
+				els.add(left + "_this._strings['" + 
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+					"]'"
+				);
 				continue;
 			}
+			
+			
+			
+			
 			var vv = this.node.quoteString(v);
 			// single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
 			this.els.add(left + "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
