@@ -576,6 +576,8 @@ namespace JsRender {
             
             string[] adda = { " = {",
                 "",
+                this.transStringsToJs() + ","
+                "",
                 " dialog : false,",
                 " callback:  false,",
                 "",   
@@ -674,6 +676,9 @@ namespace JsRender {
 		        this.outputHeader() + "\n" +
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
+		        ""
+		        this.transStringsToJs() + ","
+                "",
 		        "  part     :  "+ this.pathToPart() + ",\n" +
 		                /// critical used by builder to associate modules/parts/persm
 		        "  order    : '" +modkey+"',\n" +
