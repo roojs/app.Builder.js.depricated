@@ -241,7 +241,7 @@ public class JsRender.NodeToJs : Object {
 				continue;
 			}
 			 if (kflag == '*') {
-				// ignore '* prop';
+				// ignore '* prop'; ??? 
 				continue;
 			 }
 				
@@ -261,11 +261,11 @@ public class JsRender.NodeToJs : Object {
 			 
 			// next.. is it a function.. or a raw string..
 			if (
-				kk[0][0] == '|' 
+				kflag == '|' 
 				|| 
-				kk[0][0] == '$' 
+				kflag == '$' 
 				|| 
-				kk[0] == "function"
+				ktype == "function"
 	   		       
 				// ??? any others that are raw output..
 				) {
