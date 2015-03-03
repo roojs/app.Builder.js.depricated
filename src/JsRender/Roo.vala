@@ -320,8 +320,9 @@ namespace JsRender {
 		// the to use it it would do String.format(this._message, somedata);
 		
 		// loop through and find string starting with '_' 
-		
-		
+		if (node == null) {
+			return;
+		}		
 		
 		var iter = node.props.map_iterator();
 		while (iter.next()) {
