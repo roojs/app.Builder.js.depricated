@@ -237,11 +237,11 @@ public class JsRender.NodeToJs : Object {
 			
 			string leftv = k;
 			// skip builder stuff. prefixed with  '.' .. just like unix fs..
-			if (kk[0][0] == '.') { // |. or . -- do not output..
+			if (kflag == '.') { // |. or . -- do not output..
 				continue;
 			}
-			 if (kk[0][0] == '*') {
-				// ignore '*prop';
+			 if (kflag == '*') {
+				// ignore '* prop';
 				continue;
 			 }
 				
