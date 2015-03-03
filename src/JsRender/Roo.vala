@@ -313,7 +313,38 @@ namespace JsRender {
 	public Gee.ArrayList<string> transStrings(Node node,   Gee.ArrayList<string> ret)
 	{
 		// iterate properties...
-		   // use doubleStringProps
+		// use doubleStringProps
+		var iter = node.props.map_iterator();
+		while (iter.next()) {
+			// key formats : XXXX
+			// XXX - plain
+			// string XXX - with type
+			// $ XXX - with flag (no type)
+			// $ string XXX - with flag
+			string kname;
+			string ktype;
+			string kflag;
+			node.normalize_key(iter.get_key(), out kname, out ktype, out kflag);
+			if (kflag == "$") {
+				continue;
+			}
+			var str = iter.get_value();
+			if (this.doubleStringProps.indexOf(kname) > -1) {
+				this.transStrings.set(str,  
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
+				);
+				continue;
+			}
+			if (ktype == "string" && kname[0] == '_') {
+				this.transStrings.set(str,  
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
+				);
+				continue;
+			}
+			
+		}
+		
+		
 		for (var i =0;i < this.doubleStringProps.size; i++) {
 			var k = this.doubleStringProps.get(i);
 			if (if (!node.has(k)) {
@@ -329,6 +360,12 @@ namespace JsRender {
 				GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 			);
 		}
+		// flagging a translatable string..
+		// the code would use string _astring to indicate a translatable string
+		// the to use it it would do String.format(this._message, somedata);
+		
+		// loop through and find string starting with '_' 
+		
 
 		
 		// iterate children..
