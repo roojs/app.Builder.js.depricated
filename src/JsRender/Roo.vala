@@ -307,7 +307,7 @@ namespace JsRender {
 		return ret;
 			
 	}
-	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
+	 // map of md5 -> string..
 
 	 
 	public void  findTransStrings(Node node )
