@@ -444,6 +444,7 @@ namespace JsRender {
             if (top == null) {
                 return "";
             }
+            // get the translatable strings..
             this.findTransStrings(this.tree);
             
             
