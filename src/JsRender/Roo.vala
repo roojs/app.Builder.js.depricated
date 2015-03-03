@@ -378,7 +378,10 @@ namespace JsRender {
 		
 		public string  transStringsToJs()
 		{
+			
+			print("Roo.transStringsToJs()\n");
 			if (this.transStrings.size < 1) {
+				print("Roo.transStringsToJs() size < 1?\n");
 				return "";
 			}
 			 
