@@ -348,7 +348,7 @@ public class JsRender.NodeToGtk : Object {
 		}
 		
 		
-		var ret = new GLib.Value(prop_gtype);
+		var ret = new Value(prop_gtype);
 
 
 		switch(type) {
