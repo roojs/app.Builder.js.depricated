@@ -351,7 +351,7 @@ namespace JsRender {
 				}
 				var str = iter.get_value();
 				if (this.doubleStringProps.index_of(kname) > -1) {
-					print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
+					print("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
@@ -359,7 +359,7 @@ namespace JsRender {
 				}
 				
 				if (ktype.down() == "string" && kname[0] == '_') {
-					print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
+					print("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
