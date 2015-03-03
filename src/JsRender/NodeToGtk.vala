@@ -144,7 +144,10 @@ public class JsRender.NodeToGtk : Object {
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
 
-			 this.mungeChild(this.node.items.get(i));
+			 var ch = this.mungeChild(this.node.items.get(i));
+			 if (ch != null) {
+				 this.children.add(ch);
+			 }
 			 
 		}
 		
