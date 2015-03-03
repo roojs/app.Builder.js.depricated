@@ -351,13 +351,15 @@ namespace JsRender {
 				}
 				var str = iter.get_value();
 				if (this.doubleStringProps.index_of(kname) > -1) {
+					print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
 					continue;
 				}
-				print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
+				
 				if (ktype.down() == "string" && kname[0] == '_') {
+					print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
