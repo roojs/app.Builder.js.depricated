@@ -132,14 +132,14 @@ public class JsRender.NodeToGtk : Object {
 			ret.set_property(k, val);  
 			
 
-                }
+		}
 		// packing???
 		// for now... - just try the builder style packing
 		
 		
 		 
 		if (this.node.items.size < 1) {
-			return ret;
+			return this;
 		}
 		
 		for (var i = 0; i < this.node.items.size; i++ ) {
@@ -150,7 +150,7 @@ public class JsRender.NodeToGtk : Object {
 		
 		this.afterChildren();
 		
-		return ret;
+		return this;
 		
 
 		 
