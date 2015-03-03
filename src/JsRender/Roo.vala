@@ -369,8 +369,11 @@ namespace JsRender {
 				
 		}  
 		
-		function transStringsToJs()
+		public string  transStringsToJs()
 		{
+			if (this.transStrings.size < 1) {
+				return "";
+			}
 			string ret = " strings : {\n";
 			string[] kvs = {};
 			var iter = this.transStrings.map_iterator();
@@ -380,7 +383,7 @@ namespace JsRender {
 					)
 			}
 			return " strings : {\n " + string.joinv(",\n", kvs) + "\n" + 
-				" }";
+				" },";
 				
                 
               
