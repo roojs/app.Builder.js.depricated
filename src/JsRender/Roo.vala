@@ -338,7 +338,7 @@ namespace JsRender {
 			string kname;
 			string ktype;
 			string kflag;
-			node.normalize_key(iter.get_key(), out kname, out ktype, out kflag);
+			node.normalize_key(iter.get_key(), out kname, out kflag, out ktype);
 			if (kflag == "$") {
 				continue;
 			}
