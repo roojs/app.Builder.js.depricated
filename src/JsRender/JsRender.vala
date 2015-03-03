@@ -271,6 +271,18 @@ namespace JsRender {
 			//ret.set_string_member("items", this.items);
 			ret.set_string_member("permname", this.permname  == null ? "" : this.permname);
 			ret.set_string_member("modOrder", this.modOrder  == null ? "" : this.modOrder);
+			
+			if (this.transStrings.size > 0) {
+				var tr =  new Json.Object();
+				var iter = this.transStrings.map_iterator();
+				while (iter.next()) {
+					tr.set_string_member(iter.get_value(), iter.get_key());
+				}
+				ret.set_object_member("strings", tr);
+            }
+			
+			
+			
 			var ar = new Json.Array();
 			// empty files do not have a tree.
 			if (this.tree != null) {
