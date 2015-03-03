@@ -324,9 +324,10 @@ namespace JsRender {
 			if (k[0] == '$') {
 				continue;
 			}
-			
+			// add it to our list...
 			this.transStrings.set(str,  
-				GLib.Checksum.compute_for_string (ChecksumType.MD5, str));
+				GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
+			);
 		}
 
 		
