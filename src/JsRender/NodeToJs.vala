@@ -335,8 +335,13 @@ public class JsRender.NodeToJs : Object {
 				);
 				continue;
 			}
-			
-			
+			if (ktype.down() == "string" && kname[0] == '_') {
+				els.add(left + "_this._strings['" + 
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+					"]'"
+				);
+				continue;
+			}
 			
 			
 			var vv = this.node.quoteString(v);
