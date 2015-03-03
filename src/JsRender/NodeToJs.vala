@@ -321,10 +321,10 @@ public class JsRender.NodeToJs : Object {
 			
 			
 			// strings..
-			if (this.doubleStringProps.size < 1) {
-				this.els.add(left + this.node.quoteString(v));
-				continue;
-			}
+			//if (this.doubleStringProps.size < 1) {
+			//	this.els.add(left + this.node.quoteString(v));
+			//	continue;
+			//}
 		   
 			if (this.doubleStringProps.index_of(k) > -1) {
 				els.add(left + this.node.quoteString(v));
