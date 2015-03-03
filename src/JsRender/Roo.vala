@@ -299,132 +299,132 @@ namespace JsRender {
             
         }
 
-	public Gee.ArrayList<string> findxincludes(Node node,   Gee.ArrayList<string> ret)
-	{
-		
-		if (node.props.has_key("* xinclude")) {
-			ret.add(node.props.get("* xinclude"));
-	        }
-		for (var i =0; i < node.items.size; i++) {
-			this.findxincludes(node.items.get(i), ret);
-		}
-		return ret;
+		public Gee.ArrayList<string> findxincludes(Node node,   Gee.ArrayList<string> ret)
+		{
 			
-	}
-	 
-
-	 
-	public void  findTransStrings(Node node )
-	{
-		// iterate properties...
-		// use doubleStringProps
-		
-		// flagging a translatable string..
-		// the code would use string _astring to indicate a translatable string
-		// the to use it it would do String.format(this._message, somedata);
-		
-		// loop through and find string starting with '_' 
-		if (node == null) {
-			return;
-		}		
-		
-		var iter = node.props.map_iterator();
-		while (iter.next()) {
-			// key formats : XXXX
-			// XXX - plain
-			// string XXX - with type
-			// $ XXX - with flag (no type)
-			// $ string XXX - with flag
-			string kname;
-			string ktype;
-			string kflag;
-			node.normalize_key(iter.get_key(), out kname, out kflag, out ktype);
-			if (kflag == "$") {
-				continue;
+			if (node.props.has_key("* xinclude")) {
+				ret.add(node.props.get("* xinclude"));
 			}
-			var str = iter.get_value();
-			if (this.doubleStringProps.index_of(kname) > -1) {
-				this.transStrings.set(str,  
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
-				);
-				continue;
+			for (var i =0; i < node.items.size; i++) {
+				this.findxincludes(node.items.get(i), ret);
 			}
-			print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
-			if (ktype.ascii_casecmp("string") == 0 && kname[0] == '_') {
-				this.transStrings.set(str,  
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
-				);
-				continue;
-			}
-			
+			return ret;
+				
 		}
 		 
 
-		
-		// iterate children..
-		for (var i =0; i < node.items.size; i++) {
-			this.findTransStrings(node.items.get(i) );
-		}
-	
+		 
+		public void  findTransStrings(Node node )
+		{
+			// iterate properties...
+			// use doubleStringProps
 			
-	}    
+			// flagging a translatable string..
+			// the code would use string _astring to indicate a translatable string
+			// the to use it it would do String.format(this._message, somedata);
+			
+			// loop through and find string starting with '_' 
+			if (node == null) {
+				return;
+			}		
+			
+			var iter = node.props.map_iterator();
+			while (iter.next()) {
+				// key formats : XXXX
+				// XXX - plain
+				// string XXX - with type
+				// $ XXX - with flag (no type)
+				// $ string XXX - with flag
+				string kname;
+				string ktype;
+				string kflag;
+				node.normalize_key(iter.get_key(), out kname, out kflag, out ktype);
+				if (kflag == "$") {
+					continue;
+				}
+				var str = iter.get_value();
+				if (this.doubleStringProps.index_of(kname) > -1) {
+					this.transStrings.set(str,  
+						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
+					);
+					continue;
+				}
+				print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
+				if (ktype.ascii_casecmp("string") == 0 && kname[0] == '_') {
+					this.transStrings.set(str,  
+						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
+					);
+					continue;
+				}
+				
+			}
+			 
+
+			
+			// iterate children..
+			for (var i =0; i < node.items.size; i++) {
+				this.findTransStrings(node.items.get(i) );
+			}
+		
+				
+		}    
         /**
 	 * javascript used in Webkit preview 
          */
         
         public override string  toSourcePreview()
         {
-		print("to source preview\n");
-		if (this.tree == null) {
-			return "";
-		}
-		var top = this.tree.fqn();
-		var xinc = new Gee.ArrayList<string>(); 
+			print("to source preview\n");
+			if (this.tree == null) {
+				return "";
+			}
+			var top = this.tree.fqn();
+			var xinc = new Gee.ArrayList<string>(); 
 
-		this.findxincludes(this.tree, xinc);
-		print("got %d xincludes\n", xinc.size);
-		var prefix_data = "";
-		if (xinc.size > 0 ) {
-			for(var i = 0; i < xinc.size; i++) {
-				print("check xinclude:  %s\n", xinc.get(i));
-				var sf = this.project.getByName(xinc.get(i));
-				if (sf == null) {
-					print("Failed to find file by name?\n");
-					continue;
+			this.findxincludes(this.tree, xinc);
+			print("got %d xincludes\n", xinc.size);
+			var prefix_data = "";
+			if (xinc.size > 0 ) {
+				for(var i = 0; i < xinc.size; i++) {
+					print("check xinclude:  %s\n", xinc.get(i));
+					var sf = this.project.getByName(xinc.get(i));
+					if (sf == null) {
+						print("Failed to find file by name?\n");
+						continue;
+					}
+
+					sf.loadItems();
+					var xinc_str = sf.toSource();
+					
+					//string xinc_str;
+					//FileUtils.get_contents(js, out xinc_str);
+					prefix_data += "\n" + xinc_str + "\n";
+					
 				}
 
-				sf.loadItems();
-				var xinc_str = sf.toSource();
-				
-				//string xinc_str;
-				//FileUtils.get_contents(js, out xinc_str);
-				prefix_data += "\n" + xinc_str + "\n";
-				
 			}
 
-		}
-
-		
-		
-		//print(JSON.stringify(this.items, null,4));
-		       
-		if (top == null) {
-			print ("guessname returned false");
-			return "";
-		}
+			
+			
+			//print(JSON.stringify(this.items, null,4));
+				   
+			if (top == null) {
+				print ("guessname returned false");
+				return "";
+			}
 
 
-		if (top.contains("Dialog")) {
-			return prefix_data + this.toSourceDialog(true);
-		}
+			if (top.contains("Dialog")) {
+				return prefix_data + this.toSourceDialog(true);
+			}
 
-		if (top.contains("Modal")) {
-			return prefix_data + this.toSourceModal(true);
-		}
+			if (top.contains("Modal")) {
+				return prefix_data + this.toSourceModal(true);
+			}
 
-		return prefix_data + this.toSourceLayout(true);
-            
-            
+			return prefix_data + this.toSourceLayout(true);
+				
+				
             
         }
         
