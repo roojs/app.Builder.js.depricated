@@ -179,13 +179,23 @@ public class JsRender.NodeToGtk : Object {
 		// some are labels - this might need to be more complex...
 		// perhaps labels should be a special property labels[] of the notebook..
 		var labels = new Gee.ArrayList<NodeToGtk>();
+		var bodies = new Gee.ArrayList<NodeToGtk>();
 		for (var i = 0; i < this.children.size; i++) { 
 			var cn = this.children.get(i).node.fqn().replace(".", "");
 			if (cn != "GtkLabel") {
+				bodies.add(this.children.get(i));
 				continue;
 			}
 			labels.add(this.children.get(i));
 		}
+		for (var i = 0; i < bodies.size; i++) { 
+			((global::Gtk.Notebook)this.wrapped_object).append_page(
+				
+			);
+			
+			
+		}
+		
 		
 			
 		
