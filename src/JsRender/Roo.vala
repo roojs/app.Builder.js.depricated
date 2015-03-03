@@ -529,7 +529,7 @@ namespace JsRender {
  
             string[] adda = { " = {",
                 "",
-                this.transStringsToJs() + ","
+                this.transStringsToJs() ,
                 "",
                 " dialog : false,",
                 " callback:  false,",
@@ -579,7 +579,7 @@ namespace JsRender {
             
             string[] adda = { " = {",
                 "",
-                this.transStringsToJs() + ","
+                this.transStringsToJs() ,
                 "",
                 " dialog : false,",
                 " callback:  false,",
@@ -680,7 +680,7 @@ namespace JsRender {
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
 		        ""
-		        this.transStringsToJs() + ","
+		        this.transStringsToJs() ,
                 "",
 		        "  part     :  "+ this.pathToPart() + ",\n" +
 		                /// critical used by builder to associate modules/parts/persm
