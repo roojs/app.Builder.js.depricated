@@ -8,7 +8,7 @@ public class JsRender.NodeToGtk : Object {
  	Object wrapped_object; 
 	NodeToGtk parentObj;
 	
-	Gee.ArrayList<Object> children;
+	Gee.ArrayList<NodeToGtk> children;
 	
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
@@ -19,7 +19,7 @@ public class JsRender.NodeToGtk : Object {
 	{
 		this.node = node;
  		this.els = new Gee.ArrayList<string>(); 
- 		this.children = new Gee.ArrayList<Object>(); 
+ 		this.children = new Gee.ArrayList<NodeToGtk>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
 		this.parentObj = null;
