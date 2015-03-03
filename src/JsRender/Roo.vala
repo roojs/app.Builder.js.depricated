@@ -357,7 +357,7 @@ namespace JsRender {
 		
 		// iterate children..
 		for (var i =0; i < node.items.size; i++) {
-			this.transStrings(node.items.get(i) );
+			this.findTransStrings(node.items.get(i) );
 		}
 		return ret;
 			
