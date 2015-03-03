@@ -217,7 +217,7 @@ public class JsRender.NodeToJs : Object {
 		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
 			
-			string kname;
+			string k;
 			string ktype;
 			string kflag;
 			node.normalize_key(piter.get_key(), out k, out kflag, out ktype);
