@@ -307,7 +307,7 @@ namespace JsRender {
 		return ret;
 			
 	}
-	 // map of md5 -> string..
+	.
 
 	 
 	public void  findTransStrings(Node node )
@@ -437,7 +437,8 @@ namespace JsRender {
             
             // we have 2 types = dialogs and components
             // 
-            this.transStrings = new Gee.HashMap<string,string>();
+            
+            
 			if (this.tree == null) {
 				return "";
 			}
@@ -446,7 +447,7 @@ namespace JsRender {
                 return "";
             }
             // get the translatable strings..
-            this.findTransStrings(this.tree);
+            
             
             
             if (top.contains("Dialog")) {
