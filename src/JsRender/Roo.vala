@@ -444,6 +444,9 @@ namespace JsRender {
             if (top == null) {
                 return "";
             }
+            this.findTransStrings(this.root);
+            
+            
             if (top.contains("Dialog")) {
                 return this.toSourceDialog(false);
             }
