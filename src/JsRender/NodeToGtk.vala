@@ -147,6 +147,10 @@ public class JsRender.NodeToGtk : Object {
 		 
 
 	}
+	/**
+	 * called after the this.object  has been created
+	 * and it needs to be packed onto parent.
+	 */
 	public void packParent() 
 	{
 		var cls = this.node.fqn().replace(".", "");
@@ -166,6 +170,11 @@ public class JsRender.NodeToGtk : Object {
 		if (parent == null) { // no parent.. can not pack.
 			return;
 		}
+		
+		
+		
+		
+		// -------------  handle various child types.. -----------
 		// our overrides
 		if (cls == "GtkMenu") {
 			this.packMenu();
