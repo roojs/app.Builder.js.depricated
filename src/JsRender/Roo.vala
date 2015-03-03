@@ -359,7 +359,7 @@ namespace JsRender {
 		for (var i =0; i < node.items.size; i++) {
 			this.findTransStrings(node.items.get(i) );
 		}
-		return ret;
+	
 			
 	}    
         /**
