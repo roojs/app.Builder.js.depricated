@@ -8,7 +8,7 @@ namespace JsRender {
         string region;
         bool disabled;
 
-	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
+
         
         public Roo(Project.Project project, string path) {
             base( project, path);
@@ -294,9 +294,17 @@ namespace JsRender {
 		return ret;
 			
 	}
+	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
+
+	public string addTransString(string str)
+	{
+	    this.transStrings.set(str,   GLib.Checksum.compute_for_string (ChecksumType.MD5, str));
+	}
+	
 	public Gee.ArrayList<string> transStrings(Node node,   Gee.ArrayList<string> ret)
 	{
 		// iterate properties...
+		   // use doubleStringProps
 		
 
 		
