@@ -334,7 +334,7 @@ public class JsRender.NodeToGtk : Object {
 		var gtkbuilder = new global::Gtk.Builder();
 
 		if (type == "utf8") {
-			var qret = new GLib.Value(typeof(string));
+			var qret = GLib.Value(typeof(string));
 			qret.set_string(val);
 			return qret;
 		}
