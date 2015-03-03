@@ -309,11 +309,7 @@ namespace JsRender {
 	}
 	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
 
-	public string addTransString(string str)
-	{
-	    this.transStrings.set(str,   GLib.Checksum.compute_for_string (ChecksumType.MD5, str));
-	}
-	
+	 
 	public Gee.ArrayList<string> transStrings(Node node,   Gee.ArrayList<string> ret)
 	{
 		// iterate properties...
@@ -324,8 +320,13 @@ namespace JsRender {
 				continue;
 			}
 			// if the value is raw ... then we can not convert it..
+			var fk = get_key(k);
+			if (k[0] == '$') {
+				continue;
+			}
 			
-			nlist.add(this.parent.items.get(i));
+			this.transStrings.set(str,  
+				GLib.Checksum.compute_for_string (ChecksumType.MD5, str));
 		}
 
 		
