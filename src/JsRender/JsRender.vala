@@ -64,6 +64,7 @@ namespace JsRender {
 			this.permname = "";
 			this.modOrder = "";
 			this.language = "";
+			print("JsRender.cto() - reset transStrings\n");
 			this.transStrings = new Gee.HashMap<string,string> ();
 			
 			// should use basename reallly...
