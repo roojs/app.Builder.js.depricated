@@ -2,11 +2,13 @@
 namespace JsRender {
 
     static int rid = 0; 
- 
+   
     class Roo : JsRender 
     {
-       string region;
+        string region;
         bool disabled;
+
+	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
         
         public Roo(Project.Project project, string path) {
             base( project, path);
@@ -292,7 +294,19 @@ namespace JsRender {
 		return ret;
 			
 	}
-	    
+	public Gee.ArrayList<string> transStrings(Node node,   Gee.ArrayList<string> ret)
+	{
+		// iterate properties...
+		
+
+		
+		// iterate children..
+		for (var i =0; i < node.items.size; i++) {
+			this.transStrings(node.items.get(i), ret);
+		}
+		return ret;
+			
+	}    
         /**
 	 * javascript used in Webkit preview 
          */
