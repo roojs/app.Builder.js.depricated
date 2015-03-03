@@ -342,7 +342,7 @@ public class JsRender.NodeToJs : Object {
 				);
 				continue;
 			}
-			
+			// otherwise it needs to be encapsulated.. as single quotes..
 			
 			var vv = this.node.quoteString(v);
 			// single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
