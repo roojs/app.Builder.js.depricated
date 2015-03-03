@@ -58,7 +58,7 @@ namespace JsRender {
                 "html",
                 "headline",
                 "header",
-                
+                "placeholder",
                 
                 };
             for (var i=0;i<dsp.length;i++) {
@@ -381,7 +381,7 @@ namespace JsRender {
 			if (this.transStrings.size < 1) {
 				return "";
 			}
-			string ret = " strings : {\n";
+			 
 			string[] kvs = {};
 			var iter = this.transStrings.map_iterator();
 			while (iter.next()) {
@@ -389,7 +389,7 @@ namespace JsRender {
 					this.tree.quoteString(iter.get_key())
 					);
 			}
-			return " strings : {\n" + string.joinv(",\n", kvs) + "\n" + 
+			return " _strings : {\n" + string.joinv(",\n", kvs) + "\n" + 
 				" },";
 				
                 
