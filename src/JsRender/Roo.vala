@@ -357,7 +357,7 @@ namespace JsRender {
 					continue;
 				}
 				print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
-				if (ktype.lower() == "string" && kname[0] == '_') {
+				if (ktype.down() == "string" && kname[0] == '_') {
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
@@ -406,7 +406,7 @@ namespace JsRender {
         
         public override string  toSourcePreview()
         {
-			
+			print("toSourcePreview() - reset transStrings\n");
 			this.transStrings = new Gee.HashMap<string,string>();
 			
 		
