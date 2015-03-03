@@ -303,17 +303,22 @@ public class JsRender.NodeToJs : Object {
 				|| 
 				Lang.isBoolean(v)
 				||
-				kk[0].down() == "boolean"
+				ktype.down() == "boolean"
     	   		        || 
-				kk[0].down() == "bool"
+				ktype.down() == "bool"
 				|| 
-				kk[0].down() == "number"
+				ktype.down() == "number"
 				|| 
-				kk[0].down() == "int"
+				ktype.down() == "int"
 			    ) { // boolean or number...?
 				this.els.add(left + v.down() );
 				continue;
 			}
+			
+			// is it a translated string?
+			
+			
+			
 			
 			// strings..
 			if (this.doubleStringProps.size < 1) {
