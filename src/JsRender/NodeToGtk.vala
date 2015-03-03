@@ -175,6 +175,17 @@ public class JsRender.NodeToGtk : Object {
 	
 	public void  afterChildrenGtkNotebook()
 	{
+		// we have a number of children..
+		// some are labels - this might need to be more complex...
+		var labels = new Gee.ArrayList<NodeToGtk>();
+		for (var i = 0; i < this.children.size; i++) { 
+			var cn = this.children.get(i).node.fqn().replace(".", "");
+			if (
+		}
+			
+		
+		
+		
 		
 		
 	}
