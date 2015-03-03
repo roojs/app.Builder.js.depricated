@@ -266,7 +266,7 @@ namespace JsRender {
     		}
     		
     		
-// now write the js file..
+		//now write the js file..
 		string fn;
 		try {
 			Regex regex = new Regex("\\.(bjs|js)$");
