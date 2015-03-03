@@ -311,7 +311,7 @@ namespace JsRender {
 		return ret;
 			
 	}
-	.
+	 
 
 	 
 	public void  findTransStrings(Node node )
@@ -349,7 +349,8 @@ namespace JsRender {
 				);
 				continue;
 			}
-			if (ktype == "string" && kname[0] == '_') {
+			print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
+			if (ktype.ascii_casecmp("string") == 0 && kname[0] == '_') {
 				this.transStrings.set(str,  
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 				);
