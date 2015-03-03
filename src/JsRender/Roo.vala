@@ -314,6 +314,15 @@ namespace JsRender {
 	{
 		// iterate properties...
 		// use doubleStringProps
+		
+		// flagging a translatable string..
+		// the code would use string _astring to indicate a translatable string
+		// the to use it it would do String.format(this._message, somedata);
+		
+		// loop through and find string starting with '_' 
+		
+		
+		
 		var iter = node.props.map_iterator();
 		while (iter.next()) {
 			// key formats : XXXX
@@ -343,29 +352,7 @@ namespace JsRender {
 			}
 			
 		}
-		
-		
-		for (var i =0;i < this.doubleStringProps.size; i++) {
-			var k = this.doubleStringProps.get(i);
-			if (if (!node.has(k)) {
-				continue;
-			}
-			// if the value is raw ... then we can not convert it..
-			var fk = get_key(k);
-			if (k[0] == '$') {
-				continue;
-			}
-			// add it to our list...
-			this.transStrings.set(str,  
-				GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
-			);
-		}
-		// flagging a translatable string..
-		// the code would use string _astring to indicate a translatable string
-		// the to use it it would do String.format(this._message, somedata);
-		
-		// loop through and find string starting with '_' 
-		
+		 
 
 		
 		// iterate children..
