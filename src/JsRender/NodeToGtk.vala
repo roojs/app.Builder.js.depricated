@@ -19,6 +19,7 @@ public class JsRender.NodeToGtk : Object {
 	{
 		this.node = node;
  		this.els = new Gee.ArrayList<string>(); 
+ 		this.children = new Gee.ArrayList<Object>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
 		this.parentObj = null;
