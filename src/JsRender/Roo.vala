@@ -210,6 +210,10 @@ namespace JsRender {
         {
             
 		print("--- JsRender.Roo.save");
+		
+		this.transStrings = new Gee.HashMap<string,string>();
+		this.findTransStrings(this.tree);
+		
 		this.saveBJS();
 
 		// no tree..
