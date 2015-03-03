@@ -433,6 +433,7 @@ namespace JsRender {
 					}
 
 					sf.loadItems();
+					sf.findTransStrings(sf.tree);
 					var xinc_str = sf.toSource();
 					
 					//string xinc_str;
