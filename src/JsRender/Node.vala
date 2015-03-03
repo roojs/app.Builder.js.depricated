@@ -225,19 +225,19 @@ public class JsRender.Node : Object {
 			case 2: 
 				kname = kk[1];
 				if (kk[0].length > 1) {
-					ktype = k[0];
+					ktype = kk[0];
 				} else {
-					kflag = k[0];
+					kflag = kk[0];
 				}
 				return;
 			case 3:
-				if (kk[0].length > 1) {
-					ktype = k[0];
-				} else {
-					kflag = k[0];
-				}
-			
-	
+				kname = kk[2];
+				kflag = kk[0];
+				ktype = kk[1];
+				return;
+		}
+		// everything blank otherwise...
+	}
 	public void set(string key, string value) {
 		this.props.set(key,value);
 	}
