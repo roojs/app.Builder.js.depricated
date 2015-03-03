@@ -378,7 +378,7 @@ namespace JsRender {
 			string[] kvs = {};
 			var iter = this.transStrings.map_iterator();
 			while (iter.next()) {
-				kvs += "  " + (this.tree.quoteString(iter.get_value()) + ":" + 
+				kvs +=  ("  '" + iter.get_value() + "' :" + 
 					this.tree.quoteString(iter.get_key())
 					);
 			}
@@ -680,7 +680,7 @@ namespace JsRender {
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
 		        "\n" + 
-		        this.transStringsToJs()  + "\n"
+		        this.transStringsToJs()  +    "\n" +
                 "\n" +
 		        "  part     :  "+ this.pathToPart() + ",\n" +
 		                /// critical used by builder to associate modules/parts/persm
