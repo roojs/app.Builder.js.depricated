@@ -45,7 +45,8 @@ namespace JsRender {
             //console.dump(this);
             // various loader methods..
 
-            string[]  dsp = { "title",
+            string[]  dsp = { 
+				"title",
                 "legend",
                 "loadingText",
                 "emptyText",
@@ -55,6 +56,10 @@ namespace JsRender {
                 "emptyMsg",
                 "displayMsg",
                 "html",
+                "headline",
+                "header",
+                
+                
                 };
             for (var i=0;i<dsp.length;i++) {
                 this.doubleStringProps.add(dsp[i]);
