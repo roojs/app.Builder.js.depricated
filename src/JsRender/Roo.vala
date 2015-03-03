@@ -1,4 +1,17 @@
- 
+/*
+ * Renderer for Javascript output (roo library based)
+ * 
+ * - translation support
+ * -  doubleStringProps contains elements that are 'translable'
+ *    ** in the old method this our compression tool could extract them
+ *  - the  new idea is to make a list at the top of the javascript file
+ *    and output a map...
+ *    
+ * 
+ * 
+ * 
+ * 
+ */
 namespace JsRender {
 
     static int rid = 0; 
@@ -305,7 +318,15 @@ namespace JsRender {
 	{
 		// iterate properties...
 		   // use doubleStringProps
-		
+		for (var i =0;i < this.doubleStringProps.size; i++) {
+			var k = this.doubleStringProps.get(i);
+			if (if (!node.has(k)) {
+				continue;
+			}
+			// if the value is raw ... then we can not convert it..
+			
+			nlist.add(this.parent.items.get(i));
+		}
 
 		
 		// iterate children..
