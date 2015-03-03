@@ -310,7 +310,7 @@ namespace JsRender {
 	Gee.HashMap<string,string> transStrings; // map of md5 -> string..
 
 	 
-	public Gee.ArrayList<string> transStrings(Node node,   Gee.ArrayList<string> ret)
+	public Gee.ArrayList<string> transStrings(Node node )
 	{
 		// iterate properties...
 		// use doubleStringProps
@@ -357,7 +357,7 @@ namespace JsRender {
 		
 		// iterate children..
 		for (var i =0; i < node.items.size; i++) {
-			this.transStrings(node.items.get(i), ret);
+			this.transStrings(node.items.get(i) );
 		}
 		return ret;
 			
