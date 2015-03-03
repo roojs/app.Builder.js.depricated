@@ -207,6 +207,27 @@ public class JsRender.Node : Object {
 		return "";
 		
 	}
+	public string normalize_key(string key, out string kname, out string kflag, out string ktype)
+	{
+		kname = "";
+		ktype = "-";
+		kflag = "-";
+		var kk = key.strip().split(" ");
+		switch(kk.length) {
+			case 1: 
+				kname = kk[0];
+				break;
+			case 2: 
+				kname = kk[1];
+				if (kk[0].length > 1) {
+					ktype = k[0];
+				} else {
+					kflag = k[0];
+				}
+				break;
+			case 3:
+			
+		
 	
 	public void set(string key, string value) {
 		this.props.set(key,value);
