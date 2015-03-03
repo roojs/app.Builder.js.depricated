@@ -679,7 +679,7 @@ namespace JsRender {
 		        this.outputHeader() + "\n" +
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
-		        ""
+		        "",
 		        this.transStringsToJs() ,
                 "",
 		        "  part     :  "+ this.pathToPart() + ",\n" +
