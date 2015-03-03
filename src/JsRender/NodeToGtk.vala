@@ -181,8 +181,12 @@ public class JsRender.NodeToGtk : Object {
 		var labels = new Gee.ArrayList<NodeToGtk>();
 		for (var i = 0; i < this.children.size; i++) { 
 			var cn = this.children.get(i).node.fqn().replace(".", "");
-			if (
+			if (cn != "GtkLabel") {
+				continue;
+			}
+			labels.add(this.children.get(i));
 		}
+		
 			
 		
 		
