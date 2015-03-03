@@ -357,7 +357,7 @@ namespace JsRender {
 					continue;
 				}
 				print("flag=%s type=%s name=%s\n", kflag,ktype,kname);
-				if (ktype.ascii_casecmp("string") == 0 && kname[0] == '_') {
+				if (ktype.lower() == "string" && kname[0] == '_') {
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str)
 					);
@@ -403,10 +403,15 @@ namespace JsRender {
         
         public override string  toSourcePreview()
         {
+			
+			this.transStrings = new Gee.HashMap<string,string>();
+			
+		
 			print("to source preview\n");
 			if (this.tree == null) {
 				return "";
 			}
+			this.findTransStrings(this.tree);
 			var top = this.tree.fqn();
 			var xinc = new Gee.ArrayList<string>(); 
 
@@ -671,8 +676,8 @@ namespace JsRender {
     		if (isPreview) {
 			// set to false to ensure this is the top level..
         		parent = "false";
-			var topnode = this.tree.fqn();
-			print("topnode = %s\n", topnode);
+				var topnode = this.tree.fqn();
+				print("topnode = %s\n", topnode);
 			if (GLib.Regex.match_simple("^Roo\\.bootstrap\\.",topnode) &&
 			    topnode != "Roo.bootstrap.Body"
 			) {
