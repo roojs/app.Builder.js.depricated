@@ -380,7 +380,7 @@ namespace JsRender {
 					)
 			}
 			return " strings : {\n " + string.joinv(",\n", kvs) + "\n" + 
-				"}";
+				" }";
 				
                 
               
