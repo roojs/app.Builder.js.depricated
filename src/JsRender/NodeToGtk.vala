@@ -177,7 +177,7 @@ public class JsRender.NodeToGtk : Object {
 		var par_type = this.parentObj.node.fqn().replace(".", "");
 		
 		if (par_type == "GtkNotebook") {
-			// do not pack
+			// do not pack - it's done afterwards...
 			return;
 		}
 		
