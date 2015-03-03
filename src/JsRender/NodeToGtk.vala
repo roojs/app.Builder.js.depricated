@@ -160,14 +160,25 @@ public class JsRender.NodeToGtk : Object {
 
 	}
 	
-	function afterChildren()
+	public void  afterChildren()
 	{
 		// things like GtkNotebook - we have to pack children after they have been created..
+		var cls = this.node.fqn().replace(".", "");
 		
+		if (cls == "GtkNotebook") {
+			this.afterChildrenGtkNotebook();
+		}
 		
 		
 		
 	}
+	
+	public void  afterChildrenGtkNotebook()
+	{
+		
+		
+	}
+	
 	
 	/**
 	 * called after the this.object  has been created
