@@ -216,16 +216,21 @@ public class JsRender.NodeToJs : Object {
 		}
 		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
-			var kk = piter.get_key().split(" ");
+			
+			string kname;
+			string ktype;
+			string kflag;
+			node.normalize_key(iter.get_key(), out k, out kflag, out ktype);
+			
+			
 			var v = piter.get_value();
-			var k = kk[kk.length-1];
-
+			 
 			
 			//if (this.skip.contains(k) ) {
 			//	continue;
 			//}
 			if (  Regex.match_simple("\\[\\]$", k)) {
-				
+				// array .. not supported... here?
 				
 
 			}
