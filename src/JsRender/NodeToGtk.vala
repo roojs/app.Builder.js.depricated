@@ -170,7 +170,7 @@ public class JsRender.NodeToGtk : Object {
 		if (parent == null) { // no parent.. can not pack.
 			return;
 		}
-		
+		// -------------  handle various special parents .. -----------
 		
 		
 		
