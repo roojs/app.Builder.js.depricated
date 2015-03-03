@@ -261,9 +261,9 @@ public class JsRender.NodeToJs : Object {
 			 
 			// next.. is it a function.. or a raw string..
 			if (
-				kflag == '|' 
+				kflag == "|" 
 				|| 
-				kflag == '$' 
+				kflag == "$" 
 				|| 
 				ktype == "function"
 	   		       
