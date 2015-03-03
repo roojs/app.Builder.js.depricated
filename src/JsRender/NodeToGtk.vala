@@ -190,17 +190,15 @@ public class JsRender.NodeToGtk : Object {
 		}
 		for (var i = 0; i < bodies.size; i++) { 
 			((global::Gtk.Notebook)this.wrapped_object).append_page(
-				
+				 (global::Gtk.Notebook) bodies.get(i).wrapped_object,
+				 (labels.size > i - 1) ? 
+					(global::Gtk.Notebook) labels.get(i).wrapped_object :
+					null
+					
 			);
 			
 			
 		}
-		
-		
-			
-		
-		
-		
 		
 		
 	}
