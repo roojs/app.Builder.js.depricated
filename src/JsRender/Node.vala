@@ -207,8 +207,13 @@ public class JsRender.Node : Object {
 		return "";
 		
 	}
-	public string normalize_key(string key, out string kname, out string kflag, out string ktype)
+	public void normalize_key(string key, out string kname, out string kflag, out string ktype)
 	{
+		// key formats : XXXX
+		// XXX - plain
+		// string XXX - with type
+		// $ XXX - with flag (no type)
+		// $ string XXX - with flag
 		kname = "";
 		ktype = "-";
 		kflag = "-";
@@ -216,7 +221,7 @@ public class JsRender.Node : Object {
 		switch(kk.length) {
 			case 1: 
 				kname = kk[0];
-				break;
+				return;
 			case 2: 
 				kname = kk[1];
 				if (kk[0].length > 1) {
@@ -224,10 +229,14 @@ public class JsRender.Node : Object {
 				} else {
 					kflag = k[0];
 				}
-				break;
+				return;
 			case 3:
+				if (kk[0].length > 1) {
+					ktype = k[0];
+				} else {
+					kflag = k[0];
+				}
 			
-		
 	
 	public void set(string key, string value) {
 		this.props.set(key,value);
