@@ -156,6 +156,16 @@ public class JsRender.NodeToGtk : Object {
 		 
 
 	}
+	
+	function afterChildren()
+	{
+		// things like GtkNotebook - we have to pack children after they have been created..
+		
+		
+		
+		
+	}
+	
 	/**
 	 * called after the this.object  has been created
 	 * and it needs to be packed onto parent.
@@ -177,7 +187,7 @@ public class JsRender.NodeToGtk : Object {
 		var do_pack =true;
 
 		if (parent == null) { // no parent.. can not pack.
-			return;
+			return; /// 
 		}
 		// -------------  handle various special parents .. -----------
 		
