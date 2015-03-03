@@ -220,7 +220,7 @@ public class JsRender.NodeToJs : Object {
 			string kname;
 			string ktype;
 			string kflag;
-			node.normalize_key(iter.get_key(), out k, out kflag, out ktype);
+			node.normalize_key(piter.get_key(), out k, out kflag, out ktype);
 			
 			
 			var v = piter.get_value();
