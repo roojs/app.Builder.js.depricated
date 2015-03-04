@@ -1521,7 +1521,7 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void load () {
+        public void load (Project.GtkValaSettings conf) {
          
           this.el.clear();
           
