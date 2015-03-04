@@ -327,7 +327,7 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             _this.default_packages_tree_store = this;
-            this.el = new Gtk.ListStore( 3,     typeof(string),  // 0 key type
+            this.el = new Gtk.ListStore( 2,     typeof(string),  // 0 key type
       typeof(bool) );
 
             // my vars (dec)
