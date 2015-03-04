@@ -233,8 +233,8 @@ public class ValaProjectSettings : Object
             this.el.changed.connect( () => {
                 
                _this.project.compilegroups.get("_default_").compile_flags = this.el.text;
-               //_this.project.writeConfig();
-            
+               _this.project.writeConfig();
+            //    _this.project.save();
             
             });
         }
