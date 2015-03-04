@@ -384,7 +384,7 @@
               },
               {
                "utf8 title" : "use",
-               "* init" : "{\n this.el.add_attribute(_this.files_render_use.el , \"active\", 2 );\n }",
+               "* init" : "{\n this.el.add_attribute(_this.files_render_use.el , \"active\", 3 );\n }",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
                "gboolean resizable" : false,
