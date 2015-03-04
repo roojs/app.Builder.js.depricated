@@ -166,7 +166,7 @@ namespace Project {
 					
 					print("SCAN %s - checking %s\n", dirname, fn);
 					if (Regex.match_simple("\\.vala$", fn)) {
-						ret.add(dirname + "/" + fn);
+						ret.add(in_path + "/" + fn);
 						continue;
 					}
 					
@@ -183,7 +183,7 @@ namespace Project {
 							continue;
 						}
 						
-						ret.add(dirname + "/" + fn);
+						ret.add(in_path + "/" + fn);
 						continue;
 					}
 					// any other valid types???
@@ -192,7 +192,7 @@ namespace Project {
    			} catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
 			}
-
+			print("SCAN %s = returning %d", dirname, ret.size);
 			 
 			return ret;
 			
