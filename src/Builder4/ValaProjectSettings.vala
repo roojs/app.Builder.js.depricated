@@ -1680,7 +1680,7 @@ public class ValaProjectSettings : Object
             
             
             
-                var m = _this.default_packages_tree_store.el;
+                var m = _this.files_tree_store.el;
                Gtk.TreeIter iter;
                Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);
                m.get_iter (out iter, path);
