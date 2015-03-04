@@ -1519,6 +1519,7 @@ public class ValaProjectSettings : Object
             _this = _owner;
             _this.files_tree_store = this;
             this.el = new Gtk.ListStore( 3,     typeof(string),  // 0 file name
+        typeof(string),  // 0 basename
      typeof(string), // type (dir orfile)
      typeof(bool)  // is checked.
       );
