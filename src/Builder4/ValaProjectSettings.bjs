@@ -367,7 +367,7 @@
               },
               {
                "utf8 title" : "name",
-               "* init" : "\n this.el.add_attribute(_this.files_render.el , \"text\", 0 ); \n \n// this.el.add_attribute(_this.files_render.el , \"markup\", 2 );\n",
+               "* init" : "\n this.el.add_attribute(_this.files_render.el , \"text\", 0 ); \n \n/*  this.el.add_attribute(_this.files_render.el , \"markup\", 2 );\n*/",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
                "gboolean resizable" : true,
