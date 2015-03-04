@@ -304,12 +304,12 @@
          ]
         },
         {
-         "Project.GtkValaSettings cgroup" : "null",
          "id" : "set_vbox",
          "* pack" : "add2",
          "xtype" : "VBox",
          "gboolean homogeneous" : false,
          "$ xns" : "Gtk",
+         "# Project.GtkValaSettings cgroup" : "null",
          "items" : [
           {
            "xtype" : "Label",
