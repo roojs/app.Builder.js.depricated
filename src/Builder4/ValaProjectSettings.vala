@@ -1695,7 +1695,7 @@ public class ValaProjectSettings : Object
                m.get_value(iter, 2, out ftval);
                var ftype = (string)ftval;   
                
-               // full name...
+               // full name...  
                GLib.Value fval;     
                m.get_value(iter, 0, out fval);
                var fn = (string)fval;
