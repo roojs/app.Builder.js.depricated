@@ -356,10 +356,13 @@ public class JsRender.NodeToGtk : Object {
 			return;
 		}
 	
-		if (!this.node.props.has_key("* pack") && this.node.props.get("* pack") > 0) {
+		if (!this.node.props.has_key("* pack") {
 			return;
 		}
-		
+		var pk = this.node.props.get("* pack");
+		if (pk == null || pk.length < 1) {
+			return;
+		}
 		var ns = this.parentObj.node.fqn().split(".")[0];
 		 
 		var pack = this.node.props.get("* pack").split(",");
