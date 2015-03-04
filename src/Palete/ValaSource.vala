@@ -71,8 +71,16 @@ namespace Palete {
                            string ptype,
                            string val)
 		{
-
+			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var hash = ptype == "listener" ? node.listeners : node.props;
+			
+			// untill we get a smarter renderer..
+			// we have some scenarios where changing the value does not work
+			if (prop == "* xns" || prop == "xtype") {
+				return ret;
+			}
+				
+			
 			var old = hash.get(prop);
 			var newval = "/*--VALACHECK-START--*/ " + val ;
 			
@@ -88,7 +96,7 @@ namespace Palete {
 			this.checkString(tmpstring);
 			hash.set(prop, old);
 			// modify report
-			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
+			
 			var iter = this.report.line_errors.map_iterator();
 			while (iter.next()) {
 				// print("%d : %s\n",iter.get_key() - offset, iter.get_value());
