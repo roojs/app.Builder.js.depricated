@@ -1,5 +1,14 @@
 [
     {
+        "name" : "builder",
+        "compile_flags" : "",
+        "target_bin" : "/tmp/builder",
+        "sources" : [
+        ],
+        "packages" : [
+        ]
+    },
+    {
         "name" : "NEW GROUP",
         "compile_flags" : "",
         "target_bin" : "",
