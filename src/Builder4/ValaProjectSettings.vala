@@ -1701,7 +1701,7 @@ public class ValaProjectSettings : Object
                var fn = (string)fval;
                 
                 
-                var cg = = _this.set_vbox.cgroup;
+                var cg =   _this.set_vbox.cgroup;
                 // what's the sleected target?
                 // update the list..
                 // if ftype is a dir == then toggle all the bellow.
