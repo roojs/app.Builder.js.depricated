@@ -97,14 +97,11 @@ namespace Project {
 			var fn = this.firstPath() + "/config1.builder";
 			print("write: " + fn );
 
-			
-
 			 
-
 			var f = GLib.File.new_for_path(fn);
 			var data_out = new GLib.DataOutputStream(
-                                          f.replace(null, false, GLib.FileCreateFlags.NONE, null)
-         		);
+					f.replace(null, false, GLib.FileCreateFlags.NONE, null)
+			);
 			data_out.put_string(this.configToString(), null);
 			data_out.close(null);
 			
@@ -133,8 +130,7 @@ namespace Project {
 				prefix += "../";
 				
 			}
-	
-	
+	 
 		}
 		public Gee.ArrayList<string> files(string in_path)
 		{
@@ -165,7 +161,15 @@ namespace Project {
 						ret.add(dirname + "/" + fn);
 						continue;
 					}
+					
+					
+					
 					if (Regex.match_simple("\\.c$", fn)) {
+						
+						// if we have a vala file with the same name 
+						// then do not add it...
+						
+						
 						ret.add(dirname + "/" + fn);
 						continue;
 					}
