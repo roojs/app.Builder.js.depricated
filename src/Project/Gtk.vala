@@ -140,11 +140,14 @@ namespace Project {
 			
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
+			
+			print("SCAN %s\n", dirname);
 				// scan the directory for files -- ending with vala || c
 			
 
 			var dir = File.new_for_path(dirname);
 			if (!dir.query_exists()) {
+				print("SCAN %s - skip - does not exist\n", dirname);
 				return ret;
 			}
 	  
@@ -160,6 +163,8 @@ namespace Project {
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
 					var fn = next_file.get_display_name();
+					
+					print("SCAN %s - checking %s\n", dirname, fn);
 					if (Regex.match_simple("\\.vala$", fn)) {
 						ret.add(dirname + "/" + fn);
 						continue;
