@@ -1470,6 +1470,7 @@ public class ValaProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_files_tree( _this );
             child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // user defined functions 
