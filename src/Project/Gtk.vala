@@ -132,9 +132,9 @@ namespace Project {
 			}
 	 
 		}
-		public Gee.ArrayList<string> files(string in_path)
+		public Gee.ArrayList<string> files(string in_path, Gee.ArrayList<string> ret)
 		{
-			var ret = new Gee.ArrayList<string>(); 
+			
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 				// scan the directory for files -- ending with vala || c
