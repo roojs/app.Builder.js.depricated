@@ -179,7 +179,7 @@ namespace Project {
 						var vv = (new Regex("\\.c$")).replace(
 							fn, fn.length, 0, ".vala");
 							
-						if (ret.index_of(vv) > -1) {
+						if (ret.index_of(in_path + "/" + vv) > -1) {
 							continue;
 						}
 						
