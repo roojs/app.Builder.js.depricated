@@ -221,6 +221,14 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+
+            // listeners 
+            this.el.changed.connect( () => {
+                
+            
+            //    _this.project.save();
+            
+            });
         }
 
         // user defined functions 
