@@ -1700,18 +1700,19 @@ public class ValaProjectSettings : Object
                m.get_value(iter, 0, out fval);
                var fn = (string)fval;
                 
+                
+                var cg = = _this.set_vbox.cgroup;
                 // what's the sleected target?
                 // update the list..
                 // if ftype is a dir == then toggle all the bellow.
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
-                return;
-                var def = _this.project.compilegroups.get("_default_");
+            
                 var items  = def.packages;
                 if ((bool)val) {
                     // renive
-                    items.remove(fn);
+                    cg.sources.remove(fn);
                 } else {
-                    items.add(fn);
+                    cg.sources.add(fn);
                 }
                 
             });
