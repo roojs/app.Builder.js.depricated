@@ -1138,7 +1138,7 @@ public class ValaProjectSettings : Object
                         _this.set_vbox.el.hide();
                         return;
                     }
-                        _this.set_vbox.el.show();
+                    _this.set_vbox.el.show();
                         
                    // add the directory..
                    
