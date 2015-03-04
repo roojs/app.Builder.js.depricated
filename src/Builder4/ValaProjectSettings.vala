@@ -35,6 +35,10 @@ public class ValaProjectSettings : Object
         // my vars (def)
     public Project.Gtk project;
     public Xcls_MainWindow window;
+    public signal void hide () {
+
+}
+;
 
     // ctor 
     public ValaProjectSettings()
