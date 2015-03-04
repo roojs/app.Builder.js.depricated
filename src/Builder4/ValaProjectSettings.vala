@@ -227,6 +227,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.placeholder_text = "eg. -g --valasrc $BASEDIR ";
 
             // listeners 
             this.el.changed.connect( () => {
