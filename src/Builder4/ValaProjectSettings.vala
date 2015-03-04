@@ -68,7 +68,9 @@ public class ValaProjectSettings : Object
         this.files_tree_store.load();
     
     }
-    public void hide ()
+    public void hide () => {
+        this.project.writeConfig();
+    }
     public class Xcls_Notebook2 : Object 
     {
         public Gtk.Notebook el;
