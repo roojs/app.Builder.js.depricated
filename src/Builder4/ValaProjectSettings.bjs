@@ -14,7 +14,7 @@
    "string id" : "ValaProjectSettings",
    "| void save" : "() {\n    \n\n\n\n}\n",
    "$ xns" : "Gtk",
-   "@ void hide" : "",
+   "@ void hide" : "()",
    "items" : [
     {
      "* pack" : "pack_start,true,true,0",
