@@ -1580,18 +1580,19 @@ public class ValaProjectSettings : Object
         
             Gtk.TreeIter citer;
         
-            for(var i =0 ; i < this.iter_n_children(null); i++) {
-                this.iter_nth_child(citer,null,i);
+            for(var i =0 ; i < this.el.iter_n_children(null); i++) {
+                this.el.iter_nth_child(citer,null,i);
         
-        
-                 
-                this.el.set_value(citer, 0,   items.get(i) ); // title 
-                this.el.set_value(citer, 1,   "<span foreground=\"green\" font_weight=\"bold\">" + 
-                            GLib.Markup.escape_text(items.get(i)) + "</span>"
-                    ); // title 
-                print("ADD item %s", items.get(i));
-                this.el.set_value(citer, 2,   "dir"); // type         
-                this.el.set_value(citer, 3,   false ); // checked 
+                GLib.Value val;
+                this.el.get_value(iter,0, out val);
+                var fn = (string) val;
+                
+                var active = false;
+                if (_this.set_vbox.cgroup.sources.contains(fn)) {
+                    active = true;
+                }
+                
+                this.el.set_value(citer, 3,   active ); // checked 
             }
         
         
