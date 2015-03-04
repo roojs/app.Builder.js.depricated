@@ -327,7 +327,7 @@ public class JsRender.NodeToVala : Object {
     		var cargs_str = "";
     		// ctor..
     		this.ret += "\n" + this.pad + "// ctor \n";
-		if (this.node.has("* args")) {
+			if (this.node.has("* args")) {
     			// not sure what this is supposed to be ding..
 			
         		cargs_str = ", " + this.node.get("* args");
@@ -340,13 +340,13 @@ public class JsRender.NodeToVala : Object {
     		if (this.depth < 1) {
         		this.ret += this.pad + "public " + this.xcls + "(" + 
 				    cargs_str +")\n" + this.pad + "{\n";
-		} else {
-                
-                    //code 
-                
-			this.ret+= this.pad + "public " + this.xcls + "(" + 
-				this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
-		}
+			} else {
+					
+						//code 
+					
+				this.ret+= this.pad + "public " + this.xcls + "(" + 
+					this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+			}
             
 
 	}
@@ -621,7 +621,7 @@ public class JsRender.NodeToVala : Object {
 		}
     		this.ret+= "\n" + ipad + "// init method \n";
 		
-    		this.ret+= "\n" + ipad + this.padMultiline(ipad, this.node.get("init"));
+    		this.ret+= "\n" + ipad + this.padMultiline(ipad, this.node.get("init")) + "\n";
 
          }
 	 void addListeners()
