@@ -1100,7 +1100,7 @@ public class ValaProjectSettings : Object
                 //console.log("button press?");
                
                 
-                if (ev.type != Gdk.EventType.DOUBLE_BUTTON_PRESS  || ev.button != 3) {
+                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return false;
                 }
