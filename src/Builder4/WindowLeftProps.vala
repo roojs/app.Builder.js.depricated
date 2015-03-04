@@ -715,6 +715,9 @@ public class Xcls_LeftProps : Object
             var child_10 = new Xcls_MenuItem18( _this );
             child_10.ref();
             this.el.append (  child_10.el  );
+            var child_11 = new Xcls_MenuItem19( _this );
+            child_11.ref();
+            this.el.append (  child_11.el  );
         }
 
         // user defined functions 
@@ -1003,6 +1006,35 @@ public class Xcls_LeftProps : Object
 
         // ctor 
         public Xcls_MenuItem18(Xcls_LeftProps _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.tooltip_markup = "Add a user function boolean property";
+            this.el.label = "Vala Method";
+
+            // listeners 
+            this.el.activate.connect( ( ) =>{
+            
+                _this.addProp( "prop", "XXXX", "() {\n\n}\n", "| return_type");
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_MenuItem19 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_MenuItem19(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1549,20 +1581,20 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem28( _this );
+            var child_0 = new Xcls_MenuItem29( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_SeparatorMenuItem29( _this );
+            var child_1 = new Xcls_SeparatorMenuItem30( _this );
             child_1.ref();
             this.el.append (  child_1.el  );
-            var child_2 = new Xcls_MenuItem30( _this );
+            var child_2 = new Xcls_MenuItem31( _this );
             child_2.ref();
             this.el.append (  child_2.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_MenuItem28 : Object 
+    public class Xcls_MenuItem29 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1571,7 +1603,7 @@ public class Xcls_LeftProps : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_MenuItem28(Xcls_LeftProps _owner )
+        public Xcls_MenuItem29(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1594,7 +1626,7 @@ public class Xcls_LeftProps : Object
 
         // user defined functions 
     }
-    public class Xcls_SeparatorMenuItem29 : Object 
+    public class Xcls_SeparatorMenuItem30 : Object 
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -1603,7 +1635,7 @@ public class Xcls_LeftProps : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_SeparatorMenuItem29(Xcls_LeftProps _owner )
+        public Xcls_SeparatorMenuItem30(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -1615,7 +1647,7 @@ public class Xcls_LeftProps : Object
 
         // user defined functions 
     }
-    public class Xcls_MenuItem30 : Object 
+    public class Xcls_MenuItem31 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1624,7 +1656,7 @@ public class Xcls_LeftProps : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_MenuItem30(Xcls_LeftProps _owner )
+        public Xcls_MenuItem31(Xcls_LeftProps _owner )
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
