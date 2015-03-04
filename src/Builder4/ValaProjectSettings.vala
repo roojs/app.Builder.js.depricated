@@ -1526,6 +1526,9 @@ public class ValaProjectSettings : Object
              var def = _this.project.compilegroups.get("_default_");
              var items  = def.sources;
              
+             
+             
+             
          
             Gtk.TreeIter citer;
         
@@ -1535,8 +1538,8 @@ public class ValaProjectSettings : Object
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
                 this.el.set_value(citer, 1,   "dir"); // type         
                 this.el.set_value(citer, 2,   false ); // checked 
-                /*
-                var files = def.files(items.get(i));
+        
+                var files = _this.project.files(items.get(i));
                 
                  for(var j =0 ; j < files.size; j++) {
                     this.el.append(out citer);   
@@ -1546,7 +1549,7 @@ public class ValaProjectSettings : Object
                     this.el.set_value(citer, 2,   false ); // checked 
         
                 }
-                */
+                
                 
                 //this.el.set_value(citer, 1,   items.get(i) );
             }
