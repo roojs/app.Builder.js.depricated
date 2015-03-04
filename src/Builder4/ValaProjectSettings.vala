@@ -1133,10 +1133,12 @@ public class ValaProjectSettings : Object
                      Gtk.TreeModel mod;
                     Gtk.TreeIter iter;
                     if (!this.el.get_selection().get_selected(out mod, out iter)) {
-                           print("nothing selected\n");
+                        print("nothing selected\n");
+                        // should disable the right hand side..
+                        _this.set_vbox.el.hide();
                         return;
                     }
-            
+                        _this.set_vbox.el.show();
                         
                    // add the directory..
                    
