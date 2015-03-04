@@ -616,23 +616,23 @@ public class JsRender.NodeToVala : Object {
 	{
 
 	    
-    		if (!this.node.has("init")) {
+		if (!this.node.has("init")) {
 			    return;
 		}
-    		this.ret+= "\n" + ipad + "// init method \n";
-		
-    		this.ret+= "\n" + ipad + this.padMultiline(ipad, this.node.get("init")) + "\n";
+		this.ret+= "\n" + ipad + "// init method \n";
+	
+		this.ret+= "\n" + ipad + this.padMultiline(ipad, this.node.get("init")) + "\n";
 
-         }
+	 }
 	 void addListeners()
 	 {
-    		if (this.node.listeners.size < 1) {
+		if (this.node.listeners.size < 1) {
 			return;
 		}
 			    
             
             
-                this.ret+= "\n" + ipad + "// listeners \n";
+		this.ret+= "\n" + ipad + "// listeners \n";
 
 		var iter = this.node.listeners.map_iterator();
 		while (iter.next()) {
