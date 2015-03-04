@@ -502,6 +502,9 @@ public class WindowState : Object
                  break;
 
            case State.PROJECT:
+                if (this.win.project.xtype == "Gtk") {
+                    this.vala_projectsettings.save();
+                } 
                 
                 this.win.projecteditview.el.set_scale(0.0f,0.0f);
                  break;
@@ -629,7 +632,7 @@ public class WindowState : Object
 
            case State.PROJECT:
 
-             if (this.win.project.xtype == "Roo") {
+               if (this.win.project.xtype == "Roo") {
                     this.projectsettings.el.show_all();
                     this.projectsettings.show(this.win.project);
                 } else {
