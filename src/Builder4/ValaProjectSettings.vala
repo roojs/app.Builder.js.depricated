@@ -1707,7 +1707,7 @@ public class ValaProjectSettings : Object
                 // if ftype is a dir == then toggle all the bellow.
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
             
-                var items  = def.packages;
+                 
                 if ((bool)val) {
                     // renive
                     cg.sources.remove(fn);
