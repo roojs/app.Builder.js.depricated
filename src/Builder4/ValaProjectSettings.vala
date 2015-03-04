@@ -1587,8 +1587,9 @@ public class ValaProjectSettings : Object
 
             // init method 
 
-            // this.el.add_attribute(_this.files_render.el , "markup", 2 );
-             this.el.add_attribute(_this.files_render.el , "text", 0 );        }
+            this.el.add_attribute(_this.files_render.el , "text", 0 ); 
+             
+            // this.el.add_attribute(_this.files_render.el , "markup", 2 );        }
 
         // user defined functions 
     }
