@@ -168,7 +168,7 @@ namespace Project {
 						
 						// if we have a vala file with the same name 
 						// then do not add it...
-						var vv = (new Regex("\\.c$").replace(fn, fn.legnth, 0, ".vala");
+						var vv = (new Regex("\\.c$")).replace(fn, fn.length, 0, ".vala");
 						if (ret.index_of(vv) > -1) {
 							continue;
 						}
