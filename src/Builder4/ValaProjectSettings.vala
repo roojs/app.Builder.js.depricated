@@ -1577,6 +1577,24 @@ public class ValaProjectSettings : Object
         }
         public void update () {
         
+        
+            Gtk.TreeIter citer;
+        
+            for(var i =0 ; i < this.iter_n_children(null); i++) {
+                this.iter_nth_child(citer,null,i);
+        
+        
+                 
+                this.el.set_value(citer, 0,   items.get(i) ); // title 
+                this.el.set_value(citer, 1,   "<span foreground=\"green\" font_weight=\"bold\">" + 
+                            GLib.Markup.escape_text(items.get(i)) + "</span>"
+                    ); // title 
+                print("ADD item %s", items.get(i));
+                this.el.set_value(citer, 2,   "dir"); // type         
+                this.el.set_value(citer, 3,   false ); // checked 
+            }
+        
+        
         }
     }
     public class Xcls_TreeViewColumn46 : Object 
