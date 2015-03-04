@@ -60,7 +60,7 @@
  * special ID values
  *  +XXXX -- indicates it's a instance property / not glob...
  *  *XXXX -- skip writing glob property (used as classes that can be created...)
- * 
+ *  _XXXX -- (string) a translatable string.
  * 
  * 
  *  FORMATING?
