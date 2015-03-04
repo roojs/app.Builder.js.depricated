@@ -68,7 +68,7 @@ public class ValaProjectSettings : Object
         this.files_tree_store.load();
     
     }
-    public return_type XXXX () {
+    public void save () {
     
     }
     public class Xcls_Notebook2 : Object 
