@@ -383,7 +383,7 @@
               },
               {
                "utf8 title" : "use",
-               "* init" : "/*\n\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 1 );\n \n */\n ",
+               "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 2 );\n }",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
                "gboolean resizable" : false,
