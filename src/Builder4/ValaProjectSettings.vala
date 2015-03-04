@@ -385,8 +385,7 @@ public class ValaProjectSettings : Object
 
             // init method 
 
-            this.el.add_attribute(_this.packages_render.el , "text", 0 );
-        }
+            this.el.add_attribute(_this.packages_render.el , "text", 0 );        }
 
         // user defined functions 
     }
@@ -440,8 +439,7 @@ public class ValaProjectSettings : Object
 
             {
              this.el.add_attribute(_this.packages_render_use.el , "active", 1 );
-             }
-        }
+             }        }
 
         // user defined functions 
     }
@@ -663,8 +661,7 @@ public class ValaProjectSettings : Object
 
             // init method 
 
-            this.el.add_attribute(_this.directory_render.el , "text", 0 );
-        }
+            this.el.add_attribute(_this.directory_render.el , "text", 0 );        }
 
         // user defined functions 
     }
@@ -934,8 +931,7 @@ public class ValaProjectSettings : Object
             {  
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
             
-            }
-        }
+            }        }
 
         // user defined functions 
     }
@@ -1242,8 +1238,7 @@ public class ValaProjectSettings : Object
 
             {
                  this.el.add_attribute(_this.targets_render.el , "text", 0 );
-             }
-        }
+             }        }
 
         // user defined functions 
     }
@@ -1602,8 +1597,7 @@ public class ValaProjectSettings : Object
             this.el.add_attribute(_this.files_render.el , "markup", 1 ); // basnemae
              
             /*  this.el.add_attribute(_this.files_render.el , "markup", 2 );
-            */
-        }
+            */        }
 
         // user defined functions 
     }
@@ -1657,8 +1651,7 @@ public class ValaProjectSettings : Object
 
             {
              this.el.add_attribute(_this.files_render_use.el , "active", 2 );
-             }
-        }
+             }        }
 
         // user defined functions 
     }
