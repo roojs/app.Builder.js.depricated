@@ -60,7 +60,7 @@ public class ValaProjectSettings : Object
         
         this.project=  project;
     
-        this.compile_flags.el.text = "";
+        this.compile_flags.el.text = _this.project.compilegroups.get("_default_").compile_flags;
         
         this.default_directory_tree_store.load();    
         this.default_packages_tree_store.load();            
