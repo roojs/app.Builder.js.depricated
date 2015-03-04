@@ -342,7 +342,7 @@ public class ValaProjectSettings : Object
         public void load () {
          
             var def = _this.project.compilegroups.get("_default_");
-             var items  = def.packages;
+            var items  = def.packages;
             
             this.el.clear();
             var pal = (Palete.Gtk) Palete.factory("Gtk");
