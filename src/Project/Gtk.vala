@@ -156,7 +156,7 @@ namespace Project {
 	         
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
-			     		var fn = next_file.get_display_name();
+					var fn = next_file.get_display_name();
 					if (Regex.match_simple("\\.vala$", fn)) {
 						ret.add(dirname + "/" + fn);
 						continue;
@@ -168,7 +168,7 @@ namespace Project {
 						
 						// if we have a vala file with the same name 
 						// then do not add it...
-						
+						var vv = (new Regex("\\.c$").replace(fn, fn.legnth, 0, ".vala");
 						
 						ret.add(dirname + "/" + fn);
 						continue;
