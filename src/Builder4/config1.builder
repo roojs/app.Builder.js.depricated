@@ -1,5 +1,14 @@
 [
     {
+        "name" : "NEW GROUP",
+        "compile_flags" : "",
+        "target_bin" : "",
+        "sources" : [
+        ],
+        "packages" : [
+        ]
+    },
+    {
         "name" : "_default_",
         "compile_flags" : "this is a test",
         "target_bin" : "",
