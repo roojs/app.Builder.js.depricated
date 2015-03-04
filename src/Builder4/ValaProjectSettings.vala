@@ -68,6 +68,9 @@ public class ValaProjectSettings : Object
         this.files_tree_store.load();
     
     }
+    public return_type XXXX () {
+    
+    }
     public class Xcls_Notebook2 : Object 
     {
         public Gtk.Notebook el;

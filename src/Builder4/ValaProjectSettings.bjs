@@ -13,6 +13,7 @@
    "xtype" : "VBox",
    "string id" : "ValaProjectSettings",
    "$ xns" : "Gtk",
+   "| return_type XXXX" : "() {\n\n}\n",
    "items" : [
     {
      "* pack" : "pack_start,true,true,0",
