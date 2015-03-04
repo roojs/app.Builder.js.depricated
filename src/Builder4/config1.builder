@@ -4,6 +4,8 @@
         "compile_flags" : "",
         "target_bin" : "/tmp/builder",
         "sources" : [
+            "../Builder4/DialogConfirm.vala",
+            "../Builder4/DialogNewComponent.vala"
         ],
         "packages" : [
         ]
