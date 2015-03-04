@@ -35,7 +35,6 @@ public class ValaProjectSettings : Object
         // my vars (def)
     public Project.Gtk project;
     public Xcls_MainWindow window;
-    public signal void hide ();
 
     // ctor 
     public ValaProjectSettings()
@@ -69,6 +68,7 @@ public class ValaProjectSettings : Object
         this.files_tree_store.load();
     
     }
+    public void hide ()
     public class Xcls_Notebook2 : Object 
     {
         public Gtk.Notebook el;
