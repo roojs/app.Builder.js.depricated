@@ -304,9 +304,9 @@
          ]
         },
         {
+         "id" : "set_vbox",
          "xtype" : "VBox",
          "* pack" : "add2",
-         "string id" : "set_vbox",
          "gboolean homogeneous" : false,
          "$ xns" : "Gtk",
          "items" : [

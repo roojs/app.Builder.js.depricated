@@ -26,6 +26,7 @@ public class ValaProjectSettings : Object
     public Xcls_targets_tree targets_tree;
     public Xcls_targets_tree_store targets_tree_store;
     public Xcls_targets_render targets_render;
+    public Xcls_set_vbox set_vbox;
     public Xcls_build_pack_target build_pack_target;
     public Xcls_build_compile_flags build_compile_flags;
     public Xcls_files_tree_store files_tree_store;
@@ -1294,6 +1295,7 @@ public class ValaProjectSettings : Object
         public Xcls_set_vbox(ValaProjectSettings _owner )
         {
             _this = _owner;
+            _this.set_vbox = this;
             this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
