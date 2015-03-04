@@ -1208,7 +1208,7 @@ public class ValaProjectSettings : Object
                 //this.el.set_value(citer, 1,   items.get(i) );
             };
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
-            
+            _this.set_vbox.el.hide();
         }
     }
     public class Xcls_TreeViewColumn35 : Object 
