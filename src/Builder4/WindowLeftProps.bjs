@@ -176,7 +176,7 @@
            "label" : "Vala Signal",
            "xtype" : "MenuItem",
            "* pack" : "append",
-           "tooltip_markup" : "Add a user function boolean property",
+           "tooltip_markup" : "Add a vala signal",
            "$ xns" : "Gtk"
           }
          ]
