@@ -48,7 +48,7 @@
         },
         {
          "listeners" : {
-          "changed" : "() => {\n    \n\n//    _this.project.save();\n\n}"
+          "changed" : "() => {\n    \n   _this.project.compilegroups.get(\"_default_\").compile_flags = this.el.text;\n   _this.project.writeConfig();\n//    _this.project.save();\n\n}"
          },
          "id" : "compile_flags",
          "* pack" : "pack_start,false,false,0",
