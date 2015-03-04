@@ -1043,12 +1043,12 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Add a user function boolean property";
-            this.el.label = "Vala Method";
+            this.el.label = "Vala Signal";
 
             // listeners 
             this.el.activate.connect( ( ) =>{
             
-                _this.addProp( "prop", "XXXX", "() {\n\n}\n", "| return_type");
+                _this.addProp( "prop", "XXXX", "", "@ void");
             });
         }
 

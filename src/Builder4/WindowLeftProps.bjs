@@ -171,9 +171,9 @@
           },
           {
            "listeners" : {
-            "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"() {\\n\\n}\\n\", \"| return_type\");\n}"
+            "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"\", \"@ void\");\n}"
            },
-           "label" : "Vala Method",
+           "label" : "Vala Signal",
            "xtype" : "MenuItem",
            "* pack" : "append",
            "tooltip_markup" : "Add a user function boolean property",
