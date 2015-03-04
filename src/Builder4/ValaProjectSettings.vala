@@ -1582,7 +1582,7 @@ public class ValaProjectSettings : Object
             Gtk.TreeIter citer;
         
             for(var i =0 ; i < this.el.iter_n_children(null); i++) {
-                this.el.iter_nth_child(citer,null,i);
+                this.el.iter_nth_child(out citer,null,i);
         
                 GLib.Value val;
                 this.el.get_value(iter,0, out val);
