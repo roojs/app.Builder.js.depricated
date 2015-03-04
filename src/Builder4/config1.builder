@@ -5,7 +5,13 @@
         "target_bin" : "/tmp/builder",
         "sources" : [
             "../Builder4/DialogConfirm.vala",
-            "../Builder4/DialogNewComponent.vala"
+            "../Builder4/DialogNewComponent.vala",
+            "../Builder4/About.vala",
+            "../Builder4/ClutterFiles.vala",
+            "../Builder4",
+            "../Builder4/DialogSaveModule.vala",
+            "../Builder4/DialogSaveTemplate.vala",
+            "../Builder4/DialogTemplateSelect.vala"
         ],
         "packages" : [
         ]
