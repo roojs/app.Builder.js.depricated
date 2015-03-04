@@ -1290,6 +1290,7 @@ public class ValaProjectSettings : Object
 
 
             // my vars (def)
+        public Project.GtkValaSettings cgroup;
 
         // ctor 
         public Xcls_set_vbox(ValaProjectSettings _owner )
@@ -1299,6 +1300,7 @@ public class ValaProjectSettings : Object
             this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
+            this.cgroup = null;
 
             // set gobject values
             var child_0 = new Xcls_Label38( _this );

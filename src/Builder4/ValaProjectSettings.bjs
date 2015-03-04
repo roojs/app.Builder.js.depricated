@@ -304,6 +304,7 @@
          ]
         },
         {
+         "Project.GtkValaSettings cgroup" : "null",
          "id" : "set_vbox",
          "* pack" : "add2",
          "xtype" : "VBox",
