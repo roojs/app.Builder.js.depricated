@@ -368,7 +368,7 @@
               },
               {
                "utf8 title" : "name",
-               "* init" : "\n this.el.add_attribute(_this.files_render.el , \"text\", 1 ); // basnemae\n \n/*  this.el.add_attribute(_this.files_render.el , \"markup\", 2 );\n*/",
+               "* init" : "\n this.el.add_attribute(_this.files_render.el , \"markup\", 1 ); // basnemae\n \n/*  this.el.add_attribute(_this.files_render.el , \"markup\", 2 );\n*/",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
                "gboolean resizable" : true,
