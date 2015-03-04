@@ -68,7 +68,7 @@ public class ValaProjectSettings : Object
         this.files_tree_store.load();
     
     }
-    public void hide () => {
+    public void save () => {
         this.project.writeConfig();
     }
     public class Xcls_Notebook2 : Object 
