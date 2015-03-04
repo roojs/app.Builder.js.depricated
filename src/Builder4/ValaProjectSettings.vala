@@ -1684,17 +1684,32 @@ public class ValaProjectSettings : Object
 
             // listeners 
             this.el.toggled.connect( (  path_string) =>  { 
+            
+            
+            
                 var m = _this.default_packages_tree_store.el;
                Gtk.TreeIter iter;
                Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);
                m.get_iter (out iter, path);
                GLib.Value val;
-               m.get_value(iter, 1, out val);
-               m.set_value(iter, 1,  ((bool) val) ? false :true); 
-                 GLib.Value fval;  
+               m.get_value(iter, 3, out val);
+               m.set_value(iter, 3,  ((bool) val) ? false :true); 
+               
+               // type.
+               GLib.Value ftval;  
+               m.get_value(iter, 2, out ftval);
+               var ftype = (string)ftval;   
+               
+               // full name...
+               GLib.Value fval;     
                m.get_value(iter, 0, out fval);
                var fn = (string)fval;
                 
+                // what's the sleected target?
+                // update the list..
+                // if ftype is a dir == then toggle all the bellow.
+                // if ftype is a file .. see if all the files in that directory are check and check the dir.
+                return;
                 var def = _this.project.compilegroups.get("_default_");
                 var items  = def.packages;
                 if ((bool)val) {
