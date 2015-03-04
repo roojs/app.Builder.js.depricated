@@ -1530,7 +1530,7 @@ public class ValaProjectSettings : Object
         // user defined functions 
         public void load () {
          
-          this.el.clear();
+              this.el.clear();
           
             
              var def = _this.project.compilegroups.get("_default_");
@@ -1546,6 +1546,8 @@ public class ValaProjectSettings : Object
                  this.el.append(out citer);   
                  
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
+                
+                print("ADD item %s", items.get(i));
                 this.el.set_value(citer, 1,   "dir"); // type         
                 this.el.set_value(citer, 2,   false ); // checked 
         
@@ -1553,7 +1555,7 @@ public class ValaProjectSettings : Object
                 
                  for(var j =0 ; j < files.size; j++) {
                     this.el.append(out citer);   
-                 
+                         print("ADD item %s", files.get(j));
                     this.el.set_value(citer, 0,   files.get(j) ); // title 
                     this.el.set_value(citer, 1,   "file"); // type         
                     this.el.set_value(citer, 2,   false ); // checked 
