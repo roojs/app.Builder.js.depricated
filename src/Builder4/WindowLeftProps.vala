@@ -1048,7 +1048,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect( ( ) =>{
             
-                _this.addProp( "prop", "XXXX", "", "@ void");
+                _this.addProp( "prop", "XXXX", "()", "@ void");
             });
         }
 

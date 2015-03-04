@@ -171,7 +171,7 @@
           },
           {
            "listeners" : {
-            "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"\", \"@ void\");\n}"
+            "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"()\", \"@ void\");\n}"
            },
            "label" : "Vala Signal",
            "xtype" : "MenuItem",
