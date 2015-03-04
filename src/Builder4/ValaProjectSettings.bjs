@@ -12,7 +12,7 @@
    "| void show" : "(Project.Gtk project) {\n    \n    \n    print(\"ValaProjectSettings show\\n\");\n    \n    this.project=  project;\n\n    this.compile_flags.el.text = \"\";\n    \n    this.default_directory_tree_store.load();    \n    this.default_packages_tree_store.load();            \n    this.targets_tree_store.load();\n    this.files_tree_store.load();\n\n}\n",
    "xtype" : "VBox",
    "string id" : "ValaProjectSettings",
-   "| void save" : "() {\n\n}\n",
+   "| void save" : "() {\n    \n\n\n\n}\n",
    "$ xns" : "Gtk",
    "items" : [
     {
