@@ -68,7 +68,7 @@ public class FakeServer : Object
 			 
 		print(request.path);
 			 
-		var  file = File.new_for_path ("my-test.bin");
+		var  file = File.new_for_path ("/home/alan/gitlive/" + request.path);
 		var stream = file.read();
 		var info = file.query_info(
 				 "standard::*",
