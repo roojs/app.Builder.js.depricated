@@ -11,7 +11,8 @@ src/Makefile
 src/*.c
 src/*.o
 src/builder
-
+src/*.stamp
+src/*.stamp-t
 
 Makefile
 Makefile.in
