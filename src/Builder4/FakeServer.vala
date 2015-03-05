@@ -62,6 +62,16 @@ public class FakeServer : Object
         request.set_uri("x"+ uri);
            
     }
-    
+    public void serve(Webkit.URISchemeRequest request)
+    { 
+			 // request is URISchemeRequest    
+		var  file = File.new_for_path ("my-test.bin");
+		var stream = file.read();
+		var info = file.query_info(
+				GLib.FileAttributes.STANDARD_SIZE,
+				FileQueryInfoFlags.NONE
+		);
+		
+		request.finish (InputStream stream, int64 stream_length, string? mime_type)
 		
 }
