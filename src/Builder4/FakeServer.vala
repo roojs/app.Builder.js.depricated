@@ -18,7 +18,7 @@ public class FakeServer : Object
 		
 		  
         // Hook up signals.
-        this.wkview.load_finished.connect(on_load_finished);
+  
         this.wkview.resource_request_starting.connect(on_resource_request_starting);
         this.wkview.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
         this.wkview.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
@@ -41,7 +41,27 @@ public class FakeServer : Object
         return true;
     }
     
-    
+    private void on_resource_request_starting(
+		WebKit.WebFrame web_frame,
+        WebKit.WebResource web_resource, 
+        WebKit.NetworkRequest request,
+        WebKit.NetworkResponse? response) {
+        if (response != null) {
+            // A request that was previously approved resulted in a redirect.
+            return;
+        }
+
+        string? uri = request.get_uri();
+        if (uri == null) {
+			return;
+		}
+		if (Regex.match_simple ("\.php", uri)) {
+			return;
+		}
+         
+        request.set_uri("x"+ uri);
+           
+    }
     
 		
 }
