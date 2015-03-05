@@ -68,10 +68,10 @@ public class FakeServer : Object
 		var  file = File.new_for_path ("my-test.bin");
 		var stream = file.read();
 		var info = file.query_info(
-				GLib.FileAttributes.STANDARD_SIZE,
+				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
 		
-		request.finish (InputStream stream, int64 stream_length, string? mime_type)
+		request.finish (InputStream stream, info.get_size(), info.get_content_type());
 		
 }
