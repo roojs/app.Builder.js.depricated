@@ -66,7 +66,7 @@ public class FakeServer : Object
     { 
 		// request is URISchemeRequest
 			 
-			 
+		print(request.path);
 			 
 		var  file = File.new_for_path ("my-test.bin");
 		var stream = file.read();
