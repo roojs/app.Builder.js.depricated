@@ -1,6 +1,6 @@
 src/Builder4/*.c
 src/JsRender/*.c
-src/Palate/*.c
+src/Palete/*.c
 src/Project/*.c
 src/Builder4/*.o
 src/JsRender/*.o
