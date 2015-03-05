@@ -64,7 +64,10 @@ public class FakeServer : Object
     }
     public void serve(Webkit.URISchemeRequest request)
     { 
-			 // request is URISchemeRequest    
+		// request is URISchemeRequest
+			 
+			 
+			 
 		var  file = File.new_for_path ("my-test.bin");
 		var stream = file.read();
 		var info = file.query_info(
