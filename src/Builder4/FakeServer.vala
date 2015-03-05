@@ -37,11 +37,7 @@ public class FakeServer : Object
 	) {
         policy_decision.ignore();
         
-        // Other policy-decisions may be requested for various reasons. The existence of an iframe,
-        // for example, causes a policy-decision request with an "OTHER" reason. We don't want to
-        // open a webpage in the browser just because an email contains an iframe.
-        //if (navigation_action.reason == WebKit.WebNavigationReason.LINK_CLICKED)
-        //    link_selected(request.uri);
+        // not sure if we should allow navigations...
         return true;
     }
 		
