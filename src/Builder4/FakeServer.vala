@@ -19,12 +19,12 @@ public class FakeServer : Object
 		  
         // Hook up signals.
   
-        this.wkview.resource_request_starting.connect(on_resource_request_starting);
-        this.wkview.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-        this.wkview.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+        this.view.resource_request_starting.connect(on_resource_request_starting);
+        this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+        this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          // 
-         webcontext.register_uri_scheme("xhttp",  ( request) => {
+         this.view.get_context().register_uri_scheme("xhttp",  ( request) => {
 			 // request is URISchemeRequest
         
 	}
