@@ -214,16 +214,34 @@ public class JsRender.NodeToJs : Object {
 			print("failed to build regex");
 			return;
 		}
+		// sort the key's so they always get rendered in the same order..
+		
+		var keys = new Gee.ArrayList<string>();
 		var piter = this.node.props.map_iterator();
 		while (piter.next() ) {
-			
 			string k;
 			string ktype;
 			string kflag;
-			node.normalize_key(piter.get_key(), out k, out kflag, out ktype);
+			this.node.normalize_key(piter.get_key(), out k, out kflag, out ktype);
+			
+			keys.add(k);
+		}
+		keys.sort((  a,  b) => {
+			return ((string)a).collate((string)b);
+			//if (a == b) return 0;
+			//return a < b ? -1 : 1;
+		});
+		for (var i = 0; i< keys.size; i++) {
+			var key = this.node.get_key(keys.get(i));
+			print("ADD KEY %s\n", key);
+			string k;
+			string ktype;
+			string kflag;
+			
+			this.node.normalize_key(key, out k, out kflag, out ktype);
 			
 			
-			var v = piter.get_value();
+			var v = this.node.get(key);
 			 
 			
 			//if (this.skip.contains(k) ) {
@@ -331,14 +349,14 @@ public class JsRender.NodeToJs : Object {
 				
 				els.add(left + "_this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"]'"
+					"']"
 				);
 				continue;
 			}
-			if (ktype.down() == "string" && kname[0] == '_') {
+			if (ktype.down() == "string" && k[0] == '_') {
 				els.add(left + "_this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"]'"
+					"']"
 				);
 				continue;
 			}
@@ -401,22 +419,38 @@ public class JsRender.NodeToJs : Object {
 		
 		var liter = this.node.listeners.map_iterator();
 	
+	
+	
+		var keys = new Gee.ArrayList<string>();
+		var piter = this.node.listeners.map_iterator();
+		while (piter.next() ) {
+			 
+			keys.add(piter.get_key());
+		}
+		keys.sort((  a,  b) => {
+			return ((string)a).collate((string)b);
+			//if (a == b) return 0;
+			//return a < b ? -1 : 1;
+		});
+	
 		var itms = "listeners : {\n";
-		var i =0;
-		while (liter.next()) {
-			
+		
+		for (var i = 0; i< keys.size; i++) {
+			var key = keys.get(i);
+			var val = this.node.listeners.get(key);
+		
+	
 			itms += i >0 ? ",\n" : "";	
 			// 
-			var str = liter.get_value().strip();
+			var str = val.strip();
 			var lines = str.split("\n");
 			if (lines.length > 0) {
 				//str = string.joinv("\n" + this.pad + "	   ", lines);
 				str = string.joinv("\n" + this.pad + indent_str + indent_str , lines);
 			}
 			
-			itms +=  this.pad + indent_str  + liter.get_key().replace("|", "")  + " : " + str;
+			itms +=  this.pad + indent_str  + key.replace("|", "")  + " : " + str;
 
-			i++;
 		
 			
 		}

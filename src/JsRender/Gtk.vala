@@ -227,7 +227,7 @@ namespace JsRender {
         {
             return "http://devel.akbkhome.com/seed/" + cls + ".html";
         }
-        public void  findTransStrings(Node node )
+        public override void  findTransStrings(Node node )
 		{
 			// not yet..
 		}

@@ -321,7 +321,7 @@ namespace JsRender {
 		 
 
 		 
-		public void  findTransStrings(Node node )
+		public override void  findTransStrings(Node node )
 		{
 			// iterate properties...
 			// use doubleStringProps

@@ -1585,7 +1585,7 @@ public class ValaProjectSettings : Object
                 this.el.iter_nth_child(out citer,null,i);
         
                 GLib.Value val;
-                this.el.get_value(iter,0, out val);
+                this.el.get_value(citer,0, out val);
                 var fn = (string) val;
                 
                 var active = false;
