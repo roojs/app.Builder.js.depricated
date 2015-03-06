@@ -9,9 +9,9 @@
 
 public class FakeServer : Object
 {
-	Webkit.WebView view
+	WebKit.WebView view;
 	
-	public FakeServer(Webkit.WebView wkview)
+	public FakeServer(WebKit.WebView wkview)
 	{
 		this.view = wkview;
 		// 
@@ -19,15 +19,15 @@ public class FakeServer : Object
 		  
         // Hook up signals.
   
-        this.view.resource_request_starting.connect(on_resource_request_starting);
-        this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-        this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+        this.view.resource_load_started.connect(on_resource_request_starting);
+        //this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+        //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          // 
          this.view.get_context().register_uri_scheme("xhttp",  serve);
         
 	}
-	
+	/*
 	private bool on_navigation_policy_decision_requested(
 		WebKit.WebFrame frame,
         WebKit.NetworkRequest request,
@@ -39,7 +39,7 @@ public class FakeServer : Object
         // not sure if we should allow navigations...
         return true;
     }
-    
+    */
     private void on_resource_request_starting(
 		WebKit.WebFrame web_frame,
         WebKit.WebResource web_resource, 
@@ -54,14 +54,14 @@ public class FakeServer : Object
         if (uri == null) {
 			return;
 		}
-		if (Regex.match_simple ("\.php", uri)) {
+		if (Regex.match_simple ("\\.php", uri)) {
 			return;
 		}
          
         request.set_uri("x"+ uri);
            
     }
-    public void serve(Webkit.URISchemeRequest request)
+    public void serve(WebKit.URISchemeRequest request)
     { 
 		// request is URISchemeRequest
 			 
@@ -74,6 +74,6 @@ public class FakeServer : Object
 				FileQueryInfoFlags.NONE
 		);
 		
-		request.finish (InputStream stream, info.get_size(), info.get_content_type());
-		
+		request.finish (  stream, info.get_size(), info.get_content_type());
+	}
 }
