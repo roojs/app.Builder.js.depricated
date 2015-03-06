@@ -44,7 +44,7 @@ public class FakeServer : Object
  		
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + request.get_path());
 		if (!file.query_exists()) {
-			print("Skip file missing = /home/alan/gitlive%s\n", request.get_path());
+			print("Skip file missing = %s/gitlive%s\n", GLib.Environment.get_home_dir() , request.get_path());
 			return;
 		}
 			
