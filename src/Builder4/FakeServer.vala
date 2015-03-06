@@ -24,7 +24,7 @@ public class FakeServer : Object
         //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          // 
-         this.view.get_context().register_uri_scheme("xhttp",  serve);
+         this.view.get_context().register_uri_scheme("http",  serve);
         
 	}
 	/*
@@ -43,7 +43,7 @@ public class FakeServer : Object
     private void on_resource_request_starting(
 		WebKit.WebResource resource, 
 		WebKit.URIRequest request) {
-		print("REQUEST-A : %s\n",uri);
+		print("REQUEST-A : %s\n",request.get_uri());
         if (resource == null) {
 			
             // A request that was previously approved resulted in a redirect.
