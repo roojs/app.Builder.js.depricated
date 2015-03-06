@@ -19,12 +19,12 @@ public class FakeServer : Object
 		  
         // Hook up signals.
   
-        this.view.resource_load_started.connect(on_resource_request_starting);
+        //this.view.resource_load_started.connect(on_resource_request_starting);
         //this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
         //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          // 
-         this.view.get_context().register_uri_scheme("http",  serve);
+         this.view.get_context().register_uri_scheme("xhttp",  serve);
         
 	}
 	/*
@@ -40,6 +40,14 @@ public class FakeServer : Object
         return true;
     }
     */
+    private bool on_policy_decision(WebKit.PolicyDecision decision, WebKit.PolicyDecisionType type)
+    {
+		if ((type == WebKit.PolicyDecisionType.RESPONSE) {
+			
+			
+		}
+	}
+    
     private void on_resource_request_starting(
 		WebKit.WebResource resource, 
 		WebKit.URIRequest request) {
