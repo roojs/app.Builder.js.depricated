@@ -42,7 +42,10 @@ public class FakeServer : Object
 		print(request.get_path());
 			 
 		var  file = File.new_for_path ("/home/alan/gitlive" + request.get_path());
-		
+		if (!file.query_exists()) {
+			return;
+		}
+			
 		var stream = file.read();
 		var info = file.query_info(
 				 "standard::*",
