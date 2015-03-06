@@ -43,7 +43,7 @@ public class FakeServer : Object
     private void on_resource_request_starting(
 		WebKit.WebResource resource, 
 		WebKit.URIRequest request) {
-        if (resource != null) {
+        if (resource == null) {
             // A request that was previously approved resulted in a redirect.
             return;
         }
@@ -63,9 +63,9 @@ public class FakeServer : Object
     { 
 		// request is URISchemeRequest
 			 
-		print(request.path);
+		print(request.get_path());
 			 
-		var  file = File.new_for_path ("/home/alan/gitlive/" + request.path);
+		var  file = File.new_for_path ("/home/alan/gitlive/" + request.get_path());
 		var stream = file.read();
 		var info = file.query_info(
 				 "standard::*",
