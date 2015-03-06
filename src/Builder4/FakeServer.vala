@@ -44,6 +44,7 @@ public class FakeServer : Object
 		WebKit.WebResource resource, 
 		WebKit.URIRequest request) {
         if (resource == null) {
+			print("REQUEST : %s\n",uri);
             // A request that was previously approved resulted in a redirect.
             return;
         }
@@ -55,9 +56,10 @@ public class FakeServer : Object
 		}
 		print("REQUEST : %s\n",uri);
 		if (Regex.match_simple ("\\.php", uri)) {
+			
 			return;
 		}
-         
+        print("CHANGE TO : x%s\n",uri);
         request.set_uri("x"+ uri);
            
     }
