@@ -53,7 +53,7 @@ public class FakeServer : Object
         if (uri == null) {
 			return;
 		}
-		print("%s\n",uri);
+		print("REQUEST : %s\n",uri);
 		if (Regex.match_simple ("\\.php", uri)) {
 			return;
 		}
