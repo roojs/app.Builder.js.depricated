@@ -24,8 +24,7 @@ public class FakeServer : Object
         this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          // 
-         this.view.get_context().register_uri_scheme("xhttp",  ( request) => {
-			 // request is URISchemeRequest
+         this.view.get_context().register_uri_scheme("xhttp",  serve);
         
 	}
 	
