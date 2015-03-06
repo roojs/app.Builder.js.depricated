@@ -39,11 +39,6 @@ public class Xcls_WindowRooView : Object
     }
 
     // user defined functions 
-    public void loadFile (JsRender.JsRender file)
-    {
-        this.file = file;
-        this.view.renderJS(true);
-    }
     public void createThumb () {
         
         
@@ -114,6 +109,11 @@ public class Xcls_WindowRooView : Object
     
         
          
+    }
+    public void loadFile (JsRender.JsRender file)
+    {
+        this.file = file;
+        this.view.renderJS(true);
     }
     public void requestRedraw () {
         this.view.renderJS(false);
@@ -289,7 +289,8 @@ public class Xcls_WindowRooView : Object
 
             // init method 
 
-            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        }
 
         // user defined functions 
     }
@@ -332,6 +333,9 @@ public class Xcls_WindowRooView : Object
                 var settings =  this.el.get_settings();
                 settings.enable_developer_extras = true;
                 
+                
+                var fs= new FakeServer(this.el);
+                fs.ref();
                 // this was an attempt to change the url perms.. did not work..
                 // settings.enable_file_access_from_file_uris = true;
                 // settings.enable_offline_web_application_cache - true;
@@ -375,6 +379,7 @@ public class Xcls_WindowRooView : Object
                 
                 
             }
+
             // listeners 
             this.el.script_dialog.connect( (dialog) => {
                 if (this.el == null) {
@@ -666,7 +671,8 @@ public class Xcls_WindowRooView : Object
 
             // init method 
 
-            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        }
 
         // user defined functions 
     }
