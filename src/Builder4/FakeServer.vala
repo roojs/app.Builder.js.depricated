@@ -43,8 +43,9 @@ public class FakeServer : Object
     private void on_resource_request_starting(
 		WebKit.WebResource resource, 
 		WebKit.URIRequest request) {
+		print("REQUEST-A : %s\n",uri);
         if (resource == null) {
-			print("REQUEST : %s\n",uri);
+			
             // A request that was previously approved resulted in a redirect.
             return;
         }
