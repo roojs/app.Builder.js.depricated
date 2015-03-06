@@ -49,9 +49,11 @@ public class FakeServer : Object
         }
 
         string? uri = request.get_uri();
+        
         if (uri == null) {
 			return;
 		}
+		print("%s\n",uri);
 		if (Regex.match_simple ("\\.php", uri)) {
 			return;
 		}
