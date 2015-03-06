@@ -1,4 +1,11 @@
 /**
+ * Originally this was supposed to intercept http calls and redirect them
+ * but that is not supported in webkit2 (without using the extension api)
+ * 
+ * so for now we have modified our server to serve use a base url of xhttp:
+ * 
+ * so all relative urls are based on that 
+ * 
  * Idea is to serve the files from the file system, so no need to setup apache etc...
  * This should work for the static content like css / javascript etc.. but 
  * will cause issues with 'dynamic' xhr files (eg. the php stuff)
@@ -27,51 +34,7 @@ public class FakeServer : Object
          this.view.get_context().register_uri_scheme("xhttp",  serve);
         
 	}
-	/*
-	private bool on_navigation_policy_decision_requested(
-		WebKit.WebFrame frame,
-        WebKit.NetworkRequest request,
-        WebKit.WebNavigationAction navigation_action,
-        WebKit.WebPolicyDecision policy_decision
-	) {
-        policy_decision.ignore();
-        
-        // not sure if we should allow navigations...
-        return true;
-    }
-    */
-    private bool on_policy_decision(WebKit.PolicyDecision decision, WebKit.PolicyDecisionType type)
-    {
-		if ((type == WebKit.PolicyDecisionType.RESPONSE) {
-			
-			
-		}
-	}
-    
-    private void on_resource_request_starting(
-		WebKit.WebResource resource, 
-		WebKit.URIRequest request) {
-		print("REQUEST-A : %s\n",request.get_uri());
-        if (resource == null) {
-			
-            // A request that was previously approved resulted in a redirect.
-            return;
-        }
-
-        string? uri = request.get_uri();
-        
-        if (uri == null) {
-			return;
-		}
-		print("REQUEST : %s\n",uri);
-		if (Regex.match_simple ("\\.php", uri)) {
-			
-			return;
-		}
-        print("CHANGE TO : x%s\n",uri);
-        request.set_uri("x"+ uri);
-           
-    }
+	 
     public void serve(WebKit.URISchemeRequest request)
     { 
 		// request is URISchemeRequest
