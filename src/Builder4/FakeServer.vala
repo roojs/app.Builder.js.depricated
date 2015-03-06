@@ -41,10 +41,8 @@ public class FakeServer : Object
     }
     */
     private void on_resource_request_starting(
-		WebKit.WebFrame web_frame,
-        WebKit.WebResource web_resource, 
-        WebKit.NetworkRequest request,
-        WebKit.NetworkResponse? response) {
+		WebKit.WebResource resource, 
+		WebKit.URIRequest request) {
         if (response != null) {
             // A request that was previously approved resulted in a redirect.
             return;
