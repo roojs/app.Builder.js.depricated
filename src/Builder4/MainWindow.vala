@@ -66,6 +66,7 @@ public class Xcls_MainWindow : Object
         // init method 
 
         //this.el.show_all();
+
         // listeners 
         this.el.delete_event.connect( (   event) => {
             return false;
@@ -328,6 +329,7 @@ public class Xcls_MainWindow : Object
 
             var stage = this.el.get_stage();
                 stage.set_background_color(  Clutter.Color.from_string("#000"));
+
             // listeners 
             this.el.size_allocate.connect( (  alloc) => {
                 if (_this.windowstate == null) {
@@ -378,7 +380,8 @@ public class Xcls_MainWindow : Object
                 this.el.set_size(_this.clutterembed.el.get_stage().width-50,
                         _this.clutterembed.el.get_stage().height);
                         
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -422,7 +425,8 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -466,7 +470,8 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -510,7 +515,8 @@ public class Xcls_MainWindow : Object
                 this.el.set_size((_this.clutterembed.el.get_stage().width-50)/2,
                         _this.clutterembed.el.get_stage().height);
                         
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -552,7 +558,8 @@ public class Xcls_MainWindow : Object
                 this.el.set_size(_this.clutterembed.el.get_stage().width-50,
                         _this.clutterembed.el.get_stage().height /2);
                         
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -629,7 +636,8 @@ public class Xcls_MainWindow : Object
                  this.el.set_size(50,
                        _this.clutterembed.el.get_stage().height);
                  
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -679,7 +687,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -705,7 +714,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -790,7 +800,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -816,7 +827,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -899,7 +911,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50.0f,50.0f);        }
+            this.el.set_size(50.0f,50.0f);
+        }
 
         // user defined functions 
     }
@@ -925,7 +938,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1016,7 +1030,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -1042,7 +1057,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1128,6 +1144,7 @@ public class Xcls_MainWindow : Object
             // init method 
 
             this.el.set_size(50,50);
+
             // listeners 
             this.el.enter_event.connect( (  event)  => {
                 this.el.background_color = new Clutter.Color.from_string("#333");
@@ -1163,7 +1180,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1248,7 +1266,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -1274,7 +1293,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1359,7 +1379,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -1385,7 +1406,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1471,7 +1493,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50.0f,50.0f);        }
+            this.el.set_size(50.0f,50.0f);
+        }
 
         // user defined functions 
     }
@@ -1497,7 +1520,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1598,7 +1622,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50.0f,50.0f);        }
+            this.el.set_size(50.0f,50.0f);
+        }
 
         // user defined functions 
     }
@@ -1624,7 +1649,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1721,7 +1747,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -1747,7 +1774,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
@@ -1854,7 +1882,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            this.el.set_size(50,50);        }
+            this.el.set_size(50,50);
+        }
 
         // user defined functions 
     }
@@ -1880,7 +1909,8 @@ public class Xcls_MainWindow : Object
 
             // init method 
 
-            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);        }
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
 
         // user defined functions 
     }
