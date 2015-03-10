@@ -1102,7 +1102,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.tooltip_markup = "Add a flexy foreach (for HTML templates)";
-            this.el.label = "Flexy - Foreach";
+            this.el.label = "Flexy - If";
 
             // listeners 
             this.el.activate.connect( ( ) =>{
