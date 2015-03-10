@@ -186,7 +186,7 @@
           },
           {
            "listeners" : {
-            "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:if\", \"array,key,value\", \"string\");\n}"
+            "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:if\", \"value_or_condition\", \"string\");\n}"
            },
            "label" : "Flexy - If",
            "* pack" : "append",
