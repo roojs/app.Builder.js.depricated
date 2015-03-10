@@ -191,7 +191,7 @@
            "label" : "Flexy - If",
            "* pack" : "append",
            "xtype" : "MenuItem",
-           "tooltip_markup" : "Add a flexy foreach (for HTML templates)",
+           "tooltip_markup" : "Add a flexy if (for HTML templates)",
            "$ xns" : "Gtk"
           },
           {
