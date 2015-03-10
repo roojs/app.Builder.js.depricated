@@ -1133,7 +1133,7 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.tooltip_markup = "Add a flexy if (for HTML templates)";
+            this.el.tooltip_markup = "Add a flexy include (for HTML templates)";
             this.el.label = "Flexy - Include";
 
             // listeners 

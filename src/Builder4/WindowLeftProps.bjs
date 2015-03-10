@@ -201,7 +201,7 @@
            "label" : "Flexy - Include",
            "xtype" : "MenuItem",
            "* pack" : "append",
-           "tooltip_markup" : "Add a flexy if (for HTML templates)",
+           "tooltip_markup" : "Add a flexy include (for HTML templates)",
            "$ xns" : "Gtk"
           },
           {
