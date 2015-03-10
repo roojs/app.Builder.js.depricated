@@ -1139,7 +1139,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect( ( ) =>{
             
-                _this.addProp("prop",  "flexy:if", "array,key,value", "string");
+                _this.addProp("prop",  "flexy:include", "name_of_file.html", "string");
             });
         }
 
