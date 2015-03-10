@@ -1107,7 +1107,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect( ( ) =>{
             
-                _this.addProp("prop",  "flexy:foreach", "array,key,value", "string");
+                _this.addProp("prop",  "flexy:if", "array,key,value", "string");
             });
         }
 
