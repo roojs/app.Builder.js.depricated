@@ -196,6 +196,16 @@
           },
           {
            "listeners" : {
+            "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:if\", \"array,key,value\", \"string\");\n}"
+           },
+           "label" : "Flexy - Include",
+           "xtype" : "MenuItem",
+           "* pack" : "append",
+           "tooltip_markup" : "Add a flexy if (for HTML templates)",
+           "$ xns" : "Gtk"
+          },
+          {
+           "listeners" : {
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:foreach\", \"array,key,value\", \"string\");\n}"
            },
            "label" : "Flexy - Foreach",
