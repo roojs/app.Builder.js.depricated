@@ -1996,7 +1996,6 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.visible = false;
         }
 
         // user defined functions 

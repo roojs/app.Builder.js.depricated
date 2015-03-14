@@ -543,7 +543,6 @@
        ]
       },
       {
-       "gboolean visible" : false,
        "id" : "statusbar",
        "* pack" : "pack_end,false,true,0",
        "xtype" : "Statusbar",
