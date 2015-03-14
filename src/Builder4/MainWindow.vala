@@ -36,6 +36,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
     public Xcls_new_window new_window;
+    public Xcls_statusbar statusbar;
 
         // my vars (def)
     public Project.Project project;
@@ -132,7 +133,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
             this.el.pack_end (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_Statusbar61( _this );
+            var child_1 = new Xcls_statusbar( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
         }
@@ -1977,7 +1978,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Statusbar61 : Object 
+    public class Xcls_statusbar : Object 
     {
         public Gtk.Statusbar el;
         private Xcls_MainWindow  _this;
@@ -1986,9 +1987,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Statusbar61(Xcls_MainWindow _owner )
+        public Xcls_statusbar(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.statusbar = this;
             this.el = new Gtk.Statusbar();
 
             // my vars (dec)

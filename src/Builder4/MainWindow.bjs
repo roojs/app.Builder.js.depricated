@@ -543,6 +543,7 @@
        ]
       },
       {
+       "id" : "statusbar",
        "* pack" : "pack_start,true,true,0",
        "xtype" : "Statusbar",
        "$ xns" : "Gtk"
