@@ -38,7 +38,7 @@
       {
        "id" : "mainpane",
        "position" : 400,
-       "* pack" : "pack_end,true,true,0",
+       "* pack" : "pack_start,true,true,0",
        "# int lastWidth" : 0,
        "xtype" : "HPaned",
        "$ xns" : "Gtk",

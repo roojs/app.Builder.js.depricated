@@ -132,7 +132,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
-            this.el.pack_end (  child_0.el , true,true,0 );
+            this.el.pack_start (  child_0.el , true,true,0 );
             var child_1 = new Xcls_statusbar( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,true,0 );
