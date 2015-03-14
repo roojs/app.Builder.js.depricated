@@ -544,7 +544,7 @@
       },
       {
        "id" : "statusbar",
-       "* pack" : "pack_start,true,true,0",
+       "* pack" : "pack_end,true,true,0",
        "xtype" : "Statusbar",
        "$ xns" : "Gtk"
       }
