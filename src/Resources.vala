@@ -17,4 +17,25 @@
 public class Resources : Object
 {
 
-	
+public void fetchResourceFrom(string src, string target) 
+{
+		 
+		// fetch...
+		print("downloading %s \nto : %s\n", src,res);
+		var session = new Soup.Session ();
+		session.user_agent = "App Builder ";
+	        var message = new Soup.Message ("GET", 
+            		src
+                    );
+
+		    // send the HTTP request and wait for response
+	         session.send_message (message);
+
+		    // output the XML result to stdout
+		FileUtils.set_contents(
+                       configDirectory() + "/resources/" + res,
+                      (string) message.response_body.data
+                    );
+
+
+	}
