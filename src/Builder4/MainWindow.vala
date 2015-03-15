@@ -84,6 +84,7 @@ public class Xcls_MainWindow : Object
             // hide the file editing..
            
             //this.hideViewEditing();
+            _this.statusbar.el.hide();
         });
     }
 
