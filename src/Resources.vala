@@ -88,7 +88,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
                         "GtkUsage.txt",
                         (sess,msg) => {
-                                // See Palete.Gtk
+                                Palete factory("Gtk").load();
                                this.fetchNext();
                     });
                     break;
@@ -97,7 +97,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/RooUsage.txt",
                         "RooUsage.txt",
                         (sess,msg) => {
-                                // next step triggers the reload...
+                                // next step triggers the 
                                 this.fetchNext();
                     });
                     break;     
