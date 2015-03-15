@@ -24,9 +24,7 @@ public class Resources : Object
 		print("downloading %s \nto : %s\n", src,res);
 		var session = new Soup.Session ();
 		session.user_agent = "App Builder ";
-	    var message = new Soup.Message ("GET", 
-            		src
-        );
+	    var message = new Soup.Message ("GET",  src );
         session.queue_message (message, (sess, mess) => {
 
             FileUtils.set_contents(
