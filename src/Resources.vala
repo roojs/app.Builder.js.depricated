@@ -17,6 +17,65 @@
 public class Resources : Object
 {
 
+     var fetch_pos = 0;
+     public void fetchStart()
+     {
+          this.fetch_pos =0;
+         this.fetchNext();
+         
+     }
+     public void fetchNext()
+    {
+        var cur = this.fetch_pos;
+        this.fetch_pos++;
+        switch (cur) {
+               case 0: // html for rendering?
+                    this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/bootstrap.builder.html",
+                        "bootstrap.builder.html",
+                        (sess,msg) => {
+                               this.fetchNext();
+                    });
+                    break;
+                   
+     )
+
+    
+    
+    
+     string[] res = { 
+				"bootstrap.builder.html",
+				"roo.builder.html",
+				"roo.builder.js",
+				"Gir.overides",
+				"RooUsage.txt",
+				"GtkUsage.txt"
+			};
+			for (var i = 0; i < res.length; i++ ) { 
+				this.fetchResource(res[i], force);
+			}
+			
+			this.fetchResourceFrom (
+	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
+	                        "roodata.json",
+                		force
+                        );
+			
+
+		}
+		public void fetchResource(string res, bool force) {
+			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
+				return;
+			}
+			this.fetchResourceFrom(
+	                       "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res,
+	                       res,
+			       force
+                       );
+			
+
+
+    
     public void fetchResourceFrom(string src, string target, Soup.SessionCallback? callback)
     {
 		 
