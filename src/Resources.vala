@@ -17,7 +17,10 @@
 public class Resources : Object
 {
 
-     var fetch_pos = 0;
+     delegate void updateProgress(uint cur_pos);
+
+    
+     uint fetch_pos = 0;
      public void fetchStart()
      {
           this.fetch_pos =0;
