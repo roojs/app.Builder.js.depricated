@@ -105,46 +105,21 @@ public class Resources : Object
                     
                     this.fetchResourceFrom (
                         "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
-                        "roodata.json"",
+                        "roodata.json",
                         (sess,msg) => {
                                 // See Palete.Gtk
                                 this.updateProgress(0);
                                this.fetch_pos = 0;
                     });
-                    break;  }
+                    break;  
+        }
 
     
     
     
-     string[] res = { 
-				"bootstrap.builder.html",
-				"roo.builder.html",
-				"roo.builder.js",
-				"Gir.overides",
-				"RooUsage.txt",
-				"GtkUsage.txt"
-			};
-			for (var i = 0; i < res.length; i++ ) { 
-				this.fetchResource(res[i], force);
-			}
-			
-			this.fetchResourceFrom (
-	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
-	                        "roodata.json",
-                		force
-                        );
-			
+   
 
-		}
-		public void fetchResource(string res, bool force) {
-			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
-				return;
-			}
-			this.fetchResourceFrom(
-	                       "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res,
-	                       res,
-			       force
-                       );
+	 }
 			
 
 
