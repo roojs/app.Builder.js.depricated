@@ -96,52 +96,7 @@ namespace Palete
             
 
             
-        /**
-         * gather a  list of potentional objects that can be added..
-         * 
-         */
-        /*
-        listChildren: function (existing) {
-            existing = existing || [];
-           // existing.push('*top'); // always have top
-            var ret  = []; 
-            console.log("GATHER LIST? " + this.map.length);
-            
-            
-            function addRight(right) {
-                right.forEach(function(r) {
-                    if (ret.indexOf(r) > -1) {
-                        return;
-                    }
-                    ret.push(r);
-                });
-            }
-            
-            this.map.forEach(function(m) {
-                var done = false
-                m.left.forEach( function(left) {
-                    if (done) return; 
-                    
-                    var l = left.replace(/:.*$/, '');
-                   // print("chk:" + l + " in " + existing.join(',')); 
-                    if (existing.indexOf(l) > -1) {
-                        addRight(m.right);
-                        done =true;
-                        //return true; // no more needed..
-                    }
-                });
-                
-            });
-            ret.sort();
-            
-           // console.dump(ret);
-            return ret;
-            
-            
-            
-        },
-        */
-	
+         
 
 	    
 	public string[] getChildList(string in_rval)
@@ -226,46 +181,7 @@ namespace Palete
 		return ret;
             
         }
-        /**
-         * basic guess type.. 
-         * 
-         * /
-        findType : function (data, prop, value)
-        {
-            if (prop[0] == '|') {
-                return 'function';
-            }
-            return typeof(value);
-        },
-        
-        
-        findOptions : function(ename)
-        {
-            switch(ename.toLowerCase()) {
-                case 'boolean': 
-                    return [ 'true', 'false' ];
-                // everything else does not have options.
-                case 'string': 
-                case 'utf8': 
-                case 'int': 
-                case 'uint': 
-                case 'function': 
-                    return false;
-                default: 
-                    console.log("OOPS: = unknown type: " + ename);
-                    return false;
-            }
-        },
-        confirmCanAdd: function(parent, child) {
-            // confirms that one obj can be added to another.
-            // returns true, for items, or list of properties that can hold it..
-            return true;
-            
-        },
-        getDefaultPack: function(pname, cname) {
-            return 'add';
-        },
-	*/
+      
         public void saveTemplate (string name, JsRender.Node data)
         {
 
@@ -338,7 +254,10 @@ namespace Palete
 		
 		return ret;
 	 }
-          public   void  loadUsageFile (string fname) {
+
+
+
+    public   void  loadUsageFile (string fname) {
 
 
 
