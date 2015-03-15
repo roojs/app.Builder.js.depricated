@@ -44,7 +44,7 @@ public class Resources : Object
     {
         var cur = this.fetch_pos;
         this.fetch_pos++;
-        this.updateProgress(cur);
+        this.updateProgress(this.fetch_pos); // min=0;
         switch (cur) {
                case 0: // html for rendering Bootstrap apps.
                     this.fetchResourceFrom (
