@@ -17,7 +17,7 @@
 public class Resources : Object
 {
 
-public void fetchResourceFrom(string src, string target) 
+public void fetchResourceFrom(string src, string target, Soup.SessionCallback? callback)) 
 {
 		 
 		// fetch...
@@ -27,9 +27,13 @@ public void fetchResourceFrom(string src, string target)
 	        var message = new Soup.Message ("GET", 
             		src
                     );
-
+session.queue_message (message, (sess, mess) => {
+    stdout.printf ("Message length: %lld\n%s\n",
+                   mess.response_body.length,
+                   mess.response_body.data);
+});
 		    // send the HTTP request and wait for response
-	         session.send_message (message);
+ 
 
 		    // output the XML result to stdout
 		FileUtils.set_contents(
