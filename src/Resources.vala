@@ -45,9 +45,10 @@ public class Resources : Object
                                this.fetchNext();
                     });
                     break;
+             case 2: // generic javascript
                  this.fetchResourceFrom (
-                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.html",
-                        "roo.builder.html",
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.js",
+                        "roo.builder.js",
                         (sess,msg) => {
                                this.fetchNext();
                     });
