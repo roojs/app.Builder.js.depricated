@@ -1250,7 +1250,7 @@ public class Xcls_LeftProps : Object
             
             
                 var description = new Pango.FontDescription();
-                description.set_size(8000);
+                description.set_size(10000);
                 this.el.modify_font(description);
             }
 

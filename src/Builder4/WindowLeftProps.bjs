@@ -8,8 +8,8 @@
  "items" : [
   {
    "# bool allow_edit" : false,
-   "|              void before_edit" : "()\n{\n\n    print(\"before edit - stop editing\\n\");\n    \n  // these do not appear to trigger save...\n    _this.keyrender.el.stop_editing(false);\n    _this.keyrender.el.editable  =false;\n\n    _this.valrender.el.stop_editing(false);\n    _this.valrender.el.editable  =false;    \n    \n    \n// technicall stop the popup editor..\n\n}\n",
    "id" : "LeftProps",
+   "|              void before_edit" : "()\n{\n\n    print(\"before edit - stop editing\\n\");\n    \n  // these do not appear to trigger save...\n    _this.keyrender.el.stop_editing(false);\n    _this.keyrender.el.editable  =false;\n\n    _this.valrender.el.stop_editing(false);\n    _this.valrender.el.editable  =false;    \n    \n    \n// technicall stop the popup editor..\n\n}\n",
    "|              string keySortFormat" : "(string key) {\n    // listeners first - with 0\n    // specials\n    if (key[0] == '*') {\n        return \"1 \" + key;\n    }\n    // functions\n    \n    var bits = key.split(\" \");\n    \n    if (key[0] == '|') {\n        return \"2 \" + bits[bits.length -1];\n    }\n    // signals\n    if (key[0] == '@') {\n        return \"3 \" + bits[bits.length -1];\n    }\n        \n    // props\n    if (key[0] == '#') {\n        return \"4 \" + bits[bits.length -1];\n    }\n    // the rest..\n    return \"5 \" + bits[bits.length -1];    \n\n\n\n}",
    "|              void finish_editing" : "() {\n     // \n    this.before_edit();\n}",
    "|              bool startEditingValue" : "( Gtk.TreePath path) {\n\n    // ONLY return true if editing is allowed - eg. combo..\n    \n            print(\"start editing?\\n\");\n            if (!this.stop_editor()) {\n                print(\"stop editor failed\\n\");\n                return false;\n            }\n            \n            Gtk.TreeIter iter;\n\n            var mod = this.model.el;\n            mod.get_iter (out iter, path);\n             \n            /*\n                m.set(iter, \n                        0, \"listener\",\n                        1, miter.get_key(),\n                        2, \"<b>\" + miter.get_key() + \"</b>\",\n                        3, miter.get_value()\n                    ); \n             \n            */\n            GLib.Value gval;\n            mod.get_value(iter, 3 , out gval);\n            var val = (string)gval;\n        \n            mod.get_value(iter, 1 , out gval);\n            var key = (string)gval;\n            var type_ar = key.split(\" \");\n            \n            \n            \n            mod.get_value(iter, 0 , out gval);\n            var type = (string)gval;\n            \n           \n            \n            var use_textarea = false;\n\n            //------------ things that require the text editor...\n            \n            if (type == \"listener\") {\n                use_textarea = true;\n            }\n            if (key.length > 0 && key[0] == '|') { // user defined method\n                use_textarea = true;\n            }\n            if (key.length > 0 && key[0] == '$') { // raw string\n                use_textarea = true;\n            }\n            if (key.length > 0 && key == \"* init\") {\n                use_textarea = true;\n            }\n            if (val.length > 40) { // long value...\n                use_textarea = true;\n            }\n            \n            \n            \n            if (use_textarea) {\n                print(\"Call show editor\\n\");\n                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {\n                    this.view.el.get_selection().select_path(path);\n                    \n                    this.show_editor(file, node, type, key);\n                    \n                    return false;\n                });\n               \n                \n                return false;\n            }\n            // others... - fill in options for true/false?\n           print(\"turn on editing %s \\n\" , mod.get_path(iter).to_string());\n           \n               print (type_ar[0].up());\n                if (type_ar.length > 1 && (\n                        type_ar[0].up() == \"BOOLEAN\"\n                        ||\n                        type_ar[0].up() == \"BOOL\"                        \n                    )) {\n                        print(\"start editing try/false)???\");\n                        this.valrender.el.has_entry = false;\n                        string[] opts =  { \"true\", \"false\" };\n                        this.valrender.setOptions(opts);\n                        \n                        this.valrender.el.has_entry = false;\n                        this.valrender.el.editable = true;\n                         this.allow_edit  = true;\n                         GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {\n                             this.view.el.set_cursor_on_cell(\n                                path,\n                                this.valcol.el,\n                                this.valrender.el,\n                                true\n                            );\n                            return false;\n                        });\n                        return true;\n                }\n                                      \n                \n           \n             string[] opts =  {  };\n            this.valrender.setOptions(opts);\n           \n           GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {\n                \n                // at this point - work out the type...\n                // if its' a combo... then show the options..\n                this.valrender.el.has_entry = true;\n                \n                this.valrender.el.editable = true;            \n            \n                \n                this.allow_edit  = true;\n                \n                \n                \n                \n\n                this.view.el.set_cursor_on_cell(\n                    path,\n                    this.valcol.el,\n                    this.valrender.el,\n                    true\n                );\n                return false;\n            });\n            return false;\n        }\n",
@@ -49,24 +49,24 @@
          "$ xns" : "Gtk",
          "items" : [
           {
+           "xtype" : "Image",
            "$ stock" : "Gtk.STOCK_ADD",
            "* pack" : "add",
-           "xtype" : "Image",
            "$ xns" : "Gtk",
            "$ icon_size" : "Gtk.IconSize.MENU"
           },
           {
            "label" : "Other",
-           "* pack" : "add",
            "xtype" : "Label",
+           "* pack" : "add",
            "$ xns" : "Gtk"
           }
          ]
         },
         {
          "id" : "AddPropertyPopup",
-         "* pack" : false,
          "xtype" : "Menu",
+         "* pack" : false,
          "$ xns" : "Gtk",
          "items" : [
           {
@@ -74,8 +74,8 @@
             "activate" : " ()  => {\n    _this.addProp( \"prop\", \"id\", \"\", \"\");\n}"
            },
            "label" : "id: _this.{ID} (Vala)",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Using _this.{ID} will map to this element",
            "$ xns" : "Gtk"
           },
@@ -84,8 +84,8 @@
             "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"pack\",\"add\", \"*\");\n}"
            },
            "label" : "pack: Pack method (Vala)",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "tooltip_markup" : "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element",
            "$ xns" : "Gtk"
           },
@@ -94,8 +94,8 @@
             "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\", \"ctor\",\"\", \"*\");\n}"
            },
            "label" : "ctor: Alterative to default contructor",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "eg. \n\nnew Clutter.Image.from_file(.....)",
            "$ xns" : "Gtk"
           },
@@ -104,8 +104,8 @@
             "activate" : "  ( ) => {\n\n    _this.addProp( \"prop\",  \"init\", \"{\\n\\n}\\n\", \"*\" );\n}"
            },
            "label" : "init: initialziation code (vala)",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "This code is called after the ctor",
            "$ xns" : "Gtk"
           },
@@ -119,8 +119,8 @@
             "activate" : "  (self) => {\n\n    _this.addProp( \"prop\", \"XXXX\", \"\",\"string\");\n\n}"
            },
            "label" : "String",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a user defined string property",
            "$ xns" : "Gtk"
           },
@@ -129,8 +129,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"XXX\", \"0\", \"int\");\n}"
            },
            "label" : "Number",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a user defined number property",
            "$ xns" : "Gtk"
           },
@@ -139,8 +139,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXX\", \"true\", \"bool\");\n}"
            },
            "label" : "Boolean",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a user defined boolean property",
            "$ xns" : "Gtk"
           },
@@ -154,8 +154,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"XXXX\", \"function() { }\", \"| function\");\n}"
            },
            "label" : "Javascript Function",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a user function boolean property",
            "$ xns" : "Gtk"
           },
@@ -164,8 +164,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"() {\\n\\n}\\n\", \"| return_type\");\n}"
            },
            "label" : "Vala Method",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "tooltip_markup" : "Add a user function boolean property",
            "$ xns" : "Gtk"
           },
@@ -174,8 +174,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp( \"prop\", \"XXXX\", \"()\", \"@ void\");\n}"
            },
            "label" : "Vala Signal",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a vala signal",
            "$ xns" : "Gtk"
           },
@@ -189,8 +189,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:if\", \"value_or_condition\", \"string\");\n}"
            },
            "label" : "Flexy - If",
-           "* pack" : "append",
            "xtype" : "MenuItem",
+           "* pack" : "append",
            "tooltip_markup" : "Add a flexy if (for HTML templates)",
            "$ xns" : "Gtk"
           },
@@ -199,8 +199,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:include\", \"name_of_file.html\", \"string\");\n}"
            },
            "label" : "Flexy - Include",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "tooltip_markup" : "Add a flexy include (for HTML templates)",
            "$ xns" : "Gtk"
           },
@@ -209,8 +209,8 @@
             "activate" : "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"flexy:foreach\", \"array,key,value\", \"string\");\n}"
            },
            "label" : "Flexy - Foreach",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "tooltip_markup" : "Add a flexy foreach (for HTML templates)",
            "$ xns" : "Gtk"
           }
@@ -234,7 +234,7 @@
         "button_press_event" : "  ( ev)  => {\n \n    Gtk.TreeViewColumn col;\n    int cell_x;\n    int cell_y;\n    Gtk.TreePath path;\n    if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {\n        print(\"nothing selected on click\");\n        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {\n            this.el.get_selection().unselect_all();\n\n            return false;\n        });\n         _this.before_edit();\n        return false; //not on a element.\n    }\n    \n    \n     // right click.\n     if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1 && col.title == \"Name\") {    \n        // show popup!.   \n        \n \n         _this.before_edit();\n         \n         _this.keyrender.el.stop_editing(false);\n         _this.keyrender.el.editable  =false;\n    \n         _this.valrender.el.stop_editing(false);\n         _this.valrender.el.editable  =false;\n           \n          _this.startEditingKey(path); \n         \n        return false;\n    }\n    \n    \n    \n    \n     // right click.\n     if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    \n        // show popup!.   \n        //if (col.title == \"Value\") {\n         //     _this.before_edit();\n         //    return false;\n         //}\n\n        var p = _this.ContextMenu;\n\n        p.el.set_screen(Gdk.Screen.get_default());\n        p.el.show_all();\n        p.el.popup(null, null, null,  ev.button, ev.time);\n        //Seed.print(\"click:\" + res.column.title);\n        // select the \n        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {\n  \n            this.el.get_selection().select_path(path);\n            return false;\n        });\n         _this.before_edit();\n        return false;\n    }\n    \n     \n    if (col.title != \"Value\") {\n        print(\"col title != Value\");\n        \n        GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {\n            this.el.get_selection().select_path(path);\n            return false;\n        });\n        \n        _this.before_edit();\n          //  XObject.error(\"column is not value?\");\n        return false; // ignore.. - key click.. ??? should we do this??\n    }\n    \n    \n    // if the cell can be edited with a pulldown\n    // then we should return true... - and let the start_editing handle it?\n    \n    \n    \n    \n    \n      \n   //             _this.before_edit(); <<< we really need to stop the other editor..\n     _this.keyrender.el.stop_editing(false);\n    _this.keyrender.el.editable  =false;\n    \n           \n    return _this.startEditingValue(path); // assumes selected row..\n        \n   \n\n              \n   \n}"
        },
        "id" : "view",
-       "* init" : "{\n    var selection = this.el.get_selection();\n    selection.set_mode( Gtk.SelectionMode.SINGLE);\n\n\n    var description = new Pango.FontDescription();\n    description.set_size(8000);\n    this.el.modify_font(description);\n}\n",
+       "* init" : "{\n    var selection = this.el.get_selection();\n    selection.set_mode( Gtk.SelectionMode.SINGLE);\n\n\n    var description = new Pango.FontDescription();\n    description.set_size(10000);\n    this.el.modify_font(description);\n}\n",
        "tooltip_column" : 5,
        "xtype" : "TreeView",
        "$ enable_tree_lines" : true,
@@ -267,8 +267,8 @@
             "edited" : "  (path, newtext) => {\n        print(\"Keyrender  - signal:edited\\n\");\n    \n    this.el.editable = false;\n  \n \n\n        Gtk.TreeIter  iter;\n        _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));\n        GLib.Value gval;\n        \n         _this.model.el.get_value(iter,1, out gval);\n        var oldval = (string)gval;\n        \n         _this.model.el.get_value(iter,0, out gval);\n        var ktype = (string)gval;\n       \n        _this.model.el.set_value(iter, 1, newtext);\n        \n        if (oldval == newtext) {\n            return;\n        }\n        \n        \n        print(\"ktype: %s\\n\",ktype);\n        switch(ktype) {\n            case \"listener\":\n                var ov = _this.node.listeners.get(oldval);\n                _this.node.listeners.set(newtext, ov);\n                _this.node.listeners.remove(oldval);\n                \n                _this.updateIter(iter,  ktype, newtext, ov);\n                \n                break;\n            case \"props\":\n                var ov = _this.node.props.get(oldval);\n                _this.node.props.set(newtext, ov);\n                _this.node.props.remove(oldval);\n                _this.updateIter(iter,  ktype, newtext, ov);\n                break;\n         }\n         _this.changed();\n          \n}"
            },
            "id" : "keyrender",
-           "xtype" : "CellRendererText",
            "* pack" : "pack_start,false",
+           "xtype" : "CellRendererText",
            "$ xns" : "Gtk"
           }
          ]
@@ -288,8 +288,8 @@
             "edited" : "  (path, newtext) => {\n    print(\"Valrender  - signal:edited\\n\");\n  \n        this.el.editable = false;\n/*  \n m.set(iter, \n                0, \"listener\",\n                1, miter.get_key(),\n                2, \"<b>\" + miter.get_key() + \"</b>\",\n                3, miter.get_value(),\n                4, display_value(short);\n            ); \n\n  */      \n\n        Gtk.TreeIter  iter;\n        _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));\n        GLib.Value gval;\n        \n         _this.model.el.get_value(iter,0, out gval);\n        var ktype = (string)gval;\n        \n        \n         _this.model.el.get_value(iter,3, out gval);\n        var oldval = (string)gval;\n        \n         _this.model.el.get_value(iter,1, out gval);\n        var key = (string)gval;\n        \n         \n        \n        switch(ktype) {\n            case \"listener\":\n                _this.node.listeners.set(key, newtext);\n                _this.updateIter(iter,ktype,key,newtext);\n                break;\n            case \"props\":\n                _this.node.props.set(key,newtext);\n                _this.updateIter(iter,ktype, key,newtext);                \n                break;\n         }\n//         _this.load(_this.file,_this.node);\n         _this.changed();\n          \n}"
            },
            "id" : "valrender",
-           "* pack" : "pack_start,true",
            "xtype" : "CellRendererCombo",
+           "* pack" : "pack_start,true",
            "$ editable" : false,
            "$ has_entry" : true,
            "$ xns" : "Gtk",
@@ -298,8 +298,8 @@
            "items" : [
             {
              "id" : "valrendermodel",
-             "* pack" : false,
              "xtype" : "ListStore",
+             "* pack" : false,
              "$ columns" : "typeof(string)",
              "n_columns" : 1,
              "$ xns" : "Gtk",
@@ -311,8 +311,8 @@
         },
         {
          "id" : "ContextMenu",
-         "xtype" : "Menu",
          "* pack" : false,
+         "xtype" : "Menu",
          "$ xns" : "Gtk",
          "items" : [
           {
@@ -320,8 +320,8 @@
             "activate" : "  ( )  =>{\n  \n    var s = _this.view.el.get_selection();\n    Gtk.TreeIter iter;\n    Gtk.TreeModel model;\n    s.get_selected (out  model, out  iter);\n    _this.startEditingKey(model.get_path(iter));\n}"
            },
            "label" : "Edit",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "$ xns" : "Gtk"
           },
           {
@@ -334,8 +334,8 @@
             "activate" : "  ( )  =>{\n\t_this.deleteSelected();\n}"
            },
            "label" : "Delete",
-           "xtype" : "MenuItem",
            "* pack" : "append",
+           "xtype" : "MenuItem",
            "$ xns" : "Gtk"
           }
          ]
