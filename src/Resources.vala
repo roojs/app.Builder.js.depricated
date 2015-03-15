@@ -23,8 +23,11 @@ public class Resources : Object
      uint fetch_pos = 0;
      public void fetchStart()
      {
-          this.fetch_pos =0;
-         this.fetchNext();
+            if (this.fetch_pos > 0) { // only fetch one at a time...
+                return;
+            }
+            this.fetch_pos =0;
+            this.fetchNext();
          
      }
      public void fetchNext()
