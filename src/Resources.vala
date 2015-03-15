@@ -107,7 +107,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
                         "roodata.json",
                         (sess,msg) => {
-                                // See Palete.Gtk
+                                // See Palete.Roo
                                 this.updateProgress(0);
                                this.fetch_pos = 0;
                     });
