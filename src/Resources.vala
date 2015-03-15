@@ -17,8 +17,8 @@
 public class Resources : Object
 {
 
-public void fetchResourceFrom(string src, string target, Soup.SessionCallback? callback)
-{
+    public void fetchResourceFrom(string src, string target, Soup.SessionCallback? callback)
+    {
 		 
 		// fetch...
 		print("downloading %s \nto : %s\n", src,res);
