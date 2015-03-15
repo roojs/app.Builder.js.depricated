@@ -65,11 +65,10 @@ public class Resources : Object
                     });
                     break;
 
-            case 3: // Gir overrides - used to handle the fact we are not querying valadoc yet....and gir does
-                    // not map that well to vala...
+            case 3: // The main - what goes into what element structure..
                     this.fetchResourceFrom (
-                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
-                        "Gir.overides",
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
+                        "GtkUsage.txt",
                         (sess,msg) => {
                                 // See Palete.Gir
                                this.fetchNext();
