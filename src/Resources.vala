@@ -28,6 +28,7 @@ public class Resources : Object
     {
         var cur = this.fetch_pos;
         this.fetch_pos++;
+        this.updateProgress(cur);
         switch (cur) {
                case 0: // html for rendering Bootstrap apps.
                     this.fetchResourceFrom (
@@ -70,10 +71,20 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
                         "GtkUsage.txt",
                         (sess,msg) => {
-                                // See Palete.Gir
+                                // See Palete.Gtk
                                this.fetchNext();
                     });
-                    break;     )
+                    break;
+            case 3: // The main - what goes into what element structure..
+                    this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
+                        "GtkUsage.txt",
+                        (sess,msg) => {
+                                // See Palete.Gtk
+                               this.fetchNext();
+                    });
+                    break;     
+        }
 
     
     
