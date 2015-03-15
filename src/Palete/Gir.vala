@@ -853,9 +853,9 @@ namespace Palete {
 
 
 		}
-		public void loadOverrides()
+		public void loadOverrides(bool force = false)
 		{
-			if (overrides_loaded) {
+			if (overrides_loaded && ! force) {
 				return;
 			}
 		
