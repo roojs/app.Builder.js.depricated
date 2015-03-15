@@ -60,11 +60,21 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
                         "Gir.overides",
                         (sess,msg) => {
-                                
+                                // See Palete.Gir
                                this.fetchNext();
                     });
                     break;
-     )
+
+            case 3: // Gir overrides - used to handle the fact we are not querying valadoc yet....and gir does
+                    // not map that well to vala...
+                    this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
+                        "Gir.overides",
+                        (sess,msg) => {
+                                // See Palete.Gir
+                               this.fetchNext();
+                    });
+                    break;     )
 
     
     
