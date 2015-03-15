@@ -317,7 +317,7 @@ namespace Palete
 		}
 		this.map = cfg;
 
-        }
+   }
 
 	
 	  
