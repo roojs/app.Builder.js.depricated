@@ -5,7 +5,7 @@
  * 
  * The original code downloaded all the resources before it renders the main window
  * 
- * This is a bit annoying as although they do change quite a bit, it's not on every page load
+ * This is a bit annoying as although they do change quite a bit, it's not on every app start
  * 
  * So the Resource fetching behaviour should be a button on the File view page
  * That starts the refresh of the resources.
