@@ -29,7 +29,7 @@ public class Resources : Object
         var cur = this.fetch_pos;
         this.fetch_pos++;
         switch (cur) {
-               case 0: // html for rendering?
+               case 0: // html for rendering Bootstrap apps.
                     this.fetchResourceFrom (
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/bootstrap.builder.html",
                         "bootstrap.builder.html",
@@ -37,7 +37,21 @@ public class Resources : Object
                                this.fetchNext();
                     });
                     break;
-                   
+              case 1:
+                     this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.html",
+                        "roo.builder.html",
+                        (sess,msg) => {
+                               this.fetchNext();
+                    });
+                    break;
+                 this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.html",
+                        "roo.builder.html",
+                        (sess,msg) => {
+                               this.fetchNext();
+                    });
+                    break;
      )
 
     
@@ -87,7 +101,7 @@ public class Resources : Object
         session.queue_message (message, (sess, mess) => {
 
             FileUtils.set_contents(
-               configDirectory() + "/resources/" + res,
+               Application.configDirectory() + "/resources/" + res,
                  (string) message.response_body.data
             );
                 
