@@ -67,6 +67,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.js",
                         "roo.builder.js",
                         (sess,msg) => {
+                            // should trigger a redraw on a the webkit if it's live...
                                this.fetchNext();
                     });
                     break;
