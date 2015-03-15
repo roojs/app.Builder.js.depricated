@@ -57,8 +57,8 @@ public class Resources : Object
             case 3: // Gir overrides - used to handle the fact we are not querying valadoc yet....and gir does
                     // not map that well to vala...
                     this.fetchResourceFrom (
-                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.js",
-                        "roo.builder.js",
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
+                        "Gir.overides",
                         (sess,msg) => {
                                 
                                this.fetchNext();
