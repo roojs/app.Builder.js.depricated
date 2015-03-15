@@ -78,7 +78,7 @@ public class Resources : Object
                         "Gir.overides",
                         (sess,msg) => {
                                 (new Palete.GirObject()).loadOverides(true);
-                                // See Palete.Gir
+                                
                                this.fetchNext();
                     });
                     break;
