@@ -82,7 +82,7 @@ public class Resources : Object
                     });
                     break;
 
-            case 3: // The main - what goes into what element structure..
+            case 4: // The main - what goes into what element structure..
                     this.fetchResourceFrom (
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
                         "GtkUsage.txt",
@@ -91,13 +91,14 @@ public class Resources : Object
                                this.fetchNext();
                     });
                     break;
-            case 3: // The main - what goes into what element structure..
+            case 5: // The main - what goes into what element structure..
                     this.fetchResourceFrom (
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
                         "GtkUsage.txt",
                         (sess,msg) => {
                                 // See Palete.Gtk
-                               this.fetchNext();
+                                this.updateProgress(0);
+                               this.fetch_pos = 0;
                     });
                     break;     
         }
