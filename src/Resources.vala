@@ -82,7 +82,7 @@ public class Resources : Object
                     });
                     break;
 
-            case 4: // The main - what goes into what element structure..
+            case 4: // The main gtk tree rules 
                     this.fetchResourceFrom (
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
                         "GtkUsage.txt",
@@ -91,17 +91,27 @@ public class Resources : Object
                                this.fetchNext();
                     });
                     break;
-            case 5: // The main - what goes into what element structure..
+            case 5: // The main roo tree rules 
                     this.fetchResourceFrom (
-                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/GtkUsage.txt",
-                        "GtkUsage.txt",
+                        "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/RooUsage.txt",
+                        "RooUsage.txt",
+                        (sess,msg) => {
+                                // See Palete.Roo
+                                this.fetchNext();
+                    });
+                    break;     
+          case 6: // The docs / types for Roojs - it's already in roojs if checked out..??
+                    // we might be better just checking if roojs is set up configured.
+                    
+                    this.fetchResourceFrom (
+                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
+                        "roodata.json"",
                         (sess,msg) => {
                                 // See Palete.Gtk
                                 this.updateProgress(0);
                                this.fetch_pos = 0;
                     });
-                    break;     
-        }
+                    break;  }
 
     
     
