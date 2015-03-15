@@ -97,7 +97,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/RooUsage.txt",
                         "RooUsage.txt",
                         (sess,msg) => {
-                                // See Palete.Roo
+                                Palete factory("Gtk").load();
                                 this.fetchNext();
                     });
                     break;     
@@ -109,6 +109,7 @@ public class Resources : Object
                         "roodata.json",
                         (sess,msg) => {
                                 // See Palete.Roo
+                            Palete factory("Roo").load();
                                 this.updateProgress(0);
                                this.fetch_pos = 0;
                     });
