@@ -81,6 +81,7 @@ namespace Palete
         {
             // nothing?
 		this.map = null;
+		this.classes = null;
         }
         
         
