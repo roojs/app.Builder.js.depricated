@@ -2181,13 +2181,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                    Xcls_MainWindow.singleton().no_windows++;
-                    var w = new Xcls_MainWindow();
-                    w.ref();
-            
-                    w.el.show_all();
-                    w.initChildren();
-                    w.windowstate.switchState(WindowState.State.FILES);
+                     About.singleton().el.show();
             });
         }
 
