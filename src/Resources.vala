@@ -110,10 +110,10 @@ public class Resources : Object
                         "roodata.json",
                         (sess,msg) => {
                                 // See Palete.Roo
-                            Palete/factory("Roo").classes. = null;
-                            Palete factory("Roo").load();
-                                this.updateProgress(0);
-                               this.fetch_pos = 0;
+                            Palete.factory("Roo").classes  = null;
+                            Palete.factory("Roo").load();
+                            this.updateProgress(0);
+                           this.fetch_pos = 0;
                     });
                     break;  
         }
@@ -173,4 +173,5 @@ public class Resources : Object
         });
 		     
 
-	}
+    }
+}
