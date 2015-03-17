@@ -54,7 +54,7 @@ public class Resources : Object
                                this.fetchNext();
                     });
                     break;
-              case 1:
+              case 1:// html for rendering Roo apps.
                      this.fetchResourceFrom (
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/roo.builder.html",
                         "roo.builder.html",
