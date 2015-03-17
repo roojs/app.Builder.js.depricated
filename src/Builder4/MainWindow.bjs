@@ -560,7 +560,7 @@
                    "items" : [
                     {
                      "xtype" : "Image",
-                     "utf8 icon_name" : "window-new",
+                     "utf8 icon_name" : "go-bottom",
                      "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
