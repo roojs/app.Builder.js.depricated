@@ -587,7 +587,7 @@
                    "listeners" : {
                     "clicked" : "  ( ) => {\n         About.singleton().el.show();\n}"
                    },
-                   "utf8 tooltip_text" : "Open New Window",
+                   "utf8 tooltip_text" : "About the builder",
                    "* pack" : false,
                    "xtype" : "Button",
                    "width_request" : 50,
