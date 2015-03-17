@@ -159,9 +159,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "xtype" : "Image",
                      "utf8 icon_name" : "go-previous",
                      "* pack" : "set_image",
+                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -195,9 +195,9 @@
                    "$ tooltop_text" : "\"Open File\"",
                    "items" : [
                     {
-                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "document-open",
+                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -231,9 +231,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "utf8 icon_name" : "document-properties",
                      "* pack" : "set_image",
                      "xtype" : "Image",
+                     "utf8 icon_name" : "document-properties",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -267,9 +267,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "xtype" : "Image",
                      "utf8 icon_name" : "emblem-system",
                      "* pack" : "set_image",
+                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -307,9 +307,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "list-add",
+                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -343,9 +343,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "utf8 icon_name" : "format-justify-left",
                      "* pack" : "set_image",
                      "xtype" : "Image",
+                     "utf8 icon_name" : "format-justify-left",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -379,9 +379,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "xtype" : "Image",
                      "utf8 icon_name" : "appointment-new",
                      "* pack" : "set_image",
+                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -415,9 +415,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "utf8 icon_name" : "folder-new",
                      "* pack" : "set_image",
                      "xtype" : "Image",
+                     "utf8 icon_name" : "folder-new",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -451,9 +451,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "document-new",
+                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -487,9 +487,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "utf8 icon_name" : "user-trash",
                      "* pack" : "set_image",
                      "xtype" : "Image",
+                     "utf8 icon_name" : "user-trash",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -523,9 +523,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
-                     "utf8 icon_name" : "window-new",
                      "* pack" : "set_image",
                      "xtype" : "Image",
+                     "utf8 icon_name" : "window-new",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -551,17 +551,17 @@
                    "listeners" : {
                     "clicked" : " ( ) => {\n         Resources.singleton().fetchStart();\n}"
                    },
-                   "utf8 tooltip_text" : "Open New Window",
                    "* pack" : false,
                    "xtype" : "Button",
                    "width_request" : 50,
                    "$ xns" : "Gtk",
+                   "$ utf8 tooltip_text" : "Update Resourse\\nlike the object tree and object properties",
                    "height_request" : 50,
                    "items" : [
                     {
-                     "xtype" : "Image",
                      "utf8 icon_name" : "go-bottom",
                      "* pack" : "set_image",
+                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
