@@ -535,7 +535,7 @@
                ]
               },
               {
-               "id" : "new_window",
+               "id" : "reload_resources",
                "* init" : "this.el.set_size(50,50);",
                "xtype" : "Actor",
                "* pack" : "add_child",
