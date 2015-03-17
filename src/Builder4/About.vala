@@ -43,7 +43,7 @@ public class About : Object
     }
 
     // user defined functions 
-    public    void show_all () {
+    public    void show () {
         this.el.show_all();
     }
 }
