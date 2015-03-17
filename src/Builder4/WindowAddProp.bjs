@@ -39,6 +39,7 @@
       },
       {
        "id" : "namecol",
+       "utf8 title" : "Double click to add",
        "* init" : "  this.el.add_attribute(_this.namerender.el , \"markup\", 4  );\n \n",
        "xtype" : "TreeViewColumn",
        "* pack" : "append_column",

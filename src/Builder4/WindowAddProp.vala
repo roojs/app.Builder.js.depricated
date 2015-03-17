@@ -198,6 +198,7 @@ typeof(string) // 5 element type (event|prop)
             // my vars (dec)
 
             // set gobject values
+            this.el.title = "Double click to add";
             var child_0 = new Xcls_namerender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
