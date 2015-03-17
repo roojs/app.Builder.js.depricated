@@ -78,7 +78,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
                         "Gir.overides",
                         (sess,msg) => {
-                                (new Palete.Gir.factory("Gtk").loadOverides(true);
+                                 Palete.Gir.factory("Gtk").loadOverides(true);
                                 
                                this.fetchNext();
                     });
