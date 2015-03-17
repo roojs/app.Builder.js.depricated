@@ -35,8 +35,8 @@ builder_PKGS = \
 		--pkg  libxml-2.0 \
 		--pkg json-glib-1.0 \
 		--pkg gee-1.0 \
-		--pkg gobject-introspection-1.0 \ 
-		--pkg webkit2gtk-4.0 \
+		--pkg gobject-introspection-1.0 \
+		--pkg webkit2gtk-3.0 \
 		--pkg clutter-gtk-1.0 \
 		--pkg gladeui-2.0 \
 		--pkg libsoup-2.4 \
@@ -88,7 +88,8 @@ builder_SOURCES = \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
-		Builder4/FakeServer.vala
+		Builder4/FakeServer.vala \ 
+		Builder4/Resources.vala 
 
 
 builder_VALAFLAGS = \
