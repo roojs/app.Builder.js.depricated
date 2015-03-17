@@ -2011,7 +2011,7 @@ public class Xcls_MainWindow : Object
                     this.el.show();
                     var cid = this.el.get_context_id("resources");
                     this.el.remove_all(cid);
-                    this.el.push(cid,"Fetching Resource : %d/6".print(pos));
+                    this.el.push(cid,"Fetching Resource : %s/6".printf(pos.to_string()));
                  });
             }
         }

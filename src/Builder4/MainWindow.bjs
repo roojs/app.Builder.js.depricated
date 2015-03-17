@@ -544,7 +544,7 @@
       },
       {
        "id" : "statusbar",
-       "* init" : "{\n     Resources.singleton().updateProgress.connect((pos) => {\n        if (pos < 1) {\n            this.el.hide();\n            return;\n        }\n        this.el.show();\n        var cid = this.el.get_context_id(\"resources\");\n        this.el.remove_all(cid);\n        this.el.push(cid,\"Fetching Resource : %d/6\".print(pos));\n     });\n}\n",
+       "* init" : "{\n     Resources.singleton().updateProgress.connect((pos) => {\n        if (pos < 1) {\n            this.el.hide();\n            return;\n        }\n        this.el.show();\n        var cid = this.el.get_context_id(\"resources\");\n        this.el.remove_all(cid);\n        this.el.push(cid,\"Fetching Resource : %s/6\".printf(pos.to_string()));\n     });\n}\n",
        "xtype" : "Statusbar",
        "* pack" : "pack_end,false,true,0",
        "$ xns" : "Gtk"
