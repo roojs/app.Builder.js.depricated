@@ -280,6 +280,7 @@ public class Xcls_RightPalete : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.title = "Drag to add Object";
             var child_0 = new Xcls_txtrender( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );

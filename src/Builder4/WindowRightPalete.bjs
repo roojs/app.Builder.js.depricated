@@ -55,6 +55,7 @@
            "$ xns" : "Gtk"
           },
           {
+           "utf8 title" : "Drag to add Object",
            "* init" : " this.el.add_attribute(_this.txtrender.el , \"markup\", 0 );\n \n",
            "* pack" : "append_column",
            "xtype" : "TreeViewColumn",
