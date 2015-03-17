@@ -89,7 +89,7 @@ builder_SOURCES = \
 		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
-		Builder4/Resources.vala 
+		Resources.vala 
 
 
 builder_VALAFLAGS = \
