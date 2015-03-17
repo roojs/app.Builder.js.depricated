@@ -78,7 +78,7 @@ public class Resources : Object
                         "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/Gir.overides",
                         "Gir.overides",
                         (sess,msg) => {
-                                (new Palete.GirObject()).loadOverides(true);
+                                (new Palete.Gir.factory("Gtk").loadOverides(true);
                                 
                                this.fetchNext();
                     });
@@ -139,7 +139,8 @@ public class Resources : Object
 		for (var i = 0; i < res.length; i++ ) { 
 			
 			if (!FileUtils.test(
-				Application.configDirectory() + "/resources/"  + res[i], FileTest.EXISTS
+				BuilderApplication.configDirectory() + "/resources/"  + res[i],
+				FileTest.EXISTS
 				)) {
 				needsload = true;
 			}
@@ -158,14 +159,14 @@ public class Resources : Object
     {
 		 
 		// fetch...
-		print("downloading %s \nto : %s\n", src,res);
+		print("downloading %s \nto : %s\n", src,target);
 		var session = new Soup.Session ();
 		session.user_agent = "App Builder ";
 	    var message = new Soup.Message ("GET",  src );
         session.queue_message (message, (sess, mess) => {
 
             FileUtils.set_contents(
-               Application.configDirectory() + "/resources/" + res,
+               BuilderApplication.configDirectory() + "/resources/" + target,
                  (string) message.response_body.data
             );
                 
