@@ -138,11 +138,17 @@ public class Resources : Object
 			
 			for (var i = 0; i < res.length; i++ ) { 
 				
-				
-				
-				this.fetchResource(res[i], force);
+				if (!FileUtils.test(
+					Application.configDirectory() + "/resources/"  + res[i],FileTest.EXISTS
+					)) {
+					needsload = true;
+				}
 			}
-		 
+			if (!needsload) {
+				return;
+			}
+			this.fetchStart();
+	 }
 		 
 			
 
