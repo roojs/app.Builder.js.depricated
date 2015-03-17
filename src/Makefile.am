@@ -88,7 +88,7 @@ builder_SOURCES = \
 		Builder4/ValaProjectSettings.vala \
 		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
-		Builder4/FakeServer.vala \ 
+		Builder4/FakeServer.vala \
 		Builder4/Resources.vala 
 
 
