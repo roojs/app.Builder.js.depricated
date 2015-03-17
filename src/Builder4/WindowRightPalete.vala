@@ -108,7 +108,8 @@ public class Xcls_RightPalete : Object
             // init method 
 
             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-               this.el.set_size_request(-1,200);        }
+               this.el.set_size_request(-1,200);
+        }
 
         // user defined functions 
     }
@@ -131,7 +132,7 @@ public class Xcls_RightPalete : Object
 
             // set gobject values
             this.el.enable_tree_lines = true;
-            this.el.headers_visible = false;
+            this.el.headers_visible = true;
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
@@ -168,6 +169,7 @@ public class Xcls_RightPalete : Object
                // Gtk.drag_source_add_text_targets(this.el); 
              
             }
+
             // listeners 
             this.el.button_press_event.connect( ( event) => {
             
@@ -284,7 +286,8 @@ public class Xcls_RightPalete : Object
 
             // init method 
 
-            this.el.add_attribute(_this.txtrender.el , "markup", 0 );        }
+            this.el.add_attribute(_this.txtrender.el , "markup", 0 );
+        }
 
         // user defined functions 
     }
