@@ -808,7 +808,7 @@ public class WindowState : Object
         this.win.addfilebutton.el.hide();
         this.win.delprojectbutton.el.hide();
         this.win.new_window.el.hide();
-
+        this.win.reload_resources.el.hide();
         
         switch (this.state) {
             
@@ -849,6 +849,7 @@ public class WindowState : Object
                 this.win.addfilebutton.el.show();
                 this.win.delprojectbutton.el.show();
                 this.win.new_window.el.show();
+                this.win.reload_resources.el.show();
                 break;
         }
 
