@@ -124,6 +124,26 @@ public class Resources : Object
    
 
 	 }
+	 public void checkResources()
+	 {
+		    bool needsload = false;
+		    string[] res = { 
+				"bootstrap.builder.html",
+				"roo.builder.html",
+				"roo.builder.js",
+				"Gir.overides",
+				"RooUsage.txt",
+				"GtkUsage.txt"
+			};
+			
+			for (var i = 0; i < res.length; i++ ) { 
+				
+				
+				
+				this.fetchResource(res[i], force);
+			}
+		 
+		 
 			
 
 
