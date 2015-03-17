@@ -17,7 +17,7 @@
 public class Resources : Object
 {
 
-     delegate void updateProgress(uint cur_pos);
+     public signal void updateProgress(uint cur_pos);
 
      static Resources singleton_val;
      static Resources singleton()
