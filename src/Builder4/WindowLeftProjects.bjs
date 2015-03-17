@@ -52,6 +52,7 @@
          "$ xns" : "Gtk"
         },
         {
+         "utf8 title" : "Projects",
          "* init" : "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 0  );\n ",
          "* pack" : "append_column",
          "xtype" : "TreeViewColumn",
