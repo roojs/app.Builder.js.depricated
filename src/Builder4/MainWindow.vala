@@ -85,6 +85,8 @@ public class Xcls_MainWindow : Object
            
             //this.hideViewEditing();
             _this.statusbar.el.hide();
+            Resources.singleton().checkResources();
+            
         });
     }
 

@@ -10,7 +10,7 @@
    "listeners" : {
     "delete_event" : "  (   event) => {\n    return false;\n}",
     "destroy" : "() =>  {\n Xcls_MainWindow.singleton().no_windows--;\n \n if (Xcls_MainWindow.singleton().no_windows < 1) {\n\n     Gtk.main_quit();\n }\n}",
-    "show" : "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n    _this.statusbar.el.hide();\n}"
+    "show" : "  ( ) => {\n    // hide the file editing..\n   \n    //this.hideViewEditing();\n    _this.statusbar.el.hide();\n    Resources.singleton().checkResources();\n    \n}"
    },
    "id" : "MainWindow",
    "default_width" : 800,
