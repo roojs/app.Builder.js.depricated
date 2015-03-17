@@ -140,7 +140,8 @@ public class Xcls_WindowLeftProjects : Object
 
             // init method 
 
-            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        }
 
         // user defined functions 
     }
@@ -163,7 +164,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // set gobject values
             this.el.enable_tree_lines = true;
-            this.el.headers_visible = false;
+            this.el.headers_visible = true;
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
@@ -179,6 +180,7 @@ public class Xcls_WindowLeftProjects : Object
                                 
                 var selection = this.el.get_selection();
                 selection.set_mode( Gtk.SelectionMode.SINGLE);
+
             // listeners 
             this.el.cursor_changed.connect( () => {
                 if (_this.is_loading) {
@@ -239,7 +241,8 @@ public class Xcls_WindowLeftProjects : Object
                }); 
             
             
-            }        }
+            }
+        }
 
         // user defined functions 
     }
@@ -266,7 +269,8 @@ public class Xcls_WindowLeftProjects : Object
 
             // init method 
 
-            this.el.add_attribute(_this.namecol.el , "markup", 0  );        }
+            this.el.add_attribute(_this.namecol.el , "markup", 0  );
+        }
 
         // user defined functions 
     }
