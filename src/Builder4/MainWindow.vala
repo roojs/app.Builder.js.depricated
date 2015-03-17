@@ -36,6 +36,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
     public Xcls_new_window new_window;
+    public Xcls_new_window new_window;
     public Xcls_statusbar statusbar;
 
         // my vars (def)
@@ -624,6 +625,9 @@ public class Xcls_MainWindow : Object
             var child_11 = new Xcls_new_window( _this );
             child_11.ref();
             this.el.add_child (  child_11.el  );
+            var child_12 = new Xcls_new_window( _this );
+            child_12.ref();
+            this.el.add_child (  child_12.el  );
 
             // init method 
 
@@ -1981,6 +1985,122 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
+    public class Xcls_new_window : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_new_window(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.new_window = this;
+            this.el = new Clutter.Actor();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_Actor62( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            // init method 
+
+            this.el.set_size(50,50);
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Actor62 : Object 
+    {
+        public GtkClutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Actor62(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new GtkClutter.Actor();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_Button63( _this );
+            child_0.ref();
+
+            // init method 
+
+            ((Gtk.Container)(this.el.get_widget())).add ( child_0.el);
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button63 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button63(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.width_request = 50;
+            this.el.height_request = 50;
+            this.el.tooltip_text = "Open New Window";
+            var child_0 = new Xcls_Image64( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.clicked.connect( ( ) => {
+                    Xcls_MainWindow.singleton().no_windows++;
+                    var w = new Xcls_MainWindow();
+                    w.ref();
+            
+                    w.el.show_all();
+                    w.initChildren();
+                    w.windowstate.switchState(WindowState.State.FILES);
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Image64 : Object 
+    {
+        public Gtk.Image el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Image64(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "window-new";
+        }
+
+        // user defined functions 
+    }
     public class Xcls_statusbar : Object 
     {
         public Gtk.Statusbar el;
@@ -2006,12 +2126,16 @@ public class Xcls_MainWindow : Object
                  Resources.singleton().updateProgress.connect((pos) => {
                     if (pos < 1) {
                         this.el.hide();
+                        _this.mainpane.el.set_sensitive(true);
+                        
                         return;
                     }
+                     _this.mainpane.el.set_sensitive(false);
+                       
                     this.el.show();
                     var cid = this.el.get_context_id("resources");
                     this.el.remove_all(cid);
-                    this.el.push(cid,"Fetching Resource : %s/6".printf(pos.to_string()));
+                    this.el.push(cid,"Fetching Resource : %s/7".printf(pos.to_string()));
                  });
             }
         }
