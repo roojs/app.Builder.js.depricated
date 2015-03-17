@@ -1997,6 +1997,16 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+
+            // init method 
+
+            {
+                 Resources.singleton().updateProgress.connect((pos) => {
+                    var cid = this.el.get_context_id("resources");
+                    this.el.remove_all(cid);
+                    this.el.push(cid,"Fetching Resource : %d".print(pos));
+                 });
+            }
         }
 
         // user defined functions 

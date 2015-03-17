@@ -544,6 +544,7 @@
       },
       {
        "id" : "statusbar",
+       "* init" : "{\n     Resources.singleton().updateProgress.connect((pos) => {\n        var cid = this.el.get_context_id(\"resources\");\n        this.el.remove_all(cid);\n        this.el.push(cid,\"Fetching Resource : %d\".print(pos));\n     });\n}\n",
        "xtype" : "Statusbar",
        "* pack" : "pack_end,false,true,0",
        "$ xns" : "Gtk"
