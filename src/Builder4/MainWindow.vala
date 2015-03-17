@@ -2004,7 +2004,7 @@ public class Xcls_MainWindow : Object
                  Resources.singleton().updateProgress.connect((pos) => {
                     var cid = this.el.get_context_id("resources");
                     this.el.remove_all(cid);
-                    this.el.push(cid,"Fetching Resource : %d".print(pos));
+                    this.el.push(cid,"Fetching Resource : %d/6".print(pos));
                  });
             }
         }
