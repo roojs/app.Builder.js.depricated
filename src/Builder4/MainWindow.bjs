@@ -499,42 +499,6 @@
                ]
               },
               {
-               "id" : "new_window",
-               "* init" : "this.el.set_size(50,50);",
-               "xtype" : "Actor",
-               "* pack" : "add_child",
-               "$ xns" : "Clutter",
-               "items" : [
-                {
-                 "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
-                 "xtype" : "Actor",
-                 "$ xns" : "GtkClutter",
-                 "items" : [
-                  {
-                   "listeners" : {
-                    "clicked" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}"
-                   },
-                   "utf8 tooltip_text" : "Open New Window",
-                   "* pack" : false,
-                   "xtype" : "Button",
-                   "width_request" : 50,
-                   "$ xns" : "Gtk",
-                   "height_request" : 50,
-                   "items" : [
-                    {
-                     "utf8 icon_name" : "window-new",
-                     "* pack" : "set_image",
-                     "xtype" : "Image",
-                     "$ xns" : "Gtk"
-                    }
-                   ]
-                  }
-                 ]
-                }
-               ]
-              },
-              {
                "id" : "reload_resources",
                "* init" : "this.el.set_size(50,50);",
                "xtype" : "Actor",
@@ -562,6 +526,42 @@
                      "xtype" : "Image",
                      "utf8 icon_name" : "go-bottom",
                      "* pack" : "set_image",
+                     "$ xns" : "Gtk"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id" : "new_window",
+               "* init" : "this.el.set_size(50,50);",
+               "xtype" : "Actor",
+               "* pack" : "add_child",
+               "$ xns" : "Clutter",
+               "items" : [
+                {
+                 "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
+                 "* pack" : "add_child",
+                 "xtype" : "Actor",
+                 "$ xns" : "GtkClutter",
+                 "items" : [
+                  {
+                   "listeners" : {
+                    "clicked" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}"
+                   },
+                   "utf8 tooltip_text" : "Open New Window",
+                   "* pack" : false,
+                   "xtype" : "Button",
+                   "width_request" : 50,
+                   "$ xns" : "Gtk",
+                   "height_request" : 50,
+                   "items" : [
+                    {
+                     "utf8 icon_name" : "window-new",
+                     "* pack" : "set_image",
+                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]

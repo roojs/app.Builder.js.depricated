@@ -35,8 +35,8 @@ public class Xcls_MainWindow : Object
     public Xcls_addprojectbutton addprojectbutton;
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
-    public Xcls_new_window new_window;
     public Xcls_reload_resources reload_resources;
+    public Xcls_new_window new_window;
     public Xcls_statusbar statusbar;
 
         // my vars (def)
@@ -622,10 +622,10 @@ public class Xcls_MainWindow : Object
             var child_10 = new Xcls_delprojectbutton( _this );
             child_10.ref();
             this.el.add_child (  child_10.el  );
-            var child_11 = new Xcls_new_window( _this );
+            var child_11 = new Xcls_reload_resources( _this );
             child_11.ref();
             this.el.add_child (  child_11.el  );
-            var child_12 = new Xcls_reload_resources( _this );
+            var child_12 = new Xcls_new_window( _this );
             child_12.ref();
             this.el.add_child (  child_12.el  );
 
@@ -1869,7 +1869,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_new_window : Object 
+    public class Xcls_reload_resources : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1878,10 +1878,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_new_window(Xcls_MainWindow _owner )
+        public Xcls_reload_resources(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.new_window = this;
+            _this.reload_resources = this;
             this.el = new Clutter.Actor();
 
             // my vars (dec)
@@ -1944,20 +1944,14 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
-            this.el.tooltip_text = "Open New Window";
+            this.el.tooltip_text = "Download latest resourse files\nlike the object tree and object properties";
             var child_0 = new Xcls_Image60( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                    Xcls_MainWindow.singleton().no_windows++;
-                    var w = new Xcls_MainWindow();
-                    w.ref();
-            
-                    w.el.show_all();
-                    w.initChildren();
-                    w.windowstate.switchState(WindowState.State.FILES);
+                     Resources.singleton().fetchStart();
             });
         }
 
@@ -1980,12 +1974,12 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "window-new";
+            this.el.icon_name = "go-bottom";
         }
 
         // user defined functions 
     }
-    public class Xcls_reload_resources : Object 
+    public class Xcls_new_window : Object 
     {
         public Clutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -1994,10 +1988,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_reload_resources(Xcls_MainWindow _owner )
+        public Xcls_new_window(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.reload_resources = this;
+            _this.new_window = this;
             this.el = new Clutter.Actor();
 
             // my vars (dec)
@@ -2060,14 +2054,20 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.width_request = 50;
             this.el.height_request = 50;
-            this.el.tooltip_text = "Download latest resourse files\nlike the object tree and object properties";
+            this.el.tooltip_text = "Open New Window";
             var child_0 = new Xcls_Image64( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                     Resources.singleton().fetchStart();
+                    Xcls_MainWindow.singleton().no_windows++;
+                    var w = new Xcls_MainWindow();
+                    w.ref();
+            
+                    w.el.show_all();
+                    w.initChildren();
+                    w.windowstate.switchState(WindowState.State.FILES);
             });
         }
 
@@ -2090,7 +2090,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "go-bottom";
+            this.el.icon_name = "window-new";
         }
 
         // user defined functions 
