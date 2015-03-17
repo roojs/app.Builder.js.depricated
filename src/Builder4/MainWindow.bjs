@@ -555,7 +555,7 @@
                    "xtype" : "Button",
                    "width_request" : 50,
                    "$ xns" : "Gtk",
-                   "$ utf8 tooltip_text" : "Update Resourse\\nlike the object tree and object properties",
+                   "$ utf8 tooltip_text" : "\"Update Resourse\\nlike the object tree and object properties\"",
                    "height_request" : 50,
                    "items" : [
                     {
