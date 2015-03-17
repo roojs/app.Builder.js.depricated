@@ -75,7 +75,7 @@ namespace Palete
 
 	public Gee.ArrayList<Usage> map;
 
-	Gee.HashMap<string,GirObject> classes; // used in roo.. 
+	public Gee.HashMap<string,GirObject> classes; // used in roo.. 
 	
         public Palete()
         {
