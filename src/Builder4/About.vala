@@ -43,7 +43,9 @@ public class About : Object
     }
 
     // user defined functions 
-    public    void show () {
-        this.el.show_all();
+    public    void show (Gtk.Window parent) {
+        this.el.set_transient_for(parent);
+        this.el.modal = true;
+        this.el.show();
     }
 }
