@@ -597,7 +597,7 @@
                     {
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "window-new",
+                     "utf8 icon_name" : "help-about",
                      "$ xns" : "Gtk"
                     }
                    ]
