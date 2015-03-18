@@ -131,7 +131,7 @@ namespace Palete {
 			     JSCore.Value exa;
 			  JSCore.Value exb;
 			unowned JSCore.Value exc;
-			 unowned JSCore.Value exd;
+			   JSCore.Value exd;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
