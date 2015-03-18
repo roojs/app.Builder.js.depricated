@@ -114,8 +114,14 @@ namespace Palete {
 		 * then a method is called, with a string argument (json encoded)
 		 * 
 		 */
-		void executeFile(string filename, string method, string json)
+		void executeFile(string fname, string method, string json)
 		{
+			string file_data;
+			if (!FileUtils.test (fname, FileTest.EXISTS)) {
+				throw new JavascriptError.MISSING_FILE(fname + " not found");
+			}
+		
+			FileUtils.get_contents(fname, out file_data);
 			
 			var jfile_data new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
