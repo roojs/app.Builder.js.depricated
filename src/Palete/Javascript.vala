@@ -134,7 +134,7 @@ namespace Palete {
 			var ctx = new JSCore.GlobalContext(goc);
 			var othis = ctx.get_global_object();
 			
-			var val = ctx.evaluate_script (
+			var eval = ctx.evaluate_script (
 						jfile_data,
 						othis,
 						null,
