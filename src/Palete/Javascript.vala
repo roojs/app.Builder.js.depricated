@@ -164,10 +164,10 @@ namespace Palete {
 			 
 		     // this will never work, as we can not create arrays of Values - due to no 
 		     // free function being available..
-			 var args =  new JSCore.Value[1] ;
-			 args[0] = new JSCore.Value.string(ctx,json_args) ;
+			 //var args =  new JSCore.Value[1] ;
+			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
-			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, args, out exd);
+			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 
 			
 		}
