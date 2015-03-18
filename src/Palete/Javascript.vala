@@ -115,7 +115,7 @@ namespace Palete {
 		 * then a method is called, with a string argument (json encoded)
 		 * 
 		 */
-		public void executeFile(string fname, string method, string js_data)
+		public void executeFile(string fname, string call_method, string js_data)
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {
@@ -125,7 +125,7 @@ namespace Palete {
 			FileUtils.get_contents(fname, out file_data);
 			
 			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
-			var jmethod = new JSCore.String.with_utf8_c_string(method);
+			var jmethod = new JSCore.String.with_utf8_c_string(call_method);
 			var json_args = new JSCore.String.with_utf8_c_string(js_data);
 			
 			     JSCore.Value exa;
@@ -147,27 +147,27 @@ namespace Palete {
 			
 			
 			if (!othis.has_property(ctx,jmethod)) {
-				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", method);
+				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", call_method);
 				return;
 			}
 			
 			var val =  othis.get_property (ctx, jmethod, out exb);
 			
 			if (!val.is_object(ctx)) {
-				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", method);
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", call_method);
 			}
 			var oval = val.to_object(ctx, out exc);
 			
 			if (!oval.is_function(ctx)) {
-				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
 			}
-			  JSCore.Value[] args = {};
-			args += new JSCore.Value.string(ctx,json_args);
 			 
-			unowned JSCore.Value res = oval.call_as_function(ctx, othis, args, out exd);
-			
-			
-			
+		     
+			 var args =  new JSCore.Value[1] ;
+			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
+			 
+			 //unowned JSCore.Value res = oval.call_as_function(ctx, othis, args, out exd);
+
 			
 		}
 		
