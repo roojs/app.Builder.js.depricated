@@ -148,14 +148,20 @@ namespace Palete {
 				return;
 			}
 			
-			var val =  othis.get_property (ctx, jmethod, out ex); 
-			if (!val.is_function(ctx)) {
+			var val =  othis.get_property (ctx, jmethod, out ex);
+			
+			if (!val.is_object(ctx)) {
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", method);
+			}
+			var oval = val.to_object();
+			
+			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
 			}
 			JSCore.Value[] args = {};
 			args += json_args;
 			 
-			var res = val.call_as_function(ctx, othis, args, out ex);
+			var res = oval.call_as_function(ctx, othis, args, out ex);
 			
 			
 			
