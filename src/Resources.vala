@@ -20,7 +20,7 @@ public class Resources : Object
      public signal void updateProgress(uint cur_pos);
 
      static Resources singleton_val;
-     static Resources singleton()
+     public static Resources singleton()
      {
         if (singleton_val != null) {
             singleton_val = new Resources();
