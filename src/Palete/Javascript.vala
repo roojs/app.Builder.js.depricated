@@ -139,7 +139,7 @@ namespace Palete {
 						null,
 		                0,
 		                ex
-					);
+				);
 			
 			
 			if (!othis.has_property(ctx,jmethod)) {
