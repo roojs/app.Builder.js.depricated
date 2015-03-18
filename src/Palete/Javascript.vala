@@ -131,6 +131,7 @@ namespace Palete {
 			JSCore.Value exa;
 			JSCore.Value exb;
 			JSCore.Value exc;
+			JSCore.Value exd;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
@@ -163,7 +164,7 @@ namespace Palete {
 			JSCore.Value[] args = {};
 			args += new JSCore.Value.string(ctx,json_args);
 			 
-			var res = oval.call_as_function(ctx, othis, args, out ex);
+			var res = oval.call_as_function(ctx, othis, args, out exd);
 			
 			
 			
