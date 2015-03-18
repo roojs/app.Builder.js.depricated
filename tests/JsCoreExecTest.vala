@@ -3,7 +3,7 @@
 
  
 int main (string[] args) {
-	 var js = Javascript.singleton();
+	 var js = Palete.Javascript.singleton();
 	 js.executeFile("/home/alan/gitlive/app.Builder.js/tests/hello.js", 
 			"hello", "{}");
 	  
