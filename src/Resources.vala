@@ -22,7 +22,7 @@ public class Resources : Object
      static Resources singleton_val;
      public static Resources singleton()
      {
-        if (singleton_val != null) {
+        if (singleton_val == null) {
             singleton_val = new Resources();
         }
         return singleton_val;
