@@ -126,7 +126,7 @@ namespace Palete {
 			
 			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
-			var json_args = new JSCore.String.with_utf8_c_string(json);
+			JSCore.Value json_args = new JSCore.String.with_utf8_c_string(json);
 			
 			JSCore.Value ex;
 			
