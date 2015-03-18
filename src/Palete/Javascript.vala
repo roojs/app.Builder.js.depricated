@@ -166,7 +166,7 @@ namespace Palete {
 			 var args =  new JSCore.Value[1] ;
 			 args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
-			 //unowned JSCore.Value res = oval.call_as_function(ctx, othis, args, out exd);
+			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, args, out exd);
 
 			
 		}
