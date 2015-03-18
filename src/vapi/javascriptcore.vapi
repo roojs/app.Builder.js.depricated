@@ -338,7 +338,7 @@ namespace JSCore {
     public JSCore.String to_string_copy (Context ctx, Value *exception);
 
     [CCode (cname = "JSValueToObject", instance_pos=1.1)]
-    public Object to_object (Context ctx, Value *exception);
+    public Object to_object (Context ctx, out Value *exception);
 
     [CCode (cname = "JSValueProtect", instance_pos=1.1)]
     public void protect (Context ctx);
