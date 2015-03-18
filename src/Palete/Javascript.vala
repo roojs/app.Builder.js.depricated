@@ -4,7 +4,8 @@
 namespace Palete {
 
 	public errordomain JavascriptError {
-		MISSING_METHOD
+		MISSING_METHOD,
+		MISSING_FILE
 		
 	}
 
