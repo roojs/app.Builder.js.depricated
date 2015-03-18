@@ -162,7 +162,8 @@ namespace Palete {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
 			}
 			 
-		     
+		     // this will never work, as we can not create arrays of Values - due to no 
+		     // free function being available..
 			 var args =  new JSCore.Value[1] ;
 			 args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
