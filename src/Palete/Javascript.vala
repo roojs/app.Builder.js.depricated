@@ -128,8 +128,8 @@ namespace Palete {
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
 			var json_args = new JSCore.String.with_utf8_c_string(json);
 			
-			unowned    JSCore.Value exa;
-			unowned JSCore.Value exb;
+			     JSCore.Value exa;
+			  JSCore.Value exb;
 			unowned JSCore.Value exc;
 			unowned JSCore.Value exd;
 			
