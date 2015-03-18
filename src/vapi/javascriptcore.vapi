@@ -346,8 +346,7 @@ namespace JSCore {
     [CCode (cname = "JSValueUnprotect", instance_pos=1.1)]
     public void unprotect (Context ctx);
     
-    public static void dummy_free (Value v) {
-	}
+   
   }
 
 
