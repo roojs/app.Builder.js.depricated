@@ -352,7 +352,7 @@ namespace JSCore {
 
   [Compact]
   /* FIXME: causes a warning */
-  [CCode (cname = "void", free_function = "")]
+  [CCode (cname = "JSObjectRef", free_function = "")]
   public class Object: JSCore.Value {
     [CCode (cname = "JSObjectMake")]
     public Object (Context ctx, Class js_class, void *data);
