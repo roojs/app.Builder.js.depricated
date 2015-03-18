@@ -151,7 +151,7 @@ namespace Palete {
 			if (!val.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
 			}
-			JSCore.value[] args = {};
+			JSCore.Value[] args = {};
 			args += json_args;
 			 
 			var res = val.call_as_function(ctx, othis, args, ex);
