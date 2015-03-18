@@ -123,15 +123,22 @@ namespace Palete {
 			
 			
 			
-			var jmethod = new JSCore.String.with_utf8_c_string(method)
+			var jmethod = new JSCore.String.with_utf8_c_string(method);
+			var json_args = new JSCore.String.with_utf8_c_string(json);
+			
 			var othis = ctx.get_global_object();
 			if (!othis.has_property(ctx,jmethod)) {
-				throw new JavascriptError.MISSING_METHOD ("Plugin excute - missing  %s", method);
+				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", method);
 				return;
 			}
 			
 			var val =  othis.get_property (ctx, jmethod, out ex); 
-			
+			if (!val.is_function(ctx)) {
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
+			}
+			JSCore.value[] args = {};
+			args += new 
+			val.call_as_function(ctx, othis, 
 			
 		
 		
