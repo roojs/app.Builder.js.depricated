@@ -277,7 +277,7 @@ namespace JSCore {
 
   [Compact]
   /* FIXME: free_function causes a warning */
-  [CCode (cname = "JSValueRef", free_function = "free")]
+  [CCode (cname = "JSValueRef", free_function = "")]
   public class Value {
     [CCode (cname = "JSValueMakeUndefined")]
     public Value.undefined (Context ctx);
