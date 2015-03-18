@@ -115,7 +115,7 @@ namespace Palete {
 		 * then a method is called, with a string argument (json encoded)
 		 * 
 		 */
-		public void executeFile(string fname, string method, string json)
+		public void executeFile(string fname, string method, string js_data)
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {
@@ -126,7 +126,7 @@ namespace Palete {
 			
 			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
-			var json_args = new JSCore.String.with_utf8_c_string(json);
+			var json_args = new JSCore.String.with_utf8_c_string(js_data);
 			
 			     JSCore.Value exa;
 			  JSCore.Value exb;
