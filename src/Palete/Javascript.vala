@@ -139,7 +139,7 @@ namespace Palete {
 						othis,
 						null,
 		                0,
-		                ex
+		                out ex
 				);
 			
 			
@@ -155,7 +155,7 @@ namespace Palete {
 			JSCore.Value[] args = {};
 			args += json_args;
 			 
-			var res = val.call_as_function(ctx, othis, args, ex);
+			var res = val.call_as_function(ctx, othis, args, out ex);
 			
 			
 			
