@@ -126,7 +126,7 @@ namespace Palete {
 			
 			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
-			JSCore.Value json_args = new JSCore.String.with_utf8_c_string(json);
+			var json_args = new JSCore.String.with_utf8_c_string(json);
 			
 			JSCore.Value ex;
 			
@@ -159,7 +159,7 @@ namespace Palete {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
 			}
 			JSCore.Value[] args = {};
-			args += json_args;
+			args += new JSCore.Value.string(ctx,json_args);
 			 
 			var res = oval.call_as_function(ctx, othis, args, out ex);
 			
