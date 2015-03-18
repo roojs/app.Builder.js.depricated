@@ -119,7 +119,7 @@ namespace Palete {
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {
-				throw new JavascriptError.MISSING_FILE(fname + " not found");
+				throw new JavascriptError.MISSING_FILE("Plugin: file not found %s", fname);
 			}
 		
 			FileUtils.get_contents(fname, out file_data);
