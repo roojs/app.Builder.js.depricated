@@ -3,6 +3,11 @@
 
 namespace Palete {
 
+	public errordomain JavascriptError {
+		MISSING_METHOD
+		
+	}
+
 	Javascript instance = null;
 	
 	public class Javascript {
@@ -121,14 +126,13 @@ namespace Palete {
 			var jmethod = new JSCore.String.with_utf8_c_string(method)
 			var othis = ctx.get_global_object();
 			if (!othis.has_property(ctx,jmethod)) {
-				throw new JavascriptErr.MISSING_METHOD ("Plugin excute - missing  %s", method);
-		 
+				throw new JavascriptError.MISSING_METHOD ("Plugin excute - missing  %s", method);
 				return;
 			}
-			var val =  othis.get_property (ctx, 
-					
-				  out ex);
-		}
+			
+			var val =  othis.get_property (ctx, jmethod, out ex); 
+			
+			
 		
 		
 
