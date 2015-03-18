@@ -115,7 +115,7 @@ namespace Palete {
 		 * then a method is called, with a string argument (json encoded)
 		 * 
 		 */
-		void executeFile(string fname, string method, string json)
+		public void executeFile(string fname, string method, string json)
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {
