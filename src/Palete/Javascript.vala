@@ -161,7 +161,7 @@ namespace Palete {
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
 			}
-			JSCore.Value[] args = {};
+			unowned JSCore.Value[] args = {};
 			args += new JSCore.Value.string(ctx,json_args);
 			 
 			var res = oval.call_as_function(ctx, othis, args, out exd);
