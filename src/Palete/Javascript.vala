@@ -123,7 +123,7 @@ namespace Palete {
 		
 			FileUtils.get_contents(fname, out file_data);
 			
-			var jfile_data new JSCore.String.with_utf8_c_string(file_data);
+			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
 			var json_args = new JSCore.String.with_utf8_c_string(json);
 			
@@ -134,7 +134,7 @@ namespace Palete {
 			var othis = ctx.get_global_object();
 			
 			var val = ctx.evaluate_script (
-						jfile_data
+						jfile_data,
 						othis,
 						null,
 		                0,
