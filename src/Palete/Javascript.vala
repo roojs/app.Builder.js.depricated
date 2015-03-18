@@ -16,7 +16,7 @@ namespace Palete {
 		{
 		        var c = new JSCore.Class (class_definition);
 		        var o = new JSCore.Object (ctx, c, null);
-			exception = null;
+				exception = null;
 		        return o;
 		}
 		static const JSCore.StaticFunction[] class_functions = {
@@ -103,6 +103,33 @@ namespace Palete {
 		
 			
 		}
+		/**
+		 * extension API concept..
+		 * javascript file.. loaded into jscore, 
+		 * then a method is called, with a string argument (json encoded)
+		 * 
+		 */
+		void executeFile(string filename, string method, string json)
+		{
+			JSCore.Value ex;
+			
+			var goc = new JSCore.Class(  class_definition ); 
+			var ctx = new JSCore.GlobalContext(goc);
+			
+			
+			
+			var jmethod = new JSCore.String.with_utf8_c_string(method)
+			var othis = ctx.get_global_object();
+			if (!othis.has_property(ctx,jmethod)) {
+				throw new JavascriptErr.MISSING_METHOD ("Plugin excute - missing  %s", method);
+		 
+				return;
+			}
+			var val =  othis.get_property (ctx, 
+					
+				  out ex);
+		}
+		
 		
 
 	}
