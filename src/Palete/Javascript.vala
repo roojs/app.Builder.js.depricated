@@ -128,7 +128,9 @@ namespace Palete {
 			var jmethod = new JSCore.String.with_utf8_c_string(method);
 			var json_args = new JSCore.String.with_utf8_c_string(json);
 			
-			JSCore.Value ex;
+			JSCore.Value exa;
+			JSCore.Value exb;
+			JSCore.Value exc;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
@@ -139,7 +141,7 @@ namespace Palete {
 						othis,
 						null,
 		                0,
-		                out ex
+		                out exa
 				);
 			
 			
@@ -148,12 +150,12 @@ namespace Palete {
 				return;
 			}
 			
-			var val =  othis.get_property (ctx, jmethod, out ex);
+			var val =  othis.get_property (ctx, jmethod, out exb);
 			
 			if (!val.is_object(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", method);
 			}
-			var oval = val.to_object(ctx, out ex);
+			var oval = val.to_object(ctx, out exc);
 			
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
