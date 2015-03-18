@@ -3,6 +3,12 @@
 
 namespace Palete {
 
+	public errordomain JavascriptError {
+		MISSING_METHOD,
+		MISSING_FILE
+		
+	}
+
 	Javascript instance = null;
 	
 	public class Javascript {
@@ -16,7 +22,7 @@ namespace Palete {
 		{
 		        var c = new JSCore.Class (class_definition);
 		        var o = new JSCore.Object (ctx, c, null);
-			exception = null;
+				exception = null;
 		        return o;
 		}
 		static const JSCore.StaticFunction[] class_functions = {
@@ -103,10 +109,73 @@ namespace Palete {
 		
 			
 		}
+		/**
+		 * extension API concept..
+		 * javascript file.. loaded into jscore, 
+		 * then a method is called, with a string argument (json encoded)
+		 * 
+		 */
+		public void executeFile(string fname, string call_method, string js_data)
+		{
+			string file_data;
+			if (!FileUtils.test (fname, FileTest.EXISTS)) {
+				throw new JavascriptError.MISSING_FILE("Plugin: file not found %s", fname);
+			}
+		
+			FileUtils.get_contents(fname, out file_data);
+			
+			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
+			var jmethod = new JSCore.String.with_utf8_c_string(call_method);
+			var json_args = new JSCore.String.with_utf8_c_string(js_data);
+			
+			     JSCore.Value exa;
+			  JSCore.Value exb;
+			unowned JSCore.Value exc;
+			   JSCore.Value exd;
+			
+			var goc = new JSCore.Class(  class_definition ); 
+			var ctx = new JSCore.GlobalContext(goc);
+			var othis = ctx.get_global_object();
+			
+			var eval = ctx.evaluate_script (
+						jfile_data,
+						othis,
+						null,
+		                0,
+		                out exa
+				);
+			
+			
+			if (!othis.has_property(ctx,jmethod)) {
+				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", call_method);
+				return;
+			}
+			
+			var val =  othis.get_property (ctx, jmethod, out exb);
+			
+			if (!val.is_object(ctx)) {
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", call_method);
+			}
+			var oval = val.to_object(ctx, out exc);
+			
+			if (!oval.is_function(ctx)) {
+				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
+			}
+			 
+		     // this will never work, as we can not create arrays of Values - due to no 
+		     // free function being available..
+			 //var args =  new JSCore.Value[1] ;
+			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
+			 
+			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
+
+			
+		}
+		
 		
 
 	}
-
+	
 	
 
 

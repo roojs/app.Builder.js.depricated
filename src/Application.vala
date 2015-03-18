@@ -68,9 +68,7 @@
 					 
 			configDirectory();
 			this.settings = AppSettings.factory();	
-
-			this.initResources(true); 
-		
+ 
 
 		}
 
@@ -103,67 +101,7 @@
 		
 			return dirname;
 		}
-	 
-		public void initResources(bool force = false)
-		{
-			// files to fetch from resources.
-			string[] res = { 
-				"bootstrap.builder.html",
-				"roo.builder.html",
-				"roo.builder.js",
-				"Gir.overides",
-				"RooUsage.txt",
-				"GtkUsage.txt"
-			};
-			for (var i = 0; i < res.length; i++ ) { 
-				this.fetchResource(res[i], force);
-			}
-			
-			this.fetchResourceFrom (
-	                        "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json",
-	                        "roodata.json",
-                		force
-                        );
-			
-
-		}
-		public void fetchResource(string res, bool force) {
-			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
-				return;
-			}
-			this.fetchResourceFrom(
-	                       "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + res,
-	                       res,
-			       force
-                       );
-			
-
-		}
-
-		public void fetchResourceFrom(string src, string res, bool force) {
-			if (!force && FileUtils.test(configDirectory() + "/resources/" + res, FileTest.EXISTS)) {
-				return;
-			}
-			// fetch...
-			print("downloading %s \nto : %s\n", src,res);
-			var session = new Soup.Session ();
-			session.user_agent = "App Builder ";
-		        var message = new Soup.Message ("GET", 
-                		src
-                        );
-
-			    // send the HTTP request and wait for response
-		         session.send_message (message);
-
-			    // output the XML result to stdout
-			FileUtils.set_contents(
-	                       configDirectory() + "/resources/" + res,
-	                      (string) message.response_body.data
-                        );
-
-
-		}
-		
+	  
 	} 
 
 

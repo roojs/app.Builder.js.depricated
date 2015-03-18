@@ -278,6 +278,7 @@ namespace JSCore {
   [Compact]
   /* FIXME: free_function causes a warning */
   [CCode (cname = "void", free_function = "(void)0")]
+  [CCode (cname = "JSValueRef", free_function = "")]
   public class Value {
     [CCode (cname = "JSValueMakeUndefined")]
     public Value.undefined (Context ctx);
@@ -338,19 +339,21 @@ namespace JSCore {
     public JSCore.String to_string_copy (Context ctx, Value *exception);
 
     [CCode (cname = "JSValueToObject", instance_pos=1.1)]
-    public Object to_object (Context ctx, Value *exception);
+    public Object to_object (Context ctx, out Value *exception);
 
     [CCode (cname = "JSValueProtect", instance_pos=1.1)]
     public void protect (Context ctx);
 
     [CCode (cname = "JSValueUnprotect", instance_pos=1.1)]
     public void unprotect (Context ctx);
+    
+   
   }
 
 
   [Compact]
   /* FIXME: causes a warning */
-  [CCode (cname = "void", free_function = "")]
+  [CCode (cname = "JSObjectRef", free_function = "")]
   public class Object: JSCore.Value {
     [CCode (cname = "JSObjectMake")]
     public Object (Context ctx, Class js_class, void *data);
@@ -430,11 +433,12 @@ namespace JSCore {
     public bool is_function (Context ctx);
 
     [CCode (cname = "JSObjectCallAsFunction", instance_pos=1.1)]
-    public unowned JSCore.Value call_as_function (Context ctx,
-                                                  JSCore.Object? this_object,
-                                                      [CCode (array_length_pos=2.9, array_length_type="size_t")]
-                                                  JSCore.Value[]? arguments,
-                                                  out JSCore.Value exception);
+    public unowned JSCore.Value call_as_function (Context ctx, 
+								   JSCore.Object thisObject,
+								   [CCode (array_length_pos=2.9, array_length_type="size_t")]
+								   JSCore.Value[] arguments,
+								   out JSCore.Value exception);
+
 
     [CCode (cname = "JSObjectIsConstructor", instance_pos=1.1)]
     public bool is_constructor (Context ctx);
