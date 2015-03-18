@@ -434,7 +434,7 @@ namespace JSCore {
     [CCode (cname = "JSObjectCallAsFunction", instance_pos=1.1)]
     public unowned JSCore.Value call_as_function (Context ctx, 
 								   JSCore.Object thisObject,
-								   [CCode (array_length_pos=3.9, array_length_type="size_t")]
+								   [CCode (array_length_pos=2.9, array_length_type="size_t")]
 								   JSCore.Value[] arguments,
 								   out JSCore.Value exception);
 
