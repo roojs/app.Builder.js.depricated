@@ -153,7 +153,7 @@ namespace Palete {
 			if (!val.is_object(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", method);
 			}
-			var oval = val.to_object(ctx);
+			var oval = val.to_object(ctx, out ex);
 			
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
