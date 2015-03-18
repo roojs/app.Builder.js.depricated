@@ -116,17 +116,26 @@ namespace Palete {
 		 */
 		void executeFile(string filename, string method, string json)
 		{
+			
+			var jfile_data new JSCore.String.with_utf8_c_string(file_data);
+			var jmethod = new JSCore.String.with_utf8_c_string(method);
+			var json_args = new JSCore.String.with_utf8_c_string(json);
+			
 			JSCore.Value ex;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
-			
-			
-			
-			var jmethod = new JSCore.String.with_utf8_c_string(method);
-			var json_args = new JSCore.String.with_utf8_c_string(json);
-			
 			var othis = ctx.get_global_object();
+			
+			var val = ctx.evaluate_script (
+						jfile_data
+						othis,
+						null,
+		                0,
+		                ex
+					);
+			
+			
 			if (!othis.has_property(ctx,jmethod)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", method);
 				return;
@@ -137,9 +146,14 @@ namespace Palete {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", method);
 			}
 			JSCore.value[] args = {};
-			args += new 
-			val.call_as_function(ctx, othis, 
+			args += json_args;
+			 
+			var res = val.call_as_function(ctx, othis, args, ex);
 			
+			
+			
+			
+		}
 		
 		
 
