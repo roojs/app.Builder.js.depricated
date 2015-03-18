@@ -134,7 +134,7 @@ namespace Palete {
 			JSCore.Value exd;
 			
 			var goc = new JSCore.Class(  class_definition ); 
-			unowned   JSCore.GlobalContext  ctx = new JSCore.GlobalContext(goc);
+			var ctx = new JSCore.GlobalContext(goc);
 			var othis = ctx.get_global_object();
 			
 			var eval = ctx.evaluate_script (
