@@ -430,8 +430,7 @@ namespace JSCore {
     public bool is_function (Context ctx);
 
     [CCode (cname = "JSObjectCallAsFunction", instance_pos=1.1)]
-    public unowned JSCore.Value call_as_function (Context ctx,
-								   JSCore.Object function,
+    public unowned JSCore.Value call_as_function (Context ctx, 
 								   JSCore.Object thisObject,
 								   [CCode (array_length_pos=3.9, array_length_type="size_t")]
 								   JSCore.Value[] arguments,
