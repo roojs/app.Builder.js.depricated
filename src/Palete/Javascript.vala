@@ -1,4 +1,13 @@
 
+extern JSValueRef jscore_object_call_as_function(
+	JSContextRef ctx
+	JSObjectRef object, 
+	JSObjectRef thisObject,
+	gchar * val,
+	JSValueRef* exception
+	);
+	
+
  
 
 namespace Palete {
