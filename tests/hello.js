@@ -1,7 +1,7 @@
 
 function hello(w) {
 	var a = JSON.parse(w);
-	w.test=1;
-	return JSON.stringify(w)+'xxa';
+	a.test=1;
+	return JSON.stringify(a)+'xxa';
 
 }
