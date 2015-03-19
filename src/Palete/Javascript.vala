@@ -172,15 +172,15 @@ namespace Palete {
 			}
 			
 		 
-			 var res = jscore_object_call_as_function(
-				ctx, oval, othis, js_data, out exd
-				);
+			 //var res = jscore_object_call_as_function(
+			//	ctx, oval, othis, js_data, out exd
+			//	);
 		     // this will never work, as we can not create arrays of Values - due to no 
 		     // free function being available..
 			 //var args =  new JSCore.Value[1] ;
 			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
-			 //unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
+			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 
 			
 		}
