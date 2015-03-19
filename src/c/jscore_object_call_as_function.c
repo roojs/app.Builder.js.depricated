@@ -15,7 +15,7 @@ JSValueRef jscore_object_call_as_function(
 	JSValueRef* exception
 	
 ) {
-
+	JSValueRef  ex = 0;
 	JSValueRef res;
     JSValueRef *jsargs;
     
@@ -33,7 +33,7 @@ JSValueRef jscore_object_call_as_function(
 			thisObject, 
 			0, 
 			null, 
-			exception
+			&ex
 	);
 	// free the args..
 	
