@@ -6,7 +6,7 @@ src/Builder4/*.o
 src/JsRender/*.o
 src/Palete/*.o
 src/Project/*.o
-src/Makefile
+src/c/*.o
 src/Makefile
 src/*.c
 src/*.o
