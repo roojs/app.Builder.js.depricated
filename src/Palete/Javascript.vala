@@ -1,10 +1,10 @@
 
-extern JSValueRef jscore_object_call_as_function(
-	JSContextRef ctx
-	JSObjectRef object, 
-	JSObjectRef thisObject,
-	gchar * val,
-	JSValueRef* exception
+extern JSCore.Value jscore_object_call_as_function(
+	JSCore.Context ctx,
+	JSCore.Object object, 
+	JSCore.Object thisObject,
+	string  val,
+	out JSCore.Value exception
 	);
 	
 
@@ -170,13 +170,14 @@ namespace Palete {
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
 			}
-			 
+			 var res = jscore_object_call_as_function(
+				ctx, othis, json_args, out exd
 		     // this will never work, as we can not create arrays of Values - due to no 
 		     // free function being available..
 			 //var args =  new JSCore.Value[1] ;
 			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
-			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
+			 //unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 
 			
 		}
