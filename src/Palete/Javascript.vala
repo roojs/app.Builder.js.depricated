@@ -185,7 +185,7 @@ namespace Palete {
 			// extract the text value from res...
 			 JSCore.String  sv = res.to_string_copy ( ctx,  out  exe);
 			 var length = sv.get_maximum_utf8_c_string_size();
-			 var buf = new string[length];
+			 unowned string[] buf = new string[length];
 			
 			 sv.get_utf8_c_string( buf, length);
 			 print("ret:%s\n",(string)  buf);
