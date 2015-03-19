@@ -182,7 +182,7 @@ namespace Palete {
 			 
 			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 			// extract the text value from res...
-			
+			var sv = rs.to_string_copy ( ctx, out exe);
 			
 		}
 		
