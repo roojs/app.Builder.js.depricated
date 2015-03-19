@@ -31,8 +31,8 @@ JSValueRef jscore_object_call_as_function(
 			ctx, 
 			object, 
 			thisObject, 
-			1, 
-			jsargs, 
+			0, 
+			null, 
 			exception
 	);
 	// free the args..
