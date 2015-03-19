@@ -24,7 +24,7 @@ JSValueRef jscore_object_call_as_function(
 	JSValueRef valstr = JSValueMakeString (ctx, jsstr);
 	//JSStringRelease (jsstr); //??
     
-    (JSValueRef *) g_newa (JSValueRef, 1);
+    jsargs = (JSValueRef *) g_newa (JSValueRef, 1);
     jsargs[0] =  valstr;
     
     res =  JSObjectCallAsFunction(
