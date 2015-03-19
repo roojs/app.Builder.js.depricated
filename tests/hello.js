@@ -1,5 +1,6 @@
 
 function hello(w) {
-	return w+'xx';
+	var a = JSON.decode(w);
+	return JSON.stringify(w)+'xx';
 
 }
