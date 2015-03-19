@@ -188,6 +188,8 @@ namespace Palete {
 			 unowned string[] buf = new string[length];
 			
 			 sv.get_utf8_c_string( buf, length);
+			 sv.release();
+			 
 			 print("ret:%s\n",(string)  buf);
          
 			
