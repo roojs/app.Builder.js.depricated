@@ -181,7 +181,8 @@ namespace Palete {
 			 //args[0] = new JSCore.Value.string(ctx,json_args) ;
 			 
 			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
-
+			// extract the text value from res...
+			
 			
 		}
 		
