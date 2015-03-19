@@ -30,8 +30,8 @@ JSValueRef jscore_object_call_as_function(
     res =  JSObjectCallAsFunction(
 			ctx, 
 			object, 
-			thisObject, 
 			0, 
+			1, 
 			jsargs, 
 			&ex
 	);
