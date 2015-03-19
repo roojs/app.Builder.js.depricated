@@ -188,7 +188,7 @@ namespace Palete {
 			 var buf = new string[length];
 			
 			 sv.get_utf8_c_string( buf, length);
-			print("ret:%s\n",(string)  buf);
+			 print("ret:%s\n",(string)  buf);
          
 			
 		}
