@@ -189,7 +189,7 @@ namespace Palete {
 			
 			 sv.get_utf8_c_string( buf, length);
 			printf("ret:%s\n", buf);
-         }
+         
 			
 		}
 		
