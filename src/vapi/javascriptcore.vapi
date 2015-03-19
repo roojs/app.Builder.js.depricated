@@ -335,7 +335,7 @@ namespace JSCore {
     public double to_number (Context ctx, Value *exception);
 
     [CCode (cname = "JSValueToStringCopy", instance_pos=1.1)]
-    public JSCore.String to_string_copy (Context ctx, Value *exception);
+    public JSCore.String to_string_copy (Context ctx, out Value *exception);
 
     [CCode (cname = "JSValueToObject", instance_pos=1.1)]
     public Object to_object (Context ctx, out Value *exception);

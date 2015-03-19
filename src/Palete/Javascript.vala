@@ -141,7 +141,7 @@ namespace Palete {
 			  JSCore.Value exb;
 			unowned JSCore.Value exc;
 			   JSCore.Value exd;
-			   JSCore.Value exe;
+			   unowned JSCore.Value exe;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
@@ -166,7 +166,7 @@ namespace Palete {
 			if (!val.is_object(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a property not found  %s", call_method);
 			}
-			var oval = val.to_object(ctx, out exc);
+			var oval = val.to_object(ctx,  out  exc);
 			
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
@@ -183,12 +183,12 @@ namespace Palete {
 			 
 			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 			// extract the text value from res...
-			 var sv = rs.to_string_copy ( ctx, out exe);
+			 JSCore.String  sv = res.to_string_copy ( ctx,  out  exe);
 			 var length = sv.get_maximum_utf8_c_string_size();
 			 var buf = new string[length];
 			
 			 sv.get_utf8_c_string( buf, length);
-			printf("ret:%s\n", buf);
+			print("ret:%s\n",(string)  buf);
          
 			
 		}
