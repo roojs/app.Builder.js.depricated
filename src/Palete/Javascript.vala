@@ -135,7 +135,7 @@ namespace Palete {
 			
 			var jfile_data = new JSCore.String.with_utf8_c_string(file_data);
 			var jmethod = new JSCore.String.with_utf8_c_string(call_method);
-			var json_args = new JSCore.String.with_utf8_c_string(js_data);
+			//var json_args = new JSCore.String.with_utf8_c_string(js_data);
 			
 			     JSCore.Value exa;
 			  JSCore.Value exb;
@@ -170,8 +170,11 @@ namespace Palete {
 			if (!oval.is_function(ctx)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: not a method  %s", call_method);
 			}
+			
+		 
 			 var res = jscore_object_call_as_function(
-				ctx, othis, json_args, out exd
+				ctx, oval, othis, js_data, out exd
+				);
 		     // this will never work, as we can not create arrays of Values - due to no 
 		     // free function being available..
 			 //var args =  new JSCore.Value[1] ;
