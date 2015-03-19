@@ -141,6 +141,7 @@ namespace Palete {
 			  JSCore.Value exb;
 			unowned JSCore.Value exc;
 			   JSCore.Value exd;
+			   JSCore.Value exe;
 			
 			var goc = new JSCore.Class(  class_definition ); 
 			var ctx = new JSCore.GlobalContext(goc);
@@ -182,7 +183,7 @@ namespace Palete {
 			 
 			 unowned JSCore.Value res = oval.call_as_function(ctx, othis, null, out exd);
 			// extract the text value from res...
-			var sv = rs.to_string_copy ( ctx, out exe);
+			 var sv = rs.to_string_copy ( ctx, out exe);
 			
 		}
 		
