@@ -1,5 +1,5 @@
 
-// valac --vapidir ../src/vapi JsCoreExecTest.vala ../src/Palete/Javascript.vala --pkg javascriptcore  -o /tmp/jstest
+// valac -g --vapidir ../src/vapi JsCoreExecTest.vala ../src/Palete/Javascript.vala ../src/Palete/jscore_object_call_as_function.c  --pkg javascriptcore  --pkg libsoup-2.4  --pkg webkit2gtk-3.0 --pkg  gtk+-3.0 -o /tmp/jstest
 
  
 int main (string[] args) {
