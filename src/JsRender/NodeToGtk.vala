@@ -51,7 +51,7 @@ public class JsRender.NodeToGtk : Object {
 			// then rebuild node from return value..
 			try {
 				var ret = Palete.Javascript.singleton().executeFile(
-						filename
+						BuilderApplication.configDirectory() + "/resources/node_to_gtk.js",
 						"node_to_gtk",
 						node.toJsonString()
 				);
@@ -59,6 +59,8 @@ public class JsRender.NodeToGtk : Object {
 				new_node.loadFromJson(Json.Object obj, 2);
 				this.node = new_node;
 				
+			} catch (Exception e) {
+				print("%s", e.toString());
 			}
 			
 			
