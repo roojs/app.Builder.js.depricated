@@ -14,6 +14,9 @@
 * -- eg. an AboutBox, and turn that into load of real widgets..
 * that could be displayed..
 * 
+* we could go on the theory that we send the whole tree to the 'plugin'
+* and that would do all the transformations before rendering..
+* -- this would make more sense...
 * 
 * 
 * 
