@@ -1,6 +1,6 @@
 /**
  * 
- *  this is the code that creates a rendered view of the Gtk applications
+ *  this is the code represents a File when using the Gtk view..
  *   
  *  It ues NodeToGtk
  * 
