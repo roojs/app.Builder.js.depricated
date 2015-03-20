@@ -64,8 +64,8 @@ public class JsRender.NodeToGtk : Object {
 				new_node.loadFromJson(rnode.get_object(), 2);
 				this.node = new_node;
 				
-			} catch (JavascriptError e) {
-				print("%s", e.toString());
+			} catch (Palete.JavascriptError e) {
+				print("Error: %s\n", e.message);
 			}
 			
 			
