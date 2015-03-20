@@ -191,7 +191,7 @@ namespace Palete {
 			 
 			 
 			 print("ret:%s\n",(string)  buf);
-			 
+			 return (string) buf;
 			
 		}
 		
