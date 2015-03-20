@@ -61,7 +61,7 @@ public class JsRender.NodeToGtk : Object {
 				var rnode = pa.get_root();
 			   
 				
-				new_node.loadFromJson(rnode, 2);
+				new_node.loadFromJson(rnode.get_object(), 2);
 				this.node = new_node;
 				
 			} catch (Exception e) {
