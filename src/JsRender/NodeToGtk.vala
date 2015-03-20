@@ -49,6 +49,19 @@ public class JsRender.NodeToGtk : Object {
 			// then serialize up the node,
 			// send it to javascript for processsing,
 			// then rebuild node from return value..
+			try {
+				var ret = Palete.Javascript.singleton().executeFile(
+						filename
+						"node_to_gtk",
+						node.toJsonString()
+				);
+				var new_node = new Node();
+				new_node.loadFromJson(Json.Object obj, 2);
+				this.node = new_node;
+				
+			}
+			
+			
 		}
 		
 	}
