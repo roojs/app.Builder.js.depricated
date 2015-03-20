@@ -124,7 +124,7 @@ namespace Palete {
 		 * then a method is called, with a string argument (json encoded)
 		 * 
 		 */
-		public void executeFile(string fname, string call_method, string js_data)
+		public string executeFile(string fname, string call_method, string js_data)
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {
@@ -158,7 +158,7 @@ namespace Palete {
 			
 			if (!othis.has_property(ctx,jmethod)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", call_method);
-				return;
+				return ;
 			}
 			
 			var val =  othis.get_property (ctx, jmethod, out exb);
