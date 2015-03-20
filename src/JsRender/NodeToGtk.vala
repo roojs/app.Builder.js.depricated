@@ -1,5 +1,6 @@
 /*
 
+This code renders the Gtk tree into a set of Gtk elements.
  
 */
 public class JsRender.NodeToGtk : Object {
@@ -107,7 +108,7 @@ public class JsRender.NodeToGtk : Object {
 		var props = cls_gir.props;
 		
               
-    		var pviter = props.map_iterator();
+		var pviter = props.map_iterator();
 		while (pviter.next()) {
 			
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
