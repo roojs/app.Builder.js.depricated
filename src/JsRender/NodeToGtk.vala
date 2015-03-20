@@ -56,7 +56,12 @@ public class JsRender.NodeToGtk : Object {
 						node.toJsonString()
 				);
 				var new_node = new Node();
-				new_node.loadFromJson(Json.Object obj, 2);
+				var pa = new Json.Parser();
+				pa.load_from_data(ret);
+				var rnode = pa.get_root();
+			   
+				
+				new_node.loadFromJson(rnode, 2);
 				this.node = new_node;
 				
 			} catch (Exception e) {
