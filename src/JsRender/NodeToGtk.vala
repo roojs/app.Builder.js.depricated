@@ -48,7 +48,7 @@ public class JsRender.NodeToGtk : Object {
 		if (parent_obj == null) {
 			// then serialize up the node,
 			// send it to javascript for processsing,
-			// then set node to the return value..
+			// then rebuild node from return value..
 		}
 		
 	}
