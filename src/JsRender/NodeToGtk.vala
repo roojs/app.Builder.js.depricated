@@ -36,14 +36,21 @@ public class JsRender.NodeToGtk : Object {
 	Gee.HashMap<string,string> ar_props;
 	public static int vcnt = 0; 
 
-	public NodeToGtk( Node node) 
+	public NodeToGtk( Node node , NodeToGtk? parent_obj = null) 
 	{
 		this.node = node;
  		this.els = new Gee.ArrayList<string>(); 
  		this.children = new Gee.ArrayList<NodeToGtk>(); 
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
-		this.parentObj = null;
+		this.parentObj = parent_obj;
+		
+		if (parent_obj == null) {
+			// then serialize up the node,
+			// send it to javascript for processsing,
+			// then set node to the return value..
+		}
+		
 	}
 	
 	public Object? munge ( )
@@ -58,15 +65,15 @@ public class JsRender.NodeToGtk : Object {
 	}
 	public NodeToGtk? mungeChild(  Node cnode)
 	{
-		var x = new  NodeToGtk(cnode);
-		x.parentObj = this;
+		var x = new  NodeToGtk(cnode, this);
+		
 		return x.mungeNode();
 		
 	}
 	
 	public NodeToGtk? mungeNode()
 	{
-
+		
 		var parent = this.parentObj != null ? this.parentObj.wrapped_object : null;
 		var cls = this.node.fqn().replace(".", "");
 		var ns = this.node.fqn().split(".")[0];
