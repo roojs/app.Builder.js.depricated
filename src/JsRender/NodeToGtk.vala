@@ -1,7 +1,19 @@
 /*
 
-This code renders the Gtk tree into a set of Gtk elements.
- 
+* This code renders the Gtk tree into a set of Gtk elements.
+* principle = one NodeToGtk wraps around the original 'node'
+*  
+* it's called by the view element with
+* 	var x = new JsRender.NodeToGtk(file.tree);
+     var obj = x.munge() as Gtk.Widget;
+       
+*
+* 
+* The idea behind the Javascript tools stuff is that we can 
+* transform what is actually being requested to be rendered
+* -- eg. an about box, and turn that into load of real widgets..
+* 
+* 
 */
 public class JsRender.NodeToGtk : Object {
 
