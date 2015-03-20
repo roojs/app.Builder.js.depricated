@@ -1,4 +1,11 @@
-
+/**
+ * 
+ *  this is the code that creates a rendered view of the Gtk applications
+ *   
+ *  It ues NodeToGtk
+ * 
+ * 
+ */
 
 namespace JsRender {
 
