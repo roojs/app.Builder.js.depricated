@@ -11,7 +11,10 @@
 * 
 * The idea behind the Javascript tools stuff is that we can 
 * transform what is actually being requested to be rendered
-* -- eg. an about box, and turn that into load of real widgets..
+* -- eg. an AboutBox, and turn that into load of real widgets..
+* that could be displayed..
+* 
+* 
 * 
 * 
 */
