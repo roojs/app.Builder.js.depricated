@@ -36,9 +36,8 @@
      "$ xns" : "Gtk",
      "items" : [
       {
-       "id" : "compile_button",
-       "* pack" : "pack_start,false,false,0",
        "xtype" : "HBox",
+       "* pack" : "pack_start,false,false,0",
        "$ xns" : "Gtk",
        "items" : [
         {

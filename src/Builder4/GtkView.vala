@@ -14,7 +14,6 @@ public class Xcls_GtkView : Object
     }
     public Xcls_view_layout view_layout;
     public Xcls_container container;
-    public Xcls_compile_button compile_button;
     public Xcls_compile_view compile_view;
 
         // my vars (def)
@@ -181,7 +180,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_compile_button( _this );
+            var child_0 = new Xcls_HBox5( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_compile_view( _this );
@@ -191,7 +190,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_compile_button : Object 
+    public class Xcls_HBox5 : Object 
     {
         public Gtk.HBox el;
         private Xcls_GtkView  _this;
@@ -200,10 +199,9 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_compile_button(Xcls_GtkView _owner )
+        public Xcls_HBox5(Xcls_GtkView _owner )
         {
             _this = _owner;
-            _this.compile_button = this;
             this.el = new Gtk.HBox( true, 0 );
 
             // my vars (dec)
