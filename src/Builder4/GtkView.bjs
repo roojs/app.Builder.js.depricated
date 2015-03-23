@@ -19,13 +19,13 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "* pack" : "add",
+     "* pack" : "pack1,true,true",
      "xtype" : "ScrolledWindow",
      "$ xns" : "Gtk",
      "items" : [
       {
        "id" : "view_layout",
-       "* pack" : "pack1,true,true",
+       "* pack" : "add",
        "xtype" : "Layout",
        "$ xns" : "Gtk",
        "items" : [
