@@ -29,7 +29,7 @@ public class Xcls_GtkView : Object
         this.file = null;
 
         // set gobject values
-        var child_0 = new Xcls_Viewport2( _this );
+        var child_0 = new Xcls_Layout2( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_VBox4( _this );
@@ -97,19 +97,19 @@ public class Xcls_GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
     }
-    public class Xcls_Viewport2 : Object 
+    public class Xcls_Layout2 : Object 
     {
-        public Gtk.Viewport el;
+        public Gtk.Layout el;
         private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Viewport2(Xcls_GtkView _owner )
+        public Xcls_Layout2(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Viewport( null, null );
+            this.el = new Gtk.Layout( null, null );
 
             // my vars (dec)
 
