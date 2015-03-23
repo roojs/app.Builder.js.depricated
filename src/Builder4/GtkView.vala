@@ -116,7 +116,7 @@ public class Xcls_GtkView : Object
             // set gobject values
             var child_0 = new Xcls_container( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.put (  child_0.el , 10,10 );
         }
 
         // user defined functions 

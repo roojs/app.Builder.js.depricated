@@ -23,7 +23,7 @@
       {
        "id" : "container",
        "xtype" : "HBox",
-       "* pack" : "add",
+       "* pack" : "put,10,10",
        "$ xns" : "Gtk"
       }
      ]
