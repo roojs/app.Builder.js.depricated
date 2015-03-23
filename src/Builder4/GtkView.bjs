@@ -19,16 +19,23 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "id" : "view_layout",
-     "* pack" : "pack1,true,true",
-     "xtype" : "Layout",
+     "* pack" : "add",
+     "xtype" : "ScrolledWindow",
      "$ xns" : "Gtk",
      "items" : [
       {
-       "id" : "container",
-       "* pack" : "put,10,10",
-       "xtype" : "HBox",
-       "$ xns" : "Gtk"
+       "id" : "view_layout",
+       "* pack" : "pack1,true,true",
+       "xtype" : "Layout",
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "id" : "container",
+         "* pack" : "put,10,10",
+         "xtype" : "HBox",
+         "$ xns" : "Gtk"
+        }
+       ]
       }
      ]
     },
