@@ -19,7 +19,7 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "* pack" : "add",
+     "* pack" : "pack_start,true,true",
      "xtype" : "ScrolledWindow",
      "$ xns" : "Gtk",
      "items" : [
