@@ -41,6 +41,7 @@
        "$ xns" : "Gtk",
        "items" : [
         {
+         "id" : "compile_button",
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
          "$ xns" : "Gtk",
