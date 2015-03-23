@@ -158,7 +158,7 @@ namespace Palete {
 			
 			if (!othis.has_property(ctx,jmethod)) {
 				throw new JavascriptError.MISSING_METHOD ("Plugin: missing method  %s", call_method);
-				return ;
+			 
 			}
 			
 			var val =  othis.get_property (ctx, jmethod, out exb);
