@@ -107,7 +107,7 @@ public class Xcls_GtkView : Object
             h = uint.max (h-20, 500);        
             _this.container.el.set_size_request((int)w,(int)h);
             
-            _this.view_layout.set_size(1000,1000); // should be baded on calc.. -- see update_scrolled.
+            _this.view_layout.el.set_size(1000,1000); // should be baded on calc.. -- see update_scrolled.
             
     	var x = new JsRender.NodeToGtk(file.tree);
             var obj = x.munge() as Gtk.Widget;
