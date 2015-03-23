@@ -19,25 +19,16 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "id" : "view_layout_sw",
-     "* pack" : "pack1,true,true",
-     "xtype" : "ScrolledWindow",
+     "id" : "view_layout",
+     "* pack" : "add",
+     "xtype" : "Layout",
      "$ xns" : "Gtk",
      "items" : [
       {
-       "id" : "view_layout",
-       "* init" : "{\n    this.el.set_hadjustment(_this.view_layout_sw.hadjustment);\n    this.el.set_vadjustment(_this.view_layout_sw.vadjustment);\n}\n",
-       "* pack" : "add",
-       "xtype" : "Layout",
-       "$ xns" : "Gtk",
-       "items" : [
-        {
-         "id" : "container",
-         "* pack" : "put,10,10",
-         "xtype" : "HBox",
-         "$ xns" : "Gtk"
-        }
-       ]
+       "id" : "container",
+       "xtype" : "HBox",
+       "* pack" : "put,10,10",
+       "$ xns" : "Gtk"
       }
      ]
     },
