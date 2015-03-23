@@ -33,7 +33,7 @@ public class Xcls_GtkView : Object
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
         child_0.ref();
-        this.el.pack_start (  child_0.el , true,true );
+        this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_compile_view( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
