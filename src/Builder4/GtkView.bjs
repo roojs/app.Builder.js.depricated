@@ -16,6 +16,7 @@
    "$ xns" : "Gtk",
    "items" : [
     {
+     "id" : "view_layout",
      "* pack" : "pack1,true,true",
      "xtype" : "Layout",
      "$ xns" : "Gtk",
