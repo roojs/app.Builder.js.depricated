@@ -87,6 +87,11 @@ public class Xcls_GtkView : Object
             if (this.lastObj != null) {
                 this.container.el.remove(this.lastObj);
             }
+            
+            // hide the compile view at present..
+            _this.compile_view.el.hide();
+            
+            
             uint w,h;
             
             _this.view_layout.el.get_size(out w, out h);
