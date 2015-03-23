@@ -125,6 +125,7 @@ namespace Palete {
 		 * 
 		 */
 		public string executeFile(string fname, string call_method, string js_data)
+				throws Palete.JavascriptError
 		{
 			string file_data;
 			if (!FileUtils.test (fname, FileTest.EXISTS)) {

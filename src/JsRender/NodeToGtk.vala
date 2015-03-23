@@ -36,7 +36,7 @@ public class JsRender.NodeToGtk : Object {
 	Gee.HashMap<string,string> ar_props;
 	public static int vcnt = 0; 
 
-	public NodeToGtk( Node node , NodeToGtk? parent_obj = null) throws Palete.JavascriptError
+	public NodeToGtk( Node node , NodeToGtk? parent_obj = null) 
 	{
 		this.node = node;
  		this.els = new Gee.ArrayList<string>(); 
