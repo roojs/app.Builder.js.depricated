@@ -12,6 +12,7 @@ public class Xcls_GtkView : Object
         }
         return _GtkView;
     }
+    public Xcls_view_layout_sw view_layout_sw;
     public Xcls_view_layout view_layout;
     public Xcls_container container;
     public Xcls_compile_view compile_view;
@@ -31,7 +32,7 @@ public class Xcls_GtkView : Object
         this.file = null;
 
         // set gobject values
-        var child_0 = new Xcls_ScrolledWindow2( _this );
+        var child_0 = new Xcls_view_layout_sw( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_compile_view( _this );
@@ -121,7 +122,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public class Xcls_ScrolledWindow2 : Object 
+    public class Xcls_view_layout_sw : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_GtkView  _this;
@@ -130,9 +131,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow2(Xcls_GtkView _owner )
+        public Xcls_view_layout_sw(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.view_layout_sw = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)

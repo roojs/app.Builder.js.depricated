@@ -19,6 +19,7 @@
    "$ xns" : "Gtk",
    "items" : [
     {
+     "id" : "view_layout_sw",
      "* pack" : "pack1,true,true",
      "xtype" : "ScrolledWindow",
      "$ xns" : "Gtk",
