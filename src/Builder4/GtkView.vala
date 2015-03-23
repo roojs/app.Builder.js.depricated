@@ -112,7 +112,7 @@ public class Xcls_GtkView : Object
             this.container.el.add(obj);
             obj.show_all();
             
-             _this.compile_view.el.visible = false;
+             _this.compile_view.el.hide();
             
     }
     public class Xcls_view_layout : Object 
