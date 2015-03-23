@@ -86,14 +86,14 @@ public class Xcls_GtkView : Object
             if (this.lastObj != null) {
                 this.container.el.remove(this.lastObj);
             }
-            unit w,h;
+            uint w,h;
             
             _this.view_layout.el.get_size(out w, out h);
             
             // set the container size min to 500/500 or 20 px less than max..
             w = uint.min (w-20, 500);
             h = uint.min (h-20, 500);        
-            _this.container.el.set_size_request(w,h);
+            _this.container.el.set_size_request((int)w,(int)h);
             
     	var x = new JsRender.NodeToGtk(file.tree);
             var obj = x.munge() as Gtk.Widget;
