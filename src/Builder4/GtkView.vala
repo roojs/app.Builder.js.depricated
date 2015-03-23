@@ -103,8 +103,8 @@ public class Xcls_GtkView : Object
             _this.view_layout.el.get_size(out w, out h);
             
             // set the container size min to 500/500 or 20 px less than max..
-            w = uint.min (w-20, 500);
-            h = uint.min (h-20, 500);        
+            w = uint.max (w-20, 500);
+            h = uint.max (h-20, 500);        
             _this.container.el.set_size_request((int)w,(int)h);
             
     	var x = new JsRender.NodeToGtk(file.tree);
