@@ -89,7 +89,7 @@ public class Xcls_GtkView : Object
             }
             
             // hide the compile view at present..
-            _this.compile_view.el.hide();
+            _this.compile_view.el.visible = false;
             
             
             uint w,h;
@@ -111,6 +111,9 @@ public class Xcls_GtkView : Object
             
             this.container.el.add(obj);
             obj.show_all();
+            
+             _this.compile_view.el.visible = false;
+            
     }
     public class Xcls_view_layout : Object 
     {
