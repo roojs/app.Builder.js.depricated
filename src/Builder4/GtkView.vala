@@ -34,7 +34,7 @@ public class Xcls_GtkView : Object
         var child_0 = new Xcls_view_layout( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
-        var child_1 = new Xcls_VBox4( _this );
+        var child_1 = new Xcls_compile_view( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
     }
@@ -163,7 +163,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_VBox4 : Object 
+    public class Xcls_compile_view : Object 
     {
         public Gtk.VBox el;
         private Xcls_GtkView  _this;
@@ -172,9 +172,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox4(Xcls_GtkView _owner )
+        public Xcls_compile_view(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.compile_view = this;
             this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
@@ -183,7 +184,7 @@ public class Xcls_GtkView : Object
             var child_0 = new Xcls_HBox5( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_compile_view( _this );
+            var child_1 = new Xcls_HBox7( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
         }
@@ -236,7 +237,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_compile_view : Object 
+    public class Xcls_HBox7 : Object 
     {
         public Gtk.HBox el;
         private Xcls_GtkView  _this;
@@ -245,10 +246,9 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_compile_view(Xcls_GtkView _owner )
+        public Xcls_HBox7(Xcls_GtkView _owner )
         {
             _this = _owner;
-            _this.compile_view = this;
             this.el = new Gtk.HBox( true, 0 );
 
             // my vars (dec)

@@ -30,6 +30,7 @@
      ]
     },
     {
+     "id" : "compile_view",
      "* pack" : "pack2,true,true",
      "xtype" : "VBox",
      "gboolean homogeneous" : false,
@@ -49,7 +50,6 @@
        ]
       },
       {
-       "id" : "compile_view",
        "* pack" : "pack_start,true,true,0",
        "xtype" : "HBox",
        "gboolean homogeneous" : true,
