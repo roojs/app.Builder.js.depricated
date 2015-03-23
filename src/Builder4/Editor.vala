@@ -216,7 +216,8 @@ public class Editor : Object
 
             // init method 
 
-            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);        }
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        }
 
         // user defined functions 
     }
@@ -265,6 +266,7 @@ public class Editor : Object
                 });
                 
                 this.el.set_mark_attributes ("error", attrs, 1);
+
             // listeners 
             this.el.key_release_event.connect( (event) => {
                 
