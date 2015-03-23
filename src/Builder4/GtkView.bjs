@@ -30,6 +30,7 @@
      ]
     },
     {
+     "id" : "compile_view",
      "* pack" : "pack2,true,true",
      "xtype" : "VBox",
      "gboolean homogeneous" : false,
