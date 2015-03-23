@@ -26,6 +26,7 @@
      "items" : [
       {
        "id" : "view_layout",
+       "* init" : "{\n    this.el.set_hadjustment(_this.view_layout_sw.hadjustment);\n    this.el.set_vadjustment(_this.view_layout_sw.vadjustment);\n}\n",
        "* pack" : "add",
        "xtype" : "Layout",
        "$ xns" : "Gtk",

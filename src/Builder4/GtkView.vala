@@ -168,6 +168,13 @@ public class Xcls_GtkView : Object
             var child_0 = new Xcls_container( _this );
             child_0.ref();
             this.el.put (  child_0.el , 10,10 );
+
+            // init method 
+
+            {
+                this.el.set_hadjustment(_this.view_layout_sw.hadjustment);
+                this.el.set_vadjustment(_this.view_layout_sw.vadjustment);
+            }
         }
 
         // user defined functions 
