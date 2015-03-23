@@ -37,12 +37,6 @@ public class Xcls_GtkView : Object
         var child_1 = new Xcls_compile_view( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
-
-        // listeners 
-        this.el.show.connect( () => {
-            _this.compile_view.el.hide();
-        
-        });
     }
 
     // user defined functions 
