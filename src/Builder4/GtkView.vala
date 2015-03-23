@@ -84,7 +84,7 @@ public class Xcls_GtkView : Object
     {
         
            // this.el.set_position((int)(this.el.max_position * 0.7));
-             this.el.set_position(this.el.max_position );
+            this.el.set_position(this.el.max_position );
             this.file = null;
             
             if (file.tree == null) {
