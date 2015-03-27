@@ -267,7 +267,7 @@ public class Xcls_WindowLeftTree : Object
                         var node = (JsRender.Node)value.dup_object();
                         _this.node_selected(node);
                         
-                        this.el.scroll_to_cell(_this.model.activePath, false, 0.5f,0.0f);
+                        this.el.scroll_to_cell(Gtk.TreePath.from_string(_this.model.activePath), false, 0.5f,0.0f);
                         
                         return false;
                   });  
