@@ -178,7 +178,8 @@ public class DialogTemplateSelect : Object
 
             // init method 
 
-            this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );        }
+            this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );
+        }
 
         // user defined functions 
     }
