@@ -210,32 +210,32 @@ namespace Palete
         public  GLib.List<string> listTemplates (JsRender.Node node)
         {
             
-   		var gn = node.fqn();
-            
-    		var ret = new GLib.List<string>();
-    		var dir= GLib.Environment.get_home_dir() + "/.Builder/" + gn;
-		if (!GLib.FileUtils.test(dir, GLib.FileTest.IS_DIR)) {
-        		return ret;
-		}
+			var gn = node.fqn();
+				
+			var ret = new GLib.List<string>();
+			var dir= GLib.Environment.get_home_dir() + "/.Builder/" + gn;
+			if (!GLib.FileUtils.test(dir, GLib.FileTest.IS_DIR)) {
+				return ret;
+			}
 			
 
 
 			            
-		var f = File.new_for_path(dir);
-        
-            var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
-             
-            FileInfo next_file; 
-            while ((next_file = file_enum.next_file(null)) != null) {
-                var n = next_file.get_display_name();
-    			if (!Regex.match_simple ("\\.json$", n)) {
-					continue;
+			var f = File.new_for_path(dir);
+			
+				var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
+				 
+				FileInfo next_file; 
+				while ((next_file = file_enum.next_file(null)) != null) {
+					var n = next_file.get_display_name();
+					if (!Regex.match_simple ("\\.json$", n)) {
+						continue;
+					}
+					ret.append( dir + "/" + n);
 				}
-				ret.append( dir + "/" + n);
-            }
-            return ret;
+				return ret;
             
-        }
+		}
  
         public JsRender.Node? loadTemplate(string path)
         {
