@@ -1043,7 +1043,7 @@ public class Xcls_WindowLeftTree : Object
         
                         
                     }
-                    return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER);// + "|" + prop;
+                    return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER)  + "|" + prop;
                 }
                 /*
                 last = "" + path;
