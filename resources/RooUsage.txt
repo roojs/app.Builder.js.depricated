@@ -493,6 +493,7 @@ left:
     Roo.bootstrap.NavSidebarItem
 right:
     Roo.bootstrap.Container
+    Roo.bootstrap.Button
 
 left:    
     Roo.bootstrap.Pagination
