@@ -68,12 +68,16 @@ public class DialogTemplateSelect : Object
          _this.combo.el.set_active(0);
          
        
-        this.el.run();
+        var res = this.el.run();
         this.el.hide();    
         //var ix = _this.combo.el.get_active();
-        //if (ix < 1 ) {
-        //    return node;
-       // }
+        if (res < 1 ) {
+            return null;
+        }
+        if (res < 2 ) {
+            return node;
+        }
+        
        Gtk.TreeIter iter;
         _this.combo.el.get_active_iter (out iter);
         Value vfname;
