@@ -72,10 +72,10 @@ public class DialogTemplateSelect : Object
         this.el.hide();    
         //var ix = _this.combo.el.get_active();
         if (res < 1 ) {
-            return null;
+            return null; // 0 = cancel.
         }
         if (res < 2 ) {
-            return node;
+            return node; // 1 = just add it..
         }
         
        Gtk.TreeIter iter;
@@ -83,9 +83,7 @@ public class DialogTemplateSelect : Object
         Value vfname;
         this.model.el.get_value (iter, 0, out vfname);
         
-        if (((string)vfname).length < 1) {
-            return node;
-        }
+        
         return pal.loadTemplate((string)vfname);
     
     }
