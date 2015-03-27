@@ -550,8 +550,3 @@ left:
     Roo.bootstrap.menu.Item
 right:
     Roo.bootstrap.menu.Menu
-
-left:
-    Roo.bootstrap.MenuItem
-right:
-    Roo.bootstrap.button
