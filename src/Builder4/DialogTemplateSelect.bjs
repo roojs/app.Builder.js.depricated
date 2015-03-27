@@ -63,20 +63,20 @@
      ]
     },
     {
-     "label" : "OK",
+     "label" : "Cancel",
      "* pack" : "add_action_widget,0",
      "xtype" : "Button",
      "$ xns" : "Gtk"
     },
     {
-     "label" : "OK",
+     "label" : "Just add it",
      "xtype" : "Button",
-     "* pack" : "add_action_widget,0",
+     "* pack" : "add_action_widget,1",
      "$ xns" : "Gtk"
     },
     {
      "label" : "OK",
-     "* pack" : "add_action_widget,0",
+     "* pack" : "add_action_widget,2",
      "xtype" : "Button",
      "$ xns" : "Gtk"
     }

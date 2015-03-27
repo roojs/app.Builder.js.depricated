@@ -39,10 +39,10 @@ public class DialogTemplateSelect : Object
         this.el.add_action_widget (  child_1.el , 0 );
         var child_2 = new Xcls_Button9( _this );
         child_2.ref();
-        this.el.add_action_widget (  child_2.el , 0 );
+        this.el.add_action_widget (  child_2.el , 1 );
         var child_3 = new Xcls_Button10( _this );
         child_3.ref();
-        this.el.add_action_widget (  child_3.el , 0 );
+        this.el.add_action_widget (  child_3.el , 2 );
 
         // listeners 
         this.el.delete_event.connect( (self, event)  =>{
@@ -276,7 +276,7 @@ public class DialogTemplateSelect : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "OK";
+            this.el.label = "Cancel";
         }
 
         // user defined functions 
@@ -298,7 +298,7 @@ public class DialogTemplateSelect : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "OK";
+            this.el.label = "Just add it";
         }
 
         // user defined functions 
