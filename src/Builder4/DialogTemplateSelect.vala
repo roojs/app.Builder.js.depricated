@@ -40,6 +40,9 @@ public class DialogTemplateSelect : Object
         var child_2 = new Xcls_Button9( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 0 );
+        var child_3 = new Xcls_Button10( _this );
+        child_3.ref();
+        this.el.add_action_widget (  child_3.el , 0 );
 
         // listeners 
         this.el.delete_event.connect( (self, event)  =>{
@@ -288,6 +291,28 @@ public class DialogTemplateSelect : Object
 
         // ctor 
         public Xcls_Button9(DialogTemplateSelect _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "OK";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button10 : Object 
+    {
+        public Gtk.Button el;
+        private DialogTemplateSelect  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button10(DialogTemplateSelect _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();

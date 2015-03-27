@@ -73,6 +73,12 @@
      "xtype" : "Button",
      "* pack" : "add_action_widget,0",
      "$ xns" : "Gtk"
+    },
+    {
+     "label" : "OK",
+     "* pack" : "add_action_widget,0",
+     "xtype" : "Button",
+     "$ xns" : "Gtk"
     }
    ]
   }
