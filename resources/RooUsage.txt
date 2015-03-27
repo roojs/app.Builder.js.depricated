@@ -556,3 +556,6 @@ left:
     Roo.bootstrap.MenuItem
 right:
     Roo.bootstrap.button
+    Roo.bootstrap.Row
+    Roo.bootstrap.Column
+    Roo.bootstrap.Container
