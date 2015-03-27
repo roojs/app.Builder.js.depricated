@@ -63,7 +63,7 @@ builder_SOURCES = \
 		Project/Roo.vala \
 		Palete/Gir.vala \
 		Palete/Gtk.vala \
-		Palete/jscore_object_call_as_function.c \
+		c/jscore_object_call_as_function.c \
 		Palete/Javascript.vala \
 		Palete/Palete.vala \
 		Palete/Roo.vala \
