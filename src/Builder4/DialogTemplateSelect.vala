@@ -235,7 +235,7 @@ public class DialogTemplateSelect : Object
             
              
             el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "Just add Element");
+            el.set_value(iter, 1, "  - Just add Element - ");
             
             for (var i = 0; i < data.length();i++) {
             
