@@ -54,7 +54,7 @@
            "$ columns" : "typeof(string),typeof(string)",
            "n_columns" : 2,
            "$ xns" : "Gtk",
-           "| void loadData" : "  (GLib.List<string> data) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n    el.append(out iter);\n    \n     \n    el.set_value(iter, 0, \"\");\n    el.set_value(iter, 1, \"  - Just add Element - \");\n    \n    for (var i = 0; i < data.length();i++) {\n    \n\n        el.append(out iter);\n        var str = data.nth_data(i);\n        var fn = Path.get_basename (str);\n        fn.replace(\".json\", \"\");\n        \n        el.set_value(iter, 0, str);\n        el.set_value(iter, 1, fn);\n        \n    }\n    this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
+           "| void loadData" : "  (GLib.List<string> data) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n   /// el.append(out iter);\n    \n     \n   // el.set_value(iter, 0, \"\");\n   // el.set_value(iter, 1, \"aaa  - Just add Element - aaa\");\n    \n    for (var i = 0; i < data.length();i++) {\n    \n\n        el.append(out iter);\n        var str = data.nth_data(i);\n        var fn = Path.get_basename (str);\n        fn.replace(\".json\", \"\");\n        \n        el.set_value(iter, 0, str);\n        el.set_value(iter, 1, fn);\n        \n    }\n    this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
           }
          ]
         }
@@ -66,6 +66,12 @@
      "label" : "OK",
      "* pack" : "add_action_widget,0",
      "xtype" : "Button",
+     "$ xns" : "Gtk"
+    },
+    {
+     "label" : "OK",
+     "xtype" : "Button",
+     "* pack" : "add_action_widget,0",
      "$ xns" : "Gtk"
     }
    ]

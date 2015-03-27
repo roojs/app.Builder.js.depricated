@@ -37,6 +37,9 @@ public class DialogTemplateSelect : Object
         var child_1 = new Xcls_Button8( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
+        var child_2 = new Xcls_Button9( _this );
+        child_2.ref();
+        this.el.add_action_widget (  child_2.el , 0 );
 
         // listeners 
         this.el.delete_event.connect( (self, event)  =>{
@@ -231,11 +234,11 @@ public class DialogTemplateSelect : Object
             Gtk.TreeIter iter;
             var el = this.el;
             
-            el.append(out iter);
+           /// el.append(out iter);
             
              
-            el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "  - Just add Element - ");
+           // el.set_value(iter, 0, "");
+           // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
             
             for (var i = 0; i < data.length();i++) {
             
@@ -263,6 +266,28 @@ public class DialogTemplateSelect : Object
 
         // ctor 
         public Xcls_Button8(DialogTemplateSelect _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "OK";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button9 : Object 
+    {
+        public Gtk.Button el;
+        private DialogTemplateSelect  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button9(DialogTemplateSelect _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
