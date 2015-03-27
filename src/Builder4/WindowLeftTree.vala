@@ -1043,6 +1043,7 @@ public class Xcls_WindowLeftTree : Object
         
                         
                     }
+                    // we need to add prop - as :store -> needs to bee added when dropping onto.
                     return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER)  + "|" + prop;
                 }
                 /*
