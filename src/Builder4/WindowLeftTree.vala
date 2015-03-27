@@ -1236,13 +1236,13 @@ public class Xcls_WindowLeftTree : Object
                         this.template_select = new DialogTemplateSelect();
                      }
                  
-                     var new_node = this.template_select.show(
+                     var node = this.template_select.show(
                           (Gtk.Window) _this.el.get_toplevel (),
                               this.file.palete(),
                            node);
                            
-                     if (new_node != null) {
-                         node = new_node;
+                     if (node == null) {
+                         return; // do not add?
                      }
                 }        
                 
