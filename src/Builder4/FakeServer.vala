@@ -53,6 +53,7 @@ public class FakeServer : Object
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
+		print("Sending %s (%d:%s)", request.get_path(), info.get_size(), info.get_content_type());
 		
 		request.finish (  stream, info.get_size(), info.get_content_type());
 	}
