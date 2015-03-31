@@ -39,7 +39,7 @@ public class FakeServer : Object
     { 
 		// request is URISchemeRequest
 			 
-		print("%s\n",request.get_path());
+		print("REQ: %s\n",request.get_path());
 		
  		
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + request.get_path());
@@ -53,9 +53,9 @@ public class FakeServer : Object
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
-		print("Sending %s (%s:%s)", request.get_path(), info.get_size().to_string(), info.get_content_type());
+		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
-		request.finish (  stream, info.get_size(), info.get_content_type());
+		request.finish (  stream, info.get_size() +2, info.get_content_type());
 		//stream.close();
 	}
 }
