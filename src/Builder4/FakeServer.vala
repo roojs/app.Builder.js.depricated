@@ -55,7 +55,7 @@ public class FakeServer : Object
 		);
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
-		request.finish (  stream, info.get_size() +2, info.get_content_type());
+		request.finish (  stream, info.get_size()  , info.get_content_type());
 		//stream.close();
 	}
 }
