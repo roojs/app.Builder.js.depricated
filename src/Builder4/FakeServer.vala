@@ -58,6 +58,9 @@ public class FakeServer : Object
 		
 		var stream = new MemoryInputStream.from_data (data,  GLib.free);
 		
+		// we could cache these memory streams... so no need to keep reading from disk...
+		
+		
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
 		request.finish (  stream, info.get_size()  , info.get_content_type());
