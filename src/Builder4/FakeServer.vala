@@ -47,12 +47,16 @@ public class FakeServer : Object
 			print("Skip file missing = %s/gitlive%s\n", GLib.Environment.get_home_dir() , request.get_path());
 			return;
 		}
-			
-		var stream = file.read();
 		var info = file.query_info(
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
+		
+		string data;
+		size_t length;
+		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+		
+		
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
 		request.finish (  stream, info.get_size()  , info.get_content_type());
