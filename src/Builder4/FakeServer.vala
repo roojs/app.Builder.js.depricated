@@ -56,6 +56,7 @@ public class FakeServer : Object
 		size_t length;
 		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
 		
+		var stream = new MemoryInputStream.from_data (data,  GLib.free);
 		
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
