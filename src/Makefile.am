@@ -44,9 +44,7 @@ builder_PKGS = \
 		$(builder_LIBVALA) \
 		--pkg vte-2.90 \
 		--pkg posix \
-
-
-#		--pkg libgda-5.0
+		--pkg libgda-5.0
 
 
 builder_SOURCES = \
@@ -94,7 +92,9 @@ builder_SOURCES = \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
 		Resources.vala \
-		JsRender/RooDatabase.vala 
+
+
+#		JsRender/RooDatabase.vala 
 
 
 builder_VALAFLAGS = \
