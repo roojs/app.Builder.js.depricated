@@ -77,8 +77,8 @@ namespace JsRender {
                         LEFT JOIN pg_namespace n ON n.oid = c.relnamespace 
                         LEFT JOIN pg_constraint p ON p.conrelid = c.oid AND f.attnum = ANY ( p.conkey ) 
                         LEFT JOIN pg_class AS g ON p.confrelid = g.oid 
-                WHERE c.relkind = 'r'::char AND n.nspname = '""" + tablename + """' 
-                AND c.relname = '%s' AND f.attnum > 0 ORDER BY number;
+                WHERE c.relkind = 'r'::char AND n.nspname = 'public' 
+                AND c.relname = '""" + tablename + """' AND f.attnum > 0 ORDER BY number;
 					
 					""");
 				
