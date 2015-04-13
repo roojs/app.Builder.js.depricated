@@ -35,11 +35,23 @@ namespace JsRender {
         
         
         
-        public readTables()
+        public JSON.Array readTables()
         {
 			
-			var qr = this.cnc.execute_select_command( "SHOW TABLES" )
-			this.fetchAll(qr);
+			if (this.project.DBNAME == "PostgreSQL") {
+				
+				return this.fetchAll(this.cnc.execute_select_command( 
+					"""select c.relname FROM pg_catalog.pg_class c 
+						LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace 
+						WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+						AND pg_catalog.pg_table_is_visible(c.oid) 
+					""");
+				
+				
+			 
+			return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" );
+			
+			 
 			
 		}
         
