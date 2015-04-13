@@ -14,14 +14,17 @@ namespace JsRender {
     class RooDatabase : Object 
     {
         public Project.Project project;
-        
+
+	public string DBTYPE;
+     
         public Gda.Connection cnc;
         
 		public RooDatabase (Project.Project project)
         {
             this.project = project;
+	    this.DBTYPE = this.project.json_project_data.get_string_member("DBTYPE");
             this.cnc = Gda.Connection.open_from_string (
-				this.project.json_project_data.get_string_member("DBTYPE"),
+				this.DBTYPE,
 				"DB_NAME=" + this.project.json_project_data.get_string_member("DBNAME"), 
 				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
 				";PASSWORD=" + this.project.json_project_data.get_string_member("DBPASSWORD"),
