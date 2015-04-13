@@ -16,6 +16,7 @@ namespace JsRender {
         public Project.Project project;
 
 	public string DBTYPE;
+	public string DBNAME;
      
         public Gda.Connection cnc;
         
@@ -26,7 +27,7 @@ namespace JsRender {
 	    this.DBNAME = this.project.json_project_data.get_string_member("DBNAME");
             this.cnc = Gda.Connection.open_from_string (
 				this.DBTYPE,
-				"DB_NAME=" + this.project.json_project_data.get_string_member("DBNAME"), 
+				"DB_NAME=" + this.DBNAME, 
 				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
 				";PASSWORD=" + this.project.json_project_data.get_string_member("DBPASSWORD"),
 				Gda.ConnectionOptions.NONE
