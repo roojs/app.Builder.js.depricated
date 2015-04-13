@@ -23,6 +23,7 @@ namespace JsRender {
         {
             this.project = project;
 	    this.DBTYPE = this.project.json_project_data.get_string_member("DBTYPE");
+	    this.DBNAME = this.project.json_project_data.get_string_member("DBNAME");
             this.cnc = Gda.Connection.open_from_string (
 				this.DBTYPE,
 				"DB_NAME=" + this.project.json_project_data.get_string_member("DBNAME"), 
@@ -32,7 +33,22 @@ namespace JsRender {
 			);
             
         }
-        
+        public RooDatabase.from_cfg (string dbtype, string dbname, string dbuser, string dbpass)
+         {
+             this.DBTYPE = dbtype;
+	     this.DBNAME = dbname;
+		
+             this.cnc = Gda.Connection.open_from_string (
+				this.DBTYPE,
+				"DB_NAME=" + dbname, 
+				"USERNAME=" + dbuser + 
+				";PASSWORD=" + dbpass,
+				Gda.ConnectionOptions.NONE
+			);
+
+
+	    
+	}
           
         
         public Json.Array readTables()
@@ -113,7 +129,7 @@ namespace JsRender {
 						WHERE
 						TABLE_NAME = '""" + table + """'
 						AND
-						TABLE_SCHEMA = '""" + this.project.json_project_data.get_string_member("DBNAME") + """'
+						TABLE_SCHEMA = '""" + this.DBNAME + """'
 					"""
 					));
 					
