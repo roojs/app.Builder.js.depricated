@@ -44,7 +44,9 @@ builder_PKGS = \
 		$(builder_LIBVALA) \
 		--pkg vte-2.90 \
 		--pkg posix \
-		--pkg libgda-5.0
+
+
+#		--pkg libgda-5.0
 
 
 builder_SOURCES = \
