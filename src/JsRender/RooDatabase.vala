@@ -174,7 +174,7 @@ namespace JsRender {
 				for (var i = 0; i < cols.size; i++) { 
 					var n = cols.get(i);
 					var val = qnr.get_value_at(i,r);
-					var type = GObject.type_name(val.type()) ;
+					var type = val.type().name();
 					if (type == "GdaBinary" || type == "GdaBlob") {
 						add.set_string_member(n, val.value.to_string(1024));
 						continue;
