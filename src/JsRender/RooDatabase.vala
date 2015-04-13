@@ -38,7 +38,7 @@ namespace JsRender {
         public Json.Array readTables()
         {
 			
-			if (this.project.DBNAME == "PostgreSQL") {
+			if (this.DBTYPE == "PostgreSQL") {
 				
 				return this.fetchAll(this.cnc.execute_select_command( 
 					"""select c.relname FROM pg_catalog.pg_class c 
@@ -48,7 +48,7 @@ namespace JsRender {
 					"""));
 				
 			}
-			if (this.project.DBNAME == "MySQL") { 
+			if (this.DBTYPE == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" ));
 			}
 			return new Json.Array();
