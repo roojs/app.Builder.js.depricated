@@ -179,7 +179,7 @@ namespace JsRender {
 						add.set_string_member(n, val.value.to_string(1024));
 						continue;
 					}
-					add.set_string_member(n, val.value);
+					add.set_string_member(n, val.get_string());
 					
 				}
 				
