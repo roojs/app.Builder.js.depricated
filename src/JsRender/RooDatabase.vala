@@ -22,9 +22,9 @@ namespace JsRender {
             this.project = project;
             this.cnc = Gda.Connection.open_from_string (
 				cfg.DBTYPE,
-				"DB_NAME=" + this.project.DBNAME, 
-				"USERNAME=" + this.project.DBUSERNAME + 
-				';PASSWORD=' + this.project.DBPASSWORD,
+				"DB_NAME=" + this.project.json_project_data.get_string_member("DBNAME"), 
+				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
+				';PASSWORD=' + this.project.json_project_data.get_string_member("DBPASSWORD")
 				Gda.ConnectionOptions.NONE, null
 			);
             
@@ -32,7 +32,7 @@ namespace JsRender {
         
           
         
-        public JSON.Array readTables()
+        public Json.Array readTables()
         {
 			
 			if (this.project.DBNAME == "PostgreSQL") {
@@ -48,11 +48,11 @@ namespace JsRender {
 			if (this.project.DBNAME == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" );
 			}
-			return new JSON.Array();
+			return new Json.Array();
 			
 		}
 		
-		public JSON.Array readTable(string tablename) {
+		public Json.Array readTable(string tablename) {
 			if (this.project.DBNAME == "PostgreSQL") {
 				
 				return this.fetchAll(this.cnc.execute_select_command( 
@@ -86,15 +86,15 @@ namespace JsRender {
 			if (this.project.DBNAME == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename );
 			}
-			return  new JSON.Array();
+			return  new Json.Array();
 			
 			
 			
 		}
 		
-		public JSON.Array readForeignKeys(string table)
+		public Json.Array readForeignKeys(string table)
         {
-			var ret =   new JSON.Array();
+			var ret =   new Json.Array();
 			// technically we should use FK stuff in mysql, but for the momemnt use my hacky FK()
 			if (this.project.DBNAME != "MySQL") { 
 				return  ret;
@@ -110,7 +110,7 @@ namespace JsRender {
 						WHERE
 						TABLE_NAME = '""" + table + """'
 						AND
-						TABLE_SCHEMA = '""" + this.project.DBNAME + """'
+						TABLE_SCHEMA = '""" + this.project.json_project_data.get_string_member("DBNAME") + """'
 					"""
 					));
 					
@@ -133,7 +133,7 @@ namespace JsRender {
 			var ar = str.split("\n");
 			for (var i = 0; i < ar.length; i++) {
 				var kv = ar[i].split("=");
-				var o = new JSON.Object();
+				var o = new Json.Object();
 				o.set_string_member("key", kv[0].strip());
 				var lr = kv[1].split(":");
 				o.set_string_member("table", lr[0].strip());
@@ -145,16 +145,16 @@ namespace JsRender {
         
         
 		}
-        public JSON.Array fetchAll(qnr)
+        public Json.Array fetchAll(qnr)
 		{
 			var cols = new Gee.List<string>();
 			
 			for (var i =0;i < qnr.get_n_columns(); i++) {
 				cols.add(qnr.get_column_name(i));
 			}
-			//print(JSON.stringify(cols, null,4));
+			//print(Json.stringify(cols, null,4));
 			var iter = qnr.create_iter();
-			var res = new JSON.Array();
+			var res = new Json.Array();
 			//print(this.get_n_rows());
 			
 			for (var r = 0; qnr.get_n_rows(); r++) {
@@ -166,7 +166,7 @@ namespace JsRender {
 					continue;
 				}
 				
-				var add = new JSON.Object();
+				var add = new Json.Object();
 				
 				for (i = 0; i < cols.size; i++) { 
 					var n = cols.get(i);
@@ -186,7 +186,15 @@ namespace JsRender {
 			return res;
 
 		}
+		
+		public test()
+		{
+			
+		
+		
+		
 	}
+	
 	
 }
 
