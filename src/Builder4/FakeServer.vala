@@ -52,12 +52,21 @@ public class FakeServer : Object
 			request.finish_error(new FakeServerError.FILE_DOES_NOT_EXIST ("My error msg"));
 			return;
 		}
-			
-		var stream = file.read();
 		var info = file.query_info(
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
+		
+		string data;
+		size_t length;
+		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+		
+		var stream = new MemoryInputStream.from_data (data,  GLib.free);
+		
+		// we could cache these memory streams... so no need to keep reading from disk...
+		// then what happens if file get's updated - neet to check the data against the cache..
+		
+		
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
 		request.finish (  stream, info.get_size()  , info.get_content_type());
