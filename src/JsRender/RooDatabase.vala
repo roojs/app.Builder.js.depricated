@@ -218,3 +218,14 @@ namespace JsRender {
      var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
      x.readTables();
     
+    var  generator = new Json.Generator ();
+    var  root = new Json.Node(Json.NodeType.ARRAY);
+    root.init_array(this.json_project_data);
+    generator.set_root (root);
+    if (show_all) {
+	    generator.pretty = true;
+	    generator.indent = 4;
+    }
+
+    print("%s\n"m  generator.to_data (null));
+ }
