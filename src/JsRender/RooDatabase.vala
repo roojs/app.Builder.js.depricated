@@ -30,10 +30,7 @@ namespace JsRender {
             
         }
         
-        public Gee.List<string> tables;
-        
-        
-        
+          
         
         public JSON.Array readTables()
         {
@@ -48,14 +45,14 @@ namespace JsRender {
 					""");
 				
 			}
-			 
-			return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" );
-			
-			 
+			if (this.project.DBNAME == "MySQL") { 
+				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" );
+			}
+			return new JSON.Array();
 			
 		}
 		
-		public JSON.Array? readTable(string tablename) {
+		public JSON.Array readTable(string tablename) {
 			if (this.project.DBNAME == "PostgreSQL") {
 				
 				return this.fetchAll(this.cnc.execute_select_command( 
@@ -89,7 +86,7 @@ namespace JsRender {
 			if (this.project.DBNAME == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename );
 			}
-			return null;
+			return  new JSON.Array();;
 			
 			
 			
