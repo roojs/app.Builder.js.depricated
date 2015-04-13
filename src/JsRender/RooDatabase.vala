@@ -55,7 +55,7 @@ namespace JsRender {
 			
 		}
 		
-		public JSON.Array readTable(string tablename) {
+		public JSON.Array? readTable(string tablename) {
 			if (this.project.DBNAME == "PostgreSQL") {
 				
 				return this.fetchAll(this.cnc.execute_select_command( 
@@ -86,8 +86,10 @@ namespace JsRender {
 					""");
 				
 			}
-			 
-			return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename );
+			if (this.project.DBNAME == "MySQL") { 
+				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename );
+			}
+			return null;
 			
 			
 			
