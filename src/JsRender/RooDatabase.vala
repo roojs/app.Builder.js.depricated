@@ -6,11 +6,21 @@
  *   Sends it down the line to the Javascript code. to generate structures 
  * 
  */
+ 
+ // should this be in palete...
 namespace JsRender {
 
   
     class RooDatabase : Object 
     {
+        public Project project;
+        
+		public RooDatabase (Project project)
+        {
+            this.project = project;
+            
+        }
+        
         
         
         
