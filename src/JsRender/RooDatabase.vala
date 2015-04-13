@@ -56,7 +56,7 @@ namespace JsRender {
 		}
 		
 		public Json.Array readTable(string tablename) {
-			if (this.project.DBNAME == "PostgreSQL") {
+			if (this.DBTYPE== "PostgreSQL") {
 				
 				return this.fetchAll(this.cnc.execute_select_command( 
 					"""
@@ -86,7 +86,7 @@ namespace JsRender {
 					"""));
 				
 			}
-			if (this.project.DBNAME == "MySQL") { 
+			if (this.DBTYPE== "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
 			}
 			return  new Json.Array();
@@ -99,7 +99,7 @@ namespace JsRender {
         {
 			var ret =   new Json.Array();
 			// technically we should use FK stuff in mysql, but for the momemnt use my hacky FK()
-			if (this.project.DBNAME != "MySQL") { 
+			if (this.DBTYPE != "MySQL") { 
 				return  ret;
 			}
 			
@@ -120,10 +120,10 @@ namespace JsRender {
 			if (jarr.get_length() < 1) {
 				return  ret;
 			}
-			var str = jarr.get_string_element(0);
+			var contents = jarr.get_string_element(0);
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
-			 var str = "";
+			 string str = "";
 			 try {
 				GLib.MatchInfo mi;
 				if ( exp.match (contents, 0, out mi) ) {
@@ -150,7 +150,7 @@ namespace JsRender {
 		}
         public Json.Array fetchAll(Gda.DataModel qnr)
 		{
-			var cols = new Gee.List<string>();
+			var cols = new Gee.ArrayList<string>();
 			
 			for (var i =0;i < qnr.get_n_columns(); i++) {
 				cols.add(qnr.get_column_name(i));
@@ -160,7 +160,7 @@ namespace JsRender {
 			var res = new Json.Array();
 			//print(this.get_n_rows());
 			
-			for (var r = 0; qnr.get_n_rows(); r++) {
+			for (var r = 0; r < qnr.get_n_rows(); r++) {
 				
 				// single clo..
 				//print("GOT ROW");
@@ -171,10 +171,10 @@ namespace JsRender {
 				
 				var add = new Json.Object();
 				
-				for (i = 0; i < cols.size; i++) { 
+				for (var i = 0; i < cols.size; i++) { 
 					var n = cols.get(i);
 					var val = qnr.get_value_at(i,r);
-					var type = GObject.type_name(val.g_type) ;
+					var type = GObject.type_name(val.type()) ;
 					if (type == "GdaBinary" || type == "GdaBlob") {
 						add.set_string_member(n, val.value.to_string(1024));
 						continue;
