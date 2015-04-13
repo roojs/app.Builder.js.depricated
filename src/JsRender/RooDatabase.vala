@@ -13,19 +13,19 @@ namespace JsRender {
   
     class RooDatabase : Object 
     {
-        public Project project;
+        public Project.Project project;
         
         public Gda.Connection cnc;
         
-		public RooDatabase (Project project)
+		public RooDatabase (Project.Project project)
         {
             this.project = project;
             this.cnc = Gda.Connection.open_from_string (
-				cfg.DBTYPE,
+				this.project.json_project_data.get_string_member("DBTYPE"),
 				"DB_NAME=" + this.project.json_project_data.get_string_member("DBNAME"), 
 				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
 				";PASSWORD=" + this.project.json_project_data.get_string_member("DBPASSWORD"),
-				Gda.ConnectionOptions.NONE, null
+				Gda.ConnectionOptions.NONE
 			);
             
         }
@@ -80,11 +80,11 @@ namespace JsRender {
 						WHERE c.relkind = 'r'::char AND n.nspname = 'public' 
 						AND c.relname = '""" + tablename + """' AND f.attnum > 0 ORDER BY number;
 							
-					""");
+					"""));
 				
 			}
 			if (this.project.DBNAME == "MySQL") { 
-				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename );
+				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
 			}
 			return  new Json.Array();
 			
@@ -123,7 +123,7 @@ namespace JsRender {
 			 var str = "";
 			 try {
 				GLib.MatchInfo mi;
-				if ( exp.match (contents, 0, out mi) )
+				if ( exp.match (contents, 0, out mi) ) {
 					mi.next();
 					str = mi.fetch(0);
 				}
@@ -145,7 +145,7 @@ namespace JsRender {
         
         
 		}
-        public Json.Array fetchAll(qnr)
+        public Json.Array fetchAll(Gda.DataModel qnr)
 		{
 			var cols = new Gee.List<string>();
 			
@@ -187,10 +187,10 @@ namespace JsRender {
 
 		}
 		
-		public test()
+		public void test()
 		{
-			
-		
+
+		}
 		
 		
 	}
