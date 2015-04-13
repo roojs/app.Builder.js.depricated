@@ -29,7 +29,7 @@ bin_PROGRAMS = builder
 
 builder_PKGS = \
 		--pkg glib-2.0  \
-        --pkg gobject-2.0  \
+		--pkg gobject-2.0  \
 		--pkg  gtk+-3.0 \
 		--pkg  gtksourceview-3.0 \
 		--pkg  libxml-2.0 \
@@ -43,7 +43,8 @@ builder_PKGS = \
  		--pkg javascriptcore \
 		$(builder_LIBVALA) \
 		--pkg vte-2.90 \
-		--pkg posix
+		--pkg posix \
+		--pkg libgda-5.0
 
 
 builder_SOURCES = \

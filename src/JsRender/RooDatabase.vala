@@ -176,7 +176,7 @@ namespace JsRender {
 					var val = qnr.get_value_at(i,r);
 					var type = val.type().name();
 					if (type == "GdaBinary" || type == "GdaBlob") {
-						add.set_string_member(n, val.value.to_string(1024));
+						add.set_string_member(n, "?? big string ??");
 						continue;
 					}
 					add.set_string_member(n, val.get_string());
