@@ -41,7 +41,7 @@ namespace Project {
 		//tree : false,
 		public  string xtype;
 		
-		public JSON.Object json_project_data;
+		public Json.Object json_project_data;
 		
 		 
 		bool is_scanned; 
@@ -50,7 +50,7 @@ namespace Project {
 		public Project (string path) {
 		    
 			this.name = GLib.Path.get_basename(path); // default..
-			this.json_project_data = new JSON.Object();
+			this.json_project_data = new Json.Object();
 			
 			this.is_scanned = false;
 			this.paths = new Gee.HashMap<string,string>();
