@@ -70,10 +70,12 @@ namespace JsRender {
 					var n = cols.get(i);
 					var val = qnr.get_value_at(i,r);
 					var type = GObject.type_name(val.g_type) ;
-					var vs = ['GdaBinary', 'GdaBlob' ].indexOf(type) > -1 ? val.value.to_string(1024) : val.value;
-					//print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
-					//print (n + '=' + iter.get_value_at(i).value);
-					add.set_string_member(n, vs);
+					if (type == "GdaBinary" || type == "GdaBlob") {
+						add.set_string_member(n, val.value.to_string(1024));
+						continue;
+					}
+					add.set_string_member(n, val.value);
+					
 				}
 				
 				res.add_object_element(add);
