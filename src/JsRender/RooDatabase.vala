@@ -207,10 +207,6 @@ namespace JsRender {
 
 		}
 		
-		public void test()
-		{
-
-		}
 		
 		
 	}
@@ -218,5 +214,7 @@ namespace JsRender {
 	
 }
 
-        
+ void main() {
+     var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
+     x.readTables();
     
