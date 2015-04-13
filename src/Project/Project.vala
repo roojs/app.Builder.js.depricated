@@ -21,7 +21,7 @@ namespace Project {
 
 	// static array of all projects.
 	public Gee.HashMap<string,Project>  projects;
-
+	
 	
 	public bool  projects_loaded = false;
 
@@ -40,6 +40,9 @@ namespace Project {
 		public Gee.HashMap<string,JsRender.JsRender> files ;
 		//tree : false,
 		public  string xtype;
+		
+		public JSON.Object json_project_data;
+		
 		 
 		bool is_scanned; 
 	   
@@ -47,7 +50,8 @@ namespace Project {
 		public Project (string path) {
 		    
 			this.name = GLib.Path.get_basename(path); // default..
-
+			this.json_project_data = new JSON.Object();
+			
 			this.is_scanned = false;
 			this.paths = new Gee.HashMap<string,string>();
 			this.files = new Gee.HashMap<string,JsRender.JsRender>();
@@ -131,7 +135,7 @@ namespace Project {
 				return;
 			}
 			
-    			var obj = node.get_object ();
+			var obj = node.get_object ();
 			var xtype =  obj.get_string_member("xtype");
 
 
@@ -147,7 +151,9 @@ namespace Project {
 
 			
 			var proj = factory(xtype, fpath);
-
+			
+			proj.json_project_data  = obj; // store the original object...
+			
 			proj.fn =  Path.get_basename(jsonfile).split(".")[0];
 
 			// might not exist?
