@@ -139,7 +139,7 @@ namespace JsRender {
 			if (jarr.get_length() < 1) {
 				return  ret;
 			}
-			return ret;
+			return jarr;
 			
 			var contents = jarr.get_string_element(0);
 			
