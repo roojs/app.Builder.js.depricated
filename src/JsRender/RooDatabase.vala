@@ -185,6 +185,7 @@ namespace JsRender {
 				
 				// single clo..
 				//print("GOT ROW");
+				print("COLS  %d\n", cols.size);
 				if (cols.size == 1) {
 					res.add_string_element(qnr.get_value_at(0,r).get_string());
 					continue;
