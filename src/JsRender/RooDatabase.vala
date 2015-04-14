@@ -135,12 +135,10 @@ namespace JsRender {
 			var jarr = this.fetchAll(this.cnc.execute_select_command( 
 					query
 					));
-			print(query);
-			if (jarr.get_length() < 1) {
+ 			if (jarr.get_length() < 1) {
 				return  ret;
 			}
-			return jarr;
-			
+ 			
 			var contents = jarr.get_string_element(0);
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
@@ -150,6 +148,7 @@ namespace JsRender {
 				if ( exp.match (contents, 0, out mi) ) {
 					mi.next();
 					str = mi.fetch(0);
+					print("match = %s", str);
 				}
 			} catch (GLib.Error e) {
 				return  ret;
