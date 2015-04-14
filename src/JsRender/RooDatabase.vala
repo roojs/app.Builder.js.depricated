@@ -79,7 +79,7 @@ namespace JsRender {
 			Json.Array res_ar;
 			var res = new Json.Object();
 			
-			swith (this.DBTYPE ) {
+			switch (this.DBTYPE ) {
 				case "PostgreSQL":
 				
 					res_ar =   this.fetchAll(this.cnc.execute_select_command( 
