@@ -193,6 +193,7 @@ namespace JsRender {
 					var n = cols.get(i);
 					var val = qnr.get_value_at(i,r);
 					var type = val.type().name();
+					print(type);
 					if (type == "GdaBinary" || type == "GdaBlob") {
 						add.set_string_member(n, "?? big string ??");
 						continue;
