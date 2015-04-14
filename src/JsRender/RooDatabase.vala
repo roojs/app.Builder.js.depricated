@@ -218,11 +218,11 @@ namespace JsRender {
 // testing valac --pkg libgda-5.0 RooDatabase.vala ../Project/Project.vala
  void main() {
      var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
-     x.readTables();
+     var res = x.readTables();
     
     var  generator = new Json.Generator ();
     var  root = new Json.Node(Json.NodeType.ARRAY);
-    root.init_array(this.json_project_data);
+    root.init_array(res);
     generator.set_root (root);
     if (show_all) {
 	    generator.pretty = true;
