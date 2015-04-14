@@ -161,7 +161,7 @@ namespace JsRender {
 				var lr = kv[1].split(":");
 				o.set_string_member("table", lr[0].strip());
 				o.set_string_member("col", lr[1].strip());
-				o.set_array_member("schmea", this.table(lr[0].strip());
+				o.set_array_member("schmea", this.table(lr[0].strip()));
 				ret.add_object_element(o);
 				
 				
