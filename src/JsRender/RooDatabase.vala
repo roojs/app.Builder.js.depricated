@@ -170,7 +170,7 @@ namespace JsRender {
 			for (var i = 0; i < ar.length; i++) {
 				var kv = ar[i].split("=");
 				var o = new Json.Object();
-				o.set_string_member("key", kv[0].strip());
+				//o.set_string_member("key", kv[0].strip());
 				var lr = kv[1].split(":");
 				o.set_string_member("relates_to_table", lr[0].strip());
 				o.set_string_member("relates_to_col", lr[1].strip());
