@@ -73,10 +73,16 @@ namespace JsRender {
 			
 		}
 		
-		public Json.Object readTable(string tablename) {
-			if (this.DBTYPE== "PostgreSQL") {
+		public Json.Object readTable(string tablename) 
+		{
+			
+			Json.Array res_ar;
+			var res = new Json.Object();
+			
+			swith (this.DBTYPE ) {
+				case "PostgreSQL":
 				
-				var  this.fetchAll(this.cnc.execute_select_command( 
+					res_ar =   this.fetchAll(this.cnc.execute_select_command( 
 					"""
 					
 					 SELECT 
@@ -102,13 +108,23 @@ namespace JsRender {
 						AND c.relname = '""" + tablename + """' AND f.attnum > 0 ORDER BY number;
 							
 					"""));
+					break;
+					
+				case  "MySQL":
+					res_ar = this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
+					break;
 				
+				default: 
+					return res;
+					break;
 			}
-			if (this.DBTYPE== "MySQL") { 
-				return this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
-			}
-			return  new Json.Array();
 			
+			for (var i =0; i < res_ar.get_length(); i++) {
+				var el = res_ar.get_object_element(i);
+				res.set_object_member( el.get_string_member("Field"), el);
+					
+			}
+			return res;
 			
 			
 		}
