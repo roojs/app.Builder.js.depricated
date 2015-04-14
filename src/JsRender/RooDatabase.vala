@@ -177,7 +177,11 @@ namespace JsRender {
 			var ar = str.split("\n");
 			for (var i = 0; i < ar.length; i++) {
 				var kv = ar[i].split("=");
+				if (!ret.has_member(kv[0].strip())) { 
+					continue;
+				}
 				var o = ret.get_object_member(kv[0].strip());
+				
 				//o.set_string_member("key", kv[0].strip());
 				var lr = kv[1].split(":");
 				o.set_string_member("relates_to_table", lr[0].strip());
