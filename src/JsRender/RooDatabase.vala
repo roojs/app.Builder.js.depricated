@@ -179,7 +179,7 @@ namespace JsRender {
 			//print(Json.stringify(cols, null,4));
 			var iter = qnr.create_iter();
 			var res = new Json.Array();
-			 print("ROWS %d\n", this.get_n_rows());
+			 print("ROWS %d\n", qnr.get_n_rows());
 			
 			for (var r = 0; r < qnr.get_n_rows(); r++) {
 				
