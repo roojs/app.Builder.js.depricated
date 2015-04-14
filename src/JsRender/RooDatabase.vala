@@ -121,8 +121,7 @@ namespace JsRender {
 				return  ret;
 			}
 			
-			var jarr = this.fetchAll(this.cnc.execute_select_command( 
-					"""
+			var query = """
 					
 					 SELECT 
 						TABLE_COMMENT 
@@ -133,8 +132,11 @@ namespace JsRender {
 						AND
 						TABLE_SCHEMA = '""" + this.DBNAME + """'
 					"""
+			
+			var jarr = this.fetchAll(this.cnc.execute_select_command( 
+					query
 					));
-					
+			print(query);
 			if (jarr.get_length() < 1) {
 				return  ret;
 			}
