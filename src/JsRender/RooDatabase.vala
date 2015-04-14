@@ -253,8 +253,8 @@ namespace JsRender {
     
 	var  generator = new Json.Generator ();
     var  root = new Json.Node(Json.NodeType.OBJECT);
-    root.init_array(res);
-    generator.set_root (object);
+    root.init_object(res);
+    generator.set_root (root);
     
 	    generator.pretty = true;
 	    generator.indent = 4;
