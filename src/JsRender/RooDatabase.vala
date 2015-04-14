@@ -122,16 +122,15 @@ namespace JsRender {
 			}
 			
 			var query = """
-                    
-SELECT 
-TABLE_COMMENT 
-FROM
-information_schema.TABLES
-WHERE
-TABLE_NAME = '""" + table + """'
-AND
-TABLE_SCHEMA = '""" + this.DBNAME + """'
-                    """;
+				SELECT 
+				TABLE_COMMENT 
+				FROM
+				information_schema.TABLES
+				WHERE
+				TABLE_NAME = '""" + table + """'
+				AND
+				TABLE_SCHEMA = '""" + this.DBNAME + """'
+			""";
 			
 			var jarr = this.fetchAll(this.cnc.execute_select_command( 
 					query
