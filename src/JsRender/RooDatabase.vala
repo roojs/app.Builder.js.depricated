@@ -113,9 +113,22 @@ namespace JsRender {
 			
 		}
 		
-		public Json.Array readForeignKeys(string table)
-        {
-			var ret =   new Json.Array();
+		public Json.Object readFullSchema(string table)
+		{
+			var ar = this.readTable(table);
+			var fks = this.readForeignKeys(table);
+			
+			
+			
+			
+		}
+			
+			
+		
+		
+		public Json.Object readForeignKeys(string table)
+        { 
+			var ret =   new Json.Object();
 			// technically we should use FK stuff in mysql, but for the momemnt use my hacky FK()
 			if (this.DBTYPE != "MySQL") { 
 				return  ret;
@@ -159,10 +172,10 @@ namespace JsRender {
 				var o = new Json.Object();
 				o.set_string_member("key", kv[0].strip());
 				var lr = kv[1].split(":");
-				o.set_string_member("table", lr[0].strip());
-				o.set_string_member("col", lr[1].strip());
-				o.set_array_member("schmea", this.readTable(lr[0].strip()));
-				ret.add_object_element(o);
+				o.set_string_member("relates_to_table", lr[0].strip());
+				o.set_string_member("relates_to_col", lr[1].strip());
+				o.set_array_member("schema", this.readTable(lr[0].strip()));
+				ret.add_object_member(kv[0].strip(),o);
 				
 				
 			}
