@@ -229,7 +229,8 @@ namespace JsRender {
  void main() {
      var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
     // var res = x.readTables();
-    var res= x.readTable("Person");
+    //var res= x.readTable("Person");
+    var res= x.readForeignKeys("Person");
     
 	var  generator = new Json.Generator ();
     var  root = new Json.Node(Json.NodeType.ARRAY);
