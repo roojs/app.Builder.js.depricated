@@ -134,7 +134,9 @@ namespace JsRender {
 		
 		public Json.Object readForeignKeys(string table)
         { 
-			var ret =   new Json.Object();
+			
+			
+			var ret =   this.readTable(table);
 			// technically we should use FK stuff in mysql, but for the momemnt use my hacky FK()
 			if (this.DBTYPE != "MySQL") { 
 				return  ret;
