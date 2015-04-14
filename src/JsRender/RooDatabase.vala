@@ -147,7 +147,7 @@ namespace JsRender {
 				GLib.MatchInfo mi;
 				if ( exp.match (contents, 0, out mi) ) {
 					mi.next();
-					str = mi.fetch(0);
+					str = mi.fetch(1);
 					print("match = %s", str);
 				}
 			} catch (GLib.Error e) {
