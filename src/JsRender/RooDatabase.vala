@@ -224,10 +224,10 @@ namespace JsRender {
     var  root = new Json.Node(Json.NodeType.ARRAY);
     root.init_array(res);
     generator.set_root (root);
-    if (show_all) {
+    
 	    generator.pretty = true;
 	    generator.indent = 4;
-    }
+    
 
     print("%s\n", generator.to_data (null));
  }
