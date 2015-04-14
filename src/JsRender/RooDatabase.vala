@@ -13,19 +13,19 @@ namespace JsRender {
   
     class RooDatabase : Object 
     {
-        public Project.Project project;
+        //public Project.Project project;
 
-	public string DBTYPE;
-	public string DBNAME;
-     
+		public string DBTYPE;
+		public string DBNAME;
+		 
         public Gda.Connection cnc;
-        
-	public RooDatabase (Project.Project project)
+        /*
+		public RooDatabase (Project.Project project)
         {
             this.project = project;
-	    this.DBTYPE = this.project.json_project_data.get_string_member("DBTYPE");
-	    this.DBNAME = this.project.json_project_data.get_string_member("DBNAME");
-            this.cnc = Gda.Connection.open_from_string (
+			this.DBTYPE = this.project.json_project_data.get_string_member("DBTYPE");
+			this.DBNAME = this.project.json_project_data.get_string_member("DBNAME");
+				this.cnc = Gda.Connection.open_from_string (
 				this.DBTYPE,
 				"DB_NAME=" + this.DBNAME, 
 				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
@@ -34,10 +34,11 @@ namespace JsRender {
 			);
             
         }
+        * */
         public RooDatabase.from_cfg (string dbtype, string dbname, string dbuser, string dbpass)
          {
              this.DBTYPE = dbtype;
-	     this.DBNAME = dbname;
+			this.DBNAME = dbname;
 		
              this.cnc = Gda.Connection.open_from_string (
 				this.DBTYPE,
