@@ -167,9 +167,7 @@ namespace JsRender {
 				
 			}
 			return ret;
-				
-        
-        
+				 
 		}
         public Json.Array fetchAll(Gda.DataModel qnr)
 		{
