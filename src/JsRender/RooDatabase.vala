@@ -206,6 +206,7 @@ namespace JsRender {
 						
 						default:
 							add.set_string_member(n, val.get_string());
+							break;
 					}
 					
 				}
