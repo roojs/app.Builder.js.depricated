@@ -138,6 +138,8 @@ namespace JsRender {
 			if (jarr.get_length() < 1) {
 				return  ret;
 			}
+			return ret;
+			
 			var contents = jarr.get_string_element(0);
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
