@@ -128,16 +128,7 @@ namespace JsRender {
 			
 		}
 		
-		public Json.Object readFullSchema(string table)
-		{
-			var ar = this.readTable(table);
-			var fks = this.readForeignKeys(table);
-			
-			return fks;
-			
-			
-		}
-			
+	 
 			
 		
 		
