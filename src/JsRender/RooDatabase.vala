@@ -174,7 +174,7 @@ namespace JsRender {
 				var lr = kv[1].split(":");
 				o.set_string_member("relates_to_table", lr[0].strip());
 				o.set_string_member("relates_to_col", lr[1].strip());
-				o.set_array_member("schema", this.readTable(lr[0].strip()));
+				o.set_array_member("relates_to_schema", this.readTable(lr[0].strip()));
 				ret.set_object_member(kv[0].strip(),o);
 				
 				
