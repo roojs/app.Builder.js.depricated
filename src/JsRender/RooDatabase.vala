@@ -201,7 +201,7 @@ namespace JsRender {
 							break;
 							
 						case  "GdaNull":
-							add.set_string_member(n, "");
+							add.set_null_member(n);
 							break;
 						
 						default:
