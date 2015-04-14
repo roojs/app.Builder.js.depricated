@@ -122,7 +122,6 @@ namespace JsRender {
 			for (var i =0; i < res_ar.get_length(); i++) {
 				var el = res_ar.get_object_element(i);
 				res.set_object_member( el.get_string_member("Field"), el);
-					
 			}
 			return res;
 			
