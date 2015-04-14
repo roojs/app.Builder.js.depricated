@@ -188,7 +188,7 @@ namespace JsRender {
 				print("COLS  %d\n", cols.size);
 				if (cols.size == 1) {
 					var str = qnr.get_value_at(0,r).get_string();
-					print(str);
+					print("GOT %s\n",str);
 					res.add_string_element(qnr.get_value_at(0,r).get_string());
 					continue;
 				}
