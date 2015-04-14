@@ -118,7 +118,7 @@ namespace JsRender {
 			var ar = this.readTable(table);
 			var fks = this.readForeignKeys(table);
 			
-			
+			return fks;
 			
 			
 		}
@@ -252,9 +252,9 @@ namespace JsRender {
     var res= x.readForeignKeys("Person");
     
 	var  generator = new Json.Generator ();
-    var  root = new Json.Node(Json.NodeType.ARRAY);
+    var  root = new Json.Node(Json.NodeType.OBJECT);
     root.init_array(res);
-    generator.set_root (root);
+    generator.set_root (object);
     
 	    generator.pretty = true;
 	    generator.indent = 4;
