@@ -214,6 +214,7 @@ namespace JsRender {
 	
 }
 
+// testing valac --pkg libgda-5.0 RooDatabase.vala ../Project/Project.vala
  void main() {
      var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
      x.readTables();
@@ -227,5 +228,5 @@ namespace JsRender {
 	    generator.indent = 4;
     }
 
-    print("%s\n"m  generator.to_data (null));
+    print("%s\n", generator.to_data (null));
  }
