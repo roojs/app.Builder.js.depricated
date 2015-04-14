@@ -73,10 +73,10 @@ namespace JsRender {
 			
 		}
 		
-		public Json.Array readTable(string tablename) {
+		public Json.Object readTable(string tablename) {
 			if (this.DBTYPE== "PostgreSQL") {
 				
-				return this.fetchAll(this.cnc.execute_select_command( 
+				var  this.fetchAll(this.cnc.execute_select_command( 
 					"""
 					
 					 SELECT 
