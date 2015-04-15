@@ -47,10 +47,11 @@ public class FakeServerCache : Object
 	   }
 	    var el = new  FakeServerCache.with_data(data);
 	     cache.set(el.fname, el);
+	    return el;
 	}
     
 	public FakeServerCache.with_data( string data ) {
-	    this.fname = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
+	    this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
 	    this.data = data;
 	    this.content_type = "text/javascript";
 	    this.size= data.length;
