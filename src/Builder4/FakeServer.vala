@@ -69,7 +69,7 @@ public class FakeServerCache : Object
 	}
 
 
-	public override InputStream? run_async(Cancellable? cancellable) throws GLib.Error
+	public override InputStream? run_async( ) 
 	{
 		//var f = ensure_resource();
 
