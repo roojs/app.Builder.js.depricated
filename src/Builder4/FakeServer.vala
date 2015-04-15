@@ -69,7 +69,7 @@ public class FakeServerCache : Object
 	}
 
 
-	public override InputStream? run_async( ) 
+	public   InputStream? run_async( ) 
 	{
 		//var f = ensure_resource();
 
@@ -81,6 +81,7 @@ public class FakeServerCache : Object
 	{
 	    SourceFunc callback = run_impl.callback;
 	    InputStream? ret = null;
+	    Error? err = null;
 	    new Thread<void*>("builder-fake-webserver", () => {
 		    // Actually do it
 		    try
@@ -108,23 +109,24 @@ public class FakeServerCache : Object
 	    // Return the input stream
 	    return ret;
 	}
-	public void run((WebKit.URISchemeRequest request, Cancellable? cancellable) {
+	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) {
 	    run_impl.begin(cancellable, (obj, res) => {
 		InputStream? stream = null;
 
-		try
-		{
+		try {
 			stream = this.run_impl.end(res);
 		} catch (Error e)  {
 		    request.finish_error(e);
 		}
-		if (stream == null)
-		{
+		if (stream == null) {
 		    stream = new MemoryInputStream();
 		}
+		print("Send :%s, %s (%s/%d)", request.get_path(), 
+		      cdata.content_type, cdata.size.to_string(), cdata.data.length);
+		
 		request.finish(stream,
 	                 this.size,
-	                 this.content_type
+	                 this.content_type);
                  
 	    
 		});
@@ -169,17 +171,18 @@ public class FakeServer : Object
 			request.finish_error(new FakeServerError.FILE_DOES_NOT_EXIST ("My error msg"));
 			return;
 		}
+	
 		print("Send :%s, %s (%s/%d)", request.get_path(), 
 		      cdata.content_type, cdata.size.to_string(), cdata.data.length);
-	   
-		var stream = new GLib.MemoryInputStream.from_data (cdata.data.data,  GLib.free);
+		cdata.run(request,    null);
+		//var stream = new GLib.MemoryInputStream.from_data (cdata.data.data,  GLib.free);
 		    
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
 		
 		
 		
-		request.finish (  stream, cdata.size  , cdata.content_type);
+		//request.finish (  stream, cdata.size  , cdata.content_type);
 		//stream.close();
 	}
 
