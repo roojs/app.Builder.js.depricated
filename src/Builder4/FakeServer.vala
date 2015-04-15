@@ -121,8 +121,8 @@ public class FakeServerCache : Object
 		if (stream == null) {
 		    stream = new MemoryInputStream();
 		}
-		print("Send :%s, %s (%s/%d)", request.get_path(), 
-		      cdata.content_type, cdata.size.to_string(), cdata.data.length);
+		print("Send : %s (%s/%d)", , 
+		      this.content_type, this.size.to_string(), this.data.length);
 		
 		request.finish(stream,
 	                 this.size,
