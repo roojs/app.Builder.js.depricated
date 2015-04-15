@@ -160,7 +160,8 @@ public class FakeServer : Object
         //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
          //
-	var cx = this.view.get_context();
+	var cx = WebKit.WebContext.get_default();
+	//var cx = this.view.get_context();
         cx.register_uri_scheme("xhttp",  serve);
 	cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
         
