@@ -95,7 +95,10 @@ public class FakeServerCache : Object
 	                 this.size,
 	                 this.content_type);
                  
-	     
+	    if (this.delete_after) { 
+		cache.
+
+		
 	    return;
 	     
 	}
