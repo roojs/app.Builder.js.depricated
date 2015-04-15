@@ -442,6 +442,7 @@ public class Xcls_WindowRooView : Object
                     return;
                 }
               //  this.el.run_javascript(this.runjs, null);
+                 FakeServerCache.remove(    this.runjs);
                 this.runjs = "";
             });
         }
