@@ -584,9 +584,13 @@ public class Xcls_WindowRooView : Object
             //}
             this.lastRedraw = new DateTime.now_local();
         
-            this.runjs = js_src;
+        
+            //this.runjs = js_src;
+           var fc =  FakeServerCache.with_data(js_src);
+            
+            
                 var html = inhtml.replace("</head>", runhtml + this.runhtml + 
-                
+                    "<script type=\"text/javascript\" src=\"/" + fc.fname + "\"></script>" +   
                       //  "<script type=\"text/javascript\">\n" +
                       //  js_src + "\n" + 
                       //  "</script>" + 
