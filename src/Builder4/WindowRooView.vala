@@ -641,6 +641,7 @@ public class Xcls_WindowRooView : Object
                 return true;
                
             });
+            /*
             this.inspector.closed.connect(() => {
                  print("inspector closed?!?");
                  // if this happens destroy the webkit..
@@ -676,6 +677,7 @@ public class Xcls_WindowRooView : Object
                  _this.view.refreshRequired  = true;
                
             }); 
+            */
             
             this.inspector.show();
         }
