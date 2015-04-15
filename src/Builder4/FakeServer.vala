@@ -31,7 +31,7 @@ public class FakeServerCache : Object
 	    if (cache == null) {
 	 	cache = new Gee.HashMap<string,FakeServerCache>();
 	   }
-	    print ("CACHE look for ==%s==\n", fname);
+	   // print ("CACHE look for ==%s==\n", fname);
 	    if (cache.has_key(fname)) {
 		print ("CACHE got  %s\n", fname);
  		return cache.get(fname);
@@ -54,7 +54,7 @@ public class FakeServerCache : Object
 	    
  
 	    FakeServerCache v;
-	    print("CACHE delete %s\n", this.fname);
+ 
 	    cache.unset(fname, out v);
 	    
 
