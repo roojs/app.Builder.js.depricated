@@ -19,12 +19,16 @@ public errordomain FakeServerError {
 	
 public class FakeServer : Object
 {
-	
+	static Gee.HashMap<string,string> cache;
 	WebKit.WebView view;
 	
 	public FakeServer(WebKit.WebView wkview)
 	{
 		this.view = wkview;
+		if (cache == null) {
+		    cache = new Gee.HashMap<string,string>();
+		}
+		
 		// 
 		
 		  
@@ -38,7 +42,7 @@ public class FakeServer : Object
          this.view.get_context().register_uri_scheme("xhttp",  serve);
         
     }
-    static Gee.Map<string,string> cache;
+    
     
     public void serve(WebKit.URISchemeRequest request)
     { 
