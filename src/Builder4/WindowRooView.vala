@@ -604,14 +604,14 @@ public class Xcls_WindowRooView : Object
         }
         public void initInspector () {
             
-            if (this.inspector == this.el.get_inspector()) {
+           /* if (this.inspector == this.el.get_inspector()) {
                 this.inspector.show();
                 this.inspector.open_window();        
                 print("init inspecter called, and inspector is the same as existing\n");
                 return;
             }
             print("new inspector?\n");
-        
+        */
             this.inspector = this.el.get_inspector();
             this.inspector.ref();
             
