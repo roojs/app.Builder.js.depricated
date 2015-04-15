@@ -441,7 +441,8 @@ public class Xcls_WindowRooView : Object
                 if (this.runjs.length < 1) {
                     return;
                 }
-                this.el.run_javascript(this.runjs, null);
+              //  this.el.run_javascript(this.runjs, null);
+                this.runjs = "";
             });
         }
 
