@@ -23,8 +23,7 @@ public class FakeServerCache : Object
 	public string data;
 	public string content_type;
 	public int64 size; 
-	public bool delete_after; 
-
+	 
 	public static Gee.HashMap<string,FakeServerCache> cache;
 	
         public static FakeServerCache factory(string fname)
@@ -44,7 +43,24 @@ public class FakeServerCache : Object
  	    cache.set(fname, el);
 	    return el;
 	}
+	// called onload to clear the temporary cached file..
+	public static void remove(string fname) {
+	    if (cache == null) {
+		return;
+	    }
+	    if (!cache.has_key(fname)) {
+		return;
+ 	    }
+	    
+ 
+	    FakeServerCache v;
+	    print("CACHE delete %s\n", this.fname);
+	    cache.unset(fname, out v);
+	    
 
+	    
+	}
+    
 	public static FakeServerCache factory_with_data(string data) {
 	     if (cache == null) {
 	 	cache = new Gee.HashMap<string,FakeServerCache>();
@@ -60,12 +76,12 @@ public class FakeServerCache : Object
 	    this.data = data;
 	    this.content_type = "text/javascript";
 	    this.size= data.length;
-	    this.delete_after = true;
+	 
 	  
 	}
 
 	public FakeServerCache( string fname ) {
-	       this.delete_after = false;
+	       
 		this.fname = fname;
 
 
@@ -110,12 +126,7 @@ public class FakeServerCache : Object
 	                 this.size,
 	                 this.content_type);
                  
-	    if (this.delete_after) { 
-		FakeServerCache v;
-		print("CACHE delete %s\n", this.fname);
-		cache.unset(this.fname, out v);
-	    }
-
+	    
 		
 	    return;
 	     
