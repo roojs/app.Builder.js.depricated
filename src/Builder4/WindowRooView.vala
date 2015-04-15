@@ -586,7 +586,7 @@ public class Xcls_WindowRooView : Object
         
         
             //this.runjs = js_src;
-           var fc = new  FakeServerCache.with_data(js_src);
+           var fc =    FakeServerCache.factory_with_data(js_src);
             
             
                 var html = inhtml.replace("</head>", runhtml + this.runhtml + 
