@@ -175,7 +175,7 @@ public class FakeServer : Object
 	//var cx = this.view.get_context();
         cx.register_uri_scheme("xhttp",  serve);
 	cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
-        
+       // = crash  cx.set_process_model (WebKit.ProcessModel.MULTIPLE_SECONDARY_PROCESSES );
     }
     
     
