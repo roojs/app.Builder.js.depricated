@@ -96,7 +96,9 @@ public class FakeServerCache : Object
 	                 this.content_type);
                  
 	    if (this.delete_after) { 
-		cache.
+		FakeServerCache v;
+		cache.unset(this.fname, out v);
+	    }
 
 		
 	    return;
