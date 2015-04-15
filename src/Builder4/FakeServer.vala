@@ -61,8 +61,10 @@ public class FakeServerCache : Object
 	    try { 
 		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
 	    } catch (Error e) {
-		
-
+		this.data = "";
+		this.size = 0;
+		 this.content_type = "";
+		return;
 	    }
 
 	    this.data = data;
