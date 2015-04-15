@@ -586,11 +586,11 @@ public class Xcls_WindowRooView : Object
         
         
             //this.runjs = js_src;
-           var fc =  FakeServerCache.with_data(js_src);
+           var fc = new  FakeServerCache.with_data(js_src);
             
             
                 var html = inhtml.replace("</head>", runhtml + this.runhtml + 
-                    "<script type=\"text/javascript\" src=\"/" + fc.fname + "\"></script>" +   
+                    "<script type=\"text/javascript\" src=\"xhttp://localhost/" + fc.fname + "\"></script>" +   
                       //  "<script type=\"text/javascript\">\n" +
                       //  js_src + "\n" + 
                       //  "</script>" + 
