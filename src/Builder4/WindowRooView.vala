@@ -623,6 +623,12 @@ public class Xcls_WindowRooView : Object
                 var wv = this.inspector.get_web_view();
                 if (wv != null) {
                     print("got inspector web view\n");
+                    
+                    var cn = _this.inspectorcontainer.el.get_child();
+                    if (cn != null) {
+                         _this.inspectorcontainer.el.remove(cn);
+                     }
+                    
                     _this.inspectorcontainer.el.add(wv);
                     wv.show();
                 } else {
@@ -682,10 +688,7 @@ public class Xcls_WindowRooView : Object
                 print("Skipping redraw - no force, and autodraw off");
                 return;
             }
-            if (force) {
-                this.reInit();
-                return;
-            }
+             
             this.refreshRequired  = true;
         }
     }
