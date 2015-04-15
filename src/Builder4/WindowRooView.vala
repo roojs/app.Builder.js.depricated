@@ -591,7 +591,7 @@ public class Xcls_WindowRooView : Object
                 );
                 
             // force the inspector...        
-                  this.initInspector();
+               //   this.initInspector();
                 
                 // - no need for this, the builder javascript will call it when build is complete
                 //GLib.Timeout.add_seconds(1, () => {
