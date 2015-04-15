@@ -42,7 +42,7 @@ public class FakeServerCache : Object
 	}
 
 
-	public FakeServerCache( string fname) {
+	public FakeServerCache( string fname, string? data = null ) {
 	       this.delete_after = false;
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
