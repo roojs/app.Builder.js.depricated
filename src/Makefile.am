@@ -91,7 +91,7 @@ builder_SOURCES = \
 		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
-		Resources.vala \
+		Resources.vala
 
 
 #		JsRender/RooDatabase.vala 
