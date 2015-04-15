@@ -67,6 +67,59 @@ public class FakeServerCache : Object
 	    
 
 	}
+
+
+    
+	private async InputStream? run_impl(Cancellable? cancellable) throws GLib.Error
+	{
+	    SourceFunc callback = run_impl.callback;
+	    InputStream? ret = null;
+	    new Thread<void*>("builder-fake-webserver", () => {
+		    // Actually do it
+		    try
+		    {
+			    ret = this.run_async(cancellable);
+		    }
+		    catch (Error e)
+		    {
+			    err = e;
+		    }
+
+		    // Schedule the callback in idle
+		    Idle.add((owned)callback);
+		    return null;
+	    });
+
+	    // Wait for it to finish, yield to caller
+	    yield;
+
+	    if (err != null)
+	    {
+		    throw err;
+	    }
+
+	    // Return the input stream
+	    return ret;
+	}
+	public void run((WebKit.URISchemeRequest request, Cancellable? cancellable) {
+	    run_impl.begin(cancellable, (obj, res) => {
+		InputStream? stream = null;
+
+		try
+		{
+			stream = this.run_impl.end(res);
+		} catch (Error e)  {
+		    request.finish_error(e);
+		}
+		if (stream == null)
+		{
+		    stream = new MemoryInputStream();
+		}
+		d_request.finish(stream,
+			                 this.size,
+			                 this.content_type
+	    
+		});
 }
 
 public class FakeServer : Object
@@ -115,51 +168,11 @@ public class FakeServer : Object
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
 		
-		run_impl.begin(cancellable, (obj, res) => {
-			InputStream? stream = null;
-
-			try
-			{
-				stream = this.run_impl.end(res);
-			} catch (Error e)  {
-			    request.finish_error(e);
-
-			}
-		});
+		
 		
 		request.finish (  stream, cdata.size  , cdata.content_type);
 		//stream.close();
 	}
 
-    private async InputStream? run_impl(Cancellable? cancellable) throws GLib.Error
-    {
-	SourceFunc callback = run_impl.callback;
-	InputStream? ret = null;
-	new Thread<void*>("builder-fake-webserver", () => {
-		// Actually do it
-		try
-		{
-			ret = this.run_async(cancellable);
-		}
-		catch (Error e)
-		{
-			err = e;
-		}
-
-		// Schedule the callback in idle
-		Idle.add((owned)callback);
-		return null;
-	});
-
-	// Wait for it to finish, yield to caller
-	yield;
-
-	if (err != null)
-	{
-		throw err;
-	}
-
-	// Return the input stream
-	return ret;
-    }
+   
 }
