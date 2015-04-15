@@ -32,9 +32,13 @@ public class FakeServerCache : Object
 	    if (cache == null) {
 	 	cache = new Gee.HashMap<string,FakeServerCache>();
 	   }
+	    print ("CACHE look for %s\n", fname);
 	    if (cache.has_key(fname)) {
+		print ("CACHE got  %s\n", fname);
  		return cache.get(fname);
  	    }
+	    print ("CACHE create  %s\n", fname);
+	    
 	    var el = new  FakeServerCache(fname);
  
  	    cache.set(fname, el);
