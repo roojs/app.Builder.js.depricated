@@ -85,7 +85,7 @@ public class FakeServerCache : Object
 		    // Actually do it
 		    try
 		    {
-			    ret = this.run_async(cancellable);
+			    ret = this.run_async();
 		    }
 		    catch (Error e)
 		    {
