@@ -587,7 +587,7 @@ public class Xcls_WindowRooView : Object
                 
                 this.el.load_html( html , 
                     //fixme - should be a config option!
-                    (rootURL.length > 0 ? rootURL : "xhttp://localhost/app.Builder.js/")
+                    (rootURL.length > 0 ? rootURL : "http://localhost/app.Builder.js/")
                 );
                 
             // force the inspector...        
