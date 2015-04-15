@@ -303,6 +303,7 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
         public string renderedData;
         public bool refreshRequired;
+        public void reInit;
         public WebKit.WebInspector inspector;
         public int redraws;
         public GLib.DateTime lastRedraw;
@@ -319,6 +320,10 @@ public class Xcls_WindowRooView : Object
             // my vars (dec)
             this.renderedData = "";
             this.refreshRequired = false;
+            this.reInit = () {
+
+}
+;
             this.redraws = 0;
             this.lastRedraw = null;
             this.runhtml = "";
@@ -565,9 +570,6 @@ public class Xcls_WindowRooView : Object
         //     print( "before render" +    this.lastRedraw);
         //    print( "after render" +    (new Date()));
             
-        }
-        public return_type XXXX () {
-        
         }
         public void initInspector () {
             
