@@ -24,20 +24,20 @@ public class FakeServerCache : Object
 	public string content_type;
 	public int64 size; 
 
-	public static Gee.HashMap<string,GLib.MemoryInputStream> cache;
+	public static Gee.HashMap<string,FakeServerCache> cache;
 	
-        public static factory(string fname)
+        public static FakeServerCache factory(string fname)
 	{
 	    if (cache == null) {
-		cache = new Gee.HashMap<string,GLib.MemoryInputStream>();
+		cache = new Gee.HashMap<string,FakeServerCache>();
 	    }
-	    if (cache.has_key(fn)) {
-		return cache.get(fn);
+	    if (cache.has_key(fname)) {
+		return cache.get(fname);
 	    }
-	    var el = new  FakeServerCache(fn);
+	    var el = new  FakeServerCache(fname);
  
 	     
-	    cache.set(fn, el);
+	    cache.set(fname, el);
 	    return el;
 	}
 
@@ -59,7 +59,11 @@ public class FakeServerCache : Object
 	    string data;
 	    size_t length;
 	    GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+
 	    this.data = data;
+
+	    print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
+	  	  this.content_type, this.size.to_string(), this.data.length);
 	    
 
 	}
@@ -94,34 +98,25 @@ public class FakeServer : Object
 		// request is URISchemeRequest
 			 
 		print("REQ: %s\n",request.get_path());
-		
- 		
-		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + request.get_path());
-		if (!file.query_exists()) {
+		var cdata = FakeServerCache.factory(request.get_path());
+	
+ 		if (cdata.size < 1 ) {
 			print("Skip file missing = %s/gitlive%s\n", GLib.Environment.get_home_dir() , request.get_path());
 			request.finish_error(new FakeServerError.FILE_DOES_NOT_EXIST ("My error msg"));
 			return;
 		}
-		
-
-		if (!cache.has_key(file.get_path())) {
+		print("Send :%s, %s (%s/%d)", fname , 
+	  	  cdata.content_type, cdata.size.to_string(), cdata.data.length);
+	   
+		var stream = new GLib.MemoryInputStream.from_data (cdata.data.data,  GLib.free);
 		    
-	
-		    string data;
-		    size_t length;
-		    GLib.FileUtils.get_contents(file.get_path(), out data, out length);
- 
-		    var stream = new GLib.MemoryInputStream.from_data (data.data,  GLib.free);
-		    cache.set(file.get_path(), stream);
-		}
-		
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
 		
 		
-		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
-		request.finish (  cache.get(request.get_path()), info.get_size()  , info.get_content_type());
+		
+		request.finish (  stream, cdata.size  , cdata.content_type);
 		//stream.close();
 	}
 }
