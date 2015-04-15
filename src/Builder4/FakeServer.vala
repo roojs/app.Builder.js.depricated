@@ -87,8 +87,10 @@ public class FakeServer : Object
         //this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
         //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
           
-         // 
-         this.view.get_context().register_uri_scheme("xhttp",  serve);
+         //
+	var cx = this.view.get_context();
+        cx.register_uri_scheme("xhttp",  serve);
+	cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
         
     }
     
@@ -105,8 +107,8 @@ public class FakeServer : Object
 			request.finish_error(new FakeServerError.FILE_DOES_NOT_EXIST ("My error msg"));
 			return;
 		}
-		print("Send :%s, %s (%s/%d)", fname , 
-	  	  cdata.content_type, cdata.size.to_string(), cdata.data.length);
+		print("Send :%s, %s (%s/%d)", request.get_path(), 
+		      cdata.content_type, cdata.size.to_string(), cdata.data.length);
 	   
 		var stream = new GLib.MemoryInputStream.from_data (cdata.data.data,  GLib.free);
 		    
@@ -119,4 +121,36 @@ public class FakeServer : Object
 		request.finish (  stream, cdata.size  , cdata.content_type);
 		//stream.close();
 	}
+
+    private async InputStream? run_impl(Cancellable? cancellable) throws GLib.Error
+    {
+	SourceFunc callback = run_impl.callback;
+	InputStream? ret = null;
+	new Thread<void*>("gitg-gtk-diff-view", () => {
+		// Actually do it
+		try
+		{
+			ret = this.run_async(cancellable);
+		}
+		catch (Error e)
+		{
+			err = e;
+		}
+
+		// Schedule the callback in idle
+		Idle.add((owned)callback);
+		return null;
+	});
+
+	// Wait for it to finish, yield to caller
+	yield;
+
+	if (err != null)
+	{
+		throw err;
+	}
+
+	// Return the input stream
+	return ret;
+}
 }
