@@ -306,6 +306,7 @@ public class Xcls_WindowRooView : Object
         public bool refreshRequired;
         public WebKit.WebInspector inspector;
         public int redraws;
+        public string XXXX;
         public GLib.DateTime lastRedraw;
         public string runhtml;
         public bool pendingRedraw;
