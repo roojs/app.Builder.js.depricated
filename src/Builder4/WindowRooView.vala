@@ -257,8 +257,8 @@ public class Xcls_WindowRooView : Object
             this.el.clicked.connect( () => {
               _this.view.redraws = 99;
                 _this.view.el.web_context.clear_cache();  
-              _this.view.renderJS(true);
-              
+              //_this.view.renderJS(true);
+              _this.view.reInit();
             
             });
         }
