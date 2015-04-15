@@ -303,7 +303,6 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
         public string renderedData;
         public bool refreshRequired;
-        public void reInit;
         public WebKit.WebInspector inspector;
         public int redraws;
         public GLib.DateTime lastRedraw;
@@ -320,10 +319,6 @@ public class Xcls_WindowRooView : Object
             // my vars (dec)
             this.renderedData = "";
             this.refreshRequired = false;
-            this.reInit = () {
-
-}
-;
             this.redraws = 0;
             this.lastRedraw = null;
             this.runhtml = "";
@@ -439,6 +434,9 @@ public class Xcls_WindowRooView : Object
         }
 
         // user defined functions 
+        public void reInit () {
+        
+        }
         public void runRefresh () 
         {
             // this is run every 2 seconds from the init..
