@@ -305,8 +305,8 @@ public class Xcls_WindowRooView : Object
         public string renderedData;
         public bool refreshRequired;
         public WebKit.WebInspector inspector;
+        public string runjs;
         public int redraws;
-        public string XXXX;
         public GLib.DateTime lastRedraw;
         public string runhtml;
         public bool pendingRedraw;
@@ -321,6 +321,7 @@ public class Xcls_WindowRooView : Object
             // my vars (dec)
             this.renderedData = "";
             this.refreshRequired = false;
+            this.runjs = "";
             this.redraws = 0;
             this.lastRedraw = null;
             this.runhtml = "";
