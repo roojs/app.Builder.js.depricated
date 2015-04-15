@@ -131,6 +131,11 @@ public class FakeServerCache : Object
 	    return;
 	     
 	}
+	static public void clear()
+        {
+	    cache.clear();
+	}
+    
 }
 
 public class FakeServer : Object
