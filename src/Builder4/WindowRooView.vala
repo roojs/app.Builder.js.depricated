@@ -583,11 +583,12 @@ public class Xcls_WindowRooView : Object
             //}
             this.lastRedraw = new DateTime.now_local();
         
+            this.runjs = js_src;
                 var html = inhtml.replace("</head>", runhtml + this.runhtml + 
                 
-                        "<script type=\"text/javascript\">\n" +
-                        js_src + "\n" + 
-                        "</script>" + 
+                      //  "<script type=\"text/javascript\">\n" +
+                      //  js_src + "\n" + 
+                      //  "</script>" + 
                                 
                 "</head>");
                 //print("LOAD HTML " + html);
