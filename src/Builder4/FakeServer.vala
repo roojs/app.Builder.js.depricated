@@ -23,6 +23,7 @@ public class FakeServerCache : Object
 	public string data;
 	public string content_type;
 	public int64 size; 
+	public bool delete_after; 
 
 	public static Gee.HashMap<string,FakeServerCache> cache;
 	
@@ -42,6 +43,7 @@ public class FakeServerCache : Object
 
 
 	public FakeServerCache( string fname) {
+	       this.delete_after = false;
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
 		    this.data = "";
@@ -74,48 +76,7 @@ public class FakeServerCache : Object
 
 	}
 
-
-	public   InputStream? run_async( ) 
-	{
-		//var f = ensure_resource();
-
-		var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
-
-		return stream;
-	}
-	private async InputStream? run_impl(Cancellable? cancellable) throws GLib.Error
-	{
-	    SourceFunc callback = run_impl.callback;
-	    InputStream? ret = null;
-	    Error? err = null;
-	    new Thread<void*>("builder-fake-webserver", () => {
-		    // Actually do it
-		    try
-		    {
-			    ret = this.run_async();
-		    }
-		    catch (Error e)
-		    {
-			    err = e;
-		    }
-
-		    // Schedule the callback in idle
-		    Idle.add((owned)callback);
-		    return null;
-	    });
-
-	    // Wait for it to finish, yield to caller
-	    yield;
-
-	    if (err != null)
-	    {
-		    throw err;
-	    }
-
-	    // Return the input stream
-	    return ret;
-	}
-    
+ 
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
 	    var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
@@ -126,28 +87,7 @@ public class FakeServerCache : Object
 	    
 	
 	    return;
-	    
-	    //run_impl.begin(cancellable, (obj, res) => {
-		/*InputStream? stream = null;
-
-		try {
-			stream = this.run_impl.end(res);
-		} catch (Error e)  {
-		    request.finish_error(e);
-		}
-		if (stream == null) {
-		    stream = new MemoryInputStream();
-		}
-		print("Send : %s (%s/%d)\n",  
-		      this.content_type, this.size.to_string(), this.data.length);
-		
-		request.finish(stream,
-	                 this.size,
-	                 this.content_type);
-                 
-	    
-		});
-	    */
+	     
 	}
 }
 
