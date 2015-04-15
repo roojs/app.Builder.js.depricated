@@ -681,6 +681,10 @@ public class Xcls_WindowRooView : Object
                 print("Skipping redraw - no force, and autodraw off");
                 return;
             }
+            if (force) {
+                this.reInit();
+                return;
+            }
             this.refreshRequired  = true;
         }
     }

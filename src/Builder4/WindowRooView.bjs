@@ -92,7 +92,7 @@
          "# GLib.DateTime lastRedraw" : "null",
          "# string runhtml" : "\"\"",
          "# bool pendingRedraw" : false,
-         "| void renderJS" : "(bool force) {\n\n    // this is the public redraw call..\n    // we refresh in a loop privately..\n    var autodraw = _this.AutoRedraw.el.active;\n    if (!autodraw && !force) {\n        print(\"Skipping redraw - no force, and autodraw off\");\n        return;\n    }\n    this.refreshRequired  = true;\n}\n"
+         "| void renderJS" : "(bool force) {\n\n    // this is the public redraw call..\n    // we refresh in a loop privately..\n    var autodraw = _this.AutoRedraw.el.active;\n    if (!autodraw && !force) {\n        print(\"Skipping redraw - no force, and autodraw off\");\n        return;\n    }\n    if (force) {\n        this.reInit();\n        return;\n    }\n    this.refreshRequired  = true;\n}\n"
         }
        ]
       }
