@@ -28,16 +28,16 @@ public class FakeServerCache : Object
 	
         public static FakeServerCache factory(string fname)
 	{
-	    if (cache == null) {
-		cache = new Gee.HashMap<string,FakeServerCache>();
-	    }
-	    if (cache.has_key(fname)) {
-		return cache.get(fname);
-	    }
+	    //if (cache == null) {
+	//	cache = new Gee.HashMap<string,FakeServerCache>();
+	 //   }
+	  //  if (cache.has_key(fname)) {
+//		return cache.get(fname);
+//	    }
 	    var el = new  FakeServerCache(fname);
  
 	     
-	    cache.set(fname, el);
+//	    cache.set(fname, el);
 	    return el;
 	}
 
@@ -116,14 +116,20 @@ public class FakeServerCache : Object
 	    // Return the input stream
 	    return ret;
 	}
-    /
+    
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
-
-
-
-	    run_impl.begin(cancellable, (obj, res) => {
-		InputStream? stream = null;
+	    var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
+		request.finish(stream,
+	                 this.size,
+	                 this.content_type);
+                 
+	    
+	
+	    return;
+	    
+	    //run_impl.begin(cancellable, (obj, res) => {
+		/*InputStream? stream = null;
 
 		try {
 			stream = this.run_impl.end(res);
@@ -142,6 +148,7 @@ public class FakeServerCache : Object
                  
 	    
 		});
+	    */
 	}
 }
 
