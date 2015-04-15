@@ -41,12 +41,21 @@ public class FakeServerCache : Object
 	    return el;
 	}
 
+	public static FakeServerCache factory_with_data(string data) {
+	     if (cache == null) {
+	 	cache = new Gee.HashMap<string,FakeServerCache>();
+	   }
+	    var el = new  FakeServerCache.with_data(data);
+	     cache.set(el.fname, el);
+	}
+    
 	public FakeServerCache.with_data( string data ) {
 	    this.fname = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
 	    this.data = data;
 	    this.content_type = "text/javascript";
 	    this.size= data.length;
 	    this.delete_after = true;
+	  
 	}
 
 	public FakeServerCache( string fname ) {
