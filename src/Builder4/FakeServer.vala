@@ -37,8 +37,9 @@ public class FakeServer : Object
          // 
          this.view.get_context().register_uri_scheme("xhttp",  serve);
         
-	}
-	 
+    }
+    static Gee.Map<string,string> cache;
+    
     public void serve(WebKit.URISchemeRequest request)
     { 
 		// request is URISchemeRequest
@@ -61,7 +62,7 @@ public class FakeServer : Object
 		size_t length;
 		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
 		
-		var stream = new MemoryInputStream.from_data (data,  GLib.free);
+		var stream = new MemoryInputStream.from_data (data.data,  GLib.free);
 		
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
