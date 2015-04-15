@@ -409,7 +409,10 @@ public class Xcls_WindowRooView : Object
                 }
                 
             });
-            this.el.decide_policy.connect( );
+            this.el.decide_policy.connect( () => { 
+            // allow all ...
+                return true;
+            });
             this.el.show.connect( ( ) => {
                 this.initInspector();;
             });
