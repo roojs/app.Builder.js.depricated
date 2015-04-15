@@ -69,7 +69,14 @@ public class FakeServerCache : Object
 	}
 
 
-    
+	public override InputStream? run_async(Cancellable? cancellable) throws GLib.Error
+	{
+		//var f = ensure_resource();
+
+		var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
+
+		return stream;
+	}
 	private async InputStream? run_impl(Cancellable? cancellable) throws GLib.Error
 	{
 	    SourceFunc callback = run_impl.callback;
