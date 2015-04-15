@@ -34,6 +34,32 @@ public class FakeServerCache : Object
 	    if (cache.has_key(fn)) {
 		return cache.get(fn);
 	    }
+	    var el = new  FakeServerCache(fn);
+ 
+	     
+	    cache.set(fn, el);
+	    return el;
+	}
+
+
+	public FakeServerCache( string fname) {
+		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
+		if (!file.query_exists()) {
+		    this.data = "";
+		    this.content_type = "";
+		    this.size = 0;
+		    return;
+		}
+		 var info = file.query_info(
+				 "standard::*",
+				FileQueryInfoFlags.NONE
+		);
+	    this.content_type = info.get_content_type();
+	    this.size = info.get_size();
+	    string data;
+	    size_t length;
+	    GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+	    this.data = data;
 	    
 
 	}
@@ -76,10 +102,7 @@ public class FakeServer : Object
 			request.finish_error(new FakeServerError.FILE_DOES_NOT_EXIST ("My error msg"));
 			return;
 		}
-		var info = file.query_info(
-				 "standard::*",
-				FileQueryInfoFlags.NONE
-		);
+		
 
 		if (!cache.has_key(file.get_path())) {
 		    
