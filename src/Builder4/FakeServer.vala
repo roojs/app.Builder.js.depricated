@@ -115,8 +115,17 @@ public class FakeServer : Object
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
 		
-		
-		
+		run_impl.begin(cancellable, (obj, res) => {
+			InputStream? stream = null;
+
+			try
+			{
+				stream = this.run_impl.end(res);
+			} catch (Error e)  {
+			    request.finish_error(e);
+
+			}
+		});
 		
 		request.finish (  stream, cdata.size  , cdata.content_type);
 		//stream.close();
@@ -126,7 +135,7 @@ public class FakeServer : Object
     {
 	SourceFunc callback = run_impl.callback;
 	InputStream? ret = null;
-	new Thread<void*>("gitg-gtk-diff-view", () => {
+	new Thread<void*>("builder-fake-webserver", () => {
 		// Actually do it
 		try
 		{
@@ -152,5 +161,5 @@ public class FakeServer : Object
 
 	// Return the input stream
 	return ret;
-}
+    }
 }
