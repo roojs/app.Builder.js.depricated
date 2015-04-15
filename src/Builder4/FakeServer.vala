@@ -46,6 +46,7 @@ public class FakeServerCache : Object
 	 	cache = new Gee.HashMap<string,FakeServerCache>();
 	   }
 	    var el = new  FakeServerCache.with_data(data);
+	    print("CACHE - store %s\n", el.fname);
 	     cache.set(el.fname, el);
 	    return el;
 	}
