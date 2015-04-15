@@ -58,7 +58,12 @@ public class FakeServerCache : Object
 	    this.size = info.get_size();
 	    string data;
 	    size_t length;
-	    GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+	    try { 
+		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+	    } catch (Error e) {
+		
+
+	    }
 
 	    this.data = data;
 
