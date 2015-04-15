@@ -14,20 +14,39 @@
  * 
  */
 public errordomain FakeServerError {
-		FILE_DOES_NOT_EXIST
-	}
+	FILE_DOES_NOT_EXIST
+}
+
+public class FakeServerCache : Object
+{
+
+	public string data;
+	public string content_type;
+	public int64 size; 
+
+	public static Gee.HashMap<string,GLib.MemoryInputStream> cache;
 	
+        public static factory(string fname)
+	{
+	    if (cache == null) {
+		cache = new Gee.HashMap<string,GLib.MemoryInputStream>();
+	    }
+	    if (cache.has_key(fn)) {
+		return cache.get(fn);
+	    }
+	    
+
+	}
+}
+
 public class FakeServer : Object
 {
-	static Gee.HashMap<string,string> cache;
 	WebKit.WebView view;
 	
 	public FakeServer(WebKit.WebView wkview)
 	{
 		this.view = wkview;
-		if (cache == null) {
-		    cache = new Gee.HashMap<string,string>();
-		}
+		
 		
 		// 
 		
@@ -61,12 +80,17 @@ public class FakeServer : Object
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
-		
-		string data;
-		size_t length;
-		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
-		
-		var stream = new MemoryInputStream.from_data (data.data,  GLib.free);
+
+		if (!cache.has_key(file.get_path())) {
+		    
+	
+		    string data;
+		    size_t length;
+		    GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+ 
+		    var stream = new GLib.MemoryInputStream.from_data (data.data,  GLib.free);
+		    cache.set(file.get_path(), stream);
+		}
 		
 		// we could cache these memory streams... so no need to keep reading from disk...
 		// then what happens if file get's updated - neet to check the data against the cache..
@@ -74,7 +98,7 @@ public class FakeServer : Object
 		
 		print("Sending %s (%s:%s)\n", request.get_path(), info.get_size().to_string(), info.get_content_type());
 		
-		request.finish (  stream, info.get_size()  , info.get_content_type());
+		request.finish (  cache.get(request.get_path()), info.get_size()  , info.get_content_type());
 		//stream.close();
 	}
 }
