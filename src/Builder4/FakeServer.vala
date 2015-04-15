@@ -84,8 +84,7 @@ public class FakeServerCache : Object
 	                 this.size,
 	                 this.content_type);
                  
-	    
-	
+	     
 	    return;
 	     
 	}
