@@ -115,11 +115,13 @@ public class FakeServerCache : Object
 		{
 		    stream = new MemoryInputStream();
 		}
-		d_request.finish(stream,
-			                 this.size,
-			                 this.content_type
+		request.finish(stream,
+	                 this.size,
+	                 this.content_type
+                 
 	    
 		});
+	}
 }
 
 public class FakeServer : Object
