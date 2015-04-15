@@ -133,15 +133,7 @@ public class FakeServer : Object
 		print("Send :%s, %s (%s/%d)", request.get_path(), 
 		      cdata.content_type, cdata.size.to_string(), cdata.data.length);
 		cdata.run(request,    null);
-		//var stream = new GLib.MemoryInputStream.from_data (cdata.data.data,  GLib.free);
-		    
-		// we could cache these memory streams... so no need to keep reading from disk...
-		// then what happens if file get's updated - neet to check the data against the cache..
-		
-		
-		
-		//request.finish (  stream, cdata.size  , cdata.content_type);
-		//stream.close();
+		 
 	}
 
    
