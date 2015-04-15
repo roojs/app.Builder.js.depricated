@@ -28,16 +28,15 @@ public class FakeServerCache : Object
 	
         public static FakeServerCache factory(string fname)
 	{
-	    //if (cache == null) {
-	//	cache = new Gee.HashMap<string,FakeServerCache>();
-	 //   }
-	  //  if (cache.has_key(fname)) {
-//		return cache.get(fname);
-//	    }
+	    if (cache == null) {
+	 	cache = new Gee.HashMap<string,FakeServerCache>();
+	   }
+	    if (cache.has_key(fname)) {
+ 		return cache.get(fname);
+ 	    }
 	    var el = new  FakeServerCache(fname);
  
-	     
-//	    cache.set(fname, el);
+ 	    cache.set(fname, el);
 	    return el;
 	}
 
