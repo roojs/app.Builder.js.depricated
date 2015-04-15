@@ -19,7 +19,7 @@ public errordomain FakeServerError {
 
 public class FakeServerCache : Object
 {
-
+	public string fname;
 	public string data;
 	public string content_type;
 	public int64 size; 
@@ -41,9 +41,20 @@ public class FakeServerCache : Object
 	    return el;
 	}
 
+	public FakeServerCache.with_data( string data ) {
+	    this.fname = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
+	    this.data = data;
+	    this.content_type = "text/javascript";
+	    this.size= data.length;
+	    this.delete_after = true;
+	}
 
-	public FakeServerCache( string fname, string? data = null ) {
+	public FakeServerCache( string fname ) {
 	       this.delete_after = false;
+		this.fname = fname;
+
+
+	    
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
 		    this.data = "";
