@@ -157,7 +157,10 @@ public class FakeServer : Object
         cx.register_uri_scheme("xhttp",  serve);
 	cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
 
-	cx.register_uri_scheme_as_cors_enabled("xhttp");
+	// these do not help for cross domain requests..
+	    
+	//cx.get_security_manager().register_uri_scheme_as_cors_enabled("xhttp");
+	//cx.get_security_manager().register_uri_scheme_as_cors_enabled("http");
     //cx.register_uri_scheme_as_cors_enabled("xhttp");
        // = crash  cx.set_process_model (WebKit.ProcessModel.MULTIPLE_SECONDARY_PROCESSES );
     }
