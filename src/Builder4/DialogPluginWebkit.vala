@@ -102,7 +102,7 @@ public class Xcls_DialogPluginWebkit : Object
        
             
             
-            this.el.load_html( html , 
+            this.webview.el.load_html( html , 
                 //fixme - should be a config option!
                 "xhttp://localhost/app.Builder.js/"
             );
