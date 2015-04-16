@@ -238,7 +238,7 @@ public class Xcls_DialogPluginWebkit : Object
             }
 
             // listeners 
-            this.el.script_alert.connect( (dialog) => {
+            this.el.script_dialog.connect( (dialog) => {
                 if (this.el == null) {
                     return true;
                 }
@@ -254,6 +254,8 @@ public class Xcls_DialogPluginWebkit : Object
                 if (ar.length < 3) {
                     return false;
                 }
+                print("CMD: %s\n",ar[1]);
+                    print("ARGS: %s\n",ar[2]);
                 switch(ar[1]) {
                     case "SAVEHTML":
                       print("%sw",ar[2]);
