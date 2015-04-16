@@ -26,7 +26,7 @@ PKG_CHECK_MODULES(BUILDER, [
 		 json-glib-1.0 
 		 gee-1.0 
 		 gobject-introspection-1.0 
-		 webkit2gtk-3.0 
+		 webkit2gtk-4.0 
 		 clutter-gtk-1.0 
 		 gladeui-2.0 
 		 libsoup-2.4
