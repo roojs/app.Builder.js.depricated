@@ -90,7 +90,7 @@ public class Xcls_DialogPluginWebkit : Object
     
       
         
-        print(runhtml);
+        //print(runhtml);
         
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
                 "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor.Roo.grid.Grid.js\"></script>" + 
