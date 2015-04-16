@@ -23,6 +23,7 @@
        "items" : [
         {
          "id" : "patchview",
+         "* init" : " {\n    // this may not work!?\n    var settings =  this.el.get_settings();\n    \n     \n    //var fs= new FakeServer(this.el);\n    //fs.ref();\n    // this was an attempt to change the url perms.. did not work..\n    // settings.enable_file_access_from_file_uris = true;\n    // settings.enable_offline_web_application_cache - true;\n    // settings.enable_universal_access_from_file_uris = true;\n   \n     \n    \n    \n    \n\n     // FIXME - base url of script..\n     // we need it so some of the database features work.\n    this.el.load_html( \"Render not ready\" , \n            //fixme - should be a config option!\n            // or should we catch stuff and fix it up..\n            \"xhttp://localhost/app.Builder/\"\n    );\n        \n        \n    \n    \n}\n",
          "xtype" : "WebView",
          "* pack" : "add",
          "$ xns" : "WebKit"

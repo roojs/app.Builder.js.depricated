@@ -101,6 +101,38 @@ public class DialogPluginWebkit : Object
             // my vars (dec)
 
             // set gobject values
+
+            // init method 
+
+            {
+                // this may not work!?
+                var settings =  this.el.get_settings();
+                
+                 
+                //var fs= new FakeServer(this.el);
+                //fs.ref();
+                // this was an attempt to change the url perms.. did not work..
+                // settings.enable_file_access_from_file_uris = true;
+                // settings.enable_offline_web_application_cache - true;
+                // settings.enable_universal_access_from_file_uris = true;
+               
+                 
+                
+                
+                
+            
+                 // FIXME - base url of script..
+                 // we need it so some of the database features work.
+                this.el.load_html( "Render not ready" , 
+                        //fixme - should be a config option!
+                        // or should we catch stuff and fix it up..
+                        "xhttp://localhost/app.Builder/"
+                );
+                    
+                    
+                
+                
+            }
         }
 
         // user defined functions 
