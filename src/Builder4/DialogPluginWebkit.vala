@@ -244,8 +244,8 @@ public class Xcls_DialogPluginWebkit : Object
                     return;
                 }
               //  this.el.run_javascript(this.runjs, null);
-                 FakeServerCache.remove(    this.runjs);
-                this.runjs = "";
+                 FakeServerCache.remove(    _this.tmpjs);
+                this.tmpjs = "";
             });
         }
 
