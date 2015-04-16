@@ -1,7 +1,7 @@
 
 
 // compile
-// valac plugindialog.vala ../src/Builder4/DialogPluginWebkit.vala --pkg  gtk+-3.0  --pkg webkit2gtk-3.0 -o /tmp/plugtest
+// valac plugindialog.vala ../src/Builder4/DialogPluginWebkit.vala ../src/Builder4/FakeServer --pkg  gtk+-3.0  --pkg webkit2gtk-3.0 -o /tmp/plugtest
 // ??--pkg javascriptcore \
 
 
