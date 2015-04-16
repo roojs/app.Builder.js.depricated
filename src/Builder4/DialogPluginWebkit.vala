@@ -230,7 +230,7 @@ public class Xcls_DialogPluginWebkit : Object
             {
                 // this may not work!?
                 var settings =  this.el.get_settings();
-                
+                settings.enable_write_console_messages_to_stdout = true;
                  
                 var fs= new FakeServer(this.el);
                 fs.ref();
