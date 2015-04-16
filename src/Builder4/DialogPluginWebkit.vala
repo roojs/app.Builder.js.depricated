@@ -33,6 +33,13 @@ public class Xcls_DialogPluginWebkit : Object
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
+
+        // listeners 
+        this.el.delete_event.connect( (self, event) => {
+            this.el.hide();
+            return true; 
+            //test  
+        });
     }
 
     // user defined functions 

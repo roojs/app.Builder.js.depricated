@@ -13,8 +13,8 @@
     "show" : "(self)  => {\n  this.el.show_all();\n  //test\n}"
    },
    "|   void updateFileFromEntry" : "() {\n\n        _this.file.title = _this.title.el.get_text();\n        _this.file.region = _this.region.el.get_text();            \n        _this.file.parent = _this.parent.el.get_text();                        \n        _this.file.permname = _this.permname.el.get_text();                                    \n        _this.file.modOrder = _this.modOrder.el.get_text();\n        \n        if (_this.file.name.length  > 0 && _this.file.name != _this.name.el.get_text()) {\n            _this.file.renameTo(_this.name.el.get_text());\n        }\n                                                    \n}    ",
-   "id" : "DialogNewComponent",
    "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
+   "id" : "DialogNewComponent",
    "default_width" : 500,
    "$ deletable" : true,
    "# Project.Project project" : "",
@@ -74,8 +74,8 @@
         },
         {
          "label" : "Region",
-         "$ visible" : true,
          "tooltip_text" : "center, north, south, east, west",
+         "$ visible" : true,
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,2,3",
          "xtype" : "Label",
@@ -147,14 +147,14 @@
     },
     {
      "label" : "Cancel",
-     "xtype" : "Button",
      "* pack" : "add_action_widget,0",
+     "xtype" : "Button",
      "$ xns" : "Gtk"
     },
     {
      "label" : "OK",
-     "xtype" : "Button",
      "* pack" : "add_action_widget,1",
+     "xtype" : "Button",
      "$ xns" : "Gtk"
     }
    ]

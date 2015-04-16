@@ -7,6 +7,9 @@
  "modOrder" : "",
  "items" : [
   {
+   "listeners" : {
+    "delete_event" : "(self, event) => {\n    this.el.hide();\n    return true; \n    //test  \n}\n "
+   },
    "id" : "DialogPluginWebkit",
    "utf8 title" : "Add / Edit Component",
    "gint default_height" : 500,
