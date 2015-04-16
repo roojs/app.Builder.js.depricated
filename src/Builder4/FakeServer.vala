@@ -80,7 +80,7 @@ public class FakeServerCache : Object
     
 	public FakeServerCache.with_data( string data ) {
 	    this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
-	    this.data = data;
+	    this.data = data.data;
 	    this.content_type = "text/javascript";
 	    this.size= data.length;
 	 
@@ -95,7 +95,7 @@ public class FakeServerCache : Object
 	    
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
-		    this.data = "";
+		    this.data = "".data;
 		    this.content_type = "";
 		    this.size = 0;
 		    return;
@@ -120,7 +120,7 @@ public class FakeServerCache : Object
 	    this.data = data;
 
 		print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
-			this.content_type, this.size.to_string(), this.data.data.length);
+			this.content_type, this.size.to_string(), this.data.length);
 	    
 
 	}
@@ -128,7 +128,7 @@ public class FakeServerCache : Object
  
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
-	    var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
+	    var stream =  new GLib.MemoryInputStream.from_data (this.data,  GLib.free);
 	    print("SEND %s\nwe", this.size.to_string()); 
 	    
 		request.finish(stream,
