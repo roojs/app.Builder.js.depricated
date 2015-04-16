@@ -234,6 +234,19 @@ public class Xcls_DialogPluginWebkit : Object
                 
                 
             }
+
+            // listeners 
+            this.el.load_changed.connect( (le) => {
+                if (le != WebKit.LoadEvent.FINISHED) {
+                    return;
+                }
+                if (this.runjs.length < 1) {
+                    return;
+                }
+              //  this.el.run_javascript(this.runjs, null);
+                 FakeServerCache.remove(    this.runjs);
+                this.runjs = "";
+            });
         }
 
         // user defined functions 
