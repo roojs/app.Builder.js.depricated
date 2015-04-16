@@ -86,8 +86,7 @@ public class Xcls_DialogPluginWebkit : Object
     	"});\n";
     */	
       
-        var fc =    FakeServerCache.factory_with_data(js_src);
-        this.tmpjs = fc.fname;
+        
         print(runhtml);
         
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
@@ -234,19 +233,6 @@ public class Xcls_DialogPluginWebkit : Object
                 
                 
             }
-
-            // listeners 
-            this.el.load_changed.connect( (le) => {
-                if (le != WebKit.LoadEvent.FINISHED) {
-                    return;
-                }
-                if (this.runjs.length < 1) {
-                    return;
-                }
-              //  this.el.run_javascript(this.runjs, null);
-                 FakeServerCache.remove(    _this.tmpjs);
-                this.tmpjs = "";
-            });
         }
 
         // user defined functions 
