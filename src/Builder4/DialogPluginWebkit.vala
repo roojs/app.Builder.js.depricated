@@ -56,7 +56,12 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.modal = true;
         }
         
-        
+        this.el.load_html( text , 
+                //fixme - should be a config option!
+                // or should we catch stuff and fix it up..
+                "xhttp://localhost/app.Builder/"
+        );
+            
         
         this.el.show_all();
          var   ret = "";

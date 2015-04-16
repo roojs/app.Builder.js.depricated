@@ -15,7 +15,7 @@
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",
-   "| string show" : " (Gtk.Window ?parent, string text) {// JsRender.Node node) {\n \n    if (parent  != null) {\n        this.el.set_transient_for(parent);\n        this.el.modal = true;\n    }\n    \n    \n    \n    this.el.show_all();\n     var   ret = \"\";\n    while (true) {\n        var response_id = this.el.run();\n        if (response_id < 1) {\n            this.el.hide();\n             return \"\";\n        }\n        // keep showing...?\n        break;\n    }\n    \n    // now we save it..\n    this.el.hide();\n    \n    return ret;\n    \n    \n    \n}\n",
+   "| string show" : " (Gtk.Window ?parent, string text) {// JsRender.Node node) {\n \n    if (parent  != null) {\n        this.el.set_transient_for(parent);\n        this.el.modal = true;\n    }\n    \n    this.el.load_html( text , \n            //fixme - should be a config option!\n            // or should we catch stuff and fix it up..\n            \"xhttp://localhost/app.Builder/\"\n    );\n        \n    \n    this.el.show_all();\n     var   ret = \"\";\n    while (true) {\n        var response_id = this.el.run();\n        if (response_id < 1) {\n            this.el.hide();\n             return \"\";\n        }\n        // keep showing...?\n        break;\n    }\n    \n    // now we save it..\n    this.el.hide();\n    \n    return ret;\n    \n    \n    \n}\n",
    "$ xns" : "Gtk",
    "gint default_width" : 500,
    "gboolean modal" : true,
