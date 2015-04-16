@@ -59,64 +59,66 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
+         this.el.show_all();
+         var   ret = "";
+        while (true) {
         
-        
-        var runhtml = "<script type=\"text/javascript\">\n" ;
-        string builderhtml;
-        
-        
-        GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+            var runhtml = "<script type=\"text/javascript\">\n" ;
+            string builderhtml;
+            
+            
+            GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
     
-        runhtml += builderhtml + "\n";
-        
-        
-           runhtml += "\n" +
-            "Builder.saveHTML = function() {};\n" + 
-    	"Roo.onReady(function() {\n" +
+            runhtml += builderhtml + "\n";
+            
+            
+               runhtml += "\n" +
+                "Builder.saveHTML = function() {};\n" + 
+    	    "Roo.onReady(function() {\n" +
     
-    	"Roo.XComponent.build();\n" +
-    	"});\n";
+    	    "Roo.XComponent.build();\n" +
+    	    "});\n";
     	
     	
-        var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
-        
+            var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
+            
     
-        var ar = db.readForeignKeys("Person");
-        var  generator = new Json.Generator ();
-        var  root = new Json.Node(Json.NodeType.OBJECT);
-        root.init_object(ar);
-        generator.set_root (root);
-        
-        generator.pretty = true;
-        generator.indent = 4;
-        
-     runhtml += "\n" +
-        " Roo.XComponent.on('buildcomplete', function() {\n" +
-         "    Editor.Roo.grid.Grid.panel.loadData(" + generator.to_data (null) + "); " +
-        "});\n";
+            var ar = db.readForeignKeys("Person");
+            var  generator = new Json.Generator ();
+            var  root = new Json.Node(Json.NodeType.OBJECT);
+            root.init_object(ar);
+            generator.set_root (root);
+            
+            generator.pretty = true;
+            generator.indent = 4;
+            
+            runhtml += "\n" +
+            " Roo.XComponent.on('buildcomplete', function() {\n" +
+             "    Editor.Roo.grid.Grid.panel.loadData(" + generator.to_data (null) + "); " +
+            "});\n";
     
-        
+            
     	
     	
     
-        runhtml += "</script>\n" ;
+            runhtml += "</script>\n" ;
     
-    print(runhtml);
-        // fix to make sure they are the same..
-        
-        // need to modify paths
+            print(runhtml);
+            // fix to make sure they are the same..
+            
+            // need to modify paths
     
-        string inhtml;
-        
-        GLib.FileUtils.get_contents(
-            BuilderApplication.configDirectory() + "/resources/roo.builder.html"
-                , out inhtml);
-        
-        
-        // fetch the json from the database...
-        
-        //print(runhtml);
-        
+            string inhtml;
+            
+            GLib.FileUtils.get_contents(
+                BuilderApplication.configDirectory() + "/resources/roo.builder.html"
+                    , out inhtml);
+            
+            
+            // fetch the json from the database...
+            
+            //print(runhtml);
+            
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
                 "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor.Roo.grid.Grid.js\"></script>" + 
           //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
@@ -138,10 +140,12 @@ public class Xcls_DialogPluginWebkit : Object
         
             
         
-        this.el.show_all();
-         var   ret = "";
-        while (true) {
+       
             var response_id = this.el.run();
+            
+             if (response_id == 3) {
+                 continue;
+             }
             if (response_id < 1) {
                 this.el.hide();
                  return "";
