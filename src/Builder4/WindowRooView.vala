@@ -258,6 +258,7 @@ public class Xcls_WindowRooView : Object
               _this.view.redraws = 99;
                 _this.view.el.web_context.clear_cache();  
               //_this.view.renderJS(true);
+              FakeServerCache.clear();
               _this.view.reInit();
             
             });
