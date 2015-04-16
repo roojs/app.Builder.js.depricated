@@ -119,8 +119,8 @@ public class FakeServerCache : Object
 
 	    this.data = data;
 
-	    print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
-	  	  this.content_type, this.size.to_string(), this.data.data.length);
+		print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
+			this.content_type, this.size.to_string(), this.data.data.length);
 	    
 
 	}
@@ -129,6 +129,8 @@ public class FakeServerCache : Object
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
 	    var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
+	    print("SEND %s\n", this.size.to_string()); 
+	    
 		request.finish(stream,
 	                 this.size,
 	                 this.content_type);
