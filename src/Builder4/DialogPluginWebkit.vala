@@ -98,6 +98,7 @@ public class Xcls_DialogPluginWebkit : Object
     
         runhtml += "</script>\n" ;
     
+    print(runhtml);
         // fix to make sure they are the same..
         
         // need to modify paths
