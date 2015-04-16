@@ -7,6 +7,7 @@
  "modOrder" : "",
  "items" : [
   {
+   "id" : "DialogPluginWebkit",
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",

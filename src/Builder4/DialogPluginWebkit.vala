@@ -1,14 +1,14 @@
-static DialogPluginWebkit  _DialogPluginWebkit;
+static Xcls_DialogPluginWebkit  _DialogPluginWebkit;
 
-public class DialogPluginWebkit : Object 
+public class Xcls_DialogPluginWebkit : Object 
 {
     public Gtk.Dialog el;
-    private DialogPluginWebkit  _this;
+    private Xcls_DialogPluginWebkit  _this;
 
-    public static DialogPluginWebkit singleton()
+    public static Xcls_DialogPluginWebkit singleton()
     {
         if (_DialogPluginWebkit == null) {
-            _DialogPluginWebkit= new DialogPluginWebkit();
+            _DialogPluginWebkit= new Xcls_DialogPluginWebkit();
         }
         return _DialogPluginWebkit;
     }
@@ -17,7 +17,7 @@ public class DialogPluginWebkit : Object
         // my vars (def)
 
     // ctor 
-    public DialogPluginWebkit()
+    public Xcls_DialogPluginWebkit()
     {
         _this = this;
         this.el = new Gtk.Dialog();
@@ -37,13 +37,13 @@ public class DialogPluginWebkit : Object
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
-        private DialogPluginWebkit  _this;
+        private Xcls_DialogPluginWebkit  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox2(DialogPluginWebkit _owner )
+        public Xcls_VBox2(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
@@ -61,13 +61,13 @@ public class DialogPluginWebkit : Object
     public class Xcls_ScrolledWindow3 : Object 
     {
         public Gtk.ScrolledWindow el;
-        private DialogPluginWebkit  _this;
+        private Xcls_DialogPluginWebkit  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow3(DialogPluginWebkit _owner )
+        public Xcls_ScrolledWindow3(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -89,13 +89,13 @@ public class DialogPluginWebkit : Object
     public class Xcls_patchview : Object 
     {
         public WebKit.WebView el;
-        private DialogPluginWebkit  _this;
+        private Xcls_DialogPluginWebkit  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_patchview(DialogPluginWebkit _owner )
+        public Xcls_patchview(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
             _this.patchview = this;
