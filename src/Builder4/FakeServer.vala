@@ -20,7 +20,7 @@ public errordomain FakeServerError {
 public class FakeServerCache : Object
 {
 	public string fname;
-	public string data;
+	public  uint8[]  data;
 	public string content_type;
 	public int64 size; 
 	 
