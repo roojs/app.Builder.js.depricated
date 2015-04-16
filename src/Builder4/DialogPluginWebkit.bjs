@@ -26,7 +26,6 @@
          "id" : "patchview",
          "xtype" : "WebView",
          "* pack" : "add",
-         "$ showDiff" : "function(files) {\n    this.clear();\n    \n    \n     var model = this.get('/historyTreeStore');\n    \n    if (model.release === false) {\n        return;\n    }\n    \n    var diff = Merger.repo.diff(files, model.release, model.rev);\n    \n   // remove..\n    var s  = \"var pre  = document.createElement('pre'); document.body.appendChild(pre);\";\n    s += \"pre.textContent =  \" +\n             JSON.stringify(Merger.repo.lastCmd + \"\\n\") + '+  ' + \n           JSON.stringify(diff) + \";\";\n    print(s);\n        \n    this.el.execute_script(s);\n        \n        \n    \n    \n    \n}\n",
          "$ xns" : "WebKit"
         }
        ]
