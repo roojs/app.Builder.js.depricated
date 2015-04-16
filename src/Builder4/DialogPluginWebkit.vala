@@ -59,6 +59,9 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
+           var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
+         
+        
          this.el.show_all();
          var   ret = "";
         while (true) {
@@ -80,7 +83,6 @@ public class Xcls_DialogPluginWebkit : Object
     	    "});\n";
     	
     	
-            var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
             
     
             var ar = db.readForeignKeys("Person");
