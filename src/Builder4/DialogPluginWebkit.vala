@@ -88,9 +88,9 @@ public class Xcls_DialogPluginWebkit : Object
         generator.indent = 4;
         
      runhtml += "\n" +
-        " Roo.XComponent.on('buildcomplete', function() {" +
+        " Roo.XComponent.on('buildcomplete', function() {\n" +
          "    Editor.Roo.grid.Grid.show(" + generator.to_data (null) + "); " +
-        "})\n";
+        "});\n";
     
         
     	
