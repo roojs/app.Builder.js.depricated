@@ -212,8 +212,8 @@ public class Xcls_DialogPluginWebkit : Object
                 var settings =  this.el.get_settings();
                 
                  
-                //var fs= new FakeServer(this.el);
-                //fs.ref();
+                var fs= new FakeServer(this.el);
+                fs.ref();
                 // this was an attempt to change the url perms.. did not work..
                 // settings.enable_file_access_from_file_uris = true;
                 // settings.enable_offline_web_application_cache - true;
