@@ -256,7 +256,7 @@ namespace JsRender {
 	
 }
 // valac --pkg libgda-5.0 --pkg gee-1.0 --pkg json-glib-1.0  --pkg libxml-2.0   RooDatabase.vala  -o /tmp/rdtest
-
+/*
  void main() {
      var x = new JsRender.RooDatabase.from_cfg("MySQL", "hydra", "root", "");
     // var res = x.readTables();
@@ -274,3 +274,4 @@ namespace JsRender {
 
     print("%s\n", generator.to_data (null));
  }
+*/
