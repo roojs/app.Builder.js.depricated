@@ -88,7 +88,7 @@ public class Xcls_DialogPluginWebkit : Object
         //var fc =    FakeServerCache.factory_with_data(js_src);
         //this.runjs = fc.fname;
         
-            var html = inhtml.replace("</head>", runhtml + this.runhtml + 
+            var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
     
           //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
                   //  "<script type=\"text/javascript\">\n" +
