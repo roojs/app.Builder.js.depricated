@@ -120,7 +120,7 @@ public class FakeServerCache : Object
 	    this.data = data;
 
 	    print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
-	  	  this.content_type, this.size.to_string(), this.data.length);
+	  	  this.content_type, this.size.to_string(), this.data.data.length);
 	    
 
 	}
