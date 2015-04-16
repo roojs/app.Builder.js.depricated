@@ -7,7 +7,7 @@
 
 int main (string[] args) {
 	Gtk.init (ref args);
-	var c  = Xcls_DialogPluginWebkit();
+	var c  = new Xcls_DialogPluginWebkit();
 	c.show();
 
 
