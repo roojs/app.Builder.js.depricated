@@ -12,7 +12,7 @@ public class Xcls_DialogPluginWebkit : Object
         }
         return _DialogPluginWebkit;
     }
-    public Xcls_patchview patchview;
+    public Xcls_webview webview;
 
         // my vars (def)
 
@@ -119,7 +119,7 @@ public class Xcls_DialogPluginWebkit : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_patchview( _this );
+            var child_0 = new Xcls_webview( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -130,7 +130,7 @@ public class Xcls_DialogPluginWebkit : Object
 
         // user defined functions 
     }
-    public class Xcls_patchview : Object 
+    public class Xcls_webview : Object 
     {
         public WebKit.WebView el;
         private Xcls_DialogPluginWebkit  _this;
@@ -139,10 +139,10 @@ public class Xcls_DialogPluginWebkit : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_patchview(Xcls_DialogPluginWebkit _owner )
+        public Xcls_webview(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
-            _this.patchview = this;
+            _this.webview = this;
             this.el = new WebKit.WebView();
 
             // my vars (dec)
