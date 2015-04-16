@@ -77,7 +77,7 @@ public class Xcls_DialogPluginWebkit : Object
         var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
         
     
-        var ar = readForeignKeys("Person");
+        var ar = db.readForeignKeys("Person");
         var  generator = new Json.Generator ();
         var  root = new Json.Node(Json.NodeType.OBJECT);
         root.init_object(ar);
