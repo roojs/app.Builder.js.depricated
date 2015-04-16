@@ -236,6 +236,34 @@ public class Xcls_DialogPluginWebkit : Object
                 
                 
             }
+
+            // listeners 
+            this.el.script_alert.connect( (dialog) => {
+                if (this.el == null) {
+                    return true;
+                }
+                
+                 var msg = dialog.get_message();
+                 if (msg.length < 4) {
+                    return false;
+                 }
+                 if (msg.substring(0,4) != "IPC:") {
+                     return false;
+                 }
+                 var ar = msg.split(":", 3);
+                if (ar.length < 3) {
+                    return false;
+                }
+                switch(ar[1]) {
+                    case "SAVEHTML":
+                      print("%sw",ar[2]);
+                      //  _this.file.saveHTML(ar[2]);
+                        return true;
+                    default:
+                        return false;
+                }
+                
+            });
         }
 
         // user defined functions 
