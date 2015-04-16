@@ -15,10 +15,10 @@
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",
+   "| string show" : "() {\n\n}\n",
    "$ xns" : "Gtk",
    "gint default_width" : 500,
    "gboolean modal" : true,
-   "| return_type XXXX" : "() {\n\n}\n",
    "items" : [
     {
      "xtype" : "VBox",

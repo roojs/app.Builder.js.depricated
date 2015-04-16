@@ -43,7 +43,7 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
-    public return_type XXXX () {
+    public string show () {
     
     }
     public class Xcls_VBox2 : Object 
