@@ -13,7 +13,25 @@
     {
      "xtype" : "VBox",
      "$ pack" : "get_content_area().add",
-     "$ xns" : "Gtk"
+     "$ xns" : "Gtk",
+     "items" : [
+      {
+       "* init" : "function() {\n    XObject.prototype.init.call(this);\n      this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n}\n",
+       "* pack" : "pack_end,true,true,0",
+       "xtype" : "ScrolledWindow",
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "$ clear" : "function() {\n    \n    \n    \n     \n   // remove..\n    var s  = \"document.body.textContent='';\"\n        \n    this.el.execute_script(s);\n        \n        \n    \n    \n    \n}\n",
+         "id" : "patchview",
+         "xtype" : "WebView",
+         "* pack" : "add",
+         "$ showDiff" : "function(files) {\n    this.clear();\n    \n    \n     var model = this.get('/historyTreeStore');\n    \n    if (model.release === false) {\n        return;\n    }\n    \n    var diff = Merger.repo.diff(files, model.release, model.rev);\n    \n   // remove..\n    var s  = \"var pre  = document.createElement('pre'); document.body.appendChild(pre);\";\n    s += \"pre.textContent =  \" +\n             JSON.stringify(Merger.repo.lastCmd + \"\\n\") + '+  ' + \n           JSON.stringify(diff) + \";\";\n    print(s);\n        \n    this.el.execute_script(s);\n        \n        \n    \n    \n    \n}\n",
+         "$ xns" : "WebKit"
+        }
+       ]
+      }
+     ]
     }
    ]
   }
