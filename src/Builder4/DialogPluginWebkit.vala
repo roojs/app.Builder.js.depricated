@@ -39,7 +39,10 @@ public class Xcls_DialogPluginWebkit : Object
         this.el.add_action_widget (  child_1.el , 0 );
         var child_2 = new Xcls_Button6( _this );
         child_2.ref();
-        this.el.add_action_widget (  child_2.el , 1 );
+        this.el.add_action_widget (  child_2.el , 0 );
+        var child_3 = new Xcls_Button7( _this );
+        child_3.ref();
+        this.el.add_action_widget (  child_3.el , 1 );
 
         // listeners 
         this.el.delete_event.connect( (self, event) => {
@@ -324,6 +327,28 @@ public class Xcls_DialogPluginWebkit : Object
 
         // ctor 
         public Xcls_Button6(Xcls_DialogPluginWebkit _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Cancel";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button7 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_DialogPluginWebkit  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button7(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
