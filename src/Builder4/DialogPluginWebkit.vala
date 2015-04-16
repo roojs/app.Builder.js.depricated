@@ -65,6 +65,14 @@ public class Xcls_DialogPluginWebkit : Object
         GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
     
         runhtml += builderhtml + "\n";
+        
+        
+           runhtml += "\n" +
+    	"Roo.onReady(function() {\n" +
+    
+    	"Roo.XComponent.build();\n" +
+    	"});\n";
+    
         runhtml += "</script>\n" ;
     
         // fix to make sure they are the same..
@@ -78,19 +86,14 @@ public class Xcls_DialogPluginWebkit : Object
                 , out inhtml);
         
         
-    /*
-        string js_src = js + "\n" +
-    	"Roo.onReady(function() {\n" +
-    	"if (" + _this.file.name +".show) " +  _this.file.name +".show({});\n" +
-    	"Roo.XComponent.build();\n" +
-    	"});\n";
-    */	
+    
+    
       
         
         print(runhtml);
         
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
-    
+                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder/resources/Editor/Editor.Roo.grid.js\"></script>" + 
           //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
                   //  "<script type=\"text/javascript\">\n" +
                   //  js_src + "\n" + 
