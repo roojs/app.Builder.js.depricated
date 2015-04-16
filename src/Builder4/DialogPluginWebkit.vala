@@ -49,11 +49,12 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
-    public string show (Gtk.Window parent, JsRender.Node node) {
+    public string show (Gtk.Window ?parent, string text) {// JsRender.Node node) {
      
-         
-        this.el.set_transient_for(parent);
-        this.el.modal = true;
+        if (parent  != null) {
+            this.el.set_transient_for(parent);
+            this.el.modal = true;
+        }
         
         
         
@@ -65,33 +66,14 @@ public class Xcls_DialogPluginWebkit : Object
                 this.el.hide();
                  return "";
             }
-            
-            name = _this.name.el.get_text();
-            if (name.length < 1) {
-                StandardErrorDialog.singleton().show(
-                     _this.el,
-                    "You must give the template a name. "
-                );
-                continue;
-            }
-            if (!Regex.match_simple ("^[A-Za-z][A-Za-z0-9.]+$", name) )
-            {
-                StandardErrorDialog.singleton().show(
-                     _this.el,
-                    "Template Name must contain only letters dots"
-                );
-                continue;
-            }
+            // keep showing...?
             break;
         }
-        var f = project.newFile(name);
-        f.tree =  _this.data.deepClone();
-        f.save();
         
         // now we save it..
         this.el.hide();
         
-        return name;
+        return ret;
         
         
         
