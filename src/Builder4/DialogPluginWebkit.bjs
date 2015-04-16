@@ -8,7 +8,7 @@
  "items" : [
   {
    "id" : "DialogPluginWebkit",
-   "utf8 title" : "",
+   "utf8 title" : "Add / Edit Component",
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",

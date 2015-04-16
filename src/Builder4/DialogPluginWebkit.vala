@@ -25,7 +25,7 @@ public class Xcls_DialogPluginWebkit : Object
         // my vars (dec)
 
         // set gobject values
-        this.el.title = "";
+        this.el.title = "Add / Edit Component";
         this.el.default_height = 500;
         this.el.default_width = 500;
         this.el.deletable = true;
