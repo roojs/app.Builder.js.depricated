@@ -18,6 +18,7 @@
    "$ xns" : "Gtk",
    "gint default_width" : 500,
    "gboolean modal" : true,
+   "| return_type XXXX" : "() {\n\n}\n",
    "items" : [
     {
      "xtype" : "VBox",

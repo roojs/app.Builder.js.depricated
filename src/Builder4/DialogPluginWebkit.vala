@@ -43,6 +43,9 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
+    public return_type XXXX () {
+    
+    }
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
