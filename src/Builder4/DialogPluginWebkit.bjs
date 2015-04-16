@@ -7,8 +7,10 @@
  "modOrder" : "",
  "items" : [
   {
+   "gint default_height" : 500,
    "xtype" : "Dialog",
    "$ xns" : "Gtk",
+   "gint default_width" : 500,
    "items" : [
     {
      "xtype" : "VBox",
