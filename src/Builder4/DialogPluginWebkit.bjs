@@ -49,8 +49,8 @@
      ]
     },
     {
-     "label" : "Cancel",
-     "* pack" : "add_action_widget,0",
+     "label" : "Reload",
+     "* pack" : "add_action_widget,3",
      "xtype" : "Button",
      "$ xns" : "Gtk"
     },

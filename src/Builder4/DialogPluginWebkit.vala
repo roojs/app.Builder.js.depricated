@@ -36,7 +36,7 @@ public class Xcls_DialogPluginWebkit : Object
         this.el.get_content_area().add (  child_0.el  );
         var child_1 = new Xcls_Button5( _this );
         child_1.ref();
-        this.el.add_action_widget (  child_1.el , 0 );
+        this.el.add_action_widget (  child_1.el , 3 );
         var child_2 = new Xcls_Button6( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 0 );
@@ -312,7 +312,7 @@ public class Xcls_DialogPluginWebkit : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Cancel";
+            this.el.label = "Reload";
         }
 
         // user defined functions 
