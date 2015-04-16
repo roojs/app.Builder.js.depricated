@@ -106,10 +106,10 @@ public class FakeServerCache : Object
 		);
 	    this.content_type = info.get_content_type();
 	    this.size = info.get_size();
-	    string data;
+	    uint8[] data;
 	    size_t length;
 	    try { 
-		GLib.FileUtils.get_contents(file.get_path(), out data, out length);
+		GLib.FileUtils.get_data(file.get_path(), out data, out length);
 	    } catch (Error e) {
 		this.data = "";
 		this.size = 0;
@@ -129,7 +129,7 @@ public class FakeServerCache : Object
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
 	    var stream =  new GLib.MemoryInputStream.from_data (this.data.data,  GLib.free);
-	    print("SEND %s\n", this.size.to_string()); 
+	    print("SEND %s\nwe", this.size.to_string()); 
 	    
 		request.finish(stream,
 	                 this.size,
