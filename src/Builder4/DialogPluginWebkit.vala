@@ -124,6 +124,7 @@ public class Xcls_DialogPluginWebkit : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.expand = true;
             var child_0 = new Xcls_webview( _this );
             child_0.ref();
             this.el.add (  child_0.el  );

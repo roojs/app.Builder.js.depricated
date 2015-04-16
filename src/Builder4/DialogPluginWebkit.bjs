@@ -30,6 +30,7 @@
        "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
        "* pack" : "pack_start,false,true,3",
        "xtype" : "ScrolledWindow",
+       "gboolean expand" : true,
        "$ xns" : "Gtk",
        "items" : [
         {
