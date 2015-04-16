@@ -72,6 +72,28 @@ public class Xcls_DialogPluginWebkit : Object
     
     	"Roo.XComponent.build();\n" +
     	"});\n";
+    	
+    	
+        var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
+        
+    
+        var ar = readForeignKeys("Person");
+        var  generator = new Json.Generator ();
+        var  root = new Json.Node(Json.NodeType.OBJECT);
+        root.init_object(ar);
+        generator.set_root (root);
+        
+        generator.pretty = true;
+        generator.indent = 4;
+        
+     runhtml += "\n" +
+        " Roo.XComponent.on('buildcomplete', function() {" +
+         "    Editor.Roo.grid.Grid.show(" + generator.to_data (null) + "); " +
+        "})\n";
+    
+        
+    	
+    	
     
         runhtml += "</script>\n" ;
     
@@ -86,9 +108,7 @@ public class Xcls_DialogPluginWebkit : Object
                 , out inhtml);
         
         
-    
-    
-      
+        // fetch the json from the database...
         
         //print(runhtml);
         
