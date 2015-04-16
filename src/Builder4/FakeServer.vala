@@ -109,7 +109,7 @@ public class FakeServerCache : Object
 	    uint8[] data;
 	    size_t length;
 	    try { 
-		GLib.FileUtils.get_data(file.get_path(), out data, out length);
+		GLib.FileUtils.get_data(file.get_path(), out data);
 	    } catch (Error e) {
 		this.data = "".data;
 		this.size = 0;
