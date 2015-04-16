@@ -284,7 +284,7 @@ public class Xcls_DialogPluginWebkit : Object
                       //  _this.file.saveHTML(ar[2]);
                         return true;
                     default:
-                        return false;
+                        return true;
                 }
                 
             });
