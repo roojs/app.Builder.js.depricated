@@ -30,7 +30,7 @@ PKG_CHECK_MODULES(BUILDER, [
 		 clutter-gtk-1.0 
 		 gladeui-2.0 
 		 libsoup-2.4
- 		 javascriptcoregtk-3.0 
+ 		 javascriptcoregtk-4.0 
 		libgda-5.0
 		  
 ])
