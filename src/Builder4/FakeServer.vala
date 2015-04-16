@@ -60,6 +60,13 @@ public class FakeServerCache : Object
 
 	    
 	}
+        public static  void clear()
+        {
+	    if (cache == null) {
+		return;
+	    }
+	    cache.clear();
+	}
     
 	public static FakeServerCache factory_with_data(string data) {
 	     if (cache == null) {
@@ -131,10 +138,7 @@ public class FakeServerCache : Object
 	    return;
 	     
 	}
-	static public void clear()
-        {
-	    cache.clear();
-	}
+	
     
 }
 
