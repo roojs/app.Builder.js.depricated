@@ -16,7 +16,7 @@
      "$ xns" : "Gtk",
      "items" : [
       {
-       "* init" : "function() {\n    XObject.prototype.init.call(this);\n      this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n}\n",
+       "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
        "* pack" : "pack_end,true,true,0",
        "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",

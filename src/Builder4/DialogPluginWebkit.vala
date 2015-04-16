@@ -78,10 +78,7 @@ public class DialogPluginWebkit : Object
 
             // init method 
 
-            function() {
-                XObject.prototype.init.call(this);
-                  this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-            }
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
         // user defined functions 
