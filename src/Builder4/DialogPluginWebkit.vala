@@ -68,7 +68,7 @@ public class Xcls_DialogPluginWebkit : Object
         
         
            runhtml += "\n" +
-            "Builder.saveHTML = function();\n" + 
+            "Builder.saveHTML = function() {};\n" + 
     	"Roo.onReady(function() {\n" +
     
     	"Roo.XComponent.build();\n" +
