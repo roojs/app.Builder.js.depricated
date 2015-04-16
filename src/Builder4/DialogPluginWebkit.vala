@@ -85,8 +85,8 @@ public class Xcls_DialogPluginWebkit : Object
     	"});\n";
     */	
       
-        //var fc =    FakeServerCache.factory_with_data(js_src);
-        //this.runjs = fc.fname;
+        var fc =    FakeServerCache.factory_with_data(js_src);
+        this.tmpjs = fc.fname;
         print(runhtml);
         
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
