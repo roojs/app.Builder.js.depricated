@@ -89,7 +89,7 @@ public class Xcls_DialogPluginWebkit : Object
         
      runhtml += "\n" +
         " Roo.XComponent.on('buildcomplete', function() {\n" +
-         "    Editor.Roo.grid.Grid.show(" + generator.to_data (null) + "); " +
+         "    Editor.Roo.grid.Grid.panel.loadData(" + generator.to_data (null) + "); " +
         "});\n";
     
         
