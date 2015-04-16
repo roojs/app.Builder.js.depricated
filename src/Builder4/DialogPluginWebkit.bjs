@@ -23,7 +23,7 @@
     {
      "xtype" : "VBox",
      "$ pack" : "get_content_area().add",
-     "gboolean homogeneous" : true,
+     "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
       {

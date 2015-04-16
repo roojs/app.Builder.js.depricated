@@ -95,7 +95,7 @@ public class Xcls_DialogPluginWebkit : Object
         public Xcls_VBox2(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
 
