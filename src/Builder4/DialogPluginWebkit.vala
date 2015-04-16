@@ -15,6 +15,7 @@ public class Xcls_DialogPluginWebkit : Object
     public Xcls_webview webview;
 
         // my vars (def)
+    public string tmpjs;
 
     // ctor 
     public Xcls_DialogPluginWebkit()
