@@ -93,7 +93,7 @@ public class Xcls_DialogPluginWebkit : Object
         print(runhtml);
         
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
-                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder/resources/Editor/Editor.Roo.grid.js\"></script>" + 
+                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder/resources/Editors/Editor.Roo.grid.js\"></script>" + 
           //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
                   //  "<script type=\"text/javascript\">\n" +
                   //  js_src + "\n" + 
