@@ -8,6 +8,7 @@
  "items" : [
   {
    "gint default_height" : 500,
+   "gboolean deletable" : true,
    "xtype" : "Dialog",
    "$ xns" : "Gtk",
    "gint default_width" : 500,
