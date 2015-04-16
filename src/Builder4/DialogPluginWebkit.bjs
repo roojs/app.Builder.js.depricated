@@ -8,6 +8,7 @@
  "items" : [
   {
    "id" : "DialogPluginWebkit",
+   "utf8 title" : "",
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",
