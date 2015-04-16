@@ -56,11 +56,57 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.modal = true;
         }
         
-        _this.webview.el.load_html( text , 
+        
+        var runhtml = "<script type=\"text/javascript\">\n" ;
+        string builderhtml;
+        
+        
+        GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+    
+        runhtml += builderhtml + "\n";
+        runhtml += "</script>\n" ;
+    
+        // fix to make sure they are the same..
+        
+        // need to modify paths
+    
+        string inhtml;
+        
+        GLib.FileUtils.get_contents(
+            BuilderApplication.configDirectory() + "/resources/roo.builder.html"
+                , out inhtml);
+        
+        
+    /*
+        string js_src = js + "\n" +
+    	"Roo.onReady(function() {\n" +
+    	"if (" + _this.file.name +".show) " +  _this.file.name +".show({});\n" +
+    	"Roo.XComponent.build();\n" +
+    	"});\n";
+    */	
+      
+        //var fc =    FakeServerCache.factory_with_data(js_src);
+        //this.runjs = fc.fname;
+        
+            var html = inhtml.replace("</head>", runhtml + this.runhtml + 
+    
+          //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
+                  //  "<script type=\"text/javascript\">\n" +
+                  //  js_src + "\n" + 
+                  //  "</script>" + 
+                            
+            "</head>");
+            //print("LOAD HTML " + html);
+            
+             //var rootURL = _this.file.project.rootURL;
+       
+            
+            
+            this.el.load_html( html , 
                 //fixme - should be a config option!
-                // or should we catch stuff and fix it up..
-                "xhttp://localhost/app.Builder/"
-        );
+                "xhttp://localhost/app.Builder.js/"
+            );
+        
             
         
         this.el.show_all();
