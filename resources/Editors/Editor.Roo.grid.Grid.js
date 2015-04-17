@@ -217,6 +217,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
    title : _this._strings['c671c787b49f50a3ace9fdc5bd597825'],
    xns : Roo,
    xtype : 'GridPanel',
+   XXXX : function() { },
    listeners : {
     activate : function() {
          _this.panel = this;
