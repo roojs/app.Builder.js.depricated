@@ -33,8 +33,8 @@
    "items" : [
     {
      "listeners" : {
-      "|rowdblclick" : "function (_self, rowIndex, e)\n{\n    if (!_this.dialog) return;\n    _this.dialog.show( this.getDataSource().getAt(rowIndex), function() {\n        _this.grid.footer.onClick('first');\n    }); \n}\n",
-      "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n    if (_this.panel.active) {\n       this.footer.onClick('first');\n    }\n}",
+      "|rowdblclick" : "function (_self, rowIndex, e)\n{\n    if (!_this.dialog) return;\n  \n}\n",
+      "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n\n}",
       "cellclick" : "function (_self, rowIndex, columnIndex, e)\n{\n\n        var di = this.colModel.getDataIndex(columnIndex);\n        if (di != 'active') {\n            return;\n        }\n         \n        var rec = _this.grid.ds.getAt(rowIndex);\n        \n        rec.set('active', rec.data.active * 1 ? 0 : 1);\n        rec.commit();\n         \n        \n}"
      },
      "Number clicksToEdit" : 1,
