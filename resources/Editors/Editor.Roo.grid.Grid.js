@@ -224,6 +224,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
       
       
        var jreader = {};
+       var     colmodel = [];
    
        JSON.stringify({
            '|xns' : 'Roo',
@@ -311,29 +312,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
                                    },
                                    "|xns": "Roo.Toolbar"
                                },
-                               {
-                                   "text": "Edit",
-                                   "xtype": "Button",
-                                   "cls": "x-btn-text-icon",
-                                   "|icon": "Roo.rootURL + 'images/default/tree/leaf.gif'",
-                                   "listeners": {
-                                       "|click": "function()\n"+
-                                           "{\n"+
-                                           "    var s = _this.grid.getSelectionModel().getSelections();\n"+
-                                           "    if (!s.length || (s.length > 1))  {\n"+
-                                           "        Roo.MessageBox.alert(\"Error\", s.length ? \"Select only one Row\" : \"Select a Row\");\n"+
-                                           "        return;\n"+
-                                           "    }\n"+
-                                           "    if (!_this.dialog) return;\n" +
-                                           "    _this.dialog.show(s[0].data, function() {\n"+
-                                           "        _this.grid.footer.onClick('first');\n"+
-                                           "    }); \n"+
-                                           "    \n"+
-                                           "}\n" 
-                                       
-                                   },
-                                   "|xns": "Roo.Toolbar"
-                               },
+                                // fill ????
                                {
                                    "text": "Delete",
                                    "cls": "x-btn-text-icon",
@@ -342,7 +321,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
                                    "listeners": {
                                        "|click": "function()\n"+
                                            "{\n"+
-                                           "     Pman.genericDelete(_this, '" + reader.table + "'); \n"+
+                                           "     Pman.genericDelete(_this, '" + this.table + "'); \n"+
                                            "}\n"+
                                            "        "
                                    },
@@ -350,7 +329,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
                                }
                            ]
                        }, // end toolbar
-                   ].concat( reader.colmodel)
+                   ].concat( colmodel)
                }
            ]
            
