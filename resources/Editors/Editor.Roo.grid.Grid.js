@@ -226,7 +226,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
        var jreader = {};
        var     colmodel = [];
    
-       JSON.stringify({
+       alert("IPC:OUT:" + JSON.stringify({
            '|xns' : 'Roo',
            xtype : "GridPanel",
            "title": this.table,
@@ -334,7 +334,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
            ]
            
            
-       }, null, 4)
+       }, null, 4));
    
    },
    xns : Roo,
