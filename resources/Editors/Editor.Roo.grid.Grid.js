@@ -223,8 +223,61 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
        this.firstTxtCol = "XXX";
       
       
+       var map = {
+           'date' : 'date',
+           'datetime' : 'date',
+           'timestamp with time zone' : 'date',
+           'timestamp without time zone' : 'date',
+           'time' : 'string', //bogus
+           'int' : 'int',
+           'integer' : 'int',
+           'bigint' : 'int',
+           'double' : 'float',
+           'tinyint' : 'int',
+           'smallint' : 'int',
+           'decimal' : 'float',
+           'float' : 'float',
+           'numeric' : 'float',
+           'char' : 'string',
+           'character' : 'string',
+           'character varying' : 'string',
+           'varchar' : 'string',
+           'text' : 'string',
+           'longtext' : 'string',
+           'tinytext' : 'string',
+           'mediumtext' : 'string',
+           'enum' : 'string',
+           'timestamp' : 'number',
+           'blob' : 'text',
+           'bytea' : 'text',
+           'boolean' : 'int',
+           'text[]' : 'string',
+           
+       }
        var jreader = {};
        var     colmodel = [];
+       this.grid.dataStore.each(function(rec) {
+           if (!rec.data.active) {
+               return;
+           }
+           
+           
+           
+           colmodel.push({
+               "xtype": "ColumnModel",
+               "header": rec.data.title,
+               "width":  row.data.width * 1,
+               "dataIndex": row.Field,
+               "|renderer": !row.Type.match(/date/i) ? 
+                       "function(v) { return String.format('{0}', v); }" :
+                       "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
+               "|xns": "Roo.grid",
+               "*prop": "colModel[]"
+           });
+       });
+       
+       
+       
    
        alert("IPC:OUT:" + JSON.stringify({
            '|xns' : 'Roo',
@@ -279,7 +332,14 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
                                    "|url": "baseURL + '/Roo/" + this.table + ".php'",
                                    "|xns": "Roo.data"
                                },
-                               jreader
+                               {
+                                   '*prop' : 'reader',
+                                   'xtype' : 'JsonReader',
+                                   '|xns' : 'Roo.data',
+                                   'id' : 'id',
+                                   'root' : 'data',
+                                   'totalProperty' : 'total'
+                               }
                            ]
                        },
                        {
