@@ -215,9 +215,9 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
    tableName : 'core_enum',
    title : _this._strings['c671c787b49f50a3ace9fdc5bd597825'],
    title : _this._strings['c671c787b49f50a3ace9fdc5bd597825'],
+   toBJS : function() { },
    xns : Roo,
    xtype : 'GridPanel',
-   XXXX : function() { },
    listeners : {
     activate : function() {
          _this.panel = this;

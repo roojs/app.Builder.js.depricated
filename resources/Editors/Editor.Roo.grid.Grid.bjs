@@ -21,7 +21,7 @@
     "|activate" : "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
    },
    "| function loadData" : "function(data) { \n\n     alert(\"IPC:TEST:\" + JSON.stringify(data,null,4));\n    var ar = [];\n    for (var k in data) { \n        var r = data[k];\n        var has_s = typeof(r.relates_to_schema) != 'undefined'\n        ar.push([ !has_s , r.Field, r.Type,  r.Field, 100] );\n        if (!has_s) {\n            continue;\n        }\n        for (var kk in r.relates_to_schema) {         \n            var rr = r.relates_to_schema[kk];\n            if (rr.Field == r.relates_to_col) {\n                continue;\n            }\n            ar.push([ false, r.Field + '_'+ rr.Field, rr.Type,  rr.Field, 100] );\n        }\n    }\n    \n    alert(\"IPC:TEST:\" + JSON.stringify(ar));\n    this.grid.dataSource.loadData(ar);\n}",
-   "| function XXXX" : "function() { }",
+   "| function toBJS" : "function() { }",
    "fitToframe" : true,
    "background" : false,
    "region" : "center",
