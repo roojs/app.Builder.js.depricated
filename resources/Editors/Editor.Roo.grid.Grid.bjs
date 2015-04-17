@@ -1,0 +1,146 @@
+{
+ "name" : "Editor.Roo.grid.Grid",
+ "parent" : "",
+ "title" : "",
+ "path" : "/home/alan/gitlive/app.Builder.js/resources/Editors/Editor.Roo.grid.Grid.bjs",
+ "permname" : "",
+ "modOrder" : "001",
+ "strings" : {
+  "4ce58cbe362a5d7b156992a496d55bf3" : "Database Column",
+  "b78a3223503896721cca1303f776159b" : "Title",
+  "2f616612593df62aeed112de4f03110e" : "Edit a Grid",
+  "0ccc2bf3fb98387c23b6ca5500244d6e" : "Use ",
+  "c671c787b49f50a3ace9fdc5bd597825" : "core_enum",
+  "32954654ac8fe66a1d09be19001de2d4" : "Width",
+  "a1fa27779242b4902f7ae3bdd5c6d508" : "Type",
+  "6e7376dca68a2386a8737944196ab491" : "Create / Edit Grid"
+ },
+ "items" : [
+  {
+   "listeners" : {
+    "|activate" : "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
+   },
+   "| function loadData" : "function(data) { \n\n     alert(\"IPC:TEST:\" + JSON.stringify(data,null,4));\n    var ar = [];\n    for (var k in data) { \n        var r = data[k];\n        ar.push([ false, r.Field, r.Type,  r.Field, 100] );\n    }\n    \n    alert(\"IPC:TEST:\" + JSON.stringify(ar));\n    this.grid.dataSource.loadData(ar);\n}",
+   "background" : false,
+   "fitToframe" : true,
+   "region" : "center",
+   "title" : "core_enum",
+   "xtype" : "GridPanel",
+   "$ xns" : "Roo",
+   "fitContainer" : true,
+   "String title" : "Create / Edit Grid",
+   "tableName" : "core_enum",
+   "items" : [
+    {
+     "listeners" : {
+      "|rowdblclick" : "function (_self, rowIndex, e)\n{\n    if (!_this.dialog) return;\n    _this.dialog.show( this.getDataSource().getAt(rowIndex), function() {\n        _this.grid.footer.onClick('first');\n    }); \n}\n",
+      "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n    if (_this.panel.active) {\n       this.footer.onClick('first');\n    }\n}",
+      "cellclick" : "function (_self, rowIndex, columnIndex, e)\n{\n\n        var di = this.colModel.getDataIndex(columnIndex);\n        if (di != 'active') {\n            return;\n        }\n         \n        var rec = _this.grid.ds.getAt(rowIndex);\n        \n        rec.set('active', rec.data.active * 1 ? 0 : 1);\n        rec.commit();\n         \n        \n}"
+     },
+     "Number clicksToEdit" : 1,
+     "autoExpandColumn" : "title",
+     "xtype" : "EditorGrid",
+     "loadMask" : true,
+     "$ xns" : "Roo.grid",
+     "* prop" : "grid",
+     "items" : [
+      {
+       "$ Array fields" : "[ 'active', 'dataIndex', 'type','title', 'width' ]",
+       "$ Array data" : "[\n  [ 1, 'test', 'test', 110 ]\n  \n\n]",
+       "Number id" : "'dataIndex'",
+       "xtype" : "SimpleStore",
+       "$ xns" : "Roo.data",
+       "* prop" : "ds"
+      },
+      {
+       "xtype" : "Toolbar",
+       "$ xns" : "Roo",
+       "* prop" : "toolbar",
+       "items" : [
+        {
+         "string text" : "Edit a Grid",
+         "xtype" : "TextItem",
+         "$ xns" : "Roo.Toolbar"
+        }
+       ]
+      },
+      {
+       "xtype" : "ColumnModel",
+       "width" : 75,
+       "header" : "Use ",
+       "$ renderer" : "function(v) {  \n    var state = v *1 > 0 ?  '-checked' : '';\n\n    return '<img class=\"x-grid-check-icon' + state + '\" src=\"' + Roo.BLANK_IMAGE_URL + '\"/>';\n                \n }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "active"
+      },
+      {
+       "xtype" : "ColumnModel",
+       "header" : "Database Column",
+       "width" : 150,
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "dataIndex"
+      },
+      {
+       "xtype" : "ColumnModel",
+       "width" : 100,
+       "header" : "Type",
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "type"
+      },
+      {
+       "xtype" : "ColumnModel",
+       "header" : "Title",
+       "width" : 75,
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "title",
+       "items" : [
+        {
+         "xtype" : "GridEditor",
+         "$ xns" : "Roo.grid",
+         "* prop" : "editor",
+         "items" : [
+          {
+           "xtype" : "TextField",
+           "$ xns" : "Roo.form",
+           "* prop" : "field"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "xtype" : "ColumnModel",
+       "width" : 75,
+       "header" : "Width",
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "width",
+       "items" : [
+        {
+         "xtype" : "GridEditor",
+         "$ xns" : "Roo.grid",
+         "* prop" : "editor",
+         "items" : [
+          {
+           "xtype" : "NumberField",
+           "Number decimalPrecision" : 0,
+           "$ xns" : "Roo.form",
+           "* prop" : "field"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
