@@ -150,6 +150,7 @@ public class Xcls_DialogPluginWebkit : Object
                  this.webview.el.run_javascript.begin("Editor.Roo.grid.Grid.panel.toBJS();", null, (obj, res) => {
                     print("GOT END?");
                         var data = this.webview.el.run_javascript.end(res);
+                                        print("GOT DATA?");
                         loop.quit();
                     });
                  loop.run();
