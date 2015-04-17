@@ -199,8 +199,8 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
            if (!has_s) {
                continue;
            }
-           for (var kk in r.relates_to_schmea) {         
-               var rr = r.relates_to_schmea[kk];
+           for (var kk in r.relates_to_schema) {         
+               var rr = r.relates_to_schema[kk];
                if (rr.Field == r.relates_to_col) {
                    continue;
                }
