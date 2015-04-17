@@ -153,7 +153,7 @@ public class Xcls_DialogPluginWebkit : Object
                         loop.quit();
                     });
                  loop.run();
-    
+                   print("LOOP END?");
                  // try and get the resopse...
                 break;
              }
