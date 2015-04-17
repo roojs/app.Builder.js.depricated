@@ -143,9 +143,9 @@ public class Xcls_DialogPluginWebkit : Object
             
         
        
-            var response_id = this.el.run();
+             var response_id = this.el.run();
             
-             if (response_id == 3) {
+             if (response_id == 1) { // OK...
                  var loop = new MainLoop();
                  this.webview.el.run_javascript.begin("Editor.Roo.grid.Grid.panel.toBJS();", null, (obj, res) => {
       //              print("GOT END?");
@@ -163,7 +163,7 @@ public class Xcls_DialogPluginWebkit : Object
                  return "";
             }
             // keep showing...?
-            break;
+            continue;
         }
         
         // now we save it..
