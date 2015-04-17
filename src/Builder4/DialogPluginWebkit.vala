@@ -147,8 +147,9 @@ public class Xcls_DialogPluginWebkit : Object
             
              if (response_id == 3) {
                  this.webview.el.execute_script("Editor.Roo.grid.Grid.panel.toBJS()");
-                  var response_id = this.el.run();
-                 break;
+                 var response_id = this.el.run();
+                 // run until the 
+                continue;
              }
             if (response_id < 1) {
                 this.el.hide();
