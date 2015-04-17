@@ -225,7 +225,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
        
        var jreader = {};
        var     colmodel = [];
-       this.grid.dataStore.each(function(rec) {
+       this.grid.dataSource.each(function(rec) {
            if (!rec.data.active) {
                return;
            }
