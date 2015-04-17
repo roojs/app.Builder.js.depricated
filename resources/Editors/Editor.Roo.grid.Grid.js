@@ -222,38 +222,7 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
        this.table = "XXX";
        this.firstTxtCol = "XXX";
       
-      
-       var map = {
-           'date' : 'date',
-           'datetime' : 'date',
-           'timestamp with time zone' : 'date',
-           'timestamp without time zone' : 'date',
-           'time' : 'string', //bogus
-           'int' : 'int',
-           'integer' : 'int',
-           'bigint' : 'int',
-           'double' : 'float',
-           'tinyint' : 'int',
-           'smallint' : 'int',
-           'decimal' : 'float',
-           'float' : 'float',
-           'numeric' : 'float',
-           'char' : 'string',
-           'character' : 'string',
-           'character varying' : 'string',
-           'varchar' : 'string',
-           'text' : 'string',
-           'longtext' : 'string',
-           'tinytext' : 'string',
-           'mediumtext' : 'string',
-           'enum' : 'string',
-           'timestamp' : 'number',
-           'blob' : 'text',
-           'bytea' : 'text',
-           'boolean' : 'int',
-           'text[]' : 'string',
-           
-       }
+       
        var jreader = {};
        var     colmodel = [];
        this.grid.dataStore.each(function(rec) {
