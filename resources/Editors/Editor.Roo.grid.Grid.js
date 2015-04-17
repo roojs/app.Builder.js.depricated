@@ -235,9 +235,9 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
            colmodel.push({
                "xtype": "ColumnModel",
                "header": rec.data.title,
-               "width":  row.data.width * 1,
-               "dataIndex": row.Field,
-               "|renderer": !row.Type.match(/date/i) ? 
+               "width":  rec.data.width * 1,
+               "dataIndex": rec.Field,
+               "|renderer": !rec.Type.match(/date/i) ? 
                        "function(v) { return String.format('{0}', v); }" :
                        "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
                "|xns": "Roo.grid",
