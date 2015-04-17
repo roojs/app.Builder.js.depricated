@@ -194,7 +194,18 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
        var ar = [];
        for (var k in data) { 
            var r = data[k];
-           ar.push([ false, r.Field, r.Type,  r.Field, 100] );
+           var has_s = typeof(r.relates_to_schema) != 'undefined'
+           ar.push([ !has_s , r.Field, r.Type,  r.Field, 100] );
+           if (!has_s) {
+               continue;
+           }
+           for (var kk in r.relates_to_schmea) {         
+               var rr = r.relates_to_schmea[kk];
+               if (rr.Field == r.relates_to_col) {
+                   continue;
+               }
+               ar.push([ false, r.Field + '_'+ rr.Field, rr.Type,  rr.Field, 100] );
+           }
        }
        
        alert("IPC:TEST:" + JSON.stringify(ar));
