@@ -172,11 +172,6 @@ Editor.Roo.grid.Grid = new Roo.XComponent({
           _this.grid = this; 
           //_this.dialog = Pman.Dialog.FILL_IN
       
-      },
-     rowdblclick : function (_self, rowIndex, e)
-      {
-          if (!_this.dialog) return;
-        
       }
     },
     items : [
