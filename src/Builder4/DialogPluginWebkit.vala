@@ -148,7 +148,7 @@ public class Xcls_DialogPluginWebkit : Object
              if (response_id == 3) {
                  var loop = new MainLoop();
                  this.webview.el.run_javascript.begin("Editor.Roo.grid.Grid.panel.toBJS();", null, (obj, res) => {
-                        list_dir.end(res);
+                        this.webview.el.run_javascript.end(res);
                         loop.quit();
                     });
                  loop.run();
