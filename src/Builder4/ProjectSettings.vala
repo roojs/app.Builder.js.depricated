@@ -787,6 +787,9 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.label = "Check Connection";
+
+            // listeners 
+            this.el.clicked.connect( );
         }
 
         // user defined functions 
