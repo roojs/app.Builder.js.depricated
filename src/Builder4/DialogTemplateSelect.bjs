@@ -26,6 +26,7 @@
       {
        "* pack" : "pack_start,false,false,0",
        "xtype" : "HBox",
+       "gint margin" : 3,
        "$ xns" : "Gtk",
        "items" : [
         {
@@ -63,6 +64,7 @@
       {
        "* pack" : "pack_start,false,false,0",
        "xtype" : "HBox",
+       "gint margin" : 3,
        "$ xns" : "Gtk",
        "items" : [
         {
