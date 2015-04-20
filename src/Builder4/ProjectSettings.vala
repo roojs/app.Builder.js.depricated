@@ -64,11 +64,11 @@ public class Xcls_ProjectSettings : Object
            
         _this.rootURL.el.set_text( _this.project.rootURL );
         _this.base_template.el.set_text(_this.project.base_template);    
-       
-    _this.database_DBTYPE.el.set_text(     js.get_string_member("DBTYPE") );
-    _this.database_DBNAME.el.set_text(    js.get_string_member("DBNAME") );
-    _this.database_DBUSERNAME.el.set_text(    js.get_string_member("DBUSERNAME") );
-    _this.database_DBPASSWORD.el.set_text(    js.get_string_member("DBPASSWORD") );
+         var js = _this.project.json_project_data;
+        _this.database_DBTYPE.el.set_text(     js.get_string_member("DBTYPE") );
+        _this.database_DBNAME.el.set_text(    js.get_string_member("DBNAME") );
+        _this.database_DBUSERNAME.el.set_text(    js.get_string_member("DBUSERNAME") );
+        _this.database_DBPASSWORD.el.set_text(    js.get_string_member("DBPASSWORD") );
         //this.el.show_all();
     }
     public void save ()
