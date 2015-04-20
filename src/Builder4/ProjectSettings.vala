@@ -789,7 +789,10 @@ public class Xcls_ProjectSettings : Object
             this.el.label = "Check Connection";
 
             // listeners 
-            this.el.clicked.connect( );
+            this.el.clicked.connect( () => {
+                
+            
+            });
         }
 
         // user defined functions 
