@@ -19,6 +19,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_rootURL rootURL;
     public Xcls_view view;
     public Xcls_database_DBTYPE database_DBTYPE;
+    public Xcls_database_DBTYPE database_DBTYPE;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -558,13 +559,16 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_Label20( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_database_DBTYPE( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.pack_start (  child_1.el , false,false,0 );
             var child_2 = new Xcls_Label22( _this );
             child_2.ref();
-            this.el.add (  child_2.el  );
+            this.el.pack_start (  child_2.el , false,false,0 );
+            var child_3 = new Xcls_database_DBTYPE( _this );
+            child_3.ref();
+            this.el.pack_start (  child_3.el , false,false,0 );
         }
 
         // user defined functions 
@@ -631,6 +635,28 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.xalign = 0f;
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_database_DBTYPE : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_database_DBTYPE(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.database_DBTYPE = this;
+            this.el = new Gtk.Entry();
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions 
