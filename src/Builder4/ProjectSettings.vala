@@ -569,6 +569,9 @@ public class Xcls_ProjectSettings : Object
             var child_3 = new Xcls_database_DBTYPE( _this );
             child_3.ref();
             this.el.pack_start (  child_3.el , false,false,0 );
+            var child_4 = new Xcls_Label24( _this );
+            child_4.ref();
+            this.el.pack_start (  child_4.el , false,false,0 );
         }
 
         // user defined functions 
@@ -585,7 +588,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Label20(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Database Type" );
+            this.el = new Gtk.Label( "Type (eg. MySQL or PostgreSQL)" );
 
             // my vars (dec)
 
@@ -657,6 +660,28 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Label24 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label24(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "Name" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.xalign = 0f;
         }
 
         // user defined functions 
