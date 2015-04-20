@@ -22,7 +22,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_database_DBNAME database_DBNAME;
     public Xcls_database_DBUSERNAME database_DBUSERNAME;
     public Xcls_database_DBPASSWORD database_DBPASSWORD;
-    public Xcls_path path;
+    public Xcls_database_ERROR database_ERROR;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -590,7 +590,7 @@ public class Xcls_ProjectSettings : Object
             var child_8 = new Xcls_Button28( _this );
             child_8.ref();
             this.el.pack_start (  child_8.el , false,false,0 );
-            var child_9 = new Xcls_path( _this );
+            var child_9 = new Xcls_database_ERROR( _this );
             child_9.ref();
             this.el.pack_start (  child_9.el , false,false,0 );
         }
@@ -817,7 +817,7 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_path : Object 
+    public class Xcls_database_ERROR : Object 
     {
         public Gtk.Label el;
         private Xcls_ProjectSettings  _this;
@@ -826,10 +826,10 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_path(Xcls_ProjectSettings _owner )
+        public Xcls_database_ERROR(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            _this.path = this;
+            _this.database_ERROR = this;
             this.el = new Gtk.Label( " " );
 
             // my vars (dec)

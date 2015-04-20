@@ -217,7 +217,7 @@
         },
         {
          "label" : " ",
-         "id" : "path",
+         "id" : "database_ERROR",
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
