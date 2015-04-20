@@ -813,7 +813,7 @@ public class Xcls_ProjectSettings : Object
                   _this.database_ERROR.el.label = ue.message;
                     return;
                }
-                     _this.database_ERROR.el.label = "Connection Succeeded";
+             _this.database_ERROR.el.label = "Connection Succeeded";
                cnc.close();
             });
         }
