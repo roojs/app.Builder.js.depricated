@@ -190,6 +190,9 @@ public class Xcls_ProjectSettings : Object
             var child_2 = new Xcls_VBox8( _this );
             child_2.ref();
             this.el.append_page (  child_2.el , _this.label_global.el );
+            var child_3 = new Xcls_VBox19( _this );
+            child_3.ref();
+            this.el.add (  child_3.el  );
         }
 
         // user defined functions 
@@ -531,6 +534,27 @@ public class Xcls_ProjectSettings : Object
                 return false;
                      
             });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_VBox19 : Object 
+    {
+        public Gtk.VBox el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_VBox19(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.VBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions 
