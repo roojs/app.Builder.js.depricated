@@ -585,7 +585,7 @@ public class Xcls_ProjectSettings : Object
             this.el.pack_start (  child_7.el , false,false,0 );
             var child_8 = new Xcls_Button28( _this );
             child_8.ref();
-            this.el.pack_start (  child_8.el , true,true,0 );
+            this.el.pack_start (  child_8.el , false,false,0 );
         }
 
         // user defined functions 

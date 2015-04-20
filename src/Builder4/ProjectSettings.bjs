@@ -204,7 +204,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "* pack" : "pack_start,true,true,0",
+         "* pack" : "pack_start,false,false,0",
          "xtype" : "Button",
          "$ xns" : "Gtk",
          "utf8 label" : "Check Connection"
