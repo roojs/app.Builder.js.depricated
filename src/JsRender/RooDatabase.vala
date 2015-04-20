@@ -78,6 +78,16 @@ namespace JsRender {
 			return new Json.Array();
 			
 		}
+		public Gee.ArrayList readTablesGee()
+		{
+			var ret = new Gee.ListArray<string>();
+			var ar = this.readTables();
+			for(var i = 0; ar.get_length(); i++) {
+				ret.add(ar.get_string_element(i);
+			}
+			return ret;
+			
+		}
 		
 		public Json.Object readTable(string tablename) 
 		{
