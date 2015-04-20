@@ -604,6 +604,17 @@ public class Xcls_ProjectSettings : Object
             var child_9 = new Xcls_database_ERROR( _this );
             child_9.ref();
             this.el.pack_start (  child_9.el , false,false,0 );
+
+            // init method 
+
+            {
+               var chain = new GLib.List();
+               chain.append(_this.database_DBTYPE.el);
+               chain.append(_this.database_DBNAME.el);
+                 chain.append(_this.database_DBUSERNAME.el);
+               chain.append(_this.database_DBPASSWORD.el);
+               this.el.set_focus_chain(chain);
+            }
         }
 
         // user defined functions 
