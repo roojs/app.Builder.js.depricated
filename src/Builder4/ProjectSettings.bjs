@@ -28,6 +28,13 @@
        "* pack" : false,
        "$ xns" : "Gtk",
        "utf8 label" : "Global"
+      },
+      {
+       "id" : "label_database",
+       "* pack" : false,
+       "xtype" : "Label",
+       "$ xns" : "Gtk",
+       "utf8 label" : "Targets"
       }
      ]
     },
