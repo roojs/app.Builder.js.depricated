@@ -797,23 +797,23 @@ public class Xcls_ProjectSettings : Object
             
             
               _this.database_ERROR.el.label    = "";
-                
+                Gda.Connection cnc;
                 try {
                     // assumes localhost...
-                     var cnc = Gda.Connection.open_from_string (
+                     cnc = Gda.Connection.open_from_string (
             			_this.database_DBTYPE.el.get_text(),
             			"DB_NAME=" + _this.database_DBNAME.el.get_text(), 
             			"USERNAME=" + _this.database_DBUSERNAME.el.get_text() + 
             			";PASSWORD=" + _this.database_DBPASSWORD.el.get_text(),
             			Gda.ConnectionOptions.NONE
             		);
-               } catch (ConnectionError ce) { 
-                  _this.database_ERROR.el.label = ce.message;        
+               //} catch (Gda.ConnectionError ce) { 
+               //   _this.database_ERROR.el.label = ce.message;        
                } catch(Error ue) {
                   _this.database_ERROR.el.label = ue.message;
                     return;
                }
-             _this.database_ERROR.el.label = "Connection Succeeded";
+              _this.database_ERROR.el.label = "Connection Succeeded";
                cnc.close();
             });
         }
