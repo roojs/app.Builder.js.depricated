@@ -76,6 +76,7 @@
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
+         "gint margin" : 3,
          "$ xns" : "Gtk"
         },
         {

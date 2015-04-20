@@ -299,6 +299,7 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.margin = 3;
             this.el.xalign = 0f;
         }
 
