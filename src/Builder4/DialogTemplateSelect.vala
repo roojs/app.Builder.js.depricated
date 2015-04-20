@@ -55,7 +55,7 @@ public class DialogTemplateSelect : Object
     }
 
     // user defined functions 
-    public JsRender.Node? show (Gtk.Window pwindow, Palete.Palete pal, JsRender.Node node) {
+    public JsRender.Node? show (Gtk.Window pwindow, Palete.Palete pal, JsRender.Node node, Project.Project project) {
         
         this.el.show_all();
         var opts = pal.listTemplates(node);
@@ -68,7 +68,13 @@ public class DialogTemplateSelect : Object
         
         //opts.unshift({ path: '' , name :'Just add Element' });
          _this.model.loadData(opts);
-         _this.combo.el.set_active(0);
+         _this.combo.el.set_active(-1);
+         
+         
+         var db = new JsRender.RooDatabase(project);
+         
+         _this.dbcombo.el.set_active(-1);
+         
          
        
         var res = this.el.run();
