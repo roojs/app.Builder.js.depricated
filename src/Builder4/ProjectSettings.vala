@@ -801,7 +801,11 @@ public class Xcls_ProjectSettings : Object
             			";PASSWORD=" + _this.database_DBPASSWORD.el.get_text(),
             			Gda.ConnectionOptions.NONE
             		);
-            
+               } catch (ConnectionError ce) { 
+                    
+               } catch(Error ue) {
+                    print(ue.message);
+               }
             });
         }
 
