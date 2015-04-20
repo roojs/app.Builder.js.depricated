@@ -163,6 +163,9 @@
          "$ xns" : "Gtk"
         },
         {
+         "listeners" : {
+          "keynav_failed" : "(dir) => {\n    print(\"KEYNAV failed\\n\");\n    return false;\n}"
+         },
          "id" : "database_DBTYPE",
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Entry",

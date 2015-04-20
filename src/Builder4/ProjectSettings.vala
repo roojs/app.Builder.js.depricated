@@ -659,6 +659,12 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+
+            // listeners 
+            this.el.keynav_failed.connect( (dir) => {
+                print("KEYNAV failed\n");
+                return false;
+            });
         }
 
         // user defined functions 
