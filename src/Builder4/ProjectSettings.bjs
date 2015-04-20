@@ -39,6 +39,7 @@
       {
        "* pack" : "append_page,_this.label_global.el",
        "xtype" : "VBox",
+       "gboolean homogeneous" : false,
        "$ xns" : "Gtk"
       },
       {

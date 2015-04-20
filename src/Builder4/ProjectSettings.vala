@@ -179,7 +179,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_VBox5(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
 
