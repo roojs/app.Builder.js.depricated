@@ -151,7 +151,7 @@
        "$ xns" : "Gtk",
        "items" : [
         {
-         "label" : "filename",
+         "label" : "Database Type",
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
