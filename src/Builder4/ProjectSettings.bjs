@@ -175,7 +175,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "database_DBTYPE",
+         "id" : "database_DBNAME",
          "xtype" : "Entry",
          "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"

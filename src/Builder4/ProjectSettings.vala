@@ -19,7 +19,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_rootURL rootURL;
     public Xcls_view view;
     public Xcls_database_DBTYPE database_DBTYPE;
-    public Xcls_database_DBTYPE database_DBTYPE;
+    public Xcls_database_DBNAME database_DBNAME;
     public Xcls_database_DBUSERNAME database_DBUSERNAME;
     public Xcls_database_DBPASSWORD database_DBPASSWORD;
 
@@ -571,7 +571,7 @@ public class Xcls_ProjectSettings : Object
             var child_2 = new Xcls_Label22( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,false,0 );
-            var child_3 = new Xcls_database_DBTYPE( _this );
+            var child_3 = new Xcls_database_DBNAME( _this );
             child_3.ref();
             this.el.pack_start (  child_3.el , false,false,0 );
             var child_4 = new Xcls_Label24( _this );
@@ -659,7 +659,7 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_database_DBTYPE : Object 
+    public class Xcls_database_DBNAME : Object 
     {
         public Gtk.Entry el;
         private Xcls_ProjectSettings  _this;
@@ -668,10 +668,10 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_database_DBTYPE(Xcls_ProjectSettings _owner )
+        public Xcls_database_DBNAME(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            _this.database_DBTYPE = this;
+            _this.database_DBNAME = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)
