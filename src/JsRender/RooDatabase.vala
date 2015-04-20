@@ -19,7 +19,7 @@ namespace JsRender {
 		public string DBNAME;
 		 
         public Gda.Connection cnc;
-        /*
+        
 		public RooDatabase (Project.Project project)
         {
             this.project = project;
@@ -34,7 +34,7 @@ namespace JsRender {
 			);
             
         }
-        * */
+       
         public RooDatabase.from_cfg (string dbtype, string dbname, string dbuser, string dbpass)
          {
              this.DBTYPE = dbtype;
