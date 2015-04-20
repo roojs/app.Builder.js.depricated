@@ -790,7 +790,17 @@ public class Xcls_ProjectSettings : Object
 
             // listeners 
             this.el.clicked.connect( () => {
-                
+                _this.rootURL.el.get_text();
+                _this.project.base_template = _this.base_template.el.get_text();    
+                try {
+                    // assumes localhost...
+                     var cnc = Gda.Connection.open_from_string (
+            			_this.database_DBTYPE.el.get_text(),
+            			"DB_NAME=" + _this.database_DBNAME.el.get_text(), 
+            			"USERNAME=" + _this.database_DBUSERNAME.el.get_text() + 
+            			";PASSWORD=" + _this.database_DBPASSWORD.el.get_text(),
+            			Gda.ConnectionOptions.NONE
+            		);
             
             });
         }
