@@ -36,6 +36,7 @@ namespace JsRender {
 				);
 			} catch(Error) {
 				this.cnc  = null;
+				this.DBTYPE = "";
 			}
             
         }
