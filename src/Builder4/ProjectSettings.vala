@@ -807,6 +807,7 @@ public class Xcls_ProjectSettings : Object
                     print(ue.message);
                     return;
                }
+               cnc.close();
             });
         }
 
