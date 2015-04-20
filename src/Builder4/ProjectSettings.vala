@@ -715,6 +715,18 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+
+            // listeners 
+            this.el.key_press_event.connect( (ev) => {
+            
+                if (ev.keyval == Gdk.Key.Tab) {
+                    _this.database_DBUSERNAME.el.grab_focus();
+                    return true;
+                }
+            
+            
+                return false;
+            });
         }
 
         // user defined functions 
