@@ -148,6 +148,7 @@
       {
        "* pack" : "append_page,_this.label_database.el",
        "xtype" : "VBox",
+       "gboolean homogeneous" : false,
        "$ xns" : "Gtk",
        "items" : [
         {
