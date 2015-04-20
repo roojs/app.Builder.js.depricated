@@ -114,7 +114,7 @@ builder_SOURCES = \
 builder_VALAFLAGS = \
 	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
 
-builder_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) 
+builder_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS)
 
 
 
