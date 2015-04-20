@@ -72,7 +72,7 @@ public class DialogTemplateSelect : Object
          
          
          var db =  new Palete.RooDatabase.from_project(project);
-         _this.dbcombo.loadData(db.readTablesGee());
+         _this.dbmodel.loadData(db.readTablesGee());
          
          
          _this.dbcombo.el.set_active(-1);
