@@ -63,7 +63,7 @@ if test $vte_2_91_enabled = yes; then
         AC_DEFINE(HAVE_GDA5,1,[libgda 5.0 support])
 else
         
-		PKG_CHECK_MODULES(HAVE_GDA, [libgda-4.0],
+        PKG_CHECK_MODULES(HAVE_GDA, [libgda-4.0],
                 [gda_4_0_enabled=yes],
                 [gda_4_0_enabled=no])
     
