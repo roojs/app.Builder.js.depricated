@@ -555,6 +555,31 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_Label20( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false,false,0 );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Label20 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label20(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "filename" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.xalign = 0f;
         }
 
         // user defined functions 

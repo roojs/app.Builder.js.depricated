@@ -148,7 +148,16 @@
       {
        "* pack" : "append_page,_this.label_database.el",
        "xtype" : "VBox",
-       "$ xns" : "Gtk"
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "label" : "filename",
+         "xalign" : 0,
+         "* pack" : "pack_start,false,false,0",
+         "xtype" : "Label",
+         "$ xns" : "Gtk"
+        }
+       ]
       }
      ]
     }
