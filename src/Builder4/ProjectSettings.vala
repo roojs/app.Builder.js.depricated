@@ -661,8 +661,14 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
 
             // listeners 
-            this.el.keynav_failed.connect( (dir) => {
-                print("KEYNAV failed\n");
+            this.el.key_press_event.connect( (ev) => {
+            
+                if (ev.keyval == Gdk.Key.Tab) {
+                    _this.database_DBNAME.el.grab_focus();
+                    return true;
+                }
+            
+            
                 return false;
             });
         }

@@ -164,7 +164,7 @@
         },
         {
          "listeners" : {
-          "keynav_failed" : "(dir) => {\n    print(\"KEYNAV failed\\n\");\n    return false;\n}"
+          "key_press_event" : "(ev) => {\n\n    if (ev.keyval == Gdk.Key.Tab) {\n        _this.database_DBNAME.el.grab_focus();\n        return true;\n    }\n\n\n    return false;\n}\n"
          },
          "id" : "database_DBTYPE",
          "* pack" : "pack_start,false,false,0",
