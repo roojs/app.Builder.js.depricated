@@ -165,7 +165,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "label" : "Database Type",
+         "label" : "Database Name",
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
