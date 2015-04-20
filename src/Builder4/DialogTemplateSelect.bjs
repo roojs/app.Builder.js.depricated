@@ -65,8 +65,8 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "combo",
-         "* init" : "this.el.add_attribute(_this.cellrenderer.el , \"markup\", 1 );",
+         "id" : "dbcombo",
+         "* init" : "this.el.add_attribute(_this.dbcellrenderer.el , \"markup\", 1 );",
          "xtype" : "ComboBox",
          "* pack" : "add",
          "$ xns" : "Gtk",

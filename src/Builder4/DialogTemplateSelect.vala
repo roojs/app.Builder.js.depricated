@@ -15,7 +15,7 @@ public class DialogTemplateSelect : Object
     public Xcls_combo combo;
     public Xcls_cellrenderer cellrenderer;
     public Xcls_model model;
-    public Xcls_combo combo;
+    public Xcls_dbcombo dbcombo;
     public Xcls_cellrenderer cellrenderer;
     public Xcls_model model;
 
@@ -140,7 +140,7 @@ public class DialogTemplateSelect : Object
             var child_2 = new Xcls_Label8( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,false );
-            var child_3 = new Xcls_combo( _this );
+            var child_3 = new Xcls_dbcombo( _this );
             child_3.ref();
             this.el.add (  child_3.el  );
         }
@@ -291,7 +291,7 @@ public class DialogTemplateSelect : Object
 
         // user defined functions 
     }
-    public class Xcls_combo : Object 
+    public class Xcls_dbcombo : Object 
     {
         public Gtk.ComboBox el;
         private DialogTemplateSelect  _this;
@@ -300,10 +300,10 @@ public class DialogTemplateSelect : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_combo(DialogTemplateSelect _owner )
+        public Xcls_dbcombo(DialogTemplateSelect _owner )
         {
             _this = _owner;
-            _this.combo = this;
+            _this.dbcombo = this;
             this.el = new Gtk.ComboBox();
 
             // my vars (dec)
@@ -318,7 +318,7 @@ public class DialogTemplateSelect : Object
 
             // init method 
 
-            this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );
+            this.el.add_attribute(_this.dbcellrenderer.el , "markup", 1 );
         }
 
         // user defined functions 
