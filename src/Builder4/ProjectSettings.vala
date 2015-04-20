@@ -794,8 +794,10 @@ public class Xcls_ProjectSettings : Object
 
             // listeners 
             this.el.clicked.connect( () => {
-                _this.rootURL.el.get_text();
-                _this.project.base_template = _this.base_template.el.get_text();    
+            
+            
+              _this.database_ERROR.el.label    = "";
+                
                 try {
                     // assumes localhost...
                      var cnc = Gda.Connection.open_from_string (
@@ -806,11 +808,12 @@ public class Xcls_ProjectSettings : Object
             			Gda.ConnectionOptions.NONE
             		);
                } catch (ConnectionError ce) { 
-                    
+                  _this.database_ERROR.el.label = ce.message;        
                } catch(Error ue) {
-                    print(ue.message);
+                  _this.database_ERROR.el.label = ue.message;
                     return;
                }
+                     _this.database_ERROR.el.label = "Connection Succeeded";
                cnc.close();
             });
         }
