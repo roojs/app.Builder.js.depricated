@@ -91,6 +91,9 @@ public class DialogTemplateSelect : Object
         
        Gtk.TreeIter iter;
         _this.combo.el.get_active_iter (out iter);
+        if (iter == null) {
+            return node; // nothing selected...
+        }
         Value vfname;
         this.model.el.get_value (iter, 0, out vfname);
         
