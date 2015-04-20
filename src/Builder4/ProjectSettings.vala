@@ -36,21 +36,15 @@ public class Xcls_ProjectSettings : Object
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
-        var child_1 = new Xcls_path( _this );
+        var child_1 = new Xcls_HBox11( _this );
         child_1.ref();
         this.el.pack_start (  child_1.el , false,false,0 );
-        var child_2 = new Xcls_Label10( _this );
+        var child_2 = new Xcls_HBox14( _this );
         child_2.ref();
         this.el.pack_start (  child_2.el , false,false,0 );
-        var child_3 = new Xcls_HBox11( _this );
+        var child_3 = new Xcls_ScrolledWindow17( _this );
         child_3.ref();
-        this.el.pack_start (  child_3.el , false,false,0 );
-        var child_4 = new Xcls_HBox14( _this );
-        child_4.ref();
-        this.el.pack_start (  child_4.el , false,false,0 );
-        var child_5 = new Xcls_ScrolledWindow17( _this );
-        child_5.ref();
-        this.el.pack_start (  child_5.el , true,true,0 );
+        this.el.pack_start (  child_3.el , true,true,0 );
     }
 
     // user defined functions 
@@ -181,6 +175,12 @@ public class Xcls_ProjectSettings : Object
             var child_0 = new Xcls_HBox6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_path( _this );
+            child_1.ref();
+            this.el.pack_start (  child_1.el , false,false,0 );
+            var child_2 = new Xcls_Label10( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , false,false,0 );
         }
 
         // user defined functions 

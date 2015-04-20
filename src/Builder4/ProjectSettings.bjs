@@ -69,24 +69,24 @@
            "$ xns" : "Gtk"
           }
          ]
+        },
+        {
+         "label" : "filename",
+         "id" : "path",
+         "xalign" : 0,
+         "* pack" : "pack_start,false,false,0",
+         "xtype" : "Label",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "HTML To insert at end of <HEAD>",
+         "* pack" : "pack_start,false,false,0",
+         "xtype" : "Label",
+         "$ xns" : "Gtk"
         }
        ]
       }
      ]
-    },
-    {
-     "label" : "filename",
-     "id" : "path",
-     "xalign" : 0,
-     "* pack" : "pack_start,false,false,0",
-     "xtype" : "Label",
-     "$ xns" : "Gtk"
-    },
-    {
-     "label" : "HTML To insert at end of <HEAD>",
-     "* pack" : "pack_start,false,false,0",
-     "xtype" : "Label",
-     "$ xns" : "Gtk"
     },
     {
      "* pack" : "pack_start,false,false,0",
