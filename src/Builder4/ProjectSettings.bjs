@@ -178,10 +178,16 @@
          "$ xns" : "Gtk"
         },
         {
-         "label" : "Name",
+         "label" : "Username",
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "database_DBTYPE",
+         "* pack" : "pack_start,false,false,0",
+         "xtype" : "Entry",
          "$ xns" : "Gtk"
         }
        ]
