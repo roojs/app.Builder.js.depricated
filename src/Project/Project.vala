@@ -151,7 +151,7 @@ namespace Project {
 
 			
 			var proj = factory(xtype, fpath);
-			
+
 			proj.json_project_data  = obj; // store the original object...
 			
 			proj.fn =  Path.get_basename(jsonfile).split(".")[0];
@@ -521,6 +521,10 @@ namespace Project {
 		}
 		// wrapper around the javascript data...
 		public string get_string_member(string key) {
+			
+			if (!this.json_project_data.has_member(key)) {
+				return "";
+			}
 			var  ret = this.json_project_data.get_string_member(key);
 			if (ret == null) {
 				return "";
