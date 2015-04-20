@@ -80,6 +80,14 @@ public class Xcls_ProjectSettings : Object
         _this.project.rootURL = _this.rootURL.el.get_text();
         _this.project.base_template = _this.base_template.el.get_text();    
         
+        var js = _this.project.json_project_data;
+        _this.project.set_string_member("DBTYPE", _this.database_DBTYPE.el.get_text());
+        _this.project.set_string_member("DBNAME", _this.database_DBNAME.el.get_text());
+        _this.project.set_string_member("DBUSERNAME", _this.database_DBUSERNAME.el.get_text());
+        _this.project.set_string_member("DBPASSWORD", _this.database_DBPASSWORD.el.get_text());
+    //    _this.project.set_string_member("DBHOST", _this.DBTYPE.el.get_text());    
+        
+        
         
     }
     public class Xcls_HBox2 : Object 
