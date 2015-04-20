@@ -149,7 +149,6 @@
        ]
       },
       {
-       "* init" : "{\n   var chain = new GLib.List<Gtk.Widget>();\n   chain.append(_this.database_DBTYPE.el);\n   chain.append(_this.database_DBNAME.el);\n     chain.append(_this.database_DBUSERNAME.el);\n   chain.append(_this.database_DBPASSWORD.el);\n   this.el.set_focus_chain(chain);\n}\n\n",
        "* pack" : "append_page,_this.label_database.el",
        "xtype" : "VBox",
        "gboolean homogeneous" : false,
