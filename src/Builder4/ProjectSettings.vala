@@ -192,7 +192,7 @@ public class Xcls_ProjectSettings : Object
             this.el.append_page (  child_2.el , _this.label_global.el );
             var child_3 = new Xcls_VBox19( _this );
             child_3.ref();
-            this.el.add (  child_3.el  );
+            this.el.append_page (  child_3.el , _this.label_database.el );
         }
 
         // user defined functions 

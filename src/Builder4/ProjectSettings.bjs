@@ -146,7 +146,7 @@
        ]
       },
       {
-       "* pack" : "add",
+       "* pack" : "append_page,_this.label_database.el",
        "xtype" : "VBox",
        "$ xns" : "Gtk"
       }
