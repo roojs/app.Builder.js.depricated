@@ -34,7 +34,7 @@
        "* pack" : false,
        "xtype" : "Label",
        "$ xns" : "Gtk",
-       "utf8 label" : "Targets"
+       "utf8 label" : "Database"
       }
      ]
     },

@@ -152,7 +152,7 @@ public class Xcls_ProjectSettings : Object
         {
             _this = _owner;
             _this.label_database = this;
-            this.el = new Gtk.Label( "Targets" );
+            this.el = new Gtk.Label( "Database" );
 
             // my vars (dec)
 
