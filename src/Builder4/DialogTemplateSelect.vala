@@ -392,7 +392,7 @@ public class DialogTemplateSelect : Object
         }
 
         // user defined functions 
-        public void loadData (GLib.List<string> data) {
+        public void loadData (Gee.ArrayList<string> data) {
             this.el.clear();                                    
             Gtk.TreeIter iter;
             var el = this.el;
