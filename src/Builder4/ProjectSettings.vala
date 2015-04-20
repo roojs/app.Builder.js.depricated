@@ -608,7 +608,7 @@ public class Xcls_ProjectSettings : Object
             // init method 
 
             {
-               var chain = new GLib.List();
+               var chain = new GLib.List<Gtk.Widget>();
                chain.append(_this.database_DBTYPE.el);
                chain.append(_this.database_DBNAME.el);
                  chain.append(_this.database_DBUSERNAME.el);
