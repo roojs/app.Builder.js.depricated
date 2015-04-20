@@ -34,13 +34,13 @@ public class DialogTemplateSelect : Object
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
-        var child_1 = new Xcls_Button8( _this );
+        var child_1 = new Xcls_Button9( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button9( _this );
+        var child_2 = new Xcls_Button10( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
-        var child_3 = new Xcls_Button10( _this );
+        var child_3 = new Xcls_Button11( _this );
         child_3.ref();
         this.el.add_action_widget (  child_3.el , 2 );
 
@@ -134,6 +134,9 @@ public class DialogTemplateSelect : Object
             var child_1 = new Xcls_combo( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_Label8( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , false,false );
         }
 
         // user defined functions 
@@ -261,24 +264,23 @@ public class DialogTemplateSelect : Object
                                              
         }
     }
-    public class Xcls_Button8 : Object 
+    public class Xcls_Label8 : Object 
     {
-        public Gtk.Button el;
+        public Gtk.Label el;
         private DialogTemplateSelect  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Button8(DialogTemplateSelect _owner )
+        public Xcls_Label8(DialogTemplateSelect _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Button();
+            this.el = new Gtk.Label( "Select Template : " );
 
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Cancel";
         }
 
         // user defined functions 
@@ -300,7 +302,7 @@ public class DialogTemplateSelect : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Just add it";
+            this.el.label = "Cancel";
         }
 
         // user defined functions 
@@ -315,6 +317,28 @@ public class DialogTemplateSelect : Object
 
         // ctor 
         public Xcls_Button10(DialogTemplateSelect _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Just add it";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button11 : Object 
+    {
+        public Gtk.Button el;
+        private DialogTemplateSelect  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button11(DialogTemplateSelect _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
