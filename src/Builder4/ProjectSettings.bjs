@@ -20,7 +20,16 @@
     {
      "* pack" : "pack_start,true,true,0",
      "xtype" : "Notebook",
-     "$ xns" : "Gtk"
+     "$ xns" : "Gtk",
+     "items" : [
+      {
+       "id" : "label_global",
+       "xtype" : "Label",
+       "* pack" : false,
+       "$ xns" : "Gtk",
+       "utf8 label" : "Global"
+      }
+     ]
     },
     {
      "* pack" : "pack_start,false,false,0",
