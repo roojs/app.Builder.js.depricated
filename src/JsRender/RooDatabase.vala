@@ -23,15 +23,20 @@ namespace JsRender {
 		public RooDatabase (Project.Project project)
         {
             this.project = project;
-			this.DBTYPE = this.project.json_project_data.get_string_member("DBTYPE");
-			this.DBNAME = this.project.json_project_data.get_string_member("DBNAME");
-				this.cnc = Gda.Connection.open_from_string (
-				this.DBTYPE,
-				"DB_NAME=" + this.DBNAME, 
-				"USERNAME=" + this.project.json_project_data.get_string_member("DBUSERNAME") + 
-				";PASSWORD=" + this.project.json_project_data.get_string_member("DBPASSWORD"),
-				Gda.ConnectionOptions.NONE
-			);
+			this.DBTYPE = this.project.get_string_member("DBTYPE");
+			this.DBNAME = this.project.get_string_member("DBNAME");
+			try {
+				
+					this.cnc = Gda.Connection.open_from_string (
+					this.DBTYPE,
+					"DB_NAME=" + this.DBNAME, 
+					"USERNAME=" + this.project.get_string_member("DBUSERNAME") + 
+					";PASSWORD=" + this.project.get_string_member("DBPASSWORD"),
+					Gda.ConnectionOptions.NONE
+				);
+			} catch(Error) {
+				this.DBNAME = "";
+			}
             
         }
        
