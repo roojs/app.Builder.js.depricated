@@ -75,6 +75,7 @@ builder_SOURCES = \
 		JsRender/NodeToVala.vala \
 		JsRender/Node.vala \
 		JsRender/Roo.vala \
+		JsRender/RooDatabase.vala \
 		Project/Gtk.vala \
 		Project/Project.vala \
 		Project/Roo.vala \
@@ -108,7 +109,7 @@ builder_SOURCES = \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
 		Resources.vala \
-		JsRender/RooDatabase.vala
+
 
 
 builder_VALAFLAGS = \
