@@ -805,6 +805,7 @@ public class Xcls_ProjectSettings : Object
                     
                } catch(Error ue) {
                     print(ue.message);
+                    return;
                }
             });
         }
