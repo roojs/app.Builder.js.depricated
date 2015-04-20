@@ -59,10 +59,34 @@
          ]
         },
         {
-         "label" : "Select Template : ",
+         "label" : "Select Database Table : ",
          "* pack" : "pack_start,false,false",
          "xtype" : "Label",
          "$ xns" : "Gtk"
+        },
+        {
+         "id" : "combo",
+         "* init" : "this.el.add_attribute(_this.cellrenderer.el , \"markup\", 1 );",
+         "xtype" : "ComboBox",
+         "* pack" : "add",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "id" : "cellrenderer",
+           "* pack" : "pack_start,true",
+           "xtype" : "CellRendererText",
+           "$ xns" : "Gtk"
+          },
+          {
+           "id" : "model",
+           "xtype" : "ListStore",
+           "* pack" : "set_model",
+           "$ columns" : "typeof(string),typeof(string)",
+           "n_columns" : 2,
+           "$ xns" : "Gtk",
+           "| void loadData" : "  (GLib.List<string> data) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n   /// el.append(out iter);\n    \n     \n   // el.set_value(iter, 0, \"\");\n   // el.set_value(iter, 1, \"aaa  - Just add Element - aaa\");\n    \n    for (var i = 0; i < data.length();i++) {\n    \n\n        el.append(out iter);\n        var str = data.nth_data(i);\n        var fn = Path.get_basename (str);\n        fn.replace(\".json\", \"\");\n        \n        el.set_value(iter, 0, str);\n        el.set_value(iter, 1, fn);\n        \n    }\n    this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
+          }
+         ]
         }
        ]
       }
