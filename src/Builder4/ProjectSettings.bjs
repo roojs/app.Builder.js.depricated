@@ -156,6 +156,12 @@
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
          "$ xns" : "Gtk"
+        },
+        {
+         "id" : "database_type",
+         "* pack" : "add",
+         "xtype" : "Entry",
+         "$ xns" : "Gtk"
         }
        ]
       }

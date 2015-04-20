@@ -18,6 +18,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_base_template base_template;
     public Xcls_rootURL rootURL;
     public Xcls_view view;
+    public Xcls_database_type database_type;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -558,6 +559,9 @@ public class Xcls_ProjectSettings : Object
             var child_0 = new Xcls_Label20( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_database_type( _this );
+            child_1.ref();
+            this.el.add (  child_1.el  );
         }
 
         // user defined functions 
@@ -580,6 +584,28 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.xalign = 0f;
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_database_type : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_database_type(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.database_type = this;
+            this.el = new Gtk.Entry();
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions 
