@@ -112,6 +112,7 @@
            "label" : "root URL",
            "xtype" : "Label",
            "* pack" : "pack_start,false,false,0",
+           "gint margin" : 3,
            "$ xns" : "Gtk"
           },
           {
