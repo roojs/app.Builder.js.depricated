@@ -18,6 +18,34 @@
    "$ homogeneous" : false,
    "items" : [
     {
+     "* pack" : "pack_start,false,false,0",
+     "xtype" : "HBox",
+     "gboolean expand" : false,
+     "$ xns" : "Gtk",
+     "$ homogeneous" : true,
+     "gboolean vexpand" : false,
+     "items" : [
+      {
+       "listeners" : {
+        "button_press_event" : "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
+       },
+       "label" : "Apply",
+       "* pack" : "add",
+       "xtype" : "Button",
+       "$ xns" : "Gtk"
+      },
+      {
+       "listeners" : {
+        "button_press_event" : "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
+       },
+       "label" : "Save",
+       "* pack" : "add",
+       "xtype" : "Button",
+       "$ xns" : "Gtk"
+      }
+     ]
+    },
+    {
      "* pack" : "pack_start,true,true,0",
      "xtype" : "Notebook",
      "$ xns" : "Gtk",
@@ -42,34 +70,6 @@
        "gboolean homogeneous" : false,
        "$ xns" : "Gtk",
        "items" : [
-        {
-         "* pack" : "pack_start,false,false,0",
-         "xtype" : "HBox",
-         "gboolean expand" : false,
-         "$ xns" : "Gtk",
-         "$ homogeneous" : true,
-         "gboolean vexpand" : false,
-         "items" : [
-          {
-           "listeners" : {
-            "button_press_event" : "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
-           },
-           "label" : "Apply",
-           "xtype" : "Button",
-           "* pack" : "add",
-           "$ xns" : "Gtk"
-          },
-          {
-           "listeners" : {
-            "button_press_event" : "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
-           },
-           "label" : "Save",
-           "xtype" : "Button",
-           "* pack" : "add",
-           "$ xns" : "Gtk"
-          }
-         ]
-        },
         {
          "label" : "filename",
          "id" : "path",

@@ -33,9 +33,12 @@ public class Xcls_ProjectSettings : Object
 
         // set gobject values
         this.el.border_width = 5;
-        var child_0 = new Xcls_Notebook2( _this );
+        var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
-        this.el.pack_start (  child_0.el , true,true,0 );
+        this.el.pack_start (  child_0.el , false,false,0 );
+        var child_1 = new Xcls_Notebook5( _this );
+        child_1.ref();
+        this.el.pack_start (  child_1.el , true,true,0 );
     }
 
     // user defined functions 
@@ -74,7 +77,96 @@ public class Xcls_ProjectSettings : Object
         
         
     }
-    public class Xcls_Notebook2 : Object 
+    public class Xcls_HBox2 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HBox2(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.expand = false;
+            this.el.vexpand = false;
+            var child_0 = new Xcls_Button3( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_Button4( _this );
+            child_1.ref();
+            this.el.add (  child_1.el  );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button3 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button3(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Apply";
+
+            // listeners 
+            this.el.button_press_event.connect( () => {
+                _this.save();
+                      
+                _this.buttonPressed("apply");
+                    return false;
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button4 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button4(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Save";
+
+            // listeners 
+            this.el.button_press_event.connect( () => {
+                   _this.save();
+                      
+                _this.buttonPressed("save");
+                    return false;
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Notebook5 : Object 
     {
         public Gtk.Notebook el;
         private Xcls_ProjectSettings  _this;
@@ -83,7 +175,7 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Notebook2(Xcls_ProjectSettings _owner )
+        public Xcls_Notebook5(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.Notebook();
@@ -95,7 +187,7 @@ public class Xcls_ProjectSettings : Object
             child_0.ref();
             var child_1 = new Xcls_label_database( _this );
             child_1.ref();
-            var child_2 = new Xcls_VBox5( _this );
+            var child_2 = new Xcls_VBox8( _this );
             child_2.ref();
             this.el.append_page (  child_2.el , _this.label_global.el );
         }
@@ -146,7 +238,7 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_VBox5 : Object 
+    public class Xcls_VBox8 : Object 
     {
         public Gtk.VBox el;
         private Xcls_ProjectSettings  _this;
@@ -155,7 +247,7 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox5(Xcls_ProjectSettings _owner )
+        public Xcls_VBox8(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( false, 0 );
@@ -163,113 +255,21 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_HBox6( _this );
+            var child_0 = new Xcls_path( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_path( _this );
+            var child_1 = new Xcls_Label10( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Label10( _this );
+            var child_2 = new Xcls_HBox11( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,false,0 );
-            var child_3 = new Xcls_HBox11( _this );
+            var child_3 = new Xcls_HBox14( _this );
             child_3.ref();
             this.el.pack_start (  child_3.el , false,false,0 );
-            var child_4 = new Xcls_HBox14( _this );
+            var child_4 = new Xcls_ScrolledWindow17( _this );
             child_4.ref();
-            this.el.pack_start (  child_4.el , false,false,0 );
-            var child_5 = new Xcls_ScrolledWindow17( _this );
-            child_5.ref();
-            this.el.pack_start (  child_5.el , true,true,0 );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_HBox6 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_ProjectSettings  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_HBox6(Xcls_ProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.expand = false;
-            this.el.vexpand = false;
-            var child_0 = new Xcls_Button7( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button8( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button7 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_ProjectSettings  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button7(Xcls_ProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Apply";
-
-            // listeners 
-            this.el.button_press_event.connect( () => {
-                _this.save();
-                      
-                _this.buttonPressed("apply");
-                    return false;
-            });
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button8 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_ProjectSettings  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button8(Xcls_ProjectSettings _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Save";
-
-            // listeners 
-            this.el.button_press_event.connect( () => {
-                   _this.save();
-                      
-                _this.buttonPressed("save");
-                    return false;
-            });
+            this.el.pack_start (  child_4.el , true,true,0 );
         }
 
         // user defined functions 
