@@ -20,7 +20,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_view view;
     public Xcls_database_DBTYPE database_DBTYPE;
     public Xcls_database_DBTYPE database_DBTYPE;
-    public Xcls_database_DBTYPE database_DBTYPE;
+    public Xcls_database_DBUSERNAME database_DBUSERNAME;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -573,9 +573,12 @@ public class Xcls_ProjectSettings : Object
             var child_4 = new Xcls_Label24( _this );
             child_4.ref();
             this.el.pack_start (  child_4.el , false,false,0 );
-            var child_5 = new Xcls_database_DBTYPE( _this );
+            var child_5 = new Xcls_database_DBUSERNAME( _this );
             child_5.ref();
             this.el.pack_start (  child_5.el , false,false,0 );
+            var child_6 = new Xcls_Label26( _this );
+            child_6.ref();
+            this.el.pack_start (  child_6.el , false,false,0 );
         }
 
         // user defined functions 
@@ -690,7 +693,7 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_database_DBTYPE : Object 
+    public class Xcls_database_DBUSERNAME : Object 
     {
         public Gtk.Entry el;
         private Xcls_ProjectSettings  _this;
@@ -699,15 +702,37 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_database_DBTYPE(Xcls_ProjectSettings _owner )
+        public Xcls_database_DBUSERNAME(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            _this.database_DBTYPE = this;
+            _this.database_DBUSERNAME = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)
 
             // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Label26 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label26(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "Username" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.xalign = 0f;
         }
 
         // user defined functions 
