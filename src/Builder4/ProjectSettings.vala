@@ -583,6 +583,9 @@ public class Xcls_ProjectSettings : Object
             var child_7 = new Xcls_database_DBPASSWORD( _this );
             child_7.ref();
             this.el.pack_start (  child_7.el , false,false,0 );
+            var child_8 = new Xcls_Button28( _this );
+            child_8.ref();
+            this.el.pack_start (  child_8.el , true,true,0 );
         }
 
         // user defined functions 
@@ -755,6 +758,27 @@ public class Xcls_ProjectSettings : Object
             _this = _owner;
             _this.database_DBPASSWORD = this;
             this.el = new Gtk.Entry();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button28 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button28(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars (dec)
 

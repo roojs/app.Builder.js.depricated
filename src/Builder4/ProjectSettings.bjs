@@ -202,6 +202,11 @@
          "xtype" : "Entry",
          "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
+        },
+        {
+         "* pack" : "pack_start,true,true,0",
+         "xtype" : "Button",
+         "$ xns" : "Gtk"
         }
        ]
       }
