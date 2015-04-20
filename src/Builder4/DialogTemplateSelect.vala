@@ -71,7 +71,7 @@ public class DialogTemplateSelect : Object
          _this.combo.el.set_active(-1);
          
          
-         var db = new JsRender.RooDatabase(project);
+         var db =  new Palete.RooDatabase.from_project(project);
          _this.dbcombo.loadData(db.readTablesGee());
          
          
