@@ -72,6 +72,8 @@ public class DialogTemplateSelect : Object
          
          
          var db = new JsRender.RooDatabase(project);
+         _this.dbcombo.loadData(db.readTablesGee());
+         
          
          _this.dbcombo.el.set_active(-1);
          
