@@ -519,6 +519,15 @@ namespace Project {
 		    }
 		    
 		}
+		// wrapper around the javascript data...
+		public string get_string_member(string key) {
+			var  ret = this.json_project_data.get_string_member(key);
+			if (ret == null) {
+				return "";
+			}
+			return ret;
+			
+		}
 		  
 	}
 }
