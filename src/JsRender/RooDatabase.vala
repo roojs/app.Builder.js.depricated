@@ -35,7 +35,7 @@ namespace JsRender {
 					Gda.ConnectionOptions.NONE
 				);
 			} catch(Error) {
-				this.DBNAME = "";
+				this.cnc  = null;
 			}
             
         }
