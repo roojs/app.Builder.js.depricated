@@ -75,12 +75,12 @@ builder_SOURCES = \
 		JsRender/NodeToVala.vala \
 		JsRender/Node.vala \
 		JsRender/Roo.vala \
-		JsRender/RooDatabase.vala \
 		Project/Gtk.vala \
 		Project/Project.vala \
 		Project/Roo.vala \
 		Palete/Gir.vala \
 		Palete/Gtk.vala \
+		Palete/RooDatabase.vala \
 		c/jscore_object_call_as_function.c \
 		Palete/Javascript.vala \
 		Palete/Palete.vala \
@@ -105,13 +105,13 @@ builder_SOURCES = \
 		Builder4/WindowAddProp.vala \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
-		Builder4/MainWindow.vala \
+		Builder4/MainWindow.vala \more 
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
-		Resources.vala \
-
-
-
+		Resources.vala 
+		
+		
+ 
 builder_VALAFLAGS = \
 	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
 
