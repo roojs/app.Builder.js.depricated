@@ -195,6 +195,9 @@
          "$ xns" : "Gtk"
         },
         {
+         "listeners" : {
+          "key_press_event" : "(ev) => {\n\n    if (ev.keyval == Gdk.Key.Tab) {\n        _this.database_DBPASSWORD.el.grab_focus();\n        return true;\n    }\n\n\n    return false;\n}\n"
+         },
          "id" : "database_DBUSERNAME",
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Entry",
