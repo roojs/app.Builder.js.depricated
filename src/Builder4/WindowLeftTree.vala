@@ -1245,7 +1245,7 @@ public class Xcls_WindowLeftTree : Object
                           (Gtk.Window) _this.el.get_toplevel (),
                               this.file.palete(),
                            node,
-                            this.project);
+                            this.file.project);
                            
                      if (new_node == null) {
                          return; // do not add?
