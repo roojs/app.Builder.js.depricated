@@ -22,6 +22,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_database_DBNAME database_DBNAME;
     public Xcls_database_DBUSERNAME database_DBUSERNAME;
     public Xcls_database_DBPASSWORD database_DBPASSWORD;
+    public Xcls_path path;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -589,6 +590,9 @@ public class Xcls_ProjectSettings : Object
             var child_8 = new Xcls_Button28( _this );
             child_8.ref();
             this.el.pack_start (  child_8.el , false,false,0 );
+            var child_9 = new Xcls_path( _this );
+            child_9.ref();
+            this.el.pack_start (  child_9.el , false,false,0 );
         }
 
         // user defined functions 
@@ -809,6 +813,30 @@ public class Xcls_ProjectSettings : Object
                }
                cnc.close();
             });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_path : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_path(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.path = this;
+            this.el = new Gtk.Label( " " );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.margin = 3;
+            this.el.xalign = 0f;
         }
 
         // user defined functions 
