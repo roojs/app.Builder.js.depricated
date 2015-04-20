@@ -783,6 +783,7 @@ public class Xcls_ProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.label = "Check Connection";
         }
 
         // user defined functions 
