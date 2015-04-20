@@ -402,20 +402,24 @@ public class DialogTemplateSelect : Object
              
            // el.set_value(iter, 0, "");
            // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
+        
+            el.append(out iter);
+        
+            
+            el.set_value(iter, 0, "");
+            el.set_value(iter, 1, "-- select a table --");
+            
             
             for (var i = 0; i < data.length();i++) {
             
         
                 el.append(out iter);
-                var str = data.nth_data(i);
-                var fn = Path.get_basename (str);
-                fn.replace(".json", "");
                 
-                el.set_value(iter, 0, str);
-                el.set_value(iter, 1, fn);
+                el.set_value(iter, 0, data.get(i));
+                el.set_value(iter, 1, data.get(i));
                 
             }
-            this.el.set_sort_column_id(1, Gtk.SortType.ASCENDING);          
+             this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
                                              
         }
     }
