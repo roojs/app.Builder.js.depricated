@@ -21,6 +21,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_database_DBTYPE database_DBTYPE;
     public Xcls_database_DBTYPE database_DBTYPE;
     public Xcls_database_DBUSERNAME database_DBUSERNAME;
+    public Xcls_database_DBPASSWORD database_DBPASSWORD;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -579,6 +580,9 @@ public class Xcls_ProjectSettings : Object
             var child_6 = new Xcls_Label26( _this );
             child_6.ref();
             this.el.pack_start (  child_6.el , false,false,0 );
+            var child_7 = new Xcls_database_DBPASSWORD( _this );
+            child_7.ref();
+            this.el.pack_start (  child_7.el , false,false,0 );
         }
 
         // user defined functions 
@@ -727,12 +731,34 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Label26(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Username" );
+            this.el = new Gtk.Label( "Password" );
 
             // my vars (dec)
 
             // set gobject values
             this.el.xalign = 0f;
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_database_DBPASSWORD : Object 
+    {
+        public Gtk.Entry el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_database_DBPASSWORD(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            _this.database_DBPASSWORD = this;
+            this.el = new Gtk.Entry();
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions 

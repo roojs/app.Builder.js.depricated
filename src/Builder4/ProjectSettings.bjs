@@ -191,10 +191,16 @@
          "$ xns" : "Gtk"
         },
         {
-         "label" : "Username",
+         "label" : "Password",
          "xalign" : 0,
          "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "database_DBPASSWORD",
+         "xtype" : "Entry",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         }
        ]
