@@ -20,7 +20,7 @@ namespace JsRender {
 		 
         public Gda.Connection cnc;
         
-		public RooDatabase (Project.Project project)
+		public RooDatabase.from_project (Project.Project project)
         {
             this.project = project;
 			this.DBTYPE = this.project.get_string_member("DBTYPE");
