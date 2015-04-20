@@ -153,14 +153,21 @@
         {
          "label" : "Database Type",
          "xalign" : 0,
-         "* pack" : "pack_start,false,false,0",
+         "* pack" : "add",
          "xtype" : "Label",
          "$ xns" : "Gtk"
         },
         {
-         "id" : "database_type",
+         "id" : "database_DBTYPE",
          "* pack" : "add",
          "xtype" : "Entry",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Database Type",
+         "xalign" : 0,
+         "* pack" : "add",
+         "xtype" : "Label",
          "$ xns" : "Gtk"
         }
        ]

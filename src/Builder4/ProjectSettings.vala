@@ -18,7 +18,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_base_template base_template;
     public Xcls_rootURL rootURL;
     public Xcls_view view;
-    public Xcls_database_type database_type;
+    public Xcls_database_DBTYPE database_DBTYPE;
 
         // my vars (def)
     public signal void buttonPressed (string btn);
@@ -558,10 +558,13 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_Label20( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_database_type( _this );
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_database_DBTYPE( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_Label22( _this );
+            child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // user defined functions 
@@ -588,7 +591,7 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_database_type : Object 
+    public class Xcls_database_DBTYPE : Object 
     {
         public Gtk.Entry el;
         private Xcls_ProjectSettings  _this;
@@ -597,15 +600,37 @@ public class Xcls_ProjectSettings : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_database_type(Xcls_ProjectSettings _owner )
+        public Xcls_database_DBTYPE(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            _this.database_type = this;
+            _this.database_DBTYPE = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)
 
             // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Label22 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Label22(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "Database Type" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.xalign = 0f;
         }
 
         // user defined functions 
