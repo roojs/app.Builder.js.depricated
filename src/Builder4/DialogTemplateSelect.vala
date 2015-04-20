@@ -418,7 +418,7 @@ public class DialogTemplateSelect : Object
             el.set_value(iter, 1, "-- select a table --");
             
             
-            for (var i = 0; i < data.length();i++) {
+            for (var i = 0; i < data.size;i++) {
             
         
                 el.append(out iter);
