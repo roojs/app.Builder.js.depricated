@@ -25,6 +25,22 @@ AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBVALA_0_28_X_CFLAGS)
 LIBVALA_LIBS = $(LIBVALA_0_28_X_LIBS)
 endif
 
+# gda
+
+
+if HAVE_GDA5
+builder_LIBGDA = --pkg libgda-5.0
+AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBGDA5_CFLAGS)
+LIBGDA_LIBS = $(LIBGDA5_LIBS)
+endif
+
+if HAVE_GDA4
+builder_LIBGDA = --pkg libgda-4.0
+AM_CPPFLAGS = $(BUILDER_CFLAGS) $(LIBGDA4_CFLAGS)
+LIBGDA_LIBS = $(LIBGDA4_LIBS)
+endif
+
+
 bin_PROGRAMS = builder
 
 builder_PKGS = \
@@ -42,9 +58,9 @@ builder_PKGS = \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore \
 		$(builder_LIBVALA) \
+		$(builder_LIBGDA) \
 		--pkg vte-2.90 \
-		--pkg posix \
-		--pkg libgda-5.0
+		--pkg posix 
 
 
 builder_SOURCES = \
@@ -91,9 +107,8 @@ builder_SOURCES = \
 		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
-		Resources.vala
-
-#		JsRender/RooDatabase.vala 
+		Resources.vala \
+		JsRender/RooDatabase.vala 
 
 
 builder_VALAFLAGS = \
