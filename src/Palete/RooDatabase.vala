@@ -48,15 +48,21 @@ namespace Palete {
          {
              this.DBTYPE = dbtype;
 			this.DBNAME = dbname;
-		
-             this.cnc = Gda.Connection.open_from_string (
-				this.DBTYPE,
-				"DB_NAME=" + dbname, 
-				"USERNAME=" + dbuser + 
-				";PASSWORD=" + dbpass,
-				Gda.ConnectionOptions.NONE
-			);
-
+			try {
+				 this.cnc = Gda.Connection.open_from_string (
+					this.DBTYPE,
+					"DB_NAME=" + dbname, 
+					"USERNAME=" + dbuser + 
+					";PASSWORD=" + dbpass,
+					Gda.ConnectionOptions.NONE
+				);
+			} catch(Gda.ConfigError e) {
+				this.cnc  = null;
+				this.DBTYPE = "";
+			} catch(Gda.ConnectionError e) {
+				this.cnc  = null;
+				this.DBTYPE = "";
+			}
 
 	    
 	}
