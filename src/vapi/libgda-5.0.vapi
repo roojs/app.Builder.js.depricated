@@ -153,7 +153,7 @@ namespace Gda {
 		public bool is_opened ();
 		public bool open () throws GLib.Error;
 		public static Gda.Connection open_from_dsn (string dsn, string? auth_string, Gda.ConnectionOptions options) throws GLib.Error;
-		public static Gda.Connection open_from_string (string? provider_name, string cnc_string, string? auth_string, Gda.ConnectionOptions options) throws GLib.Error;
+		public static Gda.Connection open_from_string (string? provider_name, string cnc_string, string? auth_string, Gda.ConnectionOptions options) throws ConnectionError, ConfigError;
 		public static Gda.Connection open_sqlite (string? directory, string filename, bool auto_unlink);
 		public Gda.Statement parse_sql_string (string sql, out Gda.Set @params) throws GLib.Error;
 		public bool perform_operation (Gda.ServerOperation op) throws GLib.Error;
