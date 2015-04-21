@@ -90,8 +90,8 @@ public class DialogTemplateSelect : Object
         }
         
        Gtk.TreeIter iter;
-        _this.combo.el.get_active_iter (out iter);
-        if (iter == null) {
+        if (!_this.combo.el.get_active_iter (out iter)) {
+    
             return node; // nothing selected...
         }
         Value vfname;
