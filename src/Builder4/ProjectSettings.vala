@@ -859,6 +859,9 @@ public class Xcls_ProjectSettings : Object
                } catch(Gda.ConnectionError ue) {
                   _this.database_ERROR.el.label = ue.message;
                     return;
+               }  catch(Gda.ConfigError ue) {
+                  _this.database_ERROR.el.label = ue.message;
+                    return;
                }
               _this.database_ERROR.el.label = "Connection Succeeded";
                cnc.close();
