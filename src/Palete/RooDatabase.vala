@@ -44,9 +44,9 @@ namespace Palete {
             
         }
        
-        public RooDatabase.from_cfg (string dbtype, string dbname, string dbuser, string dbpass)
-         {
-             this.DBTYPE = dbtype;
+		public RooDatabase.from_cfg (string dbtype, string dbname, string dbuser, string dbpass)
+		{
+			this.DBTYPE = dbtype;
 			this.DBNAME = dbname;
 			try {
 				 this.cnc = Gda.Connection.open_from_string (
