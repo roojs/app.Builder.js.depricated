@@ -13,7 +13,7 @@ namespace Palete {
   
    class RooDatabase : Object 
     {
-        //public Project.Project project;
+        public Project.Project project;
 
 		public string DBTYPE;
 		public string DBNAME;
@@ -34,7 +34,7 @@ namespace Palete {
 					";PASSWORD=" + this.project.get_string_member("DBPASSWORD"),
 					Gda.ConnectionOptions.NONE
 				);
-			} catch(Error) {
+			} catch(Gda.ConfigError e) {
 				this.cnc  = null;
 				this.DBTYPE = "";
 			}
@@ -80,10 +80,10 @@ namespace Palete {
 		}
 		public Gee.ArrayList readTablesGee()
 		{
-			var ret = new Gee.ListArray<string>();
+			var ret = new Gee.ArrayList<string>();
 			var ar = this.readTables();
-			for(var i = 0; ar.get_length(); i++) {
-				ret.add(ar.get_string_element(i);
+			for(var i = 0; i < ar.get_length(); i++) {
+				ret.add(ar.get_string_element(i));
 			}
 			return ret;
 			
