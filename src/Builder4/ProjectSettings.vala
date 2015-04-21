@@ -856,7 +856,7 @@ public class Xcls_ProjectSettings : Object
             		);
                //} catch (Gda.ConnectionError ce) { 
                //   _this.database_ERROR.el.label = ce.message;        
-               } catch(Error ue) {
+               } catch(Gda.ConnectionError ue) {
                   _this.database_ERROR.el.label = ue.message;
                     return;
                }
