@@ -1813,18 +1813,18 @@ namespace Gda {
 		public Gda.SqlStatement parsed_statement;
 	}
 	[CCode (cheader_filename = "libgda/libgda.h", cprefix = "GDA_BATCH_CONFLICTING_PARAMETER_")]
-	public enum BatchError {
+	public errordomain BatchError {
 		ERROR
 	}
 	[CCode (cheader_filename = "libgda/libgda.h", cprefix = "GDA_CONFIG_")]
-	public enum ConfigError {
+	public errordomain ConfigError {
 		DSN_NOT_FOUND_ERROR,
 		PERMISSION_ERROR,
 		PROVIDER_NOT_FOUND_ERROR,
 		PROVIDER_CREATION_ERROR
 	}
 	[CCode (cheader_filename = "libgda/libgda.h", cprefix = "GDA_CONNECTION_")]
-	public enum ConnectionError {
+	public errordomain ConnectionError {
 		DSN_NOT_FOUND_ERROR,
 		PROVIDER_NOT_FOUND_ERROR,
 		PROVIDER_ERROR,
