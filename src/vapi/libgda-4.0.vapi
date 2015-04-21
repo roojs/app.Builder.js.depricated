@@ -146,7 +146,7 @@ namespace Gda {
 		public bool is_opened ();
 		public bool open () throws GLib.Error;
 		public static unowned Gda.Connection open_from_dsn (string dsn, string? auth_string, Gda.ConnectionOptions options) throws GLib.Error;
-		public static unowned Gda.Connection open_from_string (string provider_name, string? cnc_string, string? auth_string, Gda.ConnectionOptions options) throws GLib.Error;
+		public static unowned Gda.Connection open_from_string (string provider_name, string? cnc_string, string? auth_string, Gda.ConnectionOptions options) throws ConnectionError, ConfigError;
 		public unowned Gda.Statement parse_sql_string (string sql, out unowned Gda.Set @params) throws GLib.Error;
 		public bool perform_operation (Gda.ServerOperation op) throws GLib.Error;
 		public unowned string quote_sql_identifier (string id);
