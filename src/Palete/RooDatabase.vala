@@ -37,6 +37,9 @@ namespace Palete {
 			} catch(Gda.ConfigError e) {
 				this.cnc  = null;
 				this.DBTYPE = "";
+			} catch(Gda.ConnectionError e) {
+				this.cnc  = null;
+				this.DBTYPE = "";
 			}
             
         }
