@@ -100,10 +100,36 @@ public class FakeServerCache : Object
 	}
 	public FakeServerCache.from_resource( string fname )
 	{
-		this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
-		this.data = data.data;
-		this.content_type = "text/javascript";
-		this.size= data.length;
+		
+		
+		
+		this.fname = fname;
+		
+		var  file = File.new_for_path ( BuilderApplication.configDirectory() + "/" + fname);
+		if (!file.query_exists()) {
+			this.data = "".data;
+			this.content_type = "";
+			this.size = 0;
+			return;
+		}
+		
+		var info = file.query_info(
+				 "standard::*",
+				FileQueryInfoFlags.NONE
+		);
+		
+		this.content_type = info.get_content_type();
+		this.size = info.get_size();
+		uint8[] data;
+		size_t length;
+		try { 
+			GLib.FileUtils.get_data(file.get_path(), out data);
+		} catch (Error e) {
+			this.data = "".data;
+			this.size = 0;
+			this.content_type = "";
+			return;
+		}
 	 
 	  
 	}
