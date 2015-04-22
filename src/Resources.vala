@@ -144,7 +144,7 @@ public class Resources : Object
 			
 			var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
 			// create parent directory if needed
-			if (!FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
+			if (!GLibFileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
 				var f = new GLib.File.new_for_path(GLib.Path.get_dirname(tfn));
 				f.make_directory_with_parents ();
 			}
