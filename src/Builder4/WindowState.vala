@@ -39,6 +39,8 @@ public class WindowState : Object
 
     public Xcls_WindowLeftProjects left_projects; // can not see where this is initialized.. 
     
+    public DialogTemplateSelect template_select; 
+    
     // dialogs??
     public Xcls_DialogPluginWebkit webkit_plugin;
     
@@ -72,7 +74,7 @@ public class WindowState : Object
         this.fileNewInit();
         
         this.webkit_plugin = new Xcls_DialogPluginWebkit();
-
+		this.template_select; = new DialogTemplateSelect();
         this.children_loaded = true;
     }
 
