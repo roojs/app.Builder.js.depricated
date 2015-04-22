@@ -130,7 +130,8 @@ public class FakeServerCache : Object
 			this.content_type = "";
 			return;
 		}
-	 
+		this.data = data;
+
 	  
 	}
 	public FakeServerCache( string fname ) {
