@@ -519,7 +519,9 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var i =  iter.get_key();
 			var val = iter.get_value();
-			
+			if (val == null || val.length < 1) {
+				continue;
+			}
 			 listen += "\n<b>" + 
 					GLib.Markup.escape_text(i) +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
