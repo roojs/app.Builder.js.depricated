@@ -26,7 +26,7 @@ public class FakeServerCache : Object
 	 
 	public static Gee.HashMap<string,FakeServerCache> cache;
 	
-        public static FakeServerCache factory(string fname)
+	public static FakeServerCache factory(string fname)
 	{
 		if (cache == null) {
 			cache = new Gee.HashMap<string,FakeServerCache>();
