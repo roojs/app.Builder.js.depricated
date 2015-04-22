@@ -98,7 +98,9 @@ public class DialogTemplateSelect : Object
              this.dbmodel.el.get_value (iter, 0, out vfname);
              if (vfname.length > 0 && plug.has_plugin(node.fqn())) {
                 var json_str = plug.show(mwindow.el, project, node.fqn(), (string)vfname);
+                print("json_str = %s\n", json_str);
                 if (json_str.length < 1) {
+    
                     return node;
                 }
                 var pa = new Json.Parser();
