@@ -1240,7 +1240,7 @@ public class Xcls_WindowLeftTree : Object
                      var ts = _this.main_window.windowstate.template_select;
                  
                      var new_node = ts.show(
-                           _this.main_window,
+                          _this.main_window, // (Gtk.Window) _this.el.get_toplevel (),
                               this.file.palete(),
                             node,
                             this.file.project);
