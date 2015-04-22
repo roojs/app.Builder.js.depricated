@@ -53,6 +53,9 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
+    public boolean has_plugin () {
+    
+    }
     public string show (Gtk.Window ?parent, string text) {// JsRender.Node node) {
      
         if (parent  != null) {
@@ -173,9 +176,6 @@ public class Xcls_DialogPluginWebkit : Object
         
         
         
-    }
-    public return_type XXXX () {
-    
     }
     public class Xcls_VBox2 : Object 
     {
