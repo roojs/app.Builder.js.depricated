@@ -486,7 +486,9 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var i =  iter.get_key();
 			var val = iter.get_value();
-			
+			if (val == null) {
+				continue;
+			}
 			if ( i[0] != '|') {
 				props += "\n<b>" + 
 					GLib.Markup.escape_text(i) +"</b> : " + 
@@ -526,7 +528,7 @@ public class JsRender.Node : Object {
 		
 		
 		if (props.length > 0) {
-			ret+="\n\Properties:" + props;
+			ret+="\n\nProperties:" + props;
 		} 
 		if (funcs.length > 0) {
 			ret+="\n\nMethods:" + funcs;
