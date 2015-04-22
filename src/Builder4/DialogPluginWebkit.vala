@@ -60,6 +60,7 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
+        this.result_json = "";
          var  db = project.roo_database;
          
         
@@ -153,6 +154,7 @@ public class Xcls_DialogPluginWebkit : Object
                         loop.quit();
                     });
                  loop.run();
+                 ret = _this.result_json;
         //           print("LOOP END?");
                  // try and get the resopse...
                 break;
