@@ -481,23 +481,24 @@ public class JsRender.Node : Object {
 		var ret = this.nodeTitle(true);
 		var funcs = "";
 		var props = "";
+		var listen = "";
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
 			var i =  iter.get_key();
-			//, iter.get_value());
+			var val = iter.get_value();
+			
 			if ( i[0] != '|') {
 				props += "\n<b>" + 
 					GLib.Markup.escape_text(i) +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
-				
-				
+				 
 				continue;
 			}
 		
 			//if (i == "* init") { 
 			//	continue;
 			//}
-			var val = iter.get_value();
+			
 			if (Regex.match_simple("^\\s*function", val)) { 
 				funcs += "\n<b>" + 
 					GLib.Markup.escape_text(i.substring(1)) +"</b> : " + 
@@ -512,13 +513,27 @@ public class JsRender.Node : Object {
 			}
 			
 		}
+		iter = this.listeners.map_iterator();
+		while (iter.next()) {
+			var i =  iter.get_key();
+			var val = iter.get_value();
+			
+			 listen += "\n<b>" + 
+					GLib.Markup.escape_text(i) +"</b> : " + 
+					GLib.Markup.escape_text(val.split("\n")[0]);
+			
+		}
+		
+		
 		if (props.length > 0) {
-			ret+="\n\Properties:" + funcs;
+			ret+="\n\Properties:" + props;
 		} 
 		if (funcs.length > 0) {
 			ret+="\n\nMethods:" + funcs;
 		} 
-		
+		if (listen.length > 0) {
+			ret+="\n\nListeners:" + listen;
+		} 
 		return ret;
 
 	}
