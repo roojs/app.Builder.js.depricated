@@ -102,7 +102,7 @@ public class DialogTemplateSelect : Object
                     return node;
                 }
                 var pa = new Json.Parser();
-    	    pa.load_from_string(json_Str);
+    	    pa.load_from_data(json_str);
     	    var node = pa.get_root();
     
     	    if (node.get_node_type () != Json.NodeType.OBJECT) {
