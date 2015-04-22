@@ -241,7 +241,7 @@ Editor.Roo.grid.GridPanel = new Roo.XComponent({
                        "function(v) { return String.format('{0}', v); }" :
                        "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
                "|xns": "Roo.grid",
-               "*prop": "colModel[]"
+               "*prop": "cm[]"
            });
        });
        
