@@ -27,6 +27,7 @@ public class Resources : Object
      {
         if (singleton_val == null) {
             singleton_val = new Resources();
+            singleton_val.ref();
         }
         return singleton_val;
             
@@ -93,7 +94,8 @@ public class Resources : Object
 					case "roodata.json":
 						Palete.factory("Roo").classes  = null;
 						Palete.factory("Roo").load();
-					
+						break;
+						
 					default:
 						break;
 				}
@@ -144,7 +146,7 @@ public class Resources : Object
 			
 			var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
 			// create parent directory if needed
-			if (!GLibFileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
+			if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
 				var f =  GLib.File.new_for_path(GLib.Path.get_dirname(tfn));
 				f.make_directory_with_parents ();
 			}
