@@ -53,7 +53,14 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
-    public boolean has_plugin () {
+    public boolean has_plugin (string cls) {
+    
+         return GLib.FileUtils.test(
+                BuilderApplication.configDirectory() + "/resources/Editors/Editor." + cls + ".js",
+                GLib.FileTest.IS_REGULAR
+          );
+        
+    
     
     }
     public string show (Gtk.Window ?parent, string text) {// JsRender.Node node) {

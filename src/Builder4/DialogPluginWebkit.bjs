@@ -13,7 +13,7 @@
    "string tmpjs" : "",
    "utf8 title" : "Add / Edit Component",
    "id" : "DialogPluginWebkit",
-   "| boolean has_plugin" : "() {\n\n}\n",
+   "| boolean has_plugin" : "(string cls) {\n\n     return GLib.FileUtils.test(\n            BuilderApplication.configDirectory() + \"/resources/Editors/Editor.\" + cls + \".js\",\n            GLib.FileTest.IS_REGULAR\n      );\n    \n\n\n}\n",
    "gint default_height" : 500,
    "gboolean deletable" : true,
    "xtype" : "Dialog",
