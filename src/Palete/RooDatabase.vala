@@ -11,7 +11,7 @@
 namespace Palete {
 
   
-   class RooDatabase : Object 
+    public class RooDatabase : Object 
     {
         public Project.Project project;
 
@@ -35,9 +35,11 @@ namespace Palete {
 					Gda.ConnectionOptions.NONE
 				);
 			} catch(Gda.ConfigError e) {
+				print("%s\n", e.message);
 				this.cnc  = null;
 				this.DBTYPE = "";
 			} catch(Gda.ConnectionError e) {
+				print("%s\n", e.message);
 				this.cnc  = null;
 				this.DBTYPE = "";
 			}
