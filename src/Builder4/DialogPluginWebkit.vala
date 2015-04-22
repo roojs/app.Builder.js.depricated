@@ -157,7 +157,7 @@ public class Xcls_DialogPluginWebkit : Object
             
              if (response_id == 1) { // OK...
                  var loop = new MainLoop();
-                 // run toBJS to get the data...
+                 // run toBJS to get the data... (calls back into alert handler)
                    this.webview.el.run_javascript.begin("Editor." + cls + ".panel.toBJS();", null, (obj, res) => {
     
                      this.webview.el.run_javascript.end(res);
