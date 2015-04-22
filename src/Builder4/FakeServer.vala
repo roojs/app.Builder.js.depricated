@@ -174,7 +174,7 @@ public class FakeServer : Object
 		// request is URISchemeRequest
 			 
 		print("REQ: %s\n",request.get_path());
-		var cdata = FakeServerCache.factory(request.get_path());
+		var cdata = FakeServerCache.factory(request.get_path() , request.get_scheme());
 	
  		if (cdata.size < 1 ) {
 			print("Skip file missing = %s/gitlive%s\n", GLib.Environment.get_home_dir() , request.get_path());
