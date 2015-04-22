@@ -124,7 +124,7 @@ public class Xcls_DialogPluginWebkit : Object
             //print(runhtml);
             
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
-                "<script type=\"text/javascript\" src=\"xhttp://resources/Editors/Editor." + cls + ".js\"></script>" + 
+                "<script type=\"text/javascript\" src=\"resources://localhost/Editors/Editor." + cls + ".js\"></script>" + 
           
                             
             "</head>");
