@@ -307,12 +307,15 @@ public class Xcls_DialogPluginWebkit : Object
                     return false;
                 }
                 print("CMD: %s\n",ar[1]);
-                    print("ARGS: %s\n",ar[2]);
+                print("ARGS: %s\n",ar[2]);
                 switch(ar[1]) {
                     case "SAVEHTML":
                       print("%sw",ar[2]);
                       //  _this.file.saveHTML(ar[2]);
                         return true;
+                        
+                    case "OUT":
+                        _this.json = ar[2];
                     default:
                         return true;
                 }
