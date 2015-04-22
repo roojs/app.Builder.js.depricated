@@ -181,7 +181,7 @@ namespace Project {
 			paths.foreach_member((sobj, key, val) => {
 				proj.paths.set(key, "dir");
 			});
-			proj.roo_database = new Palete.RooDatabase.from_project(proj);
+			proj.initRooDatabase();
 			
 			projects.set(proj.id,proj);
 			
