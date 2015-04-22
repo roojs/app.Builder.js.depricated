@@ -55,7 +55,7 @@ public class DialogTemplateSelect : Object
     }
 
     // user defined functions 
-    public JsRender.Node? show (Gtk.Window pwindow, Palete.Palete pal, JsRender.Node node, Project.Project project) {
+    public JsRender.Node? show (Xcls_MainWindow mwindow, Palete.Palete pal, JsRender.Node node, Project.Project project) {
         
         this.el.show_all();
         var opts = pal.listTemplates(node);
@@ -63,8 +63,8 @@ public class DialogTemplateSelect : Object
             this.el.hide();
             return node;
         }
-        this.el.set_attached_to( pwindow);
-         this.el.set_transient_for( pwindow);
+        this.el.set_attached_to( mwindow.el);
+         this.el.set_transient_for( mwindow.el);
         
         //opts.unshift({ path: '' , name :'Just add Element' });
          _this.model.loadData(opts);
