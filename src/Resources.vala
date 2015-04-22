@@ -34,7 +34,8 @@ public class Resources : Object
 	 public Resources ()
 	 {
 		 
-		   string[] res = { 
+		   this.avail_files = { 
+			   "roodata.json",
 				"bootstrap.builder.html",
 				"roo.builder.html",
 				"roo.builder.js",
