@@ -158,6 +158,7 @@ public class FakeServer : Object
 		var cx = WebKit.WebContext.get_default();
 		//var cx = this.view.get_context();
 		cx.register_uri_scheme("xhttp",  serve);
+		cx.register_uri_scheme("resources",  serve);
 		cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
 
 		// these do not help for cross domain requests..
