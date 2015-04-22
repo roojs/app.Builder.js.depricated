@@ -86,6 +86,9 @@ public class FakeServerCache : Object
 		return el;
 	}
     
+    
+    
+    
 	public FakeServerCache.with_data( string data )
 	{
 		this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
@@ -95,7 +98,15 @@ public class FakeServerCache : Object
 	 
 	  
 	}
-
+	public FakeServerCache.from_resource( string fname )
+	{
+		this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
+		this.data = data.data;
+		this.content_type = "text/javascript";
+		this.size= data.length;
+	 
+	  
+	}
 	public FakeServerCache( string fname ) {
 	       
 		this.fname = fname;
