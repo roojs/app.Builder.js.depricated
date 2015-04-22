@@ -12,6 +12,9 @@
  *
  * the idea is nicked from geary.
  * 
+ * At present this serves from ~/gitlive/****  - that probably needs more thought..
+ * 
+ * 
  */
 public errordomain FakeServerError {
 	FILE_DOES_NOT_EXIST
@@ -91,7 +94,7 @@ public class FakeServerCache : Object
 	public FakeServerCache( string fname ) {
 	       
 		this.fname = fname;
- 
+		
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
 			this.data = "".data;
@@ -151,17 +154,7 @@ public class FakeServer : Object
 	{
 		this.view = wkview;
 		
-		
-		// 
-		
-		  
-		// Hook up signals.
-
-		//this.view.resource_load_started.connect(on_resource_request_starting);
-		//this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-		//this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-		  
-		 //
+		 
 		var cx = WebKit.WebContext.get_default();
 		//var cx = this.view.get_context();
 		cx.register_uri_scheme("xhttp",  serve);
