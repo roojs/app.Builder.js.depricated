@@ -512,9 +512,13 @@ public class JsRender.Node : Object {
 			}
 			
 		}
+		if (props.length > 0) {
+			ret+="\n\Properties:" + funcs;
+		} 
 		if (funcs.length > 0) {
 			ret+="\n\nMethods:" + funcs;
 		} 
+		
 		return ret;
 
 	}
