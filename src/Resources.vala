@@ -101,12 +101,7 @@ public class Resources : Object
 				}
 			    this.fetchNext();
 		});
-		 ;
-         
-    
-    
-    
-   
+		 
 
 	 }
 	 public void checkResources()
@@ -133,7 +128,7 @@ public class Resources : Object
 
 
     
-    public void fetchResourceFrom(string src, string target, Soup.SessionCallback? callback)
+    public void fetchResourceFrom(string src, string target)
     {
 		 
 		// fetch...
@@ -154,8 +149,27 @@ public class Resources : Object
 			
 			// set data??? - if it's binary?
             FileUtils.set_contents(  tfn, (string) message.response_body.data );
-                
-            callback(sess,mess);
+            
+            switch (target) {
+				case "Gir.overides":
+					Palete.Gir.factory("Gtk").loadOverrides(true);
+					break;
+					
+				case "GtkUsage.txt":
+					Palete.factory("Gtk").load();
+					break;
+					
+				case "roodata.json":
+					Palete.factory("Roo").classes  = null;
+					Palete.factory("Roo").load();
+					break;
+					
+				default:
+					break;
+			}
+            
+            this.fetchNext();
+             
         });
 		     
 
