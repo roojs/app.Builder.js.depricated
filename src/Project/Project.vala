@@ -177,6 +177,10 @@ namespace Project {
 				proj.paths.set(key, "dir");
 			});
 			projects.set(proj.id,proj);
+			
+			this.roo_database = Palete.RooDatabase.from_project(this);
+			
+			
 		}
 		
 		
