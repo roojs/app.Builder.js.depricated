@@ -90,7 +90,10 @@ public class Xcls_ProjectSettings : Object
         js.set_string_member("DBPASSWORD", _this.database_DBPASSWORD.el.get_text());
     //    _this.project.set_string_member("DBHOST", _this.DBTYPE.el.get_text());    
         
+        // need to re-init the database 
         
+        _this.project.initRooDatabase();
+         
         
     }
     public class Xcls_HBox2 : Object 
