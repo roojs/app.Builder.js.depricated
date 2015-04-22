@@ -484,8 +484,8 @@ public class JsRender.Node : Object {
 		var listen = "";
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
-			var i =  iter.get_key();
-			var val = iter.get_value();
+			var i =  iter.get_key().strip();
+			var val = iter.get_value().strip();
 			if (val == null || val.length < 1) {
 				continue;
 			}
