@@ -108,15 +108,8 @@ public class Resources : Object
 	 }
 	 public void checkResources()
 	 {
-		    bool needsload = false;
-		    string[] res = { 
-				"bootstrap.builder.html",
-				"roo.builder.html",
-				"roo.builder.js",
-				"Gir.overides",
-				"RooUsage.txt",
-				"GtkUsage.txt"
-			};
+		bool needsload = false;
+		string[] res = this.avail_files;
 			
 		for (var i = 0; i < res.length; i++ ) { 
 			
