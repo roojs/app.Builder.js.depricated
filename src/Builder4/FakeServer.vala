@@ -105,7 +105,7 @@ public class FakeServerCache : Object
 		
 		this.fname = fname;
 		
-		var  file = File.new_for_path ( BuilderApplication.configDirectory() + "/" + fname);
+		var  file = File.new_for_path ( BuilderApplication.configDirectory() + "/resources/" + fname);
 		if (!file.query_exists()) {
 			this.data = "".data;
 			this.content_type = "";
