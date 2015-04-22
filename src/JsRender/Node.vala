@@ -480,11 +480,17 @@ public class JsRender.Node : Object {
 	{
 		var ret = this.nodeTitle(true);
 		var funcs = "";
+		var props = "";
 		var iter = this.props.map_iterator();
 		while (iter.next()) {
 			var i =  iter.get_key();
 			//, iter.get_value());
 			if ( i[0] != '|') {
+				props += "\n<b>" + 
+					GLib.Markup.escape_text(i) +"</b> : " + 
+					GLib.Markup.escape_text(val.split("\n")[0]);
+				
+				
 				continue;
 			}
 		
