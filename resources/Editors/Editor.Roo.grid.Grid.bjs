@@ -35,8 +35,8 @@
     {
      "listeners" : {
       "|rowdblclick" : "function (_self, rowIndex, e)\n{\n    if (!_this.dialog) return;\n  \n}\n",
-      "cellclick" : "function (_self, rowIndex, columnIndex, e)\n{\n\n        var di = this.colModel.getDataIndex(columnIndex);\n        if (di != 'active') {\n            return;\n        }\n         \n        var rec = _this.grid.ds.getAt(rowIndex);\n        \n        rec.set('active', rec.data.active * 1 ? 0 : 1);\n        rec.commit();\n         \n        \n}",
-      "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n\n}"
+      "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n\n}",
+      "cellclick" : "function (_self, rowIndex, columnIndex, e)\n{\n\n        var di = this.colModel.getDataIndex(columnIndex);\n        if (di != 'active') {\n            return;\n        }\n         \n        var rec = _this.grid.ds.getAt(rowIndex);\n        \n        rec.set('active', rec.data.active * 1 ? 0 : 1);\n        rec.commit();\n         \n        \n}"
      },
      "Number clicksToEdit" : 1,
      "autoExpandColumn" : "title",
@@ -67,8 +67,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Use ",
        "width" : 75,
+       "header" : "Use ",
        "$ renderer" : "function(v) {  \n    var state = v *1 > 0 ?  '-checked' : '';\n\n    return '<img class=\"x-grid-check-icon' + state + '\" src=\"' + Roo.BLANK_IMAGE_URL + '\"/>';\n                \n }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -76,8 +76,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 150,
        "header" : "Database Column",
+       "width" : 150,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -85,8 +85,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Type",
        "width" : 100,
+       "header" : "Type",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -94,8 +94,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 75,
        "header" : "Title",
+       "width" : 75,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -117,8 +117,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Width",
        "width" : 75,
+       "header" : "Width",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
