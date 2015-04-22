@@ -34,17 +34,17 @@ public class Resources : Object
 	 public Resources ()
 	 {
 		 
-		   this.avail_files = { 
-			   "roodata.json",
-				"bootstrap.builder.html",
-				"roo.builder.html",
-				"roo.builder.js",
-				"Gir.overides",
-				"RooUsage.txt",
-				"GtkUsage.txt",
-				"Editors/Edit.Roo.grid.Grid.js"
-			};
-			
+	   this.avail_files = { 
+		   "roodata.json",
+			"bootstrap.builder.html",
+			"roo.builder.html",
+			"roo.builder.js",
+			"Gir.overides",
+			"RooUsage.txt",
+			"GtkUsage.txt",
+			"Editors/Edit.Roo.grid.Grid.js"
+		};
+	}	
 		 
 		 
     
