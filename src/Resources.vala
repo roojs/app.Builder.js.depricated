@@ -41,7 +41,8 @@ public class Resources : Object
 				"roo.builder.js",
 				"Gir.overides",
 				"RooUsage.txt",
-				"GtkUsage.txt"
+				"GtkUsage.txt",
+				"Editors/Edit.Roo.grid.Grid.js"
 			};
 			
 		 
