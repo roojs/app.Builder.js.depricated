@@ -98,7 +98,22 @@ public class DialogTemplateSelect : Object
              this.dbmodel.el.get_value (iter, 0, out vfname);
              if (plug.has_plugin(node.fqn())) {
                 var json_str = plug.show(mwindow.el, project, node.fqn(), (string)vfname);
-                
+                if (json_str.length < 1) {
+                    return node;
+                }
+                var pa = new Json.Parser();
+    	    pa.load_from_string(json_Str);
+    	    var node = pa.get_root();
+    
+    	    if (node.get_node_type () != Json.NodeType.OBJECT) {
+    		    return null;
+    	    }
+    	    var obj = node.get_object ();
+    
+    	    var ret = new JsRender.Node();
+    
+    	    ret.loadFromJson(obj, 1);
+    	    return ret;
              }
             
         }
