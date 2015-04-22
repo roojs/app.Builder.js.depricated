@@ -20,6 +20,9 @@ public class Resources : Object
      public signal void updateProgress(uint cur_pos);
 
      static Resources singleton_val;
+     
+     string[] avail_files;
+     
      public static Resources singleton()
      {
         if (singleton_val == null) {
@@ -28,7 +31,20 @@ public class Resources : Object
         return singleton_val;
             
      }
-
+	 public Resources ()
+	 {
+		 
+		   string[] res = { 
+				"bootstrap.builder.html",
+				"roo.builder.html",
+				"roo.builder.js",
+				"Gir.overides",
+				"RooUsage.txt",
+				"GtkUsage.txt"
+			};
+			
+		 
+		 
     
      uint fetch_pos = 0;
      public void fetchStart()
@@ -45,6 +61,11 @@ public class Resources : Object
         var cur = this.fetch_pos;
         this.fetch_pos++;
         this.updateProgress(this.fetch_pos); // min=0;
+        
+        
+        
+        
+        
         switch (cur) {
                case 0: // html for rendering Bootstrap apps.
                     this.fetchResourceFrom (
