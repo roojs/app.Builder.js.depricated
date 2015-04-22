@@ -65,8 +65,11 @@ namespace Project {
 		    
 		    
 		}
-
-        
+		public initRooDatabase()
+		{
+			 
+			this.roo_database = new Palete.RooDatabase.from_project(this);
+		}
         
         
 		
@@ -177,9 +180,11 @@ namespace Project {
 			paths.foreach_member((sobj, key, val) => {
 				proj.paths.set(key, "dir");
 			});
+			proj.roo_database = new Palete.RooDatabase.from_project(proj);
+			
 			projects.set(proj.id,proj);
 			
-			this.roo_database = Palete.RooDatabase.from_project(this);
+			
 			
 			
 		}
