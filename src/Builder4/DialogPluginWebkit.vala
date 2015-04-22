@@ -16,7 +16,6 @@ public class Xcls_DialogPluginWebkit : Object
 
         // my vars (def)
     public string tmpjs;
-    public string result_json;
 
     // ctor 
     public Xcls_DialogPluginWebkit()
@@ -60,8 +59,7 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
-        this.result_json = "";
-         var  db = project.roo_database;
+         Palete.RooDatabase db = project.roo_database;
          
         
          this.el.show_all();
@@ -154,7 +152,6 @@ public class Xcls_DialogPluginWebkit : Object
                         loop.quit();
                     });
                  loop.run();
-                 ret = _this.result_json;
         //           print("LOOP END?");
                  // try and get the resopse...
                 break;
@@ -307,18 +304,12 @@ public class Xcls_DialogPluginWebkit : Object
                     return false;
                 }
                 print("CMD: %s\n",ar[1]);
-                print("ARGS: %s\n",ar[2]);
+                    print("ARGS: %s\n",ar[2]);
                 switch(ar[1]) {
-                
                     case "SAVEHTML":
-                        // print("%sw",ar[2]);
-                        //  _this.file.saveHTML(ar[2]);
+                      print("%sw",ar[2]);
+                      //  _this.file.saveHTML(ar[2]);
                         return true;
-                        
-                    case "OUT":
-                        _this.result_json = ar[2];
-                        return true;
-                        
                     default:
                         return true;
                 }
