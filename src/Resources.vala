@@ -43,7 +43,7 @@ public class Resources : Object
 			"Gir.overides",
 			"RooUsage.txt",
 			"GtkUsage.txt",
-			"Editors/Editor.Roo.grid.Grid.js"
+			"Editors/Editor.Roo.grid.GridPanel.js"
 		};
 	}	
 		 
@@ -66,7 +66,7 @@ public class Resources : Object
         this.updateProgress(this.fetch_pos); // min=0;
         
         
-        if (cur > this.avail_files.length) {
+        if (this.fetch_pos > this.avail_files.length) {
 			this.updateProgress(0);
 		     this.fetch_pos = 0;
 		     return;
