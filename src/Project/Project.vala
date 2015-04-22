@@ -61,7 +61,8 @@ namespace Project {
 				this.paths.set(path, "dir");
 			}
 			// dummy roo database...
-			this.roo_database = new Palete.RooDatabase.from_cfg ("", "", "", "");
+			this.initRooDatabase();
+			
 		    
 		    
 		}
