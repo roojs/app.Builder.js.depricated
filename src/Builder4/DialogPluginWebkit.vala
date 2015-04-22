@@ -77,7 +77,7 @@ public class Xcls_DialogPluginWebkit : Object
             runhtml += builderhtml + "\n";
             
             
-               runhtml += "\n" +
+            runhtml += "\n" +
                 "Builder.saveHTML = function() {};\n" + 
     	    "Roo.onReady(function() {\n" +
     
@@ -124,7 +124,7 @@ public class Xcls_DialogPluginWebkit : Object
             //print(runhtml);
             
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
-                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor." + cls + ".js\"></script>" + 
+                "<script type=\"text/javascript\" src=\"xhttp://resources//Editors/Editor." + cls + ".js\"></script>" + 
           
                             
             "</head>");
