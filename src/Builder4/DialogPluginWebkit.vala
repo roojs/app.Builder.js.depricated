@@ -53,23 +53,13 @@ public class Xcls_DialogPluginWebkit : Object
     }
 
     // user defined functions 
-    public boolean has_plugin (string cls) {
-    
-         return GLib.FileUtils.test(
-                BuilderApplication.configDirectory() + "/resources/Editors/Editor." + cls + ".js",
-                GLib.FileTest.IS_REGULAR
-          );
-        
-    
-    
-    }
     public string show (Gtk.Window ?parent, Project.Project project, string cls, string tbl) {// JsRender.Node node) {
      
         if (parent  != null) {
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
-         var db = project.roo_database;
+         var  db = project.roo_database;
          
         
          this.el.show_all();
@@ -181,6 +171,16 @@ public class Xcls_DialogPluginWebkit : Object
         
         
         
+    }
+    public bool has_plugin (string cls) {
+    
+         return GLib.FileUtils.test(
+                BuilderApplication.configDirectory() + "/resources/Editors/Editor." + cls + ".js",
+                GLib.FileTest.IS_REGULAR
+          );
+        
+    
+    
     }
     public class Xcls_VBox2 : Object 
     {
