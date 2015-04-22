@@ -315,7 +315,9 @@ public class Xcls_DialogPluginWebkit : Object
                         return true;
                         
                     case "OUT":
-                        _this.json = ar[2];
+                        _this.result_json = ar[2];
+                        return true;
+                        
                     default:
                         return true;
                 }
