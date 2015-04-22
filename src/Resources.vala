@@ -73,7 +73,9 @@ public class Resources : Object
 			
 		}
         var target = this.avail_files[cur];
-        var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
+        
+        var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
+        //var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
         if (target == "roodata.json") {
 			src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
 		}
