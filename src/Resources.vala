@@ -43,7 +43,7 @@ public class Resources : Object
 			"Gir.overides",
 			"RooUsage.txt",
 			"GtkUsage.txt",
-			"Editors/Edit.Roo.grid.Grid.js"
+			"Editors/Editor.Roo.grid.Grid.js"
 		};
 	}	
 		 
@@ -78,29 +78,7 @@ public class Resources : Object
 			src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
 		}
 
-		this.fetchResourceFrom (
-			src,
-			target,
-			(sess,msg) => {
-				switch (target) {
-					case "Gir.overides":
-						Palete.Gir.factory("Gtk").loadOverrides(true);
-						break;
-						
-					case "GtkUsage.txt":
-						Palete.factory("Gtk").load();
-						break;
-						
-					case "roodata.json":
-						Palete.factory("Roo").classes  = null;
-						Palete.factory("Roo").load();
-						break;
-						
-					default:
-						break;
-				}
-			    this.fetchNext();
-		});
+		this.fetchResourceFrom ( src, target );
 		 
 
 	 }
