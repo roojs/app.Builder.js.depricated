@@ -63,18 +63,18 @@ public class Xcls_DialogPluginWebkit : Object
     
     
     }
-    public string show (Gtk.Window ?parent, string cls) {// JsRender.Node node) {
+    public string show (Gtk.Window ?parent, Project.Project project, string cls, string tbl) {// JsRender.Node node) {
      
         if (parent  != null) {
             this.el.set_transient_for(parent);
             this.el.modal = true;
         }
-           var db = new JsRender.RooDatabase.from_cfg ("MySQL", "hydra", "root", "");
+         var db = project.roo_database;
          
         
          this.el.show_all();
          var   ret = "";
-        while (true) {
+         while (true) {
         
             var runhtml = "<script type=\"text/javascript\">\n" ;
             string builderhtml;
@@ -95,7 +95,7 @@ public class Xcls_DialogPluginWebkit : Object
     	
             
     
-            var ar = db.readForeignKeys("Person");
+            var ar = db.readForeignKeys(tbl);
             var  generator = new Json.Generator ();
             var  root = new Json.Node(Json.NodeType.OBJECT);
             root.init_object(ar);
@@ -133,10 +133,7 @@ public class Xcls_DialogPluginWebkit : Object
             
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
                 "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor." + cls + ".js\"></script>" + 
-          //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
-                  //  "<script type=\"text/javascript\">\n" +
-                  //  js_src + "\n" + 
-                  //  "</script>" + 
+          
                             
             "</head>");
             //print("LOAD HTML " + html);
