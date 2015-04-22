@@ -63,7 +63,7 @@ public class Xcls_DialogPluginWebkit : Object
     
     
     }
-    public string show (Gtk.Window ?parent, string text) {// JsRender.Node node) {
+    public string show (Gtk.Window ?parent, string cls) {// JsRender.Node node) {
      
         if (parent  != null) {
             this.el.set_transient_for(parent);
@@ -106,7 +106,7 @@ public class Xcls_DialogPluginWebkit : Object
             
             runhtml += "\n" +
             " Roo.XComponent.on('buildcomplete', function() {\n" +
-             "    Editor.Roo.grid.Grid.panel.loadData(" + generator.to_data (null) + "); " +
+             "    Editor." + cls + ".panel.loadData(" + generator.to_data (null) + "); " +
             "});\n";
     
             
@@ -132,7 +132,7 @@ public class Xcls_DialogPluginWebkit : Object
             //print(runhtml);
             
             var html = inhtml.replace("</head>", runhtml + // + this.runhtml + 
-                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor.Roo.grid.Grid.js\"></script>" + 
+                "<script type=\"text/javascript\" src=\"xhttp://localhost/app.Builder.js/resources/Editors/Editor." + cls + ".js\"></script>" + 
           //      "<script type=\"text/javascript\" src=\"xhttp://localhost" + fc.fname + "\"></script>" +   
                   //  "<script type=\"text/javascript\">\n" +
                   //  js_src + "\n" + 
@@ -157,10 +157,11 @@ public class Xcls_DialogPluginWebkit : Object
             
              if (response_id == 1) { // OK...
                  var loop = new MainLoop();
-                 this.webview.el.run_javascript.begin("Editor.Roo.grid.Grid.panel.toBJS();", null, (obj, res) => {
-      //              print("GOT END?");
-                         this.webview.el.run_javascript.end(res);
-    //                                    print("GOT DATA?");
+                 // run toBJS to get the data...
+                   this.webview.el.run_javascript.begin("Editor." + cls + ".panel.toBJS();", null, (obj, res) => {
+    
+                     this.webview.el.run_javascript.end(res);
+    
                         loop.quit();
                     });
                  loop.run();
