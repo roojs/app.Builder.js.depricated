@@ -486,7 +486,7 @@ public class JsRender.Node : Object {
 		while (iter.next()) {
 			var i =  iter.get_key();
 			var val = iter.get_value();
-			if (val == null) {
+			if (val == null || val.length < 1) {
 				continue;
 			}
 			if ( i[0] != '|') {
