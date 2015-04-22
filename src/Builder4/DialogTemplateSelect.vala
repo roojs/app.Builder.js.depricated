@@ -64,7 +64,7 @@ public class DialogTemplateSelect : Object
             return node;
         }
         this.el.set_attached_to( mwindow.el);
-         this.el.set_transient_for( mwindow.el);
+        this.el.set_transient_for( mwindow.el);
         
         //opts.unshift({ path: '' , name :'Just add Element' });
          _this.model.loadData(opts);
@@ -74,6 +74,7 @@ public class DialogTemplateSelect : Object
          var db =  new Palete.RooDatabase.from_project(project);
          _this.dbmodel.loadData(db.readTablesGee());
          
+         var plug = mwindow.windowstate.webkit_plugin;
          
          _this.dbcombo.el.set_active(-1);
          
@@ -89,12 +90,24 @@ public class DialogTemplateSelect : Object
             return node; // 1 = just add it..
         }
         
-       Gtk.TreeIter iter;
+        // have they selected a table??
+        
+       Gtk.TreeIter iter; 
+        Value vfname;   
+        if (_this.dbcombo.el.get_active_iter (out iter)) {    
+             this.dbmodel.el.get_value (iter, 0, out vfname);
+             if (plug.has_plugin(node.fqn())) {
+                var json_str = plug.show(mwindow.el, project, node.fqn(), (string)vfname);
+                
+             }
+            
+        }
+    
         if (!_this.combo.el.get_active_iter (out iter)) {
     
             return node; // nothing selected...
         }
-        Value vfname;
+       
         this.model.el.get_value (iter, 0, out vfname);
         
         
