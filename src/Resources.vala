@@ -64,8 +64,41 @@ public class Resources : Object
         this.updateProgress(this.fetch_pos); // min=0;
         
         
-        
-        
+        if (cur > this.avail_files.length) {
+			this.updateProgress(0);
+		     this.fetch_pos = 0;
+		     return;
+			
+		}
+        var target = this.avail_files[cur];
+        var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
+        if (target == "roodata.json") {
+			src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
+		}
+
+		this.fetchResourceFrom (
+			src,
+			target,
+			(sess,msg) => {
+				switch (target) {
+					case "Gir.overides":
+						Palete.Gir.factory("Gtk").loadOverrides(true);
+						break;
+						
+					case "GtkUsage.txt":
+						Palete.factory("Gtk").load();
+						break;
+						
+					case "roodata.json":
+						Palete.factory("Roo").classes  = null;
+						Palete.factory("Roo").load();
+					
+					default:
+						break;
+				}
+			    this.fetchNext();
+		});
+		 ;
         
         switch (cur) {
                case 0: // html for rendering Bootstrap apps.
