@@ -42,7 +42,7 @@ namespace Project {
 		public  string xtype;
 		
 		public Json.Object json_project_data;
-		
+		public Palete.RooDatabase roo_database;
 		 
 		bool is_scanned; 
 	   
@@ -60,7 +60,7 @@ namespace Project {
 			if (path.length > 0) {
 				this.paths.set(path, "dir");
 			}
-			
+			 
 		    
 		    
 		}
