@@ -490,7 +490,7 @@ public class JsRender.Node : Object {
 				continue;
 			}
 			if ( i[0] != '|') {
-				props += "\n<b>" + 
+				props += "\n\t<b>" + 
 					GLib.Markup.escape_text(i) +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 				 
@@ -502,13 +502,13 @@ public class JsRender.Node : Object {
 			//}
 			
 			if (Regex.match_simple("^\\s*function", val)) { 
-				funcs += "\n<b>" + 
+				funcs += "\n\t<b>" + 
 					GLib.Markup.escape_text(i.substring(1)) +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;
 			}
 			if (Regex.match_simple("^\\s*\\(", val)) {
-				funcs += "\n<b>" + GLib.Markup.escape_text(i.substring(1)) +
+				funcs += "\n\t<b>" + GLib.Markup.escape_text(i.substring(1)) +
 					"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;
@@ -517,12 +517,12 @@ public class JsRender.Node : Object {
 		}
 		iter = this.listeners.map_iterator();
 		while (iter.next()) {
-			var i =  iter.get_key();
-			var val = iter.get_value();
+			var i =  iter.get_key().strip();
+			var val = iter.get_value().strip();
 			if (val == null || val.length < 1) {
 				continue;
 			}
-			 listen += "\n<b>" + 
+			 listen += "\n\t<b>" + 
 					GLib.Markup.escape_text(i) +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 			
