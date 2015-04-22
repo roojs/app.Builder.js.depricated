@@ -96,19 +96,19 @@ public class DialogTemplateSelect : Object
         Value vfname;   
         if (_this.dbcombo.el.get_active_iter (out iter)) {    
              this.dbmodel.el.get_value (iter, 0, out vfname);
-             if (plug.has_plugin(node.fqn())) {
+             if (vfname.length > 0 && plug.has_plugin(node.fqn())) {
                 var json_str = plug.show(mwindow.el, project, node.fqn(), (string)vfname);
                 if (json_str.length < 1) {
                     return node;
                 }
                 var pa = new Json.Parser();
     	    pa.load_from_data(json_str);
-    	    var node = pa.get_root();
+    	    var new_node = pa.get_root();
     
-    	    if (node.get_node_type () != Json.NodeType.OBJECT) {
-    		    return null;
+    	    if (new_node.get_node_type () != Json.NodeType.OBJECT) {
+    		    return node;
     	    }
-    	    var obj = node.get_object ();
+    	    var obj = new_node.get_object ();
     
     	    var ret = new JsRender.Node();
     
