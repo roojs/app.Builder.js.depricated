@@ -140,11 +140,16 @@ public class Resources : Object
 		session.user_agent = "App Builder ";
 	    var message = new Soup.Message ("GET",  src );
         session.queue_message (message, (sess, mess) => {
-
-            FileUtils.set_contents(
-               BuilderApplication.configDirectory() + "/resources/" + target,
-                 (string) message.response_body.data
-            );
+			
+			var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
+			if (!FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
+				var f = new GLib.File.new_for_path(GLib.Path.get_dirname(tfn));
+				f.make_directory_with_parents ();
+			}
+			
+			
+			// set data??? - if it's binary?
+            FileUtils.set_contents(  tfn, (string) message.response_body.data );
                 
             callback(sess,mess);
         });
