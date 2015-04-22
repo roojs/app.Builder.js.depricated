@@ -28,14 +28,14 @@ public class FakeServerCache : Object
 	
         public static FakeServerCache factory(string fname)
 	{
-	    if (cache == null) {
-	 	cache = new Gee.HashMap<string,FakeServerCache>();
-	   }
+		if (cache == null) {
+			cache = new Gee.HashMap<string,FakeServerCache>();
+		}
 	   // print ("CACHE look for ==%s==\n", fname);
 	    if (cache.has_key(fname)) {
-		print ("CACHE got  %s\n", fname);
- 		return cache.get(fname);
- 	    }
+			print ("CACHE got  %s\n", fname);
+			return cache.get(fname);
+		}
 	    print ("CACHE create %s\n", fname);
 	    
 	    var el = new  FakeServerCache(fname);
@@ -45,13 +45,13 @@ public class FakeServerCache : Object
 	}
 	// called onload to clear the temporary cached file..
 	public static void remove(string fname) {
-	    if (cache == null) {
-		return;
-	    }
-	    if (!cache.has_key(fname)) {
-		return;
- 	    }
-	    
+		if (cache == null) {
+			return;
+		}
+		if (!cache.has_key(fname)) {
+			return;
+		}
+		
  
 	    FakeServerCache v;
  
@@ -60,29 +60,30 @@ public class FakeServerCache : Object
 
 	    
 	}
-        public static  void clear()
-        {
-	    if (cache == null) {
-		return;
-	    }
-	    cache.clear();
+	public static  void clear()
+	{
+		if (cache == null) {
+			return;
+		}
+		cache.clear();
 	}
     
 	public static FakeServerCache factory_with_data(string data) {
-	     if (cache == null) {
-	 	cache = new Gee.HashMap<string,FakeServerCache>();
-	   }
-	    var el = new  FakeServerCache.with_data(data);
-	    print("CACHE - store %s\n", el.fname);
-	     cache.set(el.fname, el);
-	    return el;
+		if (cache == null) {
+			cache = new Gee.HashMap<string,FakeServerCache>();
+		}
+		var el = new  FakeServerCache.with_data(data);
+		print("CACHE - store %s\n", el.fname);
+		cache.set(el.fname, el);
+		return el;
 	}
     
-	public FakeServerCache.with_data( string data ) {
-	    this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
-	    this.data = data.data;
-	    this.content_type = "text/javascript";
-	    this.size= data.length;
+	public FakeServerCache.with_data( string data )
+	{
+		this.fname = "/" + GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, data, data.length) + ".js";
+		this.data = data.data;
+		this.content_type = "text/javascript";
+		this.size= data.length;
 	 
 	  
 	}
@@ -90,34 +91,32 @@ public class FakeServerCache : Object
 	public FakeServerCache( string fname ) {
 	       
 		this.fname = fname;
-
-
-	    
+ 
 		var  file = File.new_for_path ( GLib.Environment.get_home_dir() + "/gitlive" + fname);
 		if (!file.query_exists()) {
-		    this.data = "".data;
-		    this.content_type = "";
-		    this.size = 0;
-		    return;
+			this.data = "".data;
+			this.content_type = "";
+			this.size = 0;
+			return;
 		}
-		 var info = file.query_info(
+		var info = file.query_info(
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
-	    this.content_type = info.get_content_type();
-	    this.size = info.get_size();
-	    uint8[] data;
-	    size_t length;
-	    try { 
-		GLib.FileUtils.get_data(file.get_path(), out data);
-	    } catch (Error e) {
-		this.data = "".data;
-		this.size = 0;
-		 this.content_type = "";
-		return;
-	    }
+		this.content_type = info.get_content_type();
+		this.size = info.get_size();
+		uint8[] data;
+		size_t length;
+		try { 
+			GLib.FileUtils.get_data(file.get_path(), out data);
+		} catch (Error e) {
+			this.data = "".data;
+			this.size = 0;
+			this.content_type = "";
+			return;
+		}
 
-	    this.data = data;
+		this.data = data;
 
 		print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
 			this.content_type, this.size.to_string(), this.data.length);
@@ -128,14 +127,14 @@ public class FakeServerCache : Object
  
 	public void run(WebKit.URISchemeRequest request, Cancellable? cancellable) 
 	{
-	    var stream =  new GLib.MemoryInputStream.from_data (this.data,  GLib.free);
-	    print("SEND %s\nwe", this.size.to_string()); 
-	    
+		var stream =  new GLib.MemoryInputStream.from_data (this.data,  GLib.free);
+		print("SEND %s\nwe", this.size.to_string()); 
+
 		request.finish(stream,
-	                 this.size,
-	                 this.content_type);
-                 
-	    
+					 this.size,
+					 this.content_type);
+				 
+		
 		
 	    return;
 	     
@@ -156,23 +155,23 @@ public class FakeServer : Object
 		// 
 		
 		  
-        // Hook up signals.
-  
-        //this.view.resource_load_started.connect(on_resource_request_starting);
-        //this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-        //this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
-          
-         //
-	var cx = WebKit.WebContext.get_default();
-	//var cx = this.view.get_context();
-        cx.register_uri_scheme("xhttp",  serve);
-	cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
+		// Hook up signals.
 
-	// these do not help for cross domain requests..
-	    
-	//cx.get_security_manager().register_uri_scheme_as_cors_enabled("xhttp");
-	//cx.get_security_manager().register_uri_scheme_as_cors_enabled("http");
-    //cx.register_uri_scheme_as_cors_enabled("xhttp");
+		//this.view.resource_load_started.connect(on_resource_request_starting);
+		//this.view.navigation_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+		//this.view.new_window_policy_decision_requested.connect(on_navigation_policy_decision_requested);
+		  
+		 //
+		var cx = WebKit.WebContext.get_default();
+		//var cx = this.view.get_context();
+		cx.register_uri_scheme("xhttp",  serve);
+		cx.set_cache_model (WebKit.CacheModel.DOCUMENT_VIEWER);
+
+		// these do not help for cross domain requests..
+			
+		//cx.get_security_manager().register_uri_scheme_as_cors_enabled("xhttp");
+		//cx.get_security_manager().register_uri_scheme_as_cors_enabled("http");
+		//cx.register_uri_scheme_as_cors_enabled("xhttp");
        // = crash  cx.set_process_model (WebKit.ProcessModel.MULTIPLE_SECONDARY_PROCESSES );
     }
     
