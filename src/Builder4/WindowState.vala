@@ -38,6 +38,10 @@ public class WindowState : Object
     public Xcls_ClutterFiles     clutterfiles;
 
     public Xcls_WindowLeftProjects left_projects; // can not see where this is initialized.. 
+    
+    // dialogs??
+    public Xcls_DialogPluginWebkit webkit_plugin;
+    
     // ctor 
     public WindowState(Xcls_MainWindow win)
     {
@@ -66,6 +70,8 @@ public class WindowState : Object
         // dialogs
 
         this.fileNewInit();
+        
+        this.webkit_plugin = new Xcls_DialogPluginWebkit();
 
         this.children_loaded = true;
     }
