@@ -32,7 +32,7 @@ public class ResourcesItem : Object {
 		if (target.contains("*")) {
 			return;
 		}
-		var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
+		var tfn = BuilderApplication.configDirectory() + "/resources/" + this.target;
 		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
 			return;
 		}
@@ -204,6 +204,10 @@ public class Resources : Object
     
     public void fetchResourceFrom(ResourcesItem item)
     {
+		if (item.new_sha != "" && item.new_sha == item.cur_sha) {
+			this.fetchNext();
+			return;
+		}
 		 
 		// fetch...
 		print("downloading %s \nto : %s\n", item.src,item.target);
