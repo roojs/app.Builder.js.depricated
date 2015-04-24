@@ -137,10 +137,10 @@ public class Resources : Object
     {
 		 
 		// fetch...
-		print("downloading %s \nto : %s\n", src,target);
+		print("downloading %s \nto : %s\n", item.src,item.target);
 		var session = new Soup.Session ();
 		session.user_agent = "App Builder ";
-	    var message = new Soup.Message ("GET",  src );
+	    var message = new Soup.Message ("GET",  item.src );
         session.queue_message (message, (sess, mess) => {
 			
 			
@@ -155,7 +155,7 @@ public class Resources : Object
 			// set data??? - if it's binary?
             FileUtils.set_contents(  tfn, (string) message.response_body.data );
             
-            switch (target) {
+            switch (item.target) {
 				case "Gir.overides":
 					Palete.Gir.factory("Gtk").loadOverrides(true);
 					break;
