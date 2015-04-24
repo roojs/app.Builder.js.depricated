@@ -98,26 +98,13 @@ public class Resources : Object
         this.updateProgress(this.fetch_pos); // min=0;
         
         
-        if (this.fetch_pos > this.avail_files.length) {
-			this.updateProgress(0);
+        if (this.fetch_pos > this.fetch_files.size) {
+			 this.updateProgress(0);
 		     this.fetch_pos = 0;
 		     return;
 			
 		}
-        var target = this.fetch_files.keys[cur]avail_files[cur];
-        
-        var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
-        //var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
-        if (target == "roodata.json") {
-			src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
-			//src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
-		}
-
-		if (target.contains('*')) {
-			var split = target.split('*');
-			src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/Editors
-			
-
+         
 		this.fetchResourceFrom ( src, target );
 		 
 
