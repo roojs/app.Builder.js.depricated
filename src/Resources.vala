@@ -85,8 +85,9 @@ public class Resources : Object
 		
 		
 	}	
-	void initFiles()
-	{	string[] avail_files = { 
+	public void initFiles()
+	{	
+		string[] avail_files = { 
 			"roodata.json",
 			"*",
 			"Editors/*.js"
