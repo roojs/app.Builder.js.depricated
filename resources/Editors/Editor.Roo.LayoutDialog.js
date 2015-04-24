@@ -352,6 +352,20 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                '|xns' : 'Roo.form',
                xtype : rec.data.ftype
            }
+            if (xtype == 'DateField') {
+               el.format = 'Y-m-d';
+               el.useIso = true;
+               el.width = 100;
+           }
+           
+           if (xtype == 'TextArea') {
+               el.height = 100;
+           }
+           
+           if (xtype == 'Hidden') {
+               delete el.fieldLabel;
+               delete el.width;
+           }
            
            formElements.push(el);
            
