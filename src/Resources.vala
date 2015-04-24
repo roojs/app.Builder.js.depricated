@@ -136,14 +136,17 @@ public class Resources : Object
 		var node = pa.get_root();
 		if (node.get_node_type () != Json.NodeType.ARRAY) {
 			return;
-			throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+			//throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 		}
+		
+		var split = target.split('*');
 		var obj = node.get_array ();
 		for(var i = 0; i < node.get_length(); i++) {
 			var ob = node.get_object_element(i);
 			var n = ob.get_string_member("name");
 			var p = ob.get_string_member("name");
 			// 
+			
 		}
 	
 
