@@ -153,10 +153,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          xns : Roo.form,
          xtype : 'ComboBox',
          listeners : {
-          render : function (_self)
-           {
-             _this.status = _self;
-           },
           select : function (combo, record, index)
            {
                _this.grid.ds.load({});

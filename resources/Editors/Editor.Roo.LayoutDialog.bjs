@@ -132,7 +132,6 @@
          "items" : [
           {
            "listeners" : {
-            "render" : "function (_self)\n{\n  _this.status = _self;\n}",
             "select" : "function (combo, record, index)\n{\n    _this.grid.ds.load({});\n}"
            },
            "listWidth" : 200,
