@@ -22,7 +22,7 @@ public class Resources : Object
      static Resources singleton_val;
      
      string[] avail_files;
-     Gee.ArrayList<string> fetch_files;
+     Gee.ArrayList<string,string> fetch_files;
      
      public static Resources singleton()
      {
