@@ -14,6 +14,17 @@
  * overload... so sequentially may be best...
 */
 
+public class ResourcesItem : Object {
+	string target;
+	string src;
+	public ResourcesItem(string src, string target) }
+		this.target = target;
+		this.src = src;
+	}
+	
+}
+
+
 public class Resources : Object
 {
 
@@ -21,8 +32,8 @@ public class Resources : Object
 
      static Resources singleton_val;
      
-     string[] avail_files;
-     Gee.HashMap<string,string> fetch_files;
+      
+     Gee.ArrayList<ResourcesItem> fetch_files;
      
      public static Resources singleton()
      {
@@ -36,7 +47,7 @@ public class Resources : Object
 	 public Resources ()
 	 {
 		 
-	   var avail_files = { 
+		var avail_files = { 
 			"roodata.json",
 			"resources/bootstrap.builder.html",
 			"resources/roo.builder.html",
@@ -61,7 +72,7 @@ public class Resources : Object
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/" + split[0];
 			}
 			
-			this.fetch_files.set(target , src);
+			this.fetch_files.add(new ResourcesItem(src,target));
 		}
 		
 		
@@ -93,7 +104,7 @@ public class Resources : Object
 		     return;
 			
 		}
-        var target = this.avail_files[cur];
+        var target = this.fetch_files.keys[cur]avail_files[cur];
         
         var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
         //var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
