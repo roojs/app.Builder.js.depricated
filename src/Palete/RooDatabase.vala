@@ -189,6 +189,7 @@ namespace Palete {
 			}
  			
 			var contents = jarr.get_string_element(0);
+			print(contents);
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
 			 string str = "";
