@@ -46,7 +46,7 @@ public class ResourcesItem : Object {
 		 
 		this.size = info.get_size();
 		// git method... blob %d\0...string...
-		var cs = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
+		this.cur_sha = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
 				"blob %d\0".printf(info.get_size()).data + data
 		);
  	
