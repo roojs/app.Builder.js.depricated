@@ -144,8 +144,11 @@ public class Resources : Object
 		for(var i = 0; i < node.get_length(); i++) {
 			var ob = node.get_object_element(i);
 			var n = ob.get_string_member("name");
-			var p = ob.get_string_member("name");
-			// 
+			var p = ob.get_string_member("path");
+			if (split.length > 1 && !name.has_suffix(split[1])) {
+				// not related..
+				continue;
+			}
 			
 		}
 	
