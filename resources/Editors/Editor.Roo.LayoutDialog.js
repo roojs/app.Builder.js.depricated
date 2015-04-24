@@ -181,6 +181,61 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
 {
        editor : {
         field : {
+         store : {
+          '|xns' : 'Roo.data',
+          data : [ 
+              [ 'ComboBox', "ComboBox"],
+              [ 'Text' , "TextField"],
+              [ 'Number', "NumberField"],
+              [ 'TextArea', "TextArea"],
+              [ 'Html', "HtmlEntry"]
+              
+          ],
+          fields : [  'ftype', 'fname'],
+          xns : Roo.data,
+          xtype : 'SimpleStore'
+         },
+         '|xns' : 'Roo.form',
+         allowBlank : false,
+         displayField : 'fname',
+         editable : false,
+         hiddenName : 'status',
+         listWidth : 200,
+         mode : 'local',
+         name : 'status',
+         triggerAction : 'all',
+         valueField : 'ftype',
+         width : 150,
+         xns : Roo.form,
+         xtype : 'ComboBox',
+         items : [
+
+         ]
+
+        },
+        '|xns' : 'Roo.grid',
+        xns : Roo.grid,
+        xtype : 'GridEditor',
+        items : [
+
+        ]
+
+       },
+       '|xns' : 'Roo.grid',
+       dataIndex : 'ftype',
+       header : _this._strings['189efd19c4153526994a6d7ea5f6f068'],
+       renderer : function(v) { return String.format('{0}', v); },
+       width : 75,
+       xns : Roo.grid,
+       xtype : 'ColumnModel',
+       items : [
+
+       ]
+
+      },
+{
+       editor : {
+        field : {
          '|xns' : 'Roo.form',
          decimalPrecision : 0,
          xns : Roo.form,

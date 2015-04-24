@@ -160,6 +160,48 @@
       },
       {
        "xtype" : "ColumnModel",
+       "header" : "Field Type",
+       "width" : 75,
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "ftype",
+       "items" : [
+        {
+         "xtype" : "GridEditor",
+         "$ xns" : "Roo.grid",
+         "* prop" : "editor",
+         "items" : [
+          {
+           "listWidth" : 200,
+           "triggerAction" : "all",
+           "displayField" : "fname",
+           "hiddenName" : "status",
+           "valueField" : "ftype",
+           "xtype" : "ComboBox",
+           "allowBlank" : false,
+           "editable" : false,
+           "width" : 150,
+           "$ xns" : "Roo.form",
+           "mode" : "local",
+           "name" : "status",
+           "* prop" : "field",
+           "items" : [
+            {
+             "xtype" : "SimpleStore",
+             "$ data" : "[ \n    [ 'ComboBox', \"ComboBox\"],\n    [ 'Text' , \"TextField\"],\n    [ 'Number', \"NumberField\"],\n    [ 'TextArea', \"TextArea\"],\n    [ 'Html', \"HtmlEntry\"]\n    \n]\n",
+             "$ fields" : "[  'ftype', 'fname']",
+             "$ xns" : "Roo.data",
+             "* prop" : "store"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "xtype" : "ColumnModel",
        "width" : 75,
        "header" : "Width",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
