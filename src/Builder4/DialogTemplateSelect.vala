@@ -96,10 +96,10 @@ public class DialogTemplateSelect : Object
         Value vfname;   
         if (_this.dbcombo.el.get_active_iter (out iter)) {    
              this.dbmodel.el.get_value (iter, 0, out vfname);
-             if (vfname.length > 0 && plug.has_plugin(node.fqn())) {
+             if (((string)vfname).length > 0 && plug.has_plugin(node.fqn())) {
                 var json_str = plug.show(mwindow.el, project, node.fqn(), (string)vfname);
                 print("json_str = %s\n", json_str);
-                if (((string)json_str).length < 1) {
+                if (json_str.length < 1) {
     
                     return node;
                 }

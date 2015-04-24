@@ -47,35 +47,35 @@ public class WindowState : Object
     // ctor 
     public WindowState(Xcls_MainWindow win)
     {
-        this.win = win;
-        // initialize
+		this.win = win;
+		// initialize
 
-        // left elements..
-        this.leftTreeInit();
-        this.propsListInit();
+		// left elements..
+		this.leftTreeInit();
+		this.propsListInit();
 
-        // on clutter space...
-        this.projectEditInit();
-        this.codeEditInit();
-        this.projectListInit();
-        this.fileViewInit();
-        
-        // adding stuff
-        this.objectAddInit();
-        this.propsAddInit();
-     
-        
-        // previews...
-        this.gtkViewInit();
-        this.webkitViewInit();
+		// on clutter space...
+		this.projectEditInit();
+		this.codeEditInit();
+		this.projectListInit();
+		this.fileViewInit();
 
-        // dialogs
+		// adding stuff
+		this.objectAddInit();
+		this.propsAddInit();
 
-        this.fileNewInit();
-        
-        this.webkit_plugin = new Xcls_DialogPluginWebkit();
-		this.template_select; = new DialogTemplateSelect();
-        this.children_loaded = true;
+
+		// previews...
+		this.gtkViewInit();
+		this.webkitViewInit();
+
+		// dialogs
+
+		this.fileNewInit();
+
+		this.webkit_plugin = new Xcls_DialogPluginWebkit();
+		this.template_select = new DialogTemplateSelect();
+		this.children_loaded = true;
     }
 
 

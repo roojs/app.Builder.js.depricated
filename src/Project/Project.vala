@@ -66,7 +66,7 @@ namespace Project {
 		    
 		    
 		}
-		public initRooDatabase()
+		public void  initRooDatabase()
 		{
 			 
 			this.roo_database = new Palete.RooDatabase.from_project(this);

@@ -503,12 +503,12 @@ public class JsRender.Node : Object {
 			
 			if (Regex.match_simple("^\\s*function", val)) { 
 				funcs += "\n\t<b>" + 
-					GLib.Markup.escape_text(i.substring(1)) +"</b> : " + 
+					GLib.Markup.escape_text(i.substring(1)).strip() +"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;
 			}
 			if (Regex.match_simple("^\\s*\\(", val)) {
-				funcs += "\n\t<b>" + GLib.Markup.escape_text(i.substring(1)) +
+				funcs += "\n\t<b>" + GLib.Markup.escape_text(i.substring(1)).strip() +
 					"</b> : " + 
 					GLib.Markup.escape_text(val.split("\n")[0]);
 				continue;

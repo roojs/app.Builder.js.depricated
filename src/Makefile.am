@@ -105,9 +105,10 @@ builder_SOURCES = \
 		Builder4/WindowAddProp.vala \
 		Builder4/GtkView.vala \
 		Builder4/ValaProjectSettings.vala \
-		Builder4/MainWindow.vala \more 
+		Builder4/MainWindow.vala \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
+		Builder4/DialogPluginWebkit.vala \
 		Resources.vala 
 		
 		

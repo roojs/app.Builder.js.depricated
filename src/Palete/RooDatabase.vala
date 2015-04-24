@@ -86,6 +86,7 @@ namespace Palete {
 			if (this.DBTYPE == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" ));
 			}
+			print("Read tables failed DBTYPE = %s\n", this.DBTYPE);
 			return new Json.Array();
 			
 		}
