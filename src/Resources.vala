@@ -26,7 +26,7 @@ public class ResourcesItem : Object {
 		this.new_sha = new_sha;
 		this.cur_sha = "";
 		this.update_cur_sha();
-		print("New ResourcesItem %s (%s) => %s\n", target , this.cur_sha ,src);
+		print("New ResourcesItem %s (%s) => (%s) %s\n", target , this.cur_sha , new_sha, src);
 	}
 	public void update_cur_sha()
 	{
@@ -38,6 +38,7 @@ public class ResourcesItem : Object {
 			return;
 		}
 		uint8[] data;
+		uint8[] zero = { 0 };
 		GLib.FileUtils.get_data(tfn, out data);
 		
 		var  file = File.new_for_path (tfn);
@@ -46,7 +47,8 @@ public class ResourcesItem : Object {
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
-		var csdata = new GLib.ByteArray.take("blob %s\0".printf(info.get_size().to_string()).data);
+		var csdata = new GLib.ByteArray.take("blob %s".printf(info.get_size().to_string()).data);
+		csdata.append(zero);
 		csdata.append(data);
 		 
 		// git method... blob %d\0...string...
@@ -98,7 +100,7 @@ public class Resources : Object
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/" + split[0];
 			}
 			
-			this.fetch_files.add(new ResourcesItem(src,target));
+			this.fetch_files.add(new ResourcesItem(src,target, ""));
 		}
 		
 		
