@@ -366,6 +366,57 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                delete el.fieldLabel;
                delete el.width;
            }
+           if (xtype == 'Combobox') {
+           
+   
+               el.queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
+               
+               el.hiddenName = old.name; // SET WHEN USED eg. project_id
+               el.displayField = combofields_name; // SET WHEN USED eg. project_id
+               el.name  = old.name + '_' + combofields_name; // SET WHEN USED eg. project_id_name
+               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + combofields_name +'}</b> </div>'; // SET WHEN USED
+             
+           
+              el.items = [
+                   {
+                           
+                       '*prop' : 'store',
+                       'xtype' : 'Store',
+                       '|xns' : 'Roo.data',
+                       'remoteSort' : true,
+                       '|sortInfo' : '{ direction : \'ASC\', field: \'id\' }',
+                       listeners : {
+                           '|beforeload' : 'function (_self, o)' +
+                           "{\n" +
+                           "    o.params = o.params || {};\n" +
+                           "    // set more here\n" +
+                           "}\n"
+                       },
+                       items : [
+                           {
+                               '*prop' : 'proxy',
+                               'xtype' : 'HttpProxy',
+                               'method' : 'GET',
+                               '|xns' : 'Roo.data',
+                               '|url' : "baseURL + '/Roo/" + reftable + ".php'",
+                           },
+                           
+                           {
+                               '*prop' : 'reader',
+                               'xtype' : 'JsonReader',
+                               '|xns' : 'Roo.data',
+                               'id' : 'id',
+                               'root' : 'data',
+                               'totalProperty' : 'total'
+   
+                               
+                           }
+                       ]
+                   }
+               ];
+           
+           }
+           
            
            formElements.push(el);
            
