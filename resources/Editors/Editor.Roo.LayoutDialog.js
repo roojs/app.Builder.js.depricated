@@ -116,7 +116,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        dataIndex : 'title',
        header : _this._strings['b021df6aac4654c454f46c77646e745f'],
        renderer : function(v) { return String.format('{0}', v); },
-       width : 100,
+       width : 120,
        xns : Roo.grid,
        xtype : 'ColumnModel',
        items : [
@@ -171,7 +171,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        dataIndex : 'ftype',
        header : _this._strings['189efd19c4153526994a6d7ea5f6f068'],
        renderer : function(v) { return String.format('{0}', v); },
-       width : 75,
+       width : 120,
        xns : Roo.grid,
        xtype : 'ColumnModel',
        items : [
