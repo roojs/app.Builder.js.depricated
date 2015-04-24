@@ -48,7 +48,7 @@
      "* prop" : "grid",
      "items" : [
       {
-       "$ Array fields" : "[ 'active', 'dataIndex', 'type','title', 'width' ]",
+       "$ Array fields" : "[ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ]",
        "$ Array data" : "[\n  [ 1, 'test', 'test', 110 ]\n  \n\n]",
        "Number id" : "'dataIndex'",
        "xtype" : "SimpleStore",
@@ -162,11 +162,11 @@
       {
        "xtype" : "ColumnModel",
        "header" : "Display Field",
-       "width" : 75,
+       "width" : 150,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
-       "dataIndex" : "ftype",
+       "dataIndex" : "display_field",
        "items" : [
         {
          "xtype" : "GridEditor",

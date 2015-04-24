@@ -39,7 +39,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        
      
      ],
-     fields : [ 'active', 'dataIndex', 'type','title', 'width' ],
+     fields : [ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ],
      id : 'dataindex',
      xns : Roo.data,
      xtype : 'SimpleStore'
@@ -223,10 +223,10 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
 
        },
        '|xns' : 'Roo.grid',
-       dataIndex : 'ftype',
+       dataIndex : 'display_field',
        header : _this._strings['793548e77e782c209a78ed67f255b5e2'],
        renderer : function(v) { return String.format('{0}', v); },
-       width : 75,
+       width : 150,
        xns : Roo.grid,
        xtype : 'ColumnModel',
        items : [
