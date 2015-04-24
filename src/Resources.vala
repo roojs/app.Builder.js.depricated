@@ -30,7 +30,7 @@ public class ResourcesItem : Object {
 	}
 	public void update_cur_sha()
 	{
-		if (target.contains("*")) {
+		if (this.target.contains("*")) {
 			return;
 		}
 		var tfn = BuilderApplication.configDirectory() + "/resources/" + this.target;
