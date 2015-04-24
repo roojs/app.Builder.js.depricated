@@ -61,7 +61,7 @@ public class Resources : Object
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/" + split[0];
 			}
 			
-			this.fetch_files.add(target , src);
+			this.fetch_files.set(target , src);
 		}
 		
 		
