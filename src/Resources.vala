@@ -81,8 +81,7 @@ public class Resources : Object
 		 
 		string[] avail_files = { 
 			"roodata.json",
-			
-			"*"
+			"*",
 			"Editors/*.js"
 			
 		};
