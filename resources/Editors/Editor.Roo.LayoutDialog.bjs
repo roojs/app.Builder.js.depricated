@@ -131,12 +131,8 @@
          "* prop" : "editor",
          "items" : [
           {
-           "listeners" : {
-            "select" : "function (combo, record, index)\n{\n    _this.grid.ds.load({});\n}"
-           },
            "listWidth" : 200,
            "triggerAction" : "all",
-           "fieldLabel" : "Status",
            "displayField" : "fname",
            "hiddenName" : "status",
            "value" : "A",

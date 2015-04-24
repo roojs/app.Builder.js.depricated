@@ -141,7 +141,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          allowBlank : false,
          displayField : 'fname',
          editable : false,
-         fieldLabel : 'Status',
          hiddenName : 'status',
          listWidth : 200,
          mode : 'local',
@@ -152,12 +151,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          width : 150,
          xns : Roo.form,
          xtype : 'ComboBox',
-         listeners : {
-          select : function (combo, record, index)
-           {
-               _this.grid.ds.load({});
-           }
-         },
          items : [
 
          ]
