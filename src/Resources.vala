@@ -49,9 +49,7 @@ public class ResourcesItem : Object {
 		csdata.append(data);
 		 
 		// git method... blob %d\0...string...
-		this.cur_sha = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
-				csdata.data
-		);
+		this.cur_sha = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1, csdata.data 	);
  	}
 	
 }
