@@ -338,7 +338,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       
        
        var jreader = {};
-       var     colmodel = [];
+       var  colmodel = [];
        this.grid.dataSource.each(function(rec) {
            if (!rec.data.active) {
                return;
@@ -359,7 +359,42 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            });
        });
        
-       
+        var frmCfg = 
+       {
+           '|xns' : 'Roo.form',
+           xtype : "Form",
+           listeners : {
+               "|actioncomplete" : "function(_self,action)\n"+
+                   "{\n"+
+                   "    if (action.type == 'setdata') {\n"+
+                   "       //this.load({ method: 'GET', params: { '_id' : _this.data.id }});\n"+
+                   "       return;\n"+
+                   "    }\n"+
+                   "    if (action.type == 'load') {\n"+
+                   "        return;\n"+
+                   "    }\n"+
+                   "    if (action.type =='submit') {\n"+
+                   "    \n"+
+                   "        _this.dialog.hide();\n"+
+                   "    \n"+
+                   "         if (_this.callback) {\n"+
+                   "            _this.callback.call(_this, action.result.data);\n"+
+                   "         }\n"+
+                   "         _this.form.reset();\n"+
+                   "         return;\n"+
+                   "    }\n"+
+                   "}\n",
+               
+               "|rendered" : "function (form)\n"+
+                   "{\n"+
+                   "    _this.form= form;\n"+
+                   "}\n"
+           },
+           method : "POST",
+           style : "margin:10px;",
+           "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
+           items : formElements
+       };
        
    
        alert("IPC:OUT:" + JSON.stringify({
