@@ -15,8 +15,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
   'c671c787b49f50a3ace9fdc5bd597825' :"core_enum",
   '32954654ac8fe66a1d09be19001de2d4' :"Width",
   'a1fa27779242b4902f7ae3bdd5c6d508' :"Type",
-  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid",
-  '7fc56270e7a70fa81a5935b72eacbe29' :"A"
+  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid"
  },
 
   part     :  ["Editors", "LayoutDialog" ],
@@ -150,7 +149,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          mode : 'local',
          name : 'status',
          triggerAction : 'all',
-         value : _this._strings['7fc56270e7a70fa81a5935b72eacbe29'],
          valueField : 'ftype',
          width : 150,
          xns : Roo.form,
