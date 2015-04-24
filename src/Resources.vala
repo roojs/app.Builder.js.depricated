@@ -17,10 +17,14 @@
 public class ResourcesItem : Object {
 	public string target;
 	public string src;
+	public string new_sha;
+	public string cur_sha;
 	public ResourcesItem(string src, string target) 
 	{
 		this.target = target;
 		this.src = src;
+		this.new_sha = "";
+		this.cur_sha = "";
 		print("New ResourcesItem %s => %s\n", target ,src);
 	}
 	
