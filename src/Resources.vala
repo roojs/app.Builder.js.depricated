@@ -169,10 +169,10 @@ public class Resources : Object
 			//throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 		}
 		
-		var split = target.split('*');
-		var obj = node.get_array ();
-		for(var i = 0; i < node.get_length(); i++) {
-			var ob = node.get_object_element(i);
+		var split = target.split("*");
+		var ar = node.get_array ();
+		for(var i = 0; i < ar.get_length(); i++) {
+			var ob = ar.get_object_element(i);
 			var n = ob.get_string_member("name");
 			 
 			if (split.length > 1 && !name.has_suffix(split[1])) {
