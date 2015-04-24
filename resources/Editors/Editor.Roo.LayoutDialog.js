@@ -135,7 +135,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
               [ 'NumberField', "NumberField"],
               [ 'TextArea', "TextArea"],
               [ 'HtmlEditor', "HtmlEditor"],
-              [ 'Hidden', "Hidden"]
+              [ 'Hidden', "Hidden"],
+              [ 'DateField', "DateField"]    
               // checkbox?
           ],
           fields : [  'ftype', 'fname'],
