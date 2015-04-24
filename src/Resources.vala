@@ -143,13 +143,22 @@ public class Resources : Object
 	    var message = new Soup.Message ("GET",  item.src );
         session.queue_message (message, (sess, mess) => {
 			
+			if (item.target.contains('*')) {
+				// then it's a directory listing in JSON, and we need to add any new items to our list..
+				// it's used to fetch Editors (and maybe other stuff..)
+			}
+			
 			
 			var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
+			
+			
 			// create parent directory if needed
 			if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_DIR)) {
 				var f =  GLib.File.new_for_path(GLib.Path.get_dirname(tfn));
 				f.make_directory_with_parents ();
 			}
+			
+			
 			
 			
 			// set data??? - if it's binary?
@@ -172,6 +181,11 @@ public class Resources : Object
 				default:
 					break;
 			}
+            
+            
+            
+            
+            
             
             this.fetchNext();
              
