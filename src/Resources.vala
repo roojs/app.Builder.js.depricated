@@ -34,6 +34,7 @@ public class ResourcesItem : Object {
 		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
 			return;
 		}
+		
 		GLib.FileUtils.get_data(tfn, out data);
 		
 		var  file = File.new_for_path (tfn);
@@ -44,12 +45,11 @@ public class ResourcesItem : Object {
 		);
 		 
 		this.size = info.get_size();
-		
+		// git method... blob %d\0...string...
 		var cs = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
 				"blob %d\0".printf(info.get_size()).data + data
 		);
-		sha1("blob " + filesize + "\0" + data)
-	
+ 	
 	
 }
 
