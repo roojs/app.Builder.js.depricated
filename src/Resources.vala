@@ -160,7 +160,11 @@ public class Resources : Object
 	public bool files_has_target(string target)
 	{
 		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
-			if (this.fetch_files.
+			if (this.fetch_files.get(i).target == target) { 
+				return true;
+			}
+		}
+		return false;
 		
 	}
 	
