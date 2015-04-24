@@ -81,16 +81,10 @@ public class Resources : Object
 		 
 		string[] avail_files = { 
 			"roodata.json",
-			/*"bootstrap.builder.html",
-			"roo.builder.html",
-			"roo.builder.js",
-			"Gir.overides",
-			"RooUsage.txt",
-			"GtkUsage.txt",
-			"Editors/*.js"
-			*/
+			
 			"*"
-			//"Editors/Editor.Roo.grid.GridPanel.js"
+			"Editors/*.js"
+			
 		};
 		this.fetch_files = new Gee.ArrayList<ResourcesItem>();
 		for (var i=0;i < avail_files.length; i++) {
