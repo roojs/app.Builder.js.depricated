@@ -162,7 +162,7 @@ public class Resources : Object
 			if (item.target.contains('*')) {
 				// then it's a directory listing in JSON, and we need to add any new items to our list..
 				// it's used to fetch Editors (and maybe other stuff..)
-				this.parseDirectory((string) message.response_body.data );
+				this.parseDirectory((string) message.response_body.data,item.target );
 				this.fetchNext();
 				return;
 			}
