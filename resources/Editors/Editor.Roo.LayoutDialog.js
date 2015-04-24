@@ -363,118 +363,50 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        
    
        alert("IPC:OUT:" + JSON.stringify({
-           '|xns' : 'Roo',
-           xtype : "GridPanel",
-           "title": this.table,
-           "fitToframe": true,
-           "fitContainer": true,
-           "tableName": this.table,
-           "background": true,
-           "region" : 'center',
-           "listeners": {
-               "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
-           },
-           "items": [
-               {
-                   "*prop": "grid",
-                   "xtype": "Grid",
-                   "autoExpandColumn": this.firstTxtCol,
-                   "loadMask": true,
-                   "listeners": {
-                       "|render": "function() \n" +
-                           "{\n" +
-                           "    _this.grid = this; \n" +
-                           "    //_this.dialog = Pman.Dialog.FILL_IN\n" +
-                           "    if (_this.panel.active) {\n" +
-                           "       this.footer.onClick('first');\n" +
-                           "    }\n" +
-                           "}",
-                       "|rowdblclick": "function (_self, rowIndex, e)\n" + 
-                           "{\n" + 
-                           "    if (!_this.dialog) return;\n" + 
-                           "    _this.dialog.show( this.getDataSource().getAt(rowIndex).data, function() {\n" + 
-                           "        _this.grid.footer.onClick('first');\n" + 
-                           "    }); \n" + 
-                           "}\n"
+               "closable": false,
+               "collapsible": false,
+               "height": formHeight,
+               "resizable": false,
+               "title": "Edit / Create " + this.table,
+               "width": 400,
+               "modal" : true,
+               "xtype": "LayoutDialog",
+               "|xns": "Roo",
+               "items": [
+                   {
+                       "|xns": "Roo",
+                       "xtype": "LayoutRegion",
+                       "*prop": "center"
                    },
-                   "|xns": "Roo.grid",
-   
-                   "items": [
-                       {
-                           "*prop": "dataSource",
-                           "xtype": "Store",
-                            remoteSort : true,
-                           '|sortInfo' : "{ field : '" + this.firstTxtCol  +  "', direction: 'ASC' }", 
-                           "|xns": "Roo.data",
-                           "items": [
-                               
-                               {
-                                   "*prop": "proxy",
-                                   "xtype": "HttpProxy",
-                                   "method": "GET",
-                                   "|url": "baseURL + '/Roo/" + this.table + ".php'",
-                                   "|xns": "Roo.data"
-                               },
-                               {
-                                   '*prop' : 'reader',
-                                   'xtype' : 'JsonReader',
-                                   '|xns' : 'Roo.data',
-                                   'id' : 'id',
-                                   'root' : 'data',
-                                   'totalProperty' : 'total'
-                               }
-                           ]
+                   {
+                       "region": "center",
+                       "xtype": "ContentPanel",
+                       "|xns": "Roo",
+                       "items": [
+                           frmCfg
+                       ]
+                   },
+                   
+                   {
+                       "listeners": {
+                           "click": "function (_self, e)\n{\n    _this.dialog.hide();\n}"
                        },
-                       {
-                           "*prop": "footer",
-                           "xtype": "PagingToolbar",
-                           "pageSize": 25,
-                           "displayInfo": true,
-                           "displayMsg": "Displaying " + this.table + "{0} - {1} of {2}",
-                           "emptyMsg": "No " + this.table + " found",
-                           "|xns": "Roo"
+                       "*prop": "buttons[]",
+                       "text": "Cancel",
+                       "xtype": "Button",
+                       "|xns": "Roo"
+                   },
+                   {
+                       "listeners": {
+                           "click": "function (_self, e)\n{\n    // do some checks?\n     \n    \n    _this.dialog.el.mask(\"Saving\");\n    _this.form.doAction(\"submit\");\n\n}"
                        },
-                       {
-                           "*prop": "toolbar",
-                           "xtype": "Toolbar",
-                           "|xns": "Roo",
-                           "items": [
-                               {
-                                   "text": "Add",
-                                   "xtype": "Button",
-                                   "cls": "x-btn-text-icon",
-                                   "|icon": "Roo.rootURL + 'images/default/dd/drop-add.gif'",
-                                   "listeners": {
-                                       "|click": "function()\n"+
-                                           "{\n"+
-                                           "    if (!_this.dialog) return;\n" +
-                                           "    _this.dialog.show( { id : 0 } , function() {\n"+
-                                           "        _this.grid.footer.onClick('first');\n"+
-                                           "   }); \n"+
-                                           "}\n"
-                                   },
-                                   "|xns": "Roo.Toolbar"
-                               },
-                                // fill ????
-                               {
-                                   "text": "Delete",
-                                   "cls": "x-btn-text-icon",
-                                   "|icon": "rootURL + '/Pman/templates/images/trash.gif'",
-                                   "xtype": "Button",
-                                   "listeners": {
-                                       "|click": "function()\n"+
-                                           "{\n"+
-                                           "     Pman.genericDelete(_this, '" + this.table + "'); \n"+
-                                           "}\n"+
-                                           "        "
-                                   },
-                                   "|xns": "Roo.Toolbar"
-                               }
-                           ]
-                       }, // end toolbar
-                   ].concat( colmodel)
-               }
-           ]
+                       "*prop": "buttons[]",
+                       "text": "Save",
+                       "xtype": "Button",
+                       "|xns": "Roo"
+                   }
+               ]
+           
            
            
        }, null, 4));
