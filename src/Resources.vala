@@ -81,13 +81,15 @@ public class Resources : Object
 		 
 		string[] avail_files = { 
 			"roodata.json",
-			"bootstrap.builder.html",
+			/*"bootstrap.builder.html",
 			"roo.builder.html",
 			"roo.builder.js",
 			"Gir.overides",
 			"RooUsage.txt",
 			"GtkUsage.txt",
 			"Editors/*.js"
+			*/
+			"*"
 			//"Editors/Editor.Roo.grid.GridPanel.js"
 		};
 		this.fetch_files = new Gee.ArrayList<ResourcesItem>();
@@ -176,7 +178,9 @@ public class Resources : Object
 		for(var i = 0; i < ar.get_length(); i++) {
 			var ob = ar.get_object_element(i);
 			var n = ob.get_string_member("name");
-			 
+			if (ob.get_string_member("type") == "dir") {
+				continue;
+			}
 			if (split.length > 1 && !n.has_suffix(split[1])) {
 				// not needed..
 				continue;
