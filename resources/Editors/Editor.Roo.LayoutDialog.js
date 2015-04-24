@@ -9,6 +9,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
  _strings : {
   'b021df6aac4654c454f46c77646e745f' :"Label",
   '4ce58cbe362a5d7b156992a496d55bf3' :"Database Column",
+  '189efd19c4153526994a6d7ea5f6f068' :"Field Type",
   '2f616612593df62aeed112de4f03110e' :"Edit a Grid",
   '0ccc2bf3fb98387c23b6ca5500244d6e' :"Use ",
   'c671c787b49f50a3ace9fdc5bd597825' :"core_enum",
@@ -168,8 +169,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
 
        },
        '|xns' : 'Roo.grid',
-       dataIndex : 'title',
-       header : _this._strings['b021df6aac4654c454f46c77646e745f'],
+       dataIndex : 'ftype',
+       header : _this._strings['189efd19c4153526994a6d7ea5f6f068'],
        renderer : function(v) { return String.format('{0}', v); },
        width : 75,
        xns : Roo.grid,
