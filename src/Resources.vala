@@ -36,21 +36,32 @@ public class Resources : Object
 	 public Resources ()
 	 {
 		 
-	   this.avail_files = { 
+	   var avail_files = { 
 			"roodata.json",
-			"bootstrap.builder.html",
-			"roo.builder.html",
-			"roo.builder.js",
-			"Gir.overides",
-			"RooUsage.txt",
-			"GtkUsage.txt",
+			"resources/bootstrap.builder.html",
+			"resources/roo.builder.html",
+			"resources/roo.builder.js",
+			"resources/Gir.overides",
+			"resources/RooUsage.txt",
+			"resources/GtkUsage.txt",
 			"resources/Editors/*.js"
-			"Editors/Editor.Roo.grid.GridPanel.js"
+			//"Editors/Editor.Roo.grid.GridPanel.js"
 		};
 		this.fetch_files = new Gee.ArrayList<string>();
 		for (var i=0;i < avail_files.length; i++) {
+			var target = avail_files[i];
+			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/" + target;
+			 
+			if (target == "roodata.json") {
+				src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
+				//src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
+			}
+			if (target.contains('*')) {
+				var split = target.split('*');
+				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/" + split[0];
+			}
 			
-			this.fetch_files.add(avail_files[i]);
+			this.fetch_files.add(target , src);
 		}
 		
 		
