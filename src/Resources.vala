@@ -22,6 +22,7 @@ public class Resources : Object
      static Resources singleton_val;
      
      string[] avail_files;
+     Gee.ArrayList<string> fetch_files;
      
      public static Resources singleton()
      {
@@ -77,7 +78,8 @@ public class Resources : Object
         var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
         //var src = "http://git.roojs.org/?p=app.Builder.js;a=blob_plain;f=resources/" + target;
         if (target == "roodata.json") {
-			src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
+			src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
+			//src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
 		}
 
 		this.fetchResourceFrom ( src, target );
