@@ -129,9 +129,12 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          store : {
           '|xns' : 'Roo.data',
           data : [ 
-              [ 'O', "Open"],
-              [ 'C' , "Closed"],
-              [ 'A', "All"] 
+              [ 'ComboBox', "ComboBox"],
+              [ 'Text' , "TextField"],
+              [ 'Number', "NumberField"],
+              [ 'TextArea', "TextArea"],
+              [ 'Html', "HtmlEntry"]
+              
           ],
           fields : [  'ftype', 'fname'],
           xns : Roo.data,

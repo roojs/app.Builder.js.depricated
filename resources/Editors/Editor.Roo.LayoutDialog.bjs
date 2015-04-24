@@ -148,7 +148,7 @@
            "items" : [
             {
              "xtype" : "SimpleStore",
-             "$ data" : "[ \n    [ 'O', \"Open\"],\n    [ 'C' , \"Closed\"],\n    [ 'A', \"All\"] \n]\n",
+             "$ data" : "[ \n    [ 'ComboBox', \"ComboBox\"],\n    [ 'Text' , \"TextField\"],\n    [ 'Number', \"NumberField\"],\n    [ 'TextArea', \"TextArea\"],\n    [ 'Html', \"HtmlEntry\"]\n    \n]\n",
              "$ fields" : "[  'ftype', 'fname']",
              "$ xns" : "Roo.data",
              "* prop" : "store"
