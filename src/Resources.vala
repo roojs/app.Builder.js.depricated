@@ -141,7 +141,9 @@ public class Resources : Object
 		 
 			
 		for (var i = 0; i <  this.fetch_files.size; i++ ) { 
-			
+			if (this.fetch_files.get(i).target.contains("*")) {
+				continue;
+			}
 			if (!FileUtils.test(
 				BuilderApplication.configDirectory() + "/resources/"  + this.fetch_files.get(i).target,
 				FileTest.EXISTS
