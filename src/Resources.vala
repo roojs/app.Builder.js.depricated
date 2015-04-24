@@ -29,7 +29,9 @@ public class ResourcesItem : Object {
 	}
 	public void update_cur_sha()
 	{
-		
+		if (target.contains("*")) {
+			return;
+		}
 		var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
 		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
 			return;
@@ -162,7 +164,7 @@ public class Resources : Object
 	public void parseDirectory(string json, string target)
 	{
 		var pa = new Json.Parser();
-		pa.load_from_file(json);
+		pa.load_from_data(json);
 		var node = pa.get_root();
 		if (node.get_node_type () != Json.NodeType.ARRAY) {
 			return;
@@ -175,7 +177,7 @@ public class Resources : Object
 			var ob = ar.get_object_element(i);
 			var n = ob.get_string_member("name");
 			 
-			if (split.length > 1 && !name.has_suffix(split[1])) {
+			if (split.length > 1 && !n.has_suffix(split[1])) {
 				// not needed..
 				continue;
 			}
@@ -213,7 +215,7 @@ public class Resources : Object
 	    var message = new Soup.Message ("GET",  item.src );
         session.queue_message (message, (sess, mess) => {
 			
-			if (item.target.contains('*')) {
+			if (item.target.contains("*")) {
 				// then it's a directory listing in JSON, and we need to add any new items to our list..
 				// it's used to fetch Editors (and maybe other stuff..)
 				this.parseDirectory((string) message.response_body.data,item.target );
@@ -222,7 +224,7 @@ public class Resources : Object
 			}
 			
 			
-			var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
+			var tfn = BuilderApplication.configDirectory() + "/resources/" + item.target;
 			
 			
 			// create parent directory if needed
