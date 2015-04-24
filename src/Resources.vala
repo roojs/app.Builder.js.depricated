@@ -22,7 +22,7 @@ public class Resources : Object
      static Resources singleton_val;
      
      string[] avail_files;
-     Gee.ArrayList<string,string> fetch_files;
+     Gee.HashMap<string,string> fetch_files;
      
      public static Resources singleton()
      {
@@ -37,7 +37,7 @@ public class Resources : Object
 	 {
 		 
 	   this.avail_files = { 
-		   "roodata.json",
+			"roodata.json",
 			"bootstrap.builder.html",
 			"roo.builder.html",
 			"roo.builder.js",
@@ -49,6 +49,7 @@ public class Resources : Object
 		};
 		this.fetch_files = new Gee.ArrayList<string>();
 		for (var i=0;i < avail_files.length; i++) {
+			
 			this.fetch_files.add(avail_files[i]);
 		}
 		
