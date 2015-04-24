@@ -27,6 +27,29 @@ public class ResourcesItem : Object {
 		this.cur_sha = "";
 		print("New ResourcesItem %s => %s\n", target ,src);
 	}
+	public update_cur_sha()
+	{
+		
+		var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
+		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
+			return;
+		}
+		GLib.FileUtils.get_data(tfn, out data);
+		
+		var  file = File.new_for_path (tfn);
+		 
+		var info = file.query_info(
+				 "standard::*",
+				FileQueryInfoFlags.NONE
+		);
+		 
+		this.size = info.get_size();
+		
+		var cs = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
+				"blob %d\0".printf(info.get_size()).data + data
+		);
+		sha1("blob " + filesize + "\0" + data)
+	
 	
 }
 
