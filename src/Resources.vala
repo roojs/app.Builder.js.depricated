@@ -27,14 +27,14 @@ public class ResourcesItem : Object {
 		this.update_cur_sha();
 		print("New ResourcesItem %s (%s) => %s\n", target , this.cur_sha ,src);
 	}
-	public update_cur_sha()
+	public void update_cur_sha()
 	{
 		
 		var tfn = BuilderApplication.configDirectory() + "/resources/" + target;
 		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
 			return;
 		}
-		
+		uint8[] data;
 		GLib.FileUtils.get_data(tfn, out data);
 		
 		var  file = File.new_for_path (tfn);
@@ -44,12 +44,12 @@ public class ResourcesItem : Object {
 				FileQueryInfoFlags.NONE
 		);
 		 
-		this.size = info.get_size();
+		 
 		// git method... blob %d\0...string...
 		this.cur_sha = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
-				"blob %d\0".printf(info.get_size()).data + data
+				"blob %d\0".printf((int)info.get_size()).data + data
 		);
- 	
+ 	}
 	
 }
 
@@ -143,10 +143,10 @@ public class Resources : Object
 		bool needsload = false;
 		string[] res = this.fetch_files;
 			
-		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
+		for (var i = 0; i <  this.fetch_files.size; i++ ) { 
 			
 			if (!FileUtils.test(
-				BuilderApplication.configDirectory() + "/resources/"  + this.fetch_files.get(i).target
+				BuilderApplication.configDirectory() + "/resources/"  + this.fetch_files.get(i).target,
 				FileTest.EXISTS
 				)) {
 				needsload = true;
@@ -190,7 +190,7 @@ public class Resources : Object
 	}
 	public bool files_has_target(string target)
 	{
-		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
+		for (var i = 0; i <  this.fetch_files.size; i++ ) { 
 			if (this.fetch_files.get(i).target == target) { 
 				return true;
 			}
