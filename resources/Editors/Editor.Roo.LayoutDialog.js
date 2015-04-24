@@ -336,28 +336,34 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        this.table = "XXX";
        this.firstTxtCol = "XXX";
       
+       var formHeight = 50;
        
        var jreader = {};
-       var  colmodel = [];
+       var  formElements = [];
        this.grid.dataSource.each(function(rec) {
            if (!rec.data.active) {
                return;
            }
            
+           var el = {
+               fieldLabel : rec.data.title,
+               name : rec.data.dataIndex,
+               width : 200, //row.type == 'string' ? 200 : 75,
+               '|xns' : 'Roo.form',
+               xtype : rec.data.ftype
+           }
+           
+           formElements.push(el);
+           
+           formHeight += rec.data.ftype == 'TextArea' ? 100 : 30;
            
            
-           colmodel.push({
-               "xtype": "ColumnModel",
-               "header": rec.data.title,
-               "width":  rec.data.width * 1,
-               "dataIndex": rec.data.dataIndex,
-               "|renderer": !rec.data.type.match(/date/i) ? 
-                       "function(v) { return String.format('{0}', v); }" :
-                       "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
-               "|xns": "Roo.grid",
-               "*prop": "cm[]"
-           });
        });
+       
+       
+       
+       
+       
        
         var frmCfg = 
        {
