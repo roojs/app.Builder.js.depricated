@@ -117,7 +117,7 @@ public class Resources : Object
 		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
 			
 			if (!FileUtils.test(
-				BuilderApplication.configDirectory() + "/resources/"  + res[i],
+				BuilderApplication.configDirectory() + "/resources/"  + this.fetch_files.get(i).target
 				FileTest.EXISTS
 				)) {
 				needsload = true;
