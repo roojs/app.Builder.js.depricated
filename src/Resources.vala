@@ -144,13 +144,25 @@ public class Resources : Object
 		for(var i = 0; i < node.get_length(); i++) {
 			var ob = node.get_object_element(i);
 			var n = ob.get_string_member("name");
-			var p = ob.get_string_member("path");
+			 
 			if (split.length > 1 && !name.has_suffix(split[1])) {
 				// not related..
 				continue;
 			}
+			if (this.files_has_target(split[0] + n)) {
+				continue;
+			}
+			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + split[0] + n;
+			this.fetch_files.add(new ResourcesItem(src, split[0] + n);
 			
 		}
+	}
+	public bool files_has_target(string target)
+	{
+		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
+			if (this.fetch_files.
+		
+	}
 	
 
 
