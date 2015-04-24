@@ -125,52 +125,53 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       },
 {
        editor : {
+        field : {
+         store : {
+          '|xns' : 'Roo.data',
+          data : [ 
+              [ 'O', "Open"],
+              [ 'C' , "Closed"],
+              [ 'A', "All"] 
+          ],
+          fields : [  'ftype', 'fname'],
+          xns : Roo.data,
+          xtype : 'SimpleStore'
+         },
+         '|xns' : 'Roo.form',
+         allowBlank : false,
+         displayField : 'fname',
+         editable : false,
+         fieldLabel : 'Status',
+         hiddenName : 'status',
+         listWidth : 200,
+         mode : 'local',
+         name : 'status',
+         triggerAction : 'all',
+         value : _this._strings['7fc56270e7a70fa81a5935b72eacbe29'],
+         valueField : 'ftype',
+         width : 150,
+         xns : Roo.form,
+         xtype : 'ComboBox',
+         listeners : {
+          render : function (_self)
+           {
+             _this.status = _self;
+           },
+          select : function (combo, record, index)
+           {
+               _this.grid.ds.load({});
+           }
+         },
+         items : [
+
+         ]
+
+        },
         '|xns' : 'Roo.grid',
         xns : Roo.grid,
         xtype : 'GridEditor',
         items : [
-         {
-          store : {
-           '|xns' : 'Roo.data',
-           data : [ 
-               [ 'O', "Open"],
-               [ 'C' , "Closed"],
-               [ 'A', "All"] 
-           ],
-           fields : [  'ftype', 'fname'],
-           xns : Roo.data,
-           xtype : 'SimpleStore'
-          },
-          '|xns' : 'Roo.form',
-          allowBlank : false,
-          displayField : 'fname',
-          editable : false,
-          fieldLabel : 'Status',
-          hiddenName : 'status',
-          listWidth : 200,
-          mode : 'local',
-          name : 'status',
-          triggerAction : 'all',
-          value : _this._strings['7fc56270e7a70fa81a5935b72eacbe29'],
-          valueField : 'ftype',
-          width : 150,
-          xns : Roo.form,
-          xtype : 'ComboBox',
-          listeners : {
-           render : function (_self)
-            {
-              _this.status = _self;
-            },
-           select : function (combo, record, index)
-            {
-                _this.grid.ds.load({});
-            }
-          },
-          items : [
 
-          ]
-
-         }
         ]
 
        },

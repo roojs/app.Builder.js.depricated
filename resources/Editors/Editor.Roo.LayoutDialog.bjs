@@ -149,6 +149,7 @@
            "$ xns" : "Roo.form",
            "mode" : "local",
            "name" : "status",
+           "* prop" : "field",
            "items" : [
             {
              "xtype" : "SimpleStore",
