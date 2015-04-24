@@ -17,9 +17,11 @@
 public class ResourcesItem : Object {
 	public string target;
 	public string src;
-	public ResourcesItem(string src, string target) }
+	public ResourcesItem(string src, string target) 
+	{
 		this.target = target;
 		this.src = src;
+		print("New ResourcesItem %s => %s\n", target ,src);
 	}
 	
 }
