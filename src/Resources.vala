@@ -111,7 +111,7 @@ public class Resources : Object
 		 
 		 
     
-     uint fetch_pos = 0;
+     int fetch_pos = 0;
      public void fetchStart()
      {
             if (this.fetch_pos > 0) { // only fetch one at a time...
@@ -135,14 +135,14 @@ public class Resources : Object
 			
 		}
          
-		this.fetchResourceFrom ( this.fetch_files[cur] );
+		this.fetchResourceFrom ( this.fetch_files.get(cur) );
 		 
 
 	 }
 	 public void checkResources()
 	 {
 		bool needsload = false;
-		string[] res = this.fetch_files;
+		 
 			
 		for (var i = 0; i <  this.fetch_files.size; i++ ) { 
 			
