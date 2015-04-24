@@ -24,6 +24,7 @@ public class ResourcesItem : Object {
 		this.target = target;
 		this.src = src;
 		this.new_sha = "";
+		this.cur_sha = "";
 		this.update_cur_sha();
 		print("New ResourcesItem %s (%s) => %s\n", target , this.cur_sha ,src);
 	}
