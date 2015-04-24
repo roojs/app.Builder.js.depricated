@@ -182,7 +182,9 @@ public class Resources : Object
 				continue;
 			}
 			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + split[0] + n;
-			this.fetch_files.add(new ResourcesItem(src, split[0] + n);
+			var add = new ResourcesItem(src, split[0] + n);
+			add.new_sha = ob.get_string_member("sha");
+			this.fetch_files.add(add);
 			
 		}
 	}
