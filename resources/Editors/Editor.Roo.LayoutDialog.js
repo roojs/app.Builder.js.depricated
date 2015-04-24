@@ -392,7 +392,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            },
            method : "POST",
            style : "margin:10px;",
-           "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
+           "|url" : "baseURL + '/Roo/" + this.table + "'",
            items : formElements
        };
        
