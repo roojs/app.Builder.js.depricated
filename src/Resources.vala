@@ -43,11 +43,12 @@ public class ResourcesItem : Object {
 				 "standard::*",
 				FileQueryInfoFlags.NONE
 		);
-		 
+		var csdata = new GLib.ByteArray.take("blob %s\0".printf(info.get_size().to_string()).data);
+		csdata.append(data);
 		 
 		// git method... blob %d\0...string...
 		this.cur_sha = GLib.Checksum.compute_for_data(GLib.ChecksumType.SHA1,
-				"blob %d\0".printf((int)info.get_size()).data + data
+				csdata.data
 		);
  	}
 	
@@ -76,7 +77,7 @@ public class Resources : Object
 	 public Resources ()
 	 {
 		 
-		var avail_files = { 
+		string[] avail_files = { 
 			"roodata.json",
 			"bootstrap.builder.html",
 			"roo.builder.html",
@@ -87,7 +88,7 @@ public class Resources : Object
 			"Editors/*.js"
 			//"Editors/Editor.Roo.grid.GridPanel.js"
 		};
-		this.fetch_files = new Gee.ArrayList<string>();
+		this.fetch_files = new Gee.ArrayList<ResourcesItem>();
 		for (var i=0;i < avail_files.length; i++) {
 			var target = avail_files[i];
 			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
@@ -96,8 +97,8 @@ public class Resources : Object
 				src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
 				//src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
 			}
-			if (target.contains('*')) {
-				var split = target.split('*');
+			if (target.contains("*")) {
+				var split = target.split("*");
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/" + split[0];
 			}
 			
@@ -134,7 +135,7 @@ public class Resources : Object
 			
 		}
          
-		this.fetchResourceFrom ( src, target );
+		this.fetchResourceFrom ( this.fetch_files[cur] );
 		 
 
 	 }
