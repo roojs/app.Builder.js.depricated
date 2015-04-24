@@ -79,8 +79,14 @@ public class Resources : Object
      }
 	 public Resources ()
 	 {
-		 
-		string[] avail_files = { 
+		this.initFiles();
+	}
+		
+		
+		
+	}	
+	void initFiles()
+	{	string[] avail_files = { 
 			"roodata.json",
 			"*",
 			"Editors/*.js"
@@ -102,16 +108,14 @@ public class Resources : Object
 			
 			this.fetch_files.add(new ResourcesItem(src,target, ""));
 		}
-		
-		
-		
-	}	
-		 
+	
+	}	 
 		 
     
      int fetch_pos = 0;
      public void fetchStart()
      {
+            this.initFiles();
             if (this.fetch_pos > 0) { // only fetch one at a time...
                 return;
             }
