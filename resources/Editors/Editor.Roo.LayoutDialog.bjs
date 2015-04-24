@@ -118,6 +118,22 @@
       {
        "xtype" : "ColumnModel",
        "width" : 75,
+       "header" : "Label",
+       "$ renderer" : "function(v) { return String.format('{0}', v); }",
+       "$ xns" : "Roo.grid",
+       "* prop" : "cm[]",
+       "dataIndex" : "title",
+       "items" : [
+        {
+         "xtype" : "GridEditor",
+         "$ xns" : "Roo.grid",
+         "* prop" : "editor"
+        }
+       ]
+      },
+      {
+       "xtype" : "ColumnModel",
+       "width" : 75,
        "header" : "Width",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",

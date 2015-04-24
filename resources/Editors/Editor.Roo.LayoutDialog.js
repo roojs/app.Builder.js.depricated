@@ -124,6 +124,24 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       },
 {
        editor : {
+        '|xns' : 'Roo.grid',
+        xns : Roo.grid,
+        xtype : 'GridEditor'
+       },
+       '|xns' : 'Roo.grid',
+       dataIndex : 'title',
+       header : _this._strings['b021df6aac4654c454f46c77646e745f'],
+       renderer : function(v) { return String.format('{0}', v); },
+       width : 75,
+       xns : Roo.grid,
+       xtype : 'ColumnModel',
+       items : [
+
+       ]
+
+      },
+{
+       editor : {
         field : {
          '|xns' : 'Roo.form',
          decimalPrecision : 0,
