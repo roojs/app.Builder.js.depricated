@@ -116,7 +116,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        dataIndex : 'title',
        header : _this._strings['b021df6aac4654c454f46c77646e745f'],
        renderer : function(v) { return String.format('{0}', v); },
-       width : 75,
+       width : 100,
        xns : Roo.grid,
        xtype : 'ColumnModel',
        items : [
