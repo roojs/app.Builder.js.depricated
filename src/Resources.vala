@@ -44,8 +44,16 @@ public class Resources : Object
 			"Gir.overides",
 			"RooUsage.txt",
 			"GtkUsage.txt",
+			"resources/Editors/*.js"
 			"Editors/Editor.Roo.grid.GridPanel.js"
 		};
+		this.fetch_files = new Gee.ArrayList<string>();
+		for (var i=0;i < avail_files.length; i++) {
+			this.fetch_files.add(avail_files[i]);
+		}
+		
+		
+		
 	}	
 		 
 		 
@@ -81,6 +89,11 @@ public class Resources : Object
 			src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
 			//src = "http://git.roojs.org/?p=roojs1;a=blob_plain;f=docs/json/roodata.json";
 		}
+
+		if (target.contains('*')) {
+			var split = target.split('*');
+			src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/Editors
+			
 
 		this.fetchResourceFrom ( src, target );
 		 
