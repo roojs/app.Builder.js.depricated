@@ -14,7 +14,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
   'c671c787b49f50a3ace9fdc5bd597825' :"core_enum",
   '32954654ac8fe66a1d09be19001de2d4' :"Width",
   'a1fa27779242b4902f7ae3bdd5c6d508' :"Type",
-  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid"
+  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid",
+  '7fc56270e7a70fa81a5935b72eacbe29' :"A"
  },
 
   part     :  ["Editors", "LayoutDialog" ],
@@ -126,7 +127,52 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        editor : {
         '|xns' : 'Roo.grid',
         xns : Roo.grid,
-        xtype : 'GridEditor'
+        xtype : 'GridEditor',
+        items : [
+         {
+          store : {
+           '|xns' : 'Roo.data',
+           data : [ 
+               [ 'O', "Open"],
+               [ 'C' , "Closed"],
+               [ 'A', "All"] 
+           ],
+           fields : [  'ftype', 'fname'],
+           xns : Roo.data,
+           xtype : 'SimpleStore'
+          },
+          '|xns' : 'Roo.form',
+          allowBlank : false,
+          displayField : 'fname',
+          editable : false,
+          fieldLabel : 'Status',
+          hiddenName : 'status',
+          listWidth : 200,
+          mode : 'local',
+          name : 'status',
+          triggerAction : 'all',
+          value : _this._strings['7fc56270e7a70fa81a5935b72eacbe29'],
+          valueField : 'ftype',
+          width : 150,
+          xns : Roo.form,
+          xtype : 'ComboBox',
+          listeners : {
+           render : function (_self)
+            {
+              _this.status = _self;
+            },
+           select : function (combo, record, index)
+            {
+                _this.grid.ds.load({});
+            }
+          },
+          items : [
+
+          ]
+
+         }
+        ]
+
        },
        '|xns' : 'Roo.grid',
        dataIndex : 'title',
