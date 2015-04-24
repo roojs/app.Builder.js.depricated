@@ -129,7 +129,23 @@ public class Resources : Object
 		this.fetchStart();
 	 }
 		 
-			
+	public void parseDirectory(string json, string target)
+	{
+		var pa = new Json.Parser();
+		pa.load_from_file(json);
+		var node = pa.get_root();
+		if (node.get_node_type () != Json.NodeType.ARRAY) {
+			return;
+			throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+		}
+		var obj = node.get_array ();
+		for(var i = 0; i < node.get_length(); i++) {
+			var ob = node.get_object_element(i);
+			var n = ob.get_string_member("name");
+			var p = ob.get_string_member("name");
+			// 
+		}
+	
 
 
     
@@ -146,6 +162,9 @@ public class Resources : Object
 			if (item.target.contains('*')) {
 				// then it's a directory listing in JSON, and we need to add any new items to our list..
 				// it's used to fetch Editors (and maybe other stuff..)
+				this.parseDirectory((string) message.response_body.data );
+				this.fetchNext();
+				return;
 			}
 			
 			
