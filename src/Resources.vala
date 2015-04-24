@@ -15,8 +15,8 @@
 */
 
 public class ResourcesItem : Object {
-	string target;
-	string src;
+	public string target;
+	public string src;
 	public ResourcesItem(string src, string target) }
 		this.target = target;
 		this.src = src;
@@ -133,7 +133,7 @@ public class Resources : Object
 
 
     
-    public void fetchResourceFrom(string src, string target)
+    public void fetchResourceFrom(ResourcesItem item)
     {
 		 
 		// fetch...
