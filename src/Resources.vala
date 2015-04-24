@@ -175,7 +175,7 @@ public class Resources : Object
 			var n = ob.get_string_member("name");
 			 
 			if (split.length > 1 && !name.has_suffix(split[1])) {
-				// not related..
+				// not needed..
 				continue;
 			}
 			if (this.files_has_target(split[0] + n)) {
