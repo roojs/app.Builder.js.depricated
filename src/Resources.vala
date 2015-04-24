@@ -49,13 +49,13 @@ public class Resources : Object
 		 
 		var avail_files = { 
 			"roodata.json",
-			"resources/bootstrap.builder.html",
-			"resources/roo.builder.html",
-			"resources/roo.builder.js",
-			"resources/Gir.overides",
-			"resources/RooUsage.txt",
-			"resources/GtkUsage.txt",
-			"resources/Editors/*.js"
+			"bootstrap.builder.html",
+			"roo.builder.html",
+			"roo.builder.js",
+			"Gir.overides",
+			"RooUsage.txt",
+			"GtkUsage.txt",
+			"Editors/*.js"
 			//"Editors/Editor.Roo.grid.GridPanel.js"
 		};
 		this.fetch_files = new Gee.ArrayList<string>();
@@ -112,9 +112,9 @@ public class Resources : Object
 	 public void checkResources()
 	 {
 		bool needsload = false;
-		string[] res = this.avail_files;
+		string[] res = this.fetch_files;
 			
-		for (var i = 0; i < res.length; i++ ) { 
+		for (var i = 0; i <  this.fetch_files.length; i++ ) { 
 			
 			if (!FileUtils.test(
 				BuilderApplication.configDirectory() + "/resources/"  + res[i],
