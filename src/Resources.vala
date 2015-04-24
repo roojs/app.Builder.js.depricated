@@ -61,7 +61,7 @@ public class Resources : Object
 		this.fetch_files = new Gee.ArrayList<string>();
 		for (var i=0;i < avail_files.length; i++) {
 			var target = avail_files[i];
-			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/" + target;
+			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + target;
 			 
 			if (target == "roodata.json") {
 				src = "https://raw.githubusercontent.com/roojs/roojs1/master/docs/json/roodata.json";
@@ -69,7 +69,7 @@ public class Resources : Object
 			}
 			if (target.contains('*')) {
 				var split = target.split('*');
-				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/" + split[0];
+				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/" + split[0];
 			}
 			
 			this.fetch_files.add(new ResourcesItem(src,target));
