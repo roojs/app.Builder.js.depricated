@@ -19,11 +19,11 @@ public class ResourcesItem : Object {
 	public string src;
 	public string new_sha;
 	public string cur_sha;
-	public ResourcesItem(string src, string target) 
+	public ResourcesItem(string src, string target, string new_sha) 
 	{
 		this.target = target;
 		this.src = src;
-		this.new_sha = "";
+		this.new_sha = new_sha;
 		this.cur_sha = "";
 		this.update_cur_sha();
 		print("New ResourcesItem %s (%s) => %s\n", target , this.cur_sha ,src);
@@ -34,7 +34,7 @@ public class ResourcesItem : Object {
 			return;
 		}
 		var tfn = BuilderApplication.configDirectory() + "/resources/" + this.target;
-		if (!GLib.FileUtils.test (GLib.Path.get_dirname(tfn), FileTest.IS_REGULAR)) {
+		if (!GLib.FileUtils.test (tfn, FileTest.IS_REGULAR)) {
 			return;
 		}
 		uint8[] data;
