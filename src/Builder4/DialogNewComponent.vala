@@ -198,6 +198,26 @@ public class Xcls_DialogNewComponent : Object
         } else {
             this.el.set_title("Create New File");
         }
+        
+         var ar = new Gee.ArrayList<string>();
+         _this.dbmodel.loadData(ar);
+        // load the modules... if relivant..
+        if (this.project.xtype == "Gtk") {
+            var p = (Project.Gtk)c.project;
+              var cg = p.compilegroups;
+    
+            var iter = cg.map_iterator();
+           while(iter.next()) {
+                var key = iter.get_key();
+                if (key == "_default_") {
+                    continue;
+                }
+                ar.add(key);
+            };
+            _this.dbmodel.loadData(ar);
+    
+        }
+        
          
         _this.file = c;
         //console.log('show all');
