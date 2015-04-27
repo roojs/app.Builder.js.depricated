@@ -204,13 +204,15 @@ namespace Palete {
 			return this.package_cache;
 		}
 		
-		public void  loadPackages()
+		public void  loadPackages(string dirname = "")
 		{
 
 			 
 			this.package_cache = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
-			var dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
+			if (dirname == "") {
+				dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
+			}
 			 
 			var dir = File.new_for_path(dirname);
 			try {
