@@ -176,6 +176,19 @@ public class Xcls_DialogNewComponent : Object
             if (_this.file.name.length  > 0 && _this.file.name != _this.name.el.get_text()) {
                 _this.file.renameTo(_this.name.el.get_text());
             }
+            // store the module...
+            _this.file.build_module = "";        
+            if (_this.build_module.el.get_active_iter (out iter)) {
+                 Value vfname;
+                 this.dbmodel.el.get_value (iter, 0, out vfname);
+                 if (((string)vfname).length > 0) {
+                     _this.file.build_module = (string)vfname;
+                 }
+        
+            }
+            
+            
+    
                                                         
     }
     public   void show (JsRender.JsRender c) 
