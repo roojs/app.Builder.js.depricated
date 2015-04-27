@@ -128,7 +128,8 @@ namespace Palete {
 			context.gir_directories = {};
 			this.report = new ValaSourceReport();;
 			context.report = this.report;
-		
+			
+			
 			context.basedir = Posix.realpath (".");
 		
 			context.directory = context.basedir;
@@ -151,6 +152,8 @@ namespace Palete {
 		               contents
 	    		);
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
+			
+			// add the modules...
 			
 			context.add_external_package ("glib-2.0");
 			context.add_external_package ("gobject-2.0");
