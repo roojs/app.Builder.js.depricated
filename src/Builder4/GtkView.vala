@@ -99,7 +99,9 @@ public class Xcls_GtkView : Object
             
             // set the container size min to 500/500 or 20 px less than max..
             w = int.max (w-20, 500);
-            h = int.max (h-20, 500);        
+            h = int.max (h-20, 500); 
+            
+            print("SET SIZES %d, %d", w,h);       
             _this.container.el.set_size_request(w,h);
             
             _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.
