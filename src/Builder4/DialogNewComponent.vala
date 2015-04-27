@@ -19,6 +19,8 @@ public class Xcls_DialogNewComponent : Object
     public Xcls_permname permname;
     public Xcls_modOrder modOrder;
     public Xcls_build_module build_module;
+    public Xcls_dbcellrenderer dbcellrenderer;
+    public Xcls_dbmodel dbmodel;
 
         // my vars (def)
     public signal void success (Project.Project pr, JsRender.JsRender file);
@@ -43,10 +45,10 @@ public class Xcls_DialogNewComponent : Object
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
-        var child_1 = new Xcls_Button18( _this );
+        var child_1 = new Xcls_Button20( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button19( _this );
+        var child_2 = new Xcls_Button21( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
@@ -616,11 +618,91 @@ public class Xcls_DialogNewComponent : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_dbcellrenderer( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , true );
+            var child_1 = new Xcls_dbmodel( _this );
+            child_1.ref();
+            this.el.set_model (  child_1.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Button18 : Object 
+    public class Xcls_dbcellrenderer : Object 
+    {
+        public Gtk.CellRendererText el;
+        private Xcls_DialogNewComponent  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_dbcellrenderer(Xcls_DialogNewComponent _owner )
+        {
+            _this = _owner;
+            _this.dbcellrenderer = this;
+            this.el = new Gtk.CellRendererText();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_dbmodel : Object 
+    {
+        public Gtk.ListStore el;
+        private Xcls_DialogNewComponent  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_dbmodel(Xcls_DialogNewComponent _owner )
+        {
+            _this = _owner;
+            _this.dbmodel = this;
+            this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+        public void loadData (Gee.ArrayList<string> data) {
+            this.el.clear();                                    
+            Gtk.TreeIter iter;
+            var el = this.el;
+            
+           /// el.append(out iter);
+            
+             
+           // el.set_value(iter, 0, "");
+           // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
+        
+            el.append(out iter);
+        
+            
+            el.set_value(iter, 0, "");
+            el.set_value(iter, 1, "-- select a table --");
+            
+            
+            for (var i = 0; i < data.size;i++) {
+            
+        
+                el.append(out iter);
+                
+                el.set_value(iter, 0, data.get(i));
+                el.set_value(iter, 1, data.get(i));
+                
+            }
+             this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
+                                             
+        }
+    }
+    public class Xcls_Button20 : Object 
     {
         public Gtk.Button el;
         private Xcls_DialogNewComponent  _this;
@@ -629,7 +711,7 @@ public class Xcls_DialogNewComponent : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button18(Xcls_DialogNewComponent _owner )
+        public Xcls_Button20(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -642,7 +724,7 @@ public class Xcls_DialogNewComponent : Object
 
         // user defined functions 
     }
-    public class Xcls_Button19 : Object 
+    public class Xcls_Button21 : Object 
     {
         public Gtk.Button el;
         private Xcls_DialogNewComponent  _this;
@@ -651,7 +733,7 @@ public class Xcls_DialogNewComponent : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button19(Xcls_DialogNewComponent _owner )
+        public Xcls_Button21(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
