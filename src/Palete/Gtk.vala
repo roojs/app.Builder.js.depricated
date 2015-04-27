@@ -29,6 +29,10 @@ namespace Palete {
 		    
 		    base();
 		    this.name = "Gtk";
+		    var context = new Vala.CodeContext ();
+			if (dirname == "") {
+				dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
+			}
 		    this.loadPackages();	 
 				//this.load();
 		    // various loader methods..
@@ -204,10 +208,10 @@ namespace Palete {
 			return this.package_cache;
 		}
 		
-		public void  loadPackages(string dirname = "")
+		public  Gee.ArrayList<string>  loadPackages(string dirname = "")
 		{
 
-			 
+			var ret = new  Gee.ArrayList<string>();
 			this.package_cache = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
 			if (dirname == "") {
@@ -225,11 +229,11 @@ namespace Palete {
 		         
 				FileInfo next_file; 
 				while ((next_file = file_enum.next_file(null)) != null) {
-			     		var fn = next_file.get_display_name();
+					var fn = next_file.get_display_name();
 					if (!Regex.match_simple("\\.vapi$", fn)) {
 						continue;
 					}
-		    			this.package_cache.add(Path.get_basename(fn).replace(".vapi", ""));
+					this.package_cache.add(Path.get_basename(fn).replace(".vapi", ""));
 				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the packages\n");
