@@ -275,6 +275,7 @@ namespace JsRender {
 			//ret.set_string_member("items", this.items);
 			ret.set_string_member("permname", this.permname  == null ? "" : this.permname);
 			ret.set_string_member("modOrder", this.modOrder  == null ? "" : this.modOrder);
+			ret.set_string_member("build_module", this.build_module  == null ? "" : this.build_module);
 			
 			if (this.transStrings.size > 0) {
 				var tr =  new Json.Object();
