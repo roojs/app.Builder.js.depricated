@@ -22,6 +22,8 @@ namespace JsRender {
 		public string region;  // RooJS - insert region.
         
 		public string title;  // a title.. ?? nickname.. ??? -
+		public string build_module; // module to build if we compile (or are running tests...)
+		
 
 		public string permname;
 		public string language;
