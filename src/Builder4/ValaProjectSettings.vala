@@ -1542,13 +1542,10 @@ public class ValaProjectSettings : Object
                 this.el.get_value(citer,0, out val);
                 var fn = (string) val;
                 
+                if ( Path.get_dirname (fn) == dname) {
                 
-                var active = false;
-                if (_this.set_vbox.cgroup.sources.contains(fn)) {
-                    active = true;
+                    this.el.set_value(citer, 3,   val ); // checked 
                 }
-                
-                this.el.set_value(citer, 3,   active ); // checked 
             }
         
         }
