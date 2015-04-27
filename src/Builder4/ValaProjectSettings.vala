@@ -1542,6 +1542,7 @@ public class ValaProjectSettings : Object
                 this.el.get_value(citer,0, out val);
                 var fn = (string) val;
                 
+                
                 var active = false;
                 if (_this.set_vbox.cgroup.sources.contains(fn)) {
                     active = true;
