@@ -1533,7 +1533,22 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void updateDir (string dname) {
+        public void updateDir (string dname, bool val) {
+        
+          for(var i =0 ; i < this.el.iter_n_children(null); i++) {
+                this.el.iter_nth_child(out citer,null,i);
+        
+                GLib.Value val;
+                this.el.get_value(citer,0, out val);
+                var fn = (string) val;
+                
+                var active = false;
+                if (_this.set_vbox.cgroup.sources.contains(fn)) {
+                    active = true;
+                }
+                
+                this.el.set_value(citer, 3,   active ); // checked 
+            }
         
         }
         public void load () {
