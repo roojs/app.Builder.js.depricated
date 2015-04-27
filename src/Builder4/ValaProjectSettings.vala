@@ -1582,6 +1582,12 @@ public class ValaProjectSettings : Object
             Gtk.TreeIter citer;
         
             for(var i =0 ; i < items.size; i++) {
+            
+                 var files = _this.project.files(items.get(i));
+                 if (files.size < 1) {
+                    continue;
+                 }
+            
                  this.el.append(out citer);   
                  
                 this.el.set_value(citer, 0,   items.get(i) ); // title 
@@ -1592,11 +1598,11 @@ public class ValaProjectSettings : Object
                 this.el.set_value(citer, 2,   "dir"); // type         
                 this.el.set_value(citer, 3,   false ); // checked 
         
-                var files = _this.project.files(items.get(i));
+               
                 
                  for(var j =0 ; j < files.size; j++) {
                     this.el.append(out citer);   
-                         print("ADD item %s", files.get(j));
+                     print("ADD item %s", files.get(j));
                     this.el.set_value(citer, 0,   files.get(j) ); // title 
                     this.el.set_value(citer, 1,   GLib.Markup.escape_text( Path.get_basename (files.get(j))) ); // title             
                     this.el.set_value(citer, 2,   "file"); // type         
