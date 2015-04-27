@@ -20,6 +20,7 @@ public class Xcls_GtkView : Object
     public Gtk.Widget lastObj;
     public int width;
     public JsRender.JsRender file;
+    public int height;
 
     // ctor 
     public Xcls_GtkView()
@@ -31,6 +32,7 @@ public class Xcls_GtkView : Object
         this.lastObj = null;
         this.width = 0;
         this.file = null;
+        this.height = 0;
 
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );

@@ -17,6 +17,7 @@
    "int width" : 0,
    "xtype" : "VPaned",
    "# JsRender.JsRender file" : "null",
+   "int height" : 0,
    "$ xns" : "Gtk",
    "items" : [
     {
