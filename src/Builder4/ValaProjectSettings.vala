@@ -1534,7 +1534,7 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
         public void updateDir (string dname, bool val) {
-        
+          var cg =   _this.set_vbox.cgroup;
           for(var i =0 ; i < this.el.iter_n_children(null); i++) {
                 this.el.iter_nth_child(out citer,null,i);
         
@@ -1545,6 +1545,17 @@ public class ValaProjectSettings : Object
                 if ( Path.get_dirname (fn) == dname) {
                 
                     this.el.set_value(citer, 3,   val ); // checked 
+                  
+             
+             
+                    if ((bool)val) {
+                        // renive
+                        cg.sources.remove(fn);
+                    } else {
+                        cg.sources.add(fn);
+                    }
+                    
+                    
                 }
             }
         
