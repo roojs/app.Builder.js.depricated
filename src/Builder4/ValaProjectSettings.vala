@@ -1771,7 +1771,7 @@ public class ValaProjectSettings : Object
                 // if ftype is a dir == then toggle all the bellow.
                 
                 if (ftype == "dir") {
-                    _this.files_tree_store.updateDir(fval,  ((bool) val) ? false :true);
+                    _this.files_tree_store.updateDir(fn,  ((bool) val) ? false :true);
                 }
                 
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
