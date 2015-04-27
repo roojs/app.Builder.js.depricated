@@ -189,7 +189,10 @@ namespace Project {
 					}
 					// any other valid types???
 	    			
-				}       
+				}
+				// add the cfiles to ret - if they do not have a vala...
+				
+				       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
 			}
