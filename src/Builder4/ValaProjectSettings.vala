@@ -1551,7 +1551,7 @@ public class ValaProjectSettings : Object
                    
              
              
-                    if (bval) {
+                    if (!bval) {
                         // renive
                         if (cg.sources.contains(fn)) {
                             cg.sources.remove(fn);
