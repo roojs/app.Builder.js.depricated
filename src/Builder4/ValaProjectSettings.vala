@@ -1753,7 +1753,7 @@ public class ValaProjectSettings : Object
                 // if ftype is a dir == then toggle all the bellow.
                 
                 if (ftype == "dir") {
-                    
+                    _this.update.firles_tree_store.updateDir(fval,  ((bool) val) ? false :true);
                 }
                 
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
