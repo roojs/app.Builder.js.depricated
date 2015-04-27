@@ -203,9 +203,16 @@ namespace Palete {
 			
 			
 		}
-		public Gee.ArrayList<string> packages()
+		public Gee.ArrayList<string> packages(Project.Gtk gproject)
 		{
-			return this.package_cache;
+			var vapidirs = gproject.vapidirs();
+			var ret =  new Gee.ArrayList<string>();
+			ret.add_all(this.package_cache);
+			for(var i = 0; i < vapidirs.length;i++) {
+				ret.add_all(this.loadPackages(vapidirs[i]));
+			}
+			
+			return ret;
 		}
 		
 		public  Gee.ArrayList<string>  loadPackages(string dirname)
