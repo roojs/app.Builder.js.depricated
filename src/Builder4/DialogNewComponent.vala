@@ -624,6 +624,10 @@ public class Xcls_DialogNewComponent : Object
             var child_1 = new Xcls_dbmodel( _this );
             child_1.ref();
             this.el.set_model (  child_1.el  );
+
+            // init method 
+
+            this.el.add_attribute(_this.dbcellrenderer.el , "markup", 1 );
         }
 
         // user defined functions 
