@@ -212,7 +212,7 @@ namespace Palete {
 		{
 
 			var ret = new  Gee.ArrayList<string>();
-			this.package_cache = new Gee.ArrayList<string>();
+			//this.package_cache = new Gee.ArrayList<string>();
 			var context = new Vala.CodeContext ();
 			if (dirname == "") {
 				dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
@@ -233,12 +233,12 @@ namespace Palete {
 					if (!Regex.match_simple("\\.vapi$", fn)) {
 						continue;
 					}
-					this.package_cache.add(Path.get_basename(fn).replace(".vapi", ""));
+					ret.add(Path.get_basename(fn).replace(".vapi", ""));
 				}       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the packages\n");
 			}
-			 
+			return ret;
 			
 			 
 		}
