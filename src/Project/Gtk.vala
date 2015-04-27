@@ -313,8 +313,8 @@ namespace Project {
 		public string[] vapidirs()
 		{
 			string[] ret = {};
-			for(var i =0; i< this.sources.size); i++) {
-				if (Path.get_basename (this.sources.get(j)) == "vapi") {
+			for(var i =0; i< this.sources.size; i++) {
+				if (Path.get_basename (this.sources.get(i)) == "vapi") {
 					ret[] += files.get(i);
 				}
 				
