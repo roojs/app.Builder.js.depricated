@@ -100,9 +100,9 @@ public class Xcls_GtkView : Object
             // set the container size min to 500/500 or 20 px less than max..
             w = int.max (w-20, 500);
             h = int.max (h-20, 500);        
-            _this.container.el.set_size_request((int)w,(int)h);
+            _this.container.el.set_size_request(w,h);
             
-            _this.view_layout.el.set_size(1000,1000); // should be baded on calc.. -- see update_scrolled.
+            _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.
             var rgba = Gdk.RGBA ();
             rgba.parse ("#ccc");
             _this.view_layout.el.override_background_color(Gtk.StateFlags.NORMAL, rgba);
