@@ -1576,6 +1576,9 @@ public class ValaProjectSettings : Object
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
         }
+        public return_type XXXX () {
+        
+        }
         public void update () {
         
         
