@@ -1548,7 +1548,7 @@ public class ValaProjectSettings : Object
                 if ( Path.get_dirname (fn) == dname) {
                 
                     this.el.set_value(citer, 3,   bval ); // checked 
-                  
+                   
              
              
                     if (bval) {
