@@ -92,9 +92,10 @@ public class Xcls_GtkView : Object
             // hide the compile view at present..
               
             
-            uint w,h;
+            var w = _this.el.get_allocated_width();
+            var h = _this.el.get_allocated_height();
             
-            _this.el.get_size(out w, out h);
+    
             
             // set the container size min to 500/500 or 20 px less than max..
             w = uint.max (w-20, 500);
