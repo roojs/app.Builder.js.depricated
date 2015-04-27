@@ -8,10 +8,17 @@
             "../Builder4/DialogNewComponent.vala",
             "../Builder4/About.vala",
             "../Builder4/ClutterFiles.vala",
-            "../Builder4",
             "../Builder4/DialogSaveModule.vala",
             "../Builder4/DialogSaveTemplate.vala",
-            "../Builder4/DialogTemplateSelect.vala"
+            "../Builder4/DialogTemplateSelect.vala",
+            "../Builder4/DialogPluginWebkit.c",
+            "../Builder4/DialogPluginWebkit.vala",
+            "../Builder4/Editor.vala",
+            "../Builder4/EditProject.vala",
+            "../Builder4/FakeServer.vala",
+            "../Builder4/GladeExtras.vala",
+            "../Builder4/GladeView.vala",
+            "../Builder4"
         ],
         "packages" : [
         ]
