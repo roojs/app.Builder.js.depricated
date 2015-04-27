@@ -690,7 +690,7 @@ public class Xcls_DialogNewComponent : Object
         
             
             el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "-- select a table --");
+            el.set_value(iter, 1, "-- select a module --");
             
             
             for (var i = 0; i < data.size;i++) {
