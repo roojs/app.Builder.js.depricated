@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/About.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "builder",
  "items" : [
   {
    "listeners" : {
