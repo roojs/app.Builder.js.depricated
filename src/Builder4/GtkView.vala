@@ -18,6 +18,7 @@ public class Xcls_GtkView : Object
 
         // my vars (def)
     public Gtk.Widget lastObj;
+    public int width;
     public JsRender.JsRender file;
 
     // ctor 
@@ -28,6 +29,7 @@ public class Xcls_GtkView : Object
 
         // my vars (dec)
         this.lastObj = null;
+        this.width = 0;
         this.file = null;
 
         // set gobject values
@@ -37,6 +39,13 @@ public class Xcls_GtkView : Object
         var child_1 = new Xcls_compile_view( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
+
+        // listeners 
+        this.el.size_allocate.connect( (aloc) => {
+        
+            this.width = aloc.width;
+            this.height =aloc.height;
+            });
     }
 
     // user defined functions 
