@@ -709,7 +709,7 @@ public class Xcls_DialogNewComponent : Object
         }
 
         // user defined functions 
-        public void loadData (Gee.ArrayList<string> data) {
+        public void loadData (Gee.ArrayList<string> data, string cur) {
             this.el.clear();                                    
             Gtk.TreeIter iter;
             var el = this.el;
@@ -725,7 +725,7 @@ public class Xcls_DialogNewComponent : Object
             
             el.set_value(iter, 0, "");
             el.set_value(iter, 1, "-- select a module --");
-            
+            el.set_active_iter(iter);
             
             for (var i = 0; i < data.size;i++) {
             
@@ -734,6 +734,10 @@ public class Xcls_DialogNewComponent : Object
                 
                 el.set_value(iter, 0, data.get(i));
                 el.set_value(iter, 1, data.get(i));
+                
+                if (data.get(i) == cur) {
+                    el.set_active_iter(iter);
+                }
                 
             }
              this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
