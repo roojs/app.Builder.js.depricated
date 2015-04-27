@@ -1735,6 +1735,11 @@ public class ValaProjectSettings : Object
                 // what's the sleected target?
                 // update the list..
                 // if ftype is a dir == then toggle all the bellow.
+                
+                if (ftype == "dir") {
+                    
+                }
+                
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
             
                  
