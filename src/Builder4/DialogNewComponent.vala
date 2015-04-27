@@ -287,7 +287,7 @@ public class Xcls_DialogNewComponent : Object
             this.el.attach_defaults (  child_12.el , 0,1,6,7 );
             var child_13 = new Xcls_ComboBox17( _this );
             child_13.ref();
-            this.el.add (  child_13.el  );
+            this.el.attach_defaults (  child_13.el , 1,2,6,7 );
             var child_14 = new Xcls_modOrder( _this );
             child_14.ref();
             this.el.attach_defaults (  child_14.el , 1,2,5,6 );

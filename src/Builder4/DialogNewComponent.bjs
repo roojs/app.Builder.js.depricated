@@ -152,7 +152,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "* pack" : "add",
+         "* pack" : "attach_defaults,1,2,6,7",
          "xtype" : "ComboBox",
          "$ xns" : "Gtk"
         },
