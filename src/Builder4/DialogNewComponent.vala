@@ -214,7 +214,7 @@ public class Xcls_DialogNewComponent : Object
         }
         
          var ar = new Gee.ArrayList<string>();
-         _this.dbmodel.loadData(ar);
+         _this.dbmodel.loadData(ar,"");
         // load the modules... if relivant..
         if (this.project.xtype == "Gtk") {
             var p = (Project.Gtk)c.project;
@@ -725,7 +725,7 @@ public class Xcls_DialogNewComponent : Object
             
             el.set_value(iter, 0, "");
             el.set_value(iter, 1, "-- select a module --");
-            el.set_active_iter(iter);
+            _this.build_module.el.set_active_iter(iter);
             
             for (var i = 0; i < data.size;i++) {
             
@@ -736,7 +736,7 @@ public class Xcls_DialogNewComponent : Object
                 el.set_value(iter, 1, data.get(i));
                 
                 if (data.get(i) == cur) {
-                    el.set_active_iter(iter);
+                    _this.build_module.el.set_active_iter(iter);
                 }
                 
             }
