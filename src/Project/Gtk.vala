@@ -184,7 +184,7 @@ namespace Project {
 							continue;
 						}
 						
-						ret.add(in_path + "/" + fn);
+						cfiles.add(in_path + "/" + fn);
 						continue;
 					}
 					// any other valid types???
