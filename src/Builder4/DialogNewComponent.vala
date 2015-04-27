@@ -228,7 +228,7 @@ public class Xcls_DialogNewComponent : Object
                 }
                 ar.add(key);
             };
-            _this.dbmodel.loadData(ar);
+            _this.dbmodel.loadData(ar, c.build_module);
     
         }
         
