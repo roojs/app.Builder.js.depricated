@@ -152,15 +152,9 @@
          "$ xns" : "Gtk"
         },
         {
+         "id" : "build_module",
          "* pack" : "attach_defaults,1,2,6,7",
          "xtype" : "ComboBox",
-         "$ xns" : "Gtk"
-        },
-        {
-         "id" : "modOrder",
-         "$ visible" : true,
-         "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,5,6",
          "$ xns" : "Gtk"
         }
        ]

@@ -18,7 +18,7 @@ public class Xcls_DialogNewComponent : Object
     public Xcls_parent parent;
     public Xcls_permname permname;
     public Xcls_modOrder modOrder;
-    public Xcls_modOrder modOrder;
+    public Xcls_build_module build_module;
 
         // my vars (def)
     public signal void success (Project.Project pr, JsRender.JsRender file);
@@ -43,10 +43,10 @@ public class Xcls_DialogNewComponent : Object
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
-        var child_1 = new Xcls_Button19( _this );
+        var child_1 = new Xcls_Button18( _this );
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button20( _this );
+        var child_2 = new Xcls_Button19( _this );
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
@@ -285,12 +285,9 @@ public class Xcls_DialogNewComponent : Object
             var child_12 = new Xcls_Label16( _this );
             child_12.ref();
             this.el.attach_defaults (  child_12.el , 0,1,6,7 );
-            var child_13 = new Xcls_ComboBox17( _this );
+            var child_13 = new Xcls_build_module( _this );
             child_13.ref();
             this.el.attach_defaults (  child_13.el , 1,2,6,7 );
-            var child_14 = new Xcls_modOrder( _this );
-            child_14.ref();
-            this.el.attach_defaults (  child_14.el , 1,2,5,6 );
         }
 
         // user defined functions 
@@ -601,7 +598,7 @@ public class Xcls_DialogNewComponent : Object
 
         // user defined functions 
     }
-    public class Xcls_ComboBox17 : Object 
+    public class Xcls_build_module : Object 
     {
         public Gtk.ComboBox el;
         private Xcls_DialogNewComponent  _this;
@@ -610,9 +607,10 @@ public class Xcls_DialogNewComponent : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ComboBox17(Xcls_DialogNewComponent _owner )
+        public Xcls_build_module(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
+            _this.build_module = this;
             this.el = new Gtk.ComboBox();
 
             // my vars (dec)
@@ -622,25 +620,24 @@ public class Xcls_DialogNewComponent : Object
 
         // user defined functions 
     }
-    public class Xcls_modOrder : Object 
+    public class Xcls_Button18 : Object 
     {
-        public Gtk.Entry el;
+        public Gtk.Button el;
         private Xcls_DialogNewComponent  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_modOrder(Xcls_DialogNewComponent _owner )
+        public Xcls_Button18(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
-            _this.modOrder = this;
-            this.el = new Gtk.Entry();
+            this.el = new Gtk.Button();
 
             // my vars (dec)
 
             // set gobject values
-            this.el.visible = true;
+            this.el.label = "Cancel";
         }
 
         // user defined functions 
@@ -655,28 +652,6 @@ public class Xcls_DialogNewComponent : Object
 
         // ctor 
         public Xcls_Button19(Xcls_DialogNewComponent _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Cancel";
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button20 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_DialogNewComponent  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button20(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
