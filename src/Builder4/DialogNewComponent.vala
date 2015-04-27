@@ -178,6 +178,7 @@ public class Xcls_DialogNewComponent : Object
             }
             // store the module...
             _this.file.build_module = "";        
+             Gtk.TreeIter iter; 
             if (_this.build_module.el.get_active_iter (out iter)) {
                  Value vfname;
                  this.dbmodel.el.get_value (iter, 0, out vfname);
