@@ -39,6 +39,7 @@ public class Xcls_ClutterFiles : Object
         // init method 
 
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+
         // listeners 
         this.el.scroll_event.connect( ( event) => {
            //Sprint("scroll event");
@@ -153,7 +154,8 @@ public class Xcls_ClutterFiles : Object
 
             this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
-            );        }
+            );
+        }
 
         // user defined functions 
     }
@@ -224,6 +226,7 @@ public class Xcls_ClutterFiles : Object
 
             this.file = file;
             this.el.set_size(100,100);
+
             // listeners 
             this.el.button_press_event.connect( (  event) => {
                 _this.open(this.file);
@@ -321,7 +324,8 @@ public class Xcls_ClutterFiles : Object
                 
                 
                 this.el.set_size(90, 70);
-            }        }
+            }
+        }
 
         // user defined functions 
     }
