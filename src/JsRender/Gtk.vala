@@ -97,24 +97,29 @@ namespace JsRender {
             //this.permname = obj.get_string_member("permname");
             this.title = obj.get_string_member("title");
             //this.modOrder = obj.get_string_member("modOrder");
+            
+            if (obj.has_member("build_module")) {
+				
+				this.build_module = obj.get_string_member("build_module");
+            }
              
             // load items[0] ??? into tree...
-	    var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
-	    bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
+			var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
+			bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
 
-	    if (obj.has_member("items") 
-			&& 
-			obj.get_member("items").get_node_type() == Json.NodeType.ARRAY
-			&&
-			obj.get_array_member("items").get_length() > 0
-		) {
-		    var ar = obj.get_array_member("items");
-		    var tree_base = ar.get_object_element(0);
-		    this.tree = new Node();
-		    this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
+			if (obj.has_member("items") 
+				&& 
+				obj.get_member("items").get_node_type() == Json.NodeType.ARRAY
+				&&
+				obj.get_array_member("items").get_length() > 0
+			) {
+				var ar = obj.get_array_member("items");
+				var tree_base = ar.get_object_element(0);
+				this.tree = new Node();
+				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
 
-	    }
-            
+			}
+				
             
         }
          
