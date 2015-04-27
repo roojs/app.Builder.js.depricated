@@ -1533,6 +1533,9 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
+        public void updateDir () {
+        
+        }
         public void load () {
          
               this.el.clear();
@@ -1575,9 +1578,6 @@ public class ValaProjectSettings : Object
             }
             this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
             
-        }
-        public return_type XXXX () {
-        
         }
         public void update () {
         
