@@ -152,6 +152,11 @@
          "$ xns" : "Gtk"
         },
         {
+         "* pack" : "add",
+         "xtype" : "ComboBox",
+         "$ xns" : "Gtk"
+        },
+        {
          "id" : "modOrder",
          "$ visible" : true,
          "xtype" : "Entry",
