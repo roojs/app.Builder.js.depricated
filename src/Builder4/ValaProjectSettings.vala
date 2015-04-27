@@ -1533,8 +1533,11 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void updateDir (string dname, bool val) {
-          var cg =   _this.set_vbox.cgroup;
+        public void updateDir (string dname, bool bval) {
+          
+          Gtk.TreeIter citer;
+        
+            var cg =   _this.set_vbox.cgroup;
           for(var i =0 ; i < this.el.iter_n_children(null); i++) {
                 this.el.iter_nth_child(out citer,null,i);
         
@@ -1544,15 +1547,19 @@ public class ValaProjectSettings : Object
                 
                 if ( Path.get_dirname (fn) == dname) {
                 
-                    this.el.set_value(citer, 3,   val ); // checked 
+                    this.el.set_value(citer, 3,   bval ); // checked 
                   
              
              
-                    if ((bool)val) {
+                    if (bval) {
                         // renive
-                        cg.sources.remove(fn);
+                        if (cg.sources.contains(fn)) {
+                            cg.sources.remove(fn);
+                        }
                     } else {
-                        cg.sources.add(fn);
+                        if (!cg.sources.contains(fn)) {
+                            cg.sources.add(fn);
+                        }
                     }
                     
                     
@@ -1764,7 +1771,7 @@ public class ValaProjectSettings : Object
                 // if ftype is a dir == then toggle all the bellow.
                 
                 if (ftype == "dir") {
-                    _this.update.files_tree_store.updateDir(fval,  ((bool) val) ? false :true);
+                    _this.files_tree_store.updateDir(fval,  ((bool) val) ? false :true);
                 }
                 
                 // if ftype is a file .. see if all the files in that directory are check and check the dir.
