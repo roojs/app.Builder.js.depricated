@@ -91,15 +91,12 @@ namespace JsRender {
 		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 	        }
             var obj = node.get_object ();
-            //this.modOrder = obj.get_string_member("modOrder");
+            
             this.name = obj.get_string_member("name");
             this.parent = obj.get_string_member("parent");
-            //this.permname = obj.get_string_member("permname");
             this.title = obj.get_string_member("title");
-            //this.modOrder = obj.get_string_member("modOrder");
             
-            if (obj.has_member("build_module")) {
-				
+            if (obj.has_member("build_module")) { // should check type really..
 				this.build_module = obj.get_string_member("build_module");
             }
              
