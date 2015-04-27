@@ -1533,7 +1533,7 @@ public class ValaProjectSettings : Object
         }
 
         // user defined functions 
-        public void updateDir () {
+        public void updateDir (string dname) {
         
         }
         public void load () {
