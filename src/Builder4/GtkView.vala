@@ -94,7 +94,7 @@ public class Xcls_GtkView : Object
             
             uint w,h;
             
-            _this.view_layout.el.get_size(out w, out h);
+            _this.el.get_size(out w, out h);
             
             // set the container size min to 500/500 or 20 px less than max..
             w = uint.max (w-20, 500);
