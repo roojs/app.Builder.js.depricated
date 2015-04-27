@@ -177,12 +177,6 @@ namespace Project {
 						
 						// if we have a vala file with the same name 
 						// then do not add it...
-						var vv = (new Regex("\\.c$")).replace(
-							fn, fn.length, 0, ".vala");
-							
-						if (ret.index_of(in_path + "/" + vv) > -1) {
-							continue;
-						}
 						
 						cfiles.add(in_path + "/" + fn);
 						continue;
@@ -191,7 +185,17 @@ namespace Project {
 	    			
 				}
 				// add the cfiles to ret - if they do not have a vala...
-				
+				for (var i = 0; i < cfiles.size; i ++) {
+					
+					var vv = (new Regex("\\.c$")).replace(	
+							cfiles.get(i), cfiles.get(i).length, 0, ".vala");
+							
+					if (ret.index_of( vv) > -1) {
+						continue;
+					}
+					ret.add(cfiles.get(i));
+				}
+						
 				       
    			} catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
@@ -305,6 +309,20 @@ namespace Project {
 			this.packages = this.readArray(el.get_array_member("packages"));
 			
 		}
+		
+		public string[] vapidirs()
+		{
+			string[] ret = {};
+			for(var i =0; i< this.sources.size); i++) {
+				if (Path.get_basename (this.sources.get(j)) == "vapi") {
+					ret[] += files.get(i);
+				}
+				
+			}
+			return ret;
+			
+		}
+		
 		public Gee.ArrayList<string> readArray(Json.Array ar) 
 		{
 			var ret = new Gee.ArrayList<string>();
