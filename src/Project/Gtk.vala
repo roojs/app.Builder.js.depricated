@@ -272,7 +272,23 @@ namespace Project {
 			return path;
 		}
 		
-		
+		public string[] vapidirs()
+		{
+			string[] ret = {};
+			for(var i =0; i< this.sources.size; i++) {
+				
+				var path = this.resolve_path(
+	                        this.resolve_path_combine_path(this.firstPath(),this.sources.get(i)));
+				
+				if (Path.get_basename (path) == "vapi") {
+					print("Adding VAPIDIR: %s\n", path);
+					ret += path;
+				}
+				
+			}
+			return ret;
+			
+		}
 			
 
 	}
@@ -310,18 +326,7 @@ namespace Project {
 			
 		}
 		
-		public string[] vapidirs()
-		{
-			string[] ret = {};
-			for(var i =0; i< this.sources.size; i++) {
-				if (Path.get_basename (this.sources.get(i)) == "vapi") {
-					ret[] += files.get(i);
-				}
-				
-			}
-			return ret;
-			
-		}
+		
 		
 		public Gee.ArrayList<string> readArray(Json.Array ar) 
 		{
