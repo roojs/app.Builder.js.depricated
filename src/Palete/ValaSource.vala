@@ -109,19 +109,20 @@ namespace Palete {
 			
 		}
 		
-	public Gee.HashMap<int,string> checkString(string contents)
-       {
+		public Gee.HashMap<int,string> checkString(string contents)
+        {
 			// init context:
-
+			
 			context = new Vala.CodeContext ();
 			Vala.CodeContext.push (context);
 		
 			context.experimental = false;
 			context.experimental_non_null = false;
-
+			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
+			vapidirs +=  "/usr/share/vala-0.24/vapi" ;
 
 			// or context.get_vapi_path("glib-2.0"); // should return path..
-			context.vapi_directories = { "/usr/share/vala-0.24/vapi" };
+			context.vapi_directories = vapidirs;
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
