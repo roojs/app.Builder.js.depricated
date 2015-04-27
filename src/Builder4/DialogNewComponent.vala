@@ -586,7 +586,7 @@ public class Xcls_DialogNewComponent : Object
         public Xcls_Label16(Xcls_DialogNewComponent _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Order (for tabs)" );
+            this.el = new Gtk.Label( "Module to build (Vala only)" );
 
             // my vars (dec)
 

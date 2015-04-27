@@ -142,7 +142,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "label" : "Order (for tabs)",
+         "label" : "Module to build (Vala only)",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,6,7",
