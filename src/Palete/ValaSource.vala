@@ -23,7 +23,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			if (source.file.filename != "~~~~~testfile.vala") {
-				print ("Other file: Got error error: %s\n", message);
+				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
 			var pre = "";
