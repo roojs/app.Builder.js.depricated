@@ -18,16 +18,15 @@ AM_PROG_VALAC([0.22.0])
 dnl we need to check these exist, then it will generate a compile string for them.
 
 PKG_CHECK_MODULES(BUILDER, [
+		 clutter-gtk-1.0 
 		 glib-2.0 >= 2.24.1
 		 gobject-2.0 >= 2.24.1
 		 gtk+-3.0 
 		 gtksourceview-3.0 
-		 libxml-2.0 
-		 json-glib-1.0 
+		 json-glib-1.0 		 
 		 gee-1.0 
 		 gobject-introspection-1.0 
-		 clutter-gtk-1.0 
-		 gladeui-2.0 
+		 libxml-2.0 
 		 libsoup-2.4
 		 libgda-5.0
 		  
