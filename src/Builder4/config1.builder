@@ -83,7 +83,7 @@
             "../Palete",
             "../Project",
             "../vapi",
-            "../../../../../../sr/share/vala/vapi"
+            "../../../../../../usr/share/vala/vapi"
         ],
         "packages" : [
             "gdk-3.0",
