@@ -156,7 +156,7 @@
                "$ xns" : "Gtk"
               },
               {
-               "utf8 title" : "name",
+               "utf8 title" : "Available Directory",
                "* init" : "\n this.el.add_attribute(_this.directory_render.el , \"text\", 0 );\n  ",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
@@ -215,12 +215,6 @@
            ]
           }
          ]
-        },
-        {
-         "xtype" : "Label",
-         "* pack" : "pack_start,false,false,0",
-         "$ xns" : "Gtk",
-         "utf8 label" : "Available Directories"
         }
        ]
       },
