@@ -104,8 +104,7 @@ if test $webkit_4_0_enabled = yes; then
         AC_DEFINE(HAVE_WEBKIT4,1,[webkit 4.0 support])
 else
         PKG_CHECK_MODULES(WEBKIT, [webkit2gtk-3.0],
-                [webkit_3_0_enabled=yes],
-                [webkit_3_0_enabled=no])
+                [webkit_3_0_enabled=yes] )
         AC_DEFINE(HAVE_WEBKIT3,1,[webkit 3.0 support])
        
 
@@ -119,15 +118,13 @@ dnl  -- javascriptcoregtk-4.0  ** not sure if this is needed....
 
 
 PKG_CHECK_MODULES(JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
-                [javascriptcoregtk_4_0_enabled=yes],
-                [javascriptcoregtk_4_0_enabled=no])
+                [javascriptcoregtk_4_0_enabled=yes] )
 
 if test $javascriptcoregtk_4_0_enabled = yes; then
         AC_DEFINE(HAVE_JAVASCRIPTCOREGTK4,1,[javascriptcoregtk 4.0 support])
 else
         PKG_CHECK_MODULES(JAVASCRIPTCOREGTK, [javascriptcoregtk-3.0],
-                [javascriptcoregtk_3_0_enabled=yes],
-                [javascriptcoregtk_3_0_enabled=no])
+                [javascriptcoregtk_3_0_enabled=yes] )
         AC_DEFINE(HAVE_JAVASCRIPTCOREGTK3,1,[javascriptcoregtk 3.0 support])
        
 
@@ -148,11 +145,14 @@ if test $vte_2_91_enabled = yes; then
         AC_DEFINE(HAVE_VTE_2_91,1,[libvte 2.91 support])
 else
         PKG_CHECK_MODULES(VTE, [vte-2.90],
-                [vte_2_90_enabled=yes])
+                [vte_2_90_enabled=yes]
+		)
         AC_DEFINE(HAVE_VTE_2_90,1,[libvte 2.90 support])
 fi
 
- 
+AM_CONDITIONAL(HAVE_VTE_2_90, test "$vte_2_90_enabled" = "yes")
+AM_CONDITIONAL(HAVE_VTE_2_91, test "$vte_2_91_enabled" = "yes")
+
 AC_CONFIG_FILES([
     Makefile
     src/Makefile
