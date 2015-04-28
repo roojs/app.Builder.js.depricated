@@ -151,6 +151,11 @@ namespace Palete {
                                 "~~~~~testfile.vala",
 		               contents
 	    		);
+	    	
+	    	// add all the files (except the current one) - this.file.path
+	    	
+	    	
+	    	
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
 			
 			// add the modules...
