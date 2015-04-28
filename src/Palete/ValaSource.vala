@@ -205,7 +205,15 @@ namespace Palete {
 						continue;
 					}
 					//print("Add source file %s\n", path);
+					
 					valac += " " + path;
+					
+					if (Regex.match_simple("\\.c$", path)) {
+						context.add_c_source_file(path);
+						continue;
+					}
+					
+					
 					var xsf = new Vala.SourceFile (
 						context,
 						Vala.SourceFileType.SOURCE, 
