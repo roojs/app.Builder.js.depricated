@@ -143,6 +143,9 @@ namespace Palete {
 			context.experimental_non_null = false;
 			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
 			// what's the current version of vala???
+			
+			print("buildversion? %s", Vala.Config.BUILD_VERSION);
+			
 			vapidirs +=  "/usr/share/vala-0.24/vapi" ;
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
