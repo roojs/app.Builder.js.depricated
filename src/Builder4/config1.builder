@@ -82,7 +82,8 @@
             "../JsRender",
             "../Palete",
             "../Project",
-            "../vapi"
+            "../vapi",
+            "../../../../../../sr/share/vala/vapi"
         ],
         "packages" : [
             "gdk-3.0",
