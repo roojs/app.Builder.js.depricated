@@ -142,8 +142,13 @@ namespace Palete {
 			context.experimental = false;
 			context.experimental_non_null = false;
 			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
+			// what's the current version of vala???
 			vapidirs +=  "/usr/share/vala-0.24/vapi" ;
-
+			
+			for(var i =0 ; i < vapidirs.length; i++) {
+				valac += " --vapidir
+				
+			
 			// or context.get_vapi_path("glib-2.0"); // should return path..
 			context.vapi_directories = vapidirs;
 			context.report.enable_warnings = true;
