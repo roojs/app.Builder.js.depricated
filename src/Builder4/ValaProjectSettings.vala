@@ -249,10 +249,10 @@ public class ValaProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_ScrolledWindow9( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , true,true,0 );
+            this.el.add (  child_0.el  );
             var child_1 = new Xcls_ScrolledWindow16( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
+            this.el.add (  child_1.el  );
         }
 
         // user defined functions 
