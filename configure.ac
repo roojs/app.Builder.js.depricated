@@ -58,8 +58,7 @@ else
 				AC_DEFINE(HAVE_LIBVALA24,1,[libvala 0.24 support])
 			else
 				PKG_CHECK_MODULES(LIBVALA, [libvala-0.22],
-					[vala_2_2_enabled=yes],
-					[vala_2_2_enabled=no])
+					[vala_2_2_enabled=yes] )
 					
 				AC_DEFINE(HAVE_LIBVALA22,1,[libvala 0.22 support])
 			fi
