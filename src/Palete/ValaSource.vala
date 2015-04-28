@@ -149,7 +149,8 @@ namespace Palete {
 			vapidirs +=  "/usr/share/vala-0.24/vapi" ;
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
-				valac += " --vapidir
+				valac += " --vapidir " + vapidirs[i];
+			}
 				
 			
 			// or context.get_vapi_path("glib-2.0"); // should return path..
@@ -218,7 +219,6 @@ namespace Palete {
 	    	for (var i = 0; i < dcg.packages.size; i++) {
 				valac += " --pkg " + dcg.packages.get(i);
 				context.add_external_package (dcg.packages.get(i));
-				
 			}
 	    	
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
