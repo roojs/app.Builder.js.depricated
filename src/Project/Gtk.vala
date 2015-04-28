@@ -218,7 +218,7 @@ namespace Project {
 			{
 				ret += "/";
 			}
-			print("combined path = %s",  ret + second);
+			//print("combined path = %s",  ret + second);
 			return ret + second;
 		}
 		public   string  resolve_path_times(string part, int times, string? clue = null)
