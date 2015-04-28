@@ -208,6 +208,7 @@ namespace Palete {
 			
 	    	var dcg = pr.compilegroups.get("_default_");
 	    	for (var i = 0; i < dcg.packages.size; i++) {
+				valac += " --pkg " + dcg.packages.get(i);
 				context.add_external_package (dcg.packages.get(i));
 				
 			}
@@ -251,6 +252,7 @@ namespace Palete {
 			
 			 
 			context.output = "/tmp/testbuild";
+			valac += " -o " +context.output;
 			context.codegen.emit (context);
 			
 			var ccompiler = new Vala.CCodeCompiler ();
@@ -259,7 +261,7 @@ namespace Palete {
 			ccompiler.compile (context, cc_command, new string[] { }, pkg_config_command);
 			
 			Vala.CodeContext.pop ();
-
+			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
 		}
