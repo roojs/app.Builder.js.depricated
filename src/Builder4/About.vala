@@ -35,6 +35,8 @@ public class About : Object
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
+            Gda.connect();
+           
         });
         this.el.response.connect( (rid) => {
             this.el.hide();
