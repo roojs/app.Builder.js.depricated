@@ -176,15 +176,12 @@ public class ValaProjectSettings : Object
             var child_3 = new Xcls_HBox9( _this );
             child_3.ref();
             this.el.pack_start (  child_3.el , true,true,0 );
-            var child_4 = new Xcls_ScrolledWindow10( _this );
+            var child_4 = new Xcls_Label17( _this );
             child_4.ref();
-            this.el.pack_start (  child_4.el , true,true,0 );
-            var child_5 = new Xcls_Label17( _this );
+            this.el.pack_start (  child_4.el , false,false,0 );
+            var child_5 = new Xcls_ScrolledWindow18( _this );
             child_5.ref();
-            this.el.pack_start (  child_5.el , false,false,0 );
-            var child_6 = new Xcls_ScrolledWindow18( _this );
-            child_6.ref();
-            this.el.pack_start (  child_6.el , true,true,0 );
+            this.el.pack_start (  child_5.el , true,true,0 );
         }
 
         // user defined functions 
@@ -280,6 +277,9 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_ScrolledWindow10( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , true,true,0 );
         }
 
         // user defined functions 

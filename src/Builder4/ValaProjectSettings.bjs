@@ -66,64 +66,66 @@
         {
          "* pack" : "pack_start,true,true,0",
          "xtype" : "HBox",
-         "$ xns" : "Gtk"
-        },
-        {
-         "* pack" : "pack_start,true,true,0",
-         "xtype" : "ScrolledWindow",
          "$ xns" : "Gtk",
          "items" : [
           {
-           "gboolean headers_visible" : false,
-           "* pack" : "add",
-           "xtype" : "TreeView",
-           "string id" : "default_packages_tree",
+           "* pack" : "pack_start,true,true,0",
+           "xtype" : "ScrolledWindow",
            "$ xns" : "Gtk",
            "items" : [
             {
-             "id" : "default_packages_tree_store",
-             "* pack" : "set_model",
-             "xtype" : "ListStore",
-             "$ n_columns" : 2,
-             "| void load" : "() {\n \n    var def = _this.project.compilegroups.get(\"_default_\");\n    var items  = def.packages;\n    \n    this.el.clear();\n    var pal = (Palete.Gtk) Palete.factory(\"Gtk\");\n    var pkgs = pal.packages(_this.project);\n    print(\"ValaProjectSettings:packages load %d\\n\", pkgs.size);\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < pkgs.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   pkgs.get(i) ); // title \n        this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
-             "$ columns" : "    typeof(string),  // 0 key type\n      typeof(bool)",
-             "$ xns" : "Gtk"
-            },
-            {
-             "utf8 title" : "name",
-             "* init" : " \n this.el.add_attribute(_this.packages_render.el , \"text\", 0 );\n  ",
-             "* pack" : "append_column",
-             "xtype" : "TreeViewColumn",
-             "gboolean resizable" : true,
-             "gboolean expand" : true,
+             "gboolean headers_visible" : false,
+             "* pack" : "add",
+             "xtype" : "TreeView",
+             "string id" : "default_packages_tree",
              "$ xns" : "Gtk",
              "items" : [
               {
-               "id" : "packages_render",
-               "* pack" : "pack_start,false",
-               "xtype" : "CellRendererText",
+               "id" : "default_packages_tree_store",
+               "* pack" : "set_model",
+               "xtype" : "ListStore",
+               "$ n_columns" : 2,
+               "| void load" : "() {\n \n    var def = _this.project.compilegroups.get(\"_default_\");\n    var items  = def.packages;\n    \n    this.el.clear();\n    var pal = (Palete.Gtk) Palete.factory(\"Gtk\");\n    var pkgs = pal.packages(_this.project);\n    print(\"ValaProjectSettings:packages load %d\\n\", pkgs.size);\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < pkgs.size; i++) {\n         this.el.append(out citer);   \n         \n        this.el.set_value(citer, 0,   pkgs.get(i) ); // title \n        this.el.set_value(citer, 1,   items.contains(pkgs.get(i)) );\n    }\n    this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n}\n",
+               "$ columns" : "    typeof(string),  // 0 key type\n      typeof(bool)",
                "$ xns" : "Gtk"
-              }
-             ]
-            },
-            {
-             "utf8 title" : "use",
-             "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 1 );\n }",
-             "* pack" : "append_column",
-             "xtype" : "TreeViewColumn",
-             "gboolean resizable" : false,
-             "$ xns" : "Gtk",
-             "gint fixed_width" : 50,
-             "items" : [
+              },
               {
-               "listeners" : {
-                "toggled" : "(  path_string) =>  { \n    var m = _this.default_packages_tree_store.el;\n   Gtk.TreeIter iter;\n   Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);\n   m.get_iter (out iter, path);\n   GLib.Value val;\n   m.get_value(iter, 1, out val);\n   m.set_value(iter, 1,  ((bool) val) ? false :true); \n     GLib.Value fval;  \n   m.get_value(iter, 0, out fval);\n   var fn = (string)fval;\n    \n    var def = _this.project.compilegroups.get(\"_default_\");\n    var items  = def.packages;\n    if ((bool)val) {\n        // renive\n        items.remove(fn);\n    } else {\n        items.add(fn);\n    }\n    \n}"
-               },
-               "id" : "packages_render_use",
-               "xtype" : "CellRendererToggle",
-               "* pack" : "pack_start,false",
+               "utf8 title" : "name",
+               "* init" : " \n this.el.add_attribute(_this.packages_render.el , \"text\", 0 );\n  ",
+               "* pack" : "append_column",
+               "xtype" : "TreeViewColumn",
+               "gboolean resizable" : true,
+               "gboolean expand" : true,
                "$ xns" : "Gtk",
-               "gboolean activatable" : true
+               "items" : [
+                {
+                 "id" : "packages_render",
+                 "* pack" : "pack_start,false",
+                 "xtype" : "CellRendererText",
+                 "$ xns" : "Gtk"
+                }
+               ]
+              },
+              {
+               "utf8 title" : "use",
+               "* init" : "{\n this.el.add_attribute(_this.packages_render_use.el , \"active\", 1 );\n }",
+               "* pack" : "append_column",
+               "xtype" : "TreeViewColumn",
+               "gboolean resizable" : false,
+               "$ xns" : "Gtk",
+               "gint fixed_width" : 50,
+               "items" : [
+                {
+                 "listeners" : {
+                  "toggled" : "(  path_string) =>  { \n    var m = _this.default_packages_tree_store.el;\n   Gtk.TreeIter iter;\n   Gtk.TreePath path = new Gtk.TreePath.from_string (path_string);\n   m.get_iter (out iter, path);\n   GLib.Value val;\n   m.get_value(iter, 1, out val);\n   m.set_value(iter, 1,  ((bool) val) ? false :true); \n     GLib.Value fval;  \n   m.get_value(iter, 0, out fval);\n   var fn = (string)fval;\n    \n    var def = _this.project.compilegroups.get(\"_default_\");\n    var items  = def.packages;\n    if ((bool)val) {\n        // renive\n        items.remove(fn);\n    } else {\n        items.add(fn);\n    }\n    \n}"
+                 },
+                 "id" : "packages_render_use",
+                 "xtype" : "CellRendererToggle",
+                 "* pack" : "pack_start,false",
+                 "$ xns" : "Gtk",
+                 "gboolean activatable" : true
+                }
+               ]
               }
              ]
             }
