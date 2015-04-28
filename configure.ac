@@ -36,6 +36,40 @@ PKG_CHECK_MODULES(BUILDER, [
 dnl --- libvala -- needs to find matching really..
 
 
+PKG_CHECK_MODULES(LIBVALA, [libvala-0.28],
+                [vala_2_8_enabled=yes],
+                [vala_2_8_enabled=no])
+                
+                
+
+if test $vala_2_8_enabled = yes; then
+        AC_DEFINE(HAVE_LIBVALA28,1,[libvala 0.28 support])
+else
+        PKG_CHECK_MODULES(LIBVALA, [libvala-0.26],
+                [vala_2_6_enabled=yes],
+                [vala_2_6_enabled=no])
+        
+        if test $vala_2_6_enabled = yes; then
+            AC_DEFINE(HAVE_LIBVALA26,1,[libvala 0.26 support])
+		else
+			 PKG_CHECK_MODULES(LIBVALA, [libvala-0.24],
+                [vala_2_4_enabled=yes],
+                [vala_2_4_enabled=no])
+                
+			if test $vala_2_4_enabled = yes; then
+				AC_DEFINE(HAVE_LIBVALA24,1,[libvala 0.24 support])
+			else
+				PKG_CHECK_MODULES(LIBVALA, [libvala-0.22],
+					[vala_2_2_enabled=yes],
+					[vala_2_2_enabled=no])
+					
+				AC_DEFINE(HAVE_LIBVALA24,1,[libvala 0.24 support])
+			fi
+		fi
+fi
+
+
+
 PKG_CHECK_MODULES(LIBVALA_0_28_X, libvala-0.28 > 0.26.0, have_libvala_0_28_x="yes", have_libvala_0_28_x="no")
 AM_CONDITIONAL(HAVE_LIBVALA_0_28_X, test "$have_libvala_0_28_x" = "yes")
 
@@ -64,8 +98,6 @@ else
                 [gda_4_0_enabled=yes],
                 [gda_4_0_enabled=no])
         AC_DEFINE(HAVE_GDA4,1,[libgda 4.0 support])
-       
-
 fi
 AM_CONDITIONAL(HAVE_GDA4, test "$gda_4_0_enabled" = "yes")
 AM_CONDITIONAL(HAVE_GDA5, test "$gda_5_0_enabled" = "yes")
