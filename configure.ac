@@ -53,17 +53,17 @@ dnl --- gda
 
 
 
-PKG_CHECK_MODULES(HAVE_GDA, [libgda-5.0],
+PKG_CHECK_MODULES(GDA, [libgda-5.0],
                 [gda_5_0_enabled=yes],
                 [gda_5_0_enabled=no])
 
 if test $gda_5_0_enabled = yes; then
-        AC_DEFINE(HAVE_GDA5,1,[libgda 5.0 support])
+        AC_DEFINE(GDA5,1,[libgda 5.0 support])
 else
-        PKG_CHECK_MODULES(HAVE_GDA, [libgda-4.0],
+        PKG_CHECK_MODULES(GDA, [libgda-4.0],
                 [gda_4_0_enabled=yes],
                 [gda_4_0_enabled=no])
-        AC_DEFINE(HAVE_GDA4,1,[libgda 4.0 support])
+        AC_DEFINE(GDA4,1,[libgda 4.0 support])
        
 
 fi
@@ -74,17 +74,17 @@ AM_CONDITIONAL(HAVE_GDA5, test "$gda_5_0_enabled" = "yes")
 dnl  -- webkit-4.0 
 
 
-PKG_CHECK_MODULES(HAVE_WEBKIT, [webkit2gtk-4.0],
+PKG_CHECK_MODULES(WEBKIT, [webkit2gtk-4.0],
                 [webkit_4_0_enabled=yes],
                 [webkit_4_0_enabled=no])
 
 if test $webkit_4_0_enabled = yes; then
-        AC_DEFINE(HAVE_WEBKIT4,1,[webkit 4.0 support])
+        AC_DEFINE(WEBKIT4,1,[webkit 4.0 support])
 else
-        PKG_CHECK_MODULES(HAVE_WEBKIT, [webkit2gtk-3.0],
+        PKG_CHECK_MODULES(WEBKIT, [webkit2gtk-3.0],
                 [webkit_3_0_enabled=yes],
                 [webkit_3_0_enabled=no])
-        AC_DEFINE(HAVE_WEBKIT3,1,[webkit 3.0 support])
+        AC_DEFINE(WEBKIT3,1,[webkit 3.0 support])
        
 
 fi
@@ -96,17 +96,17 @@ AM_CONDITIONAL(HAVE_WEBKIT4, test "$webkit_4_0_enabled" = "yes")
 dnl  -- javascriptcoregtk-4.0 
 
 
-PKG_CHECK_MODULES(HAVE_JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
+PKG_CHECK_MODULES(JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
                 [javascriptcoregtk_4_0_enabled=yes],
                 [javascriptcoregtk_4_0_enabled=no])
 
 if test $javascriptcoregtk_4_0_enabled = yes; then
-        AC_DEFINE(HAVE_JAVASCRIPTCOREGTK4,1,[javascriptcoregtk 4.0 support])
+        AC_DEFINE(JAVASCRIPTCOREGTK4,1,[javascriptcoregtk 4.0 support])
 else
-        PKG_CHECK_MODULES(HAVE_JAVASCRIPTCOREGTK, [javascriptcoregtk-3.0],
+        PKG_CHECK_MODULES(JAVASCRIPTCOREGTK, [javascriptcoregtk-3.0],
                 [javascriptcoregtk_3_0_enabled=yes],
                 [javascriptcoregtk_3_0_enabled=no])
-        AC_DEFINE(HAVE_JAVASCRIPTCOREGTK3,1,[javascriptcoregtk 3.0 support])
+        AC_DEFINE(JAVASCRIPTCOREGTK3,1,[javascriptcoregtk 3.0 support])
        
 
 fi
