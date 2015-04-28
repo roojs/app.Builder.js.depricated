@@ -356,9 +356,9 @@ namespace Palete
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			var ret = vs.checkFileWithNodePropChange(
 	           		node, 
-                   		property, 
-                 	        ptype,
-               			code
+					property, 
+					ptype,
+					code
                          );
 			return ret;
 		}
