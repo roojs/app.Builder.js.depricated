@@ -146,7 +146,7 @@ namespace Palete {
 			
 			print("buildversion? %s", Vala.Config.BUILD_VERSION);
 			
-			vapidirs +=  "/usr/share/vala-0.24/vapi" ;
+			vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
 				valac += " --vapidir " + vapidirs[i];
