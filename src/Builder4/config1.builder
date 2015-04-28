@@ -16,8 +16,6 @@
             "../Builder4/Editor.vala",
             "../Builder4/EditProject.vala",
             "../Builder4/FakeServer.vala",
-            "../Builder4/GladeExtras.vala",
-            "../Builder4/GladeView.vala",
             "../Builder4/GtkView.vala",
             "../Builder4/MainWindow.vala",
             "../Builder4/ProjectSettings.vala",
