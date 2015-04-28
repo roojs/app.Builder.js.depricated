@@ -163,6 +163,7 @@ namespace Palete {
 					if (path == this.file.path) {
 						continue;
 					}
+					print("Add source file %s\n", path);
 					var xsf = new Vala.SourceFile (
 						context,
 						Vala.SourceFileType.SOURCE, 
