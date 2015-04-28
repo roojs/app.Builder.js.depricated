@@ -71,6 +71,8 @@ AM_CONDITIONAL(HAVE_GDA4, test "$gda_4_0_enabled" = "yes")
 AM_CONDITIONAL(HAVE_GDA5, test "$gda_5_0_enabled" = "yes")
 
 
+dnl  -- webkit-4.0 
+
 
 PKG_CHECK_MODULES(HAVE_WEBKIT, [webkit2gtk-4.0],
                 [webkit_4_0_enabled=yes],
