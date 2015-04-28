@@ -67,6 +67,9 @@ public class Editor : Object
          
          var str = _this.buffer.toString();
          
+          
+         
+         
          if (!_this.buffer.checkSyntax()) {
              print("check syntax failed");
              //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
