@@ -57,7 +57,8 @@
             "../../src/Application.vala",
             "../../src/Main.vala",
             "../../src/Resources.vala",
-            "../../src"
+            "../../src",
+            "../c/jscore_object_call_as_function.c"
         ],
         "packages" : [
         ]
