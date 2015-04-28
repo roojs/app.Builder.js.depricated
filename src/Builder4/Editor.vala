@@ -333,9 +333,9 @@ public class Editor : Object
 
 
             // my vars (def)
+        public bool check_queued;
         public int error_line;
         public bool check_running;
-        public bool XXX;
 
         // ctor 
         public Xcls_buffer(Editor _owner )
@@ -345,9 +345,9 @@ public class Editor : Object
             this.el = new Gtk.SourceBuffer( null );
 
             // my vars (dec)
+            this.check_queued = false;
             this.error_line = -1;
             this.check_running = false;
-            this.XXX = true;
 
             // set gobject values
 
@@ -379,22 +379,8 @@ public class Editor : Object
         public   bool checkSyntax () {
          
             if (this.check_running) {
-                // then add a flag to say it's queued..
-                if (this.check_queued) {
-                    return;
-                }
-                
-                this.check_queued = true;
-                GLib.Timeout.add_seconds(1,  ()  =>{
-                    this.check_false = false;
-                     this.checkSyntax(); 
-                     return false; // cancel timeout..
-                 });
-                
-            
                 return true;
             }
-            
             this.check_running = true;
             var p = Palete.factory(_this.file.xtype);   
             

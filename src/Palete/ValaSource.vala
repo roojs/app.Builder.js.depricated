@@ -244,11 +244,16 @@ namespace Palete {
 				
 			}
 			
-			context.codegen = new GDBusServerModule ();
+			context.codegen = new Vala.GDBusServerModule ();
 			
 			 
 			context.output = "/tmp/testbuild";
 			context.codegen.emit (context);
+			
+			var ccompiler = new Vala.CCodeCompiler ();
+			var cc_command = Environment.get_variable ("CC");
+			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
+			ccompiler.compile (context, cc_command, new string[] { }, pkg_config_command);
 			
 			Vala.CodeContext.pop ();
 

@@ -157,7 +157,7 @@ public class Resources : Object
 			"roo.builder.js",
 			"roodata.json",
 			"RooUsage.txt"
-		}
+		};
 
 		for (var i = 0; i <  required.length; i++ ) { 
 			

@@ -21,11 +21,11 @@ endif
 
 
 if HAVE_GDA5
-builder_LIBGDA = --pkg libgda-5.0
+builder_GDA = --pkg libgda-5.0
 endif
 
 if HAVE_GDA4
-builder_LIBGDA = --pkg libgda-4.0
+builder_GDA = --pkg libgda-4.0
 endif
 
 
@@ -51,7 +51,7 @@ endif
  
 # - not sure if needed....  
 
-AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
+AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(GDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
 
 
 bin_PROGRAMS = builder4
@@ -71,7 +71,7 @@ builder4_PKGS = \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore \
 		$(builder_LIBVALA) \
-		$(builder_LIBGDA) \
+		$(builder_GDA) \
 		$(builder_WEBKKIT) \
 		$(builder_JAVASCRIPTCOREGTK) \
 		$(builder_VTE) \
@@ -131,7 +131,7 @@ builder4_SOURCES = \
 builder4_VALAFLAGS = \
 	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder4_PKGS)
 
-builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(VTE_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
+builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(GDA_LIBS) $(WEBKIT_LIBS) $(VTE_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
 
 
 
