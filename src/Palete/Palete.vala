@@ -324,12 +324,12 @@ namespace Palete
 
 	
 	  
-	public Gee.HashMap<int,string>  validateCode(
+	public async Gee.HashMap<int,string>  validateCode(
      			string code, 
-			string property, 
-             		string ptype,
-                        JsRender.JsRender file,
-             		JsRender.Node node
+				string property, 
+				string ptype,
+				JsRender.JsRender file,
+				JsRender.Node node
                      ) 
 	{   
 
@@ -354,7 +354,7 @@ namespace Palete
 			
 			var vs = new ValaSource(file);
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			var ret = vs.checkFileWithNodePropChange(
+			var ret = yield vs.checkFileWithNodePropChange(
 	           		node, 
 					property, 
 					ptype,
