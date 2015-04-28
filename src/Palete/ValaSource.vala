@@ -212,6 +212,8 @@ namespace Palete {
 						path
 					);
 					xsf.add_using_directive (ns_ref);
+					context.add_source_file(xsf);
+					
 				}
 			}
 			// default.. packages..
