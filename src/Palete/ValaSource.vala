@@ -192,6 +192,11 @@ namespace Palete {
 				for (var i = 0; i < cg.sources.size; i++) {
 					var path = pr.resolve_path(
 	                        pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
+	                        
+	                if (FileUtils.test(path, FileTest.EXISTS)) {
+						continue;
+					}       
+	                 
 					if (path == this.file.path.replace(".bjs", ".vala")) {
 						valac += " " + path;
 						continue;
