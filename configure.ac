@@ -140,14 +140,14 @@ AM_CONDITIONAL(HAVE_JAVASCRIPTCOREGTK4, test "$javascriptcoregtk_4_0_enabled" = 
 dnl --- vte -- fixme..
  
 
-PKG_CHECK_MODULES(HAVE_VTE, [vte-2.91],
+PKG_CHECK_MODULES(VTE, [vte-2.91],
                 [vte_2_91_enabled=yes],
                 [vte_2_91_enabled=no])
                 
 if test $vte_2_91_enabled = yes; then
         AC_DEFINE(HAVE_VTE_2_91,1,[libvte 2.91 support])
 else
-        PKG_CHECK_MODULES(HAVE_VTE, [vte-2.90],
+        PKG_CHECK_MODULES(VTE, [vte-2.90],
                 [vte_2_90_enabled=yes])
         AC_DEFINE(HAVE_VTE_2_90,1,[libvte 2.90 support])
 fi
