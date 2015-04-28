@@ -140,6 +140,9 @@ public class Resources : Object
 		 
 
 	 }
+	 /**
+	  *  called on start to check we have all the required files..
+	  */
 	 public void checkResources()
 	 {
 		bool needsload = false;
