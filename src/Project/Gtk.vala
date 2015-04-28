@@ -279,8 +279,7 @@ namespace Project {
 			var sources = this.compilegroups.get("_default_").sources;
 			for(var i =0; i< sources.size; i++) {
 				
-				var path = this.resolve_path(
-	                        this.resolve_path_combine_path(this.firstPath(),sources.get(i)));
+				var path = this.resolve_path( this.firstPath(), sources.get(i));
 				
 				if (Path.get_basename (path) == "vapi") {
 					print("Adding VAPIDIR: %s\n", path);
