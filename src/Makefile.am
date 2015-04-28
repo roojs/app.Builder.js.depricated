@@ -49,14 +49,17 @@ if HAVE_VTE_2_90
 builder_VTE =   --pkg  vte-2.90  
 endif
  
- 
-
+# - not sure if needed....  
 
 AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
 
-bin_PROGRAMS = builder
 
-builder_PKGS = \
+bin_PROGRAMS = builder4
+
+
+builder4_CFLAGS =  $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
+
+builder4_PKGS = \
 		--pkg glib-2.0  \
 		--pkg gobject-2.0  \
 		--pkg  gtk+-3.0 \
@@ -77,7 +80,7 @@ builder_PKGS = \
 		--pkg posix 
 
 
-builder_SOURCES = \
+builder4_SOURCES = \
 		Application.vala \
 		Main.vala \
 		JsRender/Gtk.vala \
@@ -127,10 +130,10 @@ builder_SOURCES = \
 		
 		
  
-builder_VALAFLAGS = \
+builder4_VALAFLAGS = \
 	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
 
-builder_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(WEBKIT_VTE) $(JAVASCRIPTCOREGTK_LIBS)
+builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(WEBKIT_VTE) $(JAVASCRIPTCOREGTK_LIBS)
 
 
 
