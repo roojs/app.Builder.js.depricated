@@ -30,10 +30,8 @@ namespace Palete {
 		    base();
 		    this.name = "Gtk";
 		    var context = new Vala.CodeContext ();
-			if (dirname == "") {
-				dirname =  Path.get_dirname (context.get_vapi_path("glib-2.0"));
-			}
-		    this.loadPackages();	 
+			 
+		    this.package_cache = this.loadPackages(Path.get_dirname (context.get_vapi_path("glib-2.0")));
 				//this.load();
 		    // various loader methods..
 		      //this.map = [];
@@ -209,7 +207,14 @@ namespace Palete {
 			var ret =  new Gee.ArrayList<string>();
 			ret.add_all(this.package_cache);
 			for(var i = 0; i < vapidirs.length;i++) {
-				ret.add_all(this.loadPackages(vapidirs[i]));
+				var add = this.loadPackages(vapidirs[i]);
+				for (var j=0; j < add.size; j++) {
+					if (ret.contains(add.get(j))) {
+						continue;
+					}
+					ret.add(add.get(j));
+				}
+				
 			}
 			
 			return ret;

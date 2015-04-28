@@ -82,9 +82,7 @@ public class Resources : Object
 		this.initFiles();
 	}
 		
-		
-		
-	}	
+		 
 	public void initFiles()
 	{	
 		string[] avail_files = { 

@@ -103,8 +103,8 @@ public class Xcls_GtkView : Object
             // hide the compile view at present..
               
             
-            var w = _this.el.get_allocated_width();
-            var h = _this.el.get_allocated_height();
+            var w = this.width;
+            var h = this.height;
             
             print("ALLOC SET SIZES %d, %d\n", w,h); 
             

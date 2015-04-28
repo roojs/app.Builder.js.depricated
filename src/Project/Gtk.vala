@@ -275,7 +275,7 @@ namespace Project {
 		public string[] vapidirs()
 		{
 			string[] ret = {};
-			var sources = this.compilegroups.get("_default_").sources
+			var sources = this.compilegroups.get("_default_").sources;
 			for(var i =0; i< sources.size; i++) {
 				
 				var path = this.resolve_path(
