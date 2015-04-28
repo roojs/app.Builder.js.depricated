@@ -152,7 +152,8 @@ namespace Palete {
 					"~~~~~testfile.vala",
 					contents
 	    		);
-	    	
+			source_file.add_using_directive (ns_ref);
+
 	    	// add all the files (except the current one) - this.file.path
 	    	var pr = ((Project.Gtk)this.file.project);
 	    	if (this.file.build_module.length > 0) {
@@ -176,16 +177,11 @@ namespace Palete {
 			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
 			// user defined ones..
+			
 	    	var dcg = pr.compilegroups.get("_default");
-	    	for (var i = 0; i < cg.sources.size; i++) {
-				 
-				print("Add source file %s\n", path);
-				var xsf = new Vala.SourceFile (
-					context,
-					Vala.SourceFileType.SOURCE, 
-					path
-				);
-				xsf.add_using_directive (ns_ref);
+	    	for (var i = 0; i < dcg.packages.size; i++) {
+				context.add_external_package (dcg.packages.get(i));
+				
 			}
 	    	
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
@@ -194,9 +190,8 @@ namespace Palete {
 			
 			
 			
-			context.add_external_package ("libvala-0.24");
+			//context.add_external_package ("libvala-0.24");
 			
-			source_file.add_using_directive (ns_ref);
 			context.root.add_using_directive (ns_ref);
 			context.add_source_file (source_file);
 
