@@ -134,6 +134,7 @@ namespace Palete {
 		public Gee.HashMap<int,string> checkString(string contents)
         {
 			// init context:
+			var valac = "valac " ;
 			
 			context = new Vala.CodeContext ();
 			Vala.CodeContext.push (context);
@@ -184,12 +185,14 @@ namespace Palete {
 					var path = pr.resolve_path(
 	                        pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
 					if (path == this.file.path) {
+						valac += " " + this.file.path;
 						continue;
 					}
 					if (FileUtils.test(path, FileTest.IS_DIR)) {
 						continue;
 					}
-					print("Add source file %s\n", path);
+					//print("Add source file %s\n", path);
+					valac += " " + this.file.path;
 					var xsf = new Vala.SourceFile (
 						context,
 						Vala.SourceFileType.SOURCE, 
