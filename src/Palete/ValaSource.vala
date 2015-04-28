@@ -67,7 +67,7 @@ namespace Palete {
 			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
 		}
 
-		async public Gee.HashMap<int,string> checkFileWithNodePropChange(
+		public async Gee.HashMap<int,string> checkFileWithNodePropChange(
 	                   JsRender.Node node, 
                            string prop,
                            string ptype,
