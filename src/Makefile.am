@@ -45,13 +45,13 @@ endif
 
 
 if HAVE_WEBKIT4
-builder_LIBGDA = --pkg javascriptcoregtk-4.0  --pkg  webkit2gtk-4.0  
+builder_WEBKKIT =   --pkg  webkit2gtk-4.0  
 AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT4_CFLAGS)
 LIBGDA_LIBS = $(WEBKIT4_LIBS)
 endif
 
 if HAVE_WEBKIT3
-builder_LIBGDA = --pkg javascriptcoregtk-3.0  --pkg  webkit2gtk-3.0  
+builder_WEBKKIT =   --pkg  webkit2gtk-3.0  
 AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT3_CFLAGS)
 LIBGDA_LIBS = $(WEBKIT3_LIBS)
 endif
@@ -73,6 +73,7 @@ builder_PKGS = \
  		--pkg javascriptcore \
 		$(builder_LIBVALA) \
 		$(builder_LIBGDA) \
+		$(builder_WEBKKIT) \
 		--pkg vte-2.90 \
 		--pkg posix 
 
