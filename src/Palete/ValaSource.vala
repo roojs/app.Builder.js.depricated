@@ -153,7 +153,8 @@ namespace Palete {
 					contents
 	    		);
 			source_file.add_using_directive (ns_ref);
-
+			context.add_source_file (source_file);
+			
 	    	// add all the files (except the current one) - this.file.path
 	    	var pr = ((Project.Gtk)this.file.project);
 	    	if (this.file.build_module.length > 0) {
@@ -193,7 +194,7 @@ namespace Palete {
 			//context.add_external_package ("libvala-0.24");
 			
 			context.root.add_using_directive (ns_ref);
-			context.add_source_file (source_file);
+			
 
 		
 			//add_documented_files (context, settings.source_files);
