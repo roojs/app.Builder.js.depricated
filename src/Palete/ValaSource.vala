@@ -111,10 +111,24 @@ namespace Palete {
 			
 		}
 		
-		public Gee.HashMap<int,string> checkStringThread(string contents)
+		async public Gee.HashMap<int,string> checkStringThread(string contents)
 		{
-			
-			
+			SourceFunc callback = checkStringThread.callback;
+			var ret = new Gee.HashMap<int,string>();
+			ThreadFunc<void*> run = () => {
+				// Perform a dummy slow calculation.
+				// (Insert real-life time-consuming algorithm here.)
+				 
+				// Pass back result and schedule callback
+				ret = this.checkString(contents);
+				Idle.add((owned) callback);
+				return null;
+			};
+			Thread.create<void*>(run, false);
+
+			// Wait for background thread to schedule our callback
+			yield;
+			return ret;
 		}
 		
 		
