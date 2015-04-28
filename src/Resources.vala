@@ -143,14 +143,23 @@ public class Resources : Object
 	 public void checkResources()
 	 {
 		bool needsload = false;
-		 
+		
+		// this has to check the required files, not the list...
+		string[] required =  {
+			"bootstrap.builder.html",
+			"Gir.overides",
+			"GtkUsage.txt",
+			"mailer.builder.html",
+			"roo.builder.html",
+			"roo.builder.js",
+			"roodata.json",
+			"RooUsage.txt"
+		}
+
+		for (var i = 0; i <  required.length; i++ ) { 
 			
-		for (var i = 0; i <  this.fetch_files.size; i++ ) { 
-			if (this.fetch_files.get(i).target.contains("*")) {
-				continue;
-			}
 			if (!FileUtils.test(
-				BuilderApplication.configDirectory() + "/resources/"  + this.fetch_files.get(i).target,
+				BuilderApplication.configDirectory() + "/resources/"  + required[i],
 				FileTest.EXISTS
 				)) {
 				needsload = true;
