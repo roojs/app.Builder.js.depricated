@@ -386,7 +386,7 @@ public class Editor : Object
                 GLib.Timeout.add_seconds(1,  ()  =>{
                     this.check_false = false;
                      this.checkSyntax(); 
-                     return true;
+                     return false; // cancel timeout..
                  });
                 
             
