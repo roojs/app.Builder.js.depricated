@@ -74,6 +74,25 @@ AM_CONDITIONAL(HAVE_GDA5, test "$gda_5_0_enabled" = "yes")
 
 
 
+PKG_CHECK_MODULES(HAVE_WEBKIT, [webkit2gtk-4.0],
+                [webkit_4_0_enabled=yes],
+                [webkit_4_0_enabled=no])
+
+if test $webkit_4_0_enabled = yes; then
+        AC_DEFINE(HAVE_WEBKIT4,1,[webkit 4.0 support])
+else
+        PKG_CHECK_MODULES(HAVE_WEBKIT, [webkit2gtk-3.0],
+                [webkit_3_0_enabled=yes],
+                [webkit_3_0_enabled=no])
+        AC_DEFINE(HAVE_WEBKIT3,1,[webkit 3.0 support])
+       
+
+fi
+AM_CONDITIONAL(HAVE_WEBKIT3, test "$webkit_3_0_enabled" = "yes")
+AM_CONDITIONAL(HAVE_WEBKIT4, test "$webkit_4_0_enabled" = "yes")
+
+
+
 
 dnl --- vte -- fixme..
  
