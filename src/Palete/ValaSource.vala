@@ -116,8 +116,6 @@ namespace Palete {
 			SourceFunc callback = checkStringThread.callback;
 			var ret = new Gee.HashMap<int,string>();
 			ThreadFunc<void*> run = () => {
-				// Perform a dummy slow calculation.
-				// (Insert real-life time-consuming algorithm here.)
 				 
 				// Pass back result and schedule callback
 				ret = this.checkString(contents);
