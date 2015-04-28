@@ -32,7 +32,7 @@ namespace Palete {
 				
 			}
 			line_errors.set(source.begin.line, pre +  message);
-			print ("Test file: Got error error: %s\n", message);
+			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		public void dump()
 		{
