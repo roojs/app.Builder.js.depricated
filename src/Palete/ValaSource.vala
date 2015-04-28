@@ -163,6 +163,9 @@ namespace Palete {
 					if (path == this.file.path) {
 						continue;
 					}
+					if (FileUtils.test(path, FileTest.IS_DIR)) {
+						continue;
+					}
 					print("Add source file %s\n", path);
 					var xsf = new Vala.SourceFile (
 						context,
@@ -177,7 +180,7 @@ namespace Palete {
 			context.add_external_package ("gobject-2.0");
 			// user defined ones..
 			
-	    	var dcg = pr.compilegroups.get("_default");
+	    	var dcg = pr.compilegroups.get("_default_");
 	    	for (var i = 0; i < dcg.packages.size; i++) {
 				context.add_external_package (dcg.packages.get(i));
 				
