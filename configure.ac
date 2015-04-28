@@ -91,6 +91,27 @@ AM_CONDITIONAL(HAVE_WEBKIT4, test "$webkit_4_0_enabled" = "yes")
 
 
 
+javascriptcoregtk-4.0 
+
+
+PKG_CHECK_MODULES(HAVE_JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
+                [javascriptcoregtk_4_0_enabled=yes],
+                [javascriptcoregtk_4_0_enabled=no])
+
+if test $javascriptcoregtk_4_0_enabled = yes; then
+        AC_DEFINE(HAVE_JAVASCRIPTCOREGTK4,1,[javascriptcoregtk 4.0 support])
+else
+        PKG_CHECK_MODULES(HAVE_JAVASCRIPTCOREGTK, [javascriptcoregtk-3.0],
+                [javascriptcoregtk_3_0_enabled=yes],
+                [javascriptcoregtk_3_0_enabled=no])
+        AC_DEFINE(HAVE_JAVASCRIPTCOREGTK3,1,[javascriptcoregtk 3.0 support])
+       
+
+fi
+AM_CONDITIONAL(HAVE_JAVASCRIPTCOREGTK3, test "$javascriptcoregtk_3_0_enabled" = "yes")
+AM_CONDITIONAL(HAVE_JAVASCRIPTCOREGTK4, test "$javascriptcoregtk_4_0_enabled" = "yes")
+
+
 
 dnl --- vte -- fixme..
  
