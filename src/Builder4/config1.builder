@@ -93,7 +93,8 @@
             "gtksourceview-3.0",
             "atk",
             "atspi-2",
-            "avahi-client"
+            "avahi-client",
+            "libgda-5.0"
         ]
     }
 ]
