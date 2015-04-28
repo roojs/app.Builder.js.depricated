@@ -90,7 +90,7 @@
                "$ xns" : "Gtk"
               },
               {
-               "utf8 title" : "name",
+               "utf8 title" : "package name",
                "* init" : " \n this.el.add_attribute(_this.packages_render.el , \"text\", 0 );\n  ",
                "* pack" : "append_column",
                "xtype" : "TreeViewColumn",
