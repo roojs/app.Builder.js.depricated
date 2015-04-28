@@ -68,8 +68,12 @@ else
 		fi
 fi
 
+AM_CONDITIONAL(HAVE_LIBVALA28, test "$vala_2_8_enabled" = "yes")
+AM_CONDITIONAL(HAVE_LIBVALA26, test "$vala_2_6_enabled" = "yes")
+AM_CONDITIONAL(HAVE_LIBVALA24, test "$vala_2_4_enabled" = "yes")
+AM_CONDITIONAL(HAVE_LIBVALA22, test "$vala_2_2_enabled" = "yes")
 
-  
+ 
 
 dnl --- gda
 
