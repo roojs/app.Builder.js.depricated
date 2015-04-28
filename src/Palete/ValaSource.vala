@@ -144,16 +144,33 @@ namespace Palete {
 			//if (reporter.errors > 0) {
 			//	return context;
 			//}
-
+			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
+			
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-                                "~~~~~testfile.vala",
-		               contents
+					"~~~~~testfile.vala",
+					contents
 	    		);
 	    	
 	    	// add all the files (except the current one) - this.file.path
-	    	
+	    	var pr = ((Project.Gtk)this.file.project);
+	    	if (this.file.build_module.length > 0) {
+				var cg =  pr.compilegroups.get(this.file.build_module);
+				for (var i = 0; i < cg.sources.size; i++) {
+					var path = pr.resolve_path(
+	                        pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
+					if (path == this.file.path) {
+						continue;
+					}
+					var xsf = new Vala.SourceFile (
+						context,
+						Vala.SourceFileType.SOURCE, 
+						path
+					);
+					xsf.add_using_directive (ns_ref);
+				}
+			}
 	    	
 	    	
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
@@ -163,7 +180,7 @@ namespace Palete {
 			context.add_external_package ("glib-2.0");
 			context.add_external_package ("gobject-2.0");
 			context.add_external_package ("libvala-0.24");
-			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
+			
 			source_file.add_using_directive (ns_ref);
 			context.root.add_using_directive (ns_ref);
 			context.add_source_file (source_file);
