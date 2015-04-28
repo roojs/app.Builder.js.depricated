@@ -137,15 +137,11 @@ namespace Palete {
 
 			// add default packages:
 			//if (settings.profile == "gobject-2.0" || settings.profile == "gobject" || settings.profile == null) {
-				context.profile = Vala.Profile.GOBJECT;
-			//	context.add_define ("GOBJECT");
-			//}
-			//add_depencies (context, settings.packages);
-			//if (reporter.errors > 0) {
-			//	return context;
-			//}
+			context.profile = Vala.Profile.GOBJECT;
+ 			 
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
-			
+			context.root.add_using_directive (ns_ref);
+
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
@@ -193,7 +189,6 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			context.root.add_using_directive (ns_ref);
 			
 
 		
