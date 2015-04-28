@@ -384,6 +384,7 @@ public class Editor : Object
                 
                 this.check_queued = true;
                 GLib.Timeout.add_seconds(1,  ()  =>{
+                    this.check_false = false;
                      this.checkSyntax(); 
                      return true;
                  });
@@ -391,7 +392,7 @@ public class Editor : Object
             
                 return true;
             }
-            this.check_queued = false;
+            
             this.check_running = true;
             var p = Palete.factory(_this.file.xtype);   
             
