@@ -377,8 +377,21 @@ public class Editor : Object
         public   bool checkSyntax () {
          
             if (this.check_running) {
+                // then add a flag to say it's queued..
+                if (this.check_queued) {
+                    return;
+                }
+                
+                this.check_queued = true;
+                GLib.Timeout.add_seconds(1,  ()  =>{
+                     this.checkSyntax(); 
+                     return true;
+                 });
+                
+            
                 return true;
             }
+            this.check_queued = false;
             this.check_running = true;
             var p = Palete.factory(_this.file.xtype);   
             
@@ -403,13 +416,13 @@ public class Editor : Object
                 _this.ptype,
                 _this.file,
                 _this.node,
-                (obj, validate_res) => {
+                (obj, res) => {
                     this.check_running = false;
-                    
+                    var validate_res = p.validateCode.end(res);
                     this.error_line = validate_res.size;
         
                     if (this.error_line < 1) {
-                          return true;
+                          return;
                     }
                     var tlines = this.el.get_line_count ();
                     Gtk.TextIter iter;
