@@ -359,7 +359,7 @@ namespace Palete
 					property, 
 					ptype,
 					code
-                         );
+			 );
 			return ret;
 		}
 		var ret = new Gee.HashMap<int,string>();
