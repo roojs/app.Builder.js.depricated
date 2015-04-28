@@ -85,8 +85,7 @@ if test $gda_5_0_enabled = yes; then
         AC_DEFINE(HAVE_GDA5,1,[libgda 5.0 support])
 else
         PKG_CHECK_MODULES(GDA, [libgda-4.0],
-                [gda_4_0_enabled=yes],
-                [gda_4_0_enabled=no])
+                [gda_4_0_enabled=yes] )
         AC_DEFINE(HAVE_GDA4,1,[libgda 4.0 support])
 fi
 AM_CONDITIONAL(HAVE_GDA4, test "$gda_4_0_enabled" = "yes")
@@ -118,7 +117,8 @@ dnl  -- javascriptcoregtk-4.0  ** not sure if this is needed....
 
 
 PKG_CHECK_MODULES(JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
-                [javascriptcoregtk_4_0_enabled=yes] )
+                [javascriptcoregtk_4_0_enabled=yes],
+                [javascriptcoregtk_4_0_enabled=no])
 
 if test $javascriptcoregtk_4_0_enabled = yes; then
         AC_DEFINE(HAVE_JAVASCRIPTCOREGTK4,1,[javascriptcoregtk 4.0 support])
