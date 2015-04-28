@@ -115,11 +115,14 @@ namespace Project {
 			var basename = this.firstPath();
 			// eg. base = /home/xxx/fred/blogs
 			// target = /home/xxx/fred/jones
+			
+			// this does not work correctly...
 			var bb = basename;
 			var prefix = "";
 			while (true) {
 				if (    bb.length < target.length &&
 					target.substring(0, bb.length) == bb) {
+					
 					return prefix + target.substring(bb.length +1);
 				}
 				if (bb.length < 1) {
