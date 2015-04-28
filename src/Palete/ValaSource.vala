@@ -67,7 +67,7 @@ namespace Palete {
 			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
 		}
 
-		public Gee.HashMap<int,string> checkFileWithNodePropChange(
+		async public Gee.HashMap<int,string> checkFileWithNodePropChange(
 	                   JsRender.Node node, 
                            string prop,
                            string ptype,
@@ -95,7 +95,7 @@ namespace Palete {
 			}
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.checkString(tmpstring);
+			yield this.checkStringThread(tmpstring);
 			hash.set(prop, old);
 			// modify report
 			
@@ -111,7 +111,7 @@ namespace Palete {
 			
 		}
 		
-		async public Gee.HashMap<int,string> checkStringThread(string contents)
+		public async  Gee.HashMap<int,string> checkStringThread(string contents)
 		{
 			SourceFunc callback = checkStringThread.callback;
 			var ret = new Gee.HashMap<int,string>();
