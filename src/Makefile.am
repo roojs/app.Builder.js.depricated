@@ -40,10 +40,19 @@ if HAVE_WEBKIT3
 builder_WEBKKIT =   --pkg  webkit2gtk-3.0  
 endif
 
+# vte
+ 
+if HAVE_VTE_2_91
+builder_VTE =   --pkg  vte-2.91  
+endif
+if HAVE_VTE_2_90
+builder_VTE =   --pkg  vte-2.90  
+endif
+ 
  
 
 
-AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS)
+AM_CPPFLAGS = $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
 
 bin_PROGRAMS = builder
 
@@ -64,7 +73,7 @@ builder_PKGS = \
 		$(builder_LIBGDA) \
 		$(builder_WEBKKIT) \
 		$(builder_JAVASCRIPTCOREGTK) \
-		--pkg vte-2.90 \
+		$(builder_VTE) \
 		--pkg posix 
 
 
@@ -121,7 +130,7 @@ builder_SOURCES = \
 builder_VALAFLAGS = \
 	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
 
-builder_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
+builder_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(WEBKIT_VTE) $(JAVASCRIPTCOREGTK_LIBS)
 
 
 
