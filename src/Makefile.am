@@ -59,6 +59,8 @@ bin_PROGRAMS = builder4
 
 builder4_CFLAGS =  $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(LIBGDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
 
+builder4_LIBS = $(BUILDER_LIBS);
+ 
 builder4_PKGS = \
 		--pkg glib-2.0  \
 		--pkg gobject-2.0  \
@@ -131,7 +133,7 @@ builder4_SOURCES = \
 		
  
 builder4_VALAFLAGS = \
-	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder_PKGS)
+	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder4_PKGS)
 
 builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(LIBGDA_LIBS) $(WEBKIT_LIBS) $(WEBKIT_VTE) $(JAVASCRIPTCOREGTK_LIBS)
 
