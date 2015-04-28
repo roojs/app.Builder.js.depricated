@@ -144,8 +144,7 @@ namespace Palete {
 			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
 			// what's the current version of vala???
 			
-			print("buildversion? %s", Vala.Config.BUILD_VERSION);
-			
+ 			
 			vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
