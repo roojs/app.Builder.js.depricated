@@ -91,7 +91,7 @@ AM_CONDITIONAL(HAVE_WEBKIT4, test "$webkit_4_0_enabled" = "yes")
 
 
 
-javascriptcoregtk-4.0 
+dnl  -- javascriptcoregtk-4.0 
 
 
 PKG_CHECK_MODULES(HAVE_JAVASCRIPTCOREGTK, [javascriptcoregtk-4.0],
