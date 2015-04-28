@@ -4,7 +4,6 @@
         "compile_flags" : "",
         "target_bin" : "/tmp/builder",
         "sources" : [
-            "../Builder4/DialogPluginWebkit.c",
             "../Builder4/About.vala",
             "../Builder4/ClutterFiles.vala",
             "../Builder4/DialogConfirm.vala",
@@ -44,7 +43,6 @@
             "../Palete/Gir.vala",
             "../Palete/Gtk.vala",
             "../Palete/Javascript.vala",
-            "../Palete/jscore_object_call_as_function.c",
             "../Palete/Palete.vala",
             "../Palete/RooDatabase.vala",
             "../Palete/Roo.vala",
