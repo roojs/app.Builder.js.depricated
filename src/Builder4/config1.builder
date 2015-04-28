@@ -75,7 +75,7 @@
     },
     {
         "name" : "_default_",
-        "compile_flags" : "this is a test",
+        "compile_flags" : "-g",
         "target_bin" : "",
         "sources" : [
             "../../../app.Builder.js",
