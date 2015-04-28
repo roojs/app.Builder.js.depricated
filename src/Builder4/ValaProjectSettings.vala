@@ -631,7 +631,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.title = "Available Directory";
+            this.el.title = "Available Directories (right click to add)";
             this.el.resizable = true;
             var child_0 = new Xcls_directory_render( _this );
             child_0.ref();
