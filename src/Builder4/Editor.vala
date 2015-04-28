@@ -335,6 +335,7 @@ public class Editor : Object
             // my vars (def)
         public int error_line;
         public bool check_running;
+        public bool XXX;
 
         // ctor 
         public Xcls_buffer(Editor _owner )
@@ -346,6 +347,7 @@ public class Editor : Object
             // my vars (dec)
             this.error_line = -1;
             this.check_running = false;
+            this.XXX = true;
 
             // set gobject values
 

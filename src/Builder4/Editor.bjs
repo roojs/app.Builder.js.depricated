@@ -85,7 +85,8 @@
          "* pack" : "set_buffer",
          "xtype" : "Buffer",
          "bool check_running" : false,
-         "$ xns" : "GtkSource"
+         "$ xns" : "GtkSource",
+         "bool XXX" : true
         }
        ]
       }
