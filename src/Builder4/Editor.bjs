@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/Editor.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "",
  "items" : [
   {
    "# string activeEditor" : "\"\"",
@@ -43,8 +44,8 @@
       },
       {
        "id" : "key_edit",
-       "xtype" : "Entry",
        "* pack" : "pack_end,true,true",
+       "xtype" : "Entry",
        "$ xns" : "Gtk"
       }
      ]
