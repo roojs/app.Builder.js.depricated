@@ -149,7 +149,7 @@ namespace Palete {
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
 				valac += " --vapidir " + vapidirs[i];
-			}
+			=
 				
 			
 			// or context.get_vapi_path("glib-2.0"); // should return path..
@@ -193,7 +193,7 @@ namespace Palete {
 					var path = pr.resolve_path(
 	                        pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
 	                        
-	                if (FileUtils.test(path, FileTest.EXISTS)) {
+	                if (!FileUtils.test(path, FileTest.EXISTS)) {
 						continue;
 					}       
 	                 
