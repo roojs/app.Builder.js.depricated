@@ -38,10 +38,8 @@ dnl --- libvala -- needs to find matching really..
 
 PKG_CHECK_MODULES(LIBVALA, [libvala-0.28],
                 [vala_2_8_enabled=yes],
-                [vala_2_8_enabled=no])
+                [vala_2_8_enabled=no]) 
                 
-                
-
 if test $vala_2_8_enabled = yes; then
         AC_DEFINE(HAVE_LIBVALA28,1,[libvala 0.28 support])
 else
