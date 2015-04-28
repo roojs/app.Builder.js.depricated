@@ -86,13 +86,17 @@
         ],
         "packages" : [
             "gdk-3.0",
-            "glib-2.0",
             "gtk+-3.0",
             "gtksourceview-3.0",
-            "atk",
-            "atspi-2",
-            "avahi-client",
-            "libgda-5.0"
+            "libgda-5.0",
+            "clutter-gtk-1.0",
+            "glib-2.0",
+            "gobject-introspection-1.0",
+            "gobject-2.0",
+            "javascriptcore",
+            "json-glib-1.0",
+            "libxml-2.0",
+            "libsoup-2.4"
         ]
     }
 ]
