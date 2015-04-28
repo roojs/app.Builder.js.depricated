@@ -148,6 +148,9 @@ namespace Palete {
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
+			context.thread = true;
+			
+			
 			this.report = new ValaSourceReport();;
 			context.report = this.report;
 			
@@ -230,7 +233,7 @@ namespace Palete {
 			}
 
 
-			/*
+			
 			// check context:
 			context.check ();
 			if (context.report.get_errors () > 0) {
@@ -240,9 +243,15 @@ namespace Palete {
 				return this.report.line_errors;
 				
 			}
-			*/
-			Vala.CodeContext.pop ();
 			
+			context.codegen = new GDBusServerModule ();
+			
+			 
+			context.output = "/tmp/testbuild";
+			context.codegen.emit (context);
+			
+			Vala.CodeContext.pop ();
+
 			print("ALL OK?\n");
 			return this.report.line_errors;
 		}
