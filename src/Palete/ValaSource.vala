@@ -111,6 +111,14 @@ namespace Palete {
 			
 		}
 		
+		public Gee.HashMap<int,string> checkStringThread(string contents)
+		{
+			
+			
+		}
+		
+		
+		
 		public Gee.HashMap<int,string> checkString(string contents)
         {
 			// init context:
