@@ -334,6 +334,7 @@ public class Editor : Object
 
             // my vars (def)
         public int error_line;
+        public bool XXX;
 
         // ctor 
         public Xcls_buffer(Editor _owner )
@@ -344,6 +345,7 @@ public class Editor : Object
 
             // my vars (dec)
             this.error_line = -1;
+            this.XXX = true;
 
             // set gobject values
 
@@ -374,6 +376,10 @@ public class Editor : Object
         }
         public   bool checkSyntax () {
          
+            if (this.check_running) {
+                return true;
+            }
+            this.check_running = true;
             var p = Palete.factory(_this.file.xtype);   
             
             var str = this.toString();
@@ -389,34 +395,42 @@ public class Editor : Object
             }
             
             
-            var validate_res =  p.validateCode(
+            
+            
+            p.validateCode.begin(
                 str, 
                  _this.key, 
                 _this.ptype,
                 _this.file,
-                _this.node
+                _this.node,
+                (obj, validate_res) => {
+                    this.check_running = false;
+                    
+                    this.error_line = validate_res.size;
+        
+                    if (this.error_line < 1) {
+                          return true;
+                    }
+                    var tlines = this.el.get_line_count ();
+                    Gtk.TextIter iter;
+                    var valiter = validate_res.map_iterator();
+                    while (valiter.next()) {
+                    
+                //        print("get inter\n");
+                        var eline = valiter.get_key();
+                        if (eline > tlines) {
+                            continue;
+                        }
+                        this.el.get_iter_at_line( out iter, eline);
+                        //print("mark line\n");
+                        this.el.create_source_mark(valiter.get_value(), "error", iter);
+                    }   
+                    
+                }
                 
             );
              
-            this.error_line = validate_res.size;
-        
-            if (this.error_line < 1) {
-                  return true;
-            }
-            var tlines = this.el.get_line_count ();
-            Gtk.TextIter iter;
-            var valiter = validate_res.map_iterator();
-            while (valiter.next()) {
             
-        //        print("get inter\n");
-                var eline = valiter.get_key();
-                if (eline > tlines) {
-                    continue;
-                }
-                this.el.get_iter_at_line( out iter, eline);
-                //print("mark line\n");
-                this.el.create_source_mark(valiter.get_value(), "error", iter);
-            }   
             
             //print("done mark line\n");
              
