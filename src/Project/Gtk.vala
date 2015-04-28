@@ -174,8 +174,9 @@ namespace Project {
 						continue;
 					}
 					
-					
-					
+					if (Regex.match_simple("\\.vala\\.c$", fn)) {
+						continue;
+					}
 					if (Regex.match_simple("\\.c$", fn)) {
 						
 						// if we have a vala file with the same name 
