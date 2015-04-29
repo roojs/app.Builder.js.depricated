@@ -19,9 +19,9 @@ public class Xcls_GtkView : Object
         // my vars (def)
     public Gtk.Widget lastObj;
     public int width;
+    public Xcls_MainWindow main_window;
     public JsRender.JsRender file;
     public int height;
-    public Xcls_MainWindow win;
 
     // ctor 
     public Xcls_GtkView()
@@ -34,7 +34,6 @@ public class Xcls_GtkView : Object
         this.width = 0;
         this.file = null;
         this.height = 0;
-        this.win = true;
 
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
@@ -89,7 +88,9 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-        
+            
+            file.connect.compile_notice(_this.compile_notice);
+            
            // this.el.set_position((int)(this.el.max_position * 0.7));
             this.el.set_position(this.el.max_position );
             this.file = null;
@@ -136,6 +137,9 @@ public class Xcls_GtkView : Object
             
              
             
+    }
+    public return_type XXXX () {
+    
     }
     public class Xcls_ScrolledWindow2 : Object 
     {
