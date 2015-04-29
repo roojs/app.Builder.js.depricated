@@ -7,13 +7,16 @@ namespace Palete {
 
 
 		
-
+		public Gee.HashMap<int,string> line_warnings
+		public Gee.HashMap<int,string> line_depr;
 		public Gee.HashMap<int,string> line_errors;
 
 		public ValaSourceReport()
 		{
 			base();
 			this.line_errors = new Gee.HashMap<int,string> ();
+			this.line_depr = new Gee.HashMap<int,string> ();
+			this.line_warnings = new Gee.HashMap<int,string> ();
 		}
 		
 		public override void warn (Vala.SourceReference? source, string message) {
@@ -28,10 +31,10 @@ namespace Palete {
 			}
 			var pre = "";
 			if (line_errors.has_key(source.begin.line)) {
-				pre = line_errors.get(source.begin.line) + "\n";
+				pre = line_warnings.get(source.begin.line) + "\n";
 				
 			}
-			line_errors.set(source.begin.line, pre +  "Warn: " + message);
+			line_warnings.set(source.begin.line, pre +  "Warn: " + message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		
