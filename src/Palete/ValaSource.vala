@@ -30,14 +30,31 @@ namespace Palete {
 				return;
 			}
 			var pre = "";
-			if (line_errors.has_key(source.begin.line)) {
+			if (line_warnings.has_key(source.begin.line)) {
 				pre = line_warnings.get(source.begin.line) + "\n";
 				
 			}
 			line_warnings.set(source.begin.line, pre +  "Warn: " + message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
-		
+		public override void depr (Vala.SourceReference? source, string message) {
+			errors++;
+			if (source == null) {
+				return;
+				//stderr.printf ("My error: %s\n", message);
+			}
+			if (source.file.filename != "~~~~~testfile.vala") {
+				print ("Depr: %d:  %s\n", source.begin.line, message);
+				return;
+			}
+			var pre = "";
+			if (line_depr.has_key(source.begin.line)) {
+				pre = line_depr.get(source.begin.line) + "\n";
+				
+			}
+			line_depr.set(source.begin.line, pre +  "Warn: " + message);
+			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
+		}
 		
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
