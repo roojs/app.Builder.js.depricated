@@ -169,6 +169,7 @@ public class Xcls_GtkView : Object
             default:
                 title = type;
                 top =3;
+                break;
         }
                 
         
