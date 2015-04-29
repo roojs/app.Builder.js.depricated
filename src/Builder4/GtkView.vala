@@ -146,8 +146,20 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
+        var top = 0;
+        switch(type) {
+            case "ERR":
+                top = 0;
+                break;
+            case "WARN":
+                top =1;
+                break;
+            case "DEPR":
+                top =2;
+                break;
+        }
         
-        
+         
         // tree:
         
           // error_type
