@@ -143,6 +143,8 @@ public class Xcls_GtkView : Object
         // the issue is that the compiler is continually going..
         // so editing a file etc.. may change things.?
         // probably not an issue.
+        print("err %s / %s:%d / %s\n", type,file,line,message);
+        
         if (type =="START") {
             // reset the tree;
             return;
