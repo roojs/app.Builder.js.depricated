@@ -25,9 +25,7 @@ namespace Palete {
 		 
 		public Gee.HashMap<int,string> line_errors;
 		
-		// can be hooked into?
-		public signal void notice(string type, string file, int line, string message);
-
+	 
 		public ValaSourceReport(JsRender.JsRender file)
 		{
 			base();
@@ -44,7 +42,7 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.notice("Warn", this.file.path, source.begin.line, message);
+				this.file.compile_notice("Warn", this.file.path, source.begin.line, message);
 				return;
 			}
 			this.notice("Warn", source.file.filename, source.begin.line, message);
@@ -232,7 +230,7 @@ namespace Palete {
 			context.thread = true;
 			
 			
-			this.report = new ValaSourceReport();;
+			this.report = new ValaSourceReport(this.file);
 			context.report = this.report;
 			
 			
