@@ -164,7 +164,11 @@ public class Xcls_GtkView : Object
             case "DEPR":
                 title = "Depricated";
                 top=2;
-                
+                break;
+            
+            default:
+                title = type;
+                top =3;
         }
                 
         
