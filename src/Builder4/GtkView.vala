@@ -147,6 +147,7 @@ public class Xcls_GtkView : Object
         } 
        
         //var tn = this.
+    
         
     }
     public class Xcls_ScrolledWindow2 : Object 
