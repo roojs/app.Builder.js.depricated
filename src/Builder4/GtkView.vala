@@ -494,6 +494,13 @@ public class Xcls_GtkView : Object
             var child_0 = new Xcls_renderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
+
+            // init method 
+
+            {
+              this.el.add_attribute(_this.renderer.el , "markup", 2 );
+             
+            }
         }
 
         // user defined functions 
