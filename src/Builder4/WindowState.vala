@@ -446,6 +446,7 @@ public class WindowState : Object
     {
         this.window_gladeview  =new Xcls_GtkView();
         this.window_gladeview.ref();
+        this.window_gladeview.main_window = this.win;
     }
     
     public void easingSaveAll()
