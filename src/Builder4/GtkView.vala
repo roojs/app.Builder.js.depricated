@@ -331,7 +331,6 @@ public class Xcls_GtkView : Object
 
 
             // my vars (def)
-        public gboolean homogeneous;
 
         // ctor 
         public Xcls_HPaned8(Xcls_GtkView _owner )
@@ -340,7 +339,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.HPaned();
 
             // my vars (dec)
-            this.homogeneous = true;
 
             // set gobject values
             var child_0 = new Xcls_ScrolledWindow9( _this );
@@ -348,7 +346,7 @@ public class Xcls_GtkView : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_ScrolledWindow14( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
+            this.el.add (  child_1.el  );
         }
 
         // user defined functions 
