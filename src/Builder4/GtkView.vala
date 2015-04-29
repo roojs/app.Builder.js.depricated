@@ -15,6 +15,7 @@ public class Xcls_GtkView : Object
     public Xcls_view_layout view_layout;
     public Xcls_container container;
     public Xcls_compile_view compile_view;
+    public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
 
@@ -179,9 +180,8 @@ public class Xcls_GtkView : Object
                 
         
          var tv = cs.nodeFindOrCreate(null, top.to_string(), title);
-         var ftv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
-         
-          cs.nodeAppendOrCreate(ftv, "%d:%s:%d".printf(top, file,line), file,line, message);
+         tv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
+          cs.nodeAppendOrCreate(tv, "%d:%s:%d".printf(top, file,line), file,line, message);
         
     }
     public class Xcls_ScrolledWindow2 : Object 
@@ -373,7 +373,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_TreeView10( _this );
+            var child_0 = new Xcls_compile_tree( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -388,7 +388,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_TreeView10 : Object 
+    public class Xcls_compile_tree : Object 
     {
         public Gtk.TreeView el;
         private Xcls_GtkView  _this;
@@ -397,9 +397,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_TreeView10(Xcls_GtkView _owner )
+        public Xcls_compile_tree(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.compile_tree = this;
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
