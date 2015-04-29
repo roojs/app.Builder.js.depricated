@@ -136,7 +136,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public void compileNotice (  string type, string file, int line, string message ) {
+    public void compileNotice (  type,   file,   line,   message) {
         // if type = "START"... then we reset the tree?
         // the issue is that the compiler is continually going..
         // so editing a file etc.. may change things.?
@@ -144,10 +144,9 @@ public class Xcls_GtkView : Object
         if (type =="START") {
             // reset the tree;
             return;
-        } 
-       
-        //var tn = this.
-    
+        }
+        
+         
         
     }
     public class Xcls_ScrolledWindow2 : Object 
@@ -339,7 +338,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_ListStore10( _this );
+            var child_0 = new Xcls_TreeStore10( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_column( _this );
@@ -348,19 +347,19 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_ListStore10 : Object 
+    public class Xcls_TreeStore10 : Object 
     {
-        public Gtk.ListStore el;
+        public Gtk.TreeStore el;
         private Xcls_GtkView  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ListStore10(Xcls_GtkView _owner )
+        public Xcls_TreeStore10(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 1,   typeof(string) );
+            this.el = new Gtk.TreeStore( 1,   typeof(string) );
 
             // my vars (dec)
 
