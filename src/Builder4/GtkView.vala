@@ -21,6 +21,7 @@ public class Xcls_GtkView : Object
     public int width;
     public JsRender.JsRender file;
     public int height;
+    public bool win;
 
     // ctor 
     public Xcls_GtkView()
@@ -33,6 +34,7 @@ public class Xcls_GtkView : Object
         this.width = 0;
         this.file = null;
         this.height = 0;
+        this.win = true;
 
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
@@ -131,7 +133,8 @@ public class Xcls_GtkView : Object
             
             this.container.el.add(obj);
             obj.show_all();
-              
+            
+             
             
     }
     public class Xcls_ScrolledWindow2 : Object 
