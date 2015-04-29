@@ -2,20 +2,7 @@
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 namespace Palete {
-	1
-	/*public class ValaSourceNotice  : Object {
-		public string file;
-		public int line;
-		public string message;
-		public string type;
-		public ValaSourceNotice( string type, string file, int line, string message) {
-			this.file =f ;
-			this.line =l;
-			this.type =t;
-			this.message = m;
-		}
-	}
-	*/
+	 
 	
 	public class ValaSourceReport  : Vala.Report {
 
