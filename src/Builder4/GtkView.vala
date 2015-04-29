@@ -359,7 +359,7 @@ public class Xcls_GtkView : Object
         public Xcls_TreeStore10(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.TreeStore( 1,   typeof(string), typeof(int), typeof(string), typeof(string)  );
+            this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
 
             // my vars (dec)
 

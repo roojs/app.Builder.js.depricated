@@ -76,7 +76,7 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "gint n_columns" : 1,
+           "gint n_columns" : 4,
            "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
            "* pack" : "set_model",
            "xtype" : "TreeStore",
