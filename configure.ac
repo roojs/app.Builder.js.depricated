@@ -28,7 +28,6 @@ PKG_CHECK_MODULES(BUILDER, [
 		 gobject-introspection-1.0 
 		 libxml-2.0 
 		 libsoup-2.4
-		 libgda-5.0
 		  
 ])
 
