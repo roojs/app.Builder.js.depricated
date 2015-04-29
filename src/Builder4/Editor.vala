@@ -73,7 +73,7 @@ public class Editor : Object
          if (!_this.buffer.checkSyntax()) {
              print("check syntax failed");
              //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-             return false;
+             //return false;
          }
          
          // LeftPanel.model.changed(  str , false);
