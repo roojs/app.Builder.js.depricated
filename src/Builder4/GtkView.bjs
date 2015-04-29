@@ -71,38 +71,41 @@
        "$ xns" : "Gtk",
        "items" : [
         {
-         "* pack" : "pack_start,true,true,0",
-         "xtype" : "ScrolledWindow",
-         "$ xns" : "Gtk"
-        },
-        {
+         "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
          "* pack" : "add",
-         "xtype" : "TreeView",
+         "xtype" : "ScrolledWindow",
          "$ xns" : "Gtk",
          "items" : [
           {
-           "gint n_columns" : 4,
-           "id" : "compile_result_store",
-           "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
-           "* pack" : "set_model",
-           "xtype" : "TreeStore",
-           "| void nodeAppendOrCreate" : "(Gtk.TreePath  par, string id, string file, int line, string message) {\n\n    Gtk.TreeIter piter;\n     \n    this.el.get_iter(out piter, par);\n     \n    // loop through parent childnre\n    Gtk.TreeIter iter; \n    var loop =  par == null ? \n        this.el.iter_children(out iter, null) :\n         this.el.iter_children(out iter,  piter);\n    \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        if (sval == id) {\n            GLib.Value mval;\n            this.el.get_value(iter, 2, out mval);\n            var smval = (string)mval;\n            mval.set_string(smval + \"\\n\" + GLib.Markup.escape_text(message)); //markup?\n        \n            return;\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    \n    // create the node...\n    if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n        this.el.append(out iter, piter);\n    }\n    this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text(\"%d: %s\".printf(line,message)), 3, file,-1);\n        \n    return ;\n\n}   ",
-           "$ xns" : "Gtk",
-           "| Gtk.TreePath nodeFindOrCreate" : "(Gtk.TreePath? par, string id, string title) {\n\n\n    //print(\"looking for %s\\n\", id);\n    // loop through parent childnre\n    Gtk.TreeIter piter   ;\n    Gtk.TreeIter iter;\n    var loop = true;\n    if (par != null) {\n        this.el.get_iter(out piter, par);\n        loop = this.el.iter_children(out iter,  piter);\n    } else {\n        loop = this.el.iter_children(out iter, null) ;\n    }\n         \n         \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        //print(\"got node %s\", sval);\n        if (sval == id) {\n            return this.el.get_path(iter);\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    // create the node...\n     if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n      this.el.get_iter(out piter, par);\n        this.el.append(out iter, piter);\n    }\n    //print(\"add iter %s / %s\", id, title);\n    this.el.set(iter, 0, id, 1, 0, 2, title, 3, \"\",-1);\n       \n    return   this.el.get_path(iter);\n\n}\n "
-          },
-          {
-           "utf8 title" : "Compile output",
-           "* init" : "{\n  this.el.add_attribute(_this.renderer.el , \"markup\", 2 );\n \n}\n",
-           "xtype" : "TreeViewColumn",
-           "* pack" : "append_column",
-           "string id" : "column",
+           "* pack" : "add",
+           "xtype" : "TreeView",
            "$ xns" : "Gtk",
            "items" : [
             {
-             "id" : "renderer",
-             "xtype" : "CellRendererText",
-             "* pack" : "pack_start,true",
-             "$ xns" : "Gtk"
+             "gint n_columns" : 4,
+             "id" : "compile_result_store",
+             "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
+             "* pack" : "set_model",
+             "xtype" : "TreeStore",
+             "| void nodeAppendOrCreate" : "(Gtk.TreePath  par, string id, string file, int line, string message) {\n\n    Gtk.TreeIter piter;\n     \n    this.el.get_iter(out piter, par);\n     \n    // loop through parent childnre\n    Gtk.TreeIter iter; \n    var loop =  par == null ? \n        this.el.iter_children(out iter, null) :\n         this.el.iter_children(out iter,  piter);\n    \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        if (sval == id) {\n            GLib.Value mval;\n            this.el.get_value(iter, 2, out mval);\n            var smval = (string)mval;\n            mval.set_string(smval + \"\\n\" + GLib.Markup.escape_text(message)); //markup?\n        \n            return;\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    \n    // create the node...\n    if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n        this.el.append(out iter, piter);\n    }\n    this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text(\"%d: %s\".printf(line,message)), 3, file,-1);\n        \n    return ;\n\n}   ",
+             "$ xns" : "Gtk",
+             "| Gtk.TreePath nodeFindOrCreate" : "(Gtk.TreePath? par, string id, string title) {\n\n\n    //print(\"looking for %s\\n\", id);\n    // loop through parent childnre\n    Gtk.TreeIter piter   ;\n    Gtk.TreeIter iter;\n    var loop = true;\n    if (par != null) {\n        this.el.get_iter(out piter, par);\n        loop = this.el.iter_children(out iter,  piter);\n    } else {\n        loop = this.el.iter_children(out iter, null) ;\n    }\n         \n         \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        //print(\"got node %s\", sval);\n        if (sval == id) {\n            return this.el.get_path(iter);\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    // create the node...\n     if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n      this.el.get_iter(out piter, par);\n        this.el.append(out iter, piter);\n    }\n    //print(\"add iter %s / %s\", id, title);\n    this.el.set(iter, 0, id, 1, 0, 2, title, 3, \"\",-1);\n       \n    return   this.el.get_path(iter);\n\n}\n "
+            },
+            {
+             "utf8 title" : "Compile output",
+             "* init" : "{\n  this.el.add_attribute(_this.renderer.el , \"markup\", 2 );\n \n}\n",
+             "xtype" : "TreeViewColumn",
+             "* pack" : "append_column",
+             "string id" : "column",
+             "$ xns" : "Gtk",
+             "items" : [
+              {
+               "id" : "renderer",
+               "xtype" : "CellRendererText",
+               "* pack" : "pack_start,true",
+               "$ xns" : "Gtk"
+              }
+             ]
             }
            ]
           }

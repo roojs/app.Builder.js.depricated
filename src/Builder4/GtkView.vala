@@ -343,13 +343,10 @@ public class Xcls_GtkView : Object
             // set gobject values
             var child_0 = new Xcls_ScrolledWindow9( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_TreeView10( _this );
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_ScrolledWindow14( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
-            var child_2 = new Xcls_ScrolledWindow14( _this );
-            child_2.ref();
-            this.el.pack_start (  child_2.el , true,true,0 );
+            this.el.pack_start (  child_1.el , true,true,0 );
         }
 
         // user defined functions 
@@ -371,6 +368,17 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_TreeView10( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // init method 
+
+            {
+             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+             
+            
+            }
         }
 
         // user defined functions 
