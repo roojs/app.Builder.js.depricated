@@ -419,7 +419,7 @@ public class Xcls_GtkView : Object
                     GLib.Value mval;
                     this.el.get_value(iter, 2, out mval);
                     var smval = (string)mval;
-                    mval.set_string(smval + "\n" + message); //markup?
+                    mval.set_string(smval + "\n" + GLib.Markup.escape_text(message)); //markup?
                 
                     return;
                 }
@@ -432,7 +432,7 @@ public class Xcls_GtkView : Object
             } else {
                 this.el.append(out iter, piter);
             }
-            this.el.set(iter, 0, id, 1, line,2, message, 3, file,-1);
+            this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s",printf(line,message)), 3, file,-1);
                 
             return ;
         
