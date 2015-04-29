@@ -370,7 +370,8 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
         public Gtk.TreePath nodeFindOrCreate () {
-            return new Gtk.TreePath();
+            return new Gtk.TreePath(); 
+        
         }
     }
     public class Xcls_column : Object 
