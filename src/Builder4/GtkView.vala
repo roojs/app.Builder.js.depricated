@@ -414,9 +414,10 @@ public class Xcls_GtkView : Object
             }
             // create the node...
             
-            
-            
-            return new Gtk.TreePath(); 
+            this.el.append(out iter,par == null ? null : piter);
+            this.el.set(iter, id, 0, title, "",-1);
+               
+            return new this.el.get_path(iter);
         
         }
     }
