@@ -136,7 +136,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public void compileNotice (  string type, string file, int line, string message) {
+    public void compileNotice (  string type, string file, int line, string message d) {
         // if type = "START"... then we reset the tree?
         // the issue is that the compiler is continually going..
         // so editing a file etc.. may change things.?
@@ -145,7 +145,8 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
-         
+       
+        //var tn = this.
         
     }
     public class Xcls_ScrolledWindow2 : Object 
