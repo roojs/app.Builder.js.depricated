@@ -146,6 +146,7 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
+        var ts = _this.compile_result_store;
         var top = 0;
         switch(type) {
             case "ERR":
@@ -159,7 +160,9 @@ public class Xcls_GtkView : Object
                 break;
         }
         
-         
+        //var tn = ts.nodeFindOrCreate(null,top.to_string(), type);
+        //tn = ts.nodeFindOrCreate(tn, "%d:%s".printf(top, file), file);    
+        //ts.nodeFindOrAppend(tn, "%d:%s:%d".printf(top, file,line), message);   
         // tree:
         
           // error_type
