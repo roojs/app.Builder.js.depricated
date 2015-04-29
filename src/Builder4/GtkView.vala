@@ -494,7 +494,7 @@ public class Xcls_GtkView : Object
             this.el.title = "Compile output";
             var child_0 = new Xcls_renderer( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , false );
+            this.el.pack_start (  child_0.el , tue );
 
             // init method 
 
