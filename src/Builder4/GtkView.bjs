@@ -96,7 +96,7 @@
             {
              "id" : "renderer",
              "xtype" : "CellRendererText",
-             "* pack" : "pack_start,tue",
+             "* pack" : "pack_start,true",
              "$ xns" : "Gtk"
             }
            ]
