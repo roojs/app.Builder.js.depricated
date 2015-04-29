@@ -147,7 +147,17 @@ public class Xcls_GtkView : Object
             return;
         }
         
+        // tree:
+        
+          // error_type
+             // filename
+                // line - message
+                
+         // sort (and 'id'?)
          
+            // 0-2 : fname : line
+         // display
+          
         
     }
     public class Xcls_ScrolledWindow2 : Object 
