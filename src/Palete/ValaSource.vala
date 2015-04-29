@@ -141,6 +141,27 @@ namespace Palete {
 		
 			context.experimental = false;
 			context.experimental_non_null = false;
+			
+#if VALA_2_28
+			var ver=28;
+#elif VALA_2_26	
+			var ver=26;
+#elif VALA_2_24
+			var ver=24;
+#elif VALA_2_22	
+			var ver=22;
+#endif
+			
+			for (int i = 2; i <= ver; i += 2) {
+				context.add_define ("VALA_0_%d".printf (i));
+			}
+			
+			
+			
+			
+			
+			
+			
 			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
 			// what's the current version of vala???
 			
