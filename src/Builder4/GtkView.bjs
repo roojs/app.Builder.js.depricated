@@ -20,7 +20,7 @@
    "xtype" : "VPaned",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
-   "| void compileNotice" : "( string type,   string file,   int line, string  message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    var ts = _this.compile_result_store;\n    var top = 0;\n    switch(type) {\n        case \"ERR\":\n            top = 0;\n            break;\n        case \"WARN\":\n            top =1;\n            break;\n        case \"DEPR\":\n            top =2;\n            break;\n    }\n    \n    //var tn = ts.nodeFindOrCreate(null,top.to_string(), type);\n    //tn = ts.nodeFindOrCreate(tn, \"%d:%s\".printf(top, file), file);    \n    //ts.nodeFindOrAppend(tn, \"%d:%s:%d\".printf(top, file,line), message);   \n    // tree:\n    \n      // error_type\n         // filename\n            // line - message\n            \n     // sort (and 'id'?)\n     \n        // 0-2 : fname : line\n     // display\n      \n    \n}\n",
+   "| void compileNotice" : "(  type,   file,   line,   message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    \n     \n    \n}\n",
    "$ xns" : "Gtk",
    "items" : [
     {
@@ -81,7 +81,8 @@
            "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
            "* pack" : "set_model",
            "xtype" : "TreeStore",
-           "$ xns" : "Gtk"
+           "$ xns" : "Gtk",
+           "| ts.nodeFindOrCreate" : "() {\n\n}\n"
           },
           {
            "utf8 title" : "Compile output",

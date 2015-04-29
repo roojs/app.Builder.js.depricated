@@ -137,7 +137,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public void compileNotice ( string type,   string file,   int line, string  message) {
+    public void compileNotice (  type,   file,   line,   message) {
         // if type = "START"... then we reset the tree?
         // the issue is that the compiler is continually going..
         // so editing a file etc.. may change things.?
@@ -146,34 +146,8 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
-        var ts = _this.compile_result_store;
-        var top = 0;
-        switch(type) {
-            case "ERR":
-                top = 0;
-                break;
-            case "WARN":
-                top =1;
-                break;
-            case "DEPR":
-                top =2;
-                break;
-        }
         
-        //var tn = ts.nodeFindOrCreate(null,top.to_string(), type);
-        //tn = ts.nodeFindOrCreate(tn, "%d:%s".printf(top, file), file);    
-        //ts.nodeFindOrAppend(tn, "%d:%s:%d".printf(top, file,line), message);   
-        // tree:
-        
-          // error_type
-             // filename
-                // line - message
-                
-         // sort (and 'id'?)
          
-            // 0-2 : fname : line
-         // display
-          
         
     }
     public class Xcls_ScrolledWindow2 : Object 
@@ -395,6 +369,9 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions 
+        public ts.nodeFindOrCreate () {
+        
+        }
     }
     public class Xcls_column : Object 
     {
