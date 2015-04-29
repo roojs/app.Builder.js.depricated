@@ -39,7 +39,7 @@ public class About : Object
         });
         this.el.response.connect( (rid) => {
             this.el.hide();
-            
+        
         });
     }
 
