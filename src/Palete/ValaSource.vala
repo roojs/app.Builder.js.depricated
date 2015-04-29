@@ -20,16 +20,18 @@ namespace Palete {
 
 		public JsRender.JsRender file;
 		
-		public Gee.ArrayList<ValaSourceNotice> notices;
+		//public Gee.ArrayList<ValaSourceNotice> notices;
 		 
 		public Gee.HashMap<int,string> line_errors;
+		
+		public signal void notice(
 
 		public ValaSourceReport(JsRender.JsRender file)
 		{
 			base();
 			this.file = file;
 			this.line_errors = new Gee.HashMap<int,string> ();
-			this.notices = new Gee.ArrayList<ValaSourceNotice>();
+			//this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
 		
 		public override void warn (Vala.SourceReference? source, string message) {
