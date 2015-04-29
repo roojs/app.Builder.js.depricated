@@ -144,12 +144,13 @@ public class Xcls_GtkView : Object
         // so editing a file etc.. may change things.?
         // probably not an issue.
         print("err %s / %s:%d / %s\n", type,file,line,message);
-        
+        var cs = _this.compile_result_store;    
         if (type =="START") {
             // reset the tree;
+            cs.el.clear();   
             return;
         }
-        var cs = _this.compile_result_store;
+    
         
         var top = 0;
         var title = "";
