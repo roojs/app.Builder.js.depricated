@@ -471,7 +471,7 @@ public class Xcls_GtkView : Object
                 this.el.append(out iter, piter);
             }
             print("add iter %s / %s", id, title);
-            this.el.set(iter, id, 0, title, "",-1);
+            this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
                
             return   this.el.get_path(iter);
         
