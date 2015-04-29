@@ -16,6 +16,26 @@ namespace Palete {
 			this.line_errors = new Gee.HashMap<int,string> ();
 		}
 		
+		public override void warn (Vala.SourceReference? source, string message) {
+			errors++;
+			if (source == null) {
+				return;
+				//stderr.printf ("My error: %s\n", message);
+			}
+			if (source.file.filename != "~~~~~testfile.vala") {
+				print ("Warning: %d:  %s\n", source.begin.line, message);
+				return;
+			}
+			var pre = "";
+			if (line_errors.has_key(source.begin.line)) {
+				pre = line_errors.get(source.begin.line) + "\n";
+				
+			}
+			line_errors.set(source.begin.line, pre +  message);
+			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
+		}
+		
+		
 		public override void err (Vala.SourceReference? source, string message) {
 			errors++;
 			if (source == null) {
@@ -297,7 +317,7 @@ namespace Palete {
 			context.output = "/tmp/testbuild";
 			valac += " -o " +context.output;
 			context.codegen.emit (context);
-			
+			/*
 			var ccompiler = new Vala.CCodeCompiler ();
 			var cc_command = Environment.get_variable ("CC");
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
@@ -306,6 +326,8 @@ namespace Palete {
 #else
 			ccompiler.compile (context, cc_command, new string[] { });
 #endif
+
+*/
 			Vala.CodeContext.pop ();
 			print("%s\n", valac);
 			print("ALL OK?\n");
