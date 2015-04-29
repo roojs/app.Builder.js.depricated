@@ -205,7 +205,7 @@ namespace Palete {
 			context.report = this.report;
 			
 			
-			context.basedir = Posix.realpath (".");
+			context.basedir = "/tmp"; //Posix.realpath (".");
 		
 			context.directory = context.basedir;
 		
