@@ -82,7 +82,7 @@
            "* pack" : "set_model",
            "xtype" : "TreeStore",
            "$ xns" : "Gtk",
-           "| Gtk.TreePath nodeFindOrCreate" : "() {\n\n}\n"
+           "| Gtk.TreePath nodeFindOrCreate" : "(string treepath, string id , string title) \n{\n \n\n}"
           },
           {
            "utf8 title" : "Compile output",
