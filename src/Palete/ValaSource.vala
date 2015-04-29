@@ -42,10 +42,10 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("Warn", this.file.path, source.begin.line, message);
+				this.file.compile_notice("WARN", this.file.path, source.begin.line, message);
 				return;
 			}
-			this.file.compile_notice("Warn", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("WARN", source.file.filename, source.begin.line, message);
 			
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
@@ -56,10 +56,10 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("Depr", this.file.path, source.begin.line, message);
+				this.file.compile_notice("DEPR", this.file.path, source.begin.line, message);
 				return;
 			}
-			this.file.compile_notice("Depr", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("DEPR", source.file.filename, source.begin.line, message);
 			
 		}
 		
@@ -70,7 +70,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("Err", this.file.path, source.begin.line, message);
+				this.file.compile_notice("ERR", this.file.path, source.begin.line, message);
 				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
@@ -80,7 +80,7 @@ namespace Palete {
 				
 			}
 			line_errors.set(source.begin.line, pre +  message);
-			this.file.compile_notice("Err", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("ERR", source.file.filename, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		public void dump()
@@ -313,7 +313,7 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			
+			this.file.compile_notice("START", "", 0, "");
 
 		
 			//add_documented_files (context, settings.source_files);
