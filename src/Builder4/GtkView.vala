@@ -438,14 +438,16 @@ public class Xcls_GtkView : Object
         public Gtk.TreePath nodeFindOrCreate (Gtk.TreePath? par, string id, string title) {
         
             // loop through parent childnre
-            Gtk.TreeIter piter = null;
+            Gtk.TreeIter piter   ;
+            Gtk.TreeIter iter;
+            var loop = true;
             if (par != null) {
                 this.el.get_iter(out piter, par);
+                loop = this.el.iter_children(out iter,  piter);
+            } else {
+                loop = this.el.iter_children(out iter, null) ;
             }
-            Gtk.TreeIter iter;
-            var loop =  par == null ? 
-                this.el.iter_children(out iter, null) :
-                 this.el.iter_children(out iter,  piter);
+                 
                  
             while (loop) {
                 GLib.Value val;
@@ -460,6 +462,7 @@ public class Xcls_GtkView : Object
              if (par == null) {
                 this.el.append(out iter, null);
             } else {
+              this.el.get_iter(out piter, par);
                 this.el.append(out iter, piter);
             }
             
