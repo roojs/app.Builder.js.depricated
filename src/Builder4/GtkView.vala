@@ -271,7 +271,7 @@ public class Xcls_GtkView : Object
             var child_0 = new Xcls_HBox6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_HBox8( _this );
+            var child_1 = new Xcls_HPaned8( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
         }
@@ -324,21 +324,23 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_HBox8 : Object 
+    public class Xcls_HPaned8 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.HPaned el;
         private Xcls_GtkView  _this;
 
 
             // my vars (def)
+        public gboolean homogeneous;
 
         // ctor 
-        public Xcls_HBox8(Xcls_GtkView _owner )
+        public Xcls_HPaned8(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HPaned();
 
             // my vars (dec)
+            this.homogeneous = true;
 
             // set gobject values
             var child_0 = new Xcls_ScrolledWindow9( _this );
