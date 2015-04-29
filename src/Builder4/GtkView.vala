@@ -392,7 +392,7 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions 
-        public void nodeAppendOrCreate (Gtk.TreePath? par, string id, string file, line, message) {
+        public void nodeAppendOrCreate (Gtk.TreePath? par, string id, string file, int line, message) {
         
         
             // loop through parent childnre
