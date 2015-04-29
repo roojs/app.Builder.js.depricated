@@ -137,7 +137,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public void compileNotice (  type,   file,   line,   message) {
+    public void compileNotice (  string  type,   string file,   int line,   string message) {
         // if type = "START"... then we reset the tree?
         // the issue is that the compiler is continually going..
         // so editing a file etc.. may change things.?
@@ -369,8 +369,8 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions 
-        public Gtk.TreePath nodeFindOrCreate (Gtk.TreePath? par, string id, string text) {
-             return new Gtk.TreePath ();
+        public Gtk.TreePath nodeFindOrCreate () {
+        
         }
     }
     public class Xcls_column : Object 
