@@ -89,7 +89,7 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-        
+            file.compile_notice.connect(this.compileNotice);
            // this.el.set_position((int)(this.el.max_position * 0.7));
             this.el.set_position(this.el.max_position );
             this.file = null;
