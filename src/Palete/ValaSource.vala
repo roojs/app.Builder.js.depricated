@@ -35,7 +35,7 @@ namespace Palete {
 				
 			}
 			line_warnings.set(source.begin.line, pre +  "Warn: " + message);
-			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
+			print ("Test file: Got error WARN: %d: %s\n", source.begin.line, message);
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
 			errors++;
@@ -53,7 +53,7 @@ namespace Palete {
 				
 			}
 			line_depr.set(source.begin.line, pre +  "Warn: " + message);
-			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
+			print ("Test file: Got error DEPR: %d: %s\n", source.begin.line, message);
 		}
 		
 		public override void err (Vala.SourceReference? source, string message) {
