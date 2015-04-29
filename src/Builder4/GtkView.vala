@@ -146,8 +146,31 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
+        var cs = _this.compile_result_store;
         
-         
+        var top = 0;
+        var title = "";
+        switch(type) {
+            case "ERR":
+                title = "Errors";
+                top =0;
+                break;
+            
+            case "WARN":
+                title = "Warnings";
+                top =1;
+                break;
+                
+            case "DEPR":
+                title = "Depricated";
+                top=2;
+                
+        }
+                
+        
+         var tv = cs.nodeFindOrCreate(null, top.to_string(), title);
+         tv = cs.nodeFindOrCreate(tv, "%d:%s".print(top, file), file);
+    //     tv = cs.nodeAppendOrCreate(tv, "%d:%s:%d".print(top, file,line), file,line, message);
         
     }
     public class Xcls_ScrolledWindow2 : Object 
