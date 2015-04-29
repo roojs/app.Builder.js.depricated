@@ -373,6 +373,7 @@ public class Xcls_GtkView : Object
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_column( _this );
             child_1.ref();
+            this.el.append_column (  child_1.el  );
         }
 
         // user defined functions 

@@ -89,6 +89,7 @@
            "utf8 title" : "Compile output",
            "* init" : "{\n  this.el.add_attribute(_this.renderer.el , \"markup\", 2 );\n \n}\n",
            "xtype" : "TreeViewColumn",
+           "* pack" : "append_column",
            "string id" : "column",
            "$ xns" : "Gtk",
            "items" : [
