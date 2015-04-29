@@ -25,9 +25,9 @@ namespace Palete {
 		 
 		public Gee.HashMap<int,string> line_errors;
 		
-		public void  compile_notice(string type, string file, int line, string message) {
+		public void  compile_notice(string type, string filename, int line, string message) {
 			GLib.Idle.add(() => {
-				this.file.compile_notice(type,file,line,message);
+				this.file.compile_notice(type,filename,line,message);
 				return false;
 			});
 		}
