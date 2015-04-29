@@ -79,7 +79,7 @@
            "gint n_columns" : 4,
            "id" : "compile_result_store",
            "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
-           "| Gtk.TreePath ts.nodeFindOrCreate" : "(Gtk.TreePath? par, string id , string title) \n{\n \n\n}\n",
+           "| Gtk.TreePath ts.nodeFindOrCreate" : "(string treepath, string id , string title) \n{\n \n\n}\n",
            "* pack" : "set_model",
            "xtype" : "TreeStore",
            "$ xns" : "Gtk"
