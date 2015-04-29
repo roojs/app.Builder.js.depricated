@@ -179,8 +179,9 @@ public class Xcls_GtkView : Object
                 
         
          var tv = cs.nodeFindOrCreate(null, top.to_string(), title);
-         tv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
-          cs.nodeAppendOrCreate(tv, "%d:%s:%d".printf(top, file,line), file,line, message);
+         var ftv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
+         
+          cs.nodeAppendOrCreate(ftv, "%d:%s:%d".printf(top, file,line), file,line, message);
         
     }
     public class Xcls_ScrolledWindow2 : Object 
