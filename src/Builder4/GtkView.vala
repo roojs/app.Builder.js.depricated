@@ -418,7 +418,7 @@ public class Xcls_GtkView : Object
             
             this.el.append(out iter,par == null ? null : piter);
             this.el.set(iter, id, line, message, file,-1);
-               
+                
             return new this.el.get_path(iter);
         
         }
