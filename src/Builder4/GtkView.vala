@@ -392,13 +392,10 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions 
-        public void nodeAppendOrCreate (Gtk.TreePath? par, string id, string title) {
+        public void nodeAppendOrCreate (Gtk.TreePath? par, string id, string file, line, message) {
+        
         
             // loop through parent childnre
-            Gtk.TreeIter piter;
-            if (par != null) {
-                this.el.get_iter(out piter, par);
-            }
             Gtk.TreeIter iter;
             if (this.el.iter_children(out iter, par == null ? null : piter)) {
                 var loop = true;
@@ -407,7 +404,12 @@ public class Xcls_GtkView : Object
                     this.el.get_value(iter, 0, out val);
                     var sval = (string)val;
                     if (sval == id) {
-                        return this.el.get_path(iter);
+                        GLib.Value mval;
+                        this.el.get_value(iter, 2, out mval);
+                        var smval = (string)mval;
+                        mval.set_string(mval + "\n" + message);
+                    
+                        return;
                     }
                     loop = this.el.iter_next(iter);    
                 }
@@ -415,7 +417,7 @@ public class Xcls_GtkView : Object
             // create the node...
             
             this.el.append(out iter,par == null ? null : piter);
-            this.el.set(iter, id, 0, title, "",-1);
+            this.el.set(iter, id, line, message, file,-1);
                
             return new this.el.get_path(iter);
         
