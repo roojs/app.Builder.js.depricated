@@ -25,6 +25,7 @@ namespace Palete {
 		 
 		public Gee.HashMap<int,string> line_errors;
 		
+		// can be hooked into?
 		public signal void notice(string type, string file, int line, string message);
 
 		public ValaSourceReport(JsRender.JsRender file)
