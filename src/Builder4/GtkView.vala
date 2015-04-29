@@ -17,11 +17,11 @@ public class Xcls_GtkView : Object
     public Xcls_compile_view compile_view;
 
         // my vars (def)
-    public Xcls_MainWindow  win;
     public Gtk.Widget lastObj;
     public int width;
     public JsRender.JsRender file;
     public int height;
+    public Xcls_MainWindow win;
 
     // ctor 
     public Xcls_GtkView()
@@ -30,7 +30,6 @@ public class Xcls_GtkView : Object
         this.el = new Gtk.VPaned();
 
         // my vars (dec)
-        this.win = true;
         this.lastObj = null;
         this.width = 0;
         this.file = null;
