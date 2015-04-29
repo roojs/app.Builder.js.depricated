@@ -132,7 +132,7 @@ namespace Palete {
 		
 		
 		public Gee.HashMap<int,string> checkString(string contents)
-        {
+		{
 			// init context:
 			var valac = "valac " ;
 			
@@ -142,13 +142,13 @@ namespace Palete {
 			context.experimental = false;
 			context.experimental_non_null = false;
 			
-#if VALA_2_28
+#if VALA_0_28
 			var ver=28;
-#elif VALA_2_26	
+#elif VALA_0_26	
 			var ver=26;
-#elif VALA_2_24
+#elif VALA_0_24
 			var ver=24;
-#elif VALA_2_22	
+#elif VALA_0_22	
 			var ver=22;
 #endif
 			
@@ -301,7 +301,7 @@ namespace Palete {
 			var ccompiler = new Vala.CCodeCompiler ();
 			var cc_command = Environment.get_variable ("CC");
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
-#if VALA_2_28
+#if VALA_0_28
 			ccompiler.compile (context, cc_command, new string[] { }, pkg_config_command);
 #else
 			ccompiler.compile (context, cc_command, new string[] { });
