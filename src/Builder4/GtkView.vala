@@ -131,8 +131,7 @@ public class Xcls_GtkView : Object
             
             this.container.el.add(obj);
             obj.show_all();
-            
-             
+              
             
     }
     public class Xcls_ScrolledWindow2 : Object 
