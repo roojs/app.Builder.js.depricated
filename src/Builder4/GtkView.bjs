@@ -20,7 +20,7 @@
    "xtype" : "VPaned",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
-   "| void compileNotice" : "(  type,   file,   line,   message) {\n\n}\n",
+   "| void compileNotice" : "(  type,   file,   line,   message) {\n    // if type = \"START\"... then we reset the tree?\n}\n",
    "$ xns" : "Gtk",
    "items" : [
     {

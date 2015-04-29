@@ -137,7 +137,7 @@ public class Xcls_GtkView : Object
             
     }
     public void compileNotice (  type,   file,   line,   message) {
-    
+        // if type = "START"... then we reset the tree?
     }
     public class Xcls_ScrolledWindow2 : Object 
     {
