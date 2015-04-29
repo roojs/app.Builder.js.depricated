@@ -438,24 +438,29 @@ public class Xcls_GtkView : Object
                 this.el.get_iter(out piter, par);
             }
             Gtk.TreeIter iter;
-            if (this.el.iter_children(out iter, par == null ? null : piter)) {
-                var loop = true;
-                while (loop) {
-                    GLib.Value val;
-                    this.el.get_value(iter, 0, out val);
-                    var sval = (string)val;
-                    if (sval == id) {
-                        return this.el.get_path(iter);
-                    }
-                    loop = this.el.iter_next(iter);    
+            var loop =  par == null ? 
+                this.el.iter_children(out iter, null) :
+                 this.el.iter_children(out iter,  piter);
+                 
+            while (loop) {
+                GLib.Value val;
+                this.el.get_value(iter, 0, out val);
+                var sval = (string)val;
+                if (sval == id) {
+                    return this.el.get_path(iter);
                 }
+                loop = this.el.iter_next(ref iter);    
             }
             // create the node...
+             if (par == null) {
+                this.el.append(out iter, null);
+            } else {
+                this.el.append(out iter, piter);
+            }
             
-            this.el.append(out iter,par == null ? null : piter);
             this.el.set(iter, id, 0, title, "",-1);
                
-            return new this.el.get_path(iter);
+            return   this.el.get_path(iter);
         
         }
     }
