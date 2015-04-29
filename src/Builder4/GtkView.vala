@@ -405,7 +405,9 @@ public class Xcls_GtkView : Object
              
             // loop through parent childnre
             Gtk.TreeIter iter; 
-            var loop =    this.el.iter_children(out iter,  piter);
+            var loop =  par == null ? 
+                this.el.iter_children(out iter, null) :
+                 this.el.iter_children(out iter,  piter);
             
             while (loop) {
                 GLib.Value val;
@@ -415,9 +417,8 @@ public class Xcls_GtkView : Object
                     GLib.Value mval;
                     this.el.get_value(iter, 2, out mval);
                     var smval = (string)mval;
-                    print("add message: %s", message);
                     mval.set_string(smval + "\n" + message); //markup?
-                    this.el.set_value(iter, 2, mval);
+                
                     return;
                 }
                 loop = this.el.iter_next(ref iter);    
@@ -429,7 +430,6 @@ public class Xcls_GtkView : Object
             } else {
                 this.el.append(out iter, piter);
             }
-            print ("add line %s / %d / %s/  %s\n", id, line, message, file);
             this.el.set(iter, id, line, message, file,-1);
                 
             return ;
@@ -465,7 +465,7 @@ public class Xcls_GtkView : Object
               this.el.get_iter(out piter, par);
                 this.el.append(out iter, piter);
             }
-            
+            print("add iter %s / %s", id, title);
             this.el.set(iter, id, 0, title, "",-1);
                
             return   this.el.get_path(iter);
