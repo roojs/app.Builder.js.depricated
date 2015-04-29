@@ -3,18 +3,19 @@
 
 namespace Palete {
 	
-	public class ValaSourceNotice  : Object {
+	/*public class ValaSourceNotice  : Object {
 		public string file;
 		public int line;
 		public string message;
 		public string type;
-		public ValaSourceNotice( string t, string f, int l, string m) {
+		public ValaSourceNotice( string type, string file, int line, string message) {
 			this.file =f ;
 			this.line =l;
 			this.type =t;
 			this.message = m;
 		}
 	}
+	*/
 	
 	public class ValaSourceReport  : Vala.Report {
 
@@ -24,7 +25,7 @@ namespace Palete {
 		 
 		public Gee.HashMap<int,string> line_errors;
 		
-		public signal void notice(
+		public signal void notice(string type, string file, int line, string message);
 
 		public ValaSourceReport(JsRender.JsRender file)
 		{
@@ -42,7 +43,7 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				print ("Warning: %d:  %s\n", source.begin.line, message);
+				this.notice(
 				return;
 			}
 			var pre = "";
