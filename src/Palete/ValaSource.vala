@@ -2,7 +2,7 @@
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 namespace Palete {
-	
+	1
 	/*public class ValaSourceNotice  : Object {
 		public string file;
 		public int line;
@@ -29,7 +29,7 @@ namespace Palete {
 			GLib.Idle.add(() => {
 				this.file.compile_notice(type,file,line,message);
 				return false;
-			}
+			});
 		}
 		
 	 
@@ -320,7 +320,7 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			this.file.compile_notice("START", "", 0, "");
+			this.compile_notice("START", "", 0, "");
 
 		
 			//add_documented_files (context, settings.source_files);
@@ -333,7 +333,7 @@ namespace Palete {
 				((ValaSourceReport)context.report).dump();
 				
 				Vala.CodeContext.pop ();
-				this.file.compile_notice("END", "", 0, "");
+				this.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 			}
 
@@ -345,7 +345,7 @@ namespace Palete {
 				print("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
-				this.file.compile_notice("END", "", 0, "");
+				this.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 				
 			}
@@ -368,7 +368,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			this.file.compile_notice("END", "", 0, "");
+			this.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
