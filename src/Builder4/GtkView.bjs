@@ -12,8 +12,8 @@
     "size_allocate" : "(aloc) => {\n\n    this.width = aloc.width;\n    this.height =aloc.height;\n    }\n"
    },
    "id" : "GtkView",
-   "# Gtk.Widget lastObj" : "null",
    "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n     \n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
+   "# Gtk.Widget lastObj" : "null",
    "| void loadFile" : "(JsRender.JsRender file) \n{\n        file.compile_notice.connect(this.compileNotice);\n       // this.el.set_position((int)(this.el.max_position * 0.7));\n        this.el.set_position(this.el.max_position );\n        this.file = null;\n        \n        if (file.tree == null) {\n            return;\n        }\n        this.file = file;\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n        \n        // hide the compile view at present..\n          \n        \n        var w = this.width;\n        var h = this.height;\n        \n        print(\"ALLOC SET SIZES %d, %d\\n\", w,h); \n        \n        // set the container size min to 500/500 or 20 px less than max..\n        w = int.max (w-20, 500);\n        h = int.max (h-20, 500); \n        \n        print(\"SET SIZES %d, %d\\n\", w,h);       \n        _this.container.el.set_size_request(w,h);\n        \n        _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.\n        var rgba = Gdk.RGBA ();\n        rgba.parse (\"#ccc\");\n        _this.view_layout.el.override_background_color(Gtk.StateFlags.NORMAL, rgba);\n        \n        \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n        \n        this.container.el.add(obj);\n        obj.show_all();\n        \n         \n        \n}\n ",
    "int width" : 0,
    "Xcls_MainWindow main_window" : "",
@@ -30,14 +30,14 @@
      "items" : [
       {
        "id" : "view_layout",
-       "* pack" : "add",
        "xtype" : "Layout",
+       "* pack" : "add",
        "$ xns" : "Gtk",
        "items" : [
         {
          "id" : "container",
-         "xtype" : "HBox",
          "* pack" : "put,10,10",
+         "xtype" : "HBox",
          "$ xns" : "Gtk"
         }
        ]
@@ -46,8 +46,8 @@
     },
     {
      "id" : "compile_view",
-     "* pack" : "pack2,true,true",
      "xtype" : "VBox",
+     "* pack" : "pack2,true,true",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -81,7 +81,7 @@
            "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
            "* pack" : "set_model",
            "xtype" : "TreeStore",
-           "| void nodeAppendOrCreate" : "(Gtk.TreePath  par, string id, string file, int line, string message) {\n\n    Gtk.TreeIter piter;\n     \n    this.el.get_iter(out piter, par);\n     \n    // loop through parent childnre\n    Gtk.TreeIter iter; \n    var loop =  par == null ? \n        this.el.iter_children(out iter, null) :\n         this.el.iter_children(out iter,  piter);\n    \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        if (sval == id) {\n            GLib.Value mval;\n            this.el.get_value(iter, 2, out mval);\n            var smval = (string)mval;\n            mval.set_string(smval + \"\\n\" + message); //markup?\n        \n            return;\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    \n    // create the node...\n    if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n        this.el.append(out iter, piter);\n    }\n    this.el.set(iter, id, line, message, file,-1);\n        \n    return ;\n\n}   ",
+           "| void nodeAppendOrCreate" : "(Gtk.TreePath  par, string id, string file, int line, string message) {\n\n    Gtk.TreeIter piter;\n     \n    this.el.get_iter(out piter, par);\n     \n    // loop through parent childnre\n    Gtk.TreeIter iter; \n    var loop =    this.el.iter_children(out iter,  piter);\n    \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        if (sval == id) {\n            GLib.Value mval;\n            this.el.get_value(iter, 2, out mval);\n            var smval = (string)mval;\n            mval.set_string(smval + \"\\n\" + message); //markup?\n        \n            return;\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    \n    // create the node...\n    if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n        this.el.append(out iter, piter);\n    }\n    print (\"add line %s / %d / %s/  %s\\n\", id, line, message, file);\n    this.el.set(iter, id, line, message, file,-1);\n        \n    return ;\n\n}   ",
            "$ xns" : "Gtk",
            "| Gtk.TreePath nodeFindOrCreate" : "(Gtk.TreePath? par, string id, string title) {\n\n    // loop through parent childnre\n    Gtk.TreeIter piter   ;\n    Gtk.TreeIter iter;\n    var loop = true;\n    if (par != null) {\n        this.el.get_iter(out piter, par);\n        loop = this.el.iter_children(out iter,  piter);\n    } else {\n        loop = this.el.iter_children(out iter, null) ;\n    }\n         \n         \n    while (loop) {\n        GLib.Value val;\n        this.el.get_value(iter, 0, out val);\n        var sval = (string)val;\n        if (sval == id) {\n            return this.el.get_path(iter);\n        }\n        loop = this.el.iter_next(ref iter);    \n    }\n    // create the node...\n     if (par == null) {\n        this.el.append(out iter, null);\n    } else {\n      this.el.get_iter(out piter, par);\n        this.el.append(out iter, piter);\n    }\n    \n    this.el.set(iter, id, 0, title, \"\",-1);\n       \n    return   this.el.get_path(iter);\n\n}\n "
           },
@@ -107,8 +107,8 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
-           "* pack" : "add",
            "xtype" : "View",
+           "* pack" : "add",
            "$ xns" : "GtkSource",
            "gboolean show_line_numbers" : true,
            "gboolean editable" : false

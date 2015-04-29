@@ -405,9 +405,7 @@ public class Xcls_GtkView : Object
              
             // loop through parent childnre
             Gtk.TreeIter iter; 
-            var loop =  par == null ? 
-                this.el.iter_children(out iter, null) :
-                 this.el.iter_children(out iter,  piter);
+            var loop =    this.el.iter_children(out iter,  piter);
             
             while (loop) {
                 GLib.Value val;
@@ -430,6 +428,7 @@ public class Xcls_GtkView : Object
             } else {
                 this.el.append(out iter, piter);
             }
+            print ("add line %s / %d / %s/  %s\n", id, line, message, file);
             this.el.set(iter, id, line, message, file,-1);
                 
             return ;
