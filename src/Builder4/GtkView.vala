@@ -415,8 +415,9 @@ public class Xcls_GtkView : Object
                     GLib.Value mval;
                     this.el.get_value(iter, 2, out mval);
                     var smval = (string)mval;
+                    print("add message: %s", message);
                     mval.set_string(smval + "\n" + message); //markup?
-                
+                    this.el.set_value(iter, 2, mval);
                     return;
                 }
                 loop = this.el.iter_next(ref iter);    
