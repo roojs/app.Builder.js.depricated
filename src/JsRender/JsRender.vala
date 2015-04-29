@@ -44,7 +44,16 @@ namespace JsRender {
 		
 
 		public signal void changed (Node? node, string source); 
+		
+		// emitted by valasource... after a compile...
+		public signal void compiled_notice (
+			Gee.HashMap<int,string> line_warnings,
+			Gee.HashMap<int,string> line_depr,
+			Gee.HashMap<int,string> line_errors
 
+		
+		); 
+		
 		/**
 		 * UI componenets
 		 * 
