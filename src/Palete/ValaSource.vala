@@ -19,17 +19,15 @@ namespace Palete {
 	public class ValaSourceReport  : Vala.Report {
 
 
-		
-		public Gee.HashMap<int,string> line_warnings;
-		public Gee.HashMap<int,string> line_depr;
+		public Gee.ArrayList<ValaSourceNotice> notices;
+		 
 		public Gee.HashMap<int,string> line_errors;
 
 		public ValaSourceReport()
 		{
 			base();
 			this.line_errors = new Gee.HashMap<int,string> ();
-			this.line_depr = new Gee.HashMap<int,string> ();
-			this.line_warnings = new Gee.HashMap<int,string> ();
+			this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
 		
 		public override void warn (Vala.SourceReference? source, string message) {
