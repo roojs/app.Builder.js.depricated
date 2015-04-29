@@ -12,15 +12,15 @@
     "size_allocate" : "(aloc) => {\n\n    this.width = aloc.width;\n    this.height =aloc.height;\n    }\n"
    },
    "id" : "GtkView",
-   "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n     \n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
    "# Gtk.Widget lastObj" : "null",
+   "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n    var height = win.get_height();\n\n    Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height); // this.el.position?\n\n    screenshot.save(filename,\"png\");\n    return;\n    \n    \n    \n    \n    \n     \n    \n    // should we hold until it's printed...\n    \n      \n\n    \n    \n\n\n    \n     \n}\n",
    "| void loadFile" : "(JsRender.JsRender file) \n{\n    \n       // this.el.set_position((int)(this.el.max_position * 0.7));\n        this.el.set_position(this.el.max_position );\n        this.file = null;\n        \n        if (file.tree == null) {\n            return;\n        }\n        this.file = file;\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n        \n        // hide the compile view at present..\n          \n        \n        var w = this.width;\n        var h = this.height;\n        \n        print(\"ALLOC SET SIZES %d, %d\\n\", w,h); \n        \n        // set the container size min to 500/500 or 20 px less than max..\n        w = int.max (w-20, 500);\n        h = int.max (h-20, 500); \n        \n        print(\"SET SIZES %d, %d\\n\", w,h);       \n        _this.container.el.set_size_request(w,h);\n        \n        _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.\n        var rgba = Gdk.RGBA ();\n        rgba.parse (\"#ccc\");\n        _this.view_layout.el.override_background_color(Gtk.StateFlags.NORMAL, rgba);\n        \n        \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n        \n        this.container.el.add(obj);\n        obj.show_all();\n        \n         \n        \n}\n ",
    "int width" : 0,
    "Xcls_MainWindow main_window" : "",
    "xtype" : "VPaned",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
-   "| void compileNotice" : "(  type,   file,   line,   message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    \n     \n    \n}\n",
+   "| void compileNotice" : "( string  type,   string file,   int line,   string  message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    \n     \n    \n}\n",
    "$ xns" : "Gtk",
    "items" : [
     {
@@ -30,14 +30,14 @@
      "items" : [
       {
        "id" : "view_layout",
-       "xtype" : "Layout",
        "* pack" : "add",
+       "xtype" : "Layout",
        "$ xns" : "Gtk",
        "items" : [
         {
          "id" : "container",
-         "* pack" : "put,10,10",
          "xtype" : "HBox",
+         "* pack" : "put,10,10",
          "$ xns" : "Gtk"
         }
        ]
@@ -46,8 +46,8 @@
     },
     {
      "id" : "compile_view",
-     "xtype" : "VBox",
      "* pack" : "pack2,true,true",
+     "xtype" : "VBox",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -106,8 +106,8 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
-           "xtype" : "View",
            "* pack" : "add",
+           "xtype" : "View",
            "$ xns" : "GtkSource",
            "gboolean show_line_numbers" : true,
            "gboolean editable" : false
