@@ -369,7 +369,9 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions 
-        public Gtk.TreePath ts.nodeFindOrCreate () {
+        public Gtk.TreePath ts.nodeFindOrCreate (Gtk.TreePath? par, string id , string title) 
+        {
+         
         
         }
     }
