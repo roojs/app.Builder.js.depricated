@@ -439,6 +439,8 @@ public class Xcls_GtkView : Object
         }
         public Gtk.TreePath nodeFindOrCreate (Gtk.TreePath? par, string id, string title) {
         
+        
+            print("looking for %s\n", id);
             // loop through parent childnre
             Gtk.TreeIter piter   ;
             Gtk.TreeIter iter;
@@ -455,6 +457,7 @@ public class Xcls_GtkView : Object
                 GLib.Value val;
                 this.el.get_value(iter, 0, out val);
                 var sval = (string)val;
+                print("got node %s", sval);
                 if (sval == id) {
                     return this.el.get_path(iter);
                 }
