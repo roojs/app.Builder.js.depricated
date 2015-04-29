@@ -20,7 +20,7 @@
    "xtype" : "VPaned",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
-   "| void compileNotice" : "( string type,   string file,   int line,   string message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    \n     \n    \n}\n",
+   "| void compileNotice" : "(  type,   file,   line,   message) {\n    // if type = \"START\"... then we reset the tree?\n    // the issue is that the compiler is continually going..\n    // so editing a file etc.. may change things.?\n    // probably not an issue.\n    if (type ==\"START\") {\n        // reset the tree;\n        return;\n    }\n    \n     \n    \n}\n",
    "$ xns" : "Gtk",
    "items" : [
     {
@@ -82,7 +82,7 @@
            "* pack" : "set_model",
            "xtype" : "TreeStore",
            "$ xns" : "Gtk",
-           "| Gtk.TreePath nodeFindOrCreate" : "() {\n\n}\n"
+           "| Gtk.TreePath nodeFindOrCreate" : "(Gtk.TreePath? par, string id, string text) {\n    return par;\n}\n"
           },
           {
            "utf8 title" : "Compile output",
