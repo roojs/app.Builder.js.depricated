@@ -148,6 +148,7 @@ public class Xcls_GtkView : Object
         if (type =="START") {
             // reset the tree;
             cs.el.clear();   
+            cs.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);   
             return;
         }
     
