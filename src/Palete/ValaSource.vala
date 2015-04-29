@@ -56,10 +56,10 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("DEPR", this.file.path, source.begin.line, message);
+				this.file.compile_notice("DEPR", source.file.filename, source.begin.line, message);
 				return;
 			}
-			this.file.compile_notice("DEPR", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("DEPR",  this.file.path, source.begin.line, message);
 			
 		}
 		
