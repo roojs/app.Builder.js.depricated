@@ -71,6 +71,11 @@
        "$ xns" : "Gtk",
        "items" : [
         {
+         "* pack" : "pack_start,true,true,0",
+         "xtype" : "ScrolledWindow",
+         "$ xns" : "Gtk"
+        },
+        {
          "* pack" : "add",
          "xtype" : "TreeView",
          "$ xns" : "Gtk",
