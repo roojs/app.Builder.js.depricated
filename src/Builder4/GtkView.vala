@@ -149,10 +149,16 @@ public class Xcls_GtkView : Object
         if (type =="START") {
             // reset the tree;
             cs.el.clear();   
+    //        cs.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);   
+            return;
+        }
+        if (type =="END") {
+            // reset the tree;
+    
+            _this.compile_tree.el.expand_all(); 
             cs.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);   
             return;
         }
-    
         
         var top = 0;
         var title = "";
@@ -180,10 +186,9 @@ public class Xcls_GtkView : Object
                 
         
          var tv = cs.nodeFindOrCreate(null, top.to_string(), title);
-         tv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
-          cs.nodeAppendOrCreate(tv, "%d:%s:%d".printf(top, file,line), file,line, message);
-        
-    }
+         var ftv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
+         
+          cs.nodeAppendOrCreate(ftv, "%d:%s:%d".printf(top, file,line), file,line, message);
     public class Xcls_ScrolledWindow2 : Object 
     {
         public Gtk.ScrolledWindow el;
