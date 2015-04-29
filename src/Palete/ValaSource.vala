@@ -31,7 +31,7 @@ namespace Palete {
 				pre = line_errors.get(source.begin.line) + "\n";
 				
 			}
-			line_errors.set(source.begin.line, pre +  message);
+			line_errors.set(source.begin.line, pre +  "Warn: " + message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		
