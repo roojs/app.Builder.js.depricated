@@ -16,6 +16,7 @@ public class Xcls_GtkView : Object
     public Xcls_container container;
     public Xcls_compile_view compile_view;
     public Xcls_compile_result_store compile_result_store;
+    public Xcls_renderer renderer;
 
         // my vars (def)
     public Gtk.Widget lastObj;
@@ -490,14 +491,14 @@ public class Xcls_GtkView : Object
 
             // set gobject values
             this.el.title = "Compile output";
-            var child_0 = new Xcls_CellRendererText12( _this );
+            var child_0 = new Xcls_renderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
         }
 
         // user defined functions 
     }
-    public class Xcls_CellRendererText12 : Object 
+    public class Xcls_renderer : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_GtkView  _this;
@@ -506,9 +507,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_CellRendererText12(Xcls_GtkView _owner )
+        public Xcls_renderer(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.renderer = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
