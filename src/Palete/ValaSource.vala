@@ -42,10 +42,10 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("WARN", this.file.path, source.begin.line, message);
+				this.file.compile_notice("WARN", source.file.filename , source.begin.line, message);
 				return;
 			}
-			this.file.compile_notice("WARN", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("WARN", this.file.path, source.begin.line, message);
 			
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
