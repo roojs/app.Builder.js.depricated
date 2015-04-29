@@ -88,9 +88,7 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-            
-            file.connect.compile_notice(_this.compile_notice);
-            
+        
            // this.el.set_position((int)(this.el.max_position * 0.7));
             this.el.set_position(this.el.max_position );
             this.file = null;
@@ -138,7 +136,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public return_type XXXX () {
+    public void compileNotice () {
     
     }
     public class Xcls_ScrolledWindow2 : Object 
