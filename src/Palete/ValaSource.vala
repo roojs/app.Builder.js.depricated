@@ -3,11 +3,24 @@
 
 namespace Palete {
 	
+	public class ValaSourceNotice  : Object {
+		public string file;
+		public int line;
+		public string message;
+		public string type;
+		public ValaSourceNotice( string t, string f, int l, string m) {
+			this.file =f ;
+			this.line =l;
+			this.type =t;
+			this.message = m;
+		}
+	}
+	
 	public class ValaSourceReport  : Vala.Report {
 
 
 		
-		public Gee.HashMap<int,string> line_warnings
+		public Gee.HashMap<int,string> line_warnings;
 		public Gee.HashMap<int,string> line_depr;
 		public Gee.HashMap<int,string> line_errors;
 
@@ -20,7 +33,7 @@ namespace Palete {
 		}
 		
 		public override void warn (Vala.SourceReference? source, string message) {
-			errors++;
+			 
 			if (source == null) {
 				return;
 				//stderr.printf ("My error: %s\n", message);
@@ -38,7 +51,7 @@ namespace Palete {
 			print ("Test file: Got error WARN: %d: %s\n", source.begin.line, message);
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
-			errors++;
+			 
 			if (source == null) {
 				return;
 				//stderr.printf ("My error: %s\n", message);
