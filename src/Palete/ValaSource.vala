@@ -45,7 +45,7 @@ namespace Palete {
 				this.file.compile_notice("Warn", this.file.path, source.begin.line, message);
 				return;
 			}
-			this.notice("Warn", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("Warn", source.file.filename, source.begin.line, message);
 			
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
@@ -56,10 +56,10 @@ namespace Palete {
 			}
 			
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.notice("Depr", this.file.path, source.begin.line, message);
+				this.file.compile_notice("Depr", this.file.path, source.begin.line, message);
 				return;
 			}
-			this.notice("Depr", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("Depr", source.file.filename, source.begin.line, message);
 			
 		}
 		
@@ -70,7 +70,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.notice("Err", this.file.path, source.begin.line, message);
+				this.file.compile_notice("Err", this.file.path, source.begin.line, message);
 				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
@@ -80,7 +80,7 @@ namespace Palete {
 				
 			}
 			line_errors.set(source.begin.line, pre +  message);
-			this.notice("Err", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("Err", source.file.filename, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		public void dump()
