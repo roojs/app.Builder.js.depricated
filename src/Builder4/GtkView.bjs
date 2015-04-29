@@ -20,7 +20,7 @@
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
    "$ xns" : "Gtk",
-   "$ Xcls_MainWindow win" : "",
+   "$ Xcls_MainWindow win" : true,
    "items" : [
     {
      "* pack" : "pack1,true,true",

@@ -34,6 +34,7 @@ public class Xcls_GtkView : Object
         this.width = 0;
         this.file = null;
         this.height = 0;
+        this.win = true;
 
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
