@@ -432,7 +432,7 @@ public class Xcls_GtkView : Object
             } else {
                 this.el.append(out iter, piter);
             }
-            this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s",printf(line,message)), 3, file,-1);
+            this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s".printf(line,message)), 3, file,-1);
                 
             return ;
         
