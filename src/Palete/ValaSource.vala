@@ -68,10 +68,10 @@ namespace Palete {
 		}
 
 		public async Gee.HashMap<int,string> checkFileWithNodePropChange(
-	                   JsRender.Node node, 
-                           string prop,
-                           string ptype,
-                           string val)
+					JsRender.Node node, 
+					string prop,
+					string ptype,
+					string val)
 		{
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var hash = ptype == "listener" ? node.listeners : node.props;
