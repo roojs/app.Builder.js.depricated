@@ -18,14 +18,16 @@ namespace Palete {
 	
 	public class ValaSourceReport  : Vala.Report {
 
-
+		public JsRender.JsRender file;
+		
 		public Gee.ArrayList<ValaSourceNotice> notices;
 		 
 		public Gee.HashMap<int,string> line_errors;
 
-		public ValaSourceReport()
+		public ValaSourceReport(JsRender.JsRender file)
 		{
 			base();
+			this.file = file;
 			this.line_errors = new Gee.HashMap<int,string> ();
 			this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
@@ -36,6 +38,7 @@ namespace Palete {
 				return;
 				//stderr.printf ("My error: %s\n", message);
 			}
+			
 			if (source.file.filename != "~~~~~testfile.vala") {
 				print ("Warning: %d:  %s\n", source.begin.line, message);
 				return;
