@@ -15,6 +15,7 @@ public class Xcls_GtkView : Object
     public Xcls_view_layout view_layout;
     public Xcls_container container;
     public Xcls_compile_view compile_view;
+    public Xcls_compile_result_store compile_result_store;
 
         // my vars (def)
     public Gtk.Widget lastObj;
@@ -338,7 +339,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_TreeStore10( _this );
+            var child_0 = new Xcls_compile_result_store( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_column( _this );
@@ -347,7 +348,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions 
     }
-    public class Xcls_TreeStore10 : Object 
+    public class Xcls_compile_result_store : Object 
     {
         public Gtk.TreeStore el;
         private Xcls_GtkView  _this;
@@ -356,9 +357,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_TreeStore10(Xcls_GtkView _owner )
+        public Xcls_compile_result_store(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.compile_result_store = this;
             this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
 
             // my vars (dec)
