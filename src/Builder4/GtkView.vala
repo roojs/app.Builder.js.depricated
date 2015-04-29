@@ -438,7 +438,7 @@ public class Xcls_GtkView : Object
         public Gtk.TreePath nodeFindOrCreate (Gtk.TreePath? par, string id, string title) {
         
             // loop through parent childnre
-            Gtk.TreeIter piter;
+            Gtk.TreeIter piter = null;
             if (par != null) {
                 this.el.get_iter(out piter, par);
             }
