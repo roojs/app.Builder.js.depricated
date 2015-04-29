@@ -324,7 +324,9 @@ namespace Palete {
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
 				((ValaSourceReport)context.report).dump();
+				
 				Vala.CodeContext.pop ();
+				this.file.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 			}
 
@@ -336,6 +338,7 @@ namespace Palete {
 				print("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
+				this.file.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 				
 			}
@@ -358,6 +361,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
+			this.file.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
