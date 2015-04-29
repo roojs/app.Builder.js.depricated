@@ -145,7 +145,6 @@ public class Xcls_GtkView : Object
             // reset the tree;
             return;
         }
-        
          
         
     }
