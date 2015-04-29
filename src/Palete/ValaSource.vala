@@ -70,7 +70,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			if (source.file.filename != "~~~~~testfile.vala") {
-				this.file.compile_notice("ERR", this.file.path, source.begin.line, message);
+				this.file.compile_notice("ERR", source.file.filename, source.begin.line, message);
 				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
@@ -80,7 +80,7 @@ namespace Palete {
 				
 			}
 			line_errors.set(source.begin.line, pre +  message);
-			this.file.compile_notice("ERR", source.file.filename, source.begin.line, message);
+			this.file.compile_notice("ERR", this.file.path, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		public void dump()
