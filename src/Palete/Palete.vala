@@ -346,9 +346,11 @@ namespace Palete
                                   "var __aaa___ = " + code, out errmsg);
 
 			if (line < 0) {
+				print("no errors\n");
 				return ret;
 			}
 			ret.set(line, errmsg);
+			print("got  errors\n");
 			return ret;
 		}
 		if (file.language == "vala" ) { // not sure if we need to validate property
