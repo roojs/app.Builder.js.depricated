@@ -340,7 +340,7 @@ namespace Palete
 			var ret = new Gee.HashMap<int,string>();
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
-			print("TESTING CODE %s\n, code);
+			print("TESTING CODE %s\n", code);
 			string errmsg;
 			var line = Javascript.singleton().validate(
                                   "var __aaa___ = " + code, out errmsg);
