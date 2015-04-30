@@ -351,7 +351,7 @@ namespace Palete
 		return ret;
 
 	}
-	public async Gee.HashMap<int,string>  validateJavascript(
+	public   Gee.HashMap<int,string>  validateJavascript(
      			string code, 
 				string property, 
 				string ptype,
@@ -380,19 +380,7 @@ namespace Palete
 			print("got  errors\n");
 			return ret;
 		}
-		if (file.language == "vala" ) { // not sure if we need to validate property
-			
-			var vs = new ValaSource(file);
-			//var cd = new JSCore.ClassDefinitionEmpty();
-			var ret = yield vs.checkFileWithNodePropChange(
-	           		node, 
-					property, 
-					ptype,
-					code
-			 );
-			return ret;
-		}
-		 ;
+		 
 
 		//print ("not javascript\n");
 		return ret;
