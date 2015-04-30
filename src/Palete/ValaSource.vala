@@ -131,9 +131,8 @@ namespace Palete {
 			
 			hash.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
-		    print("%s\n", tmpstring);
 			hash.set(prop, old);
-			
+			print("%s\n", tmpstring);
 			var bits = tmpstring.split("/*--VALACHECK-START--*/");
 			var offset =0;
 			if (bits.length > 0) {
