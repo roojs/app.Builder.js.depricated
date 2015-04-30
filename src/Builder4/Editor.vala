@@ -398,6 +398,7 @@ public class Editor : Object
                 return true;
             }
            
+           
             var p = Palete.factory(_this.file.xtype);   
             
             var str = this.toString();
@@ -418,6 +419,19 @@ public class Editor : Object
             }
             this.check_running = true;
             
+            
+            if (_this.file.language == "js") {
+                return _this.highlightErrors(p.validateJavascript(
+                    str, 
+                     _this.key, 
+                    _this.ptype,
+                    _this.file,
+                    _this.node
+                ));    
+                
+            }
+                
+            print("calling validate code\n");    
             p.validateCode.begin(
                 str, 
                  _this.key, 
