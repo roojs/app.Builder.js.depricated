@@ -367,6 +367,9 @@ public class Editor : Object
         }
 
         // user defined functions 
+        public bool highlightErrors () {
+        
+        }
         public   string toString () {
             
             Gtk.TextIter s;
@@ -453,9 +456,6 @@ public class Editor : Object
             //print("done mark line\n");
              
             return true; // at present allow saving - even if it's invalid..
-        }
-        public return_type XXXX () {
-        
         }
     }
 }
