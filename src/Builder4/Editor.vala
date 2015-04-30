@@ -422,7 +422,7 @@ public class Editor : Object
             
             if (_this.file.language == "js") {
                 this.check_running = false;
-                return _this.highlightErrors(p.validateJavascript(
+                return this.highlightErrors(p.validateJavascript(
                     str, 
                      _this.key, 
                     _this.ptype,
@@ -442,26 +442,8 @@ public class Editor : Object
                 (obj, res) => {
                     this.check_running = false;
                     var validate_res = p.validateCode.end(res);
-                    this.error_line = validate_res.size;
+                    this.highlightErrors(validate_res);
         
-                    if (this.error_line < 1) {
-                          return;
-                    }
-                    var tlines = this.el.get_line_count ();
-                    Gtk.TextIter iter;
-                    var valiter = validate_res.map_iterator();
-                    while (valiter.next()) {
-                    
-                //        print("get inter\n");
-                        var eline = valiter.get_key();
-                        if (eline > tlines) {
-                            continue;
-                        }
-                        this.el.get_iter_at_line( out iter, eline);
-                        //print("mark line\n");
-                        this.el.create_source_mark(valiter.get_value(), "error", iter);
-                    }   
-                    
                 }
                 
             );
