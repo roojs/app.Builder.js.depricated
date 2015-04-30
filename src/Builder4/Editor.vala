@@ -396,7 +396,9 @@ public class Editor : Object
                 this.el.remove_source_marks (start, end, null);
             }
             
-            
+            if (str.length < 1) {
+                return true;
+            }
             
             
             p.validateCode.begin(
