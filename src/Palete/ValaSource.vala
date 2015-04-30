@@ -131,6 +131,8 @@ namespace Palete {
 			
 			hash.set(prop, newval);
 			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
+			hash.set(prop, old);
+		    
 			var bits = tmpstring.split("/*--VALACHECK-START--*/");
 			var offset =0;
 			if (bits.length > 0) {
@@ -139,7 +141,7 @@ namespace Palete {
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
 			yield this.checkStringThread(tmpstring);
-			hash.set(prop, old);
+			
 			// modify report
 			
 			var iter = this.report.line_errors.map_iterator();
@@ -255,9 +257,9 @@ namespace Palete {
 				var cg =  pr.compilegroups.get(this.file.build_module);
 				for (var i = 0; i < cg.sources.size; i++) {
 					var path = pr.resolve_path(
-	                        pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
-	                        
-	                if (!FileUtils.test(path, FileTest.EXISTS)) {
+							pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
+							
+					if (!FileUtils.test(path, FileTest.EXISTS)) {
 						continue;
 					}       
 	                 
@@ -307,7 +309,7 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			this.compile_notice("START", "", 0, "");
+			this.report.compile_notice("START", "", 0, "");
 
 		
 			//add_documented_files (context, settings.source_files);
@@ -320,7 +322,7 @@ namespace Palete {
 				((ValaSourceReport)context.report).dump();
 				
 				Vala.CodeContext.pop ();
-				this.compile_notice("END", "", 0, "");
+				this.report.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 			}
 
@@ -332,7 +334,7 @@ namespace Palete {
 				print("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
-				this.compile_notice("END", "", 0, "");
+				this.report.compile_notice("END", "", 0, "");
 				return this.report.line_errors;
 				
 			}
@@ -355,7 +357,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			this.compile_notice("END", "", 0, "");
+			this.report.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
