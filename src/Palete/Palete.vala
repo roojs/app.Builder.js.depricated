@@ -334,10 +334,10 @@ namespace Palete
 	{   
 
 		 print("validate code (%s) %s\n", file.language, code);
-		 
+		 var ret = new Gee.HashMap<int,string>();
 		
 		if (file.language == "js" && (ptype == "listener" || property[0] == '|')) {
-			var ret = new Gee.HashMap<int,string>();
+			
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			//print("TESTING CODE %s\n", code);
@@ -363,7 +363,7 @@ namespace Palete
 			 );
 			return ret;
 		}
-		var ret = new Gee.HashMap<int,string>();
+		 ;
 
 		//print ("not javascript\n");
 		return ret;
