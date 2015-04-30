@@ -354,10 +354,11 @@ public class Editor : Object
             // listeners 
             this.el.changed.connect( () => {
                 // check syntax??
-                    if(this.checkSyntax()) {
-                    _this.save_button.el.sensitive = true;
-                }
-               // print("EDITOR CHANGED");
+                // ??needed..??
+                _this.save_button.el.sensitive = true;
+                print("EDITOR CHANGED");
+                this.checkSyntax();
+               
                 _this.dirty = true;
             
                 // this.get('/LeftPanel.model').changed(  str , false);
