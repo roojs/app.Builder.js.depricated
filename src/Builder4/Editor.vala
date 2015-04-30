@@ -367,9 +367,28 @@ public class Editor : Object
         }
 
         // user defined functions 
-        public bool highlightErrors () {
+        public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
+                this.error_line = validate_res.size;
         
-        }
+                if (this.error_line < 1) {
+                      return false;
+                }
+                var tlines = this.el.get_line_count ();
+                Gtk.TextIter iter;
+                var valiter = validate_res.map_iterator();
+                while (valiter.next()) {
+                
+            //        print("get inter\n");
+                    var eline = valiter.get_key();
+                    if (eline > tlines) {
+                        continue;
+                    }
+                    this.el.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    this.el.create_source_mark(valiter.get_value(), "error", iter);
+                }   
+                return true;
+            }
         public   string toString () {
             
             Gtk.TextIter s;
