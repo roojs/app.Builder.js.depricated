@@ -324,7 +324,34 @@ namespace Palete
 
 	
 	  
-	public async Gee.HashMap<int,string>  validateCode(
+	public async Gee.HashMap<int,string>  validateVala(
+     			string code, 
+				string property, 
+				string ptype,
+				JsRender.JsRender file,
+				JsRender.Node node
+                     ) 
+	{   
+
+		 print("validate code (%s) %s\n", file.language, code);
+		 var ret = new Gee.HashMap<int,string>();
+		
+		 
+		if (file.language != "vala" ) { // not sure if we need to validate property
+			return ret;
+		}
+		var vs = new ValaSource(file);
+		//var cd = new JSCore.ClassDefinitionEmpty();
+		var ret = yield vs.checkFileWithNodePropChange(
+				node, 
+				property, 
+				ptype,
+				code
+		 );
+		return ret;
+
+	}
+	public async Gee.HashMap<int,string>  validateJavascript(
      			string code, 
 				string property, 
 				string ptype,
@@ -371,7 +398,6 @@ namespace Palete
 		return ret;
 
 	}
-
 	    
           
 	public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
