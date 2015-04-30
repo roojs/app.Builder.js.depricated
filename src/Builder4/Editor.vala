@@ -371,7 +371,7 @@ public class Editor : Object
                 this.error_line = validate_res.size;
         
                 if (this.error_line < 1) {
-                      return false;
+                      return true;
                 }
                 var tlines = this.el.get_line_count ();
                 Gtk.TextIter iter;
@@ -387,7 +387,7 @@ public class Editor : Object
                     //print("mark line\n");
                     this.el.create_source_mark(valiter.get_value(), "error", iter);
                 }   
-                return true;
+                return false;
             }
         public   string toString () {
             
