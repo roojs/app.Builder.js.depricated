@@ -379,9 +379,22 @@ public class Editor : Object
         public   bool checkSyntax () {
          
             if (this.check_running) {
+                if (this.check_queued) { 
+                    return true;
+                }
+                this.check_queued = true;
+                
+                GLib.Timeout.add_seconds(1, () => {
+                    this.check_queued = false;
+                    
+                    this.checkSyntax();
+                    return false;
+                });
+            
+        
                 return true;
             }
-            this.check_running = true;
+           
             var p = Palete.factory(_this.file.xtype);   
             
             var str = this.toString();
@@ -400,7 +413,7 @@ public class Editor : Object
                 print("checkSyntax - empty string?\n");
                 return true;
             }
-            
+             this.check_running = true;
             
             p.validateCode.begin(
                 str, 
