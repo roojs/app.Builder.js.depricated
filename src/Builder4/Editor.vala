@@ -380,11 +380,13 @@ public class Editor : Object
         public   bool checkSyntax () {
          
             if (this.check_running) {
+                print("Check is running\n");
                 if (this.check_queued) { 
+                    print("Check is already queued");
                     return true;
                 }
                 this.check_queued = true;
-                
+                print("Adding queued Check ");
                 GLib.Timeout.add_seconds(1, () => {
                     this.check_queued = false;
                     
@@ -414,7 +416,7 @@ public class Editor : Object
                 print("checkSyntax - empty string?\n");
                 return true;
             }
-             this.check_running = true;
+            this.check_running = true;
             
             p.validateCode.begin(
                 str, 
