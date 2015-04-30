@@ -10,7 +10,7 @@ public class WindowState : Object
     public Xcls_MainWindow win;
 
     public enum State {
-	NONE,
+		NONE,
         PREVIEW,
         OBJECT,
         PROP,
