@@ -363,27 +363,27 @@ namespace Palete
 		 print("validate code (%s) %s\n", file.language, code);
 		 var ret = new Gee.HashMap<int,string>();
 		
-		if (file.language == "js" && (ptype == "listener" || property[0] == '|')) {
+		if (file.language != "js") {
+			return ret;
+		 }
+		 if (ptype != "listener" && property[0] == '|') {
+			return ret;
+		 }
 			
-			
-			//var cd = new JSCore.ClassDefinitionEmpty();
-			//print("TESTING CODE %s\n", code);
-			string errmsg;
-			var line = Javascript.singleton().validate(
-                                  "var __aaa___ = " + code, out errmsg);
+		//var cd = new JSCore.ClassDefinitionEmpty();
+		//print("TESTING CODE %s\n", code);
+		string errmsg;
+		var line = Javascript.singleton().validate(
+							  "var __aaa___ = " + code, out errmsg);
 
-			if (line < 0) {
-				print("no errors\n");
-				return ret;
-			}
-			ret.set(line, errmsg);
-			print("got  errors\n");
+		if (line < 0) {
+			print("no errors\n");
 			return ret;
 		}
-		 
-
-		//print ("not javascript\n");
+		ret.set(line, errmsg);
+		print("got  errors\n");
 		return ret;
+		 
 
 	}
 	    
