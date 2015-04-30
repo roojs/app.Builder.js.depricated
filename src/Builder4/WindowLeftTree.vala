@@ -229,7 +229,7 @@ public class Xcls_WindowLeftTree : Object
                         Gtk.TreePath sp, ep;
                         this.el.get_visible_range(out sp, out ep);
                         // if sp is before cp then retuns 1.
-                        
+                        // if cp is before ep then retuns 1.
                         if (cp.compare(sp) >= 0 && ep.compare(cp) >=1) {
                             return false;
                         }

@@ -444,6 +444,7 @@ public class Editor : Object
             
             if (_this.file.language == "js") {
                 this.check_running = false;
+                print("calling validate javascript\n"); 
                 return this.highlightErrors(p.validateJavascript(
                     str, 
                      _this.key, 
@@ -454,7 +455,7 @@ public class Editor : Object
                 
             }
                 
-            print("calling validate code\n");    
+            print("calling validate vala\n");    
             p.validateVala.begin(
                 str, 
                  _this.key, 
@@ -463,7 +464,7 @@ public class Editor : Object
                 _this.node,
                 (obj, res) => {
                     this.check_running = false;
-                    var validate_res = p.validateCode.end(res);
+                    var validate_res = p.validateVala.end(res);
                     this.highlightErrors(validate_res);
         
                 }

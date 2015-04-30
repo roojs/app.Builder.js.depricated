@@ -342,7 +342,7 @@ namespace Palete
 		}
 		var vs = new ValaSource(file);
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		var ret = yield vs.checkFileWithNodePropChange(
+		 ret = yield vs.checkFileWithNodePropChange(
 				node, 
 				property, 
 				ptype,

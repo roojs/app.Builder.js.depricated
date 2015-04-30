@@ -10,6 +10,7 @@ src/c/*.o
 src/Makefile
 src/*.c
 src/*.o
+src/builder4
 src/builder
 src/*.stamp
 src/*.stamp-t
