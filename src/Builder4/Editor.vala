@@ -455,7 +455,7 @@ public class Editor : Object
             }
                 
             print("calling validate code\n");    
-            p.validateCode.begin(
+            p.validateVala.begin(
                 str, 
                  _this.key, 
                 _this.ptype,
