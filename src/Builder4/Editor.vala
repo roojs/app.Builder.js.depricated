@@ -421,6 +421,7 @@ public class Editor : Object
             
             
             if (_this.file.language == "js") {
+                this.check_running = false;
                 return _this.highlightErrors(p.validateJavascript(
                     str, 
                      _this.key, 
