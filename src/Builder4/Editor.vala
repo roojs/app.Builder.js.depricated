@@ -397,6 +397,7 @@ public class Editor : Object
             }
             
             if (str.length < 1) {
+                print("checkSyntax - empty string?\n");
                 return true;
             }
             
