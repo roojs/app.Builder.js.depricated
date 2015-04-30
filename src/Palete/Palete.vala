@@ -374,7 +374,7 @@ namespace Palete
 
 	    
           
-        public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
+	public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
 	public abstract void load();
 	public abstract Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type);
 	public abstract GirObject? getClass(string ename);
