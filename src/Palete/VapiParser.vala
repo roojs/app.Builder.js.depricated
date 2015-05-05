@@ -6,10 +6,10 @@ namespace Palete {
 	 
 	private class PackageMetaData {
 		public Package package;
-		public Gee.HashMap<Vala.Namespace, Valadoc.api.Namespace> namespaces = new HashMap<Vala.Namespace, Namespace> ();
+		public Gee.HashMap<Vala.Namespace, Valadoc.Api.Namespace> namespaces = new HashMap<Vala.Namespace, Valadoc.Api.Namespace> ();
 		public ArrayList<Vala.SourceFile> files = new ArrayList<Vala.SourceFile> ();
 
-		public PackageMetaData (Package package) {
+		public PackageMetaData ( Valadoc.Api.Package  package) {
 			this.package = package;
 		}
 
