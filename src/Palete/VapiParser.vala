@@ -40,19 +40,19 @@ namespace Palete {
 			}
 			
 			 
-			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
+			//var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
 			// what's the current version of vala???
 			
  			
-			vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
+			//vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
 			
-			for(var i =0 ; i < vapidirs.length; i++) {
-				valac += " --vapidir=" + vapidirs[i];
-			}
+			//for(var i =0 ; i < vapidirs.length; i++) {
+			//	valac += " --vapidir=" + vapidirs[i];
+			//}
 				
 			
 			// or context.get_vapi_path("glib-2.0"); // should return path..
-			context.vapi_directories = vapidirs;
+			//context.vapi_directories = vapidirs;
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
 			context.gir_directories = {};
