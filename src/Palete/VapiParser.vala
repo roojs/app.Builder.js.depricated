@@ -4,7 +4,81 @@
 
 namespace Palete {
 	 
-	
+	private class PackageMetaData {
+		public Package package;
+		public Gee.HashMap<Vala.Namespace, Valadoc.api.Namespace> namespaces = new HashMap<Vala.Namespace, Namespace> ();
+		public ArrayList<Vala.SourceFile> files = new ArrayList<Vala.SourceFile> ();
+
+		public PackageMetaData (Package package) {
+			this.package = package;
+		}
+
+		public Namespace get_namespace (Vala.Namespace vns, SourceFile file) {
+			Namespace? ns = namespaces.get (vns);
+			if (ns != null) {
+				return ns;
+			}
+
+			// find documentation comment if existing:
+			/*
+			SourceComment? comment = null;
+			if (vns.source_reference != null) {
+				foreach (Vala.Comment c in vns.get_comments()) {
+					if (c.source_reference.file == file.data ||
+						(c.source_reference.file.file_type == Vala.SourceFileType.SOURCE
+						 && ((Vala.SourceFile) file.data).file_type == Vala.SourceFileType.SOURCE)
+					) {
+						Vala.SourceReference pos = c.source_reference;
+						if (c is Vala.GirComment) {
+							comment = new GirSourceComment (c.content,
+															file,
+															pos.begin.line,
+															pos.begin.column,
+															pos.end.line,
+															pos.end.column);
+						} else {
+							comment = new SourceComment (c.content,
+														 file,
+														 pos.begin.line,
+														 pos.begin.column,
+														 pos.end.line,
+														 pos.end.column);
+						}
+						break;
+					}
+				}
+			}
+			* */
+
+			// find parent if existing
+			var parent_vns = vns.parent_symbol;
+
+			if (parent_vns == null) {
+				ns = new Namespace (package, file, vns.name, comment, vns);
+				package.add_child (ns);
+			} else {
+				Namespace parent_ns = get_namespace ((Vala.Namespace) parent_vns, file);
+				ns = new Namespace (parent_ns, file, vns.name, comment, vns);
+				parent_ns.add_child (ns);
+			}
+
+			namespaces.set (vns, ns);
+			return ns;
+		}
+
+		public void register_source_file (Vala.SourceFile file) {
+			files.add (file);
+		}
+
+		public bool is_package_for_file (Vala.SourceFile source_file) {
+			if (source_file.file_type == Vala.SourceFileType.SOURCE && !package.is_package) {
+				return true;
+			}
+
+			return files.contains (source_file);
+		}
+	}
+
 	 
 
 	public class VapiParser : Vala.CodeVisitor {
