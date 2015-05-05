@@ -20,10 +20,13 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
+// compile? valac --pkg valadoc--pkg libvaladoc-1.0 VapiParser.vala -o /tmp/vdoc
+
+
 using GLib.Path;
 using Valadoc.Importer;
 using Valadoc;
-using Config;
+//using Config;
 using Gee;
 
 
@@ -310,7 +313,7 @@ public class ValaDoc : Object {
 		}
 
 		if (version) {
-			stdout.printf ("Valadoc %s\n", Config.version);
+			//stdout.printf ("Valadoc %s\n", Config.version);
 			return 0;
 		}
 
