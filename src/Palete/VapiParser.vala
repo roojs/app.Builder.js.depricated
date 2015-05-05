@@ -1,6 +1,6 @@
 
 
-// valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
+// valac VapiParser.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 namespace Palete {
 	 
@@ -13,92 +13,12 @@ namespace Palete {
  		public VapiParser() {
 			base();
 			
-			
-
 		}
-		public void dumpCode(string str) {
-			var ls = str.split("\n");
-			for (var i=0;i < ls.length; i++) {
-				print("%d : %s\n", i+1, ls[i]);
-			}
-		}
+		  
 		
-		public Gee.HashMap<int,string> checkFile()
-		{
-			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
-		}
-
-		public async Gee.HashMap<int,string> checkFileWithNodePropChange(
-					JsRender.Node node, 
-					string prop,
-					string ptype,
-					string val)
-		{
-			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
-			var hash = ptype == "listener" ? node.listeners : node.props;
-			
-			// untill we get a smarter renderer..
-			// we have some scenarios where changing the value does not work
-			if (prop == "* xns" || prop == "xtype") {
-				return ret;
-			}
-				
-			
-			var old = hash.get(prop);
-			var newval = "/*--VALACHECK-START--*/ " + val ;
-			
-			hash.set(prop, newval);
-			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
-			hash.set(prop, old);
-			//print("%s\n", tmpstring);
-			var bits = tmpstring.split("/*--VALACHECK-START--*/");
-			var offset =0;
-			if (bits.length > 0) {
-				offset = bits[0].split("\n").length +1;
-			}
-			//this.dumpCode(tmpstring);
-			//print("offset %d\n", offset);
-			yield this.checkStringThread(tmpstring);
-			
-			// modify report
-			
-			var iter = this.report.line_errors.map_iterator();
-			while (iter.next()) {
-				// print("%d : %s\n",iter.get_key() - offset, iter.get_value());
-				// we have to prefix the error with the fake line number 
-				// so that it's a unique mark..
-				 ret.set(iter.get_key() - offset, 
-			 	       "%d : %s".printf(iter.get_key() - offset,iter.get_value()));
-			}
-			return ret;
-			
-		}
-		
-		public async  Gee.HashMap<int,string> checkStringThread(string contents)
-		{
-			SourceFunc callback = checkStringThread.callback;
-			var ret = new Gee.HashMap<int,string>();
-			ThreadFunc<void*> run = () => {
-				 
-				// Pass back result and schedule callback
-				ret = this.checkString(contents);
-				Idle.add((owned) callback);
-				return null;
-			};
-			Thread.create<void*>(run, false);
-
-			// Wait for background thread to schedule our callback
-			yield;
-			return ret;
-		}
-		
-		
-		
-		public Gee.HashMap<int,string> checkString(string contents)
+		public void checkString(string contents)
 		{
 			// init context:
-			var valac = "valac " ;
-			
 			context = new Vala.CodeContext ();
 			Vala.CodeContext.push (context);
 		
@@ -119,12 +39,7 @@ namespace Palete {
 				context.add_define ("VALA_0_%d".printf (i));
 			}
 			
-			
-			
-			
-			
-			
-			
+			 
 			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
 			// what's the current version of vala???
 			
