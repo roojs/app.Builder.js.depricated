@@ -59,8 +59,8 @@ namespace Palete {
 			context.thread = true;
 			
 			
-			this.report = new ValaSourceReport(this.file);
-			context.report = this.report;
+			//this.report = new ValaSourceReport(this.file);
+			//context.report = this.report;
 			
 			
 			context.basedir = "/tmp"; //Posix.realpath (".");
