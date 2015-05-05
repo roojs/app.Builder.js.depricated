@@ -16,7 +16,7 @@ namespace Palete {
 		}
 		  
 		
-		public void checkString(string contents)
+		public void checkPackage(string name)
 		{
 			// init context:
 			context = new Vala.CodeContext ();
@@ -74,76 +74,18 @@ namespace Palete {
  			 
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
 			context.root.add_using_directive (ns_ref);
-
-			var source_file = new Vala.SourceFile (
-		    		context, 
-		    		Vala.SourceFileType.SOURCE, 
-					"~~~~~testfile.vala",
-					contents
-	    		);
-			source_file.add_using_directive (ns_ref);
-			context.add_source_file (source_file);
-			
-	    	// add all the files (except the current one) - this.file.path
-	    	var pr = ((Project.Gtk)this.file.project);
-	    	if (this.file.build_module.length > 0) {
-				var cg =  pr.compilegroups.get(this.file.build_module);
-				for (var i = 0; i < cg.sources.size; i++) {
-					var path = pr.resolve_path(
-							pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
-							
-					if (!FileUtils.test(path, FileTest.EXISTS)) {
-						continue;
-					}       
-	                 
-					if (path == this.file.path.replace(".bjs", ".vala")) {
-						valac += " " + path;
-						continue;
-					}
-					if (FileUtils.test(path, FileTest.IS_DIR)) {
-						continue;
-					}
-					//print("Add source file %s\n", path);
-					
-					valac += " " + path;
-					
-					if (Regex.match_simple("\\.c$", path)) {
-						context.add_c_source_file(path);
-						continue;
-					}
-					
-					
-					var xsf = new Vala.SourceFile (
-						context,
-						Vala.SourceFileType.SOURCE, 
-						path
-					);
-					xsf.add_using_directive (ns_ref);
-					context.add_source_file(xsf);
-					
-				}
-			}
+ 
 			// default.. packages..
 			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
 			// user defined ones..
 			
-	    	var dcg = pr.compilegroups.get("_default_");
-	    	for (var i = 0; i < dcg.packages.size; i++) {
-				valac += " --pkg " + dcg.packages.get(i);
-				context.add_external_package (dcg.packages.get(i));
-			}
-	    	
-			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
-			
-			// add the modules...
-			
+	    	  
 			
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			this.report.compile_notice("START", "", 0, "");
-
+			 
 		
 			//add_documented_files (context, settings.source_files);
 		
@@ -152,11 +94,10 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
-				((ValaSourceReport)context.report).dump();
+				 
 				
 				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
-				return this.report.line_errors;
+ 				return ;
 			}
 
 
@@ -165,35 +106,18 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				print("check got errors");
-				((ValaSourceReport)context.report).dump();
+				 
 				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
-				return this.report.line_errors;
+				 
+				return;
 				
 			}
-			
-			context.codegen = new Vala.GDBusServerModule ();
-			
 			 
-			context.output = "/tmp/testbuild";
-			valac += " -o " +context.output;
-			context.codegen.emit (context);
-			/*
-			var ccompiler = new Vala.CCodeCompiler ();
-			var cc_command = Environment.get_variable ("CC");
-			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
-#if VALA_0_28
-			ccompiler.compile (context, cc_command, new string[] { }, pkg_config_command);
-#else
-			ccompiler.compile (context, cc_command, new string[] { });
-#endif
-			*/
- 
 			Vala.CodeContext.pop ();
-			this.report.compile_notice("END", "", 0, "");
+			 
 			print("%s\n", valac);
 			print("ALL OK?\n");
-			return this.report.line_errors;
+		 
 		}
 	//
 		// startpoint:
@@ -201,10 +125,10 @@ namespace Palete {
 	 
 	}
 }
-/*
+ 
 int main (string[] args) {
 
-	var a = new ValaSource(file);
+	var a = new VapiParser(file);
 	a.create_valac_tree();
 	return 0;
 }
