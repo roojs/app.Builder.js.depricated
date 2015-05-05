@@ -8,13 +8,19 @@ namespace Palete {
 	 
 
 	public class VapiParser : Vala.CodeVisitor {
-
+		private ArrayList<PackageMetaData> packages = new ArrayList<PackageMetaData> ();
 		Vala.CodeContext context;
  		public VapiParser() {
 			base();
 			
 		}
-		  
+		private PackageMetaData register_package (Package package) {
+			PackageMetaData meta_data = new PackageMetaData (package);
+			tree.add_package (package);
+			packages.add (meta_data);
+			return meta_data;
+		}
+
 		
 		public void checkPackage(string name)
 		{
@@ -81,7 +87,10 @@ namespace Palete {
 			// user defined ones..
 			context.add_package ("Gtk");
 	    	  
-			
+			var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, "/usr/share/vala-0.26/vapi/gtk+-3.0.vapi");
+			context.add_source_file (vfile);
+			Package vdpkg = new Package (pkg, true, null);
+			register_source_file (register_package (vdpkg), vfile);
 			
 			//context.add_external_package ("libvala-0.24");
 			
