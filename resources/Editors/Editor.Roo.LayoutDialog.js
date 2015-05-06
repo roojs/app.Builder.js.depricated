@@ -500,7 +500,9 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    
        var fields = _this.grid.dataSource.reader.recordType.prototype.fields;
        
-       var ar = [];
+       
+       var d = [];
+   
        for (var k in data) { 
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined';
@@ -529,11 +531,14 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                width : 100,
                ftype : 'TextField',
                display_field : r.Field + '_display_name',
-               relates_to_table : '',
-               relates_to_col : '',
-               relates_to_schema : []
+               relates_to_table : rt,
+               relates_to_col : rc,
+               relates_to_schema : rs
            };
            
+           d.push(o);
+           
+           /*
            var d = [];
            
            for(var j = 0; j < fields.length; j++){
@@ -543,17 +548,9 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                    d.push(o[f.name]);
                }
            }
+           */
+           //ar.push(d);
            
-           if (has_s) {
-               
-           }
-           
-           
-           
-           ar.push(d);
-           
-           /*
-           ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
            if (!has_s) {
                continue;
            }
@@ -563,10 +560,36 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                if (rr.Field == r.relates_to_col) {
                    continue;
                }
-               ar.push([ false, r.Field + '_'+ rr.Field, rr.Type,  rr.Field, 100] );
+               
+               var o = {
+                   active : false,
+                   dataIndex : r.Field + '_'+ rr.Field,
+                   type : r.Type,
+                   title : r.Field,
+                   width : 100
+               };
+               
+               d.push(o);
            }
-           */
        }
+       
+       var ar = [];
+       
+       Roo.each(d, function(dd){
+   
+           var a = [];
+           
+           for(var j = 0; j < fields.length; j++){
+               var f = fields.items[j];
+               
+               if(dd.hasOwnProperty(f.name)){
+                   a.push(o[f.name]);
+               }
+           }
+           
+           ar.push(a);
+       });
+       
        
        Roo.log(ar);
        this.schema = data;
