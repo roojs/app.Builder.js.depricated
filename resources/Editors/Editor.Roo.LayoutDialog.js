@@ -458,7 +458,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
           Roo.log('before edit!!!');
           Roo.log(e);
           
-          if(e.field != 'dfield'){
+          if(e.field != 'display_field'){
               return;
           }
           
