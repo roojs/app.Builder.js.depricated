@@ -458,7 +458,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
           Roo.log('before edit!!!');
           Roo.log(e);
           
-          _this.grid.colModel.getCellEditor(e.column, e.row).field.store.loadData()
+          _this.grid.colModel.getCellEditor(e.column, e.row).field.store.loadData(e.record.data.relates_to_schema);
       },
      cellclick : function (_self, rowIndex, columnIndex, e)
       {
