@@ -190,7 +190,7 @@
           {
            "listWidth" : 200,
            "triggerAction" : "all",
-           "displayField" : "fname",
+           "displayField" : "ftype",
            "hiddenName" : "status",
            "valueField" : "ftype",
            "xtype" : "ComboBox",

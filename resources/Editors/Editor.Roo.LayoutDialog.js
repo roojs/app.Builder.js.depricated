@@ -387,7 +387,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          },
          '|xns' : 'Roo.form',
          allowBlank : false,
-         displayField : 'fname',
+         displayField : 'ftype',
          editable : false,
          hiddenName : 'status',
          listWidth : 200,
