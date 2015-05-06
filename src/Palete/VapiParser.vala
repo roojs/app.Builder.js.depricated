@@ -172,8 +172,7 @@ public class ValaDoc : Object {
 		if (pluginpath == null) {
 			return null;
 		}
-print("pluginpath %s", pluginpath);
-		doclet = modules.create_doclet (pluginpath);
+ 		doclet = modules.create_doclet (pluginpath);
 		if (doclet == null) {
 			reporter.simple_error ("error: failed to load doclet");
 			return null;
@@ -266,28 +265,7 @@ print("pluginpath %s", pluginpath);
 			new GirDocumentationImporter (doctree, docparser, modules, settings, reporter)
 		};
 
-		doctree.parse_comments (docparser);
-		if (reporter.errors > 0) {
-			return quit (reporter);
-		}
-
-		doctree.import_comments (importers, import_packages, import_directories);
-		if (reporter.errors > 0) {
-			return quit (reporter);
-		}
-
-		doctree.check_comments (docparser);
-		if (reporter.errors > 0) {
-			return quit (reporter);
-		}
-
-		if (ValaDoc.gir_name != null) {
-			driver.write_gir (settings, reporter);
-			if (reporter.errors > 0) {
-				return quit (reporter);
-			}
-		}
-
+		  
 		doclet.process (settings, doctree, reporter);
 		return quit (reporter);
 	}
