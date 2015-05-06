@@ -101,7 +101,13 @@ namespace Palete {
 		}	
 		public void add_param(GirObject parent, Vala.Parameter pam)
 		{
+			var c = new GirObject("Param",pam.name);
+			c.gparent = parent;
+			c.ns = parent.ns;
+			parent.params.add(c);
 			
+			this.checkParamOverride(c);   
+			break;
 		}
 		
 		public void create_valac_tree( )
