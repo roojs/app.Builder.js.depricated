@@ -558,7 +558,9 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                    case 'varchar' :
                        break;
                    case 'int' :
-                       if(type_match[2]  < 11)
+                       if(type_match[2] * 1  < 11){
+                           field_type = 'CheckBox';
+                       }
                    
                }
                
