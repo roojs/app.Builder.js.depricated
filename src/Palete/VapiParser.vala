@@ -61,7 +61,9 @@ namespace Palete {
 				this.add_property(c, p);
 			}
 			// methods...
-			
+			foreach(var p in cls.get_signal()) {
+				this.add_signal(c, p);
+			}
 			 
 		}
 		public void add_property(GirObject parent, Vala.Property prop)
@@ -74,7 +76,16 @@ namespace Palete {
 			parent.props.set(prop.name,c);
 			
 		}
-			  
+		public void add_property(GirObject parent, Vala.Property prop)
+		{
+			var c = new GirObject("Prop",prop.name);
+			c.gparent = parent;
+			c.ns = parent.ns;
+			c.propertyof = parent.name;
+			c.type  = prop.property_type.data_type == null ? "" : prop.property_type.data_type.get_full_name();
+			parent.props.set(prop.name,c);
+			
+		}	  
 		
 		public void create_valac_tree( )
 		{
