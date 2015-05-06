@@ -81,6 +81,10 @@
          "$ xns" : "Roo.Toolbar"
         },
         {
+         "xtype" : "Separator",
+         "$ xns" : "Roo.Toolbar"
+        },
+        {
          "listeners" : {
           "click" : "function (_self, e)\n{\n    \n    Roo.log('Converting to BJS...');\n    _this.panel.toBJS();\n\n}"
          },

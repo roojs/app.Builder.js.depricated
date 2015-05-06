@@ -248,6 +248,11 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       },
       {
        '|xns' : 'Roo.Toolbar',
+       xns : Roo.Toolbar,
+       xtype : 'Separator'
+      },
+      {
+       '|xns' : 'Roo.Toolbar',
        text : _this._strings['040076bde7f6b3387448e32b66c2eee0'],
        xns : Roo.Toolbar,
        xtype : 'Button',
