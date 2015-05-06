@@ -524,8 +524,10 @@ namespace Palete {
 		}
 
 
-		
-	 
+		public Gir.new_empty (string ns)
+		{
+			base("Package",ns);
+		}
 		public Gir (string ns)  
 		{
 			var xns = ns == "Glade" ? "Gladeui" : ns;
@@ -606,13 +608,13 @@ namespace Palete {
 			    var c = new GirObject("Interface", parent.name + "." + n);
 			    c.gparent = parent;
 			    parent.classes.set(n, c);
-						c.ns = this.ns;
-						c.ns = parent.name;
-			    c.parent = element->get_prop("parent");
-						if (c.parent == null) {
-							c.parent = "";
-						}
-						parent =  c;
+				c.ns = this.ns;
+				c.ns = parent.name;
+				c.parent = element->get_prop("parent");
+				if (c.parent == null) {
+					c.parent = "";
+				}
+				parent =  c;
 			    break;
 			
 			
