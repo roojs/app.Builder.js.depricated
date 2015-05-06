@@ -516,6 +516,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                }
            }
            
+           ar.push(d);
+           
            /*
            ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
            if (!has_s) {
@@ -532,6 +534,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            */
        }
        
+       Roo.log(ar);
        this.schema = data;
        
        //alert("IPC:TEST:" + JSON.stringify(ar));
