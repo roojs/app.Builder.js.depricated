@@ -187,10 +187,6 @@
          "* prop" : "editor",
          "items" : [
           {
-           "listeners" : {
-            "render" : "function (_self)\n{\n Roo.log('render!!!!!!!!!!!1');\n}",
-            "select" : "function (combo, record, index)\n{\n    Roo.log('test!!!');\n}"
-           },
            "listWidth" : 200,
            "triggerAction" : "all",
            "displayField" : "fname",
