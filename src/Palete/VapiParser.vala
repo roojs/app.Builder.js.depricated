@@ -34,9 +34,8 @@ namespace Palete {
 				this.add_class(g, c);
 			}
 			
-			//foreach(var c in element.get_interfaces()) {
-			//	this.add_interface(g, c);
-			//}
+			 
+			
 			
 		}
 		
