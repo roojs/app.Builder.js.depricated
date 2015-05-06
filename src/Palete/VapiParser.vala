@@ -25,8 +25,10 @@ namespace Palete {
 		
 		public override void visit_namespace (Vala.Namespace element) {
 			print("parsing namespace %s\n", element.name);
+			
 			var g = new Gir.new_empty(element.name);
 			cache.set(element.name, g);
+			pnode = g;
 			element.accept_children (this);
 		}
 		
