@@ -13,6 +13,7 @@
   "2f616612593df62aeed112de4f03110e" : "Edit a Grid",
   "0ccc2bf3fb98387c23b6ca5500244d6e" : "Use ",
   "c671c787b49f50a3ace9fdc5bd597825" : "core_enum",
+  "dc30ec20708ef7b0f641ef78b7880a15" : "DEBUG",
   "32954654ac8fe66a1d09be19001de2d4" : "Width",
   "a1fa27779242b4902f7ae3bdd5c6d508" : "Type",
   "6e7376dca68a2386a8737944196ab491" : "Create / Edit Grid"
@@ -71,6 +72,7 @@
         },
         {
          "xtype" : "Button",
+         "String text" : "DEBUG",
          "$ xns" : "Roo.Toolbar"
         }
        ]
