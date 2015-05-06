@@ -116,7 +116,7 @@ namespace Palete {
 			c.paramset = cc;
 			
 			
-			foreach(var p in sig.get_parameters()) {
+			foreach(var p in params) {
 				this.add_param(cc, p);
 			}
 			
@@ -152,7 +152,7 @@ namespace Palete {
 			c.paramset = cc;
 			
 			
-			foreach(var p in met.get_parameters()) {
+			foreach(var p in params) {
 				this.add_param(cc, p);
 			}
 			
