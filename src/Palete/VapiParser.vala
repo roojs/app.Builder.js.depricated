@@ -82,8 +82,7 @@ namespace Palete {
 					c.implements.add(p.data_type.get_full_name());
 				}
 			}
-			// constructors...
-			
+			  
 			
 			
 			 
