@@ -513,17 +513,14 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                width : 100,
                ftype : 'TextField',
                display_field : r.Field + '_display_name',
-               relates_to_table : false,
-               relates_to_col : false,
+               relates_to_table : '',
+               relates_to_col : '',
                relates_to_schema : []
            };
            
            var d = [];
            
            for(var j = 0; j < fields.length; j++){
-               Roo.log(j);
-               Roo.log(fields);
-               Roo.log(fields.items[j]);
                var f = fields.items[j];
                Roo.log(f);
                if(o.hasOwnProperty(f.name)){
