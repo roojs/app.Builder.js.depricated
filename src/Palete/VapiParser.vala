@@ -125,7 +125,7 @@ namespace Palete {
  
 int main (string[] args) {
 
-	var a = new Palate.VapiParser( );
+	var a = new Palete.VapiParser( );
 	a.create_valac_tree();
 	return 0;
 }
