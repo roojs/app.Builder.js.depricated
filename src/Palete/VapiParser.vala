@@ -64,6 +64,15 @@ namespace Palete {
 			foreach(var p in cls.get_signals()) {
 				this.add_signal(c, p);
 			}
+			if (cls.base_class != null) {
+				c.inherits.add(cls.base_class.get_full_name());
+			}
+			foreach(var p in cls.get_base_types()) {
+				if (p.data_type != null) {
+					c.implements.add(p.data_type.get_full_name());
+				}
+			}
+			
 			 
 		}
 		public void add_property(GirObject parent, Vala.Property prop)
