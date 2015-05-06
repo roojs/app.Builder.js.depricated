@@ -458,6 +458,11 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       }
     ],
     listeners : {
+     beforeedit : function (e)
+      {
+          Roo.log('before edit!!!');
+          Roo.log(e);
+      },
      cellclick : function (_self, rowIndex, columnIndex, e)
       {
       
