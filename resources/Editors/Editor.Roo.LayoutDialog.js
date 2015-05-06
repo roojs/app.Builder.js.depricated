@@ -487,6 +487,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    
        //alert("IPC:TEST:" + JSON.stringify(data,null,4));
    
+       
        var ar = [];
        for (var k in data) { 
            var r = data[k];
@@ -499,8 +500,13 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                title : r.Field,
                width : 100,
                ftype : 'TextField',
-               display_field : r.Field + '_display_name'
+               display_field : r.Field + '_display_name'.
+               relates_to_table : false,
+               relates_to_col : false,
+               relates_to_schema : []
            }
+           
+           for ()
            
            ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
            if (!has_s) {
