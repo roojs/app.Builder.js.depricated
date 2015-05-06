@@ -14,16 +14,18 @@ namespace Palete {
 			
 		}
 		public override void visit_namespace (Vala.Namespace element) {
+			print("parsing namespace %s\n", element.name);
 			element.accept_children (this);
 		}
-		public override void visit_type_parameter (Vala.TypeParameter element) {
-			print("got param %s\n", element.name);
-			
-			 
-		}
+		
 		public override void visit_class (Vala.Class element) {
 			print("got class %s\n", element.name);
 			element.accept_children (this);
+		}
+		
+		public override void visit_type_parameter (Vala.TypeParameter element) {
+			print("got param %s / %s\n", element.name, );
+			 
 		}
 		
 		public void create_valac_tree( )
