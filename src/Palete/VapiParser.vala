@@ -60,7 +60,7 @@ namespace Palete {
 			c.gparent = parent;
 			c.ns = parent.ns;
 			c.propertyof = parent.name;
-			parent.props.set(n.replace("-", "_"),c);
+			parent.props.set(prop.name,c);
 			
 			 
 		
