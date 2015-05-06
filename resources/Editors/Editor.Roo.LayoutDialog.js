@@ -342,6 +342,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
           '|xns' : 'Roo.data',
           data : [ 
               [ 'ComboBox', "ComboBox"],
+              [ 'ComboBoxArray', "ComboBoxArray"] 
               [ 'TextField' , "TextField"],
               [ 'NumberField', "NumberField"],
               [ 'TextArea', "TextArea"],
