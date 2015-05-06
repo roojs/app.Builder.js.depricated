@@ -190,9 +190,9 @@
           {
            "listWidth" : 200,
            "triggerAction" : "all",
-           "displayField" : "ftype",
+           "displayField" : "dfield",
            "hiddenName" : "status",
-           "valueField" : "ftype",
+           "valueField" : "dfield",
            "xtype" : "ComboBox",
            "allowBlank" : false,
            "editable" : false,
@@ -205,7 +205,7 @@
             {
              "xtype" : "SimpleStore",
              "$ data" : "[ \n    ['id']\n]\n",
-             "$ fields" : "[  'ftype']",
+             "$ fields" : "[  'dfield']",
              "$ xns" : "Roo.data",
              "* prop" : "store"
             }

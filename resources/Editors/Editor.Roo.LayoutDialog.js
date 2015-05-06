@@ -381,20 +381,20 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
           data : [ 
               ['id']
           ],
-          fields : [  'ftype'],
+          fields : [  'dfield'],
           xns : Roo.data,
           xtype : 'SimpleStore'
          },
          '|xns' : 'Roo.form',
          allowBlank : false,
-         displayField : 'ftype',
+         displayField : 'dfield',
          editable : false,
          hiddenName : 'status',
          listWidth : 200,
          mode : 'local',
          name : 'display_field',
          triggerAction : 'all',
-         valueField : 'ftype',
+         valueField : 'dfield',
          width : 150,
          xns : Roo.form,
          xtype : 'ComboBox',
