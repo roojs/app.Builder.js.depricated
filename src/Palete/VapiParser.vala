@@ -76,14 +76,12 @@ namespace Palete {
 			parent.props.set(prop.name,c);
 			
 		}
-		public void add_property(GirObject parent, Vala.Property prop)
+		public void add_signal(GirObject parent, Vala.Property sig)
 		{
-			var c = new GirObject("Prop",prop.name);
+			var c = new GirObject("Signal",sig.name);
 			c.gparent = parent;
 			c.ns = parent.ns;
-			c.propertyof = parent.name;
-			c.type  = prop.property_type.data_type == null ? "" : prop.property_type.data_type.get_full_name();
-			parent.props.set(prop.name,c);
+			parent.signals.set(sig.name,c);
 			
 		}	  
 		
