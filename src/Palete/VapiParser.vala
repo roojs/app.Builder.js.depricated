@@ -25,6 +25,9 @@ namespace Palete {
 		
 		public override void visit_namespace (Vala.Namespace element) 
 		{
+			if (element == null) {
+				return;
+			}
 			print("parsing namespace %s\n", element.name);
 			
 			var g = new Gir.new_empty(element.name);
