@@ -499,7 +499,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            ar.push(d);
            
-           return;
+           continue;
            ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
            if (!has_s) {
                continue;
