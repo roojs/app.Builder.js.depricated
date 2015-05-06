@@ -162,7 +162,7 @@
             {
              "xtype" : "SimpleStore",
              "$ data" : "[ \n    [ 'ComboBox', \"ComboBox\"],\n    [ 'TextField' , \"TextField\"],\n    [ 'NumberField', \"NumberField\"],\n    [ 'TextArea', \"TextArea\"],\n    [ 'HtmlEditor', \"HtmlEditor\"],\n    [ 'Hidden', \"Hidden\"],\n    [ 'DateField', \"DateField\"],\n    [ 'Checkbox', \"Checkbox\"]    \n    // checkbox?\n]\n",
-             "$ fields" : "[  'ftype', 'fname']",
+             "$ fields" : "[  'code', 'value']",
              "$ xns" : "Roo.data",
              "* prop" : "store"
             }
