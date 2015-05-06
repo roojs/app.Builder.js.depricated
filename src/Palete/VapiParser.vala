@@ -15,10 +15,13 @@ namespace Palete {
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
-			
+			cache =  new Gee.HashMap<string,Gir>();
 		}
 		public override void visit_namespace (Vala.Namespace element) {
 			print("parsing namespace %s\n", element.name);
+			
+			
+			
 			element.accept_children (this);
 		}
 		
