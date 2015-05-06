@@ -537,6 +537,29 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            var regex = /(.*?)\((.*?)\)/;
            
+           if(regex.test(r.Type)){
+               var type_match = regex.exec(r.Type);
+               
+               if(type_match[1] == 'int'){
+                   field_type = 'NumberField';
+                       
+                   if(type_match[2] * 1  < 11){
+                       field_type = 'CheckBox';
+                   }
+               }
+               
+           } esle {
+               switch (r.Type) {
+                   case 'text' :
+                       field_type = 'TextArea';
+                       break;
+                   case 'date' :
+                   case 'datetime':
+                       field_type = 'DateField';
+               }
+           
+           }
+           
            
            var rt = '', rc = '', rs = [];
            
