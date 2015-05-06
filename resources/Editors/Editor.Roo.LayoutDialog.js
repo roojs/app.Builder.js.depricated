@@ -340,6 +340,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          listeners : {
           render : function (_self)
            {
+               Roo.log('ftype combo render');
                _this.ftype_combo = _self;
            }
          },
