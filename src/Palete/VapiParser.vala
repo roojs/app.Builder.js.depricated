@@ -60,31 +60,11 @@ namespace Palete {
 			c.gparent = parent;
 			c.ns = parent.ns;
 			c.propertyof = parent.name;
+			c.type  = prop.property_type.data_type..get_full_name();
 			parent.props.set(prop.name,c);
 			
 		}
-			 
-		
-		
-		public override void visit_method (Vala.Method element) {
-			print("got method %s / %s\n", element.name, element.get_full_name() ); 
-			var opn = this.pnode;
-			var n = element.name;
-			var c = new GirObject("Method",n);
-			c.gparent = opn;
-			c.ns = opn.ns;
-			c.propertyof = parent.name;
-			this.pnode.methods.set(n,c);
-			this.pnode = c;
-			
-			
-			element.accept_children (this);
-			this.pnode = opn;
-		}
-		public override void visit_type_parameter (Vala.TypeParameter element) {
-			print("got param %s\n", element.name); 
-		}
-		
+			  
 		
 		public void create_valac_tree( )
 		{
