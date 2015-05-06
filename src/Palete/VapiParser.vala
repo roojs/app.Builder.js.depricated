@@ -205,20 +205,14 @@ public class ValaDoc : Object {
 		settings.pkg_name = this.get_pkg_name ();
 		settings.gir_namespace = ValaDoc.gir_namespace;
 		settings.gir_version = ValaDoc.gir_version;
-		if (ValaDoc.gir_name != null) {
-			settings.gir_name = GLib.Path.get_basename (ValaDoc.gir_name);
-			settings.gir_directory = GLib.Path.get_dirname (ValaDoc.gir_name);
-			if (settings.gir_directory == "") {
-				settings.gir_directory = GLib.Path.get_dirname (ValaDoc.directory);
-			}
-		}
+		 
 		settings.pkg_version = ValaDoc.pkg_version;
 		settings.add_inherited = ValaDoc.add_inherited;
 		settings._protected = ValaDoc._protected;
 		settings._internal = ValaDoc._internal;
 		settings.with_deps = ValaDoc.with_deps;
 		settings._private = ValaDoc._private;
-		settings.path = realpath (ValaDoc.directory);
+		settings.path = "/dev/null";
 		settings.verbose = ValaDoc.verbose;
 		settings.wiki_directory = ValaDoc.wikidirectory;
 		settings.pluginargs = ValaDoc.pluginargs;
@@ -326,7 +320,7 @@ public class ValaDoc : Object {
 			reporter.simple_error ("error: File already exists");
 			return quit (reporter);
 		}
-
+/*
 		if (FileUtils.test (directory, FileTest.EXISTS)) {
 			if (force == true) {
 				bool tmp = remove_directory (directory);
@@ -339,14 +333,8 @@ public class ValaDoc : Object {
 				return quit (reporter);
 			}
 		}
-
-		if (wikidirectory != null) {
-			if (!FileUtils.test(wikidirectory, FileTest.IS_DIR)) {
-				reporter.simple_error ("error: Wiki-directory does not exist.");
-				return quit (reporter);
-			}
-		}
-
+*/
+	
 		if (gir_name != null) {
 			long gir_len = gir_name.length;
 			int last_hyphen = gir_name.last_index_of_char ('-');
