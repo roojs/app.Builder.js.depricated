@@ -700,9 +700,9 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                ];
            
            }
-           /*
+           
            if (el.xtype == 'HtmlEditor') {
-               el.height = 100,
+               el.height = 250,
                el.resizable = 's',
                el.toolbar = [
                    {
@@ -716,10 +716,10 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                   }
                ]
            }
-           */
+           
            formElements.push(el);
            
-           formHeight += rec.data.ftype == 'TextArea' ? 100 : 30;
+           formHeight += rec.data.ftype == 'TextArea' ? 100 : ((rec.data.ftype == 'HtmlEditor') ? 250 : 30);
            
            
        });
