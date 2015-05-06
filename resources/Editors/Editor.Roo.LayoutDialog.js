@@ -505,6 +505,22 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined';
            
+           var rt = '',
+           var rc = '',
+           var rs = [],
+           
+           if(has_s){
+               for (var kk in r.relates_to_schema) {         
+                   var rr = r.relates_to_schema[kk];
+                   
+                   rt = r.relates_to_table;
+                   rc = r.relates_to_col;
+                   
+                   rs.push([rr.Field]);
+                   
+               }
+           }
+           
            var o = {
                active : !has_s,
                dataIndex : r.Field,
@@ -522,11 +538,17 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            for(var j = 0; j < fields.length; j++){
                var f = fields.items[j];
-               Roo.log(f);
+               
                if(o.hasOwnProperty(f.name)){
                    d.push(o[f.name]);
                }
            }
+           
+           if (has_s) {
+               
+           }
+           
+           
            
            ar.push(d);
            
