@@ -12,6 +12,7 @@ namespace Palete {
 		static  Gee.HashMap<string,Gir> cache = null;
 		
 		
+		
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
@@ -19,6 +20,8 @@ namespace Palete {
 				cache =  new Gee.HashMap<string,Gir>();
 			}
 		}
+		
+		Gir pnode = null;
 		
 		public override void visit_namespace (Vala.Namespace element) {
 			print("parsing namespace %s\n", element.name);
@@ -29,6 +32,9 @@ namespace Palete {
 		
 		public override void visit_class (Vala.Class element) {
 			print("got class %s / %s\n", element.name, element.get_full_name());
+			
+			
+			
 			element.accept_children (this);
 		}
 		public override void visit_method (Vala.Method element) {
