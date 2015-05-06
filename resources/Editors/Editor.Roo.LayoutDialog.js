@@ -670,6 +670,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                el.selectOnFocus = true;
                el.minChars = 2;
                el.editable = true;
+               el.emptyText = 'Select a value';
                
                
                el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
@@ -729,61 +730,58 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                el.name = rec.data.dataIndex + '_' + rec.data.display_field;
                
                el.items = [
-                   'alwaysQuery' : true,
-                   'triggerAction' : 'all',
-                   'forceSelection': true,
-                   'selectOnFocus' : true,
-                   'minChars' :2,
-                   'editable' : true,
                    {
-                       '*prop' : 'store',
-                       'xtype' : 'Store',
-                       '|xns' : 'Roo.data',
-                       'remoteSort' : true,
-                       '|sortInfo' : '{ direction : \'ASC\', field: \'id\' }',
-                       listeners : {
-                           '|beforeload' : 'function (_self, o)' +
-                           "{\n" +
-                           "    o.params = o.params || {};\n" +
-                           "    // set more here\n" +
-                           "}\n"
-                       },
+                       'alwaysQuery' : true,
+                       'triggerAction' : 'all',
+                       'forceSelection': true,
+                       'selectOnFocus' : true,
+                       'minChars' :2,
+                       'editable' : true,
+                       'emptyText' : 'Select a value',
+                       'displayField' : rec.data.display_field,
+                       'valueField' : rec.data.relates_to_col,
+                       'xtype' : 'ComboBox',
+                       '$ xns' : 'Roo.form',
+                       '* prop' : 'combo',
+                       'queryParam' : 'query[' + rec.data.display_field + ']',
+                       'tpl' : '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>',
+                       
                        items : [
                            {
-                               '*prop' : 'proxy',
-                               'xtype' : 'HttpProxy',
-                               'method' : 'GET',
+                               '*prop' : 'store',
+                               'xtype' : 'Store',
                                '|xns' : 'Roo.data',
-                               '|url' : "baseURL + '/Roo/" + rec.data.relates_to_table + ".php'",
-                           },
-                           
-                           {
-                               '*prop' : 'reader',
-                               'xtype' : 'JsonReader',
-                               '|xns' : 'Roo.data',
-                               'id' : 'id',
-                               'root' : 'data',
-                               'totalProperty' : 'total'
-   
+                               'remoteSort' : true,
+                               '|sortInfo' : '{ direction : \'ASC\', field: \'id\' }',
+                               listeners : {
+                                   '|beforeload' : 'function (_self, o)' +
+                                   "{\n" +
+                                   "    o.params = o.params || {};\n" +
+                                   "    // set more here\n" +
+                                   "}\n"
+                               },
+                               items : [
+                                   {
+                                       '*prop' : 'proxy',
+                                       'xtype' : 'HttpProxy',
+                                       'method' : 'GET',
+                                       '|xns' : 'Roo.data',
+                                       '|url' : "baseURL + '/Roo/" + rec.data.relates_to_table + ".php'",
+                                   },
+                                   {
+                                       '*prop' : 'reader',
+                                       'xtype' : 'JsonReader',
+                                       '|xns' : 'Roo.data',
+                                       'id' : 'id',
+                                       'root' : 'data',
+                                       'totalProperty' : 'total'
+                                   }
                                
+                               ]
                            }
                        ]
                    }
                ];
-               
-               el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
-               
-               el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
-               el.name  = rec.data.dataIndex + '_' + rec.data.display_field; // SET WHEN USED eg. project_id_name
-               
-               el.displayField = rec.data.display_field // SET WHEN USED eg. project_id
-               el.valueField = rec.data.relates_to_col 
-               
-               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>'; // SET WHEN USED
-             
-           
-              
-           
            }
            
            if (el.xtype == 'HtmlEditor') {
