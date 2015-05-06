@@ -49,6 +49,9 @@
      "* prop" : "grid",
      "items" : [
       {
+       "listeners" : {
+        "load" : "function (_self, records, options)\n{\n    Roo.log(records);\n}"
+       },
        "$ Array fields" : "[ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ]",
        "$ Array data" : "[\n  [ 1, 'test', 'test', 110 ]\n  \n\n]",
        "Number id" : "'dataIndex'",
