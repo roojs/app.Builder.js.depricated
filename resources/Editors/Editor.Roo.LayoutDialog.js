@@ -661,6 +661,61 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                delete el.fieldLabel;
                delete el.width;
            }
+           
+           if (el.xtype == 'ComboBox') {
+           
+   
+               el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
+               
+               el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
+               el.name  = rec.data.dataIndex + '_' + rec.data.display_field; // SET WHEN USED eg. project_id_name
+               
+               el.displayField = rec.data.display_field // SET WHEN USED eg. project_id
+               el.valueField = rec.data.relates_to_col 
+               
+               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>'; // SET WHEN USED
+             
+           
+              el.items = [
+                   {
+                           
+                       '*prop' : 'store',
+                       'xtype' : 'Store',
+                       '|xns' : 'Roo.data',
+                       'remoteSort' : true,
+                       '|sortInfo' : '{ direction : \'ASC\', field: \'id\' }',
+                       listeners : {
+                           '|beforeload' : 'function (_self, o)' +
+                           "{\n" +
+                           "    o.params = o.params || {};\n" +
+                           "    // set more here\n" +
+                           "}\n"
+                       },
+                       items : [
+                           {
+                               '*prop' : 'proxy',
+                               'xtype' : 'HttpProxy',
+                               'method' : 'GET',
+                               '|xns' : 'Roo.data',
+                               '|url' : "baseURL + '/Roo/" + rec.data.relates_to_table + ".php'",
+                           },
+                           
+                           {
+                               '*prop' : 'reader',
+                               'xtype' : 'JsonReader',
+                               '|xns' : 'Roo.data',
+                               'id' : 'id',
+                               'root' : 'data',
+                               'totalProperty' : 'total'
+   
+                               
+                           }
+                       ]
+                   }
+               ];
+           
+           }
+           
            if (el.xtype == 'ComboBox') {
            
    
