@@ -124,6 +124,10 @@ namespace Palete {
 		
 		public void add_method(GirObject parent, Vala.Method met)
 		{
+			if (met.name == null) { // ?? why?
+				return;
+			}
+			
 			var c = new GirObject("Method",met.name);
 			c.gparent = parent;
 			c.ns = parent.ns;
