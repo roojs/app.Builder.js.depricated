@@ -66,6 +66,11 @@ namespace Palete {
 			}
 			
 			foreach(var p in cls.get_methods()) {
+				// skip static methods..
+				if (p.binding != Vala.MemberBinding.INSTANCE) {
+					continue;
+				}
+				
 				this.add_method(c, p);
 			}
 			
