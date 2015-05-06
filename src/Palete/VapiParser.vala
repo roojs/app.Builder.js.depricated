@@ -76,16 +76,33 @@ namespace Palete {
 			parent.props.set(prop.name,c);
 			
 		}
-		public void add_signal(GirObject parent, Vala.Property sig)
+		public void add_signal(GirObject parent, Vala.Signal sig)
 		{
 			var c = new GirObject("Signal",sig.name);
 			c.gparent = parent;
 			c.ns = parent.ns;
 			c.type  = sig.return_type.data_type == null ? "" : sig.return_type.data_type.get_full_name();
-			
 			parent.signals.set(sig.name,c);
 			
-		}	  
+			var params =  sig.get_parameters() ;
+			if (params.size < 1) {
+				return;
+			}
+			var cc = new GirObject("Paramset",n);
+			cc.gparent = c;
+			cc.ns = c.ns;
+			c.paramset = cc;
+			
+			
+			foreach(var p in sig.get_parameters()) {
+				this.add_param(cc, p);
+			}
+			
+		}	
+		public void add_param(GirObject parent, Vala.Parameter pam)
+		{
+			
+		}
 		
 		public void create_valac_tree( )
 		{
