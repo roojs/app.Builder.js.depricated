@@ -20,7 +20,7 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-// compile? valac --pkg valadoc--pkg libvaladoc-1.0 VapiParser.vala -o /tmp/vdoc
+// compile? valac --pkg  valadoc-1.0 VapiParser.vala -o /tmp/vdoc
 
 
 using GLib.Path;
