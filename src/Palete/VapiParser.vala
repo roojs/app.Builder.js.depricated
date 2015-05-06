@@ -8,6 +8,10 @@ namespace Palete {
 	 
 
 	public class VapiParser : Vala.CodeVisitor {
+		
+		static  Gee.HashMap<string,Gir> cache = null;
+		
+		
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
