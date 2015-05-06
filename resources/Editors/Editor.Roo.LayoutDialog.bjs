@@ -185,7 +185,7 @@
            "width" : 150,
            "$ xns" : "Roo.form",
            "mode" : "local",
-           "name" : "status",
+           "name" : "combo_display",
            "* prop" : "field",
            "items" : [
             {

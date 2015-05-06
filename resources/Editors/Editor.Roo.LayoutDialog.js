@@ -206,7 +206,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          hiddenName : 'status',
          listWidth : 200,
          mode : 'local',
-         name : 'status',
+         name : 'combo_display',
          triggerAction : 'all',
          valueField : 'ftype',
          width : 150,
