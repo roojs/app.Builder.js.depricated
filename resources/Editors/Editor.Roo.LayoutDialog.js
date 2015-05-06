@@ -492,14 +492,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined'
            
-           var d = {
-               active : !has_s,
-               dataIndex : r.Fiedld
-           }
-           
-           ar.push(d);
-           
-           continue;
            ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
            if (!has_s) {
                continue;
