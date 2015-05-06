@@ -647,7 +647,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                delete el.fieldLabel;
                delete el.width;
            }
-           if (el.xtype == 'Combobox') {
+           if (el.xtype == 'ComboBox') {
            
    
                el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
