@@ -44,10 +44,7 @@ namespace Palete {
 			
  			
 			//vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
-			
-			//for(var i =0 ; i < vapidirs.length; i++) {
-			//	valac += " --vapidir=" + vapidirs[i];
-			//}
+			 
 				
 			
 			// or context.get_vapi_path("glib-2.0"); // should return path..
@@ -115,7 +112,7 @@ namespace Palete {
 			 
 			Vala.CodeContext.pop ();
 			 
-			print("%s\n", valac);
+			 
 			print("ALL OK?\n");
 		 
 		}
