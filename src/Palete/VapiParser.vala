@@ -67,7 +67,9 @@ namespace Palete {
 			
 			foreach(var p in cls.get_methods()) {
 				// skip static methods..
-				if (p.binding != Vala.MemberBinding.INSTANCE) {
+				if (p.binding != Vala.MemberBinding.INSTANCE &&
+					!(p is Vala.CreationMethod)
+				) {
 					continue;
 				}
 				
@@ -132,6 +134,10 @@ namespace Palete {
 		public void add_method(GirObject parent, Vala.Method met)
 		{
 			
+			if ( met is Vala.CreationMethod) {
+				
+				
+			}
 			
 			var c = new GirObject("Method",met.name == null ? parent.name : "");
 			c.gparent = parent;
