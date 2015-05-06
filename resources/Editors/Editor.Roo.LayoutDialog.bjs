@@ -182,6 +182,9 @@
        "dataIndex" : "display_field",
        "items" : [
         {
+         "listeners" : {
+          "render" : "function (_self)\n{\n    Roo.log('reader');\n}"
+         },
          "xtype" : "GridEditor",
          "$ xns" : "Roo.grid",
          "* prop" : "editor",
