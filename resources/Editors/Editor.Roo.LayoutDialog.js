@@ -631,7 +631,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                name : rec.data.dataIndex,
                width : rec.data.width,
                '|xns' : 'Roo.form',
-               xtype : rec.data.ftype
+               'xtype' : rec.data.ftype
            }
             if (xtype == 'DateField') {
                el.format = 'Y-m-d';
