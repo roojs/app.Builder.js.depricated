@@ -88,7 +88,7 @@ namespace Palete {
 			if (params.size < 1) {
 				return;
 			}
-			var cc = new GirObject("Paramset",n);
+			var cc = new GirObject("Paramset",sig.name); // what's the name on this?
 			cc.gparent = c;
 			cc.ns = c.ns;
 			c.paramset = cc;
