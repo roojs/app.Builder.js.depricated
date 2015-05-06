@@ -9,15 +9,16 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
  _strings : {
   'b021df6aac4654c454f46c77646e745f' :"Label",
   '793548e77e782c209a78ed67f255b5e2' :"Display Field",
+  '0b6519e9da7898cdc668f6016026e71d' :"To JSON",
   '4ce58cbe362a5d7b156992a496d55bf3' :"Database Column",
   '189efd19c4153526994a6d7ea5f6f068' :"Field Type",
   '2f616612593df62aeed112de4f03110e' :"Edit a Grid",
   '0ccc2bf3fb98387c23b6ca5500244d6e' :"Use ",
   'c671c787b49f50a3ace9fdc5bd597825' :"core_enum",
-  'dc30ec20708ef7b0f641ef78b7880a15' :"DEBUG",
   '32954654ac8fe66a1d09be19001de2d4' :"Width",
   'a1fa27779242b4902f7ae3bdd5c6d508' :"Type",
-  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid"
+  '6e7376dca68a2386a8737944196ab491' :"Create / Edit Grid",
+  'f541774a08fc687f6e2016c77a6ebca5' :"Load Data"
  },
 
   part     :  ["Editors", "LayoutDialog" ],
@@ -74,7 +75,181 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       },
       {
        '|xns' : 'Roo.Toolbar',
-       text : _this._strings['dc30ec20708ef7b0f641ef78b7880a15'],
+       text : _this._strings['f541774a08fc687f6e2016c77a6ebca5'],
+       xns : Roo.Toolbar,
+       xtype : 'Button',
+       listeners : {
+        click : function (_self, e)
+         {
+             Roo.log(_this.ftype_combo);
+             var data = {    
+                 "manage_scale_id": {
+                     "Field": "manage_scale_id",
+                     "Type": "int(11)",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0",
+                     "Extra": null,
+                     "relates_to_table": "core_enum",
+                     "relates_to_col": "id",
+                     "relates_to_schema": {
+                         "id": {
+                             "Field": "id",
+                             "Type": "int(11)",
+                             "Null": "NO",
+                             "Key": "PRI",
+                             "Default": null,
+                             "Extra": "auto_increment"
+                         },
+                         "etype": {
+                             "Field": "etype",
+                             "Type": "varchar(32)",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": null,
+                             "Extra": null
+                         },
+                         "name": {
+                             "Field": "name",
+                             "Type": "varchar(255)",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": null,
+                             "Extra": null
+                         },
+                         "active": {
+                             "Field": "active",
+                             "Type": "int(2)",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": "1",
+                             "Extra": null
+                         },
+                         "seqid": {
+                             "Field": "seqid",
+                             "Type": "int(11)",
+                             "Null": "NO",
+                             "Key": "MUL",
+                             "Default": "0",
+                             "Extra": null
+                         },
+                         "seqmax": {
+                             "Field": "seqmax",
+                             "Type": "int(11)",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": "0",
+                             "Extra": null
+                         },
+                         "display_name": {
+                             "Field": "display_name",
+                             "Type": "text",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": null,
+                             "Extra": null
+                         },
+                         "is_system_enum": {
+                             "Field": "is_system_enum",
+                             "Type": "int(2)",
+                             "Null": "NO",
+                             "Key": null,
+                             "Default": "0",
+                             "Extra": null
+                         }
+                     }
+                 },
+                 "person_type": {
+                     "Field": "person_type",
+                     "Type": "text",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": null,
+                     "Extra": null
+                 },
+                 "employer_name": {
+                     "Field": "employer_name",
+                     "Type": "text",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": null,
+                     "Extra": null
+                 },
+                 "birth_date": {
+                     "Field": "birth_date",
+                     "Type": "date",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0000-00-00",
+                     "Extra": null
+                 },
+                 "employ_start_date": {
+                     "Field": "employ_start_date",
+                     "Type": "date",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0000-00-00",
+                     "Extra": null
+                 },
+                 "employ_end_date": {
+                     "Field": "employ_end_date",
+                     "Type": "date",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0000-00-00",
+                     "Extra": null
+                 },
+                 "hide_same_employer": {
+                     "Field": "hide_same_employer",
+                     "Type": "int(4)",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0",
+                     "Extra": null
+                 },
+                 "salary_currency": {
+                     "Field": "salary_currency",
+                     "Type": "varchar(256)",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": null,
+                     "Extra": null
+                 },
+                 "quota_currency": {
+                     "Field": "quota_currency",
+                     "Type": "varchar(256)",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": null,
+                     "Extra": null
+                 },
+                 "created_dt": {
+                     "Field": "created_dt",
+                     "Type": "datetime",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0000-00-00 00:00:00",
+                     "Extra": null
+                 },
+                 "updated_dt": {
+                     "Field": "updated_dt",
+                     "Type": "datetime",
+                     "Null": "NO",
+                     "Key": null,
+                     "Default": "0000-00-00 00:00:00",
+                     "Extra": null
+                 }
+             };
+             
+             Roo.log('debuging...');
+             _this.panel.loadData(data);
+         
+         }
+       }
+      },
+      {
+       '|xns' : 'Roo.Toolbar',
+       text : _this._strings['0b6519e9da7898cdc668f6016026e71d'],
        xns : Roo.Toolbar,
        xtype : 'Button',
        listeners : {
