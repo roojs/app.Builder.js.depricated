@@ -507,9 +507,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined';
            
-           var rt = '',
-           var rc = '',
-           var rs = [],
+           var rt = '', rc = '', rs = [];
            
            if(has_s){
                for (var kk in r.relates_to_schema) {         
