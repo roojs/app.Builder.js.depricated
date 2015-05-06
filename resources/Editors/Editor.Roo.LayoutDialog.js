@@ -151,7 +151,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          hiddenName : 'status',
          listWidth : 200,
          mode : 'local',
-         name : 'status',
+         name : 'field_type',
          triggerAction : 'all',
          valueField : 'ftype',
          width : 150,
