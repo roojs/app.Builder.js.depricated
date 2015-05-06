@@ -633,21 +633,21 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                '|xns' : 'Roo.form',
                xtype : rec.data.ftype
            }
-            if (xtype == 'DateField') {
+            if (el.xtype == 'DateField') {
                el.format = 'Y-m-d';
                el.useIso = true;
                el.width = 100;
            }
            
-           if (xtype == 'TextArea') {
+           if (el.xtype == 'TextArea') {
                el.height = 100;
            }
            
-           if (xtype == 'Hidden') {
+           if (el.xtype == 'Hidden') {
                delete el.fieldLabel;
                delete el.width;
            }
-           if (xtype == 'Combobox') {
+           if (el.xtype == 'Combobox') {
            
    
                el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
@@ -701,7 +701,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            }
            
-           if (xtype == 'HtmlEditor') {
+           if (el.xtype == 'HtmlEditor') {
                el.height = 100,
                el.resizable = 's',
                el.toolbar = [
