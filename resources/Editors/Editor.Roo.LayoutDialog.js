@@ -495,7 +495,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            if (!has_s) {
                continue;
            }
-           /*
+           
            for (var kk in r.relates_to_schema) {         
                var rr = r.relates_to_schema[kk];
                if (rr.Field == r.relates_to_col) {
@@ -503,7 +503,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                }
                ar.push([ false, r.Field + '_'+ rr.Field, rr.Type,  rr.Field, 100] );
            }
-           */
+           
        }
        this.schema = data;
        //alert("IPC:TEST:" + JSON.stringify(ar));
