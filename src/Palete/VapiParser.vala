@@ -61,7 +61,7 @@ namespace Palete {
 				this.add_property(c, p);
 			}
 			// methods...
-			foreach(var p in cls.get_signal()) {
+			foreach(var p in cls.get_signals()) {
 				this.add_signal(c, p);
 			}
 			 
