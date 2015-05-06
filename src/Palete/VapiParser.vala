@@ -146,9 +146,8 @@ namespace Palete {
 				c.return_value = cc;
 			}
 			if (met is Vala.CreationMethod) {
-				
+				parent.ctors.set(c.name,c);
 			} else {
-			
 				parent.methods.set(met.name,c);
 			}
 			
