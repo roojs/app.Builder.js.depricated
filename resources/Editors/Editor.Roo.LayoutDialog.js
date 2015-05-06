@@ -557,7 +557,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                d.push(o);
            }
        }
-       
+       Roo.log(d);return;
        var ar = [];
        
        Roo.each(d, function(dd){
