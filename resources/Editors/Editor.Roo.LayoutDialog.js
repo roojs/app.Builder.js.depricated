@@ -228,6 +228,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                  }
              };
              
+             Roo.log('debuging...');
              _this.panel.loadData(data);
          
          }
