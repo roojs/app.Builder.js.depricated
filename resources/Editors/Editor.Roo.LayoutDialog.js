@@ -515,6 +515,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
        }
        
+       _this.gird.dataSource.reader.readRecords(ar);
+       
        this.schema = data;
        
        //alert("IPC:TEST:" + JSON.stringify(ar));
