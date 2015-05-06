@@ -505,7 +505,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                relates_to_table : false,
                relates_to_col : false,
                relates_to_schema : []
-           }
+           };
            
            var d = [];
            
