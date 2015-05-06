@@ -489,7 +489,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    
        var fields = _this.grid.dataSource.reader.recordType.prototype.fields;
        Roo.log('grid!!!!!!!!!!!!!!!!!');
-       Roo.log(_this.grid);
+       Roo.log(_this.grid.dataSource);
        var ar = [];
        for (var k in data) { 
            var r = data[k];
