@@ -490,49 +490,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        var fields = _this.grid.dataSource.reader.recordType.prototype.fields;
        
        var ar = [];
-       for (var k in data) { 
-           var r = data[k];
-           var has_s = typeof(r.relates_to_schema) != 'undefined'
-           
-           var o = {
-               active : !has_s,
-               dataIndex : r.Field,
-               type : r.Type,
-               title : r.Field,
-               width : 100,
-               ftype : 'TextField',
-               display_field : r.Field + '_display_name'.
-               relates_to_table : false,
-               relates_to_col : false,
-               relates_to_schema : []
-           }
-           
-           var d = [];
-           
-           for(var j = 0, j = fields.length; j++){
-               var f = fields.items[j];
-               if(o.hasOwnProperty(f.name)){
-                   d.push(o[f.name]);
-               }
-           }
-           
-           ar.push(d);
-           
-           /*
-           ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
-           if (!has_s) {
-               continue;
-           }
-           
-           for (var kk in r.relates_to_schema) {         
-               var rr = r.relates_to_schema[kk];
-               if (rr.Field == r.relates_to_col) {
-                   continue;
-               }
-               ar.push([ false, r.Field + '_'+ rr.Field, rr.Type,  rr.Field, 100] );
-           }
-           */
-       }
+       
        
        Roo.log(ar);
        this.schema = data;
