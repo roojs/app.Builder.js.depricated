@@ -574,7 +574,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                field_type = 'ComboBox';
            }
            
-           if(r.Field == 'id'){
+           if(r.Field == 'id'){ // usually 'id' is hidden on the form
                field_type = 'Hidden';
            }
            
