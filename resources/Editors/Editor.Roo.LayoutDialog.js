@@ -550,7 +550,13 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var regex = /(.*?)\((.*?)\)/;
            
            if(regex.test(r.Type)){
-           
+               var type_match = regex.exec(r.Type);
+               
+               switch type_match[1] {
+                   case 'int'
+                   
+               }
+               
            }
            
            var type_match = regex.exec(r.Type);
