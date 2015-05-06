@@ -19,21 +19,12 @@ namespace Palete {
 		public override void visit_type_parameter (Vala.TypeParameter element) {
 			print("got param %s", element.name);
 			
-			/*Api.Node parent = get_parent_node_for (element);
-			SourceFile? file = get_source_file (element);
-
-			Symbol node = new TypeParameter (parent,
-											 file,
-											 element.name,
-											 element);
-			symbol_map.set (element, node);
-			parent.add_child (node);
-
-			process_children (node, element);
-			* */
+			 
 		}
-		
-		 
+		public override void visit_class (Vala.Class element) {
+			print("got class %s", element.name);
+			element.accept_children (this);
+		}
 		
 		public void create_valac_tree( )
 		{
