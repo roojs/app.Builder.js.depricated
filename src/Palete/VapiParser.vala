@@ -129,7 +129,7 @@ namespace Palete {
 			c.ns = parent.ns;
 			
 			if (met.return_type.data_type != null) {
-				print("creating return type on signal %s\n", sig.name);
+				print("creating return type on signal %s\n", met.name);
 				var cc = new GirObject("Return", "return-value");
 				cc.gparent = c;
 				cc.ns = c.ns;
@@ -138,17 +138,17 @@ namespace Palete {
 			}
 			parent.methods.set(met.name,c);
 			
-			var params =  sig.get_parameters() ;
+			var params =  met.get_parameters() ;
 			if (params.size < 1) {
 				return;
 			}
-			var cc = new GirObject("Paramset",sig.name); // what's the name on this?
+			var cc = new GirObject("Paramset",met.name); // what's the name on this?
 			cc.gparent = c;
 			cc.ns = c.ns;
 			c.paramset = cc;
 			
 			
-			foreach(var p in sig.get_parameters()) {
+			foreach(var p in met.get_parameters()) {
 				this.add_param(cc, p);
 			}
 			
