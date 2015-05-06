@@ -337,7 +337,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    toBJS : function() { 
    
    // convert the selected cells into a BJS data ready to send back to the UI..
-      
+      return;
        this.table = "XXX";
        this.firstTxtCol = "XXX";
       
