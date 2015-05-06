@@ -704,12 +704,14 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            if (el.xtype == 'HtmlEditor') {
                el.height = 250,
                el.resizable = 's',
-               el.toolbar = [
+               el.items = [
                    {
+                       '* prop' : 'toolbars[]',
                        '|xns' : 'Roo.form.HtmlEditor',
                        'xtype' : 'ToolbarContext'
                    },
                    {
+                       '* prop' : 'toolbars[]',
                        '|xns' : 'Roo.form.HtmlEditor',
                        'xtype' : 'ToolbarStandard'
    
