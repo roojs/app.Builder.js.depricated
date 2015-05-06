@@ -56,13 +56,14 @@ namespace Palete {
 			var n = element.name;
 			var c = new GirObject("Method",n);
 			c.gparent = opn;
-			c.ns = this.ns;
+			c.ns = opn.ns;
 			c.propertyof = parent.name;
-				parent.methods.set(n,c);
-				parent = c;
-				break
+			this.pnode.methods.set(n,c);
+			this.pnode = c;
+			
 			
 			element.accept_children (this);
+			this.pnode = opn;
 		}
 		public override void visit_type_parameter (Vala.TypeParameter element) {
 			print("got param %s\n", element.name); 
