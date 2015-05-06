@@ -562,26 +562,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            d.push(o);
            
-           if (!has_s) {
-               continue;
-           }
-           
-           for (var kk in r.relates_to_schema) {         
-               var rr = r.relates_to_schema[kk];
-               if (rr.Field == r.relates_to_col) {
-                   continue;
-               }
-               
-               var o = {
-                   active : false,
-                   dataIndex : r.Field + '_'+ rr.Field,
-                   type : r.Type,
-                   title : r.Field,
-                   width : 100
-               };
-               
-               d.push(o);
-           }
        }
    
        var ar = [];
