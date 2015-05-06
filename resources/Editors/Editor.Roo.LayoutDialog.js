@@ -307,6 +307,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    
        //alert("IPC:TEST:" + JSON.stringify(data,null,4));
        alert("IPC:TEST: OUTPUT DATA : " + data);
+       return;
        var ar = [];
        for (var k in data) { 
            var r = data[k];
