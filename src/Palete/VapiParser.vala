@@ -42,11 +42,40 @@ namespace Palete {
 			foreach(var c in element.get_classes()) {
 				this.add_class(g, c);
 			}
+			foreach(var c in element.get_enums()) {
+				this.add_enum(g, c);
+			}
+			
 			
 			element.accept_children(this); // catch sub namespaces..
 			
 			
 		}
+		
+		
+		public void add_enum(GirObject parent, Vala.Enum cls)
+		{
+		
+			var c = new GirObject("Enum",   cls.name);
+			parent.consts.set(cls.name, c);
+			c.ns = parent.name;
+			c.gparent = parent;
+			
+			foreach(var e in cls.get_values()) {
+				var em = new GirObject("EnumMember",e.name);
+				em.gparent = c;
+				em.ns = c.ns;
+				em.type  = e.type_reference.data_type == null ? "" : e.type_reference.data_type.get_full_name();
+				// unlikely to get value..
+				//c.value = element->get_prop("value");
+				c.consts.set(e.name,em);
+			}
+			
+			
+			
+			 
+		}
+		
 		
 		public void add_class(GirObject parent, Vala.Class cls)
 		{
