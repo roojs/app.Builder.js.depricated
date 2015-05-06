@@ -135,7 +135,7 @@ namespace Palete {
 		{
 			var n = met.name == null ? parent.name : "";
 			if (met is Vala.CreationMethod && n == "") {
-				n = parent.name;
+				n = ".new";
 			}
 			
 			var c = new GirObject("Method",n);
