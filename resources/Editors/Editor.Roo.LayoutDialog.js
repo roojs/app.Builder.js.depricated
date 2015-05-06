@@ -549,7 +549,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            var regex = /(.*?)\((.*?)\)/g;
            
-           Roo.log(regex.test(r.Type));
+           var type_test = regex.test(r.Type)
+           Roo.log(type_test);
            
            
            var type_match = regex.exec(r.Type);
