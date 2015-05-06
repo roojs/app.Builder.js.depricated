@@ -9,7 +9,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
  _strings : {
   'b021df6aac4654c454f46c77646e745f' :"Label",
   '793548e77e782c209a78ed67f255b5e2' :"Display Field",
-  '0b6519e9da7898cdc668f6016026e71d' :"To JSON",
+  '040076bde7f6b3387448e32b66c2eee0' :"To BJS",
   '4ce58cbe362a5d7b156992a496d55bf3' :"Database Column",
   '189efd19c4153526994a6d7ea5f6f068' :"Field Type",
   '2f616612593df62aeed112de4f03110e' :"Edit a Grid",
@@ -249,15 +249,15 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
       },
       {
        '|xns' : 'Roo.Toolbar',
-       text : _this._strings['0b6519e9da7898cdc668f6016026e71d'],
+       text : _this._strings['040076bde7f6b3387448e32b66c2eee0'],
        xns : Roo.Toolbar,
        xtype : 'Button',
        listeners : {
         click : function (_self, e)
          {
              
-             Roo.log('Converting to JSON...');
-             _this.panel.toJson();
+             Roo.log('Converting to BJS...');
+             _this.panel.toBJS();
          
          }
        }
