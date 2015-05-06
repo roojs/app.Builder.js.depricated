@@ -204,7 +204,7 @@
            "items" : [
             {
              "xtype" : "SimpleStore",
-             "$ data" : "[ \n    [ 'ComboBox', \"ComboBox\"],\n    [ 'Text' , \"TextField\"],\n    [ 'Number', \"NumberField\"],\n    [ 'TextArea', \"TextArea\"],\n    [ 'Html', \"HtmlEntry\"]\n    \n]\n",
+             "$ data" : "[ \n    \n]\n",
              "$ fields" : "[  'ftype']",
              "$ xns" : "Roo.data",
              "* prop" : "store"
