@@ -147,7 +147,12 @@ namespace Palete {
 				cc.type  =  met.return_type.data_type.get_full_name();
 				c.return_value = cc;
 			}
-			parent.methods.set(met.name,c);
+			if (met is Vala.CreationMethod) {
+				
+			} else {
+			
+				parent.methods.set(met.name,c);
+			}
 			
 			var params =  met.get_parameters() ;
 			if (params.size < 1) {
