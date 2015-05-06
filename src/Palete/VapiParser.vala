@@ -70,7 +70,7 @@ namespace Palete {
 			c.gparent = parent;
 			c.ns = parent.ns;
 			c.propertyof = parent.name;
-			c.type  = prop.property_type.data_type.get_full_name();
+			c.type  = prop.property_type.data_type == null ? "" : prop.property_type.data_type.get_full_name();
 			parent.props.set(prop.name,c);
 			
 		}
