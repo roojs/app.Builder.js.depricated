@@ -128,7 +128,7 @@ namespace Palete {
 			 
 			Vala.CodeContext.pop ();
 			 
-			 
+			context.accept(this);
 			print("ALL OK?\n");
 		 
 		}
