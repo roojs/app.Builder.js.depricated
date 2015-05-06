@@ -16,8 +16,8 @@ namespace Palete {
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
-			if (GirObject.cache == null) {
-				GirObject.cache =  new Gee.HashMap<string,Gir>();
+			if (Gir.cache == null) {
+				Gir.cache =  new Gee.HashMap<string,Gir>();
 			}
 		}
 		
@@ -36,7 +36,7 @@ namespace Palete {
 			}
 			
 			var g = new Gir.new_empty(element.name);
-			GirObject.cache.set(element.name, g);
+			Gir.cache.set(element.name, g);
 			
 			
 			foreach(var c in element.get_classes()) {
