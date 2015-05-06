@@ -535,6 +535,14 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            var field_type = 'TextField';
            
+           if (r.Type == 'text'){
+               field_type = 'TextArea';
+           }
+           
+           if(r.Type == 'date' || r.Type == 'datetime'){
+               field_type = 'DateField';
+           }
+               
            var regex = /(.*?)\((.*?)\)/;
            
            if(regex.test(r.Type)){
@@ -547,19 +555,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                        field_type = 'CheckBox';
                    }
                }
-               
-           } esle {
-               switch (r.Type) {
-                   case 'text' :
-                       field_type = 'TextArea';
-                       break;
-                   case 'date' :
-                   case 'datetime':
-                       field_type = 'DateField';
-               }
-           
-           }
-           
+           } 
            
            var rt = '', rc = '', rs = [];
            
