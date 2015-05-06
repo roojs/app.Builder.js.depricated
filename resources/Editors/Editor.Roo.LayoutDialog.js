@@ -716,23 +716,13 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            }
            
-           if (el.xtype == 'ComboBox') {
+           if (el.xtype == 'ComboBoxArray') {
            
-   
-               el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
+               el.hiddenName = rec.data.dataIndex;
+               el.name = rec.data.dataIndex + '_' + rec.data.display_field;
                
-               el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
-               el.name  = rec.data.dataIndex + '_' + rec.data.display_field; // SET WHEN USED eg. project_id_name
-               
-               el.displayField = rec.data.display_field // SET WHEN USED eg. project_id
-               el.valueField = rec.data.relates_to_col 
-               
-               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>'; // SET WHEN USED
-             
-           
-              el.items = [
+               el.items = [
                    {
-                           
                        '*prop' : 'store',
                        'xtype' : 'Store',
                        '|xns' : 'Roo.data',
@@ -767,6 +757,19 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                        ]
                    }
                ];
+               
+               el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
+               
+               el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
+               el.name  = rec.data.dataIndex + '_' + rec.data.display_field; // SET WHEN USED eg. project_id_name
+               
+               el.displayField = rec.data.display_field // SET WHEN USED eg. project_id
+               el.valueField = rec.data.relates_to_col 
+               
+               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>'; // SET WHEN USED
+             
+           
+              
            
            }
            
