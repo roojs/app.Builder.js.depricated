@@ -47,6 +47,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
      listeners : {
       load : function (_self, records, options)
        {
+           Roo.log('records');
            Roo.log(records);
        }
      }
