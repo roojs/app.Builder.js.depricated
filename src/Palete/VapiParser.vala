@@ -65,7 +65,7 @@ namespace Palete {
 				var em = new GirObject("EnumMember",e.name);
 				em.gparent = c;
 				em.ns = c.ns;
-				//em.type  = e.type_reference.data_type == null ? "" : e.type_reference.data_type.get_full_name();
+				em.type  = e.type_reference && e.type_reference.data_type == null ? "" : e.type_reference.data_type.get_full_name();
 				// unlikely to get value..
 				//c.value = element->get_prop("value");
 				c.consts.set(e.name,em);
