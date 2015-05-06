@@ -320,7 +320,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
               [ 'Checkbox', "Checkbox"]    
               // checkbox?
           ],
-          fields : [  'code', 'value'],
+          fields : [  'ftype', 'fname'],
           xns : Roo.data,
           xtype : 'SimpleStore'
          },
