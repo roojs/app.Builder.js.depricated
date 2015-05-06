@@ -36,20 +36,19 @@ namespace Palete {
 			var opn = this.pnode;
 			print("got class %s / %s\n", element.name, element.get_full_name());
 			var n = element.name;
-			var c = new GirObject("Class", pnode.name + "." + element.name);
-			pnode.classes.set(n, c);
-			c.ns = pnode.ns;
-			c.parent = pnode.name;
-			c.gparent = parent;
-			if (c.parent == null) {
-				c.parent = "";
-			}
-			parent =  c;
-			break;
-			
-			this.pnode = 
+			var c = new GirObject("Class", this.pnode.name + "." + element.name);
+			this.pnode.classes.set(n, c);
+			c.ns = this.pnode.ns;
+			c.parent = this.pnode.name;
+			c.gparent = this.pnode;
+			//if (c.parent == null) {
+			//	c.parent = "";
+			//}
+			this.pnode =  c;
 			
 			element.accept_children (this);
+			this.pnode = opn;
+			
 		}
 		public override void visit_method (Vala.Method element) {
 			print("got method %s / %s\n", element.name, element.get_full_name() ); 
