@@ -145,6 +145,9 @@
          "* prop" : "editor",
          "items" : [
           {
+           "listeners" : {
+            "render" : "function (_self)\n{\n    _this.ftype_combo = _self;\n}"
+           },
            "listWidth" : 200,
            "triggerAction" : "all",
            "displayField" : "fname",
