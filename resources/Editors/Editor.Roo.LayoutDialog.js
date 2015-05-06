@@ -379,7 +379,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          store : {
           '|xns' : 'Roo.data',
           data : [ 
-              
+              ['id']
           ],
           fields : [  'ftype'],
           xns : Roo.data,

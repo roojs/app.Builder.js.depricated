@@ -204,7 +204,7 @@
            "items" : [
             {
              "xtype" : "SimpleStore",
-             "$ data" : "[ \n    \n]\n",
+             "$ data" : "[ \n    ['id']\n]\n",
              "$ fields" : "[  'ftype']",
              "$ xns" : "Roo.data",
              "* prop" : "store"
