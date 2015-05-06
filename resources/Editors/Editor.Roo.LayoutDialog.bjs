@@ -38,7 +38,7 @@
     {
      "listeners" : {
       "|rowdblclick" : "function (_self, rowIndex, e)\n{\n    if (!_this.dialog) return;\n  \n}\n",
-      "beforeedit" : "function (e)\n{\n    Roo.log('before edit!!!');\n    Roo.log(e);\n    \n    if(e.field != 'dfield'){\n        return false;\n    }\n    \n    _this.grid.colModel.getCellEditor(e.column, e.row).field.store.loadData(e.record.data.relates_to_schema);\n}",
+      "beforeedit" : "function (e)\n{\n    Roo.log('before edit!!!');\n    Roo.log(e);\n    \n    if(e.field != 'dfield'){\n        return;\n    }\n    \n    _this.grid.colModel.getCellEditor(e.column, e.row).field.store.loadData(e.record.data.relates_to_schema);\n}",
       "cellclick" : "function (_self, rowIndex, columnIndex, e)\n{\n\n        var di = this.colModel.getDataIndex(columnIndex);\n        if (di != 'active') {\n            return;\n        }\n         \n        var rec = _this.grid.ds.getAt(rowIndex);\n        \n        rec.set('active', rec.data.active * 1 ? 0 : 1);\n        rec.commit();\n         \n        \n}",
       "|render" : "function() \n{\n    _this.grid = this; \n    //_this.dialog = Pman.Dialog.FILL_IN\n\n}"
      },

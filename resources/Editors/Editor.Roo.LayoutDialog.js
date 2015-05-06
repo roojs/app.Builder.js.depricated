@@ -459,7 +459,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
           Roo.log(e);
           
           if(e.field != 'dfield'){
-              return false;
+              return;
           }
           
           _this.grid.colModel.getCellEditor(e.column, e.row).field.store.loadData(e.record.data.relates_to_schema);
