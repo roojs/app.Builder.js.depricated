@@ -170,6 +170,11 @@ namespace Palete {
 			Vala.CodeContext.pop ();
 			 
 			context.accept(this);
+			
+			// dump the tree for Gtk?
+			
+			
+			
 			print("ALL OK?\n");
 		 
 		}
