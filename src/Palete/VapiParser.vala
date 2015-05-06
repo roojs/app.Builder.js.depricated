@@ -125,7 +125,7 @@ namespace Palete {
  
 int main (string[] args) {
 
-	var a = new VapiParser(file);
+	var a = new VapiParser( );
 	a.create_valac_tree();
 	return 0;
 }
