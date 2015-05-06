@@ -65,7 +65,13 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        '|xns' : 'Roo.Toolbar',
        text : _this._strings['dc30ec20708ef7b0f641ef78b7880a15'],
        xns : Roo.Toolbar,
-       xtype : 'Button'
+       xtype : 'Button',
+       listeners : {
+        click : function (_self, e)
+         {
+             var data = ""
+         }
+       }
       }
      ]
 

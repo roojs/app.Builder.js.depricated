@@ -71,6 +71,9 @@
          "$ xns" : "Roo.Toolbar"
         },
         {
+         "listeners" : {
+          "click" : "function (_self, e)\n{\n    var data = \"\"\n}"
+         },
          "xtype" : "Button",
          "String text" : "DEBUG",
          "$ xns" : "Roo.Toolbar"
