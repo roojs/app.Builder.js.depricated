@@ -121,6 +121,39 @@ namespace Palete {
 			}
 			
 		}	
+		
+		public void add_method(GirObject parent, Vala.Method met)
+		{
+			var c = new GirObject("Method",met.name);
+			c.gparent = parent;
+			c.ns = parent.ns;
+			
+			if (met.return_type.data_type != null) {
+				print("creating return type on signal %s\n", sig.name);
+				var cc = new GirObject("Return", "return-value");
+				cc.gparent = c;
+				cc.ns = c.ns;
+				cc.type  =  met.return_type.data_type.get_full_name();
+				c.return_value = cc;
+			}
+			parent.methods.set(met.name,c);
+			
+			var params =  sig.get_parameters() ;
+			if (params.size < 1) {
+				return;
+			}
+			var cc = new GirObject("Paramset",sig.name); // what's the name on this?
+			cc.gparent = c;
+			cc.ns = c.ns;
+			c.paramset = cc;
+			
+			
+			foreach(var p in sig.get_parameters()) {
+				this.add_param(cc, p);
+			}
+			
+		}
+		
 		public void add_param(GirObject parent, Vala.Parameter pam)
 		{
 			var c = new GirObject("Param",pam.name);
