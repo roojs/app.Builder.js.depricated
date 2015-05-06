@@ -106,8 +106,8 @@ namespace Palete {
 			c.ns = parent.ns;
 			parent.params.add(c);
 			
-			this.checkParamOverride(c);   
-			break;
+			// this.checkParamOverride(c);   - this is an old kludge for Gir files..
+			
 		}
 		
 		public void create_valac_tree( )
