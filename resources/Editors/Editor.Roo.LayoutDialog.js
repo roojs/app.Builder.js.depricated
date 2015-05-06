@@ -601,8 +601,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            ar.push(a);
        });
        
-       
-       Roo.log(ar);
        this.schema = data;
        
        //alert("IPC:TEST:" + JSON.stringify(ar));
