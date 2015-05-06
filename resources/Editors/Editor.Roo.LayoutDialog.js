@@ -375,7 +375,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    
                el.queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
                
-               el.hiddenName = old.name; // SET WHEN USED eg. project_id
+               el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
                el.displayField = combofields_name; // SET WHEN USED eg. project_id
                el.name  = old.name + '_' + combofields_name; // SET WHEN USED eg. project_id_name
                el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + combofields_name +'}</b> </div>'; // SET WHEN USED
