@@ -13,7 +13,9 @@ namespace Palete {
 			base();
 			
 		}
-		
+		public override void visit_namespace (Vala.Namespace element) {
+			element.accept_children (this);
+		}
 		public override void visit_type_parameter (Vala.TypeParameter element) {
 			print("got param %s", element.name);
 			
