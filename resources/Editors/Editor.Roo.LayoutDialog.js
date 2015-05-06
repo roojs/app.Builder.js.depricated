@@ -228,7 +228,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                  }
              };
              
-             
+             _this.panel.loadData(data);
          
          }
        }
