@@ -51,6 +51,7 @@ namespace Palete {
 			foreach(var p in element.get_properties()) {
 				this.add_property(c, p);
 			}
+			// methods...
 			
 			 
 		}
