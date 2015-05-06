@@ -40,7 +40,18 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        
      
      ],
-     fields : [ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ],
+     fields : [ 
+         'active', 
+         'dataIndex', 
+         'type',
+         'title', 
+         'width', 
+         'ftype', 
+         'display_field',
+         'relates_to_table',
+         'relates_to_col',
+         'relates_to_schema'
+     ],
      id : 'dataindex',
      xns : Roo.data,
      xtype : 'SimpleStore'
