@@ -667,6 +667,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                el.alwaysQuery = true;
                el.triggerAction = 'all';
                el.forceSelection = true;
+               el.selectOnFocus = true;
                el.minChars = 2;
                el.editable = true;
                
@@ -728,6 +729,12 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                el.name = rec.data.dataIndex + '_' + rec.data.display_field;
                
                el.items = [
+                   'alwaysQuery' : true,
+                   'triggerAction' : 'all',
+                   'forceSelection': true,
+                   'selectOnFocus' : true,
+                   'minChars' :2,
+                   'editable' : true,
                    {
                        '*prop' : 'store',
                        'xtype' : 'Store',
