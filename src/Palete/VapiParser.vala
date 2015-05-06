@@ -39,22 +39,30 @@ namespace Palete {
 			
 		}
 		
-		public void add_class(GirObject g, Vala.Class cls)
+		public void add_class(GirObject parent, Vala.Class cls)
 		{
 		
-			var c = new GirObject("Class", g.name + "." + cls.name);
-			g.classes.set(cls.name, c);
-			c.ns = g.ns;
-			c.parent = g.name;
-			c.gparent = g;
+			var c = new GirObject("Class", parent.name + "." + cls.name);
+			parent.classes.set(cls.name, c);
+			c.ns = parent.ns;
+			c.parent = parent.name;
+			c.gparent = parent;
 			
-			foreach(
+			foreach(var p in element.get_properties()) {
+				this.add_property(c, p);
+			}
 			
-			element.accept_children (this);
-			this.pnode = opn;
-			
+			 
 		}
+		public void add_property(GirObject parent, Vala.Property prop)
 		
+			var c = new GirObject("Prop",prop.name);
+			c.gparent = parent;
+			c.ns = this.ns;
+				c.propertyof = parent.name;
+		    		parent.props.set(n.replace("-", "_"),c);
+		    		parent = c;
+		    		break;
 		
 		
 		public override void visit_method (Vala.Method element) {
