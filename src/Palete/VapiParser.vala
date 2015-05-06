@@ -135,10 +135,10 @@ namespace Palete {
 		{
 			var n = met.name == null ? parent.name : "";
 			if (met is Vala.CreationMethod && n == "") {
-				n = ".new"
+				n = parent.name;
 			}
 			
-			var c = new GirObject("Method",met.name == null ? parent.name : "");
+			var c = new GirObject("Method",n);
 			c.gparent = parent;
 			c.ns = parent.ns;
 			
