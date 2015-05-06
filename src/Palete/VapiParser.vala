@@ -62,6 +62,7 @@ namespace Palete {
 			c.propertyof = parent.name;
 			parent.props.set(prop.name,c);
 			
+		}
 			 
 		
 		
