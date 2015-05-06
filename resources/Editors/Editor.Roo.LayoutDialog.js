@@ -507,16 +507,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                relates_to_schema : []
            }
            
-           var d = [];
-           
-           for(var j = 0, j = fields.length; j++){
-               var f = fields.items[j];
-               if(o.hasOwnProperty(f.name)){
-                   d.push(o[f.name]);
-               }
-           }
-           
-           ar.push(d);
            
            /*
            ar.push([ !has_s , r.Field, r.Type,  r.Field, 100 , 'TextField', r.Field + '_display_name'] );
