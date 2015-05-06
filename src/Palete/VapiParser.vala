@@ -225,7 +225,7 @@ namespace Palete {
 			// dump the tree for Gtk?
 			
 			
-			print("%s\n", cache.get("Gtk").asJSONString());
+			print("%s\n", Gir.cache.get("Gtk").asJSONString());
 			print("ALL OK?\n");
 		 
 		}
