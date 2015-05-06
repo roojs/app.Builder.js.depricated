@@ -506,6 +506,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
        }
        this.schema = data;
+       
        //alert("IPC:TEST:" + JSON.stringify(ar));
        this.grid.dataSource.loadData(ar);
    },
