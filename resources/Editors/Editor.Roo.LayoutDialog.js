@@ -547,13 +547,18 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                }
            }
            
+           var field_type = 'TextField';
+           
            var regex = /(.*?)\((.*?)\)/;
            
            if(regex.test(r.Type)){
                var type_match = regex.exec(r.Type);
                
                switch type_match[1] {
-                   case 'int'
+                   case 'varchar' :
+                       break;
+                   case 'int' :
+                       if(type_match[2]  < 11)
                    
                }
                
