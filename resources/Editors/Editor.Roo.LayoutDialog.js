@@ -515,7 +515,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
        }
        
-       Roo.log(_this.grid.dataSource.reader.readRecords.readRecords(ar));
+       Roo.log(_this.grid.dataSource.reader.readRecords(ar));
        
        this.schema = data;
        
