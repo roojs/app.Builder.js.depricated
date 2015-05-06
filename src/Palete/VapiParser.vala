@@ -44,7 +44,7 @@ namespace Palete {
 		
 			var c = new GirObject("Class", parent.name + "." + cls.name);
 			parent.classes.set(cls.name, c);
-			c.ns = parent.ns;
+			c.ns = parent.name;
 			c.parent = parent.name;
 			c.gparent = parent;
 			
@@ -58,11 +58,11 @@ namespace Palete {
 		
 			var c = new GirObject("Prop",prop.name);
 			c.gparent = parent;
-			c.ns = this.ns;
-				c.propertyof = parent.name;
-		    		parent.props.set(n.replace("-", "_"),c);
-		    		parent = c;
-		    		break;
+			c.ns = parent.ns;
+			c.propertyof = parent.name;
+			parent.props.set(n.replace("-", "_"),c);
+			
+			 
 		
 		
 		public override void visit_method (Vala.Method element) {
