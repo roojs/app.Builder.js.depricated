@@ -43,14 +43,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
      fields : [ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ],
      id : 'dataindex',
      xns : Roo.data,
-     xtype : 'SimpleStore',
-     listeners : {
-      load : function (_self, records, options)
-       {
-           Roo.log('records');
-           Roo.log(records);
-       }
-     }
+     xtype : 'SimpleStore'
     },
     toolbar : {
      '|xns' : 'Roo',
