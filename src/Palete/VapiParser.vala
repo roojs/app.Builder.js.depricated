@@ -19,14 +19,17 @@ namespace Palete {
 		}
 		
 		public override void visit_class (Vala.Class element) {
-			print("got class %s\n", element.name);
+			print("got class %s / %s\n", element.name, element.get_full_name());
 			element.accept_children (this);
 		}
-		
-		public override void visit_type_parameter (Vala.TypeParameter element) {
-			print("got param %s / %s\n", element.name, );
-			 
+		public override void visit_method (Vala.Method element) {
+			print("got method %s / %s\n", element.name, element.get_full_name() ); 
+			element.accept_children (this);
 		}
+		public override void visit_type_parameter (Vala.TypeParameter element) {
+			print("got param %s\n", element.name); 
+		}
+		
 		
 		public void create_valac_tree( )
 		{
