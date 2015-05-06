@@ -13,15 +13,9 @@ namespace Palete {
 			base();
 			
 		}
-		private PackageMetaData register_package (Package package) {
-			PackageMetaData meta_data = new PackageMetaData (package);
-			tree.add_package (package);
-			packages.add (meta_data);
-			return meta_data;
-		}
-
+		 
 		
-		public void checkPackage(string name)
+		public void create_valac_tree( )
 		{
 			// init context:
 			context = new Vala.CodeContext ();
