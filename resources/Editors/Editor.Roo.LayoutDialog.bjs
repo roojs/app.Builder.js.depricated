@@ -49,7 +49,7 @@
      "* prop" : "grid",
      "items" : [
       {
-       "$ Array fields" : "[ 'active', 'dataIndex', 'type','title', 'width', 'ftype', 'display_field' ]",
+       "$ Array fields" : "[\n      {\n          'name': 'active',\n          'type': 'boolean'\n      },\n      {\n          'name': 'dataIndex',\n          'type': 'string'\n      },\n      {\n          'name': 'type',\n          'type': 'string'\n      },\n      {\n          'name': 'title',\n          'type': 'string'\n      },\n      {\n          'name': 'width',\n          'type': 'int'\n      },\n      {\n          'name': 'ftype',\n          'type': 'string'\n      },\n      {\n          'name': 'display_field',\n          'type': 'string'\n      }\n]",
        "$ Array data" : "[\n  [ 1, 'test', 'test', 110 ]\n  \n\n]",
        "Number id" : "'dataIndex'",
        "xtype" : "SimpleStore",
