@@ -68,6 +68,10 @@
         {
          "xtype" : "Fill",
          "$ xns" : "Roo.Toolbar"
+        },
+        {
+         "xtype" : "Button",
+         "$ xns" : "Roo.Toolbar"
         }
        ]
       },

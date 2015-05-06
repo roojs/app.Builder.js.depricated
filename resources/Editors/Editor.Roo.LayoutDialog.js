@@ -59,6 +59,11 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        '|xns' : 'Roo.Toolbar',
        xns : Roo.Toolbar,
        xtype : 'Fill'
+      },
+      {
+       '|xns' : 'Roo.Toolbar',
+       xns : Roo.Toolbar,
+       xtype : 'Button'
       }
      ]
 
