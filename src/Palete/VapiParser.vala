@@ -87,7 +87,7 @@ namespace Palete {
 				var cc = new GirObject("Return", "return-value");
 				cc.gparent = c;
 				cc.ns = c.ns;
-				c.type  = sig.return_type.data_type == null ? "" : sig.return_type.data_type.get_full_name();
+				c.type  =  sig.return_type.data_type.get_full_name();
 				c.return_value = c;
 			}
 			parent.signals.set(sig.name,c);
