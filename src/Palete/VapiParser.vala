@@ -74,8 +74,9 @@ namespace Palete {
 			// default.. packages..
 			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
+			context.add_external_package ("gdk+-3.0");
 			// user defined ones..
-			context.add_package ("Gtk");
+			//context.add_package ("Gtk");
 	    	  
 			var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, "/usr/share/vala-0.26/vapi/gtk+-3.0.vapi");
 			context.add_source_file (vfile);
