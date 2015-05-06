@@ -533,6 +533,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined';
            
+           Roo.log(r.Type);
            var field_type = 'TextField';
            
            if (r.Type == 'text'){
