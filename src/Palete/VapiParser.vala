@@ -23,7 +23,8 @@ namespace Palete {
 		
 		
 		
-		public override void visit_namespace (Vala.Namespace element) {
+		public override void visit_namespace (Vala.Namespace element) 
+		{
 			print("parsing namespace %s\n", element.name);
 			
 			var g = new Gir.new_empty(element.name);
@@ -56,7 +57,7 @@ namespace Palete {
 			 
 		}
 		public void add_property(GirObject parent, Vala.Property prop)
-		
+		{
 			var c = new GirObject("Prop",prop.name);
 			c.gparent = parent;
 			c.ns = parent.ns;
