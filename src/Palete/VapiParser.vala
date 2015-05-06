@@ -76,6 +76,9 @@ namespace Palete {
 			context.add_external_package ("gobject-2.0");
 			context.add_external_package ("gdk-3.0");
 			context.add_external_package ("atk");
+			context.add_external_package ("gdk-x11-3.0");
+			context.add_external_package ("x11");
+			
 			// user defined ones..
 			//context.add_package ("Gtk");
 	    	  
