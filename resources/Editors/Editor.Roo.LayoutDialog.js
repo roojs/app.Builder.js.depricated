@@ -632,12 +632,15 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            if (xtype == 'Combobox') {
            
    
-               el.queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
+               el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
                
                el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
-               el.displayField = combofields_name; // SET WHEN USED eg. project_id
-               el.name  = old.name + '_' + combofields_name; // SET WHEN USED eg. project_id_name
-               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + combofields_name +'}</b> </div>'; // SET WHEN USED
+               el.name  = rec.data.dataIndex + '_' + rec.data.display_field; // SET WHEN USED eg. project_id_name
+               
+               el.displayField = rec.data.display_field // SET WHEN USED eg. project_id
+               el.valueField = rec.data.relates_to_col 
+               
+               el.tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + rec.data.display_field +'}</b> </div>'; // SET WHEN USED
              
            
               el.items = [
@@ -661,7 +664,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                                'xtype' : 'HttpProxy',
                                'method' : 'GET',
                                '|xns' : 'Roo.data',
-                               '|url' : "baseURL + '/Roo/" + reftable + ".php'",
+                               '|url' : "baseURL + '/Roo/" + rec.data.relates_to_table + ".php'",
                            },
                            
                            {
