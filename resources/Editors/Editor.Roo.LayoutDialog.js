@@ -305,8 +305,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    fitToframe : true,
    loadData : function(data) { 
    
-       //alert("IPC:TEST:" + JSON.stringify(data,null,4));
-       alert("IPC:TEST: OUTPUT DATA : " + data);
+       alert("IPC:TEST:" + JSON.stringify(data,null,4));
        return;
        var ar = [];
        for (var k in data) { 
