@@ -629,7 +629,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var el = {
                fieldLabel : rec.data.title,
                name : rec.data.dataIndex,
-               width : r.data.width,
+               width : rec.data.width,
                '|xns' : 'Roo.form',
                xtype : rec.data.ftype
            }
