@@ -17,12 +17,12 @@ namespace Palete {
 			element.accept_children (this);
 		}
 		public override void visit_type_parameter (Vala.TypeParameter element) {
-			print("got param %s", element.name);
+			print("got param %s\n", element.name);
 			
 			 
 		}
 		public override void visit_class (Vala.Class element) {
-			print("got class %s", element.name);
+			print("got class %s\n", element.name);
 			element.accept_children (this);
 		}
 		
