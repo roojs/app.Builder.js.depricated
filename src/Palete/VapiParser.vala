@@ -52,6 +52,16 @@ namespace Palete {
 		}
 		public override void visit_method (Vala.Method element) {
 			print("got method %s / %s\n", element.name, element.get_full_name() ); 
+			var opn = this.pnode;
+			var n = element.name;
+			var c = new GirObject("Method",n);
+			c.gparent = opn;
+			c.ns = this.ns;
+			c.propertyof = parent.name;
+				parent.methods.set(n,c);
+				parent = c;
+				break
+			
 			element.accept_children (this);
 		}
 		public override void visit_type_parameter (Vala.TypeParameter element) {
