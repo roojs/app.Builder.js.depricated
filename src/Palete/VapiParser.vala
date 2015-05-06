@@ -45,7 +45,7 @@ namespace Palete {
 			var c = new GirObject("Class", parent.name + "." + cls.name);
 			parent.classes.set(cls.name, c);
 			c.ns = parent.name;
-			c.parent = parent.name;
+			c.parent = cls.base_class.get_full_name() ;  // extends...
 			c.gparent = parent;
 			
 			foreach(var p in element.get_properties()) {
