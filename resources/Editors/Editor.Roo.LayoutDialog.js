@@ -400,12 +400,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
         '|xns' : 'Roo.grid',
         xns : Roo.grid,
         xtype : 'GridEditor',
-        listeners : {
-         render : function (_self)
-          {
-              Roo.log('reader');
-          }
-        },
         items : [
 
         ]
