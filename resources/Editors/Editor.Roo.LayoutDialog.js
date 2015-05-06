@@ -509,7 +509,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            var d = [];
            
-           for(var j = 0; j = fields.length; j++){
+           for(var j = 0; j < fields.length; j++){
                Roo.log(j);
                Roo.log(fields);
                Roo.log(fields.items[j]);
