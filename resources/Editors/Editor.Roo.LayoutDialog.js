@@ -305,7 +305,8 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    fitToframe : true,
    loadData : function(data) { 
    
-        alert("IPC:TEST:" + JSON.stringify(data,null,4));
+       //alert("IPC:TEST:" + JSON.stringify(data,null,4));
+       alert("IPC:TEST: OUTPUT DATA : " + data);
        var ar = [];
        for (var k in data) { 
            var r = data[k];
@@ -325,7 +326,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            */
        }
        this.schema = data;
-       alert("IPC:TEST:" + JSON.stringify(ar));
+       //alert("IPC:TEST:" + JSON.stringify(ar));
        this.grid.dataSource.loadData(ar);
    },
    region : 'center',
