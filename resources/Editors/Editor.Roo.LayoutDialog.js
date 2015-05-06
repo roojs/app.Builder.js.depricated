@@ -533,20 +533,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            var r = data[k];
            var has_s = typeof(r.relates_to_schema) != 'undefined';
            
-           var rt = '', rc = '', rs = [];
-           
-           if(has_s){
-               for (var kk in r.relates_to_schema) {         
-                   var rr = r.relates_to_schema[kk];
-                   
-                   rt = r.relates_to_table;
-                   rc = r.relates_to_col;
-                   
-                   rs.push([rr.Field]);
-                   
-               }
-           }
-           
            var field_type = 'TextField';
            
            var regex = /(.*?)\((.*?)\)/;
@@ -567,12 +553,33 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                    
                }
                
+           } esle {
+               switch r.Type {
+                   case 'text' :
+                       field_type = 'TextArea';
+                       break;
+                   case 'date' :
+                   case 'datetime':
+                       field_type = 'DateField';
+               }
+           
            }
            
-           var type_match = regex.exec(r.Type);
+           var rt = '', rc = '', rs = [];
            
-           Roo.log(type_match);
-           
+           if(has_s){
+               for (var kk in r.relates_to_schema) {         
+                   var rr = r.relates_to_schema[kk];
+                   
+                   rt = r.relates_to_table;
+                   rc = r.relates_to_col;
+                   
+                   rs.push([rr.Field]);
+                   
+               }
+               
+               field_type = 'ComboBox';
+           }
            
            
            
