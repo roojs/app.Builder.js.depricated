@@ -64,6 +64,11 @@ namespace Palete {
 			foreach(var p in cls.get_signals()) {
 				this.add_signal(c, p);
 			}
+			
+			foreach(var p in cls.get_methods()) {
+				this.add_method(c, p);
+			}
+			
 			if (cls.base_class != null) {
 				c.inherits.add(cls.base_class.get_full_name());
 			}
