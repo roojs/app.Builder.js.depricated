@@ -540,7 +540,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            if(regex.test(r.Type)){
                var type_match = regex.exec(r.Type);
                
-               switch type_match[1] {
+               switch (type_match[1]) {
                    case 'varchar' :
                        break;
                    case 'int' :
@@ -554,7 +554,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                }
                
            } esle {
-               switch r.Type {
+               switch (r.Type) {
                    case 'text' :
                        field_type = 'TextArea';
                        break;
