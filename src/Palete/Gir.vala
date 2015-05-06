@@ -421,7 +421,7 @@ namespace Palete {
     
 	public class Gir : GirObject {
     
-		static  Gee.HashMap<string,Gir> cache = null;
+		public static  Gee.HashMap<string,Gir> cache = null;
 		//Gee.Hashmap<string,what> nodes;
 
 
@@ -652,12 +652,12 @@ namespace Palete {
 			    break;
 			*/
 			case "signal": // Glib:signal
-			    	var c = new GirObject("Signal",n.replace("-", "_"));
+				var c = new GirObject("Signal",n.replace("-", "_"));
 				c.gparent = parent;
 				c.ns = this.ns;
-		    		parent.signals.set(n.replace("-", "_"),c);
-		    		parent = c;
-		    		break;
+				parent.signals.set(n.replace("-", "_"),c);
+				parent = c;
+				break;
 			    
 			
 		      
