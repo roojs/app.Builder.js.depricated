@@ -88,9 +88,7 @@ namespace Palete {
 	    	  
 			var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, "/usr/share/vala-0.26/vapi/gtk+-3.0.vapi");
 			context.add_source_file (vfile);
-			Package vdpkg = new Package (pkg, true, null);
-			register_source_file (register_package (vdpkg), vfile);
-			
+			 
 			//context.add_external_package ("libvala-0.24");
 			
 			 
