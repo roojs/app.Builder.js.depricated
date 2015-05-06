@@ -69,7 +69,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        listeners : {
         click : function (_self, e)
          {
-         
+             Roo.log(_this.ftype_combo);
              var data = {    
                  "manage_scale_id": {
                      "Field": "manage_scale_id",
