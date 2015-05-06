@@ -29,7 +29,7 @@ public class Xcls_DialogPluginWebkit : Object
         // set gobject values
         this.el.title = "Add / Edit Component";
         this.el.default_height = 500;
-        this.el.default_width = 500;
+        this.el.default_width = 750;
         this.el.deletable = true;
         this.el.modal = true;
         var child_0 = new Xcls_VBox2( _this );
