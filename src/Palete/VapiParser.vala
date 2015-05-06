@@ -26,10 +26,12 @@ namespace Palete {
 		public override void visit_namespace (Vala.Namespace element) 
 		{
 			if (element == null) {
+				
 				return;
 			}
 			print("parsing namespace %s\n", element.name);
 			if (element.name == null) {
+				element.accept_children(this); // catch sub namespaces..
 				return;
 			}
 			
@@ -41,7 +43,7 @@ namespace Palete {
 				this.add_class(g, c);
 			}
 			
-			 
+			element.accept_children(this); // catch sub namespaces..
 			
 			
 		}
