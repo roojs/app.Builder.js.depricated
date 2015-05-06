@@ -700,7 +700,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                ];
            
            }
-           
+           /*
            if (el.xtype == 'HtmlEditor') {
                el.height = 100,
                el.resizable = 's',
@@ -716,7 +716,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                   }
                ]
            }
-           
+           */
            formElements.push(el);
            
            formHeight += rec.data.ftype == 'TextArea' ? 100 : 30;
