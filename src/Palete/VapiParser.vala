@@ -133,7 +133,7 @@ namespace Palete {
 			c.ns = parent.ns;
 			
 			if (met.return_type.data_type != null) {
-				print("creating return type on signal %s\n", met.name);
+				print("creating return type on method %s\n", met.name);
 				var cc = new GirObject("Return", "return-value");
 				cc.gparent = c;
 				cc.ns = c.ns;
