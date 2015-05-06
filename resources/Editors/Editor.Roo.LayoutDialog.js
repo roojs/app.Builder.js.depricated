@@ -386,7 +386,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
               [ 'Html', "HtmlEntry"]
               
           ],
-          fields : [  'ftype', 'fname'],
+          fields : [  'ftype'],
           xns : Roo.data,
           xtype : 'SimpleStore'
          },
