@@ -664,7 +664,13 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            if (el.xtype == 'ComboBox') {
            
-   
+               el.alwaysQuery = true;
+               el.triggerAction = 'all';
+               el.forceSelection = true;
+               el.minChars = 2;
+               el.editable = true;
+               
+               
                el.queryParam  = 'query[' + rec.data.display_field + ']';// SET WHEN USED
                
                el.hiddenName = rec.data.dataIndex // SET WHEN USED eg. project_id
