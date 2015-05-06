@@ -310,12 +310,7 @@ public class ValaDoc : Object {
 			//stdout.printf ("Valadoc %s\n", Config.version);
 			return 0;
 		}
-
-		if (directory == null) {
-			reporter.simple_error ("error: No output directory specified.");
-			return quit (reporter);
-		}
-
+ 
 		if (!check_pkg_name ()) {
 			reporter.simple_error ("error: File already exists");
 			return quit (reporter);
