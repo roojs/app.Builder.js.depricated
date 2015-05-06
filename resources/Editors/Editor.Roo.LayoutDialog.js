@@ -484,7 +484,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
    loadData : function(data) { 
    
        alert("IPC:TEST:" + JSON.stringify(data,null,4));
-       
+       Roo.log('load');
        var ar = [];
        for (var k in data) { 
            var r = data[k];
