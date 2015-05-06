@@ -582,7 +582,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                type : r.Type,
                title : r.Field,
                width : 200,
-               ftype : 'TextField',
+               ftype : field_type,
                display_field : rc, //r.Field + '_display_name',
                relates_to_table : rt,
                relates_to_col : rc,
