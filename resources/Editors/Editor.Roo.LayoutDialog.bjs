@@ -187,6 +187,9 @@
          "* prop" : "editor",
          "items" : [
           {
+           "listeners" : {
+            "select" : "function (combo, record, index)\n{\n    Roo.log('test!!!');\n}"
+           },
            "listWidth" : 200,
            "triggerAction" : "all",
            "displayField" : "fname",

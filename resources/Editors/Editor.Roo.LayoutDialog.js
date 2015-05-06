@@ -392,6 +392,12 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
          width : 150,
          xns : Roo.form,
          xtype : 'ComboBox',
+         listeners : {
+          select : function (combo, record, index)
+           {
+               Roo.log('test!!!');
+           }
+         },
          items : [
 
          ]
