@@ -153,6 +153,9 @@ namespace Palete {
 			
 			
 			foreach(var p in params) {
+				if (p.name == null) {
+					continue;
+				}
 				this.add_param(cc, p);
 			}
 			
