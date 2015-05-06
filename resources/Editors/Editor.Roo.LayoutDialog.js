@@ -699,11 +699,6 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                ]
            }
            
-           if(xtype == 'Checkbox'){
-               el.inputValue = 1,
-               el.valueOff = 0
-           }
-           
            formElements.push(el);
            
            formHeight += rec.data.ftype == 'TextArea' ? 100 : 30;
