@@ -488,6 +488,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
        //alert("IPC:TEST:" + JSON.stringify(data,null,4));
    
        var fields = _this.grid.dataSource.reader.recordType.prototype.fields;
+       Roo.log('grid!!!!!!!!!!!!!!!!!');
        Roo.log(_this.grid);
        var ar = [];
        for (var k in data) { 
