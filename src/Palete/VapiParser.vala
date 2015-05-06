@@ -29,6 +29,9 @@ namespace Palete {
 				return;
 			}
 			print("parsing namespace %s\n", element.name);
+			if (element.name == null) {
+				return;
+			}
 			
 			var g = new Gir.new_empty(element.name);
 			cache.set(element.name, g);
