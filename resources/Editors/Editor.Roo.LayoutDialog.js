@@ -509,7 +509,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
            
            var d = [];
            
-           for(var j = 0, j = fields.length; j++){
+           for(var j = 0; j = fields.length; j++){
                var f = fields.items[j];
                if(o.hasOwnProperty(f.name)){
                    d.push(o[f.name]);
