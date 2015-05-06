@@ -168,11 +168,11 @@ public class ValaDoc : Object {
 		driver = null;
 		print("docletpath %s", docletpath);
 		// doclet:
-		string? pluginpath = ModuleLoader.get_doclet_path (docletpath, reporter);
+		string? pluginpath = ModuleLoader.get_doclet_path (null, reporter);
 		if (pluginpath == null) {
 			return null;
 		}
-
+print("pluginpath %s", pluginpath);
 		doclet = modules.create_doclet (pluginpath);
 		if (doclet == null) {
 			reporter.simple_error ("error: failed to load doclet");
