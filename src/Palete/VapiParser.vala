@@ -21,7 +21,7 @@ namespace Palete {
 			}
 		}
 		
-		Gir pnode = null;
+		GirObject pnode = null;
 		
 		public override void visit_namespace (Vala.Namespace element) {
 			print("parsing namespace %s\n", element.name);
@@ -33,9 +33,21 @@ namespace Palete {
 		}
 		
 		public override void visit_class (Vala.Class element) {
+			var opn = this.pnode;
 			print("got class %s / %s\n", element.name, element.get_full_name());
+			var n = element.name;
+			var c = new GirObject("Class", pnode.name + "." + element.name);
+			pnode.classes.set(n, c);
+			c.ns = pnode.ns;
+			c.parent = pnode.name;
+			c.gparent = parent;
+			if (c.parent == null) {
+				c.parent = "";
+			}
+			parent =  c;
+			break;
 			
-			
+			this.pnode = 
 			
 			element.accept_children (this);
 		}
