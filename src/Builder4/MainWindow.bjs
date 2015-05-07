@@ -38,6 +38,11 @@
      "string title" : "Application Builder",
      "items" : [
       {
+       "* pack" : "composite_name",
+       "xtype" : "HBox",
+       "$ xns" : "Gtk"
+      },
+      {
        "listeners" : {
         "activate" : "() => { \n_this.topbarmenu.el.show_all(); \n}"
        },
