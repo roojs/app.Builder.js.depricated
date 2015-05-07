@@ -39,6 +39,7 @@
       {
        "* pack" : "pack_start,?bool?,?bool?,?uint?",
        "xtype" : "HeaderBar",
+       "bool show_close_button" : true,
        "$ xns" : "Gtk",
        "string title" : "Application Builder"
       },

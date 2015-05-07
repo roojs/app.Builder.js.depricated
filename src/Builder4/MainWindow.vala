@@ -166,6 +166,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.title = "Application Builder";
+            this.el.show_close_button = true;
         }
 
         // user defined functions 
