@@ -279,9 +279,11 @@ namespace Palete {
 			// some of these may fail...
 			
 			context.add_external_package ("gtk+-3.0");
+			if (!context.add_external_package ("webkit2gtk-4.0")) {
+				context.add_external_package ("webkit2gtk-3.0");
+			}
+			context.add_external_package ("clutter-gtk-1.0");
 			
-			 
-			 
 		
 			//add_documented_files (context, settings.source_files);
 		
