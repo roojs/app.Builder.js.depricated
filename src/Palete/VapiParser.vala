@@ -255,7 +255,7 @@ namespace Palete {
 			c.ns = parent.ns;
 			parent.params.add(c);
 			c.type = pam.variable_type.data_type == null ? "" : pam.variable_type.data_type.get_full_name();
-			// this.checkParamOverride(c);   - this is an old kludge for Gir files..
+			Gir.checkParamOverride(c); 
 			
 		}
 		
