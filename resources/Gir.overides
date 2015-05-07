@@ -11,8 +11,8 @@
     "Gtk.Table.new.rows" : "n_rows",
     "Gtk.Table.new.columns" : "n_columns",
     
-    "Gtk.ListStore.new.n_columns" : "columns",
-    "Gtk.TreeStore.new.n_columns" : "columns",
+    "Gtk.ListStore.new.___" : "columns",
+    "Gtk.TreeStore.new.___" : "columns",
 	
      
     "-" : ""
