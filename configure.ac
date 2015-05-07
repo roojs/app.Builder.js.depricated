@@ -25,8 +25,7 @@ PKG_CHECK_MODULES(BUILDER, [
 		 gtksourceview-3.0 
 		 json-glib-1.0 		 
 		 gee-1.0 
-		 gobject-introspection-1.0 
-		 libxml-2.0 
+ 		 libxml-2.0 
 		 libsoup-2.4
 		  
 ])
