@@ -93,7 +93,7 @@ namespace Palete {
 				ret = cache.get(ns);
 			}
 			*/
-			if (!ret.is_overlaid) {
+			if (ret != null && !ret.is_overlaid) {
 				var iter = ret.classes.map_iterator();
 				while(iter.next()) {
 					iter.get_value().overlayParent();
