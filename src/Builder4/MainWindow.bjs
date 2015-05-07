@@ -37,7 +37,7 @@
      "$ homogeneous" : false,
      "items" : [
       {
-       "* pack" : "pack_start,?bool?,?bool?,?uint?",
+       "* pack" : "pack_start,true,true,0",
        "xtype" : "HeaderBar",
        "bool show_close_button" : true,
        "$ xns" : "Gtk",
