@@ -19,18 +19,8 @@ public static int main (string[] args) {
 }
  */
 namespace Palete {
-	public errordomain GirError {
-		INVALID_TYPE,
-		NEED_IMPLEMENTING,
-		MISSING_FILE,
-		INVALID_VALUE,
-		INVALID_FORMAT
-	}
+ 
 	 
-	    
-	     
-	    
-    
     
 	public class Gir : GirObject {
     
