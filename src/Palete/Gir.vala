@@ -20,10 +20,22 @@ public static int main (string[] args) {
  */
 namespace Palete {
  
-	public abstract class GirBase : GirObject { 
+	 
+    
+    
+    // Gir - is the libvala based version - 
+    
+    
+	public class Gir : GirObject {
+    
+		//Gee.Hashmap<string,what> nodes;
 		
-		public abstract void load();
-		
+		public Gir (string ns)
+		{
+			base("Package",ns);
+			 
+		}
+		 
 		public string doc(string what)
 		{
 			var ar = what.split(".");
@@ -36,22 +48,6 @@ namespace Palete {
 			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
-	}
-    
-    
-    // Gir - is the libvala based version - 
-    
-    
-	public class Gir : GirBase {
-    
-		//Gee.Hashmap<string,what> nodes;
-		
-		public Gir (string ns)
-		{
-			base("Package",ns);
-			 
-		}
-		 
 		
 		
 		/**
@@ -163,7 +159,6 @@ namespace Palete {
 			}
 
 		}
-
 
 		
 
