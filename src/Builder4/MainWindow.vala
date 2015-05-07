@@ -144,7 +144,7 @@ public class Xcls_MainWindow : Object
             this.el.show_close_button = true;
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
-            this.el.pack_end (  child_0.el  );
+            this.el.pack_start (  child_0.el  );
         }
 
         // user defined functions 
