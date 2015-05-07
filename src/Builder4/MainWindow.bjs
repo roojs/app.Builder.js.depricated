@@ -38,9 +38,6 @@
      "string title" : "Application Builder",
      "items" : [
       {
-       "listeners" : {
-        "button_press_event" : "  (self, ev) => {\n     \n        \n    var p = _this.topbarmenu;\n    p.el.set_screen(Gdk.Screen.get_default());\n    p.el.show_all();\n     p.el.popup(null, null, null, ev.button, ev.time);\n     return true;\n}"
-       },
        "* pack" : "pack_start",
        "xtype" : "MenuButton",
        "$ xns" : "Gtk",
@@ -53,7 +50,7 @@
         },
         {
          "id" : "topbarmenu",
-         "* pack" : false,
+         "* pack" : "set_popup",
          "xtype" : "Menu",
          "$ xns" : "Gtk",
          "items" : [

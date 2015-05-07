@@ -171,17 +171,7 @@ public class Xcls_MainWindow : Object
             this.el.set_image (  child_0.el  );
             var child_1 = new Xcls_topbarmenu( _this );
             child_1.ref();
-
-            // listeners 
-            this.el.button_press_event.connect( (self, ev) => {
-                 
-                    
-                var p = _this.topbarmenu;
-                p.el.set_screen(Gdk.Screen.get_default());
-                p.el.show_all();
-                 p.el.popup(null, null, null, ev.button, ev.time);
-                 return true;
-            });
+            this.el.set_popup (  child_1.el  );
         }
 
         // user defined functions 
