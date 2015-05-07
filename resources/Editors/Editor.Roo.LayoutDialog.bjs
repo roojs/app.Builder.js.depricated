@@ -96,8 +96,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 75,
        "header" : "Use ",
+       "width" : 75,
        "$ renderer" : "function(v) {  \n    var state = v *1 > 0 ?  '-checked' : '';\n\n    return '<img class=\"x-grid-check-icon' + state + '\" src=\"' + Roo.BLANK_IMAGE_URL + '\"/>';\n                \n }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -105,8 +105,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Database Column",
        "width" : 150,
+       "header" : "Database Column",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -114,8 +114,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 100,
        "header" : "Type",
+       "width" : 100,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -123,8 +123,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Label",
        "width" : 120,
+       "header" : "Label",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -146,8 +146,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 120,
        "header" : "Field Type",
+       "width" : 120,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -188,8 +188,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "header" : "Display Field",
        "width" : 150,
+       "header" : "Display Field",
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
@@ -230,8 +230,8 @@
       },
       {
        "xtype" : "ColumnModel",
-       "width" : 75,
        "header" : "Width",
+       "width" : 75,
        "$ renderer" : "function(v) { return String.format('{0}', v); }",
        "$ xns" : "Roo.grid",
        "* prop" : "cm[]",
