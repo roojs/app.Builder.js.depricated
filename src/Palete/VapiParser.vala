@@ -13,7 +13,34 @@ namespace Palete {
 		public static  Gee.HashMap<string,Gir> cache = null;
 		
 		
-		
+		public static GirObject?  factory(string ns) {
+			if (cache == null) {
+				cache = new Gee.HashMap<string,Gir>();
+			}
+			var ret = cache.get(ns);
+			if (ret == null) {
+
+				var add = new GirObject("Namespace",ns);
+				cache.set(ns, add);
+			
+				var iter = add.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayParent();
+				}
+				// loop again and add the ctor properties.
+				 iter = add.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayCtorProperties();
+	    			}	
+
+				
+				ret = cache.get(ns);
+			}
+			 
+
+			return ret;
+			
+		}
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
