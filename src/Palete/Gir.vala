@@ -41,7 +41,13 @@ namespace Palete {
     
 		public static  Gee.HashMap<string,Gir> cache = null;
 		//Gee.Hashmap<string,what> nodes;
-
+		
+		public Gir (string ns)
+		{
+			base("Package",ns);
+		}
+		
+		
 
 		
 		public static Gir?  factory(string ns) {
@@ -143,11 +149,6 @@ namespace Palete {
 		}
 
 
-		public Gir (string ns)
-		{
-			base("Package",ns);
-		}
-		
 		
 
 
