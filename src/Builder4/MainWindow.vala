@@ -62,6 +62,7 @@ public class Xcls_MainWindow : Object
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
+        this.el.decorated = false;
         var child_0 = new Xcls_vbox( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
