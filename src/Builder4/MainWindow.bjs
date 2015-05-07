@@ -43,7 +43,7 @@
        "$ xns" : "Gtk",
        "items" : [
         {
-         "utf8 icon_name" : "document-properties",
+         "utf8 icon_name" : "help-about",
          "* pack" : "set_image",
          "xtype" : "Image",
          "$ xns" : "Gtk"
