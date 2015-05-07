@@ -57,6 +57,8 @@ namespace Palete {
 		 
 		public static void checkParamOverride(GirObject c)
 		{
+			
+			
 			var parset = c.gparent;
 			if (parset == null || parset.nodetype != "Paramset") {
 				return;
@@ -71,7 +73,7 @@ namespace Palete {
 			}
 
 			 
-		
+			
 			c.name =  fetchOverride( cls.name, method.name, c.name);
 		}
 		public static bool overrides_loaded = false;
@@ -83,7 +85,7 @@ namespace Palete {
 			// in that "Gtk.Label.new.str" : "label"
 			loadOverrides();
 			var key = "%s.%s.%s".printf(cls,method,param);
-			//print("Chekcing for key %s\n", key);
+			 print("Chekcing for key %s\n", key);
 			if (!overrides.has_key(key)) {
 				return param;
 			}
