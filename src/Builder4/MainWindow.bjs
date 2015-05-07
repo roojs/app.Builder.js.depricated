@@ -38,7 +38,7 @@
      "string title" : "Application Builder",
      "items" : [
       {
-       "* pack" : "composite_name",
+       "* pack" : "pack_end",
        "xtype" : "HBox",
        "$ xns" : "Gtk",
        "items" : [
