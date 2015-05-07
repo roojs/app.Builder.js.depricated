@@ -38,7 +38,7 @@ namespace Palete {
 	 
 		public  string sig;
 
-		bool is_overlaid;
+		public bool is_overlaid;
 
 		public  GirObject gparent;
 		public Gee.ArrayList<GirObject> params;
