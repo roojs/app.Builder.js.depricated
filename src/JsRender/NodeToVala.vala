@@ -538,7 +538,7 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			
-			this.ret += "%sthis.el.%s = %s; // %s\n".printf(ipad,p,v,  iter.get_value().type);
+			this.ret += "%sthis.el.%s = %s;\n".printf(ipad,p,v); // // %s,  iter.get_value().type);
 		            
 		       // got a property..
 		       
