@@ -1,6 +1,7 @@
 
 
 // valac VapiParser.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
+// valac -g  --pkg libvala-0.26 --pkg libxml-2.0 --pkg gee-1.0 --pkg json-glib-1.0 --pkg gobject-introspection-1.0 --pkg gtk+-3.0  ../Application.vala  VapiParser.vala Gir.vala -o /tmp/vdoc
 
 namespace Palete {
 	 
