@@ -23,6 +23,7 @@ namespace Palete {
 	public abstract class GirBase : GirObject { 
 		
 		public abstract void load();
+		
 		public string doc(string what)
 		{
 			var ar = what.split(".");
