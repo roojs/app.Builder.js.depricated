@@ -262,7 +262,9 @@ namespace Palete {
 			c.gparent = parent;
 			c.ns = parent.ns;
 			parent.params.add(c);
-			c.type = pam.variable_type.data_type == null ? "" : pam.variable_type.data_type.get_full_name();
+			if (!pam.ellipsis) {
+				c.type = pam.variable_type.data_type == null ? "" : pam.variable_type.data_type.get_full_name();
+			}
 			Gir.checkParamOverride(c); 
 			
 		}
