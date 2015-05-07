@@ -50,7 +50,7 @@
          "items" : [
           {
            "id" : "topbarmenu",
-           "* init" : "{\n    _this.el.show_all();\n}\n",
+           "* init" : "{\n    this.el.show_all();\n}\n",
            "xtype" : "Menu",
            "* pack" : "set_popup",
            "$ xns" : "Gtk",
@@ -65,6 +65,12 @@
              "$ xns" : "Gtk"
             }
            ]
+          },
+          {
+           "* pack" : "set_image",
+           "xtype" : "Image",
+           "utf8 icon_name" : "help-about",
+           "$ xns" : "Gtk"
           }
          ]
         }
