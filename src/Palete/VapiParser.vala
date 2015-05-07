@@ -108,11 +108,11 @@ namespace Palete {
 			//if (cls.base_class != null) {
 			//	c.inherits.add(cls.base_class.get_full_name());
 			//}
-			foreach(var p in cls.get_base_types()) {
-				if (p.data_type != null) {
-					c.implements.add(p.data_type.get_full_name());
-				}
-			}
+			//foreach(var p in cls.get_base_types()) {
+			//	if (p.data_type != null) {
+			//		c.implements.add(p.data_type.get_full_name());
+			//	}
+			//}
 			  
 			
 			
