@@ -553,7 +553,7 @@ Editor.Roo.LayoutDialog = new Roo.XComponent({
                    field_type = 'NumberField';
                        
                    if(type_match[2] * 1  < 11){
-                       field_type = 'CheckBox';
+                       field_type = 'Checkbox';
                    }
                }
            } 
