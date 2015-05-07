@@ -6,10 +6,15 @@ namespace Palete {
  
 	 
     
-	public class GirFile : Gir {
+	public class GirFile : GirBase {
     
 		public GirFile (string ns)  
 		{
+			base(ns);
+		}
+			
+		public override void  load () {
+			
 			var xns = ns == "Glade" ? "Gladeui" : ns;
 			var gi = GI.Repository.get_default();
 			gi.require(xns, null, 0);
