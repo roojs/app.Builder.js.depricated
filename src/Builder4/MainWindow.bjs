@@ -49,7 +49,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "* pack" : "composite_name",
+         "* pack" : false,
          "xtype" : "Menu",
          "$ xns" : "Gtk"
         }

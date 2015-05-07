@@ -170,7 +170,6 @@ public class Xcls_MainWindow : Object
             this.el.set_image (  child_0.el  );
             var child_1 = new Xcls_Menu5( _this );
             child_1.ref();
-            this.el.composite_name (  child_1.el  );
         }
 
         // user defined functions 
