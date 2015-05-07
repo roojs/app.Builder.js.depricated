@@ -168,7 +168,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_MenuButton4( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el  );
+            this.el.add (  child_0.el  );
         }
 
         // user defined functions 

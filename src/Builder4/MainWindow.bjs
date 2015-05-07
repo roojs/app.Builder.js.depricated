@@ -48,7 +48,7 @@
          },
          "bool use_popover" : false,
          "xtype" : "MenuButton",
-         "* pack" : "pack_start",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "items" : [
           {
