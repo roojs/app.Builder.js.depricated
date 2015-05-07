@@ -194,11 +194,6 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_topbarmenu( _this );
             child_0.ref();
             this.el.set_popup (  child_0.el  );
-
-            // listeners 
-            this.el.activate.connect( () => { 
-            _this.topbarmenu.el.show_all(); 
-            });
         }
 
         // user defined functions 

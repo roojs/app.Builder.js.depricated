@@ -43,9 +43,6 @@
        "$ xns" : "Gtk",
        "items" : [
         {
-         "listeners" : {
-          "activate" : "() => { \n_this.topbarmenu.el.show_all(); \n}"
-         },
          "bool use_popover" : false,
          "xtype" : "MenuButton",
          "* pack" : "add",
