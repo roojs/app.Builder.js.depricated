@@ -50,7 +50,7 @@ namespace Palete {
 		
 
 		
-		public static Gir?  factory(string ns) {
+		public static GirBase?  factory(string ns) {
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
 			}
