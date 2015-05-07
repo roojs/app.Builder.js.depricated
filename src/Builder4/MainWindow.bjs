@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/MainWindow.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "",
  "items" : [
   {
    "listeners" : {
@@ -30,11 +31,16 @@
    "items" : [
     {
      "id" : "vbox",
-     "xtype" : "VBox",
      "* pack" : "add",
+     "xtype" : "VBox",
      "$ xns" : "Gtk",
      "$ homogeneous" : false,
      "items" : [
+      {
+       "* pack" : "pack_start,?bool?,?bool?,?uint?",
+       "xtype" : "HeaderBar",
+       "$ xns" : "Gtk"
+      },
       {
        "id" : "mainpane",
        "position" : 400,
@@ -45,26 +51,26 @@
        "items" : [
         {
          "id" : "leftpane",
-         "* pack" : "add1",
          "xtype" : "VBox",
+         "* pack" : "add1",
          "$ xns" : "Gtk",
          "items" : [
           {
            "id" : "editpane",
-           "* pack" : "pack_start,false,true,0",
            "xtype" : "VPaned",
+           "* pack" : "pack_start,false,true,0",
            "$ xns" : "Gtk",
            "items" : [
             {
              "id" : "tree",
-             "* pack" : "add1",
              "xtype" : "VBox",
+             "* pack" : "add1",
              "$ xns" : "Gtk"
             },
             {
              "id" : "props",
-             "* pack" : "add2",
              "xtype" : "VBox",
+             "* pack" : "add2",
              "$ xns" : "Gtk"
             }
            ]
@@ -143,8 +149,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
                  "xtype" : "Actor",
+                 "* pack" : "add_child",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -152,16 +158,16 @@
                     "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
                    },
                    "utf8 tooltip_text" : "Back",
-                   "xtype" : "Button",
                    "* pack" : false,
+                   "xtype" : "Button",
                    "width_request" : 50,
                    "$ xns" : "Gtk",
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "go-previous",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "go-previous",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -179,8 +185,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -195,9 +201,9 @@
                    "$ tooltop_text" : "\"Open File\"",
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "document-open",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -215,8 +221,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -231,9 +237,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "document-properties",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -251,8 +257,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -267,9 +273,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "emblem-system",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "emblem-system",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -291,8 +297,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -307,9 +313,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "list-add",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -327,8 +333,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -343,9 +349,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "format-justify-left",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -363,8 +369,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -379,9 +385,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "appointment-new",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "appointment-new",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -399,8 +405,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -415,9 +421,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "folder-new",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -435,8 +441,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -451,9 +457,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "document-new",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -471,8 +477,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -487,9 +493,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "user-trash",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -507,8 +513,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
                  "xtype" : "Actor",
+                 "* pack" : "add_child",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -523,9 +529,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "go-bottom",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "go-bottom",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -543,8 +549,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -552,16 +558,16 @@
                     "clicked" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}"
                    },
                    "utf8 tooltip_text" : "Open New Window",
-                   "xtype" : "Button",
                    "* pack" : false,
+                   "xtype" : "Button",
                    "width_request" : 50,
                    "$ xns" : "Gtk",
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "window-new",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -579,8 +585,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
                  "xtype" : "Actor",
+                 "* pack" : "add_child",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -588,16 +594,16 @@
                     "clicked" : "  ( ) => {\n         About.singleton().el.show();\n}"
                    },
                    "utf8 tooltip_text" : "About the builder",
-                   "* pack" : false,
                    "xtype" : "Button",
+                   "* pack" : false,
                    "width_request" : 50,
                    "$ xns" : "Gtk",
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "help-about",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "help-about",
                      "$ xns" : "Gtk"
                     }
                    ]
