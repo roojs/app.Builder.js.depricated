@@ -117,13 +117,29 @@ namespace Project {
 		    var ret = new Gee.ArrayList<Project>();
 		    var iter = projects.map_iterator();
 			    while (iter.next()) {
-				ret.add(iter.get_value());
+					ret.add(iter.get_value());
 			    }
 		    // fixme -- sort...
 		    return ret;
 		
 		}
-		 
+		
+		public static Project getProject(string name)
+		{
+		    
+		    var iter = projects.map_iterator();
+			while (iter.next()) {
+				if (iter.getValue().name == name) {
+					return iter.getValue();
+				}
+				
+			}
+		    
+		    return null;
+		
+		}
+		
+		
 		// load project data from project file.
 		public static void   factoryFromFile(string jsonfile)
 		{
@@ -214,6 +230,9 @@ namespace Project {
 			throw new Error.INVALID_TYPE("invalid project type");
 				
 		}
+		
+		
+		
 		 public static void  remove(Project project)
 		{
 			// delete the file..
