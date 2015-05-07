@@ -127,7 +127,7 @@ namespace Palete {
 		}
 
 
-		public Gir.new_empty (string ns)
+		public Gir (string ns)
 		{
 			base("Package",ns);
 		}
