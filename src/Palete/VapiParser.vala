@@ -77,6 +77,47 @@ namespace Palete {
 			 
 		}
 		
+		public void add_class(GirObject parent, Vala.Interface cls)
+		{
+		
+			var c = new GirObject("Class", parent.name + "." + cls.name);
+			parent.classes.set(cls.name, c);
+			c.ns = parent.name;
+			c.parent = cls.base_class == null ? "" : cls.base_class.get_full_name() ;  // extends...
+			c.gparent = parent;
+			
+			foreach(var p in cls.get_properties()) {
+				this.add_property(c, p);
+			}
+			// methods...
+			foreach(var p in cls.get_signals()) {
+				this.add_signal(c, p);
+			}
+			
+			foreach(var p in cls.get_methods()) {
+				// skip static methods..
+				if (p.binding != Vala.MemberBinding.INSTANCE &&
+					!(p is Vala.CreationMethod)
+				) {
+					continue;
+				}
+				
+				this.add_method(c, p);
+			}
+			
+			if (cls.base_class != null) {
+				c.inherits.add(cls.base_class.get_full_name());
+			}
+			foreach(var p in cls.get_base_types()) {
+				if (p.data_type != null) {
+					c.implements.add(p.data_type.get_full_name());
+				}
+			}
+			  
+			
+			
+			 
+		}
 		
 		public void add_class(GirObject parent, Vala.Class cls)
 		{
