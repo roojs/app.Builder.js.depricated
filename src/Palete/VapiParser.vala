@@ -13,6 +13,7 @@ namespace Palete {
 		 
   		public VapiParser() {
 			base();
+			// should not really happen..
 			if (Gir.cache == null) {
 				Gir.cache =  new Gee.HashMap<string,Gir>();
 			}
