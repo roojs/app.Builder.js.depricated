@@ -33,7 +33,7 @@ namespace Palete {
 				return;
 			}
 			
-			var g = new Gir.new_empty(element.name);
+			var g = new Gir(element.name);
 			cache.set(element.name, g);
 			
 			
