@@ -60,6 +60,7 @@
           {
            "* pack" : "append",
            "xtype" : "MenuItem",
+           "string label" : "About the Builder",
            "$ xns" : "Gtk"
           }
          ]
