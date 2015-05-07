@@ -243,7 +243,7 @@ namespace Palete {
 			
 			
 			foreach(var p in params) {
-				if (p.name == null) {
+				if (p.name == null && !p.ellipsis) {
 					continue;
 				}
 				this.add_param(cc, p);
@@ -253,6 +253,11 @@ namespace Palete {
 		
 		public void add_param(GirObject parent, Vala.Parameter pam)
 		{
+			
+			var n = pam.name;
+			if (pam.ellipsis) {
+				n = "..."
+			}
 			var c = new GirObject("Param",pam.name);
 			c.gparent = parent;
 			c.ns = parent.ns;
