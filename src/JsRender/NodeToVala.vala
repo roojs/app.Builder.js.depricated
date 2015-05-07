@@ -533,7 +533,7 @@ public class JsRender.NodeToVala : Object {
 			if (v == "TRUE" || v == "FALSE") {
 				v = v.down();
 			}
-			if (iter.get_value().type == "gfloat" && v[v.length-1] != 'f') {
+			if (iter.get_value().type == "float" && v[v.length-1] != 'f') {
 				v += "f";
 			}
 			
