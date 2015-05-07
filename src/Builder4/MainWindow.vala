@@ -62,7 +62,6 @@ public class Xcls_MainWindow : Object
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        this.el.decorated = false;
         var child_0 = new Xcls_vbox( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
@@ -168,6 +167,12 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.title = "Application Builder";
             this.el.show_close_button = true;
+
+            // init method 
+
+            {
+             // _this.el.set_titlebar(this.el);
+            }
         }
 
         // user defined functions 
