@@ -38,6 +38,7 @@
      "string title" : "Application Builder",
      "items" : [
       {
+       "bool use_popover" : false,
        "* pack" : "pack_start",
        "xtype" : "MenuButton",
        "$ xns" : "Gtk",

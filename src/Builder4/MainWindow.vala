@@ -166,6 +166,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.use_popover = false;
             var child_0 = new Xcls_Image4( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
