@@ -418,7 +418,7 @@ namespace Palete {
 			
 		}
 		public string fqtype() {
-			return VapiParser.fqtypeLookup(this.type, this.ns)
+			return VapiParser.fqtypeLookup(this.type, this.ns);
 			
 			/* return Gir.fqtypeLookup(this.type, this.ns); */
 		}
