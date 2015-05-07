@@ -48,10 +48,7 @@ namespace Palete {
 			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
-		public void loadOverrides(bool force = false)
-		{
-			// BC..
-		}
+		 
 		
 		/**
 		 *  == all static below here...
@@ -182,7 +179,40 @@ namespace Palete {
 
 		}
 
+		public void loadOverrides(bool force = false)
+		{
+			if (overrides_loaded && ! force) {
+				return;
+			}
 		
+			var pa = new Json.Parser();
+	    		pa.load_from_file(BuilderApplication.configDirectory() + "/resources/Gir.overides");
+	    		var node = pa.get_root();
+		    
+	    		if (node.get_node_type () != Json.NodeType.OBJECT) {
+				throw new GirError.INVALID_FORMAT ("Error loading gir.overides : Unexpected element type %s", node.type_name ());
+			}
+			overrides = new Gee.HashMap<string,string>();
+		
+		
+	    		var obj = node.get_object ();
+		
+		
+			obj.foreach_member((o , key, value) => {
+				//print(key+"\n");
+				 
+				var v = obj.get_string_member(key);
+			
+			
+				overrides.set(key, v);
+
+			});
+	
+			overrides_loaded = true;
+
+		
+
+		}
 
 
 
