@@ -48,7 +48,10 @@ namespace Palete {
 			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
-		
+		public void loadOverrides(bool force = false)
+		{
+			// BC..
+		}
 		
 		/**
 		 *  == all static below here...
@@ -61,7 +64,7 @@ namespace Palete {
 		{
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
-				var a = new Palete.VapiParser( );
+				var a = new VapiParser( );
 				a.create_valac_tree();
 				 
 				
