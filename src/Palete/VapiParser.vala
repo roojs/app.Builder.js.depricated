@@ -1,6 +1,6 @@
 
 
- // valac -g  --pkg libvala-0.26 --pkg libxml-2.0 --pkg gee-1.0 --pkg json-glib-1.0 --pkg gobject-introspection-1.0 --pkg gtk+-3.0  ../Application.vala  VapiParser.vala Gir.vala -o /tmp/vdoc
+ // valac -g  --pkg libvala-0.26  --pkg gee-1.0 --pkg json-glib-1.0  --pkg gtk+-3.0   VapiParser.vala Gir.vala GirObject.vala -o /tmp/vdoc
 
 namespace Palete {
 	 
