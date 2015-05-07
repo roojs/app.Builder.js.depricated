@@ -276,7 +276,7 @@ namespace Palete {
 			context.add_external_package ("gobject-2.0");
 			
 			// core packages we are interested in for the builder..
-			// some of these may fail...
+			// some of these may fail... - we probalby need a better way to handle this..
 			
 			context.add_external_package ("gtk+-3.0");
 			if (!context.add_external_package ("webkit2gtk-4.0")) {
@@ -329,7 +329,7 @@ namespace Palete {
 	 
 	}
 }
- 
+ /*
 int main (string[] args) {
 	
 	var g = Palete.Gir.factory("Gdk");
@@ -338,6 +338,6 @@ int main (string[] args) {
 	return 0;
 }
  
- 
+ */
 
 
