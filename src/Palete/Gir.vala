@@ -58,17 +58,20 @@ namespace Palete {
 		public static void checkParamOverride(GirObject c)
 		{
 			
-			
+			print("checkParamOverride :check %s\n" c.name);
 			var parset = c.gparent;
 			if (parset == null || parset.nodetype != "Paramset") {
+				print("skip parent not Paramset\n");
 				return;
 			}
 			var method = parset.gparent;
 			if (method == null || method.nodetype != "Ctor") {
+				print("skip parent.parent not Ctor\n");
 				return;
 			}
 			var cls = method.gparent;
 			if (cls == null || cls.nodetype != "Class") {
+				print("skip parent.parent.parent not Class\n");
 				return;
 			}
 
