@@ -20,7 +20,11 @@ public static int main (string[] args) {
  */
 namespace Palete {
  
-	
+	public abstract class GirBase : GirObject { 
+		
+		public abstract void load();
+		
+	}
     
 	public class Gir : GirObject {
     
