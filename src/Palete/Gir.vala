@@ -107,7 +107,7 @@ namespace Palete {
 
 
 		
-		// needed still?
+		// needed still - where's it called form..
 		public static string guessDefaultValueForType(string type) {
 			//print("guessDefaultValueForType: %s\n", type);
 			if (type.length < 1 || type.contains(".")) {
