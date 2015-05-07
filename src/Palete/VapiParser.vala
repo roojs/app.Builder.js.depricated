@@ -219,7 +219,7 @@ namespace Palete {
 		public void create_valac_tree( )
 		{
 			// init context:
-			var context = new Vala.CodeContext ();
+			context = new Vala.CodeContext ();
 			Vala.CodeContext.push (context);
 		
 			context.experimental = false;
