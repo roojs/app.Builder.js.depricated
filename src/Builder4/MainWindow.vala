@@ -62,9 +62,12 @@ public class Xcls_MainWindow : Object
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        var child_0 = new Xcls_vbox( _this );
+        var child_0 = new Xcls_HeaderBar2( _this );
         child_0.ref();
-        this.el.add (  child_0.el  );
+        this.el.set_titlebar (  child_0.el  );
+        var child_1 = new Xcls_vbox( _this );
+        child_1.ref();
+        this.el.add (  child_1.el  );
 
         // init method 
 
@@ -117,6 +120,29 @@ public class Xcls_MainWindow : Object
     public             void setTitle (string str) {
         this.el.set_title(this.title + " - " + str);
     }
+    public class Xcls_HeaderBar2 : Object 
+    {
+        public Gtk.HeaderBar el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HeaderBar2(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HeaderBar();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "Application Builder";
+            this.el.show_close_button = true;
+        }
+
+        // user defined functions 
+    }
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
@@ -135,44 +161,12 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_HeaderBar3( _this );
+            var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_mainpane( _this );
+            this.el.pack_start (  child_0.el , true,true,0 );
+            var child_1 = new Xcls_statusbar( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
-            var child_2 = new Xcls_statusbar( _this );
-            child_2.ref();
-            this.el.pack_end (  child_2.el , false,true,0 );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_HeaderBar3 : Object 
-    {
-        public Gtk.HeaderBar el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_HeaderBar3(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HeaderBar();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.title = "Application Builder";
-            this.el.show_close_button = true;
-
-            // init method 
-
-            {
-             // _this.el.set_titlebar(this.el);
-            }
+            this.el.pack_end (  child_1.el , false,true,0 );
         }
 
         // user defined functions 

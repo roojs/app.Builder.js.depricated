@@ -30,20 +30,19 @@
    "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [
     {
+     "xtype" : "HeaderBar",
+     "* pack" : "set_titlebar",
+     "bool show_close_button" : true,
+     "$ xns" : "Gtk",
+     "string title" : "Application Builder"
+    },
+    {
      "id" : "vbox",
      "* pack" : "add",
      "xtype" : "VBox",
      "$ xns" : "Gtk",
      "$ homogeneous" : false,
      "items" : [
-      {
-       "* init" : "{\n // _this.el.set_titlebar(this.el);\n}\n",
-       "* pack" : "pack_start,false,true,0",
-       "xtype" : "HeaderBar",
-       "bool show_close_button" : true,
-       "$ xns" : "Gtk",
-       "string title" : "Application Builder"
-      },
       {
        "id" : "mainpane",
        "position" : 400,
