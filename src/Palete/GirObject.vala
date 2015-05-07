@@ -406,9 +406,9 @@ namespace Palete {
 			}
 			*/
 			
-			var gir = VapiParser.factory (this.ns);
+			var gir = Gir.factory (this.ns);
 			if (in_pn.contains(".")) {
-				gir =  VapiParser.factory(in_pn.split(".")[0]);
+				gir =  Gir.factory(in_pn.split(".")[0]);
 				pn = in_pn.split(".")[1];
 			}
 			
