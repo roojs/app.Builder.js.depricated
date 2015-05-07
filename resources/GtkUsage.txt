@@ -83,6 +83,7 @@ right:
 	Gtk.ScaleButton 
 	Gtk.VolumeButton 
 	Gtk.Entry 
+	Gtk.HeaderBar 
 	Gtk.HScale 
 	Gtk.VScale 
 	Gtk.SpinButton 
