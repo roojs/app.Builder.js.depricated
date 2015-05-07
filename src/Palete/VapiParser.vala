@@ -11,8 +11,7 @@ namespace Palete {
 		
 		
 		 
- 		Vala.CodeContext context;
- 		public VapiParser() {
+  		public VapiParser() {
 			base();
 			if (Gir.cache == null) {
 				Gir.cache =  new Gee.HashMap<string,Gir>();
