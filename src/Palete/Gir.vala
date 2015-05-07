@@ -26,7 +26,7 @@ namespace Palete {
 		
 	}
     
-	public class Gir : GirObject {
+	public class Gir : GirBase {
     
 		public static  Gee.HashMap<string,Gir> cache = null;
 		//Gee.Hashmap<string,what> nodes;
