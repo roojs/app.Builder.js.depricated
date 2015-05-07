@@ -526,7 +526,7 @@ public class JsRender.NodeToVala : Object {
 			var is_raw = nodekey[0] == '$';
 			
 			// what's the type.. - if it's a string.. then we quote it..
-			if (iter.get_value().type == "utf8" && !is_raw) {
+			if (iter.get_value().type == "string" && !is_raw) {
 				 v = "\"" +  v.escape("") + "\"";
 			}
 			if (v == "TRUE" || v == "FALSE") {
