@@ -66,8 +66,7 @@ namespace Palete {
 				cache = new Gee.HashMap<string,Gir>();
 				var a = new VapiParser( );
 				a.create_valac_tree();
-				 
-				
+				  
 			}
 			var ret = cache.get(ns);
 			
