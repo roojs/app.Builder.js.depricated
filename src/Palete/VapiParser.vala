@@ -21,6 +21,9 @@ namespace Palete {
 			if (ret == null) {
 
 				var add = new GirObject("Namespace",ns);
+				
+				
+				
 				cache.set(ns, add);
 			
 				var iter = add.classes.map_iterator();
@@ -28,10 +31,10 @@ namespace Palete {
 					iter.get_value().overlayParent();
 				}
 				// loop again and add the ctor properties.
-				 iter = add.classes.map_iterator();
+				iter = add.classes.map_iterator();
 				while(iter.next()) {
 					iter.get_value().overlayCtorProperties();
-	    			}	
+				}	
 
 				
 				ret = cache.get(ns);
