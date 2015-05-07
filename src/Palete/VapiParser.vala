@@ -59,6 +59,7 @@ namespace Palete {
 			var c = new GirObject("Enum",   cls.name);
 			parent.consts.set(cls.name, c);
 			c.ns = parent.name;
+			
 			c.gparent = parent;
 			
 			foreach(var e in cls.get_values()) {
@@ -280,12 +281,12 @@ namespace Palete {
 			context.add_external_package ("atk");
 			context.add_external_package ("gdk-x11-3.0");
 			context.add_external_package ("x11");
-			
+			context.add_external_package ("gtk+-3.0");
 			// user defined ones..
 			//context.add_package ("Gtk");
 	    	  
-			var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, "/usr/share/vala-0.26/vapi/gtk+-3.0.vapi");
-			context.add_source_file (vfile);
+			//var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, "/usr/share/vala-0.26/vapi/gtk+-3.0.vapi");
+			//context.add_source_file (vfile);
 			 
 			//context.add_external_package ("libvala-0.24");
 			
