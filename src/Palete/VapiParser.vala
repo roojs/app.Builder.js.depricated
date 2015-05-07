@@ -77,13 +77,13 @@ namespace Palete {
 			 
 		}
 		
-		public void add_class(GirObject parent, Vala.Interface cls)
+		public void add_interface(GirObject parent, Vala.Interface cls)
 		{
 		
 			var c = new GirObject("Interface", parent.name + "." + cls.name);
 			parent.classes.set(cls.name, c);
 			c.ns = parent.name;
-			c.parent = cls.base_class == null ? "" : cls.base_class.get_full_name() ;  // extends...
+			//c.parent = cls.base_class == null ? "" : cls.base_class.get_full_name() ;  // extends...
 			c.gparent = parent;
 			
 			foreach(var p in cls.get_properties()) {
