@@ -207,7 +207,7 @@ namespace Palete {
 			var n = met.name == null ? parent.name : "";
 			var ty  = "Method";
 			if (met is Vala.CreationMethod && n == "") {
-				n = ".new";
+				n = "new";
 				ty = "Ctor";
 			}
 			
