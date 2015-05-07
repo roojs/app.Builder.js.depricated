@@ -73,9 +73,9 @@ namespace Palete
        
         public string name;
 
-	public Gee.ArrayList<Usage> map;
+		public Gee.ArrayList<Usage> map;
 
-	public Gee.HashMap<string,GirObject> classes; // used in roo.. 
+		public Gee.HashMap<string,GirObject> classes; // used in roo.. 
 	
         public Palete()
         {
@@ -102,86 +102,86 @@ namespace Palete
          
 
 	    
-	public string[] getChildList(string in_rval)
+		public string[] getChildList(string in_rval)
         {
 
-		if (this.map == null) {
-			this.load();
-		}
-		// empty == *top
-		
-		var rval = in_rval == "" ? "*top" : in_rval; 
-				
-				// should be a bit more than this..
-			// -> it should look for all elements that inherit 
-    		string[] ret = {};
-		var rt = new Gee.ArrayList<string>();
-		for (var i = 0; i < this.map.size; i++) {
-			var m = this.map.get(i);
-				
-        		if (!m.leftHas(rval)) {
-				continue;
+			if (this.map == null) {
+				this.load();
 			}
-			print("found LEFT, adding right\n");
-		
-			for(var ii =0; ii < m.right.size; ii++) {
-        			var l = m.right.get(ii);
+			// empty == *top
+			
+			var rval = in_rval == "" ? "*top" : in_rval; 
 					
-			        if (rt.index_of(l) > -1) {
-			            continue;
-			        }
-				//print("ADD " + string.joinv(", ", ret) + "\n");
-        			ret += l;
-				rt.add(l);
-    			}
-       			
-                
-    		}
-		print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
-		//console.log("DROP LIST:");
-		//console.dump(ret);
-		return ret;
-            
+					// should be a bit more than this..
+				// -> it should look for all elements that inherit 
+				string[] ret = {};
+			var rt = new Gee.ArrayList<string>();
+			for (var i = 0; i < this.map.size; i++) {
+				var m = this.map.get(i);
+					
+					if (!m.leftHas(rval)) {
+					continue;
+				}
+				print("found LEFT, adding right\n");
+			
+				for(var ii =0; ii < m.right.size; ii++) {
+						var l = m.right.get(ii);
+						
+						if (rt.index_of(l) > -1) {
+							continue;
+						}
+					//print("ADD " + string.joinv(", ", ret) + "\n");
+						ret += l;
+					rt.add(l);
+					}
+					
+					
+				}
+			print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
+			//console.log("DROP LIST:");
+			//console.dump(ret);
+			return ret;
+				
         }
 
 	    
         public string[] getDropList(string rval)
         {
 
-		if (this.map == null) {
-			this.load();
-		}
-
-				
-				// should be a bit more than this..
-			// -> it should look for all elements that inherit 
-    		string[] ret = {};
-		var rt = new Gee.ArrayList<string>();
-		for (var i = 0; i < this.map.size; i++) {
-			var m = this.map.get(i);
-				
-        		if (m.right.index_of(rval) < 0) {
-				continue;
+			if (this.map == null) {
+				this.load();
 			}
-			//print("found RIGHT, adding left\n");
-		
-			for(var ii =0; ii < m.left.size; ii++) {
-        			var l = m.left.get(ii);
+
 					
-			        if (rt.index_of(l) > -1) {
-			            continue;
-			        }
-				//print("ADD " + string.joinv(", ", ret) + "\n");
-        			ret += l;
-				rt.add(l);
-    			}
-       			
-                
-    		}
-		 print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
-		//console.log("DROP LIST:");
-		//console.dump(ret);
-		return ret;
+					// should be a bit more than this..
+				// -> it should look for all elements that inherit 
+				string[] ret = {};
+			var rt = new Gee.ArrayList<string>();
+			for (var i = 0; i < this.map.size; i++) {
+				var m = this.map.get(i);
+					
+					if (m.right.index_of(rval) < 0) {
+					continue;
+				}
+				//print("found RIGHT, adding left\n");
+			
+				for(var ii =0; ii < m.left.size; ii++) {
+						var l = m.left.get(ii);
+						
+						if (rt.index_of(l) > -1) {
+							continue;
+						}
+					//print("ADD " + string.joinv(", ", ret) + "\n");
+						ret += l;
+					rt.add(l);
+					}
+					
+					
+				}
+			 print ("drop list for %s is:\n%s\n", rval, string.joinv("\n", ret));
+			//console.log("DROP LIST:");
+			//console.dump(ret);
+			return ret;
             
         }
       
