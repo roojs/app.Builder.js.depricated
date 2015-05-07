@@ -56,6 +56,11 @@ namespace Palete {
 			
 		}
 		
+		
+		/**
+		 *  == all static below here...
+		 * 
+		 */
 		public static  Gee.HashMap<string,Gir> cache = null;
 
 		
