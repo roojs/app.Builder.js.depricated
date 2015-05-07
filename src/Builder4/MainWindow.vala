@@ -93,7 +93,7 @@ public class Xcls_MainWindow : Object
             //this.hideViewEditing();
             _this.statusbar.el.hide();
             Resources.singleton().checkResources();
-            
+        
         });
     }
 
@@ -219,6 +219,12 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_MenuItem6( _this );
             child_0.ref();
             this.el.append (  child_0.el  );
+
+            // init method 
+
+            {
+                _this.el.show_all();
+            }
         }
 
         // user defined functions 
