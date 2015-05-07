@@ -276,6 +276,7 @@ namespace Palete {
 			context.add_external_package ("gobject-2.0");
 			
 			// core packages we are interested in for the builder..
+			// some of these may fail...
 			
 			context.add_external_package ("gtk+-3.0");
 			
