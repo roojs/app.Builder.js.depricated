@@ -119,8 +119,8 @@
           {
            "gboolean show_line_marks" : true,
            "* pack" : "add",
-           "xtype" : "View",
-           "$ xns" : "GtkSource",
+           "xtype" : "SourceView",
+           "$ xns" : "Gtk",
            "gboolean show_line_numbers" : true,
            "gboolean editable" : false
           }
