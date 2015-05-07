@@ -119,7 +119,7 @@ public class Xcls_MainWindow : Object
     
     }
     public             void setTitle (string str) {
-        this.header_bar.el.set_title(this.title + " - " + str);
+        this.headerbar.el.set_title(this.title + " - " + str);
     }
     public class Xcls_headerbar : Object 
     {
