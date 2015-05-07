@@ -142,26 +142,26 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.title = "Application Builder";
             this.el.show_close_button = true;
-            var child_0 = new Xcls_Button3( _this );
+            var child_0 = new Xcls_MenuButton3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Button3 : Object 
+    public class Xcls_MenuButton3 : Object 
     {
-        public Gtk.Button el;
+        public Gtk.MenuButton el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Button3(Xcls_MainWindow _owner )
+        public Xcls_MenuButton3(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Button();
+            this.el = new Gtk.MenuButton();
 
             // my vars (dec)
 
