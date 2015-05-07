@@ -392,8 +392,7 @@ namespace Palete {
 		 *  code relating to the structure loader ....
 		 * 
 		 */
-		
-		
+		 
 		public GirObject clsToObject(string in_pn)
 		{
 			var pn = in_pn;
