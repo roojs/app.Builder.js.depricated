@@ -129,8 +129,8 @@ namespace Project {
 		    
 		    var iter = projects.map_iterator();
 			while (iter.next()) {
-				if (iter.getValue().name == name) {
-					return iter.getValue();
+				if (iter.get_value().name == name) {
+					return iter.get_value();
 				}
 				
 			}
