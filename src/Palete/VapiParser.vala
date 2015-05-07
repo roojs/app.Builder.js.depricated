@@ -27,7 +27,7 @@ namespace Palete {
 				
 				return;
 			}
-			print("parsing namespace %s\n", element.name);
+			//print("parsing namespace %s\n", element.name);
 			if (element.name == null) {
 				element.accept_children(this); // catch sub namespaces..
 				return;
@@ -213,7 +213,7 @@ namespace Palete {
 				}
 				
 			}
-			print("add_method :  %s\n", n);
+			//print("add_method :  %s\n", n);
 			
 			var c = new GirObject(ty,n);
 			c.gparent = parent;
