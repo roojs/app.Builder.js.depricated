@@ -49,11 +49,16 @@ namespace Palete {
 		public Gir (string ns)
 		{
 			base("Package",ns);
-			this.load();
+			 
 		}
 		public override void  load () 
 		{
 			// vapi parser....
+			cache.get(ns);
+			
+			var a = new Palete.VapiParser( );
+			a.create_valac_tree();
+			
 			
 		}
 		
@@ -65,7 +70,8 @@ namespace Palete {
 		public static  Gee.HashMap<string,Gir> cache = null;
 
 		
-		public static GirBase?  factory(string ns) {
+		public static GirBase?  factory(string ns) 
+		{
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
 			}
