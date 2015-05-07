@@ -375,7 +375,7 @@ namespace Palete {
 	 
 	}
 }
- 
+ /*
 int main (string[] args) {
 	
 	var g = Palete.Gir.factoryFqn("Gtk.Dialog");
@@ -383,7 +383,7 @@ int main (string[] args) {
 	
 	return 0;
 }
- 
+ */
  
  
 
