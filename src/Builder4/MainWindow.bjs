@@ -35,7 +35,14 @@
      "* pack" : "set_titlebar",
      "bool show_close_button" : true,
      "$ xns" : "Gtk",
-     "string title" : "Application Builder"
+     "string title" : "Application Builder",
+     "items" : [
+      {
+       "* pack" : "pack_start",
+       "xtype" : "Button",
+       "$ xns" : "Gtk"
+      }
+     ]
     },
     {
      "id" : "vbox",
