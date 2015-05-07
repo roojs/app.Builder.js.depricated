@@ -70,6 +70,9 @@ namespace Palete {
 				
 			}
 			var ret = cache.get(ns);
+			
+			
+			/*
 			if (ret == null) {
 
 				var add = new Gir(ns);
@@ -89,6 +92,22 @@ namespace Palete {
 				
 				ret = cache.get(ns);
 			}
+			*/
+			if (!ret.is_overlaid) {
+				var iter = ret.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayParent();
+				}
+				// loop again and add the ctor properties.
+				iter = ret.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayCtorProperties();
+				}	
+
+				
+			}
+			
+			
 			 
 
 			return ret;
