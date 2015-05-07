@@ -55,7 +55,14 @@
          "id" : "topbarmenu",
          "* pack" : false,
          "xtype" : "Menu",
-         "$ xns" : "Gtk"
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "* pack" : "reorder_child,?int?",
+           "xtype" : "MenuItem",
+           "$ xns" : "Gtk"
+          }
+         ]
         }
        ]
       }
