@@ -336,10 +336,9 @@ namespace Palete {
  
 int main (string[] args) {
 	
-	print("%s\n", Gir.cache.get("Gtk").asJSONString());
+	var g = Gir.factory("Gtk")
+	print("%s\n", g.asJSONString());
 	
-	var a = new Palete.VapiParser( );
-	a.create_valac_tree();
 	return 0;
 }
  
