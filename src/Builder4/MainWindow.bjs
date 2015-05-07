@@ -58,6 +58,9 @@
          "$ xns" : "Gtk",
          "items" : [
           {
+           "listeners" : {
+            "activate" : "() => {\n    About.singleton().el.show();\n    }"
+           },
            "* pack" : "append",
            "xtype" : "MenuItem",
            "string label" : "About the Builder",

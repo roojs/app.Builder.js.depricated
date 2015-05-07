@@ -251,6 +251,11 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "About the Builder";
+
+            // listeners 
+            this.el.activate.connect( () => {
+                About.singleton().el.show();
+                });
         }
 
         // user defined functions 
