@@ -35,8 +35,8 @@
                             "pack": "pack_end,true,true,0",
                             "items": [
                                 {
-                                    "|xns": "GtkSource",
-                                    "xtype": "View",
+                                    "|xns": "Gtk",
+                                    "xtype": "SourceView",
                                     "pack": "add",
                                     "id": "view"
                                 }
