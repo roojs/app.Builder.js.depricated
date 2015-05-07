@@ -228,7 +228,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_MenuItem6( _this );
             child_0.ref();
-            this.el.reorder_child (  child_0.el , ?int? );
+            this.el.add (  child_0.el  );
         }
 
         // user defined functions 

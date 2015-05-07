@@ -58,7 +58,7 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "* pack" : "reorder_child,?int?",
+           "* pack" : "add",
            "xtype" : "MenuItem",
            "$ xns" : "Gtk"
           }
