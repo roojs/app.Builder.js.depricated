@@ -283,8 +283,9 @@ namespace Palete {
 				context.add_external_package ("webkit2gtk-3.0");
 			}
 			context.add_external_package ("clutter-gtk-1.0");
-			
-		
+			context.add_external_package ("gdl-3.0");
+			context.add_external_package ("gtksourceview-3.0");
+		 
 			//add_documented_files (context, settings.source_files);
 		
 			Vala.Parser parser = new Vala.Parser ();
