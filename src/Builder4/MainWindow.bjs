@@ -30,6 +30,7 @@
    "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [
     {
+     "id" : "headerbar",
      "xtype" : "HeaderBar",
      "* pack" : "set_titlebar",
      "bool show_close_button" : true,

@@ -12,6 +12,7 @@ public class Xcls_MainWindow : Object
         }
         return _MainWindow;
     }
+    public Xcls_headerbar headerbar;
     public Xcls_vbox vbox;
     public Xcls_mainpane mainpane;
     public Xcls_leftpane leftpane;
@@ -62,7 +63,7 @@ public class Xcls_MainWindow : Object
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        var child_0 = new Xcls_HeaderBar2( _this );
+        var child_0 = new Xcls_headerbar( _this );
         child_0.ref();
         this.el.set_titlebar (  child_0.el  );
         var child_1 = new Xcls_vbox( _this );
@@ -120,7 +121,7 @@ public class Xcls_MainWindow : Object
     public             void setTitle (string str) {
         this.el.set_title(this.title + " - " + str);
     }
-    public class Xcls_HeaderBar2 : Object 
+    public class Xcls_headerbar : Object 
     {
         public Gtk.HeaderBar el;
         private Xcls_MainWindow  _this;
@@ -129,9 +130,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_HeaderBar2(Xcls_MainWindow _owner )
+        public Xcls_headerbar(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.headerbar = this;
             this.el = new Gtk.HeaderBar();
 
             // my vars (dec)
