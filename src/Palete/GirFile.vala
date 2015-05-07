@@ -285,6 +285,45 @@ namespace Palete {
 		    }
 
 		}
+		
+		
+		public void checkParamOverride(GirObject c)
+		{
+			var parset = c.gparent;
+			if (parset == null || parset.nodetype != "Paramset") {
+				return;
+			}
+			var method = parset.gparent;
+			if (method == null || method.nodetype != "Ctor") {
+				return;
+			}
+			var cls = method.gparent;
+			if (cls == null || cls.nodetype != "Class") {
+				return;
+			}
+
+			 
+		
+			c.name = this.fetchOverride( cls.name, method.name, c.name);
+		}
+		public static bool overrides_loaded = false;
+		public static Gee.HashMap<string,string> overrides;
+	
+		public string fetchOverride(  string cls, string method, string param)
+		{
+			// overrides should be in a file Gir.overides
+			// in that "Gtk.Label.new.str" : "label"
+			this.loadOverrides();
+			var key = "%s.%s.%s".printf(cls,method,param);
+			//print("Chekcing for key %s\n", key);
+			if (!overrides.has_key(key)) {
+				return param;
+			}
+			return overrides.get(key);
+
+
+		}
+		
 		public void loadOverrides(bool force = false)
 		{
 			if (overrides_loaded && ! force) {
