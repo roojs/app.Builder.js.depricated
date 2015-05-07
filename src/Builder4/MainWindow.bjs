@@ -47,6 +47,11 @@
          "* pack" : "set_image",
          "xtype" : "Image",
          "$ xns" : "Gtk"
+        },
+        {
+         "* pack" : "composite_name",
+         "xtype" : "Menu",
+         "$ xns" : "Gtk"
         }
        ]
       }
