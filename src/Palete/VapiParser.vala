@@ -329,7 +329,7 @@ namespace Palete {
 	 
 	}
 }
- /*
+ 
 int main (string[] args) {
 	
 	var g = Palete.Gir.factory("Gdk");
@@ -338,6 +338,6 @@ int main (string[] args) {
 	return 0;
 }
  
- */
+ 
 
 
