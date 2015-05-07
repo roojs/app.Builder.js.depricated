@@ -16,7 +16,7 @@ namespace Palete {
 			
 		public override void  load () {
 			
-			var xns = ns == "Glade" ? "Gladeui" : ns;
+			var xns = ns == "Glade" ? "Gladeui" : this.name;
 			var gi = GI.Repository.get_default();
 			gi.require(xns, null, 0);
 			
@@ -36,8 +36,7 @@ namespace Palete {
 			// print(file);
 
 
-			base("Package",ns);
-			this.ns = ns;
+ 			this.ns = ns;
 				//this.nodes = new Gee.Hashmap<string,what>();
 			 
 			var doc = Xml.Parser.parse_file (file);
