@@ -117,7 +117,7 @@ namespace Palete {
 
 
 		
-
+		// needed still?
 		public static string guessDefaultValueForType(string type) {
 			//print("guessDefaultValueForType: %s\n", type);
 			if (type.length < 1 || type.contains(".")) {
