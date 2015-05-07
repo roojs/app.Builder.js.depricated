@@ -49,7 +49,7 @@ left:
 	Gtk.Viewport
 	Gtk.Button
 	GtkClutter.Actor
-	
+	Gtk.HeaderBar 
 right:	 
 	Gtk.Alignment 
 	Gtk.AspectFrame 
