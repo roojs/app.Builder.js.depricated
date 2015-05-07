@@ -48,6 +48,12 @@ namespace Palete {
 			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
+		/**
+		 * since constructors from the API from gir or vala do not map
+		 * correctly to properties, we have an Gir.overides file in resources
+		 * that changes the ctor's for some elements.
+		 * 
+		 */
 		 public void loadOverrides(bool force = false)
 		{
 			if (overrides_loaded && ! force) {
