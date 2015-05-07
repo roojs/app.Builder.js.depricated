@@ -40,7 +40,15 @@
       {
        "* pack" : "pack_start",
        "xtype" : "Button",
-       "$ xns" : "Gtk"
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "utf8 icon_name" : "document-properties",
+         "* pack" : "set_image",
+         "xtype" : "Image",
+         "$ xns" : "Gtk"
+        }
+       ]
       }
      ]
     },
