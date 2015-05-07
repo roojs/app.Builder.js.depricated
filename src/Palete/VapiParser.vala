@@ -387,13 +387,10 @@ namespace Palete {
  
 int main (string[] args) {
 	
-	var g = Palete.Gir.factoryFqn("Gtk.ListStore");
+	var g = Palete.Gir.factoryFqn("Gtk.SourceView");
 	print("%s\n", g.asJSONString());
 	
 	return 0;
 }
-  
  
- 
-
 
