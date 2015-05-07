@@ -145,9 +145,6 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.composite_name (  child_0.el  );
-            var child_1 = new Xcls_MenuButton4( _this );
-            child_1.ref();
-            this.el.pack_start (  child_1.el  );
         }
 
         // user defined functions 
@@ -169,6 +166,9 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_MenuButton4( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el  );
         }
 
         // user defined functions 
