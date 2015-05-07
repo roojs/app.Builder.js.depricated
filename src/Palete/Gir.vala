@@ -51,16 +51,7 @@ namespace Palete {
 			base("Package",ns);
 			 
 		}
-		public override void  load () 
-		{
-			// vapi parser....
-			cache.get(ns);
-			
-			var a = new Palete.VapiParser( );
-			a.create_valac_tree();
-			
-			
-		}
+		 
 		
 		
 		/**
@@ -74,6 +65,11 @@ namespace Palete {
 		{
 			if (cache == null) {
 				cache = new Gee.HashMap<string,Gir>();
+				var a = new Palete.VapiParser( );
+				a.create_valac_tree();
+				
+				
+				
 			}
 			var ret = cache.get(ns);
 			if (ret == null) {
