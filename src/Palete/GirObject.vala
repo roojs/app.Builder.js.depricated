@@ -107,6 +107,7 @@ namespace Palete {
 				this.is_overlaid = true;
 				return;
 			}
+			this.is_overlaid = true;
 			print("Overlaying " +this.name + " with " + this.parent + "\n");
 
 			var pcls = this.clsToObject( this.parent);
