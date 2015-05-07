@@ -34,7 +34,7 @@ namespace Palete {
 			}
 			
 			var g = new Gir(element.name);
-			cache.set(element.name, g);
+			Gir.cache.set(element.name, g);
 			
 			
 			foreach(var c in element.get_classes()) {
