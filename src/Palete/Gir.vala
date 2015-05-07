@@ -93,6 +93,7 @@ namespace Palete {
 			}
 			*/
 			if (ret != null && !ret.is_overlaid) {
+				ret.is_overlaid = true;
 				var iter = ret.classes.map_iterator();
 				while(iter.next()) {
 					iter.get_value().overlayParent();
@@ -102,7 +103,7 @@ namespace Palete {
 				while(iter.next()) {
 					iter.get_value().overlayCtorProperties();
 				}	
-				ret.is_overlaid = true;
+				
 				
 			}
 			
