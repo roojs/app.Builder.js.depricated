@@ -61,10 +61,10 @@ namespace Palete {
 			}
 		
 			var pa = new Json.Parser();
-	    		pa.load_from_file(BuilderApplication.configDirectory() + "/resources/Gir.overides");
-	    		var node = pa.get_root();
+			pa.load_from_file(BuilderApplication.configDirectory() + "/resources/Gir.overides");
+			var node = pa.get_root();
 		    
-	    		if (node.get_node_type () != Json.NodeType.OBJECT) {
+			if (node.get_node_type () != Json.NodeType.OBJECT) {
 				throw new GirError.INVALID_FORMAT ("Error loading gir.overides : Unexpected element type %s", node.type_name ());
 			}
 			overrides = new Gee.HashMap<string,string>();
