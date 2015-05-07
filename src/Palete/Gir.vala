@@ -37,9 +37,12 @@ namespace Palete {
 		}
 	}
     
+    
+    // Gir - is the libvala based version - 
+    
+    
 	public class Gir : GirBase {
     
-		public static  Gee.HashMap<string,Gir> cache = null;
 		//Gee.Hashmap<string,what> nodes;
 		
 		public Gir (string ns)
@@ -48,6 +51,7 @@ namespace Palete {
 		}
 		
 		
+		public static  Gee.HashMap<string,Gir> cache = null;
 
 		
 		public static GirBase?  factory(string ns) {
