@@ -58,7 +58,7 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "* pack" : "add",
+           "* pack" : "append",
            "xtype" : "MenuItem",
            "$ xns" : "Gtk"
           }
