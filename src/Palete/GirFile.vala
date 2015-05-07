@@ -14,7 +14,7 @@ namespace Palete {
 			this.load();
 		}
 			
-		public override void  load () {
+		public   void  load () {
 			
 			var xns = ns == "Glade" ? "Gladeui" : this.name;
 			var gi = GI.Repository.get_default();
