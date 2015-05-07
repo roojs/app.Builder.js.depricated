@@ -94,6 +94,8 @@ builder4_SOURCES = \
 		Project/Project.vala \
 		Project/Roo.vala \
 		Palete/Gir.vala \
+		Palete/GirObject.vala \
+		Palete/VapiParser.vala \
 		Palete/Gtk.vala \
 		Palete/RooDatabase.vala \
 		c/jscore_object_call_as_function.c \
