@@ -206,9 +206,12 @@ namespace Palete {
 		{
 			var n = met.name == null ? "" : met.name;
 			var ty  = "Method";
-			if (met is Vala.CreationMethod && n == "") {
-				n = "new";
-				ty = "Ctor";
+			if (met is Vala.CreationMethod) {
+				ty = "Ctor");
+				if(n == "") {
+					n = "new";
+				}
+				
 			}
 			
 			var c = new GirObject(ty,n);
