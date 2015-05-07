@@ -79,9 +79,9 @@ namespace Palete
 	
         public Palete()
         {
-            // nothing?
-		this.map = null;
-		this.classes = null;
+				// nothing?
+			this.map = null;
+			this.classes = null;
         }
         
         
