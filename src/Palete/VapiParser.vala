@@ -336,7 +336,7 @@ namespace Palete {
  
 int main (string[] args) {
 	
-	var g = Gir.factory("Gtk")
+	var g = Gir.factory("Gtk");
 	print("%s\n", g.asJSONString());
 	
 	return 0;
