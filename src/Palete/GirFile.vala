@@ -11,6 +11,7 @@ namespace Palete {
 		public GirFile (string ns)  
 		{
 			base(ns);
+			this.load();
 		}
 			
 		public override void  load () {
