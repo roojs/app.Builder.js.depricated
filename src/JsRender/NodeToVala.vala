@@ -400,7 +400,7 @@ public class JsRender.NodeToVala : Object {
 		// see what the 
 		//var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".newv");
 		//if (default_ctor == null) {
-			 default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
+			var  default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
 
 		//}
 		if (default_ctor != null && default_ctor.paramset != null && default_ctor.paramset.params.size > 0) {
