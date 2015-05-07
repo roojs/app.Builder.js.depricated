@@ -323,7 +323,7 @@ namespace Palete {
 			// dump the tree for Gtk?
 			
 			
-			print("%s\n", Gir.cache.get("Gtk").asJSONString());
+			
 			print("ALL OK?\n");
 		 
 		}
@@ -335,7 +335,9 @@ namespace Palete {
 }
  
 int main (string[] args) {
-
+	
+	print("%s\n", Gir.cache.get("Gtk").asJSONString());
+	
 	var a = new Palete.VapiParser( );
 	a.create_valac_tree();
 	return 0;
