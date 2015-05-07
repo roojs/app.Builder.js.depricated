@@ -230,7 +230,7 @@ namespace Palete {
 			var dir = File.new_for_path(dirname);
 			try {
 				var file_enum = dir.enumerate_children(
-                     			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
 					GLib.FileQueryInfoFlags.NONE, 
 					null
 				);

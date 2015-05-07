@@ -158,7 +158,7 @@ namespace Project {
 	   
 			try {
 				var file_enum = dir.enumerate_children(
-	             			GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+						GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
 					GLib.FileQueryInfoFlags.NONE, 
 					null
 				);
