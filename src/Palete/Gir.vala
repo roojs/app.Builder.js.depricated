@@ -103,7 +103,7 @@ namespace Palete {
 				while(iter.next()) {
 					iter.get_value().overlayCtorProperties();
 				}	
-
+				ret.is_overlaid = true;
 				
 			}
 			
