@@ -52,12 +52,6 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "xtype" : "Image",
-           "utf8 icon_name" : "help-about",
-           "* pack" : "set_image",
-           "$ xns" : "Gtk"
-          },
-          {
            "id" : "topbarmenu",
            "xtype" : "Menu",
            "* pack" : "set_popup",
