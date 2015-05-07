@@ -164,19 +164,6 @@ namespace Palete {
 
 
 		
-		public GirObject clsToObject(string in_pn)
-		{
-			var pn = in_pn;
-			var gir = Gir.factory (this.ns);
-			if (in_pn.contains(".")) {
-				gir =  Gir.factory(in_pn.split(".")[0]);
-				pn = in_pn.split(".")[1];
-			}
-			
-			return gir.classes.get(pn);
-
-			
-		}
 		public string fqn() {
 			// not sure if fqn really is correct here...
 			// 
@@ -400,9 +387,41 @@ namespace Palete {
 			// fixme - other queires? - enums?
 			return null;
 		}
+		/**
+		 *  -----------------------------------------------
+		 *  code relating to the structure loader ....
+		 * 
+		 */
+		
+		
+		public GirObject clsToObject(string in_pn)
+		{
+			var pn = in_pn;
+			/*
+			
+			
+			var gir = Gir.factory (this.ns);
+			if (in_pn.contains(".")) {
+				gir =  Gir.factory(in_pn.split(".")[0]);
+				pn = in_pn.split(".")[1];
+			}
+			*/
+			
+			var gir = VapiParser.factory (this.ns);
+			if (in_pn.contains(".")) {
+				gir =  VapiParser.factory(in_pn.split(".")[0]);
+				pn = in_pn.split(".")[1];
+			}
+			
+			
+			return gir.classes.get(pn);
 
+			
+		}
 		public string fqtype() {
-			return Gir.fqtypeLookup(this.type, this.ns);
+			return VapiParser.fqtypeLookup(this.type, this.ns)
+			
+			/* return Gir.fqtypeLookup(this.type, this.ns); */
 		}
 	}
 	    
