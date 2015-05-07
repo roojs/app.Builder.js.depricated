@@ -80,7 +80,7 @@ namespace Palete {
 		public void add_class(GirObject parent, Vala.Interface cls)
 		{
 		
-			var c = new GirObject("Class", parent.name + "." + cls.name);
+			var c = new GirObject("Interface", parent.name + "." + cls.name);
 			parent.classes.set(cls.name, c);
 			c.ns = parent.name;
 			c.parent = cls.base_class == null ? "" : cls.base_class.get_full_name() ;  // extends...
