@@ -372,15 +372,15 @@ namespace Palete {
 	 
 	}
 }
-/*
+ 
 int main (string[] args) {
 	
-	var g = Palete.Gir.factory("Gdk");
+	var g = Palete.Gir.factoryFqn("Gtk.AboutDialog");
 	print("%s\n", g.asJSONString());
 	
 	return 0;
 }
-* */
+ 
  
  
 
