@@ -50,7 +50,11 @@ namespace Palete {
 			base("Package",ns);
 			this.load();
 		}
-		
+		public override void  load () 
+		{
+			// vapi parser....
+			
+		}
 		
 		public static  Gee.HashMap<string,Gir> cache = null;
 
