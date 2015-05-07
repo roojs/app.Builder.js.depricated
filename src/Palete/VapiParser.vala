@@ -10,14 +10,15 @@ namespace Palete {
 	public class VapiParser : Vala.CodeVisitor {
 		
 		
+		public static  Gee.HashMap<string,Gir> cache = null;
 		
 		
 		
  		Vala.CodeContext context;
  		public VapiParser() {
 			base();
-			if (Gir.cache == null) {
-				Gir.cache =  new Gee.HashMap<string,Gir>();
+			if (cache == null) {
+				cache =  new Gee.HashMap<string,Gir>();
 			}
 		}
 		
@@ -36,7 +37,7 @@ namespace Palete {
 			}
 			
 			var g = new Gir.new_empty(element.name);
-			Gir.cache.set(element.name, g);
+			cache.set(element.name, g);
 			
 			
 			foreach(var c in element.get_classes()) {
@@ -325,7 +326,7 @@ namespace Palete {
 			// dump the tree for Gtk?
 			
 			
-			print("%s\n", Gir.cache.get("Gtk").asJSONString());
+			print("%s\n", cache.get("Gtk").asJSONString());
 			print("ALL OK?\n");
 		 
 		}
