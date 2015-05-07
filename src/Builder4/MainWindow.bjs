@@ -5,7 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/MainWindow.bjs",
  "permname" : "",
  "modOrder" : "",
- "build_module" : "",
+ "build_module" : "builder",
  "items" : [
   {
    "listeners" : {
@@ -27,7 +27,7 @@
    "# WindowState windowstate" : "null",
    "border_width" : 0,
    "$ type" : "Gtk.WindowType.TOPLEVEL",
-   "|             void setTitle" : " (string str) {\n    this.header_bar.el.set_title(this.title + \" - \" + str);\n}\n",
+   "|             void setTitle" : " (string str) {\n    this.header_bar.el.set_title(this.title + \" - \" + str);\n} \n",
    "items" : [
     {
      "id" : "headerbar",
