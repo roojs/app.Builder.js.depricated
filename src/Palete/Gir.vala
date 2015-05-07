@@ -48,6 +48,7 @@ namespace Palete {
 		public Gir (string ns)
 		{
 			base("Package",ns);
+			this.load();
 		}
 		
 		
