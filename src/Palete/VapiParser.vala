@@ -341,7 +341,7 @@ namespace Palete {
  
 int main (string[] args) {
 	
-	var g = Palete.Gir.factory("Gtk");
+	var g = Palete.Gir.factory("Gdk");
 	print("%s\n", g.asJSONString());
 	
 	return 0;
