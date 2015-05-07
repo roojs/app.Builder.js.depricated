@@ -271,10 +271,14 @@ namespace Palete {
  			 
 			var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
 			context.root.add_using_directive (ns_ref);
- 
-			// default.. packages..
-			/*context.add_external_package ("glib-2.0"); 
+			
+			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
+			
+			
+			// default.. packages..
+			/*
+			 * 
 			context.add_external_package ("gdk-3.0");
 			context.add_external_package ("atk");
 			context.add_external_package ("gdk-x11-3.0");
