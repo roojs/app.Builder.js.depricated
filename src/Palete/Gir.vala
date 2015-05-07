@@ -70,17 +70,13 @@ namespace Palete {
 			overrides = new Gee.HashMap<string,string>();
 		
 		
-	    		var obj = node.get_object ();
+			var obj = node.get_object ();
 		
 		
 			obj.foreach_member((o , key, value) => {
 				//print(key+"\n");
-				 
 				var v = obj.get_string_member(key);
-			
-			
 				overrides.set(key, v);
-
 			});
 	
 			overrides_loaded = true;
