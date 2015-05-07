@@ -49,6 +49,7 @@
          "$ xns" : "Gtk"
         },
         {
+         "id" : "topbarmenu",
          "* pack" : false,
          "xtype" : "Menu",
          "$ xns" : "Gtk"

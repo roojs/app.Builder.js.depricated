@@ -13,6 +13,7 @@ public class Xcls_MainWindow : Object
         return _MainWindow;
     }
     public Xcls_headerbar headerbar;
+    public Xcls_topbarmenu topbarmenu;
     public Xcls_vbox vbox;
     public Xcls_mainpane mainpane;
     public Xcls_leftpane leftpane;
@@ -168,7 +169,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Image4( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
-            var child_1 = new Xcls_Menu5( _this );
+            var child_1 = new Xcls_topbarmenu( _this );
             child_1.ref();
         }
 
@@ -196,7 +197,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Menu5 : Object 
+    public class Xcls_topbarmenu : Object 
     {
         public Gtk.Menu el;
         private Xcls_MainWindow  _this;
@@ -205,9 +206,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Menu5(Xcls_MainWindow _owner )
+        public Xcls_topbarmenu(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.topbarmenu = this;
             this.el = new Gtk.Menu();
 
             // my vars (dec)
