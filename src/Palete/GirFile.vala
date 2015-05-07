@@ -376,3 +376,106 @@ namespace Palete {
 			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
+		
+		public static Gir?  factory(string ns) 
+		{
+			if (cache == null) {
+				cache = new Gee.HashMap<string,Gir>();
+				var a = new Palete.VapiParser( );
+				a.create_valac_tree();
+				 
+				
+			}
+			var ret = cache.get(ns);
+			if (ret == null) {
+
+				var add = new Gir(ns);
+				
+				cache.set(ns, add);
+			
+				var iter = add.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayParent();
+				}
+				// loop again and add the ctor properties.
+				iter = add.classes.map_iterator();
+				while(iter.next()) {
+					iter.get_value().overlayCtorProperties();
+				}	
+
+				
+				ret = cache.get(ns);
+			}
+			 
+
+			return ret;
+			
+		}
+		public static GirObject?  factoryFqn(string fqn)  
+		{       
+			var bits = fqn.split(".");
+			if (bits.length < 1) {
+				return null;
+			}
+			
+			var f = (GirObject)factory(bits[0]);
+
+			if (bits.length == 1 || f ==null) {
+				return f;
+			}
+			return f.fetchByFqn(fqn.substring(bits[0].length+1)); // since classes are stored in fqn format...?
+			                    
+			
+		}
+
+			
+		/**
+		 * guess the fqn of a type == eg. gboolean or Widget etc...
+		 */
+		public static string fqtypeLookup(string type, string ns) {
+			var g = factory(ns);
+			if (g.classes.has_key(type)) {
+				return ns + "." + type;
+			}
+			// enums..
+			if (g.consts.has_key(type)) {
+				return ns + "." + type;
+			}
+			
+			
+			// look at includes..
+			var iter = g.includes.map_iterator();
+			while(iter.next()) {
+				// skip empty namespaces on include..?
+				if ( iter.get_key() == "") {
+					continue;
+				}
+				var ret = fqtypeLookup(type, iter.get_key());
+				if (ret != type) {
+					return ret;
+				}
+    		}	
+			return type;
+		}
+		
+
+
+		
+		// needed still - where's it called form..
+		public static string guessDefaultValueForType(string type) {
+			//print("guessDefaultValueForType: %s\n", type);
+			if (type.length < 1 || type.contains(".")) {
+				return "null";
+			}
+			switch(type) {
+				case "gboolean":
+					return "true";
+				case "guint":
+					return "0";
+				case "utf8":
+					return "\"\"";
+				default:
+					return "?"+  type + "?";
+			}
+
+		}
