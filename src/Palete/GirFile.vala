@@ -6,5 +6,5 @@ namespace Palete {
  
 	 
     
-	public class Gir : GirObject {
+	public class GirFile : Gir {
     
