@@ -285,7 +285,7 @@ namespace Palete {
 			context.add_external_package ("clutter-gtk-1.0");
 			context.add_external_package ("gdl-3.0");
 			context.add_external_package ("gtksourceview-3.0");
-			//context.add_external_package ("vte"); //??? -- hopefullly that works..
+			context.add_external_package ("vte-2.90"); //??? -- hopefullly that works..
 			//add_documented_files (context, settings.source_files);
 		
 			Vala.Parser parser = new Vala.Parser ();
@@ -329,7 +329,7 @@ namespace Palete {
 	 
 	}
 }
- 
+/*
 int main (string[] args) {
 	
 	var g = Palete.Gir.factory("Gdk");
@@ -337,6 +337,7 @@ int main (string[] args) {
 	
 	return 0;
 }
+* */
  
  
 
