@@ -27,7 +27,7 @@
    "# WindowState windowstate" : "null",
    "border_width" : 0,
    "$ type" : "Gtk.WindowType.TOPLEVEL",
-   "|             void setTitle" : " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
+   "|             void setTitle" : " (string str) {\n    this.header_bar.el.set_title(this.title + \" - \" + str);\n}\n",
    "items" : [
     {
      "id" : "headerbar",
