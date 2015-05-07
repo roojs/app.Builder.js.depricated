@@ -258,7 +258,7 @@ namespace Palete {
 			if (pam.ellipsis) {
 				n = "..."
 			}
-			var c = new GirObject("Param",pam.name);
+			var c = new GirObject("Param",n);
 			c.gparent = parent;
 			c.ns = parent.ns;
 			parent.params.add(c);
