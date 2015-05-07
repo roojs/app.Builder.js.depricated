@@ -432,7 +432,7 @@ public class JsRender.NodeToVala : Object {
 				
 				var v = this.node.get(n);
 
-				if (iter.get().type == "utf8") {
+				if (iter.get().type == "string") {
 					v = "\"" +  v.escape("") + "\"";
 				}
 				if (v == "TRUE" || v == "FALSE") {
