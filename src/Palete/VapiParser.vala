@@ -208,7 +208,7 @@ namespace Palete {
 			var ty  = "Method";
 			if (met is Vala.CreationMethod) {
 				ty = "Ctor";
-				if(n == "") {
+				if(n == "" || n == ".new") {
 					n = "new";
 				}
 				
