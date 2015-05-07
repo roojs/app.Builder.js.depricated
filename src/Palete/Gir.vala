@@ -20,7 +20,7 @@ public static int main (string[] args) {
  */
 namespace Palete {
  
-	 
+	
     
 	public class Gir : GirObject {
     
@@ -37,6 +37,7 @@ namespace Palete {
 			if (ret == null) {
 
 				var add = new Gir(ns);
+				
 				cache.set(ns, add);
 			
 				var iter = add.classes.map_iterator();
