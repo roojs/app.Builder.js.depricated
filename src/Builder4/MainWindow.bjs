@@ -39,7 +39,8 @@
       {
        "* pack" : "pack_start,?bool?,?bool?,?uint?",
        "xtype" : "HeaderBar",
-       "$ xns" : "Gtk"
+       "$ xns" : "Gtk",
+       "string title" : "Application Builder"
       },
       {
        "id" : "mainpane",
