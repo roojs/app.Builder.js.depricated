@@ -213,6 +213,7 @@ namespace Palete {
 				}
 				
 			}
+			print("add_method :  %s\n", n);
 			
 			var c = new GirObject(ty,n);
 			c.gparent = parent;
