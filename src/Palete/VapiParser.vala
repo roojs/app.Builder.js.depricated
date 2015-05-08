@@ -384,7 +384,7 @@ namespace Palete {
 	 
 	}
 }
- 
+ /*
 int main (string[] args) {
 	
 	var g = Palete.Gir.factoryFqn("Gtk.SourceView");
@@ -394,3 +394,4 @@ int main (string[] args) {
 }
  
 
+*/

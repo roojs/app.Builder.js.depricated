@@ -130,7 +130,7 @@ AM_CONDITIONAL(HAVE_JAVASCRIPTCOREGTK4, test "$javascriptcoregtk_4_0_enabled" = 
 
 
 
-dnl --- vte -- fixme..
+dnl --- vte -- fixme - its not used yet.. not sure if we will use it....
  
 
 PKG_CHECK_MODULES(VTE, [vte-2.91],
