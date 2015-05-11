@@ -58,9 +58,9 @@
        "$ xns" : "Clutter",
        "items" : [
         {
-         "$ orientation" : "Clutter.Orientation.VERTICAL",
          "spacing" : 4,
          "xtype" : "BoxLayout",
+         "orientation" : "Clutter.Orientation.VERTICAL",
          "$ xns" : "Clutter",
          "* prop" : "layout_manager"
         },
@@ -81,8 +81,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
-         "* args" : "JsRender.JsRender file",
          "id" : "+typetitle",
+         "* args" : "JsRender.JsRender file",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
@@ -93,8 +93,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-         "* args" : "JsRender.JsRender file",
          "id" : "+title",
+         "* args" : "JsRender.JsRender file",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
