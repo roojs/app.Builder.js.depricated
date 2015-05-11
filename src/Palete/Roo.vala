@@ -195,6 +195,7 @@ namespace Palete {
 		public override bool typeOptions(string fqn, string key, string type, out string[] opts) 
 		{
 			opts = {};
+			
 			if (type.up() == "BOOL" || type.up() == "BOOLEAN") {
 				opts = { "true", "false" };
 				return true;
@@ -202,6 +203,7 @@ namespace Palete {
 			 
 			 var props = this.getPropertiesFor(fqn, "props");
 			 if (!props.has_key(key)) {
+				 print("prop %s does not have key %s\n, fqn, key);
 				 return false;
 			 }
 			 var pr = props.get(key);
@@ -210,7 +212,7 @@ namespace Palete {
 			 }
 			 string[] ret = {};
 			 for(var i = 0; i < pr.optvalues.size; i++) {
-				 ret.add(pr.optvalues.get(i));
+				 ret += pr.optvalues.get(i);
 			 }
 			 opts = ret;
 			 
