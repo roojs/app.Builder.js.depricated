@@ -50,8 +50,8 @@ namespace Palete {
 			}
 			return ret;
 		}
-		 
-			public override void  load () {
+	 
+		public override void  load () {
 
 			if (this.classes != null) {
 				return;
@@ -77,10 +77,10 @@ namespace Palete {
 				
 			
 				 
-			}
+		}
 		  
 			
-			public string doc(string what) {
+		public string doc(string what) {
 			return "";
 			/*var ns = what.split(".")[0];
 
@@ -91,21 +91,21 @@ namespace Palete {
 				return   gir.doc(what);
 				*/
 				
-				//return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
-			}
+			//return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
+		}
 
-			// does not handle implements...
+		// does not handle implements...
 		public override GirObject? getClass(string ename)
 		{
 			this.load();
 			return this.classes.get(ename);
 			
 		}
+		
+		public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
+		{
+			//print("Loading for " + ename);
 			
-			public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
-			{
-				//print("Loading for " + ename);
-				
 
 			this.load();
 					// if (typeof(this.proplist[ename]) != 'undefined') {
@@ -148,13 +148,13 @@ namespace Palete {
 					//return ret;
 			
 			}
-			
 		
-			//cls.overlayInterfaces(gir);
+	
+		//cls.overlayInterfaces(gir);
 
 
-				 
-			}
+			 
+		}
 		public string[] getInheritsFor(string ename)
 		{
 			string[] ret = {};
@@ -176,6 +176,9 @@ namespace Palete {
 
 			 return;
 		}
+		/*
+		 *  Pulldown options for type
+		 */
 		public override bool typeOptions(string key, out string[] opts) 
 		{
 			opts = {};
