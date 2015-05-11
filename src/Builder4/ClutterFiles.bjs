@@ -12,7 +12,6 @@
     "scroll_event" : "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n          \n}"
    },
    "# Gee.ArrayList<Xcls_fileitem> fileitems" : "",
-   "$ bool reactive" : true,
    "id" : "ClutterFiles",
    "|  void clearFiles" : "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n",
    "scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
@@ -22,6 +21,7 @@
    "# Gdk.Pixbuf missing_thumb_pixbuf" : "null",
    "@ void open" : "(JsRender.JsRender file)",
    "$ xns" : "Clutter",
+   "bool reactive" : false,
    "|  void set_size" : "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
    "items" : [
     {
