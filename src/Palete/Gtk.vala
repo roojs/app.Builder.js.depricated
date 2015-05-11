@@ -265,13 +265,17 @@ namespace Palete {
 			}
 			print ("Got type %s", gir.asJSONString());
 			if (gir.nodetype != "Enum") {
-				return;
+				return false;
+			}
+			var iter = gir.consts.map_iterator();
+			while(iter.next()) {
+				
+				opts += (key + "." + iter.get_key());
+			}
+			if (opts.length) {
+				return true;
 			}
 			
-			
-			
-			 
-			 
 			 
 			return false;
 			 
