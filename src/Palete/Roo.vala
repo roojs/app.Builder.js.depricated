@@ -45,6 +45,7 @@ namespace Palete {
 				prop.doctxt  = o.get_string_member("desc");
 				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
+				
 				if (o.has_member("optvals")) {
 					var ar = o.get_array_member("desc");
 					
@@ -52,7 +53,7 @@ namespace Palete {
 						prop.optvalues.add(ar.get_string_element(i));
 					}
 					
-					
+				}	
 				
 				
 				
