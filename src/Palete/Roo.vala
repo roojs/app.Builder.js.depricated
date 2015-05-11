@@ -216,7 +216,7 @@ namespace Palete {
 				 ret += pr.optvalues.get(i);
 			 }
 			 opts = ret;
-			 
+			 print("prop %s returning optvalues for %s\n", fqn, key);
 			 return true;
 			 
 		}
