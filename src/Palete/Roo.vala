@@ -203,7 +203,7 @@ namespace Palete {
 			 
 			 var props = this.getPropertiesFor(fqn, "props");
 			 if (!props.has_key(key)) {
-				 print("prop %s does not have key %s\n, fqn, key);
+				 print("prop %s does not have key %s\n", fqn, key);
 				 return false;
 			 }
 			 var pr = props.get(key);
