@@ -57,7 +57,8 @@
             "../../src/Resources.vala",
             "../../src",
             "../c/jscore_object_call_as_function.c",
-            "../Palete/GirObject.vala"
+            "../Palete/GirObject.vala",
+            "../Palete/VapiParser.vala"
         ],
         "packages" : [
         ]
