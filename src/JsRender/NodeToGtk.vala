@@ -520,6 +520,8 @@ public class JsRender.NodeToGtk : Object {
 				}
 				return ret;
 		}
+		ret = null
+		return ret;
 	}
 	
 	 
