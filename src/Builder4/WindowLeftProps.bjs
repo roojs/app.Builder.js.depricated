@@ -5,7 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/WindowLeftProps.bjs",
  "permname" : "",
  "modOrder" : "",
- "build_module" : "",
+ "build_module" : "builder",
  "items" : [
   {
    "# bool allow_edit" : false,
