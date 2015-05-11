@@ -51,6 +51,8 @@ namespace Palete {
 		public Gee.HashMap<string,GirObject> props;
 		public Gee.HashMap<string,GirObject> consts;
 		public Gee.HashMap<string,GirObject> signals;
+		
+		public Gee.ArrayList<string> optvalues; // used by Roo only..
 		public string doctxt;
 
 
