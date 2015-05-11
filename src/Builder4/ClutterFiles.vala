@@ -30,7 +30,6 @@ public class Xcls_ClutterFiles : Object
         this.missing_thumb_pixbuf = null;
 
         // set gobject values
-        this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
         this.el.reactive = true;
         var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
