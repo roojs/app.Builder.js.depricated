@@ -257,8 +257,18 @@ namespace Palete {
 			if (key.up() == "BOOL" || key.up() == "BOOLEAN") {
 				opts = { "true", "false" };
 				return true;
-			 }
-			 return false;
+			}
+			var gir= Gir.factoryFqn(key) ;
+			if (gir == null) {
+				print("could not find Gir data for %s\n", key);
+				return false;
+			}
+			
+			
+			 
+			 
+			 
+			return false;
 			 
 		}
 	
