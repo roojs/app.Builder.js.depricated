@@ -137,7 +137,7 @@ public class Xcls_LeftProps : Object
                  
                 
                 mod.get_value(iter, 0 , out gval);
-                var type = (string)gval;
+                var type = (string)gval; // listerner or prop..
                 
                
                 
