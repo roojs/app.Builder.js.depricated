@@ -451,14 +451,15 @@ public class JsRender.NodeToGtk : Object {
 
 	public GLib.Value? toValue(string val, string type) {
 
-		var gtkbuilder = new global::Gtk.Builder();
+		
 
 		if (type == "string") {
 			var qret = GLib.Value(typeof(string));
 			qret.set_string(val);
 			return qret;
 		}
-		
+		/*
+		 * var gtkbuilder = new global::Gtk.Builder();
 		var prop_gtype = gtkbuilder.get_type_from_name(type);
 		
 
@@ -466,51 +467,52 @@ public class JsRender.NodeToGtk : Object {
 			 
 			return null;
 		}
+		*/
 		
-		
-		GLib.Value ret;
+		 
 
 
 		switch(type) {
 			case "bool":
-				ret = GLib.Value(typeof(bool));
+				var ret = GLib.Value(typeof(bool));
 				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
 				
 			case "uint":
-				ret = GLib.Value(typeof(uint));
+				var ret = GLib.Value(typeof(uint));
 				ret.set_uint(int.parse(val));
 				return ret;
 				
 			case "int":
-				ret = GLib.Value(typeof(int));
+				var ret = GLib.Value(typeof(int));
 				ret.set_int(int.parse(val));
 				return ret;
 
 			// uint64 ...??
 
 			case "long":
-				ret = GLib.Value(typeof(long));
+				var ret = GLib.Value(typeof(long));
 				ret.set_long((long)int64.parse(val));
 				return ret;
 			
 			case "ulong":
-				ret = GLib.Value(typeof(ulong));
+				var ret = GLib.Value(typeof(ulong));
 				ret.set_ulong((ulong) uint64.parse(val));
 				return ret;
 
 			case "float":
-				ret = GLib.Value(typeof(float));
+				var ret = GLib.Value(typeof(float));
 				ret.set_float((float)double.parse(val));
 				return ret;
 				
 			case "string":
-				ret = GLib.Value(typeof(string));
+				var ret = GLib.Value(typeof(string));
 				ret.set_string(val);
 				return ret;
 
 			default:
-
+				return null;
+				/*
 				var sval =  GLib.Value(typeof(string));
 				sval.set_string(val);
 			
@@ -519,9 +521,10 @@ public class JsRender.NodeToGtk : Object {
 					return null;
 				}
 				return ret;
+				*/
 		}
-		ret = null
-		return ret;
+		// should not get here..
+		return null;
 	}
 	
 	 
