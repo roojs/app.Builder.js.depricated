@@ -47,10 +47,10 @@ namespace Palete {
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
 				
 				if (o.has_member("optvals")) {
-					var ar = o.get_array_member("desc");
+					var oar = o.get_array_member("desc");
 					
-					for (var i = 0; i < ar.get_length(); i++) {
-						prop.optvalues.add(ar.get_string_element(i));
+					for (var oi = 0; oi < oar.get_length(); oi++) {
+						prop.optvalues.add(oar.get_string_element(oi));
 					}
 					
 				}	
@@ -192,10 +192,10 @@ namespace Palete {
 		/*
 		 *  Pulldown options for type
 		 */
-		public override bool typeOptions(string key, out string[] opts) 
+		public override bool typeOptions(string fqn, string key, string type, out string[] opts) 
 		{
 			opts = {};
-			if (key.up() == "BOOL" || key.up() == "BOOLEAN") {
+			if (type.up() == "BOOL" || type.up() == "BOOLEAN") {
 				opts = { "true", "false" };
 				return true;
 			 }
