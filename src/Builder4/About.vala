@@ -30,6 +30,7 @@ public class About : Object
         this.el.website = "http://www.akbkhome.com/blog.php";
         this.el.modal = true;
         this.el.copyright = "LGPL";
+        this.el.license_type = ;
 
         // listeners 
         this.el.delete_event.connect( (self, event) => {
