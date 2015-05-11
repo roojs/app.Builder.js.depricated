@@ -31,7 +31,7 @@ public class Xcls_ClutterFiles : Object
 
         // set gobject values
         this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
-        this.el.reactive = false;
+        this.el.reactive = true;
         var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
