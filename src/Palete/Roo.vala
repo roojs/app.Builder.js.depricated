@@ -199,7 +199,22 @@ namespace Palete {
 				opts = { "true", "false" };
 				return true;
 			 }
-			 return false;
+			 
+			 var props = this.getPropertiesFor(fqn, "props");
+			 if (!props.has_key(key)) {
+				 return false;
+			 }
+			 var pr = props.get(key);
+			 if (pr.optvalues.size < 1) {
+				 return false;
+			 }
+			 string[] ret = {};
+			 for(var i = 0; i < pr.optvalues.size; i++) {
+				 ret.add(pr.optvalues.get(i));
+			 }
+			 opts = ret;
+			 
+			 return true;
 			 
 		}
 	
