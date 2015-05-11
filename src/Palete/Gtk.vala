@@ -264,6 +264,10 @@ namespace Palete {
 				return false;
 			}
 			print ("Got type %s", gir.asJSONString());
+			if (gir.nodetype != "Enum") {
+				return;
+			}
+			
 			
 			
 			 
