@@ -189,26 +189,26 @@ public class Xcls_LeftProps : Object
                 print("turn on editing %s \n" , mod.get_path(iter).to_string());
                
                    print (ktype.up());
-                    if (has_opts) {
-                            print("start editing try/false)???");
-                            this.valrender.el.has_entry = false;
-                          
-                            this.valrender.setOptions(opts);
-                            
-                            this.valrender.el.has_entry = false;
-                            this.valrender.el.editable = true;
-                             this.allow_edit  = true;
-                             GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
-                                 this.view.el.set_cursor_on_cell(
-                                    path,
-                                    this.valcol.el,
-                                    this.valrender.el,
-                                    true
-                                );
-                                return false;
-                            });
-                            return true;
-                    }
+                if (has_opts) {
+                        print("start editing try/false)???");
+                        this.valrender.el.has_entry = false;
+                      
+                        this.valrender.setOptions(opts);
+                        
+                        this.valrender.el.has_entry = false;
+                        this.valrender.el.editable = true;
+                         this.allow_edit  = true;
+                         GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
+                             this.view.el.set_cursor_on_cell(
+                                path,
+                                this.valcol.el,
+                                this.valrender.el,
+                                true
+                            );
+                            return false;
+                        });
+                        return true;
+                }
                                           
                    // see if type is a Enum.
                    
