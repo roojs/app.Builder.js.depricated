@@ -484,8 +484,16 @@ public class JsRender.NodeToGtk : Object {
 				ret.set_int(int.parse(val));
 				return ret;
 
+			case "long":
+				ret.set_long((long)int64.parse(val));
+				return ret;
+			
+			case "ulong":
+				ret.set_ulong((ulong) uint64.parse(val));
+				return ret;
+
 			case "float":
-				ret.set_float(long.parse(val));
+				ret.set_float((float)double.parse(val));
 				return ret;
 				
 			case "string":
