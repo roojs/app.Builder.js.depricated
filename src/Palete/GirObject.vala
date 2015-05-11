@@ -87,6 +87,8 @@ namespace Palete {
 			this.props      = new Gee.HashMap<string,GirObject>();
 			this.consts     = new Gee.HashMap<string,GirObject>();
 			this.signals    = new Gee.HashMap<string,GirObject>();
+			
+			this.optvalues = new Gee.ArrayList<string>();
 			this.is_overlaid = false;
 			this.paramset = null;
 		}
