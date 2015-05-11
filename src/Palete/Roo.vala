@@ -195,7 +195,7 @@ namespace Palete {
 		public override bool typeOptions(string fqn, string key, string type, out string[] opts) 
 		{
 			opts = {};
-			
+			print("get typeOptions %s (%s)%s", fqn, type, key);
 			if (type.up() == "BOOL" || type.up() == "BOOLEAN") {
 				opts = { "true", "false" };
 				return true;
