@@ -267,12 +267,14 @@ namespace Palete {
 			if (gir.nodetype != "Enum") {
 				return false;
 			}
+			string[] ret = {};
 			var iter = gir.consts.map_iterator();
 			while(iter.next()) {
-				
-				opts += (key + "." + iter.get_value().name);
+				var nval = key + "." + iter.get_value().name;
+				ret  += nval;
 			}
 			if (opts.length > 0) {
+				opts = ret;
 				return true;
 			}
 			
