@@ -452,12 +452,13 @@ public class JsRender.NodeToGtk : Object {
 	public GLib.Value? toValue(string val, string type) {
 
 		
-
+		/*
 		if (type == "string") {
 			var qret = GLib.Value(typeof(string));
 			qret.set_string(val);
 			return qret;
 		}
+		* */
 		/*
 		 * 
 	   * var gtkbuilder = new global::Gtk.Builder();
