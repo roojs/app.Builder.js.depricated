@@ -483,7 +483,7 @@ public class JsRender.NodeToGtk : Object {
 				ret.set_int(int.parse(val));
 				return ret;
 
-			case "gfloat":
+			case "float":
 				ret.set_float(long.parse(val));
 				return ret;
 				
