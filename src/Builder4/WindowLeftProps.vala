@@ -134,6 +134,7 @@ public class Xcls_LeftProps : Object
                 var type_ar = key.split(" ");
                 
                 
+                 
                 
                 mod.get_value(iter, 0 , out gval);
                 var type = (string)gval;
@@ -207,6 +208,9 @@ public class Xcls_LeftProps : Object
                    // see if type is a Enum.
                    
                    
+                var pal = Palete.Palete.factory(this.file.project.xtype);
+                
+                
                     
                
                  string[] opts =  {  };
