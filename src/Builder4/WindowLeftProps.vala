@@ -176,7 +176,7 @@ public class Xcls_LeftProps : Object
                     return false;
                 }
                 // others... - fill in options for true/false?
-               print("turn on editing %s \n" , mod.get_path(iter).to_string());
+                print("turn on editing %s \n" , mod.get_path(iter).to_string());
                
                    print (type_ar[0].up());
                     if (type_ar.length > 1 && (
@@ -204,6 +204,9 @@ public class Xcls_LeftProps : Object
                             return true;
                     }
                                           
+                   // see if type is a Enum.
+                   
+                   
                     
                
                  string[] opts =  {  };
@@ -1586,7 +1589,7 @@ public class Xcls_LeftProps : Object
                  _this.allow_edit =false;
                 
                
-                 if (       this.el.has_entry ) {
+                 if (  this.el.has_entry ) {
                
                      Gtk.TreeIter  iter;
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
@@ -1601,8 +1604,8 @@ public class Xcls_LeftProps : Object
                     var val = (string)gval;
                     var combo =        (Gtk.ComboBox)editable;
             
-                   var entry =  (Gtk.Entry) combo.get_child();        
-                entry.set_text(val);
+                    var entry =  (Gtk.Entry) combo.get_child();        
+                    entry.set_text(val);
                 }
                
             });
