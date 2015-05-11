@@ -178,10 +178,10 @@ public class Xcls_LeftProps : Object
                     return false;
                 }
                 
-                 var pal = Palete.Palete.factory(this.file.project.xtype);
+                 var pal = Palete.factory(this.file.project.xtype);
                 
                 string[] opts;
-                var has_ops = pal.typeOptions(ktype, opts);
+                var has_opts = pal.typeOptions(this.node.fqn(), kname, ktype, out opts);
                 
                 
                 
@@ -216,7 +216,7 @@ public class Xcls_LeftProps : Object
                
                     
                
-                 string[] opts =  {  };
+                 opts =  {  };
                 this.valrender.setOptions(opts);
                
                GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
