@@ -263,6 +263,7 @@ namespace Palete {
 				print("could not find Gir data for %s\n", key);
 				return false;
 			}
+			print ("Got type %s", gir.asJSONString());
 			
 			
 			 
