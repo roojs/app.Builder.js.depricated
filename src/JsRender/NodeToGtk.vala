@@ -472,14 +472,14 @@ public class JsRender.NodeToGtk : Object {
 
 
 		switch(type) {
-			case "gboolean":
+			case "bool":
 				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
-			case "guint":
+			case "uint":
 				ret.set_uint(int.parse(val));
 				return ret;
 				
-			case "gint":
+			case "int":
 				ret.set_int(int.parse(val));
 				return ret;
 
@@ -487,7 +487,7 @@ public class JsRender.NodeToGtk : Object {
 				ret.set_float(long.parse(val));
 				return ret;
 				
-			case "utf8":
+			case "string":
 				ret.set_string(val);
 				return ret;
 
