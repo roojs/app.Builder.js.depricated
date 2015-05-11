@@ -393,7 +393,7 @@ namespace Palete
 	public abstract Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type);
 	public abstract GirObject? getClass(string ename);
 	
-	public abstract bool typeOptions(string key, out string[] opts);
+	public abstract bool type
 	
     }
 
