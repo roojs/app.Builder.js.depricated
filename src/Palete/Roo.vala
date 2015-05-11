@@ -208,6 +208,7 @@ namespace Palete {
 			 }
 			 var pr = props.get(key);
 			 if (pr.optvalues.size < 1) {
+				 print("prop %s no optvalues for %s\n", fqn, key);
 				 return false;
 			 }
 			 string[] ret = {};
