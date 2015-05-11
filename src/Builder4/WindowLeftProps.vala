@@ -177,18 +177,22 @@ public class Xcls_LeftProps : Object
                     
                     return false;
                 }
+                
+                 var pal = Palete.Palete.factory(this.file.project.xtype);
+                
+                string[] opts;
+                var has_ops = pal.typeOptions(ktype, opts);
+                
+                
+                
                 // others... - fill in options for true/false?
                 print("turn on editing %s \n" , mod.get_path(iter).to_string());
                
                    print (ktype.up());
-                    if (ktype.length > 0 && (
-                            ktype.up() == "BOOLEAN"
-                            ||
-                            ktype.up() == "BOOL"                        
-                        )) {
+                    if (has_opts) {
                             print("start editing try/false)???");
                             this.valrender.el.has_entry = false;
-                            string[] opts =  { "true", "false" };
+                          
                             this.valrender.setOptions(opts);
                             
                             this.valrender.el.has_entry = false;
@@ -209,9 +213,7 @@ public class Xcls_LeftProps : Object
                    // see if type is a Enum.
                    
                    
-                var pal = Palete.Palete.factory(this.file.project.xtype);
-                
-                
+               
                     
                
                  string[] opts =  {  };
