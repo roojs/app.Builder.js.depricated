@@ -459,7 +459,8 @@ public class JsRender.NodeToGtk : Object {
 			return qret;
 		}
 		/*
-		 * var gtkbuilder = new global::Gtk.Builder();
+		 * 
+	   * var gtkbuilder = new global::Gtk.Builder();
 		var prop_gtype = gtkbuilder.get_type_from_name(type);
 		
 
