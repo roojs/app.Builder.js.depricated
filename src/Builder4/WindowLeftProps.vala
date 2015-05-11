@@ -133,7 +133,8 @@ public class Xcls_LeftProps : Object
                 var key = (string)gval;
                 var type_ar = key.split(" ");
                 
-                
+                string kname, kflag, ktype;
+                this.node.normalize_key(key, out kname, out kflag, out ktype);
                  
                 
                 mod.get_value(iter, 0 , out gval);
@@ -179,11 +180,11 @@ public class Xcls_LeftProps : Object
                 // others... - fill in options for true/false?
                 print("turn on editing %s \n" , mod.get_path(iter).to_string());
                
-                   print (type_ar[0].up());
-                    if (type_ar.length > 1 && (
-                            type_ar[0].up() == "BOOLEAN"
+                   print (ktype.up());
+                    if (ktype.length > 0 && (
+                            ktype.up() == "BOOLEAN"
                             ||
-                            type_ar[0].up() == "BOOL"                        
+                            ktype.up() == "BOOL"                        
                         )) {
                             print("start editing try/false)???");
                             this.valrender.el.has_entry = false;
