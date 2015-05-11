@@ -475,6 +475,7 @@ public class JsRender.NodeToGtk : Object {
 			case "bool":
 				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
+				
 			case "uint":
 				ret.set_uint(int.parse(val));
 				return ret;
