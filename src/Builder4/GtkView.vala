@@ -592,14 +592,14 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_View15( _this );
+            var child_0 = new Xcls_SourceView15( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_View15 : Object 
+    public class Xcls_SourceView15 : Object 
     {
         public Gtk.SourceView el;
         private Xcls_GtkView  _this;
@@ -608,7 +608,7 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_View15(Xcls_GtkView _owner )
+        public Xcls_SourceView15(Xcls_GtkView _owner )
         {
             _this = _owner;
             this.el = new Gtk.SourceView();
