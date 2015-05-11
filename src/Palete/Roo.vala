@@ -46,8 +46,8 @@ namespace Palete {
 				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
 				
-				if (o.has_member("optvals")) {
-					var oar = o.get_array_member("desc");
+				if (o.has_member("optvals")  ) {
+					var oar = o.get_array_member("optvals");
 					
 					for (var oi = 0; oi < oar.get_length(); oi++) {
 						prop.optvalues.add(oar.get_string_element(oi));
