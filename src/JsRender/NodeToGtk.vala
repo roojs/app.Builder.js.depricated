@@ -468,35 +468,44 @@ public class JsRender.NodeToGtk : Object {
 		}
 		
 		
-		var ret = GLib.Value(prop_gtype);
+		GLib.Value ret;
 
 
 		switch(type) {
 			case "bool":
+				ret = GLib.Value(typeof(bool));
 				ret.set_boolean(val.down() == "false" ? false : true);
 				return ret;
 				
 			case "uint":
+				ret = GLib.Value(typeof(uint));
 				ret.set_uint(int.parse(val));
 				return ret;
 				
 			case "int":
+				ret = GLib.Value(typeof(int));
 				ret.set_int(int.parse(val));
 				return ret;
 
+			// uint64 ...??
+
 			case "long":
+				ret = GLib.Value(typeof(long));
 				ret.set_long((long)int64.parse(val));
 				return ret;
 			
 			case "ulong":
+				ret = GLib.Value(typeof(ulong));
 				ret.set_ulong((ulong) uint64.parse(val));
 				return ret;
 
 			case "float":
+				ret = GLib.Value(typeof(float));
 				ret.set_float((float)double.parse(val));
 				return ret;
 				
 			case "string":
+				ret = GLib.Value(typeof(string));
 				ret.set_string(val);
 				return ret;
 
