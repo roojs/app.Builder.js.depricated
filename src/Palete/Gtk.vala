@@ -270,9 +270,9 @@ namespace Palete {
 			var iter = gir.consts.map_iterator();
 			while(iter.next()) {
 				
-				opts += (key + "." + iter.get_key());
+				opts += (key + "." + iter.get_value().name);
 			}
-			if (opts.length) {
+			if (opts.length > 0) {
 				return true;
 			}
 			
