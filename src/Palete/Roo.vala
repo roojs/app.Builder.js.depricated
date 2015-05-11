@@ -42,9 +42,20 @@ namespace Palete {
 				var prop = new GirObject(type, name );  
 				 
 				prop.type        = o.get_string_member("type");
-					prop.doctxt  = o.get_string_member("desc");
+				prop.doctxt  = o.get_string_member("desc");
 				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
+				if (o.has_member("optvals")) {
+					var ar = o.get_array_member("desc");
+					
+					for (var i = 0; i < ar.get_length(); i++) {
+						prop.optvalues.add(ar.get_string_element(i));
+					}
+					
+					
+				
+				
+				
 				//print(type + ":" + name +"\n");
 				ret.set(name,prop);
 			}
