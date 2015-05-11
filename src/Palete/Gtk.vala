@@ -251,14 +251,14 @@ namespace Palete {
 			
 			 
 		}
-		public override bool typeOptions(string key, out string[] opts) 
+		public override bool  typeOptions(string fqn, string key, string type, out string[] opts) 
 		{
 			opts = {};
-			if (key.up() == "BOOL" || key.up() == "BOOLEAN") {
+			if (type.up() == "BOOL" || type.up() == "BOOLEAN") {
 				opts = { "true", "false" };
 				return true;
 			}
-			var gir= Gir.factoryFqn(key) ;
+			var gir= Gir.factoryFqn(type) ;
 			if (gir == null) {
 				print("could not find Gir data for %s\n", key);
 				return false;
@@ -270,10 +270,11 @@ namespace Palete {
 			string[] ret = {};
 			var iter = gir.consts.map_iterator();
 			while(iter.next()) {
-				var nval = key + "." + iter.get_value().name;
-				ret  += nval;
+				
+				ret  += (type + "." + iter.get_value().name);
 			}
-			if (opts.length > 0) {
+			
+			if (ret.length > 0) {
 				opts = ret;
 				return true;
 			}
