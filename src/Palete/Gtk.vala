@@ -251,7 +251,16 @@ namespace Palete {
 			
 			 
 		}
- 
+		public override bool typeOptions(string key, out string[] opts) 
+		{
+			opts = {};
+			if (key.up() == "BOOL" || key.up() == "BOOLEAN") {
+				opts = { "true", "false" };
+				return true;
+			 }
+			 return false;
+			 
+		}
 	
     }
 }
