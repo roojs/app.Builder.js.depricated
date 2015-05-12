@@ -589,6 +589,9 @@ public class PopoverFileDetails : Object
             var child_0 = new Xcls_Button22( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , ?bool?,?bool?,?uint? );
+            var child_1 = new Xcls_Button23( _this );
+            child_1.ref();
+            this.el.pack_start (  child_1.el , ?bool?,?bool?,?uint? );
         }
 
         // user defined functions 
@@ -603,6 +606,27 @@ public class PopoverFileDetails : Object
 
         // ctor 
         public Xcls_Button22(PopoverFileDetails _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button23 : Object 
+    {
+        public Gtk.Button el;
+        private PopoverFileDetails  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button23(PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();

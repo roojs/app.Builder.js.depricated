@@ -176,6 +176,11 @@
          "* pack" : "pack_start,?bool?,?bool?,?uint?",
          "xtype" : "Button",
          "$ xns" : "Gtk"
+        },
+        {
+         "* pack" : "pack_start,?bool?,?bool?,?uint?",
+         "xtype" : "Button",
+         "$ xns" : "Gtk"
         }
        ]
       }
