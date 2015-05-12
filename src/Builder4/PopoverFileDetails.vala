@@ -774,7 +774,7 @@ public class Xcls_PopoverFileDetails : Object
                              
                          }
                                                                     
-                    
+                          this.done = true;
                         _this.file.save();
                         _this.el.hide();
                         return;
