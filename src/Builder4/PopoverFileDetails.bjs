@@ -19,7 +19,7 @@
    "items" : [
     {
      "xtype" : "VBox",
-     "$ pack" : "get_content_area().add",
+     "$ pack" : "add",
      "$ xns" : "Gtk",
      "items" : [
       {
