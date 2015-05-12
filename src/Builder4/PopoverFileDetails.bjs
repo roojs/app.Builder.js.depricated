@@ -9,7 +9,162 @@
  "items" : [
   {
    "xtype" : "Popover",
-   "$ xns" : "Gtk"
+   "$ xns" : "Gtk",
+   "items" : [
+    {
+     "xtype" : "VBox",
+     "$ pack" : "get_content_area().add",
+     "$ xns" : "Gtk",
+     "items" : [
+      {
+       "* pack" : "pack_start,false,false,0",
+       "xtype" : "Table",
+       "n_columns" : 2,
+       "$ xns" : "Gtk",
+       "n_rows" : 3,
+       "$ homogeneous" : true,
+       "items" : [
+        {
+         "label" : "Component Name",
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,0,1",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "name",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,0,1",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Title",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,1,2",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "title",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,1,2",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Region",
+         "tooltip_text" : "center, north, south, east, west",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,2,3",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "region",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,2,3",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Parent Name",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,3,4",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "parent",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,3,4",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Permission Name",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,4,5",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "permname",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,4,5",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Order (for tabs)",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,5,6",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "modOrder",
+         "$ visible" : true,
+         "xtype" : "Entry",
+         "* pack" : "attach_defaults,1,2,5,6",
+         "$ xns" : "Gtk"
+        },
+        {
+         "label" : "Module to build (Vala only)",
+         "$ visible" : true,
+         "xalign" : 0.90000000000000002,
+         "* pack" : "attach_defaults,0,1,6,7",
+         "xtype" : "Label",
+         "$ justify" : "Gtk.Justification.RIGHT",
+         "x_options" : 4,
+         "$ xns" : "Gtk"
+        },
+        {
+         "id" : "build_module",
+         "* init" : "this.el.add_attribute(_this.dbcellrenderer.el , \"markup\", 1 );",
+         "* pack" : "attach_defaults,1,2,6,7",
+         "xtype" : "ComboBox",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "id" : "dbcellrenderer",
+           "* pack" : "pack_start,true",
+           "xtype" : "CellRendererText",
+           "$ xns" : "Gtk"
+          },
+          {
+           "id" : "dbmodel",
+           "* pack" : "set_model",
+           "xtype" : "ListStore",
+           "$ columns" : "typeof(string),typeof(string)",
+           "n_columns" : 2,
+           "$ xns" : "Gtk",
+           "| void loadData" : "  (Gee.ArrayList<string> data, string cur) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n   /// el.append(out iter);\n    \n     \n   // el.set_value(iter, 0, \"\");\n   // el.set_value(iter, 1, \"aaa  - Just add Element - aaa\");\n\n    el.append(out iter);\n\n    \n    el.set_value(iter, 0, \"\");\n    el.set_value(iter, 1, \"-- select a module --\");\n    _this.build_module.el.set_active_iter(iter);\n    \n    for (var i = 0; i < data.size;i++) {\n    \n\n        el.append(out iter);\n        \n        el.set_value(iter, 0, data.get(i));\n        el.set_value(iter, 1, data.get(i));\n        \n        if (data.get(i) == cur) {\n            _this.build_module.el.set_active_iter(iter);\n        }\n        \n    }\n     this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  ]
 }
