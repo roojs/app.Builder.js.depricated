@@ -13,7 +13,6 @@ namespace Palete {
 		public Gee.HashMap<int,string> line_errors;
 		
 		public void  compile_notice(string type, string filename, int line, string message) {
-			 
 			GLib.Idle.add(() => {
 				this.file.compile_notice(type,filename,line,message);
 				return false;
@@ -162,11 +161,10 @@ namespace Palete {
 			SourceFunc callback = checkStringThread.callback;
 			var ret = new Gee.HashMap<int,string>();
 			ThreadFunc<void*> run = () => {
-				 var vs = new ValaSource(this.file);
+				 
 				// Pass back result and schedule callback
-				ret = vs.checkString(contents);
+				ret = this.checkString(contents);
 				Idle.add((owned) callback);
-				//vs = null;
 				return null;
 			};
 			Thread.create<void*>(run, false);
