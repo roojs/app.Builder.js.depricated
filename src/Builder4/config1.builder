@@ -7,7 +7,6 @@
             "../Builder4/About.vala",
             "../Builder4/ClutterFiles.vala",
             "../Builder4/DialogConfirm.vala",
-            "../Builder4/DialogNewComponent.vala",
             "../Builder4/DialogPluginWebkit.vala",
             "../Builder4/DialogSaveModule.vala",
             "../Builder4/DialogSaveTemplate.vala",
@@ -58,7 +57,8 @@
             "../../src",
             "../c/jscore_object_call_as_function.c",
             "../Palete/GirObject.vala",
-            "../Palete/VapiParser.vala"
+            "../Palete/VapiParser.vala",
+            "../Builder4/PopoverFileDetails.vala"
         ],
         "packages" : [
         ]
