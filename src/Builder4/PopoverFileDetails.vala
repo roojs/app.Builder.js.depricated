@@ -689,7 +689,7 @@ public class Xcls_PopoverFileDetails : Object
             // listeners 
             this.el.activate.connect( () => { 
             
-               _this.mainwindow.el.set_sensitive(true);
+             
                 _this.el.hide(); 
             });
         }

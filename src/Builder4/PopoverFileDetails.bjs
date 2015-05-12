@@ -180,7 +180,7 @@
        "items" : [
         {
          "listeners" : {
-          "activate" : "() => { \n\n   _this.mainwindow.el.set_sensitive(true);\n    _this.el.hide(); \n}"
+          "activate" : "() => { \n\n \n    _this.el.hide(); \n}"
          },
          "string label" : "Cancel",
          "* pack" : "add",
