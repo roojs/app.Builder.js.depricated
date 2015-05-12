@@ -358,7 +358,7 @@ namespace Palete {
  
 			Vala.CodeContext.pop ();
 			Vala.CodeNode.get_error_types().clear();
-			
+			Vala.DataType.get_type_arguments().clear();
 			
 			 
 			this.report.compile_notice("END", "", 0, "");
