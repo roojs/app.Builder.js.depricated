@@ -685,7 +685,11 @@ public class Xcls_PopoverFileDetails : Object
             this.el.label = "Cancel";
 
             // listeners 
-            this.el.activate.connect( () => { this.el.hide(); });
+            this.el.activate.connect( () => { 
+            
+               _this.mainwindow.el.set_sensitive(true);
+                _this.el.hide(); 
+            });
         }
 
         // user defined functions 
