@@ -367,13 +367,14 @@ namespace Palete {
 				
 			}
 			 
-			Vala.CodeContext.pop ();
+			
 			 
 			context.accept(this);
 			
+			context = null;
 			// dump the tree for Gtk?
 			
-			
+			Vala.CodeContext.pop ();
 			
 			print("ALL OK?\n");
 		 
