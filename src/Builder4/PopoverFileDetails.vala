@@ -690,7 +690,7 @@ public class Xcls_PopoverFileDetails : Object
             
                     if (_this.name.el.get_text().length  < 1) {
                         StandardErrorDialog.show(
-                            this.el,
+                            _this.mainwindow.el,
                             "You have to set Component name "
                         );
                          
@@ -719,10 +719,10 @@ public class Xcls_PopoverFileDetails : Object
             
                     if (!isNew) {
                         try {
-                             this.updateFileFromEntry();
+                             _this.updateFileFromEntry();
                          } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
                               Xcls_StandardErrorDialog.singleton().show(
-                                this.el,
+                                _this.mainwindow.el,
                                 "The name you used already exists "
                             );
                             return;
@@ -739,7 +739,7 @@ public class Xcls_PopoverFileDetails : Object
                    
                     if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
                         Xcls_StandardErrorDialog.singleton().show(
-                            this.el,
+                            _this.mainwindow.el,
                             "That file already exists"
                         ); 
                         return;
@@ -754,7 +754,7 @@ public class Xcls_PopoverFileDetails : Object
                     
             
                     
-                    this.updateFileFromEntry();
+                    _this.updateFileFromEntry();
                     _this.file.save();
                     _this.file.project.addFile(_this.file);
                     
