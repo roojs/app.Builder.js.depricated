@@ -24,6 +24,7 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_save_btn save_btn;
 
         // my vars (def)
+    public signal void success (Project.Project pr, JsRender.JsRender file);
     public Project.Project project;
     public JsRender.JsRender file;
 
