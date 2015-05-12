@@ -344,7 +344,7 @@ namespace Palete {
 			 
 			context.output = "/tmp/testbuild";
 			valac += " -o " +context.output;
-			context.codegen.emit (context);
+			//context.codegen.emit (context);
 			/*
 			var ccompiler = new Vala.CCodeCompiler ();
 			var cc_command = Environment.get_variable ("CC");
