@@ -689,6 +689,108 @@ public class Xcls_PopoverFileDetails : Object
 
             // set gobject values
             this.el.label = "Save";
+
+            // listeners 
+            this.el.activate.connect( ( ) =>  { 
+              
+            	if (response_id < 1) { // cancel!
+                        this.el.hide();
+                        return;
+                    }
+            
+            
+            
+                    if (_this.name.el.get_text().length  < 1) {
+                        StandardErrorDialog.show(
+                            this.el,
+                            "You have to set Component name "
+                        );
+                         
+                        return;
+                    }
+                    // what does this do?
+                    
+                    var isNew = _this.file.name.length  > 0 ? false : true;
+                    /*
+                    if (!isNew && this.file.name != _this.name.el.get_text()) {
+                        Xcls_StandardErrorDialog.singleton().show(
+                            this.el,
+                            "Sorry changing names does not work yet. "
+                        );
+                         
+                        return;
+                    }
+                    */
+                     
+                    
+                  
+                    // FIXME - this may be more complicated...
+                    //for (var i in this.def) {
+                    //    this.file[i] =  this.get(i).el.get_text();
+                    //}
+            
+                    if (!isNew) {
+                        try {
+                             this.updateFileFromEntry();
+                         } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
+                              Xcls_StandardErrorDialog.singleton().show(
+                                this.el,
+                                "The name you used already exists "
+                            );
+                            return;
+                             
+                         }
+                                                                    
+                    
+                        _this.file.save();
+                        this.el.hide();
+                        return;
+                    }
+                    var fn = this.name.el.get_text();
+                    var dir = _this.project.firstPath();
+                   
+                    if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
+                        Xcls_StandardErrorDialog.singleton().show(
+                            this.el,
+                            "That file already exists"
+                        ); 
+                        return;
+                    }
+                   
+                   var f =  JsRender.JsRender.factory(
+                            _this.file.project.xtype,  
+                            _this.file.project, 
+                            dir + "/" + fn + ".bjs");
+            
+                    _this.file = f;
+                    
+            
+                    
+                    this.updateFileFromEntry();
+                    _this.file.save();
+                    _this.file.project.addFile(_this.file);
+                    
+            	 
+                    // what about .js ?
+                   
+                    this.el.hide();
+                    
+                    
+                    //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
+                     
+                    //var nf = _this.project.create(dir + "/" + _this.file.name + ".bjs");
+                    //for (var i in this.file) {
+                    //    nf[i] = this.file[i];
+                    //}
+                    _this.success(_this.project, _this.file);
+                    /*
+            
+                    -- fixme -- needs to be a signal..
+                    if (DialogNewComponent.success != null) {
+                        DialogNewComponent.success(_this.project, nf);
+                    }
+                    */
+            });
         }
 
         // user defined functions 
