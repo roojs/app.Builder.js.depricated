@@ -359,9 +359,8 @@ namespace Palete {
 			Vala.CodeContext.pop ();
 			//(new Vala.CodeNode()).get_error_types().clear();
 			//(new Vala.NullType()).get_type_arguments().clear();
-			(new Vala.NullType()).get_type_arguments().clear();
-			(new Vala.Parser ()).parse_type_parameter_list().clear();
-			this.report.compile_notice("END", "", 0, "");
+			(new Vala.NullType(null)).get_type_arguments().clear();
+ 			this.report.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
