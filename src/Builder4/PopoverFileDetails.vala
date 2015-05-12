@@ -59,6 +59,9 @@ public class PopoverFileDetails : Object
             var child_0 = new Xcls_Table3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_HBox20( _this );
+            child_1.ref();
+            this.el.pack_start (  child_1.el , ?bool?,?bool?,?uint? );
         }
 
         // user defined functions 
@@ -541,5 +544,26 @@ public class PopoverFileDetails : Object
              this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
                                              
         }
+    }
+    public class Xcls_HBox20 : Object 
+    {
+        public Gtk.HBox el;
+        private PopoverFileDetails  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HBox20(PopoverFileDetails _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions 
     }
 }
