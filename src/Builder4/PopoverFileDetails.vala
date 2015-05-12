@@ -24,6 +24,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // my vars (def)
     public Project.Project project;
+    public JsRender.JsRender file;
 
     // ctor 
     public Xcls_PopoverFileDetails()
@@ -32,6 +33,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
+        this.file = null;
 
         // set gobject values
         var child_0 = new Xcls_VBox2( _this );
