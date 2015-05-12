@@ -855,7 +855,7 @@ public class WindowState : Object
 			
 	
 			case State.FILES:
-				if (this.win.left_projects.getSelectedProject() != null ) {
+				if (this.left_projects.getSelectedProject() != null ) {
 					if (this.left_tree.getActiveFile() != null) {
 						this.win.backbutton.el.show();
 					}
