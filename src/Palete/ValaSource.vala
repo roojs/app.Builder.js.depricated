@@ -13,6 +13,7 @@ namespace Palete {
 		public Gee.HashMap<int,string> line_errors;
 		
 		public void  compile_notice(string type, string filename, int line, string message) {
+			 
 			GLib.Idle.add(() => {
 				this.file.compile_notice(type,filename,line,message);
 				return false;
@@ -339,7 +340,7 @@ namespace Palete {
 				
 			}
 			
-			context.codegen = new Vala.GDBusServerModule ();
+			//context.codegen = new Vala.GDBusServerModule ();
 			
 			 
 			context.output = "/tmp/testbuild";
