@@ -25,6 +25,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // my vars (def)
     public signal void success (Project.Project pr, JsRender.JsRender file);
+    public bool done;
     public Project.Project project;
     public JsRender.JsRender file;
     public Xcls_MainWindow mainwindow;
@@ -36,6 +37,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
+        this.done = true;
         this.file = null;
         this.mainwindow = null;
 
