@@ -693,11 +693,7 @@ public class Xcls_PopoverFileDetails : Object
             // listeners 
             this.el.activate.connect( ( ) =>  { 
               
-            	if (response_id < 1) { // cancel!
-                        this.el.hide();
-                        return;
-                    }
-            
+            	 
             
             
                     if (_this.name.el.get_text().length  < 1) {
@@ -776,20 +772,9 @@ public class Xcls_PopoverFileDetails : Object
                     this.el.hide();
                     
                     
-                    //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
-                     
-                    //var nf = _this.project.create(dir + "/" + _this.file.name + ".bjs");
-                    //for (var i in this.file) {
-                    //    nf[i] = this.file[i];
-                    //}
+                    
                     _this.success(_this.project, _this.file);
-                    /*
-            
-                    -- fixme -- needs to be a signal..
-                    if (DialogNewComponent.success != null) {
-                        DialogNewComponent.success(_this.project, nf);
-                    }
-                    */
+                   
             });
         }
 
