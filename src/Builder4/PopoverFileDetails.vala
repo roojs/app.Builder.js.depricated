@@ -112,12 +112,9 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_Table3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_HBox20( _this );
+            var child_1 = new Xcls_HButtonBox20( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , ?bool?,?bool?,?uint? );
-            var child_2 = new Xcls_HButtonBox21( _this );
-            child_2.ref();
-            this.el.pack_start (  child_2.el , ?bool?,?bool?,?uint? );
         }
 
         // user defined functions 
@@ -601,28 +598,7 @@ public class Xcls_PopoverFileDetails : Object
                                              
         }
     }
-    public class Xcls_HBox20 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_PopoverFileDetails  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_HBox20(Xcls_PopoverFileDetails _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
-
-            // my vars (dec)
-
-            // set gobject values
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_HButtonBox21 : Object 
+    public class Xcls_HButtonBox20 : Object 
     {
         public Gtk.HButtonBox el;
         private Xcls_PopoverFileDetails  _this;
@@ -631,7 +607,7 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_HButtonBox21(Xcls_PopoverFileDetails _owner )
+        public Xcls_HButtonBox20(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.HButtonBox();
@@ -639,17 +615,17 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Button22( _this );
+            var child_0 = new Xcls_Button21( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button23( _this );
+            var child_1 = new Xcls_Button22( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Button22 : Object 
+    public class Xcls_Button21 : Object 
     {
         public Gtk.Button el;
         private Xcls_PopoverFileDetails  _this;
@@ -658,7 +634,7 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button22(Xcls_PopoverFileDetails _owner )
+        public Xcls_Button21(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -671,7 +647,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions 
     }
-    public class Xcls_Button23 : Object 
+    public class Xcls_Button22 : Object 
     {
         public Gtk.Button el;
         private Xcls_PopoverFileDetails  _this;
@@ -681,7 +657,7 @@ public class Xcls_PopoverFileDetails : Object
         public signal void success (Project.Project pr, JsRender.JsRender file);
 
         // ctor 
-        public Xcls_Button23(Xcls_PopoverFileDetails _owner )
+        public Xcls_Button22(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();

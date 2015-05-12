@@ -169,11 +169,6 @@
       },
       {
        "* pack" : "pack_start,?bool?,?bool?,?uint?",
-       "xtype" : "HBox",
-       "$ xns" : "Gtk"
-      },
-      {
-       "* pack" : "pack_start,?bool?,?bool?,?uint?",
        "xtype" : "HButtonBox",
        "$ xns" : "Gtk",
        "items" : [
