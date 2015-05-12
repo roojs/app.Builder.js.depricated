@@ -184,7 +184,7 @@
        "items" : [
         {
          "listeners" : {
-          "clicked" : "() => { \n\n \n    _this.el.hide(); \n}"
+          "clicked" : "() => { \n\n  this.done = true;\n    _this.el.hide(); \n}"
          },
          "string label" : "Cancel",
          "* pack" : "add",

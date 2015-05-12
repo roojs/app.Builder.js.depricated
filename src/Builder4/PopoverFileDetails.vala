@@ -700,7 +700,7 @@ public class Xcls_PopoverFileDetails : Object
             // listeners 
             this.el.clicked.connect( () => { 
             
-             
+              this.done = true;
                 _this.el.hide(); 
             });
         }
