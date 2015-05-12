@@ -688,7 +688,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.label = "Cancel";
 
             // listeners 
-            this.el.activate.connect( () => { 
+            this.el.click.connect( () => { 
             
              
                 _this.el.hide(); 
@@ -718,7 +718,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.label = "Save";
 
             // listeners 
-            this.el.activate.connect( ( ) =>  { 
+            this.el.click.connect( ( ) =>  { 
               
             	 
             
