@@ -166,6 +166,7 @@ namespace Palete {
 				// Pass back result and schedule callback
 				ret = vs.checkString(contents);
 				Idle.add((owned) callback);
+				vs = null;
 				return null;
 			};
 			Thread.create<void*>(run, false);
