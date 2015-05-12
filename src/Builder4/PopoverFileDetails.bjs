@@ -32,9 +32,10 @@
      "$ xns" : "Gtk",
      "items" : [
       {
-       "* pack" : "pack_start,?bool?,?bool?,?uint?",
+       "* pack" : "pack_start,false,false,0",
        "xtype" : "HeaderBar",
-       "$ xns" : "Gtk"
+       "$ xns" : "Gtk",
+       "string title" : "Add Project"
       },
       {
        "* pack" : "pack_start,false,false,0",
