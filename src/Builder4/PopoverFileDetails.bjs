@@ -16,6 +16,7 @@
    "# JsRender.JsRender file" : "null",
    "$ xns" : "Gtk",
    "bool modal" : true,
+   "uint border_width" : 6,
    "items" : [
     {
      "xtype" : "VBox",
