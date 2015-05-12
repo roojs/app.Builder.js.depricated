@@ -37,6 +37,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // set gobject values
         this.el.modal = true;
+        this.el.position = Gtk.PositionType.RIGHT;
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
