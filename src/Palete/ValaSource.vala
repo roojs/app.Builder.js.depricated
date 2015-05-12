@@ -162,9 +162,9 @@ namespace Palete {
 			SourceFunc callback = checkStringThread.callback;
 			var ret = new Gee.HashMap<int,string>();
 			ThreadFunc<void*> run = () => {
-				 
+				 var vs = new ValaSource(this.file);
 				// Pass back result and schedule callback
-				ret = this.checkString(contents);
+				ret = vs.checkString(contents);
 				Idle.add((owned) callback);
 				return null;
 			};
