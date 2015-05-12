@@ -42,7 +42,7 @@ public class Xcls_PopoverFileDetails : Object
         this.mainwindow = null;
 
         // set gobject values
-        this.el.border_width = 6;
+        this.el.border_width = 0;
         this.el.modal = true;
         this.el.position = Gtk.PositionType.RIGHT;
         var child_0 = new Xcls_VBox2( _this );
@@ -167,7 +167,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.pack_start (  child_0.el , false,true,0 );
             var child_1 = new Xcls_Table4( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , false,false,0 );
+            this.el.pack_start (  child_1.el , false,false,4 );
             var child_2 = new Xcls_HButtonBox21( _this );
             child_2.ref();
             this.el.pack_end (  child_2.el , false,true,5 );

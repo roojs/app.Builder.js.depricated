@@ -23,7 +23,7 @@
    "$ xns" : "Gtk",
    "Xcls_MainWindow mainwindow" : "null",
    "bool modal" : true,
-   "uint border_width" : 6,
+   "uint border_width" : 0,
    "items" : [
     {
      "bool homogeneous" : false,
@@ -38,7 +38,7 @@
        "string title" : "Add / Edit File"
       },
       {
-       "* pack" : "pack_start,false,false,0",
+       "* pack" : "pack_start,false,false,4",
        "xtype" : "Table",
        "n_columns" : 2,
        "$ xns" : "Gtk",
