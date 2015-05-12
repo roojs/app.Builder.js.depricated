@@ -700,7 +700,7 @@ public class Xcls_PopoverFileDetails : Object
             // listeners 
             this.el.clicked.connect( () => { 
             
-              this.done = true;
+              _this.done = true;
                 _this.el.hide(); 
             });
         }
@@ -774,7 +774,7 @@ public class Xcls_PopoverFileDetails : Object
                              
                          }
                                                                     
-                          this.done = true;
+                          _this.done = true;
                         _this.file.save();
                         _this.el.hide();
                         return;
@@ -805,7 +805,7 @@ public class Xcls_PopoverFileDetails : Object
                     
             	 
                     // what about .js ?
-                   
+                   _this.done = true;
                     _this.el.hide();
              
                     
