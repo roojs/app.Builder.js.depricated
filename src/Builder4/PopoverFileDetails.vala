@@ -36,6 +36,7 @@ public class Xcls_PopoverFileDetails : Object
         this.file = null;
 
         // set gobject values
+        this.el.modal = true;
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );

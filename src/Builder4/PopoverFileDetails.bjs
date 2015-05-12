@@ -14,6 +14,7 @@
    "xtype" : "Popover",
    "# JsRender.JsRender file" : "null",
    "$ xns" : "Gtk",
+   "bool modal" : true,
    "items" : [
     {
      "xtype" : "VBox",
