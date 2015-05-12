@@ -46,6 +46,14 @@ public class Xcls_PopoverFileDetails : Object
         var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
+
+        // listeners 
+        this.el.closed.connect( () => {
+          if (!this.done) {
+            _this.el.show();
+          
+          }
+        });
     }
 
     // user defined functions 
