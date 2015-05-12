@@ -138,7 +138,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el.set_position(Gtk.PositionType.RIGHT);
         
         // window + header?
-           
+         print("SHOWALL - POPIP\n");
         this.el.show_all();
         
         //this.success = c.success;
