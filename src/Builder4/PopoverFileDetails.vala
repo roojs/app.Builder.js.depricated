@@ -114,7 +114,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_HButtonBox20( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , ?bool?,?bool?,?uint? );
+            this.el.pack_end (  child_1.el , false,false,0 );
         }
 
         // user defined functions 
