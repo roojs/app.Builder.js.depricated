@@ -37,7 +37,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
-        this.done = true;
+        this.done = false;
         this.file = null;
         this.mainwindow = null;
 
@@ -89,7 +89,7 @@ public class Xcls_PopoverFileDetails : Object
     public void show (JsRender.JsRender c, Gtk.Widget btn) 
     {
         this.project = c.project;
-        
+        this.done = false;
         
         
         //if (!this.el) {
