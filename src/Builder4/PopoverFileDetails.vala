@@ -613,6 +613,7 @@ public class PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.label = "Cancel";
         }
 
         // user defined functions 

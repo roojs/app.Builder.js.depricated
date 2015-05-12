@@ -175,6 +175,7 @@
         {
          "* pack" : "pack_start,?bool?,?bool?,?uint?",
          "xtype" : "Button",
+         "string label" : "Cancel",
          "$ xns" : "Gtk"
         },
         {
