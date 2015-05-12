@@ -106,9 +106,16 @@ public class JsRender.NodeToGtk : Object {
 			print("SKIP - gtype is invalid\n");
 			return null;
 		}
-		// if it's a window... 
+		// if it's a window...  -- things we can not render....
 
 		if (cls_gtype.is_a(typeof(global::Gtk.Window))) {
+			// what if it has none...
+			if (this.node.items.size < 1) {
+				return null;
+			}
+			return this.mungeChild(this.node.items.get(0));
+		}
+		if (cls_gtype.is_a(typeof(global::Gtk.Popover))) {
 			// what if it has none...
 			if (this.node.items.size < 1) {
 				return null;
