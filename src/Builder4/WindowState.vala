@@ -75,7 +75,8 @@ public class WindowState : Object
 
 		// dialogs
 
-		this.fileNewInit();
+		this.fileNewInit(); // depricated...
+		this.fileDetailsInit();
 
 		this.webkit_plugin = new Xcls_DialogPluginWebkit();
 		this.template_select = new DialogTemplateSelect();
