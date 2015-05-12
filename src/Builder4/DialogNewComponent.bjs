@@ -14,8 +14,8 @@
     "show" : "(self)  => {\n  this.el.show_all();\n  //test\n}"
    },
    "|   void updateFileFromEntry" : "() {\n\n        _this.file.title = _this.title.el.get_text();\n        _this.file.region = _this.region.el.get_text();            \n        _this.file.parent = _this.parent.el.get_text();                        \n        _this.file.permname = _this.permname.el.get_text();                                    \n        _this.file.modOrder = _this.modOrder.el.get_text();\n        \n        if (_this.file.name.length  > 0 && _this.file.name != _this.name.el.get_text()) {\n            _this.file.renameTo(_this.name.el.get_text());\n        }\n        // store the module...\n        _this.file.build_module = \"\";        \n         Gtk.TreeIter iter; \n        if (_this.build_module.el.get_active_iter (out iter)) {\n             Value vfname;\n             this.dbmodel.el.get_value (iter, 0, out vfname);\n             if (((string)vfname).length > 0) {\n                 _this.file.build_module = (string)vfname;\n             }\n    \n        }\n        \n        \n\n                                                    \n}    ",
-   "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
    "id" : "DialogNewComponent",
+   "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
    "default_width" : 500,
    "$ deletable" : true,
    "# Project.Project project" : "",
@@ -75,8 +75,8 @@
         },
         {
          "label" : "Region",
-         "tooltip_text" : "center, north, south, east, west",
          "$ visible" : true,
+         "tooltip_text" : "center, north, south, east, west",
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,2,3",
          "xtype" : "Label",
@@ -161,14 +161,14 @@
          "items" : [
           {
            "id" : "dbcellrenderer",
-           "* pack" : "pack_start,true",
            "xtype" : "CellRendererText",
+           "* pack" : "pack_start,true",
            "$ xns" : "Gtk"
           },
           {
            "id" : "dbmodel",
-           "* pack" : "set_model",
            "xtype" : "ListStore",
+           "* pack" : "set_model",
            "$ columns" : "typeof(string),typeof(string)",
            "n_columns" : 2,
            "$ xns" : "Gtk",
@@ -182,14 +182,14 @@
     },
     {
      "label" : "Cancel",
-     "* pack" : "add_action_widget,0",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,0",
      "$ xns" : "Gtk"
     },
     {
      "label" : "OK",
-     "* pack" : "add_action_widget,1",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,1",
      "$ xns" : "Gtk"
     }
    ]
