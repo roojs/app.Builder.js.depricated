@@ -357,6 +357,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
+			 
 			this.report.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");
