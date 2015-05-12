@@ -35,7 +35,7 @@
        "* pack" : "pack_start,false,true,0",
        "xtype" : "HeaderBar",
        "$ xns" : "Gtk",
-       "string title" : "Add Project"
+       "string title" : "Add / Edit File"
       },
       {
        "* pack" : "pack_start,false,false,0",

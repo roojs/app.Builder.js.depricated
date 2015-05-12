@@ -192,7 +192,7 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.title = "Add Project";
+            this.el.title = "Add / Edit File";
         }
 
         // user defined functions 
