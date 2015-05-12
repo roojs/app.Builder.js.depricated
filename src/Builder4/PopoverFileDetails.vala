@@ -678,6 +678,7 @@ public class Xcls_PopoverFileDetails : Object
 
 
             // my vars (def)
+        public signal void success (Project.Project pr, JsRender.JsRender file);
 
         // ctor 
         public Xcls_Button23(Xcls_PopoverFileDetails _owner )
