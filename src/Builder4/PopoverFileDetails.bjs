@@ -32,6 +32,11 @@
      "$ xns" : "Gtk",
      "items" : [
       {
+       "* pack" : "pack_start,?bool?,?bool?,?uint?",
+       "xtype" : "HeaderBar",
+       "$ xns" : "Gtk"
+      },
+      {
        "* pack" : "pack_start,false,false,0",
        "xtype" : "Table",
        "n_columns" : 2,
