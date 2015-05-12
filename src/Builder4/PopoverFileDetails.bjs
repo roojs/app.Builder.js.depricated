@@ -16,6 +16,7 @@
    "Gtk.PositionType position" : "Gtk.PositionType.RIGHT",
    "# JsRender.JsRender file" : "null",
    "$ xns" : "Gtk",
+   "Xcls_MainWindow mainwindow" : "null",
    "bool modal" : true,
    "uint border_width" : 6,
    "items" : [

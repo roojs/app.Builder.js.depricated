@@ -27,6 +27,7 @@ public class Xcls_PopoverFileDetails : Object
     public signal void success (Project.Project pr, JsRender.JsRender file);
     public Project.Project project;
     public JsRender.JsRender file;
+    public Xcls_MainWindow mainwindow;
 
     // ctor 
     public Xcls_PopoverFileDetails()
@@ -36,6 +37,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // my vars (dec)
         this.file = null;
+        this.mainwindow = null;
 
         // set gobject values
         this.el.border_width = 6;
