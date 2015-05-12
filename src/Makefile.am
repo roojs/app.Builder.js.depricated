@@ -105,7 +105,6 @@ builder4_SOURCES = \
 		Palete/ValaSource.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
-		Builder4/DialogNewComponent.vala \
 		Builder4/StandardErrorDialog.vala \
 		Builder4/DialogSaveTemplate.vala \
 		Builder4/DialogSaveModule.vala \
@@ -126,6 +125,8 @@ builder4_SOURCES = \
 		Builder4/WindowState.vala \
 		Builder4/FakeServer.vala \
 		Builder4/DialogPluginWebkit.vala \
+		Builder4/DialogNewComponent.vala \
+		Builder4/PopoverFileDetails.vala \
 		Resources.vala 
 		
 		
