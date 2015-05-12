@@ -763,7 +763,7 @@ public class Xcls_PopoverFileDetails : Object
                                                                     
                     
                         _this.file.save();
-                        this.el.hide();
+                        _this.el.hide();
                         return;
                     }
                     var fn = _this.name.el.get_text();
