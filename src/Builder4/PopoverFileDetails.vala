@@ -761,7 +761,7 @@ public class Xcls_PopoverFileDetails : Object
                         this.el.hide();
                         return;
                     }
-                    var fn = this.name.el.get_text();
+                    var fn = _this.name.el.get_text();
                     var dir = _this.project.firstPath();
                    
                     if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
