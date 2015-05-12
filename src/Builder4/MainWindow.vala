@@ -1955,7 +1955,11 @@ public class Xcls_MainWindow : Object
                 
                 var f = JsRender.JsRender.factory(proj.xtype,  proj, "");
                 _this.project = proj;
-                _this.windowstate.new_file_dialog.show(f);
+                
+                 _this.windowstate.file_details.show(
+                   f, this.el
+                );
+                
                 
                 return  ;    
             });
