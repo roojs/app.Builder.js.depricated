@@ -125,8 +125,9 @@ public class Xcls_PopoverFileDetails : Object
         this.el.set_relative_to(btn);
         this.el.set_modal(true);
         this.el.set_position(Gtk.PositionType.RIGHT);
-        _this.mainwindow.el.set_sensitive(false);
-        _this.el.set_sensitive(true);    
+        
+        // window + header?
+           
         this.el.show_all();
         
         //this.success = c.success;
