@@ -164,7 +164,7 @@ public class Xcls_PopoverFileDetails : Object
             // set gobject values
             var child_0 = new Xcls_HeaderBar3( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , false,false,0 );
+            this.el.pack_start (  child_0.el , false,true,0 );
             var child_1 = new Xcls_Table4( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
