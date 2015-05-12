@@ -357,6 +357,9 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
+			Vala.CodeNode.get_error_types().clear();
+			
+			
 			 
 			this.report.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
