@@ -21,6 +21,7 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_build_module build_module;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
+    public Xcls_save_btn save_btn;
 
         // my vars (def)
     public Project.Project project;
@@ -625,7 +626,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_Button21( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button22( _this );
+            var child_1 = new Xcls_save_btn( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -657,7 +658,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions 
     }
-    public class Xcls_Button22 : Object 
+    public class Xcls_save_btn : Object 
     {
         public Gtk.Button el;
         private Xcls_PopoverFileDetails  _this;
@@ -667,9 +668,10 @@ public class Xcls_PopoverFileDetails : Object
         public signal void success (Project.Project pr, JsRender.JsRender file);
 
         // ctor 
-        public Xcls_Button22(Xcls_PopoverFileDetails _owner )
+        public Xcls_save_btn(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
+            _this.save_btn = this;
             this.el = new Gtk.Button();
 
             // my vars (dec)
