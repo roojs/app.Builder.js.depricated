@@ -796,7 +796,7 @@ public class Xcls_PopoverFileDetails : Object
                     // what about .js ?
                    
                     _this.el.hide();
-                     _this.mainwindow.el.set_sensitive(true);
+             
                     
                     
                     _this.success(_this.project, _this.file);
