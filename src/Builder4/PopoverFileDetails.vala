@@ -643,6 +643,9 @@ public class Xcls_PopoverFileDetails : Object
 
             // set gobject values
             this.el.label = "Cancel";
+
+            // listeners 
+            this.el.activate.connect( () => { this.el.hide(); });
         }
 
         // user defined functions 

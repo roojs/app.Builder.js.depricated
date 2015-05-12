@@ -173,6 +173,9 @@
        "$ xns" : "Gtk",
        "items" : [
         {
+         "listeners" : {
+          "activate" : "() => { this.el.hide(); }"
+         },
          "* pack" : "add",
          "xtype" : "Button",
          "string label" : "Cancel",
