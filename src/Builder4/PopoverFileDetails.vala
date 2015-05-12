@@ -64,9 +64,9 @@ public class Xcls_PopoverFileDetails : Object
         
         if (c.path.length > 0) {
         
-            //this.el.set_title("Edit File Details - " + c.name);
+            this.save_btn.el.set_label("Save");
         } else {
-            //this.el.set_title("Create New File");
+            this.save_btn.el.set_label("Create");
         }
         
          var ar = new Gee.ArrayList<string>();
