@@ -1234,7 +1234,9 @@ public class Xcls_MainWindow : Object
                 if (_this.project == null || _this.windowstate.left_tree.model.file == null) {
                     return  ;
                 }
-                 _this.windowstate.file_details.show(_this.windowstate.left_tree.model.file);
+                 _this.windowstate.file_details.show(
+                    _this.windowstate.left_tree.model.file, this.el
+                );
                  
                 return  ;    
             
