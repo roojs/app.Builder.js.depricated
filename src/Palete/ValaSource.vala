@@ -357,7 +357,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			Vala.CodeNode.get_error_types().clear();
+			(new Vala.CodeNode()).get_error_types().clear();
 			(new Vala.NullType()).get_type_arguments().clear();
 			
 			 
