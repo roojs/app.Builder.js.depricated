@@ -62,9 +62,10 @@ public class Xcls_PopoverFileDetails : Object
          _this.permname.el.set_text(c.permname);
         
         if (c.path.length > 0) {
-            this.el.set_title("Edit File Details - " + c.name);
+        
+            //this.el.set_title("Edit File Details - " + c.name);
         } else {
-            this.el.set_title("Create New File");
+            //this.el.set_title("Create New File");
         }
         
          var ar = new Gee.ArrayList<string>();
