@@ -8,6 +8,7 @@
  "build_module" : "",
  "items" : [
   {
+   "id" : "PopoverFileDetails",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
    "items" : [
