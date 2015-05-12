@@ -867,10 +867,12 @@ public class WindowState : Object
 			
 	
 			case State.FILES:
-				this.win.backbutton.el.show();
+				if (this.win.left_projects.getSelectedProject() != null ) {
+					this.win.backbutton.el.show();
+					this.win.addfilebutton.el.show();
+				}
 					 
 				this.win.addprojectbutton.el.show();
-				this.win.addfilebutton.el.show();
 				this.win.delprojectbutton.el.show();
 				
 				break;
