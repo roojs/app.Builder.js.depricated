@@ -43,7 +43,7 @@ public class Xcls_PopoverFileDetails : Object
     }
 
     // user defined functions 
-    public void show (JsRender.JsRender c) 
+    public void show (JsRender.JsRender c, Gtk.Widget btn) 
     {
         this.project = c.project;
         
