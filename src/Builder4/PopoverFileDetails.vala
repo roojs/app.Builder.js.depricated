@@ -23,6 +23,7 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_dbmodel dbmodel;
 
         // my vars (def)
+    public int XXX;
 
     // ctor 
     public Xcls_PopoverFileDetails()
@@ -31,6 +32,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
+        this.XXX = 0;
 
         // set gobject values
         var child_0 = new Xcls_VBox2( _this );
@@ -39,8 +41,54 @@ public class Xcls_PopoverFileDetails : Object
     }
 
     // user defined functions 
-    public void show () {
+    public void show (JsRender.JsRender c) 
+    {
+        this.project = c.project;
+        
+        //if (!this.el) {
+            //this.init();
+         //}
+        
+        _this.name.el.set_text(c.name);
+        _this.title.el.set_text(c.title);
+        _this.parent.el.set_text(c.parent);    
+        _this.region.el.set_text(c.region);
+        _this.modOrder.el.set_text(c.modOrder);
+         _this.permname.el.set_text(c.permname);
+        
+        if (c.path.length > 0) {
+            this.el.set_title("Edit File Details - " + c.name);
+        } else {
+            this.el.set_title("Create New File");
+        }
+        
+         var ar = new Gee.ArrayList<string>();
+         _this.dbmodel.loadData(ar,"");
+        // load the modules... if relivant..
+        if (this.project.xtype == "Gtk") {
+            var p = (Project.Gtk)c.project;
+              var cg = p.compilegroups;
     
+            var iter = cg.map_iterator();
+           while(iter.next()) {
+                var key = iter.get_key();
+                if (key == "_default_") {
+                    continue;
+                }
+                ar.add(key);
+            };
+            _this.dbmodel.loadData(ar, c.build_module);
+    
+        }
+        
+         
+        _this.file = c;
+        //console.log('show all');
+        this.el.show_all();
+        
+        //this.success = c.success;
+        
+        
     }
     public class Xcls_VBox2 : Object 
     {
