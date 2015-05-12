@@ -382,19 +382,7 @@ public class WindowState : Object
 		});
 
 	}
-	public void fileNewInit()
-	{
-		this.new_file_dialog = new Xcls_DialogNewComponent();
-		// force it modal to the main window..
-		this.new_file_dialog.el.set_transient_for(this.win.el);
-		this.new_file_dialog.el.set_modal(true);
-	
-		this.new_file_dialog.success.connect((project,file) =>
-		{
-			this.fileViewOpen(file);
-		});
-
-	}
+ 
 	public void fileDetailsInit()
 	{
 		this.file_details = new Xcls_PopoverFileDetails();
@@ -868,7 +856,9 @@ public class WindowState : Object
 	
 			case State.FILES:
 				if (this.win.left_projects.getSelectedProject() != null ) {
-					this.win.backbutton.el.show();
+					if (this.left_tree.getActiveFile() != null) {
+						this.win.backbutton.el.show();
+					}
 					this.win.addfilebutton.el.show();
 				}
 					 
