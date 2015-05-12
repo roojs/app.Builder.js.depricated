@@ -181,6 +181,7 @@
         {
          "* pack" : "pack_start,?bool?,?bool?,?uint?",
          "xtype" : "Button",
+         "string label" : "Save",
          "$ xns" : "Gtk"
         }
        ]
