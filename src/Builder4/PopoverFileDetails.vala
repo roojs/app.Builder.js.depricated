@@ -91,7 +91,7 @@ public class Xcls_PopoverFileDetails : Object
          
         _this.file = c;
         //console.log('show all');
-        this.set_relative_to(btn);
+        this.el.set_relative_to(btn);
         
         
         this.el.show_all();
