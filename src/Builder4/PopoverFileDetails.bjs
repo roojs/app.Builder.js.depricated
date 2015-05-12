@@ -9,6 +9,7 @@
  "items" : [
   {
    "id" : "PopoverFileDetails",
+   "| void show" : "() {\n\n}\n",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
    "items" : [

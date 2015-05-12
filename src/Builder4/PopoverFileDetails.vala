@@ -39,6 +39,9 @@ public class Xcls_PopoverFileDetails : Object
     }
 
     // user defined functions 
+    public void show () {
+    
+    }
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
