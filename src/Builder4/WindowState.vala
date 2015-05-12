@@ -398,6 +398,7 @@ public class WindowState : Object
 	public void fileDetailsInit()
 	{
 		this.file_details = new Xcls_PopoverFileDetails();
+		this.file_details.mainwindow = this.win;
 		// force it modal to the main window..
 		
 		this.file_details.success.connect((project,file) =>
