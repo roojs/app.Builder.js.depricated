@@ -151,7 +151,7 @@ namespace Palete {
 		
 		public ValaSource(JsRender.JsRender file) {
 			base();
-			this.file = file;
+			//this.file = file;
 			this.filepath = file.path;
 			this.build_module = this.file.build_module;
 			this.original_path = "";
@@ -166,10 +166,10 @@ namespace Palete {
 			}
 		}
 		
-		public Gee.HashMap<int,string> checkFile()
-		{
-			return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
-		}
+		//public Gee.HashMap<int,string> checkFile()
+		//{
+		//	return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
+		//}
 
 		public async Gee.HashMap<int,string> checkFileWithNodePropChange(
 					JsRender.Node node, 
