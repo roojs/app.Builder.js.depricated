@@ -106,12 +106,7 @@ namespace Palete {
 			context.add_external_package ("gtksourceview-3.0");
 			context.add_external_package ("libvala-0.26");
 			// user defined ones..
-			
-	    	var dcg = pr.compilegroups.get("_default_");
-	    	for (var i = 0; i < dcg.packages.size; i++) {
-				valac += " --pkg " + dcg.packages.get(i);
-				context.add_external_package (dcg.packages.get(i));
-			}
+			 
 	    	
 			 //Vala.Config.PACKAGE_SUFFIX.substring (1)
 			
@@ -121,8 +116,7 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			this.report.compile_notice("START", "", 0, "");
-
+		 
 		
 			//add_documented_files (context, settings.source_files);
 		
@@ -131,10 +125,9 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				print("parse got errors");
-				((ValaSourceReport)context.report).dump();
-				
+				 
 				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
+				 
 				return this.report.line_errors;
 			}
 
@@ -143,10 +136,8 @@ namespace Palete {
 			// check context:
 			context.check ();
 			if (context.report.get_errors () > 0) {
-				print("check got errors");
-				((ValaSourceReport)context.report).dump();
-				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
+				 Vala.CodeContext.pop ();
+				 
 				return this.report.line_errors;
 				
 			}
@@ -171,9 +162,7 @@ namespace Palete {
 			Vala.CodeContext.pop ();
 			//(new Vala.CodeNode()).get_error_types().clear();
 			//(new Vala.NullType()).get_type_arguments().clear();
-			(new Vala.NullType(null)).get_type_arguments().clear();
-			parser = null;
- 			this.report.compile_notice("END", "", 0, "");
+			  
 			print("%s\n", valac);
 			print("ALL OK?\n");
 			return this.report.line_errors;
