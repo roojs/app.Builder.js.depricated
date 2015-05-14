@@ -106,7 +106,7 @@ namespace Project {
 					factoryFromFile(dirname + "/" + fn);
 				}       
 			} catch(Error e) {
-				print("oops - something went wrong scanning the projects\n");
+				GLib.warning("oops - something went wrong scanning the projects\n");
 			}
 			
 
@@ -144,7 +144,7 @@ namespace Project {
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
-			print("parse %s\n", jsonfile);
+			GLib.debug("parse %s\n", jsonfile);
 
 			var pa = new Json.Parser();
 			pa.load_from_file(jsonfile);
@@ -152,7 +152,7 @@ namespace Project {
 
 			
 			if (node == null || node.get_node_type () != Json.NodeType.OBJECT) {
-				print("SKIP " + jsonfile + " - invalid format?\n");
+				GLib.debug("SKIP " + jsonfile + " - invalid format?\n");
 				return;
 			}
 			
@@ -260,8 +260,8 @@ namespace Project {
 					this.fn = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5, str, str.length);
 			}
 
-				var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-				var  s =  this.toJSON(false);
+			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
+			var  s =  this.toJSON(false);
 			FileUtils.set_contents(dirname + "/" + this.fn + ".json", s, s.length);  
 			
 			
@@ -377,7 +377,7 @@ namespace Project {
 				var f = fiter.get_value();
 				
 				
-				print ("Project.getByName: %s ?= %s\n" ,f.name , name);
+				GLib.debug ("Project.getByName: %s ?= %s\n" ,f.name , name);
 				if (f.name == name) {
 					return f;
 				}
@@ -539,9 +539,9 @@ namespace Project {
 					 
 				}
 			} catch (Error e) {
-				print("Project::scanDirs failed : " + e.message + "\n");
+				GLib.warning("Project::scanDirs failed : " + e.message + "\n");
 			} catch (GLib.Error e) {
-				print("Project::scanDirs failed : " + e.message + "\n");
+				GLib.warning("Project::scanDirs failed : " + e.message + "\n");
 			}
 			for (var i = 0; i < subs.length(); i++) {
 				
