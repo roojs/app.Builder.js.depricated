@@ -215,6 +215,9 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.margin_right = 4;
+            this.el.margin_left = 4;
+            this.el.row_spacing = 2;
             var child_0 = new Xcls_Label5( _this );
             child_0.ref();
             this.el.attach_defaults (  child_0.el , 0,1,0,1 );
@@ -694,6 +697,9 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.margin_right = 4;
+            this.el.margin_left = 4;
+            this.el.margin_bottom = 4;
             var child_0 = new Xcls_Button22( _this );
             child_0.ref();
             this.el.add (  child_0.el  );

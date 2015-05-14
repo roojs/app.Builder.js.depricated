@@ -41,8 +41,7 @@ public class WindowState : Object
 	
 	public DialogTemplateSelect template_select; 
 	
-	public Xcls_DialogNewComponent new_file_dialog;
-	public Xcls_PopoverFileDetails file_details;
+ 	public Xcls_PopoverFileDetails file_details;
 	
 	
 	// dialogs??
@@ -75,8 +74,7 @@ public class WindowState : Object
 
 		// dialogs
 
-		this.fileNewInit(); // depricated...
-		this.fileDetailsInit();
+ 		this.fileDetailsInit();
 
 		this.webkit_plugin = new Xcls_DialogPluginWebkit();
 		this.template_select = new DialogTemplateSelect();
@@ -351,6 +349,7 @@ public class WindowState : Object
 		 this.win.leftpane.el.pack_start(this.left_projects.el,true, true,0);
 		 this.left_projects.el.show_all();
 		 this.left_projects.project_selected.connect((proj) => {
+			this.buttonsShowHide();
 			proj.scanDirs();
 			this.clutterfiles.loadProject(proj);
 		

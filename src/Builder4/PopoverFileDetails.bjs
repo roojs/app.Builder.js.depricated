@@ -38,12 +38,15 @@
        "string title" : "Add / Edit File"
       },
       {
+       "int margin_right" : 4,
        "* pack" : "pack_start,false,false,4",
        "xtype" : "Table",
+       "uint row_spacing" : 2,
        "n_columns" : 2,
        "$ xns" : "Gtk",
        "n_rows" : 3,
        "$ homogeneous" : true,
+       "int margin_left" : 4,
        "items" : [
         {
          "label" : "Component Name",
@@ -184,9 +187,12 @@
        ]
       },
       {
+       "int margin_bottom" : 4,
+       "int margin_right" : 4,
        "* pack" : "pack_end,false,true,0",
        "xtype" : "HButtonBox",
        "$ xns" : "Gtk",
+       "int margin_left" : 4,
        "items" : [
         {
          "listeners" : {

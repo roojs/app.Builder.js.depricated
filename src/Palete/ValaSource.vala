@@ -360,6 +360,7 @@ namespace Palete {
 			//(new Vala.CodeNode()).get_error_types().clear();
 			//(new Vala.NullType()).get_type_arguments().clear();
 			(new Vala.NullType(null)).get_type_arguments().clear();
+			parser = null;
  			this.report.compile_notice("END", "", 0, "");
 			print("%s\n", valac);
 			print("ALL OK?\n");

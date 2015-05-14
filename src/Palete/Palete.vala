@@ -348,6 +348,7 @@ namespace Palete
 				ptype,
 				code
 		 );
+		 vs = null;
 		return ret;
 
 	}
