@@ -12,6 +12,15 @@ int main (string[] args) {
     
 
 	var app =  BuilderApplication.singleton(  args);
+	
+	if (BuilderApplication.opt_debug) || BuilderApplication.opt_compile_project == null) {
+		GLib.Log.set_handler(null, 
+			GLib.LogLevelFlags.LEVEL_DEBUG | GLib.LogLevelFlags.LEVEL_WARNING, 
+			(dom, lvl, msg) => {
+			print("%s: %s\n", dom, msg);
+		});
+	}
+	
 	if (BuilderApplication.opt_compile_project != null) {
 		 
 		Palete.ValaSource.buildApplication();
@@ -19,11 +28,7 @@ int main (string[] args) {
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
 	
-	GLib.Log.set_handler(null, 
-		GLib.LogLevelFlags.LEVEL_DEBUG | GLib.LogLevelFlags.LEVEL_WARNING, 
-		(dom, lvl, msg) => {
-		print("%s: %s\n", dom, msg);
-	});
+	 
 	
 	GLib.debug("project = %s\n", BuilderApplication.opt_compile_project);
 	
