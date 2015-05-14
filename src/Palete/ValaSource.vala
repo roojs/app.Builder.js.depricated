@@ -147,12 +147,14 @@ namespace Palete {
 		Project.Gtk project;
 		public string build_module;
 		public string filepath;
+		public string original_path;
 		
 		public ValaSource(JsRender.JsRender file) {
 			base();
 			this.file = file;
 			this.filepath = file.path;
 			this.build_module = this.file.build_module;
+			this.original_path = "";
 			this.project = (Project.Gtk) file.project;
 			
 			 
