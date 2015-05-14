@@ -176,10 +176,12 @@ namespace Palete {
  
 int main (string[] args) {
 
-	var a = new ValaSource(file);
-	a.create_valac_tree();
+	for (var i = 0;i < 1000;i++) {
+		var a = new TestCompiler(file);
+		a.compileString();
+	}
 	return 0;
 }
-*/
+ 
 
 
