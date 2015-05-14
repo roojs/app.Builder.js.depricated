@@ -378,7 +378,7 @@ namespace Palete {
 			parser.parse (context);
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
-				print("parse got errors");
+				Glib.debug("parse got errors");
 				((ValaSourceReport)context.report).dump();
 				
 				Vala.CodeContext.pop ();
@@ -391,7 +391,7 @@ namespace Palete {
 			// check context:
 			context.check ();
 			if (context.report.get_errors () > 0) {
-				print("check got errors");
+				Glib.debug("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
 				this.report.compile_notice("END", "", 0, "");
@@ -422,8 +422,8 @@ namespace Palete {
 			(new Vala.NullType(null)).get_type_arguments().clear();
 			parser = null;
  			this.report.compile_notice("END", "", 0, "");
-			print("%s\n", valac);
-			print("ALL OK?\n");
+			Glib.debug("%s", valac);
+			Glib.debug("ALL OK?\n");
 			return this.report.line_errors;
 		}
 		
