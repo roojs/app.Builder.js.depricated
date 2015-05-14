@@ -153,14 +153,14 @@ namespace Palete {
 		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
 			base();
 			//this.file = file;
-			this.filepath = file.path;
-			this.build_module = this.file.build_module;
+			this.filepath = filepath;
+			this.build_module = build_module;
 			this.original_filepath = original_filepath;
 			this.project =  project;
 			
-			 
 		}
-		public void dumpCode(string str) {
+		public void dumpCode(string str) 
+		{
 			var ls = str.split("\n");
 			for (var i=0;i < ls.length; i++) {
 				print("%d : %s\n", i+1, ls[i]);
