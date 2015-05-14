@@ -149,14 +149,14 @@ namespace Palete {
 		public string filepath;
 		public string original_filepath;
 		
-		// file.path, file.build_module, ""
-		public ValaSource(string filepath, string build_module, string original_filepath) {
+		// file.project , file.path, file.build_module, ""
+		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
 			base();
 			//this.file = file;
 			this.filepath = file.path;
 			this.build_module = this.file.build_module;
 			this.original_filepath = original_filepath;
-			this.project = (Project.Gtk) file.project;
+			this.project =  project;
 			
 			 
 		}
