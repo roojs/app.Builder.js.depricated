@@ -89,8 +89,11 @@ namespace Palete {
 
 	public class ValaSource : Vala.CodeVisitor {
 
-		public void jerr(str)
+		public void jerr(string str)
 		{
+			var ret = new Json.Object(); 
+			ret.set_boolean_member("success", false);
+			ret.set_string_member("message", str);
 			
 			
 			
