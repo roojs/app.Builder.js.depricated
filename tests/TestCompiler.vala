@@ -175,7 +175,7 @@ namespace Palete {
 int main (string[] args) {
 
 	for (var i = 0;i < 1000;i++) {
-		var a = new Palete.TestCompiler(file);
+		var a = new Palete.TestCompiler("/home/alan/gitlive/app.Builder.js/tests/TestCompiler.vala");
 		a.compileString();
 	}
 	return 0;
