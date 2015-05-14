@@ -26,7 +26,7 @@ namespace Palete {
 		 
 		
 		
-		public Gee.HashMap<int,string> checkString(string contents)
+		public Gee.HashMap<int,string> checkString( )
 		{
 			// init context:
 			var valac = "valac " ;
@@ -86,8 +86,7 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-					"~~~~~testfile.vala",
-					contents
+					file
 	    		);
 			source_file.add_using_directive (ns_ref);
 			context.add_source_file (source_file);
