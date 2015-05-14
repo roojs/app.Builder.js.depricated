@@ -89,6 +89,13 @@ namespace Palete {
 
 	public class ValaSource : Vala.CodeVisitor {
 
+		public void jerr(str)
+		{
+			
+			
+			
+		}
+
 		public static void buildApplication()
 		{
 			//print("build based on Application settings\n");
