@@ -130,7 +130,9 @@ namespace Palete {
 			var gproj = (Project.Gtk)proj;
 			
 			
-			gproj.compilegroups.has_key(BuilderApplication.opt_compile_target);
+			if (!gproj.compilegroups.has_key(BuilderApplication.opt_compile_target)) {
+				jerr("missing compile target %s".printf(BuilderApplication.opt_compile_target));
+			}
 			
 			jerr("NOT DONE");
 			
