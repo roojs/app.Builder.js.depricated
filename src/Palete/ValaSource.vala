@@ -89,9 +89,19 @@ namespace Palete {
 
 	public class ValaSource : Vala.CodeVisitor {
 
-		static void buildApplication()
+		public static void buildApplication()
 		{
-			print("build based on Application settings");
+			print("build based on Application settings\n");
+			Project.Project.loadAll();
+			var proj = Project.Project.getProject(BuilderApplication.opt_compile_project);
+			if (proj == null) {
+				jerr("could not load test project %s".printf( BuilderApplication.opt_compile_project));
+			}
+			if (proj.xtype != "Gtk") {
+				jerr("%s is not a Gtk Project".printf( BuilderApplication.opt_compile_project)");
+			}
+			proj.scanDirs();
+			
 			
 		}
 
