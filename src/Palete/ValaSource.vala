@@ -149,12 +149,13 @@ namespace Palete {
 		public string filepath;
 		public string original_filepath;
 		
-		public ValaSource(JsRender.JsRender file) {
+		// file.path, file.build_module, ""
+		public ValaSource(string filepath, string build_module, string original_filepath) {
 			base();
 			//this.file = file;
 			this.filepath = file.path;
 			this.build_module = this.file.build_module;
-			this.original_path = "";
+			this.original_filepath = original_filepath;
 			this.project = (Project.Gtk) file.project;
 			
 			 
@@ -178,6 +179,9 @@ namespace Palete {
 					string ptype,
 					string val)
 		{
+			
+			
+			
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var hash = ptype == "listener" ? node.listeners : node.props;
 			
