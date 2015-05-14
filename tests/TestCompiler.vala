@@ -157,13 +157,13 @@ namespace Palete {
 #endif
 			*/
  
-			Vala.CodeContext.pop ();
+			
 			
 			context.resolver.resolve(new Vala.CodeContext());
 			context.analyzer.context = null;
 			context.flow_analyzer.analyze(new Vala.CodeContext());
 			//context.analyzer = null; << private
-			
+			Vala.CodeContext.pop ();
 			  
 			print("%s\n", valac);
 			print("ALL OK?\n");
