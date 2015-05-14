@@ -310,7 +310,7 @@ namespace Palete {
 	    	// add all the files (except the current one) - this.file.path
 	    	var pr = ((Project.Gtk)this.file.project);
 	    	if (this.file.build_module.length > 0) {
-				var cg =  pr.compilegroups.get(this.file.build_module);
+				var cg =  pr.compilegroups.get(this.build_module);
 				for (var i = 0; i < cg.sources.size; i++) {
 					var path = pr.resolve_path(
 							pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
