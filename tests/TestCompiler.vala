@@ -27,7 +27,7 @@ namespace Palete {
 		 
 		
 		
-		public Gee.HashMap<int,string> checkString( )
+		public void checkString( )
 		{
 			// init context:
 			var valac = "valac " ;
@@ -165,7 +165,7 @@ namespace Palete {
 			  
 			print("%s\n", valac);
 			print("ALL OK?\n");
-			return this.report.line_errors;
+			return ;
 		}
 	//
 		// startpoint:
@@ -173,7 +173,7 @@ namespace Palete {
 	 
 	}
 }
-/*
+ 
 int main (string[] args) {
 
 	var a = new ValaSource(file);
