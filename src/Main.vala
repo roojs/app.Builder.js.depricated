@@ -12,6 +12,11 @@ int main (string[] args) {
     
 
 	var app =  BuilderApplication.singleton(  args);
+	if (BuilderApplication.opt_compile_project != null) {
+		(new Palete.ValaSource()).buildApplication();
+		GLib.Process.exit(Posix.EXIT_SUCCESS);
+	}
+		
 	
 	print("project = %s\n", BuilderApplication.opt_compile_project);
 	
