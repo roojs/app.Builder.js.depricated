@@ -172,6 +172,7 @@ namespace Palete {
 		//}
 
 		public async Gee.HashMap<int,string> checkFileWithNodePropChange(
+					File file,
 					JsRender.Node node, 
 					string prop,
 					string ptype,
@@ -191,7 +192,7 @@ namespace Palete {
 			var newval = "/*--VALACHECK-START--*/ " + val ;
 			
 			hash.set(prop, newval);
-			var tmpstring = JsRender.NodeToVala.mungeFile(this.file);
+			var tmpstring = JsRender.NodeToVala.mungeFile(file);
 			hash.set(prop, old);
 			//print("%s\n", tmpstring);
 			var bits = tmpstring.split("/*--VALACHECK-START--*/");
