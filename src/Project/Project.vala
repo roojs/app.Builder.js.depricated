@@ -138,13 +138,26 @@ namespace Project {
 			return null;
 		
 		}
+		public static Project getProjectByHash(string fn)
+		{
+			
+			var iter = projects.map_iterator();
+			while (iter.next()) {
+				if (iter.get_value().fn == fn) {
+					return iter.get_value();
+				}
+				
+			}
+			
+			return null;
 		
+		}
 		
 		// load project data from project file.
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
-			GLib.debug("parse %s\n", jsonfile);
+			GLib.debug("parse %s", jsonfile);
 
 			var pa = new Json.Parser();
 			pa.load_from_file(jsonfile);
@@ -152,7 +165,7 @@ namespace Project {
 
 			
 			if (node == null || node.get_node_type () != Json.NodeType.OBJECT) {
-				GLib.debug("SKIP " + jsonfile + " - invalid format?\n");
+				GLib.debug("SKIP " + jsonfile + " - invalid format?");
 				return;
 			}
 			
@@ -379,7 +392,7 @@ namespace Project {
 				var f = fiter.get_value();
 				
 				
-				GLib.debug ("Project.getByName: %s ?= %s\n" ,f.name , name);
+				GLib.debug ("Project.getByName: %s ?= %s" ,f.name , name);
 				if (f.name == name) {
 					return f;
 				}
