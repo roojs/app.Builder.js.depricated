@@ -3,23 +3,6 @@
 	public class AppSettings : Object
 	{
 
-		// options - used when builder is run as a compiler
-		// we have to spawn ourself as a compiler as just running libvala
-		// as a task to check syntax causes memory leakage..
-		// 
-		const OptionEntry[] options = {
-		
-			
-			{ "project", 0, 0, OptionArg.STRING, ref opt_compile_project, "Compile a project", null },
-			{ "target", 0, 0, OptionArg.STRING, ref opt_compile_target, "Target to build", null },
-			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip "For test compiles do not add this (usually used in conjunction with add-file ", null },
-			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
-			{ null }
-		};
-		string opt_compile_project;
-		string opt_compile_target;
-		string opt_compile_skip;
-		string opt_compile_add;
 		
 		
 		// what are we going to have as settings?
@@ -61,6 +44,27 @@
 	
 	public class BuilderApplication : Gtk.Application
 	{
+		
+		// options - used when builder is run as a compiler
+		// we have to spawn ourself as a compiler as just running libvala
+		// as a task to check syntax causes memory leakage..
+		// 
+		const OptionEntry[] options = {
+		
+			
+			{ "project", 0, 0, OptionArg.STRING, ref opt_compile_project, "Compile a project", null },
+			{ "target", 0, 0, OptionArg.STRING, ref opt_compile_target, "Target to build", null },
+			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip "For test compiles do not add this (usually used in conjunction with add-file ", null },
+			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
+			{ null }
+		};
+		string opt_compile_project;
+		string opt_compile_target;
+		string opt_compile_skip;
+		string opt_compile_add;
+		
+		
+		
 		enum Target {
 		    INT32,
 		    STRING,
@@ -87,7 +91,20 @@
 					 
 			configDirectory();
 			this.settings = AppSettings.factory();	
- 
+			var opt_context = new OptionContext ("Application Builder");
+			
+			try {
+				opt_context.set_help_enabled (true);
+				opt_context.add_main_entries (options, null);
+				opt_context.parse (ref args);
+				 
+				
+			} catch (OptionError e) {
+				stdout.printf ("error: %s\n", e.message);
+				stdout.printf ("Run '%s --help' to see a full list of available command line options.\n %s", 
+							 args[0], opt_context.get_help(true,null));
+				return 0;
+			}
 
 		}
 
