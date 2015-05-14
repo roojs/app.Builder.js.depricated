@@ -231,7 +231,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile(string filepath)
+		public Gee.HashMap<int,string> compile(string filepath, string altpath)
 		{
 			// init context:
 			var valac = "valac " ;
