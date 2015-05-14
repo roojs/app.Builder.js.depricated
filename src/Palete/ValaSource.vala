@@ -89,6 +89,12 @@ namespace Palete {
 
 	public class ValaSource : Vala.CodeVisitor {
 
+		static void buildApplication()
+		{
+			
+			
+		}
+
 		Vala.CodeContext context;
 		ValaSourceReport report;
 		JsRender.JsRender file; 
