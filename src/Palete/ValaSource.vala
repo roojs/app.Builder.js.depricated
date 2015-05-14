@@ -6,7 +6,7 @@ namespace Palete {
 	
 	public class ValaSourceReport  : Vala.Report {
 
-		public JsRender.JsRender file;
+		public string filepath;
 		
 		//public Gee.ArrayList<ValaSourceNotice> notices;
 		 
@@ -19,8 +19,9 @@ namespace Palete {
 			});
 		}
 		
+		
 	 
-		public ValaSourceReport(JsRender.JsRender file)
+		public ValaSourceReport(filepath)
 		{
 			base();
 			this.file = file;
@@ -143,9 +144,14 @@ namespace Palete {
 		Vala.CodeContext context;
 		ValaSourceReport report;
 		JsRender.JsRender file; 
+		Project.Gtk project;
+		
+		
 		public ValaSource(JsRender.JsRender file) {
 			base();
 			this.file = file;
+			this.project = (Project.Gtk) file.project;
+			
 			 
 		}
 		public void dumpCode(string str) {
@@ -256,7 +262,7 @@ namespace Palete {
 			
 			
 			
-			var vapidirs = ((Project.Gtk)this.file.project).vapidirs();
+			var vapidirs = this.project.vapidirs();
 			// what's the current version of vala???
 			
  			
