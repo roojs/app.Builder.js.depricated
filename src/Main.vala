@@ -18,9 +18,12 @@ int main (string[] args) {
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
-		
 	
-	print("project = %s\n", BuilderApplication.opt_compile_project);
+	GLib.Log.set_handler(null, GLib.LogLevelFlags.LEVEL_DEBUG, (dom, lvl, msg) => {
+		print("%s: %s\n", dom.msg);
+	});
+	
+	GLib.debug("project = %s\n", BuilderApplication.opt_compile_project);
 	
 	Gtk.init (ref args);
 	
