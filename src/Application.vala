@@ -54,14 +54,14 @@
 			
 			{ "project", 0, 0, OptionArg.STRING, ref opt_compile_project, "Compile a project", null },
 			{ "target", 0, 0, OptionArg.STRING, ref opt_compile_target, "Target to build", null },
-			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip "For test compiles do not add this (usually used in conjunction with add-file ", null },
+			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip ,"For test compiles do not add this (usually used in conjunction with add-file ", null },
 			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
 			{ null }
 		};
-		string opt_compile_project;
-		string opt_compile_target;
-		string opt_compile_skip;
-		string opt_compile_add;
+		public static string opt_compile_project;
+		public static string opt_compile_target;
+		public static string opt_compile_skip;
+		public static string opt_compile_add;
 		
 		
 		
@@ -82,7 +82,7 @@
 		public AppSettings settings = null;
 
 	
-		public BuilderApplication ()
+		public BuilderApplication (string[] args)
 		{
 			Object(
 			       application_id: "org.roojs.app-builder",
@@ -103,17 +103,17 @@
 				stdout.printf ("error: %s\n", e.message);
 				stdout.printf ("Run '%s --help' to see a full list of available command line options.\n %s", 
 							 args[0], opt_context.get_help(true,null));
-				return 0;
+				return;
 			}
 
 		}
 
 
 		
-		public static BuilderApplication  singleton()
+		public static BuilderApplication  singleton(string[] args)
 		{
 			if (application==null) {
-				application = new BuilderApplication();
+				application = new BuilderApplication(ref args);
  
 			
 			}
