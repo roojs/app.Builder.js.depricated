@@ -474,7 +474,7 @@ namespace Palete {
 			context.thread = true;
 			
 			
-			this.report = new ValaSourceReport(this.file);
+			this.report = new ValaSourceReport(this.file.path);
 			context.report = this.report;
 			
 			
