@@ -126,7 +126,7 @@ namespace Palete {
 				 
 				Vala.CodeContext.pop ();
 				 
-				return this.report.line_errors;
+				return;
 			}
 
 
@@ -136,7 +136,7 @@ namespace Palete {
 			if (context.report.get_errors () > 0) {
 				 Vala.CodeContext.pop ();
 				 
-				return this.report.line_errors;
+				return ;
 				
 			}
 			
