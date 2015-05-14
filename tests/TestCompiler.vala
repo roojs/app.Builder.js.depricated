@@ -1,5 +1,5 @@
 
-// valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
+// valac TestCompiler.vala --pkg libvala-0.26 --pkg posix -o /tmp/TestCompiler
 
 namespace Palete {
 	 
