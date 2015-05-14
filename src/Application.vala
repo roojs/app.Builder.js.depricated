@@ -103,6 +103,7 @@
 				stdout.printf ("error: %s\n", e.message);
 				stdout.printf ("Run '%s --help' to see a full list of available command line options.\n %s", 
 							 args[0], opt_context.get_help(true,null));
+				GLib.Process.exit(-1);
 				return;
 			}
 
