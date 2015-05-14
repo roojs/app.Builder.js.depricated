@@ -150,6 +150,7 @@ namespace Palete {
 		public ValaSource(JsRender.JsRender file) {
 			base();
 			this.file = file;
+			this.filepath = file.path;
 			this.build_module = this.file.build_module;
 			this.project = (Project.Gtk) file.project;
 			
@@ -318,8 +319,8 @@ namespace Palete {
 					if (!FileUtils.test(path, FileTest.EXISTS)) {
 						continue;
 					}       
-	                 
-					if (path == this.filepath.replace(".bjs", ".vala")) {
+	                // skip thie original
+					if (path == original_filepath.replace(".bjs", ".vala")) {
 						valac += " " + path;
 						continue;
 					}
