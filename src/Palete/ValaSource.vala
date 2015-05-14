@@ -102,6 +102,7 @@ namespace Palete {
 			if (proj.xtype != "Gtk") {
 				jerr("%s is not a Gtk Project".printf( BuilderApplication.opt_compile_project));
 			}
+			var gproj = (Project.Gtk)proj;
 			
 			
 			
