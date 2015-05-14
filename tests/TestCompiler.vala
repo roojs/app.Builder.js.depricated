@@ -9,6 +9,7 @@ namespace Palete {
 	public class TestCompiler : Vala.CodeVisitor {
 
 		Vala.CodeContext context;
+		string file;
 		
   		public TestCompiler(string file) {
 			base();
