@@ -82,7 +82,7 @@
 		public AppSettings settings = null;
 
 	
-		public BuilderApplication (string[] args)
+		public BuilderApplication (  string[] args)
 		{
 			Object(
 			       application_id: "org.roojs.app-builder",
@@ -103,7 +103,7 @@
 				stdout.printf ("error: %s\n", e.message);
 				stdout.printf ("Run '%s --help' to see a full list of available command line options.\n %s", 
 							 args[0], opt_context.get_help(true,null));
-				GLib.Process.exit(1);
+				GLib.Process.exit(Posix.EXIT_FAILURE);
 				return;
 			}
 
@@ -111,10 +111,10 @@
 
 
 		
-		public static BuilderApplication  singleton(string[] args)
+		public static BuilderApplication  singleton(  string[] args)
 		{
 			if (application==null) {
-				application = new BuilderApplication(args);
+				application = new BuilderApplication(  args);
  
 			
 			}
