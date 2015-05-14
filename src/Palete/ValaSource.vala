@@ -224,6 +224,9 @@ namespace Palete {
 		
 		public async  Gee.HashMap<int,string> checkStringThread(string contents)
 		{
+			
+			
+			
 			SourceFunc callback = checkStringThread.callback;
 			var ret = new Gee.HashMap<int,string>();
 			ThreadFunc<void*> run = () => {
