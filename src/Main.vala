@@ -13,7 +13,7 @@ int main (string[] args) {
 
 	var app =  BuilderApplication.singleton(  args);
 	if (BuilderApplication.opt_compile_project != null) {
-		BuilderApplication.json_output = true;
+		 
 		Palete.ValaSource.buildApplication();
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
