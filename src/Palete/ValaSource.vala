@@ -24,7 +24,7 @@ namespace Palete {
 		public ValaSourceReport(filepath)
 		{
 			base();
-			this.file = file;
+			this.filepath = filepath;
 			this.line_errors = new Gee.HashMap<int,string> ();
 			//this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
@@ -40,7 +40,7 @@ namespace Palete {
 				this.compile_notice("WARN", source.file.filename , source.begin.line, message);
 				return;
 			}
-			this.compile_notice("WARN", this.file.path, source.begin.line, message);
+			this.compile_notice("WARN", this.filepath, source.begin.line, message);
 			
 		}
 		public override void depr (Vala.SourceReference? source, string message) {
@@ -54,7 +54,7 @@ namespace Palete {
 				this.compile_notice("DEPR", source.file.filename, source.begin.line, message);
 				return;
 			}
-			this.compile_notice("DEPR",  this.file.path, source.begin.line, message);
+			this.compile_notice("DEPR",  this.filepath, source.begin.line, message);
 			
 		}
 		
@@ -75,7 +75,7 @@ namespace Palete {
 				
 			}
 			line_errors.set(source.begin.line, pre +  message);
-			this.compile_notice("ERR", this.file.path, source.begin.line, message);
+			this.compile_notice("ERR", this.filepath, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		public void dump()
@@ -231,7 +231,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile(string contents)
+		public Gee.HashMap<int,string> compile(string filepath)
 		{
 			// init context:
 			var valac = "valac " ;
