@@ -231,7 +231,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile(string filepath, string altpath)
+		public Gee.HashMap<int,string> compile(string filepath)
 		{
 			// init context:
 			var valac = "valac " ;
@@ -300,7 +300,7 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-					altpath,
+					filepath,
 					contents
 	    		);
 			source_file.add_using_directive (ns_ref);
