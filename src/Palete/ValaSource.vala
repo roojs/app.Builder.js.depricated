@@ -147,7 +147,7 @@ namespace Palete {
 		Project.Gtk project;
 		public string build_module;
 		public string filepath;
-		public string original_path;
+		public string original_filepath;
 		
 		public ValaSource(JsRender.JsRender file) {
 			base();
@@ -236,7 +236,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile(string filepath, string original_path)
+		public Gee.HashMap<int,string> compile( )
 		{
 			// init context:
 			var valac = "valac " ;
@@ -286,7 +286,7 @@ namespace Palete {
 			context.thread = true;
 			
 			
-			this.report = new ValaSourceReport(filepath);
+			this.report = new ValaSourceReport(this.filepath);
 			context.report = this.report;
 			
 			
@@ -305,14 +305,14 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-					filepath,
+					this.filepath,
 					contents
 	    		);
 			source_file.add_using_directive (ns_ref);
 			context.add_source_file (source_file);
 			
 	    	// add all the files (except the current one) - this.file.path
-	    	var pr = ((Project.Gtk)this.file.project);
+	    	var pr = this.project;
 	    	if (this.file.build_module.length > 0) {
 				var cg =  pr.compilegroups.get(this.build_module);
 				for (var i = 0; i < cg.sources.size; i++) {
@@ -323,7 +323,7 @@ namespace Palete {
 						continue;
 					}       
 	                // skip thie original
-					if (path == original_filepath.replace(".bjs", ".vala")) {
+					if (path == this.original_filepath.replace(".bjs", ".vala")) {
 						valac += " " + path;
 						continue;
 					}
