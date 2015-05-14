@@ -89,7 +89,7 @@ namespace Palete {
 
 	public class ValaSource : Vala.CodeVisitor {
 
-		public void jerr(string str)
+		public static void jerr(string str)
 		{
 			var ret = new Json.Object(); 
 			ret.set_boolean_member("success", false);
@@ -104,7 +104,7 @@ namespace Palete {
 			generator.indent = 4;
 		 
 
-			print("%s",  generator.to_data (null));
+			print("%s\n",  generator.to_data (null));
 			GLib.Process.exit(Posix.EXIT_FAILURE);
 			
 		}
@@ -118,12 +118,12 @@ namespace Palete {
 			}
 			
 			Project.Project.loadAll();
-			var projs = Project.Project.projects;
+			var proj = Project.Project.getProjectByHash(BuilderApplication.opt_compile_project);
 			
-			if (!projs.has_key(BuilderApplication.opt_compile_project)) {
+			if (proj == null) {
 				jerr("could not load test project %s".printf( BuilderApplication.opt_compile_project));
 			}
-			var proj = projs.get(BuilderApplication.opt_compile_project);
+			
 			if (proj.xtype != "Gtk") {
 				jerr("%s is not a Gtk Project".printf( BuilderApplication.opt_compile_project));
 			}
