@@ -146,6 +146,7 @@ namespace Palete {
 		JsRender.JsRender file; 
 		Project.Gtk project;
 		public string build_module;
+		public string filepath;
 		
 		public ValaSource(JsRender.JsRender file) {
 			base();
