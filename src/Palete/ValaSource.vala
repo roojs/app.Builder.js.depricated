@@ -145,11 +145,12 @@ namespace Palete {
 		ValaSourceReport report;
 		JsRender.JsRender file; 
 		Project.Gtk project;
-		
+		public string build_module;
 		
 		public ValaSource(JsRender.JsRender file) {
 			base();
 			this.file = file;
+			this.build_module = this.file.build_module;
 			this.project = (Project.Gtk) file.project;
 			
 			 
@@ -231,7 +232,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile(string filepath)
+		public Gee.HashMap<int,string> compile(string filepath, string original_path)
 		{
 			// init context:
 			var valac = "valac " ;
