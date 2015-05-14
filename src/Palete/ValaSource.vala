@@ -300,7 +300,7 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-					"~~~~~testfile.vala",
+					altpath,
 					contents
 	    		);
 			source_file.add_using_directive (ns_ref);
