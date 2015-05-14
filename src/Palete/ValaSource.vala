@@ -91,7 +91,12 @@ namespace Palete {
 
 		public static void buildApplication()
 		{
-			print("build based on Application settings\n");
+			//print("build based on Application settings\n");
+			
+			if (BuilderApplication.opt_compile_target == null) {
+				jerr("missing compile target --target");
+			}
+			
 			Project.Project.loadAll();
 			var projs = Project.Project.projects;
 			
@@ -104,6 +109,8 @@ namespace Palete {
 			}
 			var gproj = (Project.Gtk)proj;
 			
+			
+			gproj.compilegroups.has_key(BuilderApplication.opt_compile_target);
 			
 			
 			
