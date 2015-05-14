@@ -199,6 +199,8 @@ namespace Project {
 			});
 			proj.initRooDatabase();
 			
+			GLib.debug("Add Project %s", proj.id);
+			
 			projects.set(proj.id,proj);
 			
 			
