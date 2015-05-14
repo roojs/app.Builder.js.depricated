@@ -56,6 +56,7 @@
 			{ "target", 0, 0, OptionArg.STRING, ref opt_compile_target, "Target to build", null },
 			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip ,"For test compiles do not add this (usually used in conjunction with add-file ", null },
 			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
+			{ "debug", 0, 0, OptionArg.BOOLEAN, ref opt_compile_add, "Show debug messages", null },
 			{ null }
 		};
 		public static string opt_compile_project;
