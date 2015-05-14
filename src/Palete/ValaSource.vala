@@ -91,7 +91,7 @@ namespace Palete {
 
 		static void buildApplication()
 		{
-			
+			print("build based on Application settings");
 			
 		}
 
