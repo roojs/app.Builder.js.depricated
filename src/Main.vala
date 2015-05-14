@@ -9,9 +9,15 @@ int main (string[] args) {
 	
 	
 	
-    Gtk.init (ref args);
+    
 
-	var app =  BuilderApplication.singleton(ref args);
+	var app =  BuilderApplication.singleton(  args);
+	
+	print("project = %s\n", BuilderApplication.opt_compile_project);
+	
+	Gtk.init (ref args);
+	
+	
 	GtkClutter.init (ref args);
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
