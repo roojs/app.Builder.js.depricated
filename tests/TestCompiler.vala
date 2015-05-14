@@ -93,47 +93,18 @@ namespace Palete {
 			context.add_source_file (source_file);
 			
 	    	// add all the files (except the current one) - this.file.path
-	    	var pr = ((Project.Gtk)this.file.project);
-	    	if (this.file.build_module.length > 0) {
-				var cg =  pr.compilegroups.get(this.file.build_module);
-				for (var i = 0; i < cg.sources.size; i++) {
-					var path = pr.resolve_path(
-							pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
-							
-					if (!FileUtils.test(path, FileTest.EXISTS)) {
-						continue;
-					}       
-	                 
-					if (path == this.file.path.replace(".bjs", ".vala")) {
-						valac += " " + path;
-						continue;
-					}
-					if (FileUtils.test(path, FileTest.IS_DIR)) {
-						continue;
-					}
-					//print("Add source file %s\n", path);
-					
-					valac += " " + path;
-					
-					if (Regex.match_simple("\\.c$", path)) {
-						context.add_c_source_file(path);
-						continue;
-					}
-					
-					
-					var xsf = new Vala.SourceFile (
-						context,
-						Vala.SourceFileType.SOURCE, 
-						path
-					);
-					xsf.add_using_directive (ns_ref);
-					context.add_source_file(xsf);
-					
-				}
-			}
+	    	 
 			// default.. packages..
 			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
+			context.add_external_package ("gtk+-3.0");
+			if (!context.add_external_package ("webkit2gtk-4.0")) {
+				context.add_external_package ("webkit2gtk-3.0");
+			}
+			context.add_external_package ("clutter-gtk-1.0");
+			context.add_external_package ("gdl-3.0");
+			context.add_external_package ("gtksourceview-3.0");
+			context.add_external_package ("libvala-0.26");
 			// user defined ones..
 			
 	    	var dcg = pr.compilegroups.get("_default_");
