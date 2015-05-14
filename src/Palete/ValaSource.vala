@@ -93,14 +93,17 @@ namespace Palete {
 		{
 			print("build based on Application settings\n");
 			Project.Project.loadAll();
-			var proj = Project.Project.getProject(BuilderApplication.opt_compile_project);
-			if (proj == null) {
+			var projs = Project.Project.projects;
+			
+			if (!projs.has_key(BuilderApplication.opt_compile_project)) {
 				jerr("could not load test project %s".printf( BuilderApplication.opt_compile_project));
 			}
+			var proj = projs.get(BuilderApplication.opt_compile_project);
 			if (proj.xtype != "Gtk") {
-				jerr("%s is not a Gtk Project".printf( BuilderApplication.opt_compile_project)");
+				jerr("%s is not a Gtk Project".printf( BuilderApplication.opt_compile_project));
 			}
-			proj.scanDirs();
+			
+			
 			
 			
 		}
