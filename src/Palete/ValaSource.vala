@@ -95,7 +95,17 @@ namespace Palete {
 			ret.set_boolean_member("success", false);
 			ret.set_string_member("message", str);
 			
-			
+			var  generator = new Json.Generator ();
+			var  root = new Json.Node(Json.NodeType.OBJECT);
+			root.init_object(ret);
+			generator.set_root (root);
+			 
+			generator.pretty = true;
+			generator.indent = 4;
+		 
+
+			print("%s",  generator.to_data (null));
+			GLib.Process.exit(Posix.EXIT_FAILURE);
 			
 		}
 
