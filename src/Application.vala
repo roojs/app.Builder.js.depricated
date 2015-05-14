@@ -56,14 +56,14 @@
 			{ "target", 0, 0, OptionArg.STRING, ref opt_compile_target, "Target to build", null },
 			{ "skip-file", 0, 0, OptionArg.STRING, ref opt_compile_skip ,"For test compiles do not add this (usually used in conjunction with add-file ", null },
 			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
-			{ "debug", 0, 0, OptionArg.BOOLEAN, ref opt_debug, "Show debug messages", null },
+			{ "debug", 0, 0, OptionArg.NONE, ref opt_debug, "Show debug messages", null },
 			{ null }
 		};
 		public static string opt_compile_project;
 		public static string opt_compile_target;
 		public static string opt_compile_skip;
 		public static string opt_compile_add;
-		public boolean string opt_debug = false;
+		public static bool opt_debug = false;
 		
 		
 		enum Target {
