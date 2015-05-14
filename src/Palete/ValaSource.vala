@@ -319,7 +319,7 @@ namespace Palete {
 						continue;
 					}       
 	                 
-					if (path == this.file.path.replace(".bjs", ".vala")) {
+					if (path == this.filepath.replace(".bjs", ".vala")) {
 						valac += " " + path;
 						continue;
 					}
