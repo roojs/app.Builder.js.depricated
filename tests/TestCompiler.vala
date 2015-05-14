@@ -158,6 +158,11 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
+			
+			context.resolver.resolve(new Vala.CodeContext());
+			context.analyzer.context = null;
+			context.flow_analyzer.analyze(new Vala.CodeContext());
+			context.analyzer = null;
 			//(new Vala.CodeNode()).get_error_types().clear();
 			//(new Vala.NullType()).get_type_arguments().clear();
 			  
