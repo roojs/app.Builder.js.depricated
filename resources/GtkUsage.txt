@@ -190,6 +190,12 @@ right:
 	Gtk.SeparatorMenuItem 
 	Gtk.TearoffMenuItem 
 left:
+	Gtk.ImageMenuItem
+right:
+	Gtk.Image
+	
+	
+left:
 	Gtk.MenuItem:submenu
 right:	
 	Gtk.Menu
