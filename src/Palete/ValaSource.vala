@@ -249,7 +249,7 @@ namespace Palete {
 			}
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.checkStringSpawn(tmpstring,  (owned) result_callback );
+			this.checkStringSpawn(tmpstring,   result_callback );
 			
 			// modify report
 			
