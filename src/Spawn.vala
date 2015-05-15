@@ -7,7 +7,7 @@ using GLib;
 /**
  * Revised version?
  * 
- * x = new Spawn( working dir, args)
+ * x = new Spawn( "/tmp", {"ls", "-l" })
  * 
  * // these are optionall..
  * x.env = ..... (if you need to set one...
