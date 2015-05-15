@@ -637,7 +637,7 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "utf8 icon_name" : "network-error",
+           "utf8 icon_name" : "dialog-information",
            "* pack" : "set_image",
            "xtype" : "Image",
            "$ xns" : "Gtk"

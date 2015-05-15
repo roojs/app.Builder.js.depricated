@@ -2357,7 +2357,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "network-error";
+            this.el.icon_name = "dialog-information";
         }
 
         // user defined functions 
