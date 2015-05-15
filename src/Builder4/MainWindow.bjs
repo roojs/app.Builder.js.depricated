@@ -637,32 +637,11 @@
            "items" : [
             {
              "xtype" : "Image",
-             "utf8 icon_name" : "dialog-warning",
+             "utf8 icon_name" : "dialog-information",
              "* pack" : "set_image",
              "$ xns" : "Gtk"
             }
            ]
-          }
-         ]
-        },
-        {
-         "listeners" : {
-          "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
-         },
-         "bool always_show_image" : true,
-         "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
-         "* pack" : "pack_end,false,false,0",
-         "string label" : "Depricated",
-         "xtype" : "Button",
-         "$ xns" : "Gtk",
-         "items" : [
-          {
-           "int height_request" : 16,
-           "utf8 icon_name" : "dialog-information",
-           "xtype" : "Image",
-           "int width_request" : 16,
-           "1" : "set_image",
-           "$ xns" : "Gtk"
           }
          ]
         }

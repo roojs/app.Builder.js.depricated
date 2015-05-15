@@ -2147,9 +2147,6 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_Toolbar68( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Button75( _this );
-            child_2.ref();
-            this.el.pack_end (  child_2.el , false,false,0 );
         }
 
         // user defined functions 
@@ -2362,64 +2359,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "dialog-warning";
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button75 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button75(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.always_show_image = true;
-            this.el.label = "Depricated";
-            this.el.image_position = Gtk.PositionType.LEFT;
-            var child_0 = new Xcls_Image76( _this );
-            child_0.ref();
-
-            // listeners 
-            this.el.clicked.connect( ( ) => {
-                 
-                // show the compiler popup....
-            
-            });
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Image76 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Image76(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.width_request = 16;
             this.el.icon_name = "dialog-information";
-            this.el.height_request = 16;
         }
 
         // user defined functions 
