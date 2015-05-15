@@ -58,7 +58,8 @@
             "../c/jscore_object_call_as_function.c",
             "../Palete/GirObject.vala",
             "../Palete/VapiParser.vala",
-            "../Builder4/PopoverFileDetails.vala"
+            "../Builder4/PopoverFileDetails.vala",
+            "../../src/Spawn.vala"
         ],
         "packages" : [
         ]
