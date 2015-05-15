@@ -2252,6 +2252,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "dialog-error";
+            this.el.icon_size = 16;
         }
 
         // user defined functions 
@@ -2308,6 +2309,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "dialog-warning";
+            this.el.icon_size = 8;
         }
 
         // user defined functions 

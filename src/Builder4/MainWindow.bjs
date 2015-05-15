@@ -609,6 +609,7 @@
            "xtype" : "Image",
            "utf8 icon_name" : "dialog-error",
            "* pack" : "set_image",
+           "int icon_size" : 16,
            "$ xns" : "Gtk"
           }
          ]
@@ -628,6 +629,7 @@
            "* pack" : "set_image",
            "xtype" : "Image",
            "utf8 icon_name" : "dialog-warning",
+           "int icon_size" : 8,
            "$ xns" : "Gtk"
           }
          ]
