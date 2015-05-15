@@ -2220,30 +2220,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect( ( ) => {
                  
-                 var cd = DialogConfirm.singleton();
-                 cd.el.set_transient_for(_this.el);
-                cd.el.set_modal(true);
-            
-                 var project =   _this.windowstate.left_projects.getSelectedProject();
-                if (project == null) {
-                    print("SKIP - no project\n");
-                    return;
-                }
-                
-                    
-                 if (Gtk.ResponseType.YES != cd.show("Confirm", 
-                    "Are you sure you want to delete project %s".printf(project.name))) {
-                    return;
-                }
-                 
-            
-                // confirm?
-                Project.Project.remove(project);
-                _this.project = null;
-                
-                _this.windowstate.left_projects.is_loaded =  false;
-                _this.windowstate.left_projects.load();
-                _this.windowstate.clutterfiles.clearFiles();
+                // show the compiler popup....
             
             });
         }
