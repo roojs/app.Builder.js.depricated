@@ -3,7 +3,7 @@
 
 namespace Palete {
 	
-	delegate  void ValaSourceResult(Json.Object res);
+	public delegate  void ValaSourceResult(Json.Object res);
 	
 	public class ValaSourceReport  : Vala.Report {
 
@@ -265,14 +265,16 @@ namespace Palete {
 			args += "--target";
 			args += this.build_module;
 			args += "--add-file";
-			args +=  tmpfile;
+			args +=  tmpfile.get_path();
 			args += "--skip-file";
 			args += this.filepath;
 			
 			
 			
-			this.compiler = new Spawn("/tmp", args);
-			this.compiler.run((res, output, stderr) => {
+			var compiler = new Spawn("/tmp", args);
+			compiler.ref();
+			compiler.run((res, output, stderr) => {
+				
 				try { 
 					var pa = new Json.Parser();
 					pa.load_from_file(this.path);
@@ -292,7 +294,7 @@ namespace Palete {
 					ret.set_string_member("message", e.message);
 					result_callback(ret);
 				}
-				
+				compiler.unref();
 			});
 			
 			 
