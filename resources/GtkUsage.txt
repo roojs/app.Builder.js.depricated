@@ -28,7 +28,7 @@ left:
 	Gtk.AboutDialog
 	Gtk.Dialog
 	Gtk.OffScreenWindow
-	
+	Gtk.Popover
 	Gtk.Alignment 
 	Gtk.AspectFrame 
 	Gtk.HBox 
