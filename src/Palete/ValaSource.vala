@@ -201,7 +201,7 @@ namespace Palete {
 		//}
 
 		public Gee.HashMap<int,string> checkFileWithNodePropChange(
-					File file,
+					JsRender.JsRender file,
 					JsRender.Node node, 
 					string prop,
 					string ptype,
@@ -251,7 +251,7 @@ namespace Palete {
 		{
 			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
-			
+			tmpfile.ref();
 
 			OutputStream ostream = iostream.output_stream;
 			DataOutputStream dostream = new DataOutputStream (ostream);
@@ -295,6 +295,7 @@ namespace Palete {
 					result_callback(ret);
 				}
 				compiler.unref();
+				tmpfile.unref();
 			});
 			
 			 
