@@ -249,7 +249,7 @@ namespace Palete {
 			}
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.checkStringSpawn(tmpstring,  result_callback );
+			this.checkStringSpawn(tmpstring,  (owned) result_callback );
 			
 			// modify report
 			
@@ -312,17 +312,14 @@ namespace Palete {
 					print ("no callback?");
 					return;
 				}
-				GLib.Idle.add( () => {
-					result_callback(ret);
-					return GLib.Source.REMOVE;
-				});
+				this.result_callback(ret);
 				
 				
 			} catch (Error e) {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
 				ret.set_string_member("message", e.message);
-				result_callback(ret);
+				this.result_callback(ret);
 			}
 			//compiler.unref();
 			//tmpfile.unref();
