@@ -502,6 +502,24 @@ public class Editor : Object
             }
             var err = obj.get_object_member("ERR");
             
+            if (obj.has_member("ERR-TOTAL")) {
+                _this.window.statusbar_errors.el.show();
+                _this.window.statusbar_errors.el.label = obj.get_int_member("ERR-TOTAL").to_string() + " Errors";
+            }
+            if (obj.has_member("WARN-TOTAL")) {
+                _this.window.statusbar_warnings.el.show();
+                _this.window.statusbar_warnings.el.label = obj.get_int_member("WARN-TOTAL").to_string() + " Warnings";
+            }
+            if (obj.has_member("DEPR-TOTAL")) {
+                _this.window.statusbar_depricated.el.show();    
+                _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Warnings";
+            }
+            
+            
+            
+            
+            
+            
             if (!err.has_member(_this.file.path)) {
                 print("File path has no errors\n");
                 return true;
