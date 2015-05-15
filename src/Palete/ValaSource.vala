@@ -222,7 +222,19 @@ namespace Palete {
 				)
 		{
 			
+			
+			
 			string[] args = {};
+			args += FileUtils.read_link("/proc/self/exe");
+			args += "--project";
+			args += this.project.fn;
+			args += "--target";
+			args += build_module;
+			args += "--add-file";
+			args += tmpfile;
+			args += "--skip-file";
+			args += this.filepath;
+			
 			
 			
 			this.compiler = new Spawn("/tmp", args);
