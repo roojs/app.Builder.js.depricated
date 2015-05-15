@@ -520,7 +520,7 @@ public class Editor : Object
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    var msg  = "Line: %d".format(eline+1);
+                    var msg  = "Line: %d".printf(eline+1);
                     var ar = lines.get_array_member(line);
                     for (var i = 0 ; i < ar.get_length(); i++) {
         		    msg += (msg.length > 0) ? "\n" : "";
