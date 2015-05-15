@@ -2245,6 +2245,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "dialog-error";
+            this.el.no_show_all = false;
             this.el.hexpand = true;
         }
 

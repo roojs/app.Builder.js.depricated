@@ -608,7 +608,8 @@
            "* pack" : "add",
            "xtype" : "ToolButton",
            "string icon_name" : "dialog-error",
-           "$ xns" : "Gtk"
+           "$ xns" : "Gtk",
+           "bool no_show_all" : false
           },
           {
            "xtype" : "ToolButton",
