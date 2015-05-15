@@ -609,6 +609,40 @@
            "$ xns" : "Gtk"
           }
          ]
+        },
+        {
+         "listeners" : {
+          "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
+         },
+         "string label" : "Warnings",
+         "xtype" : "Button",
+         "* pack" : "pack_start,true,true,0",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "* pack" : "set_image",
+           "xtype" : "Image",
+           "utf8 icon_name" : "network-error",
+           "$ xns" : "Gtk"
+          }
+         ]
+        },
+        {
+         "listeners" : {
+          "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
+         },
+         "* pack" : "pack_start,true,true,0",
+         "string label" : "Errors",
+         "xtype" : "Button",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "utf8 icon_name" : "network-error",
+           "* pack" : "set_image",
+           "xtype" : "Image",
+           "$ xns" : "Gtk"
+          }
+         ]
         }
        ]
       }

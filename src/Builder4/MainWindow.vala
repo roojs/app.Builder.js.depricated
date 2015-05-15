@@ -2147,6 +2147,12 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_Button68( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
+            var child_2 = new Xcls_Button70( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , true,true,0 );
+            var child_3 = new Xcls_Button72( _this );
+            child_3.ref();
+            this.el.pack_start (  child_3.el , true,true,0 );
         }
 
         // user defined functions 
@@ -2236,6 +2242,114 @@ public class Xcls_MainWindow : Object
 
         // ctor 
         public Xcls_Image69(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "network-error";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button70 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button70(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Warnings";
+            var child_0 = new Xcls_Image71( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.clicked.connect( ( ) => {
+                 
+                // show the compiler popup....
+            
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Image71 : Object 
+    {
+        public Gtk.Image el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Image71(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "network-error";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button72 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button72(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Errors";
+            var child_0 = new Xcls_Image73( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.clicked.connect( ( ) => {
+                 
+                // show the compiler popup....
+            
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Image73 : Object 
+    {
+        public Gtk.Image el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Image73(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
