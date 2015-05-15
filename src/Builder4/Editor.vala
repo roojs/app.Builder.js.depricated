@@ -504,13 +504,13 @@ public class Editor : Object
                 
             //        print("get inter\n");
                     var eline = int.parse(line) - offset;
-                    if (eline > tlines) {
+                    if (eline > tlines || eline < 0) {
                         continue;
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
                     this.el.create_source_mark(lines.get_string_member(line), "error", iter);
-                } )
+                } );
                 return false;
             
         
