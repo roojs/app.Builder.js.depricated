@@ -491,23 +491,13 @@ public class Editor : Object
             }
             var lines = err.get_object_member(_this.file.path);
             
+            var tlines = this.el.get_line_count ();
             
-            
-            
+            lines.foreach_member((obj, line, node)) {
                 
-        
-                this.error_line = validate_res.size;
-        
-                if (this.error_line < 1) {
-                      return true;
-                }
-                var tlines = this.el.get_line_count ();
-                Gtk.TextIter iter;
-                var valiter = validate_res.map_iterator();
-                while (valiter.next()) {
                 
             //        print("get inter\n");
-                    var eline = valiter.get_key();
+                    var eline = int.parse(line);
                     if (eline > tlines) {
                         continue;
                     }
