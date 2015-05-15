@@ -202,7 +202,7 @@ public class Spawn : Object
 			this.tidyup();
 			//print("DONE TIDYUP");
 			
-			this.finish(this.result, this.output, this.stderr);
+			finish(this.result, this.output, this.stderr);
 			
 		});
 	    
@@ -424,11 +424,11 @@ int main (string[] args) {
 
 	var ctx = new GLib.MainLoop ();
 	var a = new Spawn("", { "ls" , "-l"});
-	a.finish.connect((res, str, stderr) => {
+	a.run((res, str, stderr) => {
 		print(str);
 		ctx.quit();
 	});
-	a.run();
+	
 	
 	ctx.run(); // wait for exit?
             
