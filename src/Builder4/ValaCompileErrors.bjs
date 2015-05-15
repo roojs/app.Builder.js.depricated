@@ -28,7 +28,7 @@
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
          "$ xns" : "Gtk",
-         "utf8 label" : "Full Compile"
+         "utf8 label" : "Compile and Run"
         }
        ]
       },
