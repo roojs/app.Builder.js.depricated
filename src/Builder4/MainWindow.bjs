@@ -597,6 +597,7 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
+         "bool always_show_image" : true,
          "xtype" : "Button",
          "* pack" : "pack_start,true,true,0",
          "string label" : "Errors",
@@ -614,6 +615,7 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
+         "bool always_show_image" : true,
          "string label" : "Warnings",
          "xtype" : "Button",
          "* pack" : "pack_start,true,true,0",

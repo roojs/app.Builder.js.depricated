@@ -2217,6 +2217,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.always_show_image = true;
             this.el.label = "Errors";
             var child_0 = new Xcls_Image69( _this );
             child_0.ref();
@@ -2271,6 +2272,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.always_show_image = true;
             this.el.label = "Warnings";
             var child_0 = new Xcls_Image71( _this );
             child_0.ref();
