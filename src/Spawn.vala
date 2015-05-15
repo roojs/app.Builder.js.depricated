@@ -28,32 +28,42 @@ public errordomain SpawnError {
 
 /**
  * @class Spawn
- * @param cfg {SpawnConfig} settings - see properties.
+ * @param cwd {String}            working directory. (defaults to home directory)
+ * @param args {Array}            arguments eg. [ 'ls', '-l' ]
  * 
- * @arg cwd {String}            working directory. (defaults to home directory)
- * @arg args {Array}            arguments eg. [ 'ls', '-l' ]
- * @arg listeners {Object} (optional) handlers for output, stderr, input
- *     stderr/output both receive output line as argument
- *     input should return any standard input
- *     finish recieves result as argument.
+ 
  * @arg env {Array}             enviroment eg. [ 'GITDIR=/home/test' ]
- * @arg async {Boolean} (optional)return instantly, or wait for exit. (default no)
- * @arg exceptions {Boolean}    throw exception on failure (default no)
- * @arg debug {Boolean}    print out what's going on.. (default no)
+ * @arg is_async {Boolean} (optional)return instantly, or wait for exit. (default no)
+ * @arg trhow_exceptions {Boolean}    throw exception on failure (default no)
+ 
  * 
  */
 
 
 public class Spawn : Object
 {
+	/**
+	 * @signal input called at start to send input when process starts?
+	 * @return the string or null 
+	 */
 	public signal string? input();
+	/**
+	 * @signal output_line called when a line is recieved from the process.
+	 * @param {string} str 
+	 */
     public signal void output_line(string str);
+    /**
+	 * @signal finish called when the process has completed.
+	 * @param {int} result_id (the unix return)
+	 * @param {string} str  (the output string)
+	 * @param {string} stderr  (the stderr output)
+	 */
     public signal void finish(int res, string str, string stderr);
 
 	public string cwd;
 	public string[] args;
 	public string[] env;
-	public bool debug = false;
+	
 	public bool is_async = true;
 	public bool throw_exceptions = false;
 
