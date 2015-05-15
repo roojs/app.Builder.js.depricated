@@ -175,8 +175,7 @@ namespace Palete {
 
 		Vala.CodeContext context;
 		ValaSourceReport report;
-		JsRender.JsRender file; 
-		Project.Gtk project;
+ 		Project.Gtk project;
 		public string build_module;
 		public string filepath;
 		public string original_filepath;
@@ -221,7 +220,8 @@ namespace Palete {
 			// untill we get a smarter renderer..
 			// we have some scenarios where changing the value does not work
 			if (prop == "* xns" || prop == "xtype") {
-				return;
+				result_callback(new Json.Object());
+				return ;
 			}
 				
 			
