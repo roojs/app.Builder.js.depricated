@@ -268,7 +268,7 @@ public class Spawn : Object
             this.tidyup(); // tidyup get's called in main loop. 
         }
         
-        if (this.cfg.exceptions && this.result != 0) {
+        if (this.throw_exceptions && this.result != 0) {
 	    
             throw new SpawnError.EXECUTE_ERROR(this.stderr);
             //this.toString = function() { return this.stderr; };
@@ -374,15 +374,14 @@ public class Spawn : Object
                     //}
                     if (ch == this.out_ch) {
                         this.output += buffer;
-                        if (this.cfg.output != null) {
-                                this.cfg.output(  buffer);                  
-                        }
+                        this.line_output(  buffer);                  
+                        
                     } else {
                         this.stderr += buffer;
                     }
                     //_this[prop] += x.str_return;
                     //if (this.cfg.debug) {
-                        stdout.printf("%s : %s", prop , buffer);
+                        GLib.debug("%s : %s", prop , buffer);
                     //}
                     if (this.cfg.async) {
                          
@@ -395,7 +394,7 @@ public class Spawn : Object
                     //this.ctx.iteration(true);
                    continue;
                 case GLib.IOStatus.AGAIN:
-		    //print("Should be called again.. waiting for more data..");
+					//print("Should be called again.. waiting for more data..");
 		            return true;
                     //break;
                 case GLib.IOStatus.ERROR:    
@@ -412,24 +411,4 @@ public class Spawn : Object
     }
     
 }
-  /*
-// test
-try { 
-    Seed.print(run({
-        args: ['ls', '/tmp'],
-        debug : true
-    }));
-} catch (e) { print(JSON.stringify(e)); }
- 
-var secs = (new Date()).getSeconds() 
-
-try {      
-Seed.print(run({
-    args: ['/bin/touch', '/tmp/spawntest-' + secs ],
-    debug : true
-}));
-} catch (e) { print( 'Error: ' + JSON.stringify(e)); }
-
- 
- */
- 
+    
