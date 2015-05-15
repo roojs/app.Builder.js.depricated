@@ -299,7 +299,6 @@ namespace Palete {
 					if (node.get_node_type () != Json.NodeType.OBJECT) {
 						throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 					}
-					
 					 
 					result_callback(node.get_object ());
 					
