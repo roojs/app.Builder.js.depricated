@@ -380,9 +380,9 @@ public class Spawn : Object
                     //}
                     if (this.is_async) {
                          
-                        if ( Gtk.events_pending()) {
-                             Gtk.main_iteration();
-                        }
+                        //if ( Gtk.events_pending()) {
+                        //     Gtk.main_iteration();
+                        //}
                          
                     }
                     
