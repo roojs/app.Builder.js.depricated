@@ -101,13 +101,13 @@ namespace Palete {
 			}
 			if (source.file.filename != this.tmpname) {
 				this.compile_notice("ERR", source.file.filename, source.begin.line, message);
-				//print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
+				GLib.debug ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
 			 
 			 
 			this.compile_notice("ERR", this.filepath, source.begin.line, message);
-			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
+			GLib.debug ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
 		/*
 		public void dump()
