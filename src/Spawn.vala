@@ -409,6 +409,12 @@ public class Spawn : Object
 
  
 int main (string[] args) {
+	GLib.Log.set_handler(null, 
+			GLib.LogLevelFlags.LEVEL_DEBUG | GLib.LogLevelFlags.LEVEL_WARNING, 
+			(dom, lvl, msg) => {
+			print("%s: %s\n", dom, msg);
+		});
+	
 	var ctx = new GLib.MainLoop ();
 	var a = new Spawn("", { "ls" , "-l"});
 	a.finish.connect((res, str, stderr) => {
