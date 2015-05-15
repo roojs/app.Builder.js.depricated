@@ -646,9 +646,12 @@
          "$ xns" : "Gtk",
          "items" : [
           {
+           "int height_request" : 16,
            "utf8 icon_name" : "dialog-information",
            "* pack" : "set_image",
            "xtype" : "Image",
+           "int icon_size" : 24,
+           "int width_request" : 16,
            "$ xns" : "Gtk"
           }
          ]
