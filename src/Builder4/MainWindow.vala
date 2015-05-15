@@ -2174,7 +2174,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Label67(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( null );
+            this.el = new Gtk.Label( "   " );
 
             // my vars (dec)
 

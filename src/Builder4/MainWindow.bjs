@@ -588,6 +588,7 @@
         {
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Label",
+         "string label" : "   ",
          "$ xns" : "Gtk"
         },
         {
