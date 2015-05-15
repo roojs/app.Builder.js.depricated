@@ -2146,6 +2146,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , true,true,0 );
             var child_1 = new Xcls_Button68( _this );
             child_1.ref();
+            this.el.pack_start (  child_1.el , true,true,0 );
         }
 
         // user defined functions 
@@ -2210,9 +2211,6 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.width_request = 50;
-            this.el.height_request = 50;
-            this.el.tooltip_text = "Delete Project";
             var child_0 = new Xcls_Image69( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

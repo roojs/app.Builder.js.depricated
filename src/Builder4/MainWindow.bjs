@@ -597,12 +597,9 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
-         "* pack" : false,
          "xtype" : "Button",
-         "width_request" : 50,
+         "* pack" : "pack_start,true,true,0",
          "$ xns" : "Gtk",
-         "$ tooltip_text" : "\"Delete Project\"",
-         "height_request" : 50,
          "items" : [
           {
            "xtype" : "Image",
