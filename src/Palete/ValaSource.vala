@@ -101,7 +101,7 @@ namespace Palete {
 			}
 			if (source.file.filename != this.tmpname) {
 				this.compile_notice("ERR", source.file.filename, source.begin.line, message);
-				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
+				//print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
 			 
@@ -283,7 +283,7 @@ namespace Palete {
 			args += "--skip-file";
 			args += this.filepath;
 			
-			
+			 
 			
 			var compiler = new Spawn("/tmp", args);
 			compiler.ref();
@@ -300,7 +300,14 @@ namespace Palete {
 						throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 					}
 					var ret = node.get_object ();
-					result_callback(ret);
+					if (result_callback == null) {
+						print ("no callback?");
+						return;
+					}
+					GLib.Idle.add( () => {
+						result_callback(ret);
+						return GLib.Source.REMOVE;
+					});
 					
 					
 				} catch (Error e) {
