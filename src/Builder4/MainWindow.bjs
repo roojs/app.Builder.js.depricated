@@ -601,7 +601,7 @@
          "bool always_show_image" : true,
          "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
          "xtype" : "Button",
-         "* pack" : "pack_start,true,true,0",
+         "* pack" : "pack_start,false,false,0",
          "string label" : "Errors",
          "$ xns" : "Gtk",
          "items" : [

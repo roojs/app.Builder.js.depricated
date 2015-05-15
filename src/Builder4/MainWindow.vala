@@ -2146,7 +2146,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , true,true,0 );
             var child_1 = new Xcls_Button68( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
+            this.el.pack_start (  child_1.el , false,false,0 );
             var child_2 = new Xcls_Button70( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , true,true,0 );
