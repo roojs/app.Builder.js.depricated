@@ -65,6 +65,7 @@
 		public static string opt_compile_add;
 		public static bool opt_debug = false;
 		
+		public static string _self;
 		
 		enum Target {
 		    INT32,
