@@ -2219,7 +2219,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_ToolButton70( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_ToolButton72( _this );
+            var child_2 = new Xcls_ToolButton71( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -2265,36 +2265,12 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Image71( _this );
-            child_0.ref();
-            this.el.set_image (  child_0.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Image71 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Image71(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars (dec)
-
-            // set gobject values
             this.el.icon_name = "dialog-warning";
         }
 
         // user defined functions 
     }
-    public class Xcls_ToolButton72 : Object 
+    public class Xcls_ToolButton71 : Object 
     {
         public Gtk.ToolButton el;
         private Xcls_MainWindow  _this;
@@ -2303,7 +2279,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ToolButton72(Xcls_MainWindow _owner )
+        public Xcls_ToolButton71(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.ToolButton( null, "Depricated" );
@@ -2311,14 +2287,14 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_Image73( _this );
+            var child_0 = new Xcls_Image72( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Image73 : Object 
+    public class Xcls_Image72 : Object 
     {
         public Gtk.Image el;
         private Xcls_MainWindow  _this;
@@ -2327,7 +2303,7 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Image73(Xcls_MainWindow _owner )
+        public Xcls_Image72(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
