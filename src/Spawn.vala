@@ -421,6 +421,7 @@ int main (string[] args) {
 		print(str);
 		ctx.quit();
 	});
+	a.run();
 	
 	ctx.run(); // wait for exit?
             
