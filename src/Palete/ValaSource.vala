@@ -10,14 +10,25 @@ namespace Palete {
 		public string filepath;
 		
 		//public Gee.ArrayList<ValaSourceNotice> notices;
+		public Json.Object result;
 		 
 		public Gee.HashMap<int,string> line_errors;
 		
 		public void  compile_notice(string type, string filename, int line, string message) {
-			GLib.Idle.add(() => {
-				this.file.compile_notice(type,filename,line,message);
-				return false;
-			});
+			 if (!this.result.has_member(type)) {
+				 this.result.set_object_member(type, new Json.Object());
+			 }
+			 var t = this.get_object_member(type);
+			 if (!t.has_member(filename)) {
+				 t.set_object_member(filename, new Json.Object());
+			 }
+			 var tt = t.get_object_member(filename);
+			 if (!tt.has_member(line.to_string())) {
+				 tt.set_object_member(line.to_string(), new Json.Array());
+			 }
+			 var tl = tt.get_array_member(line.to_string());
+			 tl.add_string_element(message);
+			 
 		}
 		
 		
@@ -26,6 +37,12 @@ namespace Palete {
 		{
 			base();
 			this.filepath = filepath;
+			this.result = new Json.Object();
+			this.result.set_boolean_member("success", "true");
+			this.result.set_string_member("message", "");
+			
+			
+			
 			this.line_errors = new Gee.HashMap<int,string> ();
 			//this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
