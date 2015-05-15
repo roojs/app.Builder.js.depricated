@@ -71,7 +71,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			
-			if (source.file.filename != "~~~~~testfile.vala") {
+			if (source.file.filename != this.tmpname) {
 				this.compile_notice("DEPR", source.file.filename, source.begin.line, message);
 				return;
 			}
@@ -85,17 +85,13 @@ namespace Palete {
 				return;
 				//stderr.printf ("My error: %s\n", message);
 			}
-			if (source.file.filename != "~~~~~testfile.vala") {
+			if (source.file.filename != this.tmpname) {
 				this.compile_notice("ERR", source.file.filename, source.begin.line, message);
 				print ("Other file: Got error error: %d:  %s\n", source.begin.line, message);
 				return;
 			}
-			var pre = "";
-			if (line_errors.has_key(source.begin.line)) {
-				pre = line_errors.get(source.begin.line) + "\n";
-				
-			}
-			line_errors.set(source.begin.line, pre +  message);
+			 
+			 
 			this.compile_notice("ERR", this.filepath, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
