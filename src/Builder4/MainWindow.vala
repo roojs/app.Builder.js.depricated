@@ -2147,15 +2147,9 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_Toolbar68( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Button73( _this );
+            var child_2 = new Xcls_Button75( _this );
             child_2.ref();
             this.el.pack_end (  child_2.el , false,false,0 );
-            var child_3 = new Xcls_Button75( _this );
-            child_3.ref();
-            this.el.pack_end (  child_3.el , false,false,0 );
-            var child_4 = new Xcls_Button77( _this );
-            child_4.ref();
-            this.el.pack_end (  child_4.el , false,false,0 );
         }
 
         // user defined functions 
@@ -2228,6 +2222,9 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_ToolButton71( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_ToolButton73( _this );
+            child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // user defined functions 
@@ -2324,36 +2321,26 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Button73 : Object 
+    public class Xcls_ToolButton73 : Object 
     {
-        public Gtk.Button el;
+        public Gtk.ToolButton el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Button73(Xcls_MainWindow _owner )
+        public Xcls_ToolButton73(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Button();
+            this.el = new Gtk.ToolButton( null, "Depricated" );
 
             // my vars (dec)
 
             // set gobject values
-            this.el.always_show_image = true;
-            this.el.label = "Errors";
-            this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image74( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
-
-            // listeners 
-            this.el.clicked.connect( ( ) => {
-                 
-                // show the compiler popup....
-            
-            });
         }
 
         // user defined functions 
@@ -2375,8 +2362,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "dialog-error";
-            this.el.icon_size = 16;
+            this.el.icon_name = "dialog-warning";
         }
 
         // user defined functions 
@@ -2399,11 +2385,10 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.always_show_image = true;
-            this.el.label = "Warnings";
+            this.el.label = "Depricated";
             this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image76( _this );
             child_0.ref();
-            this.el.set_image (  child_0.el  );
 
             // listeners 
             this.el.clicked.connect( ( ) => {
@@ -2425,62 +2410,6 @@ public class Xcls_MainWindow : Object
 
         // ctor 
         public Xcls_Image76(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.icon_name = "dialog-warning";
-            this.el.icon_size = 8;
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button77 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button77(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.always_show_image = true;
-            this.el.label = "Depricated";
-            this.el.image_position = Gtk.PositionType.LEFT;
-            var child_0 = new Xcls_Image78( _this );
-            child_0.ref();
-
-            // listeners 
-            this.el.clicked.connect( ( ) => {
-                 
-                // show the compiler popup....
-            
-            });
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Image78 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Image78(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Image();
