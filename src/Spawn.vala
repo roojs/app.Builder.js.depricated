@@ -51,7 +51,7 @@ public errordomain SpawnError {
 
 public class Spawn : Object
 {
-	public signal string input();
+	public signal string? input();
     public signal void output_line(string str);
     public signal void finish(int res, string str, string stderr);
 
@@ -127,65 +127,62 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-    public void run() throws SpawnError, GLib.SpawnError, GLib.IOChannelError
-    {
-        
-         
-        err_src = -1;
-        out_src = -1;
-        int standard_input;
-        int standard_output;
-        int standard_error;
+	public void run() throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	{
+		
+		 
+		err_src = -1;
+		out_src = -1;
+		int standard_input;
+		int standard_output;
+		int standard_error;
 
 
-         
-        Glib.debug("cd %s; %s" , this.cfg.cwd , string.joinv(" ", this.cfg.args));
-        
-        
-        Process.spawn_async_with_pipes (
-                this.cfg.cwd,
-                this.cfg.args,
-                this.cfg.env,
-                SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
-                null,
-                out this.pid,
-                out standard_input,
-                out standard_output,
-			    out standard_error);
+		 
+		GLib.debug("cd %s; %s" , this.cwd , string.joinv(" ", this.args));
+		
+		
+		Process.spawn_async_with_pipes (
+				this.cwd,
+				this.args,
+				this.env,
+				SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+				null,
+				out this.pid,
+				out standard_input,
+				out standard_output,
+				out standard_error);
 
 		// stdout:
-	
-         	
-    	//print(JSON.stringify(gret));    
-         
-        if (this.cfg.debug) {
-            
-            stdout.printf("PID: %d" ,this.pid);
-        }
-        
-        this.in_ch = new GLib.IOChannel.unix_new(standard_input);
-        this.out_ch = new GLib.IOChannel.unix_new(standard_output);
-        this.err_ch = new GLib.IOChannel.unix_new(standard_error);
-        
-        // make everything non-blocking!
-        
-        
-            
-                  // using NONBLOCKING only works if io_add_watch
-          //returns true/false in right conditions
-          this.in_ch.set_flags (GLib.IOFlags.NONBLOCK);
-          this.out_ch.set_flags (GLib.IOFlags.NONBLOCK);
-          this.err_ch.set_flags (GLib.IOFlags.NONBLOCK);
-                   
-      
+
+			
+		//print(JSON.stringify(gret));    
+		 
+		GLib.debug("PID: %d" ,this.pid);
+		 
+		
+		this.in_ch = new GLib.IOChannel.unix_new(standard_input);
+		this.out_ch = new GLib.IOChannel.unix_new(standard_output);
+		this.err_ch = new GLib.IOChannel.unix_new(standard_error);
+		
+		// make everything non-blocking!
+
+
+
+			  // using NONBLOCKING only works if io_add_watch
+		//returns true/false in right conditions
+		this.in_ch.set_flags (GLib.IOFlags.NONBLOCK);
+		this.out_ch.set_flags (GLib.IOFlags.NONBLOCK);
+		this.err_ch.set_flags (GLib.IOFlags.NONBLOCK);
+			   
+
 
  
 		ChildWatch.add (this.pid, (w_pid, result) => {
 		
 			this.result = result;
-			if (this.cfg.debug) {
-				stdout.printf("child_watch_add : result:%d ", result);
-			}
+			GLib.debug("child_watch_add : result:%d ", result);
+			
 		   
 			this.read(this.out_ch);
 			this.read(this.err_ch);
@@ -199,9 +196,9 @@ public class Spawn : Object
 			}
 			this.tidyup();
 			//print("DONE TIDYUP");
-			if (this.cfg.finish != null) {
-				this.cfg.finish(this.result);
-			}
+			
+			this.finish(this.result, this.output, this.stderr);
+			
 		});
 	    
 			  
@@ -228,10 +225,11 @@ public class Spawn : Object
         // call input.. 
         if (this.pid > -1) {
             // child can exit before we get this far..
-            if (this.cfg.input != null) {
-		        if (this.cfg.debug) print("Trying to call listeners");
+            var input = this.input();
+            if (input != null) {
+		        
                 try {
-                    this.write(this.cfg.input());
+                    this.write(input);
                      // this probably needs to be a bit smarter...
                     //but... let's close input now..
                     this.in_ch.shutdown(true);
