@@ -338,7 +338,7 @@ namespace Palete {
 			context.thread = true;
 			
 			
-			this.report = new ValaSourceReport(this.filepath);
+			this.report = new ValaSourceReport(this.filepath, this.tmpname);
 			context.report = this.report;
 			
 			
