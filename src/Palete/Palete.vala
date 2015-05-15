@@ -354,11 +354,7 @@ namespace Palete
 				ptype,
 				code,
 				validateValaResult
-				(res) => {
-					
-					result_callback(res);
-					vs.unref();
-				}
+				 
 					
 		 );
 		 
@@ -369,7 +365,7 @@ namespace Palete
 		this.vs = null;
 	}
 	
-	
+	ValaSourceResult result_callback;
 	
 	public   Gee.HashMap<int,string>  validateJavascript(
      			string code, 
