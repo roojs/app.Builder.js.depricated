@@ -216,6 +216,7 @@ namespace Palete {
 			
 		}
 		
+		string tmpfile;
 		public void checkStringThread(
 					string contents,
 					ValaSourceResult result_callback
@@ -223,11 +224,11 @@ namespace Palete {
 		{
 			FileIOStream iostream;
 			this.tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
-			stdout.printf ("tmp file name: %s\n", file.get_path ());
+			
 
 			OutputStream ostream = iostream.output_stream;
 			DataOutputStream dostream = new DataOutputStream (ostream);
-			dostream.put_string ("my tmp data\n");
+			dostream.put_string (contents);
 			
 			
 			string[] args = {};
@@ -235,9 +236,9 @@ namespace Palete {
 			args += "--project";
 			args += this.project.fn;
 			args += "--target";
-			args += build_module;
+			args += this.build_module;
 			args += "--add-file";
-			args += tmpfile;
+			args += this.tmpfile;
 			args += "--skip-file";
 			args += this.filepath;
 			
