@@ -491,13 +491,19 @@ public class Editor : Object
             }
             var lines = err.get_object_member(_this.file.path);
             
+            var offset = 0;
+            if (obj.has_member("line_offset")) {
+                offset = obj.get_int_member("line_offset");
+            }
+            
+            
             var tlines = this.el.get_line_count ();
              Gtk.TextIter iter;
             lines.foreach_member((obj, line, node)) {
                 
                 
             //        print("get inter\n");
-                    var eline = int.parse(line);
+                    var eline = int.parse(line) - offset;
                     if (eline > tlines) {
                         continue;
                     }
