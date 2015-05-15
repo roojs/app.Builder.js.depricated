@@ -3,6 +3,10 @@
 
 namespace Palete {
 	
+	public errordomain ValaSourceError {
+		INVALID_FORMAT 
+	}
+	
 	public delegate  void ValaSourceResult(Json.Object res);
 	
 	public class ValaSourceReport  : Vala.Report {
@@ -277,7 +281,7 @@ namespace Palete {
 				
 				try { 
 					var pa = new Json.Parser();
-					pa.load_from_file(this.path);
+					pa.load_from_data(output);
 					var node = pa.get_root();
 
 					if (node.get_node_type () != Json.NodeType.OBJECT) {
