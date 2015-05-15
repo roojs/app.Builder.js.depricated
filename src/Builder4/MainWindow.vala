@@ -2180,11 +2180,12 @@ public class Xcls_MainWindow : Object
                         return;
                     }
                      _this.mainpane.el.set_sensitive(false);
-                       
+                   /*    
                     this.el.show();
                     var cid = this.el.get_context_id("resources");
                     this.el.remove_all(cid);
                     this.el.push(cid,"Fetching Resource : %s/7".printf(pos.to_string()));
+                    */ 
                  });
             }
         }
