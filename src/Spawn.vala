@@ -58,6 +58,7 @@ public class Spawn : Object
 	public string cwd;
 	public string[] args;
 	public string[] env;
+	public bool debug = false;
 
     public Spawn(string cwd, string[] args) throws Error
     {
@@ -138,8 +139,8 @@ public class Spawn : Object
 
 
         
-        if (this.cfg.debug) {
-           stdout.printf("cd %s; %s" , this.cfg.cwd , string.joinv(" ", this.cfg.args));
+        if (this.debug) {
+           Glib.debug("cd %s; %s" , this.cfg.cwd , string.joinv(" ", this.cfg.args));
         }
         
         Process.spawn_async_with_pipes (
