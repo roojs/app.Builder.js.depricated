@@ -11,8 +11,8 @@ using GLib;
  * x.env = ..... (if you need to set one...
  * x.output_line.connect((string str) => { ... });
  * x.input_line.connect(() => { return string });
- * x.finish.connect((int res, string output, string stderr) => { ... });
- * x.run();
+ * x.run((int res, string output, string stderr) => { ... });
+
  * 
  * 
  */
