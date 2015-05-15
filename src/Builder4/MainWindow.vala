@@ -2336,7 +2336,6 @@ public class Xcls_MainWindow : Object
             this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image73( _this );
             child_0.ref();
-            this.el.set_image (  child_0.el  );
 
             // listeners 
             this.el.clicked.connect( ( ) => {
@@ -2368,7 +2367,7 @@ public class Xcls_MainWindow : Object
             this.el.width_request = 16;
             this.el.icon_name = "dialog-information";
             this.el.height_request = 16;
-            this.el.icon_size = 24;
+            this.el.icon_size = 16;
         }
 
         // user defined functions 
