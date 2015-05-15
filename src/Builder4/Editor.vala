@@ -462,10 +462,10 @@ public class Editor : Object
                 _this.ptype,
                 _this.file,
                 _this.node,
-                (obj, res) => {
+                (obj) => {
                     this.check_running = false;
-                    var validate_res = p.validateVala.end(res);
-                    this.highlightErrors(validate_res);
+                    //var validate_res = p.validateVala.end(res);
+                    //this.highlightErrors(validate_res);
         
                 }
                 
