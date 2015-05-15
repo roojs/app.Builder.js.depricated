@@ -2211,6 +2211,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.label = "Errors";
             var child_0 = new Xcls_Image69( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
