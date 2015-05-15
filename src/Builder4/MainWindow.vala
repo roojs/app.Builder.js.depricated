@@ -2211,6 +2211,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.orientation = Gtk.Orientation.HORIZONTAL;
             this.el.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
             this.el.toolbar_style = Gtk.ToolbarStyle.BOTH_HORIZ;
             var child_0 = new Xcls_ToolButton69( _this );
@@ -2283,30 +2284,6 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             this.el = new Gtk.ToolButton( null, "Depricated" );
-
-            // my vars (dec)
-
-            // set gobject values
-            var child_0 = new Xcls_Image72( _this );
-            child_0.ref();
-            this.el.set_image (  child_0.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Image72 : Object 
-    {
-        public Gtk.Image el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Image72(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Image();
 
             // my vars (dec)
 
