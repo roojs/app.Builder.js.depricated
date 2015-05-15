@@ -433,7 +433,8 @@ namespace Palete {
 				Vala.CodeContext.pop ();
 				Glib.debug("parse got errors");
 				//((ValaSourceReport)context.report).dump();
-				this.report.result.set_string_member("success", "false");
+				this.report.result.set_boolean_member("success", false);
+				this.report.result.set_string_member("message", "Parse failed");
 				
 				this.outputReport();
 				return;
@@ -445,9 +446,10 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				Vala.CodeContext.pop ();
-				Glib.debug("parse got errors");
+				Glib.debug("check got errors");
 				//((ValaSourceReport)context.report).dump();
-				this.report.result.set_string_member("success", "false");
+				this.report.result.set_boolean_member("success", false);
+				this.report.result.set_string_member("message", "Check failed");
 				
 				this.outputReport();
 				return;
