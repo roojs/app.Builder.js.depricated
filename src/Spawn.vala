@@ -51,7 +51,7 @@ public errordomain SpawnError {
 
 public class Spawn : Object
 {
-	public signal sting input(string str);
+	public signal string input();
     public signal void output_line(string str);
     public signal void finish(int res, string str, string stderr);
 
