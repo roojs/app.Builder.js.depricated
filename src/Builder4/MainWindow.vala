@@ -392,7 +392,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_statusbar( _this );
+            var child_1 = new Xcls_HBox66( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,true,0 );
         }
@@ -2120,6 +2120,30 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "user-trash";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_HBox66 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_HBox66(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_statusbar( _this );
+            child_0.ref();
+            this.el.pack_end (  child_0.el , false,true,0 );
         }
 
         // user defined functions 
