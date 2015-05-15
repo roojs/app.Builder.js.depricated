@@ -492,7 +492,7 @@ public class Editor : Object
             var lines = err.get_object_member(_this.file.path);
             
             var tlines = this.el.get_line_count ();
-            
+             Gtk.TextIter iter;
             lines.foreach_member((obj, line, node)) {
                 
                 
@@ -503,8 +503,8 @@ public class Editor : Object
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    this.el.create_source_mark(valiter.get_value(), "error", iter);
-                }   
+                    this.el.create_source_mark(lines.get_string_member(line), "error", iter);
+                } )
                 return false;
             
         
