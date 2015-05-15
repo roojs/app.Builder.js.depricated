@@ -248,6 +248,9 @@ namespace Palete {
 			if (bits.length > 0) {
 				offset = bits[0].split("\n").length +1;
 			}
+			
+			this.line_offset = offset;
+			
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
 			this.result_callback = result_cb;
