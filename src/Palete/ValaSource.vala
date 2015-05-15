@@ -403,8 +403,7 @@ namespace Palete {
 			
 			//context.add_external_package ("libvala-0.24");
 			
-			this.report.compile_notice("START", "", 0, "");
-
+ 
 		
 			//add_documented_files (context, settings.source_files);
 		
@@ -416,8 +415,7 @@ namespace Palete {
 				((ValaSourceReport)context.report).dump();
 				
 				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
-				return this.report.line_errors;
+ 				return this.report.line_errors;
 			}
 
 
@@ -428,8 +426,7 @@ namespace Palete {
 				Glib.debug("check got errors");
 				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
-				this.report.compile_notice("END", "", 0, "");
-				return this.report.line_errors;
+ 				return this.report.line_errors;
 				
 			}
 			
@@ -451,13 +448,10 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			//(new Vala.CodeNode()).get_error_types().clear();
-			//(new Vala.NullType()).get_type_arguments().clear();
-			(new Vala.NullType(null)).get_type_arguments().clear();
-			parser = null;
- 			this.report.compile_notice("END", "", 0, "");
-			Glib.debug("%s", valac);
-			Glib.debug("ALL OK?\n");
+			
+			
+			
+			  
 			return this.report.line_errors;
 		}
 		
