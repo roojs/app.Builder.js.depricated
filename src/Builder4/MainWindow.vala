@@ -2152,7 +2152,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_2.el , false,false,0 );
             var child_3 = new Xcls_Button72( _this );
             child_3.ref();
-            this.el.pack_start (  child_3.el , true,true,0 );
+            this.el.pack_end (  child_3.el , false,false,0 );
         }
 
         // user defined functions 
