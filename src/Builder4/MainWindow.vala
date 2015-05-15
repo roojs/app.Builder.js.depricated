@@ -2172,7 +2172,7 @@ public class Xcls_MainWindow : Object
             // init method 
 
             {
-                 this.handler_id = Resources.singleton().updateProgress.connect((pos) => {
+                 this.handler_id = Resources.singleton().updateProgress.connect((pos,total) => {
                     if (pos < 1) {
                         this.el.hide();
                         _this.mainpane.el.set_sensitive(true);
@@ -2180,6 +2180,9 @@ public class Xcls_MainWindow : Object
                         return;
                     }
                      _this.mainpane.el.set_sensitive(false);
+                     this.el.show();
+                     this.el.set_fraction ((1.0f * pos) / (1.0f * total));
+                     
                    /*    
                     this.el.show();
                     var cid = this.el.get_context_id("resources");
