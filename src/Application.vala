@@ -88,6 +88,7 @@
 		{
 			
 			_self = args[0];
+			GLib.debug("SELF = %s", _self);
 			
 			Object(
 			       application_id: "org.roojs.app-builder",
