@@ -14,7 +14,7 @@ namespace Palete {
 		//public Gee.ArrayList<ValaSourceNotice> notices;
 		public Json.Object result;
 		 
-		public Gee.HashMap<int,string> line_errors;
+		//public Gee.HashMap<int,string> line_errors;
 		
 		public void  compile_notice(string type, string filename, int line, string message) {
 			 if (!this.result.has_member(type)) {
@@ -46,7 +46,7 @@ namespace Palete {
 			
 			
 			
-			this.line_errors = new Gee.HashMap<int,string> ();
+			//this.line_errors = new Gee.HashMap<int,string> ();
 			//this.notices = new Gee.ArrayList<ValaSourceNotice>();
 		}
 		
@@ -95,6 +95,7 @@ namespace Palete {
 			this.compile_notice("ERR", this.filepath, source.begin.line, message);
 			print ("Test file: Got error error: %d: %s\n", source.begin.line, message);
 		}
+		/*
 		public void dump()
 		{
 			var iter = this.line_errors.map_iterator();
@@ -102,6 +103,7 @@ namespace Palete {
 				print ("%d : %s\n\n", iter.get_key(), iter.get_value());
 			}
 		}
+		*/
 
 	}
 
