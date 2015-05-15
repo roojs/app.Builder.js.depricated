@@ -2274,6 +2274,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.always_show_image = true;
             this.el.label = "Warnings";
+            this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image71( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
@@ -2329,6 +2330,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.always_show_image = true;
             this.el.label = "Depricated";
+            this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image73( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

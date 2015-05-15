@@ -616,6 +616,7 @@
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
          "bool always_show_image" : true,
+         "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
          "string label" : "Warnings",
          "xtype" : "Button",
          "* pack" : "pack_start,true,true,0",
@@ -634,6 +635,7 @@
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
          "bool always_show_image" : true,
+         "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
          "* pack" : "pack_start,true,true,0",
          "string label" : "Depricated",
          "xtype" : "Button",
