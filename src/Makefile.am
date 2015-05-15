@@ -81,6 +81,7 @@ builder4_PKGS = \
 builder4_SOURCES = \
 		Application.vala \
 		Main.vala \
+		Spawn.vala \
 		JsRender/Gtk.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
