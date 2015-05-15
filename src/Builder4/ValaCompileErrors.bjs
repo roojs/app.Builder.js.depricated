@@ -8,6 +8,7 @@
  "build_module" : "",
  "items" : [
   {
+   "id" : "ValaCompileErrors",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
    "items" : [

@@ -1,14 +1,14 @@
-static ValaCompileErrors  _ValaCompileErrors;
+static Xcls_ValaCompileErrors  _ValaCompileErrors;
 
-public class ValaCompileErrors : Object 
+public class Xcls_ValaCompileErrors : Object 
 {
     public Gtk.Popover el;
-    private ValaCompileErrors  _this;
+    private Xcls_ValaCompileErrors  _this;
 
-    public static ValaCompileErrors singleton()
+    public static Xcls_ValaCompileErrors singleton()
     {
         if (_ValaCompileErrors == null) {
-            _ValaCompileErrors= new ValaCompileErrors();
+            _ValaCompileErrors= new Xcls_ValaCompileErrors();
         }
         return _ValaCompileErrors;
     }
@@ -19,7 +19,7 @@ public class ValaCompileErrors : Object
         // my vars (def)
 
     // ctor 
-    public ValaCompileErrors()
+    public Xcls_ValaCompileErrors()
     {
         _this = this;
         this.el = new Gtk.Popover( null );
@@ -36,13 +36,13 @@ public class ValaCompileErrors : Object
     public class Xcls_HPaned2 : Object 
     {
         public Gtk.HPaned el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HPaned2(ValaCompileErrors _owner )
+        public Xcls_HPaned2(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.HPaned();
@@ -63,13 +63,13 @@ public class ValaCompileErrors : Object
     public class Xcls_ScrolledWindow3 : Object 
     {
         public Gtk.ScrolledWindow el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow3(ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow3(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -95,13 +95,13 @@ public class ValaCompileErrors : Object
     public class Xcls_compile_tree : Object 
     {
         public Gtk.TreeView el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_compile_tree(ValaCompileErrors _owner )
+        public Xcls_compile_tree(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             _this.compile_tree = this;
@@ -123,13 +123,13 @@ public class ValaCompileErrors : Object
     public class Xcls_compile_result_store : Object 
     {
         public Gtk.TreeStore el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_compile_result_store(ValaCompileErrors _owner )
+        public Xcls_compile_result_store(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             _this.compile_result_store = this;
@@ -222,13 +222,13 @@ public class ValaCompileErrors : Object
     public class Xcls_column : Object 
     {
         public Gtk.TreeViewColumn el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_column(ValaCompileErrors _owner )
+        public Xcls_column(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
@@ -254,13 +254,13 @@ public class ValaCompileErrors : Object
     public class Xcls_renderer : Object 
     {
         public Gtk.CellRendererText el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_renderer(ValaCompileErrors _owner )
+        public Xcls_renderer(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             _this.renderer = this;
@@ -276,13 +276,13 @@ public class ValaCompileErrors : Object
     public class Xcls_ScrolledWindow8 : Object 
     {
         public Gtk.ScrolledWindow el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow8(ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow8(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -300,13 +300,13 @@ public class ValaCompileErrors : Object
     public class Xcls_SourceView9 : Object 
     {
         public Gtk.SourceView el;
-        private ValaCompileErrors  _this;
+        private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_SourceView9(ValaCompileErrors _owner )
+        public Xcls_SourceView9(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.SourceView();
