@@ -2222,7 +2222,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_ToolButton69( _this );
             child_0.ref();
-            this.el.composite_name (  child_0.el  );
+            this.el.add (  child_0.el  );
         }
 
         // user defined functions 

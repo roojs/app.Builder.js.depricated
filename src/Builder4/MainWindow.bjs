@@ -600,7 +600,7 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "* pack" : "composite_name",
+           "* pack" : "add",
            "xtype" : "ToolButton",
            "$ xns" : "Gtk"
           }
