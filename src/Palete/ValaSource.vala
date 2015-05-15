@@ -435,7 +435,6 @@ namespace Palete {
 				//((ValaSourceReport)context.report).dump();
 				this.report.result.set_string_member("success", "false");
 				
-				
 				this.outputReport();
 				return;
 			}
@@ -445,11 +444,13 @@ namespace Palete {
 			// check context:
 			context.check ();
 			if (context.report.get_errors () > 0) {
-				Glib.debug("check got errors");
-				((ValaSourceReport)context.report).dump();
 				Vala.CodeContext.pop ();
- 				return this.report.line_errors;
+				Glib.debug("parse got errors");
+				//((ValaSourceReport)context.report).dump();
+				this.report.result.set_string_member("success", "false");
 				
+				this.outputReport();
+				return;
 			}
 			
 			//context.codegen = new Vala.GDBusServerModule ();
