@@ -407,4 +407,13 @@ public class Spawn : Object
     
 }
 
+ 
+int main (string[] args) {
 
+	var a = new Spawn("", { "ls" , "-l"});
+	a.finish.connect((res, str, stderr) => {
+		print(str);
+	});
+	return 0;
+}
+*/
