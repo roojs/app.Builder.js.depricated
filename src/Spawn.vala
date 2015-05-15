@@ -409,11 +409,15 @@ public class Spawn : Object
 
  
 int main (string[] args) {
-
+	var ctx = new GLib.MainLoop ();
 	var a = new Spawn("", { "ls" , "-l"});
 	a.finish.connect((res, str, stderr) => {
 		print(str);
+		ctx.quit();
 	});
+	
+	ctx.run(); // wait for exit?
+            
 	return 0;
 }
 */
