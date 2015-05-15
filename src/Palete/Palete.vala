@@ -323,8 +323,8 @@ namespace Palete
    }
 
 	
-	  
-	public async Gee.HashMap<int,string>  validateVala(
+	public ValaSource vs;
+	public   void validateVala(
      			string code, 
 				string property, 
 				string ptype,
@@ -340,15 +340,23 @@ namespace Palete
 		if (file.language != "vala" ) { // not sure if we need to validate property
 			return ret;
 		}
-		var vs = new ValaSource(file);
+		// file.project , file.path, file.build_module, ""
+		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
+		
+		
+		this.vs = new ValaSource(file.project, file.filepath, file.build_module, "");
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		 ret = yield vs.checkFileWithNodePropChange(
+		ret =  vs.checkFileWithNodePropChange(
 				node, 
 				property, 
 				ptype,
-				code
+				code,
+				(res) => { 
+					print("go result");
+				}
+					
 		 );
-		 vs = null;
+		 
 		return ret;
 
 	}
