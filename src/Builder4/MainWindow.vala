@@ -2219,6 +2219,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.always_show_image = true;
             this.el.label = "Errors";
+            this.el.image_position = Gtk.PositionType.LEFT;
             var child_0 = new Xcls_Image69( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

@@ -598,6 +598,7 @@
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
          "bool always_show_image" : true,
+         "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
          "xtype" : "Button",
          "* pack" : "pack_start,true,true,0",
          "string label" : "Errors",
