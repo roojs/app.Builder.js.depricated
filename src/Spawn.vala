@@ -378,7 +378,7 @@ public class Spawn : Object
                     //if (this.cfg.debug) {
                         GLib.debug("%s : %s", prop , buffer);
                     //}
-                    if (this.cfg.async) {
+                    if (this.is_async) {
                          
                         if ( Gtk.events_pending()) {
                              Gtk.main_iteration();
