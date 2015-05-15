@@ -515,7 +515,15 @@ public class Editor : Object
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    this.el.create_source_mark(lines.get_string_member(line), "error", iter);
+                    var msg  = "";
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+						msg += (msg.length > 0) ? "\n" : "";
+						msg += ar.get_string_element(i);
+					}
+                    
+                    
+                    this.el.create_source_mark(msg, "error", iter);
                 } );
                 return false;
             
