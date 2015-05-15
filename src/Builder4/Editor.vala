@@ -479,7 +479,7 @@ public class Editor : Object
              
             return true; // at present allow saving - even if it's invalid..
         }
-        public return_type XXXX () {
+        public void highlightErrorsJson () {
         
         }
     }

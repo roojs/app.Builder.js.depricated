@@ -87,8 +87,8 @@
          "* pack" : "set_buffer",
          "xtype" : "SourceBuffer",
          "bool check_running" : false,
-         "$ xns" : "Gtk",
-         "| return_type XXXX" : "() {\n\n}\n"
+         "| void highlightErrorsJson" : "() {\n\n}\n",
+         "$ xns" : "Gtk"
         }
        ]
       }
