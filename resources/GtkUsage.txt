@@ -50,6 +50,7 @@ left:
 	Gtk.Button
 	GtkClutter.Actor
 	Gtk.HeaderBar 
+	Gtk.ToolButton
 right:	 
 	Gtk.Alignment 
 	Gtk.AspectFrame 
