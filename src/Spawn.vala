@@ -18,12 +18,7 @@ using Gtk;
  */
 
 
-
-
-  
  
-}
-
 public errordomain SpawnError {
     NO_ARGS,
     WRITE_ERROR,
