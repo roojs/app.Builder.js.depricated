@@ -100,7 +100,7 @@ public class Spawn : Object
      /**
      * @property result {Number} execution result.
      */
-    int result= 0;
+    public int result= 0;
     /**
      * @property pid {Number} pid of child process (of false if it's not running)
      */
