@@ -621,7 +621,7 @@
          "Gtk.PositionType image_position" : "Gtk.PositionType.LEFT",
          "string label" : "Warnings",
          "xtype" : "Button",
-         "* pack" : "pack_start,true,true,0",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk",
          "items" : [
           {
