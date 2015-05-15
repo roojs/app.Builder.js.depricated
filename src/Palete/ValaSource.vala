@@ -236,7 +236,7 @@ namespace Palete {
 		}
 		
 		string tmpfile;
-		public void checkStringThread(
+		public void checkStringSpawn(
 					string contents,
 					ValaSourceResult result_callback
 				)
