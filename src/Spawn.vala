@@ -60,6 +60,7 @@ public class Spawn : Object
 	public string[] env;
 	public bool debug = false;
 	public bool is_async = true;
+	public bool throw_exceptions = false;
 
     public Spawn(string cwd, string[] args) throws Error
     {
@@ -255,14 +256,14 @@ public class Spawn : Object
         // start mainloop if not async..
         
         if (this.pid > -1) {
-             print("starting main loop");
+            GLib.debug("starting main loop");
              //if (this.cfg.debug) {
              //  
              // }
 	        this.ctx = new MainLoop ();
             this.ctx.run(); // wait fore exit?
             
-            print("main_loop done!");
+            GLib.debug("main_loop done!");
         } else {
             this.tidyup(); // tidyup get's called in main loop. 
         }
