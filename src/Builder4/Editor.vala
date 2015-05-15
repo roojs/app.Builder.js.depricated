@@ -484,7 +484,15 @@ public class Editor : Object
             if (!obj.has_member("ERR")) {
                 return true;
             }
-            var err = obj.get_object_membeR("ERR");
+            var err = obj.get_object_member("ERR");
+            
+            if (!err.has_member(_this.file.path)) {
+                return true;
+            }
+            var lines = err.get_object_member(_this.file.path);
+            
+            
+            
             
                 
         
