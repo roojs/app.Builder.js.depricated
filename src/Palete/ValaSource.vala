@@ -256,13 +256,15 @@ namespace Palete {
 			
 			
 		}
-		
-		 
+		Spawn compiler;
+		ValaSourceResult result_callback;
 		public void checkStringSpawn(
 					string contents,
-					ValaSourceResult result_callback
+					ValaSourceResult result_cb
 				)
 		{
+			this.result_callback = result_cb;
+			
 			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
 			tmpfile.ref();
@@ -285,44 +287,49 @@ namespace Palete {
 			
 			 
 			
-			var compiler = new Spawn("/tmp", args);
-			compiler.ref();
-			compiler.run((res, output, stderr) => {
-				
-				try { 
-					GLib.debug("GOT output %s", output);
-					
-					var pa = new Json.Parser();
-					pa.load_from_data(output);
-					var node = pa.get_root();
-
-					if (node.get_node_type () != Json.NodeType.OBJECT) {
-						throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
-					}
-					var ret = node.get_object ();
-					if (result_callback == null) {
-						print ("no callback?");
-						return;
-					}
-					GLib.Idle.add( () => {
-						result_callback(ret);
-						return GLib.Source.REMOVE;
-					});
-					
-					
-				} catch (Error e) {
-					var ret = new Json.Object();
-					ret.set_boolean_member("success", false);
-					ret.set_string_member("message", e.message);
-					result_callback(ret);
-				}
-				compiler.unref();
-				tmpfile.unref();
-			});
+			this.compiler = new Spawn("/tmp", args);
+			
+			this.compiler.run(spawnResult); 
 			
 			 
 		}
-		
+		public void spawnResult(int res, string output, string stderr)
+		{
+			 
+				
+			try { 
+				GLib.debug("GOT output %s", output);
+				
+				var pa = new Json.Parser();
+				pa.load_from_data(output);
+				var node = pa.get_root();
+
+				if (node.get_node_type () != Json.NodeType.OBJECT) {
+					throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+				}
+				var ret = node.get_object ();
+				if (result_callback == null) {
+					print ("no callback?");
+					return;
+				}
+				GLib.Idle.add( () => {
+					result_callback(ret);
+					return GLib.Source.REMOVE;
+				});
+				
+				
+			} catch (Error e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+				result_callback(ret);
+			}
+			//compiler.unref();
+			//tmpfile.unref();
+			 
+			
+			
+		}
 		
 		public void compile( )
 		{
