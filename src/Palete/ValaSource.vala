@@ -21,6 +21,16 @@ namespace Palete {
 		//public Gee.HashMap<int,string> line_errors;
 		
 		public void  compile_notice(string type, string filename, int line, string message) {
+			 
+			 if (!this.result.has_member(type+"-TOTAL")) {
+				 this.result.set_int_member(type+"-TOTAL", 1);
+			 } else {
+				this.result.set_int_member(type+"-TOTAL", 
+					this.result.get_int_member(type+"-TOTAL") +1 
+				);
+			 }
+			 
+			 
 			 if (!this.result.has_member(type)) {
 				 this.result.set_object_member(type, new Json.Object());
 			 }
@@ -280,6 +290,8 @@ namespace Palete {
 			compiler.run((res, output, stderr) => {
 				
 				try { 
+					GLib.debug("GOT output %s", output);
+					
 					var pa = new Json.Parser();
 					pa.load_from_data(output);
 					var node = pa.get_root();
@@ -288,7 +300,7 @@ namespace Palete {
 						throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 					}
 					
-					// delete tmpfile...
+					 
 					result_callback(node.get_object ());
 					
 					
@@ -382,7 +394,7 @@ namespace Palete {
 			
 	    	// add all the files (except the current one) - this.file.path
 	    	var pr = this.project;
-	    	if (this.file.build_module.length > 0) {
+	    	if (this.build_module.length > 0) {
 				var cg =  pr.compilegroups.get(this.build_module);
 				for (var i = 0; i < cg.sources.size; i++) {
 					var path = pr.resolve_path(
