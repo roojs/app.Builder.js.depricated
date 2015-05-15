@@ -2183,7 +2183,7 @@ public class Xcls_MainWindow : Object
                      _this.mainpane.el.set_sensitive(false);
                      this.el.show();
                      this.el.set_fraction ((1.0f * pos) / (1.0f * total));
-                     
+                     this.el.set_text("Fetching Resource : %s/%s".printf(pos.to_string(), total.to_string()));
                    /*    
                     this.el.show();
                     var cid = this.el.get_context_id("resources");
