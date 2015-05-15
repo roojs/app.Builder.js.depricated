@@ -38,6 +38,8 @@ public errordomain SpawnError {
  
  * 
  */
+ 
+ 
 void SpawnFinish (int res, string str, string stderr);
 
 public class Spawn : Object
@@ -49,14 +51,14 @@ public class Spawn : Object
 	public signal string? input();
 	/**
 	 * @signal output_line called when a line is recieved from the process.
+	 * Note you may want to connect this and run 
+	 *   if ( Gtk.events_pending()) { Gtk.main_iteration(); }
+	 * 
 	 * @param {string} str 
 	 */
     public signal void output_line(string str);
     /**
 	 * @signal finish called when the process has completed.
-	 * Note you may want to connect this and run 
-	 *   if ( Gtk.events_pending()) { Gtk.main_iteration(); }
-	 * 
 	 * @param {int} result_id (the unix return)
 	 * @param {string} str  (the output string)
 	 * @param {string} stderr  (the stderr output)
