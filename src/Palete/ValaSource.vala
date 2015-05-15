@@ -153,10 +153,19 @@ namespace Palete {
 			if (!gproj.compilegroups.has_key(BuilderApplication.opt_compile_target)) {
 				jerr("missing compile target %s".printf(BuilderApplication.opt_compile_target));
 			}
+			var skip_file = "";
+			if (BuilderApplication.opt_compile_skip != null) {
+				skipfile = BuilderApplication.opt_compile_skip;
+			}
+			var add_file = "";
+			if (BuilderApplication.opt_compile_add != null) {
+				add_file = BuilderApplication.opt_compile_add;
+			}
 			
 			
+			var vs = new ValaSource(gproj,  add_file, BuilderApplication.opt_compile_target,   skip_file);
+			vs.compile()
 			
-			jerr("NOT DONE");
 			
 		}
 
@@ -234,14 +243,14 @@ namespace Palete {
 			
 		}
 		
-		string tmpfile;
+		 
 		public void checkStringSpawn(
 					string contents,
 					ValaSourceResult result_callback
 				)
 		{
 			FileIOStream iostream;
-			this.tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
+			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
 			
 
 			OutputStream ostream = iostream.output_stream;
@@ -256,7 +265,7 @@ namespace Palete {
 			args += "--target";
 			args += this.build_module;
 			args += "--add-file";
-			args += this.tmpfile;
+			args +=  tmpfile;
 			args += "--skip-file";
 			args += this.filepath;
 			
@@ -272,6 +281,8 @@ namespace Palete {
 					if (node.get_node_type () != Json.NodeType.OBJECT) {
 						throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 					}
+					
+					// delete tmpfile...
 					result_callback(node.get_object ())
 					
 					
