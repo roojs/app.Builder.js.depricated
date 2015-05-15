@@ -57,14 +57,7 @@ public class Spawn : Object
 	 * @param {string} str 
 	 */
     public signal void output_line(string str);
-    /**
-	 * @signal finish called when the process has completed.
-	 * @param {int} result_id (the unix return)
-	 * @param {string} str  (the output string)
-	 * @param {string} stderr  (the stderr output)
-	 */
-    public signal void finish(int res, string str, string stderr);
-
+    
 	public string cwd;
 	public string[] args;
 	public string[] env;
@@ -139,7 +132,7 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-	public void run() throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	public void run(SpawnFinish finish) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
 	{
 		
 		 
