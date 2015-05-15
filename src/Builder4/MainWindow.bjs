@@ -609,7 +609,7 @@
             {
              "* pack" : "set_image",
              "xtype" : "Image",
-             "utf8 icon_name" : "user-trash",
+             "utf8 icon_name" : "dialog-error",
              "$ xns" : "Gtk"
             }
            ]
