@@ -189,6 +189,7 @@ namespace Palete {
 		public string build_module;
 		public string filepath;
 		public string original_filepath;
+		public int line_offset = 0;
 		
 		// file.project , file.path, file.build_module, ""
 		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
@@ -219,7 +220,7 @@ namespace Palete {
 					string prop,
 					string ptype,
 					string val,
-					ValaSourceResult result_callback)
+					ValaSourceResult result_cb)
 		{
 			
 			
@@ -263,8 +264,7 @@ namespace Palete {
 					string contents 
 				)
 		{
-			this.result_callback = result_cb;
-			
+ 			
 			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
 			tmpfile.ref();
