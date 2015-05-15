@@ -633,6 +633,7 @@
           },
           {
            "bool always_show_image" : true,
+           "id" : "statusbar_depricated",
            "string label" : "Depricated",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",

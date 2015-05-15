@@ -40,6 +40,7 @@ public class Xcls_MainWindow : Object
     public Xcls_statusbar statusbar;
     public Xcls_statusbar_errors statusbar_errors;
     public Xcls_statusbar_warnings statusbar_warnings;
+    public Xcls_statusbar_depricated statusbar_depricated;
 
         // my vars (def)
     public Project.Project project;
@@ -2219,7 +2220,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_statusbar_warnings( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_ImageMenuItem73( _this );
+            var child_2 = new Xcls_statusbar_depricated( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -2324,7 +2325,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_ImageMenuItem73 : Object 
+    public class Xcls_statusbar_depricated : Object 
     {
         public Gtk.ImageMenuItem el;
         private Xcls_MainWindow  _this;
@@ -2333,9 +2334,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ImageMenuItem73(Xcls_MainWindow _owner )
+        public Xcls_statusbar_depricated(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.statusbar_depricated = this;
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
