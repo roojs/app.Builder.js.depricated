@@ -589,7 +589,7 @@
          "ulong handler_id" : "-1",
          "* init" : "{\n     this.handler_id = Resources.singleton().updateProgress.connect((pos) => {\n        if (pos < 1) {\n            this.el.hide();\n            _this.mainpane.el.set_sensitive(true);\n            \n            return;\n        }\n         _this.mainpane.el.set_sensitive(false);\n           \n        this.el.show();\n        var cid = this.el.get_context_id(\"resources\");\n        this.el.remove_all(cid);\n        this.el.push(cid,\"Fetching Resource : %s/7\".printf(pos.to_string()));\n     });\n}\n",
          "xtype" : "ProgressBar",
-         "* pack" : "pack_end,false,true,0",
+         "* pack" : "pack_start,true,true,0",
          "$ xns" : "Gtk"
         }
        ]
