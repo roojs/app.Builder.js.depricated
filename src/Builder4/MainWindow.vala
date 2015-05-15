@@ -2168,6 +2168,7 @@ public class Xcls_MainWindow : Object
             this.handler_id = -1;
 
             // set gobject values
+            this.el.show_text = true;
 
             // init method 
 
