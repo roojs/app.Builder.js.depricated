@@ -86,6 +86,9 @@
 	
 		public BuilderApplication (  string[] args)
 		{
+			
+			_self = args[0];
+			
 			Object(
 			       application_id: "org.roojs.app-builder",
 				flags: ApplicationFlags.FLAGS_NONE
