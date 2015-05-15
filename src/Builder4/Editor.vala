@@ -264,7 +264,7 @@ public class Editor : Object
                 attrs.set_background ( pink);
                 attrs.set_icon_name ( "process-stop");    
                 attrs.query_tooltip_text.connect(( mark) => {
-                    print("tooltip query? %s\n", mark.name);
+                    //print("tooltip query? %s\n", mark.name);
                     return mark.name;
                 });
                 
@@ -480,7 +480,12 @@ public class Editor : Object
             return true; // at present allow saving - even if it's invalid..
         }
         public bool highlightErrorsJson (Json.Object obj) {
-        
+              Gtk.TextIter start;
+             Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+                
+                this.el.remove_source_marks (start, end, null);
+                        
             if (!obj.has_member("ERR")) {
                 print("Return has no errors\n");
                 return true;
