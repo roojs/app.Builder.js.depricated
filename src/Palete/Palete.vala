@@ -323,8 +323,7 @@ namespace Palete
    }
 
 	
-	public ValaSource vs;
-	public   void validateVala(
+ 	public   void validateVala(
      			string code, 
 				string property, 
 				string ptype,
@@ -344,7 +343,8 @@ namespace Palete
 		// file.project , file.path, file.build_module, ""
  		
 		
-		this.vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
+		var vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
+		vs.ref();
 		//var cd = new JSCore.ClassDefinitionEmpty();
 		vs.checkFileWithNodePropChange(
 				file,
@@ -352,7 +352,11 @@ namespace Palete
 				property, 
 				ptype,
 				code,
-				result_callback
+				(res) => {
+					
+					result_callback(res);
+					vs.unref();
+				}
 					
 		 );
 		 
