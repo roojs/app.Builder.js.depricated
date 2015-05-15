@@ -596,10 +596,10 @@
         },
         {
          "Gtk.ToolbarStyle toolbar_style" : "Gtk.ToolbarStyle.BOTH_HORIZ",
-         "xtype" : "Toolbar",
+         "xtype" : "MenuBar",
          "* pack" : "pack_end,false,true,0",
          "$ xns" : "Gtk",
-         "Gtk.IconSize icon_size" : "Gtk.IconSize.SMALL_TOOLBAR",
+         "Gtk.IconSize icon_size" : "Gtk.IconSize.MENU",
          "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {

@@ -2144,7 +2144,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_statusbar( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_Toolbar68( _this );
+            var child_1 = new Xcls_MenuBar68( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,true,0 );
         }
@@ -2194,26 +2194,29 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Toolbar68 : Object 
+    public class Xcls_MenuBar68 : Object 
     {
-        public Gtk.Toolbar el;
+        public Gtk.MenuBar el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
+        public Gtk.ToolbarStyle toolbar_style;
+        public Gtk.IconSize icon_size;
+        public Gtk.Orientation orientation;
 
         // ctor 
-        public Xcls_Toolbar68(Xcls_MainWindow _owner )
+        public Xcls_MenuBar68(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Toolbar();
+            this.el = new Gtk.MenuBar();
 
             // my vars (dec)
+            this.toolbar_style = Gtk.ToolbarStyle.BOTH_HORIZ;
+            this.icon_size = Gtk.IconSize.MENU;
+            this.orientation = Gtk.Orientation.HORIZONTAL;
 
             // set gobject values
-            this.el.orientation = Gtk.Orientation.HORIZONTAL;
-            this.el.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
-            this.el.toolbar_style = Gtk.ToolbarStyle.BOTH_HORIZ;
             var child_0 = new Xcls_ToolButton69( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
