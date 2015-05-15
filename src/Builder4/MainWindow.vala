@@ -2245,6 +2245,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "dialog-error";
+            this.el.hexpand = true;
         }
 
         // user defined functions 

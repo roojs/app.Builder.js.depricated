@@ -603,6 +603,7 @@
          "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {
+           "bool hexpand" : true,
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ToolButton",
