@@ -270,7 +270,7 @@ namespace Palete {
 		}
 		
 		
-		public Gee.HashMap<int,string> compile( )
+		public void compile( )
 		{
 			// init context:
 			var valac = "valac " ;
@@ -449,10 +449,22 @@ namespace Palete {
  
 			Vala.CodeContext.pop ();
 			
+			var generator = new Json.Generator ();
+		    generator.indent = 1;
+		    generator.pretty = true;
+		    var node = new Json.Node(Json.NodeType.OBJECT);
+		    node.set_object(this.report.result);
+		    
+		    generator.set_root(node);
+		    	 
+			generator.pretty = true;
+			generator.indent = 4;
+		 
+
+			print("%s\n",  generator.to_data (null));
+			GLib.Process.exit(Posix.EXIT_SUCCESS);
 			
-			
-			  
-			return this.report.line_errors;
+			 
 		}
 		
 		
