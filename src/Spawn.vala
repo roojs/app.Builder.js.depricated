@@ -3,111 +3,25 @@
 
 using GLib;
 using Gtk;
-// compile valac 
-
-
-
-///using Gee; // for array list?
-/*
-static int main (string[] args) {
-    // A reference to our file
-    
-    var cfg = new SpawnConfig("", { "ls" } , { "" });
-    cfg.setHandlers(
-            (line) => {
-	            stdout.printf("%s\n", line);
-            },
-            null,null,null );
-    cfg.setOptions(
-        false, // async
-        false, // exceptions?? needed??
-        false  // debug???
-    );
-    try {
-        new Spawn(cfg);
-       
-    } catch (Error e) {
-        stdout.printf("Error %s", e.message);
-    }
-    
-    return 0;
-
-}
-*/
-//var Gio      = imports.gi.Gio;
-//var GLib      = imports.gi.GLib;
-
 
 /**
-* @namespace Spawn
-* 
-* Library to wrap GLib.spawn_async_with_pipes
-* 
-* usage:
-* v 
-*
-*var output = new Spawn( SpawnConfig() {
-    cwd = "/home",  // empty string to default to homedirectory.
-    args = {"ls", "-l" },
-    evn = {},
-    ouput  = (line) => { stdout.printf("%d\n", line); }
-    stderr  = (line) => { stdout.printf("%d\n", line); }
-    input  = () => { return "xxx"; }
-};
-*
-*
-*/
-public delegate void SpawnOutput(string line);
-public delegate void SpawnErr(string line);
-public delegate string SpawnInput();
-public delegate void SpawnFinish(int result);
- 
+ * Revised version?
+ * 
+ * x = new Spawn( working dir, args)
+ * x.env = ..... (if you need to set one...
+ * x.output_line.connect((string str) => { ... });
+ * x.input_line.connect(() => { return string });
+ * x.finish.connect((int res, string output, string stderr) => { ... });
+ * 
+ * 
+ * 
+ */
 
-public class  SpawnConfig {
-    public string cwd;
-    public string[] args;
-    public string[]  env;
-    public bool async;
-    public bool exceptions; // fire exceptions.
-    public bool debug; // fire exceptions.
-    
-    public SpawnOutput output;
-    public SpawnErr stderr;
-    public SpawnInput input;
-    public SpawnFinish finish;
-    // defaults..
-    public SpawnConfig(string cwd,
-            string[] args,
-            string[] env
-        ) {
-        this.cwd = cwd;
-        this.args = args;
-        this.env = env;
-         
-        async = false;
-        exceptions = true;
-        debug = false;
-        
-        output = null;
-        stderr = null;
-        input = null;
-        
-    }
 
+
+
+  
  
-    public void setHandlers(
-            SpawnOutput? output,
-            SpawnErr? stderr,
-            SpawnInput? input,
-            SpawnFinish? finish
-         ) {
-        this.output = output;
-        this.stderr = stderr;
-        this.input = input;
-        this.finish = finish;
-    }
-    
-    
 }
 
 public errordomain SpawnError {
@@ -138,21 +52,29 @@ public errordomain SpawnError {
 public class Spawn : Object
 {
 
-    SpawnConfig cfg;
+    public signal void output_line(string str);
+    public signal void finish(int res, string str, string stderr);
 
-    public Spawn(SpawnConfig cfg) throws Error
+	public string cwd;
+	public string[] args;
+	public string[] env;
+
+    public Spawn(string cwd, string[] args) throws Error
     {
        
      
-        this.cfg = cfg;
+        this.cwd = cwd;
+        this.args = args;
+        this.env = {};
+        
         this.output = "";
         this.stderr = "";
     
-        this.cfg.cwd =  this.cfg.cwd.length  < 1 ? GLib.Environment.get_home_dir() : this.cfg.cwd;
-        if (this.cfg.args.length < 0) {
+        this.cwd =  this.cwd.length  < 1 ? GLib.Environment.get_home_dir() : this.cwd;
+        if (this.args.length < 0) {
             throw new SpawnError.NO_ARGS("No arguments");
         }
-        this.run();
+        
     
     }
 
@@ -258,29 +180,29 @@ public class Spawn : Object
       
 
  
-        ChildWatch.add (this.pid, (w_pid, result) => {
-	    
-            this.result = result;
-            if (this.cfg.debug) {
-                stdout.printf("child_watch_add : result:%d ", result);
-            }
-           
-            this.read(this.out_ch);
-            this.read(this.err_ch);
-            
-            
-            Process.close_pid(this.pid);
-            this.pid = -1;
-            if (this.ctx != null) {
-                this.ctx.quit();
-                this.ctx = null;
-            }
-            this.tidyup();
-        //print("DONE TIDYUP");
-            if (this.cfg.finish != null) {
-                this.cfg.finish(this.result);
-            }
-        });
+		ChildWatch.add (this.pid, (w_pid, result) => {
+		
+			this.result = result;
+			if (this.cfg.debug) {
+				stdout.printf("child_watch_add : result:%d ", result);
+			}
+		   
+			this.read(this.out_ch);
+			this.read(this.err_ch);
+			
+			
+			Process.close_pid(this.pid);
+			this.pid = -1;
+			if (this.ctx != null) {
+				this.ctx.quit();
+				this.ctx = null;
+			}
+			this.tidyup();
+			//print("DONE TIDYUP");
+			if (this.cfg.finish != null) {
+				this.cfg.finish(this.result);
+			}
+		});
 	    
 			  
         
@@ -326,7 +248,7 @@ public class Spawn : Object
             }
             
         }
-                // async - if running - return..
+        // async - if running - return..
         if (this.cfg.async && this.pid > -1) {
             return;
         }
