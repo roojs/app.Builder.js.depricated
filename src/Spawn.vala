@@ -138,10 +138,9 @@ public class Spawn : Object
         int standard_error;
 
 
+         
+        Glib.debug("cd %s; %s" , this.cfg.cwd , string.joinv(" ", this.cfg.args));
         
-        if (this.debug) {
-           Glib.debug("cd %s; %s" , this.cfg.cwd , string.joinv(" ", this.cfg.args));
-        }
         
         Process.spawn_async_with_pipes (
                 this.cfg.cwd,
