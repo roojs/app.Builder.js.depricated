@@ -334,30 +334,28 @@ namespace Palete
 	{   
 
 		 print("validate code (%s) %s\n", file.language, code);
-		 var ret = new Gee.HashMap<int,string>();
+		 
 		
 		 
 		if (file.language != "vala" ) { // not sure if we need to validate property
-			return ret;
+			return;
 		}
 		// file.project , file.path, file.build_module, ""
-		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
+ 		
 		
-		
-		this.vs = new ValaSource(file.project, file.filepath, file.build_module, "");
+		this.vs = new ValaSource(file.project, file.path, file.build_module, "");
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		 vs.checkFileWithNodePropChange(
+		vs.checkFileWithNodePropChange(
 				node, 
 				property, 
 				ptype,
 				code,
 				(res) => { 
-					print("go result");
+					print("got result");
 				}
 					
 		 );
 		 
-		return ret;
 
 	}
 	public   Gee.HashMap<int,string>  validateJavascript(
