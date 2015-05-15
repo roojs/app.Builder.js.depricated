@@ -126,7 +126,7 @@ public class Resources : Object
     {
         var cur = this.fetch_pos;
         this.fetch_pos++;
-        this.updateProgress(this.fetch_pos); // min=0;
+        this.updateProgress(this.fetch_pos, this.fetch_files.size); // min=0;
         
         
         if (this.fetch_pos > this.fetch_files.size) {
