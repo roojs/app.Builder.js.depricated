@@ -9,6 +9,8 @@ namespace Palete {
 
 		public string filepath;
 		
+		
+		
 		//public Gee.ArrayList<ValaSourceNotice> notices;
 		public Json.Object result;
 		 
@@ -54,7 +56,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			
-			if (source.file.filename != "~~~~~testfile.vala") {
+			if (source.file.filename != this.filepath) {
 				this.compile_notice("WARN", source.file.filename , source.begin.line, message);
 				return;
 			}
