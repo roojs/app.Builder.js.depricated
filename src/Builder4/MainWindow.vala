@@ -2136,7 +2136,7 @@ public class Xcls_MainWindow : Object
         public Xcls_HBox66(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox( false, 0 );
 
             // my vars (dec)
 

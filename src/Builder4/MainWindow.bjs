@@ -580,6 +580,7 @@
        ]
       },
       {
+       "bool homogeneous" : false,
        "* pack" : "pack_end,false,true,0",
        "xtype" : "HBox",
        "$ xns" : "Gtk",
