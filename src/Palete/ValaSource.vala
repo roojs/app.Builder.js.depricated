@@ -39,6 +39,7 @@ namespace Palete {
 		{
 			base();
 			this.filepath = filepath;
+			this.tmpname = tmpname;
 			this.result = new Json.Object();
 			this.result.set_boolean_member("success", "true");
 			this.result.set_string_member("message", "");
