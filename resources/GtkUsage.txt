@@ -16,7 +16,7 @@ right:
 	Gtk.Menu
 	GtkClutter.Window
 	Gtk.OffScreenWindow
-	
+	Gtk.Popover
     Clutter.ScrollActor
     Clutter.Actor    
 // these should really be based on heirachy..
