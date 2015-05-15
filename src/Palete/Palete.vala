@@ -346,7 +346,7 @@ namespace Palete
 		
 		this.vs = new ValaSource(file.project, file.filepath, file.build_module, "");
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		ret =  vs.checkFileWithNodePropChange(
+		 vs.checkFileWithNodePropChange(
 				node, 
 				property, 
 				ptype,
