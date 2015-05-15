@@ -2146,7 +2146,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , true,true,0 );
             var child_1 = new Xcls_Toolbar68( _this );
             child_1.ref();
-            this.el.pack_end (  child_1.el , false,false,0 );
+            this.el.pack_end (  child_1.el , false,true,0 );
         }
 
         // user defined functions 
@@ -2213,7 +2213,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.orientation = Gtk.Orientation.HORIZONTAL;
             this.el.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
-            this.el.toolbar_style = Gtk.ToolbarStyle.BOTH;
+            this.el.toolbar_style = Gtk.ToolbarStyle.BOTH_HORIZ;
             var child_0 = new Xcls_ToolButton69( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
