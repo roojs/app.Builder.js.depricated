@@ -602,7 +602,7 @@
           {
            "string label" : "Errors",
            "* pack" : "add",
-           "xtype" : "ToolButton",
+           "xtype" : "ImageMenuItem",
            "string icon_name" : "dialog-error",
            "$ xns" : "Gtk",
            "bool no_show_all" : false
