@@ -249,7 +249,8 @@ namespace Palete {
 			}
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.checkStringSpawn(tmpstring,   result_callback );
+			this.result_callback = result_cb;
+			this.checkStringSpawn(tmpstring );
 			
 			// modify report
 			
@@ -259,8 +260,7 @@ namespace Palete {
 		Spawn compiler;
 		ValaSourceResult result_callback;
 		public void checkStringSpawn(
-					string contents,
-					ValaSourceResult result_cb
+					string contents 
 				)
 		{
 			this.result_callback = result_cb;
