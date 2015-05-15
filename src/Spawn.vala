@@ -11,7 +11,9 @@ using GLib;
  * 
  * // these are optionall..
  * x.env = ..... (if you need to set one...
- * x.output_line.connect((string str) => { ... });
+ * x.output_line.connect((string str) => { 
+ * 		if ( Gtk.events_pending()) { Gtk.main_iteration(); } 
+ * });
  * x.input_line.connect(() => { return string });
  * 
  * x.run((int res, string output, string stderr) => { ... });
