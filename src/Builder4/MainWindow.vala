@@ -2243,7 +2243,6 @@ public class Xcls_MainWindow : Object
             this.icon_name = dialog-error;
 
             // set gobject values
-            this.el.no_show_all = false;
             this.el.label = "Errors";
         }
 
