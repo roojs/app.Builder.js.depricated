@@ -2243,7 +2243,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "user-trash";
+            this.el.icon_name = "network-error";
         }
 
         // user defined functions 
