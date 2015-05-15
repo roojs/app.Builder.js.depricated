@@ -375,8 +375,7 @@ namespace Palete {
 			var source_file = new Vala.SourceFile (
 		    		context, 
 		    		Vala.SourceFileType.SOURCE, 
-					this.filepath,
-					contents
+					this.filepath 
 	    		);
 			source_file.add_using_directive (ns_ref);
 			context.add_source_file (source_file);
@@ -448,7 +447,7 @@ namespace Palete {
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
 				Vala.CodeContext.pop ();
-				Glib.debug("parse got errors");
+				GLib.debug("parse got errors");
 				//((ValaSourceReport)context.report).dump();
 				this.report.result.set_boolean_member("success", false);
 				this.report.result.set_string_member("message", "Parse failed");
@@ -463,7 +462,7 @@ namespace Palete {
 			context.check ();
 			if (context.report.get_errors () > 0) {
 				Vala.CodeContext.pop ();
-				Glib.debug("check got errors");
+				GLib.debug("check got errors");
 				//((ValaSourceReport)context.report).dump();
 				this.report.result.set_boolean_member("success", false);
 				this.report.result.set_string_member("message", "Check failed");
