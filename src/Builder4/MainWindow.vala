@@ -2338,7 +2338,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.always_show_image = true;
-            this.el.label = "Errors";
+            this.el.label = "Depricated";
             var child_0 = new Xcls_Image74( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

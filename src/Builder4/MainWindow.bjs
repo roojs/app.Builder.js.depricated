@@ -631,7 +631,7 @@
           },
           {
            "bool always_show_image" : true,
-           "string label" : "Errors",
+           "string label" : "Depricated",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",
