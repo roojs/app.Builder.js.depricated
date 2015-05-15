@@ -9,7 +9,7 @@ namespace Palete {
 
 		public string filepath;
 		
-		
+		public string tmpname;
 		
 		//public Gee.ArrayList<ValaSourceNotice> notices;
 		public Json.Object result;
