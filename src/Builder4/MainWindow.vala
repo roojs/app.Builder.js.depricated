@@ -2150,7 +2150,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_statusbar : Object 
     {
-        public Gtk.Statusbar el;
+        public Gtk.ProgressBar el;
         private Xcls_MainWindow  _this;
 
 
@@ -2162,7 +2162,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.statusbar = this;
-            this.el = new Gtk.Statusbar();
+            this.el = new Gtk.ProgressBar();
 
             // my vars (dec)
             this.handler_id = -1;
