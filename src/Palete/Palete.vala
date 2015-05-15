@@ -329,7 +329,8 @@ namespace Palete
 				string property, 
 				string ptype,
 				JsRender.JsRender file,
-				JsRender.Node node
+				JsRender.Node node,
+				ValaSourceResult result_callback
                      ) 
 	{   
 
@@ -343,16 +344,15 @@ namespace Palete
 		// file.project , file.path, file.build_module, ""
  		
 		
-		this.vs = new ValaSource(file.project, file.path, file.build_module, "");
+		this.vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
 		//var cd = new JSCore.ClassDefinitionEmpty();
 		vs.checkFileWithNodePropChange(
+				file,
 				node, 
 				property, 
 				ptype,
 				code,
-				(res) => { 
-					print("got result");
-				}
+				result_callback
 					
 		 );
 		 
