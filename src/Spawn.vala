@@ -54,6 +54,9 @@ public class Spawn : Object
     public signal void output_line(string str);
     /**
 	 * @signal finish called when the process has completed.
+	 * Note you may want to connect this and run 
+	 *   if ( Gtk.events_pending()) { Gtk.main_iteration(); }
+	 * 
 	 * @param {int} result_id (the unix return)
 	 * @param {string} str  (the output string)
 	 * @param {string} stderr  (the stderr output)
