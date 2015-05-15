@@ -482,30 +482,36 @@ public class Editor : Object
         public bool highlightErrorsJson (Json.Object obj) {
         
             if (!obj.has_member("ERR")) {
+                print("Return has no errors\n");
                 return true;
             }
             var err = obj.get_object_member("ERR");
             
             if (!err.has_member(_this.file.path)) {
+                print("File path has no errors\n");
                 return true;
             }
+        
             var lines = err.get_object_member(_this.file.path);
             
             var offset = 0;
             if (obj.has_member("line_offset")) {
-                offset = obj.get_int_member("line_offset");
+                offset = (int)obj.get_int_member("line_offset");
             }
+             
             
+            var tlines = this.el.get_line_count ();
             
-            var tlines =  this.el.get_line_count ();
-             Gtk.TextIter iter;
-            lines.foreach_member((obj, line, node)) {
+            lines.foreach_member((obj, line, node) => {
                 
-                
+                     Gtk.TextIter iter;
             //        print("get inter\n");
                     var eline = int.parse(line) - offset;
+                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
+                    
+                    
                     if (eline > tlines || eline < 0) {
-                        continue;
+                        return;
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
