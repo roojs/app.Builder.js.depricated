@@ -2367,7 +2367,6 @@ public class Xcls_MainWindow : Object
             this.el.width_request = 16;
             this.el.icon_name = "dialog-information";
             this.el.height_request = 16;
-            this.el.icon_size = 16;
         }
 
         // user defined functions 

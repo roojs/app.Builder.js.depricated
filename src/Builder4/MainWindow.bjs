@@ -649,7 +649,6 @@
            "int height_request" : 16,
            "utf8 icon_name" : "dialog-information",
            "xtype" : "Image",
-           "int icon_size" : 16,
            "int width_request" : 16,
            "1" : "set_image",
            "$ xns" : "Gtk"
