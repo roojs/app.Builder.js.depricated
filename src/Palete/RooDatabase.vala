@@ -25,6 +25,11 @@ namespace Palete {
             this.project = project;
 			this.DBTYPE = this.project.get_string_member("DBTYPE");
 			this.DBNAME = this.project.get_string_member("DBNAME");
+			if (this.DBTYPE.length < 1) {
+				return;
+			}
+			
+			
 			try {
 				
 					this.cnc = Gda.Connection.open_from_string (
@@ -35,11 +40,11 @@ namespace Palete {
 					Gda.ConnectionOptions.NONE
 				);
 			} catch(Gda.ConfigError e) {
-				print("%s\n", e.message);
+				GLib.warning("%s\n", e.message);
 				this.cnc  = null;
 				this.DBTYPE = "";
 			} catch(Gda.ConnectionError e) {
-				print("%s\n", e.message);
+				GLib.warning("%s\n", e.message);
 				this.cnc  = null;
 				this.DBTYPE = "";
 			}
@@ -86,7 +91,7 @@ namespace Palete {
 			if (this.DBTYPE == "MySQL") { 
 				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" ));
 			}
-			print("Read tables failed DBTYPE = %s\n", this.DBTYPE);
+			GLib.warning("Read tables failed DBTYPE = %s\n", this.DBTYPE);
 			return new Json.Array();
 			
 		}
@@ -189,7 +194,10 @@ namespace Palete {
 			}
  			
 			var contents = jarr.get_string_element(0);
-			print(contents);
+			GLib.debug(contents);
+			if (contents == null) {
+				return ret;
+			}
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
 			 string str = "";
@@ -198,7 +206,7 @@ namespace Palete {
 				if ( exp.match (contents, 0, out mi) ) {
 					
 					str = mi.fetch(1);
-					print("match = %s", str);
+					GLib.debug("match = %s", str);
 				}
 			} catch (GLib.Error e) {
 				return  ret;

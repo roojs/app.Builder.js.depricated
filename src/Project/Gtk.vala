@@ -46,7 +46,7 @@ namespace Project {
 			
 			
 			var fn = this.firstPath() + "/config1.builder";
-			print("load: " + fn );
+			GLib.debug("load: " + fn );
 			
 			if (!FileUtils.test(fn, FileTest.EXISTS)) {
 				this.compilegroups.set("_default_", new GtkValaSettings("_default_") );
@@ -71,7 +71,7 @@ namespace Project {
 				}
 				this.compilegroups.set(vs.name,vs);
 			}
-			print("%s\n",this.configToString ());
+			GLib.debug("%s\n",this.configToString ());
 			
 		}
 		public string configToString()
@@ -95,7 +95,7 @@ namespace Project {
 		public void writeConfig()
 		{
 			var fn = this.firstPath() + "/config1.builder";
-			print("write: " + fn );
+			GLib.debug("write: " + fn );
 
 			 
 			var f = GLib.File.new_for_path(fn);
@@ -145,13 +145,13 @@ namespace Project {
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 			
-			print("SCAN %s\n", dirname);
+			GLib.debug("SCAN %s\n", dirname);
 				// scan the directory for files -- ending with vala || c
 			
 
 			var dir = File.new_for_path(dirname);
 			if (!dir.query_exists()) {
-				print("SCAN %s - skip - does not exist\n", dirname);
+				GLib.debug("SCAN %s - skip - does not exist\n", dirname);
 				return ret;
 			}
 	  
@@ -168,7 +168,7 @@ namespace Project {
 				while ((next_file = file_enum.next_file(null)) != null) {
 					var fn = next_file.get_display_name();
 					
-					print("SCAN %s - checking %s\n", dirname, fn);
+					GLib.debug("SCAN %s - checking %s\n", dirname, fn);
 					if (Regex.match_simple("\\.vala$", fn)) {
 						ret.add(in_path + "/" + fn);
 						continue;
@@ -202,9 +202,9 @@ namespace Project {
 						
 				       
    			} catch(Error e) {
-				print("oops - something went wrong scanning the projects\n");
+				GLib.warning("oops - something went wrong scanning the projects\n");
 			}
-			print("SCAN %s = returning %d", dirname, ret.size);
+			GLib.debug("SCAN %s = returning %d", dirname, ret.size);
 			 
 			return ret;
 			
@@ -286,7 +286,7 @@ namespace Project {
 				var path = this.resolve_path( this.firstPath(), sources.get(i));
 				
 				if (Path.get_basename (path) == "vapi") {
-					print("Adding VAPIDIR: %s\n", path);
+					GLib.debug("Adding VAPIDIR: %s\n", path);
 					ret += path;
 				}
 				
