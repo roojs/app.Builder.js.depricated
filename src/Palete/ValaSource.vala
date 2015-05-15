@@ -308,6 +308,7 @@ namespace Palete {
 					throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 				}
 				var ret = node.get_object ();
+				ret.set_int_member("line_offset", this.line_offset);
 				if (result_callback == null) {
 					print ("no callback?");
 					return;
