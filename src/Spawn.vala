@@ -369,7 +369,7 @@ public class Spawn : Object
                     //}
                     if (ch == this.out_ch) {
                         this.output += buffer;
-                        this.line_output(  buffer);                  
+                        this.output_line(  buffer);                  
                         
                     } else {
                         this.stderr += buffer;
