@@ -602,6 +602,7 @@
           {
            "* pack" : "add",
            "xtype" : "ToolButton",
+           "string label" : "Errors",
            "$ xns" : "Gtk",
            "items" : [
             {

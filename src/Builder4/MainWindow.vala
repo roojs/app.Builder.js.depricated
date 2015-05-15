@@ -2239,7 +2239,7 @@ public class Xcls_MainWindow : Object
         public Xcls_ToolButton69(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ToolButton( null, null );
+            this.el = new Gtk.ToolButton( null, "Errors" );
 
             // my vars (dec)
 
