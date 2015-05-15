@@ -35,7 +35,7 @@ namespace Palete {
 		
 		
 	 
-		public ValaSourceReport(filepath)
+		public ValaSourceReport(string filepath, string tmpname)
 		{
 			base();
 			this.filepath = filepath;
@@ -56,7 +56,7 @@ namespace Palete {
 				//stderr.printf ("My error: %s\n", message);
 			}
 			
-			if (source.file.filename != this.filepath) {
+			if (source.file.filename != this.tmpname) {
 				this.compile_notice("WARN", source.file.filename , source.begin.line, message);
 				return;
 			}
@@ -430,11 +430,14 @@ namespace Palete {
 			parser.parse (context);
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
-				Glib.debug("parse got errors");
-				((ValaSourceReport)context.report).dump();
-				
 				Vala.CodeContext.pop ();
- 				return this.report.line_errors;
+				Glib.debug("parse got errors");
+				//((ValaSourceReport)context.report).dump();
+				this.report.result.set_string_member("success", "false");
+				
+				
+				this.outputReport();
+				return;
 			}
 
 
@@ -467,7 +470,11 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			
+			this.outputReport();
+		
+		}
+		public void outputResult()
+		{
 			var generator = new Json.Generator ();
 		    generator.indent = 1;
 		    generator.pretty = true;
@@ -485,7 +492,7 @@ namespace Palete {
 			
 			 
 		}
-		
+/*		
 		
 		
 		public Gee.HashMap<int,string> checkString(string contents)
@@ -657,18 +664,7 @@ namespace Palete {
 			context.output = "/tmp/testbuild";
 			valac += " -o " +context.output;
 			//context.codegen.emit (context);
-			/*
-			var ccompiler = new Vala.CCodeCompiler ();
-			var cc_command = Environment.get_variable ("CC");
-			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
-#if VALA_0_28
-			ccompiler.compile (context, cc_command, new string[] { }, pkg_config_command);
-#else
-			ccompiler.compile (context, cc_command, new string[] { });
-#endif
-			*/
- 
-			Vala.CodeContext.pop ();
+			 odeContext.pop ();
 			//(new Vala.CodeNode()).get_error_types().clear();
 			//(new Vala.NullType()).get_type_arguments().clear();
 			(new Vala.NullType(null)).get_type_arguments().clear();
@@ -681,7 +677,7 @@ namespace Palete {
 	//
 		// startpoint:
 		//
-	 
+	 */
 	}
 }
 /*
