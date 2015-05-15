@@ -61,7 +61,7 @@ public class ResourcesItem : Object {
 public class Resources : Object
 {
 
-     public signal void updateProgress(uint cur_pos);
+     public signal void updateProgress(uint cur_pos, uint total);
 
      static Resources singleton_val;
      
