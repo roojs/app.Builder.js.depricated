@@ -633,6 +633,7 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
+         "bool always_show_image" : true,
          "* pack" : "pack_start,true,true,0",
          "string label" : "Depricated",
          "xtype" : "Button",
