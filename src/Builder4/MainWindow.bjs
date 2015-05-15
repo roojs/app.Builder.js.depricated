@@ -614,6 +614,20 @@
              "$ xns" : "Gtk"
             }
            ]
+          },
+          {
+           "string label" : "Warnings",
+           "* pack" : "add",
+           "xtype" : "ToolButton",
+           "$ xns" : "Gtk",
+           "items" : [
+            {
+             "utf8 icon_name" : "dialog-warning",
+             "* pack" : "set_image",
+             "xtype" : "Image",
+             "$ xns" : "Gtk"
+            }
+           ]
           }
          ]
         },
