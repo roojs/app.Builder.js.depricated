@@ -323,13 +323,14 @@ namespace Palete
    }
 
 	ValaSource vs;
+	ValaSourceResult result_callback;
  	public   void validateVala(
      			string code, 
 				string property, 
 				string ptype,
 				JsRender.JsRender file,
 				JsRender.Node node,
-				ValaSourceResult result_cb
+				 ValaSourceResult result_cb
                      ) 
 	{   
 
@@ -365,7 +366,7 @@ namespace Palete
 		this.vs = null;
 	}
 	
-	ValaSourceResult result_callback;
+	
 	
 	public   Gee.HashMap<int,string>  validateJavascript(
      			string code, 
