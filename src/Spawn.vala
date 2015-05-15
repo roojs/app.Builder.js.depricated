@@ -407,7 +407,7 @@ public class Spawn : Object
     
 }
 
- 
+ /*
 int main (string[] args) {
 	GLib.Log.set_handler(null, 
 		GLib.LogLevelFlags.LEVEL_DEBUG | GLib.LogLevelFlags.LEVEL_WARNING, 
@@ -428,3 +428,4 @@ int main (string[] args) {
 	return 0;
 }
 
+*/
