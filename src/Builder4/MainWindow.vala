@@ -2201,9 +2201,6 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
-        public Gtk.ToolbarStyle toolbar_style;
-        public Gtk.IconSize icon_size;
-        public Gtk.Orientation orientation;
 
         // ctor 
         public Xcls_MenuBar68(Xcls_MainWindow _owner )
@@ -2212,9 +2209,6 @@ public class Xcls_MainWindow : Object
             this.el = new Gtk.MenuBar();
 
             // my vars (dec)
-            this.toolbar_style = Gtk.ToolbarStyle.BOTH_HORIZ;
-            this.icon_size = Gtk.IconSize.MENU;
-            this.orientation = Gtk.Orientation.HORIZONTAL;
 
             // set gobject values
             var child_0 = new Xcls_ToolButton69( _this );
@@ -2249,7 +2243,6 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.icon_name = "dialog-error";
             this.el.no_show_all = false;
-            this.el.hexpand = true;
         }
 
         // user defined functions 

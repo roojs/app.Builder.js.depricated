@@ -595,15 +595,11 @@
          "$ xns" : "Gtk"
         },
         {
-         "Gtk.ToolbarStyle toolbar_style" : "Gtk.ToolbarStyle.BOTH_HORIZ",
-         "xtype" : "MenuBar",
          "* pack" : "pack_end,false,true,0",
+         "xtype" : "MenuBar",
          "$ xns" : "Gtk",
-         "Gtk.IconSize icon_size" : "Gtk.IconSize.MENU",
-         "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {
-           "bool hexpand" : true,
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ToolButton",
