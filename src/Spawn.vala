@@ -1,8 +1,8 @@
 
-/// # valac  --pkg gio-2.0 --pkg gtk+-3.0  --pkg posix Spawn.vala -o /tmp/Spawn
+/// # valac  --pkg gio-2.0    --pkg posix Spawn.vala -o /tmp/Spawn
 
 using GLib;
-using Gtk;
+ 
 
 /**
  * Revised version?
@@ -420,4 +420,4 @@ int main (string[] args) {
             
 	return 0;
 }
-*/
+
