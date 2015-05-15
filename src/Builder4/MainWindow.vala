@@ -2144,6 +2144,8 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_statusbar( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
+            var child_1 = new Xcls_Button68( _this );
+            child_1.ref();
         }
 
         // user defined functions 
@@ -2187,6 +2189,85 @@ public class Xcls_MainWindow : Object
                    
                  });
             }
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Button68 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button68(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.width_request = 50;
+            this.el.height_request = 50;
+            this.el.tooltip_text = "Delete Project";
+            var child_0 = new Xcls_Image69( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.clicked.connect( ( ) => {
+                 
+                 var cd = DialogConfirm.singleton();
+                 cd.el.set_transient_for(_this.el);
+                cd.el.set_modal(true);
+            
+                 var project =   _this.windowstate.left_projects.getSelectedProject();
+                if (project == null) {
+                    print("SKIP - no project\n");
+                    return;
+                }
+                
+                    
+                 if (Gtk.ResponseType.YES != cd.show("Confirm", 
+                    "Are you sure you want to delete project %s".printf(project.name))) {
+                    return;
+                }
+                 
+            
+                // confirm?
+                Project.Project.remove(project);
+                _this.project = null;
+                
+                _this.windowstate.left_projects.is_loaded =  false;
+                _this.windowstate.left_projects.load();
+                _this.windowstate.clutterfiles.clearFiles();
+            
+            });
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_Image69 : Object 
+    {
+        public Gtk.Image el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Image69(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "user-trash";
         }
 
         // user defined functions 
