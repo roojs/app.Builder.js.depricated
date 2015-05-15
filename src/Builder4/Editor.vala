@@ -19,6 +19,7 @@ public class Editor : Object
     public Xcls_buffer buffer;
 
         // my vars (def)
+    public Xcls_MainWindow window;
     public string activeEditor;
     public int pos_root_x;
     public int pos_root_y;
@@ -37,6 +38,7 @@ public class Editor : Object
         this.el = new Gtk.VBox( false, 0 );
 
         // my vars (dec)
+        this.window = null;
         this.activeEditor = "";
         this.ptype = "";
         this.key = "";
