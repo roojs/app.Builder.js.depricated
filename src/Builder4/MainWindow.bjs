@@ -597,7 +597,14 @@
         {
          "* pack" : "pack_start,?bool?,?bool?,?uint?",
          "xtype" : "Toolbar",
-         "$ xns" : "Gtk"
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "* pack" : "composite_name",
+           "xtype" : "ToolButton",
+           "$ xns" : "Gtk"
+          }
+         ]
         },
         {
          "listeners" : {
