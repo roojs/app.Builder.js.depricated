@@ -461,8 +461,8 @@ public class Editor : Object
             print("calling validate vala\n");    
             // clear the buttons.
             _this.window.statusbar_errors.el.hide();
-            _this.window.statusbar_errors.el.hide();
-            _this.window.statusbar_errors.el.hide();
+            _this.window.statusbar_warnings.el.hide();
+            _this.window.statusbar_depricated.el.hide();
             
             
             
