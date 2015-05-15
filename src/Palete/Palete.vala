@@ -322,18 +322,19 @@ namespace Palete
 
    }
 
-	
+	ValaSource vs;
  	public   void validateVala(
      			string code, 
 				string property, 
 				string ptype,
 				JsRender.JsRender file,
 				JsRender.Node node,
-				ValaSourceResult result_callback
+				ValaSourceResult result_cb
                      ) 
 	{   
 
-		 print("validate code (%s) %s\n", file.language, code);
+		this.result_callback = result_cb;
+		print("validate code (%s) %s\n", file.language, code);
 		 
 		
 		 
@@ -343,15 +344,16 @@ namespace Palete
 		// file.project , file.path, file.build_module, ""
  		
 		
-		var vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
-		vs.ref();
+		this.vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
+		
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		vs.checkFileWithNodePropChange(
+		this.vs.checkFileWithNodePropChange(
 				file,
 				node, 
 				property, 
 				ptype,
 				code,
+				validateValaResult
 				(res) => {
 					
 					result_callback(res);
@@ -362,6 +364,12 @@ namespace Palete
 		 
 
 	}
+	void validateValaResult(Json.Object res) {
+		this.result_callback(res);
+	}
+	
+	
+	
 	public   Gee.HashMap<int,string>  validateJavascript(
      			string code, 
 				string property, 
