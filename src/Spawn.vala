@@ -38,7 +38,7 @@ public errordomain SpawnError {
  
  * 
  */
-
+void SpawnFinish (int res, string str, string stderr);
 
 public class Spawn : Object
 {
