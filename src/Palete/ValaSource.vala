@@ -2,7 +2,8 @@
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
 namespace Palete {
-	 
+	
+	delegate ValaSourceResult void (Json.Object res);
 	
 	public class ValaSourceReport  : Vala.Report {
 
