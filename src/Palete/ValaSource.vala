@@ -221,7 +221,13 @@ namespace Palete {
 					ValaSourceResult result_callback
 				)
 		{
-			
+			FileIOStream iostream;
+			this.tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
+			stdout.printf ("tmp file name: %s\n", file.get_path ());
+
+			OutputStream ostream = iostream.output_stream;
+			DataOutputStream dostream = new DataOutputStream (ostream);
+			dostream.put_string ("my tmp data\n");
 			
 			
 			string[] args = {};
