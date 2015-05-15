@@ -604,7 +604,7 @@
          "items" : [
           {
            "xtype" : "Image",
-           "utf8 icon_name" : "network-error",
+           "utf8 icon_name" : "dialog-error",
            "* pack" : "set_image",
            "$ xns" : "Gtk"
           }
@@ -622,7 +622,7 @@
           {
            "* pack" : "set_image",
            "xtype" : "Image",
-           "utf8 icon_name" : "network-error",
+           "utf8 icon_name" : "dialog-warning",
            "$ xns" : "Gtk"
           }
          ]
