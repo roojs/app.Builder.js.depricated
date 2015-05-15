@@ -2214,10 +2214,10 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_ImageMenuItem69( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ToolButton70( _this );
+            var child_1 = new Xcls_ToolButton71( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_ToolButton71( _this );
+            var child_2 = new Xcls_ToolButton72( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -2244,28 +2244,31 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "Errors";
+            var child_0 = new Xcls_Image70( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_ToolButton70 : Object 
+    public class Xcls_Image70 : Object 
     {
-        public Gtk.ToolButton el;
+        public Gtk.Image el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_ToolButton70(Xcls_MainWindow _owner )
+        public Xcls_Image70(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ToolButton( null, "Warnings" );
+            this.el = new Gtk.Image();
 
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "dialog-warning";
+            this.el.icon_name = "user-trash";
         }
 
         // user defined functions 
@@ -2280,6 +2283,28 @@ public class Xcls_MainWindow : Object
 
         // ctor 
         public Xcls_ToolButton71(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ToolButton( null, "Warnings" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "dialog-warning";
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_ToolButton72 : Object 
+    {
+        public Gtk.ToolButton el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ToolButton72(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.ToolButton( null, "Depricated" );

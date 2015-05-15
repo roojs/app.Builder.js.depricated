@@ -604,7 +604,15 @@
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "string icon_name" : "dialog-error",
-           "$ xns" : "Gtk"
+           "$ xns" : "Gtk",
+           "items" : [
+            {
+             "* pack" : "set_image",
+             "xtype" : "Image",
+             "utf8 icon_name" : "user-trash",
+             "$ xns" : "Gtk"
+            }
+           ]
           },
           {
            "xtype" : "ToolButton",
