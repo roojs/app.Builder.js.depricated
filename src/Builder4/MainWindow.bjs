@@ -605,15 +605,8 @@
            "* pack" : "add",
            "xtype" : "ToolButton",
            "string label" : "Errors",
-           "$ xns" : "Gtk",
-           "items" : [
-            {
-             "* pack" : "set_image",
-             "xtype" : "Image",
-             "utf8 icon_name" : "dialog-error",
-             "$ xns" : "Gtk"
-            }
-           ]
+           "string icon_name" : "dialog-error",
+           "$ xns" : "Gtk"
           },
           {
            "string label" : "Warnings",
