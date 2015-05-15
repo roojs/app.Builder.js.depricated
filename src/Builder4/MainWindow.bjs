@@ -598,6 +598,7 @@
          "* pack" : "pack_end,false,false,0",
          "xtype" : "Toolbar",
          "$ xns" : "Gtk",
+         "Gtk.IconSize icon_size" : "Gtk.IconSize.SMALL_TOOLBAR",
          "items" : [
           {
            "* pack" : "add",

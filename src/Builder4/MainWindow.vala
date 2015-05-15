@@ -2220,6 +2220,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
             var child_0 = new Xcls_ToolButton69( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
