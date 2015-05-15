@@ -481,6 +481,8 @@ public class Editor : Object
         }
         public void highlightErrorsJson (Json.Object obj) {
         
+            
+        
         
         
         
