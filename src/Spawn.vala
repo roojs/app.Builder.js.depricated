@@ -12,7 +12,7 @@ using Gtk;
  * x.output_line.connect((string str) => { ... });
  * x.input_line.connect(() => { return string });
  * x.finish.connect((int res, string output, string stderr) => { ... });
- * 
+ * x.run();
  * 
  * 
  */
@@ -51,7 +51,7 @@ public errordomain SpawnError {
 
 public class Spawn : Object
 {
-
+	public signal sting input(string str);
     public signal void output_line(string str);
     public signal void finish(int res, string str, string stderr);
 
