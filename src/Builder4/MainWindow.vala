@@ -2184,12 +2184,7 @@ public class Xcls_MainWindow : Object
                      this.el.show();
                      this.el.set_fraction ((1.0f * pos) / (1.0f * total));
                      this.el.set_text("Fetching Resource : %s/%s".printf(pos.to_string(), total.to_string()));
-                   /*    
-                    this.el.show();
-                    var cid = this.el.get_context_id("resources");
-                    this.el.remove_all(cid);
-                    this.el.push(cid,"Fetching Resource : %s/7".printf(pos.to_string()));
-                    */ 
+                   
                  });
             }
         }
