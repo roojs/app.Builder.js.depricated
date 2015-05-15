@@ -595,6 +595,11 @@
          "$ xns" : "Gtk"
         },
         {
+         "* pack" : "pack_start,?bool?,?bool?,?uint?",
+         "xtype" : "Toolbar",
+         "$ xns" : "Gtk"
+        },
+        {
          "listeners" : {
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
