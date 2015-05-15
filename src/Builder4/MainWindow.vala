@@ -2303,7 +2303,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "network-error";
+            this.el.icon_name = "dialog-warning";
         }
 
         // user defined functions 
@@ -2325,7 +2325,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Errors";
+            this.el.label = "Depricated";
             var child_0 = new Xcls_Image73( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );

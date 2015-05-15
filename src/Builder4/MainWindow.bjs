@@ -632,7 +632,7 @@
           "clicked" : "  ( ) => {\n     \n    // show the compiler popup....\n\n}"
          },
          "* pack" : "pack_start,true,true,0",
-         "string label" : "Errors",
+         "string label" : "Depricated",
          "xtype" : "Button",
          "$ xns" : "Gtk",
          "items" : [
