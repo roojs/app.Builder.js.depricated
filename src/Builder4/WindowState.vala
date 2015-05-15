@@ -325,8 +325,10 @@ public class WindowState : Object
 	public void codeEditInit()
 	{
 		this.code_editor  = new  Editor();
-		this.code_editor.ref();  /// really?
+		//this.code_editor.ref();  /// really?
 		((Gtk.Container)(this.win.codeeditview.el.get_widget())).add(this.code_editor.el);
+		
+		this.code_editor.window = this.win;
 		//this.projectsettings.el.show_all();
 
 		var stage = this.win.codeeditview.el.get_stage();
