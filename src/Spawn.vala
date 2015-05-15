@@ -59,6 +59,7 @@ public class Spawn : Object
 	public string[] args;
 	public string[] env;
 	public bool debug = false;
+	public bool is_async = true;
 
     public Spawn(string cwd, string[] args) throws Error
     {
