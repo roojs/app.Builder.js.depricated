@@ -87,7 +87,7 @@
          "* pack" : "set_buffer",
          "xtype" : "SourceBuffer",
          "bool check_running" : false,
-         "| void highlightErrorsJson" : "() {\n\n}\n",
+         "| void highlightErrorsJson" : "(Json.Object obj) {\n\n\n\n\n}\n",
          "$ xns" : "Gtk"
         }
        ]

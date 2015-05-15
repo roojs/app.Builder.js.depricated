@@ -479,7 +479,10 @@ public class Editor : Object
              
             return true; // at present allow saving - even if it's invalid..
         }
-        public void highlightErrorsJson () {
+        public void highlightErrorsJson (Json.Object obj) {
+        
+        
+        
         
         }
     }
