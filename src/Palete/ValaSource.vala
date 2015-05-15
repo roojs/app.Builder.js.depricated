@@ -107,7 +107,7 @@ namespace Palete {
 
 	}
 
-	public class ValaSource : Vala.CodeVisitor {
+	public class ValaSource : Object {
 
 		public static void jerr(string str)
 		{
