@@ -159,7 +159,7 @@ namespace Palete {
 			}
 			var skip_file = "";
 			if (BuilderApplication.opt_compile_skip != null) {
-				skipfile = BuilderApplication.opt_compile_skip;
+				skip_file = BuilderApplication.opt_compile_skip;
 			}
 			var add_file = "";
 			if (BuilderApplication.opt_compile_add != null) {
@@ -285,7 +285,7 @@ namespace Palete {
 					var node = pa.get_root();
 
 					if (node.get_node_type () != Json.NodeType.OBJECT) {
-						throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+						throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 					}
 					
 					// delete tmpfile...
@@ -354,9 +354,9 @@ namespace Palete {
 			context.metadata_directories = { };
 			context.gir_directories = {};
 			context.thread = true;
+			 
 			
-			
-			this.report = new ValaSourceReport(this.filepath, this.tmpname);
+			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
 			context.report = this.report;
 			
 			
