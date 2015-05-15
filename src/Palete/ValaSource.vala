@@ -204,7 +204,7 @@ namespace Palete {
 		//	return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
 		//}
 
-		public Gee.HashMap<int,string> checkFileWithNodePropChange(
+		public void checkFileWithNodePropChange(
 					JsRender.JsRender file,
 					JsRender.Node node, 
 					string prop,
@@ -221,7 +221,7 @@ namespace Palete {
 			// untill we get a smarter renderer..
 			// we have some scenarios where changing the value does not work
 			if (prop == "* xns" || prop == "xtype") {
-				return ret;
+				return;
 			}
 				
 			
@@ -452,7 +452,7 @@ namespace Palete {
 				this.report.result.set_boolean_member("success", false);
 				this.report.result.set_string_member("message", "Parse failed");
 				
-				this.outputReport();
+				this.outputResult();
 				return;
 			}
 
@@ -467,7 +467,7 @@ namespace Palete {
 				this.report.result.set_boolean_member("success", false);
 				this.report.result.set_string_member("message", "Check failed");
 				
-				this.outputReport();
+				this.outputResult();
 				return;
 			}
 			
@@ -489,7 +489,7 @@ namespace Palete {
 			*/
  
 			Vala.CodeContext.pop ();
-			this.outputReport();
+			this.outputResult();
 		
 		}
 		public void outputResult()
