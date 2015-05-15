@@ -208,11 +208,7 @@ namespace Palete {
 			}
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.checkStringSpawn(tmpstring, ( JSON.Object res  ) => {
-				
-				
-				result_callback(res);
-			}) );
+			this.checkStringSpawn(tmpstring,  result_callback );
 			
 			// modify report
 			
@@ -220,25 +216,38 @@ namespace Palete {
 			
 		}
 		
-		public  Gee.HashMap<int,string> checkStringThread(string contents)
+		public void checkStringThread(
+					string contents,
+					ValaSourceResult result_callback
+				)
 		{
 			
+			string[] args = {};
 			
 			
-			SourceFunc callback = checkStringThread.callback;
-			var ret = new Gee.HashMap<int,string>();
-			ThreadFunc<void*> run = () => {
-				 
-				// Pass back result and schedule callback
-				ret = this.checkString(contents);
-				Idle.add((owned) callback);
-				return null;
-			};
-			Thread.create<void*>(run, false);
+			this.compiler = new Spawn("/tmp", args);
+			this.compiler.run((res, output, stderr) => {
+				try { 
+					var pa = new Json.Parser();
+					pa.load_from_file(this.path);
+					var node = pa.get_root();
 
-			// Wait for background thread to schedule our callback
-			yield;
-			return ret;
+					if (node.get_node_type () != Json.NodeType.OBJECT) {
+						throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+					}
+					result_callback(node.get_object ())
+					
+					
+				} catch (Error e) {
+					var ret = new Json.Object();
+					ret.set_boolean_member("success", false);
+					ret.set_string_member("message", e.message);
+					result_callback(ret);
+				}
+				
+			});
+			
+			 
 		}
 		
 		
