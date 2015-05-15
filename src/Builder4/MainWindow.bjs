@@ -611,7 +611,6 @@
              "* pack" : "set_image",
              "xtype" : "Image",
              "utf8 icon_name" : "dialog-error",
-             "int icon_size" : 16,
              "$ xns" : "Gtk"
             }
            ]
