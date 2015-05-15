@@ -87,7 +87,8 @@
          "* pack" : "set_buffer",
          "xtype" : "SourceBuffer",
          "bool check_running" : false,
-         "$ xns" : "Gtk"
+         "$ xns" : "Gtk",
+         "| return_type XXXX" : "() {\n\n}\n"
         }
        ]
       }
