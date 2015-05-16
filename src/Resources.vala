@@ -88,7 +88,8 @@ public class Resources : Object
 		string[] avail_files = { 
 			"roodata.json",
 			"*",
-			"Editors/*.js"
+			"Editors/*.js",
+			"src/vapi/*.vapi"
 			
 		};
 		this.fetch_files = new Gee.ArrayList<ResourcesItem>();
@@ -130,7 +131,7 @@ public class Resources : Object
         
         
         if (this.fetch_pos > this.fetch_files.size) {
-			 this.updateProgress(0);
+			 this.updateProgress(0,0);
 		     this.fetch_pos = 0;
 		     return;
 			
