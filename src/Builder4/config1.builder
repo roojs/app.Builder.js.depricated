@@ -104,7 +104,8 @@
             "libvala-0.26",
             "webkit2gtk-4.0",
             "gee-1.0",
-            "posix"
+            "posix",
+            "libvala-0.24"
         ]
     }
 ]
