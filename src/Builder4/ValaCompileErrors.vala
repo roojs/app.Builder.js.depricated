@@ -48,9 +48,9 @@ public class Xcls_ValaCompileErrors : Object
             // id line "display text", file
             
             var title = GLib.Path.get_basename( file) ;
-            var id = file;
+            
             store.append(out iter, null);
-            this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
+            store.set(iter, 0, file, 1, 0, 2, title, 3, "",-1);
             var lines = tree.get_object_member(file);
             lines.foreach_member((obja, line, nodea) => {
                 var msg  = "";
@@ -60,7 +60,12 @@ public class Xcls_ValaCompileErrors : Object
     		    msg += ar.get_string_element(i);
     	    }
                 store.append(out citer, iter);
-                
+                store.set(iter, 
+                    0, file + ":" + line, 
+                    1, int.parse(line), 
+                    2, GLib.Markup.escape_text(line + ": " + msg), 
+                    3, line,-1);
+            
             });
             
             
