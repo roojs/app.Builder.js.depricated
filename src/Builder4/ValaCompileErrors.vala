@@ -64,7 +64,7 @@ public class Xcls_ValaCompileErrors : Object
                     0, file + ":" + line, 
                     1, int.parse(line), 
                     2, GLib.Markup.escape_text(line + ": " + msg), 
-                    3, line,-1);
+                    3, file,-1);
             
             });
             
