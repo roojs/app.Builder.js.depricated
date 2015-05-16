@@ -20,11 +20,6 @@ public class Xcls_GtkView : Object
     public Xcls_renderer renderer;
 
         // my vars (def)
-    public Gtk.Widget lastObj;
-    public int width;
-    public Xcls_MainWindow main_window;
-    public JsRender.JsRender file;
-    public int height;
 
     // ctor 
     public Xcls_GtkView()
@@ -33,12 +28,6 @@ public class Xcls_GtkView : Object
         this.el = new Gtk.VPaned();
 
         // my vars (dec)
-        this.lastObj = null;
-        this.width = 0;
-        this.file = null;
-        this.height = 0;
-
-        // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
@@ -202,11 +191,9 @@ public class Xcls_GtkView : Object
         public Xcls_ScrolledWindow2(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
+            this.el = new Gtk.ScrolledWindow();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_view_layout( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -227,11 +214,9 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.view_layout = this;
-            this.el = new Gtk.Layout( null, null );
+            this.el = new Gtk.Layout();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_container( _this );
             child_0.ref();
             this.el.put (  child_0.el , 10,10 );
@@ -252,11 +237,9 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.container = this;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox();
 
             // my vars (dec)
-
-            // set gobject values
         }
 
         // user defined functions 
@@ -274,11 +257,9 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.compile_view = this;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.VBox();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_HBox6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
@@ -301,11 +282,9 @@ public class Xcls_GtkView : Object
         public Xcls_HBox6(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.HBox();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_Button7( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
@@ -328,9 +307,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.Button();
 
             // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Full Compile";
         }
 
         // user defined functions 
@@ -350,8 +326,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.HPaned();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_ScrolledWindow9( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -374,11 +348,9 @@ public class Xcls_GtkView : Object
         public Xcls_ScrolledWindow9(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
+            this.el = new Gtk.ScrolledWindow();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_compile_tree( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -410,8 +382,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_compile_result_store( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
@@ -435,11 +405,9 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.compile_result_store = this;
-            this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
+            this.el = new Gtk.TreeStore();
 
             // my vars (dec)
-
-            // set gobject values
         }
 
         // user defined functions 
@@ -536,9 +504,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.TreeViewColumn();
 
             // my vars (dec)
-
-            // set gobject values
-            this.el.title = "Compile output";
             var child_0 = new Xcls_renderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
@@ -569,8 +534,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
-
-            // set gobject values
         }
 
         // user defined functions 
@@ -587,11 +550,9 @@ public class Xcls_GtkView : Object
         public Xcls_ScrolledWindow14(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
+            this.el = new Gtk.ScrolledWindow();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_SourceView15( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -614,11 +575,6 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
-
-            // set gobject values
-            this.el.editable = false;
-            this.el.show_line_marks = true;
-            this.el.show_line_numbers = true;
         }
 
         // user defined functions 
