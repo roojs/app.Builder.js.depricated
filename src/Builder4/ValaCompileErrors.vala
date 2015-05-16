@@ -52,6 +52,12 @@ public class Xcls_ValaCompileErrors : Object
             this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
             var lines = tree.get_object_member(file);
             lines.foreach_member((obja, line, nodea) => {
+                var msg  = "";
+                var ar = lines.get_array_member(line);
+                for (var i = 0 ; i < ar.get_length(); i++) {
+    		    msg += (msg.length > 0) ? "\n" : "";
+    		    msg += ar.get_string_element(i);
+    	    }
                 
             });
             
