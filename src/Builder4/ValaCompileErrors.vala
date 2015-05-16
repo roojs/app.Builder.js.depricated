@@ -34,39 +34,39 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void loadErrors (Json.Object tree) {
        Gtk.TreeIter piter;
-         
-        this.el.get_iter(out piter, par);
-         
+        //print("looking for %s\n", id);
         // loop through parent childnre
-        Gtk.TreeIter iter; 
-        var loop =  par == null ? 
-            this.el.iter_children(out iter, null) :
-             this.el.iter_children(out iter,  piter);
+          
+        Gtk.TreeIter iter;
         
-        while (loop) {
+        var store = this.compile_result_store;    
+             
+        this.el.iter_children(out iter, null) ;
+        
+             
+             
+         
             GLib.Value val;
             this.el.get_value(iter, 0, out val);
             var sval = (string)val;
+            //print("got node %s", sval);
             if (sval == id) {
-                GLib.Value mval;
-                this.el.get_value(iter, 2, out mval);
-                var smval = (string)mval;
-                mval.set_string(smval + "\n" + GLib.Markup.escape_text(message)); //markup?
-            
-                return;
+                return this.el.get_path(iter);
             }
             loop = this.el.iter_next(ref iter);    
         }
-        
         // create the node...
-        if (par == null) {
+         if (par == null) {
             this.el.append(out iter, null);
         } else {
+          this.el.get_iter(out piter, par);
             this.el.append(out iter, piter);
         }
-        this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s".printf(line,message)), 3, file,-1);
-            
-        return ;
+        //print("add iter %s / %s", id, title);
+        this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
+           
+        return   this.el.get_path(iter);
+    
     }
     public class Xcls_compile_view : Object 
     {
