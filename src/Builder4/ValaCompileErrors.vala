@@ -33,7 +33,40 @@ public class Xcls_ValaCompileErrors : Object
 
     // user defined functions 
     public void loadErrors (Json.Object tree) {
-    
+       Gtk.TreeIter piter;
+         
+        this.el.get_iter(out piter, par);
+         
+        // loop through parent childnre
+        Gtk.TreeIter iter; 
+        var loop =  par == null ? 
+            this.el.iter_children(out iter, null) :
+             this.el.iter_children(out iter,  piter);
+        
+        while (loop) {
+            GLib.Value val;
+            this.el.get_value(iter, 0, out val);
+            var sval = (string)val;
+            if (sval == id) {
+                GLib.Value mval;
+                this.el.get_value(iter, 2, out mval);
+                var smval = (string)mval;
+                mval.set_string(smval + "\n" + GLib.Markup.escape_text(message)); //markup?
+            
+                return;
+            }
+            loop = this.el.iter_next(ref iter);    
+        }
+        
+        // create the node...
+        if (par == null) {
+            this.el.append(out iter, null);
+        } else {
+            this.el.append(out iter, piter);
+        }
+        this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s".printf(line,message)), 3, file,-1);
+            
+        return ;
     }
     public class Xcls_compile_view : Object 
     {
