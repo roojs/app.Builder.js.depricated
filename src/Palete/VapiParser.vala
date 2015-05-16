@@ -301,8 +301,10 @@ namespace Palete {
  			
 			//vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
 			 
-				
-			context.vapi_directories += (BuilderApplication.configDirectory() + "/vapi");
+			var vapidirs = context.vapi_directories;
+			
+			vapidirs += (BuilderApplication.configDirectory() + "/resources/vapi");
+			context.vapi_directories = vapidirs;
 			// or context.get_vapi_path("glib-2.0"); // should return path..
 			//context.vapi_directories = vapidirs;
 			context.report.enable_warnings = true;
