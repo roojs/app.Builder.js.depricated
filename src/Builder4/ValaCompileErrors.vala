@@ -43,26 +43,25 @@ public class Xcls_ValaCompileErrors : Object
              
         store.iter_children(out iter, null) ;
         
-             
+        tree.foreach_member((obj, key, node) => {
+            // id line "display text", file
+            var title = GLib.Path.get_basename( file) 
+            var id = file;
+            
+            this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
+            
+            
+        
+        });     
              
          
-            GLib.Value val;
-            this.el.get_value(iter, 0, out val);
-            var sval = (string)val;
-            //print("got node %s", sval);
-            if (sval == id) {
-                return this.el.get_path(iter);
-            }
-            loop = this.el.iter_next(ref iter);    
-        }
-        // create the node...
-         if (par == null) {
+         
             this.el.append(out iter, null);
         } else {
           this.el.get_iter(out piter, par);
             this.el.append(out iter, piter);
         }
-        //print("add iter %s / %s", id, title);
+        id? 
         this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
            
         return   this.el.get_path(iter);
