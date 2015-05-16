@@ -41,13 +41,13 @@ public class Xcls_ValaCompileErrors : Object
         
         var store = this.compile_result_store;    
              
-        store.iter_children(out iter, null) ;
+     
         
         tree.foreach_member((obj, key, node) => {
             // id line "display text", file
             var title = GLib.Path.get_basename( file) 
             var id = file;
-            
+            this.el.append(out iter, null);
             this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
             
             
