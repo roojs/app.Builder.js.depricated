@@ -41,7 +41,8 @@ public class Xcls_ValaCompileErrors : Object
         Gtk.TreeIter citer;  
         
         var store = this.compile_result_store;    
-             
+        
+        store.clear();
      
         
         tree.foreach_member((obj, file, node) => {
