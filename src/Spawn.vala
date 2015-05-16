@@ -45,7 +45,7 @@ public errordomain SpawnError {
  */
  
  
-delegate void SpawnFinish (int res, string str, string stderr);
+public delegate void SpawnFinish (int res, string str, string stderr);
 
 public class Spawn : Object
 {
@@ -419,6 +419,7 @@ public class Spawn : Object
     }
     
 }
+/*
  
 int main (string[] args) {
 	GLib.Log.set_handler(null, 
@@ -439,4 +440,4 @@ int main (string[] args) {
             
 	return 0;
 }
- 
+ */
