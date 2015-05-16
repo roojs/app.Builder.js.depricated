@@ -19,35 +19,14 @@ public class Editor : Object
     public Xcls_buffer buffer;
 
         // my vars (def)
-    public Xcls_MainWindow window;
-    public string activeEditor;
-    public int pos_root_x;
-    public int pos_root_y;
-    public string ptype;
-    public string key;
-    public JsRender.JsRender file;
-    public bool pos;
-    public bool dirty;
-    public signal void save ();
-    public JsRender.Node node;
 
     // ctor 
     public Editor()
     {
         _this = this;
-        this.el = new Gtk.VBox( false, 0 );
+        this.el = new Gtk.VBox();
 
         // my vars (dec)
-        this.window = null;
-        this.activeEditor = "";
-        this.ptype = "";
-        this.key = "";
-        this.file = null;
-        this.pos = false;
-        this.dirty = false;
-        this.node = null;
-
-        // set gobject values
         var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
@@ -132,11 +111,9 @@ public class Editor : Object
         public Xcls_HBox2(Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
+            this.el = new Gtk.HBox();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
@@ -164,9 +141,6 @@ public class Editor : Object
 
             // my vars (dec)
 
-            // set gobject values
-            this.el.label = "Save";
-
             // listeners 
             this.el.clicked.connect( () => { 
                 _this.saveContents();
@@ -191,8 +165,6 @@ public class Editor : Object
             this.el = new Gtk.Entry();
 
             // my vars (dec)
-
-            // set gobject values
         }
 
         // user defined functions 
@@ -210,11 +182,9 @@ public class Editor : Object
         {
             _this = _owner;
             _this.RightEditor = this;
-            this.el = new Gtk.ScrolledWindow( null, null );
+            this.el = new Gtk.ScrolledWindow();
 
             // my vars (dec)
-
-            // set gobject values
             var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -242,14 +212,6 @@ public class Editor : Object
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
-
-            // set gobject values
-            this.el.auto_indent = true;
-            this.el.indent_width = 4;
-            this.el.show_line_marks = true;
-            this.el.insert_spaces_instead_of_tabs = true;
-            this.el.show_line_numbers = true;
-            this.el.highlight_current_line = true;
             var child_0 = new Xcls_buffer( _this );
             child_0.ref();
             this.el.set_buffer (  child_0.el  );
@@ -335,23 +297,15 @@ public class Editor : Object
 
 
             // my vars (def)
-        public bool check_queued;
-        public int error_line;
-        public bool check_running;
 
         // ctor 
         public Xcls_buffer(Editor _owner )
         {
             _this = _owner;
             _this.buffer = this;
-            this.el = new Gtk.SourceBuffer( null );
+            this.el = new Gtk.SourceBuffer();
 
             // my vars (dec)
-            this.check_queued = false;
-            this.error_line = -1;
-            this.check_running = false;
-
-            // set gobject values
 
             // listeners 
             this.el.changed.connect( () => {
