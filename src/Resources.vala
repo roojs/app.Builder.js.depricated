@@ -106,7 +106,7 @@ public class Resources : Object
 				
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/" + split[0];
 				if (split[0] == "vapi/") {
-					src = "https://api.github.com/repos/roojs/app.Builder.js/contents/src/vapi/" + split[0];
+					src = "https://api.github.com/repos/roojs/app.Builder.js/contents/src/vapi";
 					
 				}
 				
