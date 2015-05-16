@@ -41,7 +41,7 @@ public class Xcls_ValaCompileErrors : Object
         
         var store = this.compile_result_store;    
              
-        this.el.iter_children(out iter, null) ;
+        store.iter_children(out iter, null) ;
         
              
              
