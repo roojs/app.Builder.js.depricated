@@ -32,7 +32,7 @@ public class Xcls_ValaCompileErrors : Object
     }
 
     // user defined functions 
-    public void loadErrors () {
+    public void loadErrors (Json.Object tree) {
     
     }
     public class Xcls_compile_view : Object 
