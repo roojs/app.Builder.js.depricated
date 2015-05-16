@@ -612,7 +612,6 @@
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",
-           "Json.Object notices" : "",
            "items" : [
             {
              "* pack" : "set_image",
