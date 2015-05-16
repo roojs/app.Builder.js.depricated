@@ -50,21 +50,17 @@ public class Xcls_ValaCompileErrors : Object
             var id = file;
             this.el.append(out iter, null);
             this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
+            var lines = tree.get_object_member(file);
+            lines.foreach_member((obja, line, nodea) => {
+                
+            });
             
             
         
         });     
              
          
-         
-            this.el.append(out iter, null);
-        } else {
-          this.el.get_iter(out piter, par);
-            this.el.append(out iter, piter);
-        }
-        id? 
-        this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
-           
+          
         return   this.el.get_path(iter);
     
     }

@@ -8,7 +8,7 @@
  "build_module" : "",
  "items" : [
   {
-   "| void loadErrors" : "(Json.Object tree) {\n   Gtk.TreeIter piter;\n    //print(\"looking for %s\\n\", id);\n    // loop through parent childnre\n      \n    Gtk.TreeIter iter;\n    \n    var store = this.compile_result_store;    \n         \n \n    \n    tree.foreach_member((obj, file, node) => {\n        // id line \"display text\", file\n        \n        var title = GLib.Path.get_basename( file) \n        var id = file;\n        this.el.append(out iter, null);\n        this.el.set(iter, 0, id, 1, 0, 2, title, 3, \"\",-1);\n        \n        \n    \n    });     \n         \n     \n     \n        this.el.append(out iter, null);\n    } else {\n      this.el.get_iter(out piter, par);\n        this.el.append(out iter, piter);\n    }\n    id? \n    this.el.set(iter, 0, id, 1, 0, 2, title, 3, \"\",-1);\n       \n    return   this.el.get_path(iter);\n\n}\n",
+   "| void loadErrors" : "(Json.Object tree) {\n   Gtk.TreeIter piter;\n    //print(\"looking for %s\\n\", id);\n    // loop through parent childnre\n      \n    Gtk.TreeIter iter;\n    \n    var store = this.compile_result_store;    \n         \n \n    \n    tree.foreach_member((obj, file, node) => {\n        // id line \"display text\", file\n        \n        var title = GLib.Path.get_basename( file) \n        var id = file;\n        this.el.append(out iter, null);\n        this.el.set(iter, 0, id, 1, 0, 2, title, 3, \"\",-1);\n        var lines = tree.get_object_member(file);\n        lines.foreach_member((obja, line, nodea) => {\n            \n        });\n        \n        \n    \n    });     \n         \n     \n      \n    return   this.el.get_path(iter);\n\n}\n",
    "id" : "ValaCompileErrors",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
