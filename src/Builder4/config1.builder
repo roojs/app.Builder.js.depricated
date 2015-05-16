@@ -101,7 +101,6 @@
             "json-glib-1.0",
             "libxml-2.0",
             "libsoup-2.4",
-            "libvala-0.26",
             "webkit2gtk-4.0",
             "gee-1.0",
             "posix",
