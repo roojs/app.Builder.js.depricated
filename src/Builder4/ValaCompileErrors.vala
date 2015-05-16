@@ -32,7 +32,7 @@ public class Xcls_ValaCompileErrors : Object
     }
 
     // user defined functions 
-    public return_type XXXX () {
+    public void loadErrors () {
     
     }
     public class Xcls_compile_view : Object 

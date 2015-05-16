@@ -8,10 +8,10 @@
  "build_module" : "",
  "items" : [
   {
+   "| void loadErrors" : "() {\n\n}\n",
    "id" : "ValaCompileErrors",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
-   "| return_type XXXX" : "() {\n\n}\n",
    "items" : [
     {
      "id" : "compile_view",
