@@ -11,11 +11,12 @@
    "id" : "ValaCompileErrors",
    "xtype" : "Popover",
    "$ xns" : "Gtk",
+   "| return_type XXXX" : "() {\n\n}\n",
    "items" : [
     {
      "id" : "compile_view",
-     "xtype" : "VBox",
      "* pack" : "add",
+     "xtype" : "VBox",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -39,14 +40,14 @@
        "items" : [
         {
          "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-         "* pack" : "add",
          "xtype" : "ScrolledWindow",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "items" : [
           {
            "id" : "compile_tree",
-           "* pack" : "add",
            "xtype" : "TreeView",
+           "* pack" : "add",
            "$ xns" : "Gtk",
            "items" : [
             {
@@ -69,8 +70,8 @@
              "items" : [
               {
                "id" : "renderer",
-               "xtype" : "CellRendererText",
                "* pack" : "pack_start,true",
+               "xtype" : "CellRendererText",
                "$ xns" : "Gtk"
               }
              ]
@@ -86,8 +87,8 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
-           "xtype" : "SourceView",
            "* pack" : "add",
+           "xtype" : "SourceView",
            "$ xns" : "Gtk",
            "gboolean show_line_numbers" : true,
            "gboolean editable" : false
