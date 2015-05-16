@@ -43,8 +43,9 @@ public class Xcls_ValaCompileErrors : Object
              
      
         
-        tree.foreach_member((obj, key, node) => {
+        tree.foreach_member((obj, file, node) => {
             // id line "display text", file
+            
             var title = GLib.Path.get_basename( file) 
             var id = file;
             this.el.append(out iter, null);
