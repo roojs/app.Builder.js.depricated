@@ -152,7 +152,7 @@ public class Xcls_MainWindow : Object
         public Xcls_HBox3(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox();
+            this.el = new Gtk.HBox(false,0);
 
             // my vars (dec)
             var child_0 = new Xcls_MenuButton4( _this );
