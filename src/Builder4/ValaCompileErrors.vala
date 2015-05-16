@@ -38,6 +38,7 @@ public class Xcls_ValaCompileErrors : Object
         // loop through parent childnre
           
         Gtk.TreeIter iter;
+        Gtk.TreeIter citer;  
         
         var store = this.compile_result_store;    
              
@@ -48,7 +49,7 @@ public class Xcls_ValaCompileErrors : Object
             
             var title = GLib.Path.get_basename( file) ;
             var id = file;
-            this.el.append(out iter, null);
+            store.append(out iter, null);
             this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
             var lines = tree.get_object_member(file);
             lines.foreach_member((obja, line, nodea) => {
@@ -58,6 +59,7 @@ public class Xcls_ValaCompileErrors : Object
     		    msg += (msg.length > 0) ? "\n" : "";
     		    msg += ar.get_string_element(i);
     	    }
+                store.append(out citer, iter);
                 
             });
             
