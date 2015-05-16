@@ -103,7 +103,13 @@ public class Resources : Object
 			}
 			if (target.contains("*")) {
 				var split = target.split("*");
+				
 				src = "https://api.github.com/repos/roojs/app.Builder.js/contents/resources/" + split[0];
+				if (split[0] == "vapi/") {
+					src = "https://api.github.com/repos/roojs/app.Builder.js/contents/src/vapi/" + split[0];
+					
+				}
+				
 			}
 			
 			this.fetch_files.add(new ResourcesItem(src,target, ""));
