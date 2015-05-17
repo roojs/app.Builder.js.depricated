@@ -526,6 +526,11 @@ namespace Palete {
 			this.outputResult();
 		
 		}
+		public void has_vapi(string[] dirs,  string vapi) {
+			
+			
+		}
+		
 		public void outputResult()
 		{
 			var generator = new Json.Generator ();
