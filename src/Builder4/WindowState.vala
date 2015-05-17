@@ -34,6 +34,7 @@ public class WindowState : Object
 	public Editor               code_editor;    
 	public Xcls_WindowRooView   window_rooview;
 	public Xcls_GtkView         window_gladeview;
+	public Xcls_ValaCompileErrors valacompileerrors;
 	
 	public Xcls_ClutterFiles     clutterfiles;
 
