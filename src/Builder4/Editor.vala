@@ -497,9 +497,9 @@ public class Editor : Object
                 this.el.remove_source_marks (start, end, null);
                         
                         
-             _this.window.statusbar_errors.el.show();
-             _this.window.statusbar_warnings.show();
-             _this.window.statusbar_depricated.el.show();       
+             _this.window.statusbar_errors.el.hide();
+             _this.window.statusbar_warnings.el.hide();
+             _this.window.statusbar_depricated.el.hide();       
                         
             
             if (obj.has_member("ERR-TOTAL")) {
