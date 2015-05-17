@@ -303,26 +303,7 @@ public class Editor : Object
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
             var buf = this.el.get_buffer();
-            
-            /* -- what does all this do? */
-            /*
-            var cursor = buf.get_mark("insert");
-            Gtk.TextIter iter;
-            buf.get_iter_at_mark(out iter, cursor);
-            iter.set_line(1);
-            iter.set_line_offset(4);
-            buf.move_mark(cursor, iter);
-            
-            
-            cursor = buf.get_mark("selection_bound");
-            //iter= new Gtk.TextIter;
-            buf.get_iter_at_mark(out iter, cursor);
-            iter.set_line(1);
-            iter.set_line_offset(4);
-            buf.move_mark(cursor, iter);
-            
-            */
-            
+             
             _this.dirty = false;
             this.el.grab_focus();
             _this.save_button.el.sensitive = false;
