@@ -389,10 +389,10 @@ public class Xcls_ValaCompileErrors : Object
         }
 
         // user defined functions 
-        public void loadFile (string file) {
+        public void loadFile (string fname) {
         
             string str;
-            FileUtils.get_contents(file, out str);
+            FileUtils.get_contents(fname, out str);
         			
            this.el.get_buffer().set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
