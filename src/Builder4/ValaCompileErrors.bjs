@@ -38,6 +38,7 @@
        ]
       },
       {
+       "id" : "hpane",
        "* pack" : "pack_start,true,true,0",
        "xtype" : "HPaned",
        "$ xns" : "Gtk",

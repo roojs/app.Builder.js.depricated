@@ -13,6 +13,7 @@ public class Xcls_ValaCompileErrors : Object
         return _ValaCompileErrors;
     }
     public Xcls_compile_view compile_view;
+    public Xcls_hpane hpane;
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
@@ -107,7 +108,7 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_HPaned5( _this );
+            var child_1 = new Xcls_hpane( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
         }
@@ -160,7 +161,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
     }
-    public class Xcls_HPaned5 : Object 
+    public class Xcls_hpane : Object 
     {
         public Gtk.HPaned el;
         private Xcls_ValaCompileErrors  _this;
@@ -169,9 +170,10 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_HPaned5(Xcls_ValaCompileErrors _owner )
+        public Xcls_hpane(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
+            _this.hpane = this;
             this.el = new Gtk.HPaned();
 
             // my vars (dec)
