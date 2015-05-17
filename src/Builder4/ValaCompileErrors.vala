@@ -266,9 +266,33 @@ public class Xcls_ValaCompileErrors : Object
 
             // listeners 
             this.el.cursor_changed.connect( () => {
+                var sel = this.el.get_selection();
+             
+                        if (sel.count_selected_rows() < 1) {
             
-            
-            });
+                            print("selected rows < 1\n");
+                            //??this.mo 
+                            return  ;
+                        }
+                            
+                            //console.log('changed');
+                         
+                         Gtk.TreeIter iter;
+                         Gtk.TreeModel mod;
+                        sel.get_selected(out mod, out iter);
+                        
+                        
+                        // var val = "";
+                        GLib.Value value;
+                        _this.compile_result_store.el.get_value(iter, 2, out value);
+                        _this.compile_result_store.activePath = mod.get_path(iter).to_string();
+                        
+                        var node = (JsRender.Node)value.dup_object();
+                        _this.node_selected(node);
+                        while (Gtk.events_pending()) {
+                            Gtk.main_iteration();
+                        }
+                        });
         }
 
         // user defined functions 
