@@ -2284,9 +2284,8 @@ public class Xcls_MainWindow : Object
             this.el.set_image (  child_0.el  );
 
             // listeners 
-            this.el.activate.connect( () => {
-                _this.windowstate.vala_compile_errors.show(this.notices, this.el);
-            });
+            this.el.activate.connect( );
+            this.el.button_press_event.connect( );
         }
 
         // user defined functions 
