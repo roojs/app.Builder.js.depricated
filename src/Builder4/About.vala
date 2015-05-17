@@ -23,11 +23,20 @@ public class About : Object
 
         // my vars (dec)
 
+        // set gobject values
+        this.el.program_name = "app.Builder.js";
+        this.el.license = "LGPL";
+        this.el.authors = { "Alan Knowles" };
+        this.el.website = "http://www.akbkhome.com/blog.php";
+        this.el.modal = true;
+        this.el.copyright = "LGPL";
+        this.el.license_type = Gtk.License.LGPL_3_0;
+
         // listeners 
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true; 
-             
+        
         });
         this.el.response.connect( (rid) => {
             this.el.hide();
