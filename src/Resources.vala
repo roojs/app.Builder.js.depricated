@@ -183,6 +183,7 @@ public class Resources : Object
 		 
 	public void parseDirectory(string json, string target)
 	{
+		print("%s\n", json);
 		var pa = new Json.Parser();
 		pa.load_from_data(json);
 		var node = pa.get_root();
@@ -206,7 +207,11 @@ public class Resources : Object
 			if (this.files_has_target(split[0] + n)) {
 				continue;
 			}
-			var src = "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + split[0] + n;
+			
+			
+			
+			var src = ob.get_string_member("download_url"); 
+					// "https://raw.githubusercontent.com/roojs/app.Builder.js/master/resources/" + split[0] + n;
 			var add = new ResourcesItem(src, split[0] + n, ob.get_string_member("sha") );
 			//add.new_sha = ob.get_string_member("sha");
 			this.fetch_files.add(add);
