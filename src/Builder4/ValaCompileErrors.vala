@@ -56,7 +56,7 @@ public class Xcls_ValaCompileErrors : Object
                 
                 var title = GLib.Path.get_basename( file) ;
                 Gtk.TreeIter iter;
-            
+                print("Add file %s", title);
                 store.append(out iter, null);
                 store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
                 var lines = tree.get_object_member(file);
@@ -68,7 +68,7 @@ public class Xcls_ValaCompileErrors : Object
         		    msg += ar.get_string_element(i);
         	    }
         	            Gtk.TreeIter citer;  
-    
+          print("Add line %s", line);
                     store.append(out citer, iter);
                     store.set(iter, 
                         0, file + ":" + line, 
