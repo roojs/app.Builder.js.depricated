@@ -84,9 +84,6 @@ public class Xcls_GtkView : Object
     }
     public void loadFile (JsRender.JsRender file) 
     {
-            file.compile_notice.connect(this.compileNotice);
-           // this.el.set_position((int)(this.el.max_position * 0.7));
-            this.el.set_position(this.el.max_position );
             this.file = null;
             
             if (file.tree == null) {
@@ -132,57 +129,6 @@ public class Xcls_GtkView : Object
              
             
     }
-    public void compileNotice ( string  type,   string file,   int line,   string  message) {
-        // if type = "START"... then we reset the tree?
-        // the issue is that the compiler is continually going..
-        // so editing a file etc.. may change things.?
-        // probably not an issue.
-        print("err %s / %s:%d / %s\n", type,file,line,message);
-        var cs = _this.compile_result_store;    
-        if (type =="START") {
-            // reset the tree;
-            cs.el.clear();   
-    //        cs.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);   
-            return;
-        }
-        if (type =="END") {
-            // reset the tree;
-    
-            _this.compile_tree.el.expand_all(); 
-            cs.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);   
-            return;
-        }
-        
-        var top = 0;
-        var title = "";
-        switch(type) {
-            case "ERR":
-                title = "Errors";
-                top =0;
-                break;
-            
-            case "WARN":
-                title = "Warnings";
-                top =1;
-                break;
-                
-            case "DEPR":
-                title = "Depricated";
-                top=2;
-                break;
-            
-            default:
-                title = type;
-                top =3;
-                break;
-        }
-                
-        
-         var tv = cs.nodeFindOrCreate(null, top.to_string(), title);
-         var ftv = cs.nodeFindOrCreate(tv, "%d:%s".printf(top, file), GLib.Path.get_basename( file) );
-         
-          cs.nodeAppendOrCreate(ftv, "%d:%s:%d".printf(top, file,line), file,line, message);         
-      }
     public class Xcls_ScrolledWindow2 : Object 
     {
         public Gtk.ScrolledWindow el;
