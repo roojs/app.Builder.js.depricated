@@ -15,7 +15,7 @@
    },
    "id" : "MainWindow",
    "default_width" : 800,
-   "* init" : " \n\t  \n    //this.el.show_all();\n    \n    ",
+   "* init" : " \n\t  \n    //this.el.show_all();\n    \n     ",
    "# Project.Project project" : "null",
    "# string title" : "\"Application Builder\"",
    "xtype" : "Window",
