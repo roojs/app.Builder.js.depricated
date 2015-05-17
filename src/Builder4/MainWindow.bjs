@@ -653,12 +653,12 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_depricated",
+           "Xcls_ValaCompileErrors popup" : "",
            "string label" : "Depricated",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "# Json.Object notices" : "new Json.Object()",
            "$ xns" : "Gtk",
-           "string XXXX" : "",
            "items" : [
             {
              "utf8 icon_name" : "dialog-information",

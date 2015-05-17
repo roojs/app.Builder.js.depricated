@@ -2385,8 +2385,8 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
+        public Xcls_ValaCompileErrors popup;
         public Json.Object notices;
-        public string XXXX;
 
         // ctor 
         public Xcls_statusbar_depricated(Xcls_MainWindow _owner )
