@@ -607,7 +607,7 @@
          "items" : [
           {
            "listeners" : {
-            "activate" : "this.windowstate.valacompileerrors.show(this.notices);"
+            "activate" : "() => {\n    _this.windowstate.valacompilerrors.show(this.notices);\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
