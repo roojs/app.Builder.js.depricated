@@ -59,7 +59,8 @@
             "../Palete/GirObject.vala",
             "../Palete/VapiParser.vala",
             "../Builder4/PopoverFileDetails.vala",
-            "../../src/Spawn.vala"
+            "../../src/Spawn.vala",
+            "../Builder4/ValaCompileErrors.vala"
         ],
         "packages" : [
         ]
