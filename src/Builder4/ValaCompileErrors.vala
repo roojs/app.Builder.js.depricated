@@ -257,6 +257,15 @@ public class Xcls_ValaCompileErrors : Object
             var child_1 = new Xcls_column( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
+
+            // init method 
+
+            {
+             var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
+            
+            }
         }
 
         // user defined functions 
