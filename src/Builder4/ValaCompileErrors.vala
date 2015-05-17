@@ -42,7 +42,7 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
-        
+        this.notices = tree;
              //print("looking for %s\n", id);
             // loop through parent childnre
               
