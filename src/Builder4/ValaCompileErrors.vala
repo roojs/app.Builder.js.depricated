@@ -398,11 +398,47 @@ public class Xcls_ValaCompileErrors : Object
            this.el.get_buffer().set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
             
-            
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("vala"));
-            var buf = this.el.get_buffer();
+            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+            buf.set_language(lm.get_language("vala"));
+         
              
             this.el.grab_focus();
+        
+        
+           
+            var lines = _this.notices.get_object_member(fname);
+             
+             
+             
+            lines.foreach_member((obj, line, node) => {
+                
+                     Gtk.TextIter iter;
+            //        print("get inter\n");
+                    var eline = int.parse(line);
+                     
+                    
+                    buf.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    var msg  = "Line: %d".printf(eline+1);
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+                    
+                    
+                    buf.create_source_mark(msg, "error", iter);
+                } );
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
         
         }
     }
