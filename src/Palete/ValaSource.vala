@@ -471,7 +471,6 @@ namespace Palete {
 			valac += " -o " +context.output;
 			GLib.debug("%s", valac);
 			
-			//context.add_external_package ("libvala-0.24");
 			
  
 		
@@ -526,8 +525,16 @@ namespace Palete {
 			this.outputResult();
 		
 		}
-		public void has_vapi(string[] dirs,  string vapi) {
-			
+		public bool has_vapi(string[] dirs,  string vapi) 
+		{
+			for(var i =0 ; i < dirs.length; i++) {
+				GLib.debug("check VAPI - %s", dirs[i] + "/" + vapi + ".vapi");
+				if (!FileUtils.test( dirs[i] + "/" + vapi + ".vapi", FileTest.EXISTS)) {
+					continue;
+				}   
+				return true;
+			}
+			return false;
 			
 		}
 		
