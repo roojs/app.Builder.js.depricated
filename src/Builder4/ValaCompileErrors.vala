@@ -442,7 +442,7 @@ public class Xcls_ValaCompileErrors : Object
         }
 
         // user defined functions 
-        public void loadFile (string fname) {
+        public void loadFile (string fname, int line ) {
         
             var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
             Gtk.TextIter start;
