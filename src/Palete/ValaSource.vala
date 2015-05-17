@@ -368,7 +368,7 @@ namespace Palete {
 			 
 			var vapidirs = this.project.vapidirs();
 			 
-			for(var i =0 ; i < context.vapi_directories; i++) {
+			for(var i =0 ; i < context.vapi_directories.length; i++) {
 				vapidirs += context.vapi_directories[i];
 			}
 			
@@ -455,6 +455,11 @@ namespace Palete {
 	    	var dcg = pr.compilegroups.get("_default_");
 	    	for (var i = 0; i < dcg.packages.size; i++) {
 				valac += " --pkg " + dcg.packages.get(i);
+				if (!this.has_vapi(context.vapi_directories, dcg.packages.get(i))) {
+					GLib.debug("Skip vapi '%s' - does not exist", dcg.packages.get(i));
+					continue;
+				}
+				
 				context.add_external_package (dcg.packages.get(i));
 			}
 	    	
@@ -462,7 +467,9 @@ namespace Palete {
 			
 			// add the modules...
 			
-			
+			context.output = "/tmp/testbuild";
+			valac += " -o " +context.output;
+			GLib.debug("%s", valac);
 			
 			//context.add_external_package ("libvala-0.24");
 			
@@ -502,8 +509,7 @@ namespace Palete {
 			//context.codegen = new Vala.GDBusServerModule ();
 			
 			 
-			context.output = "/tmp/testbuild";
-			valac += " -o " +context.output;
+			
 			//context.codegen.emit (context);
 			/*
 			var ccompiler = new Vala.CCodeCompiler ();
