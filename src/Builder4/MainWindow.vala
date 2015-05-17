@@ -2337,6 +2337,11 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Image73( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.activate.connect( () => {
+                _this.windowstate.vala_compile_errors.show(this.notices, this.el);
+            });
         }
 
         // user defined functions 

@@ -626,6 +626,9 @@
            ]
           },
           {
+           "listeners" : {
+            "activate" : "() => {\n    _this.windowstate.vala_compile_errors.show(this.notices, this.el);\n}"
+           },
            "bool always_show_image" : true,
            "id" : "statusbar_warnings",
            "* pack" : "add",
