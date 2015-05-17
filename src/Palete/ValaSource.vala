@@ -294,7 +294,7 @@ namespace Palete {
 			
 			try {
 				this.compiler.run(spawnResult); 
-			} catch (Error e) {
+			} catch (GLib.SpawnError e) {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
 				ret.set_string_member("message", e.message);
