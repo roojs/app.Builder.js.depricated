@@ -92,7 +92,7 @@ public class Xcls_ValaCompileErrors : Object
         }
         
         this.hpane.el.set_position(200);
-        this.el.set_relative_to(onbtn);
+      // this.el.set_relative_to(onbtn);
          
         this.el.show_all();
               
