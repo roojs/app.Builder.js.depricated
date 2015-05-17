@@ -38,51 +38,48 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
         this.el.set_relative_to(onbtn);
-        this.el.show_all();
-        
-        Gtk.TreeIter piter;
-        //print("looking for %s\n", id);
-        // loop through parent childnre
-          
-        Gtk.TreeIter iter;
-        Gtk.TreeIter citer;  
-        
-        var store = this.compile_result_store;    
-        
-        store.clear();
-     
-        
-        tree.foreach_member((obj, file, node) => {
-            // id line "display text", file
+            this.el.show_all();
             
-            var title = GLib.Path.get_basename( file) ;
+             //print("looking for %s\n", id);
+            // loop through parent childnre
+              
             
-            store.append(out iter, null);
-            store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
-            var lines = tree.get_object_member(file);
-            lines.foreach_member((obja, line, nodea) => {
-                var msg  = "";
-                var ar = lines.get_array_member(line);
-                for (var i = 0 ; i < ar.get_length(); i++) {
-    		    msg += (msg.length > 0) ? "\n" : "";
-    		    msg += ar.get_string_element(i);
-    	    }
-                store.append(out citer, iter);
-                store.set(iter, 
-                    0, file + ":" + line, 
-                    1, int.parse(line), 
-                    2, GLib.Markup.escape_text(line + ": " + msg), 
-                    3, file,-1);
+            var store = this.compile_result_store.el;    
             
-            });
-            
-            
-        
-        });     
-             
+            store.clear();
          
-          
-        return   this.el.get_path(iter);
+            
+            tree.foreach_member((obj, file, node) => {
+                // id line "display text", file
+                
+                var title = GLib.Path.get_basename( file) ;
+                Gtk.TreeIter iter;
+            
+                store.append(out iter, null);
+                store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
+                var lines = tree.get_object_member(file);
+                lines.foreach_member((obja, line, nodea) => {
+                    var msg  = "";
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+        	            Gtk.TreeIter citer;  
+    
+                    store.append(out citer, iter);
+                    store.set(iter, 
+                        0, file + ":" + line, 
+                        1, int.parse(line), 
+                        2, GLib.Markup.escape_text(line + ": " + msg), 
+                        3, file,-1);
+                
+                });
+                
+                
+            
+            });     
+                 
     
     }
     public class Xcls_compile_view : Object 
