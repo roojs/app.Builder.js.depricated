@@ -511,7 +511,7 @@ public class Editor : Object
             if (obj.has_member("DEPR-TOTAL")) {
                 _this.window.statusbar_depricated.el.show();    
                 _this.window.statusbar_depricated.notices = obj.get_object_member("DEPR");
-                _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Warnings";
+                _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Depricated";
             }
             
             if (!obj.has_member("ERR")) {
