@@ -2281,6 +2281,9 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Image71( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
+
+            // listeners 
+            this.el.activate.connect( this.windowstate.valacompileerrors.show(this.notices););
         }
 
         // user defined functions 
