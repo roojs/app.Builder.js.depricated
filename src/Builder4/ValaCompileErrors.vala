@@ -84,7 +84,7 @@ public class Xcls_ValaCompileErrors : Object
                 
             
             });
-       this.el.set_relative_to(null); 
+               
        this.el.hide();
             
        while (Gtk.events_pending()) {
@@ -92,8 +92,9 @@ public class Xcls_ValaCompileErrors : Object
         }
         
         this.hpane.el.set_position(200);
-      // this.el.set_relative_to(onbtn);
-         
+       if (this.el.relative_to == null) {
+       this.el.set_relative_to(onbtn);
+         }
         this.el.show_all();
               
     
