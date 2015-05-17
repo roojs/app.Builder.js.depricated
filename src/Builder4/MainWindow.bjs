@@ -612,12 +612,12 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
-           "Xcls_ValaCompileErrors errpopup" : "",
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "# Json.Object notices" : "new Json.Object() ",
            "$ xns" : "Gtk",
+           "# Xcls_ValaCompileErrors errpopup" : "",
            "items" : [
             {
              "xtype" : "Image",
