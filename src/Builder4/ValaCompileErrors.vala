@@ -28,6 +28,7 @@ public class Xcls_ValaCompileErrors : Object
         // my vars (dec)
 
         // set gobject values
+        this.el.position = Gtk.PositionType.TOP;
         var child_0 = new Xcls_compile_view( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
