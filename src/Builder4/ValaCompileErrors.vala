@@ -294,9 +294,11 @@ public class Xcls_ValaCompileErrors : Object
                         
                         // var val = "";
                         GLib.Value value;
+                        _this.compile_result_store.el.get_value(iter, 3, out value);
+                        var fname = (string)value;
                         
                         
-                        _this.compile_result_store.el.get_value(iter, 2, out value);
+                        
             });
         }
 
