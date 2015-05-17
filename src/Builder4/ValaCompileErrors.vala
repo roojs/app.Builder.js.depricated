@@ -36,8 +36,10 @@ public class Xcls_ValaCompileErrors : Object
 
     // user defined functions 
     public void show (Json.Object tree, GtkWidget onbtn) {
-    
-       Gtk.TreeIter piter;
+        this.el.relates_to = onbtn;
+        this.el.show_all();
+        
+        Gtk.TreeIter piter;
         //print("looking for %s\n", id);
         // loop through parent childnre
           
