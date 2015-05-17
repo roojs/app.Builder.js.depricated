@@ -24,7 +24,7 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "* pack" : "pack1,true,true",
+     "* pack" : "pack_start,true,true,0",
      "xtype" : "ScrolledWindow",
      "$ xns" : "Gtk",
      "items" : [

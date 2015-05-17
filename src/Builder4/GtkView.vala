@@ -37,7 +37,7 @@ public class Xcls_GtkView : Object
         // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
         child_0.ref();
-        this.el.pack1 (  child_0.el , true,true );
+        this.el.pack_start (  child_0.el , true,true,0 );
 
         // listeners 
         this.el.size_allocate.connect( (aloc) => {
