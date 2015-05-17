@@ -389,5 +389,8 @@ public class Xcls_ValaCompileErrors : Object
         }
 
         // user defined functions 
+        public void loadFile () {
+        
+        }
     }
 }

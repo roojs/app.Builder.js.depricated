@@ -92,6 +92,7 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
+           "| void loadFile" : "() {\n\n}\n",
            "* pack" : "add",
            "xtype" : "SourceView",
            "$ xns" : "Gtk",
