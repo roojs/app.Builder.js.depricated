@@ -102,6 +102,7 @@
            "xtype" : "SourceView",
            "$ xns" : "Gtk",
            "gboolean show_line_numbers" : true,
+           "string curfname" : "",
            "gboolean editable" : false
           }
          ]

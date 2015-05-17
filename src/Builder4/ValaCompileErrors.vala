@@ -418,6 +418,7 @@ public class Xcls_ValaCompileErrors : Object
 
 
             // my vars (def)
+        public string curfname;
 
         // ctor 
         public Xcls_sourceview(Xcls_ValaCompileErrors _owner )
