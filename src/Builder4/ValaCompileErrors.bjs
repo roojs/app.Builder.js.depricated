@@ -16,6 +16,7 @@
    "Gtk.PositionType position" : "Gtk.PositionType.TOP",
    "int width_request" : 600,
    "$ xns" : "Gtk",
+   "bool modal" : true,
    "items" : [
     {
      "id" : "compile_view",
