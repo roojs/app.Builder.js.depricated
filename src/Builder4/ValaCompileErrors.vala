@@ -41,7 +41,7 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
-        while (Gtk.event_pending()) {
+        while (Gtk.events_pending()) {
             Gtk.main_iteration();
         }
     
