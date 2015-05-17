@@ -2,7 +2,7 @@ static Xcls_GtkView  _GtkView;
 
 public class Xcls_GtkView : Object 
 {
-    public Gtk.VPaned el;
+    public Gtk.VBox el;
     private Xcls_GtkView  _this;
 
     public static Xcls_GtkView singleton()
@@ -26,7 +26,7 @@ public class Xcls_GtkView : Object
     public Xcls_GtkView()
     {
         _this = this;
-        this.el = new Gtk.VPaned();
+        this.el = new Gtk.VBox( true, 0 );
 
         // my vars (dec)
         this.lastObj = null;
