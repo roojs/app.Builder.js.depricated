@@ -444,53 +444,57 @@ public class Xcls_ValaCompileErrors : Object
         // user defined functions 
         public void loadFile (string fname, int line ) {
         
-            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
-            Gtk.TextIter start;
-            Gtk.TextIter end;     
-            buf.get_bounds (out start, out end);
-                
-            buf.remove_source_marks (start, end, null);
-                 
-             
-            
-            string str;
-            FileUtils.get_contents(fname, out str);
-        			
-            buf.set_text(str, str.length);
-            var lm = Gtk.SourceLanguageManager.get_default();
-            
-           
-            buf.set_language(lm.get_language("vala"));
-         
-             
-            this.el.grab_focus();
+            if (this.curfname != fname) {
+                this.curfname = fname;
         
-        
-           
-            var lines = _this.notices.get_object_member(fname);
-             
-                
-            lines.foreach_member((obj, line, node) => {
-                
-                     Gtk.TextIter iter;
-            //        print("get inter\n");
-                    var eline = int.parse(line);
+                var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+                Gtk.TextIter start;
+                Gtk.TextIter end;     
+                buf.get_bounds (out start, out end);
+                    
+                buf.remove_source_marks (start, end, null);
                      
-                    
-                    buf.get_iter_at_line( out iter, eline);
-                    //print("mark line\n");
-                    var msg  = "Line: %d".printf(eline+1);
-                    var ar = lines.get_array_member(line);
-                    for (var i = 0 ; i < ar.get_length(); i++) {
-        		    msg += (msg.length > 0) ? "\n" : "";
-        		    msg += ar.get_string_element(i);
-        	    }
-                    
-                    
-                    buf.create_source_mark(msg, "error", iter);
-                } );
+                 
+                
+                string str;
+                FileUtils.get_contents(fname, out str);
+        			
+                buf.set_text(str, str.length);
+                var lm = Gtk.SourceLanguageManager.get_default();
+                
+               
+                buf.set_language(lm.get_language("vala"));
+             
+                 
+                this.el.grab_focus();
         
-            
+        
+               
+                var lines = _this.notices.get_object_member(fname);
+                 
+                    
+                lines.foreach_member((obj, line, node) => {
+                    
+                         Gtk.TextIter iter;
+                //        print("get inter\n");
+                        var eline = int.parse(line);
+                         
+                        
+                        buf.get_iter_at_line( out iter, eline);
+                        //print("mark line\n");
+                        var msg  = "Line: %d".printf(eline+1);
+                        var ar = lines.get_array_member(line);
+                        for (var i = 0 ; i < ar.get_length(); i++) {
+        		        msg += (msg.length > 0) ? "\n" : "";
+        		        msg += ar.get_string_element(i);
+        	        }
+                        
+                        
+                        buf.create_source_mark(msg, "error", iter);
+                    } );
+            }
+            // jump to the line...
+                
         
         
         }
