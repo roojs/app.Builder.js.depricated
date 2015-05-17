@@ -2288,7 +2288,7 @@ public class Xcls_MainWindow : Object
             this.el.button_press_event.connect( () => {
                 if (this.errpopup == null) {
                     this.errpopup = new Xcls_ValaCompileErrors();
-                    this.errpopup.window = this;
+                    this.errpopup.window = _this;
                 }
                 this.errpopup.show(this.notices, this.el);
             });
