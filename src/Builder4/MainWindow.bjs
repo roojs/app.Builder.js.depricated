@@ -649,8 +649,7 @@
           },
           {
            "listeners" : {
-            "activate" : "() => {\n    _this.windowstate.vala_compile_errors.show(this.notices, this.el);\n}",
-            "button_press_event" : ""
+            "button_press_event" : "() => {\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n    this.popup.show(this.notices, this.el);\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_depricated",
@@ -659,6 +658,7 @@
            "xtype" : "ImageMenuItem",
            "# Json.Object notices" : "new Json.Object()",
            "$ xns" : "Gtk",
+           "string XXXX" : "",
            "items" : [
             {
              "utf8 icon_name" : "dialog-information",
