@@ -611,11 +611,11 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
-           "Xcls_ValaCompileErrors popup" : "null",
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "# Json.Object notices" : "new Json.Object() ",
+           "Xcls_ValaCompileErrors? popup" : "",
            "$ xns" : "Gtk",
            "items" : [
             {
