@@ -41,7 +41,7 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
-        this.hpane.el.set_position(0.4f);
+        this.hpane.el.set_position(200);
         this.el.set_relative_to(onbtn);
             this.el.show_all();
             
