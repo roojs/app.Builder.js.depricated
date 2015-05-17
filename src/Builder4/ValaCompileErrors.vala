@@ -17,6 +17,7 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
+    public Xcls_sourceview sourceview;
 
         // my vars (def)
     public Xcls_MainWindow window;
@@ -403,14 +404,14 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_SourceView12( _this );
+            var child_0 = new Xcls_sourceview( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_SourceView12 : Object 
+    public class Xcls_sourceview : Object 
     {
         public Gtk.SourceView el;
         private Xcls_ValaCompileErrors  _this;
@@ -419,9 +420,10 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_SourceView12(Xcls_ValaCompileErrors _owner )
+        public Xcls_sourceview(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
+            _this.sourceview = this;
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
