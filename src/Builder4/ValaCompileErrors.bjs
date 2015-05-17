@@ -11,7 +11,7 @@
    "int height_request" : 800,
    "id" : "ValaCompileErrors",
    "Xcls_MainWindow window" : "",
-   "| void show" : "(Json.Object tree, Gtk.Widget onbtn) {\n\n    \n         //print(\"looking for %s\\n\", id);\n        // loop through parent childnre\n          \n        \n        var store = this.compile_result_store.el;    \n        \n        store.clear();\n     \n        \n        tree.foreach_member((obj, file, node) => {\n            // id line \"display text\", file\n            \n            var title = GLib.Path.get_basename( file) ;\n            Gtk.TreeIter iter;\n            print(\"Add file %s\", title);\n            store.append(out iter, null);\n            var lines = tree.get_object_member(file);\n            title += \" (\" + lines.get_size().to_string() + \")\";\n            store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);\n            \n            lines.foreach_member((obja, line, nodea) => {\n                var msg  = \"\";\n                var ar = lines.get_array_member(line);\n                for (var i = 0 ; i < ar.get_length(); i++) {\n    \t\t    msg += (msg.length > 0) ? \"\\n\" : \"\";\n    \t\t    msg += ar.get_string_element(i);\n\t        }\n                Gtk.TreeIter citer;  \n                print(\"Add line %s\", line);\n                store.append(out citer, iter);\n                store.set(citer, \n                    0, file + \":\" + line, \n                    1, int.parse(line), \n                    2, GLib.Markup.escape_text(line + \": \" + msg), \n                    3, file,-1);\n            \n            });\n            \n            \n        \n        });\n           \n   this.el.hide();\n        \n   while (Gtk.events_pending()) {\n        Gtk.main_iteration();\n    }\n    \n    this.hpane.el.set_position(250);\n   if (this.el.relative_to == null) {\n   this.el.set_relative_to(onbtn);\n     }\n    this.el.show_all();\n          \n\n}\n",
+   "| void show" : "(Json.Object tree, Gtk.Widget onbtn) {\n\n    \n         //print(\"looking for %s\\n\", id);\n        // loop through parent childnre\n          \n        \n        var store = this.compile_result_store.el;    \n        \n        store.clear();\n     \n        \n        tree.foreach_member((obj, file, node) => {\n            // id line \"display text\", file\n            \n            var title = GLib.Path.get_basename( file) ;\n            Gtk.TreeIter iter;\n            print(\"Add file %s\", title);\n            store.append(out iter, null);\n            var lines = tree.get_object_member(file);\n            title += \" (\" + lines.get_size().to_string() + \")\";\n            store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);\n            \n            lines.foreach_member((obja, line, nodea) => {\n                var msg  = \"\";\n                var ar = lines.get_array_member(line);\n                for (var i = 0 ; i < ar.get_length(); i++) {\n    \t\t    msg += (msg.length > 0) ? \"\\n\" : \"\";\n    \t\t    msg += ar.get_string_element(i);\n\t        }\n                Gtk.TreeIter citer;  \n                print(\"Add line %s\", line);\n                store.append(out citer, iter);\n                store.set(citer, \n                    0, file + \":\" + line, \n                    1, int.parse(line), \n                    2, GLib.Markup.escape_text(line + \": \" + msg), \n                    3, file,-1);\n            \n            });\n            \n            \n        \n        });\n           \n \n    \n    this.hpane.el.set_position(250);\n   if (this.el.relative_to == null) {\n        this.el.set_relative_to(onbtn);\n    }\n    this.el.show_all();\n          \n\n}\n",
    "xtype" : "Popover",
    "Gtk.PositionType position" : "Gtk.PositionType.TOP",
    "int width_request" : 900,
@@ -20,8 +20,8 @@
    "items" : [
     {
      "id" : "compile_view",
-     "xtype" : "VBox",
      "* pack" : "add",
+     "xtype" : "VBox",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -40,14 +40,14 @@
       },
       {
        "id" : "hpane",
-       "xtype" : "HPaned",
        "* pack" : "pack_start,true,true,0",
+       "xtype" : "HPaned",
        "$ xns" : "Gtk",
        "items" : [
         {
          "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-         "* pack" : "add",
          "xtype" : "ScrolledWindow",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "items" : [
           {
@@ -75,8 +75,8 @@
              "items" : [
               {
                "id" : "renderer",
-               "xtype" : "CellRendererText",
                "* pack" : "pack_start,true",
+               "xtype" : "CellRendererText",
                "$ xns" : "Gtk"
               }
              ]
@@ -92,8 +92,8 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
-           "xtype" : "SourceView",
            "* pack" : "add",
+           "xtype" : "SourceView",
            "$ xns" : "Gtk",
            "gboolean show_line_numbers" : true,
            "gboolean editable" : false
