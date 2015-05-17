@@ -83,15 +83,17 @@ public class Xcls_ValaCompileErrors : Object
                 
                 
             
-            });     
-               while (Gtk.events_pending()) {
+            }); 
+       this.el.hide();
+            
+       while (Gtk.events_pending()) {
             Gtk.main_iteration();
         }
-    
+        
         this.hpane.el.set_position(200);
         this.el.set_relative_to(onbtn);
          
-        this.el.show();
+        this.el.show_all();
               
     
     }
