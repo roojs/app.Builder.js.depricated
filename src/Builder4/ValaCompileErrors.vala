@@ -91,7 +91,7 @@ public class Xcls_ValaCompileErrors : Object
             Gtk.main_iteration();
         }
         
-        this.hpane.el.set_position(200);
+        this.hpane.el.set_position(250);
        if (this.el.relative_to == null) {
        this.el.set_relative_to(onbtn);
          }
