@@ -4,7 +4,9 @@
 
 namespace Palete {
 	 
-	 
+	 public errordomain VapiParserError {
+		PARSE_FAILED 
+	}
 	 
 
 	public class VapiParser : Vala.CodeVisitor {
@@ -349,6 +351,9 @@ namespace Palete {
 			parser.parse (context);
 			//gir_parser.parse (context);
 			if (context.report.get_errors () > 0) {
+				
+				throw new 
+				
 				print("parse got errors");
 				 
 				
