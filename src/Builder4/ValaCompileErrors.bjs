@@ -92,7 +92,7 @@
          "items" : [
           {
            "gboolean show_line_marks" : true,
-           "| void loadFile" : "(string file) {\n\n    string str;\n    FileUtils.get_contents(fname, out str);\n\t\t\t\n   this.el.get_buffer().set_text(str, str.length);\n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    var lang = _this.file.language;\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(\"vala\"));\n    var buf = this.el.get_buffer();\n     \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}\n",
+           "| void loadFile" : "(string file) {\n\n    string str;\n    FileUtils.get_contents(file, out str);\n\t\t\t\n   this.el.get_buffer().set_text(str, str.length);\n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    var lang = _this.file.language;\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(\"vala\"));\n    var buf = this.el.get_buffer();\n     \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}\n",
            "* pack" : "add",
            "xtype" : "SourceView",
            "$ xns" : "Gtk",

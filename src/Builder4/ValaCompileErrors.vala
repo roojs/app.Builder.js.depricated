@@ -392,7 +392,7 @@ public class Xcls_ValaCompileErrors : Object
         public void loadFile (string file) {
         
             string str;
-            FileUtils.get_contents(fname, out str);
+            FileUtils.get_contents(file, out str);
         			
            this.el.get_buffer().set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
