@@ -389,8 +389,23 @@ public class Xcls_ValaCompileErrors : Object
         }
 
         // user defined functions 
-        public void loadFile () {
+        public void loadFile (string file) {
         
+            string str;
+            FileUtils.get_contents(fname, out str);
+        			
+           this.el.get_buffer().set_text(str, str.length);
+            var lm = Gtk.SourceLanguageManager.get_default();
+            
+            var lang = _this.file.language;
+            //?? is javascript going to work as js?
+            
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("vala"));
+            var buf = this.el.get_buffer();
+             
+            _this.dirty = false;
+            this.el.grab_focus();
+            _this.save_button.el.sensitive = false;
         }
     }
 }
