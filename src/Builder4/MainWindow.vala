@@ -2324,6 +2324,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
+        public Xcls_ValaCompileErrors popup;
         public Json.Object notices;
 
         // ctor 

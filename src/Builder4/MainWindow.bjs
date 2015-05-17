@@ -632,6 +632,7 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_warnings",
+           "Xcls_ValaCompileErrors popup" : "",
            "* pack" : "add",
            "string label" : "Warnings",
            "xtype" : "ImageMenuItem",
