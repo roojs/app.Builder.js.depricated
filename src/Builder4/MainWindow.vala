@@ -2324,6 +2324,7 @@ public class Xcls_MainWindow : Object
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
+            this.notices = new Json.Object();
 
             // set gobject values
             this.el.always_show_image = true;

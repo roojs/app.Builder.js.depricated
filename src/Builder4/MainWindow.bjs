@@ -628,7 +628,7 @@
            "* pack" : "add",
            "string label" : "Warnings",
            "xtype" : "ImageMenuItem",
-           "# Json.Object notices" : "",
+           "# Json.Object notices" : "new Json.Object()",
            "$ xns" : "Gtk",
            "items" : [
             {
