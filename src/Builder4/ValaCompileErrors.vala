@@ -18,6 +18,7 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_renderer renderer;
 
         // my vars (def)
+    public Xcls_MainWindow window;
 
     // ctor 
     public Xcls_ValaCompileErrors()
@@ -36,7 +37,7 @@ public class Xcls_ValaCompileErrors : Object
 
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
-       this.el.set_relative_to(onbtn);
+        this.el.set_relative_to(onbtn);
         this.el.show_all();
         
         Gtk.TreeIter piter;
@@ -46,7 +47,7 @@ public class Xcls_ValaCompileErrors : Object
         Gtk.TreeIter iter;
         Gtk.TreeIter citer;  
         
-        var store = this.compile_result_store.el;    
+        var store = this.compile_result_store;    
         
         store.clear();
      
