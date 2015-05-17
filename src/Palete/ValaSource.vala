@@ -292,8 +292,11 @@ namespace Palete {
 			
 			this.compiler = new Spawn("/tmp", args);
 			
-			this.compiler.run(spawnResult); 
-			
+			try {
+				this.compiler.run(spawnResult); 
+			} catch (Error e) {
+				
+			}
 			 
 		}
 		public void spawnResult(int res, string output, string stderr)
