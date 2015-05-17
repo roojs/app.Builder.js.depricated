@@ -608,11 +608,11 @@
           {
            "listeners" : {
             "activate" : "",
-            "button_press_event" : ""
+            "button_press_event" : "() => {\n    if (this.errpopup == null) {\n        this.errpopup = new Xcls_ValaCompileErrors();\n        this.errpopup.window = this;\n    }\n    this.errpopup.show(this.notices, this.el);\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
-           "Xcls_ValaCompileErrors popup" : "",
+           "Xcls_ValaCompileErrors errpopup" : "",
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",

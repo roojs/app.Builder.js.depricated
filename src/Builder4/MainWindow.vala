@@ -2263,7 +2263,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
-        public Xcls_ValaCompileErrors popup;
+        public Xcls_ValaCompileErrors errpopup;
         public Json.Object notices;
 
         // ctor 
@@ -2285,7 +2285,13 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.activate.connect( );
-            this.el.button_press_event.connect( );
+            this.el.button_press_event.connect( () => {
+                if (this.errpopup == null) {
+                    this.errpopup = new Xcls_ValaCompileErrors();
+                    this.errpopup.window = this;
+                }
+                this.errpopup.show(this.notices, this.el);
+            });
         }
 
         // user defined functions 
