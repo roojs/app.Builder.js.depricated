@@ -278,7 +278,7 @@ namespace Palete {
 			
 			
 			string[] args = {};
-			args += FileUtils.read_link("/proc/self/exe");
+			args += BuilderApplication._self;
 			args += "--project";
 			args += this.project.fn;
 			args += "--target";
