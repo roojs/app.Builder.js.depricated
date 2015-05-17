@@ -515,9 +515,9 @@ public class Editor : Object
         
             var lines = err.get_object_member(_this.file.path);
             
-            var offset = 0;
+            var offset = 1;
             if (obj.has_member("line_offset")) {
-                offset = (int)obj.get_int_member("line_offset");
+                offset = (int)obj.get_int_member("line_offset") + 1;
             }
              
             
