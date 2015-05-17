@@ -263,6 +263,12 @@ public class Xcls_ValaCompileErrors : Object
                 this.el.modify_font(description);
             
             }
+
+            // listeners 
+            this.el.cursor_changed.connect( () => {
+            
+            
+            });
         }
 
         // user defined functions 

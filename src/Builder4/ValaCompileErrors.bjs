@@ -52,6 +52,9 @@
          "$ xns" : "Gtk",
          "items" : [
           {
+           "listeners" : {
+            "cursor_changed" : "() => {\n\n\n}"
+           },
            "id" : "compile_tree",
            "* init" : "{\n var description = new Pango.FontDescription();\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n",
            "* pack" : "add",
