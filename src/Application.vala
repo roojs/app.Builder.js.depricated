@@ -87,7 +87,7 @@
 		public BuilderApplication (  string[] args)
 		{
 			
-			_self = args[0];
+			_self = FileUtils.read_link("/proc/self/exe");
 			GLib.debug("SELF = %s", _self);
 			
 			Object(
