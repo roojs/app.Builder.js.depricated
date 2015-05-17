@@ -2290,6 +2290,7 @@ public class Xcls_MainWindow : Object
                     this.popup.window = _this;
                 }
                 this.popup.show(this.notices, this.el);
+                return true;
             });
         }
 
@@ -2351,6 +2352,7 @@ public class Xcls_MainWindow : Object
                     this.popup.window = _this;
                 }
                 this.popup.show(this.notices, this.el);
+                return true;
             });
         }
 
