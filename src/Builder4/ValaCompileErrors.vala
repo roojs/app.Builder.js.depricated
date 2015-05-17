@@ -494,6 +494,7 @@ public class Xcls_ValaCompileErrors : Object
                     } );
             }
             // jump to the line...
+            this.el.scroll_to_iter (TextIter iter, 0.0f, true, 0.0f, 0.5f);
                 
         
         
