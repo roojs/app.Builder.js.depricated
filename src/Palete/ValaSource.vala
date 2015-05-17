@@ -367,11 +367,9 @@ namespace Palete {
 			
 			 
 			var vapidirs = this.project.vapidirs();
-			 
-			for(var i =0 ; i < context.vapi_directories.length; i++) {
-				vapidirs += context.vapi_directories[i];
-			}
-			
+			 vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ; // usr/share/vala-XXX/vapi
+			 vapidirs +=  Path.get_dirname (context.get_vapi_path("gee-1.0")) ; //usr/share/vala/vapi 
+			 	
 			for(var i =0 ; i < vapidirs.length; i++) {
 				valac += " --vapidir=" + vapidirs[i];
 			}
