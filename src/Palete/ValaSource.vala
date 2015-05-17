@@ -365,10 +365,7 @@ namespace Palete {
 			
 			
 			
-			
-			
-			
-			
+			 
 			var vapidirs = this.project.vapidirs();
 			 
 			for(var i =0 ; i < context.vapi_directories; i++) {
@@ -380,7 +377,6 @@ namespace Palete {
 			}
 				
 			
-			// or context.get_vapi_path("glib-2.0"); // should return path..
 			context.vapi_directories = vapidirs;
 			context.report.enable_warnings = true;
 			context.metadata_directories = { };
