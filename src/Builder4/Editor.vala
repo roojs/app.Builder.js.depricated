@@ -496,11 +496,6 @@ public class Editor : Object
                 
                 this.el.remove_source_marks (start, end, null);
                         
-            if (!obj.has_member("ERR")) {
-                print("Return has no errors\n");
-                return true;
-            }
-            var err = obj.get_object_member("ERR");
             
             if (obj.has_member("ERR-TOTAL")) {
                 _this.window.statusbar_errors.el.show();
@@ -515,6 +510,11 @@ public class Editor : Object
                 _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Warnings";
             }
             
+            if (!obj.has_member("ERR")) {
+                print("Return has no errors\n");
+                return true;
+            }
+            var err = obj.get_object_member("ERR");
             
             
             
