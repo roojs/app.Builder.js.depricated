@@ -2284,13 +2284,12 @@ public class Xcls_MainWindow : Object
             this.el.set_image (  child_0.el  );
 
             // listeners 
-            this.el.activate.connect( );
             this.el.button_press_event.connect( () => {
-                if (this.errpopup == null) {
-                    this.errpopup = new Xcls_ValaCompileErrors();
-                    this.errpopup.window = _this;
+                if (this.popup == null) {
+                    this.popup = new Xcls_ValaCompileErrors();
+                    this.popup.window = _this;
                 }
-                this.errpopup.show(this.notices, this.el);
+                this.popup.show(this.notices, this.el);
             });
         }
 

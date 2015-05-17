@@ -607,8 +607,7 @@
          "items" : [
           {
            "listeners" : {
-            "activate" : "",
-            "button_press_event" : "() => {\n    if (this.errpopup == null) {\n        this.errpopup = new Xcls_ValaCompileErrors();\n        this.errpopup.window = _this;\n    }\n    this.errpopup.show(this.notices, this.el);\n}"
+            "button_press_event" : "() => {\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n    this.popup.show(this.notices, this.el);\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
