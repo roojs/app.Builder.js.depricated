@@ -521,7 +521,7 @@ public class Editor : Object
             }
              
             
-            var tlines = this.el.get_line_count ();
+            var tlines = this.el.get_line_count () +1;
             
             lines.foreach_member((obj, line, node) => {
                 
