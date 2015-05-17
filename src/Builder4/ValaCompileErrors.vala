@@ -61,8 +61,9 @@ public class Xcls_ValaCompileErrors : Object
                 Gtk.TreeIter iter;
                 print("Add file %s", title);
                 store.append(out iter, null);
-                store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
                 var lines = tree.get_object_member(file);
+                store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
+                
                 lines.foreach_member((obja, line, nodea) => {
                     var msg  = "";
                     var ar = lines.get_array_member(line);
