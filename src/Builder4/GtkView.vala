@@ -14,12 +14,13 @@ public class Xcls_GtkView : Object
     }
     public Xcls_view_layout view_layout;
     public Xcls_container container;
-    public Xcls_compile_view compile_view;
-    public Xcls_compile_tree compile_tree;
-    public Xcls_compile_result_store compile_result_store;
-    public Xcls_renderer renderer;
 
         // my vars (def)
+    public Gtk.Widget lastObj;
+    public int width;
+    public Xcls_MainWindow main_window;
+    public JsRender.JsRender file;
+    public int height;
 
     // ctor 
     public Xcls_GtkView()
@@ -28,12 +29,15 @@ public class Xcls_GtkView : Object
         this.el = new Gtk.VPaned();
 
         // my vars (dec)
+        this.lastObj = null;
+        this.width = 0;
+        this.file = null;
+        this.height = 0;
+
+        // set gobject values
         var child_0 = new Xcls_ScrolledWindow2( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
-        var child_1 = new Xcls_compile_view( _this );
-        child_1.ref();
-        this.el.pack2 (  child_1.el , true,true );
 
         // listeners 
         this.el.size_allocate.connect( (aloc) => {
@@ -191,9 +195,11 @@ public class Xcls_GtkView : Object
         public Xcls_ScrolledWindow2(Xcls_GtkView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.ScrolledWindow();
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)
+
+            // set gobject values
             var child_0 = new Xcls_view_layout( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -214,9 +220,11 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.view_layout = this;
-            this.el = new Gtk.Layout();
+            this.el = new Gtk.Layout( null, null );
 
             // my vars (dec)
+
+            // set gobject values
             var child_0 = new Xcls_container( _this );
             child_0.ref();
             this.el.put (  child_0.el , 10,10 );
@@ -237,344 +245,11 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.container = this;
-            this.el = new Gtk.HBox();
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars (dec)
-        }
 
-        // user defined functions 
-    }
-    public class Xcls_compile_view : Object 
-    {
-        public Gtk.VBox el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_compile_view(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            _this.compile_view = this;
-            this.el = new Gtk.VBox();
-
-            // my vars (dec)
-            var child_0 = new Xcls_HBox6( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_HPaned8( _this );
-            child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_HBox6 : Object 
-    {
-        public Gtk.HBox el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_HBox6(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HBox();
-
-            // my vars (dec)
-            var child_0 = new Xcls_Button7( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , true,true,0 );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_Button7 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_Button7(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_HPaned8 : Object 
-    {
-        public Gtk.HPaned el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_HPaned8(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HPaned();
-
-            // my vars (dec)
-            var child_0 = new Xcls_ScrolledWindow9( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ScrolledWindow14( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_ScrolledWindow9 : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_ScrolledWindow9(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.ScrolledWindow();
-
-            // my vars (dec)
-            var child_0 = new Xcls_compile_tree( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-
-            // init method 
-
-            {
-             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-             
-            
-            }
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_compile_tree : Object 
-    {
-        public Gtk.TreeView el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_compile_tree(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            _this.compile_tree = this;
-            this.el = new Gtk.TreeView();
-
-            // my vars (dec)
-            var child_0 = new Xcls_compile_result_store( _this );
-            child_0.ref();
-            this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_column( _this );
-            child_1.ref();
-            this.el.append_column (  child_1.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_compile_result_store : Object 
-    {
-        public Gtk.TreeStore el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_compile_result_store(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            _this.compile_result_store = this;
-            this.el = new Gtk.TreeStore();
-
-            // my vars (dec)
-        }
-
-        // user defined functions 
-        public void nodeAppendOrCreate (Gtk.TreePath  par, string id, string file, int line, string message) {
-        
-            Gtk.TreeIter piter;
-             
-            this.el.get_iter(out piter, par);
-             
-            // loop through parent childnre
-            Gtk.TreeIter iter; 
-            var loop =  par == null ? 
-                this.el.iter_children(out iter, null) :
-                 this.el.iter_children(out iter,  piter);
-            
-            while (loop) {
-                GLib.Value val;
-                this.el.get_value(iter, 0, out val);
-                var sval = (string)val;
-                if (sval == id) {
-                    GLib.Value mval;
-                    this.el.get_value(iter, 2, out mval);
-                    var smval = (string)mval;
-                    mval.set_string(smval + "\n" + GLib.Markup.escape_text(message)); //markup?
-                
-                    return;
-                }
-                loop = this.el.iter_next(ref iter);    
-            }
-            
-            // create the node...
-            if (par == null) {
-                this.el.append(out iter, null);
-            } else {
-                this.el.append(out iter, piter);
-            }
-            this.el.set(iter, 0, id, 1, line,2, GLib.Markup.escape_text("%d: %s".printf(line,message)), 3, file,-1);
-                
-            return ;
-        
-        }
-        public Gtk.TreePath nodeFindOrCreate (Gtk.TreePath? par, string id, string title) {
-        
-        
-            //print("looking for %s\n", id);
-            // loop through parent childnre
-            Gtk.TreeIter piter   ;
-            Gtk.TreeIter iter;
-            var loop = true;
-            if (par != null) {
-                this.el.get_iter(out piter, par);
-                loop = this.el.iter_children(out iter,  piter);
-            } else {
-                loop = this.el.iter_children(out iter, null) ;
-            }
-                 
-                 
-            while (loop) {
-                GLib.Value val;
-                this.el.get_value(iter, 0, out val);
-                var sval = (string)val;
-                //print("got node %s", sval);
-                if (sval == id) {
-                    return this.el.get_path(iter);
-                }
-                loop = this.el.iter_next(ref iter);    
-            }
-            // create the node...
-             if (par == null) {
-                this.el.append(out iter, null);
-            } else {
-              this.el.get_iter(out piter, par);
-                this.el.append(out iter, piter);
-            }
-            //print("add iter %s / %s", id, title);
-            this.el.set(iter, 0, id, 1, 0, 2, title, 3, "",-1);
-               
-            return   this.el.get_path(iter);
-        
-        }
-    }
-    public class Xcls_column : Object 
-    {
-        public Gtk.TreeViewColumn el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_column(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.TreeViewColumn();
-
-            // my vars (dec)
-            var child_0 = new Xcls_renderer( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , true );
-
-            // init method 
-
-            {
-              this.el.add_attribute(_this.renderer.el , "markup", 2 );
-             
-            }
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_renderer : Object 
-    {
-        public Gtk.CellRendererText el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_renderer(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            _this.renderer = this;
-            this.el = new Gtk.CellRendererText();
-
-            // my vars (dec)
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_ScrolledWindow14 : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_ScrolledWindow14(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.ScrolledWindow();
-
-            // my vars (dec)
-            var child_0 = new Xcls_SourceView15( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_SourceView15 : Object 
-    {
-        public Gtk.SourceView el;
-        private Xcls_GtkView  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_SourceView15(Xcls_GtkView _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.SourceView();
-
-            // my vars (dec)
+            // set gobject values
         }
 
         // user defined functions 
