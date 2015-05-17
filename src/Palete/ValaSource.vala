@@ -370,10 +370,10 @@ namespace Palete {
 			
 			
 			var vapidirs = this.project.vapidirs();
-			// what's the current version of vala???
-			
- 			
-			vapidirs +=  Path.get_dirname (context.get_vapi_path("glib-2.0")) ;
+			 
+			for(var i =0 ; i < context.vapi_directories; i++) {
+				vapidirs += context.vapi_directories[i];
+			}
 			
 			for(var i =0 ; i < vapidirs.length; i++) {
 				valac += " --vapidir=" + vapidirs[i];
