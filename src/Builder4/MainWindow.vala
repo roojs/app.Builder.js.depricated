@@ -2314,6 +2314,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
+        public Json.Object notices;
 
         // ctor 
         public Xcls_statusbar_warnings(Xcls_MainWindow _owner )
