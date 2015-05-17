@@ -34,7 +34,8 @@ public class Xcls_ValaCompileErrors : Object
     }
 
     // user defined functions 
-    public void loadErrors (Json.Object tree, GtkWidget show) {
+    public void show (Json.Object tree, GtkWidget onbtn) {
+    
        Gtk.TreeIter piter;
         //print("looking for %s\n", id);
         // loop through parent childnre
