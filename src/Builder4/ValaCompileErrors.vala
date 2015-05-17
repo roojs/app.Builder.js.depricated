@@ -443,11 +443,11 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
         public void loadFile (string fname, int line ) {
-        
+          var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+              
             if (this.curfname != fname) {
                 this.curfname = fname;
         
-                var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
                 Gtk.TextIter start;
                 Gtk.TextIter end;     
                 buf.get_bounds (out start, out end);
@@ -495,6 +495,7 @@ public class Xcls_ValaCompileErrors : Object
             }
             // jump to the line...
             Gtk.TextIter liter;
+            buf.get_iter_at_line (out liter, int line)
             this.el.scroll_to_iter (liter, 0.0f, true, 0.0f, 0.5f);
                 
         
