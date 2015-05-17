@@ -69,9 +69,9 @@ public class Xcls_ValaCompileErrors : Object
                     for (var i = 0 ; i < ar.get_length(); i++) {
         		    msg += (msg.length > 0) ? "\n" : "";
         		    msg += ar.get_string_element(i);
-        	    }
-        	            Gtk.TreeIter citer;  
-          print("Add line %s", line);
+    	        }
+                    Gtk.TreeIter citer;  
+                    print("Add line %s", line);
                     store.append(out citer, iter);
                     store.set(iter, 
                         0, file + ":" + line, 
