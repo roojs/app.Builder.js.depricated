@@ -649,7 +649,8 @@
           },
           {
            "listeners" : {
-            "activate" : "() => {\n    _this.windowstate.vala_compile_errors.show(this.notices, this.el);\n}"
+            "activate" : "() => {\n    _this.windowstate.vala_compile_errors.show(this.notices, this.el);\n}",
+            "button_press_event" : ""
            },
            "bool always_show_image" : true,
            "id" : "statusbar_depricated",
