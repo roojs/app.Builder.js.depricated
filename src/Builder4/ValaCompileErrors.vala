@@ -401,9 +401,8 @@ public class Xcls_ValaCompileErrors : Object
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("vala"));
             var buf = this.el.get_buffer();
              
-            _this.dirty = false;
             this.el.grab_focus();
-            _this.save_button.el.sensitive = false;
+        
         }
     }
 }
