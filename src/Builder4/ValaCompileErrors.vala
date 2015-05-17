@@ -79,7 +79,7 @@ public class Xcls_ValaCompileErrors : Object
                     Gtk.TreeIter citer;  
                     print("Add line %s", line);
                     store.append(out citer, iter);
-                    store.set(iter, 
+                    store.set(citer, 
                         0, file + ":" + line, 
                         1, int.parse(line), 
                         2, GLib.Markup.escape_text(line + ": " + msg), 
