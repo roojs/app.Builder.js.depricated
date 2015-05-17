@@ -2284,7 +2284,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.activate.connect( () => {
-                _this.windowstate.valacompilerrors.show(this.notices);
+                _this.windowstate.vala_compile_errors.show(this.notices);
             });
         }
 
