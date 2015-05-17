@@ -2365,6 +2365,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars (def)
+        public Json.Object notices;
 
         // ctor 
         public Xcls_statusbar_depricated(Xcls_MainWindow _owner )
@@ -2374,6 +2375,7 @@ public class Xcls_MainWindow : Object
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
+            this.notices = new Json.Object();
 
             // set gobject values
             this.el.always_show_image = true;

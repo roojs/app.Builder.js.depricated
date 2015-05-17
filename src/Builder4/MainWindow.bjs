@@ -645,6 +645,7 @@
            "string label" : "Depricated",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
+           "# Json.Object notices" : "new Json.Object()",
            "$ xns" : "Gtk",
            "items" : [
             {
