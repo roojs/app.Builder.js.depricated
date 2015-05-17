@@ -433,6 +433,12 @@ public class Xcls_ValaCompileErrors : Object
             this.el.editable = false;
             this.el.show_line_marks = true;
             this.el.show_line_numbers = true;
+
+            // init method 
+
+            {
+                this.curfname = "";
+            }
         }
 
         // user defined functions 
