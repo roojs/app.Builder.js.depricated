@@ -79,6 +79,10 @@ public class WindowState : Object
 
 		this.webkit_plugin = new Xcls_DialogPluginWebkit();
 		this.template_select = new DialogTemplateSelect();
+		
+		this.valacompileerrors = new Xcls_ValaCompileErrors();
+		this.valacompileerrors.window = this.win;
+		
 		this.children_loaded = true;
 	}
 
