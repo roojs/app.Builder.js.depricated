@@ -392,13 +392,22 @@ public class Xcls_ValaCompileErrors : Object
         // user defined functions 
         public void loadFile (string fname) {
         
+            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+            Gtk.TextIter start;
+            Gtk.TextIter end;     
+            buf.get_bounds (out start, out end);
+                
+            buf.remove_source_marks (start, end, null);
+                 
+             
+            
             string str;
             FileUtils.get_contents(fname, out str);
         			
-           this.el.get_buffer().set_text(str, str.length);
+            buf.set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
             
-            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+           
             buf.set_language(lm.get_language("vala"));
          
              
@@ -408,8 +417,7 @@ public class Xcls_ValaCompileErrors : Object
            
             var lines = _this.notices.get_object_member(fname);
              
-             
-             
+                
             lines.foreach_member((obj, line, node) => {
                 
                      Gtk.TextIter iter;
@@ -431,13 +439,6 @@ public class Xcls_ValaCompileErrors : Object
                 } );
         
             
-        
-        
-        
-        
-        
-        
-        
         
         
         }
