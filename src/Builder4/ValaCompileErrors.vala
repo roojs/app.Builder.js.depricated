@@ -41,14 +41,7 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
-        while (Gtk.events_pending()) {
-            Gtk.main_iteration();
-        }
-    
-        this.hpane.el.set_position(200);
-        this.el.set_relative_to(onbtn);
-            this.el.show_all();
-            
+        
              //print("looking for %s\n", id);
             // loop through parent childnre
               
@@ -90,7 +83,15 @@ public class Xcls_ValaCompileErrors : Object
                 
             
             });     
-                 
+               while (Gtk.events_pending()) {
+            Gtk.main_iteration();
+        }
+    
+        this.hpane.el.set_position(200);
+        this.el.set_relative_to(onbtn);
+        this.el.grab_focus();
+        this.el.show_all();
+              
     
     }
     public class Xcls_compile_view : Object 
