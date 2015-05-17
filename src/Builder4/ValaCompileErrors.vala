@@ -41,6 +41,10 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
+        while (Gtk.event_pending()) {
+            Gtk.main_iteration();
+        }
+    
         this.hpane.el.set_position(200);
         this.el.set_relative_to(onbtn);
             this.el.show_all();
@@ -62,6 +66,7 @@ public class Xcls_ValaCompileErrors : Object
                 print("Add file %s", title);
                 store.append(out iter, null);
                 var lines = tree.get_object_member(file);
+                title += " (" + lines.get_size().to_string() + ")";
                 store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
                 
                 lines.foreach_member((obja, line, nodea) => {
