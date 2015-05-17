@@ -83,7 +83,8 @@ public class Xcls_ValaCompileErrors : Object
                 
                 
             
-            }); 
+            });
+       this.el.set_relative_to(null); 
        this.el.hide();
             
        while (Gtk.events_pending()) {
