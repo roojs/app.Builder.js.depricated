@@ -499,7 +499,7 @@ public class Xcls_ValaCompileErrors : Object
             Gtk.TextIter liter;
             buf.get_iter_at_line (out liter,  line);
             print("Scroll to \n");
-            this.el.scroll_to_iter (liter, 0.0f, true, 0.0f, 0.5f);
+            this.el.scroll_to_iter (liter, 0.0f, false, 0.0f, 0.5f);
             print("End Scroll to \n");
         
         
