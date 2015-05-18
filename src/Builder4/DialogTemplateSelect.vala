@@ -321,7 +321,7 @@ public class DialogTemplateSelect : Object
         public Xcls_Box8(DialogTemplateSelect _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( null, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 

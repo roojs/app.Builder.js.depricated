@@ -67,6 +67,7 @@
        "* pack" : "pack_start,false,false,0",
        "xtype" : "Box",
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "items" : [
         {
          "label" : "Select Database Table : ",
