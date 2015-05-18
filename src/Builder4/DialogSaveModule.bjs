@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/DialogSaveModule.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "",
  "items" : [
   {
    "listeners" : {
@@ -20,34 +21,34 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "xtype" : "HBox",
+     "xtype" : "Box",
      "$ pack" : " get_content_area().add\n\n",
      "$ xns" : "Gtk",
      "items" : [
       {
        "label" : "Name",
-       "* pack" : "add",
        "xtype" : "Label",
+       "* pack" : "add",
        "$ xns" : "Gtk"
       },
       {
        "id" : "name",
-       "* pack" : "add",
        "xtype" : "Entry",
+       "* pack" : "add",
        "$ xns" : "Gtk"
       }
      ]
     },
     {
      "label" : "Cancel",
-     "* pack" : "add_action_widget,0",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,0",
      "$ xns" : "Gtk"
     },
     {
      "label" : "OK",
-     "* pack" : "add_action_widget,1",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,1",
      "$ xns" : "Gtk"
     }
    ]
