@@ -1282,7 +1282,7 @@ public class Xcls_LeftProps : Object
                     return false; //not on a element.
                 }
                 
-                
+                 
                  // right click.
                  if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1 && col.title == "Name") {    
                     // show popup!.   
