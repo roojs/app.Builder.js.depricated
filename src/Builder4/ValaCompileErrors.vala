@@ -56,6 +56,7 @@ public class Xcls_ValaCompileErrors : Object
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
             this.notices = tree;
+            this.close = false;
              //print("looking for %s\n", id);
             // loop through parent childnre
               
