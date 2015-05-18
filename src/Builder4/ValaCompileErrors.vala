@@ -198,6 +198,9 @@ public class Xcls_ValaCompileErrors : Object
 
             // set gobject values
             this.el.label = "Edit";
+
+            // listeners 
+            this.el.clicked.connect( );
         }
 
         // user defined functions 
