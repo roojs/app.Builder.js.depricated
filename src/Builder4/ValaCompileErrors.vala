@@ -13,6 +13,7 @@ public class Xcls_ValaCompileErrors : Object
         return _ValaCompileErrors;
     }
     public Xcls_compile_view compile_view;
+    public Xcls_save_btn save_btn;
     public Xcls_hpane hpane;
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
@@ -89,7 +90,12 @@ public class Xcls_ValaCompileErrors : Object
             
         int w,h;
         this.window.el.get_size(out w, out h);
-        this.el.set_size_request( int.max(100, w- 100), int.max(100, h-100));
+        
+        // left tree = 250, editor area = 500?
+        var new_w = int.min(250+ 500, w-100);
+        new_w = int.max(new_w, w - 100);
+        
+        this.el.set_size_request( int.max(100, new_w), int.max(100, h-100));
     
         
         this.hpane.el.set_position(250);
@@ -151,7 +157,7 @@ public class Xcls_ValaCompileErrors : Object
             var child_1 = new Xcls_Button5( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
-            var child_2 = new Xcls_Button6( _this );
+            var child_2 = new Xcls_save_btn( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , true,true,0 );
         }
@@ -227,7 +233,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
     }
-    public class Xcls_Button6 : Object 
+    public class Xcls_save_btn : Object 
     {
         public Gtk.Button el;
         private Xcls_ValaCompileErrors  _this;
@@ -236,9 +242,10 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_Button6(Xcls_ValaCompileErrors _owner )
+        public Xcls_save_btn(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
+            _this.save_btn = this;
             this.el = new Gtk.Button();
 
             // my vars (dec)
