@@ -22,7 +22,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // my vars (def)
     public Xcls_MainWindow window;
-    public bool close;
+    public bool active;
     public Json.Object notices;
 
     // ctor 
@@ -32,7 +32,7 @@ public class Xcls_ValaCompileErrors : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
-        this.close = false;
+        this.active = false;
 
         // set gobject values
         this.el.width_request = 900;
@@ -56,7 +56,7 @@ public class Xcls_ValaCompileErrors : Object
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
             this.notices = tree;
-            this.close = false;
+            this.active = true;
              //print("looking for %s\n", id);
             // loop through parent childnre
               
