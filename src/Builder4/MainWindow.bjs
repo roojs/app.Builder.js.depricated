@@ -609,7 +609,7 @@
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
            "Xcls_ValaCompileErrors popup" : "",
-           "string label" : "Errors",
+           "string label" : "Compile Status:",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",
