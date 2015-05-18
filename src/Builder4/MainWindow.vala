@@ -150,26 +150,26 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.title = "Application Builder";
             this.el.show_close_button = true;
-            var child_0 = new Xcls_Box3( _this );
+            var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_Box3 : Object 
+    public class Xcls_HBox3 : Object 
     {
-        public Gtk.Box el;
+        public Gtk.HBox el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Box3(Xcls_MainWindow _owner )
+        public Xcls_HBox3(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars (dec)
 
@@ -381,7 +381,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_vbox : Object 
     {
-        public Gtk.Box el;
+        public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
@@ -392,12 +392,11 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.vbox = this;
-            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars (dec)
 
             // set gobject values
-            this.el.homogeneous = false;
             var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
@@ -432,7 +431,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_leftpane( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
-            var child_1 = new Xcls_Box17( _this );
+            var child_1 = new Xcls_VBox17( _this );
             child_1.ref();
             this.el.add2 (  child_1.el  );
         }
@@ -441,7 +440,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_leftpane : Object 
     {
-        public Gtk.Box el;
+        public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
@@ -452,7 +451,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.leftpane = this;
-            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars (dec)
 
@@ -494,7 +493,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_tree : Object 
     {
-        public Gtk.Box el;
+        public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
@@ -505,7 +504,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.tree = this;
-            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars (dec)
 
@@ -516,7 +515,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_props : Object 
     {
-        public Gtk.Box el;
+        public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
@@ -527,7 +526,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.props = this;
-            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars (dec)
 
@@ -536,19 +535,19 @@ public class Xcls_MainWindow : Object
 
         // user defined functions 
     }
-    public class Xcls_Box17 : Object 
+    public class Xcls_VBox17 : Object 
     {
-        public Gtk.Box el;
+        public Gtk.VBox el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_Box17(Xcls_MainWindow _owner )
+        public Xcls_VBox17(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars (dec)
 
