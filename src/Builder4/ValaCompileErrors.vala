@@ -21,9 +21,9 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_sourceview sourceview;
 
         // my vars (def)
-    public JsRender.JsRender file;
     public Xcls_MainWindow window;
     public bool active;
+    public JsRender.JsRender? file;
     public Json.Object notices;
 
     // ctor 
@@ -57,6 +57,8 @@ public class Xcls_ValaCompileErrors : Object
     // user defined functions 
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
+            
+            this.file = null;
             this.notices = tree;
             this.active = true;
              //print("looking for %s\n", id);
