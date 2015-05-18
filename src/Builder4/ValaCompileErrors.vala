@@ -21,6 +21,7 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_sourceview sourceview;
 
         // my vars (def)
+    public JsRender.JsRender file;
     public Xcls_MainWindow window;
     public bool active;
     public Json.Object notices;
