@@ -376,7 +376,20 @@ public class Xcls_ValaCompileErrors : Object
         public void loadFile (string fname, int line ) {
         
          
+             int w,h;
+            _this.window.el.get_size(out w, out h);
             
+            // left tree = 250, editor area = 500?
+            
+            var new_w = int.min(750, w-100);
+            if (new_w > (w-100)) {
+                new_w = w-100;
+            }
+            _this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
+        
+        
+            
+            _this.hpane.el.set_position( _this.hpane.el.max_postion - 250);
         
         
             var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
