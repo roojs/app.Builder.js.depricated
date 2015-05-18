@@ -2,7 +2,7 @@ static ValaProjectSettings  _ValaProjectSettings;
 
 public class ValaProjectSettings : Object 
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private ValaProjectSettings  _this;
 
     public static ValaProjectSettings singleton()
@@ -41,7 +41,7 @@ public class ValaProjectSettings : Object
     public ValaProjectSettings()
     {
         _this = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.project = null;
