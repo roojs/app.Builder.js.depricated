@@ -440,6 +440,22 @@ public class Xcls_ValaCompileErrors : Object
 
             {
                 this.curfname = "";
+                   var description =   Pango.FontDescription.from_string("monospace");
+                description.set_size(8000);
+                this.el.override_font(description);
+            
+                var attrs = new Gtk.SourceMarkAttributes();
+                var  pink = new Gdk.RGBA();
+                pink.parse ( "pink");
+                attrs.set_background ( pink);
+                attrs.set_icon_name ( "process-stop");    
+                attrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("error", attrs, 1);
+                
             }
         }
 
