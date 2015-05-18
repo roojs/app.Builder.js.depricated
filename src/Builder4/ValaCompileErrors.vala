@@ -569,10 +569,40 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
         public void loadFile (string fname, int line ) {
-          var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+        
+         
+            
+        
+        
+            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
               
             if (this.curfname != fname) {
                 this.curfname = fname;
+                
+                
+                Regex regex = new Regex("\\.vala$");
+        
+                var bjsf = regex.replace(fname,fname.length , 0 , ".bjs");
+                
+                var p = _this.window.project;
+                
+                var jsr = p.getByPath(bjsf);
+                
+                if (_this.file != null) {
+                    // remove listeners from the file...
+                }
+                
+                _this.file = null;
+                
+                if (jsr != null) {
+                    _this.file = jsr;
+                    
+                    return;
+                
+                }
+                
+                
+                
         
                 Gtk.TextIter start;
                 Gtk.TextIter end;     
