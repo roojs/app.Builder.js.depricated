@@ -128,7 +128,7 @@ builder4_SOURCES = \
 		Builder4/DialogPluginWebkit.vala \
 		Builder4/DialogNewComponent.vala \
 		Builder4/PopoverFileDetails.vala \
-		Builder4/ValaCompileErrors \
+		Builder4/ValaCompileErrors.vala \
 		Resources.vala 
 		
 		
