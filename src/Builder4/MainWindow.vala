@@ -2501,6 +2501,9 @@ public class Xcls_MainWindow : Object
         }
 
         // user defined functions 
+        public void setNotices () {
+        
+        }
     }
     public class Xcls_Image76 : Object 
     {
