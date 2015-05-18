@@ -33,8 +33,9 @@
    "items" : [
     {
      "* pack" : "pack_start,false,true,0",
-     "xtype" : "HBox",
+     "xtype" : "Box",
      "$ xns" : "Gtk",
+     "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
      "items" : [
       {
        "listeners" : {

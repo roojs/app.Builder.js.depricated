@@ -44,7 +44,7 @@ public class Xcls_LeftProps : Object
         this.main_window = null;
 
         // set gobject values
-        var child_0 = new Xcls_HBox2( _this );
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true,0 );
         var child_1 = new Xcls_EditProps( _this );
@@ -541,19 +541,19 @@ public class Xcls_LeftProps : Object
                  6,  this.keySortFormat(key)
             ); 
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_Box2 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_LeftProps  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox2(Xcls_LeftProps _owner )
+        public Xcls_Box2(Xcls_LeftProps _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
