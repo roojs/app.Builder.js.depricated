@@ -205,7 +205,8 @@ public class Xcls_ValaCompileErrors : Object
                 
                 var f = _this.sourceview.curfname;
                 
-                var p = _this.window.windowstate.
+                var p = _this.window.project;
+                
             
             
             });

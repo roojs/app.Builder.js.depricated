@@ -39,7 +39,7 @@
         },
         {
          "listeners" : {
-          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n    \n    var p = _this.window.windowstate.\n\n\n}"
+          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n    \n    var p = _this.window.project;\n    \n\n\n}"
          },
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
