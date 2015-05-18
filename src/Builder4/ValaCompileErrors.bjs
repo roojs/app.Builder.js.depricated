@@ -8,6 +8,9 @@
  "build_module" : "builder",
  "items" : [
   {
+   "listeners" : {
+    "button_press_event" : ""
+   },
    "int height_request" : 800,
    "id" : "ValaCompileErrors",
    "Xcls_MainWindow window" : "",

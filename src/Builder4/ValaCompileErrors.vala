@@ -40,6 +40,9 @@ public class Xcls_ValaCompileErrors : Object
         var child_0 = new Xcls_compile_view( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
+
+        // listeners 
+        this.el.button_press_event.connect( );
     }
 
     // user defined functions 
