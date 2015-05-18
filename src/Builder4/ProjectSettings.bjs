@@ -23,6 +23,7 @@
      "xtype" : "Box",
      "gboolean expand" : false,
      "$ xns" : "Gtk",
+     "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
      "$ homogeneous" : true,
      "gboolean vexpand" : false,
      "items" : [
@@ -67,7 +68,7 @@
       },
       {
        "* pack" : "append_page,_this.label_global.el",
-       "xtype" : "VBox",
+       "xtype" : "Box",
        "gboolean homogeneous" : false,
        "$ xns" : "Gtk",
        "items" : [

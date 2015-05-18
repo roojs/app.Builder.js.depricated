@@ -108,7 +108,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Box2(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( null, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
@@ -207,7 +207,7 @@ public class Xcls_ProjectSettings : Object
             child_0.ref();
             var child_1 = new Xcls_label_database( _this );
             child_1.ref();
-            var child_2 = new Xcls_VBox8( _this );
+            var child_2 = new Xcls_Box8( _this );
             child_2.ref();
             this.el.append_page (  child_2.el , _this.label_global.el );
             var child_3 = new Xcls_VBox19( _this );
@@ -261,23 +261,24 @@ public class Xcls_ProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_VBox8 : Object 
+    public class Xcls_Box8 : Object 
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_ProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox8(Xcls_ProjectSettings _owner )
+        public Xcls_Box8(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( null, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_path( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
