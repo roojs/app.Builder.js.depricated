@@ -151,7 +151,7 @@ public class DialogTemplateSelect : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_HBox8( _this );
+            var child_1 = new Xcls_Box8( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
         }
@@ -309,19 +309,19 @@ public class DialogTemplateSelect : Object
                                              
         }
     }
-    public class Xcls_HBox8 : Object 
+    public class Xcls_Box8 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private DialogTemplateSelect  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox8(DialogTemplateSelect _owner )
+        public Xcls_Box8(DialogTemplateSelect _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( null, 0 );
 
             // my vars (dec)
 
