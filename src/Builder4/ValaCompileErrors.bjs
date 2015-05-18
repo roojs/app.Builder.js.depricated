@@ -47,7 +47,8 @@
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
          "$ xns" : "Gtk",
-         "utf8 label" : "Save"
+         "utf8 label" : "Save",
+         "bool visible" : false
         }
        ]
       },

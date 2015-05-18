@@ -220,6 +220,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // set gobject values
             this.el.label = "Save";
+            this.el.visible = false;
         }
 
         // user defined functions 
