@@ -32,7 +32,7 @@ public class Xcls_DialogPluginWebkit : Object
         this.el.default_width = 750;
         this.el.deletable = true;
         this.el.modal = true;
-        var child_0 = new Xcls_VBox2( _this );
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
         var child_1 = new Xcls_Button5( _this );
@@ -185,23 +185,24 @@ public class Xcls_DialogPluginWebkit : Object
     
     
     }
-    public class Xcls_VBox2 : Object 
+    public class Xcls_Box2 : Object 
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_DialogPluginWebkit  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox2(Xcls_DialogPluginWebkit _owner )
+        public Xcls_Box2(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( null, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_ScrolledWindow3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,3 );
