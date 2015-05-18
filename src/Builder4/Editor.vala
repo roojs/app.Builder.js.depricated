@@ -492,8 +492,8 @@ public class Editor : Object
             }
             if (obj.has_member("DEPR-TOTAL")) {
                 
-                _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
-        //        _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Depricated";
+                 _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
+         
             } else {
                 _this.window.statusbar_depricated.setNotices( new Json.Object(),0);
             }
