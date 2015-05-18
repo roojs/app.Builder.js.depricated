@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/ProjectSettings.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "builder",
  "items" : [
   {
    "@ void buttonPressed" : "(string btn)",
@@ -30,8 +31,8 @@
         "button_press_event" : "() => {\n    _this.save();\n          \n    _this.buttonPressed(\"apply\");\n        return false;\n}"
        },
        "label" : "Apply",
-       "xtype" : "Button",
        "* pack" : "add",
+       "xtype" : "Button",
        "$ xns" : "Gtk"
       },
       {
@@ -39,8 +40,8 @@
         "button_press_event" : "() => {\n       _this.save();\n          \n    _this.buttonPressed(\"save\");\n        return false;\n}"
        },
        "label" : "Save",
-       "xtype" : "Button",
        "* pack" : "add",
+       "xtype" : "Button",
        "$ xns" : "Gtk"
       }
      ]
@@ -52,15 +53,15 @@
      "items" : [
       {
        "id" : "label_global",
-       "* pack" : false,
        "xtype" : "Label",
+       "* pack" : false,
        "$ xns" : "Gtk",
        "utf8 label" : "Global"
       },
       {
        "id" : "label_database",
-       "xtype" : "Label",
        "* pack" : false,
+       "xtype" : "Label",
        "$ xns" : "Gtk",
        "utf8 label" : "Database"
       },
@@ -88,15 +89,15 @@
          "items" : [
           {
            "label" : "HTML template file",
-           "* pack" : "pack_start,false,false,0",
            "xtype" : "Label",
+           "* pack" : "pack_start,false,false,0",
            "gint margin" : 3,
            "$ xns" : "Gtk"
           },
           {
            "id" : "base_template",
-           "* pack" : "add",
            "xtype" : "Entry",
+           "* pack" : "add",
            "$ xns" : "Gtk"
           }
          ]
@@ -110,23 +111,23 @@
          "items" : [
           {
            "label" : "root URL",
-           "* pack" : "pack_start,false,false,0",
            "xtype" : "Label",
+           "* pack" : "pack_start,false,false,0",
            "gint margin" : 3,
            "$ xns" : "Gtk"
           },
           {
            "id" : "rootURL",
-           "* pack" : "add",
            "xtype" : "Entry",
+           "* pack" : "add",
            "$ xns" : "Gtk"
           }
          ]
         },
         {
          "label" : "HTML To insert at end of <HEAD>",
-         "* pack" : "pack_start,false,false,0",
          "xtype" : "Label",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         },
         {
@@ -166,8 +167,8 @@
           "key_press_event" : "(ev) => {\n\n    if (ev.keyval == Gdk.Key.Tab) {\n        _this.database_DBNAME.el.grab_focus();\n        return true;\n    }\n\n\n    return false;\n}\n"
          },
          "id" : "database_DBTYPE",
-         "xtype" : "Entry",
          "* pack" : "pack_start,false,false,0",
+         "xtype" : "Entry",
          "$ xns" : "Gtk"
         },
         {
@@ -182,8 +183,8 @@
           "key_press_event" : "(ev) => {\n\n    if (ev.keyval == Gdk.Key.Tab) {\n        _this.database_DBUSERNAME.el.grab_focus();\n        return true;\n    }\n\n\n    return false;\n}\n"
          },
          "id" : "database_DBNAME",
-         "* pack" : "pack_start,false,false,0",
          "xtype" : "Entry",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         },
         {
@@ -198,8 +199,8 @@
           "key_press_event" : "(ev) => {\n\n    if (ev.keyval == Gdk.Key.Tab) {\n        _this.database_DBPASSWORD.el.grab_focus();\n        return true;\n    }\n\n\n    return false;\n}\n"
          },
          "id" : "database_DBUSERNAME",
-         "xtype" : "Entry",
          "* pack" : "pack_start,false,false,0",
+         "xtype" : "Entry",
          "$ xns" : "Gtk"
         },
         {
@@ -211,8 +212,8 @@
         },
         {
          "id" : "database_DBPASSWORD",
-         "* pack" : "pack_start,false,false,0",
          "xtype" : "Entry",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         },
         {

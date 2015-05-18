@@ -526,8 +526,6 @@ public class Xcls_ProjectSettings : Object
 
             // my vars (dec)
 
-            // set gobject values
-
             // init method 
 
             var description =   Pango.FontDescription.from_string("monospace");
