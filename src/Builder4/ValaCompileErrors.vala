@@ -194,7 +194,7 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Compile and Run";
+            this.el.label = "Edit";
         }
 
         // user defined functions 
