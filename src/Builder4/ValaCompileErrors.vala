@@ -15,10 +15,10 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_compile_view compile_view;
     public Xcls_save_btn save_btn;
     public Xcls_hpane hpane;
+    public Xcls_sourceview sourceview;
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
-    public Xcls_sourceview sourceview;
 
         // my vars (def)
     public Xcls_MainWindow window;
@@ -295,7 +295,7 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_ScrolledWindow8( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ScrolledWindow13( _this );
+            var child_1 = new Xcls_ScrolledWindow10( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -312,6 +312,168 @@ public class Xcls_ValaCompileErrors : Object
 
         // ctor 
         public Xcls_ScrolledWindow8(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_sourceview( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+        }
+
+        // user defined functions 
+    }
+    public class Xcls_sourceview : Object 
+    {
+        public Gtk.SourceView el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+        public string curfname;
+
+        // ctor 
+        public Xcls_sourceview(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            _this.sourceview = this;
+            this.el = new Gtk.SourceView();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.editable = false;
+            this.el.show_line_marks = true;
+            this.el.show_line_numbers = true;
+
+            // init method 
+
+            {
+                this.curfname = "";
+                   var description =   Pango.FontDescription.from_string("monospace");
+                description.set_size(8000);
+                this.el.override_font(description);
+            
+                var attrs = new Gtk.SourceMarkAttributes();
+                var  pink = new Gdk.RGBA();
+                pink.parse ( "pink");
+                attrs.set_background ( pink);
+                attrs.set_icon_name ( "process-stop");    
+                attrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("error", attrs, 1);
+                
+            }
+        }
+
+        // user defined functions 
+        public void loadFile (string fname, int line ) {
+        
+         
+            
+        
+        
+            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
+              
+            if (this.curfname != fname) {
+                this.curfname = fname;
+                
+                
+                Regex regex = new Regex("\\.vala$");
+        
+                var bjsf = regex.replace(fname,fname.length , 0 , ".bjs");
+                
+                var p = _this.window.project;
+                
+                var jsr = p.getByPath(bjsf);
+                
+                if (_this.file != null) {
+                    // remove listeners from the file...
+                }
+                
+                _this.file = null;
+                
+                if (jsr != null) {
+                    _this.file = jsr;
+                    
+                    return;
+                
+                }
+                
+                
+                
+        
+                Gtk.TextIter start;
+                Gtk.TextIter end;     
+                buf.get_bounds (out start, out end);
+                    
+                buf.remove_source_marks (start, end, null);
+                     
+                 
+                
+                string str;
+                FileUtils.get_contents(fname, out str);
+        			
+                buf.set_text(str, str.length);
+                var lm = Gtk.SourceLanguageManager.get_default();
+                
+               
+                buf.set_language(lm.get_language("vala"));
+             
+                 
+                this.el.grab_focus();
+        
+        
+               
+                var lines = _this.notices.get_object_member(fname);
+                 
+                    
+                lines.foreach_member((obj, line, node) => {
+                    
+                         Gtk.TextIter iter;
+                //        print("get inter\n");
+                        var eline = int.parse(line) -1 ;
+                         
+                        
+                        buf.get_iter_at_line( out iter, eline);
+                        //print("mark line\n");
+                        var msg  = "Line: %d".printf(eline+1);
+                        var ar = lines.get_array_member(line);
+                        for (var i = 0 ; i < ar.get_length(); i++) {
+        		        msg += (msg.length > 0) ? "\n" : "";
+        		        msg += ar.get_string_element(i);
+        	        }
+                        
+                        
+                        buf.create_source_mark(msg, "error", iter);
+                    } );
+            }
+            // jump to the line...
+            Gtk.TextIter liter;
+            buf.get_iter_at_line (out liter,  line);
+            print("Scroll to \n");
+            this.el.scroll_to_iter (liter, 0.0f, false, 0.0f, 0.5f);
+            print("End Scroll to \n");
+        
+        
+        }
+    }
+    public class Xcls_ScrolledWindow10 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_ScrolledWindow10(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -496,167 +658,5 @@ public class Xcls_ValaCompileErrors : Object
         }
 
         // user defined functions 
-    }
-    public class Xcls_ScrolledWindow13 : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_ValaCompileErrors  _this;
-
-
-            // my vars (def)
-
-        // ctor 
-        public Xcls_ScrolledWindow13(Xcls_ValaCompileErrors _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
-
-            // my vars (dec)
-
-            // set gobject values
-            var child_0 = new Xcls_sourceview( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-        }
-
-        // user defined functions 
-    }
-    public class Xcls_sourceview : Object 
-    {
-        public Gtk.SourceView el;
-        private Xcls_ValaCompileErrors  _this;
-
-
-            // my vars (def)
-        public string curfname;
-
-        // ctor 
-        public Xcls_sourceview(Xcls_ValaCompileErrors _owner )
-        {
-            _this = _owner;
-            _this.sourceview = this;
-            this.el = new Gtk.SourceView();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.editable = false;
-            this.el.show_line_marks = true;
-            this.el.show_line_numbers = true;
-
-            // init method 
-
-            {
-                this.curfname = "";
-                   var description =   Pango.FontDescription.from_string("monospace");
-                description.set_size(8000);
-                this.el.override_font(description);
-            
-                var attrs = new Gtk.SourceMarkAttributes();
-                var  pink = new Gdk.RGBA();
-                pink.parse ( "pink");
-                attrs.set_background ( pink);
-                attrs.set_icon_name ( "process-stop");    
-                attrs.query_tooltip_text.connect(( mark) => {
-                    //print("tooltip query? %s\n", mark.name);
-                    return mark.name;
-                });
-                
-                this.el.set_mark_attributes ("error", attrs, 1);
-                
-            }
-        }
-
-        // user defined functions 
-        public void loadFile (string fname, int line ) {
-        
-         
-            
-        
-        
-            var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
-              
-            if (this.curfname != fname) {
-                this.curfname = fname;
-                
-                
-                Regex regex = new Regex("\\.vala$");
-        
-                var bjsf = regex.replace(fname,fname.length , 0 , ".bjs");
-                
-                var p = _this.window.project;
-                
-                var jsr = p.getByPath(bjsf);
-                
-                if (_this.file != null) {
-                    // remove listeners from the file...
-                }
-                
-                _this.file = null;
-                
-                if (jsr != null) {
-                    _this.file = jsr;
-                    
-                    return;
-                
-                }
-                
-                
-                
-        
-                Gtk.TextIter start;
-                Gtk.TextIter end;     
-                buf.get_bounds (out start, out end);
-                    
-                buf.remove_source_marks (start, end, null);
-                     
-                 
-                
-                string str;
-                FileUtils.get_contents(fname, out str);
-        			
-                buf.set_text(str, str.length);
-                var lm = Gtk.SourceLanguageManager.get_default();
-                
-               
-                buf.set_language(lm.get_language("vala"));
-             
-                 
-                this.el.grab_focus();
-        
-        
-               
-                var lines = _this.notices.get_object_member(fname);
-                 
-                    
-                lines.foreach_member((obj, line, node) => {
-                    
-                         Gtk.TextIter iter;
-                //        print("get inter\n");
-                        var eline = int.parse(line) -1 ;
-                         
-                        
-                        buf.get_iter_at_line( out iter, eline);
-                        //print("mark line\n");
-                        var msg  = "Line: %d".printf(eline+1);
-                        var ar = lines.get_array_member(line);
-                        for (var i = 0 ; i < ar.get_length(); i++) {
-        		        msg += (msg.length > 0) ? "\n" : "";
-        		        msg += ar.get_string_element(i);
-        	        }
-                        
-                        
-                        buf.create_source_mark(msg, "error", iter);
-                    } );
-            }
-            // jump to the line...
-            Gtk.TextIter liter;
-            buf.get_iter_at_line (out liter,  line);
-            print("Scroll to \n");
-            this.el.scroll_to_iter (liter, 0.0f, false, 0.0f, 0.5f);
-            print("End Scroll to \n");
-        
-        
-        }
     }
 }
