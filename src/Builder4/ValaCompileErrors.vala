@@ -93,7 +93,7 @@ public class Xcls_ValaCompileErrors : Object
         
         // left tree = 250, editor area = 500?
         var new_w = int.min(250+ 500, w-100);
-        new_w = int.max(new_w, w - 100);
+        new_w = int.max(new_w,  100);
         
         this.el.set_size_request( int.max(100, new_w), int.max(100, h-100));
     
@@ -103,7 +103,7 @@ public class Xcls_ValaCompileErrors : Object
             this.el.set_relative_to(onbtn);
         }
         this.el.show_all();
-              
+        this.save_btn.el.hide();          
     
     }
     public class Xcls_compile_view : Object 
