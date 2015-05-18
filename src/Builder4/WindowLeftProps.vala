@@ -399,11 +399,11 @@ public class Xcls_LeftProps : Object
             
             switch(type) {
                 case "listener":
-                    this.node.listeners.remove(key);
+                    this.node.listeners.unset(key);
                     break;
                     
                 case "props":
-                    this.node.props.remove(key);
+                    this.node.props.unset(key);
                     break;
             }
             this.load(this.file, this.node);
