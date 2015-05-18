@@ -21,7 +21,7 @@ PKG_CHECK_MODULES(BUILDER, [
 		 clutter-gtk-1.0 
 		 glib-2.0 >= 2.24.1
 		 gobject-2.0 >= 2.24.1
-		 gtk+-3.0 
+		 gtk+-3.0 >= 3.11.3
 		 gtksourceview-3.0 
 		 json-glib-1.0 		 
 		 gee-1.0 
