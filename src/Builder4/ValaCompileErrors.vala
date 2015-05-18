@@ -113,7 +113,9 @@ public class Xcls_ValaCompileErrors : Object
             new_w = w-100;
         }
         this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
-    
+        while(Gtk.events_pending()) { 
+                Gtk.main_iteration();
+        }
         
         this.hpane.el.set_position( 0);
        if (this.el.relative_to == null) {
