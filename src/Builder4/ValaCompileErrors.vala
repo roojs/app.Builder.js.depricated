@@ -108,7 +108,7 @@ public class Xcls_ValaCompileErrors : Object
         
         // left tree = 250, editor area = 500?
         
-        var new_w = int.min(750, w-100);
+        var new_w = int.min(250, w-100);
         if (new_w > (w-100)) {
             new_w = w-100;
         }
