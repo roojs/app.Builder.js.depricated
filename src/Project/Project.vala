@@ -374,7 +374,7 @@ namespace Project {
 			while(fiter.next()) {
 				files.add(fiter.get_value());
 			}
-				files.sort((fa,fb) => {
+			files.sort((fa,fb) => {
 				return ((JsRender.JsRender)fa).name.collate(((JsRender.JsRender)fb).name);
 
 			});
@@ -394,6 +394,22 @@ namespace Project {
 				
 				GLib.debug ("Project.getByName: %s ?= %s" ,f.name , name);
 				if (f.name == name) {
+					return f;
+				}
+			};
+			return null;
+		}
+		public JsRender.JsRender? getByPath(string path)
+		{
+			
+			var fiter = files.map_iterator();
+			while(fiter.next()) {
+			 
+				var f = fiter.get_value();
+				
+				
+				//GLib.debug ("Project.getByName: %s ?= %s" ,f.name , name);
+				if (f.path == path) {
 					return f;
 				}
 			};
