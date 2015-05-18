@@ -2,7 +2,7 @@ static Xcls_LeftProps  _LeftProps;
 
 public class Xcls_LeftProps : Object 
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Xcls_LeftProps  _this;
 
     public static Xcls_LeftProps singleton()
@@ -37,13 +37,14 @@ public class Xcls_LeftProps : Object
     public Xcls_LeftProps()
     {
         _this = this;
-        this.el = new Gtk.VBox( false   , 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.allow_edit = false;
         this.main_window = null;
 
         // set gobject values
+        this.el.homogeneous = false   ;
         var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true,0 );
