@@ -2335,7 +2335,10 @@ public class Xcls_MainWindow : Object
         }
 
         // user defined functions 
-        public void setNotices () {
+        public void setNotices (Json.Object nots, int qty) {
+            this.el.show();
+            this.el.label = qty.to_string() + " Errors";
+            this.notices = nots;
         
         }
     }
