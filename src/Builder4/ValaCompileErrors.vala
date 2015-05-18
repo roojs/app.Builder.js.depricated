@@ -371,44 +371,49 @@ public class Xcls_ValaCompileErrors : Object
             // listeners 
             this.el.cursor_changed.connect( () => {
                 var sel = this.el.get_selection();
-             
-                        if (sel.count_selected_rows() < 1) {
             
-                            print("selected rows < 1\n");
-                            //??this.mo 
-                            return  ;
-                        }
-                            
-                            //console.log('changed');
-                         
-                         Gtk.TreeIter iter;
-                         Gtk.TreeModel mod;
-                        sel.get_selected(out mod, out iter);
-                        /*
-                         store.set(citer, 
-                                0, file + ":" + line, 
-                                1, int.parse(line), 
-                                2, GLib.Markup.escape_text(line + ": " + msg), 
-                                3, file,-1);
-                        
-                        });
-                        */
-                        
-                        
-                        
-                        // var val = "";
-                        GLib.Value value;
-                        _this.compile_result_store.el.get_value(iter, 3, out value);
-                        var fname = (string)value;
-                        GLib.Value lvalue;
-                        _this.compile_result_store.el.get_value(iter, 1, out lvalue);
-                        var line = (int) lvalue;
-                        
-                        print ("loadfile %s : %d", fname,line);
-                        
-                        _this.sourceview.loadFile(fname, line);
-                        
-                        
+                if (sel.count_selected_rows() < 1) {
+            
+                    print("selected rows < 1\n");
+                    //??this.mo 
+                    return  ;
+                }
+                    
+                    //console.log('changed');
+                 
+                 Gtk.TreeIter iter;
+                 Gtk.TreeModel mod;
+                sel.get_selected(out mod, out iter);
+                /*
+                 store.set(citer, 
+                        0, file + ":" + line, 
+                        1, int.parse(line), 
+                        2, GLib.Markup.escape_text(line + ": " + msg), 
+                        3, file,-1);
+                
+                });
+                */
+                
+                
+                
+                // var val = "";
+                GLib.Value value;
+                _this.compile_result_store.el.get_value(iter, 3, out value);
+                var fname = (string)value;
+                GLib.Value lvalue;
+                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                var line = (int) lvalue;
+                
+                
+                
+             
+                
+                
+                print ("loadfile %s : %d", fname,line);
+                
+                _this.sourceview.loadFile(fname, line);
+                
+                
                         
                         
             });
