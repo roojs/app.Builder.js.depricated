@@ -2314,6 +2314,15 @@ public class Xcls_MainWindow : Object
                     this.popup = new Xcls_ValaCompileErrors();
                     this.popup.window = _this;
                 }
+                if (_this.statusbar_warnings.popup != null && _this.statusbar_warnings.popup.active) {
+                    _this.statusbar_warnings.popup.active = false;
+                    _this.statusbar_warnings.popup.el.hide();
+                }
+                if (_this.statusbar_depricated.popup != null && _this.statusbar_depricated.popup.active) {
+                    _this.statusbar_depricated.popup.active = false;
+                    _this.statusbar_depricated.popup.el.hide();
+                }
+                
                 if (this.popup.active) {
                     this.popup.active = false;
                     this.popup.el.hide();

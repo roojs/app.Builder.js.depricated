@@ -613,7 +613,7 @@
           },
           {
            "listeners" : {
-            "button_press_event" : "() => {\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n    if (this.popup.active) {\n        this.popup.active = false;\n        this.popup.el.hide();\n        return true;\n    }\n    \n    this.popup.show(this.notices, this.el);\n    return true;\n}"
+            "button_press_event" : "() => {\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n    if (_this.statusbar_warnings.popup != null && _this.statusbar_warnings.popup.active) {\n        _this.statusbar_warnings.popup.active = false;\n        _this.statusbar_warnings.popup.el.hide();\n    }\n    if (_this.statusbar_depricated.popup != null && _this.statusbar_depricated.popup.active) {\n        _this.statusbar_depricated.popup.active = false;\n        _this.statusbar_depricated.popup.el.hide();\n    }\n    \n    if (this.popup.active) {\n        this.popup.active = false;\n        this.popup.el.hide();\n        return true;\n    }\n    \n    this.popup.show(this.notices, this.el);\n    return true;\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
