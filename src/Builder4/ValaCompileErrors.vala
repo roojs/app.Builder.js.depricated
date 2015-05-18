@@ -203,7 +203,7 @@ public class Xcls_ValaCompileErrors : Object
             this.el.clicked.connect( () => {
                 // is the file managed by the builder?
                 
-                var f = _this.sourceview.fname;
+                var f = _this.sourceview.curfname;
             
             
             

@@ -39,7 +39,7 @@
         },
         {
          "listeners" : {
-          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.fname;\n\n\n\n}"
+          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n\n\n\n}"
          },
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
