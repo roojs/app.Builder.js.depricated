@@ -2424,6 +2424,11 @@ public class Xcls_MainWindow : Object
                     this.popup = new Xcls_ValaCompileErrors();
                     this.popup.window = _this;
                 }
+                if (this.popup.active) {
+                    this.popup.active = false;
+                    this.popup.el.hide();
+                    return true;
+                }
                 this.popup.show(this.notices, this.el);
                 return true;
             });
