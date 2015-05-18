@@ -18,7 +18,6 @@ public class Xcls_ValaCompileErrors : Object
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
-    public Xcls_sourceview_win sourceview_win;
     public Xcls_sourceview sourceview;
 
         // my vars (def)
@@ -296,7 +295,7 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_ScrolledWindow8( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_sourceview_win( _this );
+            var child_1 = new Xcls_ScrolledWindow13( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -498,7 +497,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
     }
-    public class Xcls_sourceview_win : Object 
+    public class Xcls_ScrolledWindow13 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -507,10 +506,9 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_sourceview_win(Xcls_ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow13(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
-            _this.sourceview_win = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars (dec)

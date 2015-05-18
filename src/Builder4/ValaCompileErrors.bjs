@@ -112,9 +112,8 @@
          ]
         },
         {
-         "id" : "sourceview_win",
-         "* pack" : "add",
          "xtype" : "ScrolledWindow",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "items" : [
           {
