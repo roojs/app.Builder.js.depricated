@@ -21,7 +21,7 @@
    "int width_request" : 900,
    "$ xns" : "Gtk",
    "Json.Object notices" : "",
-   "bool modal" : true,
+   "bool modal" : false,
    "items" : [
     {
      "id" : "compile_view",
