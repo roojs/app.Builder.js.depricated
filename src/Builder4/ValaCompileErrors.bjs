@@ -39,7 +39,7 @@
         },
         {
          "listeners" : {
-          "clicked" : ""
+          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    \n\n\n\n}"
          },
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",

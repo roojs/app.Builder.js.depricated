@@ -200,7 +200,14 @@ public class Xcls_ValaCompileErrors : Object
             this.el.label = "Edit";
 
             // listeners 
-            this.el.clicked.connect( );
+            this.el.clicked.connect( () => {
+                // is the file managed by the builder?
+                
+                
+            
+            
+            
+            });
         }
 
         // user defined functions 
