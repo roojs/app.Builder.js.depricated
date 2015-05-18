@@ -377,19 +377,22 @@ public class Xcls_ValaCompileErrors : Object
         
             
             // resize the view...
-             int w,h;
-            _this.window.el.get_size(out w, out h);
             
             // left tree = 250, editor area = 500?
             
-            var new_w = int.min(750, w-100);
-            if (new_w > (w-100)) {
-                new_w = w-100;
-            }
-            _this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
-         
-            _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
+            if (_this.hpane.el.get_position() < 1) {
+                 int w,h;
+                _this.window.el.get_size(out w, out h);
+                
+                var new_w = int.min(750, w-100);
+                if (new_w > (w-100)) {
+                    new_w = w-100;
+                }
+                _this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
+             
+                _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
         
+            }
         
             var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
               
