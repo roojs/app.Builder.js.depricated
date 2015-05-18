@@ -495,7 +495,7 @@ public class Xcls_ValaCompileErrors : Object
                     
                          Gtk.TextIter iter;
                 //        print("get inter\n");
-                        var eline = int.parse(line);
+                        var eline = int.parse(line) -1 ;
                          
                         
                         buf.get_iter_at_line( out iter, eline);
