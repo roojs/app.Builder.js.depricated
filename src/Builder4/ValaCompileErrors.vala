@@ -57,7 +57,7 @@ public class Xcls_ValaCompileErrors : Object
             tree.foreach_member((obj, file, node) => {
                 // id line "display text", file
                 
-                var title = GLib.Path.get_basename( file) ;
+                var title = GLib.Path.get_basename(GLib.Path.get_dirname( file)) + "/" +  GLib.Path.get_basename( file) ;
                 Gtk.TreeIter iter;
                 print("Add file %s", title);
                 store.append(out iter, null);
@@ -89,7 +89,7 @@ public class Xcls_ValaCompileErrors : Object
             
         int w,h;
         this.window.el.get_size(out w, out h);
-        this.el.set_size_request( int.max(100, w- 100), int.max(100, h-100);
+        this.el.set_size_request( int.max(100, w- 100), int.max(100, h-100));
     
         
         this.hpane.el.set_position(250);
