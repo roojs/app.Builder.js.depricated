@@ -639,6 +639,7 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_warnings",
+           "| void setNotices" : "() {\n\n}\n",
            "Xcls_ValaCompileErrors popup" : "",
            "* pack" : "add",
            "string label" : "Warnings",
