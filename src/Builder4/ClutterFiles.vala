@@ -114,7 +114,7 @@ public class Xcls_ClutterFiles : Object
         
        
         
-        this.el.show_all();
+        this.el.show();
     }
     public  void set_size (float w, float h) 
     {

@@ -17,7 +17,7 @@
    "* init" : "this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n",
    "Clutter.ScrollMode scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
    "xtype" : "ScrollActor",
-   "|  void loadProject" : "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show_all();\n}\n",
+   "|  void loadProject" : "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show();\n}\n",
    "# Gdk.Pixbuf missing_thumb_pixbuf" : "null",
    "@ void open" : "(JsRender.JsRender file)",
    "$ xns" : "Clutter",
@@ -81,8 +81,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
-         "id" : "+typetitle",
          "* args" : "JsRender.JsRender file",
+         "id" : "+typetitle",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
@@ -93,8 +93,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-         "id" : "+title",
          "* args" : "JsRender.JsRender file",
+         "id" : "+title",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
