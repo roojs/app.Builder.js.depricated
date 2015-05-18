@@ -151,6 +151,9 @@ public class Xcls_ValaCompileErrors : Object
             var child_1 = new Xcls_Button5( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
+            var child_2 = new Xcls_Button6( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , true,true,0 );
         }
 
         // user defined functions 
@@ -199,6 +202,28 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
     }
+    public class Xcls_Button6 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor 
+        public Xcls_Button6(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.label = "Save";
+        }
+
+        // user defined functions 
+    }
     public class Xcls_hpane : Object 
     {
         public Gtk.HPaned el;
@@ -217,17 +242,17 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_ScrolledWindow7( _this );
+            var child_0 = new Xcls_ScrolledWindow8( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ScrolledWindow12( _this );
+            var child_1 = new Xcls_ScrolledWindow13( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
 
         // user defined functions 
     }
-    public class Xcls_ScrolledWindow7 : Object 
+    public class Xcls_ScrolledWindow8 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -236,7 +261,7 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow7(Xcls_ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow8(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -417,7 +442,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions 
     }
-    public class Xcls_ScrolledWindow12 : Object 
+    public class Xcls_ScrolledWindow13 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -426,7 +451,7 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor 
-        public Xcls_ScrolledWindow12(Xcls_ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow13(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
