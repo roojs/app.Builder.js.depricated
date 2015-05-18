@@ -2,7 +2,7 @@ static Xcls_ProjectSettings  _ProjectSettings;
 
 public class Xcls_ProjectSettings : Object 
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Xcls_ProjectSettings  _this;
 
     public static Xcls_ProjectSettings singleton()
@@ -32,11 +32,12 @@ public class Xcls_ProjectSettings : Object
     public Xcls_ProjectSettings()
     {
         _this = this;
-        this.el = new Gtk.VBox( false, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
 
         // set gobject values
+        this.el.homogeneous = false;
         this.el.border_width = 5;
         var child_0 = new Xcls_Box2( _this );
         child_0.ref();
