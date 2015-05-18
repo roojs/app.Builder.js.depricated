@@ -216,6 +216,7 @@ public class Xcls_ValaCompileErrors : Object
                 var jsr = p.getByPath(bjsf);
                 if (jsr != null) {
                     _this.window.windowstate.fileViewOpen(jsr);
+                    
                     return;
                 
                 }
