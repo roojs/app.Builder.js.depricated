@@ -105,7 +105,7 @@ public class Xcls_WindowAddProp : Object
             {  
                    var description = new Pango.FontDescription();
                  description.set_size(8000);
-                this.el.modify_font(description);     
+                this.el.override_font(description);     
                                 
                 this.el.get_selection().set_mode( Gtk.SelectionMode.SINGLE);
              
