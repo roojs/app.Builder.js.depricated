@@ -205,11 +205,18 @@ public class Xcls_ValaCompileErrors : Object
                 
                 var f = _this.sourceview.curfname;
                 
+                Regex regex = new Regex("\\.vala$");
+            
+                var bjsf = regex.replace(f,f.length , 0 , ".bjs");
+                
                 var p = _this.window.project;
                 
-                var jsr = p.getByPath(f);
-                if (jsr != null) {
                 
+                
+                var jsr = p.getByPath(bjsf);
+                if (jsr != null) {
+                    _this.window.windowstate.fileViewOpen(jsr);
+                    return;
                 
                 }
             
