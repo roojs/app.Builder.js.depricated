@@ -89,8 +89,8 @@ public class Xcls_ValaCompileErrors : Object
             
         int w,h;
         this.window.el.get_size(out w, out h);
-        this.el.width_request = int.max(100, w);
-        this.el.height_request = int.max(100, h);
+        this.el.set_size_request( int.max(100, w- 100), int.max(100, h-100);
+    
         
         this.hpane.el.set_position(250);
        if (this.el.relative_to == null) {
