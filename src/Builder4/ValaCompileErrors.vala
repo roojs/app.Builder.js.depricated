@@ -97,7 +97,7 @@ public class Xcls_ValaCompileErrors : Object
         if (new_w > (w-100)) {
             new_w = w-100;
         }
-        this.el.set_size_request( int.max(100, new_w), int.max(100, h-100));
+        this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
     
         
         this.hpane.el.set_position(250);
