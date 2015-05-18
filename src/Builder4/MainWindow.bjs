@@ -606,6 +606,11 @@
          "$ xns" : "Gtk",
          "items" : [
           {
+           "* pack" : "add",
+           "xtype" : "MenuItem",
+           "$ xns" : "Gtk"
+          },
+          {
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
            "Xcls_ValaCompileErrors popup" : "",
