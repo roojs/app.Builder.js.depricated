@@ -389,7 +389,7 @@ public class Xcls_ValaCompileErrors : Object
         
         
             
-            _this.hpane.el.set_position( _this.hpane.el.max_postion - 250);
+            _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
         
         
             var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
