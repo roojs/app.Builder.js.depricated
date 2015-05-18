@@ -478,28 +478,26 @@ public class Editor : Object
                 this.el.remove_source_marks (start, end, null);
                         
                         
-             _this.window.statusbar_errors.el.hide();
-             _this.window.statusbar_warnings.el.hide();
-             _this.window.statusbar_depricated.el.hide();       
-                        
             
             if (obj.has_member("ERR-TOTAL")) {
-                _this.window.statusbar_errors.el.show();
-                 _this.window.statusbar_errors.notices = obj.get_object_member("ERR");
-                _this.window.statusbar_errors.el.label = obj.get_int_member("ERR-TOTAL").to_string() + " Errors";
-            }
+        
+                 _this.window.statusbar_errors.setNotices( obj.get_object_member("ERR") , obj.get_int_member("ERR-TOTAL"));
+            } else {
+                 _this.window.statusbar_errors.setNotices( new Json.Object() , 0);
+            }    
             
             if (obj.has_member("WARN-TOTAL")) {
-                _this.window.statusbar_warnings.el.show();
-                 _this.window.statusbar_warnings.notices = obj.get_object_member("WARN");
-                _this.window.statusbar_warnings.el.label = obj.get_int_member("WARN-TOTAL").to_string() + " Warnings";
+        
+                 _this.window.statusbar_warnings.setNotices(obj.get_object_member("WARN"), obj.get_int_member("WARN-TOTAL"));
+            } else {
+                     _this.window.statusbar_warnings.setNotices( new Json.Object() , 0);
             }
             if (obj.has_member("DEPR-TOTAL")) {
-                _this.window.statusbar_depricated.el.show();    
-                _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR") );
-                _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Depricated";
+                
+                _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  obj.get_int_member("DEPR-TOTAL"));
+        //        _this.window.statusbar_depricated.el.label = obj.get_int_member("DEPR-TOTAL").to_string() + " Depricated";
             } else {
-                _this.window.statusbar_depricated.setNotices( new Json.Object());
+                _this.window.statusbar_depricated.setNotices( new Json.Object(),0);
             }
             
             if (!obj.has_member("ERR")) {
