@@ -158,6 +158,7 @@
        "xtype" : "Box",
        "gboolean homogeneous" : false,
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
        "items" : [
         {
          "label" : "Type (eg. MySQL or PostgreSQL)",
