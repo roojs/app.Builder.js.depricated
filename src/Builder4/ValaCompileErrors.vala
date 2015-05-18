@@ -389,7 +389,12 @@ public class Xcls_ValaCompileErrors : Object
                     new_w = w-100;
                 }
                 _this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
-             
+                
+                // let it resize, then find out the new size..
+                while(Gtk.events_pending()) { 
+                    Gtk.main_iteration();
+                }
+                
                 _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
         
             //}
@@ -417,7 +422,7 @@ public class Xcls_ValaCompileErrors : Object
                 if (jsr != null) {
                     _this.file = jsr;
                     
-                    return;
+                   // return;
                 
                 }
                 
