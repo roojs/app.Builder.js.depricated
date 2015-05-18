@@ -582,7 +582,7 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_HBox4( _this );
+            var child_0 = new Xcls_Box4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_AddPropertyPopup( _this );
@@ -603,19 +603,19 @@ public class Xcls_LeftProps : Object
 
         // user defined functions 
     }
-    public class Xcls_HBox4 : Object 
+    public class Xcls_Box4 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_LeftProps  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox4(Xcls_LeftProps _owner )
+        public Xcls_Box4(Xcls_LeftProps _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 

@@ -19,7 +19,7 @@
    "items" : [
     {
      "listeners" : {
-      "row_activated" : "(path, column)  => {\n\n        Gtk.TreeIter iter;\n\n\n        var m = _this.model;\n        \n        m.el.get_iter(out iter,path);\n        \n        \n        // var val = \"\";\n        \n        \n        var key = m.getValue(iter, 0);\n        \n        var type = m.getValue(iter, 1);\n        var skel = m.getValue(iter, 3);\n        var etype = m.getValue(iter, 5);\n        \n        \n        _this.select(key,etype == \"signals\" ? \"\" : type,skel, etype);\n        \n}\n"
+      "row_activated" : "(path, column)  => {\n\n        Gtk.TreeIter iter;\n\n\n        var m = _this.model;\n        \n        m.el.get_iter(out iter,path);\n        \n        \n        // var val = \"\";\n        \n        \n        var key = m.getValue(iter, 0);\n        \n        var type = m.getValue(iter, 1);\n        var skel = m.getValue(iter, 3);\n        var etype = m.getValue(iter, 5);\n        \n        \n        _this.select(key,etype == \"signals\" ? \"\" : type,skel, etype);\n        \n}\n "
      },
      "* init" : "{  \n       var description = new Pango.FontDescription();\n     description.set_size(8000);\n    this.el.override_font(description);     \n                    \n    this.el.get_selection().set_mode( Gtk.SelectionMode.SINGLE);\n \n\n    \n  \n    \n}\n",
      "tooltip_column" : 2,
