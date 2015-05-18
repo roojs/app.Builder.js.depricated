@@ -38,7 +38,7 @@ public class Xcls_ProjectSettings : Object
 
         // set gobject values
         this.el.border_width = 5;
-        var child_0 = new Xcls_HBox2( _this );
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,false,0 );
         var child_1 = new Xcls_Notebook5( _this );
@@ -96,23 +96,24 @@ public class Xcls_ProjectSettings : Object
          
         
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_Box2 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_ProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox2(Xcls_ProjectSettings _owner )
+        public Xcls_Box2(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( null, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = true;
             this.el.expand = false;
             this.el.vexpand = false;
             var child_0 = new Xcls_Button3( _this );

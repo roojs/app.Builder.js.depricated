@@ -20,7 +20,7 @@
    "items" : [
     {
      "* pack" : "pack_start,false,false,0",
-     "xtype" : "HBox",
+     "xtype" : "Box",
      "gboolean expand" : false,
      "$ xns" : "Gtk",
      "$ homogeneous" : true,
