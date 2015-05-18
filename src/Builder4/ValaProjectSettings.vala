@@ -93,7 +93,7 @@ public class ValaProjectSettings : Object
             child_0.ref();
             var child_1 = new Xcls_label_targets( _this );
             child_1.ref();
-            var child_2 = new Xcls_VBox5( _this );
+            var child_2 = new Xcls_Box5( _this );
             child_2.ref();
             this.el.append_page (  child_2.el , _this.label_global.el );
             var child_3 = new Xcls_HPaned26( _this );
@@ -147,30 +147,31 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_VBox5 : Object 
+    public class Xcls_Box5 : Object 
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private ValaProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_VBox5(ValaProjectSettings _owner )
+        public Xcls_Box5(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_Label6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_compile_flags( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_HBox8( _this );
+            var child_2 = new Xcls_Box8( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , true,true,0 );
         }
@@ -230,19 +231,19 @@ public class ValaProjectSettings : Object
 
         // user defined functions 
     }
-    public class Xcls_HBox8 : Object 
+    public class Xcls_Box8 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private ValaProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox8(ValaProjectSettings _owner )
+        public Xcls_Box8(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
