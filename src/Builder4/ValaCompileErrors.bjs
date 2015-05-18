@@ -39,7 +39,7 @@
         },
         {
          "listeners" : {
-          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n    \n    var p = _this.window.project;\n    \n\n\n}"
+          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n    \n    var p = _this.window.project;\n    \n    var jsr = p.getByPath(f);\n    if (jsr != null) {\n    \n    \n    }\n\n\n}"
          },
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",

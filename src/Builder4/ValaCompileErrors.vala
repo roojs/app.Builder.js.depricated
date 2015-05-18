@@ -207,6 +207,11 @@ public class Xcls_ValaCompileErrors : Object
                 
                 var p = _this.window.project;
                 
+                var jsr = p.getByPath(f);
+                if (jsr != null) {
+                
+                
+                }
             
             
             });
