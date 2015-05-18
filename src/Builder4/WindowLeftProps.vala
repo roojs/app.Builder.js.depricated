@@ -1492,7 +1492,7 @@ public class Xcls_LeftProps : Object
                         case "listener":
                             var ov = _this.node.listeners.get(oldval);
                             _this.node.listeners.set(newtext, ov);
-                            _this.node.listeners.remove(oldval);
+                            _this.node.listeners.unset(oldval);
                             
                             _this.updateIter(iter,  ktype, newtext, ov);
                             
@@ -1500,7 +1500,7 @@ public class Xcls_LeftProps : Object
                         case "props":
                             var ov = _this.node.props.get(oldval);
                             _this.node.props.set(newtext, ov);
-                            _this.node.props.remove(oldval);
+                            _this.node.props.unset(oldval);
                             _this.updateIter(iter,  ktype, newtext, ov);
                             break;
                      }
