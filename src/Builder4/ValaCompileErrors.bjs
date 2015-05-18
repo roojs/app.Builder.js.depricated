@@ -9,7 +9,7 @@
  "items" : [
   {
    "listeners" : {
-    "closed" : "() => {\n    if (this.close) {\n        return;\n    }\n    this.el.show();\n}"
+    "closed" : "() => {\n    if (this.active) {\n        return;\n    }\n    this.el.show();\n}"
    },
    "int height_request" : 800,
    "id" : "ValaCompileErrors",

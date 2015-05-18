@@ -45,7 +45,7 @@ public class Xcls_ValaCompileErrors : Object
 
         // listeners 
         this.el.closed.connect( () => {
-            if (this.close) {
+            if (this.active) {
                 return;
             }
             this.el.show();
