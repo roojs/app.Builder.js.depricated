@@ -30,7 +30,7 @@ public class DialogSaveTemplate : Object
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        var child_0 = new Xcls_HBox2( _this );
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.get_content_area().add (  child_0.el  );
         var child_1 = new Xcls_Button5( _this );
@@ -92,19 +92,19 @@ public class DialogSaveTemplate : Object
       
        
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_Box2 : Object 
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private DialogSaveTemplate  _this;
 
 
             // my vars (def)
 
         // ctor 
-        public Xcls_HBox2(DialogSaveTemplate _owner )
+        public Xcls_Box2(DialogSaveTemplate _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
