@@ -273,7 +273,7 @@ public class Xcls_ProjectSettings : Object
         public Xcls_Box8(Xcls_ProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( null, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
