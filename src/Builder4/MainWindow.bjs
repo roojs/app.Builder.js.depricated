@@ -617,6 +617,7 @@
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
+           "| void setNotices" : "() {\n\n}\n",
            "Xcls_ValaCompileErrors popup" : "",
            "string label" : "Errors",
            "* pack" : "add",
