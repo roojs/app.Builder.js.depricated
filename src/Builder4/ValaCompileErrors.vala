@@ -32,7 +32,7 @@ public class Xcls_ValaCompileErrors : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
-        this.close = true;
+        this.close = false;
 
         // set gobject values
         this.el.width_request = 900;
@@ -44,7 +44,6 @@ public class Xcls_ValaCompileErrors : Object
         this.el.add (  child_0.el  );
 
         // listeners 
-        this.el.button_press_event.connect( );
         this.el.closed.connect( () => {
             if (this.close) {
                 return;
