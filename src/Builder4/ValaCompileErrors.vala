@@ -375,7 +375,8 @@ public class Xcls_ValaCompileErrors : Object
         // user defined functions 
         public void loadFile (string fname, int line ) {
         
-         
+            
+            // resize the view...
              int w,h;
             _this.window.el.get_size(out w, out h);
             
@@ -386,9 +387,7 @@ public class Xcls_ValaCompileErrors : Object
                 new_w = w-100;
             }
             _this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
-        
-        
-            
+         
             _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
         
         
