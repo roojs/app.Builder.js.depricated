@@ -108,7 +108,7 @@ public class DialogSaveModule : Object
         public Xcls_Box2(DialogSaveModule _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( null, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
