@@ -379,7 +379,7 @@ public class Xcls_ValaCompileErrors : Object
             // resize the view...
             
             
-            if (_this.hpane.el.get_position() < 1) {
+            //if (_this.hpane.el.get_position() < 1) {
                 // left tree = 250, editor area = 500?
                  int w,h;
                 _this.window.el.get_size(out w, out h);
@@ -392,7 +392,7 @@ public class Xcls_ValaCompileErrors : Object
              
                 _this.hpane.el.set_position( _this.hpane.el.max_position - 250);
         
-            }
+            //}
         
             var buf = ((Gtk.SourceBuffer)(this.el.get_buffer()));
               
