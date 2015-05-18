@@ -204,7 +204,8 @@ public class Xcls_ValaCompileErrors : Object
                 // is the file managed by the builder?
                 
                 var f = _this.sourceview.curfname;
-            
+                
+                var p = _this.window.windowstate.
             
             
             });
