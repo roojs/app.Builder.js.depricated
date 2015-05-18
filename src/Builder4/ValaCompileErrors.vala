@@ -378,9 +378,9 @@ public class Xcls_ValaCompileErrors : Object
             
             // resize the view...
             
-            // left tree = 250, editor area = 500?
             
             if (_this.hpane.el.get_position() < 1) {
+                // left tree = 250, editor area = 500?
                  int w,h;
                 _this.window.el.get_size(out w, out h);
                 
