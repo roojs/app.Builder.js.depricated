@@ -177,7 +177,13 @@ public class JsRender.NodeToVala : Object {
 		var x = new  NodeToVala(cnode,  this.depth+1, this);
 		return x.munge();
 	}
-
+	public void addLine(string str)
+	{
+		this.cur_line++;
+		this.ret += str;
+	}
+	
+	
 	public void globalVars()
 	{
 		if (this.depth > 0) {
