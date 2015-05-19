@@ -453,26 +453,39 @@ public class Xcls_GtkView : Object
               Gtk.TextIter start;
              Gtk.TextIter end;   
              
-             var buf = this.el.get_buffer();
-               
+             var buf =  this.el.get_buffer();
+               var sbuf = (Gtk.SourceBuffer)buf;
                 buf.get_bounds (out start, out end);
                 
-                buf.remove_source_marks (start, end, type);
+                sbuf.remove_source_marks (start, end, type);
                          
              
              // we should highlight other types of errors..
             
             if (!obj.has_member(type)) {
                 print("Return has no errors\n");
-                return true;
+                return  ;
             }
             var err = obj.get_object_member(type);
             
-             
+            
+            
+            
             if (!err.has_member(_this.file.path)) {
                 print("File path has no errors\n");
-                return true;
+                return  ;
             }
+        
+            var valafn = "";
+              try {             
+                   var  regex = new Regex("\\.bjs$");
+                
+                 
+                    valafn = regex.replace(fname,fname.length , 0 , ".vala");
+                 } catch (GLib.RegexError e) {
+                    return;
+                }   
+        
         
             var lines = err.get_object_member(_this.file.path);
             
@@ -482,7 +495,7 @@ public class Xcls_GtkView : Object
             }
              
             
-            var tlines = this.el.get_line_count () +1;
+            var tlines = buf.get_line_count () +1;
             
             lines.foreach_member((obj, line, node) => {
                 
@@ -495,7 +508,7 @@ public class Xcls_GtkView : Object
                     if (eline > tlines || eline < 0) {
                         return;
                     }
-                    buf.get_iter_at_line( out iter, eline);
+                    sbuf.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
                     var msg  = "Line: %d".printf(eline+1);
                     var ar = lines.get_array_member(line);
@@ -505,9 +518,9 @@ public class Xcls_GtkView : Object
         	    }
                     
                     
-                    buf.create_source_mark(msg, type, iter);
+                    sbuf.create_source_mark(msg, type, iter);
                 } );
-                return false;
+                return  ;
             
          
         
