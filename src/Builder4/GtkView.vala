@@ -1,6 +1,6 @@
 static Xcls_GtkView  _GtkView;
 
-public class Xcls_GtkView : Object
+public class Xcls_GtkView : Object 
 {
     public Gtk.VBox el;
     private Xcls_GtkView  _this;
@@ -25,7 +25,7 @@ public class Xcls_GtkView : Object
     public int height;
     public Xcls_MainWindow main_window;
 
-    // ctor
+    // ctor 
     public Xcls_GtkView()
     {
         _this = this;
@@ -42,7 +42,7 @@ public class Xcls_GtkView : Object
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
 
-        //listeners
+        // listeners 
         this.el.size_allocate.connect( (aloc) => {
         
             this.width = aloc.width;
@@ -50,7 +50,7 @@ public class Xcls_GtkView : Object
             });
     }
 
-    // user defined functions
+    // user defined functions 
     public void createThumb () {
         
         
@@ -132,7 +132,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public class Xcls_Notebook2 : Object
+    public class Xcls_Notebook2 : Object 
     {
         public Gtk.Notebook el;
         private Xcls_GtkView  _this;
@@ -140,7 +140,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_Notebook2(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -161,9 +161,9 @@ public class Xcls_GtkView : Object
             this.el.append_page (  child_3.el , _this.label_code.el );
         }
 
-        // user defined functions
+        // user defined functions 
     }
-    public class Xcls_label_preview : Object
+    public class Xcls_label_preview : Object 
     {
         public Gtk.Label el;
         private Xcls_GtkView  _this;
@@ -171,7 +171,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_label_preview(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -183,10 +183,9 @@ public class Xcls_GtkView : Object
             // set gobject values
         }
 
-        // user defined functions
+        // user defined functions 
     }
-
-    public class Xcls_label_code : Object
+    public class Xcls_label_code : Object 
     {
         public Gtk.Label el;
         private Xcls_GtkView  _this;
@@ -194,7 +193,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_label_code(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -206,10 +205,9 @@ public class Xcls_GtkView : Object
             // set gobject values
         }
 
-        // user defined functions
+        // user defined functions 
     }
-
-    public class Xcls_ScrolledWindow5 : Object
+    public class Xcls_ScrolledWindow5 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_GtkView  _this;
@@ -217,7 +215,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_ScrolledWindow5(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -231,9 +229,9 @@ public class Xcls_GtkView : Object
             this.el.add (  child_0.el  );
         }
 
-        // user defined functions
+        // user defined functions 
     }
-    public class Xcls_view_layout : Object
+    public class Xcls_view_layout : Object 
     {
         public Gtk.Layout el;
         private Xcls_GtkView  _this;
@@ -241,7 +239,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_view_layout(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -256,9 +254,9 @@ public class Xcls_GtkView : Object
             this.el.put (  child_0.el , 10,10 );
         }
 
-        // user defined functions
+        // user defined functions 
     }
-    public class Xcls_container : Object
+    public class Xcls_container : Object 
     {
         public Gtk.HBox el;
         private Xcls_GtkView  _this;
@@ -266,7 +264,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_container(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -278,12 +276,9 @@ public class Xcls_GtkView : Object
             // set gobject values
         }
 
-        // user defined functions
+        // user defined functions 
     }
-
-
-
-    public class Xcls_ScrolledWindow8 : Object
+    public class Xcls_ScrolledWindow8 : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_GtkView  _this;
@@ -291,7 +286,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
 
-        // ctor
+        // ctor 
         public Xcls_ScrolledWindow8(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -305,18 +300,17 @@ public class Xcls_GtkView : Object
             this.el.add (  child_0.el  );
         }
 
-        // user defined functions
+        // user defined functions 
     }
-    public class Xcls_sourceview : Object
+    public class Xcls_sourceview : Object 
     {
         public Gtk.SourceView el;
         private Xcls_GtkView  _this;
 
 
             // my vars (def)
-        public string curfname;
 
-        // ctor
+        // ctor 
         public Xcls_sourceview(Xcls_GtkView _owner )
         {
             _this = _owner;
@@ -325,12 +319,7 @@ public class Xcls_GtkView : Object
 
             // my vars (dec)
 
-            // set gobject values
-            this.el.editable = false;
-            this.el.show_line_marks = true;
-            this.el.show_line_numbers = true;
-
-            // init method
+            // init method 
 
             {
                 this.curfname = "";
@@ -357,7 +346,7 @@ public class Xcls_GtkView : Object
             }
         }
 
-        // user defined functions
+        // user defined functions 
         public void nodeSelected (JsRender.Node? sel) {
             print("node selected");
             var buf = this.el.get_buffer();
@@ -375,7 +364,7 @@ public class Xcls_GtkView : Object
             }
             
             var str = JsRender.NodeToVala.mungeFile(f);
-            
+            print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
             
@@ -388,7 +377,4 @@ public class Xcls_GtkView : Object
             
         }
     }
-
-
-
 }
