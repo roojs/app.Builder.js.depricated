@@ -287,6 +287,21 @@ public class Xcls_ValaCompileErrors : Object
                     return false;
                 }
                 
+                Gtk.TreeIter iter;
+                 Gtk.TreeModel mod;
+                sel.get_selected(out mod, out iter);
+                 
+                
+                
+                
+                // var val = "";
+                GLib.Value value;
+                _this.compile_result_store.el.get_value(iter, 3, out value);
+                var fname = (string)value;
+                GLib.Value lvalue;
+                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                var line = (int) lvalue;
+                
                 
                 
                 /*
@@ -325,15 +340,7 @@ public class Xcls_ValaCompileErrors : Object
                  Gtk.TreeIter iter;
                  Gtk.TreeModel mod;
                 sel.get_selected(out mod, out iter);
-                /*
-                 store.set(citer, 
-                        0, file + ":" + line, 
-                        1, int.parse(line), 
-                        2, GLib.Markup.escape_text(line + ": " + msg), 
-                        3, file,-1);
-                
-                });
-                */
+                 
                 
                 
                 
