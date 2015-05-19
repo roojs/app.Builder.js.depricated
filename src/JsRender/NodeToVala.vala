@@ -409,7 +409,7 @@ public class JsRender.NodeToVala : Object {
 	{
 			// public static?
 		if (depth < 1) {
-			this.ret += this.ipad + "_this = this;\n";
+			this.addLine( this.ipad + "_this = this;");
 			return;
 		}
 		this.ret+= this.ipad + "_this = _owner;\n";
