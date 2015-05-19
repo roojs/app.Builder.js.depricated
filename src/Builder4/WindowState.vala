@@ -47,6 +47,9 @@ public class WindowState : Object
 	// dialogs??
 	public Xcls_DialogPluginWebkit webkit_plugin;
 	
+	
+	public Palete.ValaSource valasource; // the spawner that runs the vala compiler.
+	
 	// ctor 
 	public WindowState(Xcls_MainWindow win)
 	{
@@ -83,7 +86,8 @@ public class WindowState : Object
 		this.left_tree.node_selected.connect((sel) => {
 			this.window_gladeview.sourceview.nodeSelected(sel);
 		});
-		this.valasource = new ValaSource();
+		this.valasource = new Palete.ValaSource();
+		this.valasource.compiled.connect(this.valaCompiled);
 		
 		
 	}
@@ -874,6 +878,12 @@ public class WindowState : Object
 				this.win.delprojectbutton.el.show();
 				
 				break;
+		}
+		
+		public void valaCompiled(Json.Object results)
+		{
+			
+			
 		}
 
 	}
