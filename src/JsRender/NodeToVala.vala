@@ -25,7 +25,8 @@ public class JsRender.NodeToVala : Object {
 	string xcls;
 	
 	string ret;
-	int line;
+	
+	int cur_line;
 
 	Gee.ArrayList<string> ignoreList;
 	Gee.ArrayList<string> ignoreWrappedList; 
@@ -50,7 +51,7 @@ public class JsRender.NodeToVala : Object {
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
-		this.line = parent.line;
+		node.line = parent == null ? 0 : .line;
 		this.top = parent == null ? this : parent.top;
 		this.ignoreList = new Gee.ArrayList<string>();
 		this.ignoreWrappedList  = new Gee.ArrayList<string>();
