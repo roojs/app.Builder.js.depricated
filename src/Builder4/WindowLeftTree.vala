@@ -1,6 +1,6 @@
 static Xcls_WindowLeftTree  _WindowLeftTree;
 
-public class Xcls_WindowLeftTree : Object 
+public class Xcls_WindowLeftTree : Object
 {
     public Gtk.ScrolledWindow el;
     private Xcls_WindowLeftTree  _this;
@@ -23,7 +23,7 @@ public class Xcls_WindowLeftTree : Object
     public signal void node_selected (JsRender.Node? node);
     public Xcls_MainWindow main_window;
 
-    // ctor 
+    // ctor
     public Xcls_WindowLeftTree()
     {
         _this = this;
@@ -40,12 +40,12 @@ public class Xcls_WindowLeftTree : Object
         var child_1 = new Xcls_LeftTreeMenu( _this );
         child_1.ref();
 
-        // init method 
+        // init method
 
         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
     }
 
-    // user defined functions 
+    // user defined functions
     public           JsRender.Node? getActiveElement () { // return path to actie node.
     
          var path = this.getActivePath();
@@ -69,7 +69,7 @@ public class Xcls_WindowLeftTree : Object
         view.get_selection().get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
     }
-    public class Xcls_view : Object 
+    public class Xcls_view : Object
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftTree  _this;
@@ -77,13 +77,13 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public string dragData;
-        public int drag_x;
         public string[] dropList;
+        public int drag_x;
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
 
-        // ctor 
+        // ctor
         public Xcls_view(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -104,7 +104,7 @@ public class Xcls_WindowLeftTree : Object
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
-            // init method 
+            // init method
 
             {
                 var description = new Pango.FontDescription();
@@ -145,7 +145,7 @@ public class Xcls_WindowLeftTree : Object
                 //Gtk.drag_dest_add_text_targets(this.el);
             }
 
-            // listeners 
+            //listeners
             this.el.button_press_event.connect( ( ev) => {
                 //console.log("button press?");
                 if (! _this.before_node_change(null) ) {
@@ -173,50 +173,6 @@ public class Xcls_WindowLeftTree : Object
                   _this.LeftTreeMenu.el.popup(null, null, null,  3, ev.time);
                  //   print("click:" + res.path.to_string());
                   return true;
-            });
-            this.el.drag_begin.connect( ( ctx)  => {
-            	//print('SOURCE: drag-begin');
-                    
-                    
-                    //this.targetData = "";
-                    
-                    // find what is selected in our tree...
-                    
-                    var s = _this.view.el.get_selection();
-                    if (s.count_selected_rows() < 1) {
-                        return;
-                    }
-                    Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
-                    s.get_selected(out mod, out iter);
-            
-                    
-            
-                    // set some properties of the tree for use by the dropped element.
-                    GLib.Value value;
-                    _this.model.el.get_value(iter, 2, out value);
-                    var tp = mod.get_path(iter).to_string();
-                    var data = (JsRender.Node)(value.dup_object());
-                    var xname = data.fqn();
-                    print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = tp;
-                    this.dropList = _this.model.file.palete().getDropList(xname);
-                    
-                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-                    
-            
-                    // make the drag icon a picture of the node that was selected
-                
-                    
-                // by default returns the path..
-                   var path = _this.model.el.get_path(iter);
-            
-                     
-                    var pix = this.el.create_row_drag_icon ( path);
-                    
-                    Gtk.drag_set_icon_surface (ctx, pix) ;
-                    
-                    return;
             });
             this.el.cursor_changed.connect( ( ) => {
             
@@ -291,6 +247,50 @@ public class Xcls_WindowLeftTree : Object
                 //Seed.print( value.get_string());
                 return  ;
                             
+            });
+            this.el.drag_begin.connect( ( ctx)  => {
+            	//print('SOURCE: drag-begin');
+                    
+                    
+                    //this.targetData = "";
+                    
+                    // find what is selected in our tree...
+                    
+                    var s = _this.view.el.get_selection();
+                    if (s.count_selected_rows() < 1) {
+                        return;
+                    }
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+            
+                    
+            
+                    // set some properties of the tree for use by the dropped element.
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    var tp = mod.get_path(iter).to_string();
+                    var data = (JsRender.Node)(value.dup_object());
+                    var xname = data.fqn();
+                    print ("XNAME  IS " + xname+ "\n");
+                    this.dragData = tp;
+                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+                    
+            
+                    // make the drag icon a picture of the node that was selected
+                
+                    
+                // by default returns the path..
+                   var path = _this.model.el.get_path(iter);
+            
+                     
+                    var pix = this.el.create_row_drag_icon ( path);
+                    
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
+                    
+                    return;
             });
             this.el.drag_end.connect( (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
@@ -809,7 +809,7 @@ public class Xcls_WindowLeftTree : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public           void highlightDropPath ( string treepath, Gtk.TreeViewDropPosition pos) {
         
                 // highlighting for drag/drop
@@ -828,7 +828,7 @@ public class Xcls_WindowLeftTree : Object
              this.el.scroll_to_cell(tp, null, false, 0,0);
         }
     }
-    public class Xcls_model : Object 
+    public class Xcls_model : Object
     {
         public Gtk.TreeStore el;
         private Xcls_WindowLeftTree  _this;
@@ -840,7 +840,7 @@ public class Xcls_WindowLeftTree : Object
         public string activePath;
         public Project.Project? project;
 
-        // ctor 
+        // ctor
         public Xcls_model(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -855,12 +855,12 @@ public class Xcls_WindowLeftTree : Object
 
             // set gobject values
 
-            // init method 
+            // init method
 
             print("model initialized");
         }
 
-        // user defined functions 
+        // user defined functions
         public           string findDropNode (string treepath_str, string[] targets) {
         
             // this is used by the dragdrop code in the roo version AFAIR..
@@ -1374,7 +1374,8 @@ public class Xcls_WindowLeftTree : Object
                     
         }
     }
-    public class Xcls_TreeViewColumn4 : Object 
+
+    public class Xcls_TreeViewColumn4 : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_WindowLeftTree  _this;
@@ -1382,7 +1383,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_TreeViewColumn4(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1396,14 +1397,14 @@ public class Xcls_WindowLeftTree : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.renderer.el , "markup", 0 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_renderer : Object 
+    public class Xcls_renderer : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftTree  _this;
@@ -1411,7 +1412,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_renderer(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1423,9 +1424,12 @@ public class Xcls_WindowLeftTree : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_LeftTreeMenu : Object 
+
+
+
+    public class Xcls_LeftTreeMenu : Object
     {
         public Gtk.Menu el;
         private Xcls_WindowLeftTree  _this;
@@ -1433,7 +1437,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1454,9 +1458,9 @@ public class Xcls_WindowLeftTree : Object
             this.el.add (  child_2.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem7 : Object 
+    public class Xcls_MenuItem7 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
@@ -1464,7 +1468,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem7(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1475,7 +1479,7 @@ public class Xcls_WindowLeftTree : Object
             // set gobject values
             this.el.label = "Delete Element";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) => {
                 
                 print("ACTIVATE?");
@@ -1485,9 +1489,10 @@ public class Xcls_WindowLeftTree : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem8 : Object 
+
+    public class Xcls_MenuItem8 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
@@ -1495,7 +1500,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem8(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1506,7 +1511,7 @@ public class Xcls_WindowLeftTree : Object
             // set gobject values
             this.el.label = "Save as Template";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( () => {
             
                  DialogSaveTemplate.singleton().show(
@@ -1519,9 +1524,10 @@ public class Xcls_WindowLeftTree : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem9 : Object 
+
+    public class Xcls_MenuItem9 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
@@ -1529,7 +1535,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem9(Xcls_WindowLeftTree _owner )
         {
             _this = _owner;
@@ -1540,7 +1546,7 @@ public class Xcls_WindowLeftTree : Object
             // set gobject values
             this.el.label = "Save as Module";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( () => {
                 var node = _this.getActiveElement();
                  var name = DialogSaveModule.singleton().show(
@@ -1583,6 +1589,8 @@ public class Xcls_WindowLeftTree : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
 }
