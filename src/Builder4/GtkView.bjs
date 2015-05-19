@@ -64,7 +64,7 @@
       },
       {
        "xtype" : "ScrolledWindow",
-       "* pack" : "add",
+       "* pack" : "append_page,_this.label_code.el",
        "$ xns" : "Gtk",
        "items" : [
         {
