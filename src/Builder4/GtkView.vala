@@ -402,6 +402,7 @@ public class Xcls_GtkView : Object
             print("node selected");
             var buf = this.el.get_buffer();
             buf.set_text("",0);
+            var sbuf = (Gtk.SourceView) buf;
         
             
             var f =  _this.main_window.windowstate.left_tree.model.file;
