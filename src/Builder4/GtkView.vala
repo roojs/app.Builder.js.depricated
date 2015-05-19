@@ -380,8 +380,9 @@ public class Xcls_GtkView : Object
             var lang = f.language;
             //?? is javascript going to work as js?
             
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
-            var buf = this.el.get_buffer();
+            ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(lang));
+        
+        
             
             
         }
