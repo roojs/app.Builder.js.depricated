@@ -218,16 +218,16 @@ public class JsRender.NodeToVala : Object {
 	}
 	void addSingleton() 
 	{
-			if (depth > 0) {
+		if (depth > 0) {
 			return;
 		}
-			this.ret += pad + "public static " + xcls + " singleton()\n" + 
-				this.pad + "{\n" +
-				this.ipad + "if (_" + this.node.xvala_id  + " == null) {\n" +
-				this.ipad + "    _" + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
-			this.ipad + "}\n" +
-			this.ipad + "return _" + this.node.xvala_id +";\n" + 
-				this.pad + "}\n";
+		this.addLine(pad + "public static " + xcls + " singleton()");
+		this.addLine(this.pad + "{")
+		this.addLine(this.ipad +    "if (_" + this.node.xvala_id  + " == null) {");
+		this.addLine(this.ipad +    "    _" + this.node.xvala_id + "= new "+ this.xcls + "();");  // what about args?
+		this.addLine(this.ipad + "}");
+		this.addLine(this.ipad + "return _" + this.node.xvala_id +";");
+		this.addLine(this.pad + "}");
 	}
 			
 
