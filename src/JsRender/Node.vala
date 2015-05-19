@@ -124,7 +124,7 @@ public class JsRender.Node : Object {
 		
 	}
 
-	public void addLine(int line, string type, string prop) {
+	public void setLine(int line, string type, string prop) {
 		this.lines.add(line);
 		this.line_map.set(line, type +":" + prop);
 	}
