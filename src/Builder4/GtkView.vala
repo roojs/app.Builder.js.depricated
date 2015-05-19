@@ -379,6 +379,22 @@ public class Xcls_GtkView : Object
                 this.el.set_mark_attributes ("warning", dattrs, 1);
                 
                 
+                var dattrs = new Gtk.SourceMarkAttributes();
+                var  purple = new Gdk.RGBA();
+                purple.parse ( "purple");
+                dattrs.set_background ( purple);
+                dattrs.set_icon_name ( "process-stop");    
+                dattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("warning", dattrs, 1);
+                
+                
+                
+                
+                
                 
             }
         }
