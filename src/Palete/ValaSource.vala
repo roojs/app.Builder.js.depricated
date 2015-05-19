@@ -5,6 +5,8 @@
  * 
  *  This just deals with spawning the compiler and getting the results.
  * 
+ *  each window should have one of these...
+ * 
  */
 
 namespace Palete {
@@ -30,6 +32,9 @@ namespace Palete {
 		
 		// file.project , file.path, file.build_module, ""
 		public ValaSource(
+			
+		
+		
 			Project.Gtk project, 
 			string filepath, 
 			string build_module, 
