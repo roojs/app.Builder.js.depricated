@@ -773,8 +773,8 @@ public class JsRender.NodeToVala : Object {
 	 
 	void addUserMethods()
 	{
-			
-		this.ret+= "\n" + pad + "// user defined functions \n";  
+		this.addLine();
+		this.addLine(this.pad + "// user defined functions");
 			
 			// user defined functions...
 		var iter = this.node.props.map_iterator();
