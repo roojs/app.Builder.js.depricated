@@ -278,10 +278,10 @@ public class JsRender.NodeToVala : Object {
 	 * 
 	 */
 	
-	
 	void addMyVars()
 	{
-		this.ret += "\n" + this.ipad + "// my vars (def)\n";
+		this.addLine();
+		this.addLine(this.ipad + "// my vars (def)");
 			
 
  
