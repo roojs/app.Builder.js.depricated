@@ -369,34 +369,36 @@ public class JsRender.NodeToVala : Object {
 	void addValaCtor()
 	{
 			
-			
-			// .vala props.. 
-			
-			string[] cargs = {};
-			var cargs_str = "";
-			// ctor..
-			this.ret += "\n" + this.pad + "// ctor \n";
-			if (this.node.has("* args")) {
-				// not sure what this is supposed to be ding..
-			
-				cargs_str = ", " + this.node.get("* args");
-				//var ar = this.node.get("* args");.split(",");
-				//for (var ari =0; ari < ar.length; ari++) {
-					//	cargs +=  (ar[ari].trim().split(" ").pop();
-					  // }
-				}
 		
-			if (this.depth < 1) {
-				this.ret += this.pad + "public " + this.xcls + "(" + 
-					cargs_str +")\n" + this.pad + "{\n";
-			} else {
-					
-						//code 
-					
-				this.ret+= this.pad + "public " + this.xcls + "(" + 
-					this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+		// .vala props.. 
+		
+		string[] cargs = {};
+		var cargs_str = "";
+		// ctor..
+		this.addLine();
+		this.addLine(this.pad + "// ctor");
+		
+		if (this.node.has("* args")) {
+			// not sure what this is supposed to be ding..
+		
+			cargs_str = ", " + this.node.get("* args");
+			//var ar = this.node.get("* args");.split(",");
+			//for (var ari =0; ari < ar.length; ari++) {
+				//	cargs +=  (ar[ari].trim().split(" ").pop();
+				  // }
 			}
-			
+	
+		if (this.depth < 1) {
+			this.addLine(this.pad + "public " + this.xcls + "(" + 
+				cargs_str +")\n" + this.pad + "{\n");
+		} else {
+				
+					//code 
+				
+			this.ret+= this.pad + "public " + this.xcls + "(" + 
+				this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+		}
+		
 
 	}
 	void addUnderThis() 
