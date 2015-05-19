@@ -31,12 +31,9 @@ namespace Palete {
 
 		
 		Vala.CodeContext context;
-		 
- 		Project.Gtk project;
+		  
  		JsRender.JsRender file;
-		public string build_module;
-		public string filepath;
- 		public int line_offset = 0;
+  		public int line_offset = 0;
 		
 		// file.project , file.path, file.build_module, ""
 		public ValaSource(
