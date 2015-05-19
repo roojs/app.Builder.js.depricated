@@ -608,6 +608,7 @@ public class JsRender.NodeToVala : Object {
 	 *  pack the children into the parent.
 	 * 
 	 * if the child's id starts with '*' then it is not packed...
+	 * - this allows you to define children and add them manually..
 	 */
 
 	void addChildren()
