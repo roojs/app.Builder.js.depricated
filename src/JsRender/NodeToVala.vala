@@ -193,7 +193,7 @@ public class JsRender.NodeToVala : Object {
 		//this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
 
 		this.addLine("%sstatic %s _%s;".printf(this.inpad, this.xcls, this.node.xvala_id));
-		this.addLine("");
+		this.addLine();
 		//this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
 				
 				
@@ -210,7 +210,7 @@ public class JsRender.NodeToVala : Object {
 
 			  
 			this.addLine(this.pad + "private " + this.top.xcls + "  _this;)";
-			this.addLine("");
+			this.addLine();
 			
 			
 			
