@@ -725,7 +725,7 @@ public class JsRender.NodeToVala : Object {
 	{
 			 
 			// end ctor..
-			this.ret+= this.pad + "}\n";
+			this.addLine(this.pad + "}");
 	}
 
 
