@@ -229,7 +229,7 @@ public class EditProject : Object
                 }
                 return "";
         }
-        public setValue (v)    {
+        public void setValue (v)    {
                 var el = this.el;
                 el.set_active(-1);
                 
