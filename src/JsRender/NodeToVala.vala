@@ -242,6 +242,7 @@ public class JsRender.NodeToVala : Object {
 			
 	/**
 	 * when ID is used... on an element, it registeres a property on the top level...
+	 * so that _this.ID always works..
 	 * 
 	 */
 	void addTopProperties()
@@ -271,8 +272,14 @@ public class JsRender.NodeToVala : Object {
 		}
 				
 	}
-	 
-		void addMyVars()
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	void addMyVars()
 	{
 		this.ret += "\n" + this.ipad + "// my vars (def)\n";
 			
