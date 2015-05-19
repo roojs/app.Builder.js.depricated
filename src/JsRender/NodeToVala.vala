@@ -4,6 +4,10 @@
  * 
  * usage : x = (new JsRender.NodeToJs(node)).munge();
  * 
+ * 
+ * 
+ * 
+ * 
 */
 
 
@@ -42,6 +46,7 @@ public class JsRender.NodeToVala : Object {
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
+		this.line = 0;
 		this.top = top == null ? this : top;
 		this.ignoreList = new Gee.ArrayList<string>();
 		this.ignoreWrappedList  = new Gee.ArrayList<string>();
