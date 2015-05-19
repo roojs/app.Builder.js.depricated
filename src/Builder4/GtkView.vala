@@ -381,7 +381,7 @@ public class Xcls_GtkView : Object
                 
                 var gattrs = new Gtk.SourceMarkAttributes();
                 var  grey = new Gdk.RGBA();
-                grey.parse ( "#333");
+                grey.parse ( "#ccc");
                 gattrs.set_background ( grey);
              
                 
