@@ -352,15 +352,11 @@ namespace Palete
 				property, 
 				ptype,
 				code
- 				  
 		 );
 		 
 
 	}
-	void validateValaResult(Json.Object res) {
-		this.result_callback(res);
-		this.vs = null;
-	}
+	 
 	
 	
 	
