@@ -13,7 +13,7 @@ public class Xcls_GtkView : Object
         return _GtkView;
     }
     public Xcls_label_preview label_preview;
-    public Xcls_label_global label_global;
+    public Xcls_label_code label_code;
     public Xcls_view_layout view_layout;
     public Xcls_container container;
 
@@ -40,9 +40,6 @@ public class Xcls_GtkView : Object
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
-        var child_1 = new Xcls_ScrolledWindow5( _this );
-        child_1.ref();
-        this.el.pack_start (  child_1.el , true,true,0 );
 
         //listeners
         this.el.size_allocate.connect( (aloc) => {
@@ -153,8 +150,11 @@ public class Xcls_GtkView : Object
             // set gobject values
             var child_0 = new Xcls_label_preview( _this );
             child_0.ref();
-            var child_1 = new Xcls_label_global( _this );
+            var child_1 = new Xcls_label_code( _this );
             child_1.ref();
+            var child_2 = new Xcls_ScrolledWindow5( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , true,true,0 );
         }
 
         // user defined functions
@@ -172,7 +172,7 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.label_preview = this;
-            this.el = new Gtk.Label( "Global" );
+            this.el = new Gtk.Label( "Preview" );
 
             // my vars (dec)
 
@@ -182,7 +182,7 @@ public class Xcls_GtkView : Object
         // user defined functions
     }
 
-    public class Xcls_label_global : Object
+    public class Xcls_label_code : Object
     {
         public Gtk.Label el;
         private Xcls_GtkView  _this;
@@ -191,11 +191,11 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor
-        public Xcls_label_global(Xcls_GtkView _owner )
+        public Xcls_label_code(Xcls_GtkView _owner )
         {
             _this = _owner;
-            _this.label_global = this;
-            this.el = new Gtk.Label( "Global" );
+            _this.label_code = this;
+            this.el = new Gtk.Label( "Code" );
 
             // my vars (dec)
 
@@ -204,7 +204,6 @@ public class Xcls_GtkView : Object
 
         // user defined functions
     }
-
 
     public class Xcls_ScrolledWindow5 : Object
     {
@@ -277,6 +276,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions
     }
+
 
 
 

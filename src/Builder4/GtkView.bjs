@@ -32,33 +32,33 @@
        "* pack" : false,
        "xtype" : "Label",
        "$ xns" : "Gtk",
-       "utf8 label" : "Global"
+       "utf8 label" : "Preview"
       },
       {
-       "id" : "label_global",
+       "id" : "label_code",
        "xtype" : "Label",
        "* pack" : false,
        "$ xns" : "Gtk",
-       "utf8 label" : "Global"
-      }
-     ]
-    },
-    {
-     "* pack" : "pack_start,true,true,0",
-     "xtype" : "ScrolledWindow",
-     "$ xns" : "Gtk",
-     "items" : [
+       "utf8 label" : "Code"
+      },
       {
-       "id" : "view_layout",
-       "xtype" : "Layout",
-       "* pack" : "add",
+       "* pack" : "pack_start,true,true,0",
+       "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",
        "items" : [
         {
-         "id" : "container",
-         "* pack" : "put,10,10",
-         "xtype" : "HBox",
-         "$ xns" : "Gtk"
+         "id" : "view_layout",
+         "xtype" : "Layout",
+         "* pack" : "add",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "id" : "container",
+           "* pack" : "put,10,10",
+           "xtype" : "HBox",
+           "$ xns" : "Gtk"
+          }
+         ]
         }
        ]
       }
