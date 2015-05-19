@@ -441,7 +441,7 @@ public class Xcls_GtkView : Object
                 }
             
             }
-            sbuf.scroll_to_iter(out iter, sel.line_start, 0.0f, true, 0.0f, 0.0f);
+            this.el.scroll_to_iter(out iter, sel.line_start, 0.0f, true, 0.0f, 0.0f);
             
             
         }
