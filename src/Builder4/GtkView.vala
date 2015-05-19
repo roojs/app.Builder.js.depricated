@@ -403,13 +403,9 @@ public class Xcls_GtkView : Object
             var buf = this.el.get_buffer();
             buf.set_text("",0);
         
-            if (sel == null) {
-                // clear the window..
-                return;
-                
-            }
+            
             var f =  _this.main_window.windowstate.left_tree.model.file;
-            if (f.xtype != "Gtk") {
+            if (f == null || f.xtype != "Gtk") {
                 print("xtype != Gtk");
                 return;
             }
