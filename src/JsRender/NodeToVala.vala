@@ -51,7 +51,9 @@ public class JsRender.NodeToVala : Object {
 		this.cls = node.xvala_cls;
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
-		node.line = parent == null ? 0 : .line;
+		this.cur_line = parent == null ? 0 : parent.cur_line;
+		node.line = this.cur_line;
+		
 		this.top = parent == null ? this : parent.top;
 		this.ignoreList = new Gee.ArrayList<string>();
 		this.ignoreWrappedList  = new Gee.ArrayList<string>();
