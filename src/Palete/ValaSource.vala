@@ -46,11 +46,7 @@ namespace Palete {
 			) {
 			base();
 			//this.file = file;
-			this.filepath = filepath;
-			this.build_module = build_module;
-			this.original_filepath = original_filepath;
-			this.project =  project;
-			
+		 
 		}
 		public void dumpCode(string str) 
 		{
@@ -66,11 +62,8 @@ namespace Palete {
 		//}
 
 		public void checkFileWithNodePropChange(
-		
- 					 
-					string build_module, 
-					string original_filepath
-		
+		 
+				  
 					JsRender.JsRender file,
 					JsRender.Node node, 
 					string prop,
