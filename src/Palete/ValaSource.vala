@@ -69,7 +69,7 @@ namespace Palete {
 			// untill we get a smarter renderer..
 			// we have some scenarios where changing the value does not work
 			if (prop == "* xns" || prop == "xtype") {
-				result_callback(new Json.Object());
+				this.compiled(new Json.Object());
 				return ;
 			}
 				
