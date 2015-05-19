@@ -266,6 +266,27 @@ public class Xcls_ValaCompileErrors : Object
             }
 
             //listeners
+            this.el.button_press_event.connect( ( ev)  => {
+             
+                Gtk.TreeViewColumn col;
+                int cell_x;
+                int cell_y;
+                Gtk.TreePath path;
+                if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
+                    print("nothing selected on click");
+                    
+                    return false; //not on a element.
+                }
+                
+                 
+                 // right click.
+                 if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1  ) {    
+                    // show popup!.   
+                      
+                     
+                    return false;
+                }
+              });
             this.el.cursor_changed.connect( () => {
                 var sel = this.el.get_selection();
             
