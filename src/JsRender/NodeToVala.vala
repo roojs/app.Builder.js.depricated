@@ -38,7 +38,7 @@ public class JsRender.NodeToVala : Object {
 	 * ctor - just initializes things
 	 * - wraps a render node 
 	 */
-	public NodeToVala( Node node,  int depth, NodeToVala? top) 
+	public NodeToVala( Node node,  int depth, NodeToVala? parent) 
 	{
 
 		
@@ -171,7 +171,7 @@ public class JsRender.NodeToVala : Object {
 	} 
 	public string mungeChild(  Node cnode)
 	{
-		var x = new  NodeToVala(cnode,  this.depth+1, this.top);
+		var x = new  NodeToVala(cnode,  this.depth+1, this);
 		return x.munge();
 	}
 
