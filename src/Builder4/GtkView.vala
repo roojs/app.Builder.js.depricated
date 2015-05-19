@@ -16,6 +16,9 @@ public class Xcls_GtkView : Object
     public Xcls_label_code label_code;
     public Xcls_view_layout view_layout;
     public Xcls_container container;
+    public Xcls_compile_tree compile_tree;
+    public Xcls_compile_result_store compile_result_store;
+    public Xcls_renderer renderer;
 
         // my vars (def)
     public Gtk.Widget lastObj;
@@ -155,6 +158,9 @@ public class Xcls_GtkView : Object
             var child_2 = new Xcls_ScrolledWindow5( _this );
             child_2.ref();
             this.el.append_page (  child_2.el , _this.label_preview.el );
+            var child_3 = new Xcls_ScrolledWindow8( _this );
+            child_3.ref();
+            this.el.add (  child_3.el  );
         }
 
         // user defined functions
@@ -276,6 +282,206 @@ public class Xcls_GtkView : Object
 
         // user defined functions
     }
+
+
+
+    public class Xcls_ScrolledWindow8 : Object
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_ScrolledWindow8(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_compile_tree( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // init method
+
+            {
+             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+             
+            
+            }
+        }
+
+        // user defined functions
+    }
+    public class Xcls_compile_tree : Object
+    {
+        public Gtk.TreeView el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_compile_tree(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            _this.compile_tree = this;
+            this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_compile_result_store( _this );
+            child_0.ref();
+            this.el.set_model (  child_0.el  );
+            var child_1 = new Xcls_column( _this );
+            child_1.ref();
+            this.el.append_column (  child_1.el  );
+
+            // init method
+
+            {
+             var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
+            
+            }
+
+            //listeners
+            this.el.cursor_changed.connect( () => {
+                var sel = this.el.get_selection();
+            
+                if (sel.count_selected_rows() < 1) {
+            
+                    print("selected rows < 1\n");
+                    //??this.mo 
+                    return  ;
+                }
+                    
+                    //console.log('changed');
+                 
+                 Gtk.TreeIter iter;
+                 Gtk.TreeModel mod;
+                sel.get_selected(out mod, out iter);
+                /*
+                 store.set(citer, 
+                        0, file + ":" + line, 
+                        1, int.parse(line), 
+                        2, GLib.Markup.escape_text(line + ": " + msg), 
+                        3, file,-1);
+                
+                });
+                */
+                
+                
+                
+                // var val = "";
+                GLib.Value value;
+                _this.compile_result_store.el.get_value(iter, 3, out value);
+                var fname = (string)value;
+                GLib.Value lvalue;
+                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                var line = (int) lvalue;
+                
+                
+                
+             
+                
+                
+                print ("loadfile %s : %d", fname,line);
+                
+                _this.sourceview.loadFile(fname, line);
+                
+                
+                        
+                        
+            });
+        }
+
+        // user defined functions
+    }
+    public class Xcls_compile_result_store : Object
+    {
+        public Gtk.TreeStore el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_compile_result_store(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            _this.compile_result_store = this;
+            this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_column : Object
+    {
+        public Gtk.TreeViewColumn el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_column(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "Compile output";
+            var child_0 = new Xcls_renderer( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , true );
+
+            // init method
+
+            {
+              this.el.add_attribute(_this.renderer.el , "markup", 2 );
+             
+            }
+        }
+
+        // user defined functions
+    }
+    public class Xcls_renderer : Object
+    {
+        public Gtk.CellRendererText el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_renderer(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            _this.renderer = this;
+            this.el = new Gtk.CellRendererText();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions
+    }
+
 
 
 
