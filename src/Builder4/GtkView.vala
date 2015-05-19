@@ -420,6 +420,12 @@ public class Xcls_GtkView : Object
             
             ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(lang));
          
+            if (sel == null) {
+                // no highlighting..
+                return;
+            }
+            // clear all the marks..
+            
             
             
         }
