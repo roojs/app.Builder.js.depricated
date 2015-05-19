@@ -41,23 +41,6 @@
          "xtype" : "Button",
          "$ xns" : "Gtk",
          "utf8 label" : "Compile and Run"
-        },
-        {
-         "listeners" : {
-          "clicked" : "() => {\n    // is the file managed by the builder?\n    \n    var f = _this.sourceview.curfname;\n    \n    Regex regex = new Regex(\"\\\\.vala$\");\n\n    var bjsf = regex.replace(f,f.length , 0 , \".bjs\");\n    \n    var p = _this.window.project;\n    \n    \n    \n    var jsr = p.getByPath(bjsf);\n    if (jsr != null) {\n        _this.window.windowstate.fileViewOpen(jsr);\n        \n        return;\n    \n    }\n\n\n}"
-         },
-         "* pack" : "pack_start,true,true,0",
-         "xtype" : "Button",
-         "$ xns" : "Gtk",
-         "utf8 label" : "Edit"
-        },
-        {
-         "id" : "save_btn",
-         "xtype" : "Button",
-         "* pack" : "pack_start,true,true,0",
-         "$ xns" : "Gtk",
-         "utf8 label" : "Save",
-         "bool visible" : false
         }
        ]
       },

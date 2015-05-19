@@ -13,7 +13,6 @@ public class Xcls_ValaCompileErrors : Object
         return _ValaCompileErrors;
     }
     public Xcls_compile_view compile_view;
-    public Xcls_save_btn save_btn;
     public Xcls_compile_tree compile_tree;
     public Xcls_compile_result_store compile_result_store;
     public Xcls_renderer renderer;
@@ -145,7 +144,7 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_ScrolledWindow7( _this );
+            var child_1 = new Xcls_ScrolledWindow5( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
@@ -172,12 +171,6 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_Button4( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_Button5( _this );
-            child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
-            var child_2 = new Xcls_save_btn( _this );
-            child_2.ref();
-            this.el.pack_start (  child_2.el , true,true,0 );
         }
 
         // user defined functions
@@ -205,81 +198,8 @@ public class Xcls_ValaCompileErrors : Object
         // user defined functions
     }
 
-    public class Xcls_Button5 : Object
-    {
-        public Gtk.Button el;
-        private Xcls_ValaCompileErrors  _this;
 
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_Button5(Xcls_ValaCompileErrors _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Edit";
-
-            //listeners
-            this.el.clicked.connect( () => {
-                // is the file managed by the builder?
-                
-                var f = _this.sourceview.curfname;
-                
-                Regex regex = new Regex("\\.vala$");
-            
-                var bjsf = regex.replace(f,f.length , 0 , ".bjs");
-                
-                var p = _this.window.project;
-                
-                
-                
-                var jsr = p.getByPath(bjsf);
-                if (jsr != null) {
-                    _this.window.windowstate.fileViewOpen(jsr);
-                    
-                    return;
-                
-                }
-            
-            
-            });
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_save_btn : Object
-    {
-        public Gtk.Button el;
-        private Xcls_ValaCompileErrors  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_save_btn(Xcls_ValaCompileErrors _owner )
-        {
-            _this = _owner;
-            _this.save_btn = this;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Save";
-            this.el.visible = false;
-        }
-
-        // user defined functions
-    }
-
-
-    public class Xcls_ScrolledWindow7 : Object
+    public class Xcls_ScrolledWindow5 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -288,7 +208,7 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
 
         // ctor
-        public Xcls_ScrolledWindow7(Xcls_ValaCompileErrors _owner )
+        public Xcls_ScrolledWindow5(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
