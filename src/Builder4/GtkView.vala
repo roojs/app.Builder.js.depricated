@@ -428,10 +428,16 @@ public class Xcls_GtkView : Object
             // clear all the marks..
              Gtk.TextIter start;
             Gtk.TextIter end;     
+            Gtk.TextIter iter;     
             sbuf.get_bounds (out start, out end);
-            
             sbuf.remove_source_marks (start, end, null);
             
+            for (var i = 0; i < buf.get_line_count();i++) {
+                if (i < sel.line_start || i > sel.line_end) {
+                    buf.get_iter_at_line(out iter, i);
+                }
+            
+            }
             
             
         }
