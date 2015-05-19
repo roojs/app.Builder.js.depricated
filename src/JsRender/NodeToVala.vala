@@ -389,8 +389,9 @@ public class JsRender.NodeToVala : Object {
 			}
 	
 		if (this.depth < 1) {
+			this.node.ctorline = this.curline;
 			this.addLine(this.pad + "public " + this.xcls + "(" + 
-				cargs_str +")\n" + this.pad + "{\n");
+				cargs_str +")\n" + this.pad + "{");
 		} else {
 				
 					//code 
