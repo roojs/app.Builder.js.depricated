@@ -225,8 +225,8 @@ public class JsRender.NodeToVala : Object {
 		this.addLine(this.pad + "{")
 		this.addLine(this.ipad +    "if (_" + this.node.xvala_id  + " == null) {");
 		this.addLine(this.ipad +    "    _" + this.node.xvala_id + "= new "+ this.xcls + "();");  // what about args?
-		this.addLine(this.ipad + "}");
-		this.addLine(this.ipad + "return _" + this.node.xvala_id +";");
+		this.addLine(this.ipad +    "}");
+		this.addLine(this.ipad +    "return _" + this.node.xvala_id +";");
 		this.addLine(this.pad + "}");
 	}
 			
