@@ -429,6 +429,11 @@ public class JsRender.NodeToVala : Object {
 		}
 			 
 	}
+	/**
+	 * Initialize this.el to point to the wrapped element.
+	 * 
+	 * 
+	 */
 
 	void addWrappedCtor()
 	{
@@ -445,8 +450,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		*/
 		if (this.node.has("* ctor")) {
-			
-			
+			 
 			this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
 			return;
 		}
