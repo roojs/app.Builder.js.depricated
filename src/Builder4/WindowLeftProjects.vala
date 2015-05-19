@@ -1,6 +1,6 @@
 static Xcls_WindowLeftProjects  _WindowLeftProjects;
 
-public class Xcls_WindowLeftProjects : Object 
+public class Xcls_WindowLeftProjects : Object
 {
     public Gtk.VBox el;
     private Xcls_WindowLeftProjects  _this;
@@ -22,7 +22,7 @@ public class Xcls_WindowLeftProjects : Object
     public bool is_loading;
     public signal void show_new_project ();
 
-    // ctor 
+    // ctor
     public Xcls_WindowLeftProjects()
     {
         _this = this;
@@ -37,13 +37,13 @@ public class Xcls_WindowLeftProjects : Object
         child_0.ref();
         this.el.pack_end (  child_0.el , true,true,0 );
 
-        // listeners 
+        //listeners
         this.el.show.connect( ( ) => {
             this.load();
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public  void load () {
          // clear list...
         
@@ -116,7 +116,7 @@ public class Xcls_WindowLeftProjects : Object
     	    print("tried to select %s, could not find it", project.name);
         }
     }
-    public class Xcls_ScrolledWindow2 : Object 
+    public class Xcls_ScrolledWindow2 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_WindowLeftProjects  _this;
@@ -124,7 +124,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_ScrolledWindow2(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
@@ -138,14 +138,14 @@ public class Xcls_WindowLeftProjects : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_view : Object 
+    public class Xcls_view : Object
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftProjects  _this;
@@ -153,7 +153,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_view(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
@@ -172,7 +172,7 @@ public class Xcls_WindowLeftProjects : Object
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
-            // init method 
+            // init method
 
             var description = new Pango.FontDescription();
                  description.set_size(8000);
@@ -181,7 +181,7 @@ public class Xcls_WindowLeftProjects : Object
                 var selection = this.el.get_selection();
                 selection.set_mode( Gtk.SelectionMode.SINGLE);
 
-            // listeners 
+            //listeners
             this.el.cursor_changed.connect( () => {
                 if (_this.is_loading) {
                     return;
@@ -205,9 +205,9 @@ public class Xcls_WindowLeftProjects : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_model : Object 
+    public class Xcls_model : Object
     {
         public Gtk.ListStore el;
         private Xcls_WindowLeftProjects  _this;
@@ -215,7 +215,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_model(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
@@ -226,7 +226,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // set gobject values
 
-            // init method 
+            // init method
 
             {
                this.el.set_sort_func(0, (mod,a,b) => {
@@ -244,9 +244,10 @@ public class Xcls_WindowLeftProjects : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_TreeViewColumn5 : Object 
+
+    public class Xcls_TreeViewColumn5 : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_WindowLeftProjects  _this;
@@ -254,7 +255,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_TreeViewColumn5(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
@@ -268,14 +269,14 @@ public class Xcls_WindowLeftProjects : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.namecol.el , "markup", 0  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_namecol : Object 
+    public class Xcls_namecol : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftProjects  _this;
@@ -283,7 +284,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_namecol(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
@@ -295,6 +296,10 @@ public class Xcls_WindowLeftProjects : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
+
+
 }

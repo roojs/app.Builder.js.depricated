@@ -5,6 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/WindowLeftProjects.bjs",
  "permname" : "",
  "modOrder" : "",
+ "build_module" : "",
  "items" : [
   {
    "listeners" : {
@@ -60,8 +61,8 @@
          "items" : [
           {
            "id" : "namecol",
-           "xtype" : "CellRendererText",
            "* pack" : "pack_start,true",
+           "xtype" : "CellRendererText",
            "$ xns" : "Gtk"
           }
          ]
