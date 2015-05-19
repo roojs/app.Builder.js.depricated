@@ -196,7 +196,7 @@ public class JsRender.NodeToVala : Object {
 		this.cur_line += str.split("\n").length;
 		this.ret += str + "\n";
 	}
-	addMultiLine
+	 
 	
 	public void globalVars()
 	{
@@ -208,9 +208,7 @@ public class JsRender.NodeToVala : Object {
 
 		this.addLine(this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";");
 		this.addLine();
-		
-				
-				
+		   
 	}
 
 	void classHeader()
@@ -224,7 +222,7 @@ public class JsRender.NodeToVala : Object {
 		 
 		this.addLine(this.pad + "public " + this.cls + " el;");
  
-		this.addLine(this.pad + "private " + this.top.xcls + "  _this;)";
+		this.addLine(this.pad + "private " + this.top.xcls + "  _this;");
 		this.addLine();
 			
 			
@@ -237,7 +235,7 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
 		this.addLine(pad + "public static " + xcls + " singleton()");
-		this.addLine(this.pad + "{")
+		this.addLine(this.pad + "{");
 		this.addLine(this.ipad +    "if (_" + this.node.xvala_id  + " == null) {");
 		this.addLine(this.ipad +    "    _" + this.node.xvala_id + "= new "+ this.xcls + "();");  // what about args?
 		this.addLine(this.ipad +    "}");
@@ -397,7 +395,7 @@ public class JsRender.NodeToVala : Object {
 		if (this.depth < 1) {
 		 
 			// top level - does not pass the top level element..
-			this.addLine(this.pad + "public " + this.xcls + "(" +  cargs_str +")")
+			this.addLine(this.pad + "public " + this.xcls + "(" +  cargs_str +")");
 			this.addLine(this.pad + "{");
 		} else {
 				
