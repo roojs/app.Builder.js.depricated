@@ -364,7 +364,7 @@ public class JsRender.NodeToVala : Object {
 		}
 	}
 	/**
-	 * add the constructor..
+	 * add the constructor definition..
 	 */
 	void addValaCtor()
 	{
