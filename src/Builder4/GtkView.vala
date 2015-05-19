@@ -12,7 +12,7 @@ public class Xcls_GtkView : Object
         }
         return _GtkView;
     }
-    public Xcls_label_global label_global;
+    public Xcls_label_preview label_preview;
     public Xcls_label_global label_global;
     public Xcls_view_layout view_layout;
     public Xcls_container container;
@@ -151,7 +151,7 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_label_global( _this );
+            var child_0 = new Xcls_label_preview( _this );
             child_0.ref();
             var child_1 = new Xcls_label_global( _this );
             child_1.ref();
@@ -159,7 +159,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions
     }
-    public class Xcls_label_global : Object
+    public class Xcls_label_preview : Object
     {
         public Gtk.Label el;
         private Xcls_GtkView  _this;
@@ -168,10 +168,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor
-        public Xcls_label_global(Xcls_GtkView _owner )
+        public Xcls_label_preview(Xcls_GtkView _owner )
         {
             _this = _owner;
-            _this.label_global = this;
+            _this.label_preview = this;
             this.el = new Gtk.Label( "Global" );
 
             // my vars (dec)

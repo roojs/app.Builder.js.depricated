@@ -28,7 +28,7 @@
      "$ xns" : "Gtk",
      "items" : [
       {
-       "id" : "label_global",
+       "id" : "label_preview",
        "* pack" : false,
        "xtype" : "Label",
        "$ xns" : "Gtk",
