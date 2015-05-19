@@ -696,6 +696,7 @@ public class JsRender.NodeToVala : Object {
 		this.addLine();
 		this.addLine(ipad + "// init method");
 		this.addLine();
+		this.node.proplines.set("init", this.curline);
 		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );
 
 	 }
