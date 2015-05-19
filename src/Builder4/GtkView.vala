@@ -358,8 +358,13 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions
-        public void nodeSelected () {
-        
+        public void nodeSelected (JsRender.Node? sel) {
+            if (sel == null) {
+                // clear the window..
+                
+            }
+            
+            
         }
     }
 
