@@ -412,7 +412,7 @@ public class JsRender.NodeToVala : Object {
 			this.addLine( this.ipad + "_this = this;");
 			return;
 		}
-		this.ret+= this.ipad + "_this = _owner;\n";
+		this.addLine( this.ipad + "_this = _owner;");
 
 		if (this.node.props.has_key("id")
 			&&
@@ -422,7 +422,7 @@ public class JsRender.NodeToVala : Object {
 			&& 
 			this.node.xvala_id[0] != '+' 
 			) {
-				this.ret+= this.ipad + "_this." + node.xvala_id  + " = this;\n";
+				this.addLine( this.ipad + "_this." + node.xvala_id  + " = this;");
 		   
 		}
 				
