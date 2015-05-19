@@ -58,13 +58,10 @@ namespace Palete {
 					string prop,
 					string ptype,
 					string val
-					 )
+				 )
 		{
-			
-			this.project = file.project;
-			this.filepath = file.path;
-			this.build_module = file.build_module;
-			
+			this.file = file;
+ 			
 			
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var hash = ptype == "listener" ? node.listeners : node.props;
