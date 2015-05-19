@@ -30,9 +30,7 @@ namespace Palete {
 		public signal void compiled(Json.Object res);
 
 		
-		 
-		  
- 		JsRender.JsRender file;
+		JsRender.JsRender file;
   		public int line_offset = 0;
 		
  		public ValaSource( ) 
@@ -59,8 +57,8 @@ namespace Palete {
 					JsRender.Node node, 
 					string prop,
 					string ptype,
-					string val,
-					ValaSourceResult result_cb)
+					string val
+					 )
 		{
 			
 			this.project = file.project;
