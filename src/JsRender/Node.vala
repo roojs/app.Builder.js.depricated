@@ -107,7 +107,7 @@ public class JsRender.Node : Object {
 	public Gee.ArrayList<int> lines;
 	public Gee.HashMap<int,string> line_map; // store of l:xxx or p:....
 	public Gee.ArrayList<int> node_lines;
-	public Gee.HashMap<int,string> nodes_line_map; // store of l:xxx or p:....
+	public Gee.HashMap<int,Node> nodes_line_map; // store of l:xxx or p:....
 	
 
 	public Node()
@@ -125,7 +125,12 @@ public class JsRender.Node : Object {
 		this.line_map = new Gee.HashMap<int,string>();
 		
 	}
-
+	
+	public void setNodeLine(int line, string type, string prop) {
+		this.lines.add(line);
+		this.line_map.set(line, type +":" + prop);
+	}
+	
 	public void setLine(int line, string type, string prop) {
 		this.lines.add(line);
 		this.line_map.set(line, type +":" + prop);
