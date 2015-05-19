@@ -343,7 +343,7 @@ public class JsRender.NodeToVala : Object {
 		}
 	}
 	
-			// if id of child is '+' then it's a property of this..
+	// if id of child is '+' then it's a property of this..
 	void addPlusProperties()
 	{
 		if (this.node.items.size < 1) {
@@ -687,9 +687,10 @@ public class JsRender.NodeToVala : Object {
 		if (!this.node.has("init")) {
 				return;
 		}
-		this.ret+= "\n" + ipad + "// init method \n";
-	
-		this.ret+= "\n" + ipad + this.padMultiline(ipad, this.node.get("init")) + "\n";
+		this.addLine();
+		this.addLine(ipad + "// init method");
+		this.addLine();
+		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );;
 
 	 }
 	 void addListeners()
