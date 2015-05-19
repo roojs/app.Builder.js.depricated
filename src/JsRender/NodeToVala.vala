@@ -190,7 +190,13 @@ public class JsRender.NodeToVala : Object {
 		this.cur_line++;
 		this.ret += str + "\n";
 	}
-	
+	public void addMultiLine(string str= "")
+	{
+		this.cur_line++;
+		this.cur_line += str.split("\n").length;
+		this.ret += str + "\n";
+	}
+	addMultiLine
 	
 	public void globalVars()
 	{
@@ -690,7 +696,7 @@ public class JsRender.NodeToVala : Object {
 		this.addLine();
 		this.addLine(ipad + "// init method");
 		this.addLine();
-		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );;
+		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );
 
 	 }
 	 void addListeners()
