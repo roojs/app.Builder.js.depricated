@@ -30,7 +30,7 @@ namespace Palete {
 		public signal void compiled(Json.Object res);
 
 		
-		Vala.CodeContext context;
+		 
 		  
  		JsRender.JsRender file;
   		public int line_offset = 0;
