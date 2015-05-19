@@ -503,9 +503,9 @@ public class JsRender.NodeToVala : Object {
 			return;
 			
 		}
+		this.node.proplines.set("* xtype", this.curline);
 		
-		
-				this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
+		this.addLine(this.ipad + "this.el = new " + this.cls + "();");
 
 			
 	}
