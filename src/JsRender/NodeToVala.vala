@@ -810,7 +810,7 @@ public class JsRender.NodeToVala : Object {
 		var iter = this.node.items.list_iterator();
 		var i = -1;
 		while (iter.next()) {
-			this.ret += this.mungeChild(iter.get());
+			this.addMultiLine(this.mungeChild(iter.get()));
 		}
 			 
 		if (this.depth < 1) {
