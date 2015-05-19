@@ -203,12 +203,12 @@ public class JsRender.NodeToVala : Object {
 		if (this.depth > 0) {
 			return;
 		}
-		// Global Vars..
+		// Global Vars..??? when did this get removed..?
 		//this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
 
-		this.addLine("%sstatic %s _%s;".printf(this.inpad, this.xcls, this.node.xvala_id));
+		this.addLine(this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";");
 		this.addLine();
-		//this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
+		
 				
 				
 	}
@@ -563,7 +563,9 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
 			// what are the properties of this class???
-		this.ret += "\n" + this.ipad + "// set gobject values\n";
+		this.addLine();
+		this.addLine(this.ipad + "// set gobject values");
+		
 
 		var iter = cls.props.map_iterator();
 		while (iter.next()) {
@@ -602,7 +604,7 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			
-			this.ret += "%sthis.el.%s = %s;\n".printf(ipad,p,v); // // %s,  iter.get_value().type);
+			this.addLine("%sthis.el.%s = %s;".printf(ipad,p,v)); // // %s,  iter.get_value().type);
 					
 			   // got a property..
 			   
