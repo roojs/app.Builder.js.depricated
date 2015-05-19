@@ -518,7 +518,8 @@ public class JsRender.NodeToVala : Object {
 			
 			
 			// initialize.. my vars..
-		this.ret += "\n" + this.ipad + "// my vars (dec)\n";
+		this.addLine();
+		this.addLine( this.ipad + "// my vars (dec)");
 		
 		var iter = this.myvars.list_iterator();
 		while(iter.next()) {
