@@ -286,10 +286,10 @@ public class Xcls_ValaCompileErrors : Object
                      
                     return false;
                 }
-                
                 Gtk.TreeIter iter;
-                 Gtk.TreeModel mod;
-                sel.get_selected(out mod, out iter);
+                 var mod = _this.compile_result_store.el;
+                mod.get_iter (out iter, path);
+                
                  
                 
                 
@@ -302,26 +302,24 @@ public class Xcls_ValaCompileErrors : Object
                 _this.compile_result_store.el.get_value(iter, 1, out lvalue);
                 var line = (int) lvalue;
                 
-                
-                
-                /*
-                 var f = _this.sourceview.curfname;
+                 
+                 var f = fname;
                             
-                    Regex regex = new Regex("\\.vala$");
+                Regex regex = new Regex("\\.vala$");
                 
-                    var bjsf = regex.replace(f,f.length , 0 , ".bjs");
+                var bjsf = regex.replace(f,f.length , 0 , ".bjs");
                     
-                    var p = _this.window.project;
+                var p = _this.window.project;
                     
                     
                     
-                    var jsr = p.getByPath(bjsf);
-                    if (jsr != null) {
-                        _this.window.windowstate.fileViewOpen(jsr);
-                        
-                        return;
+                var jsr = p.getByPath(bjsf);
+                if (jsr != null) {
+                    _this.window.windowstate.fileViewOpen(jsr);
                     
-                    }
+                    return;
+                
+                }
                 
                 
               });
