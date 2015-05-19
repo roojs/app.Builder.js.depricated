@@ -473,12 +473,12 @@ public class Editor : Object
              
             return true; // at present allow saving - even if it's invalid..
         }
-        public bool highlightErrorsJson (Json.Object obj) {
+        public bool highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
              Gtk.TextIter end;     
                 this.el.get_bounds (out start, out end);
                 
-                this.el.remove_source_marks (start, end, null);
+                this.el.remove_source_marks (start, end, type);
                          
              
              // we should highlight other types of errors..
