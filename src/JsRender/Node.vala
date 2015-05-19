@@ -130,7 +130,7 @@ public class JsRender.Node : Object {
 	}
 	public void sortLines() {
 		this.lines.sort((a,b) => {   
-			return a-b;
+			return (int)a-(int)b;
 			/*if (a == b) {
 				return 0;
 			}
