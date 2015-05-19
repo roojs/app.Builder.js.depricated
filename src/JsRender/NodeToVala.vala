@@ -63,8 +63,11 @@ public class JsRender.NodeToVala : Object {
 		
 		// initialize line data..
 		node.line_start = this.cur_line;
-		node.proplines = new Gee.HashMap<string,int>();
-		node.listenlines = new Gee.HashMap<string,int>();
+		node.line_end  = this.cur_line;
+		node.lines = new Gee.ArrayList();
+		node.line_map = new Gee.HashMap<int,string>();
+		
+		 
 		
 		
 		
@@ -454,7 +457,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		*/
 		if (this.node.has("* ctor")) {
-			this.node.proplines.set("* ctor", this.curline);
+			this.node.proplines.set("* ctor", this.cur_line);
 			this.addLine(this.ipad + "this.el = " + this.node.get("* ctor")+ ";");
 			return;
 		}
@@ -502,12 +505,12 @@ public class JsRender.NodeToVala : Object {
 				args += v;
 
 			}
-			this.node.proplines.set("* xtype", this.curline);
+			this.node.proplines.set("* xtype", this.cur_line);
 			this.addLine(this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );") ;
 			return;
 			
 		}
-		this.node.proplines.set("* xtype", this.curline);
+		this.node.proplines.set("* xtype", this.cur_line);
 		
 		this.addLine(this.ipad + "this.el = new " + this.cls + "();");
 
@@ -696,7 +699,7 @@ public class JsRender.NodeToVala : Object {
 		this.addLine();
 		this.addLine(ipad + "// init method");
 		this.addLine();
-		this.node.proplines.set("init", this.curline);
+		this.node.proplines.set("init", this.cur_line);
 		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );
 
 	 }
@@ -715,7 +718,7 @@ public class JsRender.NodeToVala : Object {
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
-				this.node.listenlines.set(k, this.curline);
+				this.node.listenlines.set(k, this.cur_line);
 				this.addMultiLine(this.ipad + "this.el." + k + ".connect( " + 
 					this.padMultiline(this.ipad,v) +");"); 
 				
@@ -792,7 +795,7 @@ public class JsRender.NodeToVala : Object {
 			// function in the format of {type} (args) { .... }
 			var kk = k.substring(2);
 			var vv = iter.get_value();
-			this.node.proplines.set(k, this.curline);
+			this.node.proplines.set(k, this.cur_line);
 			this.addMultiLine(this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv));;
 			
 				
@@ -801,7 +804,7 @@ public class JsRender.NodeToVala : Object {
 
 	void iterChildren()
 	{
-		this.node.line_end = this.curline;
+		this.node.line_end = this.cur_line;
 			
 		if (this.depth > 0) {
 			this.addLine(this.inpad + "}");
