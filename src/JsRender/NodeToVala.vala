@@ -804,7 +804,7 @@ public class JsRender.NodeToVala : Object {
 		this.node.line_end = this.curline;
 			
 		if (this.depth > 0) {
-			this.ret+= this.inpad + "}\n";
+			this.addLine(this.inpad + "}");
 		}
 		
 		var iter = this.node.items.list_iterator();
