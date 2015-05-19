@@ -359,6 +359,7 @@ public class Xcls_GtkView : Object
 
         // user defined functions
         public void nodeSelected (JsRender.Node? sel) {
+            print("node selected");
             var buf = this.el.get_buffer();
             buf.set_text("",0);
         
@@ -369,6 +370,7 @@ public class Xcls_GtkView : Object
             }
             var f =  _this.main_window.windowstate.left_tree.model.file;
             if (f.xtype != "Gtk") {
+                print("xtype != Gtk");
                 return;
             }
             
