@@ -465,8 +465,7 @@ public class Xcls_GtkView : Object
             }
             var err = obj.get_object_member(type);
             
-            
-            
+             
             if (!err.has_member(_this.file.path)) {
                 print("File path has no errors\n");
                 return true;
