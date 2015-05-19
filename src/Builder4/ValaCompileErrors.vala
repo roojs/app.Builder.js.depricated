@@ -43,11 +43,11 @@ public class Xcls_ValaCompileErrors : Object
 
         //listeners
         this.el.closed.connect( () => {
-            if (this.active) {
+          /*  if (this.active) {
                 this.el.show();
                 return;
             }
-           
+           */
         });
     }
 
@@ -57,7 +57,7 @@ public class Xcls_ValaCompileErrors : Object
             
             this.file = null;
             this.notices = tree;
-            this.active = true;
+           
              //print("looking for %s\n", id);
             // loop through parent childnre
               
