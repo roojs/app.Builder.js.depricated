@@ -214,11 +214,9 @@ public class JsRender.NodeToVala : Object {
 		// class xxx {   WrappedGtk  el; }
 		this.addLine(inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{");
 		this.node.line = this.cur_line;
-		
-		
+		 
 		this.addLine(this.pad + "public " + this.cls + " el;");
-
-		  
+ 
 		this.addLine(this.pad + "private " + this.top.xcls + "  _this;)";
 		this.addLine();
 			
@@ -309,7 +307,8 @@ public class JsRender.NodeToVala : Object {
 			}
 				
 			if (vv[0] == "@") {
-				this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
+				this.addLine(this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";");
+				
 				this.ignore(k);
 				continue;
 			}
