@@ -642,12 +642,17 @@ public class JsRender.NodeToVala : Object {
 			this.addLine(this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
 			"( _this " + xargs + ");" ;
 			
+			// this is only needed if it does not have an ID???
 			this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
 			
 			if (ci.has("* prop")) {
-				this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
+				// 
+				this.addLine(ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;");
 				continue;
+			} else {
+				
 			}
+				
 
 	// not sure why we have 'true' in pack?!?
 			if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
