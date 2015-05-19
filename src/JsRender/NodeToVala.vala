@@ -193,7 +193,7 @@ public class JsRender.NodeToVala : Object {
 	public void addMultiLine(string str= "")
 	{
 		this.cur_line++;
-		this.cur_line += str.split("\n").length;
+		this.cur_line +=  "/*%d*/ ".printf(this.cur_line-1) + str.split("\n").length;
 		this.ret += str + "\n";
 	}
 	 
@@ -217,7 +217,8 @@ public class JsRender.NodeToVala : Object {
 		// class header..
 		// class xxx {   WrappedGtk  el; }
 		this.node.line_start = this.cur_line;
-		this.addLine(inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{");
+		this.addLine(inpad + "public class " + this.xcls + " : Object");
+		this.addLine(this.inpad + "{");
 		
 		 
 		this.addLine(this.pad + "public " + this.cls + " el;");
