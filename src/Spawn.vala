@@ -142,7 +142,7 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-	public void run(SpawnFinish finish) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	public void run( ) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
 	{
 		
 		 
