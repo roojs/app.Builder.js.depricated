@@ -706,18 +706,20 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
 				
+		this.addLine();
+		this.addLine(ipad + "//listeners");
 			
-			
-		this.ret+= "\n" + ipad + "// listeners \n";
+			 
 
 		var iter = this.node.listeners.map_iterator();
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
-					this.ret+= this.ipad + "this.el." + k + ".connect( " + 
-					this.padMultiline(this.ipad,v) +");\n"; 
-					
-				}
+				this.node.listenlines.set(k, this.curline);
+				this.addMultiLine(this.ipad + "this.el." + k + ".connect( " + 
+					this.padMultiline(this.ipad,v) +");"); 
+				
+			}
 	}    
 		void addEndCtor()
 	{
