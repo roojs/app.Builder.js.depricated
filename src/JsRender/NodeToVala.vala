@@ -34,6 +34,10 @@ public class JsRender.NodeToVala : Object {
 	NodeToVala top;
 	JsRender file;
 	
+	/* 
+	 * ctor - just initializes things
+	 * - wraps a render node 
+	 */
 	public NodeToVala( Node node,  int depth, NodeToVala? top) 
 	{
 
