@@ -64,7 +64,7 @@ public class JsRender.NodeToVala : Object {
 		// initialize line data..
 		node.line_start = this.cur_line;
 		node.proplines = new Gee.HashMap<string,int>();
-		node.listenlines = Gee.HashMap<string,int>();
+		node.listenlines = new Gee.HashMap<string,int>();
 		
 		
 		
@@ -355,13 +355,13 @@ public class JsRender.NodeToVala : Object {
 		}
 		var iter = this.node.items.list_iterator();
 		while (iter.next()) {
-		var ci = iter.get();
+			var ci = iter.get();
 				
 			if (ci.xvala_id[0] != '+') {
 				continue; // skip generation of children?
 				
 			}
-			this.node.proplines.set(k, this.cur_line);
+			 
 			this.addLine(this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";");
 					   
 			
@@ -411,7 +411,7 @@ public class JsRender.NodeToVala : Object {
 	 */
 	void addUnderThis() 
 	{
-			// public static?
+		// public static?
 		if (depth < 1) {
 			this.addLine( this.ipad + "_this = this;");
 			return;
@@ -646,7 +646,7 @@ public class JsRender.NodeToVala : Object {
 			}
 			// create the element..
 			this.addLine(this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
-			"( _this " + xargs + ");" ;
+					"( _this " + xargs + ");" );
 			
 			// this is only needed if it does not have an ID???
 			this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...
