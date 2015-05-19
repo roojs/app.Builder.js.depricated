@@ -61,6 +61,7 @@ public class JsRender.NodeToVala : Object {
 		this.vitems = new Gee.ArrayList<Node>();
 		this.file = null;
 		
+		// initialize line data..
 		node.line = this.cur_line;
 		node.proplines = new Gee.HashMap<string,int>();
 		node.listenlines = Gee.HashMap<string,int>();
