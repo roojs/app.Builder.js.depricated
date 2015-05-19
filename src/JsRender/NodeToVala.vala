@@ -64,7 +64,7 @@ public class JsRender.NodeToVala : Object {
 		// initialize line data..
 		node.line_start = this.cur_line;
 		node.line_end  = this.cur_line;
-		node.lines = new Gee.ArrayList();
+		node.lines = new Gee.ArrayList<int>();
 		node.line_map = new Gee.HashMap<int,string>();
 		 
 		
@@ -805,6 +805,8 @@ public class JsRender.NodeToVala : Object {
 	void iterChildren()
 	{
 		this.node.line_end = this.cur_line;
+		this.node.sortLines();
+		
 			
 		if (this.depth > 0) {
 			this.addLine(this.inpad + "}");
