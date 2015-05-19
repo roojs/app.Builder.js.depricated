@@ -65,7 +65,7 @@
       {
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
        "xtype" : "ScrolledWindow",
-       "* pack" : "add",
+       "* pack" : "append_page,_this.label_code.el",
        "$ xns" : "Gtk",
        "items" : [
         {
