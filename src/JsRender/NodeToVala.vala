@@ -344,26 +344,28 @@ public class JsRender.NodeToVala : Object {
 	}
 	
 			// if id of child is '+' then it's a property of this..
-		void addPlusProperties()
-		{
-			if (this.node.items.size < 1) {
-				return;
-			}
-			var iter = this.node.items.list_iterator();
-			while (iter.next()) {
-			var ci = iter.get();
-					
-				if (ci.xvala_id[0] != '+') {
-					continue; // skip generation of children?
-					
-				}
-				this.node.proplines.set(k, this.cur_line);
-				this.addLine(this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";");
-						   
+	void addPlusProperties()
+	{
+		if (this.node.items.size < 1) {
+			return;
+		}
+		var iter = this.node.items.list_iterator();
+		while (iter.next()) {
+		var ci = iter.get();
+				
+			if (ci.xvala_id[0] != '+') {
+				continue; // skip generation of children?
 				
 			}
+			this.node.proplines.set(k, this.cur_line);
+			this.addLine(this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";");
+					   
+			
+		}
 	}
-
+	/**
+	 * add the constructor..
+	 */
 	void addValaCtor()
 	{
 			
