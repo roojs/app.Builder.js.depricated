@@ -102,7 +102,9 @@ public class JsRender.Node : Object {
 	public string  xvala_cls;
 	public string xvala_xcls; // 'Xcls_' + id;
 	public string xvala_id; // item id or ""
-		
+	public int line;
+	public Gee.HashMap<string,line> proplines;
+	public Gee.HashMap<string,line> listenlines;
 
 
 	public Node()
