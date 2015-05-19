@@ -333,9 +333,9 @@ public class JsRender.NodeToVala : Object {
 			
 			this.myvars.add(k);
 
-				
-			this.ret += this.pad + "public " + 
-				(k[0] == '$' || k[0] == '#' ? k.substring(2) : k ) + ";\n";
+			this.node.proplines.set(k, this.cur_line);
+			this.addLine(this.pad + "public " + 
+				(k[0] == '$' || k[0] == '#' ? k.substring(2) : k ) + ";");
 				
 			this.ignore(k);
 			
