@@ -9,7 +9,8 @@
  * 
  *  x = new ValaSource();
  *  x.connect.compiled(... do something with results... );
- * 
+ *  
+ * x.
  * 
  */
 
@@ -21,13 +22,13 @@ namespace Palete {
 	
 	//public delegate  void ValaSourceResult(Json.Object res);
 	
-	public signal void compiled(Json.Object res);
 	 
 
 	public class ValaSource : Object {
  
 		
-		signal 
+		public signal void compiled(Json.Object res);
+
 		
 		Vala.CodeContext context;
 		 
@@ -42,10 +43,7 @@ namespace Palete {
 			
 		
 		
-			Project.Gtk project, 
-			string filepath, 
-			string build_module, 
-			string original_filepath) {
+			) {
 			base();
 			//this.file = file;
 			this.filepath = filepath;
@@ -69,7 +67,9 @@ namespace Palete {
 
 		public void checkFileWithNodePropChange(
 		
-		
+ 					 
+					string build_module, 
+					string original_filepath
 		
 					JsRender.JsRender file,
 					JsRender.Node node, 
@@ -79,6 +79,9 @@ namespace Palete {
 					ValaSourceResult result_cb)
 		{
 			
+			this.project = file.project;
+			this.filepath = file.path;
+			this.build_module = file.build_module;
 			
 			
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
