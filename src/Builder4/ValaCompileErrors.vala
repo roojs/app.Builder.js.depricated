@@ -122,7 +122,7 @@ public class Xcls_ValaCompileErrors : Object
         while(Gtk.events_pending()) { 
                 Gtk.main_iteration();
         }       
-        this.hpane.el.set_position( 0);
+     //   this.hpane.el.set_position( 0);
     }
     public class Xcls_compile_view : Object
     {
