@@ -506,8 +506,7 @@ public class Xcls_GtkView : Object
                 } );
                 return false;
             
-        
-        
+         
         
         
         }
