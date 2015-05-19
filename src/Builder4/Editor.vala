@@ -479,7 +479,7 @@ public class Editor : Object
             
             
             p.validateVala(
-                this.window.windowstate,
+                _this.window.windowstate,
                 str, 
                  _this.key, 
                 _this.ptype,
