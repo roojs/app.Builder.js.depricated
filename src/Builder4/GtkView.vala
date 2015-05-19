@@ -21,9 +21,9 @@ public class Xcls_GtkView : Object
         // my vars (def)
     public Gtk.Widget lastObj;
     public int width;
-    public Xcls_MainWindow main_window;
     public JsRender.JsRender file;
     public int height;
+    public Xcls_MainWindow main_window;
 
     // ctor
     public Xcls_GtkView()
