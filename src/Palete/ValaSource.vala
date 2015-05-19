@@ -29,7 +29,11 @@ namespace Palete {
 		public int line_offset = 0;
 		
 		// file.project , file.path, file.build_module, ""
-		public ValaSource(Project.Gtk project, string filepath, string build_module, string original_filepath) {
+		public ValaSource(
+			Project.Gtk project, 
+			string filepath, 
+			string build_module, 
+			string original_filepath) {
 			base();
 			//this.file = file;
 			this.filepath = filepath;
