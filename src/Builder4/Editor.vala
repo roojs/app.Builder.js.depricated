@@ -480,26 +480,8 @@ public class Editor : Object
                 
                 this.el.remove_source_marks (start, end, null);
                          
-            if (obj.has_member("ERR-TOTAL")) {
-        
-                 _this.window.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
-            } else {
-                 _this.window.statusbar_errors.setNotices( new Json.Object() , 0);
-            }    
-            
-            if (obj.has_member("WARN-TOTAL")) {
-        
-                 _this.window.statusbar_warnings.setNotices(obj.get_object_member("WARN"), (int) obj.get_int_member("WARN-TOTAL"));
-            } else {
-                     _this.window.statusbar_warnings.setNotices( new Json.Object() , 0);
-            }
-            if (obj.has_member("DEPR-TOTAL")) {
-                
-                 _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
-         
-            } else {
-                _this.window.statusbar_depricated.setNotices( new Json.Object(),0);
-            }
+             
+             // we should highlight other types of errors..
             
             if (!obj.has_member("ERR")) {
                 print("Return has no errors\n");
