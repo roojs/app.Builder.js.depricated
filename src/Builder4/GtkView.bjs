@@ -23,9 +23,16 @@
    "$ xns" : "Gtk",
    "items" : [
     {
-     "* pack" : "pack_start,?bool?,?bool?,?uint?",
+     "* pack" : "pack_start,true,true,0",
      "xtype" : "Notebook",
      "$ xns" : "Gtk"
+    },
+    {
+     "id" : "label_global",
+     "xtype" : "Label",
+     "* pack" : false,
+     "$ xns" : "Gtk",
+     "utf8 label" : "Global"
     },
     {
      "* pack" : "pack_start,true,true,0",
