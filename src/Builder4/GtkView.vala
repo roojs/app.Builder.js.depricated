@@ -339,9 +339,7 @@ public class Xcls_GtkView : Object
                 
                 this.el.set_mark_attributes ("error", attrs, 1);
                 
-                _this.main_window.windowstate.left_tree.node_selected.connect((sel) => {
-            	this.nodeSelected(sel);
-                });
+               
                 
             }
         }

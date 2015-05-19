@@ -34,7 +34,6 @@ public class WindowState : Object
 	public Editor               code_editor;    
 	public Xcls_WindowRooView   window_rooview;
 	public Xcls_GtkView         window_gladeview;
-	public Xcls_ValaCompileErrors  valacompileerrors;
 	
 	public Xcls_ClutterFiles     clutterfiles;
 
@@ -79,11 +78,12 @@ public class WindowState : Object
 
 		this.webkit_plugin = new Xcls_DialogPluginWebkit();
 		this.template_select = new DialogTemplateSelect();
-		
-		this.vala_compile_errors = new Xcls_ValaCompileErrors();
-		this.vala_compile_errors.window = this.win;
-		
 		this.children_loaded = true;
+		
+		this.left_tree.node_selected.connect((sel) => {
+			this.window_gladeview.sourceview.leftTreeNodeSelected(sel);
+		});
+		
 	}
 
 
