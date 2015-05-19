@@ -188,7 +188,7 @@ public class JsRender.NodeToVala : Object {
 	public void addLine(string str= "")
 	{
 		this.cur_line++;
-		this.ret += str + "\n";
+		this.ret += "/*%d*/ ".printf(this.cur_line-1) + str + "\n";
 	}
 	public void addMultiLine(string str= "")
 	{
