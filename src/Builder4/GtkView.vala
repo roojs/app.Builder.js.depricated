@@ -350,11 +350,11 @@ public class Xcls_GtkView : Object
                     return mark.name;
                 });
                 
-                this.el.set_mark_attributes ("error", attrs, 1);
+                this.el.set_mark_attributes ("ERR", attrs, 1);
                 
                  var wattrs = new Gtk.SourceMarkAttributes();
                 var  blue = new Gdk.RGBA();
-                blue.parse ( "blue");
+                blue.parse ( "#d9edf7");
                 wattrs.set_background ( blue);
                 wattrs.set_icon_name ( "process-stop");    
                 wattrs.query_tooltip_text.connect(( mark) => {
@@ -362,7 +362,7 @@ public class Xcls_GtkView : Object
                     return mark.name;
                 });
                 
-                this.el.set_mark_attributes ("warning", wattrs, 1);
+                this.el.set_mark_attributes ("WARN", wattrs, 1);
                 
              
                 
@@ -376,7 +376,7 @@ public class Xcls_GtkView : Object
                     return mark.name;
                 });
                 
-                this.el.set_mark_attributes ("warning", dattrs, 1);
+                this.el.set_mark_attributes ("DEPR", dattrs, 1);
                 
                 
                 var gattrs = new Gtk.SourceMarkAttributes();
