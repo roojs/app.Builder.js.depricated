@@ -129,7 +129,7 @@ public class JsRender.Node : Object {
 		this.line_map.set(line, type +":" + prop);
 	}
 	public void sortLines() {
-		this.lines.sort((a,b) {
+		this.lines.sort((a,b) { // probably simpler way to do this...
 			if (a == b) {
 				return 0;
 			}
