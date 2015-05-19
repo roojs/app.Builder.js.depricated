@@ -302,17 +302,16 @@ public class Xcls_ValaCompileErrors : Object
                 //_this.compile_result_store.el.get_value(iter, 1, out lvalue);
                 //var line = (int) lvalue;
                 
-                 
-                 var f = fname;
-                 Regex regex;
+                
+               var  bjsf = "";
                 try {             
-                    regex = new Regex("\\.vala$");
-                } catch (GLib.RegexError e) {
-                    return false;
-                }
+                   var  regex = new Regex("\\.vala$");
+                
                  
-                var bjsf = regex.replace(f,f.length , 0 , ".bjs");
-                    
+                    bjsf = regex.replace(fname,fname.length , 0 , ".bjs");
+                 } catch (GLib.RegexError e) {
+                    return false;
+                }   
                 var p = _this.window.project;
                     
                     
