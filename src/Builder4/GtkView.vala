@@ -353,9 +353,9 @@ public class Xcls_GtkView : Object
                 this.el.set_mark_attributes ("error", attrs, 1);
                 
                  var wattrs = new Gtk.SourceMarkAttributes();
-                var  pink = new Gdk.RGBA();
-                pink.parse ( "blue");
-                wattrs.set_background ( pink);
+                var  blue = new Gdk.RGBA();
+                blue.parse ( "blue");
+                wattrs.set_background ( blue);
                 wattrs.set_icon_name ( "process-stop");    
                 wattrs.query_tooltip_text.connect(( mark) => {
                     //print("tooltip query? %s\n", mark.name);
@@ -367,9 +367,9 @@ public class Xcls_GtkView : Object
              
                 
                  var dattrs = new Gtk.SourceMarkAttributes();
-                var  pink = new Gdk.RGBA();
-                pink.parse ( "blue");
-                dattrs.set_background ( pink);
+                var  purple = new Gdk.RGBA();
+                purple.parse ( "purple");
+                dattrs.set_background ( purple);
                 dattrs.set_icon_name ( "process-stop");    
                 dattrs.query_tooltip_text.connect(( mark) => {
                     //print("tooltip query? %s\n", mark.name);
