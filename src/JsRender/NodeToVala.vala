@@ -183,11 +183,12 @@ public class JsRender.NodeToVala : Object {
 		if (this.depth > 0) {
 			return;
 		}
-				// Global Vars..
-				//this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
+		// Global Vars..
+		//this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
 
-		
-		this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
+		this.addLine("%sstatic %s _%s;".printf(this.inpad, this.xcls, this.node.xvala_id));
+		this.addLine("");
+		//this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
 				
 				
 	}
