@@ -368,7 +368,7 @@ public class Xcls_GtkView : Object
                 
                  var dattrs = new Gtk.SourceMarkAttributes();
                 var  purple = new Gdk.RGBA();
-                purple.parse ( "purple");
+                purple.parse ( "#F1D9F7");
                 dattrs.set_background ( purple);
                 dattrs.set_icon_name ( "process-stop");    
                 dattrs.query_tooltip_text.connect(( mark) => {
