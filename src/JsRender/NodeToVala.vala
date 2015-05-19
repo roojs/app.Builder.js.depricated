@@ -412,6 +412,8 @@ public class JsRender.NodeToVala : Object {
 			this.addLine( this.ipad + "_this = this;");
 			return;
 		}
+		// for non top level = _this point to owner, and id is added to the owner object..
+		
 		this.addLine( this.ipad + "_this = _owner;");
 
 		if (this.node.props.has_key("id")
