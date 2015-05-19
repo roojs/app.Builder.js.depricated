@@ -431,16 +431,17 @@ public class Xcls_GtkView : Object
                 
             sbuf.get_bounds (out start, out end);
             sbuf.remove_source_marks (start, end, null);
-            
+             Gtk.TextIter iter; 
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
-                    Gtk.TextIter iter; 
+                   
                     sbuf.get_iter_at_line(out iter, i);
                     sbuf.create_source_mark(null, "grey", iter);
                     
                 }
             
             }
+            sbuf.get_iter_at_line(out iter, i);
             
             
         }
