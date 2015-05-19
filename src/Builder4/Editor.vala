@@ -484,7 +484,7 @@ public class Editor : Object
                 _this.ptype,
                 _this.file,
                 _this.node 
-                }
+                
                 
             );
              
