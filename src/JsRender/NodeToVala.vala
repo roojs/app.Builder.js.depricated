@@ -412,7 +412,7 @@ public class JsRender.NodeToVala : Object {
 			this.addLine( this.ipad + "_this = this;");
 			return;
 		}
-		// for non top level = _this point to owner, and id is added to the owner object..
+		// for non top level = _this point to owner, and _this.ID is set
 		
 		this.addLine( this.ipad + "_this = _owner;");
 
