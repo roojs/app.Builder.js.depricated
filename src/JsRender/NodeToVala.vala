@@ -801,22 +801,23 @@ public class JsRender.NodeToVala : Object {
 
 	void iterChildren()
 	{
+		this.node.line_end = this.curline;
 			
-			if (this.depth > 0) {
+		if (this.depth > 0) {
 			this.ret+= this.inpad + "}\n";
-			}
+		}
 		
 		var iter = this.node.items.list_iterator();
 		var i = -1;
 		while (iter.next()) {
-				this.ret += this.mungeChild(iter.get());
+			this.ret += this.mungeChild(iter.get());
 		}
 			 
-			if (this.depth < 1) {
-				this.ret+= this.inpad + "}\n";
-			}
-			
+		if (this.depth < 1) {
+			this.ret+= this.inpad + "}\n";
 		}
+			
+	}
 
 	string padMultiline(string pad, string str)
 	{
