@@ -643,10 +643,9 @@ public class JsRender.NodeToVala : Object {
 			"( _this " + xargs + ");" ;
 			
 			// this is only needed if it does not have an ID???
-			//this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...
+			this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...
 			
 			if (ci.has("* prop")) {
-				this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...			
 				this.addLine(ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;");
 				continue;
 			} 
@@ -663,19 +662,20 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			var pack = packing[0];
-			this.ret += this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
-					   (packing.length > 1 ? 
+			this.addLine(this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
+				   (packing.length > 1 ? 
 						(", " + string.joinv(",", packing).substring(pack.length+1))
 					:
 							""
-						) + " );\n";
+						) + " );");
 	
 					  
 			if (ci.xvala_id[0] != '+') {
 				continue; // skip generation of children?
 						
 			}
-			this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
+			// this.{id - without the '+'} = the element...
+			this.addLine(this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";");
 				  
 		}
 	}
