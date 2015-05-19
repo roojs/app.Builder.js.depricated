@@ -298,9 +298,9 @@ public class Xcls_ValaCompileErrors : Object
                 GLib.Value value;
                 _this.compile_result_store.el.get_value(iter, 3, out value);
                 var fname = (string)value;
-                GLib.Value lvalue;
-                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
-                var line = (int) lvalue;
+                //GLib.Value lvalue;
+                //_this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                //var line = (int) lvalue;
                 
                  
                  var f = fname;
