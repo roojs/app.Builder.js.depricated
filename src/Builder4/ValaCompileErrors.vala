@@ -280,12 +280,35 @@ public class Xcls_ValaCompileErrors : Object
                 
                  
                  // right click.
-                 if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1  ) {    
+                 if (ev.type != Gdk.EventType.2BUTTON_PRESS  || ev.button != 1  ) {    
                     // show popup!.   
                         
                      
                     return false;
                 }
+                
+                
+                
+                /*
+                 var f = _this.sourceview.curfname;
+                            
+                    Regex regex = new Regex("\\.vala$");
+                
+                    var bjsf = regex.replace(f,f.length , 0 , ".bjs");
+                    
+                    var p = _this.window.project;
+                    
+                    
+                    
+                    var jsr = p.getByPath(bjsf);
+                    if (jsr != null) {
+                        _this.window.windowstate.fileViewOpen(jsr);
+                        
+                        return;
+                    
+                    }
+                
+                
               });
             this.el.cursor_changed.connect( () => {
                 var sel = this.el.get_selection();
