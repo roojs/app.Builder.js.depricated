@@ -139,7 +139,7 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-	public void run(SpawnFinish finish) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	public void run( ) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
 	{
 		
 		 
@@ -209,7 +209,7 @@ public class Spawn : Object
 			this.tidyup();
 			//print("DONE TIDYUP");
 			
-			finish(this.result, this.output, this.stderr);
+			this.complete(this.result, this.output, this.stderr);
 			
 		});
 	    
