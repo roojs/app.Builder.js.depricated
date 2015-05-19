@@ -119,7 +119,7 @@ public class JsRender.Node : Object {
 		this.parent = null;
 		this.line_start = -1;
 		this.line_end = -1;		
-		this.lines = new Gee.ArrayList();
+		this.lines = new Gee.ArrayList<int>();
 		this.line_map = new Gee.HashMap<int,string>();
 		
 	}
@@ -128,7 +128,14 @@ public class JsRender.Node : Object {
 		this.lines.add(line);
 		this.line_map.set(line, type +":" + prop);
 	}
-	
+	public void sortLines() {
+		this.lines.sort((a,b) {
+			if (a == b) {
+				return 0;
+			}
+			return a < b ? -1 : 1;
+		});
+	}
 	
 	public string uid()
 	{
