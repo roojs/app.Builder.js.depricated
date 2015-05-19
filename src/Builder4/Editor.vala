@@ -527,7 +527,7 @@ public class Editor : Object
         	    }
                     
                     
-                    this.el.create_source_mark(msg, "error", iter);
+                    this.el.create_source_mark(msg, type, iter);
                 } );
                 return false;
             
