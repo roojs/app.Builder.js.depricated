@@ -483,14 +483,7 @@ public class Editor : Object
                  _this.key, 
                 _this.ptype,
                 _this.file,
-                _this.node,
-                (obj) => {
-                    this.check_running = false;
-                    this.highlightErrorsJson(obj);            
-                    
-                    //var validate_res = p.validateVala.end(res);
-                    //this.highlightErrors(validate_res);
-        
+                _this.node 
                 }
                 
             );
