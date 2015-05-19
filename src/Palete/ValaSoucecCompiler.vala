@@ -3,12 +3,7 @@
 
 namespace Palete {
 	
-	public errordomain ValaSourceError {
-		INVALID_FORMAT 
-	}
-	
-	public delegate  void ValaSourceResult(Json.Object res);
-	
+	 
 	public class ValaSourceReport  : Vala.Report {
 
 		public string filepath;
@@ -121,7 +116,7 @@ namespace Palete {
 
 	}
 
-	public class ValaSource : Object {
+	public class ValaSourceCompiler : Object {
 
 		public static void jerr(string str)
 		{
