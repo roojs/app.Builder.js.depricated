@@ -103,8 +103,8 @@ public class JsRender.Node : Object {
 	public string xvala_xcls; // 'Xcls_' + id;
 	public string xvala_id; // item id or ""
 	public int line;
-	public Gee.HashMap<string,line> proplines;
-	public Gee.HashMap<string,line> listenlines;
+	public Gee.HashMap<string,int> proplines;
+	public Gee.HashMap<string,int> listenlines;
 
 
 	public Node()
@@ -116,6 +116,10 @@ public class JsRender.Node : Object {
 		this.xvala_xcls = "";
 		this.xvala_id = "";
 		this.parent = null;
+		this.line = -1;
+		this.proplines = new Gee.HashMap<string,int>();
+		this.listenlines = Gee.HashMap<string,int>();
+		
 	}
 
 	
