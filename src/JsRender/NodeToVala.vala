@@ -402,10 +402,13 @@ public class JsRender.NodeToVala : Object {
 		
 
 	}
+	/**
+	 *  make sure _this is defined..
+	 */
 	void addUnderThis() 
 	{
 			// public static?
-			if (depth < 1) {
+		if (depth < 1) {
 			this.ret += this.ipad + "_this = this;\n";
 			return;
 		}
