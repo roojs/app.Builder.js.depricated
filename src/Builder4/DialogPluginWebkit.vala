@@ -1,6 +1,6 @@
 static Xcls_DialogPluginWebkit  _DialogPluginWebkit;
 
-public class Xcls_DialogPluginWebkit : Object 
+public class Xcls_DialogPluginWebkit : Object
 {
     public Gtk.Dialog el;
     private Xcls_DialogPluginWebkit  _this;
@@ -18,7 +18,7 @@ public class Xcls_DialogPluginWebkit : Object
     public string tmpjs;
     public string result_json;
 
-    // ctor 
+    // ctor
     public Xcls_DialogPluginWebkit()
     {
         _this = this;
@@ -45,7 +45,7 @@ public class Xcls_DialogPluginWebkit : Object
         child_3.ref();
         this.el.add_action_widget (  child_3.el , 1 );
 
-        // listeners 
+        //listeners
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true; 
@@ -53,7 +53,7 @@ public class Xcls_DialogPluginWebkit : Object
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public string show (Gtk.Window ?parent, Project.Project project, string cls, string tbl) {// JsRender.Node node) {
      
         if (parent  != null) {
@@ -185,7 +185,7 @@ public class Xcls_DialogPluginWebkit : Object
     
     
     }
-    public class Xcls_Box2 : Object 
+    public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
         private Xcls_DialogPluginWebkit  _this;
@@ -193,7 +193,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box2(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -208,9 +208,9 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.pack_start (  child_0.el , false,true,3 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_ScrolledWindow3 : Object 
+    public class Xcls_ScrolledWindow3 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_DialogPluginWebkit  _this;
@@ -218,7 +218,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_ScrolledWindow3(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -232,14 +232,14 @@ public class Xcls_DialogPluginWebkit : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_webview : Object 
+    public class Xcls_webview : Object
     {
         public WebKit.WebView el;
         private Xcls_DialogPluginWebkit  _this;
@@ -247,7 +247,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_webview(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -258,7 +258,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // set gobject values
 
-            // init method 
+            // init method
 
             {
                 // this may not work!?
@@ -290,7 +290,7 @@ public class Xcls_DialogPluginWebkit : Object
                 
             }
 
-            // listeners 
+            //listeners
             this.el.script_dialog.connect( (dialog) => {
                 if (this.el == null) {
                     return true;
@@ -327,9 +327,12 @@ public class Xcls_DialogPluginWebkit : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button5 : Object 
+
+
+
+    public class Xcls_Button5 : Object
     {
         public Gtk.Button el;
         private Xcls_DialogPluginWebkit  _this;
@@ -337,7 +340,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button5(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -349,9 +352,10 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.label = "Reload";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button6 : Object 
+
+    public class Xcls_Button6 : Object
     {
         public Gtk.Button el;
         private Xcls_DialogPluginWebkit  _this;
@@ -359,7 +363,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button6(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -371,9 +375,10 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.label = "Cancel";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button7 : Object 
+
+    public class Xcls_Button7 : Object
     {
         public Gtk.Button el;
         private Xcls_DialogPluginWebkit  _this;
@@ -381,7 +386,7 @@ public class Xcls_DialogPluginWebkit : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button7(Xcls_DialogPluginWebkit _owner )
         {
             _this = _owner;
@@ -393,6 +398,7 @@ public class Xcls_DialogPluginWebkit : Object
             this.el.label = "OK";
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
 }
