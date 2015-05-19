@@ -307,7 +307,7 @@ public class Xcls_ValaCompileErrors : Object
                  Regex regex;
                 try {             
                     regex = new Regex("\\.vala$");
-                } catch (Error e) {
+                } catch (GLib.RegexError e) {
                     return false;
                 }
                 
