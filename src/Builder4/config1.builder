@@ -60,7 +60,8 @@
             "../Palete/VapiParser.vala",
             "../Builder4/PopoverFileDetails.vala",
             "../../src/Spawn.vala",
-            "../Builder4/ValaCompileErrors.vala"
+            "../Builder4/ValaCompileErrors.vala",
+            "../Palete/ValaSourceCompiler.vala"
         ],
         "packages" : [
         ]
