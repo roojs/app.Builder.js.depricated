@@ -75,6 +75,7 @@
          "xtype" : "SourceView",
          "$ xns" : "Gtk",
          "gboolean show_line_numbers" : true,
+         "| return_type XXXX" : "() {\n\n}\n",
          "string curfname" : "",
          "gboolean editable" : false
         }

@@ -358,6 +358,9 @@ public class Xcls_GtkView : Object
         }
 
         // user defined functions
+        public return_type XXXX () {
+        
+        }
     }
 
 
