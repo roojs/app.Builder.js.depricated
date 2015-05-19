@@ -47,7 +47,6 @@
          "xtype" : "ComboBox",
          "* pack" : "pack_end,true,true,3",
          "$ xns" : "Gtk",
-         "| void setValue" : " (v)    {\n        var el = this.el;\n        el.set_active(-1);\n        \n        for (var i =0;i < this.data.length; i++ ) {\n            if (v == this.data.nth_datA(i)) {\n                el.set_active(ix);\n                return false;\n            }\n        }\n    }",
          "items" : [
           {
            "id" : "cellrender",

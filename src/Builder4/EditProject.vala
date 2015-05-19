@@ -229,17 +229,6 @@ public class EditProject : Object
                 }
                 return "";
         }
-        public void setValue (v)    {
-                var el = this.el;
-                el.set_active(-1);
-                
-                for (var i =0;i < this.data.length; i++ ) {
-                    if (v == this.data.nth_datA(i)) {
-                        el.set_active(ix);
-                        return false;
-                    }
-                }
-            }
     }
     public class Xcls_cellrender : Object
     {
