@@ -154,7 +154,7 @@ public class Xcls_GtkView : Object
             child_1.ref();
             var child_2 = new Xcls_ScrolledWindow5( _this );
             child_2.ref();
-            this.el.pack_start (  child_2.el , true,true,0 );
+            this.el.append_page (  child_2.el , _this.label_preview.el );
         }
 
         // user defined functions

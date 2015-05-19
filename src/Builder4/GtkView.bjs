@@ -42,7 +42,7 @@
        "utf8 label" : "Code"
       },
       {
-       "* pack" : "pack_start,true,true,0",
+       "* pack" : "append_page,_this.label_preview.el",
        "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",
        "items" : [
