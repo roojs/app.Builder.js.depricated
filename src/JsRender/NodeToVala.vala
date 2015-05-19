@@ -643,15 +643,13 @@ public class JsRender.NodeToVala : Object {
 			"( _this " + xargs + ");" ;
 			
 			// this is only needed if it does not have an ID???
-			this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
+			//this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...
 			
 			if (ci.has("* prop")) {
-				// 
+				this.addLine(this.ipad + "child_" + "%d".printf(i) +".ref();"); // we need to reference increase unnamed children...			
 				this.addLine(ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;");
 				continue;
-			} else {
-				
-			}
+			} 
 				
 
 	// not sure why we have 'true' in pack?!?
