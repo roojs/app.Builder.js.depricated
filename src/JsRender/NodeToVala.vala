@@ -524,25 +524,25 @@ public class JsRender.NodeToVala : Object {
 		var iter = this.myvars.list_iterator();
 		while(iter.next()) {
 			
-				var k = iter.get();
+			var k = iter.get();
 			
-				var ar  = k.strip().split(" ");
+			var ar  = k.strip().split(" ");
 			var kname = ar[ar.length-1];
 			
-				var v = this.node.props.get(k);
+			var v = this.node.props.get(k);
 			// ignore signals.. 
-				if (v.length < 1) {
-						continue; 
-				}
+			if (v.length < 1) {
+				continue; 
+			}
 			if (v == "FALSE" || v == "TRUE") {
 				v = v.down();
 			}
-//FIXME -- check for raw string.. "string XXXX"
+			//FIXME -- check for raw string.. "string XXXX"
 			
 			// if it's a string...
 			
-				this.ret += this.ipad + "this." + kname + " = " +   v +";\n";
-			}
+			this.addLine(this.ipad + "this." + kname + " = " +   v +";");
+		}
 	}
 
 	
