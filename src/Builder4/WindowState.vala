@@ -81,8 +81,10 @@ public class WindowState : Object
 		this.children_loaded = true;
 		
 		this.left_tree.node_selected.connect((sel) => {
-			this.window_gladeview.sourceview.leftTreeNodeSelected(sel);
+			this.window_gladeview.sourceview.nodeSelected(sel);
 		});
+		this.valasource = new ValaSource();
+		
 		
 	}
 
