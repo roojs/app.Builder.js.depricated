@@ -354,7 +354,7 @@ public class Xcls_GtkView : Object
                 
                  var wattrs = new Gtk.SourceMarkAttributes();
                 var  blue = new Gdk.RGBA();
-                blue.parse ( "#d9edf7");
+                blue.parse ( "#ABF4EB");
                 wattrs.set_background ( blue);
                 wattrs.set_icon_name ( "process-stop");    
                 wattrs.query_tooltip_text.connect(( mark) => {
