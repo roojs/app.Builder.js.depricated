@@ -7,7 +7,8 @@
  * 
  *  each window should have one of these...
  * 
- *  
+ *  x = new ValaSource();
+ *  x.connect.compiled(... do something with results... );
  * 
  * 
  */
