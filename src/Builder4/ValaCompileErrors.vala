@@ -304,8 +304,9 @@ public class Xcls_ValaCompileErrors : Object
                 
                  
                  var f = fname;
+                 Regex regex;
                 try {             
-                    Regex regex = new Regex("\\.vala$");
+                    regex = new Regex("\\.vala$");
                 } catch (Error e) {
                     return false;
                 }
