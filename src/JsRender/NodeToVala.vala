@@ -779,19 +779,21 @@ public class JsRender.NodeToVala : Object {
 			// user defined functions...
 		var iter = this.node.props.map_iterator();
 		while(iter.next()) {
-				var k = iter.get_key();
+			var k = iter.get_key();
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
 			// HOW TO DETERIME if its a method?            
-				if (k[0] != '|') {
-						//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
-						continue;
-			}       
-				// function in the format of {type} (args) { .... }
-				var kk = k.substring(2);
-				var vv = iter.get_value();
-				this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv) + "\n";
+			if (k[0] != '|') {
+					//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
+					continue;
+			}
+			
+			// function in the format of {type} (args) { .... }
+			var kk = k.substring(2);
+			var vv = iter.get_value();
+			this.node.proplines.set(k, this.curline);
+			this.addMultiLine(this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv));;
 			
 				
 			}
