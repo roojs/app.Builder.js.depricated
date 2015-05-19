@@ -49,6 +49,7 @@ public class WindowState : Object
 	
 	
 	public Palete.ValaSource valasource; // the spawner that runs the vala compiler.
+	public Json.Object last_compile_result;
 	
 	// ctor 
 	public WindowState(Xcls_MainWindow win)
@@ -883,6 +884,8 @@ public class WindowState : Object
 		
 
 	}
+	
+	
 	public void valaCompiled(Json.Object obj)
 		{
 			// vala has finished compiling...
