@@ -487,7 +487,7 @@ public class Xcls_GtkView : Object
                 }   
         
         
-            var lines = err.get_object_member(_this.file.path);
+            var lines = err.get_object_member(valafn);
             
             var offset = 1;
             if (obj.has_member("line_offset")) {
