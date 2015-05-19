@@ -35,8 +35,7 @@ namespace Palete {
  		Project.Gtk project;
 		public string build_module;
 		public string filepath;
-		public string original_filepath;
-		public int line_offset = 0;
+ 		public int line_offset = 0;
 		
 		// file.project , file.path, file.build_module, ""
 		public ValaSource(
@@ -62,8 +61,7 @@ namespace Palete {
 		//}
 
 		public void checkFileWithNodePropChange(
-		 
-				  
+		  
 					JsRender.JsRender file,
 					JsRender.Node node, 
 					string prop,
