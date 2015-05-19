@@ -427,9 +427,7 @@ public class JsRender.NodeToVala : Object {
 				this.addLine( this.ipad + "_this." + node.xvala_id  + " = this;");
 		   
 		}
-				
-				
-   
+			 
 	}
 
 	void addWrappedCtor()
@@ -449,7 +447,7 @@ public class JsRender.NodeToVala : Object {
 		if (this.node.has("* ctor")) {
 			
 			
-				this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
+			this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
 			return;
 		}
 		// the ctor arguments...
