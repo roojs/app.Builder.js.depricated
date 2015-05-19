@@ -66,10 +66,7 @@ public class JsRender.NodeToVala : Object {
 		node.line_end  = this.cur_line;
 		node.lines = new Gee.ArrayList();
 		node.line_map = new Gee.HashMap<int,string>();
-		
 		 
-		
-		
 		
 	}
 
@@ -315,7 +312,7 @@ public class JsRender.NodeToVala : Object {
 			}
 				
 			if (vv[0] == "@") {
-				this.node.proplines.set(k, this.cur_line);
+				this.node.setLine(this.cur_line, "p", k);
 				this.addLine(this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";");
 				
 				this.ignore(k);
@@ -339,8 +336,8 @@ public class JsRender.NodeToVala : Object {
 			}
 			
 			this.myvars.add(k);
-
-			this.node.proplines.set(k, this.cur_line);
+			this.node.setLine(this.cur_line, "p", k);
+			
 			this.addLine(this.pad + "public " + 
 				(k[0] == '$' || k[0] == '#' ? k.substring(2) : k ) + ";");
 				
@@ -457,7 +454,7 @@ public class JsRender.NodeToVala : Object {
 		}
 		*/
 		if (this.node.has("* ctor")) {
-			this.node.proplines.set("* ctor", this.cur_line);
+			this.node.setLine(this.cur_line, "p", "* ctor");
 			this.addLine(this.ipad + "this.el = " + this.node.get("* ctor")+ ";");
 			return;
 		}
@@ -505,12 +502,13 @@ public class JsRender.NodeToVala : Object {
 				args += v;
 
 			}
-			this.node.proplines.set("* xtype", this.cur_line);
+			this.node.setLine(this.cur_line, "p", "* xtype");
+			
 			this.addLine(this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );") ;
 			return;
 			
 		}
-		this.node.proplines.set("* xtype", this.cur_line);
+		this.node.setLine(this.cur_line, "p", "* xtype");;
 		
 		this.addLine(this.ipad + "this.el = new " + this.cls + "();");
 
@@ -699,7 +697,8 @@ public class JsRender.NodeToVala : Object {
 		this.addLine();
 		this.addLine(ipad + "// init method");
 		this.addLine();
-		this.node.proplines.set("init", this.cur_line);
+		this.node.setLine(this.cur_line, "p", "init");
+		
 		this.addMultiLine(ipad + this.padMultiline(ipad, this.node.get("init")) );
 
 	 }
@@ -718,11 +717,12 @@ public class JsRender.NodeToVala : Object {
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
-				this.node.listenlines.set(k, this.cur_line);
-				this.addMultiLine(this.ipad + "this.el." + k + ".connect( " + 
+			
+			this.node.setLine(this.cur_line, "l", k);
+			this.addMultiLine(this.ipad + "this.el." + k + ".connect( " + 
 					this.padMultiline(this.ipad,v) +");"); 
 				
-			}
+		}
 	}    
 	void addEndCtor()
 	{
@@ -795,7 +795,7 @@ public class JsRender.NodeToVala : Object {
 			// function in the format of {type} (args) { .... }
 			var kk = k.substring(2);
 			var vv = iter.get_value();
-			this.node.proplines.set(k, this.cur_line);
+			this.node.setLine(this.cur_line, "p", k);
 			this.addMultiLine(this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv));;
 			
 				
