@@ -308,11 +308,11 @@ public class JsRender.NodeToVala : Object {
 				continue;
 			}
 				
-				if (vv[0] == "@") {
-					this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
+			if (vv[0] == "@") {
+				this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
 				continue;
-				}
+			}
 			var min = (vv[0] == "$" || vv[0] == "#") ? 3 : 2; 
 			if (vv.length < min) {
 				// skip 'old js style properties without a type'
