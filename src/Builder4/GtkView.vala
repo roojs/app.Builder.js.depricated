@@ -451,10 +451,13 @@ public class Xcls_GtkView : Object
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
-             Gtk.TextIter end;     
-                this.el.get_bounds (out start, out end);
+             Gtk.TextIter end;   
+             
+             var buf = this.el.get_buffer();
+               
+                buf.get_bounds (out start, out end);
                 
-                this.el.remove_source_marks (start, end, type);
+                buf.remove_source_marks (start, end, type);
                          
              
              // we should highlight other types of errors..
@@ -492,7 +495,7 @@ public class Xcls_GtkView : Object
                     if (eline > tlines || eline < 0) {
                         return;
                     }
-                    this.el.get_iter_at_line( out iter, eline);
+                    buf.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
                     var msg  = "Line: %d".printf(eline+1);
                     var ar = lines.get_array_member(line);
@@ -502,7 +505,7 @@ public class Xcls_GtkView : Object
         	    }
                     
                     
-                    this.el.create_source_mark(msg, type, iter);
+                    buf.create_source_mark(msg, type, iter);
                 } );
                 return false;
             
