@@ -263,6 +263,8 @@ public class Editor : Object
                 description.set_size(8000);
                 this.el.override_font(description);
             
+            
+              
                 var attrs = new Gtk.SourceMarkAttributes();
                 var  pink = new Gdk.RGBA();
                 pink.parse ( "pink");
@@ -273,7 +275,33 @@ public class Editor : Object
                     return mark.name;
                 });
                 
-                this.el.set_mark_attributes ("error", attrs, 1);
+                this.el.set_mark_attributes ("ERR", attrs, 1);
+                
+                 var wattrs = new Gtk.SourceMarkAttributes();
+                var  blue = new Gdk.RGBA();
+                blue.parse ( "blue");
+                wattrs.set_background ( blue);
+                wattrs.set_icon_name ( "process-stop");    
+                wattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("WARN", wattrs, 1);
+                
+             
+                
+                 var dattrs = new Gtk.SourceMarkAttributes();
+                var  purple = new Gdk.RGBA();
+                purple.parse ( "purple");
+                dattrs.set_background ( purple);
+                dattrs.set_icon_name ( "process-stop");    
+                dattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("DEPR", dattrs, 1);
 
             //listeners
             this.el.key_release_event.connect( (event) => {
