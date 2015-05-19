@@ -337,6 +337,9 @@ public class Xcls_GtkView : Object
                 description.set_size(8000);
                 this.el.override_font(description);
             
+              
+              
+              
                 var attrs = new Gtk.SourceMarkAttributes();
                 var  pink = new Gdk.RGBA();
                 pink.parse ( "pink");
@@ -349,7 +352,33 @@ public class Xcls_GtkView : Object
                 
                 this.el.set_mark_attributes ("error", attrs, 1);
                 
-               
+                 var wattrs = new Gtk.SourceMarkAttributes();
+                var  pink = new Gdk.RGBA();
+                pink.parse ( "blue");
+                wattrs.set_background ( pink);
+                wattrs.set_icon_name ( "process-stop");    
+                wattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("warning", wattrs, 1);
+                
+             
+                
+                 var dattrs = new Gtk.SourceMarkAttributes();
+                var  pink = new Gdk.RGBA();
+                pink.parse ( "blue");
+                dattrs.set_background ( pink);
+                dattrs.set_icon_name ( "process-stop");    
+                dattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("warning", dattrs, 1);
+                
+                
                 
             }
         }
