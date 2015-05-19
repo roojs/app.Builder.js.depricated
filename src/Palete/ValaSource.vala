@@ -100,7 +100,7 @@ namespace Palete {
 			
 		}
 		Spawn compiler;
-		ValaSourceResult result_callback;
+		 
 		public void checkStringSpawn(
 					string contents 
 				)
