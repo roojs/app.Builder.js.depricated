@@ -33,19 +33,19 @@
 /*32*/         this.el.license_type = Gtk.License.LGPL_3_0;
 /*33*/ 
 /*34*/         //listeners
-        this.el.delete_event.connect( (self, event) => {
+/*38*/         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true; 
         });
-        this.el.response.connect( (rid) => {
+/*41*/         this.el.response.connect( (rid) => {
             this.el.hide();
         });
-/*44*/     }
-/*45*/ 
-/*46*/     // user defined functions
-    public    void show (Gtk.Window parent) {
+/*42*/     }
+/*43*/ 
+/*44*/     // user defined functions
+/*49*/     public    void show (Gtk.Window parent) {
         this.el.set_transient_for(parent);
         this.el.modal = true;
         this.el.show();
     }
-/*53*/ }
+/*50*/ }
