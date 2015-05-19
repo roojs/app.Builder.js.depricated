@@ -606,6 +606,8 @@ public class JsRender.NodeToVala : Object {
 	}
 	/**
 	 *  pack the children into the parent.
+	 * 
+	 * if the child's id starts with '*' then it is not packed...
 	 */
 
 	void addChildren()
@@ -615,62 +617,62 @@ public class JsRender.NodeToVala : Object {
 			return;
 		}
 			 
-			var iter = this.node.items.list_iterator();
+		var iter = this.node.items.list_iterator();
 		var i = -1;
 		while (iter.next()) {
 			i++;
 				
-					var ci = iter.get();
+			var ci = iter.get();
 
 			if (ci.xvala_id[0] == '*') {
-						continue; // skip generation of children?
-					}
+				continue; // skip generation of children?
+			}
 					
-					var xargs = "";
-					if (ci.has("* args")) {
-						
-						var ar = ci.get("* args").split(",");
-						for (var ari = 0 ; ari < ar.length; ari++ ) {
+			var xargs = "";
+			if (ci.has("* args")) {
+				
+				var ar = ci.get("* args").split(",");
+				for (var ari = 0 ; ari < ar.length; ari++ ) {
 					var arg = ar[ari].split(" ");
-								xargs += "," + arg[arg.length -1];
-						}
-					}
+							xargs += "," + arg[arg.length -1];
+				}
+			}
 					
-					this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
-					"( _this " + xargs + ");\n" ;
-					
-					this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
-					
-					if (ci.has("* prop")) {
-						this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
-						continue;
-					}
+			this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
+			"( _this " + xargs + ");\n" ;
+			
+			this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
+			
+			if (ci.has("* prop")) {
+				this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
+				continue;
+			}
 
-			// not sure why we have 'true' in pack?!?
-					if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
-						continue;
-					}
-					
-					string[]  packing =  { "add" };
+	// not sure why we have 'true' in pack?!?
+			if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
+				continue;
+			}
+			
+			string[]  packing =  { "add" };
 			if (ci.has("pack")) {
 				packing = ci.get("pack").split(",");
 			}
-					
-					var pack = packing[0];
-			this.ret += this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
-							   (packing.length > 1 ? 
-								(", " + string.joinv(",", packing).substring(pack.length+1))
-							:
-									""
-								) + " );\n";
 			
-							  
-					if (ci.xvala_id[0] != '+') {
-						continue; // skip generation of children?
-								
-					}
-					this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
-						  
+			var pack = packing[0];
+			this.ret += this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
+					   (packing.length > 1 ? 
+						(", " + string.joinv(",", packing).substring(pack.length+1))
+					:
+							""
+						) + " );\n";
+	
+					  
+			if (ci.xvala_id[0] != '+') {
+				continue; // skip generation of children?
+						
+			}
+			this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
+				  
 		}
 	}
 
