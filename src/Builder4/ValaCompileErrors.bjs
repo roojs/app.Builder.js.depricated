@@ -26,8 +26,8 @@
    "items" : [
     {
      "id" : "compile_view",
-     "* pack" : "add",
      "xtype" : "VBox",
+     "* pack" : "add",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -53,8 +53,8 @@
         },
         {
          "id" : "save_btn",
-         "* pack" : "pack_start,true,true,0",
          "xtype" : "Button",
+         "* pack" : "pack_start,true,true,0",
          "$ xns" : "Gtk",
          "utf8 label" : "Save",
          "bool visible" : false
@@ -62,9 +62,53 @@
        ]
       },
       {
+       "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
+       "xtype" : "ScrolledWindow",
+       "* pack" : "add",
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "listeners" : {
+          "cursor_changed" : "() => {\n    var sel = this.el.get_selection();\n\n    if (sel.count_selected_rows() < 1) {\n\n        print(\"selected rows < 1\\n\");\n        //??this.mo \n        return  ;\n    }\n        \n        //console.log('changed');\n     \n     Gtk.TreeIter iter;\n     Gtk.TreeModel mod;\n    sel.get_selected(out mod, out iter);\n    /*\n     store.set(citer, \n            0, file + \":\" + line, \n            1, int.parse(line), \n            2, GLib.Markup.escape_text(line + \": \" + msg), \n            3, file,-1);\n    \n    });\n    */\n    \n    \n    \n    // var val = \"\";\n    GLib.Value value;\n    _this.compile_result_store.el.get_value(iter, 3, out value);\n    var fname = (string)value;\n    GLib.Value lvalue;\n    _this.compile_result_store.el.get_value(iter, 1, out lvalue);\n    var line = (int) lvalue;\n    \n    \n    \n \n    \n    \n    print (\"loadfile %s : %d\", fname,line);\n    \n    _this.sourceview.loadFile(fname, line);\n    \n    \n            \n            \n}\n             "
+         },
+         "id" : "compile_tree",
+         "* init" : "{\n var description = new Pango.FontDescription();\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n",
+         "* pack" : "add",
+         "xtype" : "TreeView",
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "gint n_columns" : 4,
+           "id" : "compile_result_store",
+           "columns" : "  typeof(string), typeof(int), typeof(string), typeof(string) ",
+           "* pack" : "set_model",
+           "xtype" : "TreeStore",
+           "$ xns" : "Gtk"
+          },
+          {
+           "utf8 title" : "Compile output",
+           "* init" : "{\n  this.el.add_attribute(_this.renderer.el , \"markup\", 2 );\n \n}\n",
+           "xtype" : "TreeViewColumn",
+           "* pack" : "append_column",
+           "string id" : "column",
+           "$ xns" : "Gtk",
+           "items" : [
+            {
+             "id" : "renderer",
+             "* pack" : "pack_start,true",
+             "xtype" : "CellRendererText",
+             "$ xns" : "Gtk"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
        "id" : "hpane",
-       "* pack" : "pack_start,true,true,0",
        "xtype" : "HPaned",
+       "* pack" : "pack_start,true,true,0",
        "$ xns" : "Gtk",
        "items" : [
         {
@@ -88,8 +132,8 @@
         },
         {
          "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-         "xtype" : "ScrolledWindow",
          "* pack" : "add",
+         "xtype" : "ScrolledWindow",
          "$ xns" : "Gtk",
          "items" : [
           {
@@ -120,8 +164,8 @@
              "items" : [
               {
                "id" : "renderer",
-               "* pack" : "pack_start,true",
                "xtype" : "CellRendererText",
+               "* pack" : "pack_start,true",
                "$ xns" : "Gtk"
               }
              ]

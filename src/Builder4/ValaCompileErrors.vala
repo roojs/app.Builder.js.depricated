@@ -1,6 +1,6 @@
 static Xcls_ValaCompileErrors  _ValaCompileErrors;
 
-public class Xcls_ValaCompileErrors : Object 
+public class Xcls_ValaCompileErrors : Object
 {
     public Gtk.Popover el;
     private Xcls_ValaCompileErrors  _this;
@@ -14,6 +14,9 @@ public class Xcls_ValaCompileErrors : Object
     }
     public Xcls_compile_view compile_view;
     public Xcls_save_btn save_btn;
+    public Xcls_compile_tree compile_tree;
+    public Xcls_compile_result_store compile_result_store;
+    public Xcls_renderer renderer;
     public Xcls_hpane hpane;
     public Xcls_sourceview sourceview;
     public Xcls_compile_tree compile_tree;
@@ -26,7 +29,7 @@ public class Xcls_ValaCompileErrors : Object
     public JsRender.JsRender? file;
     public Json.Object notices;
 
-    // ctor 
+    // ctor
     public Xcls_ValaCompileErrors()
     {
         _this = this;
@@ -44,7 +47,7 @@ public class Xcls_ValaCompileErrors : Object
         child_0.ref();
         this.el.add (  child_0.el  );
 
-        // listeners 
+        //listeners
         this.el.closed.connect( () => {
             if (this.active) {
                 this.el.show();
@@ -54,7 +57,7 @@ public class Xcls_ValaCompileErrors : Object
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public void show (Json.Object tree, Gtk.Widget onbtn) {
     
             
@@ -126,7 +129,7 @@ public class Xcls_ValaCompileErrors : Object
         }       
         this.hpane.el.set_position( 0);
     }
-    public class Xcls_compile_view : Object 
+    public class Xcls_compile_view : Object
     {
         public Gtk.VBox el;
         private Xcls_ValaCompileErrors  _this;
@@ -134,7 +137,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_compile_view(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -147,14 +150,17 @@ public class Xcls_ValaCompileErrors : Object
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_hpane( _this );
+            var child_1 = new Xcls_ScrolledWindow7( _this );
             child_1.ref();
-            this.el.pack_start (  child_1.el , true,true,0 );
+            this.el.add (  child_1.el  );
+            var child_2 = new Xcls_hpane( _this );
+            child_2.ref();
+            this.el.pack_start (  child_2.el , true,true,0 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_HBox3 : Object 
+    public class Xcls_HBox3 : Object
     {
         public Gtk.HBox el;
         private Xcls_ValaCompileErrors  _this;
@@ -162,7 +168,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_HBox3(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -182,9 +188,9 @@ public class Xcls_ValaCompileErrors : Object
             this.el.pack_start (  child_2.el , true,true,0 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button4 : Object 
+    public class Xcls_Button4 : Object
     {
         public Gtk.Button el;
         private Xcls_ValaCompileErrors  _this;
@@ -192,7 +198,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button4(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -204,9 +210,10 @@ public class Xcls_ValaCompileErrors : Object
             this.el.label = "Compile and Run";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button5 : Object 
+
+    public class Xcls_Button5 : Object
     {
         public Gtk.Button el;
         private Xcls_ValaCompileErrors  _this;
@@ -214,7 +221,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button5(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -225,7 +232,7 @@ public class Xcls_ValaCompileErrors : Object
             // set gobject values
             this.el.label = "Edit";
 
-            // listeners 
+            //listeners
             this.el.clicked.connect( () => {
                 // is the file managed by the builder?
                 
@@ -251,9 +258,10 @@ public class Xcls_ValaCompileErrors : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_save_btn : Object 
+
+    public class Xcls_save_btn : Object
     {
         public Gtk.Button el;
         private Xcls_ValaCompileErrors  _this;
@@ -261,7 +269,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_save_btn(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -275,9 +283,211 @@ public class Xcls_ValaCompileErrors : Object
             this.el.visible = false;
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_hpane : Object 
+
+
+    public class Xcls_ScrolledWindow7 : Object
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_ScrolledWindow7(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_compile_tree( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // init method
+
+            {
+             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+             
+            
+            }
+        }
+
+        // user defined functions
+    }
+    public class Xcls_compile_tree : Object
+    {
+        public Gtk.TreeView el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_compile_tree(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            _this.compile_tree = this;
+            this.el = new Gtk.TreeView();
+
+            // my vars (dec)
+
+            // set gobject values
+            var child_0 = new Xcls_compile_result_store( _this );
+            child_0.ref();
+            this.el.set_model (  child_0.el  );
+            var child_1 = new Xcls_column( _this );
+            child_1.ref();
+            this.el.append_column (  child_1.el  );
+
+            // init method
+
+            {
+             var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
+            
+            }
+
+            //listeners
+            this.el.cursor_changed.connect( () => {
+                var sel = this.el.get_selection();
+            
+                if (sel.count_selected_rows() < 1) {
+            
+                    print("selected rows < 1\n");
+                    //??this.mo 
+                    return  ;
+                }
+                    
+                    //console.log('changed');
+                 
+                 Gtk.TreeIter iter;
+                 Gtk.TreeModel mod;
+                sel.get_selected(out mod, out iter);
+                /*
+                 store.set(citer, 
+                        0, file + ":" + line, 
+                        1, int.parse(line), 
+                        2, GLib.Markup.escape_text(line + ": " + msg), 
+                        3, file,-1);
+                
+                });
+                */
+                
+                
+                
+                // var val = "";
+                GLib.Value value;
+                _this.compile_result_store.el.get_value(iter, 3, out value);
+                var fname = (string)value;
+                GLib.Value lvalue;
+                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                var line = (int) lvalue;
+                
+                
+                
+             
+                
+                
+                print ("loadfile %s : %d", fname,line);
+                
+                _this.sourceview.loadFile(fname, line);
+                
+                
+                        
+                        
+            });
+        }
+
+        // user defined functions
+    }
+    public class Xcls_compile_result_store : Object
+    {
+        public Gtk.TreeStore el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_compile_result_store(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            _this.compile_result_store = this;
+            this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_column : Object
+    {
+        public Gtk.TreeViewColumn el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_column(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.TreeViewColumn();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.title = "Compile output";
+            var child_0 = new Xcls_renderer( _this );
+            child_0.ref();
+            this.el.pack_start (  child_0.el , true );
+
+            // init method
+
+            {
+              this.el.add_attribute(_this.renderer.el , "markup", 2 );
+             
+            }
+        }
+
+        // user defined functions
+    }
+    public class Xcls_renderer : Object
+    {
+        public Gtk.CellRendererText el;
+        private Xcls_ValaCompileErrors  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_renderer(Xcls_ValaCompileErrors _owner )
+        {
+            _this = _owner;
+            _this.renderer = this;
+            this.el = new Gtk.CellRendererText();
+
+            // my vars (dec)
+
+            // set gobject values
+        }
+
+        // user defined functions
+    }
+
+
+
+
+    public class Xcls_hpane : Object
     {
         public Gtk.HPaned el;
         private Xcls_ValaCompileErrors  _this;
@@ -285,7 +495,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_hpane(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -295,17 +505,17 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_ScrolledWindow8( _this );
+            var child_0 = new Xcls_ScrolledWindow13( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_ScrolledWindow10( _this );
+            var child_1 = new Xcls_ScrolledWindow15( _this );
             child_1.ref();
             this.el.add (  child_1.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_ScrolledWindow8 : Object 
+    public class Xcls_ScrolledWindow13 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -313,8 +523,8 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
-        public Xcls_ScrolledWindow8(Xcls_ValaCompileErrors _owner )
+        // ctor
+        public Xcls_ScrolledWindow13(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -327,9 +537,9 @@ public class Xcls_ValaCompileErrors : Object
             this.el.add (  child_0.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_sourceview : Object 
+    public class Xcls_sourceview : Object
     {
         public Gtk.SourceView el;
         private Xcls_ValaCompileErrors  _this;
@@ -338,7 +548,7 @@ public class Xcls_ValaCompileErrors : Object
             // my vars (def)
         public string curfname;
 
-        // ctor 
+        // ctor
         public Xcls_sourceview(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -352,7 +562,7 @@ public class Xcls_ValaCompileErrors : Object
             this.el.show_line_marks = true;
             this.el.show_line_numbers = true;
 
-            // init method 
+            // init method
 
             {
                 this.curfname = "";
@@ -375,7 +585,7 @@ public class Xcls_ValaCompileErrors : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
         public void loadFile (string fname, int line ) {
         
             
@@ -487,7 +697,9 @@ public class Xcls_ValaCompileErrors : Object
         
         }
     }
-    public class Xcls_ScrolledWindow10 : Object 
+
+
+    public class Xcls_ScrolledWindow15 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_ValaCompileErrors  _this;
@@ -495,8 +707,8 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
-        public Xcls_ScrolledWindow10(Xcls_ValaCompileErrors _owner )
+        // ctor
+        public Xcls_ScrolledWindow15(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -508,7 +720,7 @@ public class Xcls_ValaCompileErrors : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             {
              this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
@@ -517,9 +729,9 @@ public class Xcls_ValaCompileErrors : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_compile_tree : Object 
+    public class Xcls_compile_tree : Object
     {
         public Gtk.TreeView el;
         private Xcls_ValaCompileErrors  _this;
@@ -527,7 +739,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_compile_tree(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -544,7 +756,7 @@ public class Xcls_ValaCompileErrors : Object
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
-            // init method 
+            // init method
 
             {
              var description = new Pango.FontDescription();
@@ -553,7 +765,7 @@ public class Xcls_ValaCompileErrors : Object
             
             }
 
-            // listeners 
+            //listeners
             this.el.cursor_changed.connect( () => {
                 var sel = this.el.get_selection();
             
@@ -604,9 +816,9 @@ public class Xcls_ValaCompileErrors : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_compile_result_store : Object 
+    public class Xcls_compile_result_store : Object
     {
         public Gtk.TreeStore el;
         private Xcls_ValaCompileErrors  _this;
@@ -614,7 +826,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_compile_result_store(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -626,9 +838,10 @@ public class Xcls_ValaCompileErrors : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_column : Object 
+
+    public class Xcls_column : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_ValaCompileErrors  _this;
@@ -636,7 +849,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_column(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -650,7 +863,7 @@ public class Xcls_ValaCompileErrors : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
-            // init method 
+            // init method
 
             {
               this.el.add_attribute(_this.renderer.el , "markup", 2 );
@@ -658,9 +871,9 @@ public class Xcls_ValaCompileErrors : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_renderer : Object 
+    public class Xcls_renderer : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_ValaCompileErrors  _this;
@@ -668,7 +881,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_renderer(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
@@ -680,6 +893,12 @@ public class Xcls_ValaCompileErrors : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
+
+
+
+
 }
