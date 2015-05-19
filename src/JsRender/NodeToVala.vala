@@ -52,7 +52,7 @@ public class JsRender.NodeToVala : Object {
 		this.xcls = node.xvala_xcls;
 		this.ret = "";
 		this.cur_line = parent == null ? 0 : parent.cur_line;
-		node.line = this.cur_line;
+		
 		
 		this.top = parent == null ? this : parent.top;
 		this.ignoreList = new Gee.ArrayList<string>();
@@ -60,6 +60,13 @@ public class JsRender.NodeToVala : Object {
 		this.myvars = new Gee.ArrayList<string>();
 		this.vitems = new Gee.ArrayList<Node>();
 		this.file = null;
+		
+		node.line = this.cur_line;
+		node.proplines = new Gee.HashMap<string,int>();
+		node.listenlines = Gee.HashMap<string,int>();
+		
+		
+		
 	}
 
 	public int vcnt = 0;
