@@ -60,7 +60,7 @@ public class JsRender.NodeToVala : Object {
 	}
 	public void  toValaName(Node item, int depth =0) 
 	{
-			this.vcnt++;
+		this.vcnt++;
 
 		var ns =  this.toValaNS(item) ;
 		var cls = ns + item.get("xtype");
@@ -101,7 +101,7 @@ public class JsRender.NodeToVala : Object {
 			this.toValaName(item.items.get(i), depth+1);
 		}
 					  
-		}
+	}
 
 	public static string mungeFile(JsRender file) 
 	{
@@ -116,7 +116,7 @@ public class JsRender.NodeToVala : Object {
 		n.toValaName(file.tree);
 		
 		
-		print("top cls %s / xlcs %s\n ",file.tree.xvala_cls,file.tree.xvala_cls); 
+		GLib.debug("top cls %s / xlcs %s\n ",file.tree.xvala_cls,file.tree.xvala_cls); 
 		n.cls = file.tree.xvala_cls;
 		n.xcls = file.tree.xvala_xcls;
 		return n.munge();
