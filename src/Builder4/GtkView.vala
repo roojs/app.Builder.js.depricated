@@ -449,6 +449,9 @@ public class Xcls_GtkView : Object
             
             
         }
+        public void highlightErrorsJson () {
+        
+        }
     }
 
 
