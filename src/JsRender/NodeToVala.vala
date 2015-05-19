@@ -450,18 +450,14 @@ public class JsRender.NodeToVala : Object {
 		}
 		*/
 		if (this.node.has("* ctor")) {
-			 
+			this.node.proplines.set("* ctor", this.curline);
 			this.addLine(this.ipad + "this.el = " + this.node.get("* ctor")+ ";");
 			return;
 		}
-		// the ctor arguments...
+		 
+		var  default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
 
-		// see what the 
-		//var default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".newv");
-		//if (default_ctor == null) {
-			var  default_ctor = Palete.Gir.factoryFqn(this.node.fqn() + ".new");
-
-		//}
+		 
 		if (default_ctor != null && default_ctor.paramset != null && default_ctor.paramset.params.size > 0) {
 			string[] args  = {};
 			var iter =default_ctor.paramset.params.list_iterator();
