@@ -222,6 +222,9 @@ public class JsRender.NodeToVala : Object {
 		// class header..
 		// class xxx {   WrappedGtk  el; }
 		this.node.line_start = this.cur_line;
+		
+		this.top.node.setNodeLine(this.cur_line, this.node);
+		
 		this.addLine(inpad + "public class " + this.xcls + " : Object");
 		this.addLine(this.inpad + "{");
 		
