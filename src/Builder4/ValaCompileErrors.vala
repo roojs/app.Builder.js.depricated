@@ -310,7 +310,7 @@ public class Xcls_ValaCompileErrors : Object
                 } catch (GLib.RegexError e) {
                     return false;
                 }
-                
+                 
                 var bjsf = regex.replace(f,f.length , 0 , ".bjs");
                     
                 var p = _this.window.project;
