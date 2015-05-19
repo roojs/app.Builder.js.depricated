@@ -58,7 +58,7 @@ public class Spawn : Object
 	 * @signal input called at start to send input when process starts?
 	 * @return the string or null 
 	 */
-	public signal void complete();
+	public signal void complete(int res, string str, string stderr);
 	/**
 	 * @signal output_line called when a line is recieved from the process.
 	 * Note you may want to connect this and run 
@@ -142,7 +142,7 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-	public void run( ) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	public void run(SpawnFinish finish) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
 	{
 		
 		 
