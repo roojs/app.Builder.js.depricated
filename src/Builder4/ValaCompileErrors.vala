@@ -117,7 +117,7 @@ public class Xcls_ValaCompileErrors : Object
             this.el.set_relative_to(onbtn);
         }
         this.el.show_all();
-        this.save_btn.el.hide();       
+       
         while(Gtk.events_pending()) { 
                 Gtk.main_iteration();
         }       
