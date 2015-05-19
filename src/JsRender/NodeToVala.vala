@@ -541,6 +541,7 @@ public class JsRender.NodeToVala : Object {
 			
 			// if it's a string...
 			
+			
 			this.addLine(this.ipad + "this." + kname + " = " +   v +";");
 		}
 	}
@@ -603,6 +604,9 @@ public class JsRender.NodeToVala : Object {
 		}
 		
 	}
+	/**
+	 *  pack the children into the parent.
+	 */
 
 	void addChildren()
 	{
