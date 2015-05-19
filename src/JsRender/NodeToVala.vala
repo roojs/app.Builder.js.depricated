@@ -389,15 +389,16 @@ public class JsRender.NodeToVala : Object {
 			}
 	
 		if (this.depth < 1) {
-			this.node.ctorline = this.curline;
-			this.addLine(this.pad + "public " + this.xcls + "(" + 
-				cargs_str +")\n" + this.pad + "{");
+		 
+			// top level - does not pass the top level element..
+			this.addLine(this.pad + "public " + this.xcls + "(" +  cargs_str +")")
+			this.addLine(this.pad + "{");
 		} else {
 				
-					//code 
-				
-			this.ret+= this.pad + "public " + this.xcls + "(" + 
-				this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
+			
+			
+			this.addLine(this.pad + "public " + this.xcls + "(" +  this.top.xcls + " _owner " + cargs_str + ")");
+			this.addLine(this.pad + "{");
 		}
 		
 
