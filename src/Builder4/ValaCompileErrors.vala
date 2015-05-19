@@ -388,7 +388,7 @@ public class Xcls_ValaCompileErrors : Object
                 
                 print ("loadfile %s : %d", fname,line);
                 
-                _this.sourceview.loadFile(fname, line);
+               // _this.sourceview.loadFile(fname, line);
                 
                 
                         
