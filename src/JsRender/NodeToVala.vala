@@ -11,7 +11,7 @@
 
 public class JsRender.NodeToVala : Object {
 
-	 Node node;
+	Node node;
 
 	int depth;
 	string inpad;
@@ -21,6 +21,7 @@ public class JsRender.NodeToVala : Object {
 	string xcls;
 	
 	string ret;
+	int line;
 
 	Gee.ArrayList<string> ignoreList;
 	Gee.ArrayList<string> ignoreWrappedList; 
@@ -765,7 +766,7 @@ public class JsRender.NodeToVala : Object {
 	{
 		return ignoreWrappedList.contains(i);
 	}
-
+	
 }
 	
 	 
