@@ -635,12 +635,12 @@ public class JsRender.NodeToVala : Object {
 				var ar = ci.get("* args").split(",");
 				for (var ari = 0 ; ari < ar.length; ari++ ) {
 					var arg = ar[ari].split(" ");
-							xargs += "," + arg[arg.length -1];
+					xargs += "," + arg[arg.length -1];
 				}
 			}
-					
-			this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
-			"( _this " + xargs + ");\n" ;
+			// create the element..
+			this.addLine(this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
+			"( _this " + xargs + ");" ;
 			
 			this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
 			
