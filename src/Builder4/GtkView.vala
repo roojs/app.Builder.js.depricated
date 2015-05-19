@@ -435,7 +435,7 @@ public class Xcls_GtkView : Object
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
                     sbuf.get_iter_at_line(out iter, i);
-                        sbuf.create_source_mark("", "grey", iter);
+                    sbuf.create_source_mark("", "grey", iter);
                     
                 }
             
