@@ -1,6 +1,12 @@
 
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
+/**
+ * 
+ *  This just deals with spawning the compiler and getting the results.
+ * 
+ */
+
 namespace Palete {
 	
 	public errordomain ValaSourceError {
