@@ -293,7 +293,7 @@ public class Editor : Object
                 
                  var dattrs = new Gtk.SourceMarkAttributes();
                 var  purple = new Gdk.RGBA();
-                purple.parse ( "#f1d9f7");
+                purple.parse ( "#EEA9FF");
                 dattrs.set_background ( purple);
                 dattrs.set_icon_name ( "process-stop");    
                 dattrs.query_tooltip_text.connect(( mark) => {
