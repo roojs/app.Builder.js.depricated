@@ -919,7 +919,7 @@ public class WindowState : Object
 			buf.highlightErrorsJson("WARN", obj);
 			buf.highlightErrorsJson("DEPR", obj);
 			
-			
+			this.last_compile_result = obj;
 			
 			
 		}
