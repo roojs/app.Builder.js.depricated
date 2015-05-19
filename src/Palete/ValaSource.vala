@@ -136,7 +136,7 @@ namespace Palete {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
 				ret.set_string_member("message", e.message);
-				this.result_callback(ret);
+			    this.compiled(ret);
 			}
 			 
 		}
