@@ -102,7 +102,9 @@ public class JsRender.NodeToVala : Object {
 		}
 					  
 	}
-
+	/**
+	 *  Main entry point to convert a file into a string..
+	 */
 	public static string mungeFile(JsRender file) 
 	{
 		if (file.tree == null) {
