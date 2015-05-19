@@ -1,8 +1,24 @@
 /**
- * as state management is a bit too complicated inside the builder
- * it's better to seperate this into this class
+ * handle the compile state 
  * 
- * This class has references to all the Class instances that make up the window..
+ * when the app tries to compile the application, it will output information
+ * about errors/warnings and depricated information.
+ * 
+ * This has a number of effects..
+ * 
+ * - when it compiles
+ *  -- if any of the errors// etc.. are affecting the current open file
+ *     then we should flag the tree indicating which node has a problem
+ * 
+ *  -- update the footer bar to show stats (eg. how many errors etc..)
+ * 
+ * 
+ * 
+ * - when you open a file
+ *   - if there are any notices for that file, then we should flag the tree
+ *    to show the errors.
+ * 
+ *  
  * 
  */
 public class CompileState : Object 
