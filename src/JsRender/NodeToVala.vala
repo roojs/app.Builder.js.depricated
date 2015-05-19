@@ -62,7 +62,7 @@ public class JsRender.NodeToVala : Object {
 		this.file = null;
 		
 		// initialize line data..
-		node.line = this.cur_line;
+		node.line_start = this.cur_line;
 		node.proplines = new Gee.HashMap<string,int>();
 		node.listenlines = Gee.HashMap<string,int>();
 		
@@ -218,7 +218,7 @@ public class JsRender.NodeToVala : Object {
 			   
 		// class header..
 		// class xxx {   WrappedGtk  el; }
-		this.node.line = this.cur_line;
+		this.node.line_start = this.cur_line;
 		this.addLine(inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{");
 		
 		 
@@ -814,7 +814,7 @@ public class JsRender.NodeToVala : Object {
 		}
 			 
 		if (this.depth < 1) {
-			this.ret+= this.inpad + "}\n";
+			this.addLine(this.inpad + "}");
 		}
 			
 	}
