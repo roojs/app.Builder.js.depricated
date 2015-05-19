@@ -55,6 +55,11 @@ public class Spawn : Object
 	 */
 	public signal string? input();
 	/**
+	 * @signal input called at start to send input when process starts?
+	 * @return the string or null 
+	 */
+	public signal string? complete();
+	/**
 	 * @signal output_line called when a line is recieved from the process.
 	 * Note you may want to connect this and run 
 	 *   if ( Gtk.events_pending()) { Gtk.main_iteration(); }
