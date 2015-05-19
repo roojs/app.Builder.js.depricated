@@ -796,7 +796,7 @@ public class JsRender.NodeToVala : Object {
 			this.addMultiLine(this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv));;
 			
 				
-			}
+		}
 	}
 
 	void iterChildren()
