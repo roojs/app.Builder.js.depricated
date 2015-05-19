@@ -317,10 +317,10 @@ public class Xcls_ValaCompileErrors : Object
                 if (jsr != null) {
                     _this.window.windowstate.fileViewOpen(jsr);
                     
-                    return;
+                    return false;
                 
                 }
-                
+                 return false;
                 
               });
             this.el.cursor_changed.connect( () => {
