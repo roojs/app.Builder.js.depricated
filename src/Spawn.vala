@@ -43,10 +43,7 @@ public errordomain SpawnError {
  
  * 
  */
- 
- 
-public delegate void SpawnFinish (int res, string str, string stderr);
-
+  
 public class Spawn : Object
 {
 	/**
@@ -55,8 +52,8 @@ public class Spawn : Object
 	 */
 	public signal string? input();
 	/**
-	 * @signal input called at start to send input when process starts?
-	 * @return the string or null 
+	 * @signal complete called at when the command has completed.
+	 * 
 	 */
 	public signal void complete(int res, string str, string stderr);
 	/**
