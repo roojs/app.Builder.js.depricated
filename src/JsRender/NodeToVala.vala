@@ -307,6 +307,7 @@ public class JsRender.NodeToVala : Object {
 			}
 				
 			if (vv[0] == "@") {
+				this.node.proplines.set(k, this.cur_line);
 				this.addLine(this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";");
 				
 				this.ignore(k);
