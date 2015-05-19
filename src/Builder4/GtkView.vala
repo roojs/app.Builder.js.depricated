@@ -13,6 +13,7 @@ public class Xcls_GtkView : Object
         return _GtkView;
     }
     public Xcls_label_global label_global;
+    public Xcls_label_global label_global;
     public Xcls_view_layout view_layout;
     public Xcls_container container;
 
@@ -39,11 +40,9 @@ public class Xcls_GtkView : Object
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
-        var child_1 = new Xcls_label_global( _this );
+        var child_1 = new Xcls_ScrolledWindow5( _this );
         child_1.ref();
-        var child_2 = new Xcls_ScrolledWindow4( _this );
-        child_2.ref();
-        this.el.pack_start (  child_2.el , true,true,0 );
+        this.el.pack_start (  child_1.el , true,true,0 );
 
         //listeners
         this.el.size_allocate.connect( (aloc) => {
@@ -152,6 +151,32 @@ public class Xcls_GtkView : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_label_global( _this );
+            child_0.ref();
+            var child_1 = new Xcls_label_global( _this );
+            child_1.ref();
+        }
+
+        // user defined functions
+    }
+    public class Xcls_label_global : Object
+    {
+        public Gtk.Label el;
+        private Xcls_GtkView  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_label_global(Xcls_GtkView _owner )
+        {
+            _this = _owner;
+            _this.label_global = this;
+            this.el = new Gtk.Label( "Global" );
+
+            // my vars (dec)
+
+            // set gobject values
         }
 
         // user defined functions
@@ -180,7 +205,8 @@ public class Xcls_GtkView : Object
         // user defined functions
     }
 
-    public class Xcls_ScrolledWindow4 : Object
+
+    public class Xcls_ScrolledWindow5 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_GtkView  _this;
@@ -189,7 +215,7 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor
-        public Xcls_ScrolledWindow4(Xcls_GtkView _owner )
+        public Xcls_ScrolledWindow5(Xcls_GtkView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
