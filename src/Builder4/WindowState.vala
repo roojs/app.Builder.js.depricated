@@ -882,6 +882,7 @@ public class WindowState : Object
 		
 		public void valaCompiled(Json.Object results)
 		{
+			// vala has finished compiling...
 			
 			
 		}
