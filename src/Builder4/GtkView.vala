@@ -402,7 +402,7 @@ public class Xcls_GtkView : Object
             print("node selected");
             var buf = this.el.get_buffer();
             buf.set_text("",0);
-            var sbuf = (Gtk.SourceView) buf;
+            var sbuf = (Gtk.SourceBuffer) buf;
         
             
             var f =  _this.main_window.windowstate.left_tree.model.file;
@@ -428,9 +428,9 @@ public class Xcls_GtkView : Object
             // clear all the marks..
              Gtk.TextIter start;
             Gtk.TextIter end;     
-            buf.get_bounds (out start, out end);
+            sbuf.get_bounds (out start, out end);
             
-            buf.remove_source_marks (start, end, null);
+            sbuf.remove_source_marks (start, end, null);
             
             
             
