@@ -51,16 +51,16 @@ public class JsRender.NodeToVala : Object {
 
 	public int vcnt = 0;
 	string toValaNS(Node item)
-        {
-            var ns = item.get("xns") ;
-            if (ns == "GtkSource") {
-                return "Gtk.Source";
-            }
-            return ns + ".";
+	{
+			var ns = item.get("xns") ;
+			if (ns == "GtkSource") {
+				return "Gtk.Source";
+			}
+			return ns + ".";
 	}
 	public void  toValaName(Node item, int depth =0) 
 	{
-    		this.vcnt++;
+			this.vcnt++;
 
 		var ns =  this.toValaNS(item) ;
 		var cls = ns + item.get("xtype");
@@ -93,15 +93,15 @@ public class JsRender.NodeToVala : Object {
 
 		}
 		// loop children..
-				                                               
+															   
 		if (item.items.size < 1) {
 			return;
 		}
 		for(var i =0;i<item.items.size;i++) {
 			this.toValaName(item.items.get(i), depth+1);
 		}
-			          
-        }
+					  
+		}
 
 	public static string mungeFile(JsRender file) 
 	{
@@ -155,7 +155,7 @@ public class JsRender.NodeToVala : Object {
 		
 		return this.ret;
 		 
-		     
+			 
 	} 
 	public string mungeChild(  Node cnode)
 	{
@@ -168,44 +168,44 @@ public class JsRender.NodeToVala : Object {
 		if (this.depth > 0) {
 			return;
 		}
-                // Global Vars..
-                //this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
+				// Global Vars..
+				//this.ret += this.inpad + "public static " + this.xcls + "  " + this.node.xvala_id+ ";\n\n";
 
 		
 		this.ret += this.inpad + "static " + this.xcls + "  _" + this.node.xvala_id+ ";\n\n";
-                
-                
+				
+				
 	}
 
 	void classHeader()
 	{
-	           
-            // class header..
-            // class xxx {   WrappedGtk  el; }
-            this.ret += inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{\n";
-	    this.ret +=  this.pad + "public " + this.cls + " el;\n";
+			   
+			// class header..
+			// class xxx {   WrappedGtk  el; }
+			this.ret += inpad + "public class " + this.xcls + " : Object \n" + this.inpad + "{\n";
+		this.ret +=  this.pad + "public " + this.cls + " el;\n";
 
-              
-            this.ret += this.pad + "private " + this.top.xcls + "  _this;\n\n";
-            
-            
-            
-            // singleton
+			  
+			this.ret += this.pad + "private " + this.top.xcls + "  _this;\n\n";
+			
+			
+			
+			// singleton
 	}
 	void addSingleton() 
 	{
-            if (depth > 0) {
-		    return;
-	    }
-            this.ret += pad + "public static " + xcls + " singleton()\n" + 
-    			this.pad + "{\n" +
-        		this.ipad + "if (_" + this.node.xvala_id  + " == null) {\n" +
-        		this.ipad + "    _" + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
+			if (depth > 0) {
+			return;
+		}
+			this.ret += pad + "public static " + xcls + " singleton()\n" + 
+				this.pad + "{\n" +
+				this.ipad + "if (_" + this.node.xvala_id  + " == null) {\n" +
+				this.ipad + "    _" + this.node.xvala_id + "= new "+ this.xcls + "();\n" + // what about args?
 			this.ipad + "}\n" +
 			this.ipad + "return _" + this.node.xvala_id +";\n" + 
-        		this.pad + "}\n";
+				this.pad + "}\n";
 	}
-            
+			
 
 	void addTopProperties()
 	{
@@ -219,38 +219,38 @@ public class JsRender.NodeToVala : Object {
 			var n = iter.get();
 
 			 
-            		if (!n.props.has_key("id") || n.xvala_id.length < 0) {
-                		continue;
-                        
-            		}
-            		if (n.xvala_id[0] == '*') {
-                		continue;
-            		}
-            		if (n.xvala_id[0] == '+') {
-                		continue;
-            		}
-             		this.ret += this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";\n";
-                }
-                
+					if (!n.props.has_key("id") || n.xvala_id.length < 0) {
+						continue;
+						
+					}
+					if (n.xvala_id[0] == '*') {
+						continue;
+					}
+					if (n.xvala_id[0] == '+') {
+						continue;
+					}
+					this.ret += this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";\n";
+				}
+				
 	}
 	 
-        void addMyVars()
+		void addMyVars()
 	{
- 		this.ret += "\n" + this.ipad + "// my vars (def)\n";
-            
+		this.ret += "\n" + this.ipad + "// my vars (def)\n";
+			
 
  
-   		var cls = Palete.Gir.factoryFqn(this.node.fqn());
-           
+		var cls = Palete.Gir.factoryFqn(this.node.fqn());
+		   
 		if (cls == null) {
 			return;
 		}
 	  
 		
-    		// Key = TYPE:name
+			// Key = TYPE:name
 		var iter = this.node.props.map_iterator();
 		while (iter.next()) {
-    			var k = iter.get_key();
+				var k = iter.get_key();
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
@@ -262,12 +262,12 @@ public class JsRender.NodeToVala : Object {
 			if (vv[0] == "*") {
 				continue;
 			}
-		        
-		        if (vv[0] == "@") {
-		    		this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
+				
+				if (vv[0] == "@") {
+					this.ret += this.pad + "public signal" + k.substring(1)  + " "  + iter.get_value() + ";\n";
 				this.ignore(k);
 				continue;
-		        }
+				}
 			var min = (vv[0] == "$" || vv[0] == "#") ? 3 : 2; 
 			if (vv.length < min) {
 				// skip 'old js style properties without a type'
@@ -287,59 +287,59 @@ public class JsRender.NodeToVala : Object {
 			
 			this.myvars.add(k);
 
-			    
+				
 			this.ret += this.pad + "public " + 
 				(k[0] == '$' || k[0] == '#' ? k.substring(2) : k ) + ";\n";
-		        
+				
 			this.ignore(k);
 			
-		        
+				
 		}
 	}
 	
-            // if id of child is '+' then it's a property of this..
-        void addPlusProperties()
+			// if id of child is '+' then it's a property of this..
+		void addPlusProperties()
 	{
-      		if (this.node.items.size < 1) {
-		      return;
+			if (this.node.items.size < 1) {
+			  return;
 		}
 		var iter = this.node.items.list_iterator();
 		while (iter.next()) {
 			var ci = iter.get();
-                    
-            		if (ci.xvala_id[0] != '+') {
-                		continue; // skip generation of children?
-                        
-            		}
-	                this.ret += this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n";
-                               
-                    
-                }
+					
+					if (ci.xvala_id[0] != '+') {
+						continue; // skip generation of children?
+						
+					}
+					this.ret += this.pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n";
+							   
+					
+				}
 	}
 
 	void addValaCtor()
 	{
-            
-            
-            // .vala props.. 
-            
-    		string[] cargs = {};
-    		var cargs_str = "";
-    		// ctor..
-    		this.ret += "\n" + this.pad + "// ctor \n";
-			if (this.node.has("* args")) {
-    			// not sure what this is supposed to be ding..
 			
-        		cargs_str = ", " + this.node.get("* args");
-        		//var ar = this.node.get("* args");.split(",");
-        		//for (var ari =0; ari < ar.length; ari++) {
-            		//	cargs +=  (ar[ari].trim().split(" ").pop();
-                      // }
-                }
+			
+			// .vala props.. 
+			
+			string[] cargs = {};
+			var cargs_str = "";
+			// ctor..
+			this.ret += "\n" + this.pad + "// ctor \n";
+			if (this.node.has("* args")) {
+				// not sure what this is supposed to be ding..
+			
+				cargs_str = ", " + this.node.get("* args");
+				//var ar = this.node.get("* args");.split(",");
+				//for (var ari =0; ari < ar.length; ari++) {
+					//	cargs +=  (ar[ari].trim().split(" ").pop();
+					  // }
+				}
 		
-    		if (this.depth < 1) {
-        		this.ret += this.pad + "public " + this.xcls + "(" + 
-				    cargs_str +")\n" + this.pad + "{\n";
+			if (this.depth < 1) {
+				this.ret += this.pad + "public " + this.xcls + "(" + 
+					cargs_str +")\n" + this.pad + "{\n";
 			} else {
 					
 						//code 
@@ -347,31 +347,31 @@ public class JsRender.NodeToVala : Object {
 				this.ret+= this.pad + "public " + this.xcls + "(" + 
 					this.top.xcls + " _owner " + cargs_str + ")\n" + this.pad + "{\n";
 			}
-            
+			
 
 	}
 	void addUnderThis() 
 	{
-            // public static?
-    		if (depth < 1) {
+			// public static?
+			if (depth < 1) {
 			this.ret += this.ipad + "_this = this;\n";
 			return;
 		}
 		this.ret+= this.ipad + "_this = _owner;\n";
 
 		if (this.node.props.has_key("id")
-		    &&
-		    this.node.xvala_id != "" 
-		    && 
-		    this.node.xvala_id[0] != '*' 
-		    && 
-		    this.node.xvala_id[0] != '+' 
-		    ) {
-    			this.ret+= this.ipad + "_this." + node.xvala_id  + " = this;\n";
-           
+			&&
+			this.node.xvala_id != "" 
+			&& 
+			this.node.xvala_id[0] != '*' 
+			&& 
+			this.node.xvala_id[0] != '+' 
+			) {
+				this.ret+= this.ipad + "_this." + node.xvala_id  + " = this;\n";
+		   
 		}
-                
-                
+				
+				
    
 	}
 
@@ -391,8 +391,8 @@ public class JsRender.NodeToVala : Object {
 		*/
 		if (this.node.has("* ctor")) {
 			
-            
-        		this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
+			
+				this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
 			return;
 		}
 		// the ctor arguments...
@@ -449,34 +449,34 @@ public class JsRender.NodeToVala : Object {
 		}
 		
 		
-                this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
+				this.ret += this.ipad + "this.el = new " + this.cls + "();\n";
 
-            
+			
 	}
 
 	void addInitMyVars()
 	{
-            //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
-            //print(JSON.stringify(meths,null,4));Seed.quit();
-            
-     		
-            
-            // initialize.. my vars..
+			//var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
+			//print(JSON.stringify(meths,null,4));Seed.quit();
+			
+			
+			
+			// initialize.. my vars..
 		this.ret += "\n" + this.ipad + "// my vars (dec)\n";
 		
 		var iter = this.myvars.list_iterator();
 		while(iter.next()) {
 			
-    			var k = iter.get();
+				var k = iter.get();
 			
-        		var ar  = k.strip().split(" ");
+				var ar  = k.strip().split(" ");
 			var kname = ar[ar.length-1];
 			
-        		var v = this.node.props.get(k);
+				var v = this.node.props.get(k);
 			// ignore signals.. 
-        		if (v.length < 1) {
-            			continue; 
-        		}
+				if (v.length < 1) {
+						continue; 
+				}
 			if (v == "FALSE" || v == "TRUE") {
 				v = v.down();
 			}
@@ -484,8 +484,8 @@ public class JsRender.NodeToVala : Object {
 			
 			// if it's a string...
 			
-        		this.ret += this.ipad + "this." + kname + " = " +   v +";\n";
-    		}
+				this.ret += this.ipad + "this." + kname + " = " +   v +";\n";
+			}
 	}
 
 	
@@ -494,12 +494,12 @@ public class JsRender.NodeToVala : Object {
 	
 	void addWrappedProperties()
 	{
-   		var cls = Palete.Gir.factoryFqn(this.node.fqn());
+		var cls = Palete.Gir.factoryFqn(this.node.fqn());
 		if (cls == null) {
 			return;
 		}
-            // what are the properties of this class???
-  		this.ret += "\n" + this.ipad + "// set gobject values\n";
+			// what are the properties of this class???
+		this.ret += "\n" + this.ipad + "// set gobject values\n";
 
 		var iter = cls.props.map_iterator();
 		while (iter.next()) {
@@ -512,7 +512,7 @@ public class JsRender.NodeToVala : Object {
 				continue;
 			}
 			
-	     		this.ignore(p);
+				this.ignore(p);
 			var v = this.node.get(p);
 
 			var nodekey = this.node.get_key(p);
@@ -539,86 +539,86 @@ public class JsRender.NodeToVala : Object {
 			
 			
 			this.ret += "%sthis.el.%s = %s;\n".printf(ipad,p,v); // // %s,  iter.get_value().type);
-		            
-		       // got a property..
-		       
+					
+			   // got a property..
+			   
 
 		}
-	    
+		
 	}
 
 	void addChildren()
 	{
-                //code
+				//code
 		if (this.node.items.size < 1) {
 			return;
 		}
-             
-    		var iter = this.node.items.list_iterator();
+			 
+			var iter = this.node.items.list_iterator();
 		var i = -1;
 		while (iter.next()) {
 			i++;
-                
-            		var ci = iter.get();
+				
+					var ci = iter.get();
 
 			if (ci.xvala_id[0] == '*') {
-                		continue; // skip generation of children?
-            		}
-                    
-            		var xargs = "";
-            		if (ci.has("* args")) {
-                        
-                		var ar = ci.get("* args").split(",");
-                		for (var ari = 0 ; ari < ar.length; ari++ ) {
+						continue; // skip generation of children?
+					}
+					
+					var xargs = "";
+					if (ci.has("* args")) {
+						
+						var ar = ci.get("* args").split(",");
+						for (var ari = 0 ; ari < ar.length; ari++ ) {
 					var arg = ar[ari].split(" ");
-                    			xargs += "," + arg[arg.length -1];
-                		}
-            		}
-                    
-            		this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
+								xargs += "," + arg[arg.length -1];
+						}
+					}
+					
+					this.ret += this.ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls +
 					"( _this " + xargs + ");\n" ;
-				    
-            		this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
-                    
-	                if (ci.has("* prop")) {
-                		this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
-                		continue;
-            		}
+					
+					this.ret+= this.ipad + "child_" + "%d".printf(i) +".ref();\n"; // we need to reference increase unnamed children...
+					
+					if (ci.has("* prop")) {
+						this.ret+= ipad + "this.el." + ci.get("* prop") + " = child_" + "%d".printf(i) + ".el;\n";
+						continue;
+					}
 
 			// not sure why we have 'true' in pack?!?
-            		if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
-                		continue;
-            		}
-                    
-            		string[]  packing =  { "add" };
+					if (!ci.has("pack") || ci.get("pack").down() == "false" || ci.get("pack").down() == "true") {
+						continue;
+					}
+					
+					string[]  packing =  { "add" };
 			if (ci.has("pack")) {
 				packing = ci.get("pack").split(",");
 			}
-            		
-            		var pack = packing[0];
+					
+					var pack = packing[0];
 			this.ret += this.ipad + "this.el." + pack.strip() + " (  child_" + "%d".printf(i) + ".el " +
-                               (packing.length > 1 ? 
-                        		(", " + string.joinv(",", packing).substring(pack.length+1))
-                 			:
-	                                ""
-                                ) + " );\n";
+							   (packing.length > 1 ? 
+								(", " + string.joinv(",", packing).substring(pack.length+1))
+							:
+									""
+								) + " );\n";
 			
-                              
-            		if (ci.xvala_id[0] != '+') {
-                		continue; // skip generation of children?
-		                        
-            		}
-            		this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
-                          
+							  
+					if (ci.xvala_id[0] != '+') {
+						continue; // skip generation of children?
+								
+					}
+					this.ret+= this.ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + "%d".printf(i) +  ";\n";
+						  
 		}
 	}
 
 	void addInit()
 	{
 
-	    
+		
 		if (!this.node.has("init")) {
-			    return;
+				return;
 		}
 		this.ret+= "\n" + ipad + "// init method \n";
 	
@@ -630,27 +630,27 @@ public class JsRender.NodeToVala : Object {
 		if (this.node.listeners.size < 1) {
 			return;
 		}
-			    
-            
-            
+				
+			
+			
 		this.ret+= "\n" + ipad + "// listeners \n";
 
 		var iter = this.node.listeners.map_iterator();
 		while (iter.next()) {
 			var k = iter.get_key();
 			var v = iter.get_value();
-            		this.ret+= this.ipad + "this.el." + k + ".connect( " + 
+					this.ret+= this.ipad + "this.el." + k + ".connect( " + 
 					this.padMultiline(this.ipad,v) +");\n"; 
-                    
-                }
+					
+				}
 	}    
-        void addEndCtor()
+		void addEndCtor()
 	{
-            
-            
-            
-    		// end ctor..
-    		this.ret+= this.pad + "}\n";
+			
+			
+			
+			// end ctor..
+			this.ret+= this.pad + "}\n";
 	}
 
 
@@ -698,48 +698,48 @@ public class JsRender.NodeToVala : Object {
 	 
 	void addUserMethods()
 	{
-            
-  		this.ret+= "\n" + pad + "// user defined functions \n";  
-            
-    		// user defined functions...
-   		var iter = this.node.props.map_iterator();
+			
+		this.ret+= "\n" + pad + "// user defined functions \n";  
+			
+			// user defined functions...
+		var iter = this.node.props.map_iterator();
 		while(iter.next()) {
-    			var k = iter.get_key();
+				var k = iter.get_key();
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
 			// HOW TO DETERIME if its a method?            
-        		if (k[0] != '|') {
-             			//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
-            			continue;
+				if (k[0] != '|') {
+						//strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
+						continue;
 			}       
-        		// function in the format of {type} (args) { .... }
-         		var kk = k.substring(2);
-        		var vv = iter.get_value();
-        		this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv) + "\n";
+				// function in the format of {type} (args) { .... }
+				var kk = k.substring(2);
+				var vv = iter.get_value();
+				this.ret += this.pad + "public " + kk + " " + this.padMultiline(this.pad, vv) + "\n";
 			
-                
-            }
+				
+			}
 	}
 
 	void iterChildren()
 	{
-            
-    		if (this.depth > 0) {
+			
+			if (this.depth > 0) {
 			this.ret+= this.inpad + "}\n";
-    		}
+			}
 		
 		var iter = this.node.items.list_iterator();
 		var i = -1;
 		while (iter.next()) {
-    			this.ret += this.mungeChild(iter.get());
+				this.ret += this.mungeChild(iter.get());
 		}
-             
-    		if (this.depth < 1) {
-        		this.ret+= this.inpad + "}\n";
-    		}
-            
-        }
+			 
+			if (this.depth < 1) {
+				this.ret+= this.inpad + "}\n";
+			}
+			
+		}
 
 	string padMultiline(string pad, string str)
 	{
