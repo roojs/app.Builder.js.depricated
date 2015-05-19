@@ -887,27 +887,38 @@ public class WindowState : Object
 		{
 			// vala has finished compiling...
 			print("vala compiled");
+			
+			var buf = this.code_editor.buffer;
+			buf.check_running = false;
 			              
 			if (obj.has_member("ERR-TOTAL")) {
-
-				 _this.window.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
+				 this.win.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
 			} else {
-				 _this.window.statusbar_errors.setNotices( new Json.Object() , 0);
+				 this.win.statusbar_errors.setNotices( new Json.Object() , 0);
 			}    
 			
 			if (obj.has_member("WARN-TOTAL")) {
 
-				 _this.window.statusbar_warnings.setNotices(obj.get_object_member("WARN"), (int) obj.get_int_member("WARN-TOTAL"));
+				 this.win.statusbar_warnings.setNotices(obj.get_object_member("WARN"), (int) obj.get_int_member("WARN-TOTAL"));
 			} else {
-					 _this.window.statusbar_warnings.setNotices( new Json.Object() , 0);
+				 this.win.statusbar_warnings.setNotices( new Json.Object() , 0);
+				 
 			}
 			if (obj.has_member("DEPR-TOTAL")) {
 				
-				 _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
-		 
+				 this.win.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
+				 
 			} else {
-				_this.window.statusbar_depricated.setNotices( new Json.Object(),0);
+				this.win.statusbar_depricated.setNotices( new Json.Object(),0);
 			}
+			
+			buf.highlightErrorsJson("ERR", obj);
+			buf.highlightErrorsJson("WARN", obj);
+			buf.highlightErrorsJson("DEPR", obj);
+			
+			
+			
+			
 		}
 	
 }
