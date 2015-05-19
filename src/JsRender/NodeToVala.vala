@@ -498,7 +498,8 @@ public class JsRender.NodeToVala : Object {
 				args += v;
 
 			}
-			this.ret += this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );\n" ;
+			this.node.proplines.set("* xtype", this.curline);
+			this.addLine(this.ipad + "this.el = new " + cls + "( "+ string.joinv(", ",args) + " );") ;
 			return;
 			
 		}
