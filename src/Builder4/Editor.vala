@@ -1,6 +1,6 @@
 static Editor  _Editor;
 
-public class Editor : Object 
+public class Editor : Object
 {
     public Gtk.VBox el;
     private Editor  _this;
@@ -31,7 +31,7 @@ public class Editor : Object
     public signal void save ();
     public JsRender.Node node;
 
-    // ctor 
+    // ctor
     public Editor()
     {
         _this = this;
@@ -56,7 +56,7 @@ public class Editor : Object
         this.el.add (  child_1.el  );
     }
 
-    // user defined functions 
+    // user defined functions
     public   bool saveContents ()  {
         
         
@@ -120,7 +120,7 @@ public class Editor : Object
         this.key_edit.el.text = key;    
     
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_HBox2 : Object
     {
         public Gtk.HBox el;
         private Editor  _this;
@@ -128,7 +128,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_HBox2(Editor _owner )
         {
             _this = _owner;
@@ -145,9 +145,9 @@ public class Editor : Object
             this.el.pack_end (  child_1.el , true,true );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_save_button : Object 
+    public class Xcls_save_button : Object
     {
         public Gtk.Button el;
         private Editor  _this;
@@ -155,7 +155,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_save_button(Editor _owner )
         {
             _this = _owner;
@@ -167,15 +167,16 @@ public class Editor : Object
             // set gobject values
             this.el.label = "Save";
 
-            // listeners 
+            //listeners
             this.el.clicked.connect( () => { 
                 _this.saveContents();
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_key_edit : Object 
+
+    public class Xcls_key_edit : Object
     {
         public Gtk.Entry el;
         private Editor  _this;
@@ -183,7 +184,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_key_edit(Editor _owner )
         {
             _this = _owner;
@@ -195,9 +196,11 @@ public class Editor : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_RightEditor : Object 
+
+
+    public class Xcls_RightEditor : Object
     {
         public Gtk.ScrolledWindow el;
         private Editor  _this;
@@ -205,7 +208,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_RightEditor(Editor _owner )
         {
             _this = _owner;
@@ -219,14 +222,14 @@ public class Editor : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_view : Object 
+    public class Xcls_view : Object
     {
         public Gtk.SourceView el;
         private Editor  _this;
@@ -234,7 +237,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_view(Editor _owner )
         {
             _this = _owner;
@@ -254,7 +257,7 @@ public class Editor : Object
             child_0.ref();
             this.el.set_buffer (  child_0.el  );
 
-            // init method 
+            // init method
 
             var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
@@ -272,7 +275,7 @@ public class Editor : Object
                 
                 this.el.set_mark_attributes ("error", attrs, 1);
 
-            // listeners 
+            //listeners
             this.el.key_release_event.connect( (event) => {
                 
                 if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
@@ -287,7 +290,7 @@ public class Editor : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public   void load (string str) {
         
         // show the help page for the active node..
@@ -309,7 +312,7 @@ public class Editor : Object
             _this.save_button.el.sensitive = false;
         }
     }
-    public class Xcls_buffer : Object 
+    public class Xcls_buffer : Object
     {
         public Gtk.SourceBuffer el;
         private Editor  _this;
@@ -320,7 +323,7 @@ public class Editor : Object
         public int error_line;
         public bool check_running;
 
-        // ctor 
+        // ctor
         public Xcls_buffer(Editor _owner )
         {
             _this = _owner;
@@ -334,7 +337,7 @@ public class Editor : Object
 
             // set gobject values
 
-            // listeners 
+            //listeners
             this.el.changed.connect( () => {
                 // check syntax??
                 // ??needed..??
@@ -349,7 +352,7 @@ public class Editor : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
                 this.error_line = validate_res.size;
         
@@ -552,4 +555,7 @@ public class Editor : Object
         
         }
     }
+
+
+
 }
