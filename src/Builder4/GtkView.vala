@@ -359,12 +359,25 @@ public class Xcls_GtkView : Object
 
         // user defined functions
         public void nodeSelected (JsRender.Node? sel) {
+            this.el.get_buffer().set_text("",0);
+        
             if (sel == null) {
                 // clear the window..
+                return;
                 
             }
+            var f =  _this.main_window.windowstate.left_tree.model.file;
+            if (f.type != "Gtk") {
+                return;
+            }
+            this.el.get_buffer().set_text(str, str.length);
+            var lm = Gtk.SourceLanguageManager.get_default();
             
+            var lang = _this.file.language;
+            //?? is javascript going to work as js?
             
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
+            var buf = this.el.get_buffer();
         }
     }
 
