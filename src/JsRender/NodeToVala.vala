@@ -273,7 +273,7 @@ public class JsRender.NodeToVala : Object {
 				
 	}
 	/**
-	 * 
+	 * create properties that are not 'part of the wrapped element.
 	 * 
 	 * 
 	 */
@@ -295,7 +295,7 @@ public class JsRender.NodeToVala : Object {
 			// Key = TYPE:name
 		var iter = this.node.props.map_iterator();
 		while (iter.next()) {
-				var k = iter.get_key();
+			var k = iter.get_key();
 			if (this.shouldIgnore(k)) {
 				continue;
 			}
