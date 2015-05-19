@@ -721,11 +721,9 @@ public class JsRender.NodeToVala : Object {
 				
 			}
 	}    
-		void addEndCtor()
+	void addEndCtor()
 	{
-			
-			
-			
+			 
 			// end ctor..
 			this.ret+= this.pad + "}\n";
 	}
