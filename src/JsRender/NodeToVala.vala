@@ -253,7 +253,8 @@ public class JsRender.NodeToVala : Object {
 					if (n.xvala_id[0] == '+') {
 						continue;
 					}
-					this.ret += this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";\n";
+					this.addLine(this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";");
+					
 				}
 				
 	}
