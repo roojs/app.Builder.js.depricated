@@ -1,6 +1,12 @@
 
 // valac TreeBuilder.vala --pkg libvala-0.24 --pkg posix -o /tmp/treebuilder
 
+/**
+ *  this only deals with the compiling (when builder is run with different args..)
+ * 
+ */
+
+
 namespace Palete {
 	
 	 
