@@ -52,11 +52,11 @@ public class JsRender.NodeToVala : Object {
 	public int vcnt = 0;
 	string toValaNS(Node item)
 	{
-			var ns = item.get("xns") ;
-			if (ns == "GtkSource") {
-				return "Gtk.Source";
-			}
-			return ns + ".";
+		var ns = item.get("xns") ;
+		if (ns == "GtkSource") {
+			return "Gtk.Source";
+		}
+		return ns + ".";
 	}
 	public void  toValaName(Node item, int depth =0) 
 	{
