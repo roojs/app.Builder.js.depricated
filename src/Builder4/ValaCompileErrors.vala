@@ -304,8 +304,11 @@ public class Xcls_ValaCompileErrors : Object
                 
                  
                  var f = fname;
-                            
-                Regex regex = new Regex("\\.vala$");
+                try {             
+                    Regex regex = new Regex("\\.vala$");
+                } catch (Error e) {
+                    return false;
+                }
                 
                 var bjsf = regex.replace(f,f.length , 0 , ".bjs");
                     
