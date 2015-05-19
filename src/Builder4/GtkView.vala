@@ -481,7 +481,7 @@ public class Xcls_GtkView : Object
                    var  regex = new Regex("\\.bjs$");
                 
                  
-                    valafn = regex.replace(fname,fname.length , 0 , ".vala");
+                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
                  } catch (GLib.RegexError e) {
                     return;
                 }   
