@@ -129,9 +129,10 @@ namespace Palete {
 			 
 			
 			this.compiler = new Spawn("/tmp", args);
+			this.compiler.complete.connect(spawnResult);
 			
 			try {
-				this.compiler.run(spawnResult); 
+				this.compiler.run(); 
 			} catch (GLib.SpawnError e) {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
