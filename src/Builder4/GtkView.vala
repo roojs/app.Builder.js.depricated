@@ -449,7 +449,67 @@ public class Xcls_GtkView : Object
             
             
         }
-        public void highlightErrorsJson () {
+        public void highlightErrorsJson (string type, Json.Object obj) {
+              Gtk.TextIter start;
+             Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+                
+                this.el.remove_source_marks (start, end, type);
+                         
+             
+             // we should highlight other types of errors..
+            
+            if (!obj.has_member(type)) {
+                print("Return has no errors\n");
+                return true;
+            }
+            var err = obj.get_object_member(type);
+            
+            
+            
+            if (!err.has_member(_this.file.path)) {
+                print("File path has no errors\n");
+                return true;
+            }
+        
+            var lines = err.get_object_member(_this.file.path);
+            
+            var offset = 1;
+            if (obj.has_member("line_offset")) {
+                offset = (int)obj.get_int_member("line_offset") + 1;
+            }
+             
+            
+            var tlines = this.el.get_line_count () +1;
+            
+            lines.foreach_member((obj, line, node) => {
+                
+                     Gtk.TextIter iter;
+            //        print("get inter\n");
+                    var eline = int.parse(line) - offset;
+                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
+                    
+                    
+                    if (eline > tlines || eline < 0) {
+                        return;
+                    }
+                    this.el.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    var msg  = "Line: %d".printf(eline+1);
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+                    
+                    
+                    this.el.create_source_mark(msg, type, iter);
+                } );
+                return false;
+            
+        
+        
+        
         
         }
     }
