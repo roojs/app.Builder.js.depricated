@@ -35,14 +35,9 @@ namespace Palete {
  		JsRender.JsRender file;
   		public int line_offset = 0;
 		
-		// file.project , file.path, file.build_module, ""
-		public ValaSource(
-			
-		
-		
-			) {
+ 		public ValaSource( ) 
+ 		{
 			base();
-			//this.file = file;
 		 
 		}
 		public void dumpCode(string str) 
