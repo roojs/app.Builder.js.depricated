@@ -282,7 +282,7 @@ public class Xcls_ValaCompileErrors : Object
                  // right click.
                  if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1  ) {    
                     // show popup!.   
-                      
+                        
                      
                     return false;
                 }
