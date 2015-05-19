@@ -58,7 +58,7 @@ public class Spawn : Object
 	 * @signal input called at start to send input when process starts?
 	 * @return the string or null 
 	 */
-	public signal string? complete();
+	public signal void complete();
 	/**
 	 * @signal output_line called when a line is recieved from the process.
 	 * Note you may want to connect this and run 
