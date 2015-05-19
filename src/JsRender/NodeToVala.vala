@@ -451,7 +451,7 @@ public class JsRender.NodeToVala : Object {
 		*/
 		if (this.node.has("* ctor")) {
 			 
-			this.ret +=  this.ipad + "this.el = " + this.node.get("* ctor")+ ";\n";
+			this.addLine(this.ipad + "this.el = " + this.node.get("* ctor")+ ";");
 			return;
 		}
 		// the ctor arguments...
