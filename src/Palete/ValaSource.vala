@@ -7,6 +7,9 @@
  * 
  *  each window should have one of these...
  * 
+ *  
+ * 
+ * 
  */
 
 namespace Palete {
@@ -15,13 +18,16 @@ namespace Palete {
 		INVALID_FORMAT 
 	}
 	
-	public delegate  void ValaSourceResult(Json.Object res);
+	//public delegate  void ValaSourceResult(Json.Object res);
 	
+	public signal void compiled(Json.Object res);
 	 
 
 	public class ValaSource : Object {
  
-
+		
+		signal 
+		
 		Vala.CodeContext context;
 		 
  		Project.Gtk project;
@@ -61,6 +67,9 @@ namespace Palete {
 		//}
 
 		public void checkFileWithNodePropChange(
+		
+		
+		
 					JsRender.JsRender file,
 					JsRender.Node node, 
 					string prop,
