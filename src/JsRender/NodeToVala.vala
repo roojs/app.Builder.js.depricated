@@ -57,7 +57,7 @@ public class JsRender.NodeToVala : Object {
                 return "Gtk.Source";
             }
             return ns + ".";
-        }
+	}
 	public void  toValaName(Node item, int depth =0) 
 	{
     		this.vcnt++;
