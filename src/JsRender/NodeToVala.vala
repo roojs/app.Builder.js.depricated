@@ -240,7 +240,10 @@ public class JsRender.NodeToVala : Object {
 		this.addLine(this.pad + "}");
 	}
 			
-
+	/**
+	 * when ID is used... on an element, it registeres a property on the top level...
+	 * 
+	 */
 	void addTopProperties()
 	{
 		if (this.depth > 0) {
@@ -253,19 +256,19 @@ public class JsRender.NodeToVala : Object {
 			var n = iter.get();
 
 			 
-					if (!n.props.has_key("id") || n.xvala_id.length < 0) {
-						continue;
-						
-					}
-					if (n.xvala_id[0] == '*') {
-						continue;
-					}
-					if (n.xvala_id[0] == '+') {
-						continue;
-					}
-					this.addLine(this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";");
-					
-				}
+			if (!n.props.has_key("id") || n.xvala_id.length < 0) {
+				continue;
+				
+			}
+			if (n.xvala_id[0] == '*') {
+				continue;
+			}
+			if (n.xvala_id[0] == '+') {
+				continue;
+			}
+			this.addLine(this.pad + "public " + n.xvala_xcls + " " + n.xvala_id + ";");
+			
+		}
 				
 	}
 	 
