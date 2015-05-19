@@ -124,7 +124,7 @@ public class JsRender.Node : Object {
 		this.lines = new Gee.ArrayList<int>();
 		this.line_map = new Gee.HashMap<int,string>();
 		this.node_lines = new Gee.ArrayList<int>();
-		this.node_line_map = new Gee.HashMap<int,Node>();
+		this.node_lines_map = new Gee.HashMap<int,Node>();
 		
 	}
 	
