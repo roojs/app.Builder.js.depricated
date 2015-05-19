@@ -123,6 +123,8 @@ public class JsRender.Node : Object {
 		this.line_end = -1;		
 		this.lines = new Gee.ArrayList<int>();
 		this.line_map = new Gee.HashMap<int,string>();
+		this.node_lines = new Gee.ArrayList<int>();
+		this.node_line_map = new Gee.HashMap<int,Node>();
 		
 	}
 	
@@ -138,11 +140,9 @@ public class JsRender.Node : Object {
 	public void sortLines() {
 		this.lines.sort((a,b) => {   
 			return (int)a-(int)b;
-			/*if (a == b) {
-				return 0;
-			}
-			return a < b ? -1 : 1;
-			*/
+		});
+		this.node_lines.sort((a,b) => {   
+			return (int)a-(int)b;
 		});
 	}
 	
