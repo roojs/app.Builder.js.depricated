@@ -309,9 +309,25 @@ public class Xcls_ValaCompileErrors : Object
                 print ("loadfile %s : %d", fname,line);
                 
                // _this.sourceview.loadFile(fname, line);
+                /*
+                    var f = _this.sourceview.curfname;
+                            
+                    Regex regex = new Regex("\\.vala$");
                 
-                
+                    var bjsf = regex.replace(f,f.length , 0 , ".bjs");
+                    
+                    var p = _this.window.project;
+                    
+                    
+                    
+                    var jsr = p.getByPath(bjsf);
+                    if (jsr != null) {
+                        _this.window.windowstate.fileViewOpen(jsr);
                         
+                        return;
+                    
+                    }
+                     */   
                         
             });
         }
