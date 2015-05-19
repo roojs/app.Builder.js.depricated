@@ -117,6 +117,7 @@ public class JsRender.Node : Object {
 		this.xvala_id = "";
 		this.parent = null;
 		this.line = -1;
+		this.line_end = -1;		
 		this.proplines = new Gee.HashMap<string,int>();
 		this.listenlines = Gee.HashMap<string,int>();
 		
