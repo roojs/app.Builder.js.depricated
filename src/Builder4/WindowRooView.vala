@@ -550,8 +550,11 @@ public class Xcls_WindowRooView : Object
             var runhtml = "<script type=\"text/javascript\">\n" ;
             string builderhtml;
             
-            
-            GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+            try {
+                GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+            } catch (Error e) {
+                builderhtml = "";
+            }
         
             runhtml += builderhtml + "\n";
             runhtml += "</script>\n" ;
