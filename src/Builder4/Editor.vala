@@ -327,6 +327,8 @@ public class Editor : Object
         
           // this.get('/BottomPane').el.set_current_page(0);
             this.el.get_buffer().set_text(str, str.length);
+            this.el.set_undo_manager(null);
+            
             var lm = Gtk.SourceLanguageManager.get_default();
             
             var lang = _this.file.language;
