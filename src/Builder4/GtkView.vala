@@ -92,11 +92,11 @@ public class Xcls_GtkView : Object
             if (file.tree == null) {
                 return;
             }
-            
+           this.file = file;     
             this.sourceview.loadFile(file);
             
             
-            this.file = file;
+    
             if (this.lastObj != null) {
                 this.container.el.remove(this.lastObj);
             }
