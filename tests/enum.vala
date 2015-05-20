@@ -6,7 +6,7 @@
 int main (string[] args) {
  
 	
-	stdout.printf ("%s\n", Type.from_name ("Gtk.Orientation.VERTICAL").name ());
+	stdout.printf ("%s\n", Type.from_name ("Gtk.Orientation").name ());
 	
 	return 0;
 }
