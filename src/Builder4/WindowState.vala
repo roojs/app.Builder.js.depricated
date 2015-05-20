@@ -351,6 +351,8 @@ public class WindowState : Object
 		this.code_editor.save.connect( () => {
 			 this.left_tree.model.file.save();
 			 this.left_tree.model.updateSelected();
+			 // we do not need to call spawn... - as it's already called by the editor?
+			 
 		});
 		
 	}
