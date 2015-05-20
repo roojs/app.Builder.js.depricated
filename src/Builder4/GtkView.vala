@@ -456,8 +456,24 @@ public class Xcls_GtkView : Object
                 return;
             }
             
-            get_contents (_this.file.path, out string contents, out size_t length = null)
-            var str = JsRender.NodeToVala.mungeFile(_this.file);
+            var valafn = "";
+              try {             
+                   var  regex = new Regex("\\.bjs$");
+                
+                 
+                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                 } catch (GLib.RegexError e) {
+                    return;
+                }   
+        
+           if (!FileUtils.test(valafn,FileTest.IS_REGULAR) ) {
+                print("File path has no errors\n");
+                return  ;
+            }
+            
+            string str;
+            GLib.FileUtils.get_contents (_this.file.path, out str);
+        
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
