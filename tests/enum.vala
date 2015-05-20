@@ -5,9 +5,12 @@
 
 int main (string[] args) {
 	Gtk.init(ref args);
-	var x = Type.from_name ("GTK_ORIENTATION_HORIZONTAL");
-	print("%s\n", x.name ());
-	
+	var type = typeof(Gtk.Box);
+	var  ocl = (ObjectClass) type.class_ref ();
+	foreach (ParamSpec spec in ocl.list_properties ()) {
+		stdout.printf ("%s\n", spec.get_name ());
+	}
+	 
 	return 0;
 }
 	 
