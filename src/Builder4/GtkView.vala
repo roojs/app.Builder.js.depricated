@@ -2,7 +2,7 @@ static Xcls_GtkView  _GtkView;
 
 public class Xcls_GtkView : Object
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Xcls_GtkView  _this;
 
     public static Xcls_GtkView singleton()
@@ -29,7 +29,7 @@ public class Xcls_GtkView : Object
     public Xcls_GtkView()
     {
         _this = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.lastObj = null;
