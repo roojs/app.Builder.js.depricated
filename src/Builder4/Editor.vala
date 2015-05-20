@@ -336,7 +336,7 @@ public class Editor : Object
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
-            var buf = this.el.get_buffer();
+         
              
             _this.dirty = false;
             this.el.grab_focus();
