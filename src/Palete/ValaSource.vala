@@ -36,7 +36,7 @@ namespace Palete {
  		public ValaSource( ) 
  		{
 			base();
-		 
+			this.compiler = null;
 		}
 		public void dumpCode(string str) 
 		{
