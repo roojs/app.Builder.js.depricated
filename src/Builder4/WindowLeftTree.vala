@@ -1384,9 +1384,11 @@ public class Xcls_WindowLeftTree : Object
                  GLib.Value value;
                  _this.model.el.get_value(iter, 2, out value);
                  
+        
+                 
                  var n = (JsRender.Node)value;
         
-        
+                 print("compare %s to %s\n", n.fqn(), node.fqn());
                 if (node == n) {
                     ret = pth.to_string();
                     return true;
