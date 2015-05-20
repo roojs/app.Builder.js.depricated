@@ -145,7 +145,7 @@ public class JsRender.Node : Object {
 			return (int)a-(int)b;
 		});
 	}
-	public Node lineToNode(int line)
+	public Node? lineToNode(int line)
 	{
 		var l = -1;
 		foreach(int el in this.node_lines) {
@@ -164,7 +164,7 @@ public class JsRender.Node : Object {
 		}
 		if (l > -1) {
 			return this.node_lines_map.get(l);
-		
+		}
 		return null;
 		
 	}
