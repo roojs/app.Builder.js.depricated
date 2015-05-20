@@ -45,8 +45,8 @@
       {
        "listeners" : {
         "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n} ",
-        "enter_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-        "leave_event" : "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}"
+        "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+        "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
        },
        "id" : "*fileitem",
        "* args" : "JsRender.JsRender file",
@@ -81,8 +81,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
-         "id" : "+typetitle",
          "* args" : "JsRender.JsRender file",
+         "id" : "+typetitle",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
@@ -93,8 +93,8 @@
         },
         {
          "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),new Clutter.Color.from_string(\"#fff\"))",
-         "id" : "+title",
          "* args" : "JsRender.JsRender file",
+         "id" : "+title",
          "$ x_expand" : true,
          "* pack" : "add_child",
          "xtype" : "Text",
