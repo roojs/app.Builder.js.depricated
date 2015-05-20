@@ -1,8 +1,8 @@
 static Xcls_RightPalete  _RightPalete;
 
-public class Xcls_RightPalete : Object 
+public class Xcls_RightPalete : Object
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Xcls_RightPalete  _this;
 
     public static Xcls_RightPalete singleton()
@@ -21,11 +21,11 @@ public class Xcls_RightPalete : Object
     public signal void before_node_change(JsRender.Node? node) ;
     public signal void drag_end() ;
 
-    // ctor 
+    // ctor
     public Xcls_RightPalete()
     {
         _this = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
 
@@ -35,7 +35,7 @@ public class Xcls_RightPalete : Object
         this.el.add (  child_0.el  );
     }
 
-    // user defined functions 
+    // user defined functions
     public void load (Palete.Palete pal, string cls ) {
        
        // this.get('model').expanded();
@@ -58,7 +58,7 @@ public class Xcls_RightPalete : Object
     public void clear () {
        this.model.el.clear();
     }
-    public class Xcls_viewbox : Object 
+    public class Xcls_viewbox : Object
     {
         public Gtk.VBox el;
         private Xcls_RightPalete  _this;
@@ -66,7 +66,7 @@ public class Xcls_RightPalete : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_viewbox(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -81,9 +81,9 @@ public class Xcls_RightPalete : Object
             this.el.add (  child_0.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_ScrolledWindow3 : Object 
+    public class Xcls_ScrolledWindow3 : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_RightPalete  _this;
@@ -91,7 +91,7 @@ public class Xcls_RightPalete : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_ScrolledWindow3(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -105,15 +105,15 @@ public class Xcls_RightPalete : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                this.el.set_size_request(-1,200);
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_TreeView4 : Object 
+    public class Xcls_TreeView4 : Object
     {
         public Gtk.TreeView el;
         private Xcls_RightPalete  _this;
@@ -122,7 +122,7 @@ public class Xcls_RightPalete : Object
             // my vars (def)
         public string dragData;
 
-        // ctor 
+        // ctor
         public Xcls_TreeView4(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -140,7 +140,7 @@ public class Xcls_RightPalete : Object
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
-            // init method 
+            // init method
 
             {
                 this.el.set_size_request(150,-1);
@@ -170,7 +170,7 @@ public class Xcls_RightPalete : Object
              
             }
 
-            // listeners 
+            //listeners
             this.el.button_press_event.connect( ( event) => {
             
              //	if (!this.get('/Editor').save()) {
@@ -232,9 +232,9 @@ public class Xcls_RightPalete : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_model : Object 
+    public class Xcls_model : Object
     {
         public Gtk.ListStore el;
         private Xcls_RightPalete  _this;
@@ -242,7 +242,7 @@ public class Xcls_RightPalete : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_model(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -254,7 +254,7 @@ public class Xcls_RightPalete : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
         public string getValue (Gtk.TreeIter iter, int col)  {
             GLib.Value gval;
              this.el.get_value(iter, col , out gval);
@@ -263,7 +263,8 @@ public class Xcls_RightPalete : Object
             
         }
     }
-    public class Xcls_TreeViewColumn6 : Object 
+
+    public class Xcls_TreeViewColumn6 : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_RightPalete  _this;
@@ -271,7 +272,7 @@ public class Xcls_RightPalete : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_TreeViewColumn6(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -285,14 +286,14 @@ public class Xcls_RightPalete : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.txtrender.el , "markup", 0 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_txtrender : Object 
+    public class Xcls_txtrender : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_RightPalete  _this;
@@ -300,7 +301,7 @@ public class Xcls_RightPalete : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_txtrender(Xcls_RightPalete _owner )
         {
             _this = _owner;
@@ -312,6 +313,11 @@ public class Xcls_RightPalete : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
+
+
+
 }
