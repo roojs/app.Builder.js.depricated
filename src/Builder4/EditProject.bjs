@@ -36,8 +36,8 @@
        "items" : [
         {
          "label" : "Project type :",
-         "xtype" : "Label",
          "* pack" : "pack_start,false,true,3",
+         "xtype" : "Label",
          "$ xns" : "Gtk"
         },
         {
@@ -50,14 +50,14 @@
          "items" : [
           {
            "id" : "cellrender",
-           "* pack" : "pack_start,true",
            "xtype" : "CellRendererText",
+           "* pack" : "pack_start,true",
            "$ xns" : "Gtk"
           },
           {
            "id" : "model",
-           "xtype" : "ListStore",
            "* pack" : "set_model",
+           "xtype" : "ListStore",
            "$ columns" : "typeof(string),typeof(string)",
            "n_columns" : 2,
            "$ xns" : "Gtk",
@@ -80,14 +80,14 @@
     },
     {
      "label" : "OK",
-     "* pack" : "add_action_widget,1",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,1",
      "$ xns" : "Gtk"
     },
     {
      "label" : "Cancel",
-     "xtype" : "Button",
      "* pack" : "add_action_widget,0",
+     "xtype" : "Button",
      "$ xns" : "Gtk"
     }
    ]
