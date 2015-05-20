@@ -408,7 +408,10 @@ public class Xcls_GtkView : Object
          
             var sbuf = (Gtk.SourceBuffer) buf;
         
+          
+            buf.get_bounds (out start, out end);
             
+            sbuf.remove_source_marks (start, end, "grey");
          
             while(Gtk.events_pending()) {
                 Gtk.main_iteration();
