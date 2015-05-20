@@ -347,7 +347,12 @@ public class Xcls_GtkView : Object
                         return;
                     }
                     print("cursor changed : %d\n", buf.cursor_position);
-                    var node = _this.file.lineToNode(buf.cursor_position);
+                    Gtk.TextIter cpos;
+                    buf.get_iter_at_offset(out cpos, buf.cursor_position);
+                    
+                    var ln = cpos.get_line();
+                    
+                    var node = _this.file.lineToNode(ln);
                     if (node == null) {
                         print("can not find node\n");
                         return;
