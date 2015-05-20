@@ -305,9 +305,9 @@ public class Xcls_ClutterFiles : Object
                     if (FileUtils.test(fname, FileTest.EXISTS)) {
                         pixbuf = new Gdk.Pixbuf.from_file(fname);
                     } 
-                    catch (Error e) {
-                    
-                    }
+                } catch (Error e) {
+                    // noop
+                
                 }
                 if (pixbuf == null) {
                 
