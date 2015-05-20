@@ -462,8 +462,42 @@ public class Xcls_GtkView : Object
             
         
         }
-        public void loadFile () {
+        public void loadFile (JsRender.JsRender file) {
+          var buf = this.el.get_buffer();
+            buf.set_text("",0);
+            var sbuf = (Gtk.SourceBuffer) buf;
         
+            
+        
+            if (file == null || file.xtype != "Gtk") {
+                print("xtype != Gtk");
+                return;
+            }
+            
+            var str = JsRender.NodeToVala.mungeFile(file);
+        //    print("setting str %d\n", str.length);
+            buf.set_text(str, str.length);
+            var lm = Gtk.SourceLanguageManager.get_default();
+            
+            var lang = f.language;
+            //?? is javascript going to work as js?
+            
+            ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(lang));
+         
+         
+            while(Gtk.events_pending()) {
+                Gtk.main_iteration();
+            }
+            sbuf.get_iter_at_line(out iter,  sel.line_start);
+            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+            
+            if (_this.main_window.windowstate.last_compile_result != null) {
+                var obj = _this.main_window.windowstate.last_compile_result;
+                this.highlightErrorsJson("ERR", obj);
+                this.highlightErrorsJson("WARN", obj);
+                this.highlightErrorsJson("DEPR", obj);			
+            }
+         
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
