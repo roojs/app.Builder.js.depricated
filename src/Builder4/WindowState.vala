@@ -223,15 +223,14 @@ public class WindowState : Object
 		});
 	
 		this.left_props.changed.connect(() => {
-			  if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 				   this.window_rooview.requestRedraw();
-				   
-			   } else {
+			} else {
 				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
-			  }
-			  this.left_tree.model.updateSelected();
-			  this.left_tree.model.file.save();
-			  if (this.left_tree.model.file.xtype=="Gtk") {
+			}
+			this.left_tree.model.updateSelected();
+			this.left_tree.model.file.save();
+			if (this.left_tree.model.file.xtype=="Gtk") {
 				this.valasource.checkFileSpawn(this.left_tree.model.file);
 			}
 		});
