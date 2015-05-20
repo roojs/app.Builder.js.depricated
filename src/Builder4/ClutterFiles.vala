@@ -310,14 +310,18 @@ public class Xcls_ClutterFiles : Object
                 
                 }
                 if (pixbuf == null) {
-                
-                    if (_this.missing_thumb_pixbuf == null) {
-                            var     icon_theme = Gtk.IconTheme.get_default ();
-                            _this.missing_thumb_pixbuf = icon_theme.load_icon ("package-x-generic", 92, 0);
-                            _this.missing_thumb_pixbuf.ref();
-                        }
-                        pixbuf = _this.missing_thumb_pixbuf;
+                    
+                    try {
+                        if (_this.missing_thumb_pixbuf == null) {
+                                var icon_theme = Gtk.IconTheme.get_default ();
+                                _this.missing_thumb_pixbuf = icon_theme.load_icon ("package-x-generic", 92, 0);
+                                _this.missing_thumb_pixbuf.ref();
+                            }
+                            pixbuf = _this.missing_thumb_pixbuf;
             
+                    } catch (Error e) {
+                    // noop?
+                    }
                 }
             
                 var img = new Clutter.Image();
