@@ -471,10 +471,7 @@ public class Xcls_GtkView : Object
             
             
             
-            if (!err.has_member(_this.file.path)) {
-                print("File path has no errors\n");
-                return  ;
-            }
+            
         
             var valafn = "";
               try {             
@@ -486,7 +483,10 @@ public class Xcls_GtkView : Object
                     return;
                 }   
         
-        
+           if (!err.has_member(valafn)) {
+                print("File path has no errors\n");
+                return  ;
+            }
             var lines = err.get_object_member(valafn);
             
             var offset = 1;
