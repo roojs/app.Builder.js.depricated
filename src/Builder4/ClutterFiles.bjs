@@ -80,7 +80,7 @@
          "$ x_align" : "Clutter.ActorAlign.START"
         },
         {
-         "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),new Clutter.Color.from_string(\"#fff\"))",
+         "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
          "* args" : "JsRender.JsRender file",
          "id" : "+typetitle",
          "$ x_expand" : true,
