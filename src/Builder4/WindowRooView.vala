@@ -54,7 +54,7 @@ public class Xcls_WindowRooView : Object
         
         var  win = this.el.get_parent_window();
         var width = win.get_width();
-        var height = win.get_height();
+      //  var height = win.get_height();
     
         Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
     
