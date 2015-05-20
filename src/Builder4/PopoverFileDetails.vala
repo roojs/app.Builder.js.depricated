@@ -45,7 +45,7 @@ public class Xcls_PopoverFileDetails : Object
         this.el.border_width = 0;
         this.el.modal = true;
         this.el.position = Gtk.PositionType.RIGHT;
-        var child_0 = new Xcls_VBox2( _this );
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
 
@@ -146,23 +146,24 @@ public class Xcls_PopoverFileDetails : Object
         
         
     }
-    public class Xcls_VBox2 : Object
+    public class Xcls_Box2 : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_PopoverFileDetails  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_VBox2(Xcls_PopoverFileDetails _owner )
+        public Xcls_Box2(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_HeaderBar3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
