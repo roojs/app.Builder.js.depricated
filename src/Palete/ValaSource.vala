@@ -155,6 +155,11 @@ namespace Palete {
 		
 		public void checkFileSpawn(JsRender.JsRender file )
 		{
+ 			// race condition..
+ 			if (this.compiler != null) { 
+				return;
+			}
+ 			
  			this.file = file;
 			this.line_offset = 0;
 			  
