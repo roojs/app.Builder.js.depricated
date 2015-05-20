@@ -4,8 +4,8 @@
 
 
 int main (string[] args) {
- 
-	var x = Type.from_name ("Gtk");
+	Gtk.init(ref args);
+	var x = Type.from_name ("Gtk.Orientation");
 	print("%s\n", x.name ());
 	
 	return 0;
