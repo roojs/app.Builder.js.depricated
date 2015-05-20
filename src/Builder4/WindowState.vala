@@ -118,6 +118,9 @@ public class WindowState : Object
 		this.left_tree.changed.connect(() => {
 			this.window_rooview.requestRedraw();
 			this.left_tree.model.file.save();
+			if (this.left_tree.model.file.xtype=="Gtk") {
+				this.valasource.checkFileSpawn(this.left_tree.model.file);
+			}
 		});
 		 
 	}
