@@ -190,7 +190,7 @@ public class JsRender.NodeToGtk : Object {
 						raw_val = rv_s[rv_s.length-1];					
 						EnumClass ec = (EnumClass) vt.class_ref ();
 						for (var i =0;i< ec.n_values; i++) {
-							var ev = ec.values[i].value_ame;
+							var ev = ec.values[i].value_name;
 							var ev_s= ev.split("_");
 							if (raw_val == ev_s[ev_s.length-1]) {
 								var sval = GLib.Value(typeof(int));
