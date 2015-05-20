@@ -415,14 +415,8 @@ public class Xcls_GtkView : Object
                 Gtk.main_iteration();
             }
             
-            Gtk.TextIter iter;   
-            sbuf.get_iter_at_line(out iter,  sel.line_start);
-            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+          
             
-             if (sel == null) {
-                // no highlighting..
-                return;
-            }
             
             // clear all the marks..
              Gtk.TextIter start;
@@ -430,7 +424,16 @@ public class Xcls_GtkView : Object
                 
             sbuf.get_bounds (out start, out end);
             sbuf.remove_source_marks (start, end, "grey");
-             
+            
+            
+             if (sel == null) {
+                // no highlighting..
+                return;
+            }
+            Gtk.TextIter iter;   
+            sbuf.get_iter_at_line(out iter,  sel.line_start);
+            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+            
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
                    
