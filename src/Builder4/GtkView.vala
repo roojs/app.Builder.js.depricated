@@ -341,8 +341,8 @@ public class Xcls_GtkView : Object
                 description.set_size(8000);
                 this.el.override_font(description);
                 
-                this.el.get_buffer().notify.connect((s,p) => {
-                    if (s != "cursor_position") {
+                this.el.get_buffer().notify.connect((ps) => {
+                    if (ps.name != "cursor_position") {
                         return;
                     }
                     print("cursor changed : %d\n", p.cursor_position);
