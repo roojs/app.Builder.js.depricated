@@ -495,7 +495,7 @@ public class Xcls_GtkView : Object
             }
          
         }
-        public void highlightErrorsJson public void highlightErrorsJson (string type, Json.Object obj) {
+        public void highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
              Gtk.TextIter end;   
              
