@@ -62,6 +62,9 @@ namespace Palete {
 		{
 			this.file = file;
  			
+ 			if (this.compiler != null) {
+				return;
+			}
 			
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
 			var hash = ptype == "listener" ? node.listeners : node.props;
@@ -104,6 +107,8 @@ namespace Palete {
 					string contents 
 				)
 		{
+ 			
+ 			
  			
 			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
