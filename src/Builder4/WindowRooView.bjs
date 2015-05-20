@@ -5,7 +5,7 @@
  "path" : "/home/alan/gitlive/app.Builder.js/src/Builder4/WindowRooView.bjs",
  "permname" : "",
  "modOrder" : "",
- "build_module" : "",
+ "build_module" : "builder",
  "items" : [
   {
    "id" : "WindowRooView",
