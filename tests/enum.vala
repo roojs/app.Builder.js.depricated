@@ -7,9 +7,9 @@ int main (string[] args) {
 	Gtk.init(ref args);
 	var type = typeof(Gtk.Box);
 	var  ocl = (ObjectClass) type.class_ref ();
-	foreach (ParamSpec spec in ocl.list_properties ()) {
-		stdout.printf ("%s\n", spec.get_name ());
-	}
+	var ps = ocl.find_property("orientation");
+	var vt = ps.value_type;
+	print("%s\n", vt.name());
 	 
 	return 0;
 }
