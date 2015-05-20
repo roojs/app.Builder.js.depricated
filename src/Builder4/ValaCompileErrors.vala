@@ -253,7 +253,7 @@ public class Xcls_ValaCompileErrors : Object
             {
              var description = new Pango.FontDescription();
                 description.set_size(8000);
-                this.el.modify_font(description);
+                this.el.override_font(description);
             
             }
 
