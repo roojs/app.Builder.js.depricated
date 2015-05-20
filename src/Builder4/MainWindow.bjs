@@ -128,13 +128,14 @@
          "items" : [
           {
            "id" : "editpane",
-           "xtype" : "VPaned",
+           "xtype" : "Paned",
            "* pack" : "pack_start,false,true,0",
            "$ xns" : "Gtk",
+           "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
            "items" : [
             {
              "id" : "tree",
-             "xtype" : "VBox",
+             "xtype" : "Box",
              "* pack" : "add1",
              "$ xns" : "Gtk"
             },

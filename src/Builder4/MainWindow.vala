@@ -475,7 +475,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_editpane : Object
     {
-        public Gtk.VPaned el;
+        public Gtk.Paned el;
         private Xcls_MainWindow  _this;
 
 
@@ -486,7 +486,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.editpane = this;
-            this.el = new Gtk.VPaned();
+            this.el = new Gtk.Paned( Gtk.Orientation.VERTICAL );
 
             // my vars (dec)
 
@@ -503,7 +503,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_tree : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_MainWindow  _this;
 
 
@@ -514,7 +514,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.tree = this;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.Box( null, 0 );
 
             // my vars (dec)
 
