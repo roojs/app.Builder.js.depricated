@@ -495,42 +495,82 @@ public class Xcls_GtkView : Object
             }
          
         }
-        public void highlightErrorsJson (JsRender.Node? sel) {
-        
-            // this is connected in widnowstate
-           var buf = this.el.get_buffer();
+        public void highlightErrorsJson public void highlightErrorsJson (string type, Json.Object obj) {
+              Gtk.TextIter start;
+             Gtk.TextIter end;   
              
-            var sbuf = (Gtk.SourceBuffer) buf;
-        
-            Gtk.TextIter start;
-            Gtk.TextIter end;     
+             var buf =  this.el.get_buffer();
+               var sbuf = (Gtk.SourceBuffer)buf;
+                buf.get_bounds (out start, out end);
                 
-            sbuf.get_bounds (out start, out end);
-            sbuf.remove_source_marks (start, end, "grey");
-              
-            if (sel == null) {
-                // no highlighting..
-                return;
-            }
-            // clear all the marks..
-            
-             Gtk.TextIter iter; 
-            for (var i = 0; i < buf.get_line_count();i++) {
-                if (i < sel.line_start || i > sel.line_end) {
-                   
-                    sbuf.get_iter_at_line(out iter, i);
-                    sbuf.create_source_mark(null, "grey", iter);
-                    
-                }
-            
-            }
-            while(Gtk.events_pending()) {
-                Gtk.main_iteration();
-            }
-            sbuf.get_iter_at_line(out iter,  sel.line_start);
-            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
-            
+                sbuf.remove_source_marks (start, end, type);
+                         
              
+             // we should highlight other types of errors..
+            
+            if (!obj.has_member(type)) {
+                print("Return has no errors\n");
+                return  ;
+            }
+            var err = obj.get_object_member(type);
+            
+            
+            
+            
+            
+        
+            var valafn = "";
+              try {             
+                   var  regex = new Regex("\\.bjs$");
+                
+                 
+                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                 } catch (GLib.RegexError e) {
+                    return;
+                }   
+        
+           if (!err.has_member(valafn)) {
+                print("File path has no errors\n");
+                return  ;
+            }
+            var lines = err.get_object_member(valafn);
+            
+            var offset = 1;
+            if (obj.has_member("line_offset")) {
+                offset = (int)obj.get_int_member("line_offset") + 1;
+            }
+             
+            
+            var tlines = buf.get_line_count () +1;
+            
+            lines.foreach_member((obj, line, node) => {
+                
+                     Gtk.TextIter iter;
+            //        print("get inter\n");
+                    var eline = int.parse(line) - offset;
+                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
+                    
+                    
+                    if (eline > tlines || eline < 0) {
+                        return;
+                    }
+                    sbuf.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    var msg  = "Line: %d".printf(eline+1);
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+                    
+                    
+                    sbuf.create_source_mark(msg, type, iter);
+                } );
+                return  ;
+            
+         
+        
+        
         }
     }
 
