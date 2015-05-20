@@ -153,7 +153,7 @@ namespace Palete {
 			 
 		}
 		
-		public void checkSpawn(JsRender.JsRender file )
+		public void checkFileSpawn(JsRender.JsRender file )
 		{
  			this.file = file;
 			this.line_offset = 0;
