@@ -500,7 +500,10 @@ public class Xcls_GtkView : Object
         public void highlightErrorsJson (JsRender.Node? sel) {
         
             // this is connected in widnowstate
-              
+           var buf = this.el.get_buffer();
+             
+            var sbuf = (Gtk.SourceBuffer) buf;
+        
             Gtk.TextIter start;
             Gtk.TextIter end;     
                 
