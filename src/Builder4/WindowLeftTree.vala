@@ -1141,7 +1141,7 @@ public class Xcls_WindowLeftTree : Object
                 this.el.set(citer, 0, tr.get(i).nodeTitle(),
                         1, tr.get(i).nodeTip(), -1
                 );
-                var o = new GLib.Value(typeof(Object));
+                var o =   GLib.Value(typeof(Object));
                 o.set_object((Object)tr.get(i));
                 
                 this.el.set_value(citer, 2, o);
