@@ -9,7 +9,11 @@ int main (string[] args) {
 	var  ocl = (ObjectClass) type.class_ref ();
 	var ps = ocl.find_property("orientation");
 	var vt = ps.value_type;
-	print("%s : %s\n", vt.name(), vt.is_enum() ? "Y" : "N");
+    EnumClass ec = (EnumClass) vt.class_ref ();
+	for (var i =0;i< ec.n_values; i++) {
+		var ev = ec.values[i];
+		print("%s : %d", ev.name,ev.value);
+	}
 	 
 	return 0;
 }
