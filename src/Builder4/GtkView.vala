@@ -328,7 +328,7 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
-            this.loading = false;
+            this.loading = true;
 
             // set gobject values
             this.el.editable = false;
