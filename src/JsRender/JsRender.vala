@@ -405,7 +405,7 @@ namespace JsRender {
 			if (this.tree == null) {
 				return null;
 			}
-			
+			return this.tree.lineToNode(line);
 			
 			
 		}
