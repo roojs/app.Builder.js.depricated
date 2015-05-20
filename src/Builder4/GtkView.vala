@@ -425,6 +425,20 @@ public class Xcls_GtkView : Object
             
             ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(lang));
          
+         
+            while(Gtk.events_pending()) {
+                Gtk.main_iteration();
+            }
+            sbuf.get_iter_at_line(out iter,  sel.line_start);
+            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+            
+            if (_this.main_window.windowstate.last_compile_result != null) {
+                var obj = _this.main_window.windowstate.last_compile_result;
+                this.highlightErrorsJson("ERR", obj);
+                this.highlightErrorsJson("WARN", obj);
+                this.highlightErrorsJson("DEPR", obj);			
+            }
+         
             if (sel == null) {
                 // no highlighting..
                 return;
@@ -445,18 +459,7 @@ public class Xcls_GtkView : Object
                 }
             
             }
-            while(Gtk.events_pending()) {
-                Gtk.main_iteration();
-            }
-            sbuf.get_iter_at_line(out iter,  sel.line_start);
-            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             
-            if (_this.main_window.windowstate.last_compile_result != null) {
-                var obj = _this.main_window.windowstate.last_compile_result;
-                this.highlightErrorsJson("ERR", obj);
-                this.highlightErrorsJson("WARN", obj);
-                this.highlightErrorsJson("DEPR", obj);			
-            }
         
         }
         public void loadFile () {
