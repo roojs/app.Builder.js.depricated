@@ -65,7 +65,7 @@ public class Xcls_WindowLeftProjects : Object
             m.append(out iter);
             m.set(iter,   0,projects.get(i).name );
             
-            var o = new GLib.Value(typeof(Object));
+            var o =  GLib.Value(typeof(Object));
             o.set_object((Object)projects.get(i));
                        
             m.set_value(iter, 1, o);

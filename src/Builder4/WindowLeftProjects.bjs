@@ -13,7 +13,7 @@
    },
    "@ void project_selected" : "(Project.Project project)",
    "id" : "WindowLeftProjects",
-   "|  void load" : "() {\n     // clear list...\n    \n     if (_this.is_loaded) {\n         return;\n     }\n     _this.is_loading = true;\n        \n     _this.is_loaded = true;\n     \n     Project.Project.loadAll();\n     var projects = Project.Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter);\n        m.set(iter,   0,projects.get(i).name );\n        \n        var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.set_value(iter, 1, o);\n     \n     }\n     m.set_sort_column_id(0, Gtk.SortType.ASCENDING);\n     _this.is_loading = false;     \n}\n",
+   "|  void load" : "() {\n     // clear list...\n    \n     if (_this.is_loaded) {\n         return;\n     }\n     _this.is_loading = true;\n        \n     _this.is_loaded = true;\n     \n     Project.Project.loadAll();\n     var projects = Project.Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter);\n        m.set(iter,   0,projects.get(i).name );\n        \n        var o =  GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.set_value(iter, 1, o);\n     \n     }\n     m.set_sort_column_id(0, Gtk.SortType.ASCENDING);\n     _this.is_loading = false;     \n}\n",
    "# bool is_loaded" : false,
    "* pack" : "add",
    "xtype" : "VBox",
