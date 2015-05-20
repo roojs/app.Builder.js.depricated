@@ -400,6 +400,13 @@ namespace JsRender {
 			
 		    
 		}
+		public JsRender.Node? lineToNode(int line)
+		{
+			
+			
+		}
+		
+		
 		public abstract void save();
 		public abstract void saveHTML(string html);
 		public abstract string toSource() ;
