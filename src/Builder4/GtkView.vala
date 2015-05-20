@@ -203,7 +203,7 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.label_code = this;
-            this.el = new Gtk.Label( "Code" );
+            this.el = new Gtk.Label( "Preview Generated Code" );
 
             // my vars (dec)
 
