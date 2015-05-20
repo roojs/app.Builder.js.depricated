@@ -30,9 +30,10 @@
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
       {
-       "xtype" : "HBox",
+       "xtype" : "Box",
        "* pack" : "pack_start,false,false,0",
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "items" : [
         {
          "* pack" : "pack_start,true,true,0",

@@ -133,7 +133,7 @@ public class Xcls_ValaCompileErrors : Object
 
             // set gobject values
             this.el.homogeneous = false;
-            var child_0 = new Xcls_HBox3( _this );
+            var child_0 = new Xcls_Box3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_ScrolledWindow5( _this );
@@ -143,19 +143,19 @@ public class Xcls_ValaCompileErrors : Object
 
         // user defined functions
     }
-    public class Xcls_HBox3 : Object
+    public class Xcls_Box3 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_ValaCompileErrors  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HBox3(Xcls_ValaCompileErrors _owner )
+        public Xcls_Box3(Xcls_ValaCompileErrors _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
