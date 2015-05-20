@@ -342,6 +342,7 @@ public class Xcls_GtkView : Object
                 var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
                 this.el.override_font(description);
+            
                 this.loading = true;
                 var buf = this.el.get_buffer();
                 buf.notify.connect((ps) => {
