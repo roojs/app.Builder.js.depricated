@@ -189,6 +189,7 @@ public class JsRender.NodeToGtk : Object {
 					if (rv_s.length > 0) {
 						raw_val = rv_s[rv_s.length-1];					
 						EnumClass ec = (EnumClass) vt.class_ref ();
+						var foundit = false;
 						for (var i =0;i< ec.n_values; i++) {
 							var ev = ec.values[i].value_name;
 							var ev_s= ev.split("_");
@@ -196,9 +197,14 @@ public class JsRender.NodeToGtk : Object {
 								var sval = GLib.Value(typeof(int));
 								sval.set_int(ec.values[i].value);
 								ret.set_property(k, sval);
-								continue;
+								foundit = true;
+								break;
 							}
 						}
+						if (foundit) {
+							continue;
+						}
+							
 					}
 				}
 			}
