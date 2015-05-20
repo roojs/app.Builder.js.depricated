@@ -322,8 +322,7 @@ namespace Palete
 
    }
 
-	ValaSource vs;
-	ValaSourceResult result_callback;
+ 
  	public   void validateVala(
 			WindowState state,
 			string code, 

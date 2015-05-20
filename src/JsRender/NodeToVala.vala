@@ -68,7 +68,7 @@ public class JsRender.NodeToVala : Object {
 		node.line_map = new Gee.HashMap<int,string>();
 		if (parent == null) {
 			node.node_lines = new Gee.ArrayList<int>();
-			node.node_line_map = new Gee.HashMap<int,Node>();
+			node.node_lines_map = new Gee.HashMap<int,Node>();
 		 }
 		
 	}
