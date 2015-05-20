@@ -126,7 +126,7 @@ public class EditProject : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_HBox3( _this );
+            var child_0 = new Xcls_Box3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,3 );
             var child_1 = new Xcls_dir( _this );
@@ -136,23 +136,24 @@ public class EditProject : Object
 
         // user defined functions
     }
-    public class Xcls_HBox3 : Object
+    public class Xcls_Box3 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private EditProject  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HBox3(EditProject _owner )
+        public Xcls_Box3(EditProject _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_Label4( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,3 );

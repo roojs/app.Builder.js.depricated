@@ -29,9 +29,10 @@
      "$ homogeneous" : false,
      "items" : [
       {
-       "xtype" : "HBox",
+       "xtype" : "Box",
        "* pack" : "pack_start,false,true,3",
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "$ homogeneous" : false,
        "items" : [
         {
