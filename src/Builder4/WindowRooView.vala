@@ -58,7 +58,7 @@ public class Xcls_WindowRooView : Object
         try { 
             Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
             screenshot.save(filename,"png");
-        } catch(e) {
+        } catch(Error e) {
             //noop
         }
     
