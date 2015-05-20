@@ -212,7 +212,11 @@ namespace Palete {
 				if (node.get_node_type () != Json.NodeType.OBJECT) {
 					var ret = new Json.Object();
 					ret.set_boolean_member("success", false);
-					ret.set_string_member("message", "Compiler returned Unexpected element type %s", node.type_name ());
+					ret.set_string_member("message", 
+						"Compiler returned Unexpected element type %s".printf( 
+							node.type_name ()
+						)
+					);
 					this.compiled(ret);
 					this.compiler = null;
 				}
