@@ -356,8 +356,13 @@ public class WindowState : Object
 		// editor.save...
 
 		this.code_editor.save.connect( () => {
-			 this.left_tree.model.file.save();
-			 this.left_tree.model.updateSelected();
+			this.left_tree.model.file.save();
+			this.left_tree.model.updateSelected();
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+				   this.window_rooview.requestRedraw();
+			} else {
+				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
+			}
 			 // we do not need to call spawn... - as it's already called by the editor?
 			 
 		});
