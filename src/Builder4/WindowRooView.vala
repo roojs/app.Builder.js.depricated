@@ -55,59 +55,14 @@ public class Xcls_WindowRooView : Object
         var  win = this.el.get_parent_window();
         var width = win.get_width();
       //  var height = win.get_height();
-    
-        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
-    
-        screenshot.save(filename,"png");
-        return;
-        
-        
-        
-        
-        
-        
-        
-        var p = new WebKit.PrintOperation(_this.view.el);
-         
-        var ps = new Gtk.PrintSettings();
-        ps.set_printer("Print to File");
-        ps.set("output-file-format", "pdf");
-        ps.set("output-uri", "file://" + filename + ".pdf");
-    
-        // find the printer...
-        
-        /*
-        var ar = Gtk.PaperSize.get_paper_sizes(false);
-        var psetup = new Gtk.PageSetup();
-        for(var i = 0; i < ar.length(); i++) {
-            if (ar.nth_data(i).get_name() =="iso_a4") {
-                psetup.set_paper_size(ar.nth_data(i));
-            }
+        try { 
+            Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
+            screenshot.save(filename,"png");
+        } catch(e) {
+            //noop
         }
-        psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
-        
-         
-        p.set_page_setup(psetup);
-        */
-        p.set_print_settings(ps);
-        
-        p.finished.connect(() => {
-            print("creating thumbnail for " + filename + ".pdf\n"); 
-            var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
-        
-            s.write_to_png (filename);
-            
-           // var f = GLib.File.new_for_path (filename + ".pdf");
-           // f.delete();
-        });
-        
-        
-        p.print();
-        
-        // should we hold until it's printed...
-        
-          
     
+        
         
         
     
