@@ -429,6 +429,8 @@ public class Xcls_GtkView : Object
             while(Gtk.events_pending()) {
                 Gtk.main_iteration();
             }
+            
+            Gtk.TextIter iter;   
             sbuf.get_iter_at_line(out iter,  sel.line_start);
             this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             
