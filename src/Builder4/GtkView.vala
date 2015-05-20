@@ -58,6 +58,12 @@ public class Xcls_GtkView : Object
         if (this.file == null) {
             return;
         }
+        // only screenshot the gtk preview..
+        if (this.notebook.el.page > 0 ) {
+            return;
+        }
+        
+        
         var filename = this.file.getIconFileName(false);
         
         var  win = this.el.get_parent_window();
