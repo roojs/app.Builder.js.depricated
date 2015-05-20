@@ -573,13 +573,15 @@ public class Xcls_WindowRooView : Object
                    base_template = "";
             
             }
+            try {
+                GLib.FileUtils.get_contents(
+                    BuilderApplication.configDirectory() + "/resources/" + 
+                        (base_template.length > 0 ? base_template :  "roo.builder.html")
+                        , out inhtml);
             
-            GLib.FileUtils.get_contents(
-                BuilderApplication.configDirectory() + "/resources/" + 
-                    (base_template.length > 0 ? base_template :  "roo.builder.html")
-                    , out inhtml);
-            
-            
+            } catch (Error e) {
+                inhtml = "";
+            }    
             this.renderedData = js;
         
         
