@@ -492,6 +492,9 @@ public class Xcls_GtkView : Object
             var err = obj.get_object_member(type);
             
             
+            if (_this.file == null) {
+                return;
+            }
             
             
             
