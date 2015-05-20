@@ -2,7 +2,7 @@ static Xcls_WindowLeftProjects  _WindowLeftProjects;
 
 public class Xcls_WindowLeftProjects : Object
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Xcls_WindowLeftProjects  _this;
 
     public static Xcls_WindowLeftProjects singleton()
@@ -26,13 +26,14 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_WindowLeftProjects()
     {
         _this = this;
-        this.el = new Gtk.VBox( false, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.is_loaded = false;
         this.is_loading = false;
 
         // set gobject values
+        this.el.homogeneous = false;
         var child_0 = new Xcls_ScrolledWindow2( _this );
         child_0.ref();
         this.el.pack_end (  child_0.el , true,true,0 );
