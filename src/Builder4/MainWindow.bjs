@@ -105,8 +105,9 @@
     {
      "id" : "vbox",
      "* pack" : "add",
-     "xtype" : "VBox",
+     "xtype" : "Box",
      "$ xns" : "Gtk",
+     "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "$ homogeneous" : false,
      "items" : [
       {
