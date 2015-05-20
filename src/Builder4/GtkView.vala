@@ -500,38 +500,19 @@ public class Xcls_GtkView : Object
         public void highlightErrorsJson (JsRender.Node? sel) {
         
             // this is connected in widnowstate
-            print("node selected");
-            var buf = this.el.get_buffer();
-            buf.set_text("",0);
-            var sbuf = (Gtk.SourceBuffer) buf;
-        
-            
-            var f =  _this.main_window.windowstate.left_tree.model.file;
-            if (f == null || f.xtype != "Gtk") {
-                print("xtype != Gtk");
-                return;
-            }
-            
-            var str = JsRender.NodeToVala.mungeFile(f);
-            print("setting str %d\n", str.length);
-            buf.set_text(str, str.length);
-            var lm = Gtk.SourceLanguageManager.get_default();
-            
-            var lang = f.language;
-            //?? is javascript going to work as js?
-            
-            ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(lang));
-         
+              
+            Gtk.TextIter start;
+            Gtk.TextIter end;     
+                
+            sbuf.get_bounds (out start, out end);
+            sbuf.remove_source_marks (start, end, "grey");
+              
             if (sel == null) {
                 // no highlighting..
                 return;
             }
             // clear all the marks..
-             Gtk.TextIter start;
-            Gtk.TextIter end;     
-                
-            sbuf.get_bounds (out start, out end);
-            sbuf.remove_source_marks (start, end, null);
+            
              Gtk.TextIter iter; 
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
@@ -548,12 +529,7 @@ public class Xcls_GtkView : Object
             sbuf.get_iter_at_line(out iter,  sel.line_start);
             this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             
-            if (_this.main_window.windowstate.last_compile_result != null) {
-                var obj = _this.main_window.windowstate.last_compile_result;
-                this.highlightErrorsJson("ERR", obj);
-                this.highlightErrorsJson("WARN", obj);
-                this.highlightErrorsJson("DEPR", obj);			
-            }
+            
         
         }
     }
