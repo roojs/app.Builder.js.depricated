@@ -2,7 +2,7 @@ static Editor  _Editor;
 
 public class Editor : Object
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Editor  _this;
 
     public static Editor singleton()
@@ -35,7 +35,7 @@ public class Editor : Object
     public Editor()
     {
         _this = this;
-        this.el = new Gtk.VBox( false, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.window = null;
@@ -48,7 +48,8 @@ public class Editor : Object
         this.node = null;
 
         // set gobject values
-        var child_0 = new Xcls_HBox2( _this );
+        this.el.homogeneous = false;
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
         var child_1 = new Xcls_RightEditor( _this );
@@ -120,23 +121,24 @@ public class Editor : Object
         this.key_edit.el.text = key;    
     
     }
-    public class Xcls_HBox2 : Object
+    public class Xcls_Box2 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Editor  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HBox2(Editor _owner )
+        public Xcls_Box2(Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
