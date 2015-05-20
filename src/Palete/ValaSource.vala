@@ -108,7 +108,9 @@ namespace Palete {
 				)
 		{
  			
- 			
+ 			if (this.compiler != null) {
+				return;
+			}
  			
 			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
