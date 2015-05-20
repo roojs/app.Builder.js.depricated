@@ -182,6 +182,7 @@ namespace Palete {
 				ret.set_boolean_member("success", false);
 				ret.set_string_member("message", e.message);
 			    this.compiled(ret);
+			    this.compiler = false;
 			}
 			 
 		}
@@ -215,6 +216,7 @@ namespace Palete {
 				ret.set_string_member("message", e.message);
 				this.compiled(ret);
 			}
+			this.compiler = false;
 			//compiler.unref();
 			//tmpfile.unref();
 			 
