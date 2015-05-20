@@ -156,7 +156,7 @@ namespace Palete {
 		public void checkSpawn(JsRender.JsRender file )
 		{
  			this.file = file;
-			 
+			this.line_offset = 0;
 			  
 			string[] args = {};
 			args += BuilderApplication._self;
