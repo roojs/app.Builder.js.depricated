@@ -359,6 +359,9 @@ public class Xcls_GtkView : Object
                     }
                     var tp = _this.main_window.windowstate.left_tree.model.treePathFromNode(node);
                     print("got tree path %s\n", tp);
+                    _this.main_window.windowstate.left_tree.view.set_cursor(Gtk.TreePath.from_string(tp), null, false);
+                    
+                    
                     // highlight the node..
                     
                 });
