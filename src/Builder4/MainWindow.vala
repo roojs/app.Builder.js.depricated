@@ -441,7 +441,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_leftpane( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
-            var child_1 = new Xcls_VBox17( _this );
+            var child_1 = new Xcls_Box17( _this );
             child_1.ref();
             this.el.add2 (  child_1.el  );
         }
@@ -549,24 +549,23 @@ public class Xcls_MainWindow : Object
 
 
 
-    public class Xcls_VBox17 : Object
+    public class Xcls_Box17 : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_VBox17(Xcls_MainWindow _owner )
+        public Xcls_Box17(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
-            this.el.orientation = Gtk.Orientation.VERTICAL;
             var child_0 = new Xcls_clutterembed( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
