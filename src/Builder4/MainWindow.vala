@@ -1457,7 +1457,7 @@ public class Xcls_MainWindow : Object
                     return false;
             });
             this.el.leave_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#000");
+                this.el.background_color =   Clutter.Color.from_string("#000");
                 return false;
             });
         }
