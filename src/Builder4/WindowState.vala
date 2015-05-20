@@ -231,6 +231,7 @@ public class WindowState : Object
 			  }
 			  this.left_tree.model.updateSelected();
 			  this.left_tree.model.file.save();
+			  this.valasource.spawnFile(this.left_tree.model.file);
 		});
 	
 
@@ -918,6 +919,11 @@ public class WindowState : Object
 			buf.highlightErrorsJson("ERR", obj);
 			buf.highlightErrorsJson("WARN", obj);
 			buf.highlightErrorsJson("DEPR", obj);
+			
+			var gbuf =   this.window_gladeview.sourceview;
+			gbuf.highlightErrorsJson("ERR", obj);
+			gbuf.highlightErrorsJson("WARN", obj);
+			gbuf.highlightErrorsJson("DEPR", obj);			
 			
 			this.last_compile_result = obj;
 			
