@@ -139,10 +139,10 @@ public class JsRender.Node : Object {
 	}
 	public void sortLines() {
 		this.lines.sort((a,b) => {   
-			return (int)a-(int)b;
+			return (int)b-(int)a;
 		});
 		this.node_lines.sort((a,b) => {   
-			return (int)a-(int)b;
+			return (int)b-(int)a;
 		});
 	}
 	public Node? lineToNode(int line)
