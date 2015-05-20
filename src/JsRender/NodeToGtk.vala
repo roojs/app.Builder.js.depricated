@@ -168,12 +168,43 @@ public class JsRender.NodeToGtk : Object {
 				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
 			var k = pviter.get_key();
         		// skip items we have already handled..
-        		if  (!this.node.has(k)) {
+			if  (!this.node.has(k)) {
 				continue;
 			}
 			// find out the type of the property...
 			var type = pviter.get_value().type;
 			type = Palete.Gir.fqtypeLookup(type, ns);
+
+			var  ocl = (ObjectClass) cls_gtype.class_ref ();
+			var ps = ocl.find_property(k);
+			
+			// attempt to read property type and enum...
+			
+			if (ps != null) {
+				var vt = ps.value_type;
+				if (vt.is_enum()) {
+					
+					var raw_val = this.node.get(k).strip();
+					var rv_s = raw_val.split(".")
+					if (rv_s.length > 0) {
+						raw_val = rv_s[rv_s.length-1];					
+						EnumClass ec = (EnumClass) vt.class_ref ();
+						for (var i =0;i< ec.n_values; i++) {
+							var ev = ec.values[i];
+							var ev_s= ev.split("_");
+							if (raw_val == ev_s[ev_s.length-1]) {
+								var sval = GLib.Value(typeof(int));
+								sval.set_int(int.parse(val));
+								ret.set_property(k, sval);
+								continue;
+							}
+						}
+					}
+				}
+			}
+
+
+			
 
 			var val = this.toValue(this.node.get(k).strip(), type);
 			if (val == null) {
