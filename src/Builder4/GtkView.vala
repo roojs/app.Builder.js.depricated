@@ -456,6 +456,7 @@ public class Xcls_GtkView : Object
                 return;
             }
             
+            get_contents (_this.file.path, out string contents, out size_t length = null)
             var str = JsRender.NodeToVala.mungeFile(_this.file);
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
