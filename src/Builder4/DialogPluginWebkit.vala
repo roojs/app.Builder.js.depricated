@@ -117,12 +117,14 @@ public class Xcls_DialogPluginWebkit : Object
             // need to modify paths
     
             string inhtml;
+            try {
+                GLib.FileUtils.get_contents(
+                    BuilderApplication.configDirectory() + "/resources/roo.builder.html"
+                        , out inhtml);
             
-            GLib.FileUtils.get_contents(
-                BuilderApplication.configDirectory() + "/resources/roo.builder.html"
-                    , out inhtml);
-            
-            
+            } catch (Error e) {
+                inhtml = "";
+            }
             // fetch the json from the database...
             
             //print(runhtml);
