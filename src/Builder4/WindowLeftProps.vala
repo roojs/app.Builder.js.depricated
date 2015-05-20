@@ -132,7 +132,7 @@ public class Xcls_LeftProps : Object
             
                 mod.get_value(iter, 1 , out gval);
                 var key = (string)gval;
-                var type_ar = key.split(" ");
+                
                 
                 string kname, kflag, ktype;
                 this.node.normalize_key(key, out kname, out kflag, out ktype);
