@@ -401,7 +401,9 @@ public class Xcls_GtkView : Object
 
         // user defined functions
         public void nodeSelected (JsRender.Node? sel) {
-        
+          
+            
+          
             // this is connected in widnowstate
             print("node selected");
             var buf = this.el.get_buffer();
@@ -417,11 +419,11 @@ public class Xcls_GtkView : Object
             sbuf.get_iter_at_line(out iter,  sel.line_start);
             this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             
-         
-            if (sel == null) {
+             if (sel == null) {
                 // no highlighting..
                 return;
             }
+            
             // clear all the marks..
              Gtk.TextIter start;
             Gtk.TextIter end;     
