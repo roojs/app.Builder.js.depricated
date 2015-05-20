@@ -447,10 +447,12 @@ public class Xcls_GtkView : Object
             sbuf.get_iter_at_line(out iter,  sel.line_start);
             this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             
-            if (_this.window
-            this.highlightErrorsJson("ERR", obj);
-            this.highlightErrorsJson("WARN", obj);
-            this.highlightErrorsJson("DEPR", obj);			
+            if (_this.main_window.windowstate.last_compile_result != null) {
+                var obj = _this.main_window.windowstate.last_compile_result;
+                this.highlightErrorsJson("ERR", obj);
+                this.highlightErrorsJson("WARN", obj);
+                this.highlightErrorsJson("DEPR", obj);			
+            }
         
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
