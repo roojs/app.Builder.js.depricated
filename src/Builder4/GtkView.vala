@@ -93,7 +93,7 @@ public class Xcls_GtkView : Object
                 return;
             }
            this.file = file;     
-            this.sourceview.loadFile(file);
+            this.sourceview.loadFile();
             
             
     
@@ -444,7 +444,7 @@ public class Xcls_GtkView : Object
             
         
         }
-        public void loadFile (JsRender.JsRender file) {
+        public void loadFile ( ) {
             var buf = this.el.get_buffer();
             buf.set_text("",0);
             var sbuf = (Gtk.SourceBuffer) buf;
@@ -456,7 +456,7 @@ public class Xcls_GtkView : Object
                 return;
             }
             
-            var str = JsRender.NodeToVala.mungeFile(file);
+            var str = JsRender.NodeToVala.mungeFile(_this.file);
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
