@@ -419,7 +419,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_mainpane : Object
     {
-        public Gtk.HPaned el;
+        public Gtk.Paned el;
         private Xcls_MainWindow  _this;
 
 
@@ -431,7 +431,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.mainpane = this;
-            this.el = new Gtk.HPaned();
+            this.el = new Gtk.Paned( Gtk.Orientation.HORIZONTAL );
 
             // my vars (dec)
             this.lastWidth = 0;
