@@ -1300,7 +1300,7 @@ public class ValaProjectSettings : Object
 
     public class Xcls_set_vbox : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private ValaProjectSettings  _this;
 
 
@@ -1312,12 +1312,13 @@ public class ValaProjectSettings : Object
         {
             _this = _owner;
             _this.set_vbox = this;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
             this.cgroup = null;
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_Label37( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );

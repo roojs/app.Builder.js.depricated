@@ -306,10 +306,11 @@
         {
          "id" : "set_vbox",
          "* pack" : "add2",
-         "xtype" : "VBox",
+         "xtype" : "Box",
          "gboolean homogeneous" : false,
          "$ xns" : "Gtk",
          "# Project.GtkValaSettings cgroup" : "null",
+         "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
          "items" : [
           {
            "xtype" : "Label",
