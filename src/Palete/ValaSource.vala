@@ -136,7 +136,7 @@ namespace Palete {
 			args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
-			args += this.file.path;
+			args += valafn;
 			
 			 
 			
