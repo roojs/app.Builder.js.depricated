@@ -410,7 +410,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_mainpane( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
-            var child_1 = new Xcls_HBox66( _this );
+            var child_1 = new Xcls_Box66( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , false,true,0 );
         }
@@ -2196,23 +2196,24 @@ public class Xcls_MainWindow : Object
 
 
 
-    public class Xcls_HBox66 : Object
+    public class Xcls_Box66 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_MainWindow  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HBox66(Xcls_MainWindow _owner )
+        public Xcls_Box66(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_Label67( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );

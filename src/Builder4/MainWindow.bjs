@@ -589,9 +589,10 @@
       },
       {
        "bool homogeneous" : false,
-       "xtype" : "HBox",
+       "xtype" : "Box",
        "* pack" : "pack_end,false,true,0",
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "items" : [
         {
          "* pack" : "pack_start,true,true,0",
