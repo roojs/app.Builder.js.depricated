@@ -91,8 +91,7 @@ namespace Palete {
 			
 			//this.dumpCode(tmpstring);
 			//print("offset %d\n", offset);
-			this.result_callback = result_cb;
-			this.checkStringSpawn(tmpstring );
+ 			this.checkStringSpawn(tmpstring );
 			
 			// modify report
 			
@@ -114,6 +113,19 @@ namespace Palete {
 			DataOutputStream dostream = new DataOutputStream (ostream);
 			dostream.put_string (contents);
 			
+			var valafn = "";
+			try {             
+			   var  regex = new Regex("\\.bjs$");
+			
+			 
+				valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+			 } catch (GLib.RegexError e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+			    this.compiled(ret);
+			    return;
+			}   
 			
 			string[] args = {};
 			args += BuilderApplication._self;
@@ -157,10 +169,7 @@ namespace Palete {
 				}
 				var ret = node.get_object ();
 				ret.set_int_member("line_offset", this.line_offset);
-				if (result_callback == null) {
-					print ("no callback?");
-					return;
-				}
+				
 				this.compiled(ret);
 				
 				
