@@ -23,10 +23,11 @@
    "items" : [
     {
      "id" : "compile_view",
-     "xtype" : "VBox",
      "* pack" : "add",
+     "xtype" : "Box",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
+     "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
       {
        "xtype" : "HBox",
@@ -43,8 +44,8 @@
       },
       {
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-       "xtype" : "ScrolledWindow",
        "* pack" : "add",
+       "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",
        "items" : [
         {
@@ -75,8 +76,8 @@
            "items" : [
             {
              "id" : "renderer",
-             "* pack" : "pack_start,true",
              "xtype" : "CellRendererText",
+             "* pack" : "pack_start,true",
              "$ xns" : "Gtk"
             }
            ]

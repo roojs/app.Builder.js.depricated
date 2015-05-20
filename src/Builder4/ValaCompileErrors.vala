@@ -116,7 +116,7 @@ public class Xcls_ValaCompileErrors : Object
     }
     public class Xcls_compile_view : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_ValaCompileErrors  _this;
 
 
@@ -127,11 +127,12 @@ public class Xcls_ValaCompileErrors : Object
         {
             _this = _owner;
             _this.compile_view = this;
-            this.el = new Gtk.VBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
