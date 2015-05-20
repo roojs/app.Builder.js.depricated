@@ -466,6 +466,13 @@ public class Xcls_GtkView : Object
             ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(_this.file.language));
           
             
+            Gtk.TextIter start;
+            Gtk.TextIter end;     
+                
+            sbuf.get_bounds (out start, out end);
+            sbuf.remove_source_marks (start, end, null); // remove all marks..
+            
+            
             if (_this.main_window.windowstate.last_compile_result != null) {
                 var obj = _this.main_window.windowstate.last_compile_result;
                 this.highlightErrorsJson("ERR", obj);
