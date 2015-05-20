@@ -1,6 +1,6 @@
 static Xcls_ClutterFiles  _ClutterFiles;
 
-public class Xcls_ClutterFiles : Object 
+public class Xcls_ClutterFiles : Object
 {
     public Clutter.ScrollActor el;
     private Xcls_ClutterFiles  _this;
@@ -20,7 +20,7 @@ public class Xcls_ClutterFiles : Object
     public Gdk.Pixbuf missing_thumb_pixbuf;
     public signal void open (JsRender.JsRender file);
 
-    // ctor 
+    // ctor
     public Xcls_ClutterFiles()
     {
         _this = this;
@@ -36,11 +36,11 @@ public class Xcls_ClutterFiles : Object
         child_0.ref();
         this.el.add_child (  child_0.el  );
 
-        // init method 
+        // init method
 
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
 
-        // listeners 
+        //listeners
         this.el.scroll_event.connect( ( event) => {
            //Sprint("scroll event");
                     var y = this.filelayout.el.y;
@@ -82,7 +82,7 @@ public class Xcls_ClutterFiles : Object
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public  void clearFiles () {
         
         this.filelayout.el.remove_all_children();
@@ -127,7 +127,7 @@ public class Xcls_ClutterFiles : Object
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
     }
-    public class Xcls_filelayout : Object 
+    public class Xcls_filelayout : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -135,7 +135,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_filelayout(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
@@ -150,16 +150,16 @@ public class Xcls_ClutterFiles : Object
             child_0.ref();
             this.el.layout_manager = child_0.el;
 
-            // init method 
+            // init method
 
             this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_filelayout_manager : Object 
+    public class Xcls_filelayout_manager : Object
     {
         public Clutter.FlowLayout el;
         private Xcls_ClutterFiles  _this;
@@ -167,7 +167,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_filelayout_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
@@ -182,9 +182,10 @@ public class Xcls_ClutterFiles : Object
             this.el.column_spacing = 20f;
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_fileitem : Object 
+
+    public class Xcls_fileitem : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -196,7 +197,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_typetitle typetitle;
         public Xcls_title title;
 
-        // ctor 
+        // ctor
         public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
@@ -222,12 +223,12 @@ public class Xcls_ClutterFiles : Object
             this.el.add_child (  child_3.el  );
             this.title =  child_3;
 
-            // init method 
+            // init method
 
             this.file = file;
             this.el.set_size(100,100);
 
-            // listeners 
+            //listeners
             this.el.button_press_event.connect( (  event) => {
                 _this.open(this.file);
                 return false;
@@ -242,9 +243,9 @@ public class Xcls_ClutterFiles : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_BoxLayout5 : Object 
+    public class Xcls_BoxLayout5 : Object
     {
         public Clutter.BoxLayout el;
         private Xcls_ClutterFiles  _this;
@@ -252,7 +253,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_BoxLayout5(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
@@ -265,9 +266,10 @@ public class Xcls_ClutterFiles : Object
             this.el.orientation = Clutter.Orientation.VERTICAL;
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_image : Object 
+
+    public class Xcls_image : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -275,7 +277,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
@@ -292,7 +294,7 @@ public class Xcls_ClutterFiles : Object
             this.el.margin_top = 5f;
             this.el.y_expand = true;
 
-            // init method 
+            // init method
 
             {
                 Gdk.Pixbuf pixbuf;
@@ -327,9 +329,10 @@ public class Xcls_ClutterFiles : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_typetitle : Object 
+
+    public class Xcls_typetitle : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -337,7 +340,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
@@ -352,9 +355,10 @@ public class Xcls_ClutterFiles : Object
             this.el.y_expand = true;
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_title : Object 
+
+    public class Xcls_title : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -362,7 +366,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
@@ -377,6 +381,9 @@ public class Xcls_ClutterFiles : Object
             this.el.y_expand = true;
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
+
 }
