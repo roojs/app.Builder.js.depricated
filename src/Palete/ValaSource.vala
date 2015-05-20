@@ -117,8 +117,7 @@ namespace Palete {
 			try {             
 			   var  regex = new Regex("\\.bjs$");
 			
-			 
-				valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+				valafn = regex.replace(this.file.path,this.file.path.length , 0 , ".vala");
 			 } catch (GLib.RegexError e) {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
@@ -153,6 +152,61 @@ namespace Palete {
 			}
 			 
 		}
+		
+		public void checkSpawn( )
+		{
+ 			
+			FileIOStream iostream;
+			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
+			tmpfile.ref();
+
+			OutputStream ostream = iostream.output_stream;
+			DataOutputStream dostream = new DataOutputStream (ostream);
+			dostream.put_string (contents);
+			
+			var valafn = "";
+			try {             
+			   var  regex = new Regex("\\.bjs$");
+			
+				valafn = regex.replace(this.file.path,this.file.path.length , 0 , ".vala");
+			 } catch (GLib.RegexError e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+			    this.compiled(ret);
+			    return;
+			}   
+			
+			string[] args = {};
+			args += BuilderApplication._self;
+			args += "--project";
+			args += this.file.project.fn;
+			args += "--target";
+			args += this.file.build_module;
+			args += "--add-file";
+			args +=  tmpfile.get_path();
+			args += "--skip-file";
+			args += valafn;
+			
+			 
+			
+			this.compiler = new Spawn("/tmp", args);
+			this.compiler.complete.connect(spawnResult);
+			
+			try {
+				this.compiler.run(); 
+			} catch (GLib.SpawnError e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+			    this.compiled(ret);
+			}
+			 
+		}
+		
+		
+		
+		
 		public void spawnResult(int res, string output, string stderr)
 		{
 			 
