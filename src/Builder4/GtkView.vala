@@ -445,7 +445,7 @@ public class Xcls_GtkView : Object
         
         }
         public void loadFile (JsRender.JsRender file) {
-          var buf = this.el.get_buffer();
+            var buf = this.el.get_buffer();
             buf.set_text("",0);
             var sbuf = (Gtk.SourceBuffer) buf;
         
