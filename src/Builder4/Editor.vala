@@ -439,8 +439,7 @@ public class Editor : Object
             
             var str = this.toString();
             
-            string res = "";
-            
+             
             if (this.error_line > 0) {
                  Gtk.TextIter start;
                  Gtk.TextIter end;     
