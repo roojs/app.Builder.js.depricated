@@ -19,12 +19,12 @@
    "$ xns" : "Gtk",
    "JsRender.JsRender? file" : "",
    "Json.Object notices" : "",
-   "bool modal" : false,
+   "bool modal" : true,
    "items" : [
     {
      "id" : "compile_view",
-     "* pack" : "add",
      "xtype" : "VBox",
+     "* pack" : "add",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "items" : [
@@ -43,8 +43,8 @@
       },
       {
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-       "* pack" : "add",
        "xtype" : "ScrolledWindow",
+       "* pack" : "add",
        "$ xns" : "Gtk",
        "items" : [
         {
@@ -75,8 +75,8 @@
            "items" : [
             {
              "id" : "renderer",
-             "xtype" : "CellRendererText",
              "* pack" : "pack_start,true",
+             "xtype" : "CellRendererText",
              "$ xns" : "Gtk"
             }
            ]
