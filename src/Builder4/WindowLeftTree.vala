@@ -1379,8 +1379,15 @@ public class Xcls_WindowLeftTree : Object
             
             this.el.foreach((mod, pth, iter) => {
                 // get the node..
-            
-                if (node == ??) {
+              
+             
+                 GLib.Value value;
+                 _this.model.el.get_value(iter, 2, out value);
+                 
+                 var n = (JsRender.Node)value;
+        
+        
+                if (node == n) {
                     ret = pth.to_string();
                     return true;
                 }
