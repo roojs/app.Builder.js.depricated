@@ -512,13 +512,22 @@ public class Editor : Object
             var err = obj.get_object_member(type);
             
             
-            
-            if (!err.has_member(_this.file.path)) {
+            var valafn = "";
+              try {             
+                   var  regex = new Regex("\\.bjs$");
+                
+                 
+                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                 } catch (GLib.RegexError e) {
+                    return true;
+                }   
+        
+           if (!err.has_member(valafn)) {
                 print("File path has no errors\n");
-                return true;
+                return  true;
             }
         
-            var lines = err.get_object_member(_this.file.path);
+            var lines = err.get_object_member(valafn);
             
             var offset = 1;
             if (obj.has_member("line_offset")) {
