@@ -347,7 +347,9 @@ public class Xcls_GtkView : Object
                         return;
                     }
                     print("cursor changed : %d\n", buf.cursor_position);
-                
+                    var node = this.file.lineToNode(buf.cursor_position);
+                    // highlight the node..
+                    
                 });
               
               
