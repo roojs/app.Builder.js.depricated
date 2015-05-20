@@ -320,20 +320,23 @@ public class Xcls_ClutterFiles : Object
                             pixbuf = _this.missing_thumb_pixbuf;
             
                     } catch (Error e) {
-                    // noop?
+                        // noop?
                     }
                 }
-            
-                var img = new Clutter.Image();
-                img.set_data(pixbuf.get_pixels(),   
-                                    pixbuf.has_alpha 
-                                      ? Cogl.PixelFormat.RGBA_8888
-                                      : Cogl.PixelFormat.RGB_888,
-                                    pixbuf.get_width (),
-                        pixbuf.get_height (),
-                                    pixbuf.get_rowstride ()
-                );
-                this.el.set_content(img);
+                try {
+                    var img = new Clutter.Image();
+                    img.set_data(pixbuf.get_pixels(),   
+                                        pixbuf.has_alpha 
+                                          ? Cogl.PixelFormat.RGBA_8888
+                                          : Cogl.PixelFormat.RGB_888,
+                                        pixbuf.get_width (),
+                            pixbuf.get_height (),
+                                        pixbuf.get_rowstride ()
+                    );
+                    this.el.set_content(img);
+                } catch (Error e) {
+                    // noop?
+                }
                  // should probably do smarter scaling...
                 
                 
