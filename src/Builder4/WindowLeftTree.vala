@@ -772,9 +772,7 @@ public class Xcls_WindowLeftTree : Object
                         Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                         return true;
                     }
-                    
-                    var td_ar = targetData.split("|");
-                              
+                                
                             
                             
                             // continue on to allow drop..
