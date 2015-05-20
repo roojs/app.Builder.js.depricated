@@ -532,10 +532,7 @@ public class Xcls_GtkView : Object
                 this.highlightErrorsJson("WARN", obj);
                 this.highlightErrorsJson("DEPR", obj);			
             }
-            while (Gtk.events_pending()) {
-                Gtk.main_iteration();
-            }
-            
+          
             this.loading = false; 
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
