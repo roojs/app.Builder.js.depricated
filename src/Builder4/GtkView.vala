@@ -318,6 +318,7 @@ public class Xcls_GtkView : Object
 
 
             // my vars (def)
+        public bool XXX;
 
         // ctor
         public Xcls_sourceview(Xcls_GtkView _owner )
@@ -327,6 +328,7 @@ public class Xcls_GtkView : Object
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
+            this.XXX = false;
 
             // set gobject values
             this.el.editable = false;
