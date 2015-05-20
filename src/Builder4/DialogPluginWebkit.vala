@@ -71,8 +71,12 @@ public class Xcls_DialogPluginWebkit : Object
             var runhtml = "<script type=\"text/javascript\">\n" ;
             string builderhtml;
             
+            try {
+                GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
+            } catch (Error e) {
+                builderhtml = "";
+            }
             
-            GLib.FileUtils.get_contents(BuilderApplication.configDirectory() + "/resources/roo.builder.js", out builderhtml);
     
             runhtml += builderhtml + "\n";
             
