@@ -12,6 +12,7 @@ public class Xcls_GtkView : Object
         }
         return _GtkView;
     }
+    public Xcls_notebook notebook;
     public Xcls_label_preview label_preview;
     public Xcls_label_code label_code;
     public Xcls_view_layout view_layout;
@@ -38,7 +39,7 @@ public class Xcls_GtkView : Object
         this.height = 0;
 
         // set gobject values
-        var child_0 = new Xcls_Notebook2( _this );
+        var child_0 = new Xcls_notebook( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
 
@@ -138,7 +139,7 @@ public class Xcls_GtkView : Object
              
             
     }
-    public class Xcls_Notebook2 : Object
+    public class Xcls_notebook : Object
     {
         public Gtk.Notebook el;
         private Xcls_GtkView  _this;
@@ -147,9 +148,10 @@ public class Xcls_GtkView : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Notebook2(Xcls_GtkView _owner )
+        public Xcls_notebook(Xcls_GtkView _owner )
         {
             _this = _owner;
+            _this.notebook = this;
             this.el = new Gtk.Notebook();
 
             // my vars (dec)

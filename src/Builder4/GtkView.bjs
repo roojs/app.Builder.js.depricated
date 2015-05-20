@@ -24,6 +24,7 @@
    "# Xcls_MainWindow main_window" : "",
    "items" : [
     {
+     "id" : "notebook",
      "* pack" : "pack_start,true,true,0",
      "xtype" : "Notebook",
      "$ xns" : "Gtk",
