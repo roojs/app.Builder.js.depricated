@@ -202,7 +202,11 @@ namespace Palete {
 				var node = pa.get_root();
 
 				if (node.get_node_type () != Json.NodeType.OBJECT) {
-					throw new ValaSourceError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+					var ret = new Json.Object();
+					ret.set_boolean_member("success", false);
+					ret.set_string_member("message", "Compiler returned Unexpected element type %s", node.type_name ());
+					this.compiled(ret);
+					this.compiler = null;
 				}
 				var ret = node.get_object ();
 				ret.set_int_member("line_offset", this.line_offset);
