@@ -107,7 +107,7 @@ public class JsRender.Node : Object {
 	public Gee.ArrayList<int> lines;
 	public Gee.HashMap<int,string> line_map; // store of l:xxx or p:....
 	public Gee.ArrayList<int> node_lines;
-	public Gee.HashMap<int,Node> nodes_line_map; // store of l:xxx or p:....
+	public Gee.HashMap<int,Node> node_lines_map; // store of l:xxx or p:....
 	
 
 	public Node()
@@ -144,6 +144,29 @@ public class JsRender.Node : Object {
 		this.node_lines.sort((a,b) => {   
 			return (int)a-(int)b;
 		});
+	}
+	public Node lineToNode(int line)
+	{
+		var l = -1;
+		foreach(int el in this.node_lines) {
+			if (el < line) {
+				l = el;
+				continue;
+			}
+			if (el == line) {
+				l = el;
+			}
+			if (l > -1) {
+				return this.node_lines_map.get(l);
+			}
+			return null;
+			
+		}
+		if (l > -1) {
+			return this.node_lines_map.get(l);
+		
+		return null;
+		
 	}
 	
 	public string uid()
