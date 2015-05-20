@@ -476,6 +476,7 @@ public class Xcls_GtkView : Object
         
         }
         public void loadFile ( ) {
+            this.loading = true;
             var buf = this.el.get_buffer();
             buf.set_text("",0);
             var sbuf = (Gtk.SourceBuffer) buf;
@@ -484,6 +485,7 @@ public class Xcls_GtkView : Object
         
             if (_this.file == null || _this.file.xtype != "Gtk") {
                 print("xtype != Gtk");
+                this.loading = false;
                 return;
             }
             
@@ -494,11 +496,13 @@ public class Xcls_GtkView : Object
                  
                     valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
                  } catch (GLib.RegexError e) {
+                     this.loading = false;
                     return;
                 }   
         
            if (!FileUtils.test(valafn,FileTest.IS_REGULAR) ) {
                 print("File path has no errors\n");
+                this.loading = false;
                 return  ;
             }
             
@@ -527,7 +531,11 @@ public class Xcls_GtkView : Object
                 this.highlightErrorsJson("WARN", obj);
                 this.highlightErrorsJson("DEPR", obj);			
             }
-         
+            while (Gtk.events_pending()) {
+                Gtk.main_iteration();
+            }
+            
+            this.loading = false; 
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
