@@ -16,7 +16,7 @@
    "| void load" : " (Palete.Palete pal, string cls ) {\n   \n   // this.get('model').expanded();\n    \n    var tr = pal.getChildList(cls);\n    this.model.el.clear();\n\n\n    Gtk.TreeIter citer;\n\n    for(var i =0 ; i < tr.length; i++) {\n         this.model.el.append(out citer);   \n         \n        this.model.el.set_value(citer, 0,   tr[i] ); // title \n        \n    }\n    this.model.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);\n    \n} \n\n",
    "@ void drag_end()" : "",
    "$ xns" : "Gtk",
-   "| void clear" : "() {\n   this.model.el.clear();\n}",
+   "| void clear" : "() {\n   this.model.el.clear();\n} ",
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
    "items" : [
     {
