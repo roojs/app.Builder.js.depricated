@@ -393,7 +393,7 @@ public class WindowState : Object
 		this.clutterfiles = new Xcls_ClutterFiles();
 		this.clutterfiles.ref();
 		stage.add_child(this.clutterfiles.el);
-		this.clutterfiles.el.show_all();
+		this.clutterfiles.el.show();
 
 
 		this.clutterfiles.open.connect((file) => { 
@@ -553,7 +553,7 @@ public class WindowState : Object
 		  case State.FILES:
 				// hide files...
 				
-				this.win.rooview.el.show_all();
+				this.win.rooview.el.show();
 				this.win.rooview.el.set_easing_duration(1000);
 				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
 				this.win.rooview.el.set_scale(1.0f,1.0f);
@@ -707,7 +707,7 @@ public class WindowState : Object
 				}
 			 
 				
-				this.clutterfiles.el.show_all();
+				this.clutterfiles.el.show();
 				 
 				this.clutterfiles.el.set_easing_duration(1000);
 				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
