@@ -343,6 +343,9 @@ public class Xcls_GtkView : Object
                 
                 var buf = this.el.get_buffer();
                 buf.notify.connect((ps) => {
+                    if (this.loading) {
+                        return;
+                    }
                     if (ps.name != "cursor-position") {
                         return;
                     }
