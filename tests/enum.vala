@@ -12,7 +12,7 @@ int main (string[] args) {
     EnumClass ec = (EnumClass) vt.class_ref ();
 	for (var i =0;i< ec.n_values; i++) {
 		var ev = ec.values[i];
-		print("%s : %d", ev.name,ev.value);
+		print("%s : %d", ev.value_name,ev.value);
 	}
 	 
 	return 0;
