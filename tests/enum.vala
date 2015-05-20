@@ -5,7 +5,7 @@
 
 int main (string[] args) {
 	Gtk.init(ref args);
-	var x = Type.from_name ("Gtk.Orientation.HORIZONTAL");
+	var x = Type.from_name ("GTK_ORIENTATION_HORIZONTAL");
 	print("%s\n", x.name ());
 	
 	return 0;
