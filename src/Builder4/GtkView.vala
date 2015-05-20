@@ -415,9 +415,7 @@ public class Xcls_GtkView : Object
                 Gtk.main_iteration();
             }
             
-          
-            
-            
+           
             // clear all the marks..
              Gtk.TextIter start;
             Gtk.TextIter end;     
