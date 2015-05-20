@@ -231,7 +231,7 @@ public class WindowState : Object
 			  }
 			  this.left_tree.model.updateSelected();
 			  this.left_tree.model.file.save();
-			  this.valasource.spawnFile(this.left_tree.model.file);
+			  this.valasource.checkFileSpawn(this.left_tree.model.file);
 		});
 	
 
