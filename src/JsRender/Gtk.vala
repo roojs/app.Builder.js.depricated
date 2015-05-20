@@ -116,7 +116,7 @@ namespace JsRender {
 				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
 
 			}
-				
+			NodeToVala.mungeFile(this)	
 			
 		}
          
@@ -195,7 +195,7 @@ namespace JsRender {
 		}
     		var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
     		print("WRITE :%s\n " , fn);
-		this.writeFile(fn,  NodeToVala.mungeFile(this));
+			this.writeFile(fn,  NodeToVala.mungeFile(this));
             
             
         }
