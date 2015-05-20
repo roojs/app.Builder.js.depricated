@@ -116,11 +116,14 @@ public class WindowState : Object
 		});
 	 
 		this.left_tree.changed.connect(() => {
-			this.window_rooview.requestRedraw();
+			
 			this.left_tree.model.file.save();
-			if (this.left_tree.model.file.xtype=="Gtk") {
-				this.valasource.checkFileSpawn(this.left_tree.model.file);
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+				   this.window_rooview.requestRedraw();
+			} else {
+				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
 			}
+			 
 		});
 		 
 	}
