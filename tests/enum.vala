@@ -5,8 +5,8 @@
 
 int main (string[] args) {
  
-	var x = Type.from_name ("Gtk.Orientation")
-	stdout.printf ("%s\n", x.name ());
+	var x = Type.from_name ("Gtk.Orientation");
+	print("%s\n", x.name ());
 	
 	return 0;
 }
