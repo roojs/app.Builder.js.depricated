@@ -457,7 +457,7 @@ public class Xcls_LeftProps : Object
             }
             this.node.props.set(fkey,value);
         }
-               
+                
           
         // add a row???
         this.load(this.file, this.node);
