@@ -450,7 +450,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_leftpane : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_MainWindow  _this;
 
 
@@ -461,7 +461,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.leftpane = this;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 

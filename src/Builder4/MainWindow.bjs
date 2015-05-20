@@ -121,9 +121,10 @@
        "items" : [
         {
          "id" : "leftpane",
-         "xtype" : "VBox",
+         "xtype" : "Box",
          "* pack" : "add1",
          "$ xns" : "Gtk",
+         "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
          "items" : [
           {
            "id" : "editpane",
