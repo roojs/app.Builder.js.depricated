@@ -357,10 +357,12 @@ public class Xcls_GtkView : Object
                         print("can not find node\n");
                         return;
                     }
-                    var tp = _this.main_window.windowstate.left_tree.model.treePathFromNode(node);
+                    var ltree = _this.main_window.windowstate.left_tree;
+                    var tp = ltree.model.treePathFromNode(node);
                     print("got tree path %s\n", tp);
-                    _this.main_window.windowstate.left_tree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
-                    
+                    if (tp != "") {
+                        ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
+                    }
                     
                     // highlight the node..
                     
