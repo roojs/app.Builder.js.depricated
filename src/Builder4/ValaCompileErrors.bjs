@@ -8,9 +8,6 @@
  "build_module" : "builder",
  "items" : [
   {
-   "listeners" : {
-    "closed" : "() => {\n  /*  if (this.active) {\n        this.el.show();\n        return;\n    }\n   */\n}"
-   },
    "int height_request" : 800,
    "id" : "ValaCompileErrors",
    "Xcls_MainWindow window" : "",
