@@ -514,7 +514,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.tree = this;
-            this.el = new Gtk.Box( null, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
@@ -526,7 +526,7 @@ public class Xcls_MainWindow : Object
 
     public class Xcls_props : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_MainWindow  _this;
 
 
@@ -537,7 +537,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.props = this;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 
@@ -566,6 +566,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.orientation = Gtk.Orientation.VERTICAL;
             var child_0 = new Xcls_clutterembed( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true,true,0 );
