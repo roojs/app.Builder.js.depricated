@@ -116,7 +116,7 @@ namespace JsRender {
 				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
 
 			}
-			NodeToVala.mungeFile(this)	
+			NodeToVala.mungeFile(this); // force line numbering..
 			
 		}
          
