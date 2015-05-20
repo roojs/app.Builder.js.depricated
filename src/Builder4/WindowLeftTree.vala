@@ -556,7 +556,13 @@ public class Xcls_WindowLeftTree : Object
                     // for drop
                     if (dropNodeType[0] == '{') {
                         var pa = new Json.Parser();
-                        pa.load_from_data(dropNodeType);
+                        try {
+                            pa.load_from_data(dropNodeType);
+                        } catch (Error e) {
+                            Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                            // no drop action...
+                            return;   
+                        }
                          
                         dropNode.loadFromJson( pa.get_root().get_object(), 2);
                         dropNodeType = dropNode.fqn();
