@@ -326,62 +326,6 @@ public class Xcls_ValaCompileErrors : Object
                  return false;
                 
               });
-            this.el.cursor_changed.connect( () => {
-                var sel = this.el.get_selection();
-            
-                if (sel.count_selected_rows() < 1) {
-            
-                    print("selected rows < 1\n");
-                    //??this.mo 
-                    return  ;
-                }
-                    
-                    //console.log('changed');
-                 
-                 Gtk.TreeIter iter;
-                 Gtk.TreeModel mod;
-                sel.get_selected(out mod, out iter);
-                 
-                
-                
-                
-                // var val = "";
-                GLib.Value value;
-                _this.compile_result_store.el.get_value(iter, 3, out value);
-                var fname = (string)value;
-                GLib.Value lvalue;
-                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
-                var line = (int) lvalue;
-                
-                
-                
-             
-                
-                
-                print ("loadfile %s : %d", fname,line);
-                
-               // _this.sourceview.loadFile(fname, line);
-                /*
-                    var f = _this.sourceview.curfname;
-                            
-                    Regex regex = new Regex("\\.vala$");
-                
-                    var bjsf = regex.replace(f,f.length , 0 , ".bjs");
-                    
-                    var p = _this.window.project;
-                    
-                    
-                    
-                    var jsr = p.getByPath(bjsf);
-                    if (jsr != null) {
-                        _this.window.windowstate.fileViewOpen(jsr);
-                        
-                        return;
-                    
-                    }
-                     */   
-                        
-            });
         }
 
         // user defined functions
