@@ -510,6 +510,7 @@ public class Xcls_GtkView : Object
                      this.loading = false;
                     return;
                 }   
+            
         
            if (!FileUtils.test(valafn,FileTest.IS_REGULAR) ) {
                 print("File path has no errors\n");
@@ -518,7 +519,13 @@ public class Xcls_GtkView : Object
             }
             
             string str;
-            GLib.FileUtils.get_contents (valafn, out str);
+            try {
+            
+                GLib.FileUtils.get_contents (valafn, out str);
+            } catch (Error e) {
+                this.loading = false;
+                return  ;
+            }
         
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
