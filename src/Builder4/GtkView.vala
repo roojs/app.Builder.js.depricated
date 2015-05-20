@@ -348,6 +348,12 @@ public class Xcls_GtkView : Object
                     }
                     print("cursor changed : %d\n", buf.cursor_position);
                     var node = _this.file.lineToNode(buf.cursor_position);
+                    if (node == null) {
+                        print("can not find node\n");
+                        return;
+                    }
+                    var tp = _this.main_window.windowstate.left_tree.model.treePathFromNode(node);
+                    print("got tree path %s\n", tp);
                     // highlight the node..
                     
                 });
