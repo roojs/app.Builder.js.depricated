@@ -266,7 +266,7 @@ public class Editor : Object
             
               
                 var attrs = new Gtk.SourceMarkAttributes();
-                var  pink = new Gdk.RGBA();
+                var  pink =   Gdk.RGBA();
                 pink.parse ( "pink");
                 attrs.set_background ( pink);
                 attrs.set_icon_name ( "process-stop");    
@@ -278,7 +278,7 @@ public class Editor : Object
                 this.el.set_mark_attributes ("ERR", attrs, 1);
                 
                  var wattrs = new Gtk.SourceMarkAttributes();
-                var  blue = new Gdk.RGBA();
+                var  blue =   Gdk.RGBA();
                 blue.parse ( "#ABF4EB");
                 wattrs.set_background ( blue);
                 wattrs.set_icon_name ( "process-stop");    
@@ -292,7 +292,7 @@ public class Editor : Object
              
                 
                  var dattrs = new Gtk.SourceMarkAttributes();
-                var  purple = new Gdk.RGBA();
+                var  purple =   Gdk.RGBA();
                 purple.parse ( "#EEA9FF");
                 dattrs.set_background ( purple);
                 dattrs.set_icon_name ( "process-stop");    
