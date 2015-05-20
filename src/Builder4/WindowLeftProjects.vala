@@ -176,7 +176,7 @@ public class Xcls_WindowLeftProjects : Object
 
             var description = new Pango.FontDescription();
                  description.set_size(8000);
-                this.el.overide_font(description);     
+                this.el.override_font(description);     
                                 
                 var selection = this.el.get_selection();
                 selection.set_mode( Gtk.SelectionMode.SINGLE);
