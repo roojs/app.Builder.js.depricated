@@ -483,8 +483,7 @@ public class Xcls_GtkView : Object
             
             ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(file.language));
          
-         
-             
+          
             
             if (_this.main_window.windowstate.last_compile_result != null) {
                 var obj = _this.main_window.windowstate.last_compile_result;
