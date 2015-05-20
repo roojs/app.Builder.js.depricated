@@ -60,7 +60,7 @@ public class Xcls_RightPalete : Object
     }
     public class Xcls_viewbox : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
         private Xcls_RightPalete  _this;
 
 
@@ -71,7 +71,7 @@ public class Xcls_RightPalete : Object
         {
             _this = _owner;
             _this.viewbox = this;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
             // my vars (dec)
 

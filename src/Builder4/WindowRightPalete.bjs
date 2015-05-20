@@ -21,9 +21,10 @@
    "items" : [
     {
      "id" : "viewbox",
-     "xtype" : "VBox",
+     "xtype" : "Box",
      "* pack" : "add",
      "$ xns" : "Gtk",
+     "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
       {
        "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n   this.el.set_size_request(-1,200);\n \n",
