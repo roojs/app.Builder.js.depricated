@@ -274,7 +274,7 @@ public class Xcls_GtkView : Object
     }
     public class Xcls_container : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_GtkView  _this;
 
 
@@ -285,7 +285,7 @@ public class Xcls_GtkView : Object
         {
             _this = _owner;
             _this.container = this;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
