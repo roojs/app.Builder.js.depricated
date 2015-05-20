@@ -59,7 +59,7 @@ public class Xcls_WindowLeftTree : Object
         return this.model.file;
     }
     public           string getActivePath () {
-        var model = this.model;
+        
         var view = this.view.el;
         if (view.get_selection().count_selected_rows() < 1) {
             return "";
