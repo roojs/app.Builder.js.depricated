@@ -400,7 +400,7 @@ namespace JsRender {
 			
 		    
 		}
-		public JsRender.Node? lineToNode(int line)
+		public  Node? lineToNode(int line)
 		{
 			if (this.tree == null) {
 				return null;
