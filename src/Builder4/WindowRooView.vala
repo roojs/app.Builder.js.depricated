@@ -137,7 +137,7 @@ public class Xcls_WindowRooView : Object
 
             // set gobject values
             this.el.homogeneous = false;
-            var child_0 = new Xcls_HBox3( _this );
+            var child_0 = new Xcls_Box3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
             var child_1 = new Xcls_viewcontainer( _this );
@@ -147,25 +147,25 @@ public class Xcls_WindowRooView : Object
 
         // user defined functions
     }
-    public class Xcls_HBox3 : Object
+    public class Xcls_Box3 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HBox3(Xcls_WindowRooView _owner )
+        public Xcls_Box3(Xcls_WindowRooView _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( true, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = true;
             this.el.height_request = 20;
-            this.el.orientation = Gtk.Orientation.HORIZONTAL;
             this.el.vexpand = false;
             var child_0 = new Xcls_Button4( _this );
             child_0.ref();
