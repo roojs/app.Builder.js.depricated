@@ -153,12 +153,11 @@ namespace Palete {
 			 
 		}
 		
-		public void checkSpawn( )
+		public void checkSpawn(JsRender.JsRender file )
 		{
- 			this.file = null;
+ 			this.file = file;
 			 
-			 
-			
+			  
 			string[] args = {};
 			args += BuilderApplication._self;
 			args += "--project";
