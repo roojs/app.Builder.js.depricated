@@ -231,7 +231,9 @@ public class WindowState : Object
 			  }
 			  this.left_tree.model.updateSelected();
 			  this.left_tree.model.file.save();
-			  this.valasource.checkFileSpawn(this.left_tree.model.file);
+			  if (this.left_tree.model.file.xtype=="Gtk") {
+				this.valasource.checkFileSpawn(this.left_tree.model.file);
+			}
 		});
 	
 
