@@ -535,11 +535,7 @@ public class Xcls_GtkView : Object
             }
             var lines = err.get_object_member(valafn);
             
-            var offset = 1;
-            if (obj.has_member("line_offset")) {
-                offset = (int)obj.get_int_member("line_offset") + 1;
-            }
-             
+           
             
             var tlines = buf.get_line_count () +1;
             
@@ -547,7 +543,7 @@ public class Xcls_GtkView : Object
                 
                      Gtk.TextIter iter;
             //        print("get inter\n");
-                    var eline = int.parse(line) - offset;
+                    var eline = int.parse(line) -1  ;
                     print("GOT ERROR on line %s -- converted to %d\n", line,eline);
                     
                     
