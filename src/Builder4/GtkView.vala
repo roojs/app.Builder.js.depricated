@@ -472,7 +472,7 @@ public class Xcls_GtkView : Object
             }
             
             string str;
-            GLib.FileUtils.get_contents (_this.file.path, out str);
+            GLib.FileUtils.get_contents (valafn, out str);
         
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
