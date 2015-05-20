@@ -464,7 +464,6 @@ public class Xcls_GtkView : Object
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(file.language));
-         
           
             
             if (_this.main_window.windowstate.last_compile_result != null) {
