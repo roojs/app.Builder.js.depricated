@@ -147,22 +147,29 @@ public class JsRender.Node : Object {
 	}
 	public Node? lineToNode(int line)
 	{
+		print("Searching for line %d\n");
 		var l = -1;
 		foreach(int el in this.node_lines) {
+			print("?match %d\n", el);
 			if (el < line) {
+				
 				l = el;
+				print("LESS\n");
 				continue;
 			}
 			if (el == line) {
+				print("SAME\n");
 				l = el;
 			}
 			if (l > -1) {
+				print("RETURNING NODE ON LINE %d", l);
 				return this.node_lines_map.get(l);
 			}
 			return null;
 			
 		}
 		if (l > -1) {
+			print("RETURNING NODE ON LINE %d", l);
 			return this.node_lines_map.get(l);
 		}
 		return null;
