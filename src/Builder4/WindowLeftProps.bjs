@@ -53,7 +53,7 @@
          "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {
-           "$ Gtk.Stock stock" : "Gtk.STOCK_ADD",
+           "$ Gtk.Stock stock" : "Gtk.Stock.ADD",
            "xtype" : "Image",
            "* pack" : "add",
            "$ xns" : "Gtk",
