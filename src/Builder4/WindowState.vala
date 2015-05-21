@@ -457,8 +457,13 @@ public class WindowState : Object
 		this.win.setTitle(file.project.name + " : " +file.name);
 			 
 
-		}
-
+	}
+	public void fileViewOpenPlain(string file)
+	{
+		this.win.leftpane.hide();
+		
+		
+	}
 	
 	// ---------  webkit view
 	public void webkitViewInit()
