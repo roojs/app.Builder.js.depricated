@@ -157,8 +157,9 @@ public class Xcls_ClutterFiles : Object
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_Text4( _this );
             child_1.ref();
-            var child_2 = new Xcls_project_title_name( _this ,file);
+            var child_2 = new Xcls_project_title_name( _this );
             child_2.ref();
+            this.el.add_child (  child_2.el  );
 
             // init method
 
@@ -230,7 +231,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_project_title_name(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_project_title_name(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_name = this;
@@ -260,20 +261,6 @@ public class Xcls_ClutterFiles : Object
 
             this.file = file;
             this.el.set_size(100,100);
-
-            //listeners
-            this.el.button_press_event.connect( (  event) => {
-                _this.open(this.file);
-                return false;
-            });
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color =   Clutter.Color.from_string("#333");
-                    return false;
-            });
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color =   Clutter.Color.from_string("#000");
-                return false;
-            });
         }
 
         // user defined functions
