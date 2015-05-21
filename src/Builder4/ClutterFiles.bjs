@@ -54,7 +54,7 @@
        "boolean y_expand" : true
       },
       {
-       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#eee\"))",
+       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
        "id" : "project_title_name",
        "* pack" : "add_child",
        "xtype" : "Text",

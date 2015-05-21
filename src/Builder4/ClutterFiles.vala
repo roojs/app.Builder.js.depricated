@@ -238,7 +238,7 @@ public class Xcls_ClutterFiles : Object
         {
             _this = _owner;
             _this.project_title_name = this;
-            this.el = new Clutter.Text.full("Sans 20px", "",  Clutter.Color.from_string("#eee"));
+            this.el = new Clutter.Text.full("Sans 20px", "",  Clutter.Color.from_string("#ccc"));
 
             // my vars (dec)
 
