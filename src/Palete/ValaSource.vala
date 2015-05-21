@@ -229,7 +229,7 @@ namespace Palete {
 			}
 			 
 		}
-		public void checkFilePlainSpawn(Project.Project proj, string filename, string contents )
+		public void checkFilePlainSpawn(Project.Project project, string filename, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
@@ -252,10 +252,14 @@ namespace Palete {
 			string[] args = {};
 			args += BuilderApplication._self;
 			args += "--project";
-			args += this.file.project.fn;
+			args +=  project.fn;
 			args += "--target";
-			args += this.file.build_module;
-			 
+			args += project.firstBuildModule;
+			args += "--add-file";
+			args +=  tmpfile.get_path();
+			args += "--skip-file";
+			args += filename;
+			
 			 
 			
 			this.compiler = new Spawn("/tmp", args);
