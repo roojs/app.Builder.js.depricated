@@ -655,7 +655,7 @@ public class WindowState : Object
 				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				  
 				this.win.addpropsview.el.set_scale(1.0f,1.0f);
-				 break;
+				break;
 		   
 			case State.OBJECT:
 				 var n = this.left_tree.getActiveElement();
@@ -681,7 +681,7 @@ public class WindowState : Object
 
 				
 			  
-			
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				this.win.objectview.el.set_scale(1.0f,1.0f);
 				 
 				break;
@@ -692,11 +692,14 @@ public class WindowState : Object
 				this.code_editor.el.show_all();
 				// caller needs to call editor - show....
 				this.win.codeeditview.el.set_scale(1.0f,1.0f);
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
+
 				break;
 
 			case State.CODEONLY:
 				// going to codeonly..
 				this.win.codeeditview.el.show();
+				// recalc canvas...
 				while (Gtk.events_pending()) { 
 					Gtk.main_iteration();
 				}
@@ -711,7 +714,7 @@ public class WindowState : Object
 				this.code_editor.el.show_all();
 			    
 				this.win.codeeditview.el.set_scale(1.0f,1.0f);
-
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				break;
 
 		   case State.PROJECT:
