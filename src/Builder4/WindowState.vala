@@ -542,9 +542,13 @@ public class WindowState : Object
 				
 			case State.CODEONLY:
 				// going from codeonly..
+				this.win.leftpane.el.show();
+			    while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
 				this.code_editor.saveContents();
 				this.win.rooview.el.show(); 
-			    this.win.leftpane.el.show();
+			    
 				this.win.codeeditview.el.set_scale(0.0f,0.0f);
 				break;
 
@@ -679,8 +683,14 @@ public class WindowState : Object
 
 			case State.CODEONLY:
 				// going to codeonly..
+				this.win.leftpane.el.hide();
+				while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
+				
+				
 				this.code_editor.el.show_all();
-			    this.win.leftpane.el.hide();
+			    
 				this.win.codeeditview.el.set_scale(1.0f,1.0f);
 
 				break;
@@ -706,16 +716,25 @@ public class WindowState : Object
 				
    
 				this.win.editpane.el.hide(); // holder for tree and properties..
-			 
+				
 				this.left_projects.el.show(); 
-			
-				 this.win.rooview.el.set_easing_duration(1000);
-				this.win.rooview.el.set_pivot_point(0.5f,0.5f);
-				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
-				this.win.rooview.el.set_opacity(0);
-				//el.set_scale(0.0f,0.0f);
-
- 
+				
+				if (oldstate == State.CODEONLY) {
+					// code only  - rotate the codeditview..
+					this.win.codeeditview.el.set_easing_duration(1000);
+					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
+					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+					this.win.codeeditview.el.set_opacity(0);
+					//el.set_scale(0.0f,0.0f);
+				} else {
+					this.win.rooview.el.set_easing_duration(1000);
+					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
+					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+					this.win.rooview.el.set_opacity(0);
+				}
+				
+				
+	 
 				if (this.win.project != null) {
 					this.left_projects.selectProject(this.win.project);
 				}
