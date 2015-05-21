@@ -52,10 +52,10 @@
        "* pack" : "add_child",
        "xtype" : "Text",
        "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+       "boolean x_expand" : true,
        "$ xns" : "Clutter",
-       "$ x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : true,
-       "boolean$ x_expand" : true
+       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
+       "boolean y_expand" : true
       },
       {
        "* pack" : "add_child",
