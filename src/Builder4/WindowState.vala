@@ -755,7 +755,7 @@ public class WindowState : Object
 					//el.set_scale(0.0f,0.0f);
 				} else {
 					 
-					
+					// rotate the roo-view to hidden...
 					this.win.rooview.el.set_easing_duration(1000);
 					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
 					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
