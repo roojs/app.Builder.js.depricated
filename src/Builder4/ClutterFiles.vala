@@ -130,13 +130,13 @@ public class Xcls_ClutterFiles : Object
             print("object not ready yet?");
             return;
         }
-       _this.filelayout_manager.el.max_column_width = w - 50;
+       _this.filelayout_manager.el.max_column_width = w - 100;
        this.el.set_size(
-                this.el.get_stage().width-150,
+                this.el.get_stage().width-50,
                 this.el.get_stage().height
         );
         // 100 right for buttons ..
-        this.el.set_position(100,0);
+        this.el.set_position(50,0);
     }
     public class Xcls_project_title : Object
     {
