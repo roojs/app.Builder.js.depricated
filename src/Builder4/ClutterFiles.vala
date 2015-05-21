@@ -14,6 +14,7 @@ public class Xcls_ClutterFiles : Object
     }
     public Xcls_project_title project_title;
     public Xcls_project_title_manager project_title_manager;
+    public Xcls_project_title_name project_title_name;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
 
@@ -154,7 +155,7 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_project_title_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_Text4( _this );
+            var child_1 = new Xcls_project_title_name( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
 
@@ -193,7 +194,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_Text4 : Object
+    public class Xcls_project_title_name : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -202,9 +203,10 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Text4(Xcls_ClutterFiles _owner )
+        public Xcls_project_title_name(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
+            _this.project_title_name = this;
             this.el = new Clutter.Text.full("Sans 20px", file.nickName(),  Clutter.Color.from_string("#eee"));
 
             // my vars (dec)

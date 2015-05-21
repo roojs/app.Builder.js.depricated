@@ -44,6 +44,7 @@
       },
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 20px\", file.nickName(),  Clutter.Color.from_string(\"#eee\"))",
+       "id" : "project_title_name",
        "* pack" : "add_child",
        "xtype" : "Text",
        "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
