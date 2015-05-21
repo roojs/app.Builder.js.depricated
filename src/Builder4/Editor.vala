@@ -455,7 +455,7 @@ public class Editor : Object
             if (_this.file == null) {
             
                 // assume it's gtk...
-                 _this.window.windowstate.valasource.checkPlanFile(
+                 _this.window.windowstate.valasource.checkPlainFileSpawn(
         				_this.fname,
         				str
         	 );
