@@ -510,6 +510,12 @@ public class WindowState : Object
 	public void switchState(State new_state)
 	{
 		
+		// if the new state and the old state are the same..
+		
+		if (new_state == this.state) {
+			return;
+		}
+		
 		// save the easing state of everything..
 		this.easingSaveAll();
 		
@@ -737,6 +743,11 @@ public class WindowState : Object
 					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
 					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
 					this.win.codeeditview.el.set_opacity(0);
+					this.win.rooview.el.hide();
+					this.win.rooview.el.set_easing_duration(1000);
+					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
+					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+					this.win.rooview.el.set_opacity(0);
 					//el.set_scale(0.0f,0.0f);
 				} else {
 					this.win.rooview.el.set_easing_duration(1000);
@@ -759,9 +770,7 @@ public class WindowState : Object
 				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
 				this.clutterfiles.el.set_opacity(0xff);
 				
-				while (Gtk.events_pending()) { 
-					Gtk.main_iteration();
-				}
+				 
 				
 				break;
 
