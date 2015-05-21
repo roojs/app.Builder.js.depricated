@@ -21,8 +21,8 @@
    "items" : [
     {
      "id" : "viewbox",
+     "* pack" : "pack_start,true,true,0",
      "xtype" : "Box",
-     "* pack" : "add",
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
@@ -66,8 +66,8 @@
            "items" : [
             {
              "id" : "txtrender",
-             "* pack" : "pack_start,true",
              "xtype" : "CellRendererText",
+             "* pack" : "pack_start,true",
              "$ xns" : "Gtk"
             }
            ]
