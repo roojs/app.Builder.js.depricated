@@ -63,7 +63,9 @@ public class Editor : Object
     public   bool saveContents ()  {
         
         
-        
+        if (_this.file == null) {
+            return;
+        }
         
         
         
