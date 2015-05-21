@@ -104,6 +104,9 @@ public class Editor : Object
         return true;
     
     }
+    public void showPlainFile () {
+    
+    }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)
     {
         this.ptype = ptype;

@@ -15,6 +15,7 @@
    "# int pos_root_y" : "",
    "# string ptype" : "\"\"",
    "# string fname" : "\"\"",
+   "| void showPlainFile" : "() {\n\n}\n",
    "# string key" : "\"\"",
    "* pack" : "add",
    "xtype" : "Box",
