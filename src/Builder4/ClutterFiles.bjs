@@ -43,11 +43,6 @@
        "column_spacing" : 20
       },
       {
-       "* pack" : "add_child",
-       "xtype" : "Text",
-       "$ xns" : "Clutter"
-      },
-      {
        "* ctor" : "new Clutter.Text.full(\"Sans 20px\", file.nickName(),  Clutter.Color.from_string(\"#eee\"))",
        "* pack" : "add_child",
        "xtype" : "Text",
@@ -56,11 +51,6 @@
        "$ xns" : "Clutter",
        "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
        "boolean y_expand" : true
-      },
-      {
-       "* pack" : "add_child",
-       "xtype" : "Text",
-       "$ xns" : "Clutter"
       }
      ]
     },

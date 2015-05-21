@@ -157,12 +157,6 @@ public class Xcls_ClutterFiles : Object
             var child_1 = new Xcls_Text4( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
-            var child_2 = new Xcls_Text5( _this );
-            child_2.ref();
-            this.el.add_child (  child_2.el  );
-            var child_3 = new Xcls_Text6( _this );
-            child_3.ref();
-            this.el.add_child (  child_3.el  );
 
             // init method
 
@@ -211,28 +205,6 @@ public class Xcls_ClutterFiles : Object
         public Xcls_Text4(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text();
-
-            // my vars (dec)
-
-            // set gobject values
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_Text5 : Object
-    {
-        public Clutter.Text el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_Text5(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
             this.el = new Clutter.Text.full("Sans 20px", file.nickName(),  Clutter.Color.from_string("#eee"));
 
             // my vars (dec)
@@ -242,28 +214,6 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.y_expand = true;
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_Text6 : Object
-    {
-        public Clutter.Text el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_Text6(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            this.el = new Clutter.Text();
-
-            // my vars (dec)
-
-            // set gobject values
         }
 
         // user defined functions
@@ -350,7 +300,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_BoxLayout10( _this );
+            var child_0 = new Xcls_BoxLayout8( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_image( _this ,file);
@@ -388,7 +338,7 @@ public class Xcls_ClutterFiles : Object
 
         // user defined functions
     }
-    public class Xcls_BoxLayout10 : Object
+    public class Xcls_BoxLayout8 : Object
     {
         public Clutter.BoxLayout el;
         private Xcls_ClutterFiles  _this;
@@ -397,7 +347,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_BoxLayout10(Xcls_ClutterFiles _owner )
+        public Xcls_BoxLayout8(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
