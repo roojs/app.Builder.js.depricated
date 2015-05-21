@@ -42,6 +42,7 @@
        "listeners" : {
         "button_press_event" : "  (self, ev) => {\n    _this.before_edit();\n    \n        \n    var p = _this.AddPropertyPopup;\n    p.el.set_screen(Gdk.Screen.get_default());\n    p.el.show_all();\n     p.el.popup(null, null, null, ev.button, ev.time);\n     return true;\n}"
        },
+       "bool hexpand" : true,
        "* pack" : "add",
        "xtype" : "Button",
        "$ xns" : "Gtk",
