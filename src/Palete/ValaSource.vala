@@ -229,7 +229,7 @@ namespace Palete {
 			}
 			 
 		}
-		public void checkFilePlainSpawn(Project.Project proj, string filename )
+		public void checkFilePlainSpawn(Project.Project proj, string filename, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
