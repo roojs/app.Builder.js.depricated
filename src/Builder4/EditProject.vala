@@ -316,6 +316,7 @@ public class EditProject : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.expand = true;
             this.el.create_folders = false;
             this.el.select_multiple = false;
         }
