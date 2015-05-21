@@ -116,6 +116,7 @@ public class Editor : Object
         this.key  = "";
         this.node = null;
         this.file = null;
+        this.fname = fname;
         string str;
         try {
             GLib.FileUtils.get_contents(fname, out str);
