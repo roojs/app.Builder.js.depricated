@@ -693,7 +693,7 @@ public class WindowState : Object
 		   
 		   
 			case State.CODE:
-
+				this.win.codeeditview.show();
 				this.code_editor.el.show_all();
 				// caller needs to call editor - show....
 				this.win.codeeditview.el.set_scale(1.0f,1.0f);
@@ -702,6 +702,7 @@ public class WindowState : Object
 			case State.CODEONLY:
 				// going to codeonly..
 				this.win.leftpane.el.hide();
+				this.win.codeeditview.show();
 				while (Gtk.events_pending()) { 
 					Gtk.main_iteration();
 				}
