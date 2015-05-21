@@ -461,7 +461,7 @@ public class WindowState : Object
 	}
 	public void fileViewOpenPlain(string file)
 	{
-		this.win.leftpane.el.hide();
+		
 		this.switchState (State.CODEONLY); 
 		
 	}
@@ -535,13 +535,17 @@ public class WindowState : Object
 				 break;
 				
 			case State.CODE:
-
-
 				this.code_editor.saveContents();
 			  
 				this.win.codeeditview.el.set_scale(0.0f,0.0f);
-				 break;
+				break;
+				
+			case State.CODEONLY:
 
+				this.code_editor.saveContents();
+			    
+				this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				break;
 
 			 case State.OBJECT:
 			   
