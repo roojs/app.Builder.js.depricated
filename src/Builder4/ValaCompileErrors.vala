@@ -315,7 +315,11 @@ public class Xcls_ValaCompileErrors : Object
                     return false;
                 
                 }
-                 return false;
+                _this.window.windowstate.fileViewOpenPlain(fname);
+                
+                // try hiding the left nav..
+             
+                return false;
                 
               });
         }
