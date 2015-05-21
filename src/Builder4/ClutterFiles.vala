@@ -185,7 +185,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.homogeneous = true;
+            this.el.homogeneous = false;
             this.el.row_spacing = 20f;
             this.el.column_spacing = 20f;
         }

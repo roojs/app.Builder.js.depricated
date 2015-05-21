@@ -36,11 +36,11 @@
        "id" : "project_title_manager",
        "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
        "xtype" : "FlowLayout",
+       "boolean homogeneous" : false,
        "$ xns" : "Clutter",
        "row_spacing" : 20,
        "* prop" : "layout_manager",
-       "column_spacing" : 20,
-       "$ homogeneous" : true
+       "column_spacing" : 20
       },
       {
        "* pack" : "add_child",
