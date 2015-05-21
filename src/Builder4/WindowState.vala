@@ -672,18 +672,15 @@ public class WindowState : Object
 			case State.CODE:
 
 				this.code_editor.el.show_all();
-				
 				// caller needs to call editor - show....
-				  
- 
-				 this.win.codeeditview.el.set_scale(1.0f,1.0f);
-				 break;
+				this.win.codeeditview.el.set_scale(1.0f,1.0f);
+				break;
 
 			case State.CODEONLY:
 				// going to codeonly..
-				this.code_editor.saveContents();
+				this.code_editor.el.show_all();
 			    this.win.leftpane.el.hide();
-				 this.win.codeeditview.el.set_scale(1.0f,1.0f);
+				this.win.codeeditview.el.set_scale(1.0f,1.0f);
 
 				break;
 
