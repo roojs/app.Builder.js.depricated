@@ -13,7 +13,7 @@ public class Xcls_ClutterFiles : Object
         return _ClutterFiles;
     }
     public Xcls_project_title project_title;
-    public Xcls_filelayout_manager filelayout_manager;
+    public Xcls_project_title_manager project_title_manager;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
 
@@ -151,7 +151,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.reactive = true;
-            var child_0 = new Xcls_filelayout_manager( _this );
+            var child_0 = new Xcls_project_title_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
 
@@ -164,7 +164,7 @@ public class Xcls_ClutterFiles : Object
 
         // user defined functions
     }
-    public class Xcls_filelayout_manager : Object
+    public class Xcls_project_title_manager : Object
     {
         public Clutter.FlowLayout el;
         private Xcls_ClutterFiles  _this;
@@ -173,10 +173,10 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout_manager(Xcls_ClutterFiles _owner )
+        public Xcls_project_title_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            _this.filelayout_manager = this;
+            _this.project_title_manager = this;
             this.el = new Clutter.FlowLayout( Clutter.FlowOrientation.HORIZONTAL );
 
             // my vars (dec)

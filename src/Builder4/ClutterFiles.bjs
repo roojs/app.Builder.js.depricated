@@ -33,7 +33,7 @@
      "$ xns" : "Clutter",
      "items" : [
       {
-       "id" : "filelayout_manager",
+       "id" : "project_title_manager",
        "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
        "xtype" : "FlowLayout",
        "$ xns" : "Clutter",
