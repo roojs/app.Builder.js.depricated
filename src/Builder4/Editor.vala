@@ -452,7 +452,7 @@ public class Editor : Object
                 print("checkSyntax - empty string?\n");
                 return true;
             }
-            if (_this.file == null) {
+            if (_this.file == null && _this.fname.length > 0) {
             
                 // assume it's gtk...
                    this.check_running = true;
