@@ -126,21 +126,22 @@ public class Xcls_ClutterFiles : Object
     }
     public  void set_size (float w, float h) 
     {
-    
-         // called by window resize...
+        
+         // called by window resize... with is alreaddy -50 (for the buttons?)
+         
     
          if (this.el == null) {
             print("object not ready yet?");
             return;
         }
-       _this.filelayout_manager.el.max_column_width = w - 50;
+       _this.filelayout_manager.el.max_column_width = w - 75;
        this.el.set_size(
                // this.el.get_stage().width-150,
-               w-50,
+               w-75,
                h  // this.el.get_stage().height
         );
         // 100 right for buttons ..
-        this.el.set_position(100,0);
+        this.el.set_position(75,0);
     }
     public class Xcls_project_title : Object
     {
