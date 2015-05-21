@@ -104,7 +104,22 @@ public class Editor : Object
         return true;
     
     }
-    public void showPlainFile () {
+    public void showPlainFile (string fname)
+    {
+        this.ptype = "";
+        this.key  = "";
+        this.node = null;
+        this.file = null;
+        this.fname = fname;
+        string str;
+        try {
+            GLib.FileUtils.get_contents(fname, out str);
+        } catch (Error e) {
+            str = ""; // a tad dangerios... - perhaps we should block editing...
+        }
+        
+        this.view.load(str);
+        this.key_edit.el.text = "";    
     
     }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)
