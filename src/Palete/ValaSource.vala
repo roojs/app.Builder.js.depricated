@@ -196,6 +196,72 @@ namespace Palete {
 		}
 		
 		
+		public void checkFileSpawn(JsRender.JsRender file )
+		{
+ 			// race condition..
+ 			if (this.compiler != null) { 
+				return;
+			}
+ 			
+ 			this.file = file;
+			this.line_offset = 0;
+			  
+			string[] args = {};
+			args += BuilderApplication._self;
+			args += "--project";
+			args += this.file.project.fn;
+			args += "--target";
+			args += this.file.build_module;
+			 
+			 
+			
+			this.compiler = new Spawn("/tmp", args);
+			this.compiler.complete.connect(spawnResult);
+			
+			try {
+				this.compiler.run(); 
+			} catch (GLib.SpawnError e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+			    this.compiled(ret);
+			    this.compiler = null;
+			}
+			 
+		}
+		public void checkFilePlainSpawn(Project.Project proj, string filename )
+		{
+ 			// race condition..
+ 			if (this.compiler != null) { 
+				return;
+			}
+ 			
+ 			this.file = file;
+			this.line_offset = 0;
+			  
+			string[] args = {};
+			args += BuilderApplication._self;
+			args += "--project";
+			args += this.file.project.fn;
+			args += "--target";
+			args += this.file.build_module;
+			 
+			 
+			
+			this.compiler = new Spawn("/tmp", args);
+			this.compiler.complete.connect(spawnResult);
+			
+			try {
+				this.compiler.run(); 
+			} catch (GLib.SpawnError e) {
+				var ret = new Json.Object();
+				ret.set_boolean_member("success", false);
+				ret.set_string_member("message", e.message);
+			    this.compiled(ret);
+			    this.compiler = null;
+			}
+			 
+		}
 		
 		
 		public void spawnResult(int res, string output, string stderr)
