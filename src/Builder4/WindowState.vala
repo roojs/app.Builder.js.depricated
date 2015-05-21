@@ -547,9 +547,12 @@ public class WindowState : Object
 					Gtk.main_iteration();
 				}
 				this.code_editor.saveContents();
-				this.win.rooview.el.show(); 
-			    
-				this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				if (new_state != State.FILES) {
+					this.win.rooview.el.show(); 
+					this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				} else {
+					// going to files...
+				}
 				break;
 
 			 case State.OBJECT:
@@ -586,7 +589,7 @@ public class WindowState : Object
 				}  
 				
 			   
-				 this.clutterfiles.el.set_easing_duration(1000);
+				this.clutterfiles.el.set_easing_duration(1000);
 				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
 				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
 				this.clutterfiles.el.set_opacity(0);
