@@ -557,7 +557,7 @@ public class Editor : Object
             
             var err = obj.get_object_member(type);
             var valafn = _this.fname;
-            if (_this.file) {
+            if (_this.file != null) {
         
         
                 
