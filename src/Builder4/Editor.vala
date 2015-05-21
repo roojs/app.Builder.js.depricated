@@ -491,7 +491,7 @@ public class Editor : Object
             
             }
            if (_this.file == null) {
-               return;
+               return true;
            }
             var p = Palete.factory(_this.file.xtype);   
             
