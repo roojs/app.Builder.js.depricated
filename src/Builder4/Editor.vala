@@ -462,7 +462,7 @@ public class Editor : Object
                      _this.fname
                     
                 );
-            
+                return;
             
             }
            
