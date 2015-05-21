@@ -354,13 +354,17 @@ public class Editor : Object
         
         
           // this.get('/BottomPane').el.set_current_page(0);
-          var buf = (Gtk.SourceBuffer)this.el.get_buffer();
+            var buf = (Gtk.SourceBuffer)this.el.get_buffer();
             buf.set_text(str, str.length);
             buf.set_undo_manager(null);
             
             var lm = Gtk.SourceLanguageManager.get_default();
             
-            var lang = _this.file.language;
+            if (_this.file != null) {
+                var lang = _this.file.language;
+            } else {
+                lang = "vala"; // fixme...
+            }
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
