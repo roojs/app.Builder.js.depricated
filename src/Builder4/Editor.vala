@@ -28,6 +28,7 @@ public class Editor : Object
     public JsRender.JsRender file;
     public bool pos;
     public bool dirty;
+    public string fname;
     public signal void save ();
     public JsRender.Node node;
 
