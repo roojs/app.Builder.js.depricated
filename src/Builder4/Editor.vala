@@ -412,8 +412,7 @@ public class Editor : Object
         // user defined functions
         public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
                  
-                 return false;
-                 
+                   
                 this.error_line = validate_res.size;
         
                 if (this.error_line < 1) {
