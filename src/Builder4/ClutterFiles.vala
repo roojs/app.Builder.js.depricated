@@ -126,6 +126,9 @@ public class Xcls_ClutterFiles : Object
     }
     public  void set_size (float w, float h) 
     {
+    
+         // called by window resize...
+    
          if (this.el == null) {
             print("object not ready yet?");
             return;

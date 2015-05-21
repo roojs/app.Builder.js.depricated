@@ -21,7 +21,7 @@
    "@ void open" : "(JsRender.JsRender file)",
    "$ xns" : "Clutter",
    "bool reactive" : true,
-   "|  void set_size" : "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(\n            this.el.get_stage().width-150,\n            this.el.get_stage().height\n    );\n    // 100 right for buttons ..\n    this.el.set_position(100,0);\n}\n",
+   "|  void set_size" : "(float w, float h) \n{\n\n     // called by window resize...\n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(\n            this.el.get_stage().width-150,\n            this.el.get_stage().height\n    );\n    // 100 right for buttons ..\n    this.el.set_position(100,0);\n}\n",
    "items" : [
     {
      "id" : "project_title",
