@@ -49,7 +49,6 @@
       },
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
-       "id" : "+title",
        "$ x_expand" : true,
        "* pack" : "add_child",
        "xtype" : "Text",

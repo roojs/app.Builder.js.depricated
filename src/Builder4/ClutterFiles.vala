@@ -139,7 +139,6 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars (def)
-        public Xcls_title title;
 
         // ctor
         public Xcls_project_title(Xcls_ClutterFiles _owner )
@@ -158,10 +157,9 @@ public class Xcls_ClutterFiles : Object
             var child_1 = new Xcls_Text4( _this );
             child_1.ref();
             this.el.add_child (  child_1.el  );
-            var child_2 = new Xcls_title( _this );
+            var child_2 = new Xcls_Text5( _this );
             child_2.ref();
             this.el.add_child (  child_2.el  );
-            this.title =  child_2;
             var child_3 = new Xcls_Text6( _this );
             child_3.ref();
             this.el.add_child (  child_3.el  );
@@ -223,7 +221,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_title : Object
+    public class Xcls_Text5 : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -232,7 +230,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_ClutterFiles _owner )
+        public Xcls_Text5(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
