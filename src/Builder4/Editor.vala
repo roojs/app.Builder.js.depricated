@@ -103,7 +103,17 @@ public class Editor : Object
         return true;
     
     }
-    public void showPlainFile () {
+    public void showPlainFile (string fname)
+    {
+        this.ptype = "";
+        this.key  = "";
+        this.node = null;
+        this.file = null;
+        string str;
+        GLib.FileUtils.get_contents(fname, out str);
+        
+        this.view.load(str);
+        this.key_edit.el.text = "";    
     
     }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)

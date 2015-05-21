@@ -15,7 +15,7 @@
    "# int pos_root_y" : "",
    "# string ptype" : "\"\"",
    "bool expand" : true,
-   "| void showPlainFile" : "() {\n\n}\n",
+   "| void showPlainFile" : "(string fname)\n{\n    this.ptype = \"\";\n    this.key  = \"\";\n    this.node = null;\n    this.file = null;\n    string str;\n    GLib.FileUtils.get_contents(fname, out str);\n    \n    this.view.load(str);\n    this.key_edit.el.text = \"\";    \n\n}",
    "# string key" : "\"\"",
    "* pack" : "add",
    "xtype" : "Box",
