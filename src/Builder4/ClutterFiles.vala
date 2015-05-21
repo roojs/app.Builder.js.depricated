@@ -31,6 +31,7 @@ public class Xcls_ClutterFiles : Object
         this.el = new Clutter.ScrollActor();
 
         // my vars (dec)
+        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();;
         this.missing_thumb_pixbuf = null;
 
         // set gobject values
