@@ -113,7 +113,7 @@ public class Editor : Object
         try {
             GLib.FileUtils.get_contents(fname, out str);
         } catch (Error e) {
-            str = "";
+            str = ""; // a tad dangerios... - perhaps we should block editing...
         }
         
         this.view.load(str);
