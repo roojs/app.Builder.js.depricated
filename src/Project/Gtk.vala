@@ -108,6 +108,9 @@ namespace Project {
 			return ;
 			 
 		}
+		/**
+		 *  perhaps we should select the default in the window somewhere...
+		 */ 
 		public string firstBuildModule()
 		{
 			var iter = this.compilegroups.map_iterator();
@@ -119,6 +122,7 @@ namespace Project {
 				 
 				 return iter.get_value().name;
 			}
+			return "";
 		}
 		
 		
