@@ -16,6 +16,7 @@ public class WindowState : Object
 		PROP,
 		LISTENER,
 		CODE,
+		CODEONLY,
 		FILES,
 		PROJECT // project settings..
 	}
@@ -460,8 +461,8 @@ public class WindowState : Object
 	}
 	public void fileViewOpenPlain(string file)
 	{
-		this.win.leftpane.hide();
-		this.switchState (State.CODE); 
+		this.win.leftpane.el.hide();
+		this.switchState (State.CODEONLY); 
 		
 	}
 	
