@@ -455,13 +455,10 @@ public class Editor : Object
             if (_this.file == null) {
             
                 // assume it's gtk...
-                 
-                p.validateValaFile(
-                    _this.window.windowstate,
-                    str, 
-                     _this.fname
-                    
-                );
+                 _this.window.windowstate.valasource.checkFile(
+        				_this.fname,
+        				str
+        	 );
                 return;
             
             }
