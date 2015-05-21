@@ -553,12 +553,10 @@ public class WindowState : Object
 				//	Gtk.main_iteration();
 				//}
 				//this.code_editor.saveContents(); << not yet...
-				if (new_state != State.FILES) {
-					this.win.rooview.el.show(); 
-					this.win.codeeditview.el.set_scale(0.0f,0.0f);
-				} else {
-					// going to files... - show will rotate the code editview..
-				}
+				 
+				this.win.rooview.el.show(); 
+				this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				 
 				break;
 
 			 case State.OBJECT:
