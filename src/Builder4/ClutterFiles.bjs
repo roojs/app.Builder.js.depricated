@@ -67,7 +67,7 @@
     },
     {
      "id" : "filelayout",
-     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n//this.el.set_position(25,100);",
+     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n ",
      "xtype" : "Actor",
      "* pack" : "add_child",
      "$ reactive" : true,
