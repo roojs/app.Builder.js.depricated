@@ -107,7 +107,7 @@ public class Xcls_ClutterFiles : Object
         // should unref.. them hopefully.
         
         this.project_title_name.el.text = pr.name;
-        
+        this.project_title_path.el.text = pr.firstPath();
         
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
     
