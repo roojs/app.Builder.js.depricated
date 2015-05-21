@@ -57,6 +57,12 @@ public class Editor : Object
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true );
+
+        // init method
+
+        {
+            this.fname = "";
+        }
     }
 
     // user defined functions
