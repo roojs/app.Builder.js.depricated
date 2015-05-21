@@ -55,7 +55,7 @@
       },
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
-       "id" : "project_title_name",
+       "id" : "project_title_path",
        "* pack" : "add_child",
        "xtype" : "Text",
        "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
