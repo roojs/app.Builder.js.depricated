@@ -759,7 +759,9 @@ public class WindowState : Object
 				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
 				this.clutterfiles.el.set_opacity(0xff);
 				
-				
+				while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
 				
 				break;
 
@@ -767,6 +769,8 @@ public class WindowState : Object
 		}
 		this.resizeCanvasElements();
 		this.easingRestoreAll();
+		
+		// run the animation.. - then load files...
 		
 			
 	}
