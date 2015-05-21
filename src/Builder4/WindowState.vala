@@ -889,8 +889,8 @@ public class WindowState : Object
 				break;
 			
 			case State.CODEONLY: 
-			
-			
+				this.win.projectbutton.el.show();
+				break;
 		   
 			case State.CODE: 
 			case State.PROP:
