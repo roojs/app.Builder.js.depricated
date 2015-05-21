@@ -75,7 +75,7 @@
        "gboolean highlight_current_line" : true,
        "$ gboolean auto_indent" : true,
        "$ xns" : "Gtk",
-       "|   void load" : " (string str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n  var buf = (Gtk.SourceBuffer)this.el.get_buffer();\n    buf.set_text(str, str.length);\n    buf.set_undo_manager(null);\n    \n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    var lang = _this.file.language;\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));\n \n     \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}",
+       "|   void load" : " (string str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n  var buf = (Gtk.SourceBuffer)this.el.get_buffer();\n    buf.set_text(str, str.length);\n    buf.set_undo_manager(null);\n    \n    var lm = Gtk.SourceLanguageManager.get_default();\n    var lang = \"vala\";\n    if (_this.file != null) {\n         lang = _this.file.language;\n    }\n    //?? is javascript going to work as js?\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));\n \n     \n    _this.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}",
        "indent_width" : 4,
        "$ show_line_numbers" : true,
        "items" : [

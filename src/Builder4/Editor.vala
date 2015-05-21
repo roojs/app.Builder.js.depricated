@@ -355,8 +355,10 @@ public class Editor : Object
             buf.set_undo_manager(null);
             
             var lm = Gtk.SourceLanguageManager.get_default();
-            
-            var lang = _this.file.language;
+            var lang = "vala";
+            if (_this.file != null) {
+                 lang = _this.file.language;
+            }
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
