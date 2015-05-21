@@ -509,6 +509,13 @@ public class Editor : Object
                 print("Return has no errors\n");
                 return true;
             }
+            
+            if (this.window.windowstate.state != WindowState.State.CODEONLY && 
+                this.window.windowstate.state != WindowState.State.CODE
+                ) {
+                return true;
+            } 
+            
             if (_this.file == null) {
                 return true;
             }
