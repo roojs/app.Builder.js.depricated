@@ -356,7 +356,7 @@ public class Editor : Object
           // this.get('/BottomPane').el.set_current_page(0);
             var buf = (Gtk.SourceBuffer)this.el.get_buffer();
             buf.set_text(str, str.length);
-            buf.set_undo_manager(null);
+            buf.set_undo_manager(null); // reset undo...
             
             var lm = Gtk.SourceLanguageManager.get_default();
             
