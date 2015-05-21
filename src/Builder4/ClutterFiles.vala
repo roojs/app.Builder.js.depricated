@@ -105,6 +105,10 @@ public class Xcls_ClutterFiles : Object
         
         print("clutter files - load project: " + pr.name +"\n");
         // should unref.. them hopefully.
+        
+        this.project_title_name.el.text = pr.name;
+        
+        
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
     
         
