@@ -110,7 +110,11 @@ public class Editor : Object
         this.node = null;
         this.file = null;
         string str;
-        GLib.FileUtils.get_contents(fname, out str);
+        try {
+            GLib.FileUtils.get_contents(fname, out str);
+        } catch (Error e) {
+            str = "";
+        }
         
         this.view.load(str);
         this.key_edit.el.text = "";    
