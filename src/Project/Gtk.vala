@@ -110,7 +110,15 @@ namespace Project {
 		}
 		public string firstBuildModule()
 		{
-			
+			var iter = this.compilegroups.map_iterator();
+			while(iter.next()) {
+				 
+				 if (iter.get_value().name == "__default__") {
+					 continue;
+				 }
+				 
+				 return iter.get_value().name;
+			}
 		}
 		
 		
