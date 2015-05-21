@@ -551,7 +551,7 @@ public class WindowState : Object
 					this.win.rooview.el.show(); 
 					this.win.codeeditview.el.set_scale(0.0f,0.0f);
 				} else {
-					// going to files...
+					// going to files... - show will rotate the code editview..
 				}
 				break;
 
