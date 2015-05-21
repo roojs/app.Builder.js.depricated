@@ -583,7 +583,6 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.expand = true;
             var child_0 = new Xcls_Box4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
