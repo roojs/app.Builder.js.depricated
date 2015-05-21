@@ -64,7 +64,7 @@ public class Editor : Object
         
         
         if (_this.file == null) {
-            return;
+            return true;
         }
         
         
