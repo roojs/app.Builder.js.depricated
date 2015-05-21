@@ -412,7 +412,6 @@ public class Editor : Object
         // user defined functions
         public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
                  
-                   
                 this.error_line = validate_res.size;
         
                 if (this.error_line < 1) {
@@ -430,7 +429,7 @@ public class Editor : Object
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    this.el.create_source_mark(valiter.get_value(), "error", iter);
+                    this.el.create_source_mark(valiter.get_value(), "ERR", iter);
                 }   
                 return false;
             }
