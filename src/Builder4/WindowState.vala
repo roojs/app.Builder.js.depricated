@@ -543,6 +543,7 @@ public class WindowState : Object
 			case State.CODEONLY:
 				// going from codeonly..
 				this.code_editor.saveContents();
+				this.win.rooview.el.show(); 
 			    this.win.leftpane.el.show();
 				this.win.codeeditview.el.set_scale(0.0f,0.0f);
 				break;
@@ -796,7 +797,7 @@ public class WindowState : Object
 		
 		switch ( this.state) {
 			case State.PREVIEW:
-				this.win.rooview.el.show(); 
+				 
 				this.win.rooview.el.set_size(alloc.width-50, alloc.height);
 				break;
 	
@@ -810,7 +811,7 @@ public class WindowState : Object
 		
 			   // this.win.rooview.el.save_easing_state();
 				//this.win.rooview.el.set_size(alloc.width / 2.0f, alloc.height / 2.0f);
-				this.win.rooview.el.show(); 
+				 
 				this.win.rooview.el.set_scale(0.5f, 0.5f);
 				//this.win.rooview.el.restore_easing_state();
 				break;
@@ -819,7 +820,7 @@ public class WindowState : Object
 				this.win.codeeditview.el.set_size(codesize, alloc.height);
 				var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
 				//this.win.rooview.el.save_easing_state();
-				this.win.rooview.el.show(); 
+				 
 				this.win.rooview.el.set_scale(scale,scale);
 			   // this.win.rooview.el.restore_easing_state();
 				break;
@@ -886,6 +887,9 @@ public class WindowState : Object
 				this.win.addpropbutton.el.show();  
 				this.win.addlistenerbutton.el.show(); 
 				break;
+			
+			case State.CODEONLY: 
+			
 			
 		   
 			case State.CODE: 
