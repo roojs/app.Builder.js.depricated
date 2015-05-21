@@ -14,6 +14,7 @@
    "# int pos_root_x" : "",
    "# int pos_root_y" : "",
    "# string ptype" : "\"\"",
+   "# string fname" : "\"\"",
    "# string key" : "\"\"",
    "* pack" : "add",
    "xtype" : "Box",

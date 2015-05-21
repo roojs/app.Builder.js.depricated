@@ -24,6 +24,7 @@ public class Editor : Object
     public int pos_root_x;
     public int pos_root_y;
     public string ptype;
+    public string fname;
     public string key;
     public JsRender.JsRender file;
     public bool pos;
@@ -41,6 +42,7 @@ public class Editor : Object
         this.window = null;
         this.activeEditor = "";
         this.ptype = "";
+        this.fname = "";
         this.key = "";
         this.file = null;
         this.pos = false;
