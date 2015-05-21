@@ -732,7 +732,7 @@ public class WindowState : Object
 			   
 				break;
 				
-		   case State.FILES:  // can only get here from PREVIEW (or code-view) state.. in theory..
+		   case State.FILES:  // can only get here from PREVIEW (or code-only) state.. in theory..
 				
    
 				this.win.editpane.el.hide(); // holder for tree and properties..
