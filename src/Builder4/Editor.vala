@@ -448,11 +448,20 @@ public class Editor : Object
         
                 this.el.remove_source_marks (start, end, null);
             }
-            
+            if (str.length < 1) {
+                print("checkSyntax - empty string?\n");
+                return true;
+            }
             if (_this.file == null) {
             
                 // assume it's gtk...
-                
+                 
+                p.validateValaFile(
+                    _this.window.windowstate,
+                    str, 
+                     _this.fname
+                    
+                );
             
             
             }
@@ -462,18 +471,8 @@ public class Editor : Object
         
             
              
-            if (this.error_line > 0) {
-                 Gtk.TextIter start;
-                 Gtk.TextIter end;     
-                this.el.get_bounds (out start, out end);
-        
-                this.el.remove_source_marks (start, end, null);
-            }
             
-            if (str.length < 1) {
-                print("checkSyntax - empty string?\n");
-                return true;
-            }
+            
             this.check_running = true;
             
             
