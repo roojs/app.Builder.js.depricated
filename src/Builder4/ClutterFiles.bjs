@@ -26,7 +26,7 @@
    "items" : [
     {
      "id" : "project_title",
-     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
+     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\nthis.el.set_position(0,0);\n",
      "xtype" : "Actor",
      "* pack" : "add_child",
      "$ reactive" : true,
