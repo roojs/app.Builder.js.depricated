@@ -701,6 +701,7 @@ public class WindowState : Object
 
 			case State.CODEONLY:
 				// going to codeonly..
+				this.win.codeeditview.el.show();
 				this.win.leftpane.el.hide();
 				this.win.codeeditview.el.show();
 				//while (Gtk.events_pending()) { 
