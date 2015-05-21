@@ -578,15 +578,17 @@ public class WindowState : Object
 				// hide files...
 				
 				if (new_state == State.CODEONLY) {
-					 
+					this.win.rooview.el.hide();
 				} else {
 					this.win.rooview.el.show();
-					this.win.rooview.el.set_easing_duration(1000);
-					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-					this.win.rooview.el.set_scale(1.0f,1.0f);
-					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
-					this.win.rooview.el.set_opacity(0xff);
-				}  
+				}
+				
+				this.win.rooview.el.set_easing_duration(1000);
+				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+				this.win.rooview.el.set_scale(1.0f,1.0f);
+				this.win.rooview.el.set_pivot_point(0.5f,0.5f);
+				this.win.rooview.el.set_opacity(0xff);
+				
 				
 			   
 				this.clutterfiles.el.set_easing_duration(1000);
