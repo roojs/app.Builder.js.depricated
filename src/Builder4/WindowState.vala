@@ -568,13 +568,22 @@ public class WindowState : Object
 		  case State.FILES:
 				// hide files...
 				
-				this.win.rooview.el.show();
-				this.win.rooview.el.set_easing_duration(1000);
-				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
-				this.win.rooview.el.set_scale(1.0f,1.0f);
-				this.win.rooview.el.set_pivot_point(0.5f,0.5f);
-				this.win.rooview.el.set_opacity(0xff);
-			   
+				if (new_state == State.CODEONLY) {
+					
+					this.win.codeeditview.el.show();
+					this.win.codeeditview.el.set_easing_duration(1000);
+					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+					this.win.codeeditview.el.set_scale(1.0f,1.0f);
+					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
+					this.win.codeeditview.el.set_opacity(0xff);
+				} else {
+					this.win.rooview.el.show();
+					this.win.rooview.el.set_easing_duration(1000);
+					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+					this.win.rooview.el.set_scale(1.0f,1.0f);
+					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
+					this.win.rooview.el.set_opacity(0xff);
+				}  
 				
 			   
 				 this.clutterfiles.el.set_easing_duration(1000);
