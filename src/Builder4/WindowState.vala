@@ -461,7 +461,7 @@ public class WindowState : Object
 	public void fileViewOpenPlain(string file)
 	{
 		this.win.leftpane.hide();
-		
+		this.switchState (State.CODE); 
 		
 	}
 	
