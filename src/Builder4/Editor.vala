@@ -510,8 +510,8 @@ public class Editor : Object
                 return true;
             }
             
-            if (this.window.windowstate.state != WindowState.State.CODEONLY && 
-                this.window.windowstate.state != WindowState.State.CODE
+            if (_this.window.windowstate.state != WindowState.State.CODEONLY && 
+                _this.window.windowstate.state != WindowState.State.CODE
                 ) {
                 return true;
             } 
