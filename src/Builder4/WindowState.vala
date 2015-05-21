@@ -743,6 +743,7 @@ public class WindowState : Object
 					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
 					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
 					this.win.codeeditview.el.set_opacity(0);
+					// we have to 
 					this.win.rooview.el.hide();
 					this.win.rooview.el.set_easing_duration(1000);
 					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
@@ -750,6 +751,12 @@ public class WindowState : Object
 					this.win.rooview.el.set_opacity(0);
 					//el.set_scale(0.0f,0.0f);
 				} else {
+					this.win.codeeditview.hide();
+					this.win.codeeditview.el.set_easing_duration(1000);
+					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
+					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+					this.win.codeeditview.el.set_opacity(0);
+					
 					this.win.rooview.el.set_easing_duration(1000);
 					this.win.rooview.el.set_pivot_point(0.5f,0.5f);
 					this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
