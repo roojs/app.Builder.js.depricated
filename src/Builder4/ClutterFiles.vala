@@ -132,7 +132,7 @@ public class Xcls_ClutterFiles : Object
         }
        _this.filelayout_manager.el.max_column_width = w - 100;
        this.el.set_size(
-                this.el.get_stage().width-50,
+                this.el.get_stage().width-100,
                 this.el.get_stage().height
         );
         // 100 right for buttons ..
