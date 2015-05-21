@@ -474,6 +474,7 @@ public class Editor : Object
                 print("checkSyntax - empty string?\n");
                 return true;
             }
+            
             if (_this.file == null && _this.fname.length > 0) {
             
                 // assume it's gtk...
@@ -484,7 +485,7 @@ public class Editor : Object
         	    _this.fname,
         	    str
         	 );
-                return;
+                return true;
             
             }
            
@@ -551,34 +552,40 @@ public class Editor : Object
                 return true;
             } 
             
-            if (_this.file == null) {
-                return true;
-            }
             
             var err = obj.get_object_member(type);
-            
-            
-            var valafn = "";
-              try {             
-                   var  regex = new Regex("\\.bjs$");
+            var valafn = _this.fname;
+            if (_this.file) {
+        
+        
                 
-                 
-                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
-                 } catch (GLib.RegexError e) {
-                    return true;
-                }   
+                
+                 valafn = "";
+                  try {             
+                       var  regex = new Regex("\\.bjs$");
+                    
+                     
+                        valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                     } catch (GLib.RegexError e) {
+                        return true;
+                    }   
         
-           if (!err.has_member(valafn)) {
-                print("File path has no errors\n");
-                return  true;
-            }
         
-            var lines = err.get_object_member(valafn);
+        
+              }
+               if (!err.has_member(valafn)) {
+                    print("File path has no errors\n");
+                    return  true;
+                }
+        
+                var lines = err.get_object_member(valafn);
+                
+                var offset = 1;
+                if (obj.has_member("line_offset")) {
+                    offset = (int)obj.get_int_member("line_offset") + 1;
+                }
             
-            var offset = 1;
-            if (obj.has_member("line_offset")) {
-                offset = (int)obj.get_int_member("line_offset") + 1;
-            }
+        
              
             
             var tlines = this.el.get_line_count () +1;
