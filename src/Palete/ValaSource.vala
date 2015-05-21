@@ -236,7 +236,17 @@ namespace Palete {
 				return;
 			}
  			
- 			this.file = file;
+ 			FileIOStream iostream;
+			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
+			tmpfile.ref();
+
+			OutputStream ostream = iostream.output_stream;
+			DataOutputStream dostream = new DataOutputStream (ostream);
+			dostream.put_string (contents);
+			
+ 			
+ 			
+ 			this.file = null;
 			this.line_offset = 0;
 			  
 			string[] args = {};
