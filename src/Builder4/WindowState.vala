@@ -740,6 +740,7 @@ public class WindowState : Object
 				
 				if (oldstate == State.CODEONLY) {
 					// code only  - rotate the codeditview..
+					this.win.codeeditview.el.hide();
 					this.win.codeeditview.el.set_easing_duration(1000);
 					this.win.codeeditview.el.set_pivot_point(0.5f,0.5f);
 					this.win.codeeditview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
