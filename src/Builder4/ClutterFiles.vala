@@ -233,7 +233,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_Text5(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 20px", file.nickName(),  Clutter.Color.from_string("#eee"));
 
             // my vars (dec)
 

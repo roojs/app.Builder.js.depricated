@@ -48,14 +48,14 @@
        "$ xns" : "Clutter"
       },
       {
-       "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
-       "$ x_expand" : true,
+       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", file.nickName(),  Clutter.Color.from_string(\"#eee\"))",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "$ y_align" : "Clutter.ActorAlign.START",
        "$ xns" : "Clutter",
-       "$ y_expand" : true,
-       "$ x_align" : "Clutter.ActorAlign.START"
+       "boolean y_align" : "Clutter.ActorAlign.START",
+       "$ x_align" : "Clutter.ActorAlign.START",
+       "boolean y_expand" : true,
+       "boolean$ x_expand" : true
       },
       {
        "* pack" : "add_child",
