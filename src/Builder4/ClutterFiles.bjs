@@ -43,7 +43,7 @@
        "$ homogeneous" : true
       },
       {
-       "* pack" : "set_child_above_sibling,null",
+       "* pack" : true,
        "xtype" : "Text",
        "$ xns" : "Clutter"
       },

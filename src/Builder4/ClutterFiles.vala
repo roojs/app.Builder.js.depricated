@@ -157,7 +157,6 @@ public class Xcls_ClutterFiles : Object
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_Text4( _this );
             child_1.ref();
-            this.el.set_child_above_sibling (  child_1.el , null );
             var child_2 = new Xcls_project_title_name( _this ,file);
             child_2.ref();
 
