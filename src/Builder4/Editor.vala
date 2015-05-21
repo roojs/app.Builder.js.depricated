@@ -455,9 +455,11 @@ public class Editor : Object
             if (_this.file == null) {
             
                 // assume it's gtk...
+                   this.check_running = true;
+        
                  _this.window.windowstate.valasource.checkPlainFileSpawn(
-        				_this.fname,
-        				str
+        	    _this.fname,
+        	    str
         	 );
                 return;
             
@@ -466,10 +468,7 @@ public class Editor : Object
             var p = Palete.factory(_this.file.xtype);   
             
         
-            
              
-            
-            
             this.check_running = true;
             
             
