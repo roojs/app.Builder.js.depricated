@@ -822,6 +822,14 @@ public class WindowState : Object
 			   // this.win.rooview.el.restore_easing_state();
 				break;
 				
+			case State.CODEONLY: 
+				this.win.codeeditview.el.set_size(codesize, alloc.height);
+				var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
+				//this.win.rooview.el.save_easing_state();
+				 
+				this.win.rooview.el.set_scale(scale,scale);
+			   // this.win.rooview.el.restore_easing_state();
+				break;	
 			case State.PROP:
 			case State.LISTENER:
 				 this.win.addpropsview.el.set_size(palsize, alloc.height);
