@@ -14,6 +14,7 @@ public class Xcls_ClutterFiles : Object
     }
     public Xcls_project_title project_title;
     public Xcls_project_title_manager project_title_manager;
+    public Xcls_project_title_name project_title_name;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
 
@@ -154,6 +155,8 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_project_title_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
+            var child_1 = new Xcls_project_title_name( _this ,file);
+            child_1.ref();
 
             // init method
 
@@ -190,7 +193,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_fileitem : Object
+    public class Xcls_project_title_name : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -203,9 +206,10 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_project_title_name(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
+            _this.project_title_name = this;
             this.el = new Clutter.Actor();
 
             // my vars (dec)
