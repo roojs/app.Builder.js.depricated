@@ -510,7 +510,7 @@ public class Editor : Object
                 return true;
             }
             if (_this.file == null) {
-                return;
+                return true;
             }
             
             var err = obj.get_object_member(type);
