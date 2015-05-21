@@ -12,7 +12,7 @@ public class Xcls_ClutterFiles : Object
         }
         return _ClutterFiles;
     }
-    public Xcls_filelayout filelayout;
+    public Xcls_project_title project_title;
     public Xcls_filelayout_manager filelayout_manager;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
@@ -34,7 +34,7 @@ public class Xcls_ClutterFiles : Object
         // set gobject values
         this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
         this.el.reactive = true;
-        var child_0 = new Xcls_filelayout( _this );
+        var child_0 = new Xcls_project_title( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
         var child_1 = new Xcls_filelayout( _this );
@@ -132,7 +132,7 @@ public class Xcls_ClutterFiles : Object
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
     }
-    public class Xcls_filelayout : Object
+    public class Xcls_project_title : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -141,10 +141,10 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout(Xcls_ClutterFiles _owner )
+        public Xcls_project_title(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            _this.filelayout = this;
+            _this.project_title = this;
             this.el = new Clutter.Actor();
 
             // my vars (dec)

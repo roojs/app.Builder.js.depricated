@@ -25,7 +25,7 @@
    "|  void set_size" : "(float w, float h) \n{\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 150;\n   this.el.set_size(this.el.get_stage().width-150,\n                        this.el.get_stage().height);\n            this.el.set_position(100,50);\n}\n",
    "items" : [
     {
-     "id" : "filelayout",
+     "id" : "project_title",
      "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
      "xtype" : "Actor",
      "* pack" : "add_child",
