@@ -28,7 +28,6 @@ public class Editor : Object
     public JsRender.JsRender file;
     public bool pos;
     public bool dirty;
-    public string fname;
     public signal void save ();
     public JsRender.Node node;
 
@@ -50,19 +49,12 @@ public class Editor : Object
 
         // set gobject values
         this.el.homogeneous = false;
-        this.el.expand = true;
         var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true );
-
-        // init method
-
-        {
-            this.fname = "";
-        }
     }
 
     // user defined functions
@@ -108,24 +100,6 @@ public class Editor : Object
         this.save();
         
         return true;
-    
-    }
-    public void showPlainFile (string fname)
-    {
-        this.ptype = "";
-        this.key  = "";
-        this.node = null;
-        this.file = null;
-        this.fname = fname;
-        string str;
-        try {
-            GLib.FileUtils.get_contents(fname, out str);
-        } catch (Error e) {
-            str = ""; // a tad dangerios... - perhaps we should block editing...
-        }
-        
-        this.view.load(str);
-        this.key_edit.el.text = "";    
     
     }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)
@@ -354,16 +328,13 @@ public class Editor : Object
         
         
           // this.get('/BottomPane').el.set_current_page(0);
-            var buf = (Gtk.SourceBuffer)this.el.get_buffer();
+          var buf = (Gtk.SourceBuffer)this.el.get_buffer();
             buf.set_text(str, str.length);
-            buf.set_undo_manager(null); // reset undo...
+            buf.set_undo_manager(null);
             
             var lm = Gtk.SourceLanguageManager.get_default();
             
-            var lang = "vala";    
-            if (_this.file != null) {
-                 lang = _this.file.language;
-            }  
+            var lang = _this.file.language;
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
@@ -467,11 +438,28 @@ public class Editor : Object
         
                 return true;
             }
-           
+            var str = this.toString();
+            
+            // needed???
+            if (this.error_line > 0) {
+                 Gtk.TextIter start;
+                 Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+        
+                this.el.remove_source_marks (start, end, null);
+            }
+            
+            if (_this.file == null) {
+            
+                // assume it's gtk...
+                
+            
+            
+            }
            
             var p = Palete.factory(_this.file.xtype);   
             
-            var str = this.toString();
+        
             
              
             if (this.error_line > 0) {
