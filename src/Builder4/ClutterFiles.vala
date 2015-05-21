@@ -136,7 +136,7 @@ public class Xcls_ClutterFiles : Object
                 this.el.get_stage().height
         );
         // 100 right for buttons ..
-        this.el.set_position(100,50);
+        this.el.set_position(100,0);
     }
     public class Xcls_project_title : Object
     {
