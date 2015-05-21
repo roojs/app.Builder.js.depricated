@@ -509,6 +509,10 @@ public class Editor : Object
                 print("Return has no errors\n");
                 return true;
             }
+            if (_this.file == null) {
+                return;
+            }
+            
             var err = obj.get_object_member(type);
             
             
