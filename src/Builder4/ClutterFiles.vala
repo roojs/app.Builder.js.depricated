@@ -44,10 +44,6 @@ public class Xcls_ClutterFiles : Object
         child_1.ref();
         this.el.add_child (  child_1.el  );
 
-        // init method
-
-        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
-
         //listeners
         this.el.scroll_event.connect( ( event) => {
            //Sprint("scroll event");
