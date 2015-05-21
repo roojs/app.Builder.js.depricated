@@ -480,6 +480,7 @@ public class Editor : Object
                    this.check_running = true;
         
                  _this.window.windowstate.valasource.checkPlainFileSpawn(
+                    _this.window.project,
         	    _this.fname,
         	    str
         	 );
