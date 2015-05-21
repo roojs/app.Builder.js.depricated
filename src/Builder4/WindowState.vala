@@ -543,7 +543,7 @@ public class WindowState : Object
 			case State.CODEONLY:
 
 				this.code_editor.saveContents();
-			    
+			    this.win.leftpane.el.show();
 				this.win.codeeditview.el.set_scale(0.0f,0.0f);
 				break;
 
