@@ -181,7 +181,7 @@
            "* prop" : "layout_manager"
           },
           {
-           "* ctor" : "new Clutter.Text.full(\"Sans 14px\", foldername,  Clutter.Color.from_string(\"#fff\"))",
+           "* ctor" : "new Clutter.Text.full(\"Sans 14px\", GLib.basename(foldername),  Clutter.Color.from_string(\"#fff\"))",
            "id" : "+foldertitle",
            "* args" : "string foldername",
            "$ x_expand" : true,
