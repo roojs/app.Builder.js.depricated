@@ -165,7 +165,7 @@
           "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
          },
          "id" : "*folderitem",
-         "* args" : "sting folderpath",
+         "* args" : "string folderpath",
          "* init" : " \n//this.el.set_size(100,100);",
          "* pack" : true,
          "xtype" : "Actor",
