@@ -183,7 +183,7 @@
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 14px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
            "id" : "+foldertitle",
-           "* args" : "sting foldername",
+           "* args" : "string foldername",
            "$ x_expand" : true,
            "* pack" : "add_child",
            "xtype" : "Text",

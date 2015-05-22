@@ -685,7 +685,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_foldertitle(Xcls_ClutterFiles _owner , sting foldername)
+        public Xcls_foldertitle(Xcls_ClutterFiles _owner , string foldername)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 14px", file.nickType(),  Clutter.Color.from_string("#fff"));
