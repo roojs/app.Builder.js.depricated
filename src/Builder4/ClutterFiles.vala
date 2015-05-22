@@ -616,7 +616,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_folderitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_folderitem(Xcls_ClutterFiles _owner , sting folderpath)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -643,7 +643,6 @@ public class Xcls_ClutterFiles : Object
 
             // init method
 
-            this.file = file;
             this.el.set_size(100,100);
 
             //listeners

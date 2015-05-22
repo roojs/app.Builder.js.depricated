@@ -165,8 +165,8 @@
           "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
          },
          "id" : "*folderitem",
-         "* args" : "JsRender.JsRender file",
-         "* init" : "this.file = file;\nthis.el.set_size(100,100);",
+         "* args" : "sting folderpath",
+         "* init" : " \nthis.el.set_size(100,100);",
          "* pack" : true,
          "xtype" : "Actor",
          "# JsRender.JsRender file" : "",
