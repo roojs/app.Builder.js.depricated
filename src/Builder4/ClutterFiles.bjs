@@ -174,7 +174,7 @@
          "$ xns" : "Clutter",
          "items" : [
           {
-           "spacing" : 4,
+           "spacing" : 2,
            "xtype" : "BoxLayout",
            "orientation" : "Clutter.Orientation.VERTICAL",
            "$ xns" : "Clutter",
