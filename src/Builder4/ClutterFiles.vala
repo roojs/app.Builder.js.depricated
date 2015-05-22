@@ -153,7 +153,7 @@ public class Xcls_ClutterFiles : Object
             this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );
-            this.el.set_position(100,0);
+            this.el.set_position(75,0);
         }
 
         // user defined functions
