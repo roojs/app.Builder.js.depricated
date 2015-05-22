@@ -643,7 +643,7 @@ public class Xcls_ClutterFiles : Object
 
             // init method
 
-            this.el.set_size(100,100);
+            //this.el.set_size(100,100);
 
             //listeners
             this.el.button_press_event.connect( (  event) => {
