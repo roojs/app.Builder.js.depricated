@@ -49,11 +49,9 @@
        "float x" : "100.0f",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.END",
+       "float y" : "10.0f",
        "boolean x_expand" : false,
-       "$ xns" : "Clutter",
-       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : false
+       "$ xns" : "Clutter"
       },
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 10px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
