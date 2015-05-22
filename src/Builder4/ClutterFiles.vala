@@ -109,7 +109,7 @@ public class Xcls_ClutterFiles : Object
        
        this.scoller.el.set_size(
                // this.el.get_stage().width-150,
-               w-75,
+               w-150,
                h  // this.el.get_stage().height
         );
         
