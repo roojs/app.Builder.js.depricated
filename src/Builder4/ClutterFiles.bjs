@@ -40,7 +40,6 @@
       },
       {
        "xtype" : "FixedLayout",
-       "* pack" : "set_layout_manager",
        "$ xns" : "Clutter",
        "* prop" : "layout_manager"
       },
