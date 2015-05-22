@@ -603,6 +603,221 @@ public class Xcls_ClutterFiles : Object
     }
 
 
+    public class Xcls_fileitem : Object
+    {
+        public Clutter.Actor el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+        public JsRender.JsRender file;
+        public Xcls_image image;
+        public Xcls_typetitle typetitle;
+        public Xcls_title title;
+
+        // ctor
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        {
+            _this = _owner;
+            this.el = new Clutter.Actor();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.reactive = true;
+            var child_0 = new Xcls_BoxLayout16( _this );
+            child_0.ref();
+            this.el.layout_manager = child_0.el;
+            var child_1 = new Xcls_image( _this ,file);
+            child_1.ref();
+            this.el.add_child (  child_1.el  );
+            this.image =  child_1;
+            var child_2 = new Xcls_typetitle( _this ,file);
+            child_2.ref();
+            this.el.add_child (  child_2.el  );
+            this.typetitle =  child_2;
+            var child_3 = new Xcls_title( _this ,file);
+            child_3.ref();
+            this.el.add_child (  child_3.el  );
+            this.title =  child_3;
+
+            // init method
+
+            this.file = file;
+            this.el.set_size(100,100);
+
+            //listeners
+            this.el.button_press_event.connect( (  event) => {
+                _this.open(this.file);
+                return false;
+            });
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color =   Clutter.Color.from_string("#333");
+                    return false;
+            });
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color =   Clutter.Color.from_string("#000");
+                return false;
+            });
+        }
+
+        // user defined functions
+    }
+    public class Xcls_BoxLayout16 : Object
+    {
+        public Clutter.BoxLayout el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_BoxLayout16(Xcls_ClutterFiles _owner )
+        {
+            _this = _owner;
+            this.el = new Clutter.BoxLayout();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.spacing = 4;
+            this.el.orientation = Clutter.Orientation.VERTICAL;
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_image : Object
+    {
+        public Clutter.Actor el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        {
+            _this = _owner;
+            this.el = new Clutter.Actor();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.margin_right = 5f;
+            this.el.margin_left = 5f;
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.START;
+            this.el.margin_top = 5f;
+            this.el.y_expand = true;
+
+            // init method
+
+            {
+                Gdk.Pixbuf pixbuf= null;
+                
+                var fname = file.getIconFileName(false);
+            
+                try {
+                    if (FileUtils.test(fname, FileTest.EXISTS)) {
+                        pixbuf = new Gdk.Pixbuf.from_file(fname);
+                    } 
+                } catch (Error e) {
+                    // noop
+                
+                }
+                if (pixbuf == null) {
+                    
+                    try {
+                        if (_this.missing_thumb_pixbuf == null) {
+                                var icon_theme = Gtk.IconTheme.get_default ();
+                                _this.missing_thumb_pixbuf = icon_theme.load_icon ("package-x-generic", 92, 0);
+                                _this.missing_thumb_pixbuf.ref();
+                            }
+                            pixbuf = _this.missing_thumb_pixbuf;
+            
+                    } catch (Error e) {
+                        // noop?
+                    }
+                }
+                try {
+                    var img = new Clutter.Image();
+                    img.set_data(pixbuf.get_pixels(),   
+                                        pixbuf.has_alpha 
+                                          ? Cogl.PixelFormat.RGBA_8888
+                                          : Cogl.PixelFormat.RGB_888,
+                                        pixbuf.get_width (),
+                            pixbuf.get_height (),
+                                        pixbuf.get_rowstride ()
+                    );
+                    this.el.set_content(img);
+                } catch (Error e) {
+                    // noop?
+                }
+                 // should probably do smarter scaling...
+                
+                
+                this.el.set_size(90, 70);
+            }
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_typetitle : Object
+    {
+        public Clutter.Text el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px", file.nickType(),  Clutter.Color.from_string("#fff"));
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.START;
+            this.el.y_expand = true;
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_title : Object
+    {
+        public Clutter.Text el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        {
+            _this = _owner;
+            this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.START;
+            this.el.y_expand = true;
+        }
+
+        // user defined functions
+    }
+
+
 
 
 }

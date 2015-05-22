@@ -157,6 +157,69 @@
            "$ x_align" : "Clutter.ActorAlign.START"
           }
          ]
+        },
+        {
+         "listeners" : {
+          "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n} ",
+          "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+          "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
+         },
+         "id" : "*fileitem",
+         "* args" : "JsRender.JsRender file",
+         "* init" : "this.file = file;\nthis.el.set_size(100,100);",
+         "* pack" : true,
+         "xtype" : "Actor",
+         "# JsRender.JsRender file" : "",
+         "$ reactive" : true,
+         "$ xns" : "Clutter",
+         "items" : [
+          {
+           "spacing" : 4,
+           "xtype" : "BoxLayout",
+           "orientation" : "Clutter.Orientation.VERTICAL",
+           "$ xns" : "Clutter",
+           "* prop" : "layout_manager"
+          },
+          {
+           "$ margin_right" : 5,
+           "$ margin_top" : 5,
+           "id" : "+image",
+           "* args" : "JsRender.JsRender file",
+           "* init" : "{\n    Gdk.Pixbuf pixbuf= null;\n    \n    var fname = file.getIconFileName(false);\n\n    try {\n        if (FileUtils.test(fname, FileTest.EXISTS)) {\n            pixbuf = new Gdk.Pixbuf.from_file(fname);\n        } \n    } catch (Error e) {\n        // noop\n    \n    }\n    if (pixbuf == null) {\n        \n        try {\n            if (_this.missing_thumb_pixbuf == null) {\n                    var icon_theme = Gtk.IconTheme.get_default ();\n                    _this.missing_thumb_pixbuf = icon_theme.load_icon (\"package-x-generic\", 92, 0);\n                    _this.missing_thumb_pixbuf.ref();\n                }\n                pixbuf = _this.missing_thumb_pixbuf;\n\n        } catch (Error e) {\n            // noop?\n        }\n    }\n    try {\n        var img = new Clutter.Image();\n        img.set_data(pixbuf.get_pixels(),   \n                            pixbuf.has_alpha \n                              ? Cogl.PixelFormat.RGBA_8888\n                              : Cogl.PixelFormat.RGB_888,\n                            pixbuf.get_width (),\n                pixbuf.get_height (),\n                            pixbuf.get_rowstride ()\n        );\n        this.el.set_content(img);\n    } catch (Error e) {\n        // noop?\n    }\n     // should probably do smarter scaling...\n    \n    \n    this.el.set_size(90, 70);\n}\n",
+           "$ x_expand" : true,
+           "* pack" : "add_child",
+           "xtype" : "Actor",
+           "$ y_align" : "Clutter.ActorAlign.START",
+           "$ margin_left" : 5,
+           "$ xns" : "Clutter",
+           "$ y_expand" : true,
+           "$ x_align" : "Clutter.ActorAlign.START"
+          },
+          {
+           "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
+           "id" : "+typetitle",
+           "* args" : "JsRender.JsRender file",
+           "$ x_expand" : true,
+           "* pack" : "add_child",
+           "xtype" : "Text",
+           "$ y_align" : "Clutter.ActorAlign.START",
+           "$ xns" : "Clutter",
+           "$ y_expand" : true,
+           "$ x_align" : "Clutter.ActorAlign.START"
+          },
+          {
+           "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
+           "id" : "+title",
+           "* args" : "JsRender.JsRender file",
+           "$ x_expand" : true,
+           "* pack" : "add_child",
+           "xtype" : "Text",
+           "$ y_align" : "Clutter.ActorAlign.START",
+           "$ xns" : "Clutter",
+           "$ y_expand" : true,
+           "$ x_align" : "Clutter.ActorAlign.START"
+          }
+         ]
         }
        ]
       }
