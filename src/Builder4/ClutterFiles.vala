@@ -47,7 +47,7 @@ public class Xcls_ClutterFiles : Object
         this.el.reactive = true;
         var child_0 = new Xcls_scoller( _this );
         child_0.ref();
-        this.el.set_child_above_sibling (  child_0.el , null );
+        this.el.add_child (  child_0.el  );
         var child_1 = new Xcls_project_title( _this );
         child_1.ref();
         this.el.add_child (  child_1.el  );

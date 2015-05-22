@@ -29,7 +29,7 @@
      "|  void clearFiles" : "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n ",
      "Clutter.ScrollMode scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
      "xtype" : "ScrollActor",
-     "* pack" : "set_child_above_sibling,null",
+     "* pack" : "add_child",
      "|  void loadProject" : "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    // LEAK --- we should unref all the chilren...\n    this.filelayout.el.y = 0;\n    this.clearFiles();\n    \n    print(\"clutter files - load project: \" + pr.name +\"\\n\");\n    // should unref.. them hopefully.\n    \n    this.project_title_name.el.text = pr.name;\n    this.project_title_path.el.text = pr.firstPath();\n    \n    this.fileitems = new Gee.ArrayList<Xcls_fileitem>();\n\n    \n\n    var fiter = pr.sortedFiles().list_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get());\n        this.fileitems.add(a);\n\n//        a.ref();\n        print(\"add to clutter file view: \" + fiter.get().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    \n   \n    \n    this.el.show();\n}\n",
      "# Gdk.Pixbuf missing_thumb_pixbuf" : "null",
      "@ void open" : "(JsRender.JsRender file)",
