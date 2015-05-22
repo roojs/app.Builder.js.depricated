@@ -726,7 +726,7 @@ public class Xcls_ClutterFiles : Object
 
             //listeners
             this.el.button_press_event.connect( (  event) => {
-                _this.open(this.filepath);
+               // _this.open(this.filepath);
                 return false;
             });
         }

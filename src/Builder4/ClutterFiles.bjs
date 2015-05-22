@@ -194,7 +194,7 @@
           },
           {
            "listeners" : {
-            "button_press_event" : "  (  event) => {\n    _this.open(this.filepath);\n    return false;\n} "
+            "button_press_event" : "  (  event) => {\n   // _this.open(this.filepath);\n    return false;\n} "
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
            "id" : "*folderfile",
