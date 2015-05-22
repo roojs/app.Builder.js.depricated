@@ -59,7 +59,7 @@
        "float x" : "0.0f",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "float y" : "20.0f",
+       "float y" : "40.0f",
        "$ xns" : "Clutter"
       }
      ]

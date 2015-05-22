@@ -251,7 +251,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.x = 0.0f;
-            this.el.y = 20.0f;
+            this.el.y = 40.0f;
         }
 
         // user defined functions
