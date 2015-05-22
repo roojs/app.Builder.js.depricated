@@ -1,16 +1,16 @@
-static Xcls_ClutterFilesHolder  _ClutterFilesHolder;
+static Xcls_ClutterFiles  _ClutterFiles;
 
-public class Xcls_ClutterFilesHolder : Object
+public class Xcls_ClutterFiles : Object
 {
     public Clutter.Actor el;
-    private Xcls_ClutterFilesHolder  _this;
+    private Xcls_ClutterFiles  _this;
 
-    public static Xcls_ClutterFilesHolder singleton()
+    public static Xcls_ClutterFiles singleton()
     {
-        if (_ClutterFilesHolder == null) {
-            _ClutterFilesHolder= new Xcls_ClutterFilesHolder();
+        if (_ClutterFiles == null) {
+            _ClutterFiles= new Xcls_ClutterFiles();
         }
-        return _ClutterFilesHolder;
+        return _ClutterFiles;
     }
     public Xcls_ClutterFiles ClutterFiles;
     public Xcls_project_title project_title;
@@ -33,7 +33,7 @@ public class Xcls_ClutterFilesHolder : Object
     public signal void open (JsRender.JsRender file);
 
     // ctor
-    public Xcls_ClutterFilesHolder()
+    public Xcls_ClutterFiles()
     {
         _this = this;
         this.el = new Clutter.Actor();
@@ -54,47 +54,6 @@ public class Xcls_ClutterFilesHolder : Object
         var child_2 = new Xcls_filelayout( _this );
         child_2.ref();
         this.el.add_child (  child_2.el  );
-
-        //listeners
-        this.el.scroll_event.connect( ( event) => {
-           //Sprint("scroll event");
-                    var y = this.filelayout.el.y;
-                    var dir = event.direction;
-                    switch (dir) {
-                        case Clutter.ScrollDirection.UP:
-                            y += event.y /2;
-                            break;
-                        case Clutter.ScrollDirection.DOWN:
-                            y -= event.y /2 ;
-                            break;
-                        default:
-                            return false;
-                    }
-                    // range of scroll -- can go up -- eg.. -ve value.
-                    
-                    y = float.min(0, y);
-                    
-                    // to work out the max -ve number
-                    // height of filelayout
-                    // height of scrollactor..
-                    
-                    var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
-                     if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
-                        return  false;
-                    }
-                
-                
-                    
-                    
-                //    print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
-                  //          last_child_bottom - this.el.height,
-                   //         y));    
-                   // y = float.min(0, y);    //??
-                   // print("scroll event of %f  - new y = %f ".printf(event.y, y));
-                    this.filelayout.el.y = y;
-                    return true;
-                  
-        });
     }
 
     // user defined functions
@@ -157,7 +116,7 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_ClutterFiles : Object
     {
         public Clutter.ScrollActor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
@@ -166,7 +125,7 @@ public class Xcls_ClutterFilesHolder : Object
         public signal void open (JsRender.JsRender file);
 
         // ctor
-        public Xcls_ClutterFiles(Xcls_ClutterFilesHolder _owner )
+        public Xcls_ClutterFiles(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.ClutterFiles = this;
@@ -289,13 +248,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title = this;
@@ -328,13 +287,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_manager : Object
     {
         public Clutter.FlowLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_manager(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_manager = this;
@@ -354,13 +313,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_name : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_name(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_name(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_name = this;
@@ -381,13 +340,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_path : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_path(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_path(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_path = this;
@@ -409,13 +368,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_filelayout : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout(Xcls_ClutterFilesHolder _owner )
+        public Xcls_filelayout(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.filelayout = this;
@@ -442,13 +401,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_filelayout_manager : Object
     {
         public Clutter.FlowLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout_manager(Xcls_ClutterFilesHolder _owner )
+        public Xcls_filelayout_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.filelayout_manager = this;
@@ -468,7 +427,7 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_fileitem : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
@@ -478,7 +437,7 @@ public class Xcls_ClutterFilesHolder : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_fileitem(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -528,13 +487,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_BoxLayout10 : Object
     {
         public Clutter.BoxLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_BoxLayout10(Xcls_ClutterFilesHolder _owner )
+        public Xcls_BoxLayout10(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
@@ -552,13 +511,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_image : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_image(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -630,13 +589,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_typetitle : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_typetitle(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickType(),  Clutter.Color.from_string("#fff"));
@@ -656,13 +615,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_title : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
@@ -685,13 +644,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title = this;
@@ -724,13 +683,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_manager : Object
     {
         public Clutter.FlowLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_manager(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_manager = this;
@@ -750,13 +709,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_name : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_name(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_name(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_name = this;
@@ -777,13 +736,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_project_title_path : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_project_title_path(Xcls_ClutterFilesHolder _owner )
+        public Xcls_project_title_path(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.project_title_path = this;
@@ -805,13 +764,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_filelayout : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout(Xcls_ClutterFilesHolder _owner )
+        public Xcls_filelayout(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.filelayout = this;
@@ -838,13 +797,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_filelayout_manager : Object
     {
         public Clutter.FlowLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_filelayout_manager(Xcls_ClutterFilesHolder _owner )
+        public Xcls_filelayout_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             _this.filelayout_manager = this;
@@ -864,7 +823,7 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_fileitem : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
@@ -874,7 +833,7 @@ public class Xcls_ClutterFilesHolder : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_fileitem(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -924,13 +883,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_BoxLayout21 : Object
     {
         public Clutter.BoxLayout el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_BoxLayout21(Xcls_ClutterFilesHolder _owner )
+        public Xcls_BoxLayout21(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
@@ -948,13 +907,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_image : Object
     {
         public Clutter.Actor el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_image(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -1026,13 +985,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_typetitle : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_typetitle(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickType(),  Clutter.Color.from_string("#fff"));
@@ -1052,13 +1011,13 @@ public class Xcls_ClutterFilesHolder : Object
     public class Xcls_title : Object
     {
         public Clutter.Text el;
-        private Xcls_ClutterFilesHolder  _this;
+        private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_ClutterFilesHolder _owner , JsRender.JsRender file)
+        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
