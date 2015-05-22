@@ -18,7 +18,7 @@
    "@ void open" : "(JsRender.JsRender file)",
    "$ xns" : "Clutter",
    "bool reactive" : true,
-   "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 75;\n   \n    this.el.set_size(\n           // this.el.get_stage().width-150,\n           w-75,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.el.set_position(75,0);\n   \n   \n   this.scoller.el.set_size(\n           // this.el.get_stage().width-150,\n           w-75,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.scoller.el.set_position(75,0);\n}\n",
+   "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 75;\n   \n    this.el.set_size(\n           // this.el.get_stage().width-150,\n           w,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.el.set_position(0,0);\n   \n   \n   this.scoller.el.set_size(\n           // this.el.get_stage().width-150,\n           w-75,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.scoller.el.set_position(75,0);\n}\n",
    "items" : [
     {
      "id" : "project_title",
