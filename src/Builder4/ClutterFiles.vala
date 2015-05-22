@@ -234,7 +234,6 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
         public Gee.ArrayList<Xcls_fileitem> fileitems;
         public Gdk.Pixbuf missing_thumb_pixbuf;
-        public signal void open (JsRender.JsRender file);
 
         // ctor
         public Xcls_scoller(Xcls_ClutterFiles _owner )

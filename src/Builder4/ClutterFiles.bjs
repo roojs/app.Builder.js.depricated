@@ -72,7 +72,6 @@
      "xtype" : "ScrollActor",
      "* pack" : "add_child",
      "# Gdk.Pixbuf missing_thumb_pixbuf" : "null",
-     "@ void open" : "(JsRender.JsRender file)",
      "$ xns" : "Clutter",
      "bool reactive" : true,
      "items" : [
