@@ -711,7 +711,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_folderfile(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_folderfile(Xcls_ClutterFiles _owner , string filepath)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
