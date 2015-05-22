@@ -714,7 +714,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_folderfile(Xcls_ClutterFiles _owner , string filepath)
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px", GLib.Path.get_basename(filepath),  Clutter.Color.from_string("#fff"));
 
             // my vars (dec)
 
