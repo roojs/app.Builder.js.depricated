@@ -114,7 +114,7 @@ public class Xcls_ClutterFiles : Object
         );
         
         // 100 right for buttons ..
-        this.scoller.el.set_position(100,0);
+        this.scoller.el.set_position(75,50);
     }
     public class Xcls_project_title : Object
     {
