@@ -225,6 +225,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x = 100.0f;
             this.el.x_expand = false;
             this.el.y_align = Clutter.ActorAlign.END;
             this.el.y_expand = false;
