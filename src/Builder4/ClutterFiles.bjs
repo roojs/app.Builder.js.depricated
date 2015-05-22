@@ -39,11 +39,17 @@
        "column_spacing" : 20
       },
       {
+       "xtype" : "FixedLayout",
+       "* pack" : "set_layout_manager",
+       "$ xns" : "Clutter",
+       "* prop" : "layout_manager"
+      },
+      {
        "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#eee\"))",
        "id" : "project_title_name",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.END",
        "boolean x_expand" : false,
        "$ xns" : "Clutter",
        "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
@@ -54,7 +60,7 @@
        "id" : "project_title_path",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.END",
        "boolean x_expand" : false,
        "$ xns" : "Clutter",
        "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
