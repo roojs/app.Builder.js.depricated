@@ -688,7 +688,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_foldertitle(Xcls_ClutterFiles _owner , string folderpath)
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 14px", GLib.basename(folderpath),  Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 14px", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string("#fff"));
 
             // my vars (dec)
 
