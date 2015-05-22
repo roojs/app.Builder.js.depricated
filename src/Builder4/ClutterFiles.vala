@@ -256,7 +256,7 @@ public class Xcls_ClutterFiles : Object
             //listeners
             this.el.scroll_event.connect( ( event) => {
                //Sprint("scroll event");
-                        var y = this.filelayout.el.y;
+                        var y = _this.filelayout.el.y;
                         var dir = event.direction;
                         switch (dir) {
                             case Clutter.ScrollDirection.UP:
@@ -276,7 +276,7 @@ public class Xcls_ClutterFiles : Object
                         // height of filelayout
                         // height of scrollactor..
                         
-                        var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
+                        var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;
                          if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
                             return  false;
                         }
@@ -289,7 +289,7 @@ public class Xcls_ClutterFiles : Object
                        //         y));    
                        // y = float.min(0, y);    //??
                        // print("scroll event of %f  - new y = %f ".printf(event.y, y));
-                        this.filelayout.el.y = y;
+                        _this.filelayout.el.y = y;
                         return true;
                       
             });
