@@ -612,7 +612,6 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
         public JsRender.JsRender file;
         public Xcls_foldertitle foldertitle;
-        public Xcls_title title;
 
         // ctor
         public Xcls_folderitem(Xcls_ClutterFiles _owner , sting folderpath)
@@ -631,10 +630,6 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
-            var child_2 = new Xcls_title( _this ,file);
-            child_2.ref();
-            this.el.add_child (  child_2.el  );
-            this.title =  child_2;
 
             // init method
 
@@ -707,7 +702,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_title : Object
+    public class Xcls_folderfile : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -716,7 +711,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_folderfile(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
