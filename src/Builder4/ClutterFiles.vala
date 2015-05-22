@@ -611,7 +611,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
         public JsRender.JsRender file;
-        public Xcls_typetitle typetitle;
+        public Xcls_foldertitle foldertitle;
         public Xcls_title title;
 
         // ctor
@@ -627,10 +627,10 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout16( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_typetitle( _this ,file);
+            var child_1 = new Xcls_foldertitle( _this ,file);
             child_1.ref();
             this.el.add_child (  child_1.el  );
-            this.typetitle =  child_1;
+            this.foldertitle =  child_1;
             var child_2 = new Xcls_title( _this ,file);
             child_2.ref();
             this.el.add_child (  child_2.el  );
@@ -681,7 +681,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_typetitle : Object
+    public class Xcls_foldertitle : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -690,7 +690,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (def)
 
         // ctor
-        public Xcls_typetitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_foldertitle(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 14px", file.nickType(),  Clutter.Color.from_string("#fff"));
