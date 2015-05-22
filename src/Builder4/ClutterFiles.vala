@@ -12,7 +12,7 @@ public class Xcls_ClutterFiles : Object
         }
         return _ClutterFiles;
     }
-    public Xcls_ClutterFiles ClutterFiles;
+    public Xcls_scoller scoller;
     public Xcls_project_title project_title;
     public Xcls_project_title_manager project_title_manager;
     public Xcls_project_title_name project_title_name;
@@ -45,7 +45,7 @@ public class Xcls_ClutterFiles : Object
 
         // set gobject values
         this.el.reactive = true;
-        var child_0 = new Xcls_ClutterFiles( _this );
+        var child_0 = new Xcls_scoller( _this );
         child_0.ref();
         this.el.set_child_above_sibling (  child_0.el , null );
         var child_1 = new Xcls_project_title( _this );
@@ -113,7 +113,7 @@ public class Xcls_ClutterFiles : Object
         // 100 right for buttons ..
         this.el.set_position(75,0);
     }
-    public class Xcls_ClutterFiles : Object
+    public class Xcls_scoller : Object
     {
         public Clutter.ScrollActor el;
         private Xcls_ClutterFiles  _this;
@@ -125,10 +125,10 @@ public class Xcls_ClutterFiles : Object
         public signal void open (JsRender.JsRender file);
 
         // ctor
-        public Xcls_ClutterFiles(Xcls_ClutterFiles _owner )
+        public Xcls_scoller(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            _this.ClutterFiles = this;
+            _this.scoller = this;
             this.el = new Clutter.ScrollActor();
 
             // my vars (dec)
