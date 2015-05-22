@@ -370,6 +370,7 @@ right:
     Roo.bootstrap.Graph
     Roo.bootstrap.dash.TabBox
     Roo.bootstrap.menu.Menu
+    Roo.bootstrap.LocationPicker
 
 left:
     Roo.bootstrap.Progress
