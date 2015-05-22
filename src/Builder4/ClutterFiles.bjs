@@ -58,11 +58,8 @@
        "id" : "project_title_path",
        "* pack" : "add_child",
        "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.END",
        "boolean x_expand" : false,
-       "$ xns" : "Clutter",
-       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : false
+       "$ xns" : "Clutter"
       }
      ]
     },
