@@ -12,17 +12,13 @@ public class Xcls_ClutterFiles : Object
         }
         return _ClutterFiles;
     }
-    public Xcls_scoller scoller;
     public Xcls_project_title project_title;
     public Xcls_project_title_manager project_title_manager;
     public Xcls_project_title_name project_title_name;
     public Xcls_project_title_path project_title_path;
+    public Xcls_scoller scoller;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
-    public Xcls_project_title project_title;
-    public Xcls_project_title_manager project_title_manager;
-    public Xcls_project_title_name project_title_name;
-    public Xcls_project_title_path project_title_path;
 
         // my vars (def)
     public Gee.ArrayList<Xcls_fileitem> fileitems;
@@ -43,10 +39,10 @@ public class Xcls_ClutterFiles : Object
 
         // set gobject values
         this.el.reactive = true;
-        var child_0 = new Xcls_scoller( _this );
+        var child_0 = new Xcls_project_title( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
-        var child_1 = new Xcls_project_title( _this );
+        var child_1 = new Xcls_scoller( _this );
         child_1.ref();
         this.el.add_child (  child_1.el  );
     }
@@ -108,138 +104,6 @@ public class Xcls_ClutterFiles : Object
         
         // 100 right for buttons ..
         this.scoller.el.set_position(75,0);
-    }
-    public class Xcls_scoller : Object
-    {
-        public Clutter.ScrollActor el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-        public Gee.ArrayList<Xcls_fileitem> fileitems;
-        public Gdk.Pixbuf missing_thumb_pixbuf;
-        public signal void open (JsRender.JsRender file);
-
-        // ctor
-        public Xcls_scoller(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            _this.scoller = this;
-            this.el = new Clutter.ScrollActor();
-
-            // my vars (dec)
-            this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
-            this.missing_thumb_pixbuf = null;
-
-            // set gobject values
-            this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
-            this.el.reactive = true;
-            var child_0 = new Xcls_project_title( _this );
-            child_0.ref();
-            this.el.add_child (  child_0.el  );
-            var child_1 = new Xcls_filelayout( _this );
-            child_1.ref();
-            this.el.add_child (  child_1.el  );
-
-            //listeners
-            this.el.scroll_event.connect( ( event) => {
-               //Sprint("scroll event");
-                        var y = this.filelayout.el.y;
-                        var dir = event.direction;
-                        switch (dir) {
-                            case Clutter.ScrollDirection.UP:
-                                y += event.y /2;
-                                break;
-                            case Clutter.ScrollDirection.DOWN:
-                                y -= event.y /2 ;
-                                break;
-                            default:
-                                return false;
-                        }
-                        // range of scroll -- can go up -- eg.. -ve value.
-                        
-                        y = float.min(0, y);
-                        
-                        // to work out the max -ve number
-                        // height of filelayout
-                        // height of scrollactor..
-                        
-                        var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
-                         if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
-                            return  false;
-                        }
-                    
-                    
-                        
-                        
-                    //    print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
-                      //          last_child_bottom - this.el.height,
-                       //         y));    
-                       // y = float.min(0, y);    //??
-                       // print("scroll event of %f  - new y = %f ".printf(event.y, y));
-                        this.filelayout.el.y = y;
-                        return true;
-                      
-            });
-        }
-
-        // user defined functions
-        public  void clearFiles () {
-            
-            this.filelayout.el.remove_all_children();
-            // we need to unref all the chidren that we loaded though...
-            
-        }
-        public  void loadProject (Project.Project pr) {
-            // list all the files, and create new Xcls_fileitem for each one.
-            
-            // LEAK --- we should unref all the chilren...
-            this.filelayout.el.y = 0;
-            this.clearFiles();
-            
-            print("clutter files - load project: " + pr.name +"\n");
-            // should unref.. them hopefully.
-            
-            this.project_title_name.el.text = pr.name;
-            this.project_title_path.el.text = pr.firstPath();
-            
-            this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
-        
-            
-        
-            var fiter = pr.sortedFiles().list_iterator();
-            while (fiter.next()) {
-                var a = new Xcls_fileitem(this,fiter.get());
-                this.fileitems.add(a);
-        
-        //        a.ref();
-                print("add to clutter file view: " + fiter.get().name + "\n");
-                this.filelayout.el.add_child(a.el);
-            }
-            
-           
-            
-            this.el.show();
-        }
-        public  void set_size (float w, float h) 
-        {
-            
-             // called by window resize... with is alreaddy -50 (for the buttons?)
-             
-        
-             if (this.el == null) {
-                print("object not ready yet?");
-                return;
-            }
-           _this.filelayout_manager.el.max_column_width = w - 75;
-           this.el.set_size(
-                   // this.el.get_stage().width-150,
-                   w-75,
-                   h  // this.el.get_stage().height
-            );
-            // 100 right for buttons ..
-            this.el.set_position(75,0);
-        }
     }
     public class Xcls_project_title : Object
     {
@@ -361,6 +225,135 @@ public class Xcls_ClutterFiles : Object
     }
 
 
+    public class Xcls_scoller : Object
+    {
+        public Clutter.ScrollActor el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars (def)
+        public Gee.ArrayList<Xcls_fileitem> fileitems;
+        public Gdk.Pixbuf missing_thumb_pixbuf;
+        public signal void open (JsRender.JsRender file);
+
+        // ctor
+        public Xcls_scoller(Xcls_ClutterFiles _owner )
+        {
+            _this = _owner;
+            _this.scoller = this;
+            this.el = new Clutter.ScrollActor();
+
+            // my vars (dec)
+            this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+            this.missing_thumb_pixbuf = null;
+
+            // set gobject values
+            this.el.scroll_mode = Clutter.ScrollMode.VERTICALLY;
+            this.el.reactive = true;
+            var child_0 = new Xcls_filelayout( _this );
+            child_0.ref();
+            this.el.add_child (  child_0.el  );
+
+            //listeners
+            this.el.scroll_event.connect( ( event) => {
+               //Sprint("scroll event");
+                        var y = this.filelayout.el.y;
+                        var dir = event.direction;
+                        switch (dir) {
+                            case Clutter.ScrollDirection.UP:
+                                y += event.y /2;
+                                break;
+                            case Clutter.ScrollDirection.DOWN:
+                                y -= event.y /2 ;
+                                break;
+                            default:
+                                return false;
+                        }
+                        // range of scroll -- can go up -- eg.. -ve value.
+                        
+                        y = float.min(0, y);
+                        
+                        // to work out the max -ve number
+                        // height of filelayout
+                        // height of scrollactor..
+                        
+                        var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
+                         if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
+                            return  false;
+                        }
+                    
+                    
+                        
+                        
+                    //    print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
+                      //          last_child_bottom - this.el.height,
+                       //         y));    
+                       // y = float.min(0, y);    //??
+                       // print("scroll event of %f  - new y = %f ".printf(event.y, y));
+                        this.filelayout.el.y = y;
+                        return true;
+                      
+            });
+        }
+
+        // user defined functions
+        public  void clearFiles () {
+            
+            this.filelayout.el.remove_all_children();
+            // we need to unref all the chidren that we loaded though...
+            
+        }
+        public  void loadProject (Project.Project pr) {
+            // list all the files, and create new Xcls_fileitem for each one.
+            
+            // LEAK --- we should unref all the chilren...
+            this.filelayout.el.y = 0;
+            this.clearFiles();
+            
+            print("clutter files - load project: " + pr.name +"\n");
+            // should unref.. them hopefully.
+            
+            this.project_title_name.el.text = pr.name;
+            this.project_title_path.el.text = pr.firstPath();
+            
+            this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+        
+            
+        
+            var fiter = pr.sortedFiles().list_iterator();
+            while (fiter.next()) {
+                var a = new Xcls_fileitem(this,fiter.get());
+                this.fileitems.add(a);
+        
+        //        a.ref();
+                print("add to clutter file view: " + fiter.get().name + "\n");
+                this.filelayout.el.add_child(a.el);
+            }
+            
+           
+            
+            this.el.show();
+        }
+        public  void set_size (float w, float h) 
+        {
+            
+             // called by window resize... with is alreaddy -50 (for the buttons?)
+             
+        
+             if (this.el == null) {
+                print("object not ready yet?");
+                return;
+            }
+           _this.filelayout_manager.el.max_column_width = w - 75;
+           this.el.set_size(
+                   // this.el.get_stage().width-150,
+                   w-75,
+                   h  // this.el.get_stage().height
+            );
+            // 100 right for buttons ..
+            this.el.set_position(75,0);
+        }
+    }
     public class Xcls_filelayout : Object
     {
         public Clutter.Actor el;
@@ -635,126 +628,6 @@ public class Xcls_ClutterFiles : Object
     }
 
 
-
-
-    public class Xcls_project_title : Object
-    {
-        public Clutter.Actor el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_project_title(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            _this.project_title = this;
-            this.el = new Clutter.Actor();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.reactive = true;
-            var child_0 = new Xcls_project_title_manager( _this );
-            child_0.ref();
-            this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_project_title_name( _this );
-            child_1.ref();
-            this.el.add_child (  child_1.el  );
-            var child_2 = new Xcls_project_title_path( _this );
-            child_2.ref();
-            this.el.add_child (  child_2.el  );
-
-            // init method
-
-            this.el.add_constraint(
-                new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
-            );
-            this.el.set_position(0,0);
-        }
-
-        // user defined functions
-    }
-    public class Xcls_project_title_manager : Object
-    {
-        public Clutter.FlowLayout el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_project_title_manager(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            _this.project_title_manager = this;
-            this.el = new Clutter.FlowLayout( Clutter.FlowOrientation.HORIZONTAL );
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.homogeneous = false;
-            this.el.row_spacing = 20f;
-            this.el.column_spacing = 20f;
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_project_title_name : Object
-    {
-        public Clutter.Text el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_project_title_name(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            _this.project_title_name = this;
-            this.el = new Clutter.Text.full("Sans 20px", "",  Clutter.Color.from_string("#eee"));
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.x_align = Clutter.ActorAlign.START;
-            this.el.x_expand = true;
-            this.el.y_align = Clutter.ActorAlign.START;
-            this.el.y_expand = true;
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_project_title_path : Object
-    {
-        public Clutter.Text el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_project_title_path(Xcls_ClutterFiles _owner )
-        {
-            _this = _owner;
-            _this.project_title_path = this;
-            this.el = new Clutter.Text.full("Sans 20px", "",  Clutter.Color.from_string("#ccc"));
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.x_align = Clutter.ActorAlign.START;
-            this.el.x_expand = true;
-            this.el.y_align = Clutter.ActorAlign.START;
-            this.el.y_expand = true;
-        }
-
-        // user defined functions
-    }
 
 
 }

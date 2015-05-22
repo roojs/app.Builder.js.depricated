@@ -21,6 +21,48 @@
    "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 75;\n   this.scoller.el.set_size(\n           // this.el.get_stage().width-150,\n           w-75,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.scoller.el.set_position(75,0);\n}\n",
    "items" : [
     {
+     "id" : "project_title",
+     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\nthis.el.set_position(0,0);\n",
+     "xtype" : "Actor",
+     "* pack" : "add_child",
+     "$ reactive" : true,
+     "$ xns" : "Clutter",
+     "items" : [
+      {
+       "id" : "project_title_manager",
+       "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
+       "xtype" : "FlowLayout",
+       "boolean homogeneous" : false,
+       "$ xns" : "Clutter",
+       "row_spacing" : 20,
+       "* prop" : "layout_manager",
+       "column_spacing" : 20
+      },
+      {
+       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#eee\"))",
+       "id" : "project_title_name",
+       "* pack" : "add_child",
+       "xtype" : "Text",
+       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+       "boolean x_expand" : true,
+       "$ xns" : "Clutter",
+       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
+       "boolean y_expand" : true
+      },
+      {
+       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
+       "id" : "project_title_path",
+       "* pack" : "add_child",
+       "xtype" : "Text",
+       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+       "boolean x_expand" : true,
+       "$ xns" : "Clutter",
+       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
+       "boolean y_expand" : true
+      }
+     ]
+    },
+    {
      "listeners" : {
       "scroll_event" : "( event) => {\n   //Sprint(\"scroll event\");\n            var y = this.filelayout.el.y;\n            var dir = event.direction;\n            switch (dir) {\n                case Clutter.ScrollDirection.UP:\n                    y += event.y /2;\n                    break;\n                case Clutter.ScrollDirection.DOWN:\n                    y -= event.y /2 ;\n                    break;\n                default:\n                    return false;\n            }\n            // range of scroll -- can go up -- eg.. -ve value.\n            \n            y = float.min(0, y);\n            \n            // to work out the max -ve number\n            // height of filelayout\n            // height of scrollactor..\n            \n            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;\n             if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n                return  false;\n            }\n        \n        \n            \n            \n        //    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n          //          last_child_bottom - this.el.height,\n           //         y));    \n           // y = float.min(0, y);    //??\n           // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n            this.filelayout.el.y = y;\n            return true;\n          \n}"
      },
@@ -37,48 +79,6 @@
      "bool reactive" : true,
      "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n   _this.filelayout_manager.el.max_column_width = w - 75;\n   this.el.set_size(\n           // this.el.get_stage().width-150,\n           w-75,\n           h  // this.el.get_stage().height\n    );\n    // 100 right for buttons ..\n    this.el.set_position(75,0);\n}\n",
      "items" : [
-      {
-       "id" : "project_title",
-       "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\nthis.el.set_position(0,0);\n",
-       "xtype" : "Actor",
-       "* pack" : "add_child",
-       "$ reactive" : true,
-       "$ xns" : "Clutter",
-       "items" : [
-        {
-         "id" : "project_title_manager",
-         "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
-         "xtype" : "FlowLayout",
-         "boolean homogeneous" : false,
-         "$ xns" : "Clutter",
-         "row_spacing" : 20,
-         "* prop" : "layout_manager",
-         "column_spacing" : 20
-        },
-        {
-         "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#eee\"))",
-         "id" : "project_title_name",
-         "* pack" : "add_child",
-         "xtype" : "Text",
-         "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-         "boolean x_expand" : true,
-         "$ xns" : "Clutter",
-         "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-         "boolean y_expand" : true
-        },
-        {
-         "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
-         "id" : "project_title_path",
-         "* pack" : "add_child",
-         "xtype" : "Text",
-         "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-         "boolean x_expand" : true,
-         "$ xns" : "Clutter",
-         "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-         "boolean y_expand" : true
-        }
-       ]
-      },
       {
        "id" : "filelayout",
        "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n ",
@@ -162,48 +162,6 @@
          ]
         }
        ]
-      }
-     ]
-    },
-    {
-     "id" : "project_title",
-     "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\nthis.el.set_position(0,0);\n",
-     "xtype" : "Actor",
-     "* pack" : "add_child",
-     "$ reactive" : true,
-     "$ xns" : "Clutter",
-     "items" : [
-      {
-       "id" : "project_title_manager",
-       "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
-       "xtype" : "FlowLayout",
-       "boolean homogeneous" : false,
-       "$ xns" : "Clutter",
-       "row_spacing" : 20,
-       "* prop" : "layout_manager",
-       "column_spacing" : 20
-      },
-      {
-       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#eee\"))",
-       "id" : "project_title_name",
-       "* pack" : "add_child",
-       "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-       "boolean x_expand" : true,
-       "$ xns" : "Clutter",
-       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : true
-      },
-      {
-       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
-       "id" : "project_title_path",
-       "* pack" : "add_child",
-       "xtype" : "Text",
-       "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-       "boolean x_expand" : true,
-       "$ xns" : "Clutter",
-       "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : true
       }
      ]
     }
