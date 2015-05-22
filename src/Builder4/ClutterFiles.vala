@@ -297,62 +297,6 @@ public class Xcls_ClutterFiles : Object
         }
 
         // user defined functions
-        public  void clearFiles () {
-            
-            this.filelayout.el.remove_all_children();
-            // we need to unref all the chidren that we loaded though...
-            
-        }
-        public  void loadProject (Project.Project pr) {
-            // list all the files, and create new Xcls_fileitem for each one.
-            
-            // LEAK --- we should unref all the chilren...
-            this.filelayout.el.y = 0;
-            this.clearFiles();
-            
-            print("clutter files - load project: " + pr.name +"\n");
-            // should unref.. them hopefully.
-            
-            this.project_title_name.el.text = pr.name;
-            this.project_title_path.el.text = pr.firstPath();
-            
-            this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
-        
-            
-        
-            var fiter = pr.sortedFiles().list_iterator();
-            while (fiter.next()) {
-                var a = new Xcls_fileitem(this,fiter.get());
-                this.fileitems.add(a);
-        
-        //        a.ref();
-                print("add to clutter file view: " + fiter.get().name + "\n");
-                this.filelayout.el.add_child(a.el);
-            }
-            
-           
-            
-            this.el.show();
-        }
-        public  void set_size (float w, float h) 
-        {
-            
-             // called by window resize... with is alreaddy -50 (for the buttons?)
-             
-        
-             if (this.el == null) {
-                print("object not ready yet?");
-                return;
-            }
-           _this.filelayout_manager.el.max_column_width = w - 75;
-           this.el.set_size(
-                   // this.el.get_stage().width-150,
-                   w-75,
-                   h  // this.el.get_stage().height
-            );
-            // 100 right for buttons ..
-            this.el.set_position(75,0);
-        }
     }
     public class Xcls_filelayout : Object
     {
