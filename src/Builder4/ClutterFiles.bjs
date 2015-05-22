@@ -50,7 +50,7 @@
        "boolean y_expand" : true
       },
       {
-       "* ctor" : "new Clutter.Text.full(\"Sans 20px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
+       "* ctor" : "new Clutter.Text.full(\"Sans 10px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
        "id" : "project_title_path",
        "* pack" : "add_child",
        "xtype" : "Text",
@@ -78,7 +78,6 @@
       {
        "id" : "filelayout",
        "* init" : "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n ",
-       "float margin_top" : "50.0f",
        "xtype" : "Actor",
        "* pack" : "add_child",
        "$ reactive" : true,

@@ -221,7 +221,7 @@ public class Xcls_ClutterFiles : Object
         {
             _this = _owner;
             _this.project_title_path = this;
-            this.el = new Clutter.Text.full("Sans 20px", "",  Clutter.Color.from_string("#ccc"));
+            this.el = new Clutter.Text.full("Sans 10px", "",  Clutter.Color.from_string("#ccc"));
 
             // my vars (dec)
 
@@ -327,7 +327,6 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.reactive = true;
-            this.el.margin_top = 50.0f;
             var child_0 = new Xcls_filelayout_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
