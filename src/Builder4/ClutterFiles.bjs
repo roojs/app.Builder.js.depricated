@@ -56,8 +56,10 @@
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 10px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
        "id" : "project_title_path",
+       "float x" : "50.0f",
        "* pack" : "add_child",
        "xtype" : "Text",
+       "float y" : "20.0f",
        "boolean x_expand" : false,
        "$ xns" : "Clutter"
       }
