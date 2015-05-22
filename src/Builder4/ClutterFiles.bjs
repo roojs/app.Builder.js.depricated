@@ -181,7 +181,7 @@
            "* prop" : "layout_manager"
           },
           {
-           "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
+           "* ctor" : "new Clutter.Text.full(\"Sans 14px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
            "id" : "+typetitle",
            "* args" : "JsRender.JsRender file",
            "$ x_expand" : true,
