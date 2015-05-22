@@ -150,7 +150,7 @@ public class Xcls_ClutterFiles : Object
             this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );
-            this.el.set_position(0,0);
+            this.el.set_position(50,0);
         }
 
         // user defined functions
@@ -174,7 +174,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.homogeneous = false;
-            this.el.row_spacing = 20f;
+            this.el.row_spacing = 5f;
             this.el.column_spacing = 20f;
         }
 
