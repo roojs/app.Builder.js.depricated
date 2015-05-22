@@ -733,7 +733,10 @@ public class Xcls_ClutterFiles : Object
                 this.el.background_color =   Clutter.Color.from_string("#333");
                     return false;
             });
-            this.el.leave_event.connect( );
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color =   Clutter.Color.from_string("#000");
+                return false;
+            });
         }
 
         // user defined functions
