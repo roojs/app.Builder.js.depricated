@@ -729,6 +729,11 @@ public class Xcls_ClutterFiles : Object
                // _this.open(this.filepath);
                 return false;
             });
+            this.el.enter_event.connect( (  event)  => {
+                this.el.background_color =   Clutter.Color.from_string("#333");
+                    return false;
+            });
+            this.el.leave_event.connect( );
         }
 
         // user defined functions
