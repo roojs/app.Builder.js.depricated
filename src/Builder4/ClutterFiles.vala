@@ -723,6 +723,12 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.y_expand = true;
+
+            //listeners
+            this.el.button_press_event.connect( (  event) => {
+                _this.open(this.filepath);
+                return false;
+            });
         }
 
         // user defined functions
