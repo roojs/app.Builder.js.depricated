@@ -44,10 +44,10 @@
        "* pack" : "add_child",
        "xtype" : "Text",
        "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-       "boolean x_expand" : true,
+       "boolean x_expand" : false,
        "$ xns" : "Clutter",
        "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : true
+       "boolean y_expand" : false
       },
       {
        "* ctor" : "new Clutter.Text.full(\"Sans 10px\", \"\",  Clutter.Color.from_string(\"#ccc\"))",
@@ -55,10 +55,10 @@
        "* pack" : "add_child",
        "xtype" : "Text",
        "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
-       "boolean x_expand" : true,
+       "boolean x_expand" : false,
        "$ xns" : "Clutter",
        "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
-       "boolean y_expand" : true
+       "boolean y_expand" : false
       }
      ]
     },
