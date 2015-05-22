@@ -603,7 +603,7 @@ public class Xcls_ClutterFiles : Object
     }
 
 
-    public class Xcls_fileitem : Object
+    public class Xcls_folderitem : Object
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -616,7 +616,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
         // ctor
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
+        public Xcls_folderitem(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
