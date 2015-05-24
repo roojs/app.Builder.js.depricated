@@ -85,6 +85,7 @@ public class Xcls_ClutterFiles : Object
         // folders...
         
         if (!(pr is Project.Gtk)) {
+        
             return;
         }
         var gpr = (Project.Gtk)pr;
@@ -108,7 +109,7 @@ public class Xcls_ClutterFiles : Object
             for(var j =0 ; j < files.size; j++) {
                 var y = new Xcls_folderfile(this, files.get(j));
                 this.fileitems.add(y);
-                y.el.add_child(y.el);
+                x.el.add_child(y.el);
     
                 // add file to files.get(j);
                 
