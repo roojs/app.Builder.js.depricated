@@ -337,6 +337,10 @@ public class Xcls_ClutterFiles : Object
                //Sprint("scroll event");
                 var y = _this.filelayout.el.y;
                 var dir = event.direction;
+                
+                var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;
+                var bottompos = -1 * (  last_child_bottom - this.el.height);
+                
                 switch (dir) {
                     case Clutter.ScrollDirection.UP:
                         print("Scroll up by %f\n", event.y);
@@ -347,6 +351,9 @@ public class Xcls_ClutterFiles : Object
                     case Clutter.ScrollDirection.DOWN:
                         print("Scroll down by %f\n", event.y);
                         y -= event.y /2 ;
+                        
+                        
+                        
                         break;
                     default:
                         return false;
@@ -359,7 +366,7 @@ public class Xcls_ClutterFiles : Object
                 // height of filelayout
                 // height of scrollactor..
                 
-                var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;
+            
                 if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
                     var nv =         _this.filelayout.el.y ;
                     if (nv != -1 * (  last_child_bottom - this.el.height)) {
