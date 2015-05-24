@@ -203,7 +203,6 @@ namespace Palete {
 				return;
 			}
  			
- 			
  			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
 			tmpfile.ref();
