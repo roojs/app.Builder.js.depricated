@@ -103,9 +103,10 @@ public class Xcls_ClutterFiles : Object
             var x = new Xcls_folderitem(this,items.get(i));
             
             
-           
             
-             for(var j =0 ; j < files.size; j++) {
+            for(var j =0 ; j < files.size; j++) {
+                
+            
                 // add file to files.get(j);
                 
             }
