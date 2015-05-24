@@ -694,6 +694,7 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars (def)
+        public string filepath;
 
         // ctor
         public Xcls_folderfile(Xcls_ClutterFiles _owner , string filepath)

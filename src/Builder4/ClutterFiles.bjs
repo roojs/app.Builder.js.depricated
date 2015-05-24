@@ -199,6 +199,7 @@
            "* pack" : "add_child",
            "xtype" : "Text",
            "$ y_align" : "Clutter.ActorAlign.START",
+           "string filepath" : "",
            "$ xns" : "Clutter",
            "$ y_expand" : true,
            "$ x_align" : "Clutter.ActorAlign.START"
