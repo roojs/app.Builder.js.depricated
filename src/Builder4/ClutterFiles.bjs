@@ -90,7 +90,7 @@
          "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "bool homogeneous" : true,
          "xtype" : "FlowLayout",
-         "float max_column_width" : "120.0f",
+         "float max_column_width" : "100.0f",
          "$ xns" : "Clutter",
          "row_spacing" : 20,
          "* prop" : "layout_manager",
