@@ -102,12 +102,14 @@ public class Xcls_ClutterFiles : Object
     
             // add the directory... items.get(i);
             var x = new Xcls_folderitem(this,items.get(i));
-            
-            
+            this.fileitems.add(x);
+            this.filelayout.el.add_child(x.el);
             
             for(var j =0 ; j < files.size; j++) {
-                
-            
+                var y = new Xcls_folderfile(this, files.get(j));
+                this.fileitems.add(y);
+                y.el.add_child(y.el);
+    
                 // add file to files.get(j);
                 
             }
