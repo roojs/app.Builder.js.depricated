@@ -162,7 +162,7 @@ public class Xcls_ClutterFiles : Object
         // 100 right for buttons ..
         this.scroller.el.set_position(75,50);
         // scroll...
-        _this.filelayout.el.y = y;
+        _this.filelayout.el.y = 0.0f;
         
     }
     public class Xcls_project_title : Object
