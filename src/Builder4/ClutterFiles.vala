@@ -131,12 +131,17 @@ public class Xcls_ClutterFiles : Object
          // called by window resize... with is alreaddy -50 (for the buttons?)
          
     
+    
+    
          if (this.el == null) {
             print("object not ready yet?");
             return;
         }
+        
+        print("recv width %d, filelayoutw = %d", w, w-200);
+        
        //_this.filelayout_manager.el.max_column_width = w - 200;
-       _this.filelayout_manager.el.width = w - 200;
+       _this.filelayout.el.width = w - 200;
        
         this.el.set_size(
                // this.el.get_stage().width-150,
