@@ -135,7 +135,7 @@ public class Xcls_ClutterFiles : Object
             print("object not ready yet?");
             return;
         }
-       _this.filelayout_manager.el.max_column_width = w - 75;
+       _this.filelayout_manager.el.max_column_width = w - 200;
        
         this.el.set_size(
                // this.el.get_stage().width-150,
@@ -721,7 +721,7 @@ public class Xcls_ClutterFiles : Object
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
-            this.el.y_expand = true;
+            this.el.y_expand = false;
         }
 
         // user defined functions
