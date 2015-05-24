@@ -357,6 +357,8 @@ public class Xcls_ClutterFiles : Object
                 
                 var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;
                 if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
+                    _this.filelayout.el.y = -1 * (  last_child_bottom - this.el.height);
+                
                     return  false;
                 }
             
