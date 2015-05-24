@@ -88,13 +88,13 @@
         {
          "id" : "filelayout_manager",
          "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
+         "bool homogeneous" : true,
          "xtype" : "FlowLayout",
          "float max_column_width" : 120,
          "$ xns" : "Clutter",
          "row_spacing" : 20,
          "* prop" : "layout_manager",
-         "column_spacing" : 20,
-         "$ homogeneous" : true
+         "column_spacing" : 20
         },
         {
          "listeners" : {
