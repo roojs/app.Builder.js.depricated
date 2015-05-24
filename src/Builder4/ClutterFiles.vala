@@ -35,7 +35,7 @@ public class Xcls_ClutterFiles : Object
         // my vars (dec)
         this.scroll_mode = Clutter.ScrollMode.VERTICALLY;
         this.missing_thumb_pixbuf = null;
-        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+        this.fileitems = new Gee.ArrayList<Object>();
 
         // set gobject values
         this.el.reactive = true;
