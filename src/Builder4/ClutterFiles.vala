@@ -368,7 +368,7 @@ public class Xcls_ClutterFiles : Object
                //         y));    
                // y = float.min(0, y);    //??
                // print("scroll event of %f  - new y = %f ".printf(event.y, y));
-               print("Set scroll to %f (lcb=%f / height = %f)", y, last_child_bottom, this.el.height);
+               print("Set scroll to %f (lcb=%f / height = %f)\n", y, last_child_bottom, this.el.height);
                
                 _this.filelayout.el.y = y;
                 return true;
