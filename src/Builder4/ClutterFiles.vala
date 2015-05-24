@@ -138,7 +138,7 @@ public class Xcls_ClutterFiles : Object
             return;
         }
         
-        print("recv width %d, filelayoutw = %d", w, w-200);
+        print("recv width %f, filelayoutw = %f", w, w-200);
         
        //_this.filelayout_manager.el.max_column_width = w - 200;
        _this.filelayout.el.width = w - 200;
