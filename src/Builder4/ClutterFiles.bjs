@@ -89,6 +89,7 @@
          "id" : "filelayout_manager",
          "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "xtype" : "FlowLayout",
+         "float max_column_width" : 150,
          "$ xns" : "Clutter",
          "row_spacing" : 20,
          "* prop" : "layout_manager",
