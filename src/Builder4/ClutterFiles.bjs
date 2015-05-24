@@ -159,17 +159,11 @@
          ]
         },
         {
-         "listeners" : {
-          "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n} ",
-          "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#333\");\n        return false;\n}",
-          "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
-         },
          "id" : "*folderitem",
          "* args" : "string folderpath",
          "* init" : " \n//this.el.set_size(100,100);",
          "* pack" : true,
          "xtype" : "Actor",
-         "# JsRender.JsRender file" : "",
          "$ reactive" : true,
          "$ xns" : "Clutter",
          "items" : [

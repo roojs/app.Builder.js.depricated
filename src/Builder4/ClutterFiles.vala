@@ -610,7 +610,6 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars (def)
-        public JsRender.JsRender file;
         public Xcls_foldertitle foldertitle;
 
         // ctor
@@ -634,20 +633,6 @@ public class Xcls_ClutterFiles : Object
             // init method
 
             //this.el.set_size(100,100);
-
-            //listeners
-            this.el.button_press_event.connect( (  event) => {
-                _this.open(this.file);
-                return false;
-            });
-            this.el.enter_event.connect( (  event)  => {
-                this.el.background_color =   Clutter.Color.from_string("#333");
-                    return false;
-            });
-            this.el.leave_event.connect( (  event)  => {
-                this.el.background_color =   Clutter.Color.from_string("#000");
-                return false;
-            });
         }
 
         // user defined functions
