@@ -135,7 +135,8 @@ public class Xcls_ClutterFiles : Object
             print("object not ready yet?");
             return;
         }
-       _this.filelayout_manager.el.max_column_width = w - 200;
+       //_this.filelayout_manager.el.max_column_width = w - 200;
+       _this.filelayout_manager.el.width = w - 200;
        
         this.el.set_size(
                // this.el.get_stage().width-150,
