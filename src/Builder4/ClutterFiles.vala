@@ -95,7 +95,7 @@ public class Xcls_ClutterFiles : Object
          
          
         for(var i =0 ; i < items.size; i++) {
-            print ("cheking folder %s\n", items,get(i));
+            print ("cheking folder %s\n", items.get(i));
              var files = gpr.files(items.get(i));
              if (files.size < 1) {
                 continue;
@@ -107,7 +107,7 @@ public class Xcls_ClutterFiles : Object
             this.filelayout.el.add_child(x.el);
             
             for(var j =0 ; j < files.size; j++) {
-                print ("adding file %s\n", files,get(j));
+                print ("adding file %s\n", files.get(j));
             
                 var y = new Xcls_folderfile(this, files.get(j));
                 this.fileitems.add(y);
