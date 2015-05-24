@@ -211,7 +211,7 @@ namespace Palete {
 			DataOutputStream dostream = new DataOutputStream (ostream);
 			dostream.put_string (contents);
 			
- 			
+ 			var gproj = (Project.Gtk)project;
  			
  			this.file = null;
 			this.line_offset = 0;
@@ -221,7 +221,7 @@ namespace Palete {
 			args += "--project";
 			args +=  project.fn;
 			args += "--target";
-			args += ((Project.Gtk)project).firstBuildModule();
+			args += gproj.firstBuildModule();
 	`		args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
