@@ -83,6 +83,36 @@ public class Xcls_ClutterFiles : Object
         
         // folders...
         
+        if (!(pr is Project.Gtk)) {
+            return;
+        }
+        var gpr = (Project.Gtk)pr;
+         var def = gpr.compilegroups.get("_default_");
+         var items  = def.sources;
+         
+         
+         
+        for(var i =0 ; i < items.size; i++) {
+        
+             var files = gpr.files(items.get(i));
+             if (files.size < 1) {
+                continue;
+             }
+    
+            // add the directory... items.get(i);
+            
+            
+           
+            
+             for(var j =0 ; j < files.size; j++) {
+                // add file to files.get(j);
+                
+            }
+            
+            
+            //this.el.set_value(citer, 1,   items.get(i) );
+        }
+        this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
         
        
         
