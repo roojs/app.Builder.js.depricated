@@ -67,6 +67,7 @@ public class Xcls_ClutterFiles : Object
         this.project_title_name.el.text = pr.name;
         this.project_title_path.el.text = pr.firstPath();
         
+        // file items contains a reference until we reload ...
         this.fileitems = new Gee.ArrayList<Object>();
     
         
