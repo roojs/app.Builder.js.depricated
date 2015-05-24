@@ -339,19 +339,19 @@ public class Xcls_ClutterFiles : Object
                 var dir = event.direction;
                 
                 var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;
-                var bottompos = -1 * (  last_child_bottom - this.el.height);
+                var bottompos = -1 * (  last_child_bottom - (0.5f * this.el.height));
                 
                 switch (dir) {
                     case Clutter.ScrollDirection.UP:
                         print("Scroll up by %f\n", event.y);
                         y += event.y /2;
-                        y = float.min(0, y);
+                        y = float.min(0, y); // 
                         break;
                         
                     case Clutter.ScrollDirection.DOWN:
                         print("Scroll down by %f\n", event.y);
                         y -= event.y /2 ;
-                        y = float.min(bottompos, y);
+                        y = float.max(bottompos, y);
                         
                         
                         break;
@@ -740,7 +740,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_foldertitle(Xcls_ClutterFiles _owner , string folderpath)
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 14px", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans bold 14px", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string("#fff"));
 
             // my vars (dec)
 
