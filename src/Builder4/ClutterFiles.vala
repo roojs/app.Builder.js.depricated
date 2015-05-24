@@ -16,7 +16,7 @@ public class Xcls_ClutterFiles : Object
     public Xcls_project_title_manager project_title_manager;
     public Xcls_project_title_name project_title_name;
     public Xcls_project_title_path project_title_path;
-    public Xcls_scoller scoller;
+    public Xcls_scroller scroller;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
 
@@ -42,7 +42,7 @@ public class Xcls_ClutterFiles : Object
         var child_0 = new Xcls_project_title( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
-        var child_1 = new Xcls_scoller( _this );
+        var child_1 = new Xcls_scroller( _this );
         child_1.ref();
         this.el.add_child (  child_1.el  );
     }
@@ -298,7 +298,7 @@ public class Xcls_ClutterFiles : Object
     }
 
 
-    public class Xcls_scoller : Object
+    public class Xcls_scroller : Object
     {
         public Clutter.ScrollActor el;
         private Xcls_ClutterFiles  _this;
@@ -309,10 +309,10 @@ public class Xcls_ClutterFiles : Object
         public Gdk.Pixbuf missing_thumb_pixbuf;
 
         // ctor
-        public Xcls_scoller(Xcls_ClutterFiles _owner )
+        public Xcls_scroller(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            _this.scoller = this;
+            _this.scroller = this;
             this.el = new Clutter.ScrollActor();
 
             // my vars (dec)
