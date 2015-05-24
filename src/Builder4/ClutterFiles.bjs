@@ -17,7 +17,7 @@
    "@ void open" : "(JsRender.JsRender file)",
    "$ xns" : "Clutter",
    "bool reactive" : true,
-   "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n\n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n    \n    print(\"recv width %f, filelayoutw = %f\", w, w-200);\n    \n   //_this.filelayout_manager.el.max_column_width = w - 200;\n   _this.filelayout.el.width = w - 200;\n   \n    this.el.set_size(\n           // this.el.get_stage().width-150,\n           w,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.el.set_position(0,0);\n   \n   \n   this.scroller.el.set_size(\n           // this.el.get_stage().width-150,\n           w-150,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.scroller.el.set_position(75,50);\n}\n",
+   "|  void set_size" : "(float w, float h) \n{\n    \n     // called by window resize... with is alreaddy -50 (for the buttons?)\n     \n\n\n\n     if (this.el == null) {\n        print(\"object not ready yet?\");\n        return;\n    }\n    \n    print(\"recv width %f, filelayoutw = %f\", w, w-200);\n    \n   //_this.filelayout_manager.el.max_column_width = w - 200;\n   _this.filelayout.el.width = w - 200;\n   \n    this.el.set_size(\n           // this.el.get_stage().width-150,\n           w,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.el.set_position(0,0);\n   \n   \n   this.scroller.el.set_size(\n           // this.el.get_stage().width-150,\n           w-50,\n           h  // this.el.get_stage().height\n    );\n    \n    // 100 right for buttons ..\n    this.scroller.el.set_position(75,50);\n}\n",
    "# Gee.ArrayList<Object> fileitems" : "new Gee.ArrayList<Object>()",
    "items" : [
     {
@@ -88,7 +88,7 @@
         {
          "id" : "filelayout_manager",
          "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
-         "bool homogeneous" : true,
+         "bool homogeneous" : false,
          "xtype" : "FlowLayout",
          "float max_column_width" : "100.0f",
          "$ xns" : "Clutter",

@@ -155,7 +155,7 @@ public class Xcls_ClutterFiles : Object
        
        this.scroller.el.set_size(
                // this.el.get_stage().width-150,
-               w-150,
+               w-50,
                h  // this.el.get_stage().height
         );
         
@@ -426,7 +426,7 @@ public class Xcls_ClutterFiles : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.homogeneous = true;
+            this.el.homogeneous = false;
             this.el.max_column_width = 100.0f;
             this.el.row_spacing = 20f;
             this.el.column_spacing = 20f;
