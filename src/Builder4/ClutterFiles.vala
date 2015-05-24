@@ -117,7 +117,6 @@ public class Xcls_ClutterFiles : Object
             
             //this.el.set_value(citer, 1,   items.get(i) );
         }
-        this.el.set_sort_column_id(0,Gtk.SortType.ASCENDING);
         
        
         
