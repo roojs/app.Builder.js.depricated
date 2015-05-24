@@ -361,6 +361,7 @@ public class Xcls_ClutterFiles : Object
                     if (nv != -1 * (  last_child_bottom - this.el.height) {
                 
                         _this.filelayout.el.y = -1 * (  last_child_bottom - this.el.height);
+                        return true;
                     }
                 
                     return  false;
