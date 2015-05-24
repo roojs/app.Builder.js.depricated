@@ -195,7 +195,7 @@
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
            "* args" : "string filepath",
            "id" : "*folderfile",
-           "* init" : "{\n\n}\n",
+           "* init" : "{\n    this.filepath = filepath;\n}\n",
            "$ x_expand" : true,
            "* pack" : "add_child",
            "xtype" : "Text",

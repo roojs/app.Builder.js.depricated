@@ -713,7 +713,7 @@ public class Xcls_ClutterFiles : Object
             // init method
 
             {
-            
+                this.filepath = filepath;
             }
 
             //listeners
