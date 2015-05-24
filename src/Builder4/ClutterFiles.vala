@@ -147,14 +147,14 @@ public class Xcls_ClutterFiles : Object
         this.el.set_position(0,0);
        
        
-       this.scoller.el.set_size(
+       this.scroller.el.set_size(
                // this.el.get_stage().width-150,
                w-150,
                h  // this.el.get_stage().height
         );
         
         // 100 right for buttons ..
-        this.scoller.el.set_position(75,50);
+        this.scroller.el.set_position(75,50);
     }
     public class Xcls_project_title : Object
     {
