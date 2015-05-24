@@ -345,13 +345,13 @@ public class Xcls_ClutterFiles : Object
                     case Clutter.ScrollDirection.UP:
                         print("Scroll up by %f\n", event.y);
                         y += event.y /2;
-                        y = float.min(0, y);
+                        y = float.max(0, y);
                         break;
                         
                     case Clutter.ScrollDirection.DOWN:
                         print("Scroll down by %f\n", event.y);
                         y -= event.y /2 ;
-                        
+                        y = float.min(0, y);
                         
                         
                         break;
