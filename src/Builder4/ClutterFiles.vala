@@ -67,7 +67,7 @@ public class Xcls_ClutterFiles : Object
         this.project_title_name.el.text = pr.name;
         this.project_title_path.el.text = pr.firstPath();
         
-        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+        this.fileitems = new Gee.ArrayList<Object>();
     
         
     
