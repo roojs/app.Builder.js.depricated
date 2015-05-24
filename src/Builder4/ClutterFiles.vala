@@ -535,7 +535,7 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.margin_top = 5f;
-            this.el.y_expand = true;
+            this.el.y_expand = false;
 
             // init method
 
