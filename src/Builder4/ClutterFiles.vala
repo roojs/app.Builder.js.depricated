@@ -81,6 +81,9 @@ public class Xcls_ClutterFiles : Object
             this.filelayout.el.add_child(a.el);
         }
         
+        // folders...
+        
+        
        
         
         this.el.show();
