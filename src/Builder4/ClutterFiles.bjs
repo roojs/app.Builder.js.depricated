@@ -150,7 +150,7 @@
            "* args" : "JsRender.JsRender file",
            "* pack" : "add_child",
            "xtype" : "Text",
-           "bool x_expand" : true,
+           "bool x_expand" : false,
            "$ y_align" : "Clutter.ActorAlign.START",
            "$ xns" : "Clutter",
            "bool y_expand" : false,
