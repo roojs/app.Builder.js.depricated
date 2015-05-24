@@ -341,6 +341,7 @@ public class Xcls_ClutterFiles : Object
                     case Clutter.ScrollDirection.UP:
                         print("Scroll up by %f\n", event.y);
                         y += event.y /2;
+                        y = float.min(0, y);
                         break;
                         
                     case Clutter.ScrollDirection.DOWN:
@@ -352,7 +353,7 @@ public class Xcls_ClutterFiles : Object
                 }
                 // range of scroll -- can go up -- eg.. -ve value.
                 
-                y = float.min(0, y);
+            
                 
                 // to work out the max -ve number
                 // height of filelayout
