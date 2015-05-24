@@ -196,7 +196,7 @@ namespace Palete {
 		}
 		
 		 
-		public void checkFilePlainSpawn(Project.Project project, string filename, string contents )
+		public void checkPlainFileSpawn(Project.Project project, string filename, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
@@ -221,8 +221,8 @@ namespace Palete {
 			args += "--project";
 			args +=  project.fn;
 			args += "--target";
-			args += project.firstBuildModule();
-			args += "--add-file";
+			args += ((Project.Gtk)project).firstBuildModule();
+	`		args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
 			args += filename;
