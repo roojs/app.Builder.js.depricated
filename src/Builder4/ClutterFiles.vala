@@ -421,7 +421,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.homogeneous = true;
-            this.el.max_column_width = 150f;
+            this.el.max_column_width = 120f;
             this.el.row_spacing = 20f;
             this.el.column_spacing = 20f;
         }
