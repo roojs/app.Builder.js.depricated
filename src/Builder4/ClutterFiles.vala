@@ -21,10 +21,10 @@ public class Xcls_ClutterFiles : Object
     public Xcls_filelayout_manager filelayout_manager;
 
         // my vars (def)
-    public Gee.ArrayList<Xcls_fileitem> fileitems;
     public Clutter.ScrollMode scroll_mode;
     public Gdk.Pixbuf missing_thumb_pixbuf;
     public signal void open (JsRender.JsRender file);
+    public Gee.ArrayList<Object> fileitems;
 
     // ctor
     public Xcls_ClutterFiles()
@@ -33,9 +33,9 @@ public class Xcls_ClutterFiles : Object
         this.el = new Clutter.Actor();
 
         // my vars (dec)
-        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
         this.scroll_mode = Clutter.ScrollMode.VERTICALLY;
         this.missing_thumb_pixbuf = null;
+        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
 
         // set gobject values
         this.el.reactive = true;
