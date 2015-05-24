@@ -100,6 +100,7 @@ public class Xcls_ClutterFiles : Object
              }
     
             // add the directory... items.get(i);
+            var x = new Xcls_folderitem(this,items.get(i));
             
             
            
