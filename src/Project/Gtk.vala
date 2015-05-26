@@ -294,15 +294,13 @@ namespace Project {
 						ret.add( fn);
 						continue;
 					}
+					
+					if (GLib.Path.get_basename( fn) == "config1.builder") {
+						continue;
+					}
 					// not .c / not .vala /not .bjs.. -- other type of file..
 					// allow ???
 					
-				
-				 	
-						
-					if (ret.index_of( vv) > -1) {
-						continue;
-					}
 					// add the 'c' file..
 					ret.add(fn);
 				} catch (Error e) {
