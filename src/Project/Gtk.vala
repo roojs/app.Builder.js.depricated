@@ -296,7 +296,7 @@ namespace Project {
 							GLib.debug("SKIP %s - .vala (got bjs)",fn);
 							continue;
 						}
-						
+						GLib.debug("ADD %s",fn);
 						ret.add( fn);
 						continue;
 					}
@@ -307,8 +307,10 @@ namespace Project {
 						
 						var vv = (new Regex("\\.c$")).replace( fn, fn.length, 0, ".vala");
 						if (allfiles.index_of( vv) > -1) {
+							GLib.debug("SKIP %s - .c (got vala)",fn);
 							continue;
 						}
+						GLib.debug("ADD %s",fn);						
 						ret.add( fn);
 						continue;
 					}
@@ -318,7 +320,7 @@ namespace Project {
 					}
 					// not .c / not .vala /not .bjs.. -- other type of file..
 					// allow ???
-					
+					GLib.debug("ADD %s",fn);
 					// add the 'c' file..
 					ret.add(fn);
 				} catch (Error e) {
