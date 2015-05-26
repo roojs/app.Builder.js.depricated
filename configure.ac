@@ -15,6 +15,9 @@ AC_PROG_CC
 
 AM_PROG_VALAC([0.22.0])
 
+
+AC_CHECK_LIB([m])
+
 dnl we need to check these exist, then it will generate a compile string for them.
 
 PKG_CHECK_MODULES(BUILDER, [
