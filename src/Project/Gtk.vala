@@ -299,11 +299,16 @@ namespace Project {
 					
 					// confgure.am
 					if ("config.h" == bn || "config.h.in" == bn || "config.log" == bn  || "configure" == bn ) {
-						if (allfiles.index_of( in_path +"/configure.am") > -1) {
+						if (allfiles.index_of( in_path +"/configure.ac") > -1) {
 							continue;
 						}
 					}
-					
+					// makefile
+					if ("Makefile" == bn || "Makefile.in" == bn ) {
+						if (allfiles.index_of( in_path +"/Makefile.am") > -1) {
+							continue;
+						}
+					}
 					
 					if (Regex.match_simple("^\\.", GLib.Path.get_basename(fn))) {
 						GLib.debug("SKIP %s - hidden",fn);
