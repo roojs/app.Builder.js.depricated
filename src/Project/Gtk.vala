@@ -274,21 +274,29 @@ namespace Project {
 					}
 					
 					if (Regex.match_simple("\\.vala$", fn)) {
+						var vv = (new Regex("\\.vala$")).replace( fn, fn, 0, ".bjs");
+						if (allfiles.index_of( vv) > -1) {
+							continue;
+						}
+						
 						ret.add( fn);
 						continue;
 					}
 					// vala.c -- ignore..
 					
 					// not a c file...
-					if (!Regex.match_simple("\\.c$", fn)) {
+					if (Regex.match_simple("\\.c$", fn)) {
+						
+						var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+						if (allfiles.index_of( vv) > -1) {
+							continue;
+						}
+						ret.add( fn);
 						continue;
 					}
+					// not .c / not .vala /not .bjs.. -- other type of file..
+					// allow ???
 					
-					// is the c file the same as a vala file...
-					
-					var vv = fn;
-				
-					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
 				
 				 	
 						
