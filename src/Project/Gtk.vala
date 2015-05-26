@@ -170,7 +170,7 @@ namespace Project {
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 			
-			GLib.debug("SCAN %s\n", dirname);
+			GLib.debug("SCAN %s", dirname);
 				// scan the directory for files -- ending with vala || c
 			
 
@@ -193,7 +193,7 @@ namespace Project {
 				while ((next_file = file_enum.next_file(null)) != null) {
 					var fn = next_file.get_display_name();
 					
-					GLib.debug("SCAN %s - checking %s\n", dirname, fn);
+					GLib.debug("SCAN ADD %s - checking %s\n", dirname, fn);
 					if (!GLib.FileUtils.test(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
 						continue;
 					}
