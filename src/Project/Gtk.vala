@@ -163,7 +163,7 @@ namespace Project {
 		 *  
 		 */
 		
-		public Gee.ArrayList<string> allFiles(string in_path)
+		public Gee.ArrayList<string> filesAll(string in_path)
 		{
 			var ret =  new Gee.ArrayList<string>();
  			
@@ -206,6 +206,12 @@ namespace Project {
 			}	
 			
 			return ret;
+		}
+		
+		public Gee.ArrayList<string> filesForCompile(string in_path)
+		{
+			
+			
 		}
 		
 		
