@@ -198,7 +198,7 @@ namespace Project {
 						GLib.debug("SKIP %s not regular  ", fn);
 						continue;
 					}
-					GLib.debug("SCAN ADD %s ", fn);
+					GLib.debug("SCAN ADD %s : %s", fn, fn.get_content_type());
 					ret.add(in_path + "/" + fn);
 					 
 					// any other valid types???
