@@ -220,10 +220,13 @@ namespace Project {
 					ret.add( fn);
 					continue;
 				}
-				
+				// not a c file...
+				if (Regex.match_simple("\\.c$", fn)) {
+					continue;
+				}
 				// got a file that is not 
 				
-				vv = fn;
+				var vv = fn;
 				try {
 					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
 				} catch (Error e) {
