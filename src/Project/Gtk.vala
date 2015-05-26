@@ -237,15 +237,16 @@ namespace Project {
 				} catch (Error e) {
 					continue;
 				}
-				if (Regex.match_simple("\\.vala\\.c$", fn)) {
-						continue;
-					}	
+				 	
 						
 				if (ret.index_of( vv) > -1) {
 					continue;
 				}
+				// add the 'c' file..
 				ret.add(fn);
 			}
+			// sort.
+			
 			
 		}
 		
