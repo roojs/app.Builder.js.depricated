@@ -135,7 +135,7 @@ builder4_SOURCES = \
 		
  
 builder4_VALAFLAGS = \
-	 --thread  --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder4_PKGS)
+	 --thread -X -lm --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder4_PKGS)
 
 builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(GDA_LIBS) $(WEBKIT_LIBS) $(VTE_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
 
