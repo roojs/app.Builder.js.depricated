@@ -261,7 +261,7 @@ namespace Project {
 		{
 			var allfiles = this.filesAll(in_path);
 			var ret =  new Gee.ArrayList<string>();
-			
+			GLib.debug("SCAN %s - %d files",in_path, allfiles.size);
 			
 			for (var i = 0; i < allfiles.size; i ++) {
 				var fn = allfiles.get(i);
