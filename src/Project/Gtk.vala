@@ -220,10 +220,14 @@ namespace Project {
 					ret.add( fn);
 					continue;
 				}
-				// not a c file...
-				if (Regex.match_simple("\\.c$", fn)) {
+				if (!Regex.match_simple("\\.vala\\.c$", fn)) {
 					continue;
 				}
+				// not a c file...
+				if (!Regex.match_simple("\\.c$", fn)) {
+					continue;
+				}
+				
 				// got a file that is not 
 				
 				var vv = fn;
