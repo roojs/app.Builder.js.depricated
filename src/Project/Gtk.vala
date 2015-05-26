@@ -194,7 +194,9 @@ namespace Project {
 					var fn = next_file.get_display_name();
 					
 					GLib.debug("SCAN %s - checking %s\n", dirname, fn);
-					 
+					if (!GLib.FileUtils.text(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
+						continue;
+					}
 					ret.add(in_path + "/" + fn);
 					 
 					// any other valid types???
