@@ -253,6 +253,53 @@ namespace Project {
 			
 		}
 		
+		public Gee.ArrayList<string> filesForOpen(string in_path)
+		{
+			var allfile = this.fileAll();
+			var ret =  new Gee.ArrayList<string>();
+			
+			
+			for (var i = 0; i < cfiles.size; i ++) {
+				var fn = cfiles.get(i);
+				if (Regex.match_simple("\\.vala$", fn)) {
+					ret.add( fn);
+					continue;
+				}
+				// vala.c -- ignore..
+				if (Regex.match_simple("\\.vala\\.c$", fn)) {
+					continue;
+				}
+				// not a c file...
+				if (!Regex.match_simple("\\.c$", fn)) {
+					continue;
+				}
+				
+				// is the c file the same as a vala file...
+				
+				var vv = fn;
+				try {
+					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+				} catch (Error e) {
+					continue;
+				}
+				 	
+						
+				if (ret.index_of( vv) > -1) {
+					continue;
+				}
+				// add the 'c' file..
+				ret.add(fn);
+			}
+			// sort.
+			ret.sort((fa,fb) => {
+				return ((string)fa).collate(string) fb);
+			});
+			return ret;
+			
+		}
+		
+		
+		
 		
 		public Gee.ArrayList<string> files(string in_path)
 		{
