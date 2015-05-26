@@ -513,6 +513,11 @@ public class Xcls_ClutterFiles : Object
             });
             this.el.enter_event.connect( (  event)  => {
                 this.el.background_color =   Clutter.Color.from_string("#333");
+                this.title.el.background_color =   Clutter.Color.from_string("#fff");
+                this.typetitle.el.background_color =   Clutter.Color.from_string("#fff");
+                this.title.el.color =   Clutter.Color.from_string("#000");
+                this.typetitle.el.color =   Clutter.Color.from_string("#000");
+                
                     return false;
             });
             this.el.leave_event.connect( (  event)  => {
