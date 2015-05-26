@@ -220,7 +220,8 @@ namespace Project {
 					ret.add( fn);
 					continue;
 				}
-				if (!Regex.match_simple("\\.vala\\.c$", fn)) {
+				// vala.c -- ignore..
+				if (Regex.match_simple("\\.vala\\.c$", fn)) {
 					continue;
 				}
 				// not a c file...
