@@ -162,7 +162,52 @@ namespace Project {
 		 *   are vala based on a bjs file..
 		 *  
 		 */
-		 
+		
+		public Gee.ArrayList<string> allFiles(string in_path)
+		{
+			var ret =  new Gee.ArrayList<string>();
+			var cfiles =  new Gee.ArrayList<string>();
+			
+			var dirname = this.resolve_path(
+	                        this.resolve_path_combine_path(this.firstPath(),in_path));
+			
+			GLib.debug("SCAN %s\n", dirname);
+				// scan the directory for files -- ending with vala || c
+			
+
+			var dir = File.new_for_path(dirname);
+			if (!dir.query_exists()) {
+				GLib.debug("SCAN %s - skip - does not exist\n", dirname);
+				return ret;
+			}
+	  
+	   
+			try {
+				var file_enum = dir.enumerate_children(
+					GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					GLib.FileQueryInfoFlags.NONE, 
+					null
+				);
+	        
+	         
+				FileInfo next_file; 
+				while ((next_file = file_enum.next_file(null)) != null) {
+					var fn = next_file.get_display_name();
+					
+					GLib.debug("SCAN %s - checking %s\n", dirname, fn);
+					 
+					ret.add(in_path + "/" + fn);
+					 
+					// any other valid types???
+	    			
+				}
+				
+			} catch(Error e) {
+				GLib.warning("oops - something went wrong scanning the projects\n");
+			}	
+			
+		
+		
 		
 		public Gee.ArrayList<string> files(string in_path)
 		{
@@ -219,6 +264,8 @@ namespace Project {
 			} catch(Error e) {
 				GLib.warning("oops - something went wrong scanning the projects\n");
 			}	
+			
+			if 
 				 
 				// add the cfiles to ret - if they do not have a vala...
 			for (var i = 0; i < cfiles.size; i ++) {
