@@ -87,7 +87,6 @@
             "../Palete",
             "../Project",
             "../vapi",
-            "../../../../../../usr/share/vala/vapi",
             "../c"
         ],
         "packages" : [
