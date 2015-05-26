@@ -204,11 +204,16 @@ namespace Project {
 					// any other valid types???
 	    			
 				}
+				
+				
+				
+				
+				
 				// add the cfiles to ret - if they do not have a vala...
 				for (var i = 0; i < cfiles.size; i ++) {
 					
-					var vv = (new Regex("\\.c$")).replace(	
-							cfiles.get(i), cfiles.get(i).length, 0, ".vala");
+					var fn = cfiles.get(i);
+					var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
 							
 					if (ret.index_of( vv) > -1) {
 						continue;
