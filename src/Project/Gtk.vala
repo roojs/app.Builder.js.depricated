@@ -194,7 +194,7 @@ namespace Project {
 					var fn = next_file.get_display_name();
 					
 					GLib.debug("SCAN %s - checking %s\n", dirname, fn);
-					if (!GLib.FileUtils.text(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
+					if (!GLib.FileUtils.test(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
 						continue;
 					}
 					ret.add(in_path + "/" + fn);
@@ -277,10 +277,10 @@ namespace Project {
 					if (Regex.match_simple("\\.o$", fn)) {
 						continue;
 					}
-					if (Regex.match_simple("~$", fn)) {
+					if (Regex.match_simple("\\~$", fn)) {
 						continue;
 					}
-					if (Regex.match_simple("^.", GLib.File.get_basename(fn))) {
+					if (Regex.match_simple("^\\.", GLib.Path.get_basename(fn))) {
 						continue;
 					}
 					if (Regex.match_simple("\\.vala$", fn)) {
