@@ -100,7 +100,7 @@
          "listeners" : {
           "button_press_event" : "  (  event) => {\n    _this.open(this.file);\n    return false;\n} ",
           "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#333\");\n    this.title.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.typetitle.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.title.el.color =   Clutter.Color.from_string(\"#000\");\n    this.typetitle.el.color =   Clutter.Color.from_string(\"#000\");\n    \n        return false;\n}",
-          "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
+          "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.title.el.background_color =   Clutter.Color.from_string(\"#000\");\n    this.typetitle.el.background_color =   Clutter.Color.from_string(\"#000\");\n    this.title.el.color =   Clutter.Color.from_string(\"#fff\");\n    this.typetitle.el.color =   Clutter.Color.from_string(\"#fff\");\n   \n    \n    return false;\n}"
          },
          "id" : "*fileitem",
          "* args" : "JsRender.JsRender file",
