@@ -198,7 +198,7 @@ namespace Project {
 						GLib.debug("SKIP %s not regular  ", fn);
 						continue;
 					}
-					if (Regex.match_simple("^text\/", next_file.get_content_type()) {
+					if (!Regex.match_simple("^text", next_file.get_content_type()) {
 						continue;
 					}
 					GLib.debug("SCAN ADD %s : %s", fn, next_file.get_content_type());
