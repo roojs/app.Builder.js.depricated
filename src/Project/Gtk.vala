@@ -198,7 +198,7 @@ namespace Project {
 						GLib.debug("SKIP %s not regular  ", fn);
 						continue;
 					}
-					if (!Regex.match_simple("^text", next_file.get_content_type()) {
+					if (!Regex.match_simple("^text", next_file.get_content_type())) {
 						continue;
 					}
 					GLib.debug("SCAN ADD %s : %s", fn, next_file.get_content_type());
@@ -282,12 +282,17 @@ namespace Project {
 						GLib.debug("SKIP %s - .bjs",fn);
 						continue;
 					}
-					if (Regex.match_simple("\\.o$", fn)) {
+					
+					if (Regex.match_simple("\\~$", fn)) {
+						GLib.debug("SKIP %s - ~",fn);
+						continue;
+					}
+					if (Regex.match_simple("\\.stamp$", fn)) {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
-					if (Regex.match_simple("\\~$", fn)) {
-						GLib.debug("SKIP %s - ~",fn);
+					if (Regex.match_simple("stamp-h1$",  GLib.Path.get_basename(fn))) {
+						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
 					
