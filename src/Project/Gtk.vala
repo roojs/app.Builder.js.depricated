@@ -234,7 +234,7 @@ namespace Project {
 					
 					 
 					
-					var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+					var vv = (new Regex("\\.c$")).replace( fn, fn.length, 0, ".vala");
 				
 				 	
 						
@@ -272,7 +272,12 @@ namespace Project {
 					if (Regex.match_simple("\\.bjs$", fn)) {
 						continue;
 					}
-					
+					if (Regex.match_simple("\\.o$", fn)) {
+						continue;
+					}
+					if (Regex.match_simple("~$", fn)) {
+						continue;
+					}
 					if (Regex.match_simple("\\.vala$", fn)) {
 						var vv = (new Regex("\\.vala$")).replace( fn, fn.length, 0, ".bjs");
 						if (allfiles.index_of( vv) > -1) {
