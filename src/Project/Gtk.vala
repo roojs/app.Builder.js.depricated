@@ -193,10 +193,12 @@ namespace Project {
 				while ((next_file = file_enum.next_file(null)) != null) {
 					var fn = next_file.get_display_name();
 					
-					GLib.debug("SCAN ADD %s - checking %s\n", dirname, fn);
+					
 					if (!GLib.FileUtils.test(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
+						GLib.debug("SKIP %s not regular %s", fn);
 						continue;
 					}
+					GLib.debug("SCAN ADD %s ", fn);
 					ret.add(in_path + "/" + fn);
 					 
 					// any other valid types???
@@ -324,6 +326,7 @@ namespace Project {
 					// add the 'c' file..
 					ret.add(fn);
 				} catch (Error e) {
+					GLib.debug("Exception %s",e.message);
 					continue;
 				}
 			}
