@@ -216,34 +216,36 @@ namespace Project {
 			
 			for (var i = 0; i < allfiles.size; i ++) {
 				var fn = allfiles.get(i);
-				if (Regex.match_simple("\\.vala$", fn)) {
-					ret.add( fn);
-					continue;
-				}
-				// vala.c -- ignore..
-				if (Regex.match_simple("\\.vala\\.c$", fn)) {
-					continue;
-				}
-				// not a c file...
-				if (!Regex.match_simple("\\.c$", fn)) {
-					continue;
-				}
-				
-				// is the c file the same as a vala file...
-				
-				var vv = fn;
 				try {
-					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+					if (Regex.match_simple("\\.vala$", fn)) {
+						ret.add( fn);
+						continue;
+					}
+					// vala.c -- ignore..
+					if (Regex.match_simple("\\.vala\\.c$", fn)) {
+						continue;
+					}
+					// not a c file...
+					if (!Regex.match_simple("\\.c$", fn)) {
+						continue;
+					}
+					
+					// is the c file the same as a vala file...
+					
+					 
+					
+					var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+				
+				 	
+						
+					if (allfiles.index_of( vv) > -1) {
+						continue;
+					}
+					// add the 'c' file..
+					ret.add(fn);
 				} catch (Error e) {
 					continue;
 				}
-				 	
-						
-				if (allfiles.index_of( vv) > -1) {
-					continue;
-				}
-				// add the 'c' file..
-				ret.add(fn);
 			}
 			// sort.
 			ret.sort((fa,fb) => {
