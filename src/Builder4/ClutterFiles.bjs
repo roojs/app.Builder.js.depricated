@@ -87,8 +87,8 @@
        "items" : [
         {
          "id" : "filelayout_manager",
-         "bool homogeneous" : false,
          "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
+         "bool homogeneous" : false,
          "xtype" : "FlowLayout",
          "float max_column_width" : "100.0f",
          "$ xns" : "Clutter",
@@ -135,8 +135,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
-           "* args" : "JsRender.JsRender file",
            "id" : "+typetitle",
+           "* args" : "JsRender.JsRender file",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -147,8 +147,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
-           "* args" : "JsRender.JsRender file",
            "id" : "+title",
+           "* args" : "JsRender.JsRender file",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -177,8 +177,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans bold 14px\", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+foldertitle",
            "* args" : "string folderpath",
+           "id" : "+foldertitle",
            "$ x_expand" : true,
            "* pack" : "add_child",
            "xtype" : "Text",
@@ -194,8 +194,8 @@
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "*folderfile",
            "* args" : "string filepath",
+           "id" : "*folderfile",
            "* init" : "{\n    this.filepath = filepath;\n}\n",
            "$ x_expand" : true,
            "* pack" : "add_child",
