@@ -151,6 +151,17 @@ namespace Project {
 			}
 	 
 		}
+		/**
+		 * get a list of files for a folder..
+		 * 
+		 * - in the project manager this has to list all possible compilable 
+		 *   files  - eg. exclue XXX.vala.c or XXX.c with the same name as 
+		 *   a vala file (so to ignore the generated files)
+		 * 
+		 * - for the editor navigation - this should exclude all files that
+		 *   are vala based on a bjs file..
+		 *  
+		 */
 		 
 		
 		public Gee.ArrayList<string> files(string in_path)
@@ -174,7 +185,7 @@ namespace Project {
 	   
 			try {
 				var file_enum = dir.enumerate_children(
-						GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
 					GLib.FileQueryInfoFlags.NONE, 
 					null
 				);
@@ -206,9 +217,7 @@ namespace Project {
 				}
 				
 				
-				
-				
-				
+				 
 				// add the cfiles to ret - if they do not have a vala...
 				for (var i = 0; i < cfiles.size; i ++) {
 					
