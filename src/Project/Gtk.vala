@@ -166,8 +166,7 @@ namespace Project {
 		public Gee.ArrayList<string> allFiles(string in_path)
 		{
 			var ret =  new Gee.ArrayList<string>();
-			var cfiles =  new Gee.ArrayList<string>();
-			
+ 			
 			var dirname = this.resolve_path(
 	                        this.resolve_path_combine_path(this.firstPath(),in_path));
 			
@@ -206,7 +205,8 @@ namespace Project {
 				GLib.warning("oops - something went wrong scanning the projects\n");
 			}	
 			
-		
+			return ret;
+		}
 		
 		
 		public Gee.ArrayList<string> files(string in_path)
