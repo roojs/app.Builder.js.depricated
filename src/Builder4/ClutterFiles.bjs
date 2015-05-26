@@ -87,8 +87,8 @@
        "items" : [
         {
          "id" : "filelayout_manager",
-         "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "bool homogeneous" : false,
+         "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "xtype" : "FlowLayout",
          "float max_column_width" : "100.0f",
          "$ xns" : "Clutter",
@@ -135,8 +135,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+typetitle",
            "* args" : "JsRender.JsRender file",
+           "id" : "+typetitle",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -147,8 +147,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+title",
            "* args" : "JsRender.JsRender file",
+           "id" : "+title",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -177,8 +177,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans bold 14px\", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string(\"#fff\"))",
-           "* args" : "string folderpath",
            "id" : "+foldertitle",
+           "* args" : "string folderpath",
            "$ x_expand" : true,
            "* pack" : "add_child",
            "xtype" : "Text",
@@ -190,12 +190,12 @@
           {
            "listeners" : {
             "button_press_event" : "  (  event) => {\n   // _this.open(this.filepath);\n    return false;\n} ",
-            "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#333\");\n        return false;\n}",
+            "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.el.fg_color =  Clutter.Color.from_string(\"#000\");\n        return false;\n}",
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
-           "* args" : "string filepath",
            "id" : "*folderfile",
+           "* args" : "string filepath",
            "* init" : "{\n    this.filepath = filepath;\n}\n",
            "$ x_expand" : true,
            "* pack" : "add_child",

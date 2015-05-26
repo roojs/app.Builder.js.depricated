@@ -798,7 +798,8 @@ public class Xcls_ClutterFiles : Object
                 return false;
             });
             this.el.enter_event.connect( (  event)  => {
-                this.el.background_color =   Clutter.Color.from_string("#333");
+                this.el.background_color =   Clutter.Color.from_string("#fff");
+                this.el.fg_color =  Clutter.Color.from_string("#000");
                     return false;
             });
             this.el.leave_event.connect( (  event)  => {
