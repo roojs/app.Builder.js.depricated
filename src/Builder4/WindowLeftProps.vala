@@ -1,6 +1,6 @@
 static Xcls_LeftProps  _LeftProps;
 
-public class Xcls_LeftProps : Object 
+public class Xcls_LeftProps : Object
 {
     public Gtk.Box el;
     private Xcls_LeftProps  _this;
@@ -33,7 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_MainWindow main_window;
     public JsRender.Node node;
 
-    // ctor 
+    // ctor
     public Xcls_LeftProps()
     {
         _this = this;
@@ -53,7 +53,7 @@ public class Xcls_LeftProps : Object
         this.el.pack_end (  child_1.el , true,true,0 );
     }
 
-    // user defined functions 
+    // user defined functions
     public              void before_edit ()
     {
     
@@ -104,138 +104,103 @@ public class Xcls_LeftProps : Object
     }
     public              bool startEditingValue ( Gtk.TreePath path) {
     
-        // ONLY return true if editing is allowed - eg. combo..
+         // ONLY return true if editing is allowed - eg. combo..
+    
+        print("start editing?\n");
+        if (!this.stop_editor()) {
+            print("stop editor failed\n");
+            return false;
+        }
         
-                print("start editing?\n");
-                if (!this.stop_editor()) {
-                    print("stop editor failed\n");
-                    return false;
-                }
-                
-                Gtk.TreeIter iter;
+        Gtk.TreeIter iter;
     
-                var mod = this.model.el;
-                mod.get_iter (out iter, path);
-                 
-                /*
-                    m.set(iter, 
-                            0, "listener",
-                            1, miter.get_key(),
-                            2, "<b>" + miter.get_key() + "</b>",
-                            3, miter.get_value()
-                        ); 
-                 
-                */
-                GLib.Value gval;
-                mod.get_value(iter, 3 , out gval);
-                var val = (string)gval;
+        var mod = this.model.el;
+        mod.get_iter (out iter, path);
+         
+        /*
+            m.set(iter, 
+                    0, "listener",
+                    1, miter.get_key(),
+                    2, "<b>" + miter.get_key() + "</b>",
+                    3, miter.get_value()
+                ); 
+         
+        */
+        GLib.Value gval;
+        mod.get_value(iter, 3 , out gval);
+        var val = (string)gval;
+    
+        mod.get_value(iter, 1 , out gval);
+        var key = (string)gval;
+        
+        
+        string kname, kflag, ktype;
+        this.node.normalize_key(key, out kname, out kflag, out ktype);
+         
+        
+        mod.get_value(iter, 0 , out gval);
+        var type = (string)gval; // listerner or prop..
+        
+       
+        
+        var use_textarea = false;
+    
+        //------------ things that require the text editor...
+        
+        if (type == "listener") {
+            use_textarea = true;
+        }
+        if (key.length > 0 && key[0] == '|') { // user defined method
+            use_textarea = true;
+        }
+        if (key.length > 0 && key[0] == '$') { // raw string
+            use_textarea = true;
+        }
+        if (key.length > 0 && key == "* init") {
+            use_textarea = true;
+        }
+        if (val.length > 40) { // long value...
+            use_textarea = true;
+        }
+        
+        
+        
+        if (use_textarea) {
+            print("Call show editor\n");
+            GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+                this.view.el.get_selection().select_path(path);
+                
+                this.show_editor(file, node, type, key);
+                
+                return false;
+            });
+           
             
-                mod.get_value(iter, 1 , out gval);
-                var key = (string)gval;
-                var type_ar = key.split(" ");
-                
-                string kname, kflag, ktype;
-                this.node.normalize_key(key, out kname, out kflag, out ktype);
-                 
-                
-                mod.get_value(iter, 0 , out gval);
-                var type = (string)gval; // listerner or prop..
-                
-               
-                
-                var use_textarea = false;
-    
-                //------------ things that require the text editor...
-                
-                if (type == "listener") {
-                    use_textarea = true;
-                }
-                if (key.length > 0 && key[0] == '|') { // user defined method
-                    use_textarea = true;
-                }
-                if (key.length > 0 && key[0] == '$') { // raw string
-                    use_textarea = true;
-                }
-                if (key.length > 0 && key == "* init") {
-                    use_textarea = true;
-                }
-                if (val.length > 40) { // long value...
-                    use_textarea = true;
-                }
-                
-                
-                
-                if (use_textarea) {
-                    print("Call show editor\n");
-                    GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                        this.view.el.get_selection().select_path(path);
-                        
-                        this.show_editor(file, node, type, key);
-                        
-                        return false;
-                    });
-                   
-                    
-                    return false;
-                }
-                
-                 var pal = Palete.factory(this.file.project.xtype);
-                
-                string[] opts;
-                var has_opts = pal.typeOptions(this.node.fqn(), kname, ktype, out opts);
-                
-                
-                
-                // others... - fill in options for true/false?
-                print("turn on editing %s \n" , mod.get_path(iter).to_string());
-               
-                   print (ktype.up());
-                if (has_opts) {
-                        print("start editing try/false)???");
-                        this.valrender.el.has_entry = false;
-                      
-                        this.valrender.setOptions(opts);
-                        
-                        this.valrender.el.has_entry = false;
-                        this.valrender.el.editable = true;
-                         this.allow_edit  = true;
-                         GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
-                             this.view.el.set_cursor_on_cell(
-                                path,
-                                this.valcol.el,
-                                this.valrender.el,
-                                true
-                            );
-                            return false;
-                        });
-                        return true;
-                }
-                                          
-                   // see if type is a Enum.
-                   
-                   
-               
-                    
-               
-                 opts =  {  };
+            return false;
+        }
+        
+         var pal = Palete.factory(this.file.project.xtype);
+        
+        string[] opts;
+        var has_opts = pal.typeOptions(this.node.fqn(), kname, ktype, out opts);
+        
+        
+        
+        // others... - fill in options for true/false?
+        print("turn on editing %s \n" , mod.get_path(iter).to_string());
+       
+           print (ktype.up());
+        if (has_opts) {
+                print("start editing try/false)???");
+                this.valrender.el.has_entry = false;
+              
                 this.valrender.setOptions(opts);
-               
-               GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
-                    
-                    // at this point - work out the type...
-                    // if its' a combo... then show the options..
-                    this.valrender.el.has_entry = true;
-                    
-                    this.valrender.el.editable = true;            
                 
-                    
-                    this.allow_edit  = true;
-                    
-                    
-                    
-                    
-    
-                    this.view.el.set_cursor_on_cell(
+                this.valrender.el.has_entry = false;
+                this.valrender.el.editable = true;
+                 this.allow_edit  = true;
+                 GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
+                     this.view.el.set_cursor_on_cell(
                         path,
                         this.valcol.el,
                         this.valrender.el,
@@ -243,8 +208,43 @@ public class Xcls_LeftProps : Object
                     );
                     return false;
                 });
-                return false;
-            }
+                return true;
+        }
+                                  
+           // see if type is a Enum.
+           
+           
+       
+            
+       
+         opts =  {  };
+        this.valrender.setOptions(opts);
+       
+       GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
+            
+            // at this point - work out the type...
+            // if its' a combo... then show the options..
+            this.valrender.el.has_entry = true;
+            
+            this.valrender.el.editable = true;            
+        
+            
+            this.allow_edit  = true;
+            
+            
+            
+            
+    
+            this.view.el.set_cursor_on_cell(
+                path,
+                this.valcol.el,
+                this.valrender.el,
+                true
+            );
+            return false;
+        });
+        return false;
+    }
     public              void load (JsRender.JsRender file, JsRender.Node? node) 
     {
         print("load leftprops\n");
@@ -457,7 +457,7 @@ public class Xcls_LeftProps : Object
             }
             this.node.props.set(fkey,value);
         }
-               
+                
           
         // add a row???
         this.load(this.file, this.node);
@@ -542,7 +542,7 @@ public class Xcls_LeftProps : Object
                  6,  this.keySortFormat(key)
             ); 
     }
-    public class Xcls_Box2 : Object 
+    public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
         private Xcls_LeftProps  _this;
@@ -550,7 +550,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box2(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -564,9 +564,9 @@ public class Xcls_LeftProps : Object
             this.el.add (  child_0.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button3 : Object 
+    public class Xcls_Button3 : Object
     {
         public Gtk.Button el;
         private Xcls_LeftProps  _this;
@@ -574,7 +574,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button3(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -583,13 +583,14 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.hexpand = true;
             var child_0 = new Xcls_Box4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_AddPropertyPopup( _this );
             child_1.ref();
 
-            // listeners 
+            //listeners
             this.el.button_press_event.connect( (self, ev) => {
                 _this.before_edit();
                 
@@ -602,9 +603,9 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Box4 : Object 
+    public class Xcls_Box4 : Object
     {
         public Gtk.Box el;
         private Xcls_LeftProps  _this;
@@ -612,7 +613,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box4(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -629,9 +630,9 @@ public class Xcls_LeftProps : Object
             this.el.add (  child_1.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Image5 : Object 
+    public class Xcls_Image5 : Object
     {
         public Gtk.Image el;
         private Xcls_LeftProps  _this;
@@ -639,7 +640,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Image5(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -648,13 +649,14 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.stock = Gtk.STOCK_ADD;
+            this.el.stock = Gtk.Stock.ADD;
             this.el.icon_size = Gtk.IconSize.MENU;
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Label6 : Object 
+
+    public class Xcls_Label6 : Object
     {
         public Gtk.Label el;
         private Xcls_LeftProps  _this;
@@ -662,7 +664,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Label6(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -673,9 +675,11 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_AddPropertyPopup : Object 
+
+
+    public class Xcls_AddPropertyPopup : Object
     {
         public Gtk.Menu el;
         private Xcls_LeftProps  _this;
@@ -683,7 +687,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_AddPropertyPopup(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -743,9 +747,9 @@ public class Xcls_LeftProps : Object
             this.el.append (  child_15.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem8 : Object 
+    public class Xcls_MenuItem8 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -753,7 +757,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem8(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -765,15 +769,16 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Using _this.{ID} will map to this element";
             this.el.label = "id: _this.{ID} (Vala)";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ()  => {
                 _this.addProp( "prop", "id", "", "");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem9 : Object 
+
+    public class Xcls_MenuItem9 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -781,7 +786,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem9(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -793,16 +798,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "how to pack this element onto parent, (method, 2nd arg, 3rd arg) .. the 1st argument is filled by the element";
             this.el.label = "pack: Pack method (Vala)";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) => {
             
                 _this.addProp( "prop", "pack","add", "*");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem10 : Object 
+
+    public class Xcls_MenuItem10 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -810,7 +816,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem10(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -822,16 +828,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "eg. \n\nnew Clutter.Image.from_file(.....)";
             this.el.label = "ctor: Alterative to default contructor";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) => {
             
                 _this.addProp( "prop", "ctor","", "*");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem11 : Object 
+
+    public class Xcls_MenuItem11 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -839,7 +846,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem11(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -851,16 +858,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "This code is called after the ctor";
             this.el.label = "init: initialziation code (vala)";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) => {
             
                 _this.addProp( "prop",  "init", "{\n\n}\n", "*" );
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_SeparatorMenuItem12 : Object 
+
+    public class Xcls_SeparatorMenuItem12 : Object
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -868,7 +876,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_SeparatorMenuItem12(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -879,9 +887,10 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem13 : Object 
+
+    public class Xcls_MenuItem13 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -889,7 +898,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem13(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -901,7 +910,7 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined string property";
             this.el.label = "String";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( (self) => {
             
                 _this.addProp( "prop", "XXXX", "","string");
@@ -909,9 +918,10 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem14 : Object 
+
+    public class Xcls_MenuItem14 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -919,7 +929,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem14(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -931,16 +941,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined number property";
             this.el.label = "Number";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp("prop",  "XXX", "0", "int");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem15 : Object 
+
+    public class Xcls_MenuItem15 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -948,7 +959,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem15(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -960,16 +971,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined boolean property";
             this.el.label = "Boolean";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp( "prop", "XXX", "true", "bool");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_SeparatorMenuItem16 : Object 
+
+    public class Xcls_SeparatorMenuItem16 : Object
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -977,7 +989,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_SeparatorMenuItem16(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -988,9 +1000,10 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem17 : Object 
+
+    public class Xcls_MenuItem17 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -998,7 +1011,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem17(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1010,16 +1023,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user function boolean property";
             this.el.label = "Javascript Function";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp("prop",  "XXXX", "function() { }", "| function");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem18 : Object 
+
+    public class Xcls_MenuItem18 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1027,7 +1041,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem18(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1039,16 +1053,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user function boolean property";
             this.el.label = "Vala Method";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp( "prop", "XXXX", "() {\n\n}\n", "| return_type");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem19 : Object 
+
+    public class Xcls_MenuItem19 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1056,7 +1071,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem19(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1068,16 +1083,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a vala signal";
             this.el.label = "Vala Signal";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp( "prop", "XXXX", "()", "@ void");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_SeparatorMenuItem20 : Object 
+
+    public class Xcls_SeparatorMenuItem20 : Object
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -1085,7 +1101,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_SeparatorMenuItem20(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1096,9 +1112,10 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem21 : Object 
+
+    public class Xcls_MenuItem21 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1106,7 +1123,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem21(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1118,16 +1135,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a flexy if (for HTML templates)";
             this.el.label = "Flexy - If";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp("prop",  "flexy:if", "value_or_condition", "string");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem22 : Object 
+
+    public class Xcls_MenuItem22 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1135,7 +1153,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem22(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1147,16 +1165,17 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a flexy include (for HTML templates)";
             this.el.label = "Flexy - Include";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp("prop",  "flexy:include", "name_of_file.html", "string");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem23 : Object 
+
+    public class Xcls_MenuItem23 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1164,7 +1183,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem23(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1176,16 +1195,20 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a flexy foreach (for HTML templates)";
             this.el.label = "Flexy - Foreach";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( ) =>{
             
                 _this.addProp("prop",  "flexy:foreach", "array,key,value", "string");
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_EditProps : Object 
+
+
+
+
+    public class Xcls_EditProps : Object
     {
         public Gtk.ScrolledWindow el;
         private Xcls_LeftProps  _this;
@@ -1194,7 +1217,7 @@ public class Xcls_LeftProps : Object
             // my vars (def)
         public bool editing;
 
-        // ctor 
+        // ctor
         public Xcls_EditProps(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1210,7 +1233,7 @@ public class Xcls_LeftProps : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             {
               
@@ -1218,9 +1241,9 @@ public class Xcls_LeftProps : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_view : Object 
+    public class Xcls_view : Object
     {
         public Gtk.TreeView el;
         private Xcls_LeftProps  _this;
@@ -1228,7 +1251,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_view(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1253,7 +1276,7 @@ public class Xcls_LeftProps : Object
             var child_3 = new Xcls_ContextMenu( _this );
             child_3.ref();
 
-            // init method 
+            // init method
 
             {
                 var selection = this.el.get_selection();
@@ -1265,7 +1288,7 @@ public class Xcls_LeftProps : Object
                 this.el.override_font(description);
             }
 
-            // listeners 
+            //listeners
             this.el.button_press_event.connect( ( ev)  => {
              
                 Gtk.TreeViewColumn col;
@@ -1366,9 +1389,9 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_model : Object 
+    public class Xcls_model : Object
     {
         public Gtk.TreeStore el;
         private Xcls_LeftProps  _this;
@@ -1376,7 +1399,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_model(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1395,9 +1418,10 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_keycol : Object 
+
+    public class Xcls_keycol : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_LeftProps  _this;
@@ -1405,7 +1429,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_keycol(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1421,15 +1445,15 @@ public class Xcls_LeftProps : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , false );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.keyrender.el , "markup", 2 );
              this.el.add_attribute(_this.keyrender.el , "text", 1 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_keyrender : Object 
+    public class Xcls_keyrender : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_LeftProps  _this;
@@ -1437,7 +1461,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_keyrender(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1448,7 +1472,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
 
-            // listeners 
+            //listeners
             this.el.editing_started.connect( (  editable, path) => {
             
                  Gtk.TreeIter  iter;
@@ -1509,9 +1533,11 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_valcol : Object 
+
+
+    public class Xcls_valcol : Object
     {
         public Gtk.TreeViewColumn el;
         private Xcls_LeftProps  _this;
@@ -1519,7 +1545,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_valcol(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1535,7 +1561,7 @@ public class Xcls_LeftProps : Object
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
-            // init method 
+            // init method
 
             {
             	
@@ -1555,9 +1581,9 @@ public class Xcls_LeftProps : Object
             }
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_valrender : Object 
+    public class Xcls_valrender : Object
     {
         public Gtk.CellRendererCombo el;
         private Xcls_LeftProps  _this;
@@ -1565,7 +1591,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_valrender(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1582,7 +1608,7 @@ public class Xcls_LeftProps : Object
             child_0.ref();
             this.el.model = child_0.el;
 
-            // listeners 
+            //listeners
             this.el.editing_started.connect( ( editable, path) => {
                 //_this.editing = true;
                 print("editing started called\n");
@@ -1664,7 +1690,7 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public              void setOptions (string[] ar) {
               var m = _this.valrendermodel.el;
                 m.clear();
@@ -1676,7 +1702,7 @@ public class Xcls_LeftProps : Object
         
         }
     }
-    public class Xcls_valrendermodel : Object 
+    public class Xcls_valrendermodel : Object
     {
         public Gtk.ListStore el;
         private Xcls_LeftProps  _this;
@@ -1684,7 +1710,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_valrendermodel(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1696,9 +1722,12 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_ContextMenu : Object 
+
+
+
+    public class Xcls_ContextMenu : Object
     {
         public Gtk.Menu el;
         private Xcls_LeftProps  _this;
@@ -1706,7 +1735,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_ContextMenu(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1727,9 +1756,9 @@ public class Xcls_LeftProps : Object
             this.el.append (  child_2.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem33 : Object 
+    public class Xcls_MenuItem33 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1737,7 +1766,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem33(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1748,7 +1777,7 @@ public class Xcls_LeftProps : Object
             // set gobject values
             this.el.label = "Edit";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( )  =>{
               
                 var s = _this.view.el.get_selection();
@@ -1759,9 +1788,10 @@ public class Xcls_LeftProps : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_SeparatorMenuItem34 : Object 
+
+    public class Xcls_SeparatorMenuItem34 : Object
     {
         public Gtk.SeparatorMenuItem el;
         private Xcls_LeftProps  _this;
@@ -1769,7 +1799,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_SeparatorMenuItem34(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1780,9 +1810,10 @@ public class Xcls_LeftProps : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_MenuItem35 : Object 
+
+    public class Xcls_MenuItem35 : Object
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1790,7 +1821,7 @@ public class Xcls_LeftProps : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_MenuItem35(Xcls_LeftProps _owner )
         {
             _this = _owner;
@@ -1801,12 +1832,16 @@ public class Xcls_LeftProps : Object
             // set gobject values
             this.el.label = "Delete";
 
-            // listeners 
+            //listeners
             this.el.activate.connect( ( )  =>{
             	_this.deleteSelected();
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
+
+
+
 }

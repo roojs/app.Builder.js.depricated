@@ -43,10 +43,7 @@ public errordomain SpawnError {
  
  * 
  */
- 
- 
-public delegate void SpawnFinish (int res, string str, string stderr);
-
+  
 public class Spawn : Object
 {
 	/**
@@ -54,6 +51,11 @@ public class Spawn : Object
 	 * @return the string or null 
 	 */
 	public signal string? input();
+	/**
+	 * @signal complete called at when the command has completed.
+	 * 
+	 */
+	public signal void complete(int res, string str, string stderr);
 	/**
 	 * @signal output_line called when a line is recieved from the process.
 	 * Note you may want to connect this and run 
@@ -137,7 +139,7 @@ public class Spawn : Object
      * result is applied to object properties (eg. '?' or 'stderr')
      * @returns {Object} self.
      */
-	public void run(SpawnFinish finish) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
+	public void run( ) throws SpawnError, GLib.SpawnError, GLib.IOChannelError
 	{
 		
 		 
@@ -207,7 +209,7 @@ public class Spawn : Object
 			this.tidyup();
 			//print("DONE TIDYUP");
 			
-			finish(this.result, this.output, this.stderr);
+			this.complete(this.result, this.output, this.stderr);
 			
 		});
 	    

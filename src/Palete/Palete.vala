@@ -322,20 +322,18 @@ namespace Palete
 
    }
 
-	ValaSource vs;
-	ValaSourceResult result_callback;
+ 
  	public   void validateVala(
-     			string code, 
-				string property, 
-				string ptype,
-				JsRender.JsRender file,
-				JsRender.Node node,
-				 ValaSourceResult result_cb
-                     ) 
+			WindowState state,
+			string code, 
+			string property, 
+			string ptype,
+			JsRender.JsRender file,
+			JsRender.Node node
+	 ) 
 	{   
 
-		this.result_callback = result_cb;
-		print("validate code (%s) %s\n", file.language, code);
+ 		print("validate code (%s) %s\n", file.language, code);
 		 
 		
 		 
@@ -345,26 +343,19 @@ namespace Palete
 		// file.project , file.path, file.build_module, ""
  		
 		
-		this.vs = new ValaSource((Project.Gtk)file.project, file.path, file.build_module, "");
-		
+		 
 		//var cd = new JSCore.ClassDefinitionEmpty();
-		this.vs.checkFileWithNodePropChange(
+		state.valasource.checkFileWithNodePropChange(
 				file,
 				node, 
 				property, 
 				ptype,
-				code,
-				validateValaResult
-				 
-					
+				code
 		 );
 		 
 
 	}
-	void validateValaResult(Json.Object res) {
-		this.result_callback(res);
-		this.vs = null;
-	}
+	 
 	
 	
 	

@@ -23,7 +23,7 @@ int main (string[] args) {
 	
 	if (BuilderApplication.opt_compile_project != null) {
 		 
-		Palete.ValaSource.buildApplication();
+		Palete.ValaSourceCompiler.buildApplication();
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}

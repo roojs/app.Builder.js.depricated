@@ -1,6 +1,6 @@
 static About  _About;
 
-public class About : Object 
+public class About : Object
 {
     public Gtk.AboutDialog el;
     private About  _this;
@@ -15,7 +15,7 @@ public class About : Object
 
         // my vars (def)
 
-    // ctor 
+    // ctor
     public About()
     {
         _this = this;
@@ -32,7 +32,7 @@ public class About : Object
         this.el.copyright = "LGPL";
         this.el.license_type = Gtk.License.LGPL_3_0;
 
-        // listeners 
+        //listeners
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true; 
@@ -42,7 +42,7 @@ public class About : Object
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public    void show (Gtk.Window parent) {
         this.el.set_transient_for(parent);
         this.el.modal = true;

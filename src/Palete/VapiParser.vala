@@ -338,6 +338,7 @@ namespace Palete {
 			// some of these may fail... - we probalby need a better way to handle this..
 			
 			context.add_external_package ("gtk+-3.0");
+			context.add_external_package ("libsoup-2.4");
 			if (!context.add_external_package ("webkit2gtk-4.0")) {
 				context.add_external_package ("webkit2gtk-3.0");
 			}

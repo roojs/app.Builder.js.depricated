@@ -1,8 +1,8 @@
 static Editor  _Editor;
 
-public class Editor : Object 
+public class Editor : Object
 {
-    public Gtk.VBox el;
+    public Gtk.Box el;
     private Editor  _this;
 
     public static Editor singleton()
@@ -24,6 +24,7 @@ public class Editor : Object
     public int pos_root_x;
     public int pos_root_y;
     public string ptype;
+    public string fname;
     public string key;
     public JsRender.JsRender file;
     public bool pos;
@@ -31,16 +32,17 @@ public class Editor : Object
     public signal void save ();
     public JsRender.Node node;
 
-    // ctor 
+    // ctor
     public Editor()
     {
         _this = this;
-        this.el = new Gtk.VBox( false, 0 );
+        this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
         this.window = null;
         this.activeEditor = "";
         this.ptype = "";
+        this.fname = "";
         this.key = "";
         this.file = null;
         this.pos = false;
@@ -48,19 +50,22 @@ public class Editor : Object
         this.node = null;
 
         // set gobject values
-        var child_0 = new Xcls_HBox2( _this );
+        this.el.homogeneous = false;
+        var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
         var child_1 = new Xcls_RightEditor( _this );
         child_1.ref();
-        this.el.add (  child_1.el  );
+        this.el.pack_end (  child_1.el , true,true );
     }
 
-    // user defined functions 
+    // user defined functions
     public   bool saveContents ()  {
         
         
-        
+        if (_this.file == null) {
+            return true;
+        }
         
         
         
@@ -101,6 +106,24 @@ public class Editor : Object
         return true;
     
     }
+    public void showPlainFile (string fname)
+    {
+        this.ptype = "";
+        this.key  = "";
+        this.node = null;
+        this.file = null;
+        this.fname = fname;
+        string str;
+        try {
+            GLib.FileUtils.get_contents(fname, out str);
+        } catch (Error e) {
+            str = ""; // a tad dangerios... - perhaps we should block editing...
+        }
+        
+        this.view.load(str);
+        this.key_edit.el.text = "";    
+    
+    }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)
     {
         this.ptype = ptype;
@@ -120,23 +143,24 @@ public class Editor : Object
         this.key_edit.el.text = key;    
     
     }
-    public class Xcls_HBox2 : Object 
+    public class Xcls_Box2 : Object
     {
-        public Gtk.HBox el;
+        public Gtk.Box el;
         private Editor  _this;
 
 
             // my vars (def)
 
-        // ctor 
-        public Xcls_HBox2(Editor _owner )
+        // ctor
+        public Xcls_Box2(Editor _owner )
         {
             _this = _owner;
-            this.el = new Gtk.HBox( false, 0 );
+            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
 
             // my vars (dec)
 
             // set gobject values
+            this.el.homogeneous = false;
             var child_0 = new Xcls_save_button( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
@@ -145,9 +169,9 @@ public class Editor : Object
             this.el.pack_end (  child_1.el , true,true );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_save_button : Object 
+    public class Xcls_save_button : Object
     {
         public Gtk.Button el;
         private Editor  _this;
@@ -155,7 +179,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_save_button(Editor _owner )
         {
             _this = _owner;
@@ -167,15 +191,16 @@ public class Editor : Object
             // set gobject values
             this.el.label = "Save";
 
-            // listeners 
+            //listeners
             this.el.clicked.connect( () => { 
                 _this.saveContents();
             });
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_key_edit : Object 
+
+    public class Xcls_key_edit : Object
     {
         public Gtk.Entry el;
         private Editor  _this;
@@ -183,7 +208,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_key_edit(Editor _owner )
         {
             _this = _owner;
@@ -195,9 +220,11 @@ public class Editor : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_RightEditor : Object 
+
+
+    public class Xcls_RightEditor : Object
     {
         public Gtk.ScrolledWindow el;
         private Editor  _this;
@@ -205,7 +232,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_RightEditor(Editor _owner )
         {
             _this = _owner;
@@ -219,14 +246,14 @@ public class Editor : Object
             child_0.ref();
             this.el.add (  child_0.el  );
 
-            // init method 
+            // init method
 
             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_view : Object 
+    public class Xcls_view : Object
     {
         public Gtk.SourceView el;
         private Editor  _this;
@@ -234,7 +261,7 @@ public class Editor : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_view(Editor _owner )
         {
             _this = _owner;
@@ -254,14 +281,16 @@ public class Editor : Object
             child_0.ref();
             this.el.set_buffer (  child_0.el  );
 
-            // init method 
+            // init method
 
             var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
                 this.el.override_font(description);
             
+            
+              
                 var attrs = new Gtk.SourceMarkAttributes();
-                var  pink = new Gdk.RGBA();
+                var  pink =   Gdk.RGBA();
                 pink.parse ( "pink");
                 attrs.set_background ( pink);
                 attrs.set_icon_name ( "process-stop");    
@@ -270,9 +299,35 @@ public class Editor : Object
                     return mark.name;
                 });
                 
-                this.el.set_mark_attributes ("error", attrs, 1);
+                this.el.set_mark_attributes ("ERR", attrs, 1);
+                
+                 var wattrs = new Gtk.SourceMarkAttributes();
+                var  blue =   Gdk.RGBA();
+                blue.parse ( "#ABF4EB");
+                wattrs.set_background ( blue);
+                wattrs.set_icon_name ( "process-stop");    
+                wattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("WARN", wattrs, 1);
+                
+             
+                
+                 var dattrs = new Gtk.SourceMarkAttributes();
+                var  purple =   Gdk.RGBA();
+                purple.parse ( "#EEA9FF");
+                dattrs.set_background ( purple);
+                dattrs.set_icon_name ( "process-stop");    
+                dattrs.query_tooltip_text.connect(( mark) => {
+                    //print("tooltip query? %s\n", mark.name);
+                    return mark.name;
+                });
+                
+                this.el.set_mark_attributes ("DEPR", dattrs, 1);
 
-            // listeners 
+            //listeners
             this.el.key_release_event.connect( (event) => {
                 
                 if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
@@ -287,7 +342,7 @@ public class Editor : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public   void load (string str) {
         
         // show the help page for the active node..
@@ -295,21 +350,26 @@ public class Editor : Object
         
         
           // this.get('/BottomPane').el.set_current_page(0);
-            this.el.get_buffer().set_text(str, str.length);
-            var lm = Gtk.SourceLanguageManager.get_default();
+          var buf = (Gtk.SourceBuffer)this.el.get_buffer();
+            buf.set_text(str, str.length);
+            buf.set_undo_manager(null);
             
-            var lang = _this.file.language;
+            var lm = Gtk.SourceLanguageManager.get_default();
+            var lang = "vala";
+            if (_this.file != null) {
+                 lang = _this.file.language;
+            }
             //?? is javascript going to work as js?
             
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
-            var buf = this.el.get_buffer();
+         
              
             _this.dirty = false;
             this.el.grab_focus();
             _this.save_button.el.sensitive = false;
         }
     }
-    public class Xcls_buffer : Object 
+    public class Xcls_buffer : Object
     {
         public Gtk.SourceBuffer el;
         private Editor  _this;
@@ -320,7 +380,7 @@ public class Editor : Object
         public int error_line;
         public bool check_running;
 
-        // ctor 
+        // ctor
         public Xcls_buffer(Editor _owner )
         {
             _this = _owner;
@@ -334,7 +394,7 @@ public class Editor : Object
 
             // set gobject values
 
-            // listeners 
+            //listeners
             this.el.changed.connect( () => {
                 // check syntax??
                 // ??needed..??
@@ -349,8 +409,9 @@ public class Editor : Object
             });
         }
 
-        // user defined functions 
+        // user defined functions
         public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
+                 
                 this.error_line = validate_res.size;
         
                 if (this.error_line < 1) {
@@ -368,7 +429,7 @@ public class Editor : Object
                     }
                     this.el.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    this.el.create_source_mark(valiter.get_value(), "error", iter);
+                    this.el.create_source_mark(valiter.get_value(), "ERR", iter);
                 }   
                 return false;
             }
@@ -402,14 +463,9 @@ public class Editor : Object
         
                 return true;
             }
-           
-           
-            var p = Palete.factory(_this.file.xtype);   
-            
             var str = this.toString();
             
-            string res = "";
-            
+            // needed???
             if (this.error_line > 0) {
                  Gtk.TextIter start;
                  Gtk.TextIter end;     
@@ -417,11 +473,31 @@ public class Editor : Object
         
                 this.el.remove_source_marks (start, end, null);
             }
-            
             if (str.length < 1) {
                 print("checkSyntax - empty string?\n");
                 return true;
             }
+            
+            if (_this.file == null && _this.fname.length > 0) {
+            
+                // assume it's gtk...
+                   this.check_running = true;
+        
+                 _this.window.windowstate.valasource.checkPlainFileSpawn(
+                    _this.window.project,
+        	    _this.fname,
+        	    str
+        	 );
+                return true;
+            
+            }
+           if (_this.file == null) {
+               return true;
+           }
+            var p = Palete.factory(_this.file.xtype);   
+            
+        
+             
             this.check_running = true;
             
             
@@ -441,26 +517,16 @@ public class Editor : Object
                 
             print("calling validate vala\n");    
             // clear the buttons.
-            _this.window.statusbar_errors.el.hide();
-            _this.window.statusbar_warnings.el.hide();
-            _this.window.statusbar_depricated.el.hide();
-            
-            
+         
             
             p.validateVala(
+                _this.window.windowstate,
                 str, 
                  _this.key, 
                 _this.ptype,
                 _this.file,
-                _this.node,
-                (obj) => {
-                    this.check_running = false;
-                    this.highlightErrorsJson(obj);            
-                    
-                    //var validate_res = p.validateVala.end(res);
-                    //this.highlightErrors(validate_res);
-        
-                }
+                _this.node 
+                
                 
             );
              
@@ -470,53 +536,61 @@ public class Editor : Object
              
             return true; // at present allow saving - even if it's invalid..
         }
-        public bool highlightErrorsJson (Json.Object obj) {
+        public bool highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
              Gtk.TextIter end;     
                 this.el.get_bounds (out start, out end);
                 
-                this.el.remove_source_marks (start, end, null);
+                this.el.remove_source_marks (start, end, type);
                          
-            if (obj.has_member("ERR-TOTAL")) {
-        
-                 _this.window.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
-            } else {
-                 _this.window.statusbar_errors.setNotices( new Json.Object() , 0);
-            }    
+             
+             // we should highlight other types of errors..
             
-            if (obj.has_member("WARN-TOTAL")) {
-        
-                 _this.window.statusbar_warnings.setNotices(obj.get_object_member("WARN"), (int) obj.get_int_member("WARN-TOTAL"));
-            } else {
-                     _this.window.statusbar_warnings.setNotices( new Json.Object() , 0);
-            }
-            if (obj.has_member("DEPR-TOTAL")) {
-                
-                 _this.window.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
-         
-            } else {
-                _this.window.statusbar_depricated.setNotices( new Json.Object(),0);
-            }
-            
-            if (!obj.has_member("ERR")) {
+            if (!obj.has_member(type)) {
                 print("Return has no errors\n");
                 return true;
             }
-            var err = obj.get_object_member("ERR");
             
-            
-            
-            if (!err.has_member(_this.file.path)) {
-                print("File path has no errors\n");
+            if (_this.window.windowstate.state != WindowState.State.CODEONLY && 
+                _this.window.windowstate.state != WindowState.State.CODE
+                ) {
                 return true;
-            }
-        
-            var lines = err.get_object_member(_this.file.path);
+            } 
             
-            var offset = 1;
-            if (obj.has_member("line_offset")) {
-                offset = (int)obj.get_int_member("line_offset") + 1;
-            }
+            
+            var err = obj.get_object_member(type);
+            var valafn = _this.fname;
+            if (_this.file != null) {
+        
+        
+                
+                
+                 valafn = "";
+                  try {             
+                       var  regex = new Regex("\\.bjs$");
+                    
+                     
+                        valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                     } catch (GLib.RegexError e) {
+                        return true;
+                    }   
+        
+        
+        
+              }
+               if (!err.has_member(valafn)) {
+                    print("File path has no errors\n");
+                    return  true;
+                }
+        
+                var lines = err.get_object_member(valafn);
+                
+                var offset = 1;
+                if (obj.has_member("line_offset")) {
+                    offset = (int)obj.get_int_member("line_offset") + 1;
+                }
+            
+        
              
             
             var tlines = this.el.get_line_count () +1;
@@ -542,7 +616,7 @@ public class Editor : Object
         	    }
                     
                     
-                    this.el.create_source_mark(msg, "error", iter);
+                    this.el.create_source_mark(msg, type, iter);
                 } );
                 return false;
             
@@ -552,4 +626,7 @@ public class Editor : Object
         
         }
     }
+
+
+
 }

@@ -1,6 +1,6 @@
 static DialogTemplateSelect  _DialogTemplateSelect;
 
-public class DialogTemplateSelect : Object 
+public class DialogTemplateSelect : Object
 {
     public Gtk.Dialog el;
     private DialogTemplateSelect  _this;
@@ -21,7 +21,7 @@ public class DialogTemplateSelect : Object
 
         // my vars (def)
 
-    // ctor 
+    // ctor
     public DialogTemplateSelect()
     {
         _this = this;
@@ -47,14 +47,14 @@ public class DialogTemplateSelect : Object
         child_3.ref();
         this.el.add_action_widget (  child_3.el , 2 );
 
-        // listeners 
+        //listeners
         this.el.delete_event.connect( (self, event)  =>{
             this.el.hide();
             return true;
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public JsRender.Node? show (Xcls_MainWindow mwindow, Palete.Palete pal, JsRender.Node node, Project.Project project) {
         
         this.el.show_all();
@@ -104,9 +104,14 @@ public class DialogTemplateSelect : Object
                     return node;
                 }
                 var pa = new Json.Parser();
-    	    pa.load_from_data(json_str);
-    	    var new_node = pa.get_root();
+                try {
     
+    	        pa.load_from_data(json_str);
+    	    } catch(Error e) {
+    	        return node;
+    	    }
+    	    var new_node = pa.get_root();
+        
     	    if (new_node.get_node_type () != Json.NodeType.OBJECT) {
     		    return node;
     	    }
@@ -131,7 +136,7 @@ public class DialogTemplateSelect : Object
         return pal.loadTemplate((string)vfname);
     
     }
-    public class Xcls_Box2 : Object 
+    public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
         private DialogTemplateSelect  _this;
@@ -139,7 +144,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box2(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -156,9 +161,9 @@ public class DialogTemplateSelect : Object
             this.el.pack_start (  child_1.el , false,false,0 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Box3 : Object 
+    public class Xcls_Box3 : Object
     {
         public Gtk.Box el;
         private DialogTemplateSelect  _this;
@@ -166,7 +171,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box3(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -184,9 +189,9 @@ public class DialogTemplateSelect : Object
             this.el.add (  child_1.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Label4 : Object 
+    public class Xcls_Label4 : Object
     {
         public Gtk.Label el;
         private DialogTemplateSelect  _this;
@@ -194,7 +199,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Label4(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -205,9 +210,10 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_combo : Object 
+
+    public class Xcls_combo : Object
     {
         public Gtk.ComboBox el;
         private DialogTemplateSelect  _this;
@@ -215,7 +221,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_combo(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -232,14 +238,14 @@ public class DialogTemplateSelect : Object
             child_1.ref();
             this.el.set_model (  child_1.el  );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_cellrenderer : Object 
+    public class Xcls_cellrenderer : Object
     {
         public Gtk.CellRendererText el;
         private DialogTemplateSelect  _this;
@@ -247,7 +253,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_cellrenderer(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -259,9 +265,10 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_model : Object 
+
+    public class Xcls_model : Object
     {
         public Gtk.ListStore el;
         private DialogTemplateSelect  _this;
@@ -269,7 +276,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_model(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -281,7 +288,7 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
         public void loadData (GLib.List<string> data) {
             this.el.clear();                                    
             Gtk.TreeIter iter;
@@ -309,7 +316,10 @@ public class DialogTemplateSelect : Object
                                              
         }
     }
-    public class Xcls_Box8 : Object 
+
+
+
+    public class Xcls_Box8 : Object
     {
         public Gtk.Box el;
         private DialogTemplateSelect  _this;
@@ -317,7 +327,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box8(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -335,9 +345,9 @@ public class DialogTemplateSelect : Object
             this.el.add (  child_1.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Label9 : Object 
+    public class Xcls_Label9 : Object
     {
         public Gtk.Label el;
         private DialogTemplateSelect  _this;
@@ -345,7 +355,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Label9(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -356,9 +366,10 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_dbcombo : Object 
+
+    public class Xcls_dbcombo : Object
     {
         public Gtk.ComboBox el;
         private DialogTemplateSelect  _this;
@@ -366,7 +377,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_dbcombo(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -383,14 +394,14 @@ public class DialogTemplateSelect : Object
             child_1.ref();
             this.el.set_model (  child_1.el  );
 
-            // init method 
+            // init method
 
             this.el.add_attribute(_this.dbcellrenderer.el , "markup", 1 );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_dbcellrenderer : Object 
+    public class Xcls_dbcellrenderer : Object
     {
         public Gtk.CellRendererText el;
         private DialogTemplateSelect  _this;
@@ -398,7 +409,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_dbcellrenderer(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -410,9 +421,10 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_dbmodel : Object 
+
+    public class Xcls_dbmodel : Object
     {
         public Gtk.ListStore el;
         private DialogTemplateSelect  _this;
@@ -420,7 +432,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_dbmodel(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -432,7 +444,7 @@ public class DialogTemplateSelect : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
         public void loadData (Gee.ArrayList<string> data) {
             this.el.clear();                                    
             Gtk.TreeIter iter;
@@ -464,7 +476,11 @@ public class DialogTemplateSelect : Object
                                              
         }
     }
-    public class Xcls_Button13 : Object 
+
+
+
+
+    public class Xcls_Button13 : Object
     {
         public Gtk.Button el;
         private DialogTemplateSelect  _this;
@@ -472,7 +488,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button13(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -484,9 +500,10 @@ public class DialogTemplateSelect : Object
             this.el.label = "Cancel";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button14 : Object 
+
+    public class Xcls_Button14 : Object
     {
         public Gtk.Button el;
         private DialogTemplateSelect  _this;
@@ -494,7 +511,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button14(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -506,9 +523,10 @@ public class DialogTemplateSelect : Object
             this.el.label = "Just add it";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button15 : Object 
+
+    public class Xcls_Button15 : Object
     {
         public Gtk.Button el;
         private DialogTemplateSelect  _this;
@@ -516,7 +534,7 @@ public class DialogTemplateSelect : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button15(DialogTemplateSelect _owner )
         {
             _this = _owner;
@@ -528,6 +546,7 @@ public class DialogTemplateSelect : Object
             this.el.label = "OK";
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
 }

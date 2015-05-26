@@ -1,58 +1,49 @@
-/* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/RooProjectProperties.vala  -o /tmp/RooProjectProperties
-*/
+static RooProjectProperties  _RooProjectProperties;
 
-
-/* -- to test class
-static int main (string[] args) {
-    Gtk.init (ref args);
-    new Xcls_RooProjectProperties();
-    RooProjectProperties.show_all();
-     Gtk.main ();
-    return 0;
-}
-*/
-
-
-public static Xcls_RooProjectProperties  RooProjectProperties;
-
-public class Xcls_RooProjectProperties
+public class RooProjectProperties : Object
 {
     public Gtk.Dialog el;
-    private static Xcls_RooProjectProperties  _this;
+    private RooProjectProperties  _this;
 
+    public static RooProjectProperties singleton()
+    {
+        if (_RooProjectProperties == null) {
+            _RooProjectProperties= new RooProjectProperties();
+        }
+        return _RooProjectProperties;
+    }
     public Xcls_view view;
 
-        // my vars
+        // my vars (def)
     public Project.Project project;
 
-        // ctor 
-    public Xcls_RooProjectProperties()
+    // ctor
+    public RooProjectProperties()
     {
-        this.el = new Gtk.Dialog();
         _this = this;
-        RooProjectProperties = this;
+        this.el = new Gtk.Dialog();
 
-        // my vars
+        // my vars (dec)
 
         // set gobject values
         this.el.default_width = 500;
         this.el.modal = true;
-        var child_0 = new Xcls_VBox2();
-        this.el. get_content_area().add
- (  child_0.el  );
-        var child_1 = new Xcls_Button6();
+        var child_0 = new Xcls_Box2( _this );
+        child_0.ref();
+        this.el.get_content_area().add (  child_0.el  );
+        var child_1 = new Xcls_Button6( _this );
+        child_1.ref();
         this.el.add_action_widget (  child_1.el , 1 );
-        var child_2 = new Xcls_Button7();
+        var child_2 = new Xcls_Button7( _this );
+        child_2.ref();
         this.el.add_action_widget (  child_2.el , 0 );
 
-        // listeners 
-        this.el.delete_event.connect(   (self, event) => {
+        //listeners
+        this.el.delete_event.connect( (self, event) => {
             this.el.hide();
              return true;
-        } );
-        this.el.response.connect(   (self, response_id)  => {
+        });
+        this.el.response.connect( (self, response_id)  => {
            //print(response_id);
            if (response_id< 1 ) {
               this.el.hide();
@@ -79,244 +70,163 @@ public class Xcls_RooProjectProperties
            //    this.get('view').el.get_buffer().get_text(project.runjs, project.runjs.length);
            // ok pressed..
            this.el.hide();
-        } );
+        });
     }
 
-    // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip .Project.Project:project - already used 
-
-    // skip default_width - already used 
-
-    // skip xtype - not pipe 
-
-    // skip |modal - already used 
+    // user defined functions
     public void show (Project.Project project) {
-            _this.project = project;
-            // get the active project.
-            
-            //print (project.fn);
-            //project.runhtml = project.runhtml || '';
-            _this.view.el.get_buffer().set_text(project.runhtml);
-            
-            this.el.show_all();
-        }
-
-    // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip id - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
-    public class Xcls_VBox2
+        _this.project = project;
+        // get the active project.
+        
+        //print (project.fn);
+        //project.runhtml = project.runhtml || '';
+        _this.view.el.get_buffer().set_text(project.runhtml);
+        
+        this.el.show_all();
+    }
+    public class Xcls_Box2 : Object
     {
-        public Gtk.VBox el;
+        public Gtk.Box el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_VBox2()
+            // my vars (def)
+
+        // ctor
+        public Xcls_Box2(RooProjectProperties _owner )
         {
-            this.el = new Gtk.VBox( true, 0 );
+            _this = _owner;
+            this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.border_width = 5;
-            var child_0 = new Xcls_Label3();
+            var child_0 = new Xcls_Label3( _this );
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_ScrolledWindow4();
+            var child_1 = new Xcls_ScrolledWindow4( _this );
+            child_1.ref();
             this.el.pack_end (  child_1.el , true,true,0 );
         }
 
-        // userdefined functions 
-
-        // skip border_width - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |pack - already used 
-
-        // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
-    public class Xcls_Label3
+    public class Xcls_Label3 : Object
     {
         public Gtk.Label el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_Label3()
+            // my vars (def)
+
+        // ctor
+        public Xcls_Label3(RooProjectProperties _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Label( "HTML To insert at end of <HEAD>" );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
-    public class Xcls_ScrolledWindow4
+
+    public class Xcls_ScrolledWindow4 : Object
     {
         public Gtk.ScrolledWindow el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_ScrolledWindow4()
+            // my vars (def)
+
+        // ctor
+        public Xcls_ScrolledWindow4(RooProjectProperties _owner )
         {
+            _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_view();
+            var child_0 = new Xcls_view( _this );
+            child_0.ref();
             this.el.add (  child_0.el  );
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
-    public class Xcls_view
+    public class Xcls_view : Object
     {
         public Gtk.SourceView el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_view()
+            // my vars (def)
+
+        // ctor
+        public Xcls_view(RooProjectProperties _owner )
         {
-            this.el = new Gtk.SourceView();
+            _this = _owner;
             _this.view = this;
+            this.el = new Gtk.SourceView();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip id - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
-    public class Xcls_Button6
+
+
+
+    public class Xcls_Button6 : Object
     {
         public Gtk.Button el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_Button6()
+            // my vars (def)
+
+        // ctor
+        public Xcls_Button6(RooProjectProperties _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "OK";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
-    public class Xcls_Button7
+
+    public class Xcls_Button7 : Object
     {
         public Gtk.Button el;
+        private RooProjectProperties  _this;
 
-            // my vars
 
-            // ctor 
-        public Xcls_Button7()
+            // my vars (def)
+
+        // ctor
+        public Xcls_Button7(RooProjectProperties _owner )
         {
+            _this = _owner;
             this.el = new Gtk.Button();
 
-            // my vars
+            // my vars (dec)
 
             // set gobject values
             this.el.label = "Cancel";
         }
 
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip label - already used 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        // user defined functions
     }
+
 }

@@ -1,6 +1,6 @@
 static DialogSaveModule  _DialogSaveModule;
 
-public class DialogSaveModule : Object 
+public class DialogSaveModule : Object
 {
     public Gtk.Dialog el;
     private DialogSaveModule  _this;
@@ -18,7 +18,7 @@ public class DialogSaveModule : Object
     public Project.Project project;
     public JsRender.Node data;
 
-    // ctor 
+    // ctor
     public DialogSaveModule()
     {
         _this = this;
@@ -40,14 +40,14 @@ public class DialogSaveModule : Object
         child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
-        // listeners 
+        //listeners
         this.el.delete_event.connect( (self, event) => {
             this.el.response(Gtk.ResponseType.CANCEL);
             return true;
         });
     }
 
-    // user defined functions 
+    // user defined functions
     public   string show (Gtk.Window parent, Project.Project project, JsRender.Node data) {
      
          
@@ -96,7 +96,7 @@ public class DialogSaveModule : Object
         
         
     }
-    public class Xcls_Box2 : Object 
+    public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
         private DialogSaveModule  _this;
@@ -104,7 +104,7 @@ public class DialogSaveModule : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Box2(DialogSaveModule _owner )
         {
             _this = _owner;
@@ -121,9 +121,9 @@ public class DialogSaveModule : Object
             this.el.add (  child_1.el  );
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Label3 : Object 
+    public class Xcls_Label3 : Object
     {
         public Gtk.Label el;
         private DialogSaveModule  _this;
@@ -131,7 +131,7 @@ public class DialogSaveModule : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Label3(DialogSaveModule _owner )
         {
             _this = _owner;
@@ -142,9 +142,10 @@ public class DialogSaveModule : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_name : Object 
+
+    public class Xcls_name : Object
     {
         public Gtk.Entry el;
         private DialogSaveModule  _this;
@@ -152,7 +153,7 @@ public class DialogSaveModule : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_name(DialogSaveModule _owner )
         {
             _this = _owner;
@@ -164,9 +165,11 @@ public class DialogSaveModule : Object
             // set gobject values
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button5 : Object 
+
+
+    public class Xcls_Button5 : Object
     {
         public Gtk.Button el;
         private DialogSaveModule  _this;
@@ -174,7 +177,7 @@ public class DialogSaveModule : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button5(DialogSaveModule _owner )
         {
             _this = _owner;
@@ -186,9 +189,10 @@ public class DialogSaveModule : Object
             this.el.label = "Cancel";
         }
 
-        // user defined functions 
+        // user defined functions
     }
-    public class Xcls_Button6 : Object 
+
+    public class Xcls_Button6 : Object
     {
         public Gtk.Button el;
         private DialogSaveModule  _this;
@@ -196,7 +200,7 @@ public class DialogSaveModule : Object
 
             // my vars (def)
 
-        // ctor 
+        // ctor
         public Xcls_Button6(DialogSaveModule _owner )
         {
             _this = _owner;
@@ -208,6 +212,7 @@ public class DialogSaveModule : Object
             this.el.label = "OK";
         }
 
-        // user defined functions 
+        // user defined functions
     }
+
 }

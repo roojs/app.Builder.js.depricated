@@ -400,6 +400,17 @@ namespace JsRender {
 			
 		    
 		}
+		public  Node? lineToNode(int line)
+		{
+			if (this.tree == null) {
+				return null;
+			}
+			return this.tree.lineToNode(line);
+			
+			
+		}
+		
+		
 		public abstract void save();
 		public abstract void saveHTML(string html);
 		public abstract string toSource() ;

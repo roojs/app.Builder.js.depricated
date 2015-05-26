@@ -217,9 +217,10 @@
       },
       {
        "gint position" : 300,
-       "xtype" : "HPaned",
+       "xtype" : "Paned",
        "* pack" : "append_page,_this.label_targets.el",
        "$ xns" : "Gtk",
+       "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "items" : [
         {
          "* init" : "{  \nthis.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n\n}\n",
@@ -304,11 +305,12 @@
         },
         {
          "id" : "set_vbox",
-         "xtype" : "VBox",
+         "xtype" : "Box",
          "* pack" : "add2",
          "gboolean homogeneous" : false,
          "$ xns" : "Gtk",
          "# Project.GtkValaSettings cgroup" : "null",
+         "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
          "items" : [
           {
            "xtype" : "Label",

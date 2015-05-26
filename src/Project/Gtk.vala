@@ -106,10 +106,26 @@ namespace Project {
 			data_out.close(null);
 			
 			return ;
-			
-			
-
+			 
 		}
+		/**
+		 *  perhaps we should select the default in the window somewhere...
+		 */ 
+		public string firstBuildModule()
+		{
+			var iter = this.compilegroups.map_iterator();
+			while(iter.next()) {
+				 
+				 if (iter.get_value().name == "__default__") {
+					 continue;
+				 }
+				 
+				 return iter.get_value().name;
+			}
+			return "";
+		}
+		
+		
 		public string relPath(string target)
 		{
 			var basename = this.firstPath();

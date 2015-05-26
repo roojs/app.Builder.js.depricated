@@ -16,6 +16,7 @@ public class WindowState : Object
 		PROP,
 		LISTENER,
 		CODE,
+		CODEONLY,
 		FILES,
 		PROJECT // project settings..
 	}
@@ -34,7 +35,6 @@ public class WindowState : Object
 	public Editor               code_editor;    
 	public Xcls_WindowRooView   window_rooview;
 	public Xcls_GtkView         window_gladeview;
-	public Xcls_ValaCompileErrors  valacompileerrors;
 	
 	public Xcls_ClutterFiles     clutterfiles;
 
@@ -47,6 +47,10 @@ public class WindowState : Object
 	
 	// dialogs??
 	public Xcls_DialogPluginWebkit webkit_plugin;
+	
+	
+	public Palete.ValaSource valasource; // the spawner that runs the vala compiler.
+	public Json.Object last_compile_result;
 	
 	// ctor 
 	public WindowState(Xcls_MainWindow win)
@@ -79,11 +83,15 @@ public class WindowState : Object
 
 		this.webkit_plugin = new Xcls_DialogPluginWebkit();
 		this.template_select = new DialogTemplateSelect();
-		
-		this.vala_compile_errors = new Xcls_ValaCompileErrors();
-		this.vala_compile_errors.window = this.win;
-		
 		this.children_loaded = true;
+		
+		this.left_tree.node_selected.connect((sel) => {
+			this.window_gladeview.sourceview.nodeSelected(sel);
+		});
+		this.valasource = new Palete.ValaSource();
+		this.valasource.compiled.connect(this.valaCompiled);
+		
+		
 	}
 
 
@@ -109,8 +117,14 @@ public class WindowState : Object
 		});
 	 
 		this.left_tree.changed.connect(() => {
-			this.window_rooview.requestRedraw();
+			
 			this.left_tree.model.file.save();
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+				   this.window_rooview.requestRedraw();
+			} else {
+				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
+			}
+			 
 		});
 		 
 	}
@@ -216,14 +230,16 @@ public class WindowState : Object
 		});
 	
 		this.left_props.changed.connect(() => {
-			  if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 				   this.window_rooview.requestRedraw();
-				   
-			   } else {
+			} else {
 				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
-			  }
-			  this.left_tree.model.updateSelected();
-			  this.left_tree.model.file.save();
+			}
+			this.left_tree.model.updateSelected();
+			this.left_tree.model.file.save();
+			if (this.left_tree.model.file.xtype=="Gtk") {
+				this.valasource.checkFileSpawn(this.left_tree.model.file);
+			}
 		});
 	
 
@@ -341,8 +357,15 @@ public class WindowState : Object
 		// editor.save...
 
 		this.code_editor.save.connect( () => {
-			 this.left_tree.model.file.save();
-			 this.left_tree.model.updateSelected();
+			this.left_tree.model.file.save();
+			this.left_tree.model.updateSelected();
+			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
+				   this.window_rooview.requestRedraw();
+			} else {
+				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
+			}
+			 // we do not need to call spawn... - as it's already called by the editor?
+			 
 		});
 		
 	}
@@ -371,7 +394,7 @@ public class WindowState : Object
 		this.clutterfiles = new Xcls_ClutterFiles();
 		this.clutterfiles.ref();
 		stage.add_child(this.clutterfiles.el);
-		this.clutterfiles.el.show_all();
+		this.clutterfiles.el.show();
 
 
 		this.clutterfiles.open.connect((file) => { 
@@ -435,8 +458,13 @@ public class WindowState : Object
 		this.win.setTitle(file.project.name + " : " +file.name);
 			 
 
-		}
-
+	}
+	public void fileViewOpenPlain(string file)
+	{
+		
+		this.switchState (State.CODEONLY); 
+		
+	}
 	
 	// ---------  webkit view
 	public void webkitViewInit()
@@ -482,6 +510,12 @@ public class WindowState : Object
 	public void switchState(State new_state)
 	{
 		
+		// if the new state and the old state are the same..
+		
+		if (new_state == this.state) {
+			return;
+		}
+		
 		// save the easing state of everything..
 		this.easingSaveAll();
 		
@@ -507,13 +541,24 @@ public class WindowState : Object
 				 break;
 				
 			case State.CODE:
-
-
 				this.code_editor.saveContents();
 			  
 				this.win.codeeditview.el.set_scale(0.0f,0.0f);
-				 break;
-
+				break;
+				
+			case State.CODEONLY:
+				// going from codeonly..
+				this.win.leftpane.el.show();
+				// enable re-calc of canvas..
+			    while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
+				//this.code_editor.saveContents(); << not yet...
+				 
+				this.win.rooview.el.show(); 
+				this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				 
+				break;
 
 			 case State.OBJECT:
 			   
@@ -528,19 +573,24 @@ public class WindowState : Object
 				this.win.projecteditview.el.set_scale(0.0f,0.0f);
 				 break;
 
-		  case State.FILES:
+		  case State.FILES: // goes to preview or codeonly...
 				// hide files...
 				
-				this.win.rooview.el.show_all();
+				if (new_state == State.CODEONLY) {
+					this.win.rooview.el.hide();
+				} else {
+					this.win.rooview.el.show();
+				}
+				
 				this.win.rooview.el.set_easing_duration(1000);
 				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
 				this.win.rooview.el.set_scale(1.0f,1.0f);
 				this.win.rooview.el.set_pivot_point(0.5f,0.5f);
 				this.win.rooview.el.set_opacity(0xff);
-			   
+				
 				
 			   
-				 this.clutterfiles.el.set_easing_duration(1000);
+				this.clutterfiles.el.set_easing_duration(1000);
 				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
 				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
 				this.clutterfiles.el.set_opacity(0);
@@ -605,7 +655,7 @@ public class WindowState : Object
 				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				  
 				this.win.addpropsview.el.set_scale(1.0f,1.0f);
-				 break;
+				break;
 		   
 			case State.OBJECT:
 				 var n = this.left_tree.getActiveElement();
@@ -631,23 +681,41 @@ public class WindowState : Object
 
 				
 			  
-			
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				this.win.objectview.el.set_scale(1.0f,1.0f);
 				 
 				break;
 		   
 		   
 			case State.CODE:
-
+				this.win.codeeditview.el.show();
 				this.code_editor.el.show_all();
-				
 				// caller needs to call editor - show....
-				  
- 
-				 this.win.codeeditview.el.set_scale(1.0f,1.0f);
-				 break;
+				this.win.codeeditview.el.set_scale(1.0f,1.0f);
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 
+				break;
 
+			case State.CODEONLY:
+				// going to codeonly..
+				this.win.codeeditview.el.show();
+				// recalc canvas...
+				while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
+				
+				this.win.leftpane.el.hide();
+				this.win.codeeditview.el.show();
+				//while (Gtk.events_pending()) { 
+				//	Gtk.main_iteration();
+				//}
+				
+				
+				this.code_editor.el.show_all();
+			    
+				this.win.codeeditview.el.set_scale(1.0f,1.0f);
+				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
+				break;
 
 		   case State.PROJECT:
 
@@ -666,33 +734,35 @@ public class WindowState : Object
 			   
 				break;
 				
-		   case State.FILES:  // can only get here from PREVIEW state.. in theory..
+		   case State.FILES:  // can only get here from PREVIEW (or code-only) state.. in theory..
 				
    
 				this.win.editpane.el.hide(); // holder for tree and properties..
-			 
+				
 				this.left_projects.el.show(); 
-			
-				 this.win.rooview.el.set_easing_duration(1000);
+				
+				// rotate the preview to hidden...
+				this.win.rooview.el.set_easing_duration(1000);
 				this.win.rooview.el.set_pivot_point(0.5f,0.5f);
 				this.win.rooview.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
 				this.win.rooview.el.set_opacity(0);
-				//el.set_scale(0.0f,0.0f);
-
- 
+			 
+				
+				
+	 
 				if (this.win.project != null) {
 					this.left_projects.selectProject(this.win.project);
 				}
 			 
 				
-				this.clutterfiles.el.show_all();
+				this.clutterfiles.el.show();
 				 
 				this.clutterfiles.el.set_easing_duration(1000);
 				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
 				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
 				this.clutterfiles.el.set_opacity(0xff);
 				
-				
+				 
 				
 				break;
 
@@ -700,6 +770,8 @@ public class WindowState : Object
 		}
 		this.resizeCanvasElements();
 		this.easingRestoreAll();
+		
+		// run the animation.. - then load files...
 		
 			
 	}
@@ -761,6 +833,7 @@ public class WindowState : Object
 		
 		switch ( this.state) {
 			case State.PREVIEW:
+				 
 				this.win.rooview.el.set_size(alloc.width-50, alloc.height);
 				break;
 	
@@ -774,6 +847,7 @@ public class WindowState : Object
 		
 			   // this.win.rooview.el.save_easing_state();
 				//this.win.rooview.el.set_size(alloc.width / 2.0f, alloc.height / 2.0f);
+				 
 				this.win.rooview.el.set_scale(0.5f, 0.5f);
 				//this.win.rooview.el.restore_easing_state();
 				break;
@@ -787,6 +861,14 @@ public class WindowState : Object
 			   // this.win.rooview.el.restore_easing_state();
 				break;
 				
+			case State.CODEONLY: 
+				this.win.codeeditview.el.set_size(codesize, alloc.height);
+				var scale = avail > 0.0f ? (avail - codesize -10 ) / avail : 0.0f;
+				//this.win.rooview.el.save_easing_state();
+				this.win.rooview.el.hide(); 
+				this.win.rooview.el.set_scale(scale,scale);
+			   // this.win.rooview.el.restore_easing_state();
+				break;	
 			case State.PROP:
 			case State.LISTENER:
 				 this.win.addpropsview.el.set_size(palsize, alloc.height);
@@ -842,6 +924,9 @@ public class WindowState : Object
 				this.win.addlistenerbutton.el.show(); 
 				break;
 			
+			case State.CODEONLY: 
+				this.win.projectbutton.el.show();
+				break;
 		   
 			case State.CODE: 
 			case State.PROP:
@@ -873,9 +958,54 @@ public class WindowState : Object
 				
 				break;
 		}
+		
+		
 
 	}
+	
+	
+	public void valaCompiled(Json.Object obj)
+		{
+			// vala has finished compiling...
+			print("vala compiled");
+			
+			var buf = this.code_editor.buffer;
+			buf.check_running = false;
+			              
+			if (obj.has_member("ERR-TOTAL")) {
+				 this.win.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
+			} else {
+				 this.win.statusbar_errors.setNotices( new Json.Object() , 0);
+			}    
+			
+			if (obj.has_member("WARN-TOTAL")) {
 
+				 this.win.statusbar_warnings.setNotices(obj.get_object_member("WARN"), (int) obj.get_int_member("WARN-TOTAL"));
+			} else {
+				 this.win.statusbar_warnings.setNotices( new Json.Object() , 0);
+				 
+			}
+			if (obj.has_member("DEPR-TOTAL")) {
+				
+				 this.win.statusbar_depricated.setNotices( obj.get_object_member("DEPR"),  (int) obj.get_int_member("DEPR-TOTAL"));
+				 
+			} else {
+				this.win.statusbar_depricated.setNotices( new Json.Object(),0);
+			}
+			
+			buf.highlightErrorsJson("ERR", obj);
+			buf.highlightErrorsJson("WARN", obj);
+			buf.highlightErrorsJson("DEPR", obj);
+			
+			var gbuf =   this.window_gladeview.sourceview;
+			gbuf.highlightErrorsJson("ERR", obj);
+			gbuf.highlightErrorsJson("WARN", obj);
+			gbuf.highlightErrorsJson("DEPR", obj);			
+			
+			this.last_compile_result = obj;
+			
+			
+		}
 	
 }
 
