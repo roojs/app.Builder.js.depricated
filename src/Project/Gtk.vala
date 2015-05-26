@@ -218,7 +218,7 @@ namespace Project {
 					if (ret.index_of( vv) > -1) {
 						continue;
 					}
-					ret.add(cfiles.get(i));
+					ret.add(fn);
 				}
 						
 				       
