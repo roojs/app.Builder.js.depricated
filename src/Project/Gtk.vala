@@ -293,6 +293,7 @@ namespace Project {
 					if (Regex.match_simple("\\.vala$", fn)) {
 						var vv = (new Regex("\\.vala$")).replace( fn, fn.length, 0, ".bjs");
 						if (allfiles.index_of( vv) > -1) {
+							GLib.debug("SKIP %s - .vala (got bjs)",fn);
 							continue;
 						}
 						
