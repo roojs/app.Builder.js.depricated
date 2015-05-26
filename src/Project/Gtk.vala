@@ -246,7 +246,10 @@ namespace Project {
 				ret.add(fn);
 			}
 			// sort.
-			
+			ret.sort((fa,fb) => {
+				return ((string)fa).collate(string) fb);
+			});
+			return ret;
 			
 		}
 		
