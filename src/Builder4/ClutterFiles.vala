@@ -96,7 +96,7 @@ public class Xcls_ClutterFiles : Object
          
         for(var i =0 ; i < items.size; i++) {
             print ("cheking folder %s\n", items.get(i));
-             var files = gpr.files(items.get(i));
+             var files = gpr.filesForOpen(items.get(i));
              if (files.size < 1) {
                 continue;
              }
