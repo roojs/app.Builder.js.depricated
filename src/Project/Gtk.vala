@@ -268,19 +268,26 @@ namespace Project {
 				try {
 					
 					if (Regex.match_simple("\\.vala\\.c$", fn)) {
+						GLib.debug("SKIP %s - vala.c",fn);
+
 						continue;
 					}
 					
 					if (Regex.match_simple("\\.bjs$", fn)) {
+						GLib.debug("SKIP %s - .bjs",fn);
 						continue;
 					}
 					if (Regex.match_simple("\\.o$", fn)) {
+						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
 					if (Regex.match_simple("\\~$", fn)) {
+						GLib.debug("SKIP %s - ~",fn);
 						continue;
 					}
+					
 					if (Regex.match_simple("^\\.", GLib.Path.get_basename(fn))) {
+						GLib.debug("SKIP %s - hidden",fn);
 						continue;
 					}
 					if (Regex.match_simple("\\.vala$", fn)) {
