@@ -210,7 +210,7 @@ namespace Project {
 		
 		public Gee.ArrayList<string> filesForCompile(string in_path)
 		{
-			var allfiles = this.filesAll();
+			var allfiles = this.filesAll(in_path);
 			var ret =  new Gee.ArrayList<string>();
 			
 			
@@ -257,12 +257,12 @@ namespace Project {
 		
 		public Gee.ArrayList<string> filesForOpen(string in_path)
 		{
-			var allfiles = this.filesAll();
+			var allfiles = this.filesAll(in_path);
 			var ret =  new Gee.ArrayList<string>();
 			
 			
 			for (var i = 0; i < allfiles.size; i ++) {
-				var fn = cfiles.get(i);
+				var fn = allfiles.get(i);
 				try {
 					
 					if (Regex.match_simple("\\.vala\\.c$", fn)) {
@@ -274,7 +274,7 @@ namespace Project {
 					}
 					
 					if (Regex.match_simple("\\.vala$", fn)) {
-						var vv = (new Regex("\\.vala$")).replace( fn, fn, 0, ".bjs");
+						var vv = (new Regex("\\.vala$")).replace( fn, fn.length, 0, ".bjs");
 						if (allfiles.index_of( vv) > -1) {
 							continue;
 						}
@@ -287,7 +287,7 @@ namespace Project {
 					// not a c file...
 					if (Regex.match_simple("\\.c$", fn)) {
 						
-						var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+						var vv = (new Regex("\\.c$")).replace( fn, fn.length, 0, ".vala");
 						if (allfiles.index_of( vv) > -1) {
 							continue;
 						}
