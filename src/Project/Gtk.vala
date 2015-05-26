@@ -193,9 +193,9 @@ namespace Project {
 				while ((next_file = file_enum.next_file(null)) != null) {
 					var fn = next_file.get_display_name();
 					
-					
-					if (!GLib.FileUtils.test(in_path + "/" + fn, GLib.FileTest.IS_REGULAR)) {
-						GLib.debug("SKIP %s not regular %s", fn);
+					if (next_file.get_file_type () == GLib.FileType.DIRECTORY) {
+					 
+						GLib.debug("SKIP %s not regular  ", fn);
 						continue;
 					}
 					GLib.debug("SCAN ADD %s ", fn);
