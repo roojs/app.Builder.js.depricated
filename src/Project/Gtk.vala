@@ -210,7 +210,34 @@ namespace Project {
 		
 		public Gee.ArrayList<string> filesForCompile(string in_path)
 		{
+			var allfile = this.fileAll();
+			var ret =  new Gee.ArrayList<string>();
 			
+			
+			for (var i = 0; i < cfiles.size; i ++) {
+				var fn = cfiles.get(i);
+				if (Regex.match_simple("\\.vala$", fn)) {
+					ret.add( fn);
+					continue;
+				}
+				
+				// got a file that is not 
+				
+				vv = fn;
+				try {
+					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+				} catch (Error e) {
+					continue;
+				}
+				if (Regex.match_simple("\\.vala\\.c$", fn)) {
+						continue;
+					}	
+						
+				if (ret.index_of( vv) > -1) {
+					continue;
+				}
+				ret.add(fn);
+			}
 			
 		}
 		
@@ -270,8 +297,7 @@ namespace Project {
 			} catch(Error e) {
 				GLib.warning("oops - something went wrong scanning the projects\n");
 			}	
-			
-			if 
+			 
 				 
 				// add the cfiles to ret - if they do not have a vala...
 			for (var i = 0; i < cfiles.size; i ++) {
