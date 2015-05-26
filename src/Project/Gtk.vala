@@ -291,10 +291,16 @@ namespace Project {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
-					if (Regex.match_simple("stamp-h1$",  GLib.Path.get_basename(fn))) {
+					if ("stamp-h1" == GLib.Path.get_basename(fn))) {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
+					if ("config.h" == GLib.Path.get_basename(fn))) {
+						if (allfiles.index_of( in_path +"/configure.am") > -1) {
+							continue;
+						}
+					}
+					
 					
 					if (Regex.match_simple("^\\.", GLib.Path.get_basename(fn))) {
 						GLib.debug("SKIP %s - hidden",fn);
