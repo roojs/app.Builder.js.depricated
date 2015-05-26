@@ -222,11 +222,10 @@ namespace Palete {
 			args +=  project.fn;
 			args += "--target";
 			args += gproj.firstBuildModule();
-	`		args += "--add-file";
+			args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
 			args += filename;
-			
 			 
 			
 			this.compiler = new Spawn("/tmp", args);
