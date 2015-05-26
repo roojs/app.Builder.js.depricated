@@ -210,7 +210,7 @@ namespace Project {
 		
 		public Gee.ArrayList<string> filesForCompile(string in_path)
 		{
-			var allfile = this.fileAll();
+			var allfiles = this.filesAll();
 			var ret =  new Gee.ArrayList<string>();
 			
 			
@@ -249,7 +249,7 @@ namespace Project {
 			}
 			// sort.
 			ret.sort((fa,fb) => {
-				return ((string)fa).collate(string) fb);
+				return ((string)fa).collate((string) fb);
 			});
 			return ret;
 			
@@ -257,7 +257,7 @@ namespace Project {
 		
 		public Gee.ArrayList<string> filesForOpen(string in_path)
 		{
-			var allfiles = this.fileAll();
+			var allfiles = this.filesAll();
 			var ret =  new Gee.ArrayList<string>();
 			
 			
@@ -309,7 +309,7 @@ namespace Project {
 			}
 			// sort.
 			ret.sort((fa,fb) => {
-				return ((string)fa).collate(string) fb);
+				return ((string)fa).collate((string) fb);
 			});
 			return ret;
 			
