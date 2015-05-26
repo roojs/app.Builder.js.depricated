@@ -183,7 +183,7 @@ namespace Project {
 	   
 			try {
 				var file_enum = dir.enumerate_children(
-					GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
+					"standard::*", 
 					GLib.FileQueryInfoFlags.NONE, 
 					null
 				);
@@ -198,7 +198,10 @@ namespace Project {
 						GLib.debug("SKIP %s not regular  ", fn);
 						continue;
 					}
-					GLib.debug("SCAN ADD %s : %s", fn, fn.get_content_type());
+					if (Regex.match_simple("^text\/", next_file.get_content_type()) {
+						continue;
+					}
+					GLib.debug("SCAN ADD %s : %s", fn, next_file.get_content_type());
 					ret.add(in_path + "/" + fn);
 					 
 					// any other valid types???
