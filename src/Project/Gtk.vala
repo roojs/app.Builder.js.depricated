@@ -270,6 +270,7 @@ namespace Project {
 			
 			for (var i = 0; i < allfiles.size; i ++) {
 				var fn = allfiles.get(i);
+				var bn  = GLib.Path.get_basename(fn);
 				try {
 					
 					if (Regex.match_simple("\\.vala\\.c$", fn)) {
@@ -291,11 +292,13 @@ namespace Project {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
-					if ("stamp-h1" == GLib.Path.get_basename(fn))) {
+					if ("stamp-h1" == bn)) {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
-					if ("config.h" == GLib.Path.get_basename(fn))) {
+					
+					// confgure.am
+					if ("config.h" == bn || "config.h.in" == bn || "config.log" == bn  || "configure" == bn ) {
 						if (allfiles.index_of( in_path +"/configure.am") > -1) {
 							continue;
 						}
