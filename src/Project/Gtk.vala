@@ -229,7 +229,7 @@ namespace Project {
 					continue;
 				}
 				
-				// got a file that is not 
+				// is the c file the same as a vala file...
 				
 				var vv = fn;
 				try {
