@@ -216,24 +216,29 @@ namespace Project {
 	    			
 				}
 				
-				
+			} catch(Error e) {
+				GLib.warning("oops - something went wrong scanning the projects\n");
+			}	
 				 
 				// add the cfiles to ret - if they do not have a vala...
-				for (var i = 0; i < cfiles.size; i ++) {
-					
-					var fn = cfiles.get(i);
-					var vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
-							
-					if (ret.index_of( vv) > -1) {
-						continue;
-					}
-					ret.add(fn);
+			for (var i = 0; i < cfiles.size; i ++) {
+				
+				var fn = cfiles.get(i);
+				vv = fn;
+				try {
+					vv = (new Regex("\\.c$")).replace( fn, fn, 0, ".vala");
+				} catch (Error e) {
+					continue;
 				}
+					
 						
-				       
-   			} catch(Error e) {
-				GLib.warning("oops - something went wrong scanning the projects\n");
+				if (ret.index_of( vv) > -1) {
+					continue;
+				}
+				ret.add(fn);
 			}
+						
+			 
 			GLib.debug("SCAN %s = returning %d", dirname, ret.size);
 			 
 			return ret;
