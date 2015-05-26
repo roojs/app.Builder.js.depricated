@@ -191,7 +191,7 @@
            "listeners" : {
             "button_press_event" : "  (  event) => {\n   // _this.open(this.filepath);\n    return false;\n} ",
             "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.el.color =  Clutter.Color.from_string(\"#000\");\n        return false;\n}",
-            "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n    return false;\n}"
+            "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
            "id" : "*folderfile",
