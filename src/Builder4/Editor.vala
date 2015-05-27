@@ -90,8 +90,9 @@ public class Editor : Object
             } else {
                  this.node.props.set(key,str);
             }
-        }
-         
+        } else {
+            _this.file.contents = str;
+         }
         
         // call the signal..
         this.save();
