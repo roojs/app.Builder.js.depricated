@@ -560,6 +560,7 @@ public class Editor : Object
                  valafn = "";
                   try {             
                        var  regex = new Regex("\\.bjs$");
+                       // should not happen
                         if (_this.file == null) {
                             return true;
                         }
