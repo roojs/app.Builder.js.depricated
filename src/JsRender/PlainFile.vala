@@ -25,8 +25,8 @@ namespace JsRender {
             this.xtype = "PlainFile";
             
             var f = File.new_for_path (path) ;
-            var info = file.query_info ("standard::*", 0);
-            
+            var info = f.query_info ("standard::*", 0);
+            var ct = info.get_content_type();
             // fixme...
             this.language = "vala";
             
