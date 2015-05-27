@@ -13,7 +13,7 @@
    "@ bool before_node_change" : "(JsRender.Node? node)",
    "$ shadow_type" : "Gtk.ShadowType.IN",
    "* init" : " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
-   "|           JsRender.JsRender getActiveFile" : "() {\n    return this.model.file;\n}\n",
+   "|           JsRender.JsRender getActiveFile" : "() {\n    return this.main_window.windowstate.file;\n}\n",
    "* pack" : "add",
    "xtype" : "ScrolledWindow",
    "@ void changed" : "()",

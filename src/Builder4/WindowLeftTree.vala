@@ -56,7 +56,7 @@ public class Xcls_WindowLeftTree : Object
          
     }
     public           JsRender.JsRender getActiveFile () {
-        return this.model.file;
+        return this.main_window.windowstate.file;
     }
     public           string getActivePath () {
         
