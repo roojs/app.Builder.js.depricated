@@ -278,6 +278,10 @@ namespace JsRender {
 		    
 		    
 			var ret = new Json.Object();
+			if (this.xtype == "PlainFile") {
+				return ret;
+			}
+			
 			//ret.set_string_member("id", this.id); // not relivant..
 			ret.set_string_member("name", this.name);
 			ret.set_string_member("parent", this.parent == null ? "" : this.parent);
