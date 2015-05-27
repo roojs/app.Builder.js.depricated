@@ -124,7 +124,7 @@ public class WindowState : Object
 	 
 		this.left_tree.changed.connect(() => {
 			
-			this.left_tree.model.file.save();
+			this.file.save();
 			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 				   this.window_rooview.requestRedraw();
 			} else {
@@ -242,9 +242,9 @@ public class WindowState : Object
 				  this.window_gladeview.loadFile(this.left_tree.getActiveFile());
 			}
 			this.left_tree.model.updateSelected();
-			this.left_tree.model.file.save();
-			if (this.left_tree.model.file.xtype=="Gtk") {
-				this.valasource.checkFileSpawn(this.left_tree.model.file);
+			this.file.save();
+			if (this.file.xtype=="Gtk") {
+				this.valasource.checkFileSpawn(this.file);
 			}
 		});
 	
@@ -363,7 +363,7 @@ public class WindowState : Object
 		// editor.save...
 
 		this.code_editor.save.connect( () => {
-			this.left_tree.model.file.save();
+			this.file.save();
 			this.left_tree.model.updateSelected();
 			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 				   this.window_rooview.requestRedraw();
@@ -676,7 +676,7 @@ public class WindowState : Object
 			case State.OBJECT:
 				 var n = this.left_tree.getActiveElement();
 
-				if (this.left_tree.model.file == null) {
+				if (this.file == null) {
 					this.state =oldstate;
 					this.buttonsShowHide();
 					this.resizeCanvasElements();
@@ -684,7 +684,7 @@ public class WindowState : Object
 					return;
 				}
 				
-				if (n == null && this.left_tree.model.file.tree != null) {
+				if (n == null && this.file.tree != null) {
 					this.state = oldstate;
 					this.buttonsShowHide();
 					this.resizeCanvasElements();
