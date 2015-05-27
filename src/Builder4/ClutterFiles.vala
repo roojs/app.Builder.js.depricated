@@ -810,8 +810,8 @@ public class Xcls_ClutterFiles : Object
             //listeners
             this.el.button_press_event.connect( (  event) => {
                 
-              
-               // _this.open(this.filepath);
+               var f = JsRender.JsRender.factory(_this.project, this.filepath);
+                _this.open(f);
                 return false;
             });
             this.el.enter_event.connect( (  event)  => {
