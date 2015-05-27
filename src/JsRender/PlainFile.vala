@@ -65,50 +65,7 @@ namespace JsRender {
         
 		public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
 		{
-		  
-			print("load Items!");
-			if (this.tree != null) {
-				return;
-			}
-			
-			print("load: " + this.path);
-
-
-			var pa = new Json.Parser();
-			pa.load_from_file(this.path);
-			var node = pa.get_root();
-			
-			if (node.get_node_type () != Json.NodeType.OBJECT) {
-				throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
-			}
-			var obj = node.get_object ();
-			
-			this.name = obj.get_string_member("name");
-			this.parent = obj.get_string_member("parent");
-			this.title = obj.get_string_member("title");
-			
-			if (obj.has_member("build_module")) { // should check type really..
-				this.build_module = obj.get_string_member("build_module");
-			}
-			 
-			// load items[0] ??? into tree...
-			var bjs_version_str = this.jsonHasOrEmpty(obj, "bjs-version");
-			bjs_version_str = bjs_version_str == "" ? "1" : bjs_version_str;
-
-			if (obj.has_member("items") 
-				&& 
-				obj.get_member("items").get_node_type() == Json.NodeType.ARRAY
-				&&
-				obj.get_array_member("items").get_length() > 0
-			) {
-				var ar = obj.get_array_member("items");
-				var tree_base = ar.get_object_element(0);
-				this.tree = new Node();
-				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
-
-			}
-			NodeToVala.mungeFile(this); // force line numbering..
-			
+		   return;
 		}
          
         
