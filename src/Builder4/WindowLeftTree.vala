@@ -77,8 +77,8 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public string dragData;
-        public string[] dropList;
         public int drag_x;
+        public string[] dropList;
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
@@ -174,6 +174,50 @@ public class Xcls_WindowLeftTree : Object
                  //   print("click:" + res.path.to_string());
                   return true;
             });
+            this.el.drag_begin.connect( ( ctx)  => {
+            	//print('SOURCE: drag-begin');
+                    
+                    
+                    //this.targetData = "";
+                    
+                    // find what is selected in our tree...
+                    
+                    var s = _this.view.el.get_selection();
+                    if (s.count_selected_rows() < 1) {
+                        return;
+                    }
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    s.get_selected(out mod, out iter);
+            
+                    
+            
+                    // set some properties of the tree for use by the dropped element.
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    var tp = mod.get_path(iter).to_string();
+                    var data = (JsRender.Node)(value.dup_object());
+                    var xname = data.fqn();
+                    print ("XNAME  IS " + xname+ "\n");
+                    this.dragData = tp;
+                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
+                    
+            
+                    // make the drag icon a picture of the node that was selected
+                
+                    
+                // by default returns the path..
+                   var path = _this.model.el.get_path(iter);
+            
+                     
+                    var pix = this.el.create_row_drag_icon ( path);
+                    
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
+                    
+                    return;
+            });
             this.el.cursor_changed.connect( ( ) => {
             
             
@@ -247,50 +291,6 @@ public class Xcls_WindowLeftTree : Object
                 //Seed.print( value.get_string());
                 return  ;
                             
-            });
-            this.el.drag_begin.connect( ( ctx)  => {
-            	//print('SOURCE: drag-begin');
-                    
-                    
-                    //this.targetData = "";
-                    
-                    // find what is selected in our tree...
-                    
-                    var s = _this.view.el.get_selection();
-                    if (s.count_selected_rows() < 1) {
-                        return;
-                    }
-                    Gtk.TreeIter iter;
-                    Gtk.TreeModel mod;
-                    s.get_selected(out mod, out iter);
-            
-                    
-            
-                    // set some properties of the tree for use by the dropped element.
-                    GLib.Value value;
-                    _this.model.el.get_value(iter, 2, out value);
-                    var tp = mod.get_path(iter).to_string();
-                    var data = (JsRender.Node)(value.dup_object());
-                    var xname = data.fqn();
-                    print ("XNAME  IS " + xname+ "\n");
-                    this.dragData = tp;
-                    this.dropList = _this.model.file.palete().getDropList(xname);
-                    
-                    print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
-                    
-            
-                    // make the drag icon a picture of the node that was selected
-                
-                    
-                // by default returns the path..
-                   var path = _this.model.el.get_path(iter);
-            
-                     
-                    var pix = this.el.create_row_drag_icon ( path);
-                    
-                    Gtk.drag_set_icon_surface (ctx, pix) ;
-                    
-                    return;
             });
             this.el.drag_end.connect( (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
@@ -892,13 +892,7 @@ public class Xcls_WindowLeftTree : Object
             this.el.clear();
             this.file = f;
             
-            
-        //    if (!f) {
-        //        console.log('missing file');
-        //        return;
-        //    }
-            
-            // load the file if not loaded..
+           
             if (f.tree == null) {
                 f.loadItems( );
             }
@@ -906,18 +900,7 @@ public class Xcls_WindowLeftTree : Object
             if (f.tree == null) {
                 return;
             }
-            
-            /// this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
-            
-            //if (f.items.length && typeof(f.items[0]) == 'string') {
-            
-                //this.get('/RightEditor').el.show();
-                //this.get('/RightEditor.view').load( f.items[0]);
-            //    return;
-            //}
-            //print("LOAD");
-            //print(JSON.stringify(f.items, null,4));
-            //console.dump(f.items);
+          
             var o = new Gee.ArrayList<JsRender.Node>();
             o.add(f.tree);
             this.load(o,null);
@@ -938,37 +921,7 @@ public class Xcls_WindowLeftTree : Object
             }
             
             return;
-            /*    
-            
-            //print("hide right editior");
-            //this.get('/RightEditor').el.hide();
-            //this.get('/Editor').el.hide();
-            //print("set current tree");
-            //this.currentTree = this.toJS(false, false)[0];
-            //console.dump(this.currentTree);
-            //this.currentTree = this.currentTree || { items: [] };
-            //_this.renderView();
-            //console.dump(this.map);
-            //var RightPalete     = imports.Builder.RightPalete.RightPalete;
-            
-            
-            var pm = this.get('/RightPalete.model');
-            // set up provider..
-            
-            this.get('/RightPalete').provider = this.get('/LeftTree').getPaleteProvider();
-            
-            if (!this.get('/RightPalete').provider) {
-                print ("********* PALETE PROVIDER MISSING?!!");
-            }
-            this.get('/LeftTree').renderView();
-            
-            pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(this.listAllTypes()));
-            
-            
-                    
-            this.get('/Window.view-notebook').el.set_current_page(
-                this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
-                */
+         
                     
         }
         public    void updateSelected () {
