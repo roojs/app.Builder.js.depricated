@@ -577,7 +577,7 @@ public class Xcls_WindowLeftTree : Object
                      
                     // dropList --- need to gather this ... 
                     print("get dropList for : %s\n",dropNodeType);            
-                    var dropList = _this.model.file.palete().getDropList(dropNodeType);
+                    var dropList = _this.main_window.windowstate.file.palete().getDropList(dropNodeType);
                     
                     print("dropList: %s\n", string.joinv(" , ", dropList));
                     
