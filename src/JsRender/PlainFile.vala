@@ -24,6 +24,8 @@ namespace JsRender {
             base( project, path);
             this.xtype = "PlainFile";
             
+            var f = File.new_for_path (path) ;
+            var info = file.query_info ("standard::*", 0);
             
             // fixme...
             this.language = "vala";
@@ -56,20 +58,20 @@ namespace JsRender {
         },
         */
 
-		public   override void	 removeFiles() {
-			if (FileUtils.test(this.path, FileTest.EXISTS)) {
-				GLib.FileUtils.remove(this.path);
-			}
-			 
+	public   override void	 removeFiles() {
+		if (FileUtils.test(this.path, FileTest.EXISTS)) {
+			GLib.FileUtils.remove(this.path);
 		}
-        
-		public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
-		{
-		   
-		   GLib.FileUtils.get_contents(this.path, out this.contents);
-		   
-		}
-         
+		 
+	}
+    
+	public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
+	{
+	   
+	   GLib.FileUtils.get_contents(this.path, out this.contents);
+	   
+	}
+     
         
 		
         public override string toSourcePreview()
