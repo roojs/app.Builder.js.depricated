@@ -83,6 +83,7 @@ builder4_SOURCES = \
 		Main.vala \
 		Spawn.vala \
 		JsRender/Gtk.vala \
+		JsRender/PlainFile.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
 		JsRender/NodeToGlade.vala \
