@@ -146,16 +146,18 @@ public class FakeServerCache : Object
 			this.size = 0;
 			return;
 		}
-		var info = file.query_info(
-				 "standard::*",
-				FileQueryInfoFlags.NONE
-		);
-		this.content_type = info.get_content_type();
-		this.size = info.get_size();
-		uint8[] data;
-		size_t length;
 		try { 
-			GLib.FileUtils.get_data(file.get_path(), out data);
+		    var info = file.query_info(
+				     "standard::*",
+				    FileQueryInfoFlags.NONE
+		    );
+		    this.content_type = info.get_content_type();
+		    this.size = info.get_size();
+		    uint8[] data;
+		    size_t length;
+	
+		    GLib.FileUtils.get_data(file.get_path(), out data);
+		    this.data = data;
 		} catch (Error e) {
 			this.data = "".data;
 			this.size = 0;
@@ -163,7 +165,7 @@ public class FakeServerCache : Object
 			return;
 		}
 
-		this.data = data;
+		
 
 		print("FakeServerCache :%s, %s (%s/%d)\n", fname , 
 			this.content_type, this.size.to_string(), this.data.length);
