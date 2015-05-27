@@ -126,21 +126,34 @@ public class Editor : Object
     }
     public   void show (JsRender.JsRender file, JsRender.Node node, string ptype, string key)
     {
-        this.ptype = ptype;
-        this.key  = key;
-        this.node = node;
-        this.file = file;
+        this.file = file;    
+        this.ptype = "";
+        this.key  = "";
+        this.node = null;
+    
         
-       string val = "";
-        // find the text for the node..
-        if (ptype == "listener") {
-            val = node.listeners.get(key);
+        if (file.xtype != "PlainFile") {
+        
+            this.ptype = ptype;
+            this.key  = key;
+            this.node = node;
+             string val = "";
+            // find the text for the node..
+            if (ptype == "listener") {
+                val = node.listeners.get(key);
+            
+            } else {
+                val = node.props.get(key);
+            }
+            this.view.load(val);
+            this.key_edit.el.text = key;  
         
         } else {
-            val = node.props.get(key);
+            this.view.load(        file.toSource() );
         }
-        this.view.load(val);
-        this.key_edit.el.text = key;    
+    
+        
+        
     
     }
     public class Xcls_Box2 : Object
