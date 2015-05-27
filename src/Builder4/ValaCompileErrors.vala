@@ -315,7 +315,9 @@ public class Xcls_ValaCompileErrors : Object
                     return false;
                 
                 }
-                _this.window.windowstate.fileViewOpenPlain(fname);
+                
+                var pf = JsRender.JsRender.factory("PlainFile", p, fname);
+                _this.window.windowstate.fileViewOpen(pf);
                 
                 // try hiding the left nav..
              
