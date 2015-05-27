@@ -473,17 +473,7 @@ public class WindowState : Object
 			 
 
 	}
-	public void fileViewOpenPlain(Project proj, string file)
-	{
-		this.win.project = proj;
-		this.switchState (State.CODEONLY); 
-		if (project.xtype == "Roo" ) {
-			this.projectsettings.el.show_all();   
-		} else {
-			this.vala_projectsettings.el.show_all();
-	
-			
-	}
+	 
 	
 	// ---------  webkit view
 	public void webkitViewInit()
