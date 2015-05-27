@@ -112,17 +112,17 @@ public class FakeServerCache : Object
 			this.size = 0;
 			return;
 		}
+		try {
+		    var info = file.query_info(
+				     "standard::*",
+				    FileQueryInfoFlags.NONE
+		    );
 		
-		var info = file.query_info(
-				 "standard::*",
-				FileQueryInfoFlags.NONE
-		);
-		
-		this.content_type = info.get_content_type();
-		this.size = info.get_size();
-		uint8[] data;
-		size_t length;
-		try { 
+		    this.content_type = info.get_content_type();
+		    this.size = info.get_size();
+		    uint8[] data;
+		     
+		     
 			GLib.FileUtils.get_data(file.get_path(), out data);
 		} catch (Error e) {
 			this.data = "".data;
