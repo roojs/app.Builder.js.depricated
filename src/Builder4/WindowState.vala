@@ -26,6 +26,12 @@ public class WindowState : Object
 	public bool children_loaded = false;
 
 	
+	
+	public Project.Project project;
+	public JsRender.JsRender file;
+	
+	
+	
 	public Xcls_WindowLeftTree  left_tree;
 	public Xcls_WindowAddProp   add_props;
 	public Xcls_LeftProps       left_props;
