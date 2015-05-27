@@ -61,7 +61,8 @@
             "../Builder4/PopoverFileDetails.vala",
             "../../src/Spawn.vala",
             "../Builder4/ValaCompileErrors.vala",
-            "../Palete/ValaSourceCompiler.vala"
+            "../Palete/ValaSourceCompiler.vala",
+            "../JsRender/PlainFile.vala"
         ],
         "packages" : [
         ]
