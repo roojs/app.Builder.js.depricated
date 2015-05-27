@@ -544,11 +544,13 @@ public class Editor : Object
             
             
             var err = obj.get_object_member(type);
-            var valafn = _this.file.path;
+            
+            
             if (_this.file == null) {
                 return;
-            }
             
+            }
+            var valafn = _this.file.path;
             if (_this.file.xtype != "PlainFile") {
         
         
