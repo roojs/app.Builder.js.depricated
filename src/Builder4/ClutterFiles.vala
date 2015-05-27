@@ -57,6 +57,9 @@ public class Xcls_ClutterFiles : Object
     public  void loadProject (Project.Project pr) {
         // list all the files, and create new Xcls_fileitem for each one.
         
+        this.project = pr;
+        
+        
         // LEAK --- we should unref all the chilren...
         this.filelayout.el.y = 0;
         this.clearFiles();
