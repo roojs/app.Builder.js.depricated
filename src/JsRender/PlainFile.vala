@@ -28,19 +28,10 @@ namespace JsRender {
             // fixme...
             this.language = "vala";
             
-            
-            //this.items = false;
-            //if (cfg.json) {
-            //    var jstr =  JSON.parse(cfg.json);
-            //    this.items = [ jstr ];
-            //    //console.log(cfg.items.length);
-            //    delete cfg.json; // not needed!
-            // }
-             
-            
+          
             
             // super?!?!
-            this.id = "file-gtk-%d".printf(gid++);
+            this.id = "file-plain-%d".printf(gid++);
             //console.dump(this);
             // various loader methods..
 
