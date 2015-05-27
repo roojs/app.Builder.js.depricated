@@ -196,7 +196,7 @@ namespace Palete {
 		}
 		
 		 
-		public void checkPlainFileSpawn(Project.Project project, string filename, string contents )
+		public void checkPlainFileSpawn(Project.Project project, JsRender.JsRender ile, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
