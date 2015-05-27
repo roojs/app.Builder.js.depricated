@@ -22,7 +22,10 @@ namespace JsRender {
         public PlainFile(Project.Project project, string path) {
         
             base( project, path);
-            this.xtype = "Gtk";
+            this.xtype = "PlainFile";
+            
+            
+            // fixme...
             this.language = "vala";
             
             
