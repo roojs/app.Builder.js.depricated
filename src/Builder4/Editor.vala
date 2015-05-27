@@ -560,7 +560,9 @@ public class Editor : Object
                  valafn = "";
                   try {             
                        var  regex = new Regex("\\.bjs$");
-                    
+                        if (_this.file == null) {
+                            return true;
+                        }
                      
                         valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
                      } catch (GLib.RegexError e) {
