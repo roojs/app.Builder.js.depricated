@@ -292,7 +292,7 @@ namespace Project {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
-					if ("stamp-h1" == bn)) {
+					if ("stamp-h1" == bn) {
 						GLib.debug("SKIP %s - .o",fn);
 						continue;
 					}
@@ -310,7 +310,7 @@ namespace Project {
 						}
 					}
 					
-					if (Regex.match_simple("^\\.", GLib.Path.get_basename(fn))) {
+					if (Regex.match_simple("^\\.", bn)) {
 						GLib.debug("SKIP %s - hidden",fn);
 						continue;
 					}

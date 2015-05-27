@@ -16,7 +16,7 @@ AC_PROG_CC
 AM_PROG_VALAC([0.22.0])
 
 
-AC_CHECK_LIB([m])
+AC_CHECK_LIB([m],[cos])
 
 dnl we need to check these exist, then it will generate a compile string for them.
 
