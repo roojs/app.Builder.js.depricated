@@ -225,7 +225,7 @@ namespace Palete {
 			args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
-			args += filename;
+			args += file.path;
 			 
 			
 			this.compiler = new Spawn("/tmp", args);
