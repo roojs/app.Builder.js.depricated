@@ -434,6 +434,9 @@ public class WindowState : Object
 	public void fileViewOpen(JsRender.JsRender file)
 	{
 		this.win.project = file.project;
+		this.project = project;
+		this.file = file;
+		
 		
 		if (file.xtype == "PlainFile") {
 			this.switchState (State.CODEONLY); 
