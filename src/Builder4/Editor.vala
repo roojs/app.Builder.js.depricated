@@ -91,7 +91,7 @@ public class Editor : Object
                  this.node.props.set(key,str);
             }
         } else {
-            _this.file.contents = str;
+            _this.file.setSource(  str );
          }
         
         // call the signal..
