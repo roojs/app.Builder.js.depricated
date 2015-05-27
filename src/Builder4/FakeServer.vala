@@ -123,14 +123,15 @@ public class FakeServerCache : Object
 		    uint8[] data;
 		     
 		     
-			GLib.FileUtils.get_data(file.get_path(), out data);
+		    GLib.FileUtils.get_data(file.get_path(), out data);
+		    this.data = data
 		} catch (Error e) {
 			this.data = "".data;
 			this.size = 0;
 			this.content_type = "";
 			return;
 		}
-		this.data = data;
+		;
 
 	  
 	}
