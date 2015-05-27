@@ -74,30 +74,23 @@ public class Editor : Object
          
          var str = _this.buffer.toString();
          
-          
+         _this.buffer.checkSyntax();
          
          
-         if (!_this.buffer.checkSyntax()) {
-             print("check syntax failed");
-             //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-             //return false;
-         }
          
          // LeftPanel.model.changed(  str , false);
          _this.dirty = false;
          _this.save_button.el.sensitive = false;
          
-         
-            
-         
         // find the text for the node..
-        if (ptype == "listener") {
-            this.node.listeners.set(key,str);
-        
-        } else {
-             this.node.props.set(key,str);
+        if (_this.file.xtype != "PlainFile") {
+            if (ptype == "listener") {
+                this.node.listeners.set(key,str);
+            
+            } else {
+                 this.node.props.set(key,str);
+            }
         }
-    
          
         
         // call the signal..
