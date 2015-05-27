@@ -12,7 +12,7 @@ namespace JsRender {
 
 
  
-    int gid = 1;
+    int plid = 1;
 
   
     public  class PlainFile : JsRender
@@ -31,7 +31,7 @@ namespace JsRender {
 			this.contents = "";
             
             // super?!?!
-            this.id = "file-plain-%d".printf(gid++);
+            this.id = "file-plain-%d".printf(plid++);
             //console.dump(this);
             // various loader methods..
 
