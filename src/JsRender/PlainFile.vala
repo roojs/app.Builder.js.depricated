@@ -86,8 +86,8 @@ namespace JsRender {
         }
 		
         public override void save() {
+            this.writeFile(this.path, this.contents);
             
-            this.saveVala();
         }
 	    // ignore these calls.
         public override void saveHTML ( string html ) {}
@@ -100,56 +100,11 @@ namespace JsRender {
          * why is this not save...???
          * 
          */ 
-          
-        void saveJS()
-        {
-             
-            var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".js";
-            print("WRITE :%s\n " , fn);
-            this.writeFile(fn, this.toSource());
-            
-        }
-        
-       void  saveVala()
-        {
-    		if (this.tree == null) {
-			return;
-		}
-    		var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
-    		print("WRITE :%s\n " , fn);
-			this.writeFile(fn,  NodeToVala.mungeFile(this));
-            
-            
-        }
-		/*
-        valaCompileCmd : function()
-        {
-            
-            var fn = '/tmp/' + this.name + '.vala';
-            print("WRITE : " + fn);
-            File.write(fn, this.toVala(true));
-            
-            
-            
-            return ["valac",
-                   "--pkg",  "gio-2.0",
-                   "--pkg" , "posix" ,
-                   "--pkg" , "gtk+-3.0",
-                   "--pkg",  "libnotify",
-                   "--pkg",  "gtksourceview-3.0",
-                   "--pkg", "libwnck-3.0",
-                   fn ,   "-o", "/tmp/" + this.name];
-            
-           
-             
-            
-        },
-        */
-        
+         
    
         string getHelpUrl(string cls)
         {
-            return "http://devel.akbkhome.com/seed/" + cls + ".html";
+            return ""; 
         }
         public override void  findTransStrings(Node? node )
 		{
