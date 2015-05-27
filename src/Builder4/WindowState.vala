@@ -721,9 +721,9 @@ public class WindowState : Object
 				// going to codeonly..
 				this.win.codeeditview.el.show();
 				// recalc canvas...
-				while (Gtk.events_pending()) { 
-					Gtk.main_iteration();
-				}
+				//while (Gtk.events_pending()) { 
+				//	Gtk.main_iteration();
+				//}
 				
 				this.win.leftpane.el.hide();
 				this.win.codeeditview.el.show();
