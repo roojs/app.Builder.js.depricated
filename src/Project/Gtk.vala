@@ -202,7 +202,7 @@ namespace Project {
 						continue;
 					}
 					GLib.debug("SCAN ADD %s : %s", fn, next_file.get_content_type());
-					ret.add(in_path + "/" + fn);
+					ret.add(dirname + "/" + fn);
 					 
 					// any other valid types???
 	    			
