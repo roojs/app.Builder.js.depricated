@@ -363,6 +363,7 @@ namespace JsRender {
 		public abstract void save();
 		public abstract void saveHTML(string html);
 		public abstract string toSource() ;
+		public abstract string setSource() ;
 		public abstract string toSourcePreview() ;
 		public abstract void removeFiles() ;
 		 public abstract void  findTransStrings(Node? node );
