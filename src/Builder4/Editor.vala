@@ -24,7 +24,6 @@ public class Editor : Object
     public int pos_root_x;
     public int pos_root_y;
     public string ptype;
-    public string fname;
     public string key;
     public JsRender.JsRender file;
     public bool pos;
@@ -42,7 +41,6 @@ public class Editor : Object
         this.window = null;
         this.activeEditor = "";
         this.ptype = "";
-        this.fname = "";
         this.key = "";
         this.file = null;
         this.pos = false;
@@ -129,7 +127,7 @@ public class Editor : Object
     
         }
         this.key_edit.el.text = key;  
-          
+           
     }
     public class Xcls_Box2 : Object
     {
@@ -546,7 +544,7 @@ public class Editor : Object
             
             
             var err = obj.get_object_member(type);
-            var valafn = _this.fname;
+            var valafn = _this.file.path;
             if (_this.file.xtype != "PlainFile") {
         
         
