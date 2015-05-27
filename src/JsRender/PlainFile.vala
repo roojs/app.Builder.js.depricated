@@ -17,7 +17,7 @@ namespace JsRender {
   
     public  class PlainFile : JsRender
     {
-       
+		string contents;
 
         public PlainFile(Project.Project project, string path) {
         
@@ -28,7 +28,7 @@ namespace JsRender {
             // fixme...
             this.language = "vala";
             
-          
+			this.contents = "";
             
             // super?!?!
             this.id = "file-plain-%d".printf(gid++);
@@ -84,9 +84,7 @@ namespace JsRender {
         }
 		
         public override void save() {
-            this.saveBJS();
-            // this.saveJS(); - disabled at present.. project settings will probably enable this later..
-		
+            
             this.saveVala();
         }
 	    // ignore these calls.
