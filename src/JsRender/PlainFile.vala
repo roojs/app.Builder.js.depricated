@@ -65,7 +65,9 @@ namespace JsRender {
         
 		public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
 		{
-		   return;
+		   
+		   GLib.FileUtils.get_contents(this.path, this.contents);
+		   
 		}
          
         
