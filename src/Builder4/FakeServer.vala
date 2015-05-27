@@ -124,14 +124,14 @@ public class FakeServerCache : Object
 		     
 		     
 		    GLib.FileUtils.get_data(file.get_path(), out data);
-		    this.data = data
+		    this.data = data;
 		} catch (Error e) {
 			this.data = "".data;
 			this.size = 0;
 			this.content_type = "";
 			return;
 		}
-		;
+		
 
 	  
 	}
