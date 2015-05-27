@@ -551,6 +551,7 @@ public class Editor : Object
             
             }
             var valafn = _this.file.path;
+            print("%s : %s", _this.file.path, _this.file.xtype);
             if (_this.file.xtype != "PlainFile") {
         
         
