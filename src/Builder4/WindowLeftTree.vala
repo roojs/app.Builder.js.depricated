@@ -1496,7 +1496,7 @@ public class Xcls_WindowLeftTree : Object
             
                  DialogSaveTemplate.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
-                        _this.model.file.palete(), 
+                        _this.main_window.windowstate.file.palete(), 
                         _this.getActiveElement()
                 );
                  
