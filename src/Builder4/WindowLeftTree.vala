@@ -840,9 +840,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (def)
         public DialogTemplateSelect template_select;
-        public JsRender.JsRender? file;
         public string activePath;
-        public Project.Project? project;
 
         // ctor
         public Xcls_model(Xcls_WindowLeftTree _owner )
@@ -853,9 +851,7 @@ public class Xcls_WindowLeftTree : Object
 
             // my vars (dec)
             this.template_select = null;
-            this.file = null;
             this.activePath = "";
-            this.project = null;
 
             // set gobject values
 
