@@ -441,6 +441,7 @@ public class WindowState : Object
 		if (file.xtype == "PlainFile") {
 			this.switchState (State.CODEONLY); 
 			file.loadItems();
+			this.code_editor.show(file, null, "", "");
 		} else {
 		
 			this.switchState (State.PREVIEW); 
