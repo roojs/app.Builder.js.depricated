@@ -196,7 +196,7 @@ namespace Palete {
 		}
 		
 		 
-		public void checkPlainFileSpawn(Project.Project project, JsRender.JsRender ile, string contents )
+		public void checkPlainFileSpawn(  JsRender.JsRender file, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
@@ -211,7 +211,7 @@ namespace Palete {
 			DataOutputStream dostream = new DataOutputStream (ostream);
 			dostream.put_string (contents);
 			
- 			var gproj = (Project.Gtk)project;
+ 			var gproj = (Project.Gtk)(file.project);
  			
  			this.file = null;
 			this.line_offset = 0;
@@ -219,7 +219,7 @@ namespace Palete {
 			string[] args = {};
 			args += BuilderApplication._self;
 			args += "--project";
-			args +=  project.fn;
+			args +=  file.project.fn;
 			args += "--target";
 			args += gproj.firstBuildModule();
 			args += "--add-file";
