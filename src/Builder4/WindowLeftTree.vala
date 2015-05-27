@@ -200,7 +200,7 @@ public class Xcls_WindowLeftTree : Object
                     var xname = data.fqn();
                     print ("XNAME  IS " + xname+ "\n");
                     this.dragData = tp;
-                    this.dropList = _this.model.file.palete().getDropList(xname);
+                    this.dropList = _this.main_window.windowstate.file.palete().getDropList(xname);
                     
                     print ("DROP LIST IS " + string.joinv(", ", this.dropList) + "\n");
                     
