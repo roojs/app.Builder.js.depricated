@@ -1209,7 +1209,7 @@ public class Xcls_WindowLeftTree : Object
                           _this.main_window, // (Gtk.Window) _this.el.get_toplevel (),
                          _this.main_window.windowstate.file.palete(),
                             node,
-                            this.file.project);
+                            _this.main_window.windowstate.project);
                            
                      if (new_node == null) {
                          return; // do not add?
@@ -1224,7 +1224,7 @@ public class Xcls_WindowLeftTree : Object
                  if ( parent_str.length < 1) {
                       this.el.append(out n_iter, null); // drop at top level..
                       node.parent = null;
-                      this.file.tree = node;
+                      _this.main_window.windowstate.file.tree = node;
                       
                       
                 } else   if (pos  < 2) {
