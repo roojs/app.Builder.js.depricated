@@ -117,6 +117,8 @@ namespace JsRender {
 	    				return new Gtk(project, path);
 				case "Roo":
 		    			return new Roo(project, path);
+				case "PlainFile":
+		    			return new PlainFile(project, path);
 			}
 			throw new Error.INVALID_FORMAT("JsRender Factory called with xtype=%s", xt);
 			return null;    
