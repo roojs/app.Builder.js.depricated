@@ -1267,11 +1267,11 @@ public class Xcls_MainWindow : Object
             this.el.clicked.connect( ( ) => {
               
                 // create a new file in project..
-                if (_this.project == null || _this.windowstate.left_tree.model.file == null) {
+                if (_this.project == null || _this.windowstate.file == null) {
                     return  ;
                 }
                  _this.windowstate.file_details.show(
-                    _this.windowstate.left_tree.model.file, this.el
+                    _this.windowstate.file, this.el
                 );
                  
                 return  ;    

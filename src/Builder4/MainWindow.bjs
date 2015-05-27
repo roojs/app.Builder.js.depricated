@@ -302,7 +302,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.windowstate.left_tree.model.file == null) {\n        return  ;\n    }\n     _this.windowstate.file_details.show(\n        _this.windowstate.left_tree.model.file, this.el\n    );\n     \n    return  ;    \n\n\n}"
+                    "clicked" : "  ( ) => {\n  \n    // create a new file in project..\n    if (_this.project == null || _this.windowstate.file == null) {\n        return  ;\n    }\n     _this.windowstate.file_details.show(\n        _this.windowstate.file, this.el\n    );\n     \n    return  ;    \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
