@@ -126,7 +126,7 @@ namespace JsRender {
         {
 			return "";
 		}
-        public override string setSource(string str) {}
+        public override void setSource(string str) {}
         
         public override string toSource()
         {

@@ -467,7 +467,7 @@ namespace JsRender {
 				
             
         }
-        public override string setSource(string str) {}
+        public override void setSource(string str) {}
         /**
          * This needs to use some options on the project
          * to determine how the file is output..
