@@ -91,7 +91,9 @@ namespace JsRender {
 		
 		public void renameTo(string name) 
 		{
-			
+			if (this.xtype == "PlainFile") {
+				return;
+			}
 			var bjs = GLib.Path.get_dirname(this.path) +"/" +  name + ".bjs";
 			if (FileUtils.test(bjs, FileTest.EXISTS)) {
 				throw new Error.RENAME_FILE_EXISTS("File exists %s\n",name);
@@ -126,6 +128,9 @@ namespace JsRender {
 
 		public string toJsonString()
 		{
+			if (this.xtype == "PlainFile") {
+				return "";
+			}
 			var generator = new Json.Generator ();
 			generator.indent = 4;
 			generator.pretty = true;
@@ -182,7 +187,9 @@ namespace JsRender {
 
 		public void saveBJS()
 		{
-		     
+			if (this.xtype == "PlainFile") {
+				return;
+			}
 		    var generator = new Json.Generator ();
 		    generator.indent = 1;
 		    generator.pretty = true;
