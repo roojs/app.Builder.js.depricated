@@ -74,12 +74,12 @@ namespace JsRender {
 		
         public override string toSourcePreview()
         {
-			return "";
+			 
 		}
       
         public override string toSource()
         {
-			return "";
+			return this.contents;
             
              
             
