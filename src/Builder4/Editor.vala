@@ -551,7 +551,7 @@ public class Editor : Object
             
             }
             var valafn = _this.file.path;
-            print("%s : %s", _this.file.path, _this.file.xtype);
+         
             if (_this.file.xtype != "PlainFile") {
         
         
@@ -561,9 +561,7 @@ public class Editor : Object
                   try {             
                        var  regex = new Regex("\\.bjs$");
                        // should not happen
-                        if (_this.file == null) {
-                            return true;
-                        }
+                      
                      
                         valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
                      } catch (GLib.RegexError e) {
