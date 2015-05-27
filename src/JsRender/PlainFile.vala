@@ -27,10 +27,18 @@ namespace JsRender {
             var f = File.new_for_path (path) ;
             var info = f.query_info ("standard::*", 0);
             var ct = info.get_content_type();
-            // fixme...
-            this.language = "vala";
+            var cts = ct.split("/");
+            this.language = "plain-text";
             
-			this.contents = "";
+            if (ct.length > 1 && cts.length > 1) { 
+                    
+                    this.language = cts[1];
+            }
+             
+            // fixme...
+
+            
+            this.contents = "";
             
             // super?!?!
             this.id = "file-plain-%d".printf(plid++);
