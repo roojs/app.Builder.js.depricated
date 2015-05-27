@@ -1018,11 +1018,13 @@ public class WindowState : Object
 			buf.highlightErrorsJson("WARN", obj);
 			buf.highlightErrorsJson("DEPR", obj);
 			
-			var gbuf =   this.window_gladeview.sourceview;
-			gbuf.highlightErrorsJson("ERR", obj);
-			gbuf.highlightErrorsJson("WARN", obj);
-			gbuf.highlightErrorsJson("DEPR", obj);			
+			if (this.file.xtype == "Gtk") {
+				var gbuf =   this.window_gladeview.sourceview;
+				gbuf.highlightErrorsJson("ERR", obj);
+				gbuf.highlightErrorsJson("WARN", obj);
+				gbuf.highlightErrorsJson("DEPR", obj);			
 			
+		   }
 			this.last_compile_result = obj;
 			
 			
