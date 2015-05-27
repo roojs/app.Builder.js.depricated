@@ -230,7 +230,7 @@ public class Xcls_WindowLeftTree : Object
             	     this.blockChanges = false;
             	     return;
                  }
-                 if (_this.model.file == null) {
+                 if (_this.main_window.windowstate.file == null) {
                      return;
                  } 
                  
