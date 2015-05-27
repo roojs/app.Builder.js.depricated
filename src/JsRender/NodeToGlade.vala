@@ -236,8 +236,7 @@ public class JsRender.NodeToGlade : Object {
 		}
 		var p_parts =pfqn.split(".");
 
-
-		
+ 
 		var ns = p_parts[0];
     		var gir =  Palete.Gir.factory(ns);
 		var cls = gir.classes.get(p_parts[1]);
