@@ -57,8 +57,8 @@ namespace JsRender {
         */
 
 		public   override void	 removeFiles() {
-			if (FileUtils.test(this.pat, FileTest.EXISTS)) {
-				GLib.FileUtils.remove(this.pat);
+			if (FileUtils.test(this.path, FileTest.EXISTS)) {
+				GLib.FileUtils.remove(this.path);
 			}
 			 
 		}
@@ -66,7 +66,7 @@ namespace JsRender {
 		public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
 		{
 		   
-		   GLib.FileUtils.get_contents(this.path, this.contents);
+		   GLib.FileUtils.get_contents(this.path, out this.contents);
 		   
 		}
          
@@ -74,7 +74,7 @@ namespace JsRender {
 		
         public override string toSourcePreview()
         {
-			 
+			 return "";
 		}
       
         public override string toSource()
