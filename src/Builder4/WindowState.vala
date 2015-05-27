@@ -444,6 +444,7 @@ public class WindowState : Object
 		} else {
 		
 			this.switchState (State.PREVIEW); 
+			// this triggers loadItems..
 			this.left_tree.model.loadFile(file);
 
 		}
