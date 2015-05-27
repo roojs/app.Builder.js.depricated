@@ -209,64 +209,10 @@ namespace JsRender {
 		 
 
 		public abstract void loadItems() throws GLib.Error;
-		
-		/**
-		 *
-		 * load from a javascript file.. rather than bjs..
-		 * 
-		 *
-		 */
-		 /*
-		_loadItems : function(cb)
-		{
-		    // already loaded..
-		    if (this.items !== false) {
-		        return false;
-		    }
-		      
-		    
-		    
-		    var tr = new  TokenReader(  { 
-		        keepDocs :true, 
-		        keepWhite : true,  
-		        keepComments : true, 
-		        sepIdents : false,
-		        collapseWhite : false,
-		        filename : args[0],
-		        ignoreBadGrammer: true
-		    });
-		    
-		    var str = File.read(this.path);
-		    var toks = tr.tokenize(new TextStream(str));  
-		    var rf = new JsParser(toks);
-		    rf.parse();
-		    var cfg = rf.cfg;
-		    
-		    this.modOrder = cfg.modOrder || '001';
-		    this.name = cfg.name.replace(/\.bjs/, ''); // BC!
-		    this.parent =  cfg.parent;
-		    this.permname =  cfg.permname || '';
-		    this.title =  cfg.title || cfg.name;;
-		    this.items = cfg.items || []; 
-		    //???
-		    //this.fixItems(_this, false);
-		    cb();
-		    return true;    
-		        
-		},
-		*/
-		    /**
-		     * accepts:
-		     * { success : , failure : , scope : }
-		     * 
-		     * 
-		     * 
-		     */
-		/*     
-		void getTree ( o ) {
-		    print("File.getTree tree called on base object?!?!");
-		}
-	*/
+		 
+		 
+		 
+		  
 		public string jsonHasOrEmpty(Json.Object obj, string key) {
 			return obj.has_member(key) ? 
 						obj.get_string_member(key) : "";
@@ -375,18 +321,7 @@ namespace JsRender {
 			data_out.put_string(contents, null);
 			data_out.close(null);
 		}
-		/*
-		copyTo: function(path, cb)
-		{
-		    var _this = this;
-		    this.loadItems(function() {
-		        
-		        _this.path = path;
-		        cb();
-		    });
-		    
-		},
-		*/
+		 
 		
 		/**
 		 * 
