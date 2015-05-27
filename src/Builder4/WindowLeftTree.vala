@@ -886,7 +886,7 @@ public class Xcls_WindowLeftTree : Object
         public           void loadFile (JsRender.JsRender f) {
             //console.dump(f);
             this.el.clear();
-            this.main_window.windowstate.file = f;
+            _this.main_window.windowstate.file = f;
             
            
             if (f.tree == null) {
