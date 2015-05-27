@@ -1531,7 +1531,7 @@ public class Xcls_WindowLeftTree : Object
                 var node = _this.getActiveElement();
                  var name = DialogSaveModule.singleton().show(
                         (Gtk.Window) _this.el.get_toplevel (), 
-                        _this.model.file.project, 
+                        _this.main_window.windowstate.project, 
                         node
                  );
                  if (name.length < 1) {
