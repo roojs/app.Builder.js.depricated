@@ -75,13 +75,13 @@ namespace JsRender {
 		public   override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
 		{
 		  
-			print("load Items!");
+			print("load Items!\n");
 			if (this.tree != null) {
 				this.loaded = true;
 				return;
 			}
 			
-			print("load: " + this.path);
+			print("load: %s\n" , this.path);
 
 
 			var pa = new Json.Parser();
