@@ -243,7 +243,7 @@ namespace Palete {
 				// offer up this / Roo / javascript keywords... / look for var string = .. in the code..
 				for(var i = 0; i <  JsRender.Lang.match_strings.size ; i++) {
 					var str = JsRender.Lang.match_strings.get(i);
-					if (str.index_of(complete_string,0) == 0 && complete_string != str) { // should we ignore exact matches... ???
+					if (complete_string != str && str.index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 						ret.append(new SourceCompletionItem (str, str, null, "javascript : " + str));
 					}
 				}
