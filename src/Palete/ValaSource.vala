@@ -104,8 +104,8 @@ namespace Palete {
 		Spawn compiler;
 		 
 		public void checkStringSpawn(
-					string contents 
-				)
+				string contents 
+			)
 		{
  			
  			if (this.compiler != null) {
