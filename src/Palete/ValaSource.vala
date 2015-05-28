@@ -28,6 +28,7 @@ namespace Palete {
  
 		
 		public signal void compiled(Json.Object res);
+		public signal void compile_output(string str);
 
 		
 		JsRender.JsRender file;
