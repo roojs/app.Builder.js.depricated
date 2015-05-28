@@ -27,6 +27,7 @@ namespace JsRender {
 
 		public string permname;
 		public string language;
+		public string content_type;
 		public string modOrder;
 		public string xtype;
 		public uint64 webkit_page_id; // set by webkit view - used to extract extension/etc..
