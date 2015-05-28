@@ -346,7 +346,7 @@ public class Editor : Object
             if (_this.file != null) {
                  lang = _this.file.language;
             }
-            
+            print("lang=%s, content_type = %s\n", lang, _this.file.content_type);
          
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(
                     _this.file.content_type.length > 0  ?
