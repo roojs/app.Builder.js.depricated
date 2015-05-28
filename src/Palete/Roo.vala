@@ -364,7 +364,7 @@ namespace Palete {
 					// got a matching property...
 					
 					ret.append(new SourceCompletionItem (
-							 prop.name + " ("+ prop.memberOf + ")", 
+							 prop.name + " : " + prop.type + " ("+ prop.memberOf + ")", 
 							prevbits + prop.name, 
 							null, 
 							prop.doctxt));
