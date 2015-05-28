@@ -13,6 +13,7 @@ public class Xcls_ValaCompileResults : Object
         return _ValaCompileResults;
     }
     public Xcls_compile_view compile_view;
+    public Xcls_sourceview sourceview;
 
         // my vars (def)
     public Xcls_MainWindow window;
@@ -106,7 +107,7 @@ public class Xcls_ValaCompileResults : Object
 
             // set gobject values
             this.el.hexpand = true;
-            var child_0 = new Xcls_SourceView4( _this );
+            var child_0 = new Xcls_sourceview( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -121,7 +122,7 @@ public class Xcls_ValaCompileResults : Object
 
         // user defined functions
     }
-    public class Xcls_SourceView4 : Object
+    public class Xcls_sourceview : Object
     {
         public Gtk.SourceView el;
         private Xcls_ValaCompileResults  _this;
@@ -130,9 +131,10 @@ public class Xcls_ValaCompileResults : Object
             // my vars (def)
 
         // ctor
-        public Xcls_SourceView4(Xcls_ValaCompileResults _owner )
+        public Xcls_sourceview(Xcls_ValaCompileResults _owner )
         {
             _this = _owner;
+            _this.sourceview = this;
             this.el = new Gtk.SourceView();
 
             // my vars (dec)
