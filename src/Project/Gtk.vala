@@ -179,7 +179,7 @@ namespace Project {
 				GLib.debug("SCAN %s - skip - does not exist\n", dirname);
 				return ret;
 			}
-	  
+			var pathprefix = abspath ? dirname : in_path;
 	   
 			try {
 				var file_enum = dir.enumerate_children(
@@ -202,7 +202,7 @@ namespace Project {
 						continue;
 					}
 					GLib.debug("SCAN ADD %s : %s", fn, next_file.get_content_type());
-					ret.add(dirname + "/" + fn);
+					ret.add(pathprefix + "/" + fn);
 					 
 					// any other valid types???
 	    			
