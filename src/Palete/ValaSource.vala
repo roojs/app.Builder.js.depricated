@@ -199,6 +199,9 @@ namespace Palete {
  			if (this.compiler != null) { 
 				return;
 			}
+			if (!(file.project is Project.Gtk)) {
+			    return;
+        		}
 			var pr = (Project.Gtk)(file.project);
  			
  			
