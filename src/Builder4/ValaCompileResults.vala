@@ -154,6 +154,8 @@ public class Xcls_ValaCompileResults : Object
             // my vars (dec)
 
             // set gobject values
+            var child_0 = new Xcls_View4( _this );
+            child_0.ref();
 
             // init method
 
@@ -166,6 +168,26 @@ public class Xcls_ValaCompileResults : Object
 
         // user defined functions
     }
+    public class Xcls_View4 : Object
+    {
+        public Gtk.SourceView el;
+        private Xcls_ValaCompileResults  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_View4(Xcls_ValaCompileResults _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.SourceView();
+
+            // my vars (dec)
+        }
+
+        // user defined functions
+    }
+
 
 
 }

@@ -33,7 +33,13 @@
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
        "* pack" : "pack_end,true,true,0",
        "xtype" : "ScrolledWindow",
-       "$ xns" : "Gtk"
+       "$ xns" : "Gtk",
+       "items" : [
+        {
+         "xtype" : "View",
+         "$ xns" : "GtkSource"
+        }
+       ]
       }
      ]
     }
