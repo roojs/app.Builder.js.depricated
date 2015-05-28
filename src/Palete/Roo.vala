@@ -329,6 +329,7 @@ namespace Palete {
 				}
 				print("Got last element type %s\n",curtype);
 				if (!cur_instance) {
+					print("matching instance");
 					// it's a static reference..
 					var citer = this.classes.map_iterator();
 					while (citer.next()) {
