@@ -223,7 +223,7 @@ namespace Palete {
 			
 			 
 			try {
-			    this.compiler = new Spawn(pr.firstPath(), args);
+			    this.compiler = new Spawn( GLib.Environment.get_home_dir(), args);
 			    this.compiler.complete.connect(runResult);
 			    this.compiler.run(); 
 			
