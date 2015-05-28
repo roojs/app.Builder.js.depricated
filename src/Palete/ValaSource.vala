@@ -224,7 +224,7 @@ namespace Palete {
 			 
 			try {
 			    this.compiler = new Spawn(pr.firstPath(), args);
-			    this.compiler.complete.connect(spawnResult);
+			    this.compiler.complete.connect(runResult);
 			    this.compiler.run(); 
 			
 			 
