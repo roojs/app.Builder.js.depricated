@@ -48,6 +48,7 @@ public class ValaProjectSettings : Object
         this.window = null;
 
         // set gobject values
+        this.el.hexpand = true;
         var child_0 = new Xcls_Notebook2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
