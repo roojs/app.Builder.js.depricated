@@ -269,7 +269,7 @@ namespace Palete {
 				curtype = "Roo";
 			}
 			
-			var prevbits = "";
+			var prevbits = parts[0] + ".";
 			for(var i =0; i < parts.length; i++) {
 				var is_last = i == parts.length -1;
 				
