@@ -69,6 +69,7 @@ namespace JsRender {
 			this.permname = "";
 			this.modOrder = "";
 			this.language = "";
+			this.content_type = "";
 			this.build_module = "";
 			print("JsRender.cto() - reset transStrings\n");
 			this.transStrings = new Gee.HashMap<string,string> ();
