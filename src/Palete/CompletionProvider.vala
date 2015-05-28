@@ -102,7 +102,7 @@ namespace Palete {
 		private bool is_forward_space(unichar space){
 			return !(
 				space.to_string() == " "
-					||
+				||
 				space.to_string() == ""
 				||
 				space.to_string() == "\n")
