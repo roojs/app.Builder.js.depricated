@@ -267,7 +267,7 @@ namespace Palete {
 			context.report = this.report;
 			
 			//valac += " -b  /tmp ";
-			//context.basedir = "/tmp"; //Posix.realpath (".");
+			context.basedir = Posix.realpath (".");
 		
 			context.directory = context.basedir;
 		
