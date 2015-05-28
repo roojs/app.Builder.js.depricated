@@ -278,7 +278,9 @@ namespace Palete {
 				
 				// look up all the properties of the type...
 				var cls = this.getClass(curtype);
-				
+				if (cls == null) {
+					return ret;
+				}
 				
 				if (is_last) {
 					if (curtype == "") {
@@ -291,7 +293,16 @@ namespace Palete {
 					return ret;
 				}
 				// only exact matches from here on...
-				var childcls = 
+				if (cur_instance) {
+					if (cls.props.has_key(parts[i])) {
+						var prop = cls.props.get(parts[i]);
+						if (prop.type.index_of(".",0) > -1) {
+							// type is another roo object..
+							currtype = prop.type;
+							continue;
+						}
+						return ret;
+					}
 				
 					
 					
