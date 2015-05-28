@@ -105,9 +105,9 @@ namespace Palete {
 				||
 				space.to_string() == ""
 				||
-				space.to_string() == "\n")
+				space.to_string() == "\n"
 				||
-				space.to_string() == ")")
+				space.to_string() == ")"
 				||
 				space.to_string() == "("
 				
