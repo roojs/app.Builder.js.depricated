@@ -214,15 +214,13 @@ namespace Palete {
         		    args += this.file.build_module;
 			} else {
 			    args += pr.firstBuildModule();
+			}
+			args += "--output";
+			args += "/tmp/testrun";
 			
-			
-
 			 
-			 
-			
-			
 			try {
-			    this.compiler = new Spawn("/tmp", args);
+			    this.compiler = new Spawn(pr.firstPath(), args);
 			    this.compiler.complete.connect(spawnResult);
 			
 			    this.compiler.run(); 
