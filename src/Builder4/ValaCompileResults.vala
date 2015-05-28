@@ -185,6 +185,7 @@ public class Xcls_ValaCompileResults : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.show_line_numbers = true;
 
             // init method
 
