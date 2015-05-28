@@ -391,7 +391,7 @@ public class Spawn : Object
                     }
                     //_this[prop] += x.str_return;
                     //if (this.cfg.debug) {
-                        GLib.debug("%s : %s", prop , buffer);
+                        //GLib.debug("%s : %s", prop , buffer);
                     //}
                     if (this.is_async) {
                          
