@@ -69,7 +69,9 @@ public class Xcls_ValaCompileResults : Object
         
         
     }
-    public void addLine () {
+    public void addLine (string str) {
+    	
+    
     
     }
     public class Xcls_compile_view : Object
