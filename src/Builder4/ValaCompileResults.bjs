@@ -17,7 +17,7 @@
    "bool active" : false,
    "int width_request" : 600,
    "$ xns" : "Gtk",
-   "| void addLine" : "(string str) {\n\tvar buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();\n\tTextIter iter;\n\tbuf.get_end_iter (out  iter);\n\tbuf.insert(ref iter, str, str.length);\n\t/// scroll..\n\t\n\n}\n",
+   "| void addLine" : "(string str) {\n\tvar buf = (Gtk.SourceBuffer)this.sourceview.get_buffer();\n\tTextIter iter;\n\tbuf.get_end_iter (out  iter);\n\tbuf.insert(ref iter, str, str.length);\n\t/// scroll..\n\tbuf.get_end_iter (out  iter);\n\tthis.sourceview.el.scroll_to_iter(iter, 0.0f, true, 0.0f, 1.0f);\n\t\n\n}\n",
    "bool modal" : true,
    "items" : [
     {
