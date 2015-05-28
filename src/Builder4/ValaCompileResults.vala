@@ -54,6 +54,9 @@ public class Xcls_ValaCompileResults : Object
             this.el.set_relative_to(onbtn);
         }
         this.el.show_all();
+       // not sure why..
+       
+       
        
         while(Gtk.events_pending()) { 
                 Gtk.main_iteration();
