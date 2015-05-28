@@ -306,8 +306,20 @@ namespace Palete {
 					// check methods?? - we do not export that at present..
 					return ret;	 //no idea...
 				}
-				// not a 
-					
+				
+				// not a instance..
+				//look for child classes.
+				var citer = this.classes.map_iter();
+				while (citer.next()) {
+					var scls = citer.get_key();
+					var look = prevbits + parts[i];
+					if (scls.indexOf(look,0) != 0) {
+						continue;
+					}
+					// got a starting match..
+					curtype = look;
+					cur_instance = false;
+				}
 					
 				
 			}
