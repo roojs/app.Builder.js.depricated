@@ -25,7 +25,7 @@ namespace JsRender {
         Gee.HashMap<string,string> keywordNames;
         Gee.HashMap<string,string> puncNames;
         Gee.HashMap<string,string> matchingNames;
-        Gee.ArrayList<string> match_strings;
+        public Gee.ArrayList<string> match_strings;
         
         public Lang_Class ()
         {
@@ -103,7 +103,7 @@ namespace JsRender {
             this.keywordNames = new Gee.HashMap<string,string>();
             this.puncNames = new Gee.HashMap<string,string>();
             this.matchingNames = new Gee.HashMap<string,string>();
-            
+            this.match_strings = new Gee.ArrayList<string>();
             
             
             string[] co = { "_global_", "Array", "Boolean", "Date", "Error", 
