@@ -219,6 +219,12 @@ namespace Palete {
 			
 			}
 			if (!foundit) {
+    			    var ret = new Json.Object();
+			    ret.set_boolean_member("success", true);
+			    ret.set_string_member("message", "no need to compile");
+			    this.compiled(ret);
+			    this.compiler = null;
+			
 			    return; // do not run the compile..
 			}
 			// is the file in the module?
