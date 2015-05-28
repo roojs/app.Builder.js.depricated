@@ -240,170 +240,176 @@ namespace Palete
         public JsRender.Node? loadTemplate(string path)
         {
 
-		var pa = new Json.Parser();
-		pa.load_from_file(path);
-		var node = pa.get_root();
+			var pa = new Json.Parser();
+			pa.load_from_file(path);
+			var node = pa.get_root();
 
-		if (node.get_node_type () != Json.NodeType.OBJECT) {
-			return null;
-		}
-		var obj = node.get_object ();
+			if (node.get_node_type () != Json.NodeType.OBJECT) {
+				return null;
+			}
+			var obj = node.get_object ();
 
-		var ret = new JsRender.Node();
+			var ret = new JsRender.Node();
 
 
-		ret.loadFromJson(obj, 1);
-		ret.ref(); // not sure if needed -- but we had a case where ret became uninitialized?
+			ret.loadFromJson(obj, 1);
+			ret.ref(); // not sure if needed -- but we had a case where ret became uninitialized?
 		
-		return ret;
-	 }
+			return ret;
+		}
 
 
 
-    public   void  loadUsageFile (string fname) {
+		public   void  loadUsageFile (string fname) {
 
 
 
 			
-     		print("Palete Load called\n");
-		string raw;
-		if (!FileUtils.test (fname, FileTest.EXISTS)) {
-			throw new Error.MISSING_FILE(fname + " not found");
-		}
-	
-		FileUtils.get_contents(fname, out raw);
-  	      // print(data);
-		var data  = raw.split("\n");
-		var state = 0;
-		var cfg = new Gee.ArrayList<Usage>();
-		var left = new Gee.ArrayList<string>();
-		var right = new Gee.ArrayList<string>();
-	
-		for (var i = 0; i < data.length; i++) {
-			var d = data[i].strip();
-			//print("READ " + d + "\n");
-			if (
-				d.length < 1
-			    ||
-			     Regex.match_simple ("^\\s+$", d)
-			    ||
-				Regex.match_simple ("^\\s*/", d)
-		     ){
-			    continue;
+		 		print("Palete Load called\n");
+			string raw;
+			if (!FileUtils.test (fname, FileTest.EXISTS)) {
+				throw new Error.MISSING_FILE(fname + " not found");
 			}
+	
+			FileUtils.get_contents(fname, out raw);
+	  	      // print(data);
+			var data  = raw.split("\n");
+			var state = 0;
+			var cfg = new Gee.ArrayList<Usage>();
+			var left = new Gee.ArrayList<string>();
+			var right = new Gee.ArrayList<string>();
+	
+			for (var i = 0; i < data.length; i++) {
+				var d = data[i].strip();
+				//print("READ " + d + "\n");
+				if (
+					d.length < 1
+					||
+					 Regex.match_simple ("^\\s+$", d)
+					||
+					Regex.match_simple ("^\\s*/", d)
+				 ){
+					continue;
+				}
 				
-		        if (Regex.match_simple ("^left:", d)) { 
-		            state = 1;
-		            if (left.size > 0 ){
-		                cfg.add(new Usage( left, right));
-						}
-		            left = new Gee.ArrayList<string>();
-					right = new Gee.ArrayList<string>();
-		            continue;
-		        }
-		         if (Regex.match_simple ("^right:", d)) { 
-		            state = 2;
-		            continue;
-		        }
-		        if (state == 1) {
-						//print("add left: " + d + "\n");
-		            left.add(d);
-		            continue;
-		        }
-					//print("add Right: " + d + "\n");
-		        right.add(d);
-		        //Seed.quit();
-		       
-		}
-		if (left.size > 0 ){
-			cfg.add(new Usage( left, right));
-		}
-		this.map = cfg;
+				    if (Regex.match_simple ("^left:", d)) { 
+				        state = 1;
+				        if (left.size > 0 ){
+				            cfg.add(new Usage( left, right));
+							}
+				        left = new Gee.ArrayList<string>();
+						right = new Gee.ArrayList<string>();
+				        continue;
+				    }
+				     if (Regex.match_simple ("^right:", d)) { 
+				        state = 2;
+				        continue;
+				    }
+				    if (state == 1) {
+							//print("add left: " + d + "\n");
+				        left.add(d);
+				        continue;
+				    }
+						//print("add Right: " + d + "\n");
+				    right.add(d);
+				    //Seed.quit();
+				   
+			}
+			if (left.size > 0 ){
+				cfg.add(new Usage( left, right));
+			}
+			this.map = cfg;
 
-   }
+	   }
 
- 
- 	public   void validateVala(
-			WindowState state,
-			string code, 
-			string property, 
-			string ptype,
-			JsRender.JsRender file,
-			JsRender.Node node
-	 ) 
-	{   
-
- 		print("validate code (%s) %s\n", file.language, code);
-		 
-		
-		 
-		if (file.language != "vala" ) { // not sure if we need to validate property
-			return;
-		}
-		// file.project , file.path, file.build_module, ""
- 		
-		
-		 
-		//var cd = new JSCore.ClassDefinitionEmpty();
-		state.valasource.checkFileWithNodePropChange(
-				file,
-				node, 
-				property, 
-				ptype,
-				code
-		 );
-		 
-
-	}
 	 
-	
-	
-	
-	public   Gee.HashMap<int,string>  validateJavascript(
-     			string code, 
+	 	public   void validateVala(
+				WindowState state,
+				string code, 
 				string property, 
 				string ptype,
 				JsRender.JsRender file,
 				JsRender.Node node
-                     ) 
-	{   
+		 ) 
+		{   
 
-		 print("validate code (%s) %s\n", file.language, code);
-		 var ret = new Gee.HashMap<int,string>();
+	 		print("validate code (%s) %s\n", file.language, code);
+			 
 		
-		if (file.language != "js") {
-			return ret;
-		 }
-		 if (ptype != "listener" && property[0] == '|') {
-			return ret;
-		 }
-			
-		//var cd = new JSCore.ClassDefinitionEmpty();
-		//print("TESTING CODE %s\n", code);
-		string errmsg;
-		var line = Javascript.singleton().validate(
-							  "var __aaa___ = " + code, out errmsg);
+			 
+			if (file.language != "vala" ) { // not sure if we need to validate property
+				return;
+			}
+			// file.project , file.path, file.build_module, ""
+	 		
+		
+			 
+			//var cd = new JSCore.ClassDefinitionEmpty();
+			state.valasource.checkFileWithNodePropChange(
+					file,
+					node, 
+					property, 
+					ptype,
+					code
+			 );
+			 
 
-		if (line < 0) {
-			print("no errors\n");
-			return ret;
 		}
-		ret.set(line, errmsg);
-		print("got  errors\n");
-		return ret;
 		 
+	
+	
+	
+		public   Gee.HashMap<int,string>  validateJavascript(
+		 			string code, 
+					string property, 
+					string ptype,
+					JsRender.JsRender file,
+					JsRender.Node node
+		                 ) 
+		{   
 
+			 print("validate code (%s) %s\n", file.language, code);
+			 var ret = new Gee.HashMap<int,string>();
+		
+			if (file.language != "js") {
+				return ret;
+			 }
+			 if (ptype != "listener" && property[0] == '|') {
+				return ret;
+			 }
+			
+			//var cd = new JSCore.ClassDefinitionEmpty();
+			//print("TESTING CODE %s\n", code);
+			string errmsg;
+			var line = Javascript.singleton().validate(
+								  "var __aaa___ = " + code, out errmsg);
+
+			if (line < 0) {
+				print("no errors\n");
+				return ret;
+			}
+			ret.set(line, errmsg);
+			print("got  errors\n");
+			return ret;
+			 
+
+		}
+			
+		      
+		public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
+		public abstract void load();
+		public abstract Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type);
+		public abstract GirObject? getClass(string ename);
+	
+		public abstract bool typeOptions(string fqn, string key, string type, out string[] opts);
+		public abstract  List<SourceCompletionItem> suggestComplete(
+				JsRender.JsRender file,
+				JsRender.Node node,
+				string proptype, 
+				string key,
+				string complete_string
+		)
 	}
-	    
-          
-	public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
-	public abstract void load();
-	public abstract Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type);
-	public abstract GirObject? getClass(string ename);
-	
-	public abstract bool typeOptions(string fqn, string key, string type, out string[] opts);
-	
-    }
 
 
 }
