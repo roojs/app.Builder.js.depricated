@@ -88,6 +88,7 @@ namespace Palete {
 				var cls = new GirObject("class", key);  
 				cls.props = this.propsFromJSONArray("prop", value.get_object().get_array_member("props"),cls);
 				cls.signals = this.propsFromJSONArray("signal", value.get_object().get_array_member("events"),cls);
+				cls.signals = this.propsFromJSONArray("method", value.get_object().get_array_member("methods"),cls);
 				
 				this.classes.set(key, cls);
 			});
