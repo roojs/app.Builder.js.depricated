@@ -101,7 +101,7 @@ public class WindowState : Object
 		
 		this.compile_results = new  Xcls_ValaCompileResults();
 		this.compile_results.window = this.win;
-		this.valasource.compile_output.connect(this.compile_results.add_line);
+		this.valasource.compile_output.connect(this.compile_results.addLine);
 	}
 
 
