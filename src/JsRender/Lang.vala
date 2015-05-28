@@ -171,6 +171,7 @@ namespace JsRender {
             for(var i =0; i< ws.length;i++ ) {
                 var x = ws[i].split(":");
                 this.keywordNames.set(x[0],x[1]);
+                this.match_strings.add(x[0].substring(1));
             }
         
       
