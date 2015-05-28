@@ -159,7 +159,7 @@ public class Xcls_ClutterFiles : Object
         );
         
         // 100 right for buttons ..
-        this.el.set_position(0,0);
+        this.el.set_position(75,0);
        
        
        this.scroller.el.set_size(
