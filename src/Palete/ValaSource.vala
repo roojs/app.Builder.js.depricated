@@ -204,13 +204,23 @@ namespace Palete {
  			if (this.compiler != null) { 
 				return;
 			}
-			var gproj = (Project.Gtk)(file.project);
+			var pr = (Project.Gtk)(file.project);
  			
-			var m = gproj.firstBuildModule();
-			var cg = gproj.compilegroups.get(m);
+			var m = pr.firstBuildModule();
+			var cg = pr.compilegroups.get(m);
+			var foundit = false;
 			for (var i = 0; i < cg.sources.size; i++) {
-			    
+			    var path = pr.resolve_path(
+				    pr.resolve_path_combine_path(pr.firstPath(),cg.sources.get(i)));
+		            if (path == file.path) {
+		                foundit = true;
+		                break;
+	                    }
 			
+			}
+			if (!foundit) {
+			    return; // do not run the compile..
+			}
 			// is the file in the module?
 			
  			
@@ -231,7 +241,7 @@ namespace Palete {
 			args += "--project";
 			args +=  file.project.fn;
 			args += "--target";
-			args += gproj.firstBuildModule();
+			args += pr.firstBuildModule();
 			args += "--add-file";
 			args +=  tmpfile.get_path();
 			args += "--skip-file";
