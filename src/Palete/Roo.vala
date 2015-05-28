@@ -262,6 +262,7 @@ namespace Palete {
 			if (parts[0] == "this") {
 				// work out from the node, what the type is...
 				if (node == null) {
+					print("node is empty - no return\n");
 					return ret; // no idea..
 				}
 				curtype = node.fqn();
@@ -273,15 +274,17 @@ namespace Palete {
 			}
 			
 			var prevbits = parts[0] + ".";
-			for(var i =0; i < parts.length; i++) {
+			for(var i =1; i < parts.length; i++) {
+				print("matching %d/%d\n", i, parts.length);
 				var is_last = i == parts.length -1;
 				
 				// look up all the properties of the type...
 				var cls = this.getClass(curtype);
 				if (cls == null) {
+					print("could not get class of curtype %s\n", curtype);
 					return ret;
 				}
-				
+
 				if (!is_last) {
 				
 					// only exact matches from here on...
@@ -361,7 +364,7 @@ namespace Palete {
 					// got a matching property...
 					
 					ret.append(new SourceCompletionItem (
-							cls.name + "." + prop.name, 
+							 prop.name + " ("+ prop.memberOf + ")", 
 							prevbits + prop.name, 
 							null, 
 							prop.doctxt));
