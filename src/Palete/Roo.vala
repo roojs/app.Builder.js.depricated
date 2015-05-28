@@ -258,15 +258,18 @@ namespace Palete {
 			// got at least one ".".
 			var parts = complete_string.split(".");
 			var curtype = "";
+			var cur_instance = false;
 			if (parts[0] == "this") {
 				// work out from the node, what the type is...
 				if (node == null) {
 					return ret; // no idea..
 				}
 				curtype = node.fqn();
+				cur_instance = true;
 			}
 			if (parts[0] == "Roo") {	
 				curtype = "Roo";
+				cur_false = true;
 			}
 			
 			var prevbits = parts[0] + ".";
@@ -274,15 +277,21 @@ namespace Palete {
 				var is_last = i == parts.length -1;
 				
 				// look up all the properties of the type...
+				var cls = this.getClass(curtype);
 				
 				
 				if (is_last) {
 					if (curtype == "") {
 						return ret;
 					}
+					// get the properties / methods and subclasses.. of cls..
+					
+					
 					
 					return ret;
 				}
+				// only exact matches from here on...
+				var childcls = 
 				
 					
 					
