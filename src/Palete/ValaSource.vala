@@ -183,8 +183,10 @@ namespace Palete {
 				this.compiler.run(); 
 			} catch (GLib.SpawnError e) {
 			    GLib.debug(e.message);
+			    this.compiler = false;
 			    return false;
 			}
+			return true;
 			 
 		}
 		/**
