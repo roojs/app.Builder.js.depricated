@@ -250,7 +250,7 @@ namespace Palete {
 					
 				}
 				if (complete_string != "Roo" && "Roo".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
-					ret.append(new SourceCompletionItem ("Roo", "Roo", null, "Roo library");
+					ret.append(new SourceCompletionItem ("Roo", "Roo", null, "Roo library"));
 				}
 
 				return ret;
