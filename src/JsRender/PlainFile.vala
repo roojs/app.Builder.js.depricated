@@ -27,6 +27,7 @@ namespace JsRender {
             var f = File.new_for_path (path) ;
             var info = f.query_info ("standard::*", 0);
             var ct = info.get_content_type();
+            this.content_type = ct;
             var cts = ct.split("/");
             this.language = "plain-text";
             
