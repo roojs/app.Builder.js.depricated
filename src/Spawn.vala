@@ -157,7 +157,7 @@ public class Spawn : Object
 		Process.spawn_async_with_pipes (
 				this.cwd,
 				this.args,
-				this.env,
+				this.env.length > 0 ? this.env : null,
 				SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
 				null,
 				out this.pid,
