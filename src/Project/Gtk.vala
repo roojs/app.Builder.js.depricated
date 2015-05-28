@@ -163,7 +163,7 @@ namespace Project {
 		 *  
 		 */
 		
-		public Gee.ArrayList<string> filesAll(string in_path)
+		public Gee.ArrayList<string> filesAll(string in_path,bool abspath = true)
 		{
 			var ret =  new Gee.ArrayList<string>();
  			
