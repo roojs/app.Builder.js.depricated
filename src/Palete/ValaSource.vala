@@ -176,16 +176,19 @@ namespace Palete {
 			 
 			 
 			
-			this.compiler = new Spawn("/tmp", args);
-			this.compiler.complete.connect(spawnResult);
 			
 			try {
-				this.compiler.run(); 
-			} catch (GLib.SpawnError e) {
+			    this.compiler = new Spawn("/tmp", args);
+			    this.compiler.complete.connect(spawnResult);
+			
+			    this.compiler.run(); 
+			
+			 
+			} catch (GLib.Error e) {
 			    GLib.debug(e.message);
-			    this.compiler = false;
+			    this.compiler = null;
 			    return false;
-			}
+		        }
 			return true;
 			 
 		}
@@ -193,7 +196,7 @@ namespace Palete {
 		* Used to compile a non builder file..
 		*/
 		 
-		public void checkPlainFileSpawn(  JsRender.JsRender file, string contents )
+		public bool checkPlainFileSpawn(  JsRender.JsRender file, string contents )
 		{
  			// race condition..
  			if (this.compiler != null) { 
