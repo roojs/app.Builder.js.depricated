@@ -298,7 +298,7 @@ namespace Palete {
 						var prop = cls.props.get(parts[i]);
 						if (prop.type.index_of(".",0) > -1) {
 							// type is another roo object..
-							currtype = prop.type;
+							curtype = prop.type;
 							continue;
 						}
 						return ret;
