@@ -391,8 +391,7 @@ namespace Palete
 			ret.set(line, errmsg);
 			print("got  errors\n");
 			return ret;
-			 
-
+			  
 		} 
 		      
 		public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
