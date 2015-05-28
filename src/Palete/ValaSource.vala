@@ -192,6 +192,44 @@ namespace Palete {
 			return true;
 			 
 		}
+		
+		public bool spawnExecute(JsRender.JsRender file)
+		{
+ 			// race condition..
+ 			if (this.compiler != null) { 
+				return false;
+			}
+ 			
+ 			this.file = file;
+			this.line_offset = 0;
+			  
+			string[] args = {};
+			args += BuilderApplication._self;
+			args += "--project";
+			args += this.file.project.fn;
+			args += "--target";
+			args += this.file.build_module;
+			 
+			 
+			
+			
+			try {
+			    this.compiler = new Spawn("/tmp", args);
+			    this.compiler.complete.connect(spawnResult);
+			
+			    this.compiler.run(); 
+			
+			 
+			} catch (GLib.Error e) {
+			    GLib.debug(e.message);
+			    this.compiler = null;
+			    return false;
+		        }
+			return true;
+			 
+		}
+		
+		
 		/**
 		* Used to compile a non builder file..
 		*/
