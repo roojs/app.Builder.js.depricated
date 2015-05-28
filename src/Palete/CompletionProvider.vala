@@ -54,9 +54,17 @@ namespace Palete {
 			if (search.length < 2) {
 				return;
 			}
-
-			var filtered_proposals = new List<SourceCompletionItem> ();
+			// now do our magic..
+			var filtered_proposals = windowstate.file.palete().suggestComplete(
+				this.windowstate.file,
+				this.editor.node,
+				this.editor.ptype,
+				this.editor.key,
+				search);
 			
+			
+
+			 
 			filtered_proposals.prepend (new SourceCompletionItem (search + "xx", search + "xx", null, "some info"));
 			foreach(var i in this.proposals) {
 				//if(i.text.contains(search)) // starts??
