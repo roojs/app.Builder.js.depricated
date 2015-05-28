@@ -36,8 +36,8 @@
        "$ xns" : "Gtk",
        "items" : [
         {
-         "xtype" : "View",
-         "$ xns" : "GtkSource"
+         "xtype" : "SourceView",
+         "$ xns" : "Gtk"
         }
        ]
       }
