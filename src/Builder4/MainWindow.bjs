@@ -691,9 +691,9 @@
             "button_press_event" : "() => {\n\t\n    return true;\n}"
            },
            "bool always_show_image" : true,
-           "id" : "statusbar_errors",
+           "id" : "statusbar_run",
            "Xcls_ValaCompileErrors popup" : "",
-           "string label" : "Errors",
+           "string label" : "Run",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",

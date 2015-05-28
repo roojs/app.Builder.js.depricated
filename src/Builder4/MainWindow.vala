@@ -41,7 +41,7 @@ public class Xcls_MainWindow : Object
     public Xcls_statusbar_errors statusbar_errors;
     public Xcls_statusbar_warnings statusbar_warnings;
     public Xcls_statusbar_depricated statusbar_depricated;
-    public Xcls_statusbar_errors statusbar_errors;
+    public Xcls_statusbar_run statusbar_run;
 
         // my vars (def)
     public Project.Project project;
@@ -2323,7 +2323,7 @@ public class Xcls_MainWindow : Object
             var child_3 = new Xcls_statusbar_depricated( _this );
             child_3.ref();
             this.el.add (  child_3.el  );
-            var child_4 = new Xcls_statusbar_errors( _this );
+            var child_4 = new Xcls_statusbar_run( _this );
             child_4.ref();
             this.el.add (  child_4.el  );
         }
@@ -2568,7 +2568,7 @@ public class Xcls_MainWindow : Object
     }
 
 
-    public class Xcls_statusbar_errors : Object
+    public class Xcls_statusbar_run : Object
     {
         public Gtk.ImageMenuItem el;
         private Xcls_MainWindow  _this;
@@ -2578,17 +2578,17 @@ public class Xcls_MainWindow : Object
         public Xcls_ValaCompileErrors popup;
 
         // ctor
-        public Xcls_statusbar_errors(Xcls_MainWindow _owner )
+        public Xcls_statusbar_run(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.statusbar_errors = this;
+            _this.statusbar_run = this;
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
 
             // set gobject values
             this.el.always_show_image = true;
-            this.el.label = "Errors";
+            this.el.label = "Run";
             var child_0 = new Xcls_Image78( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
