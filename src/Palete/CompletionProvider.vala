@@ -61,15 +61,7 @@ namespace Palete {
 				search
 			);
 			
-			
-
 			 
-			//filtered_proposals.prepend (new SourceCompletionItem (search + "xx", search + "xx", null, "some info"));
-			foreach(var i in this.proposals) {
-				//if(i.text.contains(search)) // starts??
-				//	this.filtered_proposals.prepend (new SourceCompletionItem (i.label, i.text, i.icon, i.info));
-				//}
-			}
 			context.add_proposals (this, filtered_proposals, true);
 		}
 
