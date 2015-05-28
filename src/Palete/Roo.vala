@@ -246,13 +246,47 @@ namespace Palete {
 					if (complete_string != str && str.index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 						ret.append(new SourceCompletionItem (str, str, null, "javascript : " + str));
 					}
+					
+					
 				}
+				if (complete_string != "Roo" && "Roo".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
+					ret.append(new SourceCompletionItem ("Roo", "Roo", null, "Roo library");
+				}
+
 				return ret;
 			}
 			// got at least one ".".
 			var parts = complete_string.split(".");
-			for(var i =0; i < parts.length; i++) {
+			var curtype = "";
+			if (parts[0] == "this") {
+				// work out from the node, what the type is...
+				if (node == null) {
+					return ret; // no idea..
+				}
+				curtype = node.fqn();
+			}
+			if (parts[0] == "Roo") {	
+				curtype = "Roo";
+			}
 			
+			var prevbits = "";
+			for(var i =0; i < parts.length; i++) {
+				var is_last = i == parts.length -1;
+				
+				// look up all the properties of the type...
+				
+				
+				if (is_last) {
+					if (curtype == "") {
+						return ret;
+					}
+					
+					return ret;
+				}
+				
+					
+					
+				
 			}
 			
 			
