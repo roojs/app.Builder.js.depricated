@@ -282,9 +282,7 @@ public class Xcls_ValaCompileErrors : Object
                  var mod = _this.compile_result_store.el;
                 mod.get_iter (out iter, path);
                 
-                 
-                
-                
+                  
                 
                 // var val = "";
                 GLib.Value value;
