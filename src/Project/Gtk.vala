@@ -215,9 +215,9 @@ namespace Project {
 			return ret;
 		}
 		
-		public Gee.ArrayList<string> filesForCompile(string in_path)
+		public Gee.ArrayList<string> filesForCompile(string in_path, bool abspath = true)
 		{
-			var allfiles = this.filesAll(in_path);
+			var allfiles = this.filesAll(in_path,abspath);
 			var ret =  new Gee.ArrayList<string>();
 			
 			
