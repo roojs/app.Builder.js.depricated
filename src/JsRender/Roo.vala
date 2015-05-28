@@ -28,7 +28,8 @@ namespace JsRender {
             this.xtype = "Roo";
              this.language = "js";
             
-            
+           this.content_type = "";
+           
             //this.items = false;
             //if (cfg.json) {
             //    var jstr =  JSON.parse(cfg.json);
