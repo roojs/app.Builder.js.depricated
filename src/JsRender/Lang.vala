@@ -12,6 +12,8 @@ void main () {
     print(JsRender.Lang.keyword("delete") + "\n");
 }
 */
+ 
+
 namespace JsRender { 
     public Lang_Class Lang = null;
     
@@ -23,6 +25,8 @@ namespace JsRender {
         Gee.HashMap<string,string> keywordNames;
         Gee.HashMap<string,string> puncNames;
         Gee.HashMap<string,string> matchingNames;
+        Gee.ArrayList<string> match_strings;
+        
         public Lang_Class ()
         {
             if (Lang != null) {
@@ -82,10 +86,12 @@ namespace JsRender {
         public bool isNewline (string str) {
             return this.newlineNames.get(str) != null;
         }
-         public bool isBoolean (string str) {
-		var ss = str.down();
+ 	    public bool isBoolean (string str) {
+			var ss = str.down();
             return ss == "false" || ss == "true";
         }
+        
+        
         
         
         void init() {
@@ -223,6 +229,10 @@ namespace JsRender {
                var x = ws[i].split(":");
                this.matchingNames.set(x[0],x[1]);
            }
+           
+           
+           
+           
         }
         
         
