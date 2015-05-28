@@ -51,6 +51,8 @@ public class WindowState : Object
  	public Xcls_PopoverFileDetails file_details;
 	
 	
+	public Xcls_ValaCompileResults compile_results;
+	
 	// dialogs??
 	public Xcls_DialogPluginWebkit webkit_plugin;
 	
