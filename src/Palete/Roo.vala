@@ -249,6 +249,11 @@ namespace Palete {
 				}
 				return ret;
 			}
+			// got at least one ".".
+			var parts = complete_string.split(".");
+			for(var i =0; i < parts.length; i++) {
+			
+			}
 			
 			
 			
