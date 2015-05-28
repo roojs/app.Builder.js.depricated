@@ -390,7 +390,8 @@ namespace Palete {
 			}
 			
 			context.codegen = new Vala.GDBusServerModule ();
-			
+			context.target_glib_major = glib_major;
+			context.target_glib_minor = glib_minor;
 			 
 			
 			context.codegen.emit (context);
