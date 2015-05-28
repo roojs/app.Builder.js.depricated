@@ -154,8 +154,10 @@ public class Xcls_ValaCompileResults : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.hexpand = true;
             var child_0 = new Xcls_SourceView4( _this );
             child_0.ref();
+            this.el.add (  child_0.el  );
 
             // init method
 

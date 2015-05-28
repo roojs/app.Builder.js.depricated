@@ -31,6 +31,7 @@
      "items" : [
       {
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
+       "bool hexpand" : true,
        "* pack" : "pack_end,true,true,0",
        "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",
@@ -38,6 +39,7 @@
         {
          "* init" : "{\n\n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n\n}\n",
          "xtype" : "SourceView",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "bool show_line_numbers" : true
         }
