@@ -197,7 +197,7 @@ namespace Palete {
 		{
  			// race condition..
  			if (this.compiler != null) { 
-				return false;
+				return;
 			}
 			var pr = (Project.Gtk)(file.project);
  			
@@ -222,16 +222,15 @@ namespace Palete {
 			try {
 			    this.compiler = new Spawn(pr.firstPath(), args);
 			    this.compiler.complete.connect(spawnResult);
-			
 			    this.compiler.run(); 
 			
 			 
 			} catch (GLib.Error e) {
 			    GLib.debug(e.message);
 			    this.compiler = null;
-			    return false;
+
 		        }
-			return true;
+			return;
 			 
 		}
 		
