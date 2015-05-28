@@ -120,13 +120,14 @@ public class Editor : Object
                 val = node.props.get(key);
             }
             this.view.load(val);
-    
+            this.key_edit.el.show();
+            this.key_edit.el.text = key;  
         
         } else {
             this.view.load(        file.toSource() );
-    
+            this.key_edit.el.hide();
         }
-        this.key_edit.el.text = key;  
+    
            
     }
     public class Xcls_Box2 : Object
