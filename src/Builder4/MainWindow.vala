@@ -41,6 +41,7 @@ public class Xcls_MainWindow : Object
     public Xcls_statusbar_errors statusbar_errors;
     public Xcls_statusbar_warnings statusbar_warnings;
     public Xcls_statusbar_depricated statusbar_depricated;
+    public Xcls_statusbar_errors statusbar_errors;
 
         // my vars (def)
     public Project.Project project;
@@ -2322,6 +2323,9 @@ public class Xcls_MainWindow : Object
             var child_3 = new Xcls_statusbar_depricated( _this );
             child_3.ref();
             this.el.add (  child_3.el  );
+            var child_4 = new Xcls_statusbar_errors( _this );
+            child_4.ref();
+            this.el.add (  child_4.el  );
         }
 
         // user defined functions
@@ -2558,6 +2562,78 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "dialog-information";
+        }
+
+        // user defined functions
+    }
+
+
+    public class Xcls_statusbar_errors : Object
+    {
+        public Gtk.ImageMenuItem el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+        public Xcls_ValaCompileErrors popup;
+        public Json.Object notices;
+
+        // ctor
+        public Xcls_statusbar_errors(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            _this.statusbar_errors = this;
+            this.el = new Gtk.ImageMenuItem();
+
+            // my vars (dec)
+            this.notices = new Json.Object() ;
+
+            // set gobject values
+            this.el.always_show_image = true;
+            this.el.label = "Errors";
+            var child_0 = new Xcls_Image78( _this );
+            child_0.ref();
+            this.el.set_image (  child_0.el  );
+
+            //listeners
+            this.el.button_press_event.connect( () => {
+                if (this.popup == null) {
+                    this.popup = new Xcls_ValaCompileErrors();
+                    this.popup.window = _this;
+                }
+               
+                
+                this.popup.show(this.notices, this.el);
+                return true;
+            });
+        }
+
+        // user defined functions
+        public void setNotices (Json.Object nots, int qty) {
+            this.el.show();
+            this.el.label = qty.to_string() + " Errors";
+            this.notices = nots;
+        
+        }
+    }
+    public class Xcls_Image78 : Object
+    {
+        public Gtk.Image el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_Image78(Xcls_MainWindow _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.icon_name = "dialog-error";
         }
 
         // user defined functions
