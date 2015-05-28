@@ -512,16 +512,13 @@ public class Editor : Object
             // clear the buttons.
          
             
-           if (! p.validateVala(
-                _this.window.windowstate,
-                str, 
-                 _this.key, 
-                _this.ptype,
+           if (! _this.window.windowstate.valasource.checkFileWithNodePropChange(
                 _this.file,
-                _this.node 
-                
-                
-            )) {
+                _this.node,
+                 _this.key,        
+                 _this.ptype,
+                    str
+                )) {
                 this.check_running = false;
             } 
              
