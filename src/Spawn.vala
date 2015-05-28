@@ -388,6 +388,7 @@ public class Spawn : Object
                         
                     } else {
                         this.stderr += buffer;
+                        this.output_line(  buffer); 
                     }
                     //_this[prop] += x.str_return;
                     //if (this.cfg.debug) {
