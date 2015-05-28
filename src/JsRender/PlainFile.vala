@@ -28,17 +28,8 @@ namespace JsRender {
             var info = f.query_info ("standard::*", 0);
             var ct = info.get_content_type();
             this.content_type = ct;
-            var cts = ct.split("/");
-            this.language = "plain-text";
-            
-            if (ct.length > 1 && cts.length > 1) { 
-                    
-                    this.language = cts[1];
-                    
-                    this.language = (new Regex("^x-")).replace( this.language, this.language.length, 0, "");
-                    print("got language %s\n", this.language);
-                    
-            }
+       
+            this.language = "";
              
             // fixme...
 
