@@ -263,7 +263,7 @@ public class Editor : Object
             this.el.show_line_marks = true;
             this.el.insert_spaces_instead_of_tabs = true;
             this.el.show_line_numbers = true;
-            this.el.draw_spaces = Gtk.SourceDrawSpacesFlags.SPACE;
+            this.el.draw_spaces = Gtk.SourceDrawSpacesFlags.LEADING;
             this.el.highlight_current_line = true;
             var child_0 = new Xcls_buffer( _this );
             child_0.ref();
