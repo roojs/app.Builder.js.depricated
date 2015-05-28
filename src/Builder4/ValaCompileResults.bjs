@@ -39,6 +39,7 @@
          "* init" : "{\n\n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n\n}\n",
          "xtype" : "SourceView",
          "* pack" : "add",
+         "bool editable" : false,
          "$ xns" : "Gtk",
          "bool show_line_numbers" : true
         }
