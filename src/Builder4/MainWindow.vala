@@ -2596,7 +2596,7 @@ public class Xcls_MainWindow : Object
             //listeners
             this.el.button_press_event.connect( () => {
             	_this.windowstate.valasource.spawnExecute(_this.windowstate.file);
-                return true;
+            	return true;
             });
         }
 
