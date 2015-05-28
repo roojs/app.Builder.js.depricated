@@ -282,50 +282,87 @@ namespace Palete {
 					return ret;
 				}
 				
-				if (is_last) {
-					if (curtype == "") {
-						return ret;
+				if (!is_last) {
+				
+					// only exact matches from here on...
+					if (cur_instance) {
+						if (cls.props.has_key(parts[i])) {
+							var prop = cls.props.get(parts[i]);
+							if (prop.type.index_of(".",0) > -1) {
+								// type is another roo object..
+								curtype = prop.type;
+								continue;
+							}
+							return ret;
+						}
+						// check methods?? - we do not export that at present..
+						return ret;	 //no idea...
 					}
-					// get the properties / methods and subclasses.. of cls..
-					
-					
-					
-					return ret;
-				}
-				// only exact matches from here on...
-				if (cur_instance) {
-					if (cls.props.has_key(parts[i])) {
-						var prop = cls.props.get(parts[i]);
-						if (prop.type.index_of(".",0) > -1) {
-							// type is another roo object..
-							curtype = prop.type;
+				
+					// not a instance..
+					//look for child classes.
+					var citer = this.classes.map_iterator();
+					var foundit = false;
+					while (citer.next()) {
+						var scls = citer.get_key();
+						var look = prevbits + parts[i];
+						if (scls.index_of(look,0) != 0) {
 							continue;
 						}
+						// got a starting match..
+						curtype = look;
+						cur_instance = false;
+						foundit =true;
+						break;
+					}
+					if (!foundit) {
 						return ret;
 					}
-					// check methods?? - we do not export that at present..
-					return ret;	 //no idea...
+					continue;
 				}
-				
-				// not a instance..
-				//look for child classes.
-				var citer = this.classes.map_iterator();
-				var foundit = false;
-				while (citer.next()) {
-					var scls = citer.get_key();
-					var look = prevbits + parts[i];
-					if (scls.index_of(look,0) != 0) {
-						continue;
-					}
-					// got a starting match..
-					curtype = look;
-					cur_instance = false;
-					foundit =true;
-					break;
-				}
-				if (!foundit) {
+				// got to the last element..
+				 
+				if (curtype == "") { // should not happen.. we would have returned already..
 					return ret;
 				}
+				
+				if (!cur_instance) {
+					// it's a static reference..
+					
+					return ret;
+				}
+				
+				
+				// get the properties / methods and subclasses.. of cls..
+				// we have cls.. - see if the string matches any of the properties..
+				var citer = cls.props.map_iterator();
+				while (citer.next()) {
+					var prop = citer.get_value();
+					// does the name start with ...
+					if (prop.index_of(parts[i],0) != 0) {
+						continue;
+					}
+					// got a matching property...
+					
+					
+					
+				
+				if (cls.props.has_key(parts[i])) {
+					var prop = cls.props.get(parts[i]);
+					if (prop.type.index_of(".",0) > -1) {
+						// type is another roo object..
+						curtype = prop.type;
+						continue;
+					}
+					return ret;
+				}	
+					
+					
+					
+					
+					return ret;
+				}
+				
 					
 				
 			}
