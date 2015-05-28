@@ -701,7 +701,7 @@
             {
              "* pack" : "set_image",
              "xtype" : "Image",
-             "utf8 icon_name" : "dialog-error",
+             "utf8 icon_name" : "media-playback-start",
              "$ xns" : "Gtk"
             }
            ]

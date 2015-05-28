@@ -2619,7 +2619,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.icon_name = "dialog-error";
+            this.el.icon_name = "media-playback-start";
         }
 
         // user defined functions
