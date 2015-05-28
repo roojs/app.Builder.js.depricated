@@ -78,7 +78,7 @@
     },
     {
         "name" : "_default_",
-        "compile_flags" : "-g",
+        "compile_flags" : "--thread -X -lm --target-glib=2.32 -g",
         "target_bin" : "",
         "sources" : [
             "../../../app.Builder.js",
