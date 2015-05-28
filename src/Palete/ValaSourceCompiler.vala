@@ -390,7 +390,7 @@ namespace Palete {
 				this.outputResult();
 				return;
 			}
-			
+			context.run_output = true;
 			context.codegen = new Vala.GDBusServerModule ();
 			
 			 
