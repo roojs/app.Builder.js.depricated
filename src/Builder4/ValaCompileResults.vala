@@ -40,6 +40,8 @@ public class Xcls_ValaCompileResults : Object
 
     // user defined functions
     public void show ( Gtk.Widget onbtn, bool reset) {
+    	int w, h;
+     
     	this.window.el.get_size(out w, out h);
         
         // left tree = 250, editor area = 500?
