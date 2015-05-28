@@ -43,13 +43,12 @@ public class Xcls_ValaCompileResults : Object
         
         // left tree = 250, editor area = 500?
         
-        var new_w = int.min(250, w-100);
+        var new_w = int.min(500, w-100);
         if (new_w > (w-100)) {
             new_w = w-100;
         }
         this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));
-    
-        
+     
     
         if (this.el.relative_to == null) {
             this.el.set_relative_to(onbtn);
