@@ -330,7 +330,20 @@ namespace Palete {
 				
 				if (!cur_instance) {
 					// it's a static reference..
-					
+					var citer = this.classes.map_iterator();
+					while (citer.next()) {
+						var scls = citer.get_key();
+						var look = prevbits + parts[i];
+						if (scls.index_of(look,0) != 0) {
+							continue;
+						}
+						// got a starting match..
+						ret.append(new SourceCompletionItem (
+							scls 
+							scls, 
+							null, 
+							scls));
+					}
 					return ret;
 				}
 				
