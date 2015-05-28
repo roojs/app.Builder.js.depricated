@@ -179,6 +179,9 @@ namespace Palete {
 			
 			
 			var vs = new ValaSourceCompiler(gproj,  add_file, BuilderApplication.opt_compile_target,   skip_file);
+			if (BuilderApplication.opt_compile_output != null) {
+				vs.output = BuilderApplication.opt_compile_output;
+			}
 			vs.compile();
 			
 			
@@ -191,6 +194,7 @@ namespace Palete {
 		public string filepath;
 		public string original_filepath;
 		public int line_offset = 0;
+		public string output;
 		
 		// file.project , file.path, file.build_module, ""
 		public ValaSourceCompiler(Project.Gtk project, string filepath, string build_module, string original_filepath) {
@@ -200,6 +204,7 @@ namespace Palete {
 			this.build_module = build_module;
 			this.original_filepath = original_filepath;
 			this.project =  project;
+			this.output = "";
 			
 		}
 		public void dumpCode(string str) 
