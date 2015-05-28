@@ -354,7 +354,8 @@ public class Editor : Object
            
            
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lg); 
-            
+        
+            this.el.insert_spaces_instead_of_tabs = true;
             if (lg.name == "vala") {
                 this.el.insert_spaces_instead_of_tabs = false;
             }
