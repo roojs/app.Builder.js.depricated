@@ -106,6 +106,7 @@ builder4_SOURCES = \
 		Palete/Roo.vala \
 		Palete/ValaSource.vala \
 		Palete/ValaSourceCompiler.vala \
+		Palete/CompletionProvider.vala \
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/StandardErrorDialog.vala \
