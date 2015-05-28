@@ -62,7 +62,8 @@
             "../../src/Spawn.vala",
             "../Builder4/ValaCompileErrors.vala",
             "../Palete/ValaSourceCompiler.vala",
-            "../JsRender/PlainFile.vala"
+            "../JsRender/PlainFile.vala",
+            "../Builder4/ValaCompileResults.vala"
         ],
         "packages" : [
         ]
