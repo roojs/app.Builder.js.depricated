@@ -192,9 +192,12 @@ namespace JsRender {
 
 		public void saveBJS()
 		{
-			if (this.xtype == "PlainFile") {
-				return;
-			}
+		    if (!this.loaded) {
+        		    return;
+		    }
+		    if (this.xtype == "PlainFile") {
+			    return;
+		    }
 		    var generator = new Json.Generator ();
 		    generator.indent = 1;
 		    generator.pretty = true;
