@@ -345,9 +345,13 @@ public class Editor : Object
             if (_this.file != null) {
                  lang = _this.file.language;
             }
-            //?? is javascript going to work as js?
             
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(lang));
+         
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(
+                    _this.file.content_type.length > 0  ?
+                    lm.guess_language(_this.file.path, _this.file.content_type) :
+                    lm.get_language(lang)
+                );
          
              
             _this.dirty = false;
