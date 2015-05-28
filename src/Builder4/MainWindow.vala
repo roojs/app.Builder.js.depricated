@@ -2004,7 +2004,7 @@ public class Xcls_MainWindow : Object
             //listeners
             this.el.clicked.connect( () => {
                 // create a new file in project..
-                
+                print("add file selected\n");
                 // what's the currently selected project...
                 var proj = _this.windowstate.left_projects.getSelectedProject();
                 
@@ -2013,11 +2013,11 @@ public class Xcls_MainWindow : Object
                     return  ;
                 }
                 
-                
+                print("creating file?");
                 
                 var f = JsRender.JsRender.factory(proj.xtype,  proj, "");
                 _this.project = proj;
-                
+                    print("showing popup?");
                  _this.windowstate.file_details.show(
                    f, this.el
                 );
