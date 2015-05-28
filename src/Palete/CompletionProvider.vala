@@ -2,7 +2,7 @@
 
 namespace Palete {
 
-    class CompletionProvider : Gtk.SourceCompletionProvider, Object
+    public class CompletionProvider : Object, Gtk.SourceCompletionProvider
     {
 		
 		 public List<Gtk.SourceCompletionItem> proposals;
