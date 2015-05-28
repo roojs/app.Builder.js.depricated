@@ -60,12 +60,13 @@ namespace Palete {
 				this.editor.node,
 				this.editor.ptype,
 				this.editor.key,
-				search);
+				search
+			);
 			
 			
 
 			 
-			filtered_proposals.prepend (new SourceCompletionItem (search + "xx", search + "xx", null, "some info"));
+			//filtered_proposals.prepend (new SourceCompletionItem (search + "xx", search + "xx", null, "some info"));
 			foreach(var i in this.proposals) {
 				//if(i.text.contains(search)) // starts??
 				//	this.filtered_proposals.prepend (new SourceCompletionItem (i.label, i.text, i.icon, i.info));

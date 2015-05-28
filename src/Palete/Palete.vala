@@ -393,8 +393,7 @@ namespace Palete
 			return ret;
 			 
 
-		}
-			
+		} 
 		      
 		public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
 		public abstract void load();
