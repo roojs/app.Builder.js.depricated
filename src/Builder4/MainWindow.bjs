@@ -688,7 +688,7 @@
           },
           {
            "listeners" : {
-            "button_press_event" : "() => {\n\t_this.windowstate.valasource.spawnExecute(_this.windowstate.file);\n\treturn true;\n}"
+            "button_press_event" : "() => {\n\tif (_this.windowstate.file == null) {\n\t\treturn true;\n\t}\n\t_this.windowstate.valasource.spawnExecute(_this.windowstate.file);\n\treturn true;\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_run",
