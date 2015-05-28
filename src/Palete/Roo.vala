@@ -229,7 +229,33 @@ namespace Palete {
 				string key,
 				string complete_string
 		) { 
-		
+			
+			// completion rules??
+			
+			// Roo......
+			
+			// this. (based on the node type)
+			// this.xxx // Node and any determination...
+			
+			if (string.index_of(".",0) < 0) {
+				// string does not have a '.'
+				// offer up this / Roo / javascript keywords... / look for var string = .. in the code..
+			
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			return new List<SourceCompletionItem>();
 		}
     }
