@@ -9,7 +9,7 @@
  "items" : [
   {
    "listeners" : {
-    "delete_event" : "(self, event) => {\n\tthis.el.hide();\n\treturn true; \n}      ",
+    "delete_event" : "(self, event) => {\n\tthis.el.hide();\n\treturn true; \n}",
     "response" : "(rid) => {\n    this.el.hide();\n}\n"
    },
    "Gtk.License license_type" : "Gtk.License.LGPL_3_0",
