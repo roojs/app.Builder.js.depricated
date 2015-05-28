@@ -2601,7 +2601,7 @@ public class Xcls_MainWindow : Object
             	}
             	_this.windowstate.valasource.spawnExecute(_this.windowstate.file);
             	
-            	_this.windowstate.compile_errors.show(this.el);
+            	_this.windowstate.compile_results.show(this.el,true);
             	
             	return true;
             });
