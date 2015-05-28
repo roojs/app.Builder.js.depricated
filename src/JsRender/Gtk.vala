@@ -81,7 +81,7 @@ namespace JsRender {
 				
 				return;
 			}
-			
+			/*
 			print("load: %s\n" , this.path);
 			if (!GLib.FileUtils.test(this.path, GLib.FileTest.EXISTS)) {
 				// new file?!?
@@ -89,6 +89,7 @@ namespace JsRender {
 				this.loaded = true;
 				return;
 			}
+			*/
 
 			var pa = new Json.Parser();
 			pa.load_from_file(this.path);
