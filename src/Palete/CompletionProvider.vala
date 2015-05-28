@@ -13,7 +13,7 @@ namespace Palete {
 		public CompletionProvider(Editor editor)
 		{
 		    this.editor  = editor;
-		    this.windowstate = editor.window.windowstate;
+		    
 		    
  		}
 
@@ -35,6 +35,11 @@ namespace Palete {
 
 		public void populate (SourceCompletionContext context)
 		{
+			if (this.windowstate == null) {
+				this.windowstate = this.editor.window.windowstate;
+			}
+			
+			
 			var buffer = context.completion.view.buffer;
 			var  mark = buffer.get_insert ();
 			TextIter end;
@@ -53,7 +58,7 @@ namespace Palete {
 				return;
 			}
 			// now do our magic..
-			var filtered_proposals = windowstate.file.palete().suggestComplete(
+			var filtered_proposals = this.windowstate.file.palete().suggestComplete(
 				this.windowstate.file,
 				this.editor.node,
 				this.editor.ptype,
