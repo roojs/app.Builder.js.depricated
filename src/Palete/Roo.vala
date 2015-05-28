@@ -256,7 +256,7 @@ namespace Palete {
 					ret.append(new SourceCompletionItem ("Roo - A Roo class", "Roo", null, "Roo library"));
 				}
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
-					ret.append(new SourceCompletionItem ("_this (the top level element", "_this", null, "Top level element"));
+					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
 				}
 				return ret;
 			}
