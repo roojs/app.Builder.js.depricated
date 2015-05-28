@@ -1,3 +1,5 @@
+using Gtk;
+
 namespace Palete {
 
 	
