@@ -310,6 +310,7 @@ namespace Palete {
 				// not a instance..
 				//look for child classes.
 				var citer = this.classes.map_iterator();
+				var foundit = false;
 				while (citer.next()) {
 					var scls = citer.get_key();
 					var look = prevbits + parts[i];
@@ -319,6 +320,11 @@ namespace Palete {
 					// got a starting match..
 					curtype = look;
 					cur_instance = false;
+					foundit =true;
+					break;
+				}
+				if (!foundit) {
+					return ret;
 				}
 					
 				
