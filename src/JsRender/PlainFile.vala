@@ -33,6 +33,8 @@ namespace JsRender {
             if (ct.length > 1 && cts.length > 1) { 
                     
                     this.language = cts[1];
+                    
+                    this.language = (new Regex("^x-")).replace( this.language, this.language.length, 0, "");
                     print("got language %s\n", this.language);
                     
             }
