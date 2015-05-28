@@ -349,7 +349,8 @@ namespace Palete {
 			valac += " -o " +context.output;
 			GLib.debug("%s", valac);
 			
-			
+			context.target_glib_major = 2;
+			context.target_glib_minor = 32;
  
 		
 			//add_documented_files (context, settings.source_files);
@@ -390,8 +391,7 @@ namespace Palete {
 			}
 			
 			context.codegen = new Vala.GDBusServerModule ();
-			context.target_glib_major = glib_major;
-			context.target_glib_minor = glib_minor;
+			
 			 
 			
 			context.codegen.emit (context);
