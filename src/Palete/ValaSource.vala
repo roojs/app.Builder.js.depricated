@@ -194,7 +194,9 @@ namespace Palete {
 			}
 			 
 		}
-		
+		/**
+		* Used to compile a non builder file..
+		*/
 		 
 		public void checkPlainFileSpawn(  JsRender.JsRender file, string contents )
 		{
@@ -202,6 +204,15 @@ namespace Palete {
  			if (this.compiler != null) { 
 				return;
 			}
+			var gproj = (Project.Gtk)(file.project);
+ 			
+			var m = gproj.firstBuildModule();
+			var cg = gproj.compilegroups.get(m);
+			for (var i = 0; i < cg.sources.size; i++) {
+			    
+			
+			// is the file in the module?
+			
  			
  			FileIOStream iostream;
 			var tmpfile = File.new_tmp ("test-XXXXXX.vala", out iostream);
@@ -211,7 +222,6 @@ namespace Palete {
 			DataOutputStream dostream = new DataOutputStream (ostream);
 			dostream.put_string (contents);
 			
- 			var gproj = (Project.Gtk)(file.project);
  			
  			this.file = null;
 			this.line_offset = 0;
