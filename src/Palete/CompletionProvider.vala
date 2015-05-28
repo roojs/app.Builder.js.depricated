@@ -10,7 +10,7 @@ namespace Palete {
 		WindowState windowstate;
  		//public List<Gtk.SourceCompletionItem> filtered_proposals;
 
-		construct(Editor editor)
+		CompletionProvider(Editor editor)
 		{
 		    this.editor  = editor;
 		    this.windowstate = editor.window.windowstate;
