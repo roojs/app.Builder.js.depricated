@@ -399,11 +399,12 @@ namespace Palete {
 			
 			var ccompiler = new Vala.CCodeCompiler ();
 			var cc_command = Environment.get_variable ("CC");
-			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
+			
 			
 			string [] cc_options = { "-lm" };
 			
 #if VALA_0_28
+			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
 			ccompiler.compile (context, cc_command, cc_options, pkg_config_command);
 #else
 			ccompiler.compile (context, cc_command, cc_options);
