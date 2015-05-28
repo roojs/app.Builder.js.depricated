@@ -33,7 +33,7 @@ namespace Palete {
 			  
         }
 
-		Gee.HashMap<string,GirObject> propsFromJSONArray(string type, Json.Array ar)
+		Gee.HashMap<string,GirObject> propsFromJSONArray(string type, Json.Array ar, GirObject cls)
 		{
 
 			var ret = new Gee.HashMap<string,GirObject>();
@@ -45,7 +45,7 @@ namespace Palete {
 				 
 				prop.type        = o.get_string_member("type");
 				prop.doctxt  = o.get_string_member("desc");
-				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
+				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : cls.name;
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
 				
 				if (o.has_member("optvals")  ) {
@@ -364,7 +364,7 @@ namespace Palete {
 					// got a matching property...
 					
 					ret.append(new SourceCompletionItem (
-							 prop.name + " : " + prop.type + " ("+ prop.memberOf + ")", 
+							 prop.name + " : " + prop.type + " ("+ prop.propertyof + ")", 
 							prevbits + prop.name, 
 							null, 
 							prop.doctxt));
