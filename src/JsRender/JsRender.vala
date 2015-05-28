@@ -41,6 +41,8 @@ namespace JsRender {
 
 		public bool hasParent; 
 		
+		public bool loaded;
+		
 		public Gee.HashMap<string,string> transStrings; // map of md5 -> string.
 		
 
@@ -71,6 +73,7 @@ namespace JsRender {
 			this.language = "";
 			this.content_type = "";
 			this.build_module = "";
+			this.loaded = false;
 			print("JsRender.cto() - reset transStrings\n");
 			this.transStrings = new Gee.HashMap<string,string> ();
 			
