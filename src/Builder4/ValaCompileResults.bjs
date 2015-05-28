@@ -8,15 +8,13 @@
  "build_module" : "",
  "items" : [
   {
-   "int height_request" : 800,
+   "int height_request" : 400,
    "id" : "ValaCompileResults",
-   "Xcls_MainWindow window" : "",
    "xtype" : "Popover",
    "Gtk.PositionType position" : "Gtk.PositionType.TOP",
    "bool active" : false,
-   "int width_request" : 900,
+   "int width_request" : 600,
    "$ xns" : "Gtk",
-   "Json.Object notices" : "",
    "bool modal" : true,
    "items" : [
     {

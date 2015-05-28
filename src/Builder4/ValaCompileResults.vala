@@ -15,9 +15,7 @@ public class Xcls_ValaCompileResults : Object
     public Xcls_compile_view compile_view;
 
         // my vars (def)
-    public Xcls_MainWindow window;
     public bool active;
-    public Json.Object notices;
 
     // ctor
     public Xcls_ValaCompileResults()
@@ -29,8 +27,8 @@ public class Xcls_ValaCompileResults : Object
         this.active = false;
 
         // set gobject values
-        this.el.width_request = 900;
-        this.el.height_request = 800;
+        this.el.width_request = 600;
+        this.el.height_request = 400;
         this.el.modal = true;
         this.el.position = Gtk.PositionType.TOP;
         var child_0 = new Xcls_compile_view( _this );
