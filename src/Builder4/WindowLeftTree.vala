@@ -195,7 +195,9 @@ public class Xcls_WindowLeftTree : Object
                 
                 
                 // -- it appears that the selection is not updated.
-                
+                  while (Gtk.events_pending()) {
+                        Gtk.main_iteration();
+                   }
                 GLib.Timeout.add_full(GLib.Priority.DEFAULT,10 , () => {
                      
             
