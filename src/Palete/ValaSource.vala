@@ -293,7 +293,7 @@ namespace Palete {
 				this.compiled(ret);
 				
 				
-			} catch (Error e) {
+			} catch (GLib.Error e) {
 				var ret = new Json.Object();
 				ret.set_boolean_member("success", false);
 				ret.set_string_member("message", e.message);
