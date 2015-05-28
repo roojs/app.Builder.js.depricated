@@ -26,7 +26,7 @@ public class Xcls_ValaCompileResults : Object
         this.el = new Gtk.Popover( null );
 
         // my vars (dec)
-        this.active = false;
+        this.active = true;
 
         // set gobject values
         this.el.width_request = 600;
@@ -71,7 +71,7 @@ public class Xcls_ValaCompileResults : Object
     }
     public void addLine (string str) {
     	var buf = (Gtk.SourceBuffer)this.sourceview.get_buffer();
-    	TextIter iter;
+    	Gtk.TextIter iter;
     	buf.get_end_iter (out  iter);
     	buf.insert(ref iter, str, str.length);
     	/// scroll..
