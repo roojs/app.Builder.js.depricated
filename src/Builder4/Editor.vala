@@ -474,10 +474,13 @@ public class Editor : Object
                 // assume it's gtk...
                    this.check_running = true;
         
-                 _this.window.windowstate.valasource.checkPlainFileSpawn(
+                 if (!_this.window.windowstate.valasource.checkPlainFileSpawn(
         	   _this.file,
         	    str
-        	 );
+        	 )) {
+                    this.check_running = false;
+                }
+        	
                 return true;
             
             }
@@ -509,7 +512,7 @@ public class Editor : Object
             // clear the buttons.
          
             
-            p.validateVala(
+           if (! p.validateVala(
                 _this.window.windowstate,
                 str, 
                  _this.key, 
@@ -518,7 +521,9 @@ public class Editor : Object
                 _this.node 
                 
                 
-            );
+            )) {
+                this.check_running = false;
+            } 
              
             
             
