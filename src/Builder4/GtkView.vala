@@ -575,8 +575,8 @@ public class Xcls_GtkView : Object
             var err = obj.get_object_member(type);
             
             if (_this.file == null) { 
-                return;
-                }
+                return; // just in case the file has not loaded yet?
+            }
          
         
             var valafn = "";
