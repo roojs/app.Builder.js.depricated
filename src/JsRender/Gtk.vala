@@ -77,6 +77,7 @@ namespace JsRender {
 		  
 			print("load Items!");
 			if (this.tree != null) {
+				this.loaded = true;
 				return;
 			}
 			
