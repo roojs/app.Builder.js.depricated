@@ -110,6 +110,7 @@ namespace JsRender {
                 "Function", "Math", "Number", "Object", "RegExp", "String" };
             for(var i =0; i< co.length;i++ ) {
                 this.coreObjects.append(co[i]);
+                this.match_strings.add(co[i]);
             }
             string[] ws =  {
                 " :SPACE",
