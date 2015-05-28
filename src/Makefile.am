@@ -131,6 +131,7 @@ builder4_SOURCES = \
 		Builder4/DialogNewComponent.vala \
 		Builder4/PopoverFileDetails.vala \
 		Builder4/ValaCompileErrors.vala \
+		Builder4/ValaCompileResults.vala \
 		Resources.vala 
 		
 		
