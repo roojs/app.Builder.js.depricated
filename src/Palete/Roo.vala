@@ -339,7 +339,7 @@ namespace Palete {
 						}
 						// got a starting match..
 						ret.append(new SourceCompletionItem (
-							scls 
+							scls,
 							scls, 
 							null, 
 							scls));
