@@ -230,6 +230,7 @@ namespace Palete {
 				string complete_string
 		) { 
 			
+			var ret =  new List<SourceCompletionItem>();
 			// completion rules??
 			
 			// Roo......
@@ -237,10 +238,16 @@ namespace Palete {
 			// this. (based on the node type)
 			// this.xxx // Node and any determination...
 			
-			if (string.index_of(".",0) < 0) {
+			if (complete_string.index_of(".",0) < 0) {
 				// string does not have a '.'
 				// offer up this / Roo / javascript keywords... / look for var string = .. in the code..
-			
+				for(var i = 0; i <  JsRender.Lang.match_strings ; i++) {
+					var str = JsRender.Lang.match_strings.get(i);
+					if (str.index_of(complete_string,0) == 0) {
+						ret.append(new SourceCompletionItem (str, str, null, "javascript : " + str));
+					}
+				}
+				return ret;
 			}
 			
 			
@@ -256,7 +263,7 @@ namespace Palete {
 			
 			
 			
-			return new List<SourceCompletionItem>();
+			return ret;
 		}
     }
 }
