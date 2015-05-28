@@ -238,7 +238,7 @@ namespace Palete {
 			return;
 			 
 		}
-		public bool compile_output_line(   string str )
+		public void compile_output_line(   string str )
 		{
 			this.compile_output(str);
 		}
