@@ -70,7 +70,7 @@ public class Xcls_ValaCompileResults : Object
         
     }
     public void addLine (string str) {
-    	var buf = (Gtk.SourceBuffer)this.sourceview.get_buffer();
+    	var buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();
     	Gtk.TextIter iter;
     	buf.get_end_iter (out  iter);
     	buf.insert(ref iter, str, str.length);
