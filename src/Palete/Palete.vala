@@ -1,4 +1,5 @@
 
+using Gtk;
 namespace Palete 
 {
 
@@ -400,7 +401,7 @@ namespace Palete
 		public abstract GirObject? getClass(string ename);
 	
 		public abstract bool typeOptions(string fqn, string key, string type, out string[] opts);
-		public abstract  List<Gtk.SourceCompletionItem> suggestComplete(
+		public abstract  List<SourceCompletionItem> suggestComplete(
 				JsRender.JsRender file,
 				JsRender.Node node,
 				string proptype, 
