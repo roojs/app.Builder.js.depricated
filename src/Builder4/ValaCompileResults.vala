@@ -70,8 +70,12 @@ public class Xcls_ValaCompileResults : Object
         
     }
     public void addLine (string str) {
+    	var buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();
+    	TextIter iter;
+    	buf.get_end_iter (out  iter);
+    	buf.insert(ref iter, str, str.length);
+    	/// scroll..
     	
-    
     
     }
     public class Xcls_compile_view : Object
