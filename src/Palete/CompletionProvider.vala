@@ -7,7 +7,7 @@ namespace Palete {
     public class CompletionProvider : Object, SourceCompletionProvider
     {
 		Editor editor; 
-		
+		WindowState windowstate;
 		public List<SourceCompletionItem> proposals;
 		//public List<Gtk.SourceCompletionItem> filtered_proposals;
 
