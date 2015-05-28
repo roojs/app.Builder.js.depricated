@@ -69,6 +69,9 @@ public class Xcls_ValaCompileResults : Object
         
         
     }
+    public void addLine () {
+    
+    }
     public class Xcls_compile_view : Object
     {
         public Gtk.Box el;

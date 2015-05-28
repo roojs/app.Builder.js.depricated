@@ -17,6 +17,7 @@
    "bool active" : false,
    "int width_request" : 600,
    "$ xns" : "Gtk",
+   "| void addLine" : "() {\n\n}\n",
    "bool modal" : true,
    "items" : [
     {
