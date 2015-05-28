@@ -335,7 +335,7 @@ namespace Palete {
 					while (citer.next()) {
 						var scls = citer.get_key();
 						var look = prevbits + parts[i];
-						if (scls.index_of(look,0) != 0) {
+						if (parts[i].length > 0 && scls.index_of(look,0) != 0) {
 							continue;
 						}
 						// got a starting match..
@@ -355,7 +355,7 @@ namespace Palete {
 				while (citer.next()) {
 					var prop = citer.get_value();
 					// does the name start with ...
-					if (prop.name.index_of(parts[i],0) != 0) {
+					if (parts[i].length > 0 && prop.name.index_of(parts[i],0) != 0) {
 						continue;
 					}
 					// got a matching property...
