@@ -825,7 +825,7 @@ public class Xcls_PopoverFileDetails : Object
                             return;
                              
                          }
-                                                                    
+            
                           _this.done = true;
                         _this.file.save();
                         _this.el.hide();
@@ -852,6 +852,7 @@ public class Xcls_PopoverFileDetails : Object
             
                     
                     _this.updateFileFromEntry();
+            	    _this.file.loaded = true;
                     _this.file.save();
                     _this.file.project.addFile(_this.file);
                     
