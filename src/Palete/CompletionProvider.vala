@@ -44,7 +44,7 @@ namespace Palete {
 			searchpos.backward_find_char(is_space, null);
 			searchpos.forward_char();
 			var search = endpos.get_text(searchpos);
-			
+			print("got search %s\n");
 			
 
 			var filtered_proposals = new List<Gtk.SourceCompletionItem> ();
