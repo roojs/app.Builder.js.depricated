@@ -347,13 +347,17 @@ public class Editor : Object
                  lang = _this.file.language;
             }
             print("lang=%s, content_type = %s\n", lang, _this.file.content_type);
-         
-            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(
-                    _this.file.content_type.length > 0  ?
+            var lg = _this.file.content_type.length > 0  ?
                     lm.guess_language(_this.file.path, _this.file.content_type) :
-                    lm.get_language(lang)
-                );
-         
+                    lm.get_language(lang);
+            
+           
+           
+            ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lg); 
+            
+            if (lg.name == "vala") {
+                this.el.insert_spaces_instead_of_tabs = false;
+            }
              
             _this.dirty = false;
             this.el.grab_focus();
