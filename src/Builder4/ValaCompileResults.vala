@@ -46,7 +46,7 @@ public class Xcls_ValaCompileResults : Object
         
         // left tree = 250, editor area = 500?
         
-        var new_w = int.min(500, w-100);
+        var new_w = int.min(750, w-100);
         if (new_w > (w-100)) {
             new_w = w-100;
         }
@@ -160,7 +160,7 @@ public class Xcls_ValaCompileResults : Object
 
             // set gobject values
             this.el.editable = false;
-            this.el.show_line_numbers = true;
+            this.el.show_line_numbers = false;
 
             // init method
 
