@@ -1,17 +1,20 @@
  
+using Gtk;
 
+// not sure why - but extending Gtk.SourceCompletionProvider seems to give an error..
 namespace Palete {
 
-    public class CompletionProvider : Object, Gtk.SourceCompletionProvider
+    public class CompletionProvider : Object, SourceCompletionProvider
     {
+		Editor editor; 
 		
-		 public List<Gtk.SourceCompletionItem> proposals;
+		public List<SourceCompletionItem> proposals;
 		//public List<Gtk.SourceCompletionItem> filtered_proposals;
 
 		construct
 		{
 		   
-			this.proposals = new List<Gtk.SourceCompletionItem> ();
+			this.proposals = new List<SourceCompletionItem> ();
 		}
 
 		public string get_name ()
@@ -24,13 +27,13 @@ namespace Palete {
 		  return 1;
 		}
 
-		public bool match (Gtk.SourceCompletionContext context)
+		public bool match (SourceCompletionContext context)
 		{
 		
 			return true;
 		}
 
-		public void populate (Gtk.SourceCompletionContext context)
+		public void populate (SourceCompletionContext context)
 		{
 			var buffer = context.completion.view.buffer;
 			var  mark = buffer.get_insert ();
@@ -44,19 +47,24 @@ namespace Palete {
 			searchpos.backward_find_char(is_space, null);
 			searchpos.forward_char();
 			var search = endpos.get_text(searchpos);
-			print("got search %s\n");
+			print("got search %s\n", search);
 			
+			if (search.length < 2) {
+				return;
+			}
 
-			var filtered_proposals = new List<Gtk.SourceCompletionItem> ();
+			var filtered_proposals = new List<SourceCompletionItem> ();
+			
+			filtered_proposals.prepend (new SourceCompletionItem (search + "xx", search + "xx", null, "some info"));
 			foreach(var i in this.proposals) {
 				//if(i.text.contains(search)) // starts??
-				//	this.filtered_proposals.prepend (new Gtk.SourceCompletionItem (i.label, i.text, i.icon, i.info));
+				//	this.filtered_proposals.prepend (new SourceCompletionItem (i.label, i.text, i.icon, i.info));
 				//}
 			}
 			context.add_proposals (this, filtered_proposals, true);
 		}
 
-		public bool activate_proposal (Gtk.SourceCompletionProposal proposal, Gtk.TextIter iter)
+		public bool activate_proposal (SourceCompletionProposal proposal, TextIter iter)
 		{
 			var istart = iter;
 			istart.backward_find_char(is_space, null);
@@ -71,10 +79,10 @@ namespace Palete {
 			return true;
 		}
 
-		public Gtk.SourceCompletionActivation get_activation ()
+		public SourceCompletionActivation get_activation ()
 		{
 			//if(SettingsManager.Get_Setting("complete_auto") == "true"){
-				return Gtk.SourceCompletionActivation.INTERACTIVE | Gtk.SourceCompletionActivation.USER_REQUESTED;
+				return SourceCompletionActivation.INTERACTIVE | SourceCompletionActivation.USER_REQUESTED;
 			//} else {
 			//	return Gtk.SourceCompletionActivation.USER_REQUESTED;
 			//}
@@ -85,12 +93,12 @@ namespace Palete {
 			return -1;
 		}
 
-		public bool get_start_iter (Gtk.SourceCompletionContext context, Gtk.SourceCompletionProposal proposal, Gtk.TextIter iter)
+		public bool get_start_iter (SourceCompletionContext context, SourceCompletionProposal proposal, out TextIter iter)
 		{
 			return false;
 		}
 
-		public void update_info (Gtk.SourceCompletionProposal proposal, Gtk.SourceCompletionInfo info)
+		public void update_info (SourceCompletionProposal proposal, SourceCompletionInfo info)
 		{
 
 		}
