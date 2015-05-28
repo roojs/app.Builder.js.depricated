@@ -355,10 +355,11 @@ namespace Palete {
 		
 		public void runResult(int res, string output, string stderr)
 		{
+			this.compiler = null;
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
 	            var exec = new Spawn("/tmp", { "/tmp/testrun" });
 		    exec.run(); 
-			this.compiler = null;
+
 		}
 	}
 		 
