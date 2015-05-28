@@ -88,7 +88,7 @@ namespace JsRender {
 			var node = pa.get_root();
 			
 			if (node.get_node_type () != Json.NodeType.OBJECT) {
-				throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+			    throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 			}
 			var obj = node.get_object ();
 			
@@ -117,6 +117,7 @@ namespace JsRender {
 
 			}
 			NodeToVala.mungeFile(this); // force line numbering..
+			this.loaded = true;
 			
 		}
          
