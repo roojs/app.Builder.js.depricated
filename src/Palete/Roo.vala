@@ -291,6 +291,7 @@ namespace Palete {
 							if (prop.type.index_of(".",0) > -1) {
 								// type is another roo object..
 								curtype = prop.type;
+								prevbits += parts[i] + ".";
 								continue;
 							}
 							return ret;
@@ -318,6 +319,7 @@ namespace Palete {
 					if (!foundit) {
 						return ret;
 					}
+					prevbits += parts[i] + ".";
 					continue;
 				}
 				// got to the last element..
@@ -339,23 +341,14 @@ namespace Palete {
 				while (citer.next()) {
 					var prop = citer.get_value();
 					// does the name start with ...
-					if (prop.index_of(parts[i],0) != 0) {
+					if (prop.name.index_of(parts[i],0) != 0) {
 						continue;
 					}
 					// got a matching property...
 					
+					ret.append(new SourceCompletionItem (cls.name + "." + prop.name, "Roo", null, "Roo library"));
 					
-					
-				
-				if (cls.props.has_key(parts[i])) {
-					var prop = cls.props.get(parts[i]);
-					if (prop.type.index_of(".",0) > -1) {
-						// type is another roo object..
-						curtype = prop.type;
-						continue;
-					}
-					return ret;
-				}	
+					 
 					
 					
 					
