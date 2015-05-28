@@ -193,12 +193,14 @@ namespace Palete {
 			 
 		}
 		
-		public bool spawnExecute(JsRender.JsRender file)
+		public void spawnExecute(JsRender.JsRender file)
 		{
  			// race condition..
  			if (this.compiler != null) { 
 				return false;
 			}
+			var pr = (Project.Gtk)(file.project);
+ 			
  			
  			this.file = file;
 			this.line_offset = 0;
@@ -208,7 +210,13 @@ namespace Palete {
 			args += "--project";
 			args += this.file.project.fn;
 			args += "--target";
-			args += this.file.build_module;
+			if (this.file.build_module.length > 0 ) {
+        		    args += this.file.build_module;
+			} else {
+			    args += pr.firstBuildModule();
+			
+			
+
 			 
 			 
 			
