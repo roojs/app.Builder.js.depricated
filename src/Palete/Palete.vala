@@ -408,7 +408,7 @@ namespace Palete
 				string proptype, 
 				string key,
 				string complete_string
-		)
+		);
 	}
 
 
