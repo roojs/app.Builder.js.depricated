@@ -346,29 +346,23 @@ namespace Palete {
 					}
 					// got a matching property...
 					
-					ret.append(new SourceCompletionItem (cls.name + "." + prop.name, "Roo", null, "Roo library"));
-					
+					ret.append(new SourceCompletionItem (
+							cls.name + "." + prop.name, 
+							prevbits + prop.name, 
+							null, 
+							prop.doctxt));
+				}
 					 
 					
+				return ret;	
 					
 					
-					
-					return ret;
-				}
 				
 					
 				
 			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			 
 			
 			
 			
