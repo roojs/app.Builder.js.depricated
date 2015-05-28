@@ -309,11 +309,11 @@ namespace Palete {
 				
 				// not a instance..
 				//look for child classes.
-				var citer = this.classes.map_iter();
+				var citer = this.classes.map_iterator();
 				while (citer.next()) {
 					var scls = citer.get_key();
 					var look = prevbits + parts[i];
-					if (scls.indexOf(look,0) != 0) {
+					if (scls.index_of(look,0) != 0) {
 						continue;
 					}
 					// got a starting match..
