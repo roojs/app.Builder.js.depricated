@@ -276,7 +276,7 @@ public class Editor : Object
             var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
                 this.el.override_font(description);
-            
+            	this.completion.add_provider(new Palete.CompletionProvider());
             
               
                 var attrs = new Gtk.SourceMarkAttributes();
