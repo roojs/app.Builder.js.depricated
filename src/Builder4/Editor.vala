@@ -276,8 +276,8 @@ public class Editor : Object
             var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
                 this.el.override_font(description);
-                var p = new Palete.CompletionProvider();
-                p.editor = _this;
+                var p = new Palete.CompletionProvider(_this);
+            
             	this.el.completion.add_provider(p);
             	this.el.completion.unblock_interactive();
             	this.el.completion.select_on_show			= true;
