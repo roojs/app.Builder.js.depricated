@@ -200,7 +200,7 @@ namespace Palete {
 		{
  			// race condition..
  			if (this.compiler != null) { 
-				return;
+				return false;
 			}
 			var pr = (Project.Gtk)(file.project);
  			
@@ -213,7 +213,7 @@ namespace Palete {
 		            if (path == file.path) {
 		                foundit = true;
 		                break;
-	                    }
+					}
 			
 			}
 			if (!foundit) {
