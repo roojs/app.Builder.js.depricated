@@ -49,6 +49,7 @@ public class Editor : Object
 
         // set gobject values
         this.el.homogeneous = false;
+        this.el.hexpand = true;
         var child_0 = new Xcls_Box2( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true );
