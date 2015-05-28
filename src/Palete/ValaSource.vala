@@ -249,18 +249,18 @@ namespace Palete {
 			args += file.path;
 			 
 			
-			this.compiler = new Spawn("/tmp", args);
-			this.compiler.complete.connect(spawnResult);
+			
 			
 			try {
+			    this.compiler = new Spawn("/tmp", args);
+			    this.compiler.complete.connect(spawnResult);
 			    this.compiler.run(); 
-			} catch (GLib.SpawnError e) {
-			    var ret = new Json.Object();
-			    ret.set_boolean_member("success", false);
-			    ret.set_string_member("message", e.message);
-			    this.compiled(ret);
+			} catch (GLib.Error e) {
+			    
 			    this.compiler = null;
+			    return false;
 			}
+			return true;
 			 
 		}
 		
