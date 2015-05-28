@@ -266,7 +266,7 @@ namespace Palete {
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
 			context.report = this.report;
 			
-			
+			valac += " -b  /tmp ";
 			context.basedir = "/tmp"; //Posix.realpath (".");
 		
 			context.directory = context.basedir;
