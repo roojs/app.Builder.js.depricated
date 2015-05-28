@@ -23,7 +23,7 @@ namespace JsRender {
             base( project, path);
             this.xtype = "Gtk";
             this.language = "vala";
-            this.content_type = "text/x-vala";
+            
             
             //this.items = false;
             //if (cfg.json) {
