@@ -266,8 +266,8 @@ namespace Palete {
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
 			context.report = this.report;
 			
-			valac += " -b  /tmp ";
-			context.basedir = "/tmp"; //Posix.realpath (".");
+			//valac += " -b  /tmp ";
+			//context.basedir = "/tmp"; //Posix.realpath (".");
 		
 			context.directory = context.basedir;
 		
@@ -390,9 +390,8 @@ namespace Palete {
 				this.outputResult();
 				return;
 			}
-			context.run_output = true;
+			 
 			context.codegen = new Vala.GDBusServerModule ();
-			
 			 
 			
 			context.codegen.emit (context);
