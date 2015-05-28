@@ -39,7 +39,7 @@ public class Xcls_ValaCompileResults : Object
     }
 
     // user defined functions
-    public void show ( Gtk.Widget onbtn) {
+    public void show ( Gtk.Widget onbtn, bool reset) {
     	this.window.el.get_size(out w, out h);
         
         // left tree = 250, editor area = 500?
@@ -61,7 +61,13 @@ public class Xcls_ValaCompileResults : Object
        
         while(Gtk.events_pending()) { 
                 Gtk.main_iteration();
-        }       
+        }
+        if (reset) {
+    		var buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();
+    		buf.set_text("",0);
+    	}
+        
+        
     }
     public class Xcls_compile_view : Object
     {
