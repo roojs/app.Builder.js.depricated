@@ -10,7 +10,7 @@
   {
    "int height_request" : 400,
    "id" : "ValaCompileResults",
-   "| void show" : "() {\n\n}\n",
+   "| void show" : "( Gtk.Widget onbtn) {\n\tthis.window.el.get_size(out w, out h);\n    \n    // left tree = 250, editor area = 500?\n    \n    var new_w = int.min(250, w-100);\n    if (new_w > (w-100)) {\n        new_w = w-100;\n    }\n    this.el.set_size_request( int.max(100, new_w), int.max(100, h-120));\n\n    \n\n    if (this.el.relative_to == null) {\n        this.el.set_relative_to(onbtn);\n    }\n    this.el.show_all();\n   \n    while(Gtk.events_pending()) { \n            Gtk.main_iteration();\n    }       \n}\n",
    "xtype" : "Popover",
    "Gtk.PositionType position" : "Gtk.PositionType.TOP",
    "bool active" : false,
