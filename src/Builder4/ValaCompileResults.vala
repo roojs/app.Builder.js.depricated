@@ -37,6 +37,9 @@ public class Xcls_ValaCompileResults : Object
     }
 
     // user defined functions
+    public void show () {
+    
+    }
     public class Xcls_compile_view : Object
     {
         public Gtk.Box el;

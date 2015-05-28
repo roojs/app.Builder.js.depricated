@@ -10,6 +10,7 @@
   {
    "int height_request" : 400,
    "id" : "ValaCompileResults",
+   "| void show" : "() {\n\n}\n",
    "xtype" : "Popover",
    "Gtk.PositionType position" : "Gtk.PositionType.TOP",
    "bool active" : false,
