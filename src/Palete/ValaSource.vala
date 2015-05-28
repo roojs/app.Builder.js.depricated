@@ -275,7 +275,7 @@ namespace Palete {
 			 
 				
 			try { 
-				GLib.debug("GOT output %s", output);
+				//GLib.debug("GOT output %s", output);
 				
 				var pa = new Json.Parser();
 				pa.load_from_data(output);
