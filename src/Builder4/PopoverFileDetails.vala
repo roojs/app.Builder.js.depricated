@@ -781,90 +781,90 @@ public class Xcls_PopoverFileDetails : Object
 
             //listeners
             this.el.clicked.connect( ( ) =>  { 
-              
-            	 
             
-            
-                    if (_this.name.el.get_text().length  < 1) {
-                        StandardErrorDialog.show(
-                            _this.mainwindow.el,
-                            "You have to set Component name "
-                        );
-                         
-                        return;
-                    }
-                    // what does this do?
-                    
-                    var isNew = _this.file.name.length  > 0 ? false : true;
-                    /*
-                    if (!isNew && this.file.name != _this.name.el.get_text()) {
-                        Xcls_StandardErrorDialog.singleton().show(
-                            this.el,
-                            "Sorry changing names does not work yet. "
-                        );
-                         
-                        return;
-                    }
-                    */
-                     
-                    
-                  
-                    // FIXME - this may be more complicated...
-                    //for (var i in this.def) {
-                    //    this.file[i] =  this.get(i).el.get_text();
-                    //}
-            
-                    if (!isNew) {
-                        try {
-                             _this.updateFileFromEntry();
-                         } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
-                              Xcls_StandardErrorDialog.singleton().show(
-                                _this.mainwindow.el,
-                                "The name you used already exists "
-                            );
-                            return;
-                             
-                         }
-            
-                          _this.done = true;
-                        _this.file.save();
-                        _this.el.hide();
-                        return;
-                    }
-                    var fn = _this.name.el.get_text();
-                    var dir = _this.project.firstPath();
-                   
-                    if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
-                        Xcls_StandardErrorDialog.singleton().show(
-                            _this.mainwindow.el,
-                            "That file already exists"
-                        ); 
-                        return;
-                    }
-                   
-                   var f =  JsRender.JsRender.factory(
-                            _this.file.project.xtype,  
-                            _this.file.project, 
-                            dir + "/" + fn + ".bjs");
-            
-                    _this.file = f;
-                    
-            
-                    
-                    _this.updateFileFromEntry();
-            	    _this.file.loaded = true;
-                    _this.file.save();
-                    _this.file.project.addFile(_this.file);
-                    
-            	 
-                    // what about .js ?
-                   _this.done = true;
-                    _this.el.hide();
              
-                    
-                    
-                    _this.success(_this.project, _this.file);
-                   
+            
+            
+            	if (_this.name.el.get_text().length  < 1) {
+            	    StandardErrorDialog.show(
+            	        _this.mainwindow.el,
+            	        "You have to set Component name "
+            	    );
+            	     
+            	    return;
+            	}
+            	// what does this do?
+            	
+            	var isNew = _this.file.name.length  > 0 ? false : true;
+            	/*
+            	if (!isNew && this.file.name != _this.name.el.get_text()) {
+            	    Xcls_StandardErrorDialog.singleton().show(
+            	        this.el,
+            	        "Sorry changing names does not work yet. "
+            	    );
+            	     
+            	    return;
+            	}
+            	*/
+            	 
+            	
+              
+            	// FIXME - this may be more complicated...
+            	//for (var i in this.def) {
+            	//    this.file[i] =  this.get(i).el.get_text();
+            	//}
+            
+            	if (!isNew) {
+            	    try {
+            	         _this.updateFileFromEntry();
+            	     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
+            	          Xcls_StandardErrorDialog.singleton().show(
+            	            _this.mainwindow.el,
+            	            "The name you used already exists "
+            	        );
+            	        return;
+            	         
+            	     }
+            
+            	      _this.done = true;
+            	    _this.file.save();
+            	    _this.el.hide();
+            	    return;
+            	}
+            	var fn = _this.name.el.get_text();
+            	var dir = _this.project.firstPath();
+               
+            	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
+            	    Xcls_StandardErrorDialog.singleton().show(
+            	        _this.mainwindow.el,
+            	        "That file already exists"
+            	    ); 
+            	    return;
+            	}
+               
+               var f =  JsRender.JsRender.factory(
+            		_this.file.project.xtype,  
+            		_this.file.project, 
+            		dir + "/" + fn + ".bjs");
+            
+            	_this.file = f;
+            	
+            
+            	
+            	_this.updateFileFromEntry();
+            	_this.file.loaded = true;
+            	_this.file.save();
+            	_this.file.project.addFile(_this.file);
+            	
+             
+            	// what about .js ?
+               _this.done = true;
+            	_this.el.hide();
+            
+            	
+            	
+            	_this.success(_this.project, _this.file);
+               
             });
         }
 
