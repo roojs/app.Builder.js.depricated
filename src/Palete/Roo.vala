@@ -269,7 +269,7 @@ namespace Palete {
 			}
 			if (parts[0] == "Roo") {	
 				curtype = "Roo";
-				cur_false = true;
+				cur_instance = false;
 			}
 			
 			var prevbits = parts[0] + ".";
