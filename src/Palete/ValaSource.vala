@@ -51,7 +51,7 @@ namespace Palete {
 		//	return this.checkString(JsRender.NodeToVala.mungeFile(this.file));
 		//}
 
-		public void checkFileWithNodePropChange(
+		public bool checkFileWithNodePropChange(
 		  
 					JsRender.JsRender file,
 					JsRender.Node node, 
@@ -63,7 +63,7 @@ namespace Palete {
 			this.file = file;
  			
  			if (this.compiler != null) {
-				return;
+				return false;
 			}
 			
 			Gee.HashMap<int,string> ret = new Gee.HashMap<int,string> ();
@@ -72,8 +72,7 @@ namespace Palete {
 			// untill we get a smarter renderer..
 			// we have some scenarios where changing the value does not work
 			if (prop == "* xns" || prop == "xtype") {
-				this.compiled(new Json.Object());
-				return ;
+				return  false;
 			}
 				
 			
@@ -103,13 +102,13 @@ namespace Palete {
 		}
 		Spawn compiler;
 		 
-		public void checkStringSpawn(
+		public bool checkStringSpawn(
 				string contents 
 			)
 		{
  			
  			if (this.compiler != null) {
-				return;
+				return false;
 			}
  			
 			FileIOStream iostream;
@@ -126,11 +125,8 @@ namespace Palete {
 			
 				valafn = regex.replace(this.file.path,this.file.path.length , 0 , ".vala");
 			 } catch (GLib.RegexError e) {
-				var ret = new Json.Object();
-				ret.set_boolean_member("success", false);
-				ret.set_string_member("message", e.message);
-			    this.compiled(ret);
-			    return;
+				 
+			    return false;
 			}   
 			
 			string[] args = {};
@@ -152,12 +148,12 @@ namespace Palete {
 			try {
 				this.compiler.run(); 
 			} catch (GLib.SpawnError e) {
-				var ret = new Json.Object();
-				ret.set_boolean_member("success", false);
-				ret.set_string_member("message", e.message);
-			    this.compiled(ret);
-			    this.compiler = null;
+			        GLib.debug(e.message);
+         			this.compiler = null;
+			        return false;
+
 			}
+			return true;
 			 
 		}
 		
