@@ -2009,6 +2009,7 @@ public class Xcls_MainWindow : Object
                 var proj = _this.windowstate.left_projects.getSelectedProject();
                 
                 if (proj == null) {
+            		print("no project selected?\n");
                     return  ;
                 }
                 
