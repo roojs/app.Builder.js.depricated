@@ -345,7 +345,7 @@ namespace Palete {
 			
 			// add the modules...
 			
-			context.output = "/tmp/testbuild";
+			context.output = this.output == "" ? "/tmp/testbuild" : this.output;
 			valac += " -o " +context.output;
 			GLib.debug("%s", valac);
 			
@@ -383,12 +383,18 @@ namespace Palete {
 				return;
 			}
 			
-			//context.codegen = new Vala.GDBusServerModule ();
+			if (this.output == "") {
+				Vala.CodeContext.pop ();
+				this.outputResult();
+				return;
+			}
+			
+			context.codegen = new Vala.GDBusServerModule ();
 			
 			 
 			
-			//context.codegen.emit (context);
-			/*
+			context.codegen.emit (context);
+			
 			var ccompiler = new Vala.CCodeCompiler ();
 			var cc_command = Environment.get_variable ("CC");
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
@@ -397,7 +403,7 @@ namespace Palete {
 #else
 			ccompiler.compile (context, cc_command, new string[] { });
 #endif
-			*/
+		
  
 			Vala.CodeContext.pop ();
 			this.outputResult();
