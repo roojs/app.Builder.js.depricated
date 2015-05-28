@@ -67,7 +67,7 @@ namespace Palete {
 		
 		}
 
-		public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
+		public override Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type) throws Error
 		{
 			//print("Loading for " + ename);
 		    
