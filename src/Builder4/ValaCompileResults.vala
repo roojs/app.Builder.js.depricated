@@ -57,15 +57,15 @@ public class Xcls_ValaCompileResults : Object
         this.el.show_all();
        // not sure why..
        
-       
+       if (reset) {
+    		var buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();
+    		buf.set_text("",0);
+    	}
        
         while(Gtk.events_pending()) { 
                 Gtk.main_iteration();
         }
-        if (reset) {
-    		var buf = (Gtk.SourceBuffer)this.sourceview.el.get_buffer();
-    		buf.set_text("",0);
-    	}
+        
         
         
     }
