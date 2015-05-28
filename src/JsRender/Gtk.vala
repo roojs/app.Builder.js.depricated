@@ -78,11 +78,17 @@ namespace JsRender {
 			print("load Items!\n");
 			if (this.tree != null) {
 				this.loaded = true;
+				
 				return;
 			}
 			
 			print("load: %s\n" , this.path);
-
+			if (!GLib.FileUtils.test(this.path, GLib.FileTest.EXISTS)) {
+				// new file?!?
+				this.tree = null;
+				this.loaded = true;
+				return;
+			}
 
 			var pa = new Json.Parser();
 			pa.load_from_file(this.path);
