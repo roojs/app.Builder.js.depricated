@@ -64,6 +64,7 @@
 		public static string opt_compile_target;
 		public static string opt_compile_skip;
 		public static string opt_compile_add;
+		public static string opt_compile_output;		
 		public static bool opt_debug = false;
 		
 		public static string _self;
