@@ -260,6 +260,7 @@ namespace Palete {
 			context.metadata_directories = { };
 			context.gir_directories = {};
 			context.thread = true;
+			valac += " --thread ";
 			 
 			
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
