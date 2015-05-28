@@ -13,9 +13,6 @@ public class Xcls_ValaCompileResults : Object
         return _ValaCompileResults;
     }
     public Xcls_compile_view compile_view;
-    public Xcls_compile_tree compile_tree;
-    public Xcls_compile_result_store compile_result_store;
-    public Xcls_renderer renderer;
 
         // my vars (def)
     public Xcls_MainWindow window;
@@ -157,9 +154,6 @@ public class Xcls_ValaCompileResults : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_compile_tree( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
 
             // init method
 
@@ -172,189 +166,6 @@ public class Xcls_ValaCompileResults : Object
 
         // user defined functions
     }
-    public class Xcls_compile_tree : Object
-    {
-        public Gtk.TreeView el;
-        private Xcls_ValaCompileResults  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_compile_tree(Xcls_ValaCompileResults _owner )
-        {
-            _this = _owner;
-            _this.compile_tree = this;
-            this.el = new Gtk.TreeView();
-
-            // my vars (dec)
-
-            // set gobject values
-            var child_0 = new Xcls_compile_result_store( _this );
-            child_0.ref();
-            this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_column( _this );
-            child_1.ref();
-            this.el.append_column (  child_1.el  );
-
-            // init method
-
-            {
-             var description = new Pango.FontDescription();
-                description.set_size(8000);
-                this.el.override_font(description);
-            
-            }
-
-            //listeners
-            this.el.button_press_event.connect( ( ev)  => {
-             
-                Gtk.TreeViewColumn col;
-                int cell_x;
-                int cell_y;
-                Gtk.TreePath path;
-                if (!this.el.get_path_at_pos((int)ev.x, (int) ev.y, out path, out col, out cell_x, out cell_y )) {
-                    print("nothing selected on click");
-                    
-                    return false; //not on a element.
-                }
-                
-                 
-                 // right click.
-                 if (ev.type != Gdk.EventType.2BUTTON_PRESS  || ev.button != 1  ) {    
-                    // show popup!.   
-                        
-                     
-                    return false;
-                }
-                Gtk.TreeIter iter;
-                 var mod = _this.compile_result_store.el;
-                mod.get_iter (out iter, path);
-                
-                  
-                
-                // var val = "";
-                GLib.Value value;
-                _this.compile_result_store.el.get_value(iter, 3, out value);
-                var fname = (string)value;
-                //GLib.Value lvalue;
-                //_this.compile_result_store.el.get_value(iter, 1, out lvalue);
-                //var line = (int) lvalue;
-                
-                
-               var  bjsf = "";
-                try {             
-                   var  regex = new Regex("\\.vala$");
-                
-                 
-                    bjsf = regex.replace(fname,fname.length , 0 , ".bjs");
-                 } catch (GLib.RegexError e) {
-                    return false;
-                }   
-                var p = _this.window.project;
-                    
-                    
-                    
-                var jsr = p.getByPath(bjsf);
-                if (jsr != null) {
-                    _this.window.windowstate.fileViewOpen(jsr);
-                    
-                    return false;
-                
-                }
-                
-                var pf = JsRender.JsRender.factory("PlainFile", p, fname);
-                _this.window.windowstate.fileViewOpen(pf);
-                
-                // try hiding the left nav..
-             
-                return false;
-                
-              });
-        }
-
-        // user defined functions
-    }
-    public class Xcls_compile_result_store : Object
-    {
-        public Gtk.TreeStore el;
-        private Xcls_ValaCompileResults  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_compile_result_store(Xcls_ValaCompileResults _owner )
-        {
-            _this = _owner;
-            _this.compile_result_store = this;
-            this.el = new Gtk.TreeStore( 4,   typeof(string), typeof(int), typeof(string), typeof(string)  );
-
-            // my vars (dec)
-
-            // set gobject values
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_column : Object
-    {
-        public Gtk.TreeViewColumn el;
-        private Xcls_ValaCompileResults  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_column(Xcls_ValaCompileResults _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.TreeViewColumn();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.title = "Compile output";
-            var child_0 = new Xcls_renderer( _this );
-            child_0.ref();
-            this.el.pack_start (  child_0.el , true );
-
-            // init method
-
-            {
-              this.el.add_attribute(_this.renderer.el , "markup", 2 );
-             
-            }
-        }
-
-        // user defined functions
-    }
-    public class Xcls_renderer : Object
-    {
-        public Gtk.CellRendererText el;
-        private Xcls_ValaCompileResults  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_renderer(Xcls_ValaCompileResults _owner )
-        {
-            _this = _owner;
-            _this.renderer = this;
-            this.el = new Gtk.CellRendererText();
-
-            // my vars (dec)
-
-            // set gobject values
-        }
-
-        // user defined functions
-    }
-
-
-
 
 
 }
