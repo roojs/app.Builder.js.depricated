@@ -305,6 +305,9 @@ namespace Palete {
 							}
 							return ret;
 						}
+						
+						
+						
 						// check methods?? - we do not export that at present..
 						return ret;	 //no idea...
 					}
@@ -358,9 +361,27 @@ namespace Palete {
 				}
 				print("matching property");
 				
+				
+				
+				var citer = cls.methods.map_iterator();
+				while (citer.next()) {
+					var prop = citer.get_value();
+					// does the name start with ...
+					if (parts[i].length > 0 && prop.name.index_of(parts[i],0) != 0) {
+						continue;
+					}
+					// got a matching property...
+					
+					ret.append(new SourceCompletionItem (
+							 prop.name + prop.sig + " : " + prop.type + " ("+ prop.propertyof + ")", 
+							prevbits + prop.name + "(", 
+							null, 
+							prop.doctxt));
+				}
+				
 				// get the properties / methods and subclasses.. of cls..
 				// we have cls.. - see if the string matches any of the properties..
-				var citer = cls.props.map_iterator();
+				citer = cls.props.map_iterator();
 				while (citer.next()) {
 					var prop = citer.get_value();
 					// does the name start with ...
