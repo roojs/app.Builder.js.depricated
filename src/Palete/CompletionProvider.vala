@@ -8,16 +8,14 @@ namespace Palete {
     {
 		Editor editor; 
 		WindowState windowstate;
-		public List<SourceCompletionItem> proposals;
-		//public List<Gtk.SourceCompletionItem> filtered_proposals;
+ 		//public List<Gtk.SourceCompletionItem> filtered_proposals;
 
 		construct(Editor editor)
 		{
 		    this.editor  = editor;
 		    this.windowstate = editor.window.windowstate;
 		    
-			this.proposals = new List<SourceCompletionItem> ();
-		}
+ 		}
 
 		public string get_name ()
 		{
