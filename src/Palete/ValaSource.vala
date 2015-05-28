@@ -352,6 +352,14 @@ namespace Palete {
 			
 			
 		}
+		
+		public void runResult(int res, string output, string stderr)
+		{
+		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
+	            var exec = new Spawn("/tmp", { "/tmp/testrun" });
+		    exec.run(); 
+		
+		}
 	}
 		 
 }
