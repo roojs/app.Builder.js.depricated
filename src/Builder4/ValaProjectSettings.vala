@@ -1599,7 +1599,7 @@ public class ValaProjectSettings : Object
         
             for(var i =0 ; i < items.size; i++) {
             
-                 var files = _this.project.filesForCompile(items.get(i));
+                 var files = _this.project.filesForCompile(items.get(i), false);
                  if (files.size < 1) {
                     continue;
                  }
