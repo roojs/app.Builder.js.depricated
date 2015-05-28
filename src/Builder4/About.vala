@@ -34,8 +34,8 @@ public class About : Object
 
         //listeners
         this.el.delete_event.connect( (self, event) => {
-            this.el.hide();
-            return true; 
+        	this.el.hide();
+        	return true; 
         });
         this.el.response.connect( (rid) => {
             this.el.hide();
