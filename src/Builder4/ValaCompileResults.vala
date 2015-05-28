@@ -15,6 +15,7 @@ public class Xcls_ValaCompileResults : Object
     public Xcls_compile_view compile_view;
 
         // my vars (def)
+    public Xcls_MainWindow window;
     public bool active;
 
     // ctor
