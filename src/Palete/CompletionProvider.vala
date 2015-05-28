@@ -11,9 +11,11 @@ namespace Palete {
 		public List<SourceCompletionItem> proposals;
 		//public List<Gtk.SourceCompletionItem> filtered_proposals;
 
-		construct
+		construct(Editor editor)
 		{
-		   
+		    this.editor  = editor;
+		    this.windowstate = editor.window.windowstate;
+		    
 			this.proposals = new List<SourceCompletionItem> ();
 		}
 
