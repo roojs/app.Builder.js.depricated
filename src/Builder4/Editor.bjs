@@ -18,7 +18,7 @@
    "# string key" : "\"\"",
    "* pack" : "add",
    "xtype" : "Box",
-   "|   void show" : "(JsRender.JsRender file, JsRender.Node? node, string ptype, string key)\n{\n    this.file = file;    \n    this.ptype = \"\";\n    this.key  = \"\";\n    this.node = null;\n\n    \n    if (file.xtype != \"PlainFile\") {\n    \n        this.ptype = ptype;\n        this.key  = key;\n        this.node = node;\n         string val = \"\";\n        // find the text for the node..\n        if (ptype == \"listener\") {\n            val = node.listeners.get(key);\n        \n        } else {\n            val = node.props.get(key);\n        }\n        this.view.load(val);\n        this.key_edit.el.show();\n        this.key_edit.el.text = key;  \n    \n    } else {\n        this.view.load(        file.toSource() );\n        this.key_edit.el.hide();\n    }\n\n       \n}",
+   "|   void show" : "(JsRender.JsRender file, JsRender.Node? node, string ptype, string key)\n{\n    this.file = file;    \n    this.ptype = \"\";\n    this.key  = \"\";\n    this.node = null;\n\n    \n    if (file.xtype != \"PlainFile\") {\n    \n        this.ptype = ptype;\n        this.key  = key;\n        this.node = node;\n         string val = \"\";\n        // find the text for the node..\n        if (ptype == \"listener\") {\n            val = node.listeners.get(key);\n        \n        } else {\n            val = node.props.get(key);\n        }\n        this.view.load(val);\n        this.key_edit.el.show();\n        this.key_edit.el.text = key;  \n    \n    } else {\n        this.view.load(        file.toSource() );\n        this.key_edit.el.hide();\n    }\n\n        \n}",
    "# JsRender.JsRender file" : "null",
    "# bool pos" : false,
    "string id" : "Editor",

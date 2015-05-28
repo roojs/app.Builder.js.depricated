@@ -129,7 +129,7 @@ public class Editor : Object
             this.key_edit.el.hide();
         }
     
-           
+            
     }
     public class Xcls_Box2 : Object
     {
