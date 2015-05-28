@@ -225,6 +225,7 @@ namespace Palete {
 			// assume code is in home...
 			try {
 			    this.compiler = new Spawn( GLib.Environment.get_home_dir(), args);
+			    this.compiler.output_line.connect(compile_output);
 			    this.compiler.complete.connect(runResult);
 			    this.compiler.run(); 
 			
