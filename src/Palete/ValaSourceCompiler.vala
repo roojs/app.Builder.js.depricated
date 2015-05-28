@@ -351,7 +351,7 @@ namespace Palete {
 			
 			context.target_glib_major = 2;
 			context.target_glib_minor = 32;
- 
+			valac += " --target-glib=2.32 ";
 		
 			//add_documented_files (context, settings.source_files);
 		
