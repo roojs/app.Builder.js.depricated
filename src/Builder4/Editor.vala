@@ -277,7 +277,11 @@ public class Editor : Object
                 description.set_size(8000);
                 this.el.override_font(description);
             	this.el.completion.add_provider(new Palete.CompletionProvider());
-             
+            	this.el.completion.unblock_interactive();
+            	this.completion.select_on_show			= true;
+            	this.completion.show_headers			= true;
+            	this.completion.remember_info_visibility		= true;
+            
               
                 var attrs = new Gtk.SourceMarkAttributes();
                 var  pink =   Gdk.RGBA();
