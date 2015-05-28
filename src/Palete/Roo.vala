@@ -347,7 +347,7 @@ namespace Palete {
 					}
 					return ret;
 				}
-				
+				print("matching property");
 				
 				// get the properties / methods and subclasses.. of cls..
 				// we have cls.. - see if the string matches any of the properties..
