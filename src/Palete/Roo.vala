@@ -45,7 +45,10 @@ namespace Palete {
 				 
 				prop.type        = o.get_string_member("type");
 				prop.doctxt  = o.get_string_member("desc");
-				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : cls.name;
+				prop.propertyof = o.has_member("memberOf") ? o.get_string_member("memberOf") : "";
+				if (prop.propertyof.length < 1)  {
+					prop.propertyof = cls.name;
+				}
 				prop.sig = o.has_member("sig") ? o.get_string_member("sig") : "";
 				
 				if (o.has_member("optvals")  ) {
@@ -250,9 +253,11 @@ namespace Palete {
 					
 				}
 				if (complete_string != "Roo" && "Roo".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
-					ret.append(new SourceCompletionItem ("Roo", "Roo", null, "Roo library"));
+					ret.append(new SourceCompletionItem ("Roo - A Roo class", "Roo", null, "Roo library"));
 				}
-
+				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
+					ret.append(new SourceCompletionItem ("_this (the top level element", "_this", null, "Top level element"));
+				}
 				return ret;
 			}
 			// got at least one ".".
