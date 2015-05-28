@@ -34,10 +34,13 @@ namespace Palete {
 		JsRender.JsRender file;
   		public int line_offset = 0;
 		
+		public Gee.ArrayList<Spawn> children;
  		public ValaSource( ) 
  		{
 			base();
 			this.compiler = null;
+			this.children = new Gee.ArrayList<Spawn>();
+			
 		}
 		public void dumpCode(string str) 
 		{
@@ -194,6 +197,9 @@ namespace Palete {
 			 
 		}
 		
+
+		
+		
 		public void spawnExecute(JsRender.JsRender file)
 		{
  			// race condition..
@@ -228,7 +234,7 @@ namespace Palete {
 			    this.compiler.output_line.connect(compile_output_line);
 			    this.compiler.complete.connect(runResult);
 			    this.compiler.run(); 
-			
+				this.children.add(this.compiler); //keep a reference...
 			 
 			} catch (GLib.Error e) {
 			    GLib.debug(e.message);
@@ -361,9 +367,9 @@ namespace Palete {
 		{
 			this.compiler = null;
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
-	            var exec = new Spawn("/tmp", { "/tmp/testrun" });
+            var exec = new Spawn("/tmp", { "/tmp/testrun" });
 		    exec.run(); 
-
+			this.children.add(exec);
 		}
 	}
 		 
