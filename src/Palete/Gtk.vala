@@ -339,10 +339,7 @@ namespace Palete {
 			}
 			 
 			
-			
-			return ret;
-			
-			// got at least one ".".
+			 // got at least one ".".
 			var parts = complete_string.split(".");
 			var curtype = "";
 			var cur_instance = false;
