@@ -314,13 +314,14 @@ namespace Palete {
 					var ss = s.slice(1,-1);
 					if (s[0] == '`' && GLib.Regex.match_simple("^[a-z]+$", ss) &&
 						complete_string != ss && ss.index_of(complete_string,0) == 0 ) {
-						ret.append(new SourceCompletionItem (ss, ss, null, "vala : " + str));
+						ret.append(new SourceCompletionItem (ss, ss, null, "vala : " + ss));
 					}
 				}
 				
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
 				}
+				// basic types..
 				
 				return ret;
 			}
@@ -337,7 +338,7 @@ namespace Palete {
 					print("node is empty - no return\n");
 					return ret; // no idea..
 				}
-				curtype = '*' +  node.fqn();
+				curtype = "*" +  node.fqn();
 				cur_instance = true;
 			}
 			// all Gtk.... etc.. types...
@@ -362,7 +363,7 @@ namespace Palete {
 
 				if (!is_last) {
 					
-					if (curtype[0] == '*' && parts[i] = "el") {
+					if (curtype[0] == '*' && parts[i] == "el") {
 						curtype = curtype.substring(1);
 						prevbits += parts[i] + ".";
 						continue;
@@ -410,6 +411,7 @@ namespace Palete {
 					continue;
 					*/
 				}
+				/*
 				// got to the last element..
 				print("Got last element\n");
 				if (curtype == "") { // should not happen.. we would have returned already..
@@ -472,7 +474,7 @@ namespace Palete {
 							null, 
 							prop.doctxt));
 				}
-					 
+					*/
 					
 				return ret;	
 					
