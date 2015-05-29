@@ -190,14 +190,16 @@ namespace Palete {
 				AND
 				TABLE_SCHEMA = '""" + this.DBNAME + """'
 			""";
-			
-			var jarr = this.fetchAll(this.cnc.execute_select_command( 
-					query
-					));
- 			if (jarr.get_length() < 1) {
-				return  ret;
-			}
- 			
+			try {
+				var jarr = this.fetchAll(this.cnc.execute_select_command( 
+						query
+				));
+	 			if (jarr.get_length() < 1) {
+					return  ret;
+				}
+ 			} catch (GLib.Error e) {
+ 				return ret;
+ 			}
 			var contents = jarr.get_string_element(0);
 			GLib.debug(contents);
 			if (contents == null) {
