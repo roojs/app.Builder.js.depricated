@@ -77,19 +77,21 @@ namespace Palete {
         
         public Json.Array readTables()
         {
-			
-			if (this.DBTYPE == "PostgreSQL") {
+			try {
+				if (this.DBTYPE == "PostgreSQL") {
 				
-				return this.fetchAll(this.cnc.execute_select_command( 
-					"""select c.relname FROM pg_catalog.pg_class c 
-						LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace 
-						WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
-						AND pg_catalog.pg_table_is_visible(c.oid) 
-					"""));
+					return this.fetchAll(this.cnc.execute_select_command( 
+						"""select c.relname FROM pg_catalog.pg_class c 
+							LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace 
+							WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+							AND pg_catalog.pg_table_is_visible(c.oid) 
+						"""));
 				
-			}
-			if (this.DBTYPE == "MySQL") { 
-				return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" ));
+				}
+				if (this.DBTYPE == "MySQL") { 
+					return this.fetchAll(this.cnc.execute_select_command( "SHOW TABLES" ));
+				}
+			} catch (GLib.Error e) {
 			}
 			GLib.warning("Read tables failed DBTYPE = %s\n", this.DBTYPE);
 			return new Json.Array();
@@ -111,46 +113,48 @@ namespace Palete {
 			
 			Json.Array res_ar;
 			var res = new Json.Object();
-			
-			switch (this.DBTYPE ) {
-				case "PostgreSQL":
+			try {
+				switch (this.DBTYPE ) {
+					case "PostgreSQL":
 				
-					res_ar =   this.fetchAll(this.cnc.execute_select_command( 
-					"""
+						res_ar =   this.fetchAll(this.cnc.execute_select_command( 
+						"""
 					
-					 SELECT 
-						f.attnum AS number, 
-						f.attname AS Field, 
-						f.attnum, 
-						CASE WHEN f.attnotnull = 't' THEN 'NO' ELSE 'YES' END AS isNull,  
-						pg_catalog.format_type(f.atttypid,f.atttypmod) AS Type, 
-						CASE WHEN p.contype = 'p' THEN 't' ELSE 'f' END AS primarykey, 
-						CASE WHEN p.contype = 'u' THEN 't' ELSE 'f' END AS uniquekey, 
-						CASE WHEN p.contype = 'f' THEN g.relname END AS foreignkey, 
-						CASE WHEN p.contype = 'f' THEN p.confkey END AS foreignkey_fieldnum, 
-						CASE WHEN p.contype = 'f' THEN g.relname END AS foreignkey, 
-						CASE WHEN p.contype = 'f' THEN p.conkey END AS foreignkey_connnum, 
-						CASE WHEN f.atthasdef = 't' THEN d.adsrc END AS default 
-						FROM pg_attribute f JOIN pg_class c ON c.oid = f.attrelid 
-								JOIN pg_type t ON t.oid = f.atttypid 
-								LEFT JOIN pg_attrdef d ON d.adrelid = c.oid AND d.adnum = f.attnum 
-								LEFT JOIN pg_namespace n ON n.oid = c.relnamespace 
-								LEFT JOIN pg_constraint p ON p.conrelid = c.oid AND f.attnum = ANY ( p.conkey ) 
-								LEFT JOIN pg_class AS g ON p.confrelid = g.oid 
-						WHERE c.relkind = 'r'::char AND n.nspname = 'public' 
-						AND c.relname = '""" + tablename + """' AND f.attnum > 0 ORDER BY number;
+						 SELECT 
+							f.attnum AS number, 
+							f.attname AS Field, 
+							f.attnum, 
+							CASE WHEN f.attnotnull = 't' THEN 'NO' ELSE 'YES' END AS isNull,  
+							pg_catalog.format_type(f.atttypid,f.atttypmod) AS Type, 
+							CASE WHEN p.contype = 'p' THEN 't' ELSE 'f' END AS primarykey, 
+							CASE WHEN p.contype = 'u' THEN 't' ELSE 'f' END AS uniquekey, 
+							CASE WHEN p.contype = 'f' THEN g.relname END AS foreignkey, 
+							CASE WHEN p.contype = 'f' THEN p.confkey END AS foreignkey_fieldnum, 
+							CASE WHEN p.contype = 'f' THEN g.relname END AS foreignkey, 
+							CASE WHEN p.contype = 'f' THEN p.conkey END AS foreignkey_connnum, 
+							CASE WHEN f.atthasdef = 't' THEN d.adsrc END AS default 
+							FROM pg_attribute f JOIN pg_class c ON c.oid = f.attrelid 
+									JOIN pg_type t ON t.oid = f.atttypid 
+									LEFT JOIN pg_attrdef d ON d.adrelid = c.oid AND d.adnum = f.attnum 
+									LEFT JOIN pg_namespace n ON n.oid = c.relnamespace 
+									LEFT JOIN pg_constraint p ON p.conrelid = c.oid AND f.attnum = ANY ( p.conkey ) 
+									LEFT JOIN pg_class AS g ON p.confrelid = g.oid 
+							WHERE c.relkind = 'r'::char AND n.nspname = 'public' 
+							AND c.relname = '""" + tablename + """' AND f.attnum > 0 ORDER BY number;
 							
-					"""));
-					break;
+						"""));
+						break;
 					
-				case  "MySQL":
-					res_ar = this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
-					break;
+					case  "MySQL":
+						res_ar = this.fetchAll(this.cnc.execute_select_command( "DESCRIBE " + tablename ));
+						break;
 				
-				default: 
-					return res;
-					break;
-			}
+					default: 
+						return res;
+						break;
+				}
+			 } catch (GLib.Error e) {
+			 }
 			
 			for (var i =0; i < res_ar.get_length(); i++) {
 				var el = res_ar.get_object_element(i);
