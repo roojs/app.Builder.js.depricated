@@ -46,6 +46,7 @@ namespace Palete {
 			if (parent == null) {
 				Gir.cache.set(element.name, (Gir)g);
 			} else {
+				// we add it as a class of the package.. even though its a namespace..
 				parent.classes.set(element.name, g);
 			}
 			
