@@ -312,18 +312,10 @@ namespace Palete {
 					var m = (Vala.TokenType)i;
 					var s = m.to_string();
 					var ss = s.slice(1,-1);
-					if (s[0] == '`' && GLib.Regex.match_simple("^[a-z]+$", ss)) {
-						print("%s\n",ss);
+					if (s[0] == '`' && GLib.Regex.match_simple("^[a-z]+$", ss) &&
+						complete_string != ss && ss.index_of(complete_string,0) == 0 ) {
+						ret.append(new SourceCompletionItem (ss, ss, null, "vala : " + str));
 					}
-				}
-				
-				for(var i = 0; i <  JsRender.Lang.match_strings.size ; i++) {
-					var str = JsRender.Lang.match_strings.get(i);
-					if (complete_string != str && str.index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
-						ret.append(new SourceCompletionItem (str, str, null, "javascript : " + str));
-					}
-					
-					
 				}
 				
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
