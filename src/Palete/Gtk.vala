@@ -370,6 +370,7 @@ namespace Palete {
 				print("matching %d/%d\n", i, parts.length);
 				var is_last = i == parts.length -1;
 				
+				
 				// look up all the properties of the type...
 				var cls = Gir.factoryFqn(curtype);
 				if (cls == null && curtype[0] != '*') {
@@ -445,7 +446,7 @@ namespace Palete {
 						var scls = citer.get_key();
 						print("checking against class %s\n",scls);
 						var look = prevbits + parts[i];
-						if (parts[i].length > 0 && scls.index_of(look,0) != 0) {
+						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
 							continue;
 						}
 						// got a starting match..
