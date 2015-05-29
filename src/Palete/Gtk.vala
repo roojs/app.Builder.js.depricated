@@ -324,6 +324,9 @@ namespace Palete {
 				
 				return ret;
 			}
+			
+			return ret;
+			
 			// got at least one ".".
 			var parts = complete_string.split(".");
 			var curtype = "";
