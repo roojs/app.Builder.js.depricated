@@ -445,17 +445,37 @@ namespace Palete {
 					while (citer.next()) {
 						var scls = citer.get_key();
 						print("checking against class %s\n",scls);
-						var look = prevbits + parts[i];
+						
 						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
 							continue;
 						}
 						// got a starting match..
 						ret.append(new SourceCompletionItem (
-							scls,
-							scls, 
+							prevbits + scls,
+							prevbits + scls, 
 							null, 
 							scls));
 					}
+					// methods.... 
+					citer = cls.methods.map_iterator();
+					while (citer.next()) {
+						var scls = citer.get_key();
+						print("checking against class %s\n",scls);
+						
+						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
+							continue;
+						}
+						// got a starting match..
+						ret.append(new SourceCompletionItem (
+							prevbits + scls,
+							prevbits + scls, 
+							null, 
+							scls));
+					}
+					
+					
+					
+					
 					return ret;
 				}
 				print("matching property");
