@@ -278,7 +278,7 @@ public class Editor : Object
                 this.el.override_font(description);
             	this.el.completion.add_provider(new Palete.CompletionProvider(_this));
             	this.el.completion.unblock_interactive();
-            	this.el.completion.select_on_show			= true;
+            	this.el.completion.select_on_show			= false; // select first item on list..
             	this.el.completion.show_headers			= false;
             	this.el.completion.remember_info_visibility		= true;
             
