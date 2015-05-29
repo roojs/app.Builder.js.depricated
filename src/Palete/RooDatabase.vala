@@ -190,6 +190,8 @@ namespace Palete {
 				AND
 				TABLE_SCHEMA = '""" + this.DBNAME + """'
 			""";
+			
+			var jarr = new Json.Array();
 			try {
 				var jarr = this.fetchAll(this.cnc.execute_select_command( 
 						query
