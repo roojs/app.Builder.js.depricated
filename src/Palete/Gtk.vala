@@ -371,6 +371,7 @@ namespace Palete {
 				var is_last = i == parts.length -1;
 				
 				
+				 
 				// look up all the properties of the type...
 				var cls = Gir.factoryFqn(curtype);
 				if (cls == null && curtype[0] != '*') {
@@ -474,7 +475,9 @@ namespace Palete {
 					return ret;
 				}
 				print("matching property");
-				
+				if (cls == null) {
+					return ret;
+				}
 				
 				
 				var citer = cls.methods.map_iterator();
