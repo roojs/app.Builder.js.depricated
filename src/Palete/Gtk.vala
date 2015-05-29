@@ -467,7 +467,7 @@ namespace Palete {
 						}
 						// got a starting match..
 						ret.append(new SourceCompletionItem (
-							prevbits + scls  prop.sig ,
+							prevbits + scls  + citer.get_value().sig ,
 							prevbits + scls, 
 							null, 
 							scls));
