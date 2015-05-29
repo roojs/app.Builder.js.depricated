@@ -210,16 +210,14 @@ namespace Palete {
 			
 			 GLib.Regex exp = /FK\(([^\)]+)\)/;
 			 string str = "";
-			 try {
-				GLib.MatchInfo mi;
-				if ( exp.match (contents, 0, out mi) ) {
-					
-					str = mi.fetch(1);
-					GLib.debug("match = %s", str);
-				}
-			} catch (GLib.Error e) {
-				return  ret;
+			  
+			GLib.MatchInfo mi;
+			if ( exp.match (contents, 0, out mi) ) {
+				
+				str = mi.fetch(1);
+				GLib.debug("match = %s", str);
 			}
+			 
 			var ar = str.split("\n");
 			for (var i = 0; i < ar.length; i++) {
 				var kv = ar[i].split("=");
