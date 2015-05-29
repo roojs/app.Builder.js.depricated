@@ -1312,8 +1312,9 @@ public class Xcls_LeftProps : Object
                  // double click on name..
                  if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1 && col.title == "Name") {    
                     // show popup!.   
+                    
                      if (this.popover == null) {
-                 		   this.popover = Xcls_PopoverProperty();
+                 		   this.popover = new Xcls_PopoverProperty();
              		}
              		
              
