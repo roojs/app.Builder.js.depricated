@@ -444,7 +444,6 @@ namespace Palete {
 					var citer = cls.classes.map_iterator();
 					while (citer.next()) {
 						var scls = citer.get_key();
-						print("checking against class %s\n",scls);
 						
 						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
 							continue;
@@ -460,7 +459,6 @@ namespace Palete {
 					citer = cls.methods.map_iterator();
 					while (citer.next()) {
 						var scls = citer.get_key();
-						print("checking against class %s\n",scls);
 						
 						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
 							continue;
@@ -473,7 +471,21 @@ namespace Palete {
 							scls));
 					}
 					
-					
+					// enums.... 
+					citer = cls.consts.map_iterator();
+					while (citer.next()) {
+						var scls = citer.get_key();
+						
+						if (parts[i].length > 0 && scls.index_of(parts[i],0) != 0) {
+							continue;
+						}
+						// got a starting match..
+						ret.append(new SourceCompletionItem (
+							prevbits + scls  + citer.get_value().sig ,
+							prevbits + scls, 
+							null, 
+							scls));
+					}
 					
 					
 					return ret;
