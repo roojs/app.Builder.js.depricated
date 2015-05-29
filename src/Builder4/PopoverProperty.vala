@@ -15,7 +15,7 @@ public class Xcls_PopoverProperty : Object
     public Xcls_build_module build_module;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
-    public Xcls_title title;
+    public Xcls_ktype ktype;
     public Xcls_kname kname;
     public Xcls_save_btn save_btn;
 
@@ -201,7 +201,7 @@ public class Xcls_PopoverProperty : Object
             var child_2 = new Xcls_Label9( _this );
             child_2.ref();
             this.el.attach_defaults (  child_2.el , 0,1,1,2 );
-            var child_3 = new Xcls_title( _this );
+            var child_3 = new Xcls_ktype( _this );
             child_3.ref();
             this.el.attach_defaults (  child_3.el , 1,2,1,2 );
             var child_4 = new Xcls_Label11( _this );
@@ -363,7 +363,7 @@ public class Xcls_PopoverProperty : Object
         public Xcls_Label9(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Title" );
+            this.el = new Gtk.Label( "Type" );
 
             // my vars (dec)
 
@@ -376,7 +376,7 @@ public class Xcls_PopoverProperty : Object
         // user defined functions
     }
 
-    public class Xcls_title : Object
+    public class Xcls_ktype : Object
     {
         public Gtk.Entry el;
         private Xcls_PopoverProperty  _this;
@@ -385,10 +385,10 @@ public class Xcls_PopoverProperty : Object
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_PopoverProperty _owner )
+        public Xcls_ktype(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            _this.title = this;
+            _this.ktype = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)

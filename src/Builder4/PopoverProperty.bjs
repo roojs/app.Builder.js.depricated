@@ -83,7 +83,7 @@
          ]
         },
         {
-         "label" : "Title",
+         "label" : "Type",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,1,2",
@@ -93,7 +93,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "title",
+         "id" : "ktype",
          "$ visible" : true,
          "xtype" : "Entry",
          "* pack" : "attach_defaults,1,2,1,2",
