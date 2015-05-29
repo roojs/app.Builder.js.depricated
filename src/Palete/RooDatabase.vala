@@ -258,7 +258,11 @@ namespace Palete {
 				if (cols.size == 1) {
 					 
 					//print("GOT %s\n",str);
-					res.add_string_element(qnr.get_value_at(0,r).get_string());
+					try { 
+						res.add_string_element(qnr.get_value_at(0,r).get_string());
+					} catch (GLib.Error e) {
+						res.add_string_element("");
+					}
 					continue;
 				}
 				
@@ -266,22 +270,26 @@ namespace Palete {
 				
 				for (var i = 0; i < cols.size; i++) { 
 					var n = cols.get(i);
-					var val = qnr.get_value_at(i,r);
-					var type = val.type().name();
-					//print("%s\n",type);
-					switch(type) {
-						case "GdaBinary":
-						case "GdaBlob":
-							add.set_string_member(n, "?? big string ??");
-							break;
+					try {
+						var val = qnr.get_value_at(i,r);
+						var type = val.type().name();
+						//print("%s\n",type);
+						switch(type) {
+							case "GdaBinary":
+							case "GdaBlob":
+								add.set_string_member(n, "?? big string ??");
+								break;
 							
-						case  "GdaNull":
-							add.set_null_member(n);
-							break;
+							case  "GdaNull":
+								add.set_null_member(n);
+								break;
 						
-						default:
-							add.set_string_member(n, val.get_string());
-							break;
+							default:
+								add.set_string_member(n, val.get_string());
+								break;
+						}
+					} catch (GLib.Error e ) {
+						add.set_string_member(n, "");
 					}
 					
 				}
