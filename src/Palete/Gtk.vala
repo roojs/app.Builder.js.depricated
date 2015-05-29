@@ -467,7 +467,7 @@ namespace Palete {
 						}
 						// got a starting match..
 						ret.append(new SourceCompletionItem (
-							prevbits + scls,
+							prevbits + scls  prop.sig ,
 							prevbits + scls, 
 							null, 
 							scls));
