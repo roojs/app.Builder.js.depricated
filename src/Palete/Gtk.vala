@@ -398,35 +398,18 @@ namespace Palete {
 							}
 							return ret;
 						}
-						
+						 
 						
 						
 						// check methods?? - we do not export that at present..
 						return ret;	 //no idea...
 					}
-					 
-					// not a instance..
-					//look for child classes.
-					var citer = cls.classes.map_iterator();
-					var foundit = false;
-					while (citer.next()) {
-						var scls = citer.get_key();
-						print("checking against class %s\n",scls);
-						var look = prevbits + parts[i];
-						if (scls.index_of(parts[i],0) != 0) {
-							continue;
-						}
-						// got a starting match..
-						curtype = prevbits + parts[i];
-						cur_instance = false;
-						foundit =true;
-						break;
-					}
-					// enums // static etc..?
-					
-					if (!foundit) {
+					var look = prevbits + parts[i];
+					var scls = Gir.factoryFqn(look);
+					if (scls == null) {
 						return ret;
 					}
+					curtype = look;
 					prevbits += parts[i] + ".";
 					continue;
 					 
