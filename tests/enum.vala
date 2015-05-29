@@ -10,7 +10,7 @@ int main (string[] args) {
 		var m = (Vala.TokenType)i;
 		var s = m.to_string();
 		if (s[0] == '`') {
-			print("%s\n",s).slice(1,-1));
+			print("%s\n",s.slice(1,-1));
 		}
 	}
 	
