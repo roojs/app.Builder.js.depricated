@@ -357,18 +357,17 @@ public class Editor : Object
             var lg = _this.file.content_type.length > 0  ?
                     lm.guess_language(_this.file.path, _this.file.content_type) :
                     lm.get_language(lang);
-            
-           
+             
            
             ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lg); 
         
             this.el.insert_spaces_instead_of_tabs = true;
-            
-            print("sourcelanguage  = %s\n", lg.name);
-            if (lg.name == "Vala") {
-                this.el.insert_spaces_instead_of_tabs = false;
-            }
-             
+            if (lg != null) {
+        		print("sourcelanguage  = %s\n", lg.name);
+        		if (lg.name == "Vala") {
+        		    this.el.insert_spaces_instead_of_tabs = false;
+        		}
+             }
             _this.dirty = false;
             this.el.grab_focus();
             _this.save_button.el.sensitive = false;
