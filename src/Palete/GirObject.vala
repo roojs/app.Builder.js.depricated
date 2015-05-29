@@ -24,7 +24,7 @@ namespace Palete {
 		public string type;
 		public string nodetype;
 		public string package;
-		public string direction;
+		public string direction; // used for vala in/out/ref...
 		
 		public GirObject paramset = null;
 		public GirObject return_value = null;
