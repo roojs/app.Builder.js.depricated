@@ -87,7 +87,7 @@ public class Xcls_PopoverProperty : Object
     
     	string kname = "", kflag = "", ktype = "";
     	if (key.length > 0) {
-    		node.normalize_key( key, out  kname, out  kflag, out ktype)
+    		node.normalize_key( key, out  kname, out  kflag, out ktype);
     	}
     
     	_this.kname.el.set_text(kname);
