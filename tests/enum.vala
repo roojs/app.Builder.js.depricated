@@ -1,9 +1,17 @@
 // compile
-// valac   --pkg  gtk+-3.0  enum.vala   -o /tmp/enum
+// valac   --pkg  gtk+-3.0  enum.vala --pkg libvala-0.26  -o /tmp/enum
 // ??--pkg javascriptcore \
 
 
 int main (string[] args) {
+	
+	var max = (int)Vala.TokenType.YIELD +1;
+	for (var i =0; i < max;i++) {
+		var m = (Vala.TokenType)i;
+		print(m.to_string());
+	}
+	
+	
 	Gtk.init(ref args);
 	var type = typeof(Gtk.Box);
 	var  ocl = (ObjectClass) type.class_ref ();
