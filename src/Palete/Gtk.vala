@@ -354,7 +354,7 @@ namespace Palete {
 				var is_last = i == parts.length -1;
 				
 				// look up all the properties of the type...
-				var cls = this.getClass(curtype);
+				var cls = Gir.factoryFqn(curtype);
 				if (cls == null && curtype[0] != '*') {
 					print("could not get class of curtype %s\n", curtype);
 					return ret;
