@@ -408,6 +408,7 @@ namespace Palete {
 					var foundit = false;
 					while (citer.next()) {
 						var scls = citer.get_key();
+						print("checking against class %s\n",scls);
 						var look = prevbits + parts[i];
 						if (scls.index_of(look,0) != 0) {
 							continue;
