@@ -337,10 +337,13 @@ namespace Palete {
 				curtype = '*' +  node.fqn();
 				cur_instance = true;
 			}
-			if (parts[0] == "Roo") {	
-				curtype = "Roo";
-				cur_instance = false;
-			}
+			// all Gtk.... etc.. types...
+			
+			
+			//if (parts[0] == "Roo") {	
+			//	curtype = "Roo";
+			//	cur_instance = false;
+			//}
 			
 			var prevbits = parts[0] + ".";
 			for(var i =1; i < parts.length; i++) {
@@ -349,7 +352,7 @@ namespace Palete {
 				
 				// look up all the properties of the type...
 				var cls = this.getClass(curtype);
-				if (cls == null) {
+				if (cls == null && curtype[0] != '*') {
 					print("could not get class of curtype %s\n", curtype);
 					return ret;
 				}
