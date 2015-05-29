@@ -1325,7 +1325,7 @@ public class Xcls_LeftProps : Object
                      _this.valrender.el.stop_editing(false);
                      _this.valrender.el.editable  =false;
                     
-                    this.popover.show(this.node, "test");
+                    this.popover.show(this.el, this.node, "test");
                        
                      // _this.startEditingKey(path); 
                      
