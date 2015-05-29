@@ -269,7 +269,7 @@ namespace Palete {
 				}
 				var pp = this.add_param(cc, p);
 				c.sig += (c.sig == "(" ? "" : ",");
-				c.sig += " " + (c.direction == "in" ? "" : c.direction) + " " + pp.type + " " + pp.name;
+				c.sig += " " + (pp.direction == "in" ? "" : pp.direction) + " " + pp.type + " " + pp.name;
 			}
 			c.sig += (c.sig == "(" ? ")" : " )");
 			
