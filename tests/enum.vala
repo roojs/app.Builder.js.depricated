@@ -9,8 +9,9 @@ int main (string[] args) {
 	for (var i =0; i < max;i++) {
 		var m = (Vala.TokenType)i;
 		var s = m.to_string();
-		if (s[0] == '`') {
-			print("%s\n",s.slice(1,-1));
+		var ss = s.slice(1,-1);
+		if (s[0] == '`' && GLib.Regex.match_simple('^[a-z]+$', ss) {
+			print("%s\n",ss);
 		}
 	}
 	
