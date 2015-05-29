@@ -10,7 +10,7 @@ int main (string[] args) {
 		var m = (Vala.TokenType)i;
 		var s = m.to_string();
 		var ss = s.slice(1,-1);
-		if (s[0] == '`' && GLib.Regex.match_simple('^[a-z]+$', ss) {
+		if (s[0] == '`' && GLib.Regex.match_simple("^[a-z]+$", ss) {
 			print("%s\n",ss);
 		}
 	}
