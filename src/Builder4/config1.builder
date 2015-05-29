@@ -64,7 +64,8 @@
             "../Palete/ValaSourceCompiler.vala",
             "../JsRender/PlainFile.vala",
             "../Builder4/ValaCompileResults.vala",
-            "../Palete/CompletionProvider.vala"
+            "../Palete/CompletionProvider.vala",
+            "../Builder4/PopoverProperty.vala"
         ],
         "packages" : [
         ]
