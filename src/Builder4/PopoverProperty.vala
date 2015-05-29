@@ -116,8 +116,7 @@ public class Xcls_PopoverProperty : Object
     	this.kname.el.grab_focus();
     
     	//this.success = c.success;
-    
-    
+     
     }
     public class Xcls_Box2 : Object
     {
