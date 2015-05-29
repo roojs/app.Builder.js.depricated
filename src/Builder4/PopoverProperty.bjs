@@ -24,6 +24,7 @@
    "Xcls_MainWindow mainwindow" : "null",
    "bool modal" : true,
    "uint border_width" : 0,
+   "JsRender.Node node" : "",
    "items" : [
     {
      "bool homogeneous" : false,

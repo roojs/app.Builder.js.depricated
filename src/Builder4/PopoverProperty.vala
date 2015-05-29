@@ -25,6 +25,7 @@ public class Xcls_PopoverProperty : Object
     public Project.Project project;
     public JsRender.JsRender file;
     public Xcls_MainWindow mainwindow;
+    public JsRender.Node node;
 
     // ctor
     public Xcls_PopoverProperty()
