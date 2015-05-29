@@ -260,14 +260,17 @@ namespace Palete {
 			cc.gparent = c;
 			cc.ns = c.ns;
 			c.paramset = cc;
-			
+			c.sig = "(";
 			
 			foreach(var p in params) {
 				if (p.name == null && !p.ellipsis) {
 					continue;
 				}
-				this.add_param(cc, p);
+				var p = this.add_param(cc, p);
+				p.sig += p.sig == "(" ? "" : ", ";
+				p.sig += " " + p.type + " " + p.name;
 			}
+			p.sig += ")";
 			
 		}
 		
