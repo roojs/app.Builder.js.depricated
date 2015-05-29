@@ -88,7 +88,9 @@ namespace Palete {
 				var cls = new GirObject("class", key);  
 				cls.props = this.propsFromJSONArray("prop", value.get_object().get_array_member("props"),cls);
 				cls.signals = this.propsFromJSONArray("signal", value.get_object().get_array_member("events"),cls);
-				cls.signals = this.propsFromJSONArray("method", value.get_object().get_array_member("methods"),cls);
+				if (value.get_object().has_member("methods")) {
+					cls.methods = this.propsFromJSONArray("method", value.get_object().get_array_member("methods"),cls);
+				}
 				
 				this.classes.set(key, cls);
 			});
@@ -373,7 +375,7 @@ namespace Palete {
 					// got a matching property...
 					// return type?
 					ret.append(new SourceCompletionItem (
-							 prop.name + prop.sig + " : " + prop.type + " ("+ prop.propertyof + ")", 
+							 prop.name + prop.sig + " :  ("+ prop.propertyof + ")", 
 							prevbits + prop.name + "(", 
 							null, 
 							prop.doctxt));

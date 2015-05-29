@@ -578,7 +578,7 @@ public class JsRender.NodeToVala : Object {
 		var iter = cls.props.map_iterator();
 		while (iter.next()) {
 			var p = iter.get_key();
-			print("Check Write %s\n", p);
+			//print("Check Write %s\n", p);
 			if (!this.node.has(p)) {
 				continue;
 			}

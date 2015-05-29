@@ -13,7 +13,7 @@ namespace Palete {
 		public CompletionProvider(Editor editor)
 		{
 		    this.editor  = editor;
-		    
+		    this.windowstate = null; // not ready until the UI is built.
 		    
  		}
 
@@ -65,10 +65,14 @@ namespace Palete {
 				this.editor.key,
 				search
 			);
-			
+			filtered_proposals.sort((a, b) => {
+				return ((string)(a.text)).collate((string)(b.text));
+			});
 			 
 			context.add_proposals (this, filtered_proposals, true);
 		}
+
+
 
 		public bool activate_proposal (SourceCompletionProposal proposal, TextIter iter)
 		{
