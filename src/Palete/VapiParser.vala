@@ -266,11 +266,11 @@ namespace Palete {
 				if (p.name == null && !p.ellipsis) {
 					continue;
 				}
-				var p = this.add_param(cc, p);
-				p.sig += p.sig == "(" ? "" : ", ";
-				p.sig += " " + p.type + " " + p.name;
+				var pp = this.add_param(cc, p);
+				c.sig += (c.sig == "(" ? "" : ",");
+				c.sig +=  pp.type + " " + pp.name;
 			}
-			p.sig += ")";
+			c.sig += (c.sig == "(" ? ")" : " )");
 			
 		}
 		
