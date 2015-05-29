@@ -403,7 +403,7 @@ namespace Palete
 		public abstract bool typeOptions(string fqn, string key, string type, out string[] opts);
 		public abstract  List<SourceCompletionItem> suggestComplete(
 				JsRender.JsRender file,
-				JsRender.Node node,
+				JsRender.Node? node,
 				string proptype, 
 				string key,
 				string complete_string
