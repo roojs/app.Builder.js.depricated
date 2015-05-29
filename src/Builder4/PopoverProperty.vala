@@ -16,7 +16,7 @@ public class Xcls_PopoverProperty : Object
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
     public Xcls_title title;
-    public Xcls_parent parent;
+    public Xcls_kname kname;
     public Xcls_save_btn save_btn;
 
         // my vars (def)
@@ -83,40 +83,40 @@ public class Xcls_PopoverProperty : Object
                                                         
     }
     public void show (Gtk.Widget btn, JsRender.Node node, string key) 
-    {
-        
-        string kname = "", kflag = "", ktype = "";
-        if (key.length > 0) {
-    	    node.normalize_key( key, out  kname, out  kflag, out ktype)
-        }
-        
-        _this.kname.el.set_text(kname);
-        _this.ktype.el.set_text(ktype);
+    	{
+    
+    	string kname = "", kflag = "", ktype = "";
+    	if (key.length > 0) {
+    		node.normalize_key( key, out  kname, out  kflag, out ktype)
+    	}
+    
+    	_this.kname.el.set_text(kname);
+    	_this.ktype.el.set_text(ktype);
     
     	// does node have this property...
-    	
-    	
-        if (key.length > 0) {
-            this.save_btn.el.set_label("Save");
-        } else {
-            this.save_btn.el.set_label("Create");
-        }
-        
-        _this.node = node;
-        //console.log('show all');
-       this.el.set_modal(true);
-        this.el.set_relative_to(btn);
     
-        this.el.set_position(Gtk.PositionType.TOP);
-        
-        // window + header?
-         print("SHOWALL - POPIP\n");
-        this.el.show_all();
-        this.name.el.grab_focus();
-        
-        //this.success = c.success;
-        
-        
+    
+    	if (key.length > 0) {
+    		this.save_btn.el.set_label("Save");
+    	} else {
+    		this.save_btn.el.set_label("Create");
+    	}
+    
+    	_this.node = node;
+    	//console.log('show all');
+    	this.el.set_modal(true);
+    	this.el.set_relative_to(btn);
+    
+    	this.el.set_position(Gtk.PositionType.TOP);
+    
+    	// window + header?
+    	 print("SHOWALL - POPIP\n");
+    	this.el.show_all();
+    	this.kname.el.grab_focus();
+    
+    	//this.success = c.success;
+    
+    
     }
     public class Xcls_Box2 : Object
     {
@@ -207,7 +207,7 @@ public class Xcls_PopoverProperty : Object
             var child_4 = new Xcls_Label11( _this );
             child_4.ref();
             this.el.attach_defaults (  child_4.el , 0,1,2,3 );
-            var child_5 = new Xcls_parent( _this );
+            var child_5 = new Xcls_kname( _this );
             child_5.ref();
             this.el.attach_defaults (  child_5.el , 1,2,2,3 );
         }
@@ -426,7 +426,7 @@ public class Xcls_PopoverProperty : Object
         // user defined functions
     }
 
-    public class Xcls_parent : Object
+    public class Xcls_kname : Object
     {
         public Gtk.Entry el;
         private Xcls_PopoverProperty  _this;
@@ -435,10 +435,10 @@ public class Xcls_PopoverProperty : Object
             // my vars (def)
 
         // ctor
-        public Xcls_parent(Xcls_PopoverProperty _owner )
+        public Xcls_kname(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            _this.parent = this;
+            _this.kname = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)

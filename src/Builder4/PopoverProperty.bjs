@@ -12,9 +12,9 @@
     "closed" : "() => {\n  if (!this.done) {\n    _this.el.show();\n  \n  }\n} "
    },
    "|   void updateFileFromEntry" : "() {\n\n        _this.file.title = _this.title.el.get_text();\n        _this.file.region = _this.region.el.get_text();            \n        _this.file.parent = _this.parent.el.get_text();                        \n        _this.file.permname = _this.permname.el.get_text();                                    \n        _this.file.modOrder = _this.modOrder.el.get_text();\n        \n        if (_this.file.name.length  > 0 && _this.file.name != _this.name.el.get_text()) {\n            _this.file.renameTo(_this.name.el.get_text());\n        }\n        // store the module...\n        _this.file.build_module = \"\";        \n         Gtk.TreeIter iter; \n        if (_this.build_module.el.get_active_iter (out iter)) {\n             Value vfname;\n             this.dbmodel.el.get_value (iter, 0, out vfname);\n             if (((string)vfname).length > 0) {\n                 _this.file.build_module = (string)vfname;\n             }\n    \n        }\n        \n        \n\n                                                    \n}    ",
-   "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
    "id" : "PopoverProperty",
-   "| void show" : "(Gtk.Widget btn, JsRender.Node node, string key) \n{\n    \n    string kname = \"\", kflag = \"\", ktype = \"\";\n    if (key.length > 0) {\n\t    node.normalize_key( key, out  kname, out  kflag, out ktype)\n    }\n    \n    _this.kname.el.set_text(kname);\n    _this.ktype.el.set_text(ktype);\n\n\t// does node have this property...\n\t\n\t\n    if (key.length > 0) {\n        this.save_btn.el.set_label(\"Save\");\n    } else {\n        this.save_btn.el.set_label(\"Create\");\n    }\n    \n    _this.node = node;\n    //console.log('show all');\n   this.el.set_modal(true);\n    this.el.set_relative_to(btn);\n\n    this.el.set_position(Gtk.PositionType.TOP);\n    \n    // window + header?\n     print(\"SHOWALL - POPIP\\n\");\n    this.el.show_all();\n    this.name.el.grab_focus();\n    \n    //this.success = c.success;\n    \n    \n}",
+   "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
+   "| void show" : "(Gtk.Widget btn, JsRender.Node node, string key) \n\t{\n\n\tstring kname = \"\", kflag = \"\", ktype = \"\";\n\tif (key.length > 0) {\n\t\tnode.normalize_key( key, out  kname, out  kflag, out ktype)\n\t}\n\n\t_this.kname.el.set_text(kname);\n\t_this.ktype.el.set_text(ktype);\n\n\t// does node have this property...\n\n\n\tif (key.length > 0) {\n\t\tthis.save_btn.el.set_label(\"Save\");\n\t} else {\n\t\tthis.save_btn.el.set_label(\"Create\");\n\t}\n\n\t_this.node = node;\n\t//console.log('show all');\n\tthis.el.set_modal(true);\n\tthis.el.set_relative_to(btn);\n\n\tthis.el.set_position(Gtk.PositionType.TOP);\n\n\t// window + header?\n\t print(\"SHOWALL - POPIP\\n\");\n\tthis.el.show_all();\n\tthis.kname.el.grab_focus();\n\n\t//this.success = c.success;\n\n\n}",
    "bool done" : false,
    "# Project.Project project" : "",
    "xtype" : "Popover",
@@ -27,8 +27,8 @@
    "items" : [
     {
      "bool homogeneous" : false,
-     "xtype" : "Box",
      "$ pack" : "add",
+     "xtype" : "Box",
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
@@ -40,8 +40,8 @@
       },
       {
        "int margin_right" : 4,
-       "xtype" : "Table",
        "* pack" : "pack_start,false,false,4",
+       "xtype" : "Table",
        "uint row_spacing" : 2,
        "n_columns" : 2,
        "$ xns" : "Gtk",
@@ -67,14 +67,14 @@
          "items" : [
           {
            "id" : "dbcellrenderer",
-           "* pack" : "pack_start,true",
            "xtype" : "CellRendererText",
+           "* pack" : "pack_start,true",
            "$ xns" : "Gtk"
           },
           {
            "id" : "dbmodel",
-           "* pack" : "set_model",
            "xtype" : "ListStore",
+           "* pack" : "set_model",
            "$ columns" : "typeof(string),typeof(string)",
            "n_columns" : 2,
            "$ xns" : "Gtk",
@@ -101,8 +101,8 @@
         },
         {
          "label" : "Name",
-         "$ visible" : true,
          "tooltip_text" : "center, north, south, east, west",
+         "$ visible" : true,
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,2,3",
          "xtype" : "Label",
@@ -111,7 +111,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "parent",
+         "id" : "kname",
          "$ visible" : true,
          "xtype" : "Entry",
          "* pack" : "attach_defaults,1,2,2,3",
@@ -131,9 +131,9 @@
          "listeners" : {
           "clicked" : "() => { \n\n  _this.done = true;\n    _this.el.hide(); \n}"
          },
+         "xtype" : "Button",
          "string label" : "Cancel",
          "* pack" : "add",
-         "xtype" : "Button",
          "$ xns" : "Gtk"
         },
         {
@@ -141,8 +141,8 @@
           "clicked" : "( ) =>  { \n\n \n\n\n\tif (_this.name.el.get_text().length  < 1) {\n\t    StandardErrorDialog.show(\n\t        _this.mainwindow.el,\n\t        \"You have to set Component name \"\n\t    );\n\t     \n\t    return;\n\t}\n\t// what does this do?\n\t\n\tvar isNew = _this.file.name.length  > 0 ? false : true;\n\t/*\n\tif (!isNew && this.file.name != _this.name.el.get_text()) {\n\t    Xcls_StandardErrorDialog.singleton().show(\n\t        this.el,\n\t        \"Sorry changing names does not work yet. \"\n\t    );\n\t     \n\t    return;\n\t}\n\t*/\n\t \n\t\n  \n\t// FIXME - this may be more complicated...\n\t//for (var i in this.def) {\n\t//    this.file[i] =  this.get(i).el.get_text();\n\t//}\n\n\tif (!isNew) {\n\t    try {\n\t         _this.updateFileFromEntry();\n\t     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {\n\t          Xcls_StandardErrorDialog.singleton().show(\n\t            _this.mainwindow.el,\n\t            \"The name you used already exists \"\n\t        );\n\t        return;\n\t         \n\t     }\n\n\t      _this.done = true;\n\t    _this.file.save();\n\t    _this.el.hide();\n\t    return;\n\t}\n\tvar fn = _this.name.el.get_text();\n\tvar dir = _this.project.firstPath();\n   \n\tif (GLib.FileUtils.test(dir + \"/\" + fn + \".bjs\", GLib.FileTest.EXISTS)) {\n\t    Xcls_StandardErrorDialog.singleton().show(\n\t        _this.mainwindow.el,\n\t        \"That file already exists\"\n\t    ); \n\t    return;\n\t}\n   \n   var f =  JsRender.JsRender.factory(\n\t\t_this.file.project.xtype,  \n\t\t_this.file.project, \n\t\tdir + \"/\" + fn + \".bjs\");\n\n\t_this.file = f;\n\t\n\n\t\n\t_this.updateFileFromEntry();\n\t_this.file.loaded = true;\n\t_this.file.save();\n\t_this.file.project.addFile(_this.file);\n\t\n \n\t// what about .js ?\n   _this.done = true;\n\t_this.el.hide();\n\n\t\n\t\n\t_this.success(_this.project, _this.file);\n   \n}"
          },
          "id" : "save_btn",
-         "xtype" : "Button",
          "* pack" : "add",
+         "xtype" : "Button",
          "string label" : "Save",
          "$ xns" : "Gtk"
         }
