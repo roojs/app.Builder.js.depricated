@@ -1250,6 +1250,7 @@ public class Xcls_LeftProps : Object
 
 
             // my vars (def)
+        public Xcls_PopoverProperty popover;
 
         // ctor
         public Xcls_view(Xcls_LeftProps _owner )
@@ -1259,6 +1260,7 @@ public class Xcls_LeftProps : Object
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
+            this.popover = null;
 
             // set gobject values
             this.el.tooltip_column = 5;
@@ -1307,10 +1309,13 @@ public class Xcls_LeftProps : Object
                 }
                 
                  
-                 // right click.
+                 // double click on name..
                  if (ev.type == Gdk.EventType.2BUTTON_PRESS  && ev.button == 1 && col.title == "Name") {    
                     // show popup!.   
-                    
+                     if (this.popover == null) {
+                 		   this.popover = Xcls_PopoverProperty();
+             		}
+             		
              
                      _this.before_edit();
                      
@@ -1319,6 +1324,8 @@ public class Xcls_LeftProps : Object
                 
                      _this.valrender.el.stop_editing(false);
                      _this.valrender.el.editable  =false;
+                    
+                    this.popover.show(this.node, "test");
                        
                       _this.startEditingKey(path); 
                      
