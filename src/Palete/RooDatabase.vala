@@ -246,7 +246,7 @@ namespace Palete {
 				cols.add(qnr.get_column_name(i));
 			}
 			//print(Json.stringify(cols, null,4));
-			var iter = qnr.create_iter();
+			 
 			var res = new Json.Array();
 			 //print("ROWS %d\n", qnr.get_n_rows());
 			
@@ -256,7 +256,7 @@ namespace Palete {
 				//print("GOT ROW");
 				//print("COLS  %d\n", cols.size);
 				if (cols.size == 1) {
-					var str = qnr.get_value_at(0,r).get_string();
+					 
 					//print("GOT %s\n",str);
 					res.add_string_element(qnr.get_value_at(0,r).get_string());
 					continue;
