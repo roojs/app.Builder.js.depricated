@@ -116,7 +116,7 @@ namespace JsRender {
 		
 		// not sure why xt is needed... -> project contains xtype..
 		
-		public static JsRender? factory(string xt, Project.Project project, string path) throws Error
+		public static JsRender factory(string xt, Project.Project project, string path) throws Error
 		{
 	 
 			switch (xt) {
@@ -128,7 +128,7 @@ namespace JsRender {
 		    			return new PlainFile(project, path);
 			}
 			throw new Error.INVALID_FORMAT("JsRender Factory called with xtype=%s", xt);
-			return null;    
+			//return null;    
 		}
 
 		public string toJsonString()
