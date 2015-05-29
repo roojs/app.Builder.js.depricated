@@ -1327,7 +1327,7 @@ public class Xcls_LeftProps : Object
                     
                     this.popover.show(this.node, "test");
                        
-                      _this.startEditingKey(path); 
+                     // _this.startEditingKey(path); 
                      
                     return false;
                 }
