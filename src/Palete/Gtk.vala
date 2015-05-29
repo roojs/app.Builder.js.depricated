@@ -321,6 +321,7 @@ namespace Palete {
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
 				}
+				
 				return ret;
 			}
 			// got at least one ".".
@@ -333,7 +334,7 @@ namespace Palete {
 					print("node is empty - no return\n");
 					return ret; // no idea..
 				}
-				curtype = node.fqn();
+				curtype = '*' +  node.fqn();
 				cur_instance = true;
 			}
 			if (parts[0] == "Roo") {	
