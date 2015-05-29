@@ -85,50 +85,29 @@ public class Xcls_PopoverProperty : Object
     public void show (Gtk.Widget btn, JsRender.Node node, string key) 
     {
         
-        //if (!this.el) {
-            //this.init();
-         //}
+        string kname = "", kflag = "", ktype = "";
+        if (key.length > 0) {
+    	    node.normalize_key( key, out  kname, out  kflag, out ktype)
+        }
         
-        _this.name.el.set_text(c.name);
-        _this.title.el.set_text(c.title);
-        _this.parent.el.set_text(c.parent);    
-        _this.region.el.set_text(c.region);
-        _this.modOrder.el.set_text(c.modOrder);
-         _this.permname.el.set_text(c.permname);
-        
-        if (c.path.length > 0) {
-        
+        _this.kname.el.set_text(kname);
+        _this.ktype.el.set_text(ktype);
+    
+    	// does node have this property...
+    	
+    	
+        if (key.length > 0) {
             this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
         }
         
-         var ar = new Gee.ArrayList<string>();
-         _this.dbmodel.loadData(ar,"");
-        // load the modules... if relivant..
-        if (this.project.xtype == "Gtk") {
-            var p = (Project.Gtk)c.project;
-              var cg = p.compilegroups;
-    
-            var iter = cg.map_iterator();
-           while(iter.next()) {
-                var key = iter.get_key();
-                if (key == "_default_") {
-                    continue;
-                }
-                ar.add(key);
-            };
-            _this.dbmodel.loadData(ar, c.build_module);
-    
-        }
-        
-         
-        _this.file = c;
+        _this.node = node;
         //console.log('show all');
        this.el.set_modal(true);
         this.el.set_relative_to(btn);
     
-        this.el.set_position(Gtk.PositionType.RIGHT);
+        this.el.set_position(Gtk.PositionType.TOP);
         
         // window + header?
          print("SHOWALL - POPIP\n");
