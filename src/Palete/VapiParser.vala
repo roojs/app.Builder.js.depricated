@@ -49,7 +49,7 @@ namespace Palete {
 				this.add_interface(g, c);
 			}
 			foreach(var c in element.get_namespaces()) {
-				this.add_class(g, c);
+				this.add_namespace(g, c);
 			}
 			element.accept_children(this); // catch sub namespaces..
 			
