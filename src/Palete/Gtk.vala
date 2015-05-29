@@ -351,6 +351,11 @@ namespace Palete {
 				}
 				curtype = "*" +  node.fqn();
 				cur_instance = true;
+			} else {
+				 if (Gir.cache.get(parts[0]) == null) {
+					return ret;
+				}
+				curtype = parts[0];
 			}
 			// all Gtk.... etc.. types...
 			
@@ -407,7 +412,7 @@ namespace Palete {
 						var scls = citer.get_key();
 						print("checking against class %s\n",scls);
 						var look = prevbits + parts[i];
-						if (scls.index_of(look,0) != 0) {
+						if (scls.index_of(parts[i],0) != 0) {
 							continue;
 						}
 						// got a starting match..
