@@ -35,7 +35,7 @@ namespace Project {
 	  		this.id = gid;
 	  		try {
 				this.loadConfig();
-			} catch (GLib.Error) {
+			} catch (GLib.Error e )  {
 				// is tihs ok?
 			}
 		
