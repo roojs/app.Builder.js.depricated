@@ -416,7 +416,7 @@ namespace Palete {
 							continue;
 						}
 						// got a starting match..
-						curtype = look;
+						curtype = prevbits + parts[i];
 						cur_instance = false;
 						foundit =true;
 						break;
