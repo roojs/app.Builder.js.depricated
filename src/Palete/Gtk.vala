@@ -305,7 +305,18 @@ namespace Palete {
 			
 			if (complete_string.index_of(".",0) < 0) {
 				// string does not have a '.'
-				// offer up this / Roo / javascript keywords... / look for var string = .. in the code..
+				// offer up vala keywords... / _this .. / look for var string = .. in the code..
+				
+				var max = (int)Vala.TokenType.YIELD +1;
+				for (var i =0; i < max;i++) {
+					var m = (Vala.TokenType)i;
+					var s = m.to_string();
+					var ss = s.slice(1,-1);
+					if (s[0] == '`' && GLib.Regex.match_simple("^[a-z]+$", ss)) {
+						print("%s\n",ss);
+					}
+				}
+				
 				for(var i = 0; i <  JsRender.Lang.match_strings.size ; i++) {
 					var str = JsRender.Lang.match_strings.get(i);
 					if (complete_string != str && str.index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
@@ -314,9 +325,7 @@ namespace Palete {
 					
 					
 				}
-				if (complete_string != "Roo" && "Roo".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
-					ret.append(new SourceCompletionItem ("Roo - A Roo class", "Roo", null, "Roo library"));
-				}
+				
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
 				}
