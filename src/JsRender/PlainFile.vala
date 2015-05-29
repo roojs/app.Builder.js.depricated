@@ -97,7 +97,11 @@ namespace JsRender {
     		if (!this.loaded) {
 	    		return;
     		}
-            this.writeFile(this.path, this.contents);
+    		try { 
+	            this.writeFile(this.path, this.contents);
+            } catch (Error e) {
+	            // error ???
+    		}
             
         }
 	    // ignore these calls.
