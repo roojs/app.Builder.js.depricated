@@ -100,7 +100,7 @@ namespace JsRender {
     		}
     		try { 
 	            this.writeFile(this.path, this.contents);
-            } catch (Error e) {
+            } catch (GLib.Error e) {
 	            // error ???
     		}
             
