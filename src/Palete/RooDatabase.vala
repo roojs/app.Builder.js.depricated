@@ -193,7 +193,7 @@ namespace Palete {
 			
 			var jarr = new Json.Array();
 			try {
-				var jarr = this.fetchAll(this.cnc.execute_select_command( 
+			   jarr = this.fetchAll(this.cnc.execute_select_command( 
 						query
 				));
 	 			if (jarr.get_length() < 1) {
