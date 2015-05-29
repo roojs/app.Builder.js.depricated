@@ -268,7 +268,7 @@ namespace Palete {
 				}
 				var pp = this.add_param(cc, p);
 				c.sig += (c.sig == "(" ? "" : ",");
-				c.sig +=  pp.type + " " + pp.name;
+				c.sig +=  " " + pp.type + " " + pp.name;
 			}
 			c.sig += (c.sig == "(" ? ")" : " )");
 			
