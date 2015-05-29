@@ -492,7 +492,7 @@ namespace Palete {
 							null, 
 							prop.doctxt));
 				}
-					*/
+					 
 					
 				return ret;	
 					
