@@ -8,7 +8,7 @@ int main (string[] args) {
 	var max = (int)Vala.TokenType.YIELD +1;
 	for (var i =0; i < max;i++) {
 		var m = (Vala.TokenType)i;
-		print(m.to_string().substring(1,-2));
+		print("%s\n",m.to_string().substring(1,-2));
 	}
 	
 	
