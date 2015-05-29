@@ -389,6 +389,9 @@ namespace Palete {
 					
 					// only exact matches from here on...
 					if (cur_instance) {
+						if (cls == null) {
+							return ret;
+						}
 						if (cls.props.has_key(parts[i])) {
 							var prop = cls.props.get(parts[i]);
 							if (prop.type.index_of(".",0) > -1) {
