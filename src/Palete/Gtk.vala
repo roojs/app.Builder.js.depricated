@@ -401,10 +401,10 @@ namespace Palete {
 						// check methods?? - we do not export that at present..
 						return ret;	 //no idea...
 					}
-					/*
+					 
 					// not a instance..
 					//look for child classes.
-					var citer = this.classes.map_iterator();
+					var citer = cls.classes.map_iterator();
 					var foundit = false;
 					while (citer.next()) {
 						var scls = citer.get_key();
@@ -423,7 +423,7 @@ namespace Palete {
 					}
 					prevbits += parts[i] + ".";
 					continue;
-					*/
+					 
 				}
 				/*
 				// got to the last element..
