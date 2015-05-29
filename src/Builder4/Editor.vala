@@ -279,7 +279,7 @@ public class Editor : Object
             	this.el.completion.add_provider(new Palete.CompletionProvider(_this));
             	this.el.completion.unblock_interactive();
             	this.el.completion.select_on_show			= true;
-            	this.el.completion.show_headers			= true;
+            	this.el.completion.show_headers			= false;
             	this.el.completion.remember_info_visibility		= true;
             
               
