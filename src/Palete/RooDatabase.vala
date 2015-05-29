@@ -154,6 +154,7 @@ namespace Palete {
  
 				}
 			 } catch (GLib.Error e) {
+				 return res;
 			 }
 			
 			for (var i =0; i < res_ar.get_length(); i++) {
