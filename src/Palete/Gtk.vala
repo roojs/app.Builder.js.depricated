@@ -428,7 +428,7 @@ namespace Palete {
 					continue;
 					 
 				}
-				/*
+				
 				// got to the last element..
 				print("Got last element\n");
 				if (curtype == "") { // should not happen.. we would have returned already..
@@ -438,9 +438,10 @@ namespace Palete {
 				if (!cur_instance) {
 					print("matching instance");
 					// it's a static reference..
-					var citer = this.classes.map_iterator();
+					var citer = cls.classes.map_iterator();
 					while (citer.next()) {
 						var scls = citer.get_key();
+						print("checking against class %s\n",scls);
 						var look = prevbits + parts[i];
 						if (parts[i].length > 0 && scls.index_of(look,0) != 0) {
 							continue;
