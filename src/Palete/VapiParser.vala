@@ -271,7 +271,7 @@ namespace Palete {
 			
 		}
 		
-		public void add_param(GirObject parent, Vala.Parameter pam)
+		public GirObject add_param(GirObject parent, Vala.Parameter pam)
 		{
 			
 			var n = pam.name;
@@ -287,6 +287,7 @@ namespace Palete {
 				c.type = pam.variable_type.data_type == null ? "" : pam.variable_type.data_type.get_full_name();
 			}
 			Gir.checkParamOverride(c); 
+			return c;
 			
 		}
 		
