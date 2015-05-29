@@ -536,7 +536,7 @@ public class Xcls_PopoverProperty : Object
             this.el.clicked.connect( ( ) =>  { 
             
              
-            
+            /*
             
             	if (_this.name.el.get_text().length  < 1) {
             	    StandardErrorDialog.show(
@@ -549,16 +549,7 @@ public class Xcls_PopoverProperty : Object
             	// what does this do?
             	
             	var isNew = _this.file.name.length  > 0 ? false : true;
-            	/*
-            	if (!isNew && this.file.name != _this.name.el.get_text()) {
-            	    Xcls_StandardErrorDialog.singleton().show(
-            	        this.el,
-            	        "Sorry changing names does not work yet. "
-            	    );
-            	     
-            	    return;
-            	}
-            	*/
+            	 
             	 
             	
               
@@ -617,6 +608,7 @@ public class Xcls_PopoverProperty : Object
             	
             	
             	_this.success(_this.project, _this.file);
+            	*/
                
             });
         }
