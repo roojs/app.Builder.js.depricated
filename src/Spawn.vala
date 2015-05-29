@@ -71,6 +71,7 @@ public class Spawn : Object
 	
 	public bool is_async = true;
 	public bool throw_exceptions = false;
+	public bool detach = false;
 
     public Spawn(string cwd, string[] args) throws Error
     {
