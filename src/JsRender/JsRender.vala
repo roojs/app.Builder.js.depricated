@@ -85,7 +85,7 @@ namespace JsRender {
 				Regex regex = new Regex ("\\.(bjs|js)$");
 
 				this.name = ar.length > 0 ? regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "") : "";
-			} catch (Error e) {
+			} catch (GLib.Error e) {
 				this.name = "???";
 			}
 			this.fullname = (this.parent.length > 0 ? (this.parent + ".") : "" ) + this.name;
@@ -94,7 +94,7 @@ namespace JsRender {
 
 		}
 		
-		public void renameTo(string name) 
+		public void renameTo(string name) throws  Error
 		{
 			if (this.xtype == "PlainFile") {
 				return;
