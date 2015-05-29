@@ -273,13 +273,10 @@ public class Editor : Object
 
             // init method
 
-            try { 
-            		var description =   Pango.FontDescription.from_string("monospace");
+            var description =   Pango.FontDescription.from_string("monospace");
             		description.set_size(8000);
             		 this.el.override_font(description);
-                } catch (GLib.Error e) {
                 
-                }
                
             	this.el.completion.add_provider(new Palete.CompletionProvider(_this));
             	this.el.completion.unblock_interactive();
