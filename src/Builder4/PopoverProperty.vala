@@ -535,7 +535,7 @@ public class Xcls_PopoverProperty : Object
             //listeners
             this.el.clicked.connect( ( ) =>  { 
             
-             
+              
             /*
             
             	if (_this.name.el.get_text().length  < 1) {
