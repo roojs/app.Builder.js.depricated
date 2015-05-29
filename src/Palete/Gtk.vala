@@ -419,6 +419,8 @@ namespace Palete {
 						foundit =true;
 						break;
 					}
+					// enums // static etc..?
+					
 					if (!foundit) {
 						return ret;
 					}
