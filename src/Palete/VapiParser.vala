@@ -185,17 +185,7 @@ namespace Palete {
 			c.gparent = parent;
 			c.ns = parent.ns;
 			c.propertyof = parent.name;
-			switch (prop.direction) {
-				case Vala.ParameterDirection.IN:
-					c.direction = "in";
-					break;
-				case Vala.ParameterDirection.OUT:
-					c.direction = "out";
-					break;
-				case Vala.ParameterDirection.REF:
-					c.direction = "ref";
-					break;
-			}
+			
 			c.type  = prop.property_type.data_type == null ? "" : prop.property_type.data_type.get_full_name();
 			parent.props.set(prop.name,c);
 			
@@ -295,6 +285,19 @@ namespace Palete {
 			var c = new GirObject("Param",n);
 			c.gparent = parent;
 			c.ns = parent.ns;
+			
+			switch (pam.direction) {
+				case Vala.ParameterDirection.IN:
+					c.direction = "in";
+					break;
+				case Vala.ParameterDirection.OUT:
+					c.direction = "out";
+					break;
+				case Vala.ParameterDirection.REF:
+					c.direction = "ref";
+					break;
+			}
+			
 			parent.params.add(c);
 			
 			if (!pam.ellipsis) {
