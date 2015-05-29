@@ -111,7 +111,7 @@ namespace Palete {
 		public Json.Object readTable(string tablename) 
 		{
 			
-			Json.Array res_ar;
+			Json.Array res_ar = new Json.Array();
 			var res = new Json.Object();
 			try {
 				switch (this.DBTYPE ) {
