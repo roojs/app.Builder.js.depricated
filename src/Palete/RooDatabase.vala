@@ -151,7 +151,7 @@ namespace Palete {
 				
 					default: 
 						return res;
-						break;
+ 
 				}
 			 } catch (GLib.Error e) {
 			 }
