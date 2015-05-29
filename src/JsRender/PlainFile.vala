@@ -95,6 +95,7 @@ namespace JsRender {
 		
         public override void save() {
     		if (!this.loaded) {
+    			print("Ignoring Save  - as file was never loaded?\n");
 	    		return;
     		}
     		try { 
