@@ -368,8 +368,9 @@ namespace Palete {
 			this.compiler = null;
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
             var exec = new Spawn("/tmp", { "/tmp/testrun" });
+            exec.detach = true;
 		    exec.run(); 
-			this.children.add(exec);
+			
 		}
 	}
 		 
