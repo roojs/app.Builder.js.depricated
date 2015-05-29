@@ -317,6 +317,15 @@ namespace Palete {
 						ret.append(new SourceCompletionItem (ss, ss, null, "vala : " + ss));
 					}
 				}
+				var miter = Gir.cache.map_iterator();
+				while (miter.next()) {
+					var ss = miter.get_key();
+					
+					if (complete_string != ss && ss.index_of(complete_string,0) == 0 ) {
+						ret.append(new SourceCompletionItem (ss, ss, null, "vala namespace : " + ss));
+					}
+				}
+				 
 				
 				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
 					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
