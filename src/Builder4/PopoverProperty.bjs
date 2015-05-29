@@ -50,7 +50,7 @@
        "int margin_left" : 4,
        "items" : [
         {
-         "label" : "Property Type",
+         "label" : "Special Flags",
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,0,1",
          "xtype" : "Label",
@@ -83,7 +83,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "label" : "Region",
+         "label" : "Name",
          "$ visible" : true,
          "tooltip_text" : "center, north, south, east, west",
          "xalign" : 0.90000000000000002,

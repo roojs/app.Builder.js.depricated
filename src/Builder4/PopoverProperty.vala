@@ -278,7 +278,7 @@ public class Xcls_PopoverProperty : Object
         public Xcls_Label5(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Property Type" );
+            this.el = new Gtk.Label( "Special Flags" );
 
             // my vars (dec)
 
@@ -375,7 +375,7 @@ public class Xcls_PopoverProperty : Object
         public Xcls_Label9(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Region" );
+            this.el = new Gtk.Label( "Name" );
 
             // my vars (dec)
 
