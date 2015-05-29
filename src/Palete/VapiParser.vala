@@ -29,14 +29,24 @@ namespace Palete {
 				
 				return;
 			}
+			
+			
 			//print("parsing namespace %s\n", element.name);
 			if (element.name == null) {
 				element.accept_children(this); // catch sub namespaces..
 				return;
 			}
+			this.add_namespace(null, element);
+		}
+		public void add_namespace(GirObject? parent, Vala.Namespace element)
+		{
 			
-			var g = new Gir(element.name);
-			Gir.cache.set(element.name, g);
+			var g = new Gir(element.name) ;
+			if (parent == null) {
+				Gir.cache.set(element.name, g);
+			} else {
+				parent.classes.set(element.name, g);
+			}
 			
 			
 			foreach(var c in element.get_classes()) {
@@ -55,7 +65,7 @@ namespace Palete {
 			
 			
 		}
-		
+		 
 		
 		public void add_enum(GirObject parent, Vala.Enum cls)
 		{
