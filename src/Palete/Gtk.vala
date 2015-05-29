@@ -294,10 +294,186 @@ namespace Palete {
 				string key,
 				string complete_string
 		) { 
-		
-			return new List<SourceCompletionItem>();
+			
+			var ret =  new List<SourceCompletionItem>();
+			// completion rules??
+			
+			// Roo......
+			
+			// this. (based on the node type)
+			// this.xxx // Node and any determination...
+			
+			if (complete_string.index_of(".",0) < 0) {
+				// string does not have a '.'
+				// offer up this / Roo / javascript keywords... / look for var string = .. in the code..
+				for(var i = 0; i <  JsRender.Lang.match_strings.size ; i++) {
+					var str = JsRender.Lang.match_strings.get(i);
+					if (complete_string != str && str.index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
+						ret.append(new SourceCompletionItem (str, str, null, "javascript : " + str));
+					}
+					
+					
+				}
+				if (complete_string != "Roo" && "Roo".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
+					ret.append(new SourceCompletionItem ("Roo - A Roo class", "Roo", null, "Roo library"));
+				}
+				if (complete_string != "_this" && "_this".index_of(complete_string,0) == 0 ) { // should we ignore exact matches... ???
+					ret.append(new SourceCompletionItem ("_this - the top level element", "_this", null, "Top level element"));
+				}
+				return ret;
+			}
+			// got at least one ".".
+			var parts = complete_string.split(".");
+			var curtype = "";
+			var cur_instance = false;
+			if (parts[0] == "this") {
+				// work out from the node, what the type is...
+				if (node == null) {
+					print("node is empty - no return\n");
+					return ret; // no idea..
+				}
+				curtype = node.fqn();
+				cur_instance = true;
+			}
+			if (parts[0] == "Roo") {	
+				curtype = "Roo";
+				cur_instance = false;
+			}
+			
+			var prevbits = parts[0] + ".";
+			for(var i =1; i < parts.length; i++) {
+				print("matching %d/%d\n", i, parts.length);
+				var is_last = i == parts.length -1;
+				
+				// look up all the properties of the type...
+				var cls = this.getClass(curtype);
+				if (cls == null) {
+					print("could not get class of curtype %s\n", curtype);
+					return ret;
+				}
+
+				if (!is_last) {
+				
+					// only exact matches from here on...
+					if (cur_instance) {
+						if (cls.props.has_key(parts[i])) {
+							var prop = cls.props.get(parts[i]);
+							if (prop.type.index_of(".",0) > -1) {
+								// type is another roo object..
+								curtype = prop.type;
+								prevbits += parts[i] + ".";
+								continue;
+							}
+							return ret;
+						}
+						
+						
+						
+						// check methods?? - we do not export that at present..
+						return ret;	 //no idea...
+					}
+				
+					// not a instance..
+					//look for child classes.
+					var citer = this.classes.map_iterator();
+					var foundit = false;
+					while (citer.next()) {
+						var scls = citer.get_key();
+						var look = prevbits + parts[i];
+						if (scls.index_of(look,0) != 0) {
+							continue;
+						}
+						// got a starting match..
+						curtype = look;
+						cur_instance = false;
+						foundit =true;
+						break;
+					}
+					if (!foundit) {
+						return ret;
+					}
+					prevbits += parts[i] + ".";
+					continue;
+				}
+				// got to the last element..
+				print("Got last element\n");
+				if (curtype == "") { // should not happen.. we would have returned already..
+					return ret;
+				}
+				print("Got last element type %s\n",curtype);
+				if (!cur_instance) {
+					print("matching instance");
+					// it's a static reference..
+					var citer = this.classes.map_iterator();
+					while (citer.next()) {
+						var scls = citer.get_key();
+						var look = prevbits + parts[i];
+						if (parts[i].length > 0 && scls.index_of(look,0) != 0) {
+							continue;
+						}
+						// got a starting match..
+						ret.append(new SourceCompletionItem (
+							scls,
+							scls, 
+							null, 
+							scls));
+					}
+					return ret;
+				}
+				print("matching property");
+				
+				
+				
+				var citer = cls.methods.map_iterator();
+				while (citer.next()) {
+					var prop = citer.get_value();
+					// does the name start with ...
+					if (parts[i].length > 0 && prop.name.index_of(parts[i],0) != 0) {
+						continue;
+					}
+					// got a matching property...
+					// return type?
+					ret.append(new SourceCompletionItem (
+							 prop.name + prop.sig + " :  ("+ prop.propertyof + ")", 
+							prevbits + prop.name + "(", 
+							null, 
+							prop.doctxt));
+				}
+				
+				// get the properties / methods and subclasses.. of cls..
+				// we have cls.. - see if the string matches any of the properties..
+				citer = cls.props.map_iterator();
+				while (citer.next()) {
+					var prop = citer.get_value();
+					// does the name start with ...
+					if (parts[i].length > 0 && prop.name.index_of(parts[i],0) != 0) {
+						continue;
+					}
+					// got a matching property...
+					
+					ret.append(new SourceCompletionItem (
+							 prop.name + " : " + prop.type + " ("+ prop.propertyof + ")", 
+							prevbits + prop.name, 
+							null, 
+							prop.doctxt));
+				}
+					 
+					
+				return ret;	
+					
+					
+				
+					
+				
+			}
+			
+			 
+			
+			
+			
+			
+			return ret;
 		}
-		
 	
     }
 }
