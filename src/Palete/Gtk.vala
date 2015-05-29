@@ -298,6 +298,9 @@ namespace Palete {
 			var ret =  new List<SourceCompletionItem>();
 			// completion rules??
 			
+			// make sure data is loaded
+			Gir.factory("Gtk");
+			
 			// Roo......
 			
 			// this. (based on the node type)
