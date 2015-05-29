@@ -174,7 +174,7 @@ namespace JsRender {
 					 File.new_for_path(dir).make_directory();
 				}
 			} catch (GLib.Error e) {
-				// 
+				// eakk.. what to do here...
 			}
 			var fname = dir + "/" + m5 + ".png";
 			
