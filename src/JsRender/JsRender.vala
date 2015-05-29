@@ -116,7 +116,7 @@ namespace JsRender {
 		
 		// not sure why xt is needed... -> project contains xtype..
 		
-		public static JsRender factory(string xt, Project.Project project, string path) throws Error
+		public static JsRender? factory(string xt, Project.Project project, string path) throws Error
 		{
 	 
 			switch (xt) {
