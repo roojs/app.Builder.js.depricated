@@ -50,7 +50,7 @@
        "int margin_left" : 4,
        "items" : [
         {
-         "label" : "Component Name",
+         "label" : "Property Type",
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,0,1",
          "xtype" : "Label",
