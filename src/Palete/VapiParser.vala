@@ -63,6 +63,9 @@ namespace Palete {
 			foreach(var c in element.get_namespaces()) {
 				this.add_namespace(g, c);
 			}
+			foreach(var c in element.get_methods()) {
+				this.add_method(g, c);
+			}
 			element.accept_children(this); // catch sub namespaces..
 			
 			
