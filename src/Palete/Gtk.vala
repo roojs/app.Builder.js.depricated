@@ -289,7 +289,7 @@ namespace Palete {
 		
 		public override  List<SourceCompletionItem> suggestComplete(
 				JsRender.JsRender file,
-				JsRender.Node node,
+				JsRender.Node? node,
 				string proptype, 
 				string key,
 				string complete_string
