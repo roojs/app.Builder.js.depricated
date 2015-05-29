@@ -269,7 +269,7 @@ namespace Palete {
 				}
 				var pp = this.add_param(cc, p);
 				c.sig += (c.sig == "(" ? "" : ",");
-				c.sig +=  " " + pp.type + " " + pp.name;
+				c.sig += " " + (c.direction == "in" ? "" : c.direction) + " " + pp.type + " " + pp.name;
 			}
 			c.sig += (c.sig == "(" ? ")" : " )");
 			
@@ -285,7 +285,7 @@ namespace Palete {
 			var c = new GirObject("Param",n);
 			c.gparent = parent;
 			c.ns = parent.ns;
-			
+			c.direction = "??";
 			switch (pam.direction) {
 				case Vala.ParameterDirection.IN:
 					c.direction = "in";
