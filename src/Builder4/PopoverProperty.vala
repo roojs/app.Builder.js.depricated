@@ -1,16 +1,16 @@
-static Xcls_PopoverFileDetails  _PopoverFileDetails;
+static Xcls_PopoverProperty  _PopoverProperty;
 
-public class Xcls_PopoverFileDetails : Object
+public class Xcls_PopoverProperty : Object
 {
     public Gtk.Popover el;
-    private Xcls_PopoverFileDetails  _this;
+    private Xcls_PopoverProperty  _this;
 
-    public static Xcls_PopoverFileDetails singleton()
+    public static Xcls_PopoverProperty singleton()
     {
-        if (_PopoverFileDetails == null) {
-            _PopoverFileDetails= new Xcls_PopoverFileDetails();
+        if (_PopoverProperty == null) {
+            _PopoverProperty= new Xcls_PopoverProperty();
         }
-        return _PopoverFileDetails;
+        return _PopoverProperty;
     }
     public Xcls_name name;
     public Xcls_title title;
@@ -31,7 +31,7 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_MainWindow mainwindow;
 
     // ctor
-    public Xcls_PopoverFileDetails()
+    public Xcls_PopoverProperty()
     {
         _this = this;
         this.el = new Gtk.Popover( null );
@@ -149,13 +149,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Box2(Xcls_PopoverFileDetails _owner )
+        public Xcls_Box2(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
@@ -180,13 +180,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_HeaderBar3 : Object
     {
         public Gtk.HeaderBar el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HeaderBar3(Xcls_PopoverFileDetails _owner )
+        public Xcls_HeaderBar3(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.HeaderBar();
@@ -203,13 +203,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Table4 : Object
     {
         public Gtk.Table el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Table4(Xcls_PopoverFileDetails _owner )
+        public Xcls_Table4(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Table( 3, 2, true );
@@ -269,13 +269,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label5 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label5(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label5(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Component Name" );
@@ -293,13 +293,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_name : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_name(Xcls_PopoverFileDetails _owner )
+        public Xcls_name(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.name = this;
@@ -317,13 +317,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label7 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label7(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label7(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Title" );
@@ -342,13 +342,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_title : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_title(Xcls_PopoverFileDetails _owner )
+        public Xcls_title(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.title = this;
@@ -366,13 +366,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label9 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label9(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label9(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Region" );
@@ -392,13 +392,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_region : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_region(Xcls_PopoverFileDetails _owner )
+        public Xcls_region(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.region = this;
@@ -416,13 +416,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label11 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label11(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label11(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Parent Name" );
@@ -441,13 +441,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_parent : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_parent(Xcls_PopoverFileDetails _owner )
+        public Xcls_parent(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.parent = this;
@@ -465,13 +465,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label13 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label13(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label13(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Permission Name" );
@@ -490,13 +490,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_permname : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_permname(Xcls_PopoverFileDetails _owner )
+        public Xcls_permname(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.permname = this;
@@ -514,13 +514,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label15 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label15(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label15(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Order (for tabs)" );
@@ -539,13 +539,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_modOrder : Object
     {
         public Gtk.Entry el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_modOrder(Xcls_PopoverFileDetails _owner )
+        public Xcls_modOrder(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.modOrder = this;
@@ -563,13 +563,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Label17 : Object
     {
         public Gtk.Label el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Label17(Xcls_PopoverFileDetails _owner )
+        public Xcls_Label17(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Label( "Module to build (Vala only)" );
@@ -588,13 +588,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_build_module : Object
     {
         public Gtk.ComboBox el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_build_module(Xcls_PopoverFileDetails _owner )
+        public Xcls_build_module(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.build_module = this;
@@ -620,13 +620,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_dbcellrenderer : Object
     {
         public Gtk.CellRendererText el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_dbcellrenderer(Xcls_PopoverFileDetails _owner )
+        public Xcls_dbcellrenderer(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.dbcellrenderer = this;
@@ -643,13 +643,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_dbmodel : Object
     {
         public Gtk.ListStore el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_dbmodel(Xcls_PopoverFileDetails _owner )
+        public Xcls_dbmodel(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.dbmodel = this;
@@ -702,13 +702,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_HButtonBox21 : Object
     {
         public Gtk.HButtonBox el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_HButtonBox21(Xcls_PopoverFileDetails _owner )
+        public Xcls_HButtonBox21(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.HButtonBox();
@@ -732,13 +732,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_Button22 : Object
     {
         public Gtk.Button el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Button22(Xcls_PopoverFileDetails _owner )
+        public Xcls_Button22(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -762,13 +762,13 @@ public class Xcls_PopoverFileDetails : Object
     public class Xcls_save_btn : Object
     {
         public Gtk.Button el;
-        private Xcls_PopoverFileDetails  _this;
+        private Xcls_PopoverProperty  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_save_btn(Xcls_PopoverFileDetails _owner )
+        public Xcls_save_btn(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
             _this.save_btn = this;
