@@ -93,7 +93,7 @@ public class Xcls_PopoverProperty : Object
     }
     public   void updateNodeFromValues () {
     
-            _this.file.title = _this.title.el.get_text();
+         /*   _this.file.title = _this.title.el.get_text();
             _this.file.region = _this.region.el.get_text();            
             _this.file.parent = _this.parent.el.get_text();                        
             _this.file.permname = _this.permname.el.get_text();                                    
@@ -113,6 +113,7 @@ public class Xcls_PopoverProperty : Object
                  }
         
             }
+            */
             
             
     
