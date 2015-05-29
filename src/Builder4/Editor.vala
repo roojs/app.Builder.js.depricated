@@ -273,15 +273,19 @@ public class Editor : Object
 
             // init method
 
-            var description =   Pango.FontDescription.from_string("monospace");
-                description.set_size(8000);
+            try { 
+            		var description =   Pango.FontDescription.from_string("monospace");
+            		description.set_size(8000);
+                } catch (GLib.Error e) {
+                
+                }
                 this.el.override_font(description);
             	this.el.completion.add_provider(new Palete.CompletionProvider(_this));
             	this.el.completion.unblock_interactive();
             	this.el.completion.select_on_show			= true; // select
             	this.el.completion.show_headers			= false;
             	this.el.completion.remember_info_visibility		= true;
-            
+                
               
                 var attrs = new Gtk.SourceMarkAttributes();
                 var  pink =   Gdk.RGBA();
