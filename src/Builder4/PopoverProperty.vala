@@ -194,7 +194,7 @@ public class Xcls_PopoverProperty : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.title = "Add / Edit File";
+            this.el.title = "Modify / Create Property";
         }
 
         // user defined functions

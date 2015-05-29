@@ -36,7 +36,7 @@
        "* pack" : "pack_start,false,true,0",
        "xtype" : "HeaderBar",
        "$ xns" : "Gtk",
-       "string title" : "Add / Edit File"
+       "string title" : "Modify / Create Property"
       },
       {
        "int margin_right" : 4,
