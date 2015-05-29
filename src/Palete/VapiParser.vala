@@ -41,9 +41,10 @@ namespace Palete {
 		public void add_namespace(GirObject? parent, Vala.Namespace element)
 		{
 			
-			var g = new Gir(element.name) ;
+			
+			var g = new GirObject("Package",element.name) ;
 			if (parent == null) {
-				Gir.cache.set(element.name, g);
+				Gir.cache.set(element.name, (Gir)g);
 			} else {
 				parent.classes.set(element.name, g);
 			}
