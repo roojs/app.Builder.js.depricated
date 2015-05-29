@@ -94,6 +94,9 @@ namespace JsRender {
         }
 		
         public override void save() {
+    		if (!this.loaded) {
+	    		return;
+    		}
             this.writeFile(this.path, this.contents);
             
         }
