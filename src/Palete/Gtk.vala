@@ -358,7 +358,13 @@ namespace Palete {
 				}
 
 				if (!is_last) {
-				
+					
+					if (curtype[0] == '*' && parts[i] = "el") {
+						curtype = curtype.substring(1);
+						prevbits += parts[i] + ".";
+						continue;
+					}
+					
 					// only exact matches from here on...
 					if (cur_instance) {
 						if (cls.props.has_key(parts[i])) {
