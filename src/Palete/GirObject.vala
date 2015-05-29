@@ -23,7 +23,8 @@ namespace Palete {
 		public string propertyof;
 		public string type;
 		public string nodetype;
-		public string  package;
+		public string package;
+		public string direction;
 		
 		public GirObject paramset = null;
 		public GirObject return_value = null;
