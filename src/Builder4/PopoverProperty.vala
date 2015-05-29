@@ -82,11 +82,8 @@ public class Xcls_PopoverProperty : Object
     
                                                         
     }
-    public void show (JsRender.JsRender c, Gtk.Widget btn) 
+    public void show (Gtk.Widget btn, JsRender.Node node, string key) 
     {
-        this.project = c.project;
-        this.done = false;
-        
         
         //if (!this.el) {
             //this.init();
