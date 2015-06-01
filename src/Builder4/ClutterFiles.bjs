@@ -203,6 +203,7 @@
            "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
            "string filepath" : "",
            "$ xns" : "Clutter",
+           "bool reactive" : true,
            "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
            "bool y_expand" : true
           }
