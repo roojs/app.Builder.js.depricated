@@ -338,35 +338,56 @@ public class Xcls_PopoverProperty : Object
         
             el.append(out iter);
             el.set(iter, 0, "", 1,   "Normal Property", -1);
-        
+        	if (kflag == "") {
+        		 _this.kflag.el.set_active_iter(iter);
+        	 }
         	if (_this.file.xtype == "Gtk") {
         		el.append(out iter);
         		el.set(iter, 0, "$", 1,   "Raw Property (not escaped)", -1);
         		if (kflag == "$") {
         			 _this.kflag.el.set_active_iter(iter);
-        		 }
+        		}
         		
         		el.append(out iter);
         		el.set(iter, 0, "#", 1,   "User defined property", -1);
+        		if (kflag == "#") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         
         		el.append(out iter);
         		el.set(iter, 0, "|", 1,   "User defined method", -1);
-        
+        		if (kflag == "|") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         		el.append(out iter);
         		el.set(iter, 0, "*", 1,   "Special property (eg. prop | args | ctor | init )", -1);
+        		if (kflag == "*") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         		
         		el.append(out iter);
         	    el.set(iter, 0, "@", 1,   "Vala Signal", -1);
+        		if (kflag == "@") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
+        		
         	} else { 
         		// javascript
         		el.append(out iter);
         		el.set(iter, 0, "$", 1,   "Raw Property (not escaped)", -1);
-        
+        		if (kflag == "$") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         		el.append(out iter);
         		el.set(iter, 0, "|", 1,   "User defined method", -1);
-        		
+        		if (kflag == "|") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         		el.append(out iter);
         		el.set(iter, 0, "*", 1,   "Special property (eg. prop )", -1);
+        		if (kflag == "*") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		}
         	
         	}
         	
