@@ -1826,7 +1826,7 @@ public class Xcls_LeftProps : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.label = "Edit";
+            this.el.label = "Edit (double click)";
 
             //listeners
             this.el.activate.connect( ( )  =>{
