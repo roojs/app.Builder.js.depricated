@@ -62,6 +62,14 @@ public class Xcls_PopoverProperty : Object
     		node.normalize_key( key, out  kname, out  kflag, out ktype);
     	}
     
+    	if (this.type == "listener") {
+    		this.header.el.title = "Modify Event Listener";
+    	} else {
+    		this.header.el.title = "Modify Property";
+    	}
+    	
+    	
+    
     	_this.kname.el.set_text(kname);
     	_this.ktype.el.set_text(ktype);
     	
