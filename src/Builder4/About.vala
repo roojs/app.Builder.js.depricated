@@ -32,11 +32,6 @@ public class About : Object
         this.el.copyright = "LGPL";
 
         //listeners
-        this.el.delete_event.connect( (self, event) => {
-        	this.el.hide();
-        	return true; 
-        
-        });
         this.el.response.connect( (rid) => {
             this.el.hide();
         });
