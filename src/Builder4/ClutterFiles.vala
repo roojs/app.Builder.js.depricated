@@ -164,7 +164,7 @@ public class Xcls_ClutterFiles : Object
        
        this.scroller.el.set_size(
                // this.el.get_stage().width-150,
-               w-50,
+               w,
                h  // this.el.get_stage().height
         );
         
