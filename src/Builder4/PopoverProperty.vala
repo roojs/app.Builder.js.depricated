@@ -316,7 +316,7 @@ public class Xcls_PopoverProperty : Object
         }
 
         // user defined functions
-        public void loadData (Gee.ArrayList<string> data, string cur) {
+        public void loadData (string kflag) {
             this.el.clear();                                    
             Gtk.TreeIter iter;
             var el = this.el;
