@@ -18,7 +18,6 @@ public class Xcls_PopoverProperty : Object
     public Xcls_dbmodel dbmodel;
     public Xcls_ktype ktype;
     public Xcls_kname kname;
-    public Xcls_save_btn save_btn;
 
         // my vars (def)
     public string old_keyname;
@@ -48,11 +47,7 @@ public class Xcls_PopoverProperty : Object
 
         //listeners
         this.el.closed.connect( () => {
-          if (!this.done) {
-            _this.el.show();
-          
-          }
-          
+         
           
           var newtext = "";
           Gtk.TreeIter citer;
@@ -191,9 +186,6 @@ public class Xcls_PopoverProperty : Object
             var child_1 = new Xcls_Table4( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,4 );
-            var child_2 = new Xcls_HButtonBox13( _this );
-            child_2.ref();
-            this.el.pack_end (  child_2.el , false,true,0 );
         }
 
         // user defined functions
@@ -531,171 +523,6 @@ public class Xcls_PopoverProperty : Object
 
             // set gobject values
             this.el.visible = true;
-        }
-
-        // user defined functions
-    }
-
-
-    public class Xcls_HButtonBox13 : Object
-    {
-        public Gtk.HButtonBox el;
-        private Xcls_PopoverProperty  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_HButtonBox13(Xcls_PopoverProperty _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.HButtonBox();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.margin_right = 4;
-            this.el.margin_left = 4;
-            this.el.margin_bottom = 4;
-            var child_0 = new Xcls_Button14( _this );
-            child_0.ref();
-            this.el.add (  child_0.el  );
-            var child_1 = new Xcls_save_btn( _this );
-            child_1.ref();
-            this.el.add (  child_1.el  );
-        }
-
-        // user defined functions
-    }
-    public class Xcls_Button14 : Object
-    {
-        public Gtk.Button el;
-        private Xcls_PopoverProperty  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_Button14(Xcls_PopoverProperty _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Cancel";
-
-            //listeners
-            this.el.clicked.connect( () => { 
-            
-              _this.done = true;
-                _this.el.hide(); 
-            });
-        }
-
-        // user defined functions
-    }
-
-    public class Xcls_save_btn : Object
-    {
-        public Gtk.Button el;
-        private Xcls_PopoverProperty  _this;
-
-
-            // my vars (def)
-
-        // ctor
-        public Xcls_save_btn(Xcls_PopoverProperty _owner )
-        {
-            _this = _owner;
-            _this.save_btn = this;
-            this.el = new Gtk.Button();
-
-            // my vars (dec)
-
-            // set gobject values
-            this.el.label = "Save";
-
-            //listeners
-            this.el.clicked.connect( ( ) =>  { 
-            
-              
-            /*
-            
-            	if (_this.name.el.get_text().length  < 1) {
-            	    StandardErrorDialog.show(
-            	        _this.mainwindow.el,
-            	        "You have to set Component name "
-            	    );
-            	     
-            	    return;
-            	}
-            	// what does this do?
-            	
-            	var isNew = _this.file.name.length  > 0 ? false : true;
-            	 
-            	 
-            	
-              
-            	// FIXME - this may be more complicated...
-            	//for (var i in this.def) {
-            	//    this.file[i] =  this.get(i).el.get_text();
-            	//}
-            
-            	if (!isNew) {
-            	    try {
-            	         _this.updateFileFromEntry();
-            	     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {
-            	          Xcls_StandardErrorDialog.singleton().show(
-            	            _this.mainwindow.el,
-            	            "The name you used already exists "
-            	        );
-            	        return;
-            	         
-            	     }
-            
-            	      _this.done = true;
-            	    _this.file.save();
-            	    _this.el.hide();
-            	    return;
-            	}
-            	var fn = _this.name.el.get_text();
-            	var dir = _this.project.firstPath();
-               
-            	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
-            	    Xcls_StandardErrorDialog.singleton().show(
-            	        _this.mainwindow.el,
-            	        "That file already exists"
-            	    ); 
-            	    return;
-            	}
-               
-               var f =  JsRender.JsRender.factory(
-            		_this.file.project.xtype,  
-            		_this.file.project, 
-            		dir + "/" + fn + ".bjs");
-            
-            	_this.file = f;
-            	
-            
-            	
-            	_this.updateFileFromEntry();
-            	_this.file.loaded = true;
-            	_this.file.save();
-            	_this.file.project.addFile(_this.file);
-            	
-             
-            	// what about .js ?
-               _this.done = true;
-            	_this.el.hide();
-            
-            	
-            	
-            	_this.success(_this.project, _this.file);
-            	*/
-               
-            });
         }
 
         // user defined functions

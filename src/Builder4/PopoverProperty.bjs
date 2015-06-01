@@ -9,7 +9,7 @@
  "items" : [
   {
    "listeners" : {
-    "closed" : "() => {\n  if (!this.done) {\n    _this.el.show();\n  \n  }\n  \n  \n  var newtext = \"\";\n  Gtk.TreeIter citer;\n  GLib.Value gval;\n  this.kflag.el.get_active_iter(out citer);\n  this.dbmodel.el.get_value(citer, 0, out  gval);\n  \n  newtext += (string)gval;  \n  newtext += this.ktype.el.get_text().length > 0 && newtext.length > 0 ? \" \" :\"\";\n  newtext += this.ktype.el.get_text() ;\n  newtext += this.kname.el.get_text().length > 0 && newtext.length > 0 ? \" \" :\"\";\n  newtext += this.kname.el.get_text();\n  \n  \n   var lp =  _this.mainwindow.windowstate.left_props;\n    \n    switch(this.key_type) {\n        case \"listener\":\n            var ov = _this.node.listeners.get(this.old_keyname);\n            _this.node.listeners.set(newtext, ov);\n            _this.node.listeners.unset(this.old_keyname);\n            \n            \n            lp.updateKey(this.old_keyname, this.key_type, newtext);\n            \n            break;\n        case \"props\":\n            var ov = _this.node.props.get(this.old_keyname);\n            _this.node.props.set(newtext, ov);\n            _this.node.props.unset(this.old_keyname);\n            lp.updateKey(this.old_keyname, this.key_type, newtext);\n            break;\n     }\n   \n  \n  \n} "
+    "closed" : "() => {\n \n  \n  var newtext = \"\";\n  Gtk.TreeIter citer;\n  GLib.Value gval;\n  this.kflag.el.get_active_iter(out citer);\n  this.dbmodel.el.get_value(citer, 0, out  gval);\n  \n  newtext += (string)gval;  \n  newtext += this.ktype.el.get_text().length > 0 && newtext.length > 0 ? \" \" :\"\";\n  newtext += this.ktype.el.get_text() ;\n  newtext += this.kname.el.get_text().length > 0 && newtext.length > 0 ? \" \" :\"\";\n  newtext += this.kname.el.get_text();\n  \n  \n   var lp =  _this.mainwindow.windowstate.left_props;\n    \n    switch(this.key_type) {\n        case \"listener\":\n            var ov = _this.node.listeners.get(this.old_keyname);\n            _this.node.listeners.set(newtext, ov);\n            _this.node.listeners.unset(this.old_keyname);\n            \n            \n            lp.updateKey(this.old_keyname, this.key_type, newtext);\n            \n            break;\n        case \"props\":\n            var ov = _this.node.props.get(this.old_keyname);\n            _this.node.props.set(newtext, ov);\n            _this.node.props.unset(this.old_keyname);\n            lp.updateKey(this.old_keyname, this.key_type, newtext);\n            break;\n     }\n   \n  \n  \n} "
    },
    "string old_keyname" : "",
    "id" : "PopoverProperty",
@@ -117,35 +117,6 @@
          "$ visible" : true,
          "xtype" : "Entry",
          "* pack" : "attach_defaults,1,2,2,3",
-         "$ xns" : "Gtk"
-        }
-       ]
-      },
-      {
-       "int margin_bottom" : 4,
-       "int margin_right" : 4,
-       "* pack" : "pack_end,false,true,0",
-       "xtype" : "HButtonBox",
-       "$ xns" : "Gtk",
-       "int margin_left" : 4,
-       "items" : [
-        {
-         "listeners" : {
-          "clicked" : "() => { \n\n  _this.done = true;\n    _this.el.hide(); \n}"
-         },
-         "xtype" : "Button",
-         "string label" : "Cancel",
-         "* pack" : "add",
-         "$ xns" : "Gtk"
-        },
-        {
-         "listeners" : {
-          "clicked" : "( ) =>  { \n\n  \n/*\n\n\tif (_this.name.el.get_text().length  < 1) {\n\t    StandardErrorDialog.show(\n\t        _this.mainwindow.el,\n\t        \"You have to set Component name \"\n\t    );\n\t     \n\t    return;\n\t}\n\t// what does this do?\n\t\n\tvar isNew = _this.file.name.length  > 0 ? false : true;\n\t \n\t \n\t\n  \n\t// FIXME - this may be more complicated...\n\t//for (var i in this.def) {\n\t//    this.file[i] =  this.get(i).el.get_text();\n\t//}\n\n\tif (!isNew) {\n\t    try {\n\t         _this.updateFileFromEntry();\n\t     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {\n\t          Xcls_StandardErrorDialog.singleton().show(\n\t            _this.mainwindow.el,\n\t            \"The name you used already exists \"\n\t        );\n\t        return;\n\t         \n\t     }\n\n\t      _this.done = true;\n\t    _this.file.save();\n\t    _this.el.hide();\n\t    return;\n\t}\n\tvar fn = _this.name.el.get_text();\n\tvar dir = _this.project.firstPath();\n   \n\tif (GLib.FileUtils.test(dir + \"/\" + fn + \".bjs\", GLib.FileTest.EXISTS)) {\n\t    Xcls_StandardErrorDialog.singleton().show(\n\t        _this.mainwindow.el,\n\t        \"That file already exists\"\n\t    ); \n\t    return;\n\t}\n   \n   var f =  JsRender.JsRender.factory(\n\t\t_this.file.project.xtype,  \n\t\t_this.file.project, \n\t\tdir + \"/\" + fn + \".bjs\");\n\n\t_this.file = f;\n\t\n\n\t\n\t_this.updateFileFromEntry();\n\t_this.file.loaded = true;\n\t_this.file.save();\n\t_this.file.project.addFile(_this.file);\n\t\n \n\t// what about .js ?\n   _this.done = true;\n\t_this.el.hide();\n\n\t\n\t\n\t_this.success(_this.project, _this.file);\n\t*/\n   \n}"
-         },
-         "id" : "save_btn",
-         "xtype" : "Button",
-         "* pack" : "add",
-         "string label" : "Save",
          "$ xns" : "Gtk"
         }
        ]
