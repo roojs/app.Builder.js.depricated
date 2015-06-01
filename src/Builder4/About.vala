@@ -30,7 +30,6 @@ public class About : Object
         this.el.website = "http://www.roojs.org/blog.php";
         this.el.modal = true;
         this.el.copyright = "LGPL";
-        this.el.license_type = Gtk.License.LGPL_3_0;
 
         //listeners
         this.el.delete_event.connect( (self, event) => {

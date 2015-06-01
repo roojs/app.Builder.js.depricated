@@ -12,7 +12,6 @@
     "delete_event" : "(self, event) => {\n\tthis.el.hide();\n\treturn true; \n\n}",
     "response" : "(rid) => {\n    this.el.hide();\n}\n"
    },
-   "Gtk.License license_type" : "Gtk.License.LGPL_3_0",
    "|    void show" : "(Gtk.Window parent) {\n    this.el.set_transient_for(parent);\n    this.el.modal = true;\n    this.el.show();\n}\n ",
    "$ string[] authors" : "{ \"Alan Knowles\" }",
    "xtype" : "AboutDialog",
