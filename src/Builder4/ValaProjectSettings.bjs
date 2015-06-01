@@ -130,7 +130,7 @@
            ]
           },
           {
-           "* pack" : "add",
+           "* pack" : "add2",
            "xtype" : "ScrolledWindow",
            "$ xns" : "Gtk",
            "items" : [

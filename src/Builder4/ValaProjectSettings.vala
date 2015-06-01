@@ -258,7 +258,7 @@ public class ValaProjectSettings : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_ScrolledWindow16( _this );
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.add2 (  child_1.el  );
         }
 
         // user defined functions
