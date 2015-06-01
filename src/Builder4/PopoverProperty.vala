@@ -54,7 +54,10 @@ public class Xcls_PopoverProperty : Object
           }
           
           
-         var lp =  _this.mainwindow.windowstate.left_props;
+          var newtext ="";
+          
+          
+           var lp =  _this.mainwindow.windowstate.left_props;
             
             switch(this.key_type) {
                 case "listener":
@@ -67,7 +70,7 @@ public class Xcls_PopoverProperty : Object
                     
                     break;
                 case "props":
-                    var ov = _this.node.props.get((this.old_keyname);
+                    var ov = _this.node.props.get(this.old_keyname);
                     _this.node.props.set(newtext, ov);
                     _this.node.props.unset((this.old_keyname);
                    lp.updateKey(this.old_keyname, this.key_type, newtext);
