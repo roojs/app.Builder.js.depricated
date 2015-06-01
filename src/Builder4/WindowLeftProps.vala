@@ -1329,11 +1329,14 @@ public class Xcls_LeftProps : Object
                      Gtk.TreeIter iter;
                       var mod = this.el.get_model();
             		  mod.get_iter (out iter, path);
-                
-            		GLib.Value gval;
+            		  
+                   
+            		GLib.Value gvaltype, gval;
             		mod.get_value(iter, 1 , out gval); // one is key..
-            		var val = (string)gval;
-                    this.popover.show(this.el, _this.node, val);
+            		
+            	     mod.el.get_value(iter,0, out gvaltype);
+            
+                    this.popover.show(this.el, _this.node, (string)gvaltype, (string)gval);
                        
                      // _this.startEditingKey(path); 
                      
