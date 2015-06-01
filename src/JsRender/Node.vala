@@ -276,7 +276,13 @@ public class JsRender.Node : Object {
 		kname = "";
 		ktype = "-";
 		kflag = "-";
-		var kk = key.strip().split(" ");
+		var kkv = key.strip().split(" ");
+		string[] kk = {};
+		for (var i = 0; i < kkv.length; i++) {
+			if (kkv[i].length > 0 ) {
+				kk+= kkv[i];
+			}
+		}
 		switch(kk.length) {
 			case 1: 
 				kname = kk[0];
