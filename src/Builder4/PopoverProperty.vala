@@ -58,7 +58,7 @@ public class Xcls_PopoverProperty : Object
           newtext += this.ktype.el.get_text().length > 0 && newtext.length > 0 ? " " :"";
           newtext += this.ktype.el.get_text() ;
           newtext += this.kname.el.get_text().length > 0 && newtext.length > 0 ? " " :"";
-          newtext += this.kname.el.get_text() : "";
+          newtext += this.kname.el.get_text();
           
           
            var lp =  _this.mainwindow.windowstate.left_props;
