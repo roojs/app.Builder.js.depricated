@@ -1833,8 +1833,8 @@ public class Xcls_LeftProps : Object
               
                 var s = _this.view.el.get_selection();
                 Gtk.TreeIter iter;
-                Gtk.TreeModel model;
-                s.get_selected (out  model, out  iter);
+                Gtk.TreeModel mod;
+                s.get_selected (out  mod, out  iter);
                 
                   if (_this.view.popover == null) {
                  		   _this.view.popover = new Xcls_PopoverProperty();
@@ -1842,7 +1842,7 @@ public class Xcls_LeftProps : Object
              		}
              		
              
-                 _this.before_edit();
+                  _this.before_edit();
                   _this.stop_editor();
             	  
                  _this.keyrender.el.stop_editing(false);
@@ -1850,21 +1850,18 @@ public class Xcls_LeftProps : Object
             
                  _this.valrender.el.stop_editing(false);
                  _this.valrender.el.editable  =false;
-                 Gtk.TreeIter iter;
-                  var mod = this.el.get_model();
-            	  mod.get_iter (out iter, path);
-            	  
-               
+                 
+                  
             	GLib.Value gvaltype, gval;
             	mod.get_value(iter, 1 , out gval); // one is key..
             	
                  mod.get_value(iter,0, out gvaltype);
             
-            		_this.view.popover.show(this.el, _this.node, (string)gvaltype, (string)gval);
+            	_this.view.popover.show(_this.view.el, _this.node, (string)gvaltype, (string)gval);
                    
                 
                 
-                _this.startEditingKey(model.get_path(iter));
+               // _this.startEditingKey(model.get_path(iter));
             });
         }
 
