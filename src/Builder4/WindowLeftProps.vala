@@ -1326,7 +1326,22 @@ public class Xcls_LeftProps : Object
                 
                      _this.valrender.el.stop_editing(false);
                      _this.valrender.el.editable  =false;
-                    
+                     Gtk.TreeIter iter;
+                      var mod = this.el.get_model();
+            		  mod.get_iter (out iter, path);
+                 
+                /*
+                    m.set(iter, 
+                            0, "listener",
+                            1, miter.get_key(),
+                            2, "<b>" + miter.get_key() + "</b>",
+                            3, miter.get_value()
+                        ); 
+                 
+                */
+                GLib.Value gval;
+                mod.get_value(iter, 3 , out gval);
+                var val = (string)gval;
                     this.popover.show(this.el, _this.node, "test");
                        
                      // _this.startEditingKey(path); 
