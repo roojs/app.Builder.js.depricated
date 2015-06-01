@@ -72,7 +72,7 @@ public class Xcls_LeftProps : Object
     	     
     	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
     	      
-    	  	  print("update iter type=%s, key=%s value=%s\n", type, key, kvalue);
+    		  	  print("update iter type=%s, key=%s value=%s\n", type, key,(string) kvalue);
     	      
        	 	      this.updateIter(iter, type, key, (string)kvalue);
        	 	      return true;
