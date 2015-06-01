@@ -183,9 +183,7 @@ public class Spawn : Object
 				out standard_error);
 
 		// stdout:
-		if (this.detach) { 
-			return;
-		}
+		 
 			
 		//print(JSON.stringify(gret));    
 		 
