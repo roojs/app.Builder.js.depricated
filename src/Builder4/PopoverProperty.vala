@@ -12,7 +12,7 @@ public class Xcls_PopoverProperty : Object
         }
         return _PopoverProperty;
     }
-    public Xcls_build_module build_module;
+    public Xcls_kflag kflag;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
     public Xcls_ktype ktype;
@@ -197,7 +197,7 @@ public class Xcls_PopoverProperty : Object
             var child_0 = new Xcls_Label5( _this );
             child_0.ref();
             this.el.attach_defaults (  child_0.el , 0,1,0,1 );
-            var child_1 = new Xcls_build_module( _this );
+            var child_1 = new Xcls_kflag( _this );
             child_1.ref();
             this.el.attach_defaults (  child_1.el , 1,2,0,1 );
             var child_2 = new Xcls_Label9( _this );
@@ -240,7 +240,7 @@ public class Xcls_PopoverProperty : Object
         // user defined functions
     }
 
-    public class Xcls_build_module : Object
+    public class Xcls_kflag : Object
     {
         public Gtk.ComboBox el;
         private Xcls_PopoverProperty  _this;
@@ -249,10 +249,10 @@ public class Xcls_PopoverProperty : Object
             // my vars (def)
 
         // ctor
-        public Xcls_build_module(Xcls_PopoverProperty _owner )
+        public Xcls_kflag(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
-            _this.build_module = this;
+            _this.kflag = this;
             this.el = new Gtk.ComboBox();
 
             // my vars (dec)
@@ -342,7 +342,10 @@ public class Xcls_PopoverProperty : Object
         	if (_this.file.xtype == "Gtk") {
         		el.append(out iter);
         		el.set(iter, 0, "$", 1,   "Raw Property (not escaped)", -1);
-        
+        		if (kflag == "$") {
+        			 _this.kflag.el.set_active_iter(iter);
+        		 }
+        		
         		el.append(out iter);
         		el.set(iter, 0, "#", 1,   "User defined property", -1);
         
