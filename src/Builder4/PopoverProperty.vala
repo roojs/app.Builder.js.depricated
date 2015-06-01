@@ -22,8 +22,6 @@ public class Xcls_PopoverProperty : Object
         // my vars (def)
     public signal void success (Project.Project pr, JsRender.JsRender file);
     public bool done;
-    public Project.Project project;
-    public JsRender.JsRender file;
     public Xcls_MainWindow mainwindow;
     public JsRender.Node node;
 
@@ -35,7 +33,6 @@ public class Xcls_PopoverProperty : Object
 
         // my vars (dec)
         this.done = false;
-        this.file = null;
         this.mainwindow = null;
 
         // set gobject values
@@ -341,7 +338,7 @@ public class Xcls_PopoverProperty : Object
         	if (kflag == "") {
         		 _this.kflag.el.set_active_iter(iter);
         	 }
-        	if (_this.file.xtype == "Gtk") {
+        	if (_this.mainwindow.windowstate.file.xtype == "Gtk") {
         		el.append(out iter);
         		el.set(iter, 0, "$", 1,   "Raw Property (not escaped)", -1);
         		if (kflag == "$") {
