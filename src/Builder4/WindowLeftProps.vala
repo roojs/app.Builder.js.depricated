@@ -435,12 +435,15 @@ public class Xcls_LeftProps : Object
           
         
     }
-    public Gtk.TreeIter keyToIter (string ) {
+    public Gtk.TreeIter keyToIter (string oldkey,  string type, string key, string kvalue) {
+    
     	var m = _this.model;
     	
     	
     	m.foreach(((model, path,  iter) => {
-    	
+    		
+    		
+    		});
     	
     	
     
