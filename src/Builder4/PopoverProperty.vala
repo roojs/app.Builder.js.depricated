@@ -360,6 +360,10 @@ public class Xcls_PopoverProperty : Object
         
         		el.append(out iter);
         		el.set(iter, 0, "|", 1,   "User defined method", -1);
+        		
+        		el.append(out iter);
+        		el.set(iter, 0, "*", 1,   "Special property (eg. prop )", -1);
+        	
         	}
         
                                              
