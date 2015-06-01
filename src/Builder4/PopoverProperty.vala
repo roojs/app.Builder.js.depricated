@@ -12,6 +12,7 @@ public class Xcls_PopoverProperty : Object
         }
         return _PopoverProperty;
     }
+    public Xcls_header header;
     public Xcls_kflag kflag;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
@@ -135,7 +136,7 @@ public class Xcls_PopoverProperty : Object
 
             // set gobject values
             this.el.homogeneous = false;
-            var child_0 = new Xcls_HeaderBar3( _this );
+            var child_0 = new Xcls_header( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
             var child_1 = new Xcls_Table4( _this );
@@ -148,7 +149,7 @@ public class Xcls_PopoverProperty : Object
 
         // user defined functions
     }
-    public class Xcls_HeaderBar3 : Object
+    public class Xcls_header : Object
     {
         public Gtk.HeaderBar el;
         private Xcls_PopoverProperty  _this;
@@ -157,9 +158,10 @@ public class Xcls_PopoverProperty : Object
             // my vars (def)
 
         // ctor
-        public Xcls_HeaderBar3(Xcls_PopoverProperty _owner )
+        public Xcls_header(Xcls_PopoverProperty _owner )
         {
             _this = _owner;
+            _this.header = this;
             this.el = new Gtk.HeaderBar();
 
             // my vars (dec)

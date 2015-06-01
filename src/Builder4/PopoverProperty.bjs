@@ -32,6 +32,7 @@
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
       {
+       "id" : "header",
        "* pack" : "pack_start,false,true,0",
        "xtype" : "HeaderBar",
        "$ xns" : "Gtk",
