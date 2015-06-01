@@ -195,7 +195,7 @@
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+folderfile",
+           "id" : "*folderfile",
            "* args" : "string filepath",
            "* init" : "{\n\tthis.filepath = filepath;\n}\n",
            "xtype" : "Text",

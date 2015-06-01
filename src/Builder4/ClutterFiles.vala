@@ -701,7 +701,6 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
         public Xcls_foldertitle foldertitle;
-        public Xcls_folderfile folderfile;
 
         // ctor
         public Xcls_folderitem(Xcls_ClutterFiles _owner , string folderpath)
@@ -720,8 +719,6 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
-            var child_2 = new Xcls_folderfile( _this ,filepath);
-            child_2.ref();
 
             // init method
 
