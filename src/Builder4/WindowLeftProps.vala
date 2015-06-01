@@ -435,7 +435,7 @@ public class Xcls_LeftProps : Object
           
         
     }
-    public return_type XXXX () {
+    public Gtk.TreeIter keyToIter () {
     
     }
     public              void addProp (string in_type, string key, string value, string value_type) {
