@@ -67,10 +67,10 @@ public class Xcls_PopoverProperty : Object
                     
                     break;
                 case "props":
-                    var ov = _this.node.props.get(oldval);
+                    var ov = _this.node.props.get((this.old_keyname);
                     _this.node.props.set(newtext, ov);
-                    _this.node.props.unset(oldval);
-                    _this.updateIter(iter,  ktype, newtext, ov);
+                    _this.node.props.unset((this.old_keyname);
+                   //lp.updateIter(iter,  ktype, newtext, ov);
                     break;
              }
              _this.changed();
