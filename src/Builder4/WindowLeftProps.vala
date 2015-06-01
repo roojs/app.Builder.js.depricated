@@ -435,6 +435,9 @@ public class Xcls_LeftProps : Object
           
         
     }
+    public return_type XXXX () {
+    
+    }
     public              void addProp (string in_type, string key, string value, string value_type) {
           // info includes key, val, skel, etype..
           //console.dump(info);
