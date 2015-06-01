@@ -24,7 +24,6 @@ public class Xcls_ClutterFiles : Object
     public Clutter.ScrollMode scroll_mode;
     public Gdk.Pixbuf missing_thumb_pixbuf;
     public signal void open (JsRender.JsRender file);
-    public Project.Project project;
     public Gee.ArrayList<Object> fileitems;
 
     // ctor
