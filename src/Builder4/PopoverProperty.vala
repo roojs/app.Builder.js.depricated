@@ -54,7 +54,7 @@ public class Xcls_PopoverProperty : Object
     }
 
     // user defined functions
-    public void show (Gtk.Widget btn, JsRender.Node node, string key) 
+    public void show (Gtk.Widget btn, JsRender.Node node, string type,  string key) 
     	{
     	
     	string kname = "", kflag = "", ktype = "";
