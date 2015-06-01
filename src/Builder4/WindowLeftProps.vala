@@ -441,7 +441,20 @@ public class Xcls_LeftProps : Object
     	
     	
     	m.foreach((model, path,  iter) => {
+    		 
+            
+            	  
+           
+    		 GLib.Value gvaltype, gval;
+    		 mod.get_value(iter, 1 , out gval); // one is key..
     		
+    	     mod.get_value(iter,0, out gvaltype);
+    	     
+    	     if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
+    	 	    this.updateIter(iter, type, key, kvalue);
+    	 	  }
+    	     
+    
     		return false;
     	});
     	
