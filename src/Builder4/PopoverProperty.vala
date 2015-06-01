@@ -366,6 +366,8 @@ public class Xcls_PopoverProperty : Object
         		el.set(iter, 0, "*", 1,   "Special property (eg. prop )", -1);
         	
         	}
+        	
+        	
         
                                              
         }
