@@ -194,12 +194,12 @@
             "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.el.color =  Clutter.Color.from_string(\"#000\");\n        return false;\n}",
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
-           "$ x_expand" : true,
            "xtype" : "Text",
-           "$ y_align" : "Clutter.ActorAlign.START",
+           "bool x_expand" : true,
+           "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
            "$ xns" : "Clutter",
-           "bool y_expand" : false,
-           "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START"
+           "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
+           "bool y_expand" : true
           }
          ]
         }
