@@ -553,7 +553,7 @@ public class Xcls_LeftProps : Object
                 2, this.keyFormat(key ,type),
                 3, kvalue,
                 4, dis_val,
-                5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
+                5, "<tt>" +  GLib.Markup.escape_text(key + " " +kvalue) + "</tt>",
                 6,  "0 " + key
             ); 
             return;
@@ -567,7 +567,7 @@ public class Xcls_LeftProps : Object
                 2,  this.keyFormat(key , "prop"),
                 3, kvalue,
                 4, dis_val,
-                 5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
+                 5, "<tt>" + GLib.Markup.escape_text(key + " " + kvalue) + "</tt>",
                  6,  this.keySortFormat(key)
             ); 
     }
