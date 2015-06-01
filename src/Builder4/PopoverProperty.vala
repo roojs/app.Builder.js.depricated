@@ -375,7 +375,7 @@ public class Xcls_PopoverProperty : Object
         		if (((string)val) == kflag) {
         			_this.kflag.el.set_active_iter(titer);
         		}
-        		
+        		return true;
         	});
         	
         
