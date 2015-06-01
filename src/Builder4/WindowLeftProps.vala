@@ -435,7 +435,15 @@ public class Xcls_LeftProps : Object
           
         
     }
-    public Gtk.TreeIter keyToIter () {
+    public Gtk.TreeIter keyToIter (string ) {
+    	var m = _this.model;
+    	
+    	
+    	m.foreach(((model, path,  iter) => {
+    	
+    	
+    	
+    
     
     }
     public              void addProp (string in_type, string key, string value, string value_type) {
