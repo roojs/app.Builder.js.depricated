@@ -95,6 +95,7 @@ public class Xcls_PopoverProperty : Object
     	
     	this.key_type = key_type;
     	this.old_keyname = key;
+    	this.node = node;
     	
     	_this.kname.el.set_text(kname);
     	_this.ktype.el.set_text(ktype);
