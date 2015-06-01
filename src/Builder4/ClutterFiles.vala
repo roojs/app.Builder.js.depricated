@@ -793,7 +793,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_folderfile(Xcls_ClutterFiles _owner , string folderpath)
         {
             _this = _owner;
-            this.el = new Clutter.Text();
+            this.el = new Clutter.Text.full("Sans 10px", file.nickName(),  Clutter.Color.from_string("#fff"));
 
             // my vars (dec)
 
