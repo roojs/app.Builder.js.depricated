@@ -21,6 +21,7 @@ public class Xcls_PopoverProperty : Object
     public Xcls_save_btn save_btn;
 
         // my vars (def)
+    public string old_keyname;
     public signal void success (Project.Project pr, JsRender.JsRender file);
     public bool done;
     public Xcls_MainWindow mainwindow;
@@ -54,14 +55,14 @@ public class Xcls_PopoverProperty : Object
           
           
          
-            print("ktype: %s\n",ktype);
+            
             switch(this.key_type) {
                 case "listener":
-                    var ov = _this.node.listeners.get(oldval);
+                    var ov = _this.node.listeners.get(this.old_keyname);
                     _this.node.listeners.set(newtext, ov);
-                    _this.node.listeners.unset(oldval);
+                    _this.node.listeners.unset(this.old_keyname);
                     
-                    _this.updateIter(iter,  ktype, newtext, ov);
+                    _this.mainwindow.windowstate.leftprops.updateIter(iter,  ktype, newtext, ov);
                     
                     break;
                 case "props":
