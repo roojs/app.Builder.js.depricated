@@ -283,7 +283,7 @@ public class JsRender.Node : Object {
 				kk+= kkv[i];
 			}
 		}
-		print("normalize %s\n", kk.join("=:="));
+		print("normalize %s => %s\n", key,string.joinv("=:=",kk));
 		
 		switch(kk.length) {
 			case 1: 
