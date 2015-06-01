@@ -56,10 +56,9 @@ public class Xcls_LeftProps : Object
     // user defined functions
     public void updateKey (string oldkey,  string type, string key ) {
     
-    	var m = _this.model.el;
+     
     	
-    	
-    	m.foreach((mod, path,  iter) => {
+    	_this.model.el.foreach((mod, path,  iter) => {
     		 
             
             	  
