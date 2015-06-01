@@ -28,8 +28,8 @@
    "items" : [
     {
      "bool homogeneous" : false,
-     "$ pack" : "add",
      "xtype" : "Box",
+     "$ pack" : "add",
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "items" : [
@@ -41,8 +41,8 @@
       },
       {
        "int margin_right" : 4,
-       "* pack" : "pack_start,false,false,4",
        "xtype" : "Table",
+       "* pack" : "pack_start,false,false,4",
        "uint row_spacing" : 2,
        "n_columns" : 2,
        "$ xns" : "Gtk",
@@ -68,18 +68,18 @@
          "items" : [
           {
            "id" : "dbcellrenderer",
-           "xtype" : "CellRendererText",
            "* pack" : "pack_start,true",
+           "xtype" : "CellRendererText",
            "$ xns" : "Gtk"
           },
           {
            "id" : "dbmodel",
-           "xtype" : "ListStore",
            "* pack" : "set_model",
+           "xtype" : "ListStore",
            "$ columns" : "typeof(string),typeof(string)",
            "n_columns" : 2,
            "$ xns" : "Gtk",
-           "| void loadData" : "  (Gee.ArrayList<string> data, string cur) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n   /// el.append(out iter);\n    \n     \n   // el.set_value(iter, 0, \"\");\n   // el.set_value(iter, 1, \"aaa  - Just add Element - aaa\");\n\n    el.append(out iter);\n\n    \n    el.set_value(iter, 0, \"\");\n    el.set_value(iter, 1, \"-- select a module --\");\n    _this.build_module.el.set_active_iter(iter);\n    \n    for (var i = 0; i < data.size;i++) {\n    \n\n        el.append(out iter);\n        \n        el.set_value(iter, 0, data.get(i));\n        el.set_value(iter, 1, data.get(i));\n        \n        if (data.get(i) == cur) {\n            _this.build_module.el.set_active_iter(iter);\n        }\n        \n    }\n     this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          \n                                     \n}\n"
+           "| void loadData" : "  (Gee.ArrayList<string> data, string cur) {\n    this.el.clear();                                    \n    Gtk.TreeIter iter;\n    var el = this.el;\n    \n    \n    // vala signal.. '@'\n    // raw value '$'\n    // user defined property '#'\n    // user defined method '|'\n    // special property '*' => prop  |args|ctor|init\n    \n    \n    \n   /// el.append(out iter);\n    \n     \n   // el.set_value(iter, 0, \"\");\n   // el.set_value(iter, 1, \"aaa  - Just add Element - aaa\");\n\n    el.append(out iter);\n    el.set(iter, 0, \"\", 1,   \"Normal Property\", -1);\n\n\n    el.append(out iter);\n    el.set(iter, 0, \"$\", 1,   \"Raw Property (not escaped)\", -1);\n\n    el.append(out iter);\n    el.set(iter, 0, \"#\", 1,   \"User defined property\", -1);\n\n    el.append(out iter);\n    el.set(iter, 0, \"|\", 1,   \"User defined method\", -1);\n\n    el.append(out iter);\n    el.set(iter, 0, \"*\", 1,   \"Special property (eg. prop)\", -1);\n\n    el.append(out iter);\n    el.set(iter, 0, \"@\", 1,   \"Vala Signal\", -1);\n                                     \n}\n"
           }
          ]
         },
@@ -102,8 +102,8 @@
         },
         {
          "label" : "Name",
-         "tooltip_text" : "center, north, south, east, west",
          "$ visible" : true,
+         "tooltip_text" : "center, north, south, east, west",
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,2,3",
          "xtype" : "Label",
@@ -132,9 +132,9 @@
          "listeners" : {
           "clicked" : "() => { \n\n  _this.done = true;\n    _this.el.hide(); \n}"
          },
+         "* pack" : "add",
          "xtype" : "Button",
          "string label" : "Cancel",
-         "* pack" : "add",
          "$ xns" : "Gtk"
         },
         {
@@ -142,8 +142,8 @@
           "clicked" : "( ) =>  { \n\n  \n/*\n\n\tif (_this.name.el.get_text().length  < 1) {\n\t    StandardErrorDialog.show(\n\t        _this.mainwindow.el,\n\t        \"You have to set Component name \"\n\t    );\n\t     \n\t    return;\n\t}\n\t// what does this do?\n\t\n\tvar isNew = _this.file.name.length  > 0 ? false : true;\n\t \n\t \n\t\n  \n\t// FIXME - this may be more complicated...\n\t//for (var i in this.def) {\n\t//    this.file[i] =  this.get(i).el.get_text();\n\t//}\n\n\tif (!isNew) {\n\t    try {\n\t         _this.updateFileFromEntry();\n\t     } catch( JsRender.Error.RENAME_FILE_EXISTS er) {\n\t          Xcls_StandardErrorDialog.singleton().show(\n\t            _this.mainwindow.el,\n\t            \"The name you used already exists \"\n\t        );\n\t        return;\n\t         \n\t     }\n\n\t      _this.done = true;\n\t    _this.file.save();\n\t    _this.el.hide();\n\t    return;\n\t}\n\tvar fn = _this.name.el.get_text();\n\tvar dir = _this.project.firstPath();\n   \n\tif (GLib.FileUtils.test(dir + \"/\" + fn + \".bjs\", GLib.FileTest.EXISTS)) {\n\t    Xcls_StandardErrorDialog.singleton().show(\n\t        _this.mainwindow.el,\n\t        \"That file already exists\"\n\t    ); \n\t    return;\n\t}\n   \n   var f =  JsRender.JsRender.factory(\n\t\t_this.file.project.xtype,  \n\t\t_this.file.project, \n\t\tdir + \"/\" + fn + \".bjs\");\n\n\t_this.file = f;\n\t\n\n\t\n\t_this.updateFileFromEntry();\n\t_this.file.loaded = true;\n\t_this.file.save();\n\t_this.file.project.addFile(_this.file);\n\t\n \n\t// what about .js ?\n   _this.done = true;\n\t_this.el.hide();\n\n\t\n\t\n\t_this.success(_this.project, _this.file);\n\t*/\n   \n}"
          },
          "id" : "save_btn",
-         "* pack" : "add",
          "xtype" : "Button",
+         "* pack" : "add",
          "string label" : "Save",
          "$ xns" : "Gtk"
         }

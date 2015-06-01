@@ -320,6 +320,15 @@ public class Xcls_PopoverProperty : Object
             Gtk.TreeIter iter;
             var el = this.el;
             
+            
+            // vala signal.. '@'
+            // raw value '$'
+            // user defined property '#'
+            // user defined method '|'
+            // special property '*' => prop  |args|ctor|init
+            
+            
+            
            /// el.append(out iter);
             
              
@@ -327,26 +336,23 @@ public class Xcls_PopoverProperty : Object
            // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
         
             el.append(out iter);
+            el.set(iter, 0, "", 1,   "Normal Property", -1);
         
-            
-            el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "-- select a module --");
-            _this.build_module.el.set_active_iter(iter);
-            
-            for (var i = 0; i < data.size;i++) {
-            
         
-                el.append(out iter);
-                
-                el.set_value(iter, 0, data.get(i));
-                el.set_value(iter, 1, data.get(i));
-                
-                if (data.get(i) == cur) {
-                    _this.build_module.el.set_active_iter(iter);
-                }
-                
-            }
-             this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
+            el.append(out iter);
+            el.set(iter, 0, "$", 1,   "Raw Property (not escaped)", -1);
+        
+            el.append(out iter);
+            el.set(iter, 0, "#", 1,   "User defined property", -1);
+        
+            el.append(out iter);
+            el.set(iter, 0, "|", 1,   "User defined method", -1);
+        
+            el.append(out iter);
+            el.set(iter, 0, "*", 1,   "Special property (eg. prop)", -1);
+        
+            el.append(out iter);
+            el.set(iter, 0, "@", 1,   "Vala Signal", -1);
                                              
         }
     }
