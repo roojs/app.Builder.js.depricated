@@ -786,6 +786,7 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars (def)
+        public string filepath;
 
         // ctor
         public Xcls_Text18(Xcls_ClutterFiles _owner )

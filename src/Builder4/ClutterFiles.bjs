@@ -197,6 +197,7 @@
            "xtype" : "Text",
            "bool x_expand" : true,
            "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
+           "string filepath" : "",
            "$ xns" : "Clutter",
            "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START",
            "bool y_expand" : true
