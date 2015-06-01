@@ -720,7 +720,7 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
-            var child_2 = new Xcls_folderfile( _this ,folderpath);
+            var child_2 = new Xcls_folderfile( _this ,filepath);
             child_2.ref();
 
             // init method
@@ -790,7 +790,7 @@ public class Xcls_ClutterFiles : Object
         public string filepath;
 
         // ctor
-        public Xcls_folderfile(Xcls_ClutterFiles _owner , string folderpath)
+        public Xcls_folderfile(Xcls_ClutterFiles _owner , string filepath)
         {
             _this = _owner;
             this.el = new Clutter.Text.full("Sans 10px", GLib.Path.get_basename(filepath),  Clutter.Color.from_string("#fff"));
