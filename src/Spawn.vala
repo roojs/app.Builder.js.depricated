@@ -154,7 +154,17 @@ public class Spawn : Object
 		 
 		GLib.debug("cd %s; %s" , this.cwd , string.joinv(" ", this.args));
 		
-		
+		if (this.detach) { 
+			Process.spawn_async_with_pipes (
+				this.cwd,
+				this.args,
+				this.env.length > 0 ? this.env : null,
+				SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+				null,
+				out this.pid);
+				return;
+
+		}
 		Process.spawn_async_with_pipes (
 				this.cwd,
 				this.args,
