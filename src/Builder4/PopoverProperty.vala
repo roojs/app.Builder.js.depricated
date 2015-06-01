@@ -55,9 +55,9 @@ public class Xcls_PopoverProperty : Object
           
           
           var newtext = "";
-          newtext += this.ktype.el.value.length > 0 && newtext.length > 0 ? " " :""
+          newtext += this.ktype.el.value.length > 0 && newtext.length > 0 ? " " :"";
           newtext += this.ktype ;
-          newtext += this.kname.el.value.length > 0 && newtext.length > 0 ? " " :""
+          newtext += this.kname.el.value.length > 0 && newtext.length > 0 ? " " :"";
           newtext += this.kname.el.value : "";
           
           
