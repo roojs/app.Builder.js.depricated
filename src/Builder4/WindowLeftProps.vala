@@ -454,6 +454,7 @@ public class Xcls_LeftProps : Object
     	     
     	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
        	 	      this.updateIter(iter, type, key, (string)kvalue);
+       	 	      return true;
     	 	  }
     	     
     
