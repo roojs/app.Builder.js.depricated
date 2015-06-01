@@ -57,7 +57,7 @@ public class Xcls_PopoverProperty : Object
           var newtext = "";
           Gtk.TreeIter citer;
           GLib.Value gval;
-          this.kflag.get_active_iter(out citer);
+          this.kflag.el.get_active_iter(out citer);
           this.dbmodel.el.get_value(citer, 0, gval);
           
           newtext += (string)gval;  
