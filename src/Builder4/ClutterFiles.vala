@@ -719,6 +719,8 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
+            var child_2 = new Xcls_Text18( _this );
+            child_2.ref();
 
             // init method
 
@@ -777,20 +779,19 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_folderfile : Object
+    public class Xcls_Text18 : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
 
 
             // my vars (def)
-        public string filepath;
 
         // ctor
-        public Xcls_folderfile(Xcls_ClutterFiles _owner , string filepath)
+        public Xcls_Text18(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px", GLib.Path.get_basename(filepath),  Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text();
 
             // my vars (dec)
 
@@ -798,14 +799,7 @@ public class Xcls_ClutterFiles : Object
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
-            this.el.reactive = true;
             this.el.y_expand = false;
-
-            // init method
-
-            {
-                this.filepath = filepath;
-            }
 
             //listeners
             this.el.button_press_event.connect( (  event) => {
