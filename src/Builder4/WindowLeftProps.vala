@@ -435,7 +435,7 @@ public class Xcls_LeftProps : Object
           
         
     }
-    public Gtk.TreeIter keyToIter (string oldkey,  string type, string key, string kvalue) {
+    public Gtk.TreeIter keyToIter (string oldkey,  string type, string key ) {
     
     	var m = _this.model.el;
     	
@@ -445,13 +445,15 @@ public class Xcls_LeftProps : Object
             
             	  
            
-    		 GLib.Value gvaltype, gval;
+    		 GLib.Value gvaltype, gval,kvalue;
     		 mod.get_value(iter, 1 , out gval); // one is key..
     		
     	     mod.get_value(iter,0, out gvaltype);
     	     
+     	     mod.get_value(iter,3, out kvalue);
+    	     
     	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
-       	 	      this.updateIter(iter, type, key, kvalue);
+       	 	      this.updateIter(iter, type, key, (string)kvalue);
     	 	  }
     	     
     
