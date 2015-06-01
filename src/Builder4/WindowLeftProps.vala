@@ -1336,9 +1336,9 @@ public class Xcls_LeftProps : Object
             		
             	     mod.get_value(iter,0, out gvaltype);
             
-                    this.popover.show(this.el, _this.node, (string)gvaltype, (string)gval);
+                    //this.popover.show(this.el, _this.node, (string)gvaltype, (string)gval);
                        
-                     // _this.startEditingKey(path); 
+                      _this.startEditingKey(path); 
                      
                     return false;
                 }
