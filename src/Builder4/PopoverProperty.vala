@@ -51,6 +51,29 @@ public class Xcls_PopoverProperty : Object
             _this.el.show();
           
           }
+          
+          
+         
+            print("ktype: %s\n",ktype);
+            switch(this.key_type) {
+                case "listener":
+                    var ov = _this.node.listeners.get(oldval);
+                    _this.node.listeners.set(newtext, ov);
+                    _this.node.listeners.unset(oldval);
+                    
+                    _this.updateIter(iter,  ktype, newtext, ov);
+                    
+                    break;
+                case "props":
+                    var ov = _this.node.props.get(oldval);
+                    _this.node.props.set(newtext, ov);
+                    _this.node.props.unset(oldval);
+                    _this.updateIter(iter,  ktype, newtext, ov);
+                    break;
+             }
+             _this.changed();
+          
+          
         });
     }
 

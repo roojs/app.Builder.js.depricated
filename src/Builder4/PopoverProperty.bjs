@@ -9,7 +9,7 @@
  "items" : [
   {
    "listeners" : {
-    "closed" : "() => {\n  if (!this.done) {\n    _this.el.show();\n  \n  }\n} "
+    "closed" : "() => {\n  if (!this.done) {\n    _this.el.show();\n  \n  }\n  \n  \n \n    print(\"ktype: %s\\n\",ktype);\n    switch(this.key_type) {\n        case \"listener\":\n            var ov = _this.node.listeners.get(oldval);\n            _this.node.listeners.set(newtext, ov);\n            _this.node.listeners.unset(oldval);\n            \n            _this.updateIter(iter,  ktype, newtext, ov);\n            \n            break;\n        case \"props\":\n            var ov = _this.node.props.get(oldval);\n            _this.node.props.set(newtext, ov);\n            _this.node.props.unset(oldval);\n            _this.updateIter(iter,  ktype, newtext, ov);\n            break;\n     }\n     _this.changed();\n  \n  \n} "
    },
    "id" : "PopoverProperty",
    "@ void success" : "(Project.Project pr, JsRender.JsRender file)",
