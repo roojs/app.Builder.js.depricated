@@ -54,6 +54,36 @@ public class Xcls_LeftProps : Object
     }
 
     // user defined functions
+    public void updateKey (string oldkey,  string type, string key ) {
+    
+    	var m = _this.model.el;
+    	
+    	
+    	m.foreach((model, path,  iter) => {
+    		 
+            
+            	  
+           
+    		 GLib.Value gvaltype, gval,kvalue;
+    		 mod.get_value(iter, 1 , out gval); // one is key..
+    		
+    	     mod.get_value(iter,0, out gvaltype);
+    	     
+     	     mod.get_value(iter,3, out kvalue);
+    	     
+    	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
+       	 	      this.updateIter(iter, type, key, (string)kvalue);
+       	 	      return true;
+    	 	  }
+    	     
+    
+    		return false;
+    	});
+    	
+    	
+    
+    
+    }
     public              void before_edit ()
     {
     
@@ -434,36 +464,6 @@ public class Xcls_LeftProps : Object
         });
           
         
-    }
-    public Gtk.TreeIter keyToIter (string oldkey,  string type, string key ) {
-    
-    	var m = _this.model.el;
-    	
-    	
-    	m.foreach((model, path,  iter) => {
-    		 
-            
-            	  
-           
-    		 GLib.Value gvaltype, gval,kvalue;
-    		 mod.get_value(iter, 1 , out gval); // one is key..
-    		
-    	     mod.get_value(iter,0, out gvaltype);
-    	     
-     	     mod.get_value(iter,3, out kvalue);
-    	     
-    	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
-       	 	      this.updateIter(iter, type, key, (string)kvalue);
-       	 	      return true;
-    	 	  }
-    	     
-    
-    		return false;
-    	});
-    	
-    	
-    
-    
     }
     public              void addProp (string in_type, string key, string value, string value_type) {
           // info includes key, val, skel, etype..
