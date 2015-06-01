@@ -76,7 +76,7 @@ public class Xcls_PopoverProperty : Object
                    lp.updateKey(this.old_keyname, this.key_type, newtext);
                     break;
              }
-             _this.changed();
+            lp.changed();
           
           
         });
