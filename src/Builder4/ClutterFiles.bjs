@@ -199,7 +199,7 @@
            "$ y_align" : "Clutter.ActorAlign.START",
            "$ xns" : "Clutter",
            "bool y_expand" : false,
-           "$ x_align" : "Clutter.ActorAlign.START"
+           "Clutter.ActorAlign x_align" : "Clutter.ActorAlign.START"
           }
          ]
         }
