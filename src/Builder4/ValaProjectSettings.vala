@@ -280,6 +280,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.hexpand = true;
             var child_0 = new Xcls_default_packages_tree( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
@@ -519,6 +520,7 @@ public class ValaProjectSettings : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.hexpand = true;
             var child_0 = new Xcls_default_directory_tree( _this );
             child_0.ref();
             this.el.add (  child_0.el  );

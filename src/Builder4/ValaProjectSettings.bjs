@@ -67,6 +67,7 @@
          "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {
+           "bool hexpand" : true,
            "* pack" : "add",
            "xtype" : "ScrolledWindow",
            "$ xns" : "Gtk",
@@ -130,6 +131,7 @@
            ]
           },
           {
+           "bool hexpand" : true,
            "* pack" : "add2",
            "xtype" : "ScrolledWindow",
            "$ xns" : "Gtk",
