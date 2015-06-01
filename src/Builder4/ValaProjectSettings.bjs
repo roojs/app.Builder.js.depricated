@@ -64,6 +64,7 @@
          "* pack" : "pack_start,true,true,0",
          "xtype" : "Paned",
          "$ xns" : "Gtk",
+         "int position" : 300,
          "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
          "items" : [
           {
