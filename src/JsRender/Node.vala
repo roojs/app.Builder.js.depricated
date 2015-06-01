@@ -283,6 +283,8 @@ public class JsRender.Node : Object {
 				kk+= kkv[i];
 			}
 		}
+		print("normalize %s\n", kk.join("=:="));
+		
 		switch(kk.length) {
 			case 1: 
 				kname = kk[0];
