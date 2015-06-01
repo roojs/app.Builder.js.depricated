@@ -9,7 +9,6 @@
  "items" : [
   {
    "id" : "ClutterFiles",
-   "* args" : "string folderpath",
    "|  void clearFiles" : "() {\n    \n    this.filelayout.el.remove_all_children();\n    // we need to unref all the chidren that we loaded though...\n    \n}\n ",
    "Clutter.ScrollMode scroll_mode" : "Clutter.ScrollMode.VERTICALLY",
    "xtype" : "Actor",

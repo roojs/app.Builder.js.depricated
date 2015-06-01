@@ -28,7 +28,7 @@ public class Xcls_ClutterFiles : Object
     public Gee.ArrayList<Object> fileitems;
 
     // ctor
-    public Xcls_ClutterFiles(, string folderpath)
+    public Xcls_ClutterFiles()
     {
         _this = this;
         this.el = new Clutter.Actor();
