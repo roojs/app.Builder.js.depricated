@@ -334,7 +334,7 @@ public class Xcls_PopoverProperty : Object
            // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
         
             el.append(out iter);
-            el.set(iter, 0, "", 1,   "Normal Property", -1);
+            el.set(iter, 0, " ", 1,   "Normal Property", -1);
         	 
         	if (_this.mainwindow.windowstate.file.xtype == "Gtk") {
         		el.append(out iter);
@@ -371,6 +371,7 @@ public class Xcls_PopoverProperty : Object
         	el.foreach((tm, tp, titer) => {
         		GLib.Value val;
         		el.get(titer, 0, out val);
+        		print("got type %s",val.type_name());
         		print("check %s against %s\n", (string)val, kflag);
         		if (((string)val) == kflag) {
         			_this.kflag.el.set_active_iter(titer);
