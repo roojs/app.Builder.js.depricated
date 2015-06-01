@@ -80,7 +80,7 @@ public class Xcls_LeftProps : Object
     		return false;
     	});
     	
-    	
+    	this.changed();
     
     
     }
