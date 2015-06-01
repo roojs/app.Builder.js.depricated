@@ -69,7 +69,7 @@ public class Xcls_PopoverProperty : Object
     		this.header.el.title = "Modify Property";
     	}
     	
-    	
+    	this.key_type = key_type;
     
     	_this.kname.el.set_text(kname);
     	_this.ktype.el.set_text(ktype);
