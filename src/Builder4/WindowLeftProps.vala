@@ -450,8 +450,8 @@ public class Xcls_LeftProps : Object
     		
     	     mod.get_value(iter,0, out gvaltype);
     	     
-    	     if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
-    	 	    this.updateIter(iter, type, key, kvalue);
+    	      if (oldkey == ((string)gval) && type == ((string)gvaltype)) {
+       	 	      this.updateIter(iter, type, key, kvalue);
     	 	  }
     	     
     
