@@ -59,7 +59,7 @@ public class Xcls_LeftProps : Object
     	var m = _this.model.el;
     	
     	
-    	m.foreach((model, path,  iter) => {
+    	m.foreach((mod, path,  iter) => {
     		 
             
             	  
