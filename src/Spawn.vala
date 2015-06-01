@@ -162,6 +162,12 @@ public class Spawn : Object
 				SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
 				null,
 				out this.pid);
+				ChildWatch.add (this.pid, (pid, status) => {
+					// Triggered when the child indicated by child_pid exits
+					Process.close_pid (pid);
+					 
+				});
+				
 				return;
 
 		}
