@@ -334,7 +334,7 @@ public class Xcls_PopoverProperty : Object
            // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
         
             el.append(out iter);
-            el.set(iter, 0, " ", 1,   "Normal Property", -1);
+            el.set(iter, 0, "", 1,   "Normal Property", -1);
         	 
         	if (_this.mainwindow.windowstate.file.xtype == "Gtk") {
         		el.append(out iter);
