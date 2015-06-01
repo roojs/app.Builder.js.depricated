@@ -530,7 +530,7 @@ public class Xcls_LeftProps : Object
     }
     public              void updateIter (Gtk.TreeIter iter,  string type, string key, string kvalue) {
     
-        print("update Iter %s, %s\n", key,value);
+        print("update Iter %s, %s\n", key,kvalue);
         //typeof(string),  // 0 key type
          //typeof(string),  // 1 key
          //typeof(string),  // 2 key (display)
@@ -539,7 +539,7 @@ public class Xcls_LeftProps : Object
          //typeof(string),  // 5 both (tooltip)
          //typeof(string),  // 6 key (sort)
         
-        var dl = value.strip().split("\n");
+        var dl = kvalue.strip().split("\n");
     
         var dis_val = dl.length > 1 ? (dl[0].strip()+ "...") : dl[0];
         
