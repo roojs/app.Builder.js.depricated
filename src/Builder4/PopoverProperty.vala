@@ -368,7 +368,15 @@ public class Xcls_PopoverProperty : Object
         		 
         	
         	}
-        	
+        	el.foreach((tm, tp, titer) => {
+        		GLib.Value val;
+        		el.get(titer, 0, out val)
+        		print("check %s against %s\n", (string)val, kflag);
+        		if (((string)val) == kflag) {
+        			_this.kflag.el.set_active_iter(titer);
+        		}
+        		
+        	});
         	
         
                                              
