@@ -274,8 +274,8 @@ public class JsRender.Node : Object {
 		// $ XXX - with flag (no type)
 		// $ string XXX - with flag
 		kname = "";
-		ktype = "";
-		kflag = "";
+		ktype = ""; // these used to contain '-' ???
+		kflag = ""; // these used to contain '-' ???
 		var kkv = key.strip().split(" ");
 		string[] kk = {};
 		for (var i = 0; i < kkv.length; i++) {
