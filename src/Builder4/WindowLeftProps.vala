@@ -1349,7 +1349,10 @@ public class Xcls_LeftProps : Object
              		
              
                      _this.before_edit();
-                     
+                       if (!_this.stop_editor()) {
+            			return;
+            		 }
+            		  
                      _this.keyrender.el.stop_editing(false);
                      _this.keyrender.el.editable  =false;
                 
