@@ -113,11 +113,7 @@ public class Xcls_PopoverProperty : Object
     	// does node have this property...
     
     
-    	if (key.length > 0) {
-    		this.save_btn.el.set_label("Save");
-    	} else {
-    		this.save_btn.el.set_label("Create");
-    	}
+    	 
     
     	_this.node = node;
     	//console.log('show all');
