@@ -15,13 +15,14 @@
    "Gtk.License license_type" : "Gtk.License.LGPL_3_0",
    "|    void show" : "(Gtk.Window parent) {\n    this.el.set_transient_for(parent);\n    this.el.modal = true;\n    this.el.show();\n}\n ",
    "$ string[] authors" : "{ \"Alan Knowles\" }",
-   "copyright" : "LGPL",
    "xtype" : "AboutDialog",
    "program_name" : "app.Builder.js",
    "$ modal" : true,
+   "$ authors" : "{ \"Alan Knowles\" }",
    "$ xns" : "Gtk",
    "website" : "http://www.roojs.org/blog.php",
-   "license" : "LGPL"
+   "string copyright" : "LGPL",
+   "string license" : "LGPL"
   }
  ]
 }
