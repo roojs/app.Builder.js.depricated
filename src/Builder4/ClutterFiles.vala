@@ -19,7 +19,6 @@ public class Xcls_ClutterFiles : Object
     public Xcls_scroller scroller;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
-    public Xcls_folderfile folderfile;
 
         // my vars (def)
     public Clutter.ScrollMode scroll_mode;
@@ -702,6 +701,7 @@ public class Xcls_ClutterFiles : Object
 
             // my vars (def)
         public Xcls_foldertitle foldertitle;
+        public Xcls_folderfile folderfile;
 
         // ctor
         public Xcls_folderitem(Xcls_ClutterFiles _owner , string folderpath)
@@ -793,7 +793,6 @@ public class Xcls_ClutterFiles : Object
         public Xcls_folderfile(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            _this.folderfile = this;
             this.el = new Clutter.Text();
 
             // my vars (dec)
