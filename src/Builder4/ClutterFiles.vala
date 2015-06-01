@@ -19,6 +19,7 @@ public class Xcls_ClutterFiles : Object
     public Xcls_scroller scroller;
     public Xcls_filelayout filelayout;
     public Xcls_filelayout_manager filelayout_manager;
+    public Xcls_folderfile folderfile;
 
         // my vars (def)
     public Clutter.ScrollMode scroll_mode;
@@ -719,7 +720,7 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
-            var child_2 = new Xcls_Text18( _this );
+            var child_2 = new Xcls_folderfile( _this );
             child_2.ref();
 
             // init method
@@ -779,7 +780,7 @@ public class Xcls_ClutterFiles : Object
         // user defined functions
     }
 
-    public class Xcls_Text18 : Object
+    public class Xcls_folderfile : Object
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -789,9 +790,10 @@ public class Xcls_ClutterFiles : Object
         public string filepath;
 
         // ctor
-        public Xcls_Text18(Xcls_ClutterFiles _owner )
+        public Xcls_folderfile(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
+            _this.folderfile = this;
             this.el = new Clutter.Text();
 
             // my vars (dec)

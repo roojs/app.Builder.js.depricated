@@ -194,6 +194,7 @@
             "enter_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#fff\");\n    this.el.color =  Clutter.Color.from_string(\"#000\");\n        return false;\n}",
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
+           "id" : "folderfile",
            "xtype" : "Text",
            "bool x_expand" : true,
            "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
