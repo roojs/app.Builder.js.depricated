@@ -1334,7 +1334,7 @@ public class Xcls_LeftProps : Object
             		GLib.Value gvaltype, gval;
             		mod.get_value(iter, 1 , out gval); // one is key..
             		
-            	     mod.el.get_value(iter,0, out gvaltype);
+            	     mod.get_value(iter,0, out gvaltype);
             
                     this.popover.show(this.el, _this.node, (string)gvaltype, (string)gval);
                        
