@@ -720,7 +720,7 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.foldertitle =  child_1;
-            var child_2 = new Xcls_folderfile( _this );
+            var child_2 = new Xcls_folderfile( _this ,folderpath);
             child_2.ref();
 
             // init method
@@ -790,7 +790,7 @@ public class Xcls_ClutterFiles : Object
         public string filepath;
 
         // ctor
-        public Xcls_folderfile(Xcls_ClutterFiles _owner )
+        public Xcls_folderfile(Xcls_ClutterFiles _owner , string folderpath)
         {
             _this = _owner;
             this.el = new Clutter.Text();

@@ -196,6 +196,7 @@
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
            "id" : "+folderfile",
+           "* args" : "string folderpath",
            "xtype" : "Text",
            "bool x_expand" : true,
            "Clutter.ActorAlign y_align" : "Clutter.ActorAlign.START",
