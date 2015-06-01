@@ -58,7 +58,7 @@ public class Xcls_PopoverProperty : Object
     // user defined functions
     public void show (Gtk.Widget btn, JsRender.Node node, string key) 
     	{
-    
+    	
     	string kname = "", kflag = "", ktype = "";
     	if (key.length > 0) {
     		node.normalize_key( key, out  kname, out  kflag, out ktype);
