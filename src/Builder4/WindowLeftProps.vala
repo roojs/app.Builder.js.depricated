@@ -526,7 +526,7 @@ public class Xcls_LeftProps : Object
         
                   
     }
-    public              void updateIter (Gtk.TreeIter iter,  string type, string key, string value) {
+    public              void updateIter (Gtk.TreeIter iter,  string type, string key, string kvalue) {
     
         print("update Iter %s, %s\n", key,value);
         //typeof(string),  // 0 key type
@@ -549,7 +549,7 @@ public class Xcls_LeftProps : Object
                     0, type,
                 1, key,
                 2, this.keyFormat(key ,type),
-                3, value,
+                3, kvalue,
                 4, dis_val,
                 5, "<tt>" +  GLib.Markup.escape_text(key + " " +value) + "</tt>",
                 6,  "0 " + key
@@ -563,7 +563,7 @@ public class Xcls_LeftProps : Object
                 0, "props",
                 1, key,
                 2,  this.keyFormat(key , "prop"),
-                3, value,
+                3, kvalue,
                 4, dis_val,
                  5, "<tt>" + GLib.Markup.escape_text(key + " " + value) + "</tt>",
                  6,  this.keySortFormat(key)
