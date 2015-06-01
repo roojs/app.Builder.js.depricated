@@ -20,7 +20,7 @@
    "$ modal" : true,
    "$ authors" : "{ \"Alan Knowles\" }",
    "$ xns" : "Gtk",
-   "website" : "http://www.akbkhome.com/blog.php",
+   "website" : "http://www.roojs.org/blog.php",
    "license" : "LGPL"
   }
  ]

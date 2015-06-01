@@ -27,7 +27,7 @@ public class About : Object
         this.el.program_name = "app.Builder.js";
         this.el.license = "LGPL";
         this.el.authors = { "Alan Knowles" };
-        this.el.website = "http://www.akbkhome.com/blog.php";
+        this.el.website = "http://www.roojs.org/blog.php";
         this.el.modal = true;
         this.el.copyright = "LGPL";
         this.el.license_type = Gtk.License.LGPL_3_0;
