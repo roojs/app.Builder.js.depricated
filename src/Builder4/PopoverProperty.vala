@@ -54,7 +54,7 @@ public class Xcls_PopoverProperty : Object
     }
 
     // user defined functions
-    public void show (Gtk.Widget btn, JsRender.Node node, string type,  string key) 
+    public void show (Gtk.Widget btn, JsRender.Node node, string key_type,  string key) 
     	{
     	
     	string kname = "", kflag = "", ktype = "";
@@ -62,7 +62,7 @@ public class Xcls_PopoverProperty : Object
     		node.normalize_key( key, out  kname, out  kflag, out ktype);
     	}
     
-    	if (type == "listener") {
+    	if (key_type == "listener") {
     		this.header.el.title = "Modify Event Listener";
     	} else {
     		this.header.el.title = "Modify Property";
