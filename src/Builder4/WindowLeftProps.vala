@@ -1315,6 +1315,7 @@ public class Xcls_LeftProps : Object
                     
                      if (this.popover == null) {
                  		   this.popover = new Xcls_PopoverProperty();
+                 		   this.popover.mainwindow = _this.main_window;
              		}
              		
              
