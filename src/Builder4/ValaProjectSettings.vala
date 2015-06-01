@@ -174,7 +174,7 @@ public class ValaProjectSettings : Object
             var child_1 = new Xcls_compile_flags( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Box8( _this );
+            var child_2 = new Xcls_Paned8( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , true,true,0 );
         }
@@ -236,19 +236,19 @@ public class ValaProjectSettings : Object
         // user defined functions
     }
 
-    public class Xcls_Box8 : Object
+    public class Xcls_Paned8 : Object
     {
-        public Gtk.Box el;
+        public Gtk.Paned el;
         private ValaProjectSettings  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Box8(ValaProjectSettings _owner )
+        public Xcls_Paned8(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
+            this.el = new Gtk.Paned( Gtk.Orientation.HORIZONTAL );
 
             // my vars (dec)
 
