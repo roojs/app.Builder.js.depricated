@@ -435,7 +435,7 @@ public class WindowState : Object
 
 	}
 	
-	public void fileViewOpen(JsRender.JsRender file, int line =0)
+	public void fileViewOpen(JsRender.JsRender file, int line = -1)
 	{
 		this.win.project = file.project;
 		this.project = file.project;
@@ -446,6 +446,9 @@ public class WindowState : Object
 			this.switchState (State.CODEONLY); 
 			file.loadItems();
 			this.code_editor.show(file, null, "", "");
+			if (line> -1) {
+				this.code_editor.scroll_to_line(line);
+			}
 		} else {
 		
 			this.switchState (State.PREVIEW); 
