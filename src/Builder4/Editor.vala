@@ -178,7 +178,11 @@ public class Editor : Object
     	 
     	this.buffer.el.get_iter_at_offset(out beg, this.last_search_end);
     	this.searchcontext.forward(beg, out st, out en);
-    	this.last_search_end = 0;
+    	this.last_search_end = en.get_offset();
+    	
+    	this.view.el.grab_focus();
+    	this.buffer.el.place_cursor(st);
+    	
     	
     
     }
