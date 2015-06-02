@@ -621,16 +621,14 @@
          "items" : [
           {
            "listeners" : {
-            "button_press_event" : "() => {\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n   \n    \n    this.popup.show(this.notices, this.el);\n    return true;\n}"
+            "button_press_event" : "() => {\n/*\n    if (this.popup == null) {\n        this.popup = new Xcls_ValaCompileErrors();\n        this.popup.window = _this;\n    }\n   \n    \n    this.popup.show(this.notices, this.el);\n    */\n    return true;\n}"
            },
            "bool always_show_image" : true,
            "id" : "statusbar_errors",
-           "| void setNotices" : "(Json.Object nots, int qty) {\n    this.el.show();\n    this.el.label = qty.to_string() + \" Errors\";\n    this.notices = nots;\n\n}\n",
            "Xcls_ValaCompileErrors popup" : "",
            "string label" : "Errors",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
-           "# Json.Object notices" : "new Json.Object() ",
            "$ xns" : "Gtk",
            "items" : [
             {

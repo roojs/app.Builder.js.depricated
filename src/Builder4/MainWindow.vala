@@ -2368,7 +2368,6 @@ public class Xcls_MainWindow : Object
 
             // my vars (def)
         public Xcls_ValaCompileErrors popup;
-        public Json.Object notices;
 
         // ctor
         public Xcls_statusbar_errors(Xcls_MainWindow _owner )
@@ -2378,7 +2377,6 @@ public class Xcls_MainWindow : Object
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
-            this.notices = new Json.Object() ;
 
             // set gobject values
             this.el.always_show_image = true;
@@ -2389,6 +2387,7 @@ public class Xcls_MainWindow : Object
 
             //listeners
             this.el.button_press_event.connect( () => {
+            /*
                 if (this.popup == null) {
                     this.popup = new Xcls_ValaCompileErrors();
                     this.popup.window = _this;
@@ -2396,17 +2395,12 @@ public class Xcls_MainWindow : Object
                
                 
                 this.popup.show(this.notices, this.el);
+                */
                 return true;
             });
         }
 
         // user defined functions
-        public void setNotices (Json.Object nots, int qty) {
-            this.el.show();
-            this.el.label = qty.to_string() + " Errors";
-            this.notices = nots;
-        
-        }
     }
     public class Xcls_Image72 : Object
     {
