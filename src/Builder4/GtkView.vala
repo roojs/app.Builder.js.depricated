@@ -519,6 +519,9 @@ public class Xcls_GtkView : Object
             
         
         }
+        public string toString () {
+        
+        }
         public void loadFile ( ) {
             this.loading = true;
             var buf = this.el.get_buffer();
