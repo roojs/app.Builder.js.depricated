@@ -2378,7 +2378,7 @@ public class Xcls_MainWindow : Object
         }
 
         // user defined functions
-        public return_type XXXX () {
+        public void forwardSearch () {
         
         }
     }
