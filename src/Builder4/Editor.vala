@@ -140,7 +140,7 @@ public class Editor : Object
         this.ptype = "";
         this.key  = "";
         this.node = null;
-    
+    	this.searchcontext = null;
         
         if (file.xtype != "PlainFile") {
         
