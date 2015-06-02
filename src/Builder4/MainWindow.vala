@@ -2330,7 +2330,7 @@ public class Xcls_MainWindow : Object
             	if (this.el.text == "") {
             		return;
             	}
-            	Gee.ArrayList<int> res = new Gee.ArrayList<int>();;
+            	Gee.ArrayList<int> res = new Gee.ArrayList<int>();
             	switch(_this.windowstate.state) {
             		case WindowState.State.CODEONLY:
             		case WindowState.State.CODE:
