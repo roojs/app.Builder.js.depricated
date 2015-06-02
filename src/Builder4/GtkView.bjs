@@ -11,7 +11,7 @@
    "listeners" : {
     "size_allocate" : "(aloc) => {\n\n    this.width = aloc.width;\n    this.height =aloc.height;\n    }\n"
    },
-   "| Gee.ArrayList<int> search" : "(string txt) {\n  var ret =  new Gee.ArrayList<int>();\n  var str = this.sourceview.toString();\n  \n  \n  return ret;\n}\n",
+   "| Gee.ArrayList<int> search" : "(string txt) {\n  var ret =  new Gee.ArrayList<int>();\n  var str = this.sourceview.toString();\n  \n  var lines = str.split(\"\\n\");\n  for (var i = 0 ; i < lines.length; i++)  {\n\tif (lines[i].contains(txt)) {\n\t\tret.add(i);\n\t}\n  \n  }\n  \n  \n  return ret;\n}\n",
    "id" : "GtkView",
    "| void scroll_to_line" : "(int line) {\n   this.notebook.el.page = 1;// code preview...\n   \n   GLib.Timeout.add(500, () => {\n   \n   \n\t   \n\t   \n\t\t  var buf = this.sourceview.el.get_buffer();\n\t \n\t\tvar sbuf = (Gtk.SourceBuffer) buf;\n\n\n\t\tGtk.TextIter iter;   \n\t\tsbuf.get_iter_at_line(out iter,  line);\n\t\tthis.sourceview.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);\n\t\treturn false;\n\t});   \n\n   \n}\n",
    "# Gtk.Widget lastObj" : "null",

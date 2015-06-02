@@ -57,6 +57,14 @@ public class Xcls_GtkView : Object
       var ret =  new Gee.ArrayList<int>();
       var str = this.sourceview.toString();
       
+      var lines = str.split("\n");
+      for (var i = 0 ; i < lines.length; i++)  {
+    	if (lines[i].contains(txt)) {
+    		ret.add(i);
+    	}
+      
+      }
+      
       
       return ret;
     }
