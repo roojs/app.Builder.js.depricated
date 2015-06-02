@@ -969,6 +969,9 @@ public class WindowState : Object
 				break;
 		   
 			case State.CODE: 
+				this.win.search_entry.el.show();
+				this.win.search_results.el.show();
+				// continue thru..
 			case State.PROP:
 			case State.LISTENER:
 			case State.OBJECT:
