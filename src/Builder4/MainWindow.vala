@@ -111,7 +111,7 @@ public class Xcls_MainWindow : Object
             
             if (event.keyval == Gdk.Key.f && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                 print("SAVE: ctrl-f  pressed");
-        		this.search_entry.el.focus();
+        		this.search_entry.el.grab_focus();
                 return false;
             }
            // print(event.key.keyval)
