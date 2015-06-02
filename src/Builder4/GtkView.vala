@@ -53,6 +53,9 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions
+    public void scroll_to_line (int line) {
+    	
+    }
     public void createThumb () {
         
         
