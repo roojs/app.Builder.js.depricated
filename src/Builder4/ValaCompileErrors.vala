@@ -35,6 +35,7 @@ public class Xcls_ValaCompileErrors : Object
         // set gobject values
         this.el.width_request = 900;
         this.el.height_request = 800;
+        this.el.hexpand = true;
         this.el.modal = true;
         this.el.position = Gtk.PositionType.TOP;
         var child_0 = new Xcls_compile_view( _this );
