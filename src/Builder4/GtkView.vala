@@ -39,6 +39,7 @@ public class Xcls_GtkView : Object
         this.height = 0;
 
         // set gobject values
+        this.el.hexpand = true;
         var child_0 = new Xcls_notebook( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
