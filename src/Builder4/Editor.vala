@@ -28,6 +28,7 @@ public class Editor : Object
     public JsRender.JsRender file;
     public bool pos;
     public bool dirty;
+    public string XXXX;
     public signal void save ();
     public JsRender.Node node;
 
@@ -66,7 +67,7 @@ public class Editor : Object
     	var sctx = new Gtk.SourceSearchContext(this.buffer.el,s);
     	sctx.set_highlight(true);
     	s.set_search_text(txt);
-    	
+    	while (sctx.get_occurence_position(st, en)> -1) {
     
     
     	var ret =  new Gee.ArrayList<int>();
