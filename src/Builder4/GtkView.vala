@@ -54,17 +54,24 @@ public class Xcls_GtkView : Object
 
     // user defined functions
     public void scroll_to_line (int line) {
-    
-    	  var buf = this.sourceview.el.get_buffer();
-     
-        var sbuf = (Gtk.SourceBuffer) buf;
-    
-    
-    	Gtk.TextIter iter;   
-        sbuf.get_iter_at_line(out iter,  line);
-        this.sourceview.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
-       
        this.notebook.el.page = 1;// code preview...
+       
+       GLib.Timeout.add(1000, () => {
+       
+       
+    	   
+    	   
+    		  var buf = this.sourceview.el.get_buffer();
+    	 
+    		var sbuf = (Gtk.SourceBuffer) buf;
+    
+    
+    		Gtk.TextIter iter;   
+    		sbuf.get_iter_at_line(out iter,  line);
+    		this.sourceview.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+    		return false;
+    	});   
+    
        
     }
     public void createThumb () {
