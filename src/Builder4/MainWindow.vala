@@ -2383,12 +2383,12 @@ public class Xcls_MainWindow : Object
         		case WindowState.State.CODEONLY:
         		case WindowState.State.CODE:
         			// search the code being edited..
-        			res = _this.windowstate.code_editor.forwardSearch();
+        			_this.windowstate.code_editor.forwardSearch();
         			
         			break;
         		case WindowState.State.PREVIEW:
         			if (_this.windowstate.file.xtype == "Gtk") {
-        				 //res = _this.windowstate.window_gladeview.forwardSearch();
+        				_this.windowstate.window_gladeview.forwardSearch();
         			}
         		
         		

@@ -619,7 +619,7 @@
          "* pack" : "pack_start,false,true,0",
          "xtype" : "Entry",
          "$ xns" : "Gtk",
-         "| void forwardSearch" : "() {\n\tswitch(_this.windowstate.state) {\n\t\tcase WindowState.State.CODEONLY:\n\t\tcase WindowState.State.CODE:\n\t\t\t// search the code being edited..\n\t\t\tres = _this.windowstate.code_editor.forwardSearch();\n\t\t\t\n\t\t\tbreak;\n\t\tcase WindowState.State.PREVIEW:\n\t\t\tif (_this.windowstate.file.xtype == \"Gtk\") {\n\t\t\t\t //res = _this.windowstate.window_gladeview.forwardSearch();\n\t\t\t}\n\t\t\n\t\t\n\t\t\tbreak;\n\t}\n}\n"
+         "| void forwardSearch" : "() {\n\tswitch(_this.windowstate.state) {\n\t\tcase WindowState.State.CODEONLY:\n\t\tcase WindowState.State.CODE:\n\t\t\t// search the code being edited..\n\t\t\t_this.windowstate.code_editor.forwardSearch();\n\t\t\t\n\t\t\tbreak;\n\t\tcase WindowState.State.PREVIEW:\n\t\t\tif (_this.windowstate.file.xtype == \"Gtk\") {\n\t\t\t\t_this.windowstate.window_gladeview.forwardSearch();\n\t\t\t}\n\t\t\n\t\t\n\t\t\tbreak;\n\t}\n}\n"
         },
         {
          "* pack" : "pack_end,false,true,0",
