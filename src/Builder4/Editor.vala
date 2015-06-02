@@ -43,6 +43,7 @@ public class Editor : Object
         this.activeEditor = "";
         this.ptype = "";
         this.key = "";
+        this.searchcontext = null;
         this.file = null;
         this.pos = false;
         this.dirty = false;
