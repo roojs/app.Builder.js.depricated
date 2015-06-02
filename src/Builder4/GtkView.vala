@@ -53,6 +53,11 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions
+    public Gee.ArrayList<int> search (string txt) {
+      var ret =  new Gee.ArrayList<int>();
+      
+      return ret;
+    }
     public void scroll_to_line (int line) {
        this.notebook.el.page = 1;// code preview...
        
