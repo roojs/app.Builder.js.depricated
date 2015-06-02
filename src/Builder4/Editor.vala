@@ -122,16 +122,9 @@ public class Editor : Object
     	this.sourcecontext = new Gtk.SourceSearchContext(this.buffer.el,s);
     	this.sourcecontext .set_highlight(true);
     	s.set_search_text(txt);
-    	return this.sourcecontext.get_occurences_count();
-    
-    
-    	var s = new Gtk.SourceSearchSettings();
-    	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
-    	this.sourcecontext = new Gtk.SourceSearchContext(buf,s);
-    	this.sourcecontext.set_highlight(true);
-    	s.set_search_text(txt);
     	return this.sourcecontext.get_occurrences_count();
     
+     
        
     
     }
