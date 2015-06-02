@@ -122,6 +122,12 @@ public class Editor : Object
     	this.searchcontext = new Gtk.SourceSearchContext(this.buffer.el,s);
     	this.searchcontext .set_highlight(true);
     	s.set_search_text(txt);
+    	Gtk.TextIter beg, st,en;
+    	 
+    	buf.get_start_iter(out beg);
+    	this.searchcontext.forward(beg, out st, out en);
+    	
+    	
     	return this.searchcontext.get_occurrences_count();
     
      
