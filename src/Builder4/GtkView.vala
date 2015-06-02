@@ -20,6 +20,7 @@ public class Xcls_GtkView : Object
     public Xcls_sourceview sourceview;
 
         // my vars (def)
+    public int XXX;
     public Gtk.Widget lastObj;
     public int width;
     public Gtk.SourceSearchContext searchcontext;
@@ -34,6 +35,7 @@ public class Xcls_GtkView : Object
         this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
 
         // my vars (dec)
+        this.XXX = 0;
         this.lastObj = null;
         this.width = 0;
         this.file = null;
