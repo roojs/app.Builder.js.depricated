@@ -61,29 +61,6 @@ public class Editor : Object
     }
 
     // user defined functions
-    public Gee.ArrayList<int> search (string txt) {
-    
-    	var s = new Gtk.SourceSearchSettings();
-    	
-    	var sctx = new Gtk.SourceSearchContext(this.buffer.el,s);
-    	sctx.set_highlight(true);
-    	s.set_search_text(txt);
-    	while (sctx.get_occurence_position(st, en)> -1) {
-    
-    
-    	var ret =  new Gee.ArrayList<int>();
-    
-    	var str = this.buffer.toString();
-    
-    	var lines = str.split("\n");
-    	for (var i = 0 ; i < lines.length; i++)  {
-    	if (lines[i].contains(txt)) {
-    		ret.add(i);
-    	}
-      
-    	}
-    	return ret;
-    }
     public   bool saveContents ()  {
         
         
@@ -137,6 +114,16 @@ public class Editor : Object
     		this.view.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
     		return false;
     	});   
+    }
+    public int search (string txt) {
+    
+    	var s = new Gtk.SourceSearchSettings();
+    	
+    	this.sourcecontext = new Gtk.SourceSearchContext(this.buffer.el,s);
+    	sctx.set_highlight(true);
+    	s.set_search_text(txt);
+    	return this.sourcecontext.get_occurences_count();
+    
     }
     public   void show (JsRender.JsRender file, JsRender.Node? node, string ptype, string key)
     {
