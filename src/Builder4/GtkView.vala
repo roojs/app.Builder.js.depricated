@@ -180,6 +180,9 @@ public class Xcls_GtkView : Object
     	s.set_search_text(txt);
     	
     	Gtk.TextIter beg, st,en;
+    	
+    	
+    	buf.get_start_iter(out beg);
     	this.searchcontext.forward(beg, out st, out en);
     	
     	return this.searchcontext.get_occurrences_count();
