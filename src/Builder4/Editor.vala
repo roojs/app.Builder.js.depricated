@@ -168,6 +168,11 @@ public class Editor : Object
     }
     public void forwardSearch () {
     
+    	if (this.searchcontext == null) {
+    		return;
+    	}
+    	
+    
     }
     public class Xcls_Box2 : Object
     {
