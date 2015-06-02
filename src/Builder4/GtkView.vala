@@ -538,7 +538,7 @@ public class Xcls_GtkView : Object
             }
             Gtk.TextIter iter;   
             sbuf.get_iter_at_line(out iter,  sel.line_start);
-            if (!this.ignore_node_scroll) {
+            if (this.allow_node_scroll) {
             
         	    this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
             }
