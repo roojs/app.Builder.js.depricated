@@ -11,7 +11,6 @@
    "listeners" : {
     "size_allocate" : "(aloc) => {\n\n    this.width = aloc.width;\n    this.height =aloc.height;\n    }\n"
    },
-   "int XXX" : 0,
    "| void scroll_to_line" : "(int line) {\n   this.notebook.el.page = 1;// code preview...\n   \n   GLib.Timeout.add(500, () => {\n   \n   \n\t   \n\t   \n\t\t  var buf = this.sourceview.el.get_buffer();\n\t \n\t\tvar sbuf = (Gtk.SourceBuffer) buf;\n\n\n\t\tGtk.TextIter iter;   \n\t\tsbuf.get_iter_at_line(out iter,  line);\n\t\tthis.sourceview.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);\n\t\treturn false;\n\t});   \n\n   \n}\n",
    "id" : "GtkView",
    "# Gtk.Widget lastObj" : "null",
@@ -20,6 +19,7 @@
    "int width" : 0,
    "bool hexpand" : true,
    "| int search" : "(string txt) {\n \tvar s = new Gtk.SourceSearchSettings();\n\tvar buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();\n\tthis.searchcontext = new Gtk.SourceSearchContext(buf,s);\n\tthis.searchcontext.set_highlight(true);\n\ts.set_search_text(txt);\n\t\n\tGtk.TextIter beg, st,en;\n\t \n\tbuf.get_start_iter(out beg);\n\tthis.searchcontext.forward(beg, out st, out en);\n\t\n\treturn this.searchcontext.get_occurrences_count();\n\n   \n}\n",
+   "int last_search_end" : 0,
    "xtype" : "Box",
    "Gtk.SourceSearchContext searchcontext" : "",
    "# JsRender.JsRender file" : "null",
