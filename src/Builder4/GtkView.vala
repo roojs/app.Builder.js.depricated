@@ -395,6 +395,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
         public bool loading;
+        public bool allow_node_scroll;
 
         // ctor
         public Xcls_sourceview(Xcls_GtkView _owner )
@@ -405,6 +406,7 @@ public class Xcls_GtkView : Object
 
             // my vars (dec)
             this.loading = true;
+            this.allow_node_scroll = true;
 
             // set gobject values
             this.el.editable = false;
