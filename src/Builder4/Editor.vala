@@ -20,11 +20,11 @@ public class Editor : Object
 
         // my vars (def)
     public Xcls_MainWindow window;
-    public int XXX;
     public string activeEditor;
     public int pos_root_x;
     public int pos_root_y;
     public string ptype;
+    public int last_search_end;
     public string key;
     public Gtk.SourceSearchContext searchcontext;
     public JsRender.JsRender file;
@@ -41,9 +41,9 @@ public class Editor : Object
 
         // my vars (dec)
         this.window = null;
-        this.XXX = 0;
         this.activeEditor = "";
         this.ptype = "";
+        this.last_search_end = 0;
         this.key = "";
         this.searchcontext = null;
         this.file = null;
