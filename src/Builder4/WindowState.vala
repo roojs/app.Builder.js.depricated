@@ -972,7 +972,7 @@ public class WindowState : Object
 				this.win.search_entry.el.show();
 				this.win.search_results.el.show();
 				this.win.backbutton.el.show();
-				this.win.objectshowbutton.el.show(); // add objects
+				this.win.objectshowbutton.el.show(); // add objects ?? can you do this from here?
 				this.win.addpropbutton.el.show();  
 				this.win.addlistenerbutton.el.show(); 
 				break;
