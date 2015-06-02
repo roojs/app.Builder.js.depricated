@@ -188,6 +188,24 @@ public class Xcls_GtkView : Object
     
        
     }
+    public void forwardSearch () {
+    
+    	if (this.searchcontext == null) {
+    		return;
+    	}
+    	
+    	Gtk.TextIter beg, st,en;
+    	 
+    	this.buffer.el.get_iter_at_offset(out beg, this.last_search_end);
+    	this.searchcontext.forward(beg, out st, out en);
+    	this.last_search_end = en.get_offset();
+    	
+    	this.view.el.grab_focus();
+    	this.buffer.el.place_cursor(st);
+    	this.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
+    	
+    
+    }
     public class Xcls_notebook : Object
     {
         public Gtk.Notebook el;
