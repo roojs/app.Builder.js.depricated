@@ -206,9 +206,9 @@ public class Xcls_GtkView : Object
     		this.last_search_end = en.get_offset();
     	
     		this.sourceview.el.grab_focus();
-    		this.sourceview.allow_node_scroll = false;
+    	 
     		buf.place_cursor(st);
-    		this.sourceview.allow_node_scroll = true;
+    		 
     		this.sourceview.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
     	}
     
@@ -397,7 +397,6 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
         public bool loading;
-        public bool allow_node_scroll;
 
         // ctor
         public Xcls_sourceview(Xcls_GtkView _owner )
@@ -408,7 +407,6 @@ public class Xcls_GtkView : Object
 
             // my vars (dec)
             this.loading = true;
-            this.allow_node_scroll = true;
 
             // set gobject values
             this.el.editable = false;
