@@ -545,7 +545,12 @@ public class Xcls_GtkView : Object
             Gtk.TextIter cur_iter;
             sbuf.get_iter_at_offset(out cur_iter, sbuf.cursor_position);
             
+            var cur_line = cur_iter.get_line();
+            if (cur_line > sel.line_start && cur_line < sel.line_end) {
             
+            } else {
+                	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
+        	}
             
             /*
             is the cursor is between start+end... 
@@ -558,7 +563,7 @@ public class Xcls_GtkView : Object
             this.el.get_iter_location(iter, out target_rect);
             
             if (!rect.intersect(target_rect, out inter_rect)) {
-            	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
+        
         	}
         	*/
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);    
