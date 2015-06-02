@@ -803,7 +803,10 @@ public class WindowState : Object
 		this.easingRestoreAll();
 		
 		// run the animation.. - then load files...
-		this.resizeCanvas();
+		GLib.Timeout.add(300,  ()  =>{
+			 this.resizeCanvasElements();
+			 return false;
+		});
 			
 	}
 	
