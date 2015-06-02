@@ -626,7 +626,7 @@
            "bool always_show_image" : true,
            "id" : "search_results",
            "Xcls_ValaCompileErrors popup" : "",
-           "string label" : "Errors",
+           "string label" : "Matches",
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",
