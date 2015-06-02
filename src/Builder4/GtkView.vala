@@ -540,7 +540,14 @@ public class Xcls_GtkView : Object
             }
             Gtk.TextIter iter;   
             sbuf.get_iter_at_line(out iter,  sel.line_start);
-             
+            
+            Gdk.Rectangle rect, target_rect;
+            this.el.get_visible_rect(out rect);
+            this.el.get_iter_location(iter, out target_rect);
+            
+            
+            
+            
         	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
             
             
