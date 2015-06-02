@@ -206,7 +206,9 @@ public class Xcls_GtkView : Object
     		this.last_search_end = en.get_offset();
     	
     		this.sourceview.el.grab_focus();
+    		this.allow_node_scroll = false;
     		buf.place_cursor(st);
+    		this.allow_node_scroll = true;
     		this.sourceview.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
     	}
     
