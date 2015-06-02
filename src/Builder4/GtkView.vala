@@ -55,6 +55,8 @@ public class Xcls_GtkView : Object
     // user defined functions
     public Gee.ArrayList<int> search (string txt) {
       var ret =  new Gee.ArrayList<int>();
+      var str = this.sourceview.toString();
+      
       
       return ret;
     }
