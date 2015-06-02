@@ -59,6 +59,9 @@ public class Editor : Object
     }
 
     // user defined functions
+    public Gee.ArrayList<int> search () {
+    
+    }
     public   bool saveContents ()  {
         
         
