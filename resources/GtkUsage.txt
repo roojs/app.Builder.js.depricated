@@ -31,12 +31,9 @@ left:
 	Gtk.Popover
 	Gtk.Alignment 
 	Gtk.AspectFrame 
-	Gtk.HBox 
-	Gtk.VBox 
-	Gtk.HButtonBox 
-	Gtk.VButtonBox 
-	Gtk.HPaned 
-	Gtk.VPaned 
+	Gtk.Box 
+	Gtk.ButtonBox 
+	Gtk.Paned 
 	Gtk.Table
 	Gtk.Layout 
 	Gtk.Notebook
@@ -54,13 +51,10 @@ left:
 right:	 
 	Gtk.Alignment 
 	Gtk.AspectFrame 
-	Gtk.HBox 
-	Gtk.VBox 
-	Gtk.HButtonBox 
-	Gtk.VButtonBox 
+	Gtk.Box 
+	Gtk.ButtonBox 
 	Gtk.Fixed 
-	Gtk.HPaned 
-	Gtk.VPaned 
+	Gtk.Paned 
 	Gtk.Layout 
 	Gtk.Notebook 
 	Gtk.Table 
@@ -125,13 +119,10 @@ right:
 	
 	Gtk.Alignment 
 	Gtk.AspectFrame 
-	Gtk.HBox 
-	Gtk.VBox 
-	Gtk.HButtonBox 
-	Gtk.VButtonBox 
+	Gtk.Box 
+	Gtk.ButtonBox 
 	Gtk.Fixed 
-	Gtk.HPaned 
-	Gtk.VPaned 
+	Gtk.Paned 
 	Gtk.Layout 
 	Gtk.Notebook 
 	Gtk.Table 
