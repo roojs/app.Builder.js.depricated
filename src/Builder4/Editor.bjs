@@ -30,6 +30,7 @@
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
    "@ void save" : "()",
    "$ homogeneous" : false,
+   "| void forwardSearch" : "() {\n\n}\n",
    "# JsRender.Node node" : "null",
    "items" : [
     {

@@ -166,6 +166,9 @@ public class Editor : Object
     
            
     }
+    public void forwardSearch () {
+    
+    }
     public class Xcls_Box2 : Object
     {
         public Gtk.Box el;
