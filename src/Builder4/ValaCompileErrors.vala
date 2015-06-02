@@ -290,9 +290,9 @@ public class Xcls_ValaCompileErrors : Object
                 GLib.Value value;
                 _this.compile_result_store.el.get_value(iter, 3, out value);
                 var fname = (string)value;
-                //GLib.Value lvalue;
-                //_this.compile_result_store.el.get_value(iter, 1, out lvalue);
-                //var line = (int) lvalue;
+                GLib.Value lvalue;
+                _this.compile_result_store.el.get_value(iter, 1, out lvalue);
+                var line = (int) lvalue;
                 
                 
                var  bjsf = "";
@@ -310,13 +310,13 @@ public class Xcls_ValaCompileErrors : Object
                     
                 var jsr = p.getByPath(bjsf);
                 if (jsr != null) {
-                    _this.window.windowstate.fileViewOpen(jsr);
+                    _this.window.windowstate.fileViewOpen(jsr, line);
                     
                     return false;
                 
                 }
                 
-                var pf = JsRender.JsRender.factory("PlainFile", p, fname);
+                var pf = JsRender.JsRender.factory("PlainFile", p, fname, line);
                 _this.window.windowstate.fileViewOpen(pf);
                 
                 // try hiding the left nav..
