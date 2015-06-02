@@ -55,11 +55,13 @@ public class Xcls_PopoverProperty : Object
           this.kflag.el.get_active_iter(out citer);
           this.dbmodel.el.get_value(citer, 0, out  gval);
           
-          newtext += (string)gval;  
-          newtext += this.ktype.el.get_text().length > 0 && newtext.length > 0 ? " " :"";
-          newtext += this.ktype.el.get_text() ;
-          newtext += this.kname.el.get_text().length > 0 && newtext.length > 0 ? " " :"";
-          newtext += this.kname.el.get_text();
+          var ktype = this.ktype.el.get_text().strip(); 
+          var kname = this.kname.el.get_text().strip(); 
+          newtext += ((string)gval).strip();  
+          newtext += ktype.length > 0 && newtext.length > 0 ? " " :"";
+          newtext += ktype;
+          newtext += kname.length > 0 && newtext.length > 0 ? " " :"";
+          newtext += kname.get_text();
           
           
            var lp =  _this.mainwindow.windowstate.left_props;
@@ -68,7 +70,9 @@ public class Xcls_PopoverProperty : Object
                 case "listener":
                     var ov = _this.node.listeners.get(this.old_keyname);
                     _this.node.listeners.set(newtext, ov);
-                    _this.node.listeners.unset(this.old_keyname);
+                    if (this.old_keyname != newtext) { 
+        	            _this.node.listeners.unset(this.old_keyname);
+                    }
                     
                     
                     lp.updateKey(this.old_keyname, this.key_type, newtext);
@@ -77,7 +81,9 @@ public class Xcls_PopoverProperty : Object
                 case "props":
                     var ov = _this.node.props.get(this.old_keyname);
                     _this.node.props.set(newtext, ov);
-                    _this.node.props.unset(this.old_keyname);
+        			if (this.old_keyname != newtext) { 
+        	            _this.node.props.unset(this.old_keyname);
+                    }
                     lp.updateKey(this.old_keyname, this.key_type, newtext);
                     break;
              }
