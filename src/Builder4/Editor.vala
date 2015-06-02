@@ -100,7 +100,7 @@ public class Editor : Object
     }
     public void scroll_to_line (int line) {
     
-    	GLib.Timeout.add(100, () => {
+    	GLib.Timeout.add(500, () => {
        
     		var buf = this.view.el.get_buffer();
     
