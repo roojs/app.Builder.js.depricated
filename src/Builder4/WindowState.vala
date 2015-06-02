@@ -454,7 +454,7 @@ public class WindowState : Object
 			this.switchState (State.PREVIEW); 
 			// this triggers loadItems..
 			this.left_tree.model.loadFile(file);
-			if (file.project.xtype == "Gtk" ) {
+			if (file.project.xtype == "Gtk" && line> -1 ) {
 				this.window_gladeview.scroll_to_line(line);
 			}
 
