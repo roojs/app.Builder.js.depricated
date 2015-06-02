@@ -178,6 +178,10 @@ public class Xcls_GtkView : Object
     	this.searchcontext = new Gtk.SourceSearchContext(buf,s);
     	this.searchcontext.set_highlight(true);
     	s.set_search_text(txt);
+    	
+    	Gtk.TextIter beg, st,en;
+    	this.searchcontext.forward(beg, out st, out en);
+    	
     	return this.searchcontext.get_occurrences_count();
     
        
