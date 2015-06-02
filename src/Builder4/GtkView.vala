@@ -53,18 +53,6 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions
-    public Gee.ArrayList<int> search (string txt) {
-     	var s = new Gtk.SourceSearchSettings();
-    	
-    	this.sourcecontext = new Gtk.SourceSearchContext(this.sourceview.el.get_buffer(),s);
-    	sctx.set_highlight(true);
-    	s.set_search_text(txt);
-    	return this.sourcecontext.get_occurences_count();
-    
-      
-      
-      return ret;
-    }
     public void scroll_to_line (int line) {
        this.notebook.el.page = 1;// code preview...
        
@@ -182,6 +170,16 @@ public class Xcls_GtkView : Object
             
              
             
+    }
+    public int search (string txt) {
+     	var s = new Gtk.SourceSearchSettings();
+    	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
+    	this.sourcecontext = new Gtk.SourceSearchContext(buf,s);
+    	sctx.set_highlight(true);
+    	s.set_search_text(txt);
+    	return this.sourcecontext.get_occurences_count();
+    
+       
     }
     public class Xcls_notebook : Object
     {
