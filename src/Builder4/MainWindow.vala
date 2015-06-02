@@ -2340,8 +2340,9 @@ public class Xcls_MainWindow : Object
             			break;
             		case WindowState.State.PREVIEW:
             			if (_this.windowstate.file.xtype == "Gtk") {
-            				var res = _this.windowstate.window_gladeview.search(this.el.text);
+            				 res = _this.windowstate.window_gladeview.search(this.el.text);
             			}
+            		
             		
             			break;
             	}
