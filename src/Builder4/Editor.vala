@@ -60,6 +60,15 @@ public class Editor : Object
 
     // user defined functions
     public Gee.ArrayList<int> search (string txt) {
+    
+    	var s = new Gtk.SourceSearchSettings();
+    	
+    	var sctx = new Gtk.SourceSearchContext(this.buffer,s);
+    	sctx.set_highlight(true);
+    	s.set_search_text(txt);
+    	
+    
+    
     	var ret =  new Gee.ArrayList<int>();
     
     	var str = this.buffer.toString();
