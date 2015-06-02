@@ -176,7 +176,7 @@ public class Xcls_GtkView : Object
      	var s = new Gtk.SourceSearchSettings();
     	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
     	this.sourcecontext = new Gtk.SourceSearchContext(buf,s);
-    	sctx.set_highlight(true);
+    	this.sourcecontext.set_highlight(true);
     	s.set_search_text(txt);
     	return this.sourcecontext.get_occurences_count();
     
