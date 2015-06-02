@@ -610,7 +610,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "* pack" : "pack_start,?bool?,?bool?,?uint?",
+         "* pack" : "pack_start,false,true,0",
          "xtype" : "Entry",
          "$ xns" : "Gtk"
         },
