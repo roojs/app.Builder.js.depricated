@@ -9,7 +9,7 @@
  "items" : [
   {
    "# Xcls_MainWindow window" : "null",
-   "| Gee.ArrayList<int> search" : "() {\n\n}\n",
+   "| Gee.ArrayList<int> search" : "(string txt) {\n  var ret =  new Gee.ArrayList<int>();\n  \n  return ret;\n}\n",
    "|   bool saveContents" : "  ()  {\n    \n    \n    if (_this.file == null) {\n        return true;\n    }\n    \n    \n   \n   \n     \n     var str = _this.buffer.toString();\n     \n     _this.buffer.checkSyntax();\n     \n     \n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n     \n    // find the text for the node..\n    if (_this.file.xtype != \"PlainFile\") {\n        if (ptype == \"listener\") {\n            this.node.listeners.set(key,str);\n        \n        } else {\n             this.node.props.set(key,str);\n        }\n    } else {\n        _this.file.setSource(  str );\n     }\n    \n    // call the signal..\n    this.save();\n    \n    return true;\n\n} ",
    "# string activeEditor" : "\"\"",
    "| void scroll_to_line" : "(int line) {\n\n\tGLib.Timeout.add(500, () => {\n   \n\t\tvar buf = this.view.el.get_buffer();\n\n\t\tvar sbuf = (Gtk.SourceBuffer) buf;\n\n\n\t\tGtk.TextIter iter;   \n\t\tsbuf.get_iter_at_line(out iter,  line);\n\t\tthis.view.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);\n\t\treturn false;\n\t});   \n}\n",
