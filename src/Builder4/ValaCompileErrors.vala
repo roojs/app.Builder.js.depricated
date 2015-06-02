@@ -294,6 +294,8 @@ public class Xcls_ValaCompileErrors : Object
                 _this.compile_result_store.el.get_value(iter, 1, out lvalue);
                 var line = (int) lvalue;
                 
+                print("open %s @ %d\n", fname, line);
+                
                 
                var  bjsf = "";
                 try {             
