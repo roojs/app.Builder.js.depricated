@@ -803,7 +803,7 @@ public class WindowState : Object
 		this.easingRestoreAll();
 		
 		// run the animation.. - then load files...
-		
+		this.resizeCanvas();
 			
 	}
 	
