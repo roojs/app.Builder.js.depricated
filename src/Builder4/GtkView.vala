@@ -22,6 +22,8 @@ public class Xcls_GtkView : Object
         // my vars (def)
     public Gtk.Widget lastObj;
     public int width;
+    public int last_search_end;
+    public Gtk.SourceSearchContext searchcontext;
     public JsRender.JsRender file;
     public int height;
     public Xcls_MainWindow main_window;
@@ -35,6 +37,7 @@ public class Xcls_GtkView : Object
         // my vars (dec)
         this.lastObj = null;
         this.width = 0;
+        this.last_search_end = 0;
         this.file = null;
         this.height = 0;
 
@@ -53,21 +56,6 @@ public class Xcls_GtkView : Object
     }
 
     // user defined functions
-    public Gee.ArrayList<int> search (string txt) {
-      var ret =  new Gee.ArrayList<int>();
-      var str = this.sourceview.toString();
-      
-      var lines = str.split("\n");
-      for (var i = 0 ; i < lines.length; i++)  {
-    	if (lines[i].contains(txt)) {
-    		ret.add(i);
-    	}
-      
-      }
-      
-      
-      return ret;
-    }
     public void scroll_to_line (int line) {
        this.notebook.el.page = 1;// code preview...
        
@@ -144,7 +132,7 @@ public class Xcls_GtkView : Object
             
            this.file = file;     
             this.sourceview.loadFile();
-            
+            this.searchcontext = null;
             
     
             if (this.lastObj != null) {
@@ -185,6 +173,45 @@ public class Xcls_GtkView : Object
             
              
             
+    }
+    public int search (string txt) {
+     	var s = new Gtk.SourceSearchSettings();
+    	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
+    	this.searchcontext = new Gtk.SourceSearchContext(buf,s);
+    	this.searchcontext.set_highlight(true);
+    	s.set_search_text(txt);
+    	
+    	Gtk.TextIter beg, st,en;
+    	 
+    	buf.get_start_iter(out beg);
+    	this.searchcontext.forward(beg, out st, out en);
+    	this.last_search_end  = 0;
+    	return this.searchcontext.get_occurrences_count();
+    
+       
+    }
+    public void forwardSearch () {
+    
+    	if (this.searchcontext == null) {
+    		return;
+    	}
+    	
+    	Gtk.TextIter beg, st,en;
+    	
+    	var buf = this.sourceview.el.get_buffer();
+    	buf.get_iter_at_offset(out beg, this.last_search_end);
+    	if (!this.searchcontext.forward(beg, out st, out en)) {
+    		this.last_search_end = 0;
+    	} else { 
+    		this.last_search_end = en.get_offset();
+    	
+    		this.sourceview.el.grab_focus();
+    	 
+    		buf.place_cursor(st);
+    		 
+    		this.sourceview.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
+    	}
+    
     }
     public class Xcls_notebook : Object
     {
@@ -513,7 +540,28 @@ public class Xcls_GtkView : Object
             }
             Gtk.TextIter iter;   
             sbuf.get_iter_at_line(out iter,  sel.line_start);
-            this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
+            
+            
+            Gtk.TextIter cur_iter;
+            sbuf.get_iter_at_offset(out cur_iter, sbuf.cursor_position);
+            
+            
+            
+            /*
+            is the cursor is between start+end... 
+            then assume we do not need to scroll..
+            
+            
+            
+            Gdk.Rectangle rect, target_rect, inter_rect;
+            this.el.get_visible_rect(out rect);
+            this.el.get_iter_location(iter, out target_rect);
+            
+            if (!rect.intersect(target_rect, out inter_rect)) {
+            	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
+        	}
+        	*/
+            	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);    
             
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
