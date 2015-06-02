@@ -520,7 +520,13 @@ public class Xcls_GtkView : Object
         
         }
         public string toString () {
-        
+           Gtk.TextIter s;
+            Gtk.TextIter e;
+            this.el.get_buffer().get_start_iter(out s);
+            this.el.get_buffer().get_end_iter(out e);
+            var ret = this.el.get_buffer().get_text(s,e,true);
+            //print("TO STRING? " + ret);
+            return ret;
         }
         public void loadFile ( ) {
             this.loading = true;
