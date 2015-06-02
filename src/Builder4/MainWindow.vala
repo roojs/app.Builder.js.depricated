@@ -38,6 +38,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
     public Xcls_statusbar statusbar;
+    public Xcls_search_entry search_entry;
     public Xcls_search_results search_results;
     public Xcls_statusbar_errors statusbar_errors;
     public Xcls_statusbar_warnings statusbar_warnings;
@@ -2223,7 +2224,7 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_statusbar( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , true,true,0 );
-            var child_2 = new Xcls_Entry69( _this );
+            var child_2 = new Xcls_search_entry( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,true,0 );
             var child_3 = new Xcls_MenuBar70( _this );
@@ -2299,7 +2300,7 @@ public class Xcls_MainWindow : Object
         // user defined functions
     }
 
-    public class Xcls_Entry69 : Object
+    public class Xcls_search_entry : Object
     {
         public Gtk.Entry el;
         private Xcls_MainWindow  _this;
@@ -2308,9 +2309,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Entry69(Xcls_MainWindow _owner )
+        public Xcls_search_entry(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.search_entry = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)

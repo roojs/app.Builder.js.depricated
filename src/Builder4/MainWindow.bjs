@@ -610,6 +610,7 @@
          "$ xns" : "Gtk"
         },
         {
+         "id" : "search_entry",
          "* pack" : "pack_start,false,true,0",
          "xtype" : "Entry",
          "$ xns" : "Gtk"
