@@ -38,7 +38,7 @@ public class Xcls_MainWindow : Object
     public Xcls_addfilebutton addfilebutton;
     public Xcls_delprojectbutton delprojectbutton;
     public Xcls_statusbar statusbar;
-    public Xcls_statusbar_errors statusbar_errors;
+    public Xcls_search_results search_results;
     public Xcls_statusbar_errors statusbar_errors;
     public Xcls_statusbar_warnings statusbar_warnings;
     public Xcls_statusbar_depricated statusbar_depricated;
@@ -2338,7 +2338,7 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_statusbar_errors( _this );
+            var child_0 = new Xcls_search_results( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_MenuItem73( _this );
@@ -2360,7 +2360,7 @@ public class Xcls_MainWindow : Object
 
         // user defined functions
     }
-    public class Xcls_statusbar_errors : Object
+    public class Xcls_search_results : Object
     {
         public Gtk.ImageMenuItem el;
         private Xcls_MainWindow  _this;
@@ -2370,10 +2370,10 @@ public class Xcls_MainWindow : Object
         public Xcls_ValaCompileErrors popup;
 
         // ctor
-        public Xcls_statusbar_errors(Xcls_MainWindow _owner )
+        public Xcls_search_results(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.statusbar_errors = this;
+            _this.search_results = this;
             this.el = new Gtk.ImageMenuItem();
 
             // my vars (dec)
