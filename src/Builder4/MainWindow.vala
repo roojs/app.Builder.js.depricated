@@ -2327,10 +2327,32 @@ public class Xcls_MainWindow : Object
 
             //listeners
             this.el.changed.connect( () => {
-            	if (this.el.text != "") {
+            	if (this.el.text == "") {
+            		return;
+            	}
+            	Gee.ArrayList<int> res = new Gee.ArrayList<int>();;
+            	switch(_this.windowstate.state) {
+            		case WindowState.State.CODEONLY:
+            		case WindowState.State.CODE:
+            			// search the code being edited..
+            			res = _this.windowstate.code_editor.search(this.el.text);
+            			
+            			break;
+            		case WindowState.State.PREVIEW:
+            			if (this.windowstate.file.xtype == "Gtk") {
+            				var res = _this.windowstate.window_gladeview.search(this.el.text);
+            			}
+            		
+            			break;
+            	}
+            	if (res.size > 0) {
+            		_this.search_results.el.text = "%d Matches".printf(res.size);
+            	} else {
+            		_this.search_results.el.text = "No Matches";
+            	}
             		
             	
-            	}
+            	
             });
         }
 

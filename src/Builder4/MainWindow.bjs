@@ -611,7 +611,7 @@
         },
         {
          "listeners" : {
-          "changed" : "() => {\n\tif (this.el.text != \"\") {\n\t\t\n\t\n\t}\n}\n"
+          "changed" : "() => {\n\tif (this.el.text == \"\") {\n\t\treturn;\n\t}\n\tGee.ArrayList<int> res = new Gee.ArrayList<int>();;\n\tswitch(_this.windowstate.state) {\n\t\tcase WindowState.State.CODEONLY:\n\t\tcase WindowState.State.CODE:\n\t\t\t// search the code being edited..\n\t\t\tres = _this.windowstate.code_editor.search(this.el.text);\n\t\t\t\n\t\t\tbreak;\n\t\tcase WindowState.State.PREVIEW:\n\t\t\tif (this.windowstate.file.xtype == \"Gtk\") {\n\t\t\t\tvar res = _this.windowstate.window_gladeview.search(this.el.text);\n\t\t\t}\n\t\t\n\t\t\tbreak;\n\t}\n\tif (res.size > 0) {\n\t\t_this.search_results.el.text = \"%d Matches\".printf(res.size);\n\t} else {\n\t\t_this.search_results.el.text = \"No Matches\";\n\t}\n\t\t\n\t\n\t\n}\n"
          },
          "id" : "search_entry",
          "* init" : "var description =   Pango.FontDescription.from_string(\"monospace\");\n\tdescription.set_size(8000);\n\t this.el.override_font(description);\n\n",
