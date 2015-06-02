@@ -63,7 +63,7 @@ public class Editor : Object
     
     	var s = new Gtk.SourceSearchSettings();
     	
-    	var sctx = new Gtk.SourceSearchContext(this.buffer,s);
+    	var sctx = new Gtk.SourceSearchContext(this.buffer.el,s);
     	sctx.set_highlight(true);
     	s.set_search_text(txt);
     	
