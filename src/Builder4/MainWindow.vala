@@ -2420,6 +2420,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.icon_name = "system-search";
+            this.el.sensitive = false;
         }
 
         // user defined functions
