@@ -632,7 +632,7 @@
            "$ xns" : "Gtk",
            "items" : [
             {
-             "utf8 icon_name" : "dialog-error",
+             "utf8 icon_name" : "system-search",
              "* pack" : "set_image",
              "xtype" : "Image",
              "$ xns" : "Gtk"
