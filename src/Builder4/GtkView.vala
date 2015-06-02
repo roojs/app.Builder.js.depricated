@@ -123,6 +123,10 @@ public class Xcls_GtkView : Object
             if (file.tree == null) {
                 return;
             }
+            this.notebook.el.page = 0;// gtk preview 
+       
+      
+            
            this.file = file;     
             this.sourceview.loadFile();
             
