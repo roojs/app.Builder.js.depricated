@@ -942,8 +942,9 @@ public class WindowState : Object
 		this.win.addprojectbutton.el.hide();
 		this.win.addfilebutton.el.hide();
 		this.win.delprojectbutton.el.hide();
-		  
 		
+		this.win.search_entry.el.hide();
+		this.win.search_results.el.hide();
 		switch (this.state) {
 			
 			case State.PREVIEW:  // this is the default state when working...
@@ -956,10 +957,15 @@ public class WindowState : Object
 				this.win.objectshowbutton.el.show(); // add objects
 				this.win.addpropbutton.el.show();  
 				this.win.addlistenerbutton.el.show(); 
+				this.win.search_entry.el.show();
+				this.win.search_results.el.show();
+				
 				break;
 			
 			case State.CODEONLY: 
 				this.win.projectbutton.el.show();
+				this.win.search_entry.el.show();
+				this.win.search_results.el.show();
 				break;
 		   
 			case State.CODE: 
@@ -976,6 +982,7 @@ public class WindowState : Object
 			case State.PROJECT: 
 				// anything else?
 				this.win.backbutton.el.show();
+				
 				break;
 			
 	
@@ -985,10 +992,16 @@ public class WindowState : Object
 						this.win.backbutton.el.show();
 					}
 					this.win.addfilebutton.el.show();
-				}
+					this.win.search_entry.el.show();
+					this.win.search_results.el.show();
+				} 
+				  
 					 
 				this.win.addprojectbutton.el.show();
 				this.win.delprojectbutton.el.show();
+				
+				
+				
 				
 				break;
 		}
