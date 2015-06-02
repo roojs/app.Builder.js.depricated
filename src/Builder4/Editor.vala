@@ -128,7 +128,7 @@ public class Editor : Object
     	 
     	this.buffer.el.get_start_iter(out beg);
     	this.searchcontext.forward(beg, out st, out en);
-    	
+    	this.last_search_end = 0;
     	
     	return this.searchcontext.get_occurrences_count();
     
