@@ -82,18 +82,7 @@ public class Xcls_MainWindow : Object
         this.el.delete_event.connect( (   event) => {
             return false;
         });
-        this.el.button_release_event.connect( (event) => {
-            
-            if (event.keyval == Gdk.Key.f && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
-                print("SAVE: ctrl-f  pressed");
-        		
-                return false;
-            }
-           // print(event.key.keyval)
-            
-            return false;
-        
-        });
+        this.el.button_release_event.connect( );
         this.el.destroy.connect( () =>  {
          Xcls_MainWindow.singleton().no_windows--;
          
@@ -116,6 +105,18 @@ public class Xcls_MainWindow : Object
             
           
             Resources.singleton().checkResources();
+        
+        });
+        this.el.key_release_event.connect( (event) => {
+            
+            if (event.keyval == Gdk.Key.f && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                print("SAVE: ctrl-f  pressed");
+        		
+                return false;
+            }
+           // print(event.key.keyval)
+            
+            return false;
         
         });
     }
