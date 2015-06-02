@@ -618,7 +618,8 @@
          "* init" : "var description =   Pango.FontDescription.from_string(\"monospace\");\n\tdescription.set_size(8000);\n\t this.el.override_font(description);\n\n",
          "* pack" : "pack_start,false,true,0",
          "xtype" : "Entry",
-         "$ xns" : "Gtk"
+         "$ xns" : "Gtk",
+         "| return_type XXXX" : "() {\n\n}\n"
         },
         {
          "* pack" : "pack_end,false,true,0",
