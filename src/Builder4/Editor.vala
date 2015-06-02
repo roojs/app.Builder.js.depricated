@@ -174,6 +174,12 @@ public class Editor : Object
     		return;
     	}
     	
+    	Gtk.TextIter beg, st,en;
+    	 
+    	this.buffer.el.get_iter_at_offset(out beg, this.last_search_end);
+    	this.searchcontext.forward(beg, out st, out en);
+    	this.last_search_end = 0;
+    	
     
     }
     public class Xcls_Box2 : Object
