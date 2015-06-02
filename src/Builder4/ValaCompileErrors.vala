@@ -68,7 +68,7 @@ public class Xcls_ValaCompileErrors : Object
                 store.append(out iter, null);
                 var lines = tree.get_object_member(file);
                 title += " (" + lines.get_size().to_string() + ")";
-                store.set(iter, 0, file, 1, 0, 2, title, 3, file,-1);
+                store.set(iter, 0, file, 1, -1, 2, title, 3, file,-1);
                 
                 lines.foreach_member((obja, line, nodea) => {
                     var msg  = "";
