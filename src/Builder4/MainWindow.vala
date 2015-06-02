@@ -2339,16 +2339,16 @@ public class Xcls_MainWindow : Object
             			
             			break;
             		case WindowState.State.PREVIEW:
-            			if (this.windowstate.file.xtype == "Gtk") {
+            			if (_this.windowstate.file.xtype == "Gtk") {
             				var res = _this.windowstate.window_gladeview.search(this.el.text);
             			}
             		
             			break;
             	}
             	if (res.size > 0) {
-            		_this.search_results.el.text = "%d Matches".printf(res.size);
+            		_this.search_results.el.label = "%d Matches".printf(res.size);
             	} else {
-            		_this.search_results.el.text = "No Matches";
+            		_this.search_results.el.label = "No Matches";
             	}
             		
             	
