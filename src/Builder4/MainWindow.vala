@@ -82,7 +82,6 @@ public class Xcls_MainWindow : Object
         this.el.delete_event.connect( (   event) => {
             return false;
         });
-        this.el.button_release_event.connect( );
         this.el.destroy.connect( () =>  {
          Xcls_MainWindow.singleton().no_windows--;
          
