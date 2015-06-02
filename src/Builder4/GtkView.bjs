@@ -18,13 +18,13 @@
    "| void loadFile" : "(JsRender.JsRender file) \n{\n        this.file = null;\n        \n        if (file.tree == null) {\n            return;\n        }\n        this.notebook.el.page = 0;// gtk preview \n   \n  \n        \n       this.file = file;     \n        this.sourceview.loadFile();\n        \n        \n\n        if (this.lastObj != null) {\n            this.container.el.remove(this.lastObj);\n        }\n        \n        // hide the compile view at present..\n          \n        \n        var w = this.width;\n        var h = this.height;\n        \n        print(\"ALLOC SET SIZES %d, %d\\n\", w,h); \n        \n        // set the container size min to 500/500 or 20 px less than max..\n        w = int.max (w-20, 500);\n        h = int.max (h-20, 500); \n        \n        print(\"SET SIZES %d, %d\\n\", w,h);       \n        _this.container.el.set_size_request(w,h);\n        \n        _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.\n        var rgba = Gdk.RGBA ();\n        rgba.parse (\"#ccc\");\n        _this.view_layout.el.override_background_color(Gtk.StateFlags.NORMAL, rgba);\n        \n        \n\tvar x = new JsRender.NodeToGtk(file.tree);\n        var obj = x.munge() as Gtk.Widget;\n        this.lastObj = null;\n\tif (obj == null) {\n        \treturn;\n\t}\n\tthis.lastObj = obj;\n        \n        this.container.el.add(obj);\n        obj.show_all();\n        \n         \n        \n}\n ",
    "int width" : 0,
    "bool hexpand" : true,
-   "| int search" : "(string txt) {\n \tvar s = new Gtk.SourceSearchSettings();\n\tvar buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();\n\tthis.sourcecontext = new Gtk.SourceSearchContext(buf,s);\n\tthis.sourcecontext.set_highlight(true);\n\ts.set_search_text(txt);\n\treturn this.sourcecontext.get_occurrences_count();\n\n   \n}\n",
+   "| int search" : "(string txt) {\n \tvar s = new Gtk.SourceSearchSettings();\n\tvar buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();\n\tthis.searchcontext = new Gtk.SourceSearchContext(buf,s);\n\tthis.searchcontext.set_highlight(true);\n\ts.set_search_text(txt);\n\treturn this.searchcontext.get_occurrences_count();\n\n   \n}\n",
    "xtype" : "Box",
+   "Gtk.SourceSearchContext searchcontext" : "",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
    "$ xns" : "Gtk",
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
-   "Gtk.SourceSearchContext sourcecontext" : "",
    "# Xcls_MainWindow main_window" : "",
    "items" : [
     {

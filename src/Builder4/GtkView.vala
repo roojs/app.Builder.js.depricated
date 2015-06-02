@@ -22,9 +22,9 @@ public class Xcls_GtkView : Object
         // my vars (def)
     public Gtk.Widget lastObj;
     public int width;
+    public Gtk.SourceSearchContext searchcontext;
     public JsRender.JsRender file;
     public int height;
-    public Gtk.SourceSearchContext sourcecontext;
     public Xcls_MainWindow main_window;
 
     // ctor
@@ -175,10 +175,10 @@ public class Xcls_GtkView : Object
     public int search (string txt) {
      	var s = new Gtk.SourceSearchSettings();
     	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
-    	this.sourcecontext = new Gtk.SourceSearchContext(buf,s);
-    	this.sourcecontext.set_highlight(true);
+    	this.searchcontext = new Gtk.SourceSearchContext(buf,s);
+    	this.searchcontext.set_highlight(true);
     	s.set_search_text(txt);
-    	return this.sourcecontext.get_occurrences_count();
+    	return this.searchcontext.get_occurrences_count();
     
        
     }
