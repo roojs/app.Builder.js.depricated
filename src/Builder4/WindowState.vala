@@ -435,7 +435,7 @@ public class WindowState : Object
 
 	}
 	
-	public void fileViewOpen(JsRender.JsRender file)
+	public void fileViewOpen(JsRender.JsRender file, int line =0)
 	{
 		this.win.project = file.project;
 		this.project = file.project;
