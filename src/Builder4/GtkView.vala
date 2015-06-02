@@ -197,12 +197,12 @@ public class Xcls_GtkView : Object
     	Gtk.TextIter beg, st,en;
     	
     	var buf = this.sourceview.el.get_buffer();
-    	buf.el.get_iter_at_offset(out beg, this.last_search_end);
+    	buf.get_iter_at_offset(out beg, this.last_search_end);
     	this.searchcontext.forward(beg, out st, out en);
     	this.last_search_end = en.get_offset();
     	
     	this.sourceview.el.grab_focus();
-    	buf.el.place_cursor(st);
+    	buf.place_cursor(st);
     	this.sourceview.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
     	
     
