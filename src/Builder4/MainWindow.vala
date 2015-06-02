@@ -2350,7 +2350,7 @@ public class Xcls_MainWindow : Object
             	if (this.el.text == "") {
             		return;
             	}
-            	Gee.ArrayList<int> res = new Gee.ArrayList<int>();
+            	var res = 0;
             	switch(_this.windowstate.state) {
             		case WindowState.State.CODEONLY:
             		case WindowState.State.CODE:
@@ -2366,8 +2366,8 @@ public class Xcls_MainWindow : Object
             		
             			break;
             	}
-            	if (res.size > 0) {
-            		_this.search_results.el.label = "%d Matches".printf(res.size);
+            	if (res > 0) {
+            		_this.search_results.el.label = "%d Matches".printf(res);
             	} else {
             		_this.search_results.el.label = "No Matches";
             	}
