@@ -99,6 +99,14 @@ public class Editor : Object
     
     }
     public void scroll_to_line (int line) {
+         var buf = this.view.el.get_buffer();
+     
+        var sbuf = (Gtk.SourceBuffer) buf;
+    
+    
+    	Gtk.TextIter iter;   
+        sbuf.get_iter_at_line(out iter,  line);
+        this.view.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.0f);
        
     }
     public   void show (JsRender.JsRender file, JsRender.Node? node, string ptype, string key)
