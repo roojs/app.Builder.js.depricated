@@ -610,6 +610,9 @@
          "$ xns" : "Gtk"
         },
         {
+         "listeners" : {
+          "changed" : "() => {\n\tif (this.el.text != \"\") {\n\t\t\n\t\n\t}\n}\n"
+         },
          "id" : "search_entry",
          "* init" : "var description =   Pango.FontDescription.from_string(\"monospace\");\n\tdescription.set_size(8000);\n\t this.el.override_font(description);\n\n",
          "* pack" : "pack_start,false,true,0",

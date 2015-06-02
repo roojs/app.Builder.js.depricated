@@ -2324,6 +2324,14 @@ public class Xcls_MainWindow : Object
             var description =   Pango.FontDescription.from_string("monospace");
             	description.set_size(8000);
             	 this.el.override_font(description);
+
+            //listeners
+            this.el.changed.connect( () => {
+            	if (this.el.text != "") {
+            		
+            	
+            	}
+            });
         }
 
         // user defined functions
