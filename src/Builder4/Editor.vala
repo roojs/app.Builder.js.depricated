@@ -25,10 +25,10 @@ public class Editor : Object
     public int pos_root_y;
     public string ptype;
     public string key;
+    public Gtk.SourceSearchContext searchcontext;
     public JsRender.JsRender file;
     public bool pos;
     public bool dirty;
-    public string XXXX;
     public signal void save ();
     public JsRender.Node node;
 
