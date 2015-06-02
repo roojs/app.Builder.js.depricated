@@ -31,7 +31,7 @@
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
    "@ void save" : "()",
    "$ homogeneous" : false,
-   "| void forwardSearch" : "() {\n\n\tif (this.searchcontext == null) {\n\t\treturn;\n\t}\n\t\n\tGtk.TextIter beg, st,en;\n\t \n\tthis.buffer.el.get_iter_at_offset(out beg, this.last_search_end);\n\tthis.searchcontext.forward(beg, out st, out en);\n\tthis.last_search_end = en.get_offset();\n\t\n\tthis.view.el.grab_focus();\n\tthis.buffer.el.place_cursor(st);\n\tthis.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);\n\t\n\n}\n",
+   "| void forwardSearch" : "() {\n\n\tif (this.searchcontext == null) {\n\t\treturn;\n\t}\n\t\n\tGtk.TextIter beg, st,en;\n\t \n\tthis.buffer.el.get_iter_at_offset(out beg, this.last_search_end);\n\tthis.searchcontext.forward(beg, out st, out en);\n\t\n\tif (en == null) {\n\t\tthis.last_search_end = 0;\n\t} else {\n\t\tthis.last_search_end = en.get_offset();\n\t\n\t\tthis.view.el.grab_focus();\n\t\tthis.buffer.el.place_cursor(st);\n\t\tthis.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);\n\t}\n\n}\n",
    "# JsRender.Node node" : "null",
    "items" : [
     {

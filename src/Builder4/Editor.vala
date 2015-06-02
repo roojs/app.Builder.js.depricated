@@ -178,12 +178,16 @@ public class Editor : Object
     	 
     	this.buffer.el.get_iter_at_offset(out beg, this.last_search_end);
     	this.searchcontext.forward(beg, out st, out en);
-    	this.last_search_end = en.get_offset();
     	
-    	this.view.el.grab_focus();
-    	this.buffer.el.place_cursor(st);
-    	this.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
+    	if (en == null) {
+    		this.last_search_end = 0;
+    	} else {
+    		this.last_search_end = en.get_offset();
     	
+    		this.view.el.grab_focus();
+    		this.buffer.el.place_cursor(st);
+    		this.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
+    	}
     
     }
     public class Xcls_Box2 : Object
