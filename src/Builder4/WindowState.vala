@@ -971,6 +971,11 @@ public class WindowState : Object
 			case State.CODE: 
 				this.win.search_entry.el.show();
 				this.win.search_results.el.show();
+				this.win.backbutton.el.show();
+				this.win.objectshowbutton.el.show(); // add objects
+				this.win.addpropbutton.el.show();  
+				this.win.addlistenerbutton.el.show(); 
+				break;
 				// continue thru..
 			case State.PROP:
 			case State.LISTENER:
