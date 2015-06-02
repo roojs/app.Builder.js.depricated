@@ -16,7 +16,7 @@
    "# int pos_root_y" : "",
    "# string ptype" : "\"\"",
    "bool hexpand" : true,
-   "| int search" : "(string txt) {\n\n\tvar s = new Gtk.SourceSearchSettings();\n\t\n\tthis.sourcecontext = new Gtk.SourceSearchContext(this.buffer.el,s);\n\tsctx.set_highlight(true);\n\ts.set_search_text(txt);\n\treturn this.sourcecontext.get_occurences_count();\n\n}\n",
+   "| int search" : "(string txt) {\n\n\tvar s = new Gtk.SourceSearchSettings();\n\t\n\tthis.sourcecontext = new Gtk.SourceSearchContext(this.buffer.el,s);\n\tthis.sourcecontext .set_highlight(true);\n\ts.set_search_text(txt);\n\treturn this.sourcecontext.get_occurences_count();\n\n\n\tvar s = new Gtk.SourceSearchSettings();\n\tvar buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();\n\tthis.sourcecontext = new Gtk.SourceSearchContext(buf,s);\n\tthis.sourcecontext.set_highlight(true);\n\ts.set_search_text(txt);\n\treturn this.sourcecontext.get_occurrences_count();\n\n   \n\n}\n",
    "# string key" : "\"\"",
    "* pack" : "add",
    "xtype" : "Box",
