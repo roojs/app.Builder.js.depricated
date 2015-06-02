@@ -24,6 +24,7 @@ public class Xcls_GtkView : Object
     public int width;
     public JsRender.JsRender file;
     public int height;
+    public Gtk.SourceSearchContext sourcecontext;
     public Xcls_MainWindow main_window;
 
     // ctor

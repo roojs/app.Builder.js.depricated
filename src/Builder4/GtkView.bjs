@@ -24,6 +24,7 @@
    "int height" : 0,
    "$ xns" : "Gtk",
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
+   "Gtk.SourceSearchContext sourcecontext" : "",
    "# Xcls_MainWindow main_window" : "",
    "items" : [
     {
