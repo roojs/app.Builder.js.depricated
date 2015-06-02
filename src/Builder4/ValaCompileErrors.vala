@@ -316,8 +316,8 @@ public class Xcls_ValaCompileErrors : Object
                 
                 }
                 
-                var pf = JsRender.JsRender.factory("PlainFile", p, fname, line);
-                _this.window.windowstate.fileViewOpen(pf);
+                var pf = JsRender.JsRender.factory("PlainFile", p, fname);
+                _this.window.windowstate.fileViewOpen(pf,line);
                 
                 // try hiding the left nav..
              
