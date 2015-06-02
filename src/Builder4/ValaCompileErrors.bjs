@@ -24,6 +24,7 @@
    "items" : [
     {
      "id" : "compile_view",
+     "bool hexpand" : true,
      "* pack" : "add",
      "xtype" : "Box",
      "gboolean homogeneous" : false,
