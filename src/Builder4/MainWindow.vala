@@ -2379,7 +2379,21 @@ public class Xcls_MainWindow : Object
 
         // user defined functions
         public void forwardSearch () {
-        
+        	switch(_this.windowstate.state) {
+        		case WindowState.State.CODEONLY:
+        		case WindowState.State.CODE:
+        			// search the code being edited..
+        			res = _this.windowstate.code_editor.forwardSearch();
+        			
+        			break;
+        		case WindowState.State.PREVIEW:
+        			if (_this.windowstate.file.xtype == "Gtk") {
+        				 //res = _this.windowstate.window_gladeview.forwardSearch();
+        			}
+        		
+        		
+        			break;
+        	}
         }
     }
 
