@@ -54,16 +54,13 @@ public class Xcls_GtkView : Object
 
     // user defined functions
     public Gee.ArrayList<int> search (string txt) {
-      var ret =  new Gee.ArrayList<int>();
-      var str = this.sourceview.toString();
-      
-      var lines = str.split("\n");
-      for (var i = 0 ; i < lines.length; i++)  {
-    	if (lines[i].contains(txt)) {
-    		ret.add(i);
-    	}
-      
-      }
+     	var s = new Gtk.SourceSearchSettings();
+    	
+    	this.sourcecontext = new Gtk.SourceSearchContext(this.sourceview.el.get_buffer(),s);
+    	sctx.set_highlight(true);
+    	s.set_search_text(txt);
+    	return this.sourcecontext.get_occurences_count();
+    
       
       
       return ret;
