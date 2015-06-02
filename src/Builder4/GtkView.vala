@@ -132,7 +132,7 @@ public class Xcls_GtkView : Object
             
            this.file = file;     
             this.sourceview.loadFile();
-            
+            this.searchcontext = null;
             
     
             if (this.lastObj != null) {
