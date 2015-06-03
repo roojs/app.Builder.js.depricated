@@ -449,7 +449,7 @@ public class Xcls_GtkView : Object
                     print("got tree path %s\n", tp);
                     if (tp != "") {
             	       this.allow_node_scroll = false;        
-            	       print("changing cursor");
+            	       print("changing cursor\n");
                         ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
                         this.allow_node_scroll = true;
                     }
@@ -521,7 +521,7 @@ public class Xcls_GtkView : Object
             
           
             // this is connected in widnowstate
-            print("node selected");
+            print("node selected\n");
             var buf = this.el.get_buffer();
          
             var sbuf = (Gtk.SourceBuffer) buf;
@@ -556,7 +556,7 @@ public class Xcls_GtkView : Object
             
             //} else {
             if (this.allow_node_scroll) {
-        		print("scrolling cursor");
+        		print("scrolling cursor\n");
                 	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
