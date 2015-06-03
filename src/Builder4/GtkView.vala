@@ -437,9 +437,9 @@ public class Xcls_GtkView : Object
                     buf.get_iter_at_offset(out cpos, buf.cursor_position);
                     
                     var ln = cpos.get_line();
-                    this.allow_node_scroll = false;
+             
                     var node = _this.file.lineToNode(ln);
-                            this.allow_node_scroll = false;
+             
                     if (node == null) {
                         print("can not find node\n");
                         return;
@@ -448,7 +448,9 @@ public class Xcls_GtkView : Object
                     var tp = ltree.model.treePathFromNode(node);
                     print("got tree path %s\n", tp);
                     if (tp != "") {
+            	       this.allow_node_scroll = false;        
                         ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
+                        this.allow_node_scroll = false;
                     }
                     
                     // highlight the node..
