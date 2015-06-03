@@ -9,8 +9,8 @@
  "items" : [
   {
    "id" : "WindowRooView",
+   "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n  //  var height = win.get_height();\n    try { \n        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n        screenshot.save(filename,\"png\");\n    } catch(Error e) {\n        //noop\n    }\n\n    \n     \n    \n     \n}\n",
    "| void loadFile" : "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
-   "| void createThumb" : "() {\n    \n    \n    if (this.file == null) {\n        return;\n    }\n    var filename = this.file.getIconFileName(false);\n    \n    var  win = this.el.get_parent_window();\n    var width = win.get_width();\n  //  var height = win.get_height();\n    try { \n        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);\n        screenshot.save(filename,\"png\");\n    } catch(Error e) {\n        //noop\n    }\n\n    \n    \n    \n\n\n    \n     \n}\n",
    "* pack" : "add",
    "xtype" : "Paned",
    "# JsRender.JsRender file" : "",
@@ -20,16 +20,16 @@
    "items" : [
     {
      "id" : "viewbox",
-     "xtype" : "Box",
      "* pack" : "pack1,true,true",
+     "xtype" : "Box",
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "$ homogeneous" : false,
      "items" : [
       {
        "$ vexpand" : false,
-       "* pack" : "pack_start,false,true,0",
        "$ height_request" : 20,
+       "* pack" : "pack_start,false,true,0",
        "xtype" : "Box",
        "$ xns" : "Gtk",
        "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
@@ -40,8 +40,8 @@
           "clicked" : "( ) => {\n    _this.view.renderJS(  true);\n}"
          },
          "label" : "Redraw",
-         "* pack" : "pack_start,false,false,0",
          "xtype" : "Button",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         },
         {
@@ -60,16 +60,16 @@
           "clicked" : " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  //_this.view.renderJS(true);\n  FakeServerCache.clear();\n  _this.view.reInit();\n\n}"
          },
          "label" : "Full Redraw",
-         "* pack" : "pack_start,false,false,0",
          "xtype" : "Button",
+         "* pack" : "pack_start,false,false,0",
          "$ xns" : "Gtk"
         }
        ]
       },
       {
        "id" : "viewcontainer",
-       "$ shadow_type" : "Gtk.ShadowType.IN",
        "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+       "$ shadow_type" : "Gtk.ShadowType.IN",
        "* pack" : "pack_end,true,true,0",
        "xtype" : "ScrolledWindow",
        "$ xns" : "Gtk",
@@ -106,8 +106,8 @@
     },
     {
      "id" : "inspectorcontainer",
-     "$ shadow_type" : "Gtk.ShadowType.IN",
      "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+     "$ shadow_type" : "Gtk.ShadowType.IN",
      "xtype" : "ScrolledWindow",
      "* pack" : "pack2,true,true",
      "$ xns" : "Gtk"
