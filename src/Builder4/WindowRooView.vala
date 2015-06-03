@@ -52,7 +52,7 @@ public class Xcls_GtkView : Object
         
             this.width = aloc.width;
             this.height =aloc.height;
-            });
+        });
     }
 
     // user defined functions
@@ -111,7 +111,9 @@ public class Xcls_GtkView : Object
         // should we hold until it's printed...
         
           
-     
+    
+        
+        
     
     
         
