@@ -209,7 +209,7 @@ public class Xcls_GtkView : Object
     	 
     		buf.place_cursor(st);
     		var ln = st.get_line();
-    		buf.get_iter_at_line(ln, out stl);
+    		buf.get_iter_at_line(out stl,ln);
     		 
     		this.sourceview.el.scroll_to_iter(stl,  0.0f, true, 0.0f, 0.5f);
     	}
