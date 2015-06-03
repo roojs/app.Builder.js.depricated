@@ -281,7 +281,7 @@ public class JsRender.NodeToGtk : Object {
 			labels.add(this.children.get(i));
 		}
 		for (var i = 0; i < bodies.size; i++) {
-			var lbl = i > (labels.size -1)) ? null : labels.get(i);
+			var lbl = (i > (labels.size -1)) ? null : labels.get(i);
 
 			((global::Gtk.Notebook)this.wrapped_object).append_page(
 				 (global::Gtk.Notebook) bodies.get(i).wrapped_object,
