@@ -450,7 +450,7 @@ public class Xcls_GtkView : Object
                     if (tp != "") {
             	       this.allow_node_scroll = false;        
                         ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
-                        this.allow_node_scroll = false;
+                        this.allow_node_scroll = true;
                     }
                     
                     // highlight the node..
