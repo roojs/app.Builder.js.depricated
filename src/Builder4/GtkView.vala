@@ -196,7 +196,7 @@ public class Xcls_GtkView : Object
     	if (this.searchcontext == null) {
     		return;
     	}
-    	
+    	this.notebook.el.page = 1;
     	Gtk.TextIter beg, st,en, stl;
     	
     	var buf = this.sourceview.el.get_buffer();
