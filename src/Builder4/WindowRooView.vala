@@ -97,60 +97,13 @@ public class Xcls_WindowRooView : Object
         
          
     }
-    public void loadFile (JsRender.JsRender file) 
+    public void loadFile (JsRender.JsRender file)
     {
-            this.file = null;
-            
-            if (file.tree == null) {
-                return;
-            }
-            this.notebook.el.page = 0;// gtk preview 
-       
-      
-            
-           this.file = file;     
-            this.sourceview.loadFile();
-            this.searchcontext = null;
-            
-    
-            if (this.lastObj != null) {
-                this.container.el.remove(this.lastObj);
-            }
-            
-            // hide the compile view at present..
-              
-            
-            var w = this.width;
-            var h = this.height;
-            
-            print("ALLOC SET SIZES %d, %d\n", w,h); 
-            
-            // set the container size min to 500/500 or 20 px less than max..
-            w = int.max (w-20, 500);
-            h = int.max (h-20, 500); 
-            
-            print("SET SIZES %d, %d\n", w,h);       
-            _this.container.el.set_size_request(w,h);
-            
-            _this.view_layout.el.set_size(w,h); // should be baded on calc.. -- see update_scrolled.
-            var rgba = Gdk.RGBA ();
-            rgba.parse ("#ccc");
-            _this.view_layout.el.override_background_color(Gtk.StateFlags.NORMAL, rgba);
-            
-            
-    	var x = new JsRender.NodeToGtk(file.tree);
-            var obj = x.munge() as Gtk.Widget;
-            this.lastObj = null;
-    	if (obj == null) {
-            	return;
-    	}
-    	this.lastObj = obj;
-            
-            this.container.el.add(obj);
-            obj.show_all();
-            
-             
-            
+        this.file = file;
+        this.view.renderJS(true);
+        this.notebook.el.page = 0;// gtk preview 
+        this.sourceview.loadFile();   
+        
     }
     public int search (string txt) {
     	this.notebook.el.page = 1;
