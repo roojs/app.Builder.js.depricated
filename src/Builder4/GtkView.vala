@@ -561,24 +561,10 @@ public class Xcls_GtkView : Object
             //} else {
             if (this.allow_node_scroll) {
         		print("scrolling cursor\n");
-                	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
+            	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
-            /*
-            is the cursor is between start+end... 
-            then assume we do not need to scroll..
-            
-            
-            
-            Gdk.Rectangle rect, target_rect, inter_rect;
-            this.el.get_visible_rect(out rect);
-            this.el.get_iter_location(iter, out target_rect);
-            
-            if (!rect.intersect(target_rect, out inter_rect)) {
-        
-        	}
-        	*/
-            	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);    
+             
             
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < sel.line_start || i > sel.line_end) {
