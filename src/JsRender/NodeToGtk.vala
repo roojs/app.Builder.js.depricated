@@ -280,7 +280,11 @@ public class JsRender.NodeToGtk : Object {
 			}
 			labels.add(this.children.get(i));
 		}
-		for (var i = 0; i < bodies.size; i++) { 
+		for (var i = 0; i < bodies.size; i++) {
+			if (i => labels.size) {
+				// more bodies than labels..
+				continue;
+			}
 			((global::Gtk.Notebook)this.wrapped_object).append_page(
 				 (global::Gtk.Notebook) bodies.get(i).wrapped_object,
 				 (labels.size > i - 1) ? 
