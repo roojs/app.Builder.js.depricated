@@ -2392,7 +2392,7 @@ public class Xcls_MainWindow : Object
         			if (_this.windowstate.file.xtype == "Gtk") {
         				_this.windowstate.window_gladeview.forwardSearch();
         			} else { 
-        				 res = _this.windowstate.window_rooview.forwardSearch();
+        				 _this.windowstate.window_rooview.forwardSearch();
         			}
         		
         			break;
