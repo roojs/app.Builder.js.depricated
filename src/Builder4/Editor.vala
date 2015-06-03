@@ -168,7 +168,7 @@ public class Editor : Object
     
            
     }
-    public void forwardSearch () {
+    public void forwardSearch (bool change_focus) {
     
     	if (this.searchcontext == null) {
     		return;
@@ -182,8 +182,9 @@ public class Editor : Object
     		this.last_search_end = 0;
     	} else {
     		this.last_search_end = en.get_offset();
-    	
-    		this.view.el.grab_focus();
+    		if (change_focus) {
+    			this.view.el.grab_focus();
+    		}
     		this.buffer.el.place_cursor(st);
     		this.view.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
     	}
