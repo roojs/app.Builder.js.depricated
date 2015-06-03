@@ -2350,7 +2350,7 @@ public class Xcls_MainWindow : Object
                 
              	if (event.keyval == Gdk.Key.Return) {
             		this.forwardSearch();
-            	    return false;
+            	    return true;
             
             	}    
                // print(event.key.keyval)

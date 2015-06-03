@@ -612,7 +612,7 @@
         },
         {
          "listeners" : {
-          "key_press_event" : " (event) => {\n    \n \tif (event.keyval == Gdk.Key.Return) {\n\t\tthis.forwardSearch();\n\t    return false;\n\n\t}    \n   // print(event.key.keyval)\n    \n    return false;\n\n} ",
+          "key_press_event" : "(event) => {\n    \n \tif (event.keyval == Gdk.Key.Return) {\n\t\tthis.forwardSearch();\n\t    return true;\n\n\t}    \n   // print(event.key.keyval)\n    \n    return false;\n\n} ",
           "changed" : "() => {\n\tif (this.el.text == \"\") {\n\t\treturn;\n\t}\n\tvar res = 0;\n\tswitch(_this.windowstate.state) {\n\t\tcase WindowState.State.CODEONLY:\n\t\tcase WindowState.State.CODE:\n\t\t\t// search the code being edited..\n\t\t\tres = _this.windowstate.code_editor.search(this.el.text);\n\t\t\t\n\t\t\tbreak;\n\t\tcase WindowState.State.PREVIEW:\n\t\t\tif (_this.windowstate.file.xtype == \"Gtk\") {\n\t\t\t\t res = _this.windowstate.window_gladeview.search(this.el.text);\n\t\t\t} else { \n\t\t\t\t res = _this.windowstate.window_rooview.search(this.el.text);\t\t\t\n\t\t\t}\n\t\t\n\t\t\n\t\t\tbreak;\n\t}\n\tif (res > 0) {\n\t\t_this.search_results.el.label = \"%d Matches\".printf(res);\n\t} else {\n\t\t_this.search_results.el.label = \"No Matches\";\n\t}\n\t\t\n\t\n\t\n}\n"
          },
          "id" : "search_entry",
