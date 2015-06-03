@@ -454,6 +454,7 @@ public class Xcls_GtkView : Object
                         // scrolling is disabled... as node selection calls scroll 10ms after it changes.
                         GLib.Timeout.add_full(GLib.Priority.DEFAULT,15 , () => {
             	            this.allow_node_scroll = true;
+            	            return false;
                         });
                     }
                     
