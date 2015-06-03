@@ -175,6 +175,7 @@ public class Xcls_GtkView : Object
             
     }
     public int search (string txt) {
+    	this.notebook.el.page = 1;
      	var s = new Gtk.SourceSearchSettings();
     	var buf = (Gtk.SourceBuffer) this.sourceview.el.get_buffer();
     	this.searchcontext = new Gtk.SourceSearchContext(buf,s);
