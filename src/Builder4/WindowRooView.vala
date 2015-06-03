@@ -1124,7 +1124,7 @@ public class Xcls_WindowRooView : Object
         
             
         
-            if (_this.file == null || _this.file.xtype != "Gtk") {
+            if (_this.file == null || _this.file.xtype != "Roo") {
                 print("xtype != Gtk");
                 this.loading = false;
                 return;
@@ -1135,7 +1135,7 @@ public class Xcls_WindowRooView : Object
                    var  regex = new Regex("\\.bjs$");
                 
                  
-                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".js");
                  } catch (GLib.RegexError e) {
                      this.loading = false;
                     return;
