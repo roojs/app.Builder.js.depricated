@@ -117,7 +117,7 @@ public class Xcls_MainWindow : Object
         		
         		  if (event.keyval == Gdk.Key.g && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
         		    print("SAVE: ctrl-g  pressed");
-        			this.search_entry.forwardSearch();
+        			this.search_entry.forwardSearch(true);
         		    return false;
         		}
         	}    
@@ -2349,7 +2349,7 @@ public class Xcls_MainWindow : Object
             this.el.key_press_event.connect( (event) => {
                 
              	if (event.keyval == Gdk.Key.Return) {
-            		this.forwardSearch();
+            		this.forwardSearch(false);
             	    return true;
             
             	}    
