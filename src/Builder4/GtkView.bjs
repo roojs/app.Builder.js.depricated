@@ -27,7 +27,7 @@
    "$ xns" : "Gtk",
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
    "# Xcls_MainWindow main_window" : "",
-   "| void forwardSearch" : "() {\n\n\tif (this.searchcontext == null) {\n\t\treturn;\n\t}\n\t\n\tGtk.TextIter beg, st,en;\n\t\n\tvar buf = this.sourceview.el.get_buffer();\n\tbuf.get_iter_at_offset(out beg, this.last_search_end);\n\tif (!this.searchcontext.forward(beg, out st, out en)) {\n\t\tthis.last_search_end = 0;\n\t} else { \n\t\tthis.last_search_end = en.get_offset();\n\t\n\t\tthis.sourceview.el.grab_focus();\n\t \n\t\tbuf.place_cursor(st);\n\t\t\n\t\t \n\t\tthis.sourceview.el.scroll_to_iter(st,  0.0f, true, 0.5f, 0.5f);\n\t}\n\n}\n",
+   "| void forwardSearch" : "() {\n\n\tif (this.searchcontext == null) {\n\t\treturn;\n\t}\n\t\n\tGtk.TextIter beg, st,en, stl;\n\t\n\tvar buf = this.sourceview.el.get_buffer();\n\tbuf.get_iter_at_offset(out beg, this.last_search_end);\n\tif (!this.searchcontext.forward(beg, out st, out en)) {\n\t\tthis.last_search_end = 0;\n\t} else { \n\t\tthis.last_search_end = en.get_offset();\n\t\n\t\tthis.sourceview.el.grab_focus();\n\t \n\t\tbuf.place_cursor(st);\n\t\tvar ln = st.get_line();\n\t\tbuf.get_iter_at_line(ln, out stl);\n\t\t \n\t\tthis.sourceview.el.scroll_to_iter(stl,  0.0f, true, 0.0f, 0.5f);\n\t}\n\n}\n",
    "items" : [
     {
      "id" : "notebook",

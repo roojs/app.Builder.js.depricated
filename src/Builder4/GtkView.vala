@@ -196,7 +196,7 @@ public class Xcls_GtkView : Object
     		return;
     	}
     	
-    	Gtk.TextIter beg, st,en;
+    	Gtk.TextIter beg, st,en, stl;
     	
     	var buf = this.sourceview.el.get_buffer();
     	buf.get_iter_at_offset(out beg, this.last_search_end);
@@ -208,9 +208,10 @@ public class Xcls_GtkView : Object
     		this.sourceview.el.grab_focus();
     	 
     		buf.place_cursor(st);
-    		
+    		var ln = st.get_line();
+    		buf.get_iter_at_line(ln, out stl);
     		 
-    		this.sourceview.el.scroll_to_iter(st,  0.0f, true, 0.5f, 0.5f);
+    		this.sourceview.el.scroll_to_iter(stl,  0.0f, true, 0.0f, 0.5f);
     	}
     
     }
