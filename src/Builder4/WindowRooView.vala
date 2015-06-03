@@ -1,16 +1,16 @@
-static Xcls_GtkView  _GtkView;
+static Xcls_WindowRooView  _WindowRooView;
 
-public class Xcls_GtkView : Object
+public class Xcls_WindowRooView : Object
 {
     public Gtk.Box el;
-    private Xcls_GtkView  _this;
+    private Xcls_WindowRooView  _this;
 
-    public static Xcls_GtkView singleton()
+    public static Xcls_WindowRooView singleton()
     {
-        if (_GtkView == null) {
-            _GtkView= new Xcls_GtkView();
+        if (_WindowRooView == null) {
+            _WindowRooView= new Xcls_WindowRooView();
         }
-        return _GtkView;
+        return _WindowRooView;
     }
     public Xcls_notebook notebook;
     public Xcls_label_preview label_preview;
@@ -33,7 +33,7 @@ public class Xcls_GtkView : Object
     public Xcls_MainWindow main_window;
 
     // ctor
-    public Xcls_GtkView()
+    public Xcls_WindowRooView()
     {
         _this = this;
         this.el = new Gtk.Box( Gtk.Orientation.VERTICAL, 0 );
@@ -223,13 +223,13 @@ public class Xcls_GtkView : Object
     public class Xcls_notebook : Object
     {
         public Gtk.Notebook el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_notebook(Xcls_GtkView _owner )
+        public Xcls_notebook(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.notebook = this;
@@ -255,13 +255,13 @@ public class Xcls_GtkView : Object
     public class Xcls_label_preview : Object
     {
         public Gtk.Label el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_label_preview(Xcls_GtkView _owner )
+        public Xcls_label_preview(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.label_preview = this;
@@ -278,13 +278,13 @@ public class Xcls_GtkView : Object
     public class Xcls_label_code : Object
     {
         public Gtk.Label el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_label_code(Xcls_GtkView _owner )
+        public Xcls_label_code(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.label_code = this;
@@ -301,14 +301,14 @@ public class Xcls_GtkView : Object
     public class Xcls_WindowRooView : Object
     {
         public Gtk.Paned el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
         public JsRender.JsRender file;
 
         // ctor
-        public Xcls_WindowRooView(Xcls_GtkView _owner )
+        public Xcls_WindowRooView(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.WindowRooView = this;
@@ -361,13 +361,13 @@ public class Xcls_GtkView : Object
     public class Xcls_viewbox : Object
     {
         public Gtk.Box el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_viewbox(Xcls_GtkView _owner )
+        public Xcls_viewbox(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.viewbox = this;
@@ -390,13 +390,13 @@ public class Xcls_GtkView : Object
     public class Xcls_Box7 : Object
     {
         public Gtk.Box el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Box7(Xcls_GtkView _owner )
+        public Xcls_Box7(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Box( Gtk.Orientation.HORIZONTAL, 0 );
@@ -423,13 +423,13 @@ public class Xcls_GtkView : Object
     public class Xcls_Button8 : Object
     {
         public Gtk.Button el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Button8(Xcls_GtkView _owner )
+        public Xcls_Button8(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -451,13 +451,13 @@ public class Xcls_GtkView : Object
     public class Xcls_AutoRedraw : Object
     {
         public Gtk.CheckButton el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_AutoRedraw(Xcls_GtkView _owner )
+        public Xcls_AutoRedraw(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.AutoRedraw = this;
@@ -481,13 +481,13 @@ public class Xcls_GtkView : Object
     public class Xcls_Button10 : Object
     {
         public Gtk.Button el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Button10(Xcls_GtkView _owner )
+        public Xcls_Button10(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -515,13 +515,13 @@ public class Xcls_GtkView : Object
     public class Xcls_viewcontainer : Object
     {
         public Gtk.ScrolledWindow el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_viewcontainer(Xcls_GtkView _owner )
+        public Xcls_viewcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.viewcontainer = this;
@@ -545,7 +545,7 @@ public class Xcls_GtkView : Object
     public class Xcls_view : Object
     {
         public WebKit.WebView el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
@@ -559,7 +559,7 @@ public class Xcls_GtkView : Object
         public bool pendingRedraw;
 
         // ctor
-        public Xcls_view(Xcls_GtkView _owner )
+        public Xcls_view(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.view = this;
@@ -970,13 +970,13 @@ public class Xcls_GtkView : Object
     public class Xcls_inspectorcontainer : Object
     {
         public Gtk.ScrolledWindow el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_inspectorcontainer(Xcls_GtkView _owner )
+        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.inspectorcontainer = this;
@@ -999,13 +999,13 @@ public class Xcls_GtkView : Object
     public class Xcls_ScrolledWindow14 : Object
     {
         public Gtk.ScrolledWindow el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_ScrolledWindow14(Xcls_GtkView _owner )
+        public Xcls_ScrolledWindow14(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -1023,7 +1023,7 @@ public class Xcls_GtkView : Object
     public class Xcls_sourceview : Object
     {
         public Gtk.SourceView el;
-        private Xcls_GtkView  _this;
+        private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
@@ -1031,7 +1031,7 @@ public class Xcls_GtkView : Object
         public bool allow_node_scroll;
 
         // ctor
-        public Xcls_sourceview(Xcls_GtkView _owner )
+        public Xcls_sourceview(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.sourceview = this;
