@@ -2346,7 +2346,7 @@ public class Xcls_MainWindow : Object
             	 this.el.override_font(description);
 
             //listeners
-            this.el.key_release_event.connect( (event) => {
+            this.el.key_press_event.connect( (event) => {
                 
              	if (event.keyval == Gdk.Key.Return) {
             		this.forwardSearch();
