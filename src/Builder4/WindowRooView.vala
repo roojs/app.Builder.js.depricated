@@ -1173,15 +1173,7 @@ public class Xcls_WindowRooView : Object
             sbuf.remove_source_marks (start, end, null); // remove all marks..
             
             
-            if (_this.main_window.windowstate.last_compile_result != null) {
-                var obj = _this.main_window.windowstate.last_compile_result;
-                this.highlightErrorsJson("ERR", obj);
-                this.highlightErrorsJson("WARN", obj);
-                this.highlightErrorsJson("DEPR", obj);			
-            }
-            //while (Gtk.events_pending()) {
-             //   Gtk.main_iteration();
-           // }
+            
             
             this.loading = false; 
         }
