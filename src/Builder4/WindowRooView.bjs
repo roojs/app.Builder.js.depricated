@@ -48,6 +48,7 @@
        "utf8 label" : "Preview Generated Code"
       },
       {
+       "id" : "paned",
        "* pack" : "add",
        "xtype" : "Paned",
        "$ xns" : "Gtk",

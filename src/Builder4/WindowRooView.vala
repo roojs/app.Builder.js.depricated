@@ -15,6 +15,7 @@ public class Xcls_WindowRooView : Object
     public Xcls_notebook notebook;
     public Xcls_label_preview label_preview;
     public Xcls_label_code label_code;
+    public Xcls_paned paned;
     public Xcls_viewbox viewbox;
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_viewcontainer viewcontainer;
@@ -171,7 +172,7 @@ public class Xcls_WindowRooView : Object
             child_0.ref();
             var child_1 = new Xcls_label_code( _this );
             child_1.ref();
-            var child_2 = new Xcls_Paned5( _this );
+            var child_2 = new Xcls_paned( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
             var child_3 = new Xcls_ScrolledWindow14( _this );
@@ -227,7 +228,7 @@ public class Xcls_WindowRooView : Object
         // user defined functions
     }
 
-    public class Xcls_Paned5 : Object
+    public class Xcls_paned : Object
     {
         public Gtk.Paned el;
         private Xcls_WindowRooView  _this;
@@ -236,9 +237,10 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Paned5(Xcls_WindowRooView _owner )
+        public Xcls_paned(Xcls_WindowRooView _owner )
         {
             _this = _owner;
+            _this.paned = this;
             this.el = new Gtk.Paned( Gtk.Orientation.VERTICAL );
 
             // my vars (dec)
