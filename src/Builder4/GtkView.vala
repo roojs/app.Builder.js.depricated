@@ -452,10 +452,10 @@ public class Xcls_GtkView : Object
             	       print("changing cursor on tree..\n");
                         ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
                         // scrolling is disabled... as node selection calls scroll 10ms after it changes.
-                        //GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
+                        GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
             	            this.allow_node_scroll = true;
-            	        //    return false;
-                        //});
+            	            return false;
+                        });
                     }
                     
                     // highlight the node..
