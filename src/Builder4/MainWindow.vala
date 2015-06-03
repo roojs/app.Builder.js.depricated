@@ -2397,7 +2397,7 @@ public class Xcls_MainWindow : Object
         		case WindowState.State.CODEONLY:
         		case WindowState.State.CODE:
         			// search the code being edited..
-        			_this.windowstate.code_editor.forwardSearch();
+        			_this.windowstate.code_editor.forwardSearch(change_focus);
         			
         			break;
         		case WindowState.State.PREVIEW:
@@ -2409,6 +2409,7 @@ public class Xcls_MainWindow : Object
         		
         			break;
         	}
+        	
         }
     }
 
