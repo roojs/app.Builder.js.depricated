@@ -208,6 +208,7 @@ public class Xcls_GtkView : Object
     		this.sourceview.el.grab_focus();
     	 
     		buf.place_cursor(st);
+    		
     		 
     		this.sourceview.el.scroll_to_iter(st,  0.0f, true, 0.5f, 0.5f);
     	}
