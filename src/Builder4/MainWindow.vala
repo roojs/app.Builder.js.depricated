@@ -2391,8 +2391,9 @@ public class Xcls_MainWindow : Object
         		case WindowState.State.PREVIEW:
         			if (_this.windowstate.file.xtype == "Gtk") {
         				_this.windowstate.window_gladeview.forwardSearch();
+        			} else { 
+        				 res = _this.windowstate.window_rooview.forwardSearch();
         			}
-        		
         		
         			break;
         	}
