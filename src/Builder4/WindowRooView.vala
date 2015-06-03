@@ -605,7 +605,7 @@ public class Xcls_WindowRooView : Object
                  
                  
             _this.viewbox.el.remove(_this.viewcontainer.el);
-            _this.el.remove(_this.inspectorcontainer.el);        
+            _this.paned.el.remove(_this.inspectorcontainer.el);        
                  
                  // destory seems to cause problems.
                  //this.el.destroy();
@@ -613,7 +613,7 @@ public class Xcls_WindowRooView : Object
                  //_this.inspectorcontainer.el.destroy();
              var  inv =new Xcls_inspectorcontainer(_this);
               inv.ref();
-              _this.el.pack2(inv.el,true,true);
+              _this.paned.el.pack2(inv.el,true,true);
               
               
              this.el = null;         
