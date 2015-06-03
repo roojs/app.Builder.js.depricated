@@ -2346,6 +2346,18 @@ public class Xcls_MainWindow : Object
             	 this.el.override_font(description);
 
             //listeners
+            this.el.key_release_event.connect( (event) => {
+                
+             	if (event.keyval == Gdk.Key.ENTER) {
+            		this.forwardSearch();
+            	    return false;
+            
+            	}    
+               // print(event.key.keyval)
+                
+                return false;
+            
+            });
             this.el.changed.connect( () => {
             	if (this.el.text == "") {
             		return;
