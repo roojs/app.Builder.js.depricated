@@ -50,13 +50,6 @@ public class Xcls_WindowRooView : Object
         var child_0 = new Xcls_notebook( _this );
         child_0.ref();
         this.el.pack_start (  child_0.el , true,true,0 );
-
-        //listeners
-        this.el.size_allocate.connect( (aloc) => {
-        
-            this.width = aloc.width;
-            this.height =aloc.height;
-        });
     }
 
     // user defined functions
