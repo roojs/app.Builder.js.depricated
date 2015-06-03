@@ -157,28 +157,6 @@
        ]
       },
       {
-       "* pack" : "append_page,_this.label_preview.el",
-       "xtype" : "ScrolledWindow",
-       "$ xns" : "Gtk",
-       "items" : [
-        {
-         "id" : "view_layout",
-         "xtype" : "Layout",
-         "* pack" : "add",
-         "$ xns" : "Gtk",
-         "items" : [
-          {
-           "id" : "container",
-           "* pack" : "put,10,10",
-           "xtype" : "Box",
-           "$ xns" : "Gtk",
-           "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL"
-          }
-         ]
-        }
-       ]
-      },
-      {
        "xtype" : "ScrolledWindow",
        "* pack" : "append_page,_this.label_code.el",
        "$ xns" : "Gtk",
