@@ -2392,7 +2392,7 @@ public class Xcls_MainWindow : Object
         }
 
         // user defined functions
-        public void forwardSearch () {
+        public void forwardSearch (bool change_focus) {
         	switch(_this.windowstate.state) {
         		case WindowState.State.CODEONLY:
         		case WindowState.State.CODE:
@@ -2402,9 +2402,9 @@ public class Xcls_MainWindow : Object
         			break;
         		case WindowState.State.PREVIEW:
         			if (_this.windowstate.file.xtype == "Gtk") {
-        				_this.windowstate.window_gladeview.forwardSearch();
+        				_this.windowstate.window_gladeview.forwardSearch(change_focus);
         			} else { 
-        				 _this.windowstate.window_rooview.forwardSearch();
+        				 _this.windowstate.window_rooview.forwardSearch(change_focus);
         			}
         		
         			break;
