@@ -2348,7 +2348,7 @@ public class Xcls_MainWindow : Object
             //listeners
             this.el.key_release_event.connect( (event) => {
                 
-             	if (event.keyval == Gdk.Key.ENTER) {
+             	if (event.keyval == Gdk.Key.Return) {
             		this.forwardSearch();
             	    return false;
             
