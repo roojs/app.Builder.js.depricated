@@ -15,7 +15,6 @@ public class Xcls_WindowRooView : Object
     public Xcls_notebook notebook;
     public Xcls_label_preview label_preview;
     public Xcls_label_code label_code;
-    public Xcls_WindowRooView WindowRooView;
     public Xcls_viewbox viewbox;
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_viewcontainer viewcontainer;
@@ -172,7 +171,7 @@ public class Xcls_WindowRooView : Object
             child_0.ref();
             var child_1 = new Xcls_label_code( _this );
             child_1.ref();
-            var child_2 = new Xcls_WindowRooView( _this );
+            var child_2 = new Xcls_Paned5( _this );
             child_2.ref();
             this.el.add (  child_2.el  );
             var child_3 = new Xcls_ScrolledWindow14( _this );
@@ -228,20 +227,18 @@ public class Xcls_WindowRooView : Object
         // user defined functions
     }
 
-    public class Xcls_WindowRooView : Object
+    public class Xcls_Paned5 : Object
     {
         public Gtk.Paned el;
         private Xcls_WindowRooView  _this;
 
 
             // my vars (def)
-        public JsRender.JsRender file;
 
         // ctor
-        public Xcls_WindowRooView(Xcls_WindowRooView _owner )
+        public Xcls_Paned5(Xcls_WindowRooView _owner )
         {
             _this = _owner;
-            _this.WindowRooView = this;
             this.el = new Gtk.Paned( Gtk.Orientation.VERTICAL );
 
             // my vars (dec)
@@ -256,37 +253,6 @@ public class Xcls_WindowRooView : Object
         }
 
         // user defined functions
-        public void createThumb () {
-            
-            
-            if (this.file == null) {
-                return;
-            }
-            var filename = this.file.getIconFileName(false);
-            
-            var  win = this.el.get_parent_window();
-            var width = win.get_width();
-          //  var height = win.get_height();
-            try { 
-                Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, this.el.position);
-                screenshot.save(filename,"png");
-            } catch(Error e) {
-                //noop
-            }
-        
-            
-             
-            
-             
-        }
-        public void loadFile (JsRender.JsRender file)
-        {
-            this.file = file;
-            this.view.renderJS(true);
-        }
-        public void requestRedraw () {
-            this.view.renderJS(false);
-        }
     }
     public class Xcls_viewbox : Object
     {
