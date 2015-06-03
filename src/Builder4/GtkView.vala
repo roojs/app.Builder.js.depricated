@@ -209,7 +209,7 @@ public class Xcls_GtkView : Object
     	 
     		buf.place_cursor(st);
     		 
-    		this.sourceview.el.scroll_to_iter(st,  0.1f, true, 0.0f, 0.5f);
+    		this.sourceview.el.scroll_to_iter(st,  0.0f, true, 0.5f, 0.5f);
     	}
     
     }
