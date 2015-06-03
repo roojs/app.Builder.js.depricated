@@ -191,7 +191,7 @@ public class Xcls_GtkView : Object
     
        
     }
-    public void forwardSearch () {
+    public void forwardSearch (bool change_focus) {
     
     	if (this.searchcontext == null) {
     		return;
@@ -205,9 +205,9 @@ public class Xcls_GtkView : Object
     		this.last_search_end = 0;
     	} else { 
     		this.last_search_end = en.get_offset();
-    	
-    		this.sourceview.el.grab_focus();
-    	 
+    		if (change_focus) {
+    			this.sourceview.el.grab_focus();	
+    		}
     		buf.place_cursor(st);
     		var ln = st.get_line();
     		buf.get_iter_at_line(out stl,ln);
