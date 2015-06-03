@@ -122,6 +122,9 @@ public class Xcls_WindowRooView : Object
     
        
     }
+    public void requestRedraw () {
+        this.view.renderJS(false);
+    }
     public void forwardSearch () {
     
     	if (this.searchcontext == null) {
