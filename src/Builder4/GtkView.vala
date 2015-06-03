@@ -397,6 +397,7 @@ public class Xcls_GtkView : Object
 
             // my vars (def)
         public bool loading;
+        public bool allow_node_scroll;
 
         // ctor
         public Xcls_sourceview(Xcls_GtkView _owner )
@@ -407,6 +408,7 @@ public class Xcls_GtkView : Object
 
             // my vars (dec)
             this.loading = true;
+            this.allow_node_scroll = true;
 
             // set gobject values
             this.el.editable = false;
@@ -545,10 +547,11 @@ public class Xcls_GtkView : Object
             Gtk.TextIter cur_iter;
             sbuf.get_iter_at_offset(out cur_iter, sbuf.cursor_position);
             
-            var cur_line = cur_iter.get_line();
-            if (cur_line > sel.line_start && cur_line < sel.line_end) {
+            //var cur_line = cur_iter.get_line();
+            //if (cur_line > sel.line_start && cur_line < sel.line_end) {
             
-            } else {
+            //} else {
+            if (this.allow_node_scroll) {
                 	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
