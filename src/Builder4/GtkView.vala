@@ -449,6 +449,7 @@ public class Xcls_GtkView : Object
                     print("got tree path %s\n", tp);
                     if (tp != "") {
             	       this.allow_node_scroll = false;        
+            	       print("changing cursor");
                         ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
                         this.allow_node_scroll = true;
                     }
