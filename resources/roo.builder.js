@@ -334,7 +334,7 @@ Builder  = {
         //Roo.log("Add xtype")
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
         if (!tree.items || !tree.items.length) { return; }
-        
+        Roo.log(tree);
         for (var i = 0; i < tree.items.length; i++){
             this.applyFlexy(tree.items[i]);
         }
