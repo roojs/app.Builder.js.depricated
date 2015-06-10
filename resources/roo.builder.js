@@ -331,6 +331,12 @@ Builder  = {
             //Roo.log("add flexy:if");
             tree.el.attr('flexy:include', tree['flexy:include']);
         }
+        
+        if (typeof(tree['flexy:ignore']) != 'undefined') {
+            //Roo.log("add flexy:if");
+            tree.el.attr('flexy:ignore', tree['flexy:ignore']);
+        }
+        
         //Roo.log("Add xtype")
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
         if (!tree.items || !tree.items.length) { return; }
