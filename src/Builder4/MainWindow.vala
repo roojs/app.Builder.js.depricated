@@ -2322,7 +2322,7 @@ public class Xcls_MainWindow : Object
 
     public class Xcls_search_entry : Object
     {
-        public Gtk.Entry el;
+        public Gtk.SearchEntry el;
         private Xcls_MainWindow  _this;
 
 
@@ -2333,7 +2333,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.search_entry = this;
-            this.el = new Gtk.Entry();
+            this.el = new Gtk.SearchEntry();
 
             // my vars (dec)
 
