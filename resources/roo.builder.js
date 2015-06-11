@@ -344,6 +344,11 @@ Builder  = {
         for (var i = 0; i < tree.items.length; i++){
             this.applyFlexy(tree.items[i]);
         }
+        if (typeof(tree.menu) != 'undefined') {
+            this.applyFlexy(tree.menu);
+        }
+        
+        
     }
     
      
