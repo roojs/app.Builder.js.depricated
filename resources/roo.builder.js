@@ -341,7 +341,7 @@ Builder  = {
         }
         
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
-        Roo.log(tree);
+        //Roo.log(tree);
         //Roo.log("Add xtype")
         
         
