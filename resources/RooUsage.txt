@@ -371,7 +371,7 @@ right:
     Roo.bootstrap.dash.TabBox
     Roo.bootstrap.menu.Menu
     Roo.bootstrap.LocationPicker
-
+    Roo.bootstrap.Alert
 
 left:
     Roo.bootstrap.Progress
