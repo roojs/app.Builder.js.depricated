@@ -373,6 +373,7 @@ right:
     Roo.bootstrap.LocationPicker
     Roo.bootstrap.Alert
 
+
 left:
     Roo.bootstrap.Progress
 right:
