@@ -314,7 +314,9 @@ Builder  = {
     
     applyFlexy: function(tree)
     {
-         
+        if (!tree.el) {
+            return;
+        }
         if (typeof(tree['flexy:foreach']) != 'undefined') {
             //Roo.log("add flexy:foreach");
             tree.el.attr('flexy:foreach', tree['flexy:foreach']);
@@ -337,9 +339,9 @@ Builder  = {
             //Roo.log("add flexy:if");
             tree.el.attr('flexy:ignore', tree['flexy:ignore']);
         }
-        if (tree.el) {
-            tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
-        }
+        
+        tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
+        
         //Roo.log("Add xtype")
         
         
