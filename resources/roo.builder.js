@@ -339,10 +339,13 @@ Builder  = {
         
         //Roo.log("Add xtype")
         tree.el.attr('xtype', tree['|xns'] + '.' +  tree['xtype']);
-        if (!tree.items || !tree.items.length) { return; }
+        
+        
+        if (tree.items && !tree.items.length) { 
         //Roo.log(tree);
-        for (var i = 0; i < tree.items.length; i++){
-            this.applyFlexy(tree.items[i]);
+            for (var i = 0; i < tree.items.length; i++){
+                this.applyFlexy(tree.items[i]);
+            }
         }
         if (typeof(tree.menu) == 'object') {
             this.applyFlexy(tree.menu);
