@@ -344,7 +344,7 @@ Builder  = {
         for (var i = 0; i < tree.items.length; i++){
             this.applyFlexy(tree.items[i]);
         }
-        if (typeof(tree.menu) != 'undefined') {
+        if (typeof(tree.menu) == 'object') {
             this.applyFlexy(tree.menu);
         }
         
