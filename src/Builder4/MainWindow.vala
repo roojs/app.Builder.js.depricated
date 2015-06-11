@@ -2322,7 +2322,7 @@ public class Xcls_MainWindow : Object
 
     public class Xcls_search_entry : Object
     {
-        public Gtk.Entry el;
+        public Gtk.SearchEntry el;
         private Xcls_MainWindow  _this;
 
 
@@ -2333,7 +2333,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.search_entry = this;
-            this.el = new Gtk.Entry();
+            this.el = new Gtk.SearchEntry();
 
             // my vars (dec)
 
@@ -2397,7 +2397,7 @@ public class Xcls_MainWindow : Object
         		case WindowState.State.CODEONLY:
         		case WindowState.State.CODE:
         			// search the code being edited..
-        			_this.windowstate.code_editor.forwardSearch();
+        			_this.windowstate.code_editor.forwardSearch(change_focus);
         			
         			break;
         		case WindowState.State.PREVIEW:
@@ -2409,6 +2409,7 @@ public class Xcls_MainWindow : Object
         		
         			break;
         	}
+        	
         }
     }
 
