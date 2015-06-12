@@ -94,6 +94,7 @@ public class Xcls_WindowLeftTree : Object
             this.blockChanges = false;
 
             // set gobject values
+            this.el.expand = true;
             this.el.tooltip_column = 1;
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
