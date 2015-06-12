@@ -28,28 +28,28 @@
      "items" : [
       {
        "label" : "Name",
-       "* pack" : "add",
        "xtype" : "Label",
+       "* pack" : "add",
        "$ xns" : "Gtk"
       },
       {
        "id" : "name",
-       "* pack" : "add",
        "xtype" : "Entry",
+       "* pack" : "add",
        "$ xns" : "Gtk"
       }
      ]
     },
     {
      "label" : "Cancel",
-     "* pack" : "add_action_widget,0",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,0",
      "$ xns" : "Gtk"
     },
     {
      "label" : "OK",
-     "* pack" : "add_action_widget,1",
      "xtype" : "Button",
+     "* pack" : "add_action_widget,1",
      "$ xns" : "Gtk"
     }
    ]
