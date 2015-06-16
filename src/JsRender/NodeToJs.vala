@@ -40,14 +40,23 @@ public class JsRender.NodeToJs : Object {
 		this.cur_line = parent == null ? 0 : parent.cur_line;
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
+		this.line_buffer = "";
 	}
+	
+	string line_buffer;
+	
+	
 	
 	public void addLine(string str= "")
 	{
-		this.cur_line++;
-		//this.ret += "/*%d*/ ".printf(this.cur_line-1) + str + "\n";
-		this.ret += str + "\n";
+		if (this.line_buffer.length > 0) { 
+			this.cur_line++;   
+			this.ret += this.line_buffer+ ",\n";
+		}
+		this.line_buffer = str;
+		
 	}
+	
 	public void addMultiLine(string str= "")
 	{
 		 
@@ -56,7 +65,16 @@ public class JsRender.NodeToJs : Object {
 		this.ret +=   str + "\n";
 	}
 	
+	/**
 	
+	This currently works by creating a key/value array of this.els, which is just an array of properties..
+	this is so that join() works...
+	
+	
+	
+	
+	
+	*/
 	
 	
 	
@@ -74,6 +92,7 @@ public class JsRender.NodeToJs : Object {
 		this.readListeners();
 
 		if (!this.node.props.has_key("* xinclude")) {
+			
 			this.iterChildren();
 		}
 		
@@ -260,11 +279,15 @@ public class JsRender.NodeToJs : Object {
 			
 			keys.add(k);
 		}
+		
 		keys.sort((  a,  b) => {
 			return ((string)a).collate((string)b);
 			//if (a == b) return 0;
 			//return a < b ? -1 : 1;
 		});
+		
+		
+		
 		for (var i = 0; i< keys.size; i++) {
 			var key = this.node.get_key(keys.get(i));
 			print("ADD KEY %s\n", key);
