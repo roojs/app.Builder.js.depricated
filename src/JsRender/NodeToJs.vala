@@ -12,28 +12,34 @@
 public class JsRender.NodeToJs : Object {
 
 	static uint indent = 1;
-	 static string indent_str = " ";
+	static string indent_str = " ";
+	
 	Node node;
-	Gee.ArrayList<string>  doubleStringProps;
+	Gee.ArrayList<string>  doubleStringProps;  // need to think if this is a good idea like this
 	string pad;
+	
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 
+	NodeToJs top;
 	string ret;
 	
 	int cur_line;
 
 	
-	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
+	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad, NodeToJs? parent) 
 	{
 		this.node = node;
 		this.doubleStringProps = doubleStringProps;
 		this.pad = pad;
+		
 		this.els = new Gee.ArrayList<string>(); 
-		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
-
+		
+		this.cur_line = parent == null ? 0 : parent.cur_line;
+		this.ret = "";
+		this.top = parent == null ? this : parent.top;
 	}
 	
 	public void addLine(string str= "")
@@ -50,11 +56,17 @@ public class JsRender.NodeToJs : Object {
 		this.ret +=   str + "\n";
 	}
 	
+	
+	
+	
+	
+	
+	
 	public string munge ( )
 	{
 		//return this.mungeToString(this.node);
 
-	
+		this.node.line_start = this.cur_line;
 		
 		this.checkChildren();
 		this.readProps();
@@ -74,8 +86,13 @@ public class JsRender.NodeToJs : Object {
 		// oprops...	
 			
 		var spad = pad.substring(0, this.pad.length-indent);
+		
+		
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
 		//print ("STR PROPS: " + str_props);
+		
+		
+		
 		if (!this.node.props.has_key("* xinclude")) {
 			return   "{\n" +
 				this.pad  + str_props + 
@@ -103,7 +120,7 @@ public class JsRender.NodeToJs : Object {
 	}
 	public string mungeChild(string pad ,  Node cnode)
 	{
-		var x = new  NodeToJs(cnode, this.doubleStringProps, pad);
+		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
 		return x.munge();
 	}
 	
