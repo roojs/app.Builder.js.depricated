@@ -20,6 +20,9 @@ public class JsRender.NodeToJs : Object {
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 
+	string ret;
+	
+	int cur_line;
 
 	
 	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad) 
@@ -31,6 +34,20 @@ public class JsRender.NodeToJs : Object {
 		//this.skip = new Gee.ArrayList<string>();
 		this.ar_props = new Gee.HashMap<string,string>();
 
+	}
+	
+	public void addLine(string str= "")
+	{
+		this.cur_line++;
+		//this.ret += "/*%d*/ ".printf(this.cur_line-1) + str + "\n";
+		this.ret += str + "\n";
+	}
+	public void addMultiLine(string str= "")
+	{
+		 
+		this.cur_line += str.split("\n").length;
+		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
+		this.ret +=   str + "\n";
 	}
 	
 	public string munge ( )
