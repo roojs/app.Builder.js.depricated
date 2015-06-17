@@ -278,7 +278,7 @@ public class JsRender.NodeToJs : Object {
 		Regex func_regex ;
 
 		if (this.node.props.has_key("$ xns")) {
-			this.out_props("'|xns'", this.node.props.get("$ xns") );
+			this.out_props.set("'|xns'", this.node.props.get("$ xns") );
 			
 			this.els.add("'|xns' : '" + this.node.props.get("$ xns") + "'");
 
