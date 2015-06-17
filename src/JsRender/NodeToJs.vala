@@ -22,8 +22,12 @@ public class JsRender.NodeToJs : Object {
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 	
+	Gee.HashMap<string,string> out_props;
+	Gee.HashMap<string,string> out_listeners;	
+	Gee.HashMap<string,Node> out_nodeprops;
+	Gee.ArrayList<Node> out_children;
 	
-
+	
 	NodeToJs top;
 	string ret;
 	
