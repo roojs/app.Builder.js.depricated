@@ -43,6 +43,16 @@ public class JsRender.NodeToJs : Object {
 		this.els = new Gee.ArrayList<string>(); 
 		this.ar_props = new Gee.HashMap<string,string>();
 		
+		
+		this.out_props = new Gee.HashMap<string,string>();
+		this.out_listeners = new Gee.HashMap<string,string>();	
+		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
+		this.out_children = new Gee.ArrayList<Node> ();
+	
+	
+		
+		
+		
 		this.cur_line = parent == null ? 0 : parent.cur_line;
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
@@ -187,6 +197,9 @@ public class JsRender.NodeToJs : Object {
 				// it's a standard prop..
 				
 				// munge property..??
+				
+				this.out_nodeprops.set(prop, pl);
+				
 				this.els.add( prop  + " : " + this.mungeChild (  this.pad + indent_str,  pl));
 				
 				
@@ -265,7 +278,8 @@ public class JsRender.NodeToJs : Object {
 		Regex func_regex ;
 
 		if (this.node.props.has_key("$ xns")) {
-	 
+			this.out_props("'|xns'", this.node.props.get("$ xns") );
+			
 			this.els.add("'|xns' : '" + this.node.props.get("$ xns") + "'");
 
 		}
