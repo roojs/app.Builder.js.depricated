@@ -21,6 +21,8 @@ public class JsRender.NodeToJs : Object {
 	Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
+	
+	
 
 	NodeToJs top;
 	string ret;
@@ -70,7 +72,12 @@ public class JsRender.NodeToJs : Object {
 	This currently works by creating a key/value array of this.els, which is just an array of properties..
 	this is so that join() works...
 	
-	
+	how this could work:
+	a) output header
+	b) output plan properties.
+	c) output listeners..
+	c) output *prop
+	d) output children
 	
 	
 	
@@ -92,7 +99,6 @@ public class JsRender.NodeToJs : Object {
 		this.readListeners();
 
 		if (!this.node.props.has_key("* xinclude")) {
-			
 			this.iterChildren();
 		}
 		
