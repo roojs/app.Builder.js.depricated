@@ -162,7 +162,7 @@ public class JsRender.NodeToJs : Object {
 			total_nodes--;
 			suffix = total_nodes > 0 ? "," : "";
 			this.addMultiLine(this.pad + niter.get_key() + " : " + 
-					this.mungeChild(this.pad + indent_str, niter.get_value() + suffix)
+					this.mungeChild(this.pad + indent_str, niter.get_value()) + suffix
 			);
 		}	
 		
