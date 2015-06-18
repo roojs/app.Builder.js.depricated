@@ -253,12 +253,15 @@ public class JsRender.NodeToJs : Object {
 		if (this.out_listeners.size > 0 ) { 
 			total_nodes--;
 			this.addLine(this.pad + "listeners : {");
-			var lis_iter = this.out_listeners.map_iterator();
+			iter = this.orderedListenerKeys().list_iterator();
+			 
 			var sz = this.out_listeners.size;
-			while(lis_iter.next()) {
+			while(iter.next()) {
 				sz--;
 				suffix = sz > 0 ? "," : "";
-				this.addMultiLine(this.pad + indent_str + lis_iter.get_key() + " : " + lis_iter.get_value() + suffix);
+				var k = iter.get();
+				var v = this.out_listeners.get(k);
+				this.addMultiLine(this.pad + indent_str + k + " : " + v + suffix);
 			}
 			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + "}" + suffix);			
