@@ -137,6 +137,7 @@ public class JsRender.NodeToJs : Object {
 		} else {
 			this.addLine("{");
 		}
+		var suffix = "";
 		// output the items...
 		// work out remaining items...
 		var  total_nodes = this.out_props.size + 
@@ -149,7 +150,7 @@ public class JsRender.NodeToJs : Object {
 		var iter = this.out_props.map_iterator();
 		while(iter.next()) {
 			total_nodes--;
-			var suffix = total_nodes > 0 ? "," : "";
+			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 		}
 		// listeners..
@@ -161,12 +162,25 @@ public class JsRender.NodeToJs : Object {
 			var sz = this.out_listeners.size;
 			while(iter.next()) {
 				sz--;
+				suffix = sz > 0 ? "," : "";
+				this.addMultiLine(this.pad + indent_str + iter.get_key() + " : " + iter.get_value() + suffix);
+			}
+			suffix = total_nodes > 0 ? "," : "";
+			this.addLine(this.pad + "}" + suffix);			
+			
+		}
+		// * prop
+		if (this.out_nodeprops.size > 0 ) { 
+			total_nodes--;
+			this.addLine(this.pad + "listeners : {");
+			iter = this.out_nodeprops.map_iterator();
+			var sz = this.out_listeners.size;
+			while(iter.next()) {
+				sz--;
 				var suffix = sz > 0 ? "," : "";
 				this.addMultiLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 			}			 
 		}
-		// * prop
-		
 		
 		
 		
