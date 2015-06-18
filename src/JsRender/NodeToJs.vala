@@ -560,6 +560,9 @@ public class JsRender.NodeToJs : Object {
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
 					"']"
 				);
+				this.out_props.set(left, "_this._strings['" + 
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+					"']");
 				continue;
 			}
 			if (ktype.down() == "string" && k[0] == '_') {
@@ -567,6 +570,12 @@ public class JsRender.NodeToJs : Object {
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
 					"']"
 				);
+				this.out_props.set(left, " _this._strings['" + 
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+					"']"
+				);
+				
+				
 				continue;
 			}
 			// otherwise it needs to be encapsulated.. as single quotes..
