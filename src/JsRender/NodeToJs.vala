@@ -146,6 +146,21 @@ public class JsRender.NodeToJs : Object {
 		});
 		return ret;
 	}
+	public Gee.ArrayList<string> orderedListenerKeys() {
+	
+		var ret = new Gee.ArrayList<string> ();
+		var niter = this.out_listeners.map_iterator();
+		while(niter.next()) {
+			ret.add(niter.get_key());
+		}
+		
+		ret.sort((  a,  b) => {
+			return ((string)a).collate((string)b);
+			//if (a == b) return 0;
+			//return a < b ? -1 : 1;
+		});
+		return ret;
+	}
 	
 
 	public string mungeOut()
