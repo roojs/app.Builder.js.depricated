@@ -151,9 +151,16 @@ public class JsRender.NodeToJs : Object {
 			var suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 		}
-		if (this.listeners) { 
-			
-		
+		if (this.out_listeners.size > 0 ) { 
+			total_nodes--;
+			this.addLine(this.pad + "listeners : {");
+			iter = this.out_listeners.map_iterator();
+			var sz = this.out_listeners.size;
+			while(iter.next()) {
+				sz--;
+				var suffix = sz > 0 ? "," : "";
+				this.addMultiLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
+			}			 
 		}
 		
 		
