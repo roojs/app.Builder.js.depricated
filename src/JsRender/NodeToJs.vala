@@ -30,7 +30,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.HashMap<string,Gee.ArrayList<string>> out_props_array_plain;	
 	
 	NodeToJs top;
-	string ret;
+	public string ret;
 	
 	int cur_line;
 
