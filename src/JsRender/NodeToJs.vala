@@ -201,8 +201,26 @@ public class JsRender.NodeToJs : Object {
 		}	
 		
 		// children..
+		if (this.out_children.size > 0) {
+			this.addLine(this.pad + "items  : [");
+			var cniter = this.out_children.list_iterator();
+			while (cniter.next()) {
+				suffix = cniter.has_next()  ? "," : "";
+				this.addMultiLine(this.pad + 
+					this.mungeChild(this.pad + indent_str  + indent_str, cniter.get()) + suffix
+				);
+				
+			}
+			
+			this.addLine(this.pad + "]");
+		}
 		
-		
+		if (this.node.props.has_key("* xinclude")) {
+			this.addLine("})");
+	 
+		} else {
+			this.addLine("}");
+		}
 		
 		
 		return this.ret;
