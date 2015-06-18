@@ -246,10 +246,10 @@ public class JsRender.NodeToJs : Object {
 		}
 		
 		if (this.node.props.has_key("* xinclude")) {
-			this.ret+= spad + "})";
+			this.ret += spad + "})";
 	 
 		} else {
-			this.ret+= spad + "}";
+			this.ret += spad + "}";
 		}
 		
 		
