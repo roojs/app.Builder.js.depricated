@@ -165,6 +165,8 @@ public class JsRender.NodeToJs : Object {
 				this.addMultiLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 			}			 
 		}
+		// * prop
+		
 		
 		
 		
