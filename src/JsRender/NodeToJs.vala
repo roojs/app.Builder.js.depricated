@@ -131,6 +131,22 @@ public class JsRender.NodeToJs : Object {
 	
 	*/
 	
+	public Gee.ArrayList<string> orderedPropKeys() {
+	
+		var ret = new Gee.ArrayList<string> ();
+		var niter = this.out_props.map_iterator();
+		while(niter.next()) {
+			ret.add(niter.get_key());
+		}
+		
+		ret.sort((  a,  b) => {
+			return ((string)a).collate((string)b);
+			//if (a == b) return 0;
+			//return a < b ? -1 : 1;
+		});
+		return ret;
+	}
+	
 
 	public string mungeOut()
 	{
