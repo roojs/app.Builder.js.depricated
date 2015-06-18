@@ -232,7 +232,7 @@ public class JsRender.NodeToJs : Object {
 		}
 		// children..
 		if (this.out_children.size > 0) {
-			this.addLine(this.pad + "items  : [  /* " + this.out_children.size.to_string() + "  */" );
+			this.addLine(this.pad + "items  : [" );
 			var cniter = this.out_children.list_iterator();
 			while (cniter.next()) {
 				suffix = cniter.has_next()  ? "," : "";
