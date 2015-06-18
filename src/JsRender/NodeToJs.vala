@@ -238,7 +238,7 @@ public class JsRender.NodeToJs : Object {
 		if (this.out_listeners.size > 0 ) { 
 			total_nodes--;
 			this.addLine(this.pad + "listeners : {");
-			iter = this.out_listeners.map_iterator();
+			var iter = this.out_listeners.map_iterator();
 			var sz = this.out_listeners.size;
 			while(iter.next()) {
 				sz--;
