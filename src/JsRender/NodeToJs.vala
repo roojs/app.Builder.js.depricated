@@ -162,7 +162,7 @@ public class JsRender.NodeToJs : Object {
 			total_nodes--;
 			suffix = total_nodes > 0 ? "," : "";
 			this.addMultiLine(this.pad + niter.get_key() + " : " + 
-					this.mungeChild(this.pad + indent_str, niter.get_value()) + suffix
+					this.mungeChildNew(this.pad + indent_str, niter.get_value()) + suffix
 			);
 		}	
 		
@@ -207,11 +207,11 @@ public class JsRender.NodeToJs : Object {
 			while (pliter.next()) {
 				suffix = pliter.has_next()  ? "," : "";
 				this.addMultiLine(this.pad + indent_str + 
-					this.mungeChild(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
+					this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
 			}
 
 			suffix = total_nodes > 0 ? "," : "";
-//					this.mungeChild(this.pad + indent_str, niter.get_value())
+//					this.mungeChildNew(this.pad + indent_str, niter.get_value())
 			this.addLine(this.pad + "]" + suffix);			
 		}	
 		// listeners..
@@ -237,7 +237,7 @@ public class JsRender.NodeToJs : Object {
 			while (cniter.next()) {
 				suffix = cniter.has_next()  ? "," : "";
 				this.addMultiLine(this.pad + 
-					this.mungeChild(this.pad + indent_str  + indent_str, cniter.get()) + suffix
+					this.mungeChildNew(this.pad + indent_str  + indent_str, cniter.get()) + suffix
 				);
 				
 			}
@@ -294,7 +294,7 @@ public class JsRender.NodeToJs : Object {
 		return x.munge();
 	}
 	
-		public string mungeChildNew(string pad ,  Node cnode)
+	public string mungeChildNew(string pad ,  Node cnode)
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
 		x.munge();
