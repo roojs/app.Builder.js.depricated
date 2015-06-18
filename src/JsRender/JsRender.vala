@@ -362,7 +362,8 @@ namespace JsRender {
 			var nret = x.ret;
 			
 			// output both files.. so we can diff them...
-			
+			this.writeFile("/tmp/old.js", ret);
+			this.writeFile("/tmp/new.js", nret);			
 			return ret;
 			
 		    
