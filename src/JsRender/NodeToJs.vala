@@ -26,7 +26,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.HashMap<string,string> out_listeners;	
 	Gee.HashMap<string,Node> out_nodeprops;
 	Gee.ArrayList<Node> out_children;
-	
+	Gee.HashMap<string,Gee.ArrayList<Node>> out_array_props;
 	
 	NodeToJs top;
 	string ret;
@@ -48,6 +48,7 @@ public class JsRender.NodeToJs : Object {
 		this.out_listeners = new Gee.HashMap<string,string>();	
 		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
 		this.out_children = new Gee.ArrayList<Node> ();
+		this.out_array_props = new Gee.HashMap<string,Gee.ArrayList<Node>>() ;
 	
 	
 		
