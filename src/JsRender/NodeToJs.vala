@@ -82,7 +82,7 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		
-		// no properties...
+		// no properties to output...
 		if (this.els.size < 1) {
 			return "";
 		}
