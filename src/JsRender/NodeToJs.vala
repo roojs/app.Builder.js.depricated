@@ -182,7 +182,23 @@ public class JsRender.NodeToJs : Object {
 		}			 
 		// prop arrays...
 		
-		
+		var piter = this.out_props_array.map_iterator();
+
+		while(piter.next()) {
+			total_nodes--;
+
+			this.addLine(this.pad + niter.get_key() + " : [");
+			var pliter = piter.get_value().list_iterator();
+			while (pliter.next()) {
+				suffix = pliter.has_next()  ? "," : "";
+				this.addMultiLine(this.pad + indent_str + 
+					this.mungeChild(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
+			}
+
+			suffix = total_nodes > 0 ? "," : "";
+//					this.mungeChild(this.pad + indent_str, niter.get_value())
+			this.addLine(this.pad + "]" + suffix);			
+		}	
 		
 		
 		
