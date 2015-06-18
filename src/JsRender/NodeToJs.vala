@@ -691,7 +691,7 @@ public class JsRender.NodeToJs : Object {
 			n++;
 			itms +=	this.pad + indent_str  +
 				this.mungeChild( this.pad + indent_str + indent_str ,  ele);
-			
+			this.out_children.add(ele);
 			
 		}
 		itms +=  "\n"+  this.pad + "]"  + "\n";
