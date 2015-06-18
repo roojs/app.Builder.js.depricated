@@ -141,6 +141,7 @@ public class JsRender.NodeToJs : Object {
 		// output the items...
 		// work out remaining items...
 		var  total_nodes = this.out_props.size + 
+				this.out_props_array_plain.size + 
 				(this.out_listeners.size > 0 ? 1 : 0) +
 				this.out_nodeprops.size +
 				this.out_props_array.size +
@@ -153,6 +154,26 @@ public class JsRender.NodeToJs : Object {
 			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 		}
+		
+		// 				out_props_array_plain
+		var paiter = this.out_props_array_plain.map_iterator();
+
+		while(paiter.next()) {
+			total_nodes--;
+
+			this.addLine(this.pad + paiter.get_key() + " : [");
+			var paliter = paiter.get_value().list_iterator();
+			while (paliter.next()) {
+				suffix = paliter.has_next()  ? "," : "";
+				this.addMultiLine(this.pad + indent_str +   paliter.get() + suffix);
+			}
+
+			suffix = total_nodes > 0 ? "," : "";
+//					this.mungeChild(this.pad + indent_str, niter.get_value())
+			this.addLine(this.pad + "]" + suffix);			
+		}	
+
+		
 		// listeners..
 		
 		if (this.out_listeners.size > 0 ) { 
@@ -576,13 +597,15 @@ public class JsRender.NodeToJs : Object {
 			} else {
 				left = leftv;
 			}
-			left += " : ";
-			
-			 
-			
+
 			
 			if (right.length > 0){
-				this.els.add(left + "[\n" +  this.pad + indent_str + indent_str +  
+				if (this.out_props_array_plain.has_key(left)) {
+					this.out_props_array_plain.set(left, new Gee.ArrayList<string>());
+				}
+				this.out_props_array_plain.get(left).add(right);
+			
+				this.els.add(left + " : [\n" +  this.pad + indent_str + indent_str +  
 				             right + "\n" + this.pad + "]");
 			}
 		
