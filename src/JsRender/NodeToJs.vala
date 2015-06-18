@@ -26,7 +26,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.HashMap<string,string> out_listeners;	
 	Gee.HashMap<string,Node> out_nodeprops;
 	Gee.ArrayList<Node> out_children;
-	Gee.HashMap<string,Gee.ArrayList<Node>> out_array_props;
+	Gee.HashMap<string,Gee.ArrayList<Node>> out_props_array;
 	
 	NodeToJs top;
 	string ret;
@@ -48,7 +48,7 @@ public class JsRender.NodeToJs : Object {
 		this.out_listeners = new Gee.HashMap<string,string>();	
 		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
 		this.out_children = new Gee.ArrayList<Node> ();
-		this.out_array_props = new Gee.HashMap<string,Gee.ArrayList<Node>>() ;
+		this.out_props_array = new Gee.HashMap<string,Gee.ArrayList<Node>>() ;
 	
 	
 		
@@ -60,27 +60,6 @@ public class JsRender.NodeToJs : Object {
 		this.line_buffer = "";
 	}
 	
-	string line_buffer;
-	
-	
-	
-	public void addLine(string str= "")
-	{
-		if (this.line_buffer.length > 0) { 
-			this.cur_line++;   
-			this.ret += this.line_buffer+ ",\n";
-		}
-		this.line_buffer = str;
-		
-	}
-	
-	public void addMultiLine(string str= "")
-	{
-		 
-		this.cur_line += str.split("\n").length;
-		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
-		this.ret +=   str + "\n";
-	}
 	
 	/**
 	
@@ -147,6 +126,41 @@ public class JsRender.NodeToJs : Object {
 				"\n" + spad +  "})";
 		     
 	} 
+	
+	public string mungeOut()
+	{
+		if (this.node.props.has_key("* xinclude")) {
+			this.addLine("Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), {");
+	 
+		} else {
+			this.addLine("{");
+		}
+		// output the items...
+		
+		
+	
+	}
+	
+ 
+	
+	
+	
+	public void addLine(string str= "")
+	{
+		this.cur_line ++;
+		this.ret += str+ "\n";
+		
+		
+		
+	}
+	
+	public void addMultiLine(string str= "")
+	{
+		 
+		this.cur_line += str.split("\n").length;
+		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
+		this.ret +=   str + "\n";
+	}
 
 	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
 	{
@@ -219,13 +233,13 @@ public class JsRender.NodeToJs : Object {
 			if (!this.ar_props.has_key(sprop)) {
 				
 				this.ar_props.set(sprop, "");
-				
+				this.out_props_array.set(sprop, new Gee.ArrayList<Node>());
 			} else {
 				old = this.ar_props.get(sprop);
 			}
 			var nstr  = old += old.length > 0 ? ",\n" : "";
 			nstr += this.mungeChild( this.pad + indent_str + indent_str + indent_str ,   pl);
-			
+			this.out_props_array.get(sprop).add( pl);
 	  		this.ar_props.set(sprop, nstr);
 			 
 			
