@@ -580,6 +580,8 @@ public class JsRender.NodeToJs : Object {
 	
 		// handle the childitems  that are arrays.. eg. button[] = {  }...
 		
+		// note this does not handle a mix of nodes and properties with the same 
+		
 		string left;
 		
 		var iter = this.ar_props.map_iterator();
@@ -600,10 +602,10 @@ public class JsRender.NodeToJs : Object {
 
 			
 			if (right.length > 0){
-				if (this.out_props_array_plain.has_key(left)) {
-					this.out_props_array_plain.set(left, new Gee.ArrayList<string>());
-				}
-				this.out_props_array_plain.get(left).add(right);
+				//if (this.out_props_array_plain.has_key(left)) {
+				//	this.out_props_array_plain.set(left, new Gee.ArrayList<string>());
+				//}
+				//this.out_props_array_plain.get(left).add(right);
 			
 				this.els.add(left + " : [\n" +  this.pad + indent_str + indent_str +  
 				             right + "\n" + this.pad + "]");
