@@ -214,7 +214,7 @@ public class JsRender.NodeToJs : Object {
 		while(piter.next()) {
 			total_nodes--;
 
-			this.addLine(this.pad + niter.get_key() + " : [");
+			this.addLine(this.pad + piter.get_key() + " : [");
 			var pliter = piter.get_value().list_iterator();
 			while (pliter.next()) {
 				suffix = pliter.has_next()  ? "," : "";
