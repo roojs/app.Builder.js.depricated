@@ -153,6 +153,19 @@ public class JsRender.NodeToJs : Object {
 				this.out_props_array.size +
 				(this.out_children.size > 0 ? 1 : 0);
 		
+		
+		// * prop
+
+		var niter = this.out_nodeprops.map_iterator();
+
+		while(niter.next()) {
+			total_nodes--;
+			suffix = total_nodes > 0 ? "," : "";
+			this.addMultiLine(this.pad + niter.get_key() + " : " + 
+					this.mungeChild(this.pad + indent_str, niter.get_value())
+			);
+		}	
+		
 		// plain properties.
 		var iter = this.out_props.map_iterator();
 		while(iter.next()) {
@@ -180,33 +193,8 @@ public class JsRender.NodeToJs : Object {
 		}	
 		*/
 		
-		// listeners..
 		
-		if (this.out_listeners.size > 0 ) { 
-			total_nodes--;
-			this.addLine(this.pad + "listeners : {");
-			iter = this.out_listeners.map_iterator();
-			var sz = this.out_listeners.size;
-			while(iter.next()) {
-				sz--;
-				suffix = sz > 0 ? "," : "";
-				this.addMultiLine(this.pad + indent_str + iter.get_key() + " : " + iter.get_value() + suffix);
-			}
-			suffix = total_nodes > 0 ? "," : "";
-			this.addLine(this.pad + "}" + suffix);			
-			
-		}
-		// * prop
-
-		var niter = this.out_nodeprops.map_iterator();
-
-		while(niter.next()) {
-			total_nodes--;
-			suffix = total_nodes > 0 ? "," : "";
-			this.addMultiLine(this.pad + niter.get_key() + " : " + 
-					this.mungeChild(this.pad + indent_str, niter.get_value())
-			);
-		}			 
+				 
 		// prop arrays...
 		
 		var piter = this.out_props_array.map_iterator();
@@ -226,7 +214,22 @@ public class JsRender.NodeToJs : Object {
 //					this.mungeChild(this.pad + indent_str, niter.get_value())
 			this.addLine(this.pad + "]" + suffix);			
 		}	
+		// listeners..
 		
+		if (this.out_listeners.size > 0 ) { 
+			total_nodes--;
+			this.addLine(this.pad + "listeners : {");
+			iter = this.out_listeners.map_iterator();
+			var sz = this.out_listeners.size;
+			while(iter.next()) {
+				sz--;
+				suffix = sz > 0 ? "," : "";
+				this.addMultiLine(this.pad + indent_str + iter.get_key() + " : " + iter.get_value() + suffix);
+			}
+			suffix = total_nodes > 0 ? "," : "";
+			this.addLine(this.pad + "}" + suffix);			
+			
+		}
 		// children..
 		if (this.out_children.size > 0) {
 			this.addLine(this.pad + "items  : [");
