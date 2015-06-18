@@ -556,7 +556,7 @@ public class JsRender.NodeToJs : Object {
 			if (this.doubleStringProps.index_of(k) > -1) {
 				// then use the translated version...
 				
-				els.add(left + " : _this._strings['" + 
+				this.els.add(left + " : _this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
 					"']"
 				);
@@ -566,7 +566,7 @@ public class JsRender.NodeToJs : Object {
 				continue;
 			}
 			if (ktype.down() == "string" && k[0] == '_') {
-				els.add(left + " : _this._strings['" + 
+				this.els.add(left + " : _this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
 					"']"
 				);
