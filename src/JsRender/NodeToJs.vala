@@ -27,6 +27,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.HashMap<string,Node> out_nodeprops;
 	Gee.ArrayList<Node> out_children;
 	Gee.HashMap<string,Gee.ArrayList<Node>> out_props_array;
+	Gee.HashMap<string,Gee.ArrayList<string>> out_props_array_plain;	
 	
 	NodeToJs top;
 	string ret;
@@ -49,9 +50,8 @@ public class JsRender.NodeToJs : Object {
 		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
 		this.out_children = new Gee.ArrayList<Node> ();
 		this.out_props_array = new Gee.HashMap<string,Gee.ArrayList<Node>>() ;
+		this.out_props_array_plain = new Gee.HashMap<string,Gee.ArrayList<string>>() ;
 	
-	
-		
 		
 		
 		this.cur_line = parent == null ? 0 : parent.cur_line;
@@ -455,9 +455,7 @@ public class JsRender.NodeToJs : Object {
 			} else {
 				left = leftv;
 			}
-			left += " : ";
-			
-			
+			 
 			 
 			// next.. is it a function.. or a raw string..
 			if (
@@ -491,8 +489,9 @@ public class JsRender.NodeToJs : Object {
 					nstr =  string.joinv("\n" + this.pad, lines);
 					//nstr =  string.joinv("\n", lines);
 				}
+				this.out_props.set(left, nstr);
 				//print("==> " +  str + "\n");
-				this.els.add(left + nstr);
+				this.els.add(left + " : "+  nstr);
 				continue;
 			}
 			// standard..
@@ -511,7 +510,8 @@ public class JsRender.NodeToJs : Object {
 				|| 
 				ktype.down() == "int"
 			    ) { // boolean or number...?
-				this.els.add(left + v.down() );
+			    this.out_props.set(left, v.down());
+				this.els.add(left + " : " + v.down() );
 				continue;
 			}
 			
@@ -546,8 +546,8 @@ public class JsRender.NodeToJs : Object {
 			
 			var vv = this.node.quoteString(v);
 			// single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-			this.els.add(left + "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
-			
+			this.els.add(left + " : " +  "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
+			this.out_props.set(left,  "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
 
 		   
 		   
