@@ -624,10 +624,10 @@ public class JsRender.NodeToJs : Object {
 		if (this.node.listeners.size < 1) {
 			return;
 		}
-			// munge the listeners.
-			//print("ADDING listeners?");
-		
-	 
+		// munge the listeners.
+		//print("ADDING listeners?");
+	
+ 
 	
 	
 		var keys = new Gee.ArrayList<string>();
@@ -659,7 +659,7 @@ public class JsRender.NodeToJs : Object {
 			}
 			
 			itms +=  this.pad + indent_str  + key.replace("|", "")  + " : " + str;
-
+			this.out_listeners.set(key.replace("|", "") ,str);
 		
 			
 		}
