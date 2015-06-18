@@ -361,7 +361,9 @@ namespace JsRender {
 			var ret = x.munge();
 			var nret = x.ret;
 			
-			return x.munge();
+			// output both files.. so we can diff them...
+			
+			return ret;
 			
 		    
 		}
