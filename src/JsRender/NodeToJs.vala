@@ -145,12 +145,15 @@ public class JsRender.NodeToJs : Object {
 				this.out_props_array.size +
 				(this.out_children.size > 0 ? 1 : 0);
 		
+		// plain properties.
 		var iter = this.out_props.map_iterator();
 		while(iter.next()) {
 			total_nodes--;
 			var suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 		}
+		// listeners..
+		
 		if (this.out_listeners.size > 0 ) { 
 			total_nodes--;
 			this.addLine(this.pad + "listeners : {");
@@ -162,6 +165,10 @@ public class JsRender.NodeToJs : Object {
 				this.addMultiLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 			}			 
 		}
+		
+		
+		
+		
 		
 		return this.ret;
 	
