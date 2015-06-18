@@ -60,6 +60,7 @@ namespace JsRender {
                 "headline",
                 "header",
                 "placeholder",
+                "fieldLabel",
                 
                 };
             for (var i=0;i<dsp.length;i++) {
