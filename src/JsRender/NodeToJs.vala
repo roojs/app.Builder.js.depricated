@@ -200,6 +200,9 @@ public class JsRender.NodeToJs : Object {
 			this.addLine(this.pad + "]" + suffix);			
 		}	
 		
+		// children..
+		
+		
 		
 		
 		return this.ret;
