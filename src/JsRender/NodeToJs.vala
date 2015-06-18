@@ -242,7 +242,7 @@ public class JsRender.NodeToJs : Object {
 				
 			}
 			
-			this.addLine(this.pad + indent_str + "]");
+			this.addLine(this.pad +   "]");
 		}
 		
 		if (this.node.props.has_key("* xinclude")) {
