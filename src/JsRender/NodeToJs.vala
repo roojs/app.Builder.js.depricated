@@ -216,10 +216,10 @@ public class JsRender.NodeToJs : Object {
 		}
 		
 		if (this.node.props.has_key("* xinclude")) {
-			this.addLine("})");
+			this.addLine(this.pad + "})");
 	 
 		} else {
-			this.addLine("}");
+			this.addLine(this.pad + "}");
 		}
 		
 		
