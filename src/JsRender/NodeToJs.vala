@@ -170,17 +170,17 @@ public class JsRender.NodeToJs : Object {
 			
 		}
 		// * prop
-		if (this.out_nodeprops.size > 0 ) { 
+
+		var niter = this.out_nodeprops.map_iterator();
+
+		while(niter.next()) {
 			total_nodes--;
-			this.addLine(this.pad + "listeners : {");
-			iter = this.out_nodeprops.map_iterator();
-			var sz = this.out_listeners.size;
-			while(iter.next()) {
-				sz--;
-				var suffix = sz > 0 ? "," : "";
-				this.addMultiLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
-			}			 
-		}
+			suffix = total_nodes > 0 ? "," : "";
+			this.addMultiLine(this.pad + niter.get_key() + " : " + 
+					this.mungeChild(this.pad + indent_str, niter.get_value())
+			);
+		}			 
+		// prop arrays...
 		
 		
 		
