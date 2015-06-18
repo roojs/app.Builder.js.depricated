@@ -211,7 +211,7 @@ public class JsRender.NodeToJs : Object {
 			}
 
 			suffix = total_nodes > 0 ? "," : "";
-//					this.mungeChildNew(this.pad + indent_str, niter.get_value())
+ 
 			this.addLine(this.pad + "]" + suffix);			
 		}	
 		// listeners..
