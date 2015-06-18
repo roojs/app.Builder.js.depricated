@@ -578,6 +578,9 @@ public class JsRender.NodeToJs : Object {
 	public void readArrayProps()
 	{
 	
+		// this is not needed in the new version
+		// as array props are handled more directly..
+		
 		// handle the childitems  that are arrays.. eg. button[] = {  }...
 		
 		// note this does not handle a mix of nodes and properties with the same 
