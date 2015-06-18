@@ -236,7 +236,7 @@ public class JsRender.NodeToJs : Object {
 			var cniter = this.out_children.list_iterator();
 			while (cniter.next()) {
 				suffix = cniter.has_next()  ? "," : "";
-				this.addMultiLine(this.pad + indent_str
+				this.addMultiLine(this.pad + indent_str +
 					this.mungeChildNew(this.pad + indent_str  + indent_str, cniter.get()) + suffix
 				);
 				
