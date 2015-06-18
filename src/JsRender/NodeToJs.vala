@@ -627,8 +627,7 @@ public class JsRender.NodeToJs : Object {
 			// munge the listeners.
 			//print("ADDING listeners?");
 		
-		var liter = this.node.listeners.map_iterator();
-	
+	 
 	
 	
 		var keys = new Gee.ArrayList<string>();
