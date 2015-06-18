@@ -61,22 +61,6 @@ public class JsRender.NodeToJs : Object {
 	}
 	
 	
-	/**
-	
-	This currently works by creating a key/value array of this.els, which is just an array of properties..
-	this is so that join() works...
-	
-	how this could work:
-	a) output header
-	b) output plan properties.
-	c) output listeners..
-	c) output *prop
-	d) output children
-	
-	
-	
-	*/
-	
 	
 	
 	
@@ -126,7 +110,25 @@ public class JsRender.NodeToJs : Object {
 				"\n" + spad +  "})";
 		     
 	} 
+		/**
 	
+	This currently works by creating a key/value array of this.els, which is just an array of properties..
+	this is so that join() works...
+	
+	how this could work:
+	a) output header
+	b) output plan properties.
+	c) output listeners..
+	c) output *prop
+	g) output prop_arrays..
+	d) output children
+	e) 
+	
+	
+	
+	*/
+	
+
 	public string mungeOut()
 	{
 		if (this.node.props.has_key("* xinclude")) {
@@ -136,6 +138,23 @@ public class JsRender.NodeToJs : Object {
 			this.addLine("{");
 		}
 		// output the items...
+		// work out remaining items...
+		var  total_nodes = this.out_props.size + 
+				(this.out_listeners.size > 0 ? 1 : 0) +
+				this.out_nodeprops.size +
+				this.out_props_array.size +
+				(this.out_children.size > 0 ? 1 : 0);
+		
+		var iter = this.out_props.map_iterator();
+		while(iter.next()) {
+			total_nodes--;
+			var suffix = total_nodes > 0 ? "," : "";
+			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
+		}
+		if (this.listeners) { 
+			
+		
+		}
 		
 		
 	
