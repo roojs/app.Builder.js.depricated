@@ -82,10 +82,13 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		
-		
+		// no properties...
 		if (this.els.size < 1) {
 			return "";
 		}
+		
+		
+		
 		// oprops...	
 			
 		var spad = pad.substring(0, this.pad.length-indent);
