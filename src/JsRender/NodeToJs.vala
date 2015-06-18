@@ -163,7 +163,7 @@ public class JsRender.NodeToJs : Object {
 			}			 
 		}
 		
-		
+		return this.ret;
 	
 	}
 	
