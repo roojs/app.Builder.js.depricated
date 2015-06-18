@@ -294,6 +294,12 @@ public class JsRender.NodeToJs : Object {
 		return x.munge();
 	}
 	
+		public string mungeChildNew(string pad ,  Node cnode)
+	{
+		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
+		x.munge();
+		return x.ret;
+	}
 	
 
 	
