@@ -91,7 +91,7 @@ public class JsRender.NodeToJs : Object {
 		
 		// oprops...	
 			
-		var spad = pad.substring(0, this.pad.length-indent);
+		var spad = this.pad.substring(0, this.pad.length-indent);
 		
 		
 		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
