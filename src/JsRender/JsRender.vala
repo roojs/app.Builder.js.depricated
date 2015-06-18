@@ -357,6 +357,10 @@ namespace JsRender {
 				return "";
 			}
 			var x = new NodeToJs(this.tree, this.doubleStringProps, pad, null);
+			
+			var ret = x.munge();
+			var nret = x.ret;
+			
 			return x.munge();
 			
 		    
