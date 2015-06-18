@@ -356,7 +356,7 @@ namespace JsRender {
 			if (this.tree == null) {
 				return "";
 			}
-			var x = new NodeToJs(this.tree, this.doubleStringProps, pad);
+			var x = new NodeToJs(this.tree, this.doubleStringProps, pad, null);
 			return x.munge();
 			
 		    
