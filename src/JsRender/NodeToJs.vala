@@ -57,7 +57,7 @@ public class JsRender.NodeToJs : Object {
 		this.cur_line = parent == null ? 0 : parent.cur_line;
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
-		this.line_buffer = "";
+ 
 	}
 	
 	
