@@ -183,11 +183,14 @@ public class JsRender.NodeToJs : Object {
 		}	
 		
 		// plain properties.
-		var iter = this.out_props.map_iterator();
+		var iter = this.orderedPropKeys().list_iterator();
 		while(iter.next()) {
 			total_nodes--;
 			suffix = total_nodes > 0 ? "," : "";
-			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
+			var k = iter.get();
+			var v = this.out_props.get(k);
+			
+			this.addLine(this.pad + k + " : " + v + suffix);
 		}
 		/*
 		// 				out_props_array_plain -- not used?
