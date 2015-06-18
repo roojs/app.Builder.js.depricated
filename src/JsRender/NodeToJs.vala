@@ -160,8 +160,8 @@ public class JsRender.NodeToJs : Object {
 			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + iter.get_key() + " : " + iter.get_value() + suffix);
 		}
-		
-		// 				out_props_array_plain
+		/*
+		// 				out_props_array_plain -- not used?
 		var paiter = this.out_props_array_plain.map_iterator();
 
 		while(paiter.next()) {
@@ -178,7 +178,7 @@ public class JsRender.NodeToJs : Object {
 //					this.mungeChild(this.pad + indent_str, niter.get_value())
 			this.addLine(this.pad + "]" + suffix);			
 		}	
-
+		*/
 		
 		// listeners..
 		
