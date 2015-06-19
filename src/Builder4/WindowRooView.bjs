@@ -21,7 +21,7 @@
    "Gtk.SourceSearchContext searchcontext" : "",
    "# JsRender.JsRender file" : "null",
    "int height" : 0,
-   "| void requestRedraw" : "() {\n    this.view.renderJS(false);\n}",
+   "| void requestRedraw" : "() {\n    this.view.renderJS(false);\n    this.sourceview.loadFile();   \n}",
    "$ xns" : "Gtk",
    "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
    "# Xcls_MainWindow main_window" : "",

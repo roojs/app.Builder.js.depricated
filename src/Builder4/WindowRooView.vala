@@ -128,6 +128,7 @@ public class Xcls_WindowRooView : Object
     }
     public void requestRedraw () {
         this.view.renderJS(false);
+        this.sourceview.loadFile();   
     }
     public void forwardSearch (bool change_focus) {
     
