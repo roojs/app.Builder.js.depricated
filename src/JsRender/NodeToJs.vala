@@ -205,7 +205,7 @@ public class JsRender.NodeToJs : Object {
 			var k = iter.get();
 			var v = this.out_props.get(k);
 			
-			this.addLine(this.pad + k + " : " + v + suffix);
+			this.addMultiLine(this.pad + k + " : " + v + suffix);
 		}
 		/*
 		// 				out_props_array_plain -- not used?
