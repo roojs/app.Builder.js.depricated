@@ -86,7 +86,7 @@ public class JsRender.NodeToJs : Object {
 		if (this.els.size < 1) {
 			return "";
 		}
-		
+
 		this.mungeOut();
 		
 		// oprops...	
@@ -165,7 +165,7 @@ public class JsRender.NodeToJs : Object {
 
 	public string mungeOut()
 	{
-		
+		this.node.line_start = this.cur_line;
 		var spad = this.pad.substring(0, this.pad.length-indent);
 		
 		if (this.node.props.has_key("* xinclude")) {
@@ -301,18 +301,18 @@ public class JsRender.NodeToJs : Object {
 	public void addLine(string str= "")
 	{
 		this.cur_line ++;
-		//this.ret += str+ "\n";
-		this.ret +=  "/*%d*/ ".printf(this.cur_line -1) + str + "\n";
+		this.ret += str+ "\n";
+		//this.ret +=  "/*%d*/ ".printf(this.cur_line -1) + str + "\n";
 		
 		
 	}
 	
 	public void addMultiLine(string str= "")
 	{
-		 var l = cur_line;
+		//var l = cur_line;
 		this.cur_line += str.split("\n").length;
-		this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
-		//this.ret +=   str + "\n";
+		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
+		this.ret +=   str + "\n";
 	}
 
 	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
