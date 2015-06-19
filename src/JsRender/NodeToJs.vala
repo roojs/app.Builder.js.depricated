@@ -288,7 +288,7 @@ public class JsRender.NodeToJs : Object {
 		} else {
 			this.ret += spad + "}";
 		}
-		
+		this.node.line_end = this.cur_line;
 		
 		return this.ret;
 	
