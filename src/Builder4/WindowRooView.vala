@@ -1101,10 +1101,10 @@ public class Xcls_WindowRooView : Object
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
-             
+            
             
             for (var i = 0; i < buf.get_line_count();i++) {
-                if (i < sel.line_start || i > sel.line_end) {
+                if (i < (sel.line_start -1) || i > (sel.line_end -1)) {
                    
                     sbuf.get_iter_at_line(out iter, i);
                     sbuf.create_source_mark(null, "grey", iter);
@@ -1139,34 +1139,9 @@ public class Xcls_WindowRooView : Object
             }
             
             // get the string from the rendered tree...
-            
-            var valafn = "";
-              try {             
-                   var  regex = new Regex("\\.bjs$");
-                
-                 
-                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".js");
-                 } catch (GLib.RegexError e) {
-                     this.loading = false;
-                    return;
-                }   
-            
-        
-           if (!FileUtils.test(valafn,FileTest.IS_REGULAR) ) {
-                print("File path has no errors\n");
-                this.loading = false;
-                return  ;
-            }
-            
-            string str;
-            try {
-            
-                GLib.FileUtils.get_contents (valafn, out str);
-            } catch (Error e) {
-                this.loading = false;
-                return  ;
-            }
-        
+             
+             var src = _this.file.toSource();
+             
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);
             var lm = Gtk.SourceLanguageManager.get_default();
