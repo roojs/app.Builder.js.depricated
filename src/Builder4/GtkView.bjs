@@ -31,21 +31,21 @@
    "items" : [
     {
      "id" : "notebook",
-     "* pack" : "pack_start,true,true,0",
      "xtype" : "Notebook",
+     "* pack" : "pack_start,true,true,0",
      "$ xns" : "Gtk",
      "items" : [
       {
        "id" : "label_preview",
-       "* pack" : false,
        "xtype" : "Label",
+       "* pack" : false,
        "$ xns" : "Gtk",
        "utf8 label" : "Preview"
       },
       {
        "id" : "label_code",
-       "xtype" : "Label",
        "* pack" : false,
+       "xtype" : "Label",
        "$ xns" : "Gtk",
        "utf8 label" : "Preview Generated Code"
       },
@@ -56,14 +56,14 @@
        "items" : [
         {
          "id" : "view_layout",
-         "xtype" : "Layout",
          "* pack" : "add",
+         "xtype" : "Layout",
          "$ xns" : "Gtk",
          "items" : [
           {
            "id" : "container",
-           "* pack" : "put,10,10",
            "xtype" : "Box",
+           "* pack" : "put,10,10",
            "$ xns" : "Gtk",
            "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL"
           }
