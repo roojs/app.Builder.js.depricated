@@ -146,7 +146,7 @@ public class JsRender.Node : Object {
 			return (int)b-(int)a;
 		});
 		this.node_lines.sort((a,b) => {   
-			return (int)b-(int)a;
+			return (int)a-(int)b;
 		});
 	}
 	public Node? lineToNode(int line)
