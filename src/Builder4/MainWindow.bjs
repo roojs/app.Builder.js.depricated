@@ -653,7 +653,8 @@
            "* pack" : "add",
            "xtype" : "MenuItem",
            "string label" : "Compile Status:",
-           "$ xns" : "Gtk"
+           "$ xns" : "Gtk",
+           "bool visible" : false
           },
           {
            "listeners" : {

@@ -2539,6 +2539,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "Compile Status:";
+            this.el.visible = false;
         }
 
         // user defined functions
