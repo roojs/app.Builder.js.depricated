@@ -1069,7 +1069,7 @@ public class WindowState : Object
 				if (!has_errors) { 
 					this.win.statusbar_compilestatus_run.el.hide();
 				}
-				var gbuf =   this.window_gladeview.sourceview
+				var gbuf =   this.window_gladeview.sourceview;
 				gbuf.highlightErrorsJson("ERR", obj);
 				gbuf.highlightErrorsJson("WARN", obj);
 				gbuf.highlightErrorsJson("DEPR", obj);			
