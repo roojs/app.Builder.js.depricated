@@ -60,7 +60,7 @@
            "items" : [
             {
              "listeners" : {
-              "activate" : "  ( ) => {\n        Xcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}"
+              "activate" : "( ) => {\n       _this.openNewWindow();\n}"
              },
              "* pack" : "append",
              "xtype" : "MenuItem",
