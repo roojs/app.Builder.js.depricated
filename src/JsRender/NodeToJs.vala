@@ -32,7 +32,7 @@ public class JsRender.NodeToJs : Object {
 	NodeToJs top;
 	public string ret;
 	
-	int cur_line;
+	public int cur_line;
 
 	
 	public NodeToJs( Node node, Gee.ArrayList<string> doubleStringProps, string pad, NodeToJs? parent) 
@@ -54,7 +54,7 @@ public class JsRender.NodeToJs : Object {
 	
 		
 		
-		this.cur_line = parent == null ? 0 : parent.cur_line -1 ; //-1 as we usuall concat onto the existin gline?
+		this.cur_line = parent == null ? 0 : parent.cur_line  ; //-1 as we usuall concat onto the existin gline?
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
  
