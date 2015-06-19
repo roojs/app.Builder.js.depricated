@@ -590,6 +590,11 @@ namespace JsRender {
              
              
         }
+        /**
+         Bootstrap modal dialog 
+         
+        */
+        
         
         public string toSourceModal(bool isPreview) 
         {
@@ -633,12 +638,22 @@ namespace JsRender {
                 "};",
                 ""
             };
+			return this.mungeToStringWrap("    ",   
+        		this.outputHeader() + "\n" +  this.name + string.joinv("\n", adda), // header
+        		string.joinv("\n", addb) // footer
+    		)
             return this.outputHeader() + "\n" + 
                 this.name + string.joinv("\n", adda) + o + string.joinv("\n", addb);
              
              
              
         }
+		this.mungeToStringWrap(pad, prefix, footer)
+		{
+		
+		} 
+        
+        
         
         
         public string   pathToPart()
