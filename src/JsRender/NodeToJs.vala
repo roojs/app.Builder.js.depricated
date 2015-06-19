@@ -92,7 +92,8 @@ public class JsRender.NodeToJs : Object {
 		}
 
 		this.mungeOut();
-		
+		return this.ret;
+		/*
 		// oprops...	
 			
 		var spad = this.pad.substring(0, this.pad.length-indent);
@@ -115,7 +116,7 @@ public class JsRender.NodeToJs : Object {
 			 "{\n" +
 				this.pad  + str_props + 
 				"\n" + spad +  "})";
-		     
+		*/   
 	} 
 		/**
 	
