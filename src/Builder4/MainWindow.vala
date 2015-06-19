@@ -2781,6 +2781,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             this.el.always_show_image = true;
             this.el.label = "Run";
+            this.el.visible = false;
             var child_0 = new Xcls_Image81( _this );
             child_0.ref();
             this.el.set_image (  child_0.el  );
