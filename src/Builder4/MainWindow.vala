@@ -2381,6 +2381,7 @@ public class Xcls_MainWindow : Object
             		
             			break;
             	}
+            	_this.search_results.el.show();
             	if (res > 0) {
             		_this.search_results.el.label = "%d Matches".printf(res);
             	} else {
