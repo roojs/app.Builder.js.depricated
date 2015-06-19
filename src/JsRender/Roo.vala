@@ -70,32 +70,18 @@ namespace JsRender {
             
         }
     
-    /*    
-        setNSID : function(id)
-        {
-            
-            this.items[0]['|module'] = id;
-       
-            
-        },
-        
-        
-        getType: function() {
-            return 'Roo';
-        },
-
-    */
+ 
 		
-	public   override void	 removeFiles() {
-		var html = GLib.Path.get_dirname(this.path) +"/templates/" + name + ".html";
-		if (FileUtils.test(html, FileTest.EXISTS)) {
-			GLib.FileUtils.remove(html);
+		public   override void	 removeFiles() {
+			var html = GLib.Path.get_dirname(this.path) +"/templates/" + name + ".html";
+			if (FileUtils.test(html, FileTest.EXISTS)) {
+				GLib.FileUtils.remove(html);
+			}
+			var js = GLib.Path.get_dirname(this.path) +"/" + name + ".html";
+			if (FileUtils.test(js, FileTest.EXISTS)) {
+				GLib.FileUtils.remove(js);
+			}
 		}
-		var js = GLib.Path.get_dirname(this.path) +"/" + name + ".html";
-		if (FileUtils.test(js, FileTest.EXISTS)) {
-			GLib.FileUtils.remove(js);
-		}
-	}
 		
         public  override void  loadItems() throws GLib.Error // : function(cb, sync) == original was async.
         {
@@ -141,7 +127,7 @@ namespace JsRender {
 				this.tree.loadFromJson(tree_base, int.parse(bjs_version_str));
 			}
 			this.loaded = true;
-
+			this.toSource(); // force it to number the lines...
 
             
         }
