@@ -131,7 +131,7 @@ public class JsRender.Node : Object {
 	}
 	
 	public void setNodeLine(int line, Node node) {
-		print("Add node @ %s\n", line);
+		print("Add node @ %d\n", line);
 		this.node_lines.add(line);
 		this.node_lines_map.set(line, node);
 	}
@@ -141,6 +141,7 @@ public class JsRender.Node : Object {
 		this.line_map.set(line, type + ":" + prop);
 	}
 	public void sortLines() {
+		print("sortLines\n");
 		this.lines.sort((a,b) => {   
 			return (int)b-(int)a;
 		});
