@@ -727,7 +727,7 @@ namespace JsRender {
 	    		var reg = new Regex("[^A-Za-z.]+");
             
     			 modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
-            } catch (Exception e) {
+            } catch (RegexError e) {
         		//noop..
             }
     		string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
