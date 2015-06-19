@@ -501,6 +501,7 @@ public class WindowState : Object
 	public void webkitViewInit()
 	{
 		this.window_rooview  =new Xcls_WindowRooView();
+		this.window_rooview.main_window = this.win;
 		this.window_rooview.ref();
 		((Gtk.Container)(this.win.rooview.el.get_widget())).add(this.window_rooview.el);
 		this.window_rooview.el.show_all();
