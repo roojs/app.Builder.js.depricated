@@ -94,7 +94,11 @@ public class WindowState : Object
 		this.children_loaded = true;
 		
 		this.left_tree.node_selected.connect((sel) => {
-			this.window_gladeview.sourceview.nodeSelected(sel);
+			if (this.file.xtype == "Roo") { 
+				this.window_rooview.sourceview.nodeSelected(sel);			
+			} else {
+				this.window_gladeview.sourceview.nodeSelected(sel);
+			}
 		});
 		this.valasource = new Palete.ValaSource();
 		this.valasource.compiled.connect(this.valaCompiled);
