@@ -582,8 +582,7 @@ namespace JsRender {
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             
             
-            var o = this.mungeToString("    ");   
-
+           
  
             string[] adda = { " = {",
                 "",
@@ -620,9 +619,14 @@ namespace JsRender {
                 "};",
                 ""
             };
-            return  this.outputHeader() + "\n" +
-                this.name + string.joinv("\n", adda) + o + string.joinv("\n", addb);
             
+             var o = this.mungeToString("    ");   
+
+            return this.mungeToStringWrap("    ",   
+        		this.outputHeader() + "\n" + .name + string.joinv("\n", adda), //header
+        		string.joinv("\n", addb) // footer
+    		)
+             
              
              
              
@@ -679,16 +683,11 @@ namespace JsRender {
         		this.outputHeader() + "\n" +  this.name + string.joinv("\n", adda), // header
         		string.joinv("\n", addb) // footer
     		)
-            return this.outputHeader() + "\n" + 
-                this.name + string.joinv("\n", adda) + o + string.joinv("\n", addb);
              
              
              
         }
-		this.mungeToStringWrap(pad, prefix, footer)
-		{
-		
-		} 
+	 
         
         
         
