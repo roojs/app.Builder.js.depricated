@@ -1138,6 +1138,8 @@ public class Xcls_WindowRooView : Object
                 return;
             }
             
+            // get the string from the rendered tree...
+            
             var valafn = "";
               try {             
                    var  regex = new Regex("\\.bjs$");
