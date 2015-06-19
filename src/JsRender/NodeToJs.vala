@@ -278,7 +278,7 @@ public class JsRender.NodeToJs : Object {
 	{
 		var l = cur_line;
 		this.cur_line += str.split("\n").length;
-		//this.ret +=   "/*%d(%d-%d)*/ ".printf(l, this.node.line_start,this.node.line_end)+ str + "\n";
+		this.ret +=   "/*%d(%d-%d)*/ ".printf(l, this.node.line_start,this.node.line_end)+ str + "\n";
 		//this.ret +=   str + "\n";
 	}
  
