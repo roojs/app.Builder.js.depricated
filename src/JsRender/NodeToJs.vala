@@ -18,10 +18,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.ArrayList<string>  doubleStringProps;  // need to think if this is a good idea like this
 	string pad;
 	
-	//Gee.ArrayList<string> els;
-        //Gee.ArrayList<string> skip;
-	//Gee.HashMap<string,string> ar_props;
-	
+	  
 	Gee.HashMap<string,string> out_props;
 	Gee.HashMap<string,string> out_listeners;	
 	Gee.HashMap<string,Node> out_nodeprops;
@@ -93,31 +90,7 @@ public class JsRender.NodeToJs : Object {
 
 		this.mungeOut();
 		return this.ret;
-		
-		/*
-		// oprops...	
-			
-		var spad = this.pad.substring(0, this.pad.length-indent);
-		
-		
-		var str_props = gLibStringListJoin(",\n" + this.pad , this.els) ;
-		//print ("STR PROPS: " + str_props);
-		
-		
-		
-		if (!this.node.props.has_key("* xinclude")) {
-			return   "{\n" +
-				this.pad  + str_props + 
-				"\n" + spad +  "}";
-		}
-		// xinclude...
-		
-
-		return "Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), "+
-			 "{\n" +
-				this.pad  + str_props + 
-				"\n" + spad +  "})";
-		*/   
+		 
 	} 
 		/**
 	
@@ -192,17 +165,6 @@ public class JsRender.NodeToJs : Object {
 				(this.out_children.size > 0 ? 1 : 0);
 		
 		
-		// * prop
-
-		var niter = this.out_nodeprops.map_iterator();
-
-		while(niter.next()) {
-			total_nodes--;
-			suffix = total_nodes > 0 ? "," : "";
-			var l = this.pad + niter.get_key() + " : " + 
-					this.mungeChildNew(this.pad + indent_str, niter.get_value()) + suffix;
-			this.addMultiLine(l);
-		}	
 		
 		// plain properties.
 		var iter = this.orderedPropKeys().list_iterator();
@@ -214,47 +176,7 @@ public class JsRender.NodeToJs : Object {
 			
 			this.addMultiLine(this.pad + k + " : " + v + suffix);
 		}
-		/*
-		// 				out_props_array_plain -- not used?
-		var paiter = this.out_props_array_plain.map_iterator();
-
-		while(paiter.next()) {
-			total_nodes--;
-
-			this.addLine(this.pad + paiter.get_key() + " : [");
-			var paliter = paiter.get_value().list_iterator();
-			while (paliter.next()) {
-				suffix = paliter.has_next()  ? "," : "";
-				this.addMultiLine(this.pad + indent_str +   paliter.get() + suffix);
-			}
-
-			suffix = total_nodes > 0 ? "," : "";
-//					this.mungeChild(this.pad + indent_str, niter.get_value())
-			this.addLine(this.pad + "]" + suffix);			
-		}	
-		*/
-		
-		
-				 
-		// prop arrays...
-		
-		var piter = this.out_props_array.map_iterator();
-
-		while(piter.next()) {
-			total_nodes--;
-
-			this.addLine(this.pad + piter.get_key() + " : [");
-			var pliter = piter.get_value().list_iterator();
-			while (pliter.next()) {
-				suffix = pliter.has_next()  ? "," : "";
-				this.addMultiLine(this.pad + indent_str + 
-					this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
-			}
-
-			suffix = total_nodes > 0 ? "," : "";
- 
-			this.addLine(this.pad + "]" + suffix);			
-		}	
+	 
 		// listeners..
 		
 		if (this.out_listeners.size > 0 ) { 
@@ -274,6 +196,41 @@ public class JsRender.NodeToJs : Object {
 			this.addLine(this.pad + "}" + suffix);			
 			
 		}
+		
+		//------- at this point it is the end of the code relating directly to the object..
+		
+		this.node.line_end = this.cur_line;
+		// * prop
+
+		var niter = this.out_nodeprops.map_iterator();
+
+		while(niter.next()) {
+			total_nodes--;
+			suffix = total_nodes > 0 ? "," : "";
+			var l = this.pad + niter.get_key() + " : " + 
+					this.mungeChildNew(this.pad + indent_str, niter.get_value()) + suffix;
+			this.addMultiLine(l);
+		}			 
+		// prop arrays...
+		
+		var piter = this.out_props_array.map_iterator();
+
+		while(piter.next()) {
+			total_nodes--;
+
+			this.addLine(this.pad + piter.get_key() + " : [");
+			var pliter = piter.get_value().list_iterator();
+			while (pliter.next()) {
+				suffix = pliter.has_next()  ? "," : "";
+				this.addMultiLine(this.pad + indent_str + 
+					this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
+			}
+
+			suffix = total_nodes > 0 ? "," : "";
+ 
+			this.addLine(this.pad + "]" + suffix);			
+		}	
+		
 		// children..
 		if (this.out_children.size > 0) {
 			this.addLine(this.pad + "items  : [" );
@@ -295,7 +252,7 @@ public class JsRender.NodeToJs : Object {
 		} else {
 			this.ret += spad + "}";
 		}
-		this.node.line_end = this.cur_line;
+		
 		this.node.sortLines();
 		return this.ret;
 	
