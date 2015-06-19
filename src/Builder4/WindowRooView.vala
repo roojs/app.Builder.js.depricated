@@ -1140,7 +1140,7 @@ public class Xcls_WindowRooView : Object
             
             // get the string from the rendered tree...
              
-             var src = _this.file.toSource();
+             var str = _this.file.toSource();
              
         //    print("setting str %d\n", str.length);
             buf.set_text(str, str.length);

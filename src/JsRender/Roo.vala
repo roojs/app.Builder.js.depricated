@@ -411,8 +411,12 @@ namespace JsRender {
             if (top == null) {
                 return "";
             }
-            // get the translatable strings..
             
+            
+            
+            // get the translatable strings.. = we reload them again so calling methods get the right data...
+            this.transStrings = new Gee.HashMap<string,string>();
+			this.findTransStrings(this.tree);
             
             
             if (top.contains("Dialog")) {
