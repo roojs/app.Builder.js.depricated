@@ -109,7 +109,7 @@ public class JsRender.NodeToJs : Object {
 				"\n" + spad +  "}";
 		}
 		// xinclude...
-
+		
 
 		return "Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), "+
 			 "{\n" +
@@ -294,7 +294,7 @@ public class JsRender.NodeToJs : Object {
 			this.ret += spad + "}";
 		}
 		this.node.line_end = this.cur_line;
-		
+		this.node.sortLines();
 		return this.ret;
 	
 	}
