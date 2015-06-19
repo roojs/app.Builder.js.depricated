@@ -1082,6 +1082,8 @@ public class Xcls_WindowRooView : Object
                 // no highlighting..
                 return;
             }
+            
+            print("highlight region %d to %d\n", sel.line_start,sel.line_end);
             Gtk.TextIter iter;   
             sbuf.get_iter_at_line(out iter,  sel.line_start);
             
