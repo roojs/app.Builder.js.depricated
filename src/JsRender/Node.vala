@@ -102,6 +102,8 @@ public class JsRender.Node : Object {
 	public string  xvala_cls;
 	public string xvala_xcls; // 'Xcls_' + id;
 	public string xvala_id; // item id or ""
+	
+	// line markers..
 	public int line_start;
 	public int line_end;
 	public Gee.ArrayList<int> lines;
