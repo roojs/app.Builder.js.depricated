@@ -160,6 +160,9 @@ public class Xcls_MainWindow : Object
     
     
     }
+    public return_type XXXX () {
+    
+    }
     public             void show () {
        
         this.el.show_all();
