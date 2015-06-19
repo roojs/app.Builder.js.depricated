@@ -169,6 +169,7 @@ public class JsRender.Node : Object {
 			if (el == line) {
 				print("SAME\n");
 				l = el;
+				break;
 			}
 			if (l > -1) {
 				print("RETURNING NODE ON LINE %d", l);
