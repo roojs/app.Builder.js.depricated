@@ -200,6 +200,9 @@ public class JsRender.NodeToJs : Object {
 		//------- at this point it is the end of the code relating directly to the object..
 		
 		this.node.line_end = this.cur_line;
+		
+		
+		
 		// * prop
 
 		var niter = this.out_nodeprops.map_iterator();
@@ -278,23 +281,7 @@ public class JsRender.NodeToJs : Object {
 		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
 		this.ret +=   str + "\n";
 	}
-/*
-	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
-	{
-		var ret = "";
-		for (var i = 0; i < ar.size; i++) {
-			ret += i>0 ? sep : "";
-			ret += ar.get(i);
-		}
-		return ret;
-
-	}
-	public string mungeChild(string pad ,  Node cnode)
-	{
-		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
-		return x.munge();
-	}
-	*/
+ 
 	public string mungeChildNew(string pad ,  Node cnode )
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
@@ -338,11 +325,7 @@ public class JsRender.NodeToJs : Object {
 				// munge property..??
 				
 				this.out_nodeprops.set(prop, pl);
-				
-				//this.els.add( prop  + " : " + this.mungeChild (  this.pad + indent_str,  pl));
-				
-				
-				//keys.push(prop);
+				 
 				continue;
 			}
 
@@ -358,17 +341,7 @@ public class JsRender.NodeToJs : Object {
 				this.out_props_array.set(sprop, new Gee.ArrayList<Node>());
 			}
 			
-			/*
-			if (!this.ar_props.has_key(sprop)) {
-				
-				this.ar_props.set(sprop, "");
-				this.out_props_array.set(sprop, new Gee.ArrayList<Node>());
-			} else {
-				old = this.ar_props.get(sprop);
-			}
-			var nstr  = old += old.length > 0 ? ",\n" : "";
-			nstr += this.mungeChild( this.pad + indent_str + indent_str + indent_str ,   pl);
-			*/
+			 
 			this.out_props_array.get(sprop).add( pl);
 	  		//this.ar_props.set(sprop, nstr);
 			 
@@ -432,7 +405,7 @@ public class JsRender.NodeToJs : Object {
 		
 		try {
 			func_regex = new Regex("^\\s+|\\s+$");
-		} catch (Error e) {
+		} catch (RegexError e) {
 			print("failed to build regex");
 			return;
 		}
@@ -604,51 +577,7 @@ public class JsRender.NodeToJs : Object {
 		   
 		}
 	}
-	/*
-	public void readArrayProps()
-	{
-	
-		// this is not needed in the new version
-		// as array props are handled more directly..
-		
-		// handle the childitems  that are arrays.. eg. button[] = {  }...
-		
-		// note this does not handle a mix of nodes and properties with the same 
-		
-		string left;
-		
-		var iter = this.ar_props.map_iterator();
-		while (iter.next()) {
-			var k = iter.get_key();
-			var right = iter.get_value();
-			
-			string leftv = k[0] == '|' ? k.substring(1) : k;
-			if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
-				left = "'" + leftv + "'";
-			} else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
-				var val = this.node.quoteString(leftv);
-				
-				left = "'" + val.substring(1, val.length-2).replace("'", "\\'") + "'";
-			} else {
-				left = leftv;
-			}
-
-			
-			if (right.length > 0){
-				//if (this.out_props_array_plain.has_key(left)) {
-				//	this.out_props_array_plain.set(left, new Gee.ArrayList<string>());
-				//}
-				//this.out_props_array_plain.get(left).add(right);
-			
-				//this.els.add(left + " : [\n" +  this.pad + indent_str + indent_str +  
-				//             right + "\n" + this.pad + "]");
-			}
-		
-			
-		}
-
-	}
-	*/
+	 
 	public void readListeners()
 	{
 		
@@ -673,30 +602,26 @@ public class JsRender.NodeToJs : Object {
 			//return a < b ? -1 : 1;
 		});
 	
-		var itms = "listeners : {\n";
-		
+		 
 		for (var i = 0; i< keys.size; i++) {
 			var key = keys.get(i);
 			var val = this.node.listeners.get(key);
 		
 	
-			itms += i >0 ? ",\n" : "";	
-			// 
+			 // 
 			var str = val.strip();
 			var lines = str.split("\n");
 			if (lines.length > 0) {
 				//str = string.joinv("\n" + this.pad + "	   ", lines);
 				str = string.joinv("\n" + this.pad + indent_str + indent_str , lines);
 			}
-			
-			itms +=  this.pad + indent_str  + key.replace("|", "")  + " : " + str;
+			 
 			this.out_listeners.set(key.replace("|", "") ,str);
 		
 			
 		}
-		itms += "\n" + this.pad + "}";
-		//print ( "ADD " + itms); 
-		//this.els.add(itms);
+		 
+		 
 
 	}
 
@@ -715,13 +640,7 @@ public class JsRender.NodeToJs : Object {
 			if (ele.props.has_key("* prop")) {
 				continue;
 			}
-			/*if (n > 0) {
-				 itms += ",\n";
-			}
-			n++;
-			itms +=	this.pad + indent_str  +
-				this.mungeChild( this.pad + indent_str + indent_str ,  ele);
-				*/
+			 
 			this.out_children.add(ele);
 			
 		}
