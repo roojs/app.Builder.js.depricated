@@ -1133,7 +1133,7 @@ public class Xcls_WindowRooView : Object
             
         
             if (_this.file == null || _this.file.xtype != "Roo") {
-                print("xtype != Gtk");
+                print("xtype != Roo");
                 this.loading = false;
                 return;
             }
