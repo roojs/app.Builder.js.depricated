@@ -154,6 +154,11 @@ public class JsRender.Node : Object {
 		print("Searching for line %d\n",line);
 		var l = -1;
 		foreach(int el in this.node_lines) {
+			print("all lines %d\n", el);
+		}
+		
+		
+		foreach(int el in this.node_lines) {
 			print("?match %d\n", el);
 			if (el < line) {
 				
