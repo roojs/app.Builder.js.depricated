@@ -331,10 +331,10 @@ public class JsRender.NodeToJs : Object {
 		return x.munge();
 	}
 	
-	public string mungeChildNew(string pad ,  Node cnode, int offset = 0)
+	public string mungeChildNew(string pad ,  Node cnode )
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
-		x.cur_line -= offset;
+	 
 		x.munge();
 		return x.ret;
 	}
