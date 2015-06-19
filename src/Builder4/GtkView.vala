@@ -528,7 +528,7 @@ public class Xcls_GtkView : Object
             
           
             // this is connected in widnowstate
-            print("node selected\n");
+            print("Roo-view - node selected\n");
             var buf = this.el.get_buffer();
          
             var sbuf = (Gtk.SourceBuffer) buf;
