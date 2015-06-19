@@ -137,10 +137,10 @@ namespace JsRender {
 		}
         public override void setSource(string str) {}
         
-        public override string toSource()
+        public override string toSource() // no seed support currently.
         {
         
-            
+            /*
             if (this.tree == null) {
                 return "";
             }
@@ -164,9 +164,9 @@ namespace JsRender {
             src += this.name + ".init();\n";
             // register it in the cache
             src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n";
-            
-            
             return src;
+            */
+            return "";
             
             
         }
