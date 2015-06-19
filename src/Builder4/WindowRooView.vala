@@ -1078,6 +1078,7 @@ public class Xcls_WindowRooView : Object
             
             
              if (sel == null) {
+        	     print("no selected node\n");
                 // no highlighting..
                 return;
             }
