@@ -2361,6 +2361,7 @@ public class Xcls_MainWindow : Object
             });
             this.el.changed.connect( () => {
             	if (this.el.text == "") {
+            		_this.search_results.el.hide();
             		return;
             	}
             	var res = 0;
