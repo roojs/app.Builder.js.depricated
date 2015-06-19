@@ -335,39 +335,7 @@ namespace JsRender {
 		}
 		 
 		
-		/**
-		 * 
-		 * munge JSON tree into Javascript code.
-		 *
-		 * NOTE - needs a deep copy of original tree, before starting..
-		 *     - so that it does not modify current..
-		 * 
-		 * FIXME: + or / prefixes to properties hide it from renderer.
-		 * FIXME: '*props' - not supported by this.. ?? - upto rendering code..
-		 * FIXME: needs to understand what properties might be translatable (eg. double quotes)
-		 * 
-		 * @arg {object} obj the object or array to munge..
-		 * @arg {boolean} isListener - is the array being sent a listener..
-		 * @arg {string} pad - the padding to indent with. 
-		 */
 		
-		public string mungeToString(string pad)
-		{
-			if (this.tree == null) {
-				return "";
-			}
-			var x = new NodeToJs(this.tree, this.doubleStringProps, pad, null);
-			
-			var ret = x.munge();
-			var nret = x.ret;
-			
-			// output both files.. so we can diff them...
-			this.writeFile("/tmp/old.js", ret);
-			this.writeFile("/tmp/new.js", nret);			
-			return ret;
-			
-		    
-		}
 		public  Node? lineToNode(int line)
 		{
 			if (this.tree == null) {
