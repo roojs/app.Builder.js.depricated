@@ -621,7 +621,7 @@ public class JsRender.NodeToJs : Object {
 				
 				var com = " /* " + 
 					(v.split("\n").length > 1 ?
-						("\n" + string.joinv(this.pad +  "\n", v.split("\n")).replace("*/", "* - /") + "\n" + this.pad + "*/ ") :
+						("\n" + this.pad +  string.joinv(this.pad +  "\n", v.split("\n")).replace("*/", "* - /") + "\n" + this.pad + "*/ ") :
  						(v.replace("*/", "* - /") + " */")
 					);
 				
