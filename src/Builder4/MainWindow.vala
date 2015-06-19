@@ -126,13 +126,7 @@ public class Xcls_MainWindow : Object
         	
         	if (event.keyval == Gdk.Key.n && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
         		print("SAVE: ctrl-n  pressed");
-        		Xcls_MainWindow.singleton().no_windows++;
-                var w = new Xcls_MainWindow();
-                w.ref();
-        
-                w.el.show_all();
-                w.initChildren();
-                w.windowstate.switchState(WindowState.State.FILES);
+        		this.openNewWindow();
         		return false;
         	}
         	
@@ -166,7 +160,13 @@ public class Xcls_MainWindow : Object
     
     }
     public return_type openNewWindow () {
+    	Xcls_MainWindow.singleton().no_windows++;
+            var w = new Xcls_MainWindow();
+            w.ref();
     
+            w.el.show_all();
+            w.initChildren();
+            w.windowstate.switchState(WindowState.State.FILES);
     }
     public             void setTitle (string str) {
         this.headerbar.el.set_title(this.title + " - " + str);
