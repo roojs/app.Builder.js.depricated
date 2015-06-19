@@ -116,12 +116,20 @@ public class Xcls_MainWindow : Object
         		    return false;
         		}
         		
-        		  if (event.keyval == Gdk.Key.g && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+        		if (event.keyval == Gdk.Key.g && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
         		    print("SAVE: ctrl-g  pressed");
         			this.search_entry.forwardSearch(true);
         		    return false;
         		}
+        		
         	}    
+        	
+        	if (event.keyval == Gdk.Key.n && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+        		print("SAVE: ctrl-n  pressed");
+        
+        		return false;
+        	}
+        	
            // print(event.key.keyval)
             
             return false;
