@@ -138,6 +138,15 @@ public class Xcls_MainWindow : Object
     }
 
     // user defined functions
+    public void openNewWindow () {
+    	Xcls_MainWindow.singleton().no_windows++;
+            var w = new Xcls_MainWindow();
+            w.ref();
+    
+            w.el.show_all();
+            w.initChildren();
+            w.windowstate.switchState(WindowState.State.FILES);
+    }
     public        void initChildren () {
         // this needs putting in a better place..
         this.windowstate = new WindowState(this);
@@ -158,15 +167,6 @@ public class Xcls_MainWindow : Object
        
         this.el.show_all();
     
-    }
-    public return_type openNewWindow () {
-    	Xcls_MainWindow.singleton().no_windows++;
-            var w = new Xcls_MainWindow();
-            w.ref();
-    
-            w.el.show_all();
-            w.initChildren();
-            w.windowstate.switchState(WindowState.State.FILES);
     }
     public             void setTitle (string str) {
         this.headerbar.el.set_title(this.title + " - " + str);
