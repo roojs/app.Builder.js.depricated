@@ -20,7 +20,7 @@ public class JsRender.NodeToJs : Object {
 	
 	//Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
-	Gee.HashMap<string,string> ar_props;
+	//Gee.HashMap<string,string> ar_props;
 	
 	Gee.HashMap<string,string> out_props;
 	Gee.HashMap<string,string> out_listeners;	
@@ -42,7 +42,7 @@ public class JsRender.NodeToJs : Object {
 		this.pad = pad;
 		
 		//this.els = new Gee.ArrayList<string>(); 
-		this.ar_props = new Gee.HashMap<string,string>();
+		//this.ar_props = new Gee.HashMap<string,string>();
 		
 		
 		this.out_props = new Gee.HashMap<string,string>();
