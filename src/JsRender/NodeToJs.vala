@@ -267,18 +267,18 @@ public class JsRender.NodeToJs : Object {
 	public void addLine(string str= "")
 	{
 		this.cur_line ++;
-		//this.ret += str+ "\n";
-		this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
+		this.ret += str+ "\n";
+		//this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
 		
 		
 	}
 	
 	public void addMultiLine(string str= "")
 	{
-		var l = cur_line;
+
+		//this.ret +=   "/*%d(%d-%d)*/ ".printf(this.cur_line, this.node.line_start,this.node.line_end)+ str + "\n";
+		this.ret +=   str + "\n";
 		this.cur_line += str.split("\n").length;
-		this.ret +=   "/*%d(%d-%d)*/ ".printf(l, this.node.line_start,this.node.line_end)+ str + "\n";
-		//this.ret +=   str + "\n";
 	}
  
 	public string mungeChildNew(string pad ,  Node cnode )
