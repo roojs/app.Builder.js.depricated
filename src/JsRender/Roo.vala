@@ -619,13 +619,11 @@ namespace JsRender {
                 "};",
                 ""
             };
-            
-             var o = this.mungeToString("    ");   
-
+             
             return this.mungeToStringWrap("    ",   
-        		this.outputHeader() + "\n" + .name + string.joinv("\n", adda), //header
+        		this.outputHeader() + "\n" + this.name + string.joinv("\n", adda), //header
         		string.joinv("\n", addb) // footer
-    		)
+    		);
              
              
              
