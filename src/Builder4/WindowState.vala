@@ -1062,12 +1062,12 @@ public class WindowState : Object
 			buf.highlightErrorsJson("DEPR", obj);
 			
 			this.win.statusbar_compilestatus_label.el.hide();
-			this.win.statusbar_compilestatus_run.el.hide();
+			this.win.statusbar_run.el.hide();
 			
 			if (this.file.xtype == "Gtk") {
-				this.win.statusbar_compilestatus_lable.el.show();
+				this.win.statusbar_compilestatus_label.el.show();
 				if (!has_errors) { 
-					this.win.statusbar_compilestatus_run.el.hide();
+					this.win.statusbar_run.el.hide();
 				}
 				var gbuf =   this.window_gladeview.sourceview;
 				gbuf.highlightErrorsJson("ERR", obj);
