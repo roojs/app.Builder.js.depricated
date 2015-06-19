@@ -396,7 +396,12 @@ public class JsRender.NodeToJs : Object {
 			print("sprop is : " + sprop + "\n");
 			
 			// it's an array type..
-			var old = "";
+			//var old = "";
+			if (!this.out_props_array.has_key(sprop)) {
+				this.out_props_array.set(sprop, new Gee.ArrayList<Node>());
+			}
+			
+			/*
 			if (!this.ar_props.has_key(sprop)) {
 				
 				this.ar_props.set(sprop, "");
@@ -406,8 +411,9 @@ public class JsRender.NodeToJs : Object {
 			}
 			var nstr  = old += old.length > 0 ? ",\n" : "";
 			nstr += this.mungeChild( this.pad + indent_str + indent_str + indent_str ,   pl);
+			*/
 			this.out_props_array.get(sprop).add( pl);
-	  		this.ar_props.set(sprop, nstr);
+	  		//this.ar_props.set(sprop, nstr);
 			 
 			
 		}
