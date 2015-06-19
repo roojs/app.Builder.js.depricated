@@ -752,18 +752,19 @@ public class JsRender.NodeToJs : Object {
 			return;
 		}
 		var itms = "items : [\n";
-		var n = 0;
+		//var n = 0;
 		for(var i = 0; i < this.node.items.size;i++) {
 			var ele = this.node.items.get(i);
 			if (ele.props.has_key("* prop")) {
 				continue;
 			}
-			if (n > 0) {
+			/*if (n > 0) {
 				 itms += ",\n";
 			}
 			n++;
 			itms +=	this.pad + indent_str  +
 				this.mungeChild( this.pad + indent_str + indent_str ,  ele);
+				*/
 			this.out_children.add(ele);
 			
 		}
