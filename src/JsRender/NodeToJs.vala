@@ -321,7 +321,7 @@ public class JsRender.NodeToJs : Object {
 		//this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
 		this.ret +=   str + "\n";
 	}
-
+/*
 	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
 	{
 		var ret = "";
@@ -337,7 +337,7 @@ public class JsRender.NodeToJs : Object {
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
 		return x.munge();
 	}
-	
+	*/
 	public string mungeChildNew(string pad ,  Node cnode )
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
