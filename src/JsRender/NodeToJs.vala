@@ -57,7 +57,11 @@ public class JsRender.NodeToJs : Object {
 		this.cur_line = parent == null ? 0 : parent.cur_line  ; //-1 as we usuall concat onto the existin gline?
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
- 
+		// reset the maps...
+		if (parent == null) {
+			node.node_lines = new Gee.ArrayList<int>();
+			node.node_lines_map = new Gee.HashMap<int,Node>();
+		 }
 	}
 	
 	
