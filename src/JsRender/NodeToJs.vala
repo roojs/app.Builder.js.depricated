@@ -599,8 +599,17 @@ public class JsRender.NodeToJs : Object {
 			//	continue;
 			//}
 		   
-			if (this.doubleStringProps.index_of(k) > -1) {
+			if ((this.doubleStringProps.index_of(k) > -1) || 
+				(ktype.down() == "string" && k[0] == '_')
+			
+			) {
 				// then use the translated version...
+				
+				var com = " /* " + 
+					(v.split("\n").length > 1 ?
+						("\n" + string.joinv(this.pad +  "\n", v.split("\n")).replace("*/", "* - /") + "\n" + this.pad + "*/ ") :
+ 						(v.replace("*/", "* - /") + " */")
+					);
 				
 				this.els.add(left + " : _this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
@@ -608,22 +617,10 @@ public class JsRender.NodeToJs : Object {
 				);
 				this.out_props.set(left, "_this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"']");
+					"']" + com);
 				continue;
 			}
-			if (ktype.down() == "string" && k[0] == '_') {
-				this.els.add(left + " : _this._strings['" + 
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"']"
-				);
-				this.out_props.set(left, " _this._strings['" + 
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"']"
-				);
-				
-				
-				continue;
-			}
+		 
 			// otherwise it needs to be encapsulated.. as single quotes..
 			
 			var vv = this.node.quoteString(v);
