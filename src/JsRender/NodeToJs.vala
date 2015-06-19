@@ -70,7 +70,6 @@ public class JsRender.NodeToJs : Object {
 	{
 		//return this.mungeToString(this.node);
 
-		this.node.line_start = this.cur_line;
 		
 		this.checkChildren();
 		this.readProps();
