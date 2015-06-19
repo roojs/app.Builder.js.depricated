@@ -302,16 +302,16 @@ public class JsRender.NodeToJs : Object {
 	{
 		this.cur_line ++;
 		//this.ret += str+ "\n";
-		this.ret +=  "/*%d*/ ".printf(this.cur_line) + str + "\n";
+		this.ret +=  "/*%d*/ ".printf(this.cur_line -1) + str + "\n";
 		
 		
 	}
 	
 	public void addMultiLine(string str= "")
 	{
-		 
+		 var l = cur_line;
 		this.cur_line += str.split("\n").length;
-		this.ret +=  "/*%d*/ ".printf(this.cur_line) + str + "\n";
+		this.ret +=  "/*%d*/ ".printf(l) + str + "\n";
 		//this.ret +=   str + "\n";
 	}
 
