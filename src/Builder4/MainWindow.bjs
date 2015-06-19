@@ -733,7 +733,6 @@
            "* pack" : "add",
            "xtype" : "ImageMenuItem",
            "$ xns" : "Gtk",
-           "bool visible" : false,
            "items" : [
             {
              "utf8 icon_name" : "media-playback-start",
