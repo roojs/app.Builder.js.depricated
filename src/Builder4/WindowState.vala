@@ -1031,8 +1031,12 @@ public class WindowState : Object
 			
 			var buf = this.code_editor.buffer;
 			buf.check_running = false;
+			var has_errors = false;
 			              
 			if (obj.has_member("ERR-TOTAL")) {
+				if (obj.get_int_member("ERR-TOTAL")> 0) {
+					has_errors = true;
+				}
 				 this.win.statusbar_errors.setNotices( obj.get_object_member("ERR") , (int) obj.get_int_member("ERR-TOTAL"));
 			} else {
 				 this.win.statusbar_errors.setNotices( new Json.Object() , 0);
@@ -1057,8 +1061,15 @@ public class WindowState : Object
 			buf.highlightErrorsJson("WARN", obj);
 			buf.highlightErrorsJson("DEPR", obj);
 			
+			this.win.statusbar_compilestatus_label.el.hide();
+			this.win.statusbar_compilestatus_run.el.hide();
+			
 			if (this.file.xtype == "Gtk") {
-				var gbuf =   this.window_gladeview.sourceview;
+				this.win.statusbar_compilestatus_lable.el.show();
+				if (!has_errors) { 
+					this.win.statusbar_compilestatus_run.el.hide();
+				}
+				var gbuf =   this.window_gladeview.sourceview
 				gbuf.highlightErrorsJson("ERR", obj);
 				gbuf.highlightErrorsJson("WARN", obj);
 				gbuf.highlightErrorsJson("DEPR", obj);			
