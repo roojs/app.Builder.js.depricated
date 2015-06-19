@@ -301,8 +301,8 @@ public class JsRender.NodeToJs : Object {
 	public void addLine(string str= "")
 	{
 		this.cur_line ++;
-		this.ret += str+ "\n";
-		
+		//this.ret += str+ "\n";
+		this.ret +=  "/*%d*/ ".printf(this.cur_line) + str + "\n";
 		
 		
 	}
