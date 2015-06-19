@@ -18,7 +18,7 @@ public class JsRender.NodeToJs : Object {
 	Gee.ArrayList<string>  doubleStringProps;  // need to think if this is a good idea like this
 	string pad;
 	
-	Gee.ArrayList<string> els;
+	//Gee.ArrayList<string> els;
         //Gee.ArrayList<string> skip;
 	Gee.HashMap<string,string> ar_props;
 	
@@ -41,7 +41,7 @@ public class JsRender.NodeToJs : Object {
 		this.doubleStringProps = doubleStringProps;
 		this.pad = pad;
 		
-		this.els = new Gee.ArrayList<string>(); 
+		//this.els = new Gee.ArrayList<string>(); 
 		this.ar_props = new Gee.HashMap<string,string>();
 		
 		
@@ -77,7 +77,7 @@ public class JsRender.NodeToJs : Object {
 		
 		this.checkChildren();
 		this.readProps();
-		this.readArrayProps();
+		//this.readArrayProps();
 		this.readListeners();
 
 		if (!this.node.props.has_key("* xinclude")) {
@@ -87,12 +87,13 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		// no properties to output...
-		if (this.els.size < 1) {
-			return "";
-		}
+		//if (this.els.size < 1) {
+		//	return "";
+		//}
 
 		this.mungeOut();
 		return this.ret;
+		
 		/*
 		// oprops...	
 			
@@ -381,7 +382,7 @@ public class JsRender.NodeToJs : Object {
 				
 				this.out_nodeprops.set(prop, pl);
 				
-				this.els.add( prop  + " : " + this.mungeChild (  this.pad + indent_str,  pl));
+				//this.els.add( prop  + " : " + this.mungeChild (  this.pad + indent_str,  pl));
 				
 				
 				//keys.push(prop);
@@ -461,7 +462,7 @@ public class JsRender.NodeToJs : Object {
 		if (this.node.props.has_key("$ xns")) {
 			this.out_props.set("'|xns'", "'" +  this.node.props.get("$ xns") + "'" );
 			
-			this.els.add("'|xns' : '" + this.node.props.get("$ xns") + "'");
+			//this.els.add("'|xns' : '" + this.node.props.get("$ xns") + "'");
 
 		}
 
@@ -571,7 +572,7 @@ public class JsRender.NodeToJs : Object {
 				}
 				this.out_props.set(left, nstr);
 				//print("==> " +  str + "\n");
-				this.els.add(left + " : "+  nstr);
+				//this.els.add(left + " : "+  nstr);
 				continue;
 			}
 			// standard..
@@ -591,7 +592,7 @@ public class JsRender.NodeToJs : Object {
 				ktype.down() == "int"
 			    ) { // boolean or number...?
 			    this.out_props.set(left, v.down());
-				this.els.add(left + " : " + v.down() );
+				//this.els.add(left + " : " + v.down() );
 				continue;
 			}
 			
@@ -618,10 +619,10 @@ public class JsRender.NodeToJs : Object {
  						(v.replace("*/", "* - /") + " */")
 					);
 				
-				this.els.add(left + " : _this._strings['" + 
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
-					"']"
-				);
+				//this.els.add(left + " : _this._strings['" + 
+				//	GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+				//	"']"
+				//);
 				this.out_props.set(left, "_this._strings['" + 
 					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
 					"']" + com);
@@ -632,7 +633,7 @@ public class JsRender.NodeToJs : Object {
 			
 			var vv = this.node.quoteString(v);
 			// single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-			this.els.add(left + " : " +  "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
+			//this.els.add(left + " : " +  "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
 			this.out_props.set(left,  "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
 
 		   
@@ -640,6 +641,7 @@ public class JsRender.NodeToJs : Object {
 		   
 		}
 	}
+	/*
 	public void readArrayProps()
 	{
 	
@@ -675,14 +677,15 @@ public class JsRender.NodeToJs : Object {
 				//}
 				//this.out_props_array_plain.get(left).add(right);
 			
-				this.els.add(left + " : [\n" +  this.pad + indent_str + indent_str +  
-				             right + "\n" + this.pad + "]");
+				//this.els.add(left + " : [\n" +  this.pad + indent_str + indent_str +  
+				//             right + "\n" + this.pad + "]");
 			}
 		
 			
 		}
 
 	}
+	*/
 	public void readListeners()
 	{
 		
@@ -730,7 +733,7 @@ public class JsRender.NodeToJs : Object {
 		}
 		itms += "\n" + this.pad + "}";
 		//print ( "ADD " + itms); 
-		this.els.add(itms);
+		//this.els.add(itms);
 
 	}
 
@@ -759,7 +762,7 @@ public class JsRender.NodeToJs : Object {
 			
 		}
 		itms +=  "\n"+  this.pad + "]"  + "\n";
-		this.els.add(itms);
+		//this.els.add(itms);
 	}
 
 		// finally output listeners...
