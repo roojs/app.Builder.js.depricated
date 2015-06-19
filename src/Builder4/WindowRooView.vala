@@ -1100,10 +1100,10 @@ public class Xcls_WindowRooView : Object
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
-             
-            
+            var sl = sel.line_start -1;
+            var el = sel.line_end - 1;
             for (var i = 0; i < buf.get_line_count();i++) {
-                if (i < sel.line_start || i > sel.line_end) {
+                if (i < sl || i > el) {
                    
                     sbuf.get_iter_at_line(out iter, i);
                     sbuf.create_source_mark(null, "grey", iter);
