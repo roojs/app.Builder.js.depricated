@@ -640,7 +640,7 @@ namespace JsRender {
             
             
             //var items = JSON.parse(JSON.stringify(this.items[0]));
-            var o = this.mungeToString("    ");   
+             
             
             string[] adda = { " = {",
                 "",
@@ -680,7 +680,7 @@ namespace JsRender {
 			return this.mungeToStringWrap("    ",   
         		this.outputHeader() + "\n" +  this.name + string.joinv("\n", adda), // header
         		string.joinv("\n", addb) // footer
-    		)
+    		);
              
              
              
@@ -722,11 +722,14 @@ namespace JsRender {
     			//    topItem.background = false;
     		}
             
-    		var o = this.mungeToString("   ");   
-    		var reg = new Regex("[^A-Za-z.]+");
+    		var  modkey = this.modOrder + "-" +   this.name;
+    		try {
+	    		var reg = new Regex("[^A-Za-z.]+");
             
-    		string modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
-            
+    			 modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
+            } catch (Exception e) {
+        		//noop..
+            }
     		string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
 		
@@ -744,9 +747,9 @@ namespace JsRender {
 			  
     		}
             
-          
-    		return 
-		        this.outputHeader() + "\n" +
+            
+            
+            var pref = this.outputHeader() + "\n" +
 		        
 		        this.name  +  " = new Roo.XComponent({\n" +
 		        "\n" + 
@@ -766,10 +769,13 @@ namespace JsRender {
 		        "  {\n" +
 		        "   var _this = this;\n" + // bc
 		        "   var MODULE = this;\n" + /// this looks like a better name.
-		        "   return " + o + ";" +
+		        "   return ";
+		        
+		    return this.mungeToStringWrap("   ", pref,  ";" +
 		        "  }\n" +
-		        "});\n";
-		         
+		        "});\n"
+	        );
+		      
               
         }
             
