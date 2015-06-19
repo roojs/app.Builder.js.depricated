@@ -166,6 +166,7 @@ public class JsRender.NodeToJs : Object {
 	public string mungeOut()
 	{
 		this.node.line_start = this.cur_line;
+		this.top.node.setNodeLine(this.cur_line, this.node);
 		var spad = this.pad.substring(0, this.pad.length-indent);
 		
 		if (this.node.props.has_key("* xinclude")) {
