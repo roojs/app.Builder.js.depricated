@@ -57,7 +57,7 @@ int main (string[] args) {
 	w.windowstate.switchState(WindowState.State.FILES);
 	
 	Gtk.main();
-    
+    app = null;
 	
 	return 0;
 }
