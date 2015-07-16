@@ -246,6 +246,8 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
+            this.el.expand = true;
+            this.el.hexpand = true;
             this.el.use_popover = false;
             var child_0 = new Xcls_topbarmenu( _this );
             child_0.ref();
