@@ -104,6 +104,7 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
          },
+         "id" : "openbtn",
          "* pack" : false,
          "xtype" : "Button",
          "width_request" : 50,

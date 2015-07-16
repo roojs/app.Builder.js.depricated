@@ -14,6 +14,7 @@ public class Xcls_MainWindow : Object
     }
     public Xcls_headerbar headerbar;
     public Xcls_topbarmenu topbarmenu;
+    public Xcls_openbtn openbtn;
     public Xcls_vbox vbox;
     public Xcls_mainpane mainpane;
     public Xcls_leftpane leftpane;
@@ -218,7 +219,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_MenuButton4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button11( _this );
+            var child_1 = new Xcls_openbtn( _this );
             child_1.ref();
             var child_2 = new Xcls_Button13( _this );
             child_2.ref();
@@ -425,7 +426,7 @@ public class Xcls_MainWindow : Object
     }
 
 
-    public class Xcls_Button11 : Object
+    public class Xcls_openbtn : Object
     {
         public Gtk.Button el;
         private Xcls_MainWindow  _this;
@@ -434,9 +435,10 @@ public class Xcls_MainWindow : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Button11(Xcls_MainWindow _owner )
+        public Xcls_openbtn(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.openbtn = this;
             this.el = new Gtk.Button();
 
             // my vars (dec)
