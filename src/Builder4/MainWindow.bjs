@@ -108,7 +108,6 @@
          "xtype" : "Button",
          "* pack" : "add",
          "$ xns" : "Gtk",
-         "height_request" : 50,
          "$ tooltop_text" : "\"Open File\"",
          "items" : [
           {
@@ -127,9 +126,7 @@
          "utf8 tooltip_text" : "Back",
          "xtype" : "Button",
          "* pack" : "add",
-         "width_request" : 50,
          "$ xns" : "Gtk",
-         "height_request" : 50,
          "bool visible" : false,
          "items" : [
           {
