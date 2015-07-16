@@ -966,6 +966,7 @@ public class WindowState : Object
 				this.win.editfilebutton.el.show();
 				this.win.projecteditbutton.el.show();
 				 
+				 
 				
 				this.win.objectshowbutton.el.show(); // add objects
 				this.win.addpropbutton.el.show();  
