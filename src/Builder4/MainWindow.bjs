@@ -124,6 +124,7 @@
          "listeners" : {
           "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
          },
+         "id" : "openbackbtn",
          "utf8 tooltip_text" : "Back",
          "xtype" : "Button",
          "* pack" : false,
