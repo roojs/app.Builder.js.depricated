@@ -71,15 +71,6 @@
         ]
     },
     {
-        "name" : "NEW GROUP",
-        "compile_flags" : "",
-        "target_bin" : "",
-        "sources" : [
-        ],
-        "packages" : [
-        ]
-    },
-    {
         "name" : "_default_",
         "compile_flags" : "--thread -X -lm --target-glib=2.32 -g",
         "target_bin" : "",
