@@ -124,6 +124,25 @@
      ]
     },
     {
+     "listeners" : {
+      "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
+     },
+     "utf8 tooltip_text" : "Back",
+     "xtype" : "Button",
+     "* pack" : false,
+     "width_request" : 50,
+     "$ xns" : "Gtk",
+     "height_request" : 50,
+     "items" : [
+      {
+       "* pack" : "set_image",
+       "xtype" : "Image",
+       "utf8 icon_name" : "go-previous",
+       "$ xns" : "Gtk"
+      }
+     ]
+    },
+    {
      "id" : "vbox",
      "* pack" : "add",
      "xtype" : "Box",
