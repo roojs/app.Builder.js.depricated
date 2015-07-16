@@ -33,8 +33,8 @@
    "items" : [
     {
      "id" : "headerbar",
-     "* pack" : "set_titlebar",
      "xtype" : "HeaderBar",
+     "* pack" : "set_titlebar",
      "bool show_close_button" : true,
      "$ xns" : "Gtk",
      "string title" : "Application Builder",
@@ -47,8 +47,8 @@
        "items" : [
         {
          "bool use_popover" : false,
-         "* pack" : "add",
          "xtype" : "MenuButton",
+         "* pack" : "add",
          "$ xns" : "Gtk",
          "items" : [
           {
@@ -62,9 +62,9 @@
              "listeners" : {
               "activate" : "( ) => {\n       _this.openNewWindow();\n}"
              },
+             "string label" : "Open a new Window",
              "* pack" : "append",
              "xtype" : "MenuItem",
-             "string label" : "Open a new Window",
              "$ xns" : "Gtk"
             },
             {
@@ -76,38 +76,76 @@
              "listeners" : {
               "activate" : " ( ) => {\n         Resources.singleton().fetchStart();\n}"
              },
+             "xtype" : "MenuItem",
              "string label" : "Download updated Resources",
              "* pack" : "append",
-             "xtype" : "MenuItem",
              "$ xns" : "Gtk"
             },
             {
              "listeners" : {
               "activate" : "() => {\n    About.singleton().el.show();\n    }"
              },
+             "* pack" : "append",
              "xtype" : "MenuItem",
              "string label" : "About the Builder",
-             "* pack" : "append",
              "$ xns" : "Gtk"
             }
            ]
           },
           {
+           "utf8 icon_name" : "help-about",
            "* pack" : "set_image",
            "xtype" : "Image",
-           "utf8 icon_name" : "help-about",
            "$ xns" : "Gtk"
           }
          ]
+        }
+       ]
+      },
+      {
+       "listeners" : {
+        "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
+       },
+       "* pack" : false,
+       "xtype" : "Button",
+       "width_request" : 50,
+       "$ xns" : "Gtk",
+       "height_request" : 50,
+       "$ tooltop_text" : "\"Open File\"",
+       "items" : [
+        {
+         "xtype" : "Image",
+         "utf8 icon_name" : "document-open",
+         "* pack" : "set_image",
+         "$ xns" : "Gtk"
         }
        ]
       }
      ]
     },
     {
+     "listeners" : {
+      "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
+     },
+     "* pack" : false,
+     "xtype" : "Button",
+     "width_request" : 50,
+     "$ xns" : "Gtk",
+     "height_request" : 50,
+     "$ tooltop_text" : "\"Open File\"",
+     "items" : [
+      {
+       "utf8 icon_name" : "document-open",
+       "* pack" : "set_image",
+       "xtype" : "Image",
+       "$ xns" : "Gtk"
+      }
+     ]
+    },
+    {
      "id" : "vbox",
-     "xtype" : "Box",
      "* pack" : "add",
+     "xtype" : "Box",
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
      "$ homogeneous" : false,
@@ -123,29 +161,29 @@
        "items" : [
         {
          "id" : "leftpane",
-         "* pack" : "add1",
          "xtype" : "Box",
+         "* pack" : "add1",
          "$ xns" : "Gtk",
          "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
          "items" : [
           {
            "id" : "editpane",
-           "* pack" : "pack_start,true,true,0",
            "xtype" : "Paned",
+           "* pack" : "pack_start,true,true,0",
            "$ xns" : "Gtk",
            "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
            "items" : [
             {
              "id" : "tree",
-             "* pack" : "add1",
              "xtype" : "Box",
+             "* pack" : "add1",
              "$ xns" : "Gtk",
              "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL"
             },
             {
              "id" : "props",
-             "* pack" : "add2",
              "xtype" : "Box",
+             "* pack" : "add2",
              "$ xns" : "Gtk",
              "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL"
             }
@@ -226,8 +264,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
                  "xtype" : "Actor",
+                 "* pack" : "add_child",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -235,16 +273,16 @@
                     "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
                    },
                    "utf8 tooltip_text" : "Back",
-                   "xtype" : "Button",
                    "* pack" : false,
+                   "xtype" : "Button",
                    "width_request" : 50,
                    "$ xns" : "Gtk",
                    "height_request" : 50,
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "go-previous",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -262,8 +300,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -278,9 +316,9 @@
                    "$ tooltop_text" : "\"Open File\"",
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "document-open",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -298,8 +336,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -314,9 +352,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "document-properties",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "document-properties",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -334,8 +372,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -350,9 +388,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "emblem-system",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -374,8 +412,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -390,9 +428,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "list-add",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -410,8 +448,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -426,9 +464,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "format-justify-left",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "format-justify-left",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -446,8 +484,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -462,9 +500,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "xtype" : "Image",
                      "utf8 icon_name" : "appointment-new",
                      "* pack" : "set_image",
-                     "xtype" : "Image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -482,8 +520,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -498,9 +536,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "folder-new",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "folder-new",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -518,8 +556,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -534,9 +572,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "* pack" : "set_image",
                      "xtype" : "Image",
                      "utf8 icon_name" : "document-new",
-                     "* pack" : "set_image",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -554,8 +592,8 @@
                "items" : [
                 {
                  "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "xtype" : "Actor",
                  "* pack" : "add_child",
+                 "xtype" : "Actor",
                  "$ xns" : "GtkClutter",
                  "items" : [
                   {
@@ -570,9 +608,9 @@
                    "height_request" : 50,
                    "items" : [
                     {
+                     "utf8 icon_name" : "user-trash",
                      "* pack" : "set_image",
                      "xtype" : "Image",
-                     "utf8 icon_name" : "user-trash",
                      "$ xns" : "Gtk"
                     }
                    ]
@@ -591,21 +629,21 @@
       },
       {
        "bool homogeneous" : false,
-       "* pack" : "pack_end,false,true,0",
        "xtype" : "Box",
+       "* pack" : "pack_end,false,true,0",
        "$ xns" : "Gtk",
        "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
        "items" : [
         {
+         "* pack" : "pack_start,true,true,0",
          "xtype" : "Label",
          "string label" : "   ",
-         "* pack" : "pack_start,true,true,0",
          "$ xns" : "Gtk"
         },
         {
          "bool show_text" : true,
-         "ulong handler_id" : "-1",
          "id" : "statusbar",
+         "ulong handler_id" : "-1",
          "* init" : "{\n     this.handler_id = Resources.singleton().updateProgress.connect((pos,total) => {\n        if (pos < 1) {\n            this.el.hide();\n            _this.mainpane.el.set_sensitive(true);\n            \n            return;\n        }\n         _this.mainpane.el.set_sensitive(false);\n         this.el.show();\n         this.el.set_fraction ((1.0f * pos) / (1.0f * total));\n         this.el.set_text(\"Fetching Resource : %s/%s\".printf(pos.to_string(), total.to_string()));\n       \n     });\n}\n",
          "xtype" : "ProgressBar",
          "* pack" : "pack_start,true,true,0",
@@ -641,9 +679,9 @@
            "$ xns" : "Gtk",
            "items" : [
             {
+             "* pack" : "set_image",
              "xtype" : "Image",
              "utf8 icon_name" : "system-search",
-             "* pack" : "set_image",
              "bool sensitive" : false,
              "$ xns" : "Gtk"
             }
@@ -651,8 +689,8 @@
           },
           {
            "id" : "statusbar_compilestatus_label",
-           "xtype" : "MenuItem",
            "* pack" : "add",
+           "xtype" : "MenuItem",
            "string label" : "Compile Status:",
            "$ xns" : "Gtk"
           },
@@ -671,9 +709,9 @@
            "$ xns" : "Gtk",
            "items" : [
             {
+             "xtype" : "Image",
              "utf8 icon_name" : "dialog-error",
              "* pack" : "set_image",
-             "xtype" : "Image",
              "$ xns" : "Gtk"
             }
            ]
@@ -693,9 +731,9 @@
            "$ xns" : "Gtk",
            "items" : [
             {
+             "* pack" : "set_image",
              "xtype" : "Image",
              "utf8 icon_name" : "dialog-warning",
-             "* pack" : "set_image",
              "$ xns" : "Gtk"
             }
            ]
@@ -715,9 +753,9 @@
            "$ xns" : "Gtk",
            "items" : [
             {
+             "utf8 icon_name" : "dialog-information",
              "* pack" : "set_image",
              "xtype" : "Image",
-             "utf8 icon_name" : "dialog-information",
              "$ xns" : "Gtk"
             }
            ]
@@ -735,9 +773,9 @@
            "$ xns" : "Gtk",
            "items" : [
             {
+             "* pack" : "set_image",
              "xtype" : "Image",
              "utf8 icon_name" : "media-playback-start",
-             "* pack" : "set_image",
              "$ xns" : "Gtk"
             }
            ]
