@@ -941,7 +941,7 @@ public class WindowState : Object
 		
 		this.win.backbutton.el.hide();
 		
-		this.win.projectbutton.el.hide(); // show file nav...
+
 		this.win.editfilebutton.el.hide();
 		this.win.projecteditbutton.el.hide();
 		 
@@ -962,7 +962,7 @@ public class WindowState : Object
 			
 			case State.PREVIEW:  // this is the default state when working...
 			   
-				this.win.projectbutton.el.show(); // show file nav...
+				
 				this.win.editfilebutton.el.show();
 				this.win.projecteditbutton.el.show();
 				 
@@ -978,7 +978,8 @@ public class WindowState : Object
 				break;
 			
 			case State.CODEONLY: 
-				this.win.projectbutton.el.show();
+				this.win.openbtn.el.show();
+	
 				this.win.search_entry.el.show();
 				break;
 		   
