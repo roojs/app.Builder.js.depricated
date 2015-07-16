@@ -71,11 +71,9 @@ public class Xcls_MainWindow : Object
         var child_0 = new Xcls_headerbar( _this );
         child_0.ref();
         this.el.set_titlebar (  child_0.el  );
-        var child_1 = new Xcls_Button13( _this );
+        var child_1 = new Xcls_vbox( _this );
         child_1.ref();
-        var child_2 = new Xcls_vbox( _this );
-        child_2.ref();
-        this.el.add (  child_2.el  );
+        this.el.add (  child_1.el  );
 
         // init method
 
@@ -196,8 +194,6 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_Box3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el  );
-            var child_1 = new Xcls_Button11( _this );
-            child_1.ref();
         }
 
         // user defined functions
@@ -222,6 +218,10 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_MenuButton4( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
+            var child_1 = new Xcls_Button11( _this );
+            child_1.ref();
+            var child_2 = new Xcls_Button13( _this );
+            child_2.ref();
         }
 
         // user defined functions
@@ -425,7 +425,6 @@ public class Xcls_MainWindow : Object
     }
 
 
-
     public class Xcls_Button11 : Object
     {
         public Gtk.Button el;
@@ -481,7 +480,6 @@ public class Xcls_MainWindow : Object
 
         // user defined functions
     }
-
 
 
     public class Xcls_Button13 : Object
@@ -541,6 +539,8 @@ public class Xcls_MainWindow : Object
 
         // user defined functions
     }
+
+
 
 
     public class Xcls_vbox : Object

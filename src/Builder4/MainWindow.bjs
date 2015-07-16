@@ -99,46 +99,46 @@
            "$ xns" : "Gtk"
           }
          ]
-        }
-       ]
-      },
-      {
-       "listeners" : {
-        "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
-       },
-       "* pack" : false,
-       "xtype" : "Button",
-       "width_request" : 50,
-       "$ xns" : "Gtk",
-       "height_request" : 50,
-       "$ tooltop_text" : "\"Open File\"",
-       "items" : [
+        },
         {
-         "xtype" : "Image",
-         "utf8 icon_name" : "document-open",
-         "* pack" : "set_image",
-         "$ xns" : "Gtk"
+         "listeners" : {
+          "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
+         },
+         "* pack" : false,
+         "xtype" : "Button",
+         "width_request" : 50,
+         "$ xns" : "Gtk",
+         "height_request" : 50,
+         "$ tooltop_text" : "\"Open File\"",
+         "items" : [
+          {
+           "xtype" : "Image",
+           "utf8 icon_name" : "document-open",
+           "* pack" : "set_image",
+           "$ xns" : "Gtk"
+          }
+         ]
+        },
+        {
+         "listeners" : {
+          "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
+         },
+         "utf8 tooltip_text" : "Back",
+         "xtype" : "Button",
+         "* pack" : false,
+         "width_request" : 50,
+         "$ xns" : "Gtk",
+         "height_request" : 50,
+         "items" : [
+          {
+           "* pack" : "set_image",
+           "xtype" : "Image",
+           "utf8 icon_name" : "go-previous",
+           "$ xns" : "Gtk"
+          }
+         ]
         }
        ]
-      }
-     ]
-    },
-    {
-     "listeners" : {
-      "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
-     },
-     "utf8 tooltip_text" : "Back",
-     "xtype" : "Button",
-     "* pack" : false,
-     "width_request" : 50,
-     "$ xns" : "Gtk",
-     "height_request" : 50,
-     "items" : [
-      {
-       "* pack" : "set_image",
-       "xtype" : "Image",
-       "utf8 icon_name" : "go-previous",
-       "$ xns" : "Gtk"
       }
      ]
     },
