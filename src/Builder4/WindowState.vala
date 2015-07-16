@@ -935,8 +935,12 @@ public class WindowState : Object
 	{
 		// basically hide everything, then show the relivant..
 
-		 this.win.backbutton.el.hide();
-	
+		// top bar btns
+		this.win.openbtn.el.hide();
+		this.win.openbackbtn.el.hide();
+		
+		this.win.backbutton.el.hide();
+		
 		this.win.projectbutton.el.hide(); // show file nav...
 		this.win.editfilebutton.el.hide();
 		this.win.projecteditbutton.el.hide();
