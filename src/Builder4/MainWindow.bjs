@@ -131,6 +131,7 @@
          "width_request" : 50,
          "$ xns" : "Gtk",
          "height_request" : 50,
+         "bool visible" : false,
          "items" : [
           {
            "* pack" : "set_image",
