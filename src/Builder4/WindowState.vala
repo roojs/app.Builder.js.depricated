@@ -972,6 +972,8 @@ public class WindowState : Object
 				this.win.addlistenerbutton.el.show(); 
 				this.win.search_entry.el.show();
 				
+				this.win.openbtn.el.show();
+				
 				break;
 			
 			case State.CODEONLY: 
@@ -1008,6 +1010,7 @@ public class WindowState : Object
 				if (this.left_projects.getSelectedProject() != null ) {
 					if (this.left_tree.getActiveFile() != null) {
 						this.win.backbutton.el.show();
+						this.win.openbackbtn.el.show();
 					}
 					this.win.addfilebutton.el.show();
 					this.win.search_entry.el.show();
