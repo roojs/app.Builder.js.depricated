@@ -295,42 +295,6 @@
                ]
               },
               {
-               "id" : "projectbutton",
-               "* init" : "this.el.set_size(50,50);",
-               "xtype" : "Actor",
-               "* pack" : "add_child",
-               "$ xns" : "Clutter",
-               "items" : [
-                {
-                 "* init" : "((Gtk.Container)(this.el.get_widget())).add ( child_0.el);",
-                 "* pack" : "add_child",
-                 "xtype" : "Actor",
-                 "$ xns" : "GtkClutter",
-                 "items" : [
-                  {
-                   "listeners" : {
-                    "clicked" : "  ( ) => {\n   _this.windowstate.switchState(WindowState.State.FILES);\n      \n\n}"
-                   },
-                   "* pack" : false,
-                   "xtype" : "Button",
-                   "width_request" : 50,
-                   "$ xns" : "Gtk",
-                   "height_request" : 50,
-                   "$ tooltop_text" : "\"Open File\"",
-                   "items" : [
-                    {
-                     "* pack" : "set_image",
-                     "xtype" : "Image",
-                     "utf8 icon_name" : "document-open",
-                     "$ xns" : "Gtk"
-                    }
-                   ]
-                  }
-                 ]
-                }
-               ]
-              },
-              {
                "id" : "editfilebutton",
                "* init" : "this.el.set_size(50.0f,50.0f);",
                "xtype" : "Actor",
