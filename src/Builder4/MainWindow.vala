@@ -222,8 +222,10 @@ public class Xcls_MainWindow : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_openbtn( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
             var child_2 = new Xcls_openbackbtn( _this );
             child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // user defined functions
