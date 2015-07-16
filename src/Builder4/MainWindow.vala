@@ -246,8 +246,6 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.expand = true;
-            this.el.hexpand = true;
             this.el.use_popover = false;
             var child_0 = new Xcls_topbarmenu( _this );
             child_0.ref();
@@ -448,7 +446,6 @@ public class Xcls_MainWindow : Object
             // my vars (dec)
 
             // set gobject values
-            this.el.width_request = 50;
             this.el.height_request = 50;
             var child_0 = new Xcls_Image12( _this );
             child_0.ref();

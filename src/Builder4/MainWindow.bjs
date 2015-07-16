@@ -47,8 +47,6 @@
        "items" : [
         {
          "bool use_popover" : false,
-         "bool expand" : true,
-         "bool hexpand" : true,
          "* pack" : "add",
          "xtype" : "MenuButton",
          "$ xns" : "Gtk",
@@ -109,7 +107,6 @@
          "id" : "openbtn",
          "xtype" : "Button",
          "* pack" : "add",
-         "width_request" : 50,
          "$ xns" : "Gtk",
          "height_request" : 50,
          "$ tooltop_text" : "\"Open File\"",
