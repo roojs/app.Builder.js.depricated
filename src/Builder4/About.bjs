@@ -12,7 +12,6 @@
     "response" : "(rid) => {\n    this.el.hide();\n}\n "
    },
    "|    void show" : "(Gtk.Window parent) {\n    this.el.set_transient_for(parent);\n    this.el.modal = true;\n    this.el.show();\n}\n ",
-   "$ string[] authors" : "{ \"Alan Knowles\" }",
    "xtype" : "AboutDialog",
    "program_name" : "app.Builder.js",
    "$ modal" : true,
