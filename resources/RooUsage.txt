@@ -476,6 +476,7 @@ right:
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
+    Roo.bootstrap.MonthField
     Roo.bootstrap.TimeField
     Roo.bootstrap.CheckBox
     Roo.bootstrap.Radio
