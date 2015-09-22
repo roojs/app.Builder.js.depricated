@@ -143,7 +143,7 @@ namespace Project {
 				if (    bb.length < target.length &&
 					target.substring(0, bb.length) == bb) {
 					
-					return prefix + target.substring(bb.length +1);
+					return prefix + target.substring(bb.length );
 				}
 				if (bb.length < 1) {
 					throw new Error.INVALID_FORMAT ("Could not work out relative path %s to %s",
