@@ -227,9 +227,15 @@ namespace Palete {
 
 			var ret = new  Gee.ArrayList<string>();
 			//this.package_cache = new Gee.ArrayList<string>();
- 			 
+ 			
+ 			if (!GLib.FileUtils.test(dirname,  FileTest.IS_DIR)) {
+ 				print("opps package directory %s does not exist", dirname);
+ 				return ret;
+			}
 			 
 			var dir = File.new_for_path(dirname);
+			
+			
 			try {
 				var file_enum = dir.enumerate_children(
 					GLib.FileAttribute.STANDARD_DISPLAY_NAME, 
