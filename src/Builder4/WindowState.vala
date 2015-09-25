@@ -26,8 +26,7 @@ public class WindowState : Object
 
 	public bool children_loaded = false;
 
-	
-	
+	 
 	public Project.Project project;
 	public JsRender.JsRender file;
 	
