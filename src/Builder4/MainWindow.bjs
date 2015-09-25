@@ -269,7 +269,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n  \n    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    \n\n}"
+                    "clicked" : "  ( ) => {\n   if (_this.windowstate.state == WindowState.State.FILEPROJECT) {\n    \n\t     _this.windowstate.switchState(WindowState.State.FILES);\n     } else { \n\t    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    }\n    \n\n}"
                    },
                    "utf8 tooltip_text" : "Back",
                    "* pack" : false,
