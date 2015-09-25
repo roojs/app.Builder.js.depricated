@@ -1430,11 +1430,11 @@ public class Xcls_MainWindow : Object
             //listeners
             this.el.clicked.connect( ( ) => {
                  
-                 if (_this.windowstate == WindowState.State.FILES) {
+                 if (_this.windowstate.state == WindowState.State.FILES) {
                  
             	     _this.windowstate.switchState(WindowState.State.FILEPROJECT);
                  } else {
-                 	     _this.windowstate.switchState(WindowState.State.PROJECT);
+             	     _this.windowstate.switchState(WindowState.State.PROJECT);
             	 }     
                
             
