@@ -773,12 +773,9 @@ public class WindowState : Object
 					this.vala_projectsettings.el.show_all();
 					this.vala_projectsettings.show((Project.Gtk)this.win.project);
 				}
-
-
-				
+ 
 				this.win.projecteditview.el.set_scale(1.0f,1.0f);
-				
-			   
+				 
 				break;
 				
 		   case State.FILES:  // can only get here from PREVIEW (or code-only) state.. in theory..
