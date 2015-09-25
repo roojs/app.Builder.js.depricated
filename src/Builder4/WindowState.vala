@@ -1019,7 +1019,7 @@ public class WindowState : Object
 					this.win.search_entry.el.show();
 					 
 				} 
-				  
+				this.win.projecteditbutton.el.show(); 
 					 
 				this.win.addprojectbutton.el.show();
 				this.win.delprojectbutton.el.show();
