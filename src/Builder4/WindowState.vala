@@ -606,7 +606,8 @@ public class WindowState : Object
 				this.win.objectview.el.set_scale(0.0f,0.0f);
 				 break;
 
-		   case State.PROJECT:
+			case State.FILEPROJECT:
+			case State.PROJECT:
 				if (this.win.project.xtype == "Gtk") {
 					this.vala_projectsettings.save();
 				} 
@@ -758,9 +759,14 @@ public class WindowState : Object
 				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				break;
 
-		   case State.PROJECT:
 
-			   if (this.win.project.xtype == "Roo") {
+
+
+			case State.PROJECT:
+				this.win.rooview.el.set_pivot_point(1.0f,1.0f); // bottom right..
+			
+			case State.FILEPROJECT:
+				if (this.win.project.xtype == "Roo") {
 					this.projectsettings.el.show_all();
 					this.projectsettings.show(this.win.project);
 				} else {
@@ -768,7 +774,7 @@ public class WindowState : Object
 					this.vala_projectsettings.show((Project.Gtk)this.win.project);
 				}
 
-				this.win.rooview.el.set_pivot_point(1.0f,1.0f); // bottom right..
+
 				
 				this.win.projecteditview.el.set_scale(1.0f,1.0f);
 				
