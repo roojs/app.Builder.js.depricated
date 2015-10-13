@@ -493,6 +493,14 @@ right:
     Roo.bootstrap.Button
 
 left:    
+    Roo.bootstrap.Modal:tmpl
+right:
+    Roo.Template
+    Roo.XTemplate
+    Roo.DomTemplate
+
+
+left:    
     Roo.bootstrap.Header
 right:
     Roo.bootstrap.Container
