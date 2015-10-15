@@ -373,7 +373,13 @@ right:
     Roo.bootstrap.menu.Menu
     Roo.bootstrap.LocationPicker
     Roo.bootstrap.Alert
+    Roo.bootstrap.TabGroup
 
+left:
+    Roo.bootstrap.TabGroup
+right:
+    Roo.bootstrap.TabPanel
+        
 
 left:
     Roo.bootstrap.Progress
