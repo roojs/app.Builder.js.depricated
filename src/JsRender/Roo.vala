@@ -269,6 +269,11 @@ namespace JsRender {
 				if (kflag == "$") {
 					continue;
 				}
+				// skip cms-id nodes...
+				if (kname == "html" && node.has("cms-id") {
+					continue;
+				}
+				
 				var str = iter.get_value();
 				if (this.doubleStringProps.index_of(kname) > -1) {
 					print("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
