@@ -427,7 +427,7 @@ public class JsRender.NodeToJs : Object {
 			//return a < b ? -1 : 1;
 		});
 		
-		
+		var has_cms = this.node.has("cms-id");
 		
 		for (var i = 0; i< keys.size; i++) {
 			var key = this.node.get_key(keys.get(i));
@@ -456,10 +456,30 @@ public class JsRender.NodeToJs : Object {
 			if (kflag == ".") { // |. or . -- do not output..
 				continue;
 			}
-			 if (kflag == "*") {
+			if (kflag == "*") {
 				// ignore '* prop'; ??? 
 				continue;
-			 }
+			}
+			
+			// handle cms-id // html
+			if (has_cms && k == "cms-id") {
+				continue; // ignore it...
+			}
+			// html must not be a dynamic property...
+			// note - we do not translate this either...
+			if (has_cms && k == "html" && kflag != "$") {
+				 
+
+				this.out_props.set("html", "Pman.Cms.content(" + 
+					this.node.quoteString(this.node.get("cms-id")) +
+					 ", " +
+					this.node.quoteString(v) +
+					 ")");
+					 
+				continue;	 
+			}
+			
+			
 				
 			
 			if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
