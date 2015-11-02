@@ -270,7 +270,7 @@ namespace JsRender {
 					continue;
 				}
 				// skip cms-id nodes...
-				if (kname == "html" && node.has("cms-id") {
+				if (kname == "html" && node.has("cms-id")) { 
 					continue;
 				}
 				
