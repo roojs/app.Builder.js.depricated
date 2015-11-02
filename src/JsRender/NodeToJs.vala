@@ -19,7 +19,7 @@ public class JsRender.NodeToJs : Object {
 	Node node;
 	Gee.ArrayList<string>  doubleStringProps;  // need to think if this is a good idea like this
 	string pad;
-	JsRender jsrender;
+	public JsRender renderer;
 	  
 	Gee.HashMap<string,string> out_props;
 	Gee.HashMap<string,string> out_listeners;	
@@ -55,7 +55,7 @@ public class JsRender.NodeToJs : Object {
 		
 		this.cur_line = parent == null ? 0 : parent.cur_line  ; //-1 as we usuall concat onto the existin gline?
 		if (parent != null) {
-			this.jsrender = parent.jsrender;
+			this.renderer = parent.renderer;
 		}
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
@@ -476,7 +476,7 @@ public class JsRender.NodeToJs : Object {
 				 
 
 				this.out_props.set("html", "Pman.Cms.content(" + 
-					this.node.quoteString(this.jsrender.name + "::" + this.node.get("cms-id")) +
+					this.node.quoteString(this.renderer.name + "::" + this.node.get("cms-id")) +
 					 ", " +
 					this.node.quoteString(v) +
 					 ")");
