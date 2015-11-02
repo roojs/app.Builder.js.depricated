@@ -476,7 +476,7 @@ public class JsRender.NodeToJs : Object {
 				 
 
 				this.out_props.set("html", "Pman.Cms.content(" + 
-					this.node.quoteString(this.node.get("cms-id")) +
+					this.node.quoteString(this.jsrender.name + "::" + this.node.get("cms-id")) +
 					 ", " +
 					this.node.quoteString(v) +
 					 ")");
