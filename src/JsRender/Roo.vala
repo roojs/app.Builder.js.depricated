@@ -462,6 +462,7 @@ namespace JsRender {
 				return "";
 			}
 			var x = new NodeToJs(this.tree, this.doubleStringProps, pad, null);
+			x.renderer = this;
 			x.cur_line = prefix.split("\n").length;
 			
 			var ret = x.munge();
