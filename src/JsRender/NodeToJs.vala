@@ -14,10 +14,12 @@ public class JsRender.NodeToJs : Object {
 	static uint indent = 1;
 	static string indent_str = " ";
 	
+	
+	
 	Node node;
 	Gee.ArrayList<string>  doubleStringProps;  // need to think if this is a good idea like this
 	string pad;
-	
+	JsRender jsrender;
 	  
 	Gee.HashMap<string,string> out_props;
 	Gee.HashMap<string,string> out_listeners;	
@@ -52,6 +54,9 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		this.cur_line = parent == null ? 0 : parent.cur_line  ; //-1 as we usuall concat onto the existin gline?
+		if (parent != null) {
+			this.jsrender = parent.jsrender;
+		}
 		this.ret = "";
 		this.top = parent == null ? this : parent.top;
 		// reset the maps...
