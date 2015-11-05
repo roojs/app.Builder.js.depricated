@@ -57,6 +57,7 @@ namespace Palete {
 			if (search.length < 2) {
 				return;
 			}
+			
 			// now do our magic..
 			var filtered_proposals = this.windowstate.file.palete().suggestComplete(
 				this.windowstate.file,
@@ -65,6 +66,10 @@ namespace Palete {
 				this.editor.key,
 				search
 			);
+			if (filtered_proposals.length() < 1) {
+			    return;
+			}
+		    
 			filtered_proposals.sort((a, b) => {
 				return ((string)(a.text)).collate((string)(b.text));
 			});
