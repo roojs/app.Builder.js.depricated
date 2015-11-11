@@ -573,6 +573,7 @@ public class WindowState : Object
 				// and different windows hide the preview in differnt ways..
 				
 				break;
+				
 			
 		   case State.LISTENER:
 		   case State.PROP:
