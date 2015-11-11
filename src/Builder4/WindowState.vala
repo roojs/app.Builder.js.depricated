@@ -596,8 +596,9 @@ public class WindowState : Object
 					Gtk.main_iteration();
 				}
 				//this.code_editor.saveContents(); << not yet...
-				 
-				this.win.rooview.el.show(); 
+				if (new_state != State.PROJECTCODEONLY) {
+					this.win.rooview.el.show(); 
+				}
 				this.win.codeeditview.el.set_scale(0.0f,0.0f); // hides it completely...
 				 
 				break;
