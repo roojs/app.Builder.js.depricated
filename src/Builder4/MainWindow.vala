@@ -1196,8 +1196,8 @@ public class Xcls_MainWindow : Object
             			 _this.windowstate.switchState(WindowState.State.CODEONLY);
             			 break;
             		 default: 
-            		    _this.windowstate.switchState(WindowState.State.PREVIEW);
-            		    			 break;
+            			 _this.windowstate.switchState(WindowState.State.PREVIEW);
+            			break;
                 }
                 
             
