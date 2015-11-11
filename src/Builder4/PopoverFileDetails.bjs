@@ -53,7 +53,7 @@
          "label" : "File type",
          "id" : "filetypelbl",
          "xalign" : 0.90000000000000002,
-         "* pack" : "attach,0,1,0,1",
+         "* pack" : "attach,0,0,1,1",
          "xtype" : "Label",
          "$ justify" : "Gtk.Justification.RIGHT",
          "x_options" : 4,

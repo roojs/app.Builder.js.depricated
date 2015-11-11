@@ -234,7 +234,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.row_spacing = 2;
             var child_0 = new Xcls_filetypelbl( _this );
             child_0.ref();
-            this.el.attach (  child_0.el , 0,1,0,1 );
+            this.el.attach (  child_0.el , 0,0,1,1 );
             var child_1 = new Xcls_filetype( _this );
             child_1.ref();
             this.el.attach (  child_1.el , 1,2,0,1 );
