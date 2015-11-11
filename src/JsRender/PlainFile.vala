@@ -32,12 +32,12 @@ namespace JsRender {
 	            this.content_type = ct;
             } else {
         		this.content_type = "text/plain"; // hopefully..
-        		var ar = path.split(".");
-        		var ext = ar[ar.length -1]; // hopefully not fail...
+//        		var ar = path.split(".");
+  //      		var ext = ar[ar.length -1]; // hopefully not fail...
         		
-        		switch(ext) { 
-	        		case "vala";
-	        			
+  //      		switch(ext) { 
+	//        		case "vala";
+	        	this.loaded = true;
         		
             
             }
