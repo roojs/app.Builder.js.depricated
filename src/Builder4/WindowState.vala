@@ -629,7 +629,7 @@ public class WindowState : Object
 				// hide files...
 				
 				
-				if (new_state == State.FILESPROJECT) {
+				if (new_state == State.FILEPROJECT) {
 				
 					this.clutterfiles.el.set_easing_duration(1000);
 					this.clutterfiles.el.set_pivot_point(0.5f,1.0f);
