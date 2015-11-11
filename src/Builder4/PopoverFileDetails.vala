@@ -279,7 +279,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.attach (  child_14.el , 0,0,1,1 );
             var child_15 = new Xcls_build_module( _this );
             child_15.ref();
-            this.el.attach (  child_15.el , 1,0,1,1 );
+            this.el.attach (  child_15.el , 1,7,1,1 );
         }
 
         // user defined functions
