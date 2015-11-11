@@ -346,7 +346,7 @@ public class Xcls_ClutterFiles : Object
 
             //listeners
             this.el.scroll_event.connect( ( event) => {
-                print("scroll event");
+                print("scroll event\n");
                 var y = _this.filelayout.el.y;
                 var dir = event.direction;
                 
@@ -368,36 +368,13 @@ public class Xcls_ClutterFiles : Object
                         
                         break;
                     default:
+            	        print("scroll event = bad direction\n");
                         return false;
                 }
                 // range of scroll -- can go up -- eg.. -ve value.
                 
             
                 
-                // to work out the max -ve number
-                // height of filelayout
-                // height of scrollactor..
-                
-            /*
-                if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {
-                    var nv =         _this.filelayout.el.y ;
-                    if (nv != -1 * (  last_child_bottom - this.el.height)) {
-                
-                        _this.filelayout.el.y = -1 * (  last_child_bottom - this.el.height);
-                        return true;
-                    }
-                
-                    return  false;
-                }
-            
-            */
-                
-                
-            //    print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
-              //          last_child_bottom - this.el.height,
-               //         y));    
-               // y = float.min(0, y);    //??
-               // print("scroll event of %f  - new y = %f ".printf(event.y, y));
                print("Set scroll to %f (lcb=%f / height = %f)\n", y, last_child_bottom, this.el.height);
                
                 _this.filelayout.el.y = y;
