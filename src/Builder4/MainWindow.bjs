@@ -341,7 +341,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n     \n     if (_this.windowstate.state == WindowState.State.FILES) {\n     \n\t     _this.windowstate.switchState(WindowState.State.FILEPROJECT);\n     } else {\n \t     _this.windowstate.switchState(WindowState.State.PROJECT);\n\t }     \n   \n\n\n}"
+                    "clicked" : "  ( ) => {\n    \n     switch(_this.windowstate.state) {\n \t   case WindowState.State.FILES:\n\t \t   _this.windowstate.switchState(WindowState.State.FILEPROJECT);\n\t \t   break;\n \t   case WindowState.State.CODEONLY:\n \t \t   _this.windowstate.switchState(WindowState.State.PROJECTCODEONLY);\n\t \t   break;\n \t   default:\n \t     _this.windowstate.switchState(WindowState.State.PROJECT);\n \t     break;\n\t }     \n   \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
