@@ -504,8 +504,13 @@ public class WindowState : Object
 			 
 
 	}
-	 
 	
+	public void setProjectSettings(string type) {
+	
+	
+	
+	
+	}
 	// ---------  webkit view
 	public void webkitViewInit()
 	{
