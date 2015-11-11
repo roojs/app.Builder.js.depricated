@@ -590,15 +590,19 @@ public class WindowState : Object
 				
 			case State.CODEONLY:
 				// going from codeonly..
-				this.win.leftpane.el.show();
+				
 				// enable re-calc of canvas..
-			    while (Gtk.events_pending()) { 
-					Gtk.main_iteration();
-				}
+
 				//this.code_editor.saveContents(); << not yet...
 				if (new_state != State.PROJECTCODEONLY) {
 					this.win.rooview.el.show(); 
+					this.win.leftpane.el.show();
 				}
+				
+							    while (Gtk.events_pending()) { 
+					Gtk.main_iteration();
+				}
+				
 				this.win.codeeditview.el.set_scale(0.0f,0.0f); // hides it completely...
 				 
 				break;
