@@ -1069,8 +1069,10 @@ public class Xcls_PopoverFileDetails : Object
             	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
             	var ext = ((string)ftypename);
             	
+                var rx = new GLib.Regex("\." + ext + "$",GLib.RegexCompileFlags.CASELESS);
+                targetfile = rx.replace(targetfile, targetfile.length, 0, ""); 
                
-            	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
+            	if (GLib.FileUtils.test(targetfile + "." + ext, GLib.FileTest.EXISTS)) {
             	    Xcls_StandardErrorDialog.singleton().show(
             	        _this.mainwindow.el,
             	        "That file already exists"
