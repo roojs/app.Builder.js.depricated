@@ -1069,7 +1069,7 @@ public class Xcls_PopoverFileDetails : Object
             	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
             	var ext = ((string)ftypename);
             	
-                var rx = new GLib.Regex("\." + ext + "$",GLib.RegexCompileFlags.CASELESS);
+                var rx = new GLib.Regex("\\." + ext + "$",GLib.RegexCompileFlags.CASELESS);
                 targetfile = rx.replace(targetfile, targetfile.length, 0, ""); 
                
             	if (GLib.FileUtils.test(targetfile + "." + ext, GLib.FileTest.EXISTS)) {
