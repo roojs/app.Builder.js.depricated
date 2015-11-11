@@ -609,6 +609,7 @@ public class WindowState : Object
 
 			case State.FILEPROJECT:
 			case State.PROJECT:
+			case State.PROJECTCODEONLY:
 				if (this.win.project.xtype == "Gtk") {
 					this.vala_projectsettings.save();
 				} 
