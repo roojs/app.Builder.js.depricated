@@ -341,18 +341,27 @@ public class Xcls_PopoverFileDetails : Object
             //listeners
             this.el.changed.connect( () => {
             	Gtk.TreeIter iter;
-            	if (!this.el.get_active_iter(out iter)) {
-            		return;
+            	bool is_bjs = true;
+            	if (this.el.get_active_iter(out iter)) {
+            		Value vfname;
+            		_this.ftdbmodel.el.get_value (iter, 0, out vfname);
+            		 is_bjs = ((string)vfname) == "BJS";
             	}
-                Value vfname;
-                _this.ftdbmodel.el.get_value (iter, 0, out vfname);
-                var is_bjs = ((string)vfname) == "BJS";
                 
-                
-                
-                
-                 
-                 
+               for (var i = 2; i < 8;i++) {
+            		var el = this.el.get_child_at(0,i);
+            		if (is_bjs) {
+            		   el.show();
+            		} else {
+            			el.hide();
+            		}
+            		var el = this.el.get_child_at(1,i);
+            		if (is_bjs) {
+            		   el.show();
+            		} else {
+            			el.hide();
+            		}     
+                }
                  
                  
             
