@@ -1187,17 +1187,11 @@ public class Xcls_MainWindow : Object
 
             //listeners
             this.el.clicked.connect( ( ) => {
-              
-            	switch(_this.windowstate.state) {
-            		case   WindowState.State.FILEPROJECT:
-            			 _this.windowstate.switchState(WindowState.State.FILES);
-            			 break;
-            		case   WindowState.State.PROJECTCODEONLY:
-            			 _this.windowstate.switchState(WindowState.State.CODEONLY);
-            			 break;
-            		 default: 
-            			 _this.windowstate.switchState(WindowState.State.PREVIEW);
-            			break;
+               if (_this.windowstate.state == WindowState.State.FILEPROJECT) {
+                
+            	     _this.windowstate.switchState(WindowState.State.FILES);
+                 } else { 
+            	    _this.windowstate.switchState(WindowState.State.PREVIEW);
                 }
                 
             
@@ -1439,19 +1433,16 @@ public class Xcls_MainWindow : Object
 
             //listeners
             this.el.clicked.connect( ( ) => {
-                
-                 switch(_this.windowstate.state) {
-             	   case WindowState.State.FILES:
-            	 	   _this.windowstate.switchState(WindowState.State.FILEPROJECT);
-            	 	   break;
-             	   case WindowState.State.CODEONLY:
-             	 	   _this.windowstate.switchState(WindowState.State.PROJECTCODEONLY);
-            	 	   break;
-             	   default:
+                 
+                 if (_this.windowstate.state == WindowState.State.FILES) {
+                 
+            	     _this.windowstate.switchState(WindowState.State.FILEPROJECT);
+                 } else {
              	     _this.windowstate.switchState(WindowState.State.PROJECT);
-             	     break;
             	 }     
-                
+               
+            
+            
             });
         }
 

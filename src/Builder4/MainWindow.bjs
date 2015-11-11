@@ -269,7 +269,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n  \n\tswitch(_this.windowstate.state) {\n\t\tcase   WindowState.State.FILEPROJECT:\n\t\t\t _this.windowstate.switchState(WindowState.State.FILES);\n\t\t\t break;\n\t\tcase   WindowState.State.PROJECTCODEONLY:\n\t\t\t _this.windowstate.switchState(WindowState.State.CODEONLY);\n\t\t\t break;\n\t\t default: \n\t\t\t _this.windowstate.switchState(WindowState.State.PREVIEW);\n\t\t\tbreak;\n    }\n    \n\n}"
+                    "clicked" : "  ( ) => {\n   if (_this.windowstate.state == WindowState.State.FILEPROJECT) {\n    \n\t     _this.windowstate.switchState(WindowState.State.FILES);\n     } else { \n\t    _this.windowstate.switchState(WindowState.State.PREVIEW);\n    }\n    \n\n}"
                    },
                    "utf8 tooltip_text" : "Back",
                    "xtype" : "Button",
@@ -341,7 +341,7 @@
                  "items" : [
                   {
                    "listeners" : {
-                    "clicked" : "  ( ) => {\n    \n     switch(_this.windowstate.state) {\n \t   case WindowState.State.FILES:\n\t \t   _this.windowstate.switchState(WindowState.State.FILEPROJECT);\n\t \t   break;\n \t   case WindowState.State.CODEONLY:\n \t \t   _this.windowstate.switchState(WindowState.State.PROJECTCODEONLY);\n\t \t   break;\n \t   default:\n \t     _this.windowstate.switchState(WindowState.State.PROJECT);\n \t     break;\n\t }     \n    \n}"
+                    "clicked" : "  ( ) => {\n     \n     if (_this.windowstate.state == WindowState.State.FILES) {\n     \n\t     _this.windowstate.switchState(WindowState.State.FILEPROJECT);\n     } else {\n \t     _this.windowstate.switchState(WindowState.State.PROJECT);\n\t }     \n   \n\n\n}"
                    },
                    "* pack" : false,
                    "xtype" : "Button",
