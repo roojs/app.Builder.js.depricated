@@ -24,6 +24,8 @@ namespace JsRender {
             base( project, path);
             this.xtype = "PlainFile";
             
+            // if the file does not exist...
+            
             var f = File.new_for_path (path) ;
             var info = f.query_info ("standard::*", 0);
             var ct = info.get_content_type();
