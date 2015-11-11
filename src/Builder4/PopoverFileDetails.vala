@@ -1055,7 +1055,20 @@ public class Xcls_PopoverFileDetails : Object
             	var targetfile = dir + "/" + fn;
             	
             	// strip the file type off the end..
+            	Gtk.TreeIter iter;
+            
+            	if (!_this.filetype.el.get_active_iter(out iter)) {
+            		// should not happen...
+            		// so we are jut going to return without 
+            		StandardErrorDialog.show(
+            	        _this.mainwindow.el,
+            	        "You must select a file type. "
+            	    );
             	
+            		Value vfname;
+            		_this.ftdbmodel.el.get_value (iter, 0, out vfname);
+            		 is_bjs = ((string)vfname) == "bjs";
+            	}
                
             	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
             	    Xcls_StandardErrorDialog.singleton().show(
