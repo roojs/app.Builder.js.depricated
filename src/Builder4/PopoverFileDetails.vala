@@ -258,10 +258,10 @@ public class Xcls_PopoverFileDetails : Object
             this.el.attach (  child_7.el , 1,3,1,1 );
             var child_8 = new Xcls_Label15( _this );
             child_8.ref();
-            this.el.attach (  child_8.el , 0,0,1,1 );
+            this.el.attach (  child_8.el , 0,4,1,1 );
             var child_9 = new Xcls_parent( _this );
             child_9.ref();
-            this.el.attach (  child_9.el , 1,0,1,1 );
+            this.el.attach (  child_9.el , 1,4,1,1 );
             var child_10 = new Xcls_Label17( _this );
             child_10.ref();
             this.el.attach (  child_10.el , 0,0,1,1 );
