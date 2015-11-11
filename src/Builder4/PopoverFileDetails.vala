@@ -111,11 +111,12 @@ public class Xcls_PopoverFileDetails : Object
         
         
         
-        _this.filetype.el.hide();
-        _this.filetypelbl.el.hide();
+        
         
         
         if (c.path.length > 0) {
+    		_this.filetype.el.hide();
+    		_this.filetypelbl.el.hide();
     	    this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
