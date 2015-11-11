@@ -633,7 +633,7 @@ public class WindowState : Object
 				
 					this.clutterfiles.el.set_easing_duration(1000);
 					this.clutterfiles.el.set_pivot_point(0.5f,1.0f);
-					 
+					this.clutterfiles.el.set_scale(0.5f,0.5f);
 					break;
 				}
  
