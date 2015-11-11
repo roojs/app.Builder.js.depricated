@@ -557,6 +557,13 @@ public class WindowState : Object
 			return;
 		}
 		
+		// stop werid stuff happening
+		
+		if (this.state == State.FILES 
+			&& new_state = State.FILEPROJECT 
+			&& this.left_projects.getSelectedProject() == null) {
+			return;
+		}
 		// save the easing state of everything..
 		this.easingSaveAll();
 		
