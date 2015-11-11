@@ -59,7 +59,7 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "build_module",
+         "id" : "filetype",
          "* init" : "this.el.add_attribute(_this.dbcellrenderer.el , \"markup\", 1 );",
          "* pack" : "attach_defaults,1,2,0,1",
          "xtype" : "ComboBox",

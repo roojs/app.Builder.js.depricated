@@ -12,7 +12,7 @@ public class Xcls_PopoverFileDetails : Object
         }
         return _PopoverFileDetails;
     }
-    public Xcls_build_module build_module;
+    public Xcls_filetype filetype;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
     public Xcls_name name;
@@ -226,7 +226,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_Label5( _this );
             child_0.ref();
             this.el.attach_defaults (  child_0.el , 0,1,0,1 );
-            var child_1 = new Xcls_build_module( _this );
+            var child_1 = new Xcls_filetype( _this );
             child_1.ref();
             this.el.attach_defaults (  child_1.el , 1,2,0,1 );
             var child_2 = new Xcls_Label9( _this );
@@ -299,7 +299,7 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_build_module : Object
+    public class Xcls_filetype : Object
     {
         public Gtk.ComboBox el;
         private Xcls_PopoverFileDetails  _this;
@@ -308,10 +308,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_build_module(Xcls_PopoverFileDetails _owner )
+        public Xcls_filetype(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.build_module = this;
+            _this.filetype = this;
             this.el = new Gtk.ComboBox();
 
             // my vars (dec)
