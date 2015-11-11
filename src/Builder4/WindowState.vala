@@ -762,7 +762,20 @@ public class WindowState : Object
 				this.win.rooview.el.set_pivot_point(1.0f,0.5f);
 				break;
 
-
+			case State.PROJECTCODEONLY:
+				this.win.codeeditview.el.set_pivot_point(1.0f,1.0f); // bottom right..
+				
+				if (this.win.project.xtype == "Roo") {
+					this.projectsettings.el.show_all();
+					this.projectsettings.show(this.win.project);
+				} else {
+					this.vala_projectsettings.el.show_all();
+					this.vala_projectsettings.show((Project.Gtk)this.win.project);
+				}
+ 
+				this.win.projecteditview.el.set_scale(1.0f,1.0f);
+				 
+				break;
 
 
 			case State.PROJECT:
