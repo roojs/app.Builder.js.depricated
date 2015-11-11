@@ -389,24 +389,30 @@ public class Xcls_PopoverFileDetails : Object
             el.append(out iter);
         
             
-            el.set_value(iter, 0, "UI");
+            el.set_value(iter, 0, "bjs");
             el.set_value(iter, 1, "User Interface File (bjs)");
             _this.build_module.el.set_active_iter(iter);
-            
-            for (var i = 0; i < data.size;i++) {
-            
         
-                el.append(out iter);
-                
-                el.set_value(iter, 0, data.get(i));
-                el.set_value(iter, 1, data.get(i));
-                
-                if (data.get(i) == cur) {
-                    _this.build_module.el.set_active_iter(iter);
-                }
-                
-            }
-             this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
+            el.append(out iter);
+            
+            el.set_value(iter, 0, "vala");
+            el.set_value(iter, 1, "Vala");
+        
+        
+        
+        
+            el.append(out iter);
+            
+            el.set_value(iter, 0, "js");
+            el.set_value(iter, 1, "Javascript");
+        
+        
+        
+            el.append(out iter);
+            
+            el.set_value(iter, 0, "css");
+            el.set_value(iter, 1, "CSS");
+        
                                              
         }
     }
