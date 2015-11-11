@@ -95,7 +95,7 @@
          "id" : "name",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,0,1",
+         "* pack" : "attach_defaults,1,2,1,2",
          "$ xns" : "Gtk"
         },
         {
@@ -112,7 +112,7 @@
          "id" : "title",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,1,2",
+         "* pack" : "attach_defaults,1,2,2,3",
          "$ xns" : "Gtk"
         },
         {
@@ -130,7 +130,7 @@
          "id" : "region",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,2,3",
+         "* pack" : "attach_defaults,1,2,3,4",
          "$ xns" : "Gtk"
         },
         {
