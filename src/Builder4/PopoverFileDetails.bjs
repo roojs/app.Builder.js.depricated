@@ -66,13 +66,13 @@
          "$ xns" : "Gtk",
          "items" : [
           {
-           "id" : "dbcellrenderer",
+           "id" : "ftdbcellrenderer",
            "xtype" : "CellRendererText",
            "* pack" : "pack_start,true",
            "$ xns" : "Gtk"
           },
           {
-           "id" : "dbmodel",
+           "id" : "ftdbmodel",
            "xtype" : "ListStore",
            "* pack" : "set_model",
            "$ columns" : "typeof(string),typeof(string)",

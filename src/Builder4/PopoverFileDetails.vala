@@ -13,8 +13,8 @@ public class Xcls_PopoverFileDetails : Object
         return _PopoverFileDetails;
     }
     public Xcls_filetype filetype;
-    public Xcls_dbcellrenderer dbcellrenderer;
-    public Xcls_dbmodel dbmodel;
+    public Xcls_ftdbcellrenderer ftdbcellrenderer;
+    public Xcls_ftdbmodel ftdbmodel;
     public Xcls_name name;
     public Xcls_title title;
     public Xcls_region region;
@@ -317,10 +317,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_dbcellrenderer( _this );
+            var child_0 = new Xcls_ftdbcellrenderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
-            var child_1 = new Xcls_dbmodel( _this );
+            var child_1 = new Xcls_ftdbmodel( _this );
             child_1.ref();
             this.el.set_model (  child_1.el  );
 
@@ -331,7 +331,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions
     }
-    public class Xcls_dbcellrenderer : Object
+    public class Xcls_ftdbcellrenderer : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_PopoverFileDetails  _this;
@@ -340,10 +340,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_dbcellrenderer(Xcls_PopoverFileDetails _owner )
+        public Xcls_ftdbcellrenderer(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.dbcellrenderer = this;
+            _this.ftdbcellrenderer = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
@@ -354,7 +354,7 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_dbmodel : Object
+    public class Xcls_ftdbmodel : Object
     {
         public Gtk.ListStore el;
         private Xcls_PopoverFileDetails  _this;
@@ -363,10 +363,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_dbmodel(Xcls_PopoverFileDetails _owner )
+        public Xcls_ftdbmodel(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.dbmodel = this;
+            _this.ftdbmodel = this;
             this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
 
             // my vars (dec)
