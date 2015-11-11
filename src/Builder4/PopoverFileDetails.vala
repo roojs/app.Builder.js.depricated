@@ -1092,7 +1092,9 @@ public class Xcls_PopoverFileDetails : Object
             	_this.updateFileFromEntry();
             	_this.file.loaded = true;
             	_this.file.save();
-            	_this.file.project.addFile(_this.file);
+            	if (ext == "bjs") {
+            		_this.file.project.addFile(_this.file);
+            	}
             	
              
             	// what about .js ?
