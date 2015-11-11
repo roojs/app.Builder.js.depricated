@@ -560,7 +560,7 @@ public class WindowState : Object
 		// stop werid stuff happening
 		
 		if (this.state == State.FILES 
-			&& new_state = State.FILEPROJECT 
+			&& new_state == State.FILEPROJECT 
 			&& this.left_projects.getSelectedProject() == null) {
 			return;
 		}
