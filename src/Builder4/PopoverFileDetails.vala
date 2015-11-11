@@ -389,8 +389,8 @@ public class Xcls_PopoverFileDetails : Object
             el.append(out iter);
         
             
-            el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "-- select a module --");
+            el.set_value(iter, 0, "UI");
+            el.set_value(iter, 1, "User Interface File");
             _this.build_module.el.set_active_iter(iter);
             
             for (var i = 0; i < data.size;i++) {
