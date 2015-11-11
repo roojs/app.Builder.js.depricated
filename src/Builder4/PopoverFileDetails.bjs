@@ -165,14 +165,14 @@
          "id" : "permname",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach,1,0,1,1",
+         "* pack" : "attach,1,5,1,1",
          "$ xns" : "Gtk"
         },
         {
          "label" : "Order (for tabs)",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
-         "* pack" : "attach,0,0,1,1",
+         "* pack" : "attach,0,6,1,1",
          "xtype" : "Label",
          "$ justify" : "Gtk.Justification.RIGHT",
          "x_options" : 4,
@@ -182,7 +182,7 @@
          "id" : "modOrder",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach,1,0,1,1",
+         "* pack" : "attach,1,6,1,1",
          "$ xns" : "Gtk"
         },
         {

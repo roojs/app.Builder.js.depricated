@@ -267,13 +267,13 @@ public class Xcls_PopoverFileDetails : Object
             this.el.attach (  child_10.el , 0,5,1,1 );
             var child_11 = new Xcls_permname( _this );
             child_11.ref();
-            this.el.attach (  child_11.el , 1,0,1,1 );
+            this.el.attach (  child_11.el , 1,5,1,1 );
             var child_12 = new Xcls_Label19( _this );
             child_12.ref();
-            this.el.attach (  child_12.el , 0,0,1,1 );
+            this.el.attach (  child_12.el , 0,6,1,1 );
             var child_13 = new Xcls_modOrder( _this );
             child_13.ref();
-            this.el.attach (  child_13.el , 1,0,1,1 );
+            this.el.attach (  child_13.el , 1,6,1,1 );
             var child_14 = new Xcls_Label21( _this );
             child_14.ref();
             this.el.attach (  child_14.el , 0,0,1,1 );
