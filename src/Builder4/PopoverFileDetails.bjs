@@ -61,7 +61,7 @@
         },
         {
          "listeners" : {
-          "changed" : "() => {\n\n\n\n}"
+          "changed" : "() => {\n\tGtk.TreeIter iter;\n\tif (!this.el.get_active_iter(out iter)) {\n\t\treturn;\n\t}\n\t\n\n\n}"
          },
          "id" : "filetype",
          "* init" : "this.el.add_attribute(_this.ftdbcellrenderer.el , \"markup\", 1 );",

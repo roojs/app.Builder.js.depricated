@@ -340,7 +340,11 @@ public class Xcls_PopoverFileDetails : Object
 
             //listeners
             this.el.changed.connect( () => {
-            
+            	Gtk.TreeIter iter;
+            	if (!this.el.get_active_iter(out iter)) {
+            		return;
+            	}
+            	
             
             
             });
