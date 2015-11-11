@@ -763,6 +763,7 @@ public class WindowState : Object
 				break;
 
 			case State.PROJECTCODEONLY:
+			    // going to project edit (when in code only)
 				this.win.codeeditview.el.set_pivot_point(1.0f,1.0f); // bottom right..
 				
 				if (this.win.project.xtype == "Roo") {
