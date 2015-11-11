@@ -504,7 +504,8 @@ public class WindowState : Object
 			 
 
 	}
-	
+	// our project properties is different for Roo and Gtk
+	// it would be better to change the above code to use this, 
 	public void attachProjectSettings() {
 	
 		var ctr_p= ((Gtk.Container)(this.win.projecteditview.el.get_widget()));
