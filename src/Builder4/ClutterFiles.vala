@@ -371,8 +371,9 @@ public class Xcls_ClutterFiles : Object
                  	    double delta_x, delta_y;
                  	    event.get_scroll_delta(out delta_x, out delta_y);
                         //print("Scroll SMOOTH? by %f\n",  delta_y * event.y);
-                        y += (delta_y * event.y) /2 ;
+                        y += ((float)delta_y * event.y * -1.0f) /2 ;
                         y = float.max(bottompos, y);
+                        y = float.min(0, y); // 
                                    
                         break;
                     default:
