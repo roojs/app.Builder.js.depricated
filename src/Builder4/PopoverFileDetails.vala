@@ -1046,6 +1046,9 @@ public class Xcls_PopoverFileDetails : Object
             	    _this.el.hide();
             	    return;
             	}
+            	
+            	// ---------------- NEW FILES...
+            	
             	var fn = _this.name.el.get_text();
             	var dir = _this.project.firstPath();
                
