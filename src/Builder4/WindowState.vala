@@ -509,9 +509,7 @@ public class WindowState : Object
 	
 		var ctr_p= ((Gtk.Container)(this.win.projecteditview.el.get_widget()));
 		
-		
-		
-		if (file.project.xtype == "Roo" ) { 
+		if (this.win.project.xtype == "Roo" ) { 
 			ctr_p.foreach( (w) => { ctr_p.remove(w); });
 			ctr_p.add(this.projectsettings.el);
 			this.projectsettings.el.show_all();            
