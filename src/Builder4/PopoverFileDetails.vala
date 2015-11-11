@@ -1054,7 +1054,7 @@ public class Xcls_PopoverFileDetails : Object
             	
             	var targetfile = dir + "/" + fn;
             	
-            	
+            	// strip the file type off the end..
             	
                
             	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
