@@ -391,7 +391,7 @@ public class Xcls_PopoverFileDetails : Object
             
             el.set_value(iter, 0, "bjs");
             el.set_value(iter, 1, "User Interface File (bjs)");
-            _this.build_module.el.set_active_iter(iter);
+            _this.filetype.el.set_active_iter(iter);
         
             el.append(out iter);
             
