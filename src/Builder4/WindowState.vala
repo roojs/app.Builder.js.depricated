@@ -597,13 +597,16 @@ public class WindowState : Object
 				if (new_state != State.PROJECTCODEONLY) {
 					this.win.rooview.el.show(); 
 					this.win.leftpane.el.show();
-				}
-				
-							    while (Gtk.events_pending()) { 
+					this.win.codeeditview.el.set_scale(0.0f,0.0f);
+				} else {
+					this.win.codeeditview.el.set_pivot_point(0.0f,1.0f); // bottom left
+				    this.win.codeeditview.el.set_scale(0.5f,0.5f);
+				}	
+			    while (Gtk.events_pending()) { 
 					Gtk.main_iteration();
 				}
 				
-				this.win.codeeditview.el.set_scale(0.0f,0.0f); // hides it completely...
+				 // hides it completely...
 				 
 				break;
 
@@ -769,8 +772,7 @@ public class WindowState : Object
 			case State.PROJECTCODEONLY:
 			    // going to project edit (when in code only)
 
-				this.win.codeeditview.el.set_pivot_point(1.0f,1.0f); // bottom right..
-			    this.win.codeeditview.el.set_scale(0.5f,0.5f);
+		
 			    
 				if (this.win.project.xtype == "Roo") {
 					this.projectsettings.el.show_all();
