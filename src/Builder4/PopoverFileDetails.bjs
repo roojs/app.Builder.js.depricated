@@ -103,7 +103,7 @@
          "label" : "Title",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
-         "* pack" : "attach_defaults,0,1,2,3",
+         "* pack" : "attach,0,1,2,3",
          "xtype" : "Label",
          "$ justify" : "Gtk.Justification.RIGHT",
          "x_options" : 4,
@@ -113,7 +113,7 @@
          "id" : "title",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,2,3",
+         "* pack" : "attach,1,2,2,3",
          "$ xns" : "Gtk"
         },
         {
