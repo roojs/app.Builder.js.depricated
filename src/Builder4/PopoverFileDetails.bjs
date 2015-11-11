@@ -197,7 +197,7 @@
         {
          "id" : "build_module",
          "* init" : "this.el.add_attribute(_this.dbcellrenderer.el , \"markup\", 1 );",
-         "* pack" : "attach_defaults,1,2,6,7",
+         "* pack" : "attach_defaults,1,2,7.8",
          "xtype" : "ComboBox",
          "$ xns" : "Gtk",
          "items" : [
