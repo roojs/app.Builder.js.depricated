@@ -1187,11 +1187,15 @@ public class Xcls_MainWindow : Object
 
             //listeners
             this.el.clicked.connect( ( ) => {
-               if (_this.windowstate.state == WindowState.State.FILEPROJECT) {
-                
-            	     _this.windowstate.switchState(WindowState.State.FILES);
-                 } else { 
-            	    _this.windowstate.switchState(WindowState.State.PREVIEW);
+              
+            	switch(_this.windowstate.state) {
+            		case   WindowState.State.FILEPROJECT:
+            			 _this.windowstate.switchState(WindowState.State.FILES);
+            			 break;
+            		case   WindowState.State.PROJECTCODEONLY:
+            			 _this.windowstate.switchState(WindowState.State.CODEONLY);
+            		 default: 
+            		    _this.windowstate.switchState(WindowState.State.PREVIEW);
                 }
                 
             
