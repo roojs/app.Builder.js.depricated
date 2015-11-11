@@ -357,7 +357,7 @@ public class Xcls_PopoverFileDetails : Object
             		} else {
             			el.hide();
             		}
-            		var el = _this.grid.el.get_child_at(1,i);
+            		 el = _this.grid.el.get_child_at(1,i);
             		if (is_bjs) {
             		   el.show();
             		} else {
