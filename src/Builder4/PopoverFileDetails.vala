@@ -400,7 +400,9 @@ public class Xcls_PopoverFileDetails : Object
             
             el.set_value(iter, 0, "vala");
             el.set_value(iter, 1, "Vala");
-        
+        	if (cur == "vala") {
+        	    _this.filetype.el.set_active_iter(iter);
+            }
         
         
         
@@ -409,13 +411,18 @@ public class Xcls_PopoverFileDetails : Object
             el.set_value(iter, 0, "js");
             el.set_value(iter, 1, "Javascript");
         
-        
+        	if (cur == "js") {
+        	    _this.filetype.el.set_active_iter(iter);
+            }
         
             el.append(out iter);
             
             el.set_value(iter, 0, "css");
             el.set_value(iter, 1, "CSS");
         
+        	if (cur == "css") {
+        	    _this.filetype.el.set_active_iter(iter);
+            }
                                              
         }
     }
