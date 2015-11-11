@@ -115,14 +115,12 @@ public class Xcls_PopoverFileDetails : Object
         
         
         if (c.path.length > 0) {
-    		_this.filetype.el.hide();
-    		_this.filetypelbl.el.hide();
+    		 
     	    this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
             _this.ftdbmodel.loadData("bjs"); // fixme - need to determine type..
-    	    _this.filetype.el.show();
-    	    _this.filetypelbl.el.show();
+    	   
         }
         
          var ar = new Gee.ArrayList<string>();
@@ -156,6 +154,20 @@ public class Xcls_PopoverFileDetails : Object
          print("SHOWALL - POPIP\n");
         this.el.show_all();
         this.name.el.grab_focus();
+        
+        
+        
+        if (c.path.length > 0) {
+    		_this.filetype.el.hide();
+    		_this.filetypelbl.el.hide();
+    	    this.save_btn.el.set_label("Save");
+        } else {
+            this.save_btn.el.set_label("Create");
+            _this.ftdbmodel.loadData("bjs"); // fixme - need to determine type..
+    	    _this.filetype.el.show();
+    	    _this.filetypelbl.el.show();
+        }
+        
         
         //this.success = c.success;
         
