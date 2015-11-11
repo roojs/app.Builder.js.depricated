@@ -1081,7 +1081,7 @@ public class Xcls_PopoverFileDetails : Object
             	}
                
                var f =  JsRender.JsRender.factory(
-            		_this.file.project.xtype,  
+            		ext == "bjs" ? _this.file.project.xtype : "PlainFile",  
             		_this.file.project, 
             		targetfile + "." + ext);
             
