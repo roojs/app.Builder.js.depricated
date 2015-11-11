@@ -369,7 +369,7 @@ public class Xcls_ClutterFiles : Object
                         break;
                  	  case Clutter.ScrollDirection.SMOOTH:
                  	    double delta_x, delta_y;
-                 	    event.get_scoll_data(out delta_x, out delta_y);
+                 	    event.get_scroll_data(out delta_x, out delta_y);
                         print("Scroll SMOOTH? by %f\n", event.y);
                         
                         return false;            
