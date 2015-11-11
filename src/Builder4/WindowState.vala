@@ -626,7 +626,7 @@ public class WindowState : Object
 				
 				}
 				this.win.projecteditview.el.set_scale(0.0f,0.0f);
-				 break;
+				break;
 
 		  case State.FILES: // goes to preview or codeonly...
 				// hide files...
