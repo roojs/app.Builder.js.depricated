@@ -764,8 +764,10 @@ public class WindowState : Object
 
 			case State.PROJECTCODEONLY:
 			    // going to project edit (when in code only)
+
 				this.win.codeeditview.el.set_pivot_point(1.0f,1.0f); // bottom right..
-				
+			    this.win.codeeditview.el.set_scale(1.0f,0.5f);
+			    
 				if (this.win.project.xtype == "Roo") {
 					this.projectsettings.el.show_all();
 					this.projectsettings.show(this.win.project);
