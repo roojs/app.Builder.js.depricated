@@ -12,6 +12,7 @@ public class Xcls_PopoverFileDetails : Object
         }
         return _PopoverFileDetails;
     }
+    public Xcls_filetypelbl filetypelbl;
     public Xcls_filetype filetype;
     public Xcls_ftdbcellrenderer ftdbcellrenderer;
     public Xcls_ftdbmodel ftdbmodel;
@@ -230,7 +231,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.margin_right = 4;
             this.el.margin_left = 4;
             this.el.row_spacing = 2;
-            var child_0 = new Xcls_Label5( _this );
+            var child_0 = new Xcls_filetypelbl( _this );
             child_0.ref();
             this.el.attach_defaults (  child_0.el , 0,1,0,1 );
             var child_1 = new Xcls_filetype( _this );
@@ -282,7 +283,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions
     }
-    public class Xcls_Label5 : Object
+    public class Xcls_filetypelbl : Object
     {
         public Gtk.Label el;
         private Xcls_PopoverFileDetails  _this;
@@ -291,9 +292,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Label5(Xcls_PopoverFileDetails _owner )
+        public Xcls_filetypelbl(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
+            _this.filetypelbl = this;
             this.el = new Gtk.Label( "File type" );
 
             // my vars (dec)

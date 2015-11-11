@@ -51,6 +51,7 @@
        "items" : [
         {
          "label" : "File type",
+         "id" : "filetypelbl",
          "xalign" : 0.90000000000000002,
          "* pack" : "attach_defaults,0,1,0,1",
          "xtype" : "Label",
