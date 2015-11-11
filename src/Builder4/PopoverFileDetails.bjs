@@ -147,7 +147,7 @@
          "id" : "parent",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,3,4",
+         "* pack" : "attach_defaults,1,2,4,5",
          "$ xns" : "Gtk"
         },
         {
