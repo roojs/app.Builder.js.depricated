@@ -822,6 +822,8 @@ public class WindowState : Object
 				
 			case State.FILEPROJECT:
 				var pr = this.left_projects.getSelectedProject();
+				
+				this.win.project = this.left_projects.getSelectedProject();
 				if (pr.xtype == "Roo") {
 					this.projectsettings.el.show_all();
 					this.projectsettings.show(this.win.project);
