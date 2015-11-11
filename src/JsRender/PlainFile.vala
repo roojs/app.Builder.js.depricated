@@ -31,8 +31,13 @@ namespace JsRender {
 		        var ct = info.get_content_type();
 	            this.content_type = ct;
             } else {
+        		this.content_type = "text/plain"; // hopefully..
         		var ar = path.split(".");
         		var ext = ar[ar.length -1]; // hopefully not fail...
+        		
+        		switch(ext) { 
+	        		case "vala";
+	        			
         		
             
             }
