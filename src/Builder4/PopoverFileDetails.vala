@@ -115,10 +115,11 @@ public class Xcls_PopoverFileDetails : Object
         
         
         if (c.path.length > 0) {
-    	    
-            this.save_btn.el.set_label("Save");
+    	    this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
+    	    _this.filetype.el.show();
+    	    _this.filetypelbl.el.show();
         }
         
          var ar = new Gee.ArrayList<string>();
