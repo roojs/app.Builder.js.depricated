@@ -346,7 +346,7 @@ public class Xcls_ClutterFiles : Object
 
             //listeners
             this.el.scroll_event.connect( ( event) => {
-               //Sprint("scroll event");
+                print("scroll event");
                 var y = _this.filelayout.el.y;
                 var dir = event.direction;
                 

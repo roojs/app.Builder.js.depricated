@@ -67,7 +67,7 @@
     },
     {
      "listeners" : {
-      "scroll_event" : "( event) => {\n   //Sprint(\"scroll event\");\n    var y = _this.filelayout.el.y;\n    var dir = event.direction;\n    \n    var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;\n    var bottompos = -1 * (  last_child_bottom - (0.5f * this.el.height));\n    \n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            print(\"Scroll up by %f\\n\", event.y);\n            y += event.y /2;\n            y = float.min(0, y); // \n            break;\n            \n        case Clutter.ScrollDirection.DOWN:\n            print(\"Scroll down by %f\\n\", event.y);\n            y -= event.y /2 ;\n            y = float.max(bottompos, y);\n            \n            \n            break;\n        default:\n            return false;\n    }\n    // range of scroll -- can go up -- eg.. -ve value.\n    \n\n    \n    // to work out the max -ve number\n    // height of filelayout\n    // height of scrollactor..\n    \n/*\n    if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n        var nv =         _this.filelayout.el.y ;\n        if (nv != -1 * (  last_child_bottom - this.el.height)) {\n    \n            _this.filelayout.el.y = -1 * (  last_child_bottom - this.el.height);\n            return true;\n        }\n    \n        return  false;\n    }\n\n*/\n    \n    \n//    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n  //          last_child_bottom - this.el.height,\n   //         y));    \n   // y = float.min(0, y);    //??\n   // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n   print(\"Set scroll to %f (lcb=%f / height = %f)\\n\", y, last_child_bottom, this.el.height);\n   \n    _this.filelayout.el.y = y;\n    return true;\n          \n}"
+      "scroll_event" : "( event) => {\n    print(\"scroll event\");\n    var y = _this.filelayout.el.y;\n    var dir = event.direction;\n    \n    var last_child_bottom = _this.filelayout.el.last_child.y +  _this.filelayout.el.last_child.height;\n    var bottompos = -1 * (  last_child_bottom - (0.5f * this.el.height));\n    \n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            print(\"Scroll up by %f\\n\", event.y);\n            y += event.y /2;\n            y = float.min(0, y); // \n            break;\n            \n        case Clutter.ScrollDirection.DOWN:\n            print(\"Scroll down by %f\\n\", event.y);\n            y -= event.y /2 ;\n            y = float.max(bottompos, y);\n            \n            \n            break;\n        default:\n            return false;\n    }\n    // range of scroll -- can go up -- eg.. -ve value.\n    \n\n    \n    // to work out the max -ve number\n    // height of filelayout\n    // height of scrollactor..\n    \n/*\n    if ( (-1 * (y+200)) > (  last_child_bottom - this.el.height)) {\n        var nv =         _this.filelayout.el.y ;\n        if (nv != -1 * (  last_child_bottom - this.el.height)) {\n    \n            _this.filelayout.el.y = -1 * (  last_child_bottom - this.el.height);\n            return true;\n        }\n    \n        return  false;\n    }\n\n*/\n    \n    \n//    print(\"\\nlast child - this height = %f  ==== new y %f\\n \".printf( \n  //          last_child_bottom - this.el.height,\n   //         y));    \n   // y = float.min(0, y);    //??\n   // print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n   print(\"Set scroll to %f (lcb=%f / height = %f)\\n\", y, last_child_bottom, this.el.height);\n   \n    _this.filelayout.el.y = y;\n    return true;\n          \n}"
      },
      "# Gee.ArrayList<Xcls_fileitem> fileitems" : "new Gee.ArrayList<Xcls_fileitem>()",
      "id" : "scroller",
@@ -88,8 +88,8 @@
        "items" : [
         {
          "id" : "filelayout_manager",
-         "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "bool homogeneous" : false,
+         "$ orientation" : "Clutter.FlowOrientation.HORIZONTAL",
          "xtype" : "FlowLayout",
          "float max_column_width" : "100.0f",
          "$ xns" : "Clutter",
@@ -136,8 +136,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickType(),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+typetitle",
            "* args" : "JsRender.JsRender file",
+           "id" : "+typetitle",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -148,8 +148,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", file.nickName(),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "+title",
            "* args" : "JsRender.JsRender file",
+           "id" : "+title",
            "* pack" : "add_child",
            "xtype" : "Text",
            "bool x_expand" : false,
@@ -178,8 +178,8 @@
           },
           {
            "* ctor" : "new Clutter.Text.full(\"Sans bold 14px\", GLib.Path.get_basename(folderpath),  Clutter.Color.from_string(\"#fff\"))",
-           "* args" : "string folderpath",
            "id" : "+foldertitle",
+           "* args" : "string folderpath",
            "$ x_expand" : true,
            "* pack" : "add_child",
            "xtype" : "Text",
@@ -195,8 +195,8 @@
             "leave_event" : "(  event)  => {\n    this.el.background_color =   Clutter.Color.from_string(\"#000\");\n     this.el.color =   Clutter.Color.from_string(\"#fff\");\n    return false;\n}"
            },
            "* ctor" : "new Clutter.Text.full(\"Sans 10px\", GLib.Path.get_basename(filepath),  Clutter.Color.from_string(\"#fff\"))",
-           "id" : "*folderfile",
            "* args" : "string filepath",
+           "id" : "*folderfile",
            "* init" : "{\n\tthis.filepath = filepath;\n}\n",
            "xtype" : "Text",
            "bool x_expand" : true,
