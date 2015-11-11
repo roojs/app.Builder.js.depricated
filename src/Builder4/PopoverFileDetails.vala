@@ -106,6 +106,9 @@ public class Xcls_PopoverFileDetails : Object
         _this.modOrder.el.set_text(c.modOrder);
          _this.permname.el.set_text(c.permname);
         
+        _this.filetype.loadData();
+        
+        
         if (c.path.length > 0) {
         
             this.save_btn.el.set_label("Save");
@@ -270,7 +273,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.attach_defaults (  child_14.el , 0,1,7,8 );
             var child_15 = new Xcls_build_module( _this );
             child_15.ref();
-            this.el.attach_defaults (  child_15.el , 1,2,7.8 );
+            this.el.attach_defaults (  child_15.el , 1,2,7,8 );
         }
 
         // user defined functions
