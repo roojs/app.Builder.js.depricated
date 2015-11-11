@@ -179,7 +179,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_HeaderBar3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_Table4( _this );
+            var child_1 = new Xcls_Grid4( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,4 );
             var child_2 = new Xcls_HButtonBox25( _this );
@@ -212,19 +212,19 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_Table4 : Object
+    public class Xcls_Grid4 : Object
     {
-        public Gtk.Table el;
+        public Gtk.Grid el;
         private Xcls_PopoverFileDetails  _this;
 
 
             // my vars (def)
 
         // ctor
-        public Xcls_Table4(Xcls_PopoverFileDetails _owner )
+        public Xcls_Grid4(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Table( 7, 2, true );
+            this.el = new Gtk.Grid();
 
             // my vars (dec)
 

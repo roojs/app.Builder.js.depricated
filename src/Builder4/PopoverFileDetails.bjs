@@ -41,7 +41,7 @@
       {
        "int margin_right" : 4,
        "* pack" : "pack_start,false,false,4",
-       "xtype" : "Table",
+       "xtype" : "Grid",
        "uint row_spacing" : 2,
        "n_columns" : 2,
        "$ xns" : "Gtk",
