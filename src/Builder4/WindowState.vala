@@ -505,9 +505,22 @@ public class WindowState : Object
 
 	}
 	
-	public void setProjectSettings(string type) {
+	public void attachProjectSettings() {
 	
-	
+		var ctr_p= ((Gtk.Container)(this.win.projecteditview.el.get_widget()));
+		
+		
+		
+		if (file.project.xtype == "Roo" ) { 
+			ctr_p.foreach( (w) => { ctr_p.remove(w); });
+			ctr_p.add(this.projectsettings.el);
+			this.projectsettings.el.show_all();            
+
+		} else {
+			ctr_p.foreach( (w) => { ctr_p.remove(w); });            
+			ctr_p.add(this.vala_projectsettings.el);
+			this.vala_projectsettings.el.show_all();
+		}
 	
 	
 	}
