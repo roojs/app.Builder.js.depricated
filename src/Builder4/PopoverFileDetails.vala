@@ -344,7 +344,17 @@ public class Xcls_PopoverFileDetails : Object
             	if (!this.el.get_active_iter(out iter)) {
             		return;
             	}
-            	
+                Value vfname;
+                this.ftdbmodel.el.get_value (iter, 0, out vfname);
+                var is_bjs = ((string)vfname) == "BJS";
+                
+                
+                
+                
+                 
+                 
+                 
+                 
             
             
             });
