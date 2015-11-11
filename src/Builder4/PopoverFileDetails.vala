@@ -1051,6 +1051,11 @@ public class Xcls_PopoverFileDetails : Object
             	
             	var fn = _this.name.el.get_text();
             	var dir = _this.project.firstPath();   // fixme.. should be based on a pulldown?
+            	
+            	var targetfile = dir + "/" + fn;
+            	
+            	
+            	
                
             	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
             	    Xcls_StandardErrorDialog.singleton().show(
