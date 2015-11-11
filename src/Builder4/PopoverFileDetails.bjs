@@ -155,7 +155,7 @@
          "label" : "Permission Name",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
-         "* pack" : "attach_defaults,0,1,5,6",
+         "* pack" : "attach,0,1,5,6",
          "xtype" : "Label",
          "$ justify" : "Gtk.Justification.RIGHT",
          "x_options" : 4,
