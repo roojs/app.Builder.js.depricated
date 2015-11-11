@@ -249,37 +249,37 @@ public class Xcls_PopoverFileDetails : Object
             this.el.attach (  child_4.el , 0,0,1,1 );
             var child_5 = new Xcls_title( _this );
             child_5.ref();
-            this.el.attach (  child_5.el , 1,2,2,3 );
+            this.el.attach (  child_5.el , 0,0,1,1 );
             var child_6 = new Xcls_Label13( _this );
             child_6.ref();
-            this.el.attach (  child_6.el , 0,1,3,4 );
+            this.el.attach (  child_6.el , 0,0,1,1 );
             var child_7 = new Xcls_region( _this );
             child_7.ref();
-            this.el.attach (  child_7.el , 1,2,3,4 );
+            this.el.attach (  child_7.el , 0,0,1,1 );
             var child_8 = new Xcls_Label15( _this );
             child_8.ref();
-            this.el.attach (  child_8.el , 0,1,4,5 );
+            this.el.attach (  child_8.el , 0,0,1,1 );
             var child_9 = new Xcls_parent( _this );
             child_9.ref();
-            this.el.attach (  child_9.el , 1,2,4,5 );
+            this.el.attach (  child_9.el , 0,0,1,1 );
             var child_10 = new Xcls_Label17( _this );
             child_10.ref();
-            this.el.attach (  child_10.el , 0,1,5,6 );
+            this.el.attach (  child_10.el , 0,0,1,1 );
             var child_11 = new Xcls_permname( _this );
             child_11.ref();
-            this.el.attach_defaults (  child_11.el , 1,2,5,6 );
+            this.el.attach (  child_11.el , 0,0,1,1 );
             var child_12 = new Xcls_Label19( _this );
             child_12.ref();
-            this.el.attach_defaults (  child_12.el , 0,1,6,7 );
+            this.el.attach (  child_12.el , 0,0,1,1 );
             var child_13 = new Xcls_modOrder( _this );
             child_13.ref();
-            this.el.attach_defaults (  child_13.el , 1,2,6,7 );
+            this.el.attach (  child_13.el , 0,0,1,1 );
             var child_14 = new Xcls_Label21( _this );
             child_14.ref();
-            this.el.attach_defaults (  child_14.el , 0,1,7,8 );
+            this.el.attach (  child_14.el , 0,0,1,1 );
             var child_15 = new Xcls_build_module( _this );
             child_15.ref();
-            this.el.attach_defaults (  child_15.el , 1,2,7,8 );
+            this.el.attach (  child_15.el , 0,0,1,1 );
         }
 
         // user defined functions
