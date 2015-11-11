@@ -1064,11 +1064,11 @@ public class Xcls_PopoverFileDetails : Object
             	        _this.mainwindow.el,
             	        "You must select a file type. "
             	    );
-            	
-            		Value vfname;
-            		_this.ftdbmodel.el.get_value (iter, 0, out vfname);
-            		 is_bjs = ((string)vfname) == "bjs";
             	}
+            	Value ftypename;
+            	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
+            	var ext = ((string)vfname);
+            	
                
             	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
             	    Xcls_StandardErrorDialog.singleton().show(
