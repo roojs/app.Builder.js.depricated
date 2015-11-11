@@ -45,7 +45,7 @@
        "uint row_spacing" : 2,
        "n_columns" : 2,
        "$ xns" : "Gtk",
-       "n_rows" : 3,
+       "n_rows" : 7,
        "$ homogeneous" : true,
        "int margin_left" : 4,
        "items" : [

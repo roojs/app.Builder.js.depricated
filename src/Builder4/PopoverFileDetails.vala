@@ -215,7 +215,7 @@ public class Xcls_PopoverFileDetails : Object
         public Xcls_Table4(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Table( 3, 2, true );
+            this.el = new Gtk.Table( 7, 2, true );
 
             // my vars (dec)
 
