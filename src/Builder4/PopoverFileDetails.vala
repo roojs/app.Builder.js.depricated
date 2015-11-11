@@ -349,13 +349,13 @@ public class Xcls_PopoverFileDetails : Object
             	}
                 
                for (var i = 2; i < 8;i++) {
-            		var el = this.el.get_child_at(0,i);
+            		var el = _this.grid.el.get_child_at(0,i);
             		if (is_bjs) {
             		   el.show();
             		} else {
             			el.hide();
             		}
-            		var el = this.el.get_child_at(1,i);
+            		var el = _this.grid..el.get_child_at(1,i);
             		if (is_bjs) {
             		   el.show();
             		} else {
