@@ -370,9 +370,10 @@ public class Xcls_ClutterFiles : Object
                  	  case Clutter.ScrollDirection.SMOOTH:
                  	    double delta_x, delta_y;
                  	    event.get_scroll_delta(out delta_x, out delta_y);
-                        print("Scroll SMOOTH? by %f\n",  delta_y * event.y);
-                        
-                        return false;            
+                        //print("Scroll SMOOTH? by %f\n",  delta_y * event.y);
+                        y += (delta_y * event.y) /2 ;
+                        y = float.max(bottompos, y);
+                                   
                         break;
                     default:
             	        print("scroll event = bad direction %s\n", dir.to_string());
