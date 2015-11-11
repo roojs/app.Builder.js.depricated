@@ -1044,6 +1044,8 @@ public class WindowState : Object
 				break;
 			
 			case State.PROJECT: 
+			case State.FILEPROJECT:
+			case State.PROJECTCODEONLY:
 				// anything else?
 				this.win.backbutton.el.show();
 				
