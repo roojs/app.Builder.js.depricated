@@ -367,8 +367,15 @@ public class Xcls_ClutterFiles : Object
                         
                         
                         break;
+                 	  case Clutter.ScrollDirection.SMOOTH:
+                        print("Scroll SMOOTH? by %f\n", event.y);
+                        y -= event.y /2 ;
+                        y = float.max(bottompos, y);
+                        
+                        
+                        break;
                     default:
-            	        print("scroll event = bad direction\n");
+            	        print("scroll event = bad direction %s\n", dir.to_string());
                         return false;
                 }
                 // range of scroll -- can go up -- eg.. -ve value.
