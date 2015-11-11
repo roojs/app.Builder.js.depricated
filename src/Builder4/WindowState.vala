@@ -995,7 +995,7 @@ public class WindowState : Object
 			
 			case State.CODEONLY: 
 				this.win.openbtn.el.show();
-	
+				this.win.projecteditbutton.el.show();
 				this.win.search_entry.el.show();
 				break;
 		   
