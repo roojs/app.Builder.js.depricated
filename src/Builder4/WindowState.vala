@@ -19,7 +19,8 @@ public class WindowState : Object
 		CODEONLY,
 		FILES,
 		PROJECT, // project settings..
-		FILEPROJECT // project when in file mode
+		FILEPROJECT, // project when in file mode
+		PROJECTCODEONLY // when editing code...
 	}
 
 	public State state = State.NONE;

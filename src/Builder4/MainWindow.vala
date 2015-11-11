@@ -1445,9 +1445,7 @@ public class Xcls_MainWindow : Object
              	     _this.windowstate.switchState(WindowState.State.PROJECT);
              	     break;
             	 }     
-               
-            
-            
+                
             });
         }
 
