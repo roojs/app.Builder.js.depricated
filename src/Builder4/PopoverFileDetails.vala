@@ -390,7 +390,7 @@ public class Xcls_PopoverFileDetails : Object
         
             
             el.set_value(iter, 0, "UI");
-            el.set_value(iter, 1, "User Interface File");
+            el.set_value(iter, 1, "User Interface File (bjs)");
             _this.build_module.el.set_active_iter(iter);
             
             for (var i = 0; i < data.size;i++) {
