@@ -106,11 +106,13 @@ public class Xcls_PopoverFileDetails : Object
         _this.modOrder.el.set_text(c.modOrder);
          _this.permname.el.set_text(c.permname);
         
+        
+        
         _this.ftdbmodel.loadData("bjs"); // fixme - need to determine type..
-        
-        
+        _this.filetype.el.hide();
+        _this.filetype.el.hide();
         if (c.path.length > 0) {
-        
+    	    
             this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
