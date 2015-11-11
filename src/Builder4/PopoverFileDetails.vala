@@ -337,6 +337,13 @@ public class Xcls_PopoverFileDetails : Object
             // init method
 
             this.el.add_attribute(_this.ftdbcellrenderer.el , "markup", 1 );
+
+            //listeners
+            this.el.changed.connect( () => {
+            
+            
+            
+            });
         }
 
         // user defined functions
