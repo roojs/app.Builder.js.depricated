@@ -39,6 +39,7 @@
        "string title" : "Add / Edit File"
       },
       {
+       "id" : "grid",
        "int margin_right" : 4,
        "* pack" : "pack_start,false,false,4",
        "xtype" : "Grid",

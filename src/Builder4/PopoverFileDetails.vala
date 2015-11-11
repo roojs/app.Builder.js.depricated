@@ -12,6 +12,7 @@ public class Xcls_PopoverFileDetails : Object
         }
         return _PopoverFileDetails;
     }
+    public Xcls_grid grid;
     public Xcls_filetypelbl filetypelbl;
     public Xcls_filetype filetype;
     public Xcls_ftdbcellrenderer ftdbcellrenderer;
@@ -179,7 +180,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_HeaderBar3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_Grid4( _this );
+            var child_1 = new Xcls_grid( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,4 );
             var child_2 = new Xcls_HButtonBox25( _this );
@@ -212,7 +213,7 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_Grid4 : Object
+    public class Xcls_grid : Object
     {
         public Gtk.Grid el;
         private Xcls_PopoverFileDetails  _this;
@@ -221,9 +222,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Grid4(Xcls_PopoverFileDetails _owner )
+        public Xcls_grid(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
+            _this.grid = this;
             this.el = new Gtk.Grid();
 
             // my vars (dec)
