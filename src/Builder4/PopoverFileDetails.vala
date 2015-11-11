@@ -1083,7 +1083,7 @@ public class Xcls_PopoverFileDetails : Object
                var f =  JsRender.JsRender.factory(
             		_this.file.project.xtype,  
             		_this.file.project, 
-            		dir + "/" + fn + ".bjs");
+            		targetfile + "." + ext);
             
             	_this.file = f;
             	
