@@ -1067,7 +1067,7 @@ public class Xcls_PopoverFileDetails : Object
             	}
             	Value ftypename;
             	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
-            	var ext = ((string)vfname);
+            	var ext = ((string)ftypename);
             	
                
             	if (GLib.FileUtils.test(dir + "/" + fn + ".bjs", GLib.FileTest.EXISTS)) {
