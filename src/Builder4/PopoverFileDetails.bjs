@@ -96,7 +96,7 @@
          "id" : "name",
          "$ visible" : true,
          "xtype" : "Entry",
-         "* pack" : "attach_defaults,1,2,1,2",
+         "* pack" : "attach,1,2,1,2",
          "$ xns" : "Gtk"
         },
         {
