@@ -628,6 +628,15 @@ public class WindowState : Object
 		  case State.FILES: // goes to preview or codeonly...
 				// hide files...
 				
+				this.clutterfiles.el.set_easing_duration(1000);
+				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
+				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
+				this.clutterfiles.el.set_opacity(0);
+ 
+				if (new_state == State.FILESPROJECT) {
+					break;
+				}
+ 
 				if (new_state == State.CODEONLY) {
 					this.win.rooview.el.hide();
 				} else {
@@ -642,11 +651,6 @@ public class WindowState : Object
 				
 				
 			   
-				this.clutterfiles.el.set_easing_duration(1000);
-				this.clutterfiles.el.set_pivot_point(0.5f,0.5f);
-				this.clutterfiles.el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, -180.0f);
-				this.clutterfiles.el.set_opacity(0);
- 
 				//this.clutterfiles.el.hide();
 				 
 
