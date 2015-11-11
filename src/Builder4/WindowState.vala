@@ -621,7 +621,10 @@ public class WindowState : Object
 				if (this.win.project.xtype == "Gtk") {
 					this.vala_projectsettings.save();
 				} 
+				if (this.state == State.FILEPROJECT) {
+					this.clutterfiles.el.set_scale(1.0f,1.0f);
 				
+				}
 				this.win.projecteditview.el.set_scale(0.0f,0.0f);
 				 break;
 
