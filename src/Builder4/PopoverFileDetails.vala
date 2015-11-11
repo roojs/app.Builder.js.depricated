@@ -106,7 +106,7 @@ public class Xcls_PopoverFileDetails : Object
         _this.modOrder.el.set_text(c.modOrder);
          _this.permname.el.set_text(c.permname);
         
-        _this.filetype.loadData();
+        _this.filetype.loadData("bjs");
         
         
         if (c.path.length > 0) {
