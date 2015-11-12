@@ -89,7 +89,7 @@ public class Resources : Object
 			"roodata.json",
 			"*",
 			"Editors/*.js",
-			"vapi/*.vapi"
+			"vapi/*"
 			
 		};
 		this.fetch_files = new Gee.ArrayList<ResourcesItem>();
