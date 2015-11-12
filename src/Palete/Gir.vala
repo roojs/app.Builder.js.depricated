@@ -66,10 +66,10 @@ namespace Palete {
 			}
 			var method = parset.gparent;
 			// we can do this for pack methods..
-			//if (method == null || method.nodetype != "Ctor") {
-			//	print("skip parent.parent not Ctor\n");
-			//	return;
-			//}
+			if (method == null) {
+				print("skip parent.parent is null\n");
+				return;
+			}
 			var cls = method.gparent;
 			if (cls == null || cls.nodetype != "Class") {
 				//print("skip parent.parent.parent not Class\n");
