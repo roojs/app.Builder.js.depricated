@@ -14,7 +14,9 @@
     "Gtk.ListStore.new.___" : "columns",
     "Gtk.TreeStore.new.___" : "columns",
 	
-
+	"Gtk.Grid.new.top" : "top_attach",
+    "Gtk.Grid.new.left" : "left_attach",
+   
      
     "-" : ""
     
