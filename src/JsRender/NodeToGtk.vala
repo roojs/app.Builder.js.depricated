@@ -466,7 +466,7 @@ public class JsRender.NodeToGtk : Object {
 				if (i > (pack.length -1)) {
 					continue;
 				}
-				Gir.checkParamOverride(mparams.get(i));
+				Palete.Gir.checkParamOverride(mparams.get(i));
 				var k = mparams.get(i).name;
 
 				Value cur_val;
