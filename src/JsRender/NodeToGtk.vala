@@ -457,7 +457,9 @@ public class JsRender.NodeToGtk : Object {
 		var pack = this.node.props.get("* pack").split(",");
 		
 		// this tries to use the parameter names from the '*pack' function as properties in child_set_property.
-	
+	    // for a grid it's trying to do left/top/width/height.
+	    
+	    
 		if (cls_methods.has_key(pack[0])) {
 			var mparams = cls_methods.get(pack[0]).paramset.params;
 			for (var i = 1; i < mparams.size; i++ ) {
