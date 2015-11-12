@@ -455,7 +455,8 @@ public class JsRender.NodeToGtk : Object {
 		var ns = this.parentObj.node.fqn().split(".")[0];
 		 
 		var pack = this.node.props.get("* pack").split(",");
-
+		
+		// this tries to use the parameter names from the '*pack' function as properties in child_set_property.
 	
 		if (cls_methods.has_key(pack[0])) {
 			var mparams = cls_methods.get(pack[0]).paramset.params;
