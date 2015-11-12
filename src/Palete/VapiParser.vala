@@ -316,7 +316,8 @@ namespace Palete {
 		
 			context.experimental = false;
 			context.experimental_non_null = false;
-			
+#if VALA_0_30
+			var ver=30;			
 #if VALA_0_28
 			var ver=28;
 #elif VALA_0_26	
@@ -377,7 +378,13 @@ namespace Palete {
 			if (!context.add_external_package ("webkit2gtk-4.0")) {
 				context.add_external_package ("webkit2gtk-3.0");
 			}
+			// these are supposed to be in the 'deps' file, but it's not getting read..
+			context.add_external_package ("cogl-1.0");
+			context.add_external_package ("json-glib-1.0");
 			context.add_external_package ("clutter-gtk-1.0");
+
+
+		    
 			context.add_external_package ("gdl-3.0");
 			context.add_external_package ("gtksourceview-3.0");
 			context.add_external_package ("vte-2.90"); //??? -- hopefullly that works..
