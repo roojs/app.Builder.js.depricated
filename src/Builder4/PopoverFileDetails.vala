@@ -197,9 +197,12 @@ public class Xcls_PopoverFileDetails : Object
             var child_1 = new Xcls_grid( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,4 );
-            var child_2 = new Xcls_HButtonBox25( _this );
+            var child_2 = new Xcls_Label25( _this );
             child_2.ref();
-            this.el.pack_end (  child_2.el , false,true,0 );
+            this.el.attach (  child_2.el , 0,7,1,1 );
+            var child_3 = new Xcls_HButtonBox26( _this );
+            child_3.ref();
+            this.el.pack_end (  child_3.el , false,true,0 );
         }
 
         // user defined functions
@@ -914,7 +917,32 @@ public class Xcls_PopoverFileDetails : Object
 
 
 
-    public class Xcls_HButtonBox25 : Object
+    public class Xcls_Label25 : Object
+    {
+        public Gtk.Label el;
+        private Xcls_PopoverFileDetails  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_Label25(Xcls_PopoverFileDetails _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "Module to build (Vala only)" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
+            this.el.visible = true;
+        }
+
+        // user defined functions
+    }
+
+    public class Xcls_HButtonBox26 : Object
     {
         public Gtk.HButtonBox el;
         private Xcls_PopoverFileDetails  _this;
@@ -923,7 +951,7 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_HButtonBox25(Xcls_PopoverFileDetails _owner )
+        public Xcls_HButtonBox26(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.HButtonBox();
@@ -934,7 +962,7 @@ public class Xcls_PopoverFileDetails : Object
             this.el.margin_right = 4;
             this.el.margin_left = 4;
             this.el.margin_bottom = 4;
-            var child_0 = new Xcls_Button26( _this );
+            var child_0 = new Xcls_Button27( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_save_btn( _this );
@@ -944,7 +972,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions
     }
-    public class Xcls_Button26 : Object
+    public class Xcls_Button27 : Object
     {
         public Gtk.Button el;
         private Xcls_PopoverFileDetails  _this;
@@ -953,7 +981,7 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_Button26(Xcls_PopoverFileDetails _owner )
+        public Xcls_Button27(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -1101,7 +1129,7 @@ public class Xcls_PopoverFileDetails : Object
                _this.done = true;
             	_this.el.hide();
             
-            	
+            // hopefull this will work with bjs files..
             	
             	_this.success(_this.project, _this.file);
                
