@@ -1021,6 +1021,9 @@ public class Xcls_PopoverFileDetails : Object
 
             // set gobject values
             this.el.label = "Save";
+            var child_0 = new Xcls_Label29( _this );
+            child_0.ref();
+            this.el.attach (  child_0.el , 0,7,1,1 );
 
             //listeners
             this.el.clicked.connect( ( ) =>  { 
@@ -1138,6 +1141,31 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions
     }
+    public class Xcls_Label29 : Object
+    {
+        public Gtk.Label el;
+        private Xcls_PopoverFileDetails  _this;
+
+
+            // my vars (def)
+
+        // ctor
+        public Xcls_Label29(Xcls_PopoverFileDetails _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "Module to build (Vala only)" );
+
+            // my vars (dec)
+
+            // set gobject values
+            this.el.justify = Gtk.Justification.RIGHT;
+            this.el.xalign = 0.900000f;
+            this.el.visible = true;
+        }
+
+        // user defined functions
+    }
+
 
 
 

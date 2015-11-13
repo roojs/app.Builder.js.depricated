@@ -260,7 +260,19 @@
          "xtype" : "Button",
          "* pack" : "add",
          "string label" : "Save",
-         "$ xns" : "Gtk"
+         "$ xns" : "Gtk",
+         "items" : [
+          {
+           "label" : "Module to build (Vala only)",
+           "$ visible" : true,
+           "xalign" : 0.90000000000000002,
+           "* pack" : "attach,0,7,1,1",
+           "xtype" : "Label",
+           "$ justify" : "Gtk.Justification.RIGHT",
+           "x_options" : 4,
+           "$ xns" : "Gtk"
+          }
+         ]
         }
        ]
       }
