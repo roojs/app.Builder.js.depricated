@@ -375,7 +375,7 @@ public class Xcls_PopoverFileDetails : Object
                 
               
                 // directory is only available for non-bjs 
-                 
+                this.showhide(is_bjs);
             
             
             });
