@@ -373,26 +373,7 @@ public class Xcls_PopoverFileDetails : Object
             		 is_bjs = ((string)vfname) == "bjs";
             	}
                 
-               for (var i = 2; i < 9;i++) {
-            		var el = _this.grid.el.get_child_at(0,i);
-            		
-            		var showhide= is_bjs;
-            		if (i> 7) {
-            			showhide = !showhide;
-            		}
-            		
-            		if (showhide) {
-            		   el.show();
-            		} else {
-            			el.hide();
-            		}
-            		 el = _this.grid.el.get_child_at(1,i);
-            		if (showhide) {
-            		   el.show();
-            		} else {
-            			el.hide();
-            		}     
-                }
+              
                 // directory is only available for non-bjs 
                  
             
@@ -401,8 +382,27 @@ public class Xcls_PopoverFileDetails : Object
         }
 
         // user defined functions
-        public void showhide () {
-        
+        public void showhide (bool is_bjs) {
+        	for (var i = 2; i < 9;i++) {
+        		var el = _this.grid.el.get_child_at(0,i);
+        		
+        		var showhide= is_bjs;
+        		if (i> 7) {
+        			showhide = !showhide;
+        		}
+        		
+        		if (showhide) {
+        		   el.show();
+        		} else {
+        			el.hide();
+        		}
+        		 el = _this.grid.el.get_child_at(1,i);
+        		if (showhide) {
+        		   el.show();
+        		} else {
+        			el.hide();
+        		}     
+            }
         }
     }
     public class Xcls_ftdbcellrenderer : Object
