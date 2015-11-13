@@ -122,8 +122,6 @@ public class Xcls_PopoverFileDetails : Object
     	    this.save_btn.el.set_label("Save");
         } else {
             this.save_btn.el.set_label("Create");
-            
-    	   
         }
         
          var ar = new Gee.ArrayList<string>();
@@ -163,7 +161,7 @@ public class Xcls_PopoverFileDetails : Object
         if (c.path.length > 0) {
     		_this.filetype.el.hide();
     		_this.filetypelbl.el.hide();
-    		_this.filetype.showhide(is_bjs);
+    		_this.filetype.showhide(true); // as we only work on bjs files currently
         } else {
             
             _this.ftdbmodel.loadData("bjs"); // fixme - need to determine type..
