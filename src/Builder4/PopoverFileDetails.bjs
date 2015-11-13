@@ -62,7 +62,7 @@
         },
         {
          "listeners" : {
-          "changed" : "() => {\n\tGtk.TreeIter iter;\n\tbool is_bjs = true;\n\tif (this.el.get_active_iter(out iter)) {\n\t\tValue vfname;\n\t\t_this.ftdbmodel.el.get_value (iter, 0, out vfname);\n\t\t is_bjs = ((string)vfname) == \"bjs\";\n\t}\n    \n   for (var i = 2; i < 8;i++) {\n\t\tvar el = _this.grid.el.get_child_at(0,i);\n\t\tif (is_bjs) {\n\t\t   el.show();\n\t\t} else {\n\t\t\tel.hide();\n\t\t}\n\t\t el = _this.grid.el.get_child_at(1,i);\n\t\tif (is_bjs) {\n\t\t   el.show();\n\t\t} else {\n\t\t\tel.hide();\n\t\t}     \n    }\n     \n     \n\n\n}"
+          "changed" : "() => {\n\tGtk.TreeIter iter;\n\tbool is_bjs = true;\n\tif (this.el.get_active_iter(out iter)) {\n\t\tValue vfname;\n\t\t_this.ftdbmodel.el.get_value (iter, 0, out vfname);\n\t\t is_bjs = ((string)vfname) == \"bjs\";\n\t}\n    \n   for (var i = 2; i < 9;i++) {\n\t\tvar el = _this.grid.el.get_child_at(0,i);\n\t\t\n\t\tvar showhide= is_bjs;\n\t\tif (i> 7) {\n\t\t\tshowhide = !showhide;\n\t\t}\n\t\t\n\t\tif (showhide) {\n\t\t   el.show();\n\t\t} else {\n\t\t\tel.hide();\n\t\t}\n\t\t el = _this.grid.el.get_child_at(1,i);\n\t\tif (showhide) {\n\t\t   el.show();\n\t\t} else {\n\t\t\tel.hide();\n\t\t}     \n    }\n    // directory is only available for non-bjs \n     \n\n\n}"
          },
          "id" : "filetype",
          "* init" : "this.el.add_attribute(_this.ftdbcellrenderer.el , \"markup\", 1 );",

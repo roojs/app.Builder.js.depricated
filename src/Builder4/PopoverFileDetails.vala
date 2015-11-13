@@ -373,21 +373,27 @@ public class Xcls_PopoverFileDetails : Object
             		 is_bjs = ((string)vfname) == "bjs";
             	}
                 
-               for (var i = 2; i < 8;i++) {
+               for (var i = 2; i < 9;i++) {
             		var el = _this.grid.el.get_child_at(0,i);
-            		if (is_bjs) {
+            		
+            		var showhide= is_bjs;
+            		if (i> 7) {
+            			showhide = !showhide;
+            		}
+            		
+            		if (showhide) {
             		   el.show();
             		} else {
             			el.hide();
             		}
             		 el = _this.grid.el.get_child_at(1,i);
-            		if (is_bjs) {
+            		if (showhide) {
             		   el.show();
             		} else {
             			el.hide();
             		}     
                 }
-                 
+                // directory is only available for non-bjs 
                  
             
             
