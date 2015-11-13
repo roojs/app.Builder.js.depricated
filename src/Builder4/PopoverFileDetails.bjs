@@ -69,6 +69,7 @@
          "* pack" : "attach,1,0,1,1",
          "xtype" : "ComboBox",
          "$ xns" : "Gtk",
+         "| return_type XXXX" : "() {\n\n}\n",
          "items" : [
           {
            "id" : "ftdbcellrenderer",
