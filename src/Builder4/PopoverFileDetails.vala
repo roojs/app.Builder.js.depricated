@@ -28,7 +28,7 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_dbmodel dbmodel;
     public Xcls_dir dir;
     public Xcls_dircellrenderer dircellrenderer;
-    public Xcls_dbmodel dbmodel;
+    public Xcls_dirmodel dirmodel;
     public Xcls_save_btn save_btn;
 
         // my vars (def)
@@ -971,7 +971,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_0 = new Xcls_dircellrenderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
-            var child_1 = new Xcls_dbmodel( _this );
+            var child_1 = new Xcls_dirmodel( _this );
             child_1.ref();
             this.el.set_model (  child_1.el  );
 
@@ -1005,7 +1005,7 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_dbmodel : Object
+    public class Xcls_dirmodel : Object
     {
         public Gtk.ListStore el;
         private Xcls_PopoverFileDetails  _this;
@@ -1014,10 +1014,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_dbmodel(Xcls_PopoverFileDetails _owner )
+        public Xcls_dirmodel(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.dbmodel = this;
+            _this.dirmodel = this;
             this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
 
             // my vars (dec)

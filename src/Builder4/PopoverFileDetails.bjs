@@ -247,7 +247,7 @@
            "$ xns" : "Gtk"
           },
           {
-           "id" : "dbmodel",
+           "id" : "dirmodel",
            "* pack" : "set_model",
            "xtype" : "ListStore",
            "$ columns" : "typeof(string),typeof(string)",
