@@ -163,7 +163,7 @@ public class Xcls_PopoverFileDetails : Object
         if (c.path.length > 0) {
     		_this.filetype.el.hide();
     		_this.filetypelbl.el.hide();
-    		_this.ftdbmodel.showhide(is_bjs);
+    		_this.filetype.showhide(is_bjs);
         } else {
             
             _this.ftdbmodel.loadData("bjs"); // fixme - need to determine type..
