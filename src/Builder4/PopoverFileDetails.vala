@@ -401,7 +401,7 @@ public class Xcls_PopoverFileDetails : Object
         }
 
         // user defined functions
-        public return_type XXXX () {
+        public void showhide () {
         
         }
     }
