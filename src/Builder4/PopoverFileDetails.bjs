@@ -224,7 +224,7 @@
          ]
         },
         {
-         "label" : "Module to build (Vala only)",
+         "label" : "Directory",
          "$ visible" : true,
          "xalign" : 0.90000000000000002,
          "* pack" : "attach,0,8",

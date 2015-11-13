@@ -937,7 +937,7 @@ public class Xcls_PopoverFileDetails : Object
         public Xcls_Label25(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Module to build (Vala only)" );
+            this.el = new Gtk.Label( "Directory" );
 
             // my vars (dec)
 
