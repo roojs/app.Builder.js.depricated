@@ -234,14 +234,14 @@
          "$ xns" : "Gtk"
         },
         {
-         "id" : "build_module",
+         "id" : "dir",
          "* init" : "this.el.add_attribute(_this.dircellrenderer.el , \"markup\", 1 );",
          "* pack" : "attach,1,8",
          "xtype" : "ComboBox",
          "$ xns" : "Gtk",
          "items" : [
           {
-           "id" : "dbcellrenderer",
+           "id" : "dircellrenderer",
            "* pack" : "pack_start,true",
            "xtype" : "CellRendererText",
            "$ xns" : "Gtk"

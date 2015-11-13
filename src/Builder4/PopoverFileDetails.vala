@@ -26,8 +26,8 @@ public class Xcls_PopoverFileDetails : Object
     public Xcls_build_module build_module;
     public Xcls_dbcellrenderer dbcellrenderer;
     public Xcls_dbmodel dbmodel;
-    public Xcls_build_module build_module;
-    public Xcls_dbcellrenderer dbcellrenderer;
+    public Xcls_dir dir;
+    public Xcls_dircellrenderer dircellrenderer;
     public Xcls_dbmodel dbmodel;
     public Xcls_save_btn save_btn;
 
@@ -305,7 +305,7 @@ public class Xcls_PopoverFileDetails : Object
             var child_16 = new Xcls_Label25( _this );
             child_16.ref();
             this.el.attach (  child_16.el , 0,8 );
-            var child_17 = new Xcls_build_module( _this );
+            var child_17 = new Xcls_dir( _this );
             child_17.ref();
             this.el.attach (  child_17.el , 1,8 );
         }
@@ -950,7 +950,7 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
     }
 
-    public class Xcls_build_module : Object
+    public class Xcls_dir : Object
     {
         public Gtk.ComboBox el;
         private Xcls_PopoverFileDetails  _this;
@@ -959,16 +959,16 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_build_module(Xcls_PopoverFileDetails _owner )
+        public Xcls_dir(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.build_module = this;
+            _this.dir = this;
             this.el = new Gtk.ComboBox();
 
             // my vars (dec)
 
             // set gobject values
-            var child_0 = new Xcls_dbcellrenderer( _this );
+            var child_0 = new Xcls_dircellrenderer( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
             var child_1 = new Xcls_dbmodel( _this );
@@ -982,7 +982,7 @@ public class Xcls_PopoverFileDetails : Object
 
         // user defined functions
     }
-    public class Xcls_dbcellrenderer : Object
+    public class Xcls_dircellrenderer : Object
     {
         public Gtk.CellRendererText el;
         private Xcls_PopoverFileDetails  _this;
@@ -991,10 +991,10 @@ public class Xcls_PopoverFileDetails : Object
             // my vars (def)
 
         // ctor
-        public Xcls_dbcellrenderer(Xcls_PopoverFileDetails _owner )
+        public Xcls_dircellrenderer(Xcls_PopoverFileDetails _owner )
         {
             _this = _owner;
-            _this.dbcellrenderer = this;
+            _this.dircellrenderer = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars (dec)
