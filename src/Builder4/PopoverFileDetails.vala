@@ -373,7 +373,7 @@ public class Xcls_PopoverFileDetails : Object
             		 is_bjs = ((string)vfname) == "bjs";
             	}
                 
-               for (var i = 2; i < 9;i++) {
+               for (var i = 2; i < 8;i++) {
             		var el = _this.grid.el.get_child_at(0,i);
             		if (is_bjs) {
             		   el.show();
