@@ -1059,7 +1059,7 @@ public class Xcls_PopoverFileDetails : Object
             
         //    el.set_value(iter, 0, "");
           //  el.set_value(iter, 1, "-- select a directoyr --");
-            _this.build_module.el.set_active_iter(iter);
+            //_this.build_module.el.set_active_iter(iter);
             
             for (var i = 0; i < sd.length;i++) {
             
@@ -1074,7 +1074,7 @@ public class Xcls_PopoverFileDetails : Object
                 }
                 
             }
-             this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
+          //  this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
                                              
         }
     }
