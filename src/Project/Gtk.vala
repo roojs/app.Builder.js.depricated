@@ -505,7 +505,7 @@ namespace Project {
 			
 		}
 		
-		
+		// why not array of strings?
 		
 		public Gee.ArrayList<string> readArray(Json.Array ar) 
 		{
