@@ -1069,9 +1069,9 @@ public class Xcls_PopoverFileDetails : Object
                 el.set_value(iter, 0, sd[i]);
                 el.set_value(iter, 1, sd[i]);
                 
-                if (data.get(i) == cur) {
-                    _this.build_module.el.set_active_iter(iter);
-                }
+                //if (data.get(i) == cur) {
+                //    _this.build_module.el.set_active_iter(iter);
+               // }
                 
             }
           //  this.el.set_sort_column_id(0, Gtk.SortType.ASCENDING);          
