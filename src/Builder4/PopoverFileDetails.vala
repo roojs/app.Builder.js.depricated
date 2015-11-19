@@ -1036,14 +1036,14 @@ public class Xcls_PopoverFileDetails : Object
         // user defined functions
         public void loadData () {
         	
-        	this.project.
+        	
           
             this.el.clear();                                    
             
             if (!(this.project is Project.Gtk)) {
         		return;
         	}
-            
+            var sd = this.project.sourcedirs();
             
             Gtk.TreeIter iter;
             var el = this.el;
@@ -1054,20 +1054,20 @@ public class Xcls_PopoverFileDetails : Object
            // el.set_value(iter, 0, "");
            // el.set_value(iter, 1, "aaa  - Just add Element - aaa");
         
-            el.append(out iter);
+        //    el.append(out iter);
         
             
-            el.set_value(iter, 0, "");
-            el.set_value(iter, 1, "-- select a module --");
+        //    el.set_value(iter, 0, "");
+          //  el.set_value(iter, 1, "-- select a directoyr --");
             _this.build_module.el.set_active_iter(iter);
             
-            for (var i = 0; i < data.size;i++) {
+            for (var i = 0; i < sd.length;i++) {
             
         
                 el.append(out iter);
                 
-                el.set_value(iter, 0, data.get(i));
-                el.set_value(iter, 1, data.get(i));
+                el.set_value(iter, 0, sd[i]);
+                el.set_value(iter, 1, sd[i]);
                 
                 if (data.get(i) == cur) {
                     _this.build_module.el.set_active_iter(iter);
