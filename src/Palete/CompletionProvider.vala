@@ -66,7 +66,10 @@ namespace Palete {
 				this.editor.key,
 				search
 			);
-			if (filtered_proposals.length() < 1) {
+		    
+			print("GOT %d results\n", (int) filtered_proposals.length()); 
+		    
+			if (filtered_proposals.length() < 2) {
 			    return;
 			}
 		    

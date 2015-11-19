@@ -807,7 +807,7 @@ public class WindowState : Object
 			case State.PROJECTCODEONLY:
 			    // going to project edit (when in code only)
 
-		
+				
 			    
 				if (this.win.project.xtype == "Roo") {
 					this.projectsettings.el.show_all();
@@ -841,6 +841,8 @@ public class WindowState : Object
 				var pr = this.left_projects.getSelectedProject();
 
 				this.win.project = pr;
+				
+				this.attachProjectSettings();
 				print("FIlE PROJECT -  show %s\n", pr.xtype);
 				
 				if (pr.xtype == "Roo") {
