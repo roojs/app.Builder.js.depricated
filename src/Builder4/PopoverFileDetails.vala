@@ -1247,7 +1247,7 @@ public class Xcls_PopoverFileDetails : Object
             			return;
             		}
             		Value vdir;
-            		this.dir.el.get_value (iter, 0, out vdir);
+            		_this.dir.el.get_value (iter, 0, out vdir);
             		dir = (string)vdir;
             	}
             	
