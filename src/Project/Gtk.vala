@@ -454,7 +454,7 @@ namespace Project {
 		{
 			string[] ret = {};
 			var sources = this.compilegroups.get("_default_").sources;
-			//ret += this.firstPath();
+			//ret += this.firstPath(); << might not be needed?
 			for(var i =0; i< sources.size; i++) {
 				
 				var path = this.resolve_path( this.firstPath(), sources.get(i));
