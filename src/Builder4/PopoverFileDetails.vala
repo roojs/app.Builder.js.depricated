@@ -1217,6 +1217,18 @@ public class Xcls_PopoverFileDetails : Object
             	// ---------------- NEW FILES...
             	Gtk.TreeIter iter;
             
+            	if (!_this.filetype.el.get_active_iter(out iter)) {
+            		// should not happen...
+            		// so we are jut going to return without 
+            		StandardErrorDialog.show(
+            	        _this.mainwindow.el,
+            	        "You must select a file type. "
+            	    );
+            	    return;
+            		 
+            	}
+            	
+            	
             	var fn = _this.name.el.get_text();
             	
             	Value ftypename;
@@ -1234,23 +1246,15 @@ public class Xcls_PopoverFileDetails : Object
             			);
             			return;
             		}
-            		
+            		Value vdir
+            		this.dir.el.get_value (iter, 0, out vdir);
+            		dir = (string)vdir;
             	}
             	
             	var targetfile = dir + "/" + fn;
             	
             	// strip the file type off the end..
             	
-            	if (!_this.filetype.el.get_active_iter(out iter)) {
-            		// should not happen...
-            		// so we are jut going to return without 
-            		StandardErrorDialog.show(
-            	        _this.mainwindow.el,
-            	        "You must select a file type. "
-            	    );
-            	    return;
-            		 
-            	}
             	
                 var rx = new GLib.Regex("\\." + ext + "$",GLib.RegexCompileFlags.CASELESS);
                 targetfile = rx.replace(targetfile, targetfile.length, 0, ""); 
