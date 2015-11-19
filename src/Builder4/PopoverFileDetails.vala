@@ -1034,8 +1034,17 @@ public class Xcls_PopoverFileDetails : Object
         }
 
         // user defined functions
-        public void loadData (Gee.ArrayList<string> data, string cur) {
+        public void loadData () {
+        	
+        	this.project.
+          
             this.el.clear();                                    
+            
+            if (!(this.project is Project.Gtk)) {
+        		return;
+        	}
+            
+            
             Gtk.TreeIter iter;
             var el = this.el;
             
