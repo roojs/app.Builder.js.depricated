@@ -396,6 +396,15 @@ public class Xcls_PopoverFileDetails : Object
         			el.hide();
         		}     
             }
+            // load up the directories
+            //??? why can we not create bjs files in other directories??
+        	if (!is_bjs) {
+        		_this.dirmodel.load();
+        		
+        		
+        	}
+           
+            
         }
     }
     public class Xcls_ftdbcellrenderer : Object
