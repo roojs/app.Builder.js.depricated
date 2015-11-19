@@ -398,7 +398,7 @@ public class Xcls_PopoverFileDetails : Object
             }
             // load up the directories
             //??? why can we not create bjs files in other directories??
-        	if (!is_bjs && _this.file == null) {
+        	if (!is_bjs && _this.file.path.length == null) {
         		_this.dirmodel.loadData();
         		
         		
