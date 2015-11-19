@@ -1215,15 +1215,33 @@ public class Xcls_PopoverFileDetails : Object
             	}
             	
             	// ---------------- NEW FILES...
-            	
+            	Gtk.TreeIter iter;
+            
             	var fn = _this.name.el.get_text();
-            	var dir = _this.project.firstPath();   // fixme.. should be based on a pulldown?
+            	
+            	Value ftypename;
+            	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
+            	var ext = ((string)ftypename);
+            	
+            	if (ext == "bjs") {
+            	
+            		var dir = _this.project.firstPath();   // fixme.. should be based on a pulldown?
+            	} else {
+            		if (!_this.dir.el.get_active_iter(out iter)) {
+            			// should not happen...
+            			// so we are jut going to return without 
+            			StandardErrorDialog.show(
+            			    _this.mainwindow.el,
+            			    "You must select a directory "
+            			);
+            		}
+            		
+            	}
             	
             	var targetfile = dir + "/" + fn;
             	
             	// strip the file type off the end..
-            	Gtk.TreeIter iter;
-            
+            	
             	if (!_this.filetype.el.get_active_iter(out iter)) {
             		// should not happen...
             		// so we are jut going to return without 
@@ -1232,9 +1250,6 @@ public class Xcls_PopoverFileDetails : Object
             	        "You must select a file type. "
             	    );
             	}
-            	Value ftypename;
-            	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
-            	var ext = ((string)ftypename);
             	
                 var rx = new GLib.Regex("\\." + ext + "$",GLib.RegexCompileFlags.CASELESS);
                 targetfile = rx.replace(targetfile, targetfile.length, 0, ""); 
