@@ -450,7 +450,24 @@ namespace Project {
 			return ret;
 			
 		}
+		public string[] sourcedirs()
+		{
+			string[] ret = {};
+			var sources = this.compilegroups.get("_default_").sources;
+			for(var i =0; i< sources.size; i++) {
+				
+				var path = this.resolve_path( this.firstPath(), sources.get(i));
+				
+				if (Path.get_basename (path) == "vapi") {
+					continue;
+		
+				}
+		//			GLib.debug("Adding VAPIDIR: %s\n", path);
+				ret += path;		
+			}
+			return ret;
 			
+		}	
 
 	}
 	// an object describing a build config (or generic ...)
