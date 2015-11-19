@@ -1222,11 +1222,9 @@ public class Xcls_PopoverFileDetails : Object
             	Value ftypename;
             	_this.ftdbmodel.el.get_value (iter, 0, out ftypename);
             	var ext = ((string)ftypename);
-            	
-            	if (ext == "bjs") {
-            	
-            		var dir = _this.project.firstPath();   // fixme.. should be based on a pulldown?
-            	} else {
+            	var dir = _this.project.firstPath(); 
+            	if (ext != "bjs") {
+            	 
             		if (!_this.dir.el.get_active_iter(out iter)) {
             			// should not happen...
             			// so we are jut going to return without 
