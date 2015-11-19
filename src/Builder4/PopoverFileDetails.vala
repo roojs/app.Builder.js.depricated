@@ -1234,6 +1234,7 @@ public class Xcls_PopoverFileDetails : Object
             			    _this.mainwindow.el,
             			    "You must select a directory "
             			);
+            			return;
             		}
             		
             	}
