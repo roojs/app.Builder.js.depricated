@@ -1164,7 +1164,6 @@ public class WindowState : Object
 			}
 			if (this.file.xtype == "Gtk") {
 				
-				
 				var gbuf =   this.window_gladeview.sourceview;
 				gbuf.highlightErrorsJson("ERR", obj);
 				gbuf.highlightErrorsJson("WARN", obj);
