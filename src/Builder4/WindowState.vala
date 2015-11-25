@@ -1159,10 +1159,11 @@ public class WindowState : Object
 			this.win.statusbar_compilestatus_label.el.hide();
 			this.win.statusbar_run.el.hide();
 			if (!has_errors) { 
+				this.win.statusbar_compilestatus_label.el.show();
 				this.win.statusbar_run.el.show();
 			}
 			if (this.file.xtype == "Gtk") {
-				this.win.statusbar_compilestatus_label.el.show();
+				
 				
 				var gbuf =   this.window_gladeview.sourceview;
 				gbuf.highlightErrorsJson("ERR", obj);
