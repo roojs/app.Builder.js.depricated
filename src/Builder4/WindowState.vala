@@ -1163,7 +1163,7 @@ public class WindowState : Object
 				this.win.statusbar_run.el.show();
 			}
 			if (this.file.xtype == "Gtk") {
-				
+				// not sure how this is working ok? - as highlighting is happening on the vala files at present..
 				var gbuf =   this.window_gladeview.sourceview;
 				gbuf.highlightErrorsJson("ERR", obj);
 				gbuf.highlightErrorsJson("WARN", obj);
