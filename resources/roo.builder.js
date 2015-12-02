@@ -88,7 +88,7 @@ Builder  = {
                         if (aval == 'builderel') { 
                             return;
                         }
-                        attr.push(aname + '="' + aval + '"' );
+                        attr.push(aname + '="' + aval + '"' );  //?? escaping attributes?
                     }
                     
                     
