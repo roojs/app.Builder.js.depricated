@@ -85,10 +85,10 @@ Builder  = {
                             aname= 'xbuilderid';
                         }
                         // skip
-                        if (currentElement.attributes.item(i).value == 'builderel') {
+                        if (aval == 'builderel') {
                             return;
                         }
-                        attr.push(aname + '="' + currentElement.attributes.item(i).value + '"' );
+                        attr.push(aname + '="' + aval + '"' );
                     }
                     
                     
