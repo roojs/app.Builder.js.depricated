@@ -78,9 +78,9 @@ Builder  = {
                 if (tagName) {
                     var attr = [];
                     for(i = 0; i < currentElement.attributes.length;i++) {
-                        var attr = currentElement.attributes.item(i);
-                        var aname = attr.name;
-                        var aval = attr.value || '';
+                        var attre = currentElement.attributes.item(i);
+                        var aname = attre.name;
+                        var aval = attre.value || '';
                         if (aname=='id' && aval.match(/^roo\-/)) { // only roo -elements hide..
                             aname= 'xbuilderid';
                         }
