@@ -81,7 +81,7 @@ Builder  = {
                         var attr = currentElement.attributes.item(i);
                         var aname = attr.name;
                         var aval = attr.value || '';
-                        if (aname=='id' && aval.match(/^roo-/)) { // only roo -elements hide..
+                        if (aname=='id' && aval.match(/^roo\-/)) { // only roo -elements hide..
                             aname= 'xbuilderid';
                         }
                         // skip -- component created by the builder?
