@@ -84,8 +84,8 @@ Builder  = {
                         if (aname=='id' && aval.match(/^roo-/)) { // only roo -elements hide..
                             aname= 'xbuilderid';
                         }
-                        // skip
-                        if (aval == 'builderel') {
+                        // skip -- component created by the builder?
+                        if (aval == 'builderel') { 
                             return;
                         }
                         attr.push(aname + '="' + aval + '"' );
