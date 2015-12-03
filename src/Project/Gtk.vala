@@ -493,6 +493,7 @@ namespace Project {
 			this.target_bin = "";
 			this.packages = new Gee.ArrayList<string>();
 			this.sources = new Gee.ArrayList<string>();
+			this.execute_args = "";
 				
 		}
 		
