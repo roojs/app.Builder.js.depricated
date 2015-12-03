@@ -335,7 +335,7 @@ namespace Palete {
 					var xsf = new Vala.SourceFile (
 						context,
 						Vala.SourceFileType.SOURCE, 
-						relpath
+						path
 					);
 					xsf.add_using_directive (ns_ref);
 					context.add_source_file(xsf);
