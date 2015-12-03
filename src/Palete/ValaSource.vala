@@ -380,16 +380,29 @@ namespace Palete {
 			if (mod.length < 1) {
 				return;
 			}
-			
-			
-			
-			if (!GLib.FileUtils.test("/tmp/testrun", GLib.FileTest.EXISTS)) {
-				print("Missing outfile\n");
-				return;
+			var cg =  pr.compilegroups.get(mod);
+			if (cg.target_bin.length > 0) {
+				exe = cg.target_bin;
 			}
 			
+			
+			if (!GLib.FileUtils.test(exe, GLib.FileTest.EXISTS)) {
+				print("Missing output file: %s\n",exe);
+				return;
+			}
+			string args[] = {};
+			args += exe;
+			if (cg.execute_args.length > 0) {
+				var aa = cg.execute_args.split(" ");
+				for (var i =0; i < aa.length; i++) {
+					args += aa[i];
+				}
+			}
+
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
-            var exec = new Spawn("/tmp", { "/tmp/testrun" });
+		    
+		    
+            var exec = new Spawn("/tmp", args);
             exec.detach = true;
 		    exec.run(); 
 			
