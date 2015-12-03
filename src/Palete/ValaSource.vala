@@ -225,7 +225,7 @@ namespace Palete {
 			} else {
 			    args += pr.firstBuildModule();
 			}
-			//args += "--output";
+			//args += "--output"; -- set up by the module -- defaults to testrun
 			//args += "/tmp/testrun";
 			
 			// assume code is in home...
