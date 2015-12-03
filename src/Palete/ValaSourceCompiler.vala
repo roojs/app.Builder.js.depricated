@@ -264,7 +264,8 @@ namespace Palete {
 			valac += " --thread ";
 			
 			// we should parse the compilegroup to find out the flags..
-			 
+			context.debug = true;
+			valac += " -g ";
 			
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
 			context.report = this.report;
