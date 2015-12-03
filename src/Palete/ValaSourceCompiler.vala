@@ -270,7 +270,7 @@ namespace Palete {
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
 			context.report = this.report;
 			
-			valac += " -b  " + GLib.Environment.get_home_dir() + " " ;
+			valac += " -b  " + GLib.Environment.get_home_dir() + " ";
 			context.basedir = GLib.Environment.get_home_dir(); //Posix.realpath (".");
 		
 			context.directory = context.basedir;
