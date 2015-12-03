@@ -408,7 +408,9 @@ namespace Palete {
 		    
 		    // should be home directory...
 		    
-            var exec = new Spawn("/tmp", args);
+		    
+		    
+            var exec = new Spawn(GLib.Environment.get_home_dir() , args);
             exec.detach = true;
 		    exec.run(); 
 			
