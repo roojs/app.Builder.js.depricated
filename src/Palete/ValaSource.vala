@@ -368,6 +368,10 @@ namespace Palete {
 			this.compiler = null;
 			var exe = "/tmp/testrun";
 			var mod = "";
+			var pr = (Project.Gtk)(this.file.project);
+ 			
+			
+			
 			if (this.file.build_module.length > 0 ) {
     		    mod =  this.file.build_module;
 			} else {
