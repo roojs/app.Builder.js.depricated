@@ -413,7 +413,7 @@ namespace Palete {
 			
 			string [] cc_options = { "-lm" };
 			
-#if VALA_0_28
+#if VALA_0_28 || VALA_0_30
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
 			ccompiler.compile (context, cc_command, cc_options, pkg_config_command);
 #else
