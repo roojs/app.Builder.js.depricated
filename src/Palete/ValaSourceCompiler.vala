@@ -322,7 +322,7 @@ namespace Palete {
 					var relpath = path;
 					if (relpath.length > context.basedir.length
 						&& relpath.substring(0,context.basedir.length) == context.basedir) {
-						relpath = relpath.substring(context.basedir.length);
+						relpath = relpath.substring(context.basedir.length +1);
 					}	
 					valac += " " + relpath;
 					
