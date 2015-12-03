@@ -319,7 +319,7 @@ namespace Palete {
 					}
 					//print("Add source file %s\n", path);
 					
-				 
+					valac += " " + path;
 					
 					if (Regex.match_simple("\\.c$", path)) {
 						context.add_c_source_file(path);
