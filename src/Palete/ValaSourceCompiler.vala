@@ -321,7 +321,7 @@ namespace Palete {
 					
 				 
 					
-					if (Regex.match_simple("\\.c$", relpath)) {
+					if (Regex.match_simple("\\.c$", path)) {
 						context.add_c_source_file(path);
 						continue;
 					}
