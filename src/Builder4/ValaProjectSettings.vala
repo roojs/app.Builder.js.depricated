@@ -1470,7 +1470,7 @@ public class ValaProjectSettings : Object
         public Xcls_Label41(ValaProjectSettings _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "compile flags" );
+            this.el = new Gtk.Label( "test argments" );
 
             // my vars (dec)
 
