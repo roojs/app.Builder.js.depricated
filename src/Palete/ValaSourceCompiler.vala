@@ -358,7 +358,7 @@ namespace Palete {
 			// add the modules...
 			
 			context.output = this.output == "" ? "/tmp/testrun" : this.output;
-			valac += " -o " +context.output;
+			valac += " -o " + context.output;
 			GLib.debug("%s", valac);
 			
 			context.target_glib_major = 2;
