@@ -319,15 +319,10 @@ namespace Palete {
 					}
 					//print("Add source file %s\n", path);
 					
-					var relpath = path;
-					if (relpath.length > context.basedir.length
-						&& relpath.substring(0,context.basedir.length) == context.basedir) {
-						relpath = relpath.substring(context.basedir.length +1);
-					}	
-					valac += " " + relpath;
+				 
 					
 					if (Regex.match_simple("\\.c$", relpath)) {
-						context.add_c_source_file(relpath);
+						context.add_c_source_file(path);
 						continue;
 					}
 					
