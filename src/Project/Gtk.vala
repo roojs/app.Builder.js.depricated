@@ -483,7 +483,7 @@ namespace Project {
 		public Gee.ArrayList<string> sources; // list of files+dirs (relative to project)
 		public string target_bin;
 
-		public string build_execute_args;
+		public string execute_args;
 		
 		
 		public GtkValaSettings(string name) 
