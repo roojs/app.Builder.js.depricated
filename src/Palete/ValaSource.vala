@@ -225,8 +225,8 @@ namespace Palete {
 			} else {
 			    args += pr.firstBuildModule();
 			}
-			args += "--output";
-			args += "/tmp/testrun";
+			//args += "--output";
+			//args += "/tmp/testrun";
 			
 			// assume code is in home...
 			try {
@@ -366,6 +366,11 @@ namespace Palete {
 		public void runResult(int res, string output, string stderr)
 		{
 			this.compiler = null;
+			if (!GLib.FileUtils.test("/tmp/testrun", GLib.FileTest.EXISTS)) {
+				print("Missing outfile\n");
+				return;
+			}
+			
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
             var exec = new Spawn("/tmp", { "/tmp/testrun" });
             exec.detach = true;
