@@ -401,6 +401,7 @@ namespace Palete {
 
 		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
 		    
+		    // should be home directory...
 		    
             var exec = new Spawn("/tmp", args);
             exec.detach = true;
