@@ -262,6 +262,8 @@ namespace Palete {
 			context.gir_directories = {};
 			context.thread = true;
 			valac += " --thread ";
+			
+			// we should parse the compilegroup to find out the flags..
 			 
 			
 			this.report = new ValaSourceReport(this.original_filepath, this.filepath);
