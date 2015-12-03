@@ -273,7 +273,7 @@ namespace Palete {
 			valac += " -b  " + GLib.Environment.get_home_dir() + " ";
 			context.basedir = GLib.Environment.get_home_dir(); //Posix.realpath (".");
 		
-			context.directory = context.basedir;
+			context.directory = null; //??? 
 		
 
 			// add default packages:
