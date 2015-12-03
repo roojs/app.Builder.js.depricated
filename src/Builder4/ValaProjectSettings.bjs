@@ -350,7 +350,7 @@
            "xtype" : "Label",
            "* pack" : "pack_start,false,false,0",
            "$ xns" : "Gtk",
-           "utf8 label" : "test argments"
+           "utf8 label" : "test argments - when run after a build"
           },
           {
            "listeners" : {
