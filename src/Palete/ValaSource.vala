@@ -392,6 +392,7 @@ namespace Palete {
 			}
 			string args[] = {};
 			
+			// runs gnome-terminal, with gdb .. running the application..
 			// fixme -- need a system/which
 			
 			args += "/usr/bin/gnome-terminal";
