@@ -417,7 +417,9 @@ namespace Palete {
 			var cc_command = Environment.get_variable ("CC");
 			
 			
-			string [] cc_options = { "-lm" };
+			string [] q = { "-lm" };
+			valac += " -X -lm";
+			
 			
 #if VALA_0_28 || VALA_0_30
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
