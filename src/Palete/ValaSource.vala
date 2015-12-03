@@ -366,6 +366,19 @@ namespace Palete {
 		public void runResult(int res, string output, string stderr)
 		{
 			this.compiler = null;
+			var exe = "/tmp/testrun";
+			var mod = "";
+			if (this.file.build_module.length > 0 ) {
+    		    mod =  this.file.build_module;
+			} else {
+			    mod =  pr.firstBuildModule();
+			}
+			if (mod.length < 1) {
+				return;
+			}
+			
+			
+			
 			if (!GLib.FileUtils.test("/tmp/testrun", GLib.FileTest.EXISTS)) {
 				print("Missing outfile\n");
 				return;
