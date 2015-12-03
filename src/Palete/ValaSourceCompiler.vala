@@ -342,6 +342,8 @@ namespace Palete {
 					
 				}
 			}
+			
+			print("%s\n", valac);
 			// default.. packages..
 			context.add_external_package ("glib-2.0"); 
 			context.add_external_package ("gobject-2.0");
