@@ -1505,7 +1505,7 @@ public class ValaProjectSettings : Object
                 if (_this.targets_tree.cursor.length < 1) {
                     return;
                 }
-                _this.project.compilegroups.get(_this.targets_tree.cursor).compile_flags = this.el.text;
+                _this.project.compilegroups.get(_this.targets_tree.cursor).execute_args = this.el.text;
             });
         }
 
