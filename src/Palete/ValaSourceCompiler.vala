@@ -319,10 +319,15 @@ namespace Palete {
 					}
 					//print("Add source file %s\n", path);
 					
-					valac += " " + path;
+					var relpath = path;
+					if (relpath.length > context.basedir.length
+						&& relpath.substring(0,context.basedir.length) == context.basedir) {
+						relpath = relpath.substring(context.basedir.length);
+					}	
+					valac += " " + relpath;
 					
-					if (Regex.match_simple("\\.c$", path)) {
-						context.add_c_source_file(path);
+					if (Regex.match_simple("\\.c$", relpath)) {
+						context.add_c_source_file(relpath);
 						continue;
 					}
 					
@@ -330,7 +335,7 @@ namespace Palete {
 					var xsf = new Vala.SourceFile (
 						context,
 						Vala.SourceFileType.SOURCE, 
-						path
+						relpath
 					);
 					xsf.add_using_directive (ns_ref);
 					context.add_source_file(xsf);
