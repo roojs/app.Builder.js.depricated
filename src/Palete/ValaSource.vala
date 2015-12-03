@@ -404,7 +404,7 @@ namespace Palete {
 				}
 			}
 
-		    print("OUT: %s\n\n----\nERR:%s", output, stderr);
+		    print("OUT: %s\n\n----\nERR:%s\n", output, stderr);
 		    
 		    // should be home directory...
 		    
