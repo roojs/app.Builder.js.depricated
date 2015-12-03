@@ -344,6 +344,12 @@ namespace Palete {
 			
 	    	var dcg = pr.compilegroups.get("_default_");
 	    	for (var i = 0; i < dcg.packages.size; i++) {
+	    	
+	    		var pkg = dcg.packages.get(i);
+	    		// do not add libvala versions except the one that matches the one we are compiled against..
+	    		if (Regex.match_simple("^libvala", pkg) && pkg != ("libvala-0." + ver.to_string())) {
+	    			continue;
+    			}
 				valac += " --pkg " + dcg.packages.get(i);
 				if (!this.has_vapi(context.vapi_directories, dcg.packages.get(i))) {
 					GLib.debug("Skip vapi '%s' - does not exist", dcg.packages.get(i));

@@ -390,16 +390,12 @@ namespace Palete {
 				print("Missing output file: %s\n",exe);
 				return;
 			}
-			string args[] = {};
+			string[] args = "/usr/bin/gnome-terminal -e /usr/bin/gdb -ex=r --args".split(" ");
+
 			
 			// runs gnome-terminal, with gdb .. running the application..
 			// fixme -- need a system/which
 			
-			args += "/usr/bin/gnome-terminal";
-			args += "-e";
-			args += "/usr/bin/gdb";
-			args += "-ex=r";
-			args += "--args";
 			args += exe;
 			if (cg.execute_args.length > 0) {
 				var aa = cg.execute_args.split(" ");
