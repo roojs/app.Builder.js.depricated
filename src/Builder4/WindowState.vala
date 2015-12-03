@@ -8,7 +8,7 @@
 public class WindowState : Object 
 {
 	public Xcls_MainWindow win;
-
+ 
 	public enum State {
 		NONE,
 		PREVIEW,
@@ -30,8 +30,7 @@ public class WindowState : Object
 	 
 	public Project.Project project;
 	public JsRender.JsRender file;
-	
-	
+	 
 	
 	public Xcls_WindowLeftTree  left_tree;
 	public Xcls_WindowAddProp   add_props;
