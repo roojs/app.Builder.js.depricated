@@ -29,7 +29,7 @@ public class ValaProjectSettings : Object
     public Xcls_set_vbox set_vbox;
     public Xcls_build_pack_target build_pack_target;
     public Xcls_build_compile_flags build_compile_flags;
-    public Xcls_build_test_args build_test_args;
+    public Xcls_build_execute_args build_execute_args;
     public Xcls_files_tree_store files_tree_store;
     public Xcls_files_render files_render;
     public Xcls_files_render_use files_render_use;
@@ -1341,7 +1341,7 @@ public class ValaProjectSettings : Object
             var child_4 = new Xcls_Label41( _this );
             child_4.ref();
             this.el.pack_start (  child_4.el , false,false,0 );
-            var child_5 = new Xcls_build_test_args( _this );
+            var child_5 = new Xcls_build_execute_args( _this );
             child_5.ref();
             this.el.pack_start (  child_5.el , false,false,0 );
             var child_6 = new Xcls_Label43( _this );
@@ -1482,7 +1482,7 @@ public class ValaProjectSettings : Object
         // user defined functions
     }
 
-    public class Xcls_build_test_args : Object
+    public class Xcls_build_execute_args : Object
     {
         public Gtk.Entry el;
         private ValaProjectSettings  _this;
@@ -1491,10 +1491,10 @@ public class ValaProjectSettings : Object
             // my vars (def)
 
         // ctor
-        public Xcls_build_test_args(ValaProjectSettings _owner )
+        public Xcls_build_execute_args(ValaProjectSettings _owner )
         {
             _this = _owner;
-            _this.build_test_args = this;
+            _this.build_execute_args = this;
             this.el = new Gtk.Entry();
 
             // my vars (dec)
