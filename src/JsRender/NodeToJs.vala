@@ -584,7 +584,7 @@ public class JsRender.NodeToJs : Object {
 				//	"']"
 				//);
 				this.out_props.set(left, "_this._strings['" + 
-					GLib.Checksum.compute_for_string (ChecksumType.MD5, v) +
+					GLib.Checksum.compute_for_string (ChecksumType.MD5, v.strip()) +
 					"']" + com);
 				continue;
 			}
