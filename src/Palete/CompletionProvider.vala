@@ -93,7 +93,8 @@ namespace Palete {
 			    return;
 			}
 			 
-			context.add_proposals (this, filtered_proposals, true);
+			context.add_proposals (this, filtered_proposals, false);
+		    context.add_proposals (this, null, true);
 		}
 
 
@@ -159,3 +160,4 @@ namespace Palete {
 
 
 } 
+
