@@ -33,6 +33,56 @@ namespace Palete {
 			return true;
 		}
 
+		public List<SourceCompletionItem>? fetchMatches(SourceCompletionContext context, out bool has_matches)
+		{
+		    has_matches = false;
+
+		    if (this.windowstate == null) {
+			    this.windowstate = this.editor.window.windowstate;
+		    }
+		
+		
+		    var buffer = context.completion.view.buffer;
+		    var  mark = buffer.get_insert ();
+		    TextIter end;
+
+		    buffer.get_iter_at_mark (out end, mark);
+		    var endpos = end;
+		
+		    var searchpos = endpos;
+		
+		    searchpos.backward_find_char(is_space, null);
+		    searchpos.forward_char();
+		    var search = endpos.get_text(searchpos);
+		    print("got search %s\n", search);
+		
+		    if (search.length < 2) {
+			    return null;
+		    }
+		
+		    // now do our magic..
+		    var filtered_proposals = this.windowstate.file.palete().suggestComplete(
+			    this.windowstate.file,
+			    this.editor.node,
+			    this.editor.ptype,
+			    this.editor.key,
+			    search
+		    );
+		
+		    print("GOT %d results\n", (int) filtered_proposals.length()); 
+		
+		    if (filtered_proposals.length() < 2) {
+			return null;
+		    }
+		
+		    filtered_proposals.sort((a, b) => {
+			    return ((string)(a.text)).collate((string)(b.text));
+		    });
+		    has_matches = true;
+		    return filtered_proposals;
+
+		}
+	
 		public void populate (SourceCompletionContext context)
 		{
 			if (this.windowstate == null) {
