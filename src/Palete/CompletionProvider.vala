@@ -92,7 +92,8 @@ namespace Palete {
 			    context.add_proposals (this, null, true);
 			    return;
 			}
-			GLib.Log.set_always_fatal(!LogLevelFlags.MASK); 
+			// add proposals triggers a critical error in Gtk - try running gtksourceview/tests/test-completion.
+			GLib.Log.set_always_fatal(0); 
 			context.add_proposals (this, filtered_proposals, true);
 			GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 		}
