@@ -36,7 +36,7 @@ namespace Palete {
 
 		public List<SourceCompletionItem>? fetchMatches(SourceCompletionContext context, out bool has_matches)
 		{
-		    var has_matches = false;
+		     has_matches = false;
 
 		    if (this.windowstate == null) {
 			    this.windowstate = this.editor.window.windowstate;
@@ -86,6 +86,7 @@ namespace Palete {
 	
 		public void populate (SourceCompletionContext context)
 		{
+			bool has_matches = false;
 			this.fetchMatches(context, out has_matches);
 			if (!has_matches) {
 				    return;
