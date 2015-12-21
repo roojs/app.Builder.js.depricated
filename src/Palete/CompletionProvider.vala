@@ -19,12 +19,12 @@ namespace Palete {
 
 		public string get_name ()
 		{
-		  return  "test";
+		  return  "roojsbuilder";
 		}
 
 		public int get_priority ()
 		{
-		  return 1;
+		  return 200;
 		}
 
 		public bool match (SourceCompletionContext context)
