@@ -87,9 +87,10 @@ namespace Palete {
 		public void populate (SourceCompletionContext context)
 		{
 			bool has_matches = false;
-			this.fetchMatches(context, out has_matches);
+			var filtered_proposals = this.fetchMatches(context, out has_matches);
 			if (!has_matches) {
-				    return;
+			    context.add_proposals (this, null, true);
+			    return;
 			}
 			 
 			context.add_proposals (this, filtered_proposals, true);
