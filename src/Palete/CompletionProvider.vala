@@ -92,9 +92,9 @@ namespace Palete {
 			    context.add_proposals (this, null, true);
 			    return;
 			}
-			 
-			context.add_proposals (this, filtered_proposals, false);
-		    context.add_proposals (this, null, true);
+			GLib.Log.set_always_fatal(!LogLevelFlags.MASK); 
+			context.add_proposals (this, filtered_proposals, true);
+			GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
 		}
 
 
