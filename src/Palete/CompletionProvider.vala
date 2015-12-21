@@ -29,13 +29,14 @@ namespace Palete {
 
 		public bool match (SourceCompletionContext context)
 		{
+			bool has_matches = false;
 			this.fetchMatches(context, out has_matches);
 			return has_matches;
 		}
 
 		public List<SourceCompletionItem>? fetchMatches(SourceCompletionContext context, out bool has_matches)
 		{
-		    has_matches = false;
+		    var has_matches = false;
 
 		    if (this.windowstate == null) {
 			    this.windowstate = this.editor.window.windowstate;
