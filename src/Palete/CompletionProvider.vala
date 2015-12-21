@@ -29,8 +29,8 @@ namespace Palete {
 
 		public bool match (SourceCompletionContext context)
 		{
-		
-			return true;
+			this.fetchMatches(context, out has_matches);
+			return has_matches;
 		}
 
 		public List<SourceCompletionItem>? fetchMatches(SourceCompletionContext context, out bool has_matches)
