@@ -93,9 +93,10 @@ namespace Palete {
 			    return;
 			}
 			// add proposals triggers a critical error in Gtk - try running gtksourceview/tests/test-completion.
-			GLib.Log.set_always_fatal(0); 
+			// see https://bugzilla.gnome.org/show_bug.cgi?id=758646
+			var fe = GLib.Log.set_always_fatal(0); 
 			context.add_proposals (this, filtered_proposals, true);
-			GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL);
+			GLib.Log.set_always_fatal(fe);
 		}
 
 
