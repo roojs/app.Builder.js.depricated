@@ -374,6 +374,7 @@ right:
     Roo.bootstrap.LocationPicker
     Roo.bootstrap.Alert
     Roo.bootstrap.TabGroup
+    Roo.bootstrap.LayoutMasonry
 
 left:
     Roo.bootstrap.TabGroup
