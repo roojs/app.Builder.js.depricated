@@ -13,7 +13,6 @@ right:
  Roo.bootstrap.Modal
  Roo.bootstrap.Container
  Roo.mailer.Body
- Roo.bootstrap.UploadCropbox
  
   
 // added with a property..  (*prop)
