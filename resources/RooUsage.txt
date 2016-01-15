@@ -505,6 +505,7 @@ right:
 
 left:    
     Roo.bootstrap.Modal:tmpl
+    Roo.bootstrap.UploadCropbox:tmpl
 right:
     Roo.Template
     Roo.XTemplate
