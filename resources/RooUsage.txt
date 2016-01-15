@@ -499,6 +499,7 @@ right:
 
 left:    
     Roo.bootstrap.Modal:buttons[]
+    Roo.bootstrap.UploadCropbox:buttons[]
 right:
     Roo.bootstrap.Button
 
