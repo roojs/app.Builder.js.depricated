@@ -494,17 +494,14 @@ left:
     Roo.bootstrap.Body
 right:
     Roo.bootstrap.Modal
-    Roo.bootstrap.UploadCropbox
 
 left:    
     Roo.bootstrap.Modal:buttons[]
-    Roo.bootstrap.UploadCropbox:buttons[]
 right:
     Roo.bootstrap.Button
 
 left:    
     Roo.bootstrap.Modal:tmpl
-    Roo.bootstrap.UploadCropbox:tmpl
 right:
     Roo.Template
     Roo.XTemplate
