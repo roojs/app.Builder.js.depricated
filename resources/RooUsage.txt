@@ -376,6 +376,7 @@ right:
     Roo.bootstrap.Alert
     Roo.bootstrap.TabGroup
     Roo.bootstrap.LayoutMasonry
+    Roo.bootstrap.UploadCropbox
 
 left:
     Roo.bootstrap.TabGroup
