@@ -335,6 +335,7 @@ left:
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
     Roo.bootstrap.Element
+    Roo.bootstrap.Form
     Roo.bootstrap.UploadCropbox
 right:
     Roo.bootstrap.Container
