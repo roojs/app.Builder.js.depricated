@@ -337,6 +337,8 @@ left:
     Roo.bootstrap.Element
     Roo.bootstrap.Form
     Roo.bootstrap.UploadCropbox
+    Roo.bootstrap.Popover
+    Roo.bootstrap.Link
 right:
     Roo.bootstrap.Container
     Roo.bootstrap.Button
