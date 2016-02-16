@@ -380,6 +380,7 @@ right:
     Roo.bootstrap.TabGroup
     Roo.bootstrap.LayoutMasonry
     Roo.bootstrap.UploadCropbox
+    Roo.bootstrap.DocumentManager
 
 left:
     Roo.bootstrap.TabGroup
