@@ -381,6 +381,7 @@ right:
     Roo.bootstrap.LayoutMasonry
     Roo.bootstrap.UploadCropbox
     Roo.bootstrap.DocumentManager
+    Roo.bootstrap.DocumentViewer
 
 left:
     Roo.bootstrap.TabGroup
