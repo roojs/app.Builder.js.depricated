@@ -382,6 +382,7 @@ right:
     Roo.bootstrap.UploadCropbox
     Roo.bootstrap.DocumentManager
     Roo.bootstrap.DocumentViewer
+    Roo.bootstrap.PagingToolbar
 
 left:
     Roo.bootstrap.TabGroup
