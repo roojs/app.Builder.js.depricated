@@ -339,7 +339,6 @@ left:
     Roo.bootstrap.UploadCropbox
     Roo.bootstrap.Popover
     Roo.bootstrap.Link
-    Roo.bootstrap.NavProgressBar
 right:
     Roo.bootstrap.Container
     Roo.bootstrap.Button
@@ -385,7 +384,6 @@ right:
     Roo.bootstrap.DocumentViewer
     Roo.bootstrap.PagingToolbar
     Roo.bootstrap.NavProgressBar
-    Roo.bootstrap.NavProgressItem
 
 left:
     Roo.bootstrap.TabGroup
@@ -432,6 +430,11 @@ left:
     Roo.bootstrap.PagingToolbar:store
 right:  
     Roo.data.Store
+
+left:
+    Roo.bootstrap.NavProgressBar:items[]
+right:
+    Roo.bootstrap.NavProgressItem
 
 left:
     Roo.bootstrap.TableBody
