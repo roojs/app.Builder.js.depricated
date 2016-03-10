@@ -383,6 +383,7 @@ right:
     Roo.bootstrap.DocumentManager
     Roo.bootstrap.DocumentViewer
     Roo.bootstrap.PagingToolbar
+    Roo.bootstrap.NavProgressBar
 
 left:
     Roo.bootstrap.TabGroup
