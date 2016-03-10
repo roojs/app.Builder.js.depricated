@@ -432,7 +432,7 @@ right:
     Roo.data.Store
 
 left:
-    Roo.bootstrap.NavProgressBar:item
+    Roo.bootstrap.NavProgressBar:items[]
 right:
     Roo.bootstrap.NavProgressItem
 
