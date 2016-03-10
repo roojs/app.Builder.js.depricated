@@ -429,7 +429,7 @@ right:
     Roo.bootstrap.Button
 
 left:
-    Roo.bootstrap.PagingToolbar:store[]
+    Roo.bootstrap.PagingToolbar:store
 right:  
     Roo.data.Store
 
