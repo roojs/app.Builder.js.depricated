@@ -384,6 +384,7 @@ right:
     Roo.bootstrap.DocumentViewer
     Roo.bootstrap.PagingToolbar
     Roo.bootstrap.NavProgressBar
+    Roo.bootstrap.FieldLabel
 
 left:
     Roo.bootstrap.TabGroup
