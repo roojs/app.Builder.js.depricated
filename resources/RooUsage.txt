@@ -385,6 +385,7 @@ right:
     Roo.bootstrap.PagingToolbar
     Roo.bootstrap.NavProgressBar
     Roo.bootstrap.FieldLabel
+    Roo.bootstrap.DateSplitField
 
 left:
     Roo.bootstrap.TabGroup
