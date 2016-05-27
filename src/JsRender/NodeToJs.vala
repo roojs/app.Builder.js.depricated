@@ -210,8 +210,9 @@ public class JsRender.NodeToJs : Object {
 				this.node.setLine(this.cur_line, ";",k);
 				this.addLine( v,',');
 			}
-			suffix = total_nodes > 0 ? "," : "";
-			this.closeLine(this.pad + "}" ,',');			
+			
+			this.closeLine();
+			this.addLine(this.pad + "}" ,',');
 			
 		}
 		
