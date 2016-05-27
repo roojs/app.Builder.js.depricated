@@ -290,7 +290,7 @@ public class JsRender.NodeToJs : Object {
 	/**
 	* add a line - note we will end up with an extra line break 
 	*     at beginning of nodes doing this..
-	
+	*
 	* @param str = text to add..
 	* @param line_end = 0  (just add a line break)
 	*        line_end = ','  and ","
@@ -300,7 +300,7 @@ public class JsRender.NodeToJs : Object {
 	{
 		this.ret += (this.line_end == 0 ? "" : this.last_line_end) + "\n"; 
 		this.cur_line ++;
-		this.ret += str+ "\n";
+		this.ret += str ;
 		//this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
 		
 		
