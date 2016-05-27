@@ -299,7 +299,8 @@ public class JsRender.NodeToJs : Object {
 	*/
 	public void addLine(string str, char line_end)
 	{
-		this.ret += (this.line_end == 0 ? "" : this.last_line_end) + "\n"; 
+		this.ret += (this.last_line_end == 0 ? "" : this.last_line_end) + "\n"; 
+		this.last_line_end = line_end;
 		this.cur_line += str.split("\n").length;
 		this.ret += str;
 		
@@ -307,6 +308,10 @@ public class JsRender.NodeToJs : Object {
 		//this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
 		
 		
+	}
+	public void closeLine()
+	{
+		this.last_line_end = 0;
 	}
 	
 /*	public void addMultiLine(str= "")
