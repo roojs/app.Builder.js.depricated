@@ -104,7 +104,9 @@
             "gee-1.0",
             "posix",
             "libvala-0.24",
-            "libvala-0.30"
+            "libvala-0.30",
+            "librsvg-2.0",
+            "libvala-0.32"
         ]
     }
 ]
