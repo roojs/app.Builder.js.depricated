@@ -192,7 +192,7 @@ public class JsRender.NodeToJs : Object {
 			var k = iter.get();
 			var v = this.out_props.get(k);
 			
-			this.addMultiLine(this.pad + k + " : " + v + suffix);
+			this.addLine(this.pad + k + " : " + v + suffix, ',');
 		}
 	 
 		// listeners..
