@@ -44,6 +44,10 @@ public class JsRender.NodeToJs : Object {
 		//this.ar_props = new Gee.HashMap<string,string>();
 		
 		
+		
+		// this is the bit that causes issues - we have to output as we go, otherwise we 
+		// can not work out which line is which...
+		
 		this.out_props = new Gee.HashMap<string,string>();
 		this.out_listeners = new Gee.HashMap<string,string>();	
 		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
