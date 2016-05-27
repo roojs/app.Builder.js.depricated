@@ -21,6 +21,10 @@ if HAVE_LIBVALA30
 builder_LIBVALA = --pkg libvala-0.30
 endif
 
+if HAVE_LIBVALA32
+builder_LIBVALA = --pkg libvala-0.32
+endif
+
 # gda
 
 
