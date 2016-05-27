@@ -1,8 +1,8 @@
 /**
  * 
- * Code to convert node tree to Javascript...
+ * Code to convert node tree to Vala...
  * 
- * usage : x = (new JsRender.NodeToJs(node)).munge();
+ * usage : x = (new JsRender.NodeToVala(node)).munge();
  * 
  * 
  * 
