@@ -202,13 +202,13 @@ public class JsRender.NodeToJs : Object {
 			this.addLine(this.pad + "listeners : {", 0);
 			iter = this.orderedListenerKeys().list_iterator();
 			 
-			var sz = this.out_listeners.size;
 			while(iter.next()) {
-				sz--;
-				suffix = sz > 0 ? "," : "";
+				
 				var k = iter.get();
 				var v = this.out_listeners.get(k);
-				this.addLine(this.pad + indent_str + k + " : " + v + suffix,',');
+				this.addLine(this.pad + indent_str + k + " : ", '');
+				this.node.setLine(this.cur_line, ";",k);
+				this.addLine( v,',');
 			}
 			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + "}" + suffix);			
