@@ -211,7 +211,7 @@ public class JsRender.NodeToJs : Object {
 				this.addLine( v,',');
 			}
 			suffix = total_nodes > 0 ? "," : "";
-			this.addLine(this.pad + "}" + suffix);			
+			this.addLine(this.pad + "}" ,',');			
 			
 		}
 		
