@@ -424,7 +424,7 @@ namespace Palete {
 			string [] cc_options = { "-lm", "-pg" };
 			valac += " -X -lm -X -pg";
 			
-#if VALA_0_28 || VALA_0_30
+#if VALA_0_28 || VALA_0_30 || VALA_0_32
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
 			ccompiler.compile (context, cc_command, cc_options, pkg_config_command);
 #else
