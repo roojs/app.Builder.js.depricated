@@ -299,21 +299,21 @@ public class JsRender.NodeToJs : Object {
 	public void addLine(string str, char line_end)
 	{
 		this.ret += (this.line_end == 0 ? "" : this.last_line_end) + "\n"; 
-		this.cur_line++;
+		this.cur_line += str.split("\n").length;
 		this.ret += str ;
 		//this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
 		
 		
 	}
 	
-	public void addMultiLine(string str= "")
+/*	public void addMultiLine(str= "")
 	{
-
-		//this.ret +=   "/*%d(%d-%d)*/ ".printf(this.cur_line, this.node.line_start,this.node.line_end)+ str + "\n";
+		
+		//this.ret +=   "/ * %d(%d-%d) * / ".printf(this.cur_line, this.node.line_start,this.node.line_end)+ str + "\n";
 		this.ret +=   str + "\n";
 		this.cur_line += str.split("\n").length;
 	}
- 
+ */
 	public string mungeChildNew(string pad ,  Node cnode )
 	{
 		var x = new  NodeToJs(cnode, this.doubleStringProps, pad, this);
