@@ -199,7 +199,7 @@ public class JsRender.NodeToJs : Object {
 		
 		if (this.out_listeners.size > 0 ) { 
 			total_nodes--;
-			this.addLine(this.pad + "listeners : {");
+			this.addLine(this.pad + "listeners : {", '');
 			iter = this.orderedListenerKeys().list_iterator();
 			 
 			var sz = this.out_listeners.size;
