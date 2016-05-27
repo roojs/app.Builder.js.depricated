@@ -200,7 +200,7 @@ public class JsRender.NodeToJs : Object {
 				var k = iter.get();
 				var v = this.out_listeners.get(k);
 				this.addLine(this.pad + indent_str + k + " : ", '');
-				this.node.setLine(this.cur_line, "l",k);
+				this.node.setLine(this.cur_line, "l",k); //listener
 				this.addLine( v,',');
 			}
 			
@@ -220,35 +220,31 @@ public class JsRender.NodeToJs : Object {
 		var niter = this.out_nodeprops.map_iterator();
 
 		while(niter.next()) {
-			total_nodes--;
-			suffix = total_nodes > 0 ? "," : "";
-			var l = this.pad + niter.get_key() + " : " + 
-					this.mungeChildNew(this.pad + indent_str, niter.get_value()) + suffix;
-			this.addMultiLine(l);
+			this.addLine(this.pad + niter.get_key() + " : ", '');
+			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
+			this.addLine(addstr,',') ;
+			
 		}			 
 		// prop arrays...
 		
 		var piter = this.out_props_array.map_iterator();
 
 		while(piter.next()) {
-			total_nodes--;
 
-			this.addLine(this.pad + piter.get_key() + " : [");
+			this.addLine(this.pad + piter.get_key() + " : [", '');
+			
 			var pliter = piter.get_value().list_iterator();
 			while (pliter.next()) {
-				suffix = pliter.has_next()  ? "," : "";
-				this.addMultiLine(this.pad + indent_str + 
-					this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get()) + suffix);
+				var addstr = this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get());
+				this.addLine(this.pad + indent_str + addstr, ',');
 			}
-
-			suffix = total_nodes > 0 ? "," : "";
- 
-			this.addLine(this.pad + "]" + suffix);			
+			this.closeLine();
+			this.addLine(this.pad + "]" , ',');			
 		}	
 		
 		// children..
 		if (this.out_children.size > 0) {
-			this.addLine(this.pad + "items  : [" );
+			this.addLine(this.pad + "items  : [" , '');
 			var cniter = this.out_children.list_iterator();
 			while (cniter.next()) {
 				suffix = cniter.has_next()  ? "," : "";
@@ -257,15 +253,16 @@ public class JsRender.NodeToJs : Object {
 				);
 				
 			}
-			
-			this.addLine(this.pad +   "]");
+			this.closeLine();
+			this.addLine(this.pad +   "]",',');
 		}
 		
+		this.closeLine();
 		if (this.node.props.has_key("* xinclude")) {
-			this.ret += spad + "})";
+			this.addLine(spad + "})",'');
 	 
 		} else {
-			this.ret += spad + "}";
+			this.addLine( spad + "}", '');
 		}
 		
 		this.node.sortLines();
