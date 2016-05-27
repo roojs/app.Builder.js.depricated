@@ -227,7 +227,9 @@ namespace Palete {
 		
 			context.experimental = false;
 			context.experimental_non_null = false;
-#if VALA_0_30
+#if VALA_0_32
+			var ver=32;
+#elif VALA_0_30
 			var ver=30;
 #elif VALA_0_28
 			var ver=28;
@@ -419,8 +421,8 @@ namespace Palete {
 			var cc_command = Environment.get_variable ("CC");
 			
 			
-			string [] cc_options = { "-lm" };
-			valac += " -X -lm";
+			string [] cc_options = { "-lm", "-pg" };
+			valac += " -X -lm -X -pg";
 			
 #if VALA_0_28 || VALA_0_30
 			var pkg_config_command = Environment.get_variable ("PKG_CONFIG");
