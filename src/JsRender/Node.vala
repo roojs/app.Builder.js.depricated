@@ -131,7 +131,7 @@ public class JsRender.Node : Object {
 	}
 	
 	public void setNodeLine(int line, Node node) {
-		print("Add node @ %d\n", line);
+		//print("Add node @ %d\n", line);
 		this.node_lines.add(line);
 		this.node_lines_map.set(line, node);
 	}
@@ -141,7 +141,7 @@ public class JsRender.Node : Object {
 		this.line_map.set(line, type + ":" + prop);
 	}
 	public void sortLines() {
-		print("sortLines\n");
+		//print("sortLines\n");
 		this.lines.sort((a,b) => {   
 			return (int)b-(int)a;
 		});
@@ -151,35 +151,35 @@ public class JsRender.Node : Object {
 	}
 	public Node? lineToNode(int line)
 	{
-		print("Searching for line %d\n",line);
+		//print("Searching for line %d\n",line);
 		var l = -1;
 		foreach(int el in this.node_lines) {
-			print("all lines %d\n", el);
+			//print("all lines %d\n", el);
 		}
 		
 		
 		foreach(int el in this.node_lines) {
-			print("?match %d\n", el);
+			//print("?match %d\n", el);
 			if (el < line) {
 				
 				l = el;
-				print("LESS\n");
+				//print("LESS\n");
 				continue;
 			}
 			if (el == line) {
-				print("SAME\n");
+				//print("SAME\n");
 				l = el;
 				break;
 			}
 			if (l > -1) {
-				print("RETURNING NODE ON LINE %d", l);
+				//print("RETURNING NODE ON LINE %d", l);
 				return this.node_lines_map.get(l);
 			}
 			return null;
 			
 		}
 		if (l > -1) {
-			print("RETURNING NODE ON LINE %d", l);
+			//print("RETURNING NODE ON LINE %d", l);
 			return this.node_lines_map.get(l);
 		}
 		return null;
@@ -222,7 +222,7 @@ public class JsRender.Node : Object {
 		this.props.set("xtype", ar[ar.length-1]);
 		var l = name.length - (ar[ar.length-1].length +1);
 		this.props.set("$ xns", name.substring(0, l));
-		print("setFQN %s to %s\n", name , this.fqn());
+		//print("setFQN %s to %s\n", name , this.fqn());
 		               
 
 	}
@@ -293,7 +293,7 @@ public class JsRender.Node : Object {
 				kk+= kkv[i];
 			}
 		}
-		print("normalize %s => %s\n", key,string.joinv("=:=",kk));
+		//print("normalize %s => %s\n", key,string.joinv("=:=",kk));
 		
 		switch(kk.length) {
 			case 1: 
