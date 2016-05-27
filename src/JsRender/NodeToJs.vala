@@ -299,7 +299,7 @@ public class JsRender.NodeToJs : Object {
 	*/
 	public void addLine(string str, char line_end)
 	{
-		this.ret += (this.last_line_end == 0 ? "" : this.last_line_end) + "\n"; 
+		this.ret += (this.last_line_end == 0 ? "" : this.last_line_end.toString()) + "\n"; 
 		this.last_line_end = line_end;
 		this.cur_line += str.split("\n").length;
 		this.ret += str;
