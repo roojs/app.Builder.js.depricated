@@ -4,6 +4,13 @@
  * 
  * usage : x = (new JsRender.NodeToJs(node)).munge();
  * 
+ *
+ *  We are changing this to output as we go.
+ *   However... since line-endings on properties have ',' (not ;) like vala.
+ *           we have to be a bit smarter about how to output.
+ *
+ *   
+ *
 */
 
 
@@ -50,9 +57,12 @@ public class JsRender.NodeToJs : Object {
 		
 		this.out_props = new Gee.HashMap<string,string>();
 		this.out_listeners = new Gee.HashMap<string,string>();	
+		
+		
 		this.out_nodeprops = new Gee.HashMap<string,Node>() ;
 		this.out_children = new Gee.ArrayList<Node> ();
-		this.out_props_array = new Gee.HashMap<string,Gee.ArrayList<Node>>() ;
+		
+		this.out_props_array = new Gee.HashMap<string,Gee.ArrayList<Node>>(); // filled in by 'checkChildren'
 		this.out_props_array_plain = new Gee.HashMap<string,Gee.ArrayList<string>>() ;
 	
 		
@@ -269,12 +279,26 @@ public class JsRender.NodeToJs : Object {
 	
 	}
 	
- 
+	/**
+	* Line endings
+	*     if we end with a ','
+	*
+	*/
+
+	char last_line_end = 0; 
 	
+	/**
+	* add a line - note we will end up with an extra line break 
+	*     at beginning of nodes doing this..
 	
-	
-	public void addLine(string str= "")
+	* @param str = text to add..
+	* @param line_end = 0  (just add a line break)
+	*        line_end = ','  and ","
+	*  
+	*/
+	public void addLine(string str, char line_end)
 	{
+		this.ret += (this.line_end == 0 ? "" : this.last_line_end) + "\n"; 
 		this.cur_line ++;
 		this.ret += str+ "\n";
 		//this.ret +=  "/*%d(%d-%d)*/ ".printf(this.cur_line -1, this.node.line_start,this.node.line_end) + str + "\n";
@@ -298,7 +322,12 @@ public class JsRender.NodeToJs : Object {
 		return x.ret;
 	}
 	
-
+	/**
+	* loop through items[] array see if any of the children have '* prop'
+	* -- which means they are a property of this node.
+	* -- ADD TO : this.opt_props_array  
+	*
+	*/
 	
 	public void checkChildren () 
 	{
