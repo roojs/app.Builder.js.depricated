@@ -175,20 +175,13 @@ public class JsRender.NodeToJs : Object {
 		var suffix = "";
 		// output the items...
 		// work out remaining items...
-		var  total_nodes = this.out_props.size + 
-				this.out_props_array_plain.size + 
-				(this.out_listeners.size > 0 ? 1 : 0) +
-				this.out_nodeprops.size +
-				this.out_props_array.size +
-				(this.out_children.size > 0 ? 1 : 0);
-		
-		
+	 
 		
 		// plain properties.
 		var iter = this.orderedPropKeys().list_iterator();
 		while(iter.next()) {
-			total_nodes--;
-			suffix = total_nodes > 0 ? "," : "";
+ 
+			 
 			var k = iter.get();
 			var v = this.out_props.get(k);
 			
@@ -198,7 +191,7 @@ public class JsRender.NodeToJs : Object {
 		// listeners..
 		
 		if (this.out_listeners.size > 0 ) { 
-			total_nodes--;
+			 
 			this.addLine(this.pad + "listeners : {", 0);
 			iter = this.orderedListenerKeys().list_iterator();
 			 
@@ -207,7 +200,7 @@ public class JsRender.NodeToJs : Object {
 				var k = iter.get();
 				var v = this.out_listeners.get(k);
 				this.addLine(this.pad + indent_str + k + " : ", '');
-				this.node.setLine(this.cur_line, ";",k);
+				this.node.setLine(this.cur_line, "l",k);
 				this.addLine( v,',');
 			}
 			
