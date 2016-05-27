@@ -199,7 +199,7 @@ public class JsRender.NodeToJs : Object {
 		
 		if (this.out_listeners.size > 0 ) { 
 			total_nodes--;
-			this.addLine(this.pad + "listeners : {", '');
+			this.addLine(this.pad + "listeners : {", 0);
 			iter = this.orderedListenerKeys().list_iterator();
 			 
 			var sz = this.out_listeners.size;
@@ -208,7 +208,7 @@ public class JsRender.NodeToJs : Object {
 				suffix = sz > 0 ? "," : "";
 				var k = iter.get();
 				var v = this.out_listeners.get(k);
-				this.addMultiLine(this.pad + indent_str + k + " : " + v + suffix);
+				this.addMultiLine(this.pad + indent_str + k + " : " + v + suffix,',');
 			}
 			suffix = total_nodes > 0 ? "," : "";
 			this.addLine(this.pad + "}" + suffix);			
