@@ -84,7 +84,8 @@
             "../Palete",
             "../Project",
             "../vapi",
-            "../c"
+            "../c",
+            "../..//tests"
         ],
         "packages" : [
             "gdk-3.0",
