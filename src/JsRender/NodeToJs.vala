@@ -320,7 +320,7 @@ public class JsRender.NodeToJs : Object {
 			//var prop = pl['*prop'] + '';
 			//delete pl['*prop'];
 			var prop = pl.get("* prop");
-			print("got prop "+ prop + "\n");
+			//print("got prop "+ prop + "\n");
 			
 			// name ends in [];
 			if (! Regex.match_simple("\\[\\]$", prop)) {
@@ -337,7 +337,7 @@ public class JsRender.NodeToJs : Object {
 
 			
 			var sprop  = prop.replace("[]", "");
-			print("sprop is : " + sprop + "\n");
+			//print("sprop is : " + sprop + "\n");
 			
 			// it's an array type..
 			//var old = "";
@@ -436,7 +436,7 @@ public class JsRender.NodeToJs : Object {
 		
 		for (var i = 0; i< keys.size; i++) {
 			var key = this.node.get_key(keys.get(i));
-			print("ADD KEY %s\n", key);
+			//("ADD KEY %s\n", key);
 			string k;
 			string ktype;
 			string kflag;
