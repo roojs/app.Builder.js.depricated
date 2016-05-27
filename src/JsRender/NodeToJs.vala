@@ -167,10 +167,10 @@ public class JsRender.NodeToJs : Object {
 		var spad = this.pad.substring(0, this.pad.length-indent);
 		
 		if (this.node.props.has_key("* xinclude")) {
-			this.addLine("Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), {");
+			this.addLine("Roo.apply(" + this.node.props.get("* xinclude") + "._tree(), {",0 );
 	 
 		} else {
-			this.addLine("{");
+			this.addLine("{", 0);
 		}
 		var suffix = "";
 		// output the items...
