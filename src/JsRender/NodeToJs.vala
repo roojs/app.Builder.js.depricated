@@ -309,7 +309,7 @@ public class JsRender.NodeToJs : Object {
 		
 		
 	}
-	public void closeLine() // send this before '}' or ']'
+	public void closeLine() // send this before '}' or ']' to block output of ',' ...
 	{
 		this.last_line_end = 0;
 	}
