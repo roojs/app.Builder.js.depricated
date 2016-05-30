@@ -107,7 +107,13 @@ namespace JsRender {
              
             
         }
-		
+		 public override string toSourceCode()
+        {
+			return this.contents;
+            
+             
+            
+        }
         public override void save() {
     		if (!this.loaded) {
     			print("Ignoring Save  - as file was never loaded?\n");
