@@ -1082,7 +1082,7 @@ public class Xcls_WindowRooView : Object
                 		}
                     }
                     ltree.view.setCursor(tp, "editor");
-                    
+                   // ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false); 
                    
                     
                     // scrolling is disabled... as node selection calls scroll 10ms after it changes.
