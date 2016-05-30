@@ -132,6 +132,9 @@ public class JsRender.Node : Object {
 	
 	public void setNodeLine(int line, Node node) {
 		//print("Add node @ %d\n", line);
+		if (this.node_line_map.has_key(line)) {
+			return;
+		}
 		this.node_lines.add(line);
 		this.node_lines_map.set(line, node);
 		
