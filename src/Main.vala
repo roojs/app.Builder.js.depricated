@@ -28,8 +28,22 @@ int main (string[] args) {
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
+	if (BuilderApplication.opt_list_projects != null) {
+		 
+		//BuilderApplication.compileBjs();
+        Project.Project.loadAll();
+		Project.Project.listAll();
+		GLib.Process.exit(Posix.EXIT_SUCCESS);
+	}
 	
-    
+      if (BuilderApplication.opt_bjs_compile != null) {
+		 
+		//BuilderApplication.compileBjs();
+        print("compile BJS comming soon");
+		
+		GLib.Process.exit(Posix.EXIT_SUCCESS);
+	}
+	
     
 	if (BuilderApplication.opt_compile_project != null) {
 		 
@@ -43,12 +57,11 @@ int main (string[] args) {
 	GLib.debug("project = %s\n", BuilderApplication.opt_compile_project);
 	
 	Gtk.init (ref args);
-	
-	
+	 
 	GtkClutter.init (ref args);
 	new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
-	Project.Project.loadAll();
+	
     
     
     // respond to other arguments
