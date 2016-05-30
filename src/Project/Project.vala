@@ -158,7 +158,7 @@ namespace Project {
 			var ret = "ID\tName\tDirectory\n";
 			while (iter.next()) {
 				ret += "%s\t%s\t%s\n".printf(
-						iter.get().id,
+						iter.get().fn,
 						iter.get().name,
 						iter.get().firstPath()
 						);
@@ -416,6 +416,29 @@ namespace Project {
 
 		}
 		
+	 
+	 
+	 	public string listAllFilesToString()
+		{
+			this.scanDirs();
+			var iter = this.sortedFiles().list_iterator();
+			var ret = "ID\tName\tDirectory\n";
+			while (iter.next()) {
+				ret += "%s\n".printf(
+						 
+						iter.get().name
+						 
+						);
+			 
+				
+			}
+			
+			return ret;
+		
+		}
+		
+	 
+	 
 	 
 		public JsRender.JsRender? getByName(string name)
 		{
