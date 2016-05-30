@@ -829,6 +829,9 @@ public class Xcls_WindowLeftTree : Object
                  }
                      
         }
+        public return_type XXXX () {
+        
+        }
         public           void selectNode (string treepath_str, string source) {
         	this.lastEventSource = source;
             //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
