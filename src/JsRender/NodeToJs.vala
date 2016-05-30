@@ -186,7 +186,7 @@ public class JsRender.NodeToJs : Object {
 			var v = this.out_props.get(k);
 			this.node.setLine(this.cur_line, "p",k); //listener
 			this.addLine(this.pad + k + " : " + v + suffix, ',');
-			
+			this.node.setLine(this.cur_line, "e", "");
 			
 		}
 	 
@@ -203,7 +203,7 @@ public class JsRender.NodeToJs : Object {
 				var v = this.out_listeners.get(k);
 				this.node.setLine(this.cur_line, "l",k); //listener
 				this.addLine(this.pad + indent_str + k + " : " + v , ',');
-				
+				this.node.setLine(this.cur_line, "e", "");
 			}
 			
 			this.closeLine();
@@ -229,7 +229,7 @@ public class JsRender.NodeToJs : Object {
 				this.addLine(this.pad + "'|xns' : '" + addstr + "'", ',');
 
 			}
-			
+			this.node.setLine(this.cur_line, "e", "");
 		}			 
 		// prop arrays...
 		
