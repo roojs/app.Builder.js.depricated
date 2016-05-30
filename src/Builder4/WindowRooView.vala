@@ -959,7 +959,7 @@ public class Xcls_WindowRooView : Object
             
                 this.loading = true;
                 var buf = this.el.get_buffer();
-                buf.notify.connect(this.onCursorChanged);
+                //buf.notify.connect(this.onCursorChanged);
               
               
               
@@ -1033,6 +1033,7 @@ public class Xcls_WindowRooView : Object
                 if (ps.name != "cursor-position") {
                     return;
                 }
+        
                 var buf = this.el.get_buffer();
                 print("cursor changed : %d\n", buf.cursor_position);
                 Gtk.TextIter cpos;
