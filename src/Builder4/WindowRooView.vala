@@ -1019,14 +1019,14 @@ public class Xcls_WindowRooView : Object
 
             //listeners
             this.el.button_release_event.connect( () => {
+            	this.onCursorChanged();
             
-            
-            
+            	return false;
             });
         }
 
         // user defined functions
-        public void onCursorChanged (ParamSpec ps) {
+        public void onCursorChanged (/*ParamSpec ps*/) {
         	  if (this.loading) {
                     return;
                 }
