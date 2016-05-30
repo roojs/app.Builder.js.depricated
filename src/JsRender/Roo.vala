@@ -403,7 +403,9 @@ namespace JsRender {
          */
         public override string toSourceCode() 
         {
-    		return this.toSource();
+			this.transStrings = new Gee.HashMap<string,string>();
+			this.findTransStrings(this.tree);
+			return this.toSource();
 		}
          
         public override string toSource()
