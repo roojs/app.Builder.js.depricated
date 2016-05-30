@@ -401,6 +401,11 @@ namespace JsRender {
          * 
          * 
          */
+        public override string toSourceCode() 
+        {
+    		return this.toSource();
+		}
+         
         public override string toSource()
         {
             // dump the file tree back out to a string.
