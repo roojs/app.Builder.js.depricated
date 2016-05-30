@@ -1026,6 +1026,7 @@ public class Xcls_WindowRooView : Object
                 if (ps.name != "cursor-position") {
                     return;
                 }
+                var buf = this.el.get_buffer();
                 print("cursor changed : %d\n", buf.cursor_position);
                 Gtk.TextIter cpos;
                 buf.get_iter_at_offset(out cpos, buf.cursor_position);
