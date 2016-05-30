@@ -29,43 +29,43 @@
    "items" : [
     {
      "id" : "notebook",
-     "xtype" : "Notebook",
      "* pack" : "pack_start,true,true,0",
+     "xtype" : "Notebook",
      "$ xns" : "Gtk",
      "items" : [
       {
        "id" : "label_preview",
-       "xtype" : "Label",
        "* pack" : false,
+       "xtype" : "Label",
        "$ xns" : "Gtk",
        "utf8 label" : "Preview"
       },
       {
        "id" : "label_code",
-       "* pack" : false,
        "xtype" : "Label",
+       "* pack" : false,
        "$ xns" : "Gtk",
        "utf8 label" : "Preview Generated Code"
       },
       {
        "id" : "paned",
-       "xtype" : "Paned",
        "* pack" : "add",
+       "xtype" : "Paned",
        "$ xns" : "Gtk",
        "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
        "items" : [
         {
          "id" : "viewbox",
-         "xtype" : "Box",
          "* pack" : "pack1,true,true",
+         "xtype" : "Box",
          "$ xns" : "Gtk",
          "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
          "$ homogeneous" : false,
          "items" : [
           {
            "$ vexpand" : false,
-           "* pack" : "pack_start,false,true,0",
            "$ height_request" : 20,
+           "* pack" : "pack_start,false,true,0",
            "xtype" : "Box",
            "$ xns" : "Gtk",
            "Gtk.Orientation orientation" : "Gtk.Orientation.HORIZONTAL",
@@ -76,8 +76,8 @@
               "clicked" : "( ) => {\n    _this.view.renderJS(  true);\n}"
              },
              "label" : "Redraw",
-             "* pack" : "pack_start,false,false,0",
              "xtype" : "Button",
+             "* pack" : "pack_start,false,false,0",
              "$ xns" : "Gtk"
             },
             {
@@ -96,16 +96,16 @@
               "clicked" : " () => {\n  _this.view.redraws = 99;\n    _this.view.el.web_context.clear_cache();  \n  //_this.view.renderJS(true);\n  FakeServerCache.clear();\n  _this.view.reInit();\n\n}"
              },
              "label" : "Full Redraw",
-             "* pack" : "pack_start,false,false,0",
              "xtype" : "Button",
+             "* pack" : "pack_start,false,false,0",
              "$ xns" : "Gtk"
             }
            ]
           },
           {
            "id" : "viewcontainer",
-           "$ shadow_type" : "Gtk.ShadowType.IN",
            "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+           "$ shadow_type" : "Gtk.ShadowType.IN",
            "* pack" : "pack_end,true,true,0",
            "xtype" : "ScrolledWindow",
            "$ xns" : "Gtk",
@@ -142,8 +142,8 @@
         },
         {
          "id" : "inspectorcontainer",
-         "$ shadow_type" : "Gtk.ShadowType.IN",
          "* init" : "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
+         "$ shadow_type" : "Gtk.ShadowType.IN",
          "xtype" : "ScrolledWindow",
          "* pack" : "pack2,true,true",
          "$ xns" : "Gtk"
