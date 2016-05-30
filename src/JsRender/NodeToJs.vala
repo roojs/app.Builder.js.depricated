@@ -215,7 +215,7 @@ public class JsRender.NodeToJs : Object {
 		
 		
 		
-		
+		this.node.line_end = this.cur_line;
 		
 		// * prop
 
@@ -263,7 +263,7 @@ public class JsRender.NodeToJs : Object {
 			this.closeLine();
 			this.addLine(this.pad +   "]",',');
 		}
-		
+		this.node.setLine(this.cur_line, "e", "");
 		this.closeLine();
 		if (this.node.props.has_key("* xinclude")) {
 			this.addLine(spad + "})",0);
@@ -274,7 +274,7 @@ public class JsRender.NodeToJs : Object {
 		
 		this.node.sortLines();
 		
-		this.node.line_end = this.cur_line;
+		
 		
 		return this.ret;
 	
