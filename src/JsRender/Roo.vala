@@ -91,7 +91,7 @@ namespace JsRender {
 			if (this.tree != null) {
 				return;
 			}
-			print("load " + this.path);
+			GLib.debug("load " + this.path);
 
 			var pa = new Json.Parser();
 			pa.load_from_file(this.path);
