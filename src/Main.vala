@@ -78,7 +78,7 @@ int main (string[] args) {
     		var prop = node == null ? null : node.lineToProp(i);
     		print("%d: %s   :  %s\n", 
     			i+1, 
-    			prop == null ? "????????" : prop,
+    			node == null ? "......" ) : (prop == null ? "????????" : prop),
     			str_ar[i]
 			);
         }
