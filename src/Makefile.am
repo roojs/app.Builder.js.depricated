@@ -8,7 +8,6 @@ if HAVE_LIBVALA24
 builder_LIBVALA = --pkg libvala-0.24
 endif
 
-
 if HAVE_LIBVALA26
 builder_LIBVALA = --pkg libvala-0.26
 endif
@@ -86,11 +85,8 @@ builder4_PKGS = \
 		--pkg posix 
 
 
-builder4_SOURCES = \
-		Application.vala \
-		Main.vala \
-		Spawn.vala \
-		JsRender/Gtk.vala \
+BUIDERJSRENDER = \
+        JsRender/Gtk.vala \
 		JsRender/PlainFile.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
@@ -99,23 +95,30 @@ builder4_SOURCES = \
 		JsRender/NodeToJs.vala \
 		JsRender/NodeToVala.vala \
 		JsRender/Node.vala \
-		JsRender/Roo.vala \
-		Project/Gtk.vala \
-		Project/Project.vala \
-		Project/Roo.vala \
-		Palete/Gir.vala \
+		JsRender/Roo.vala 
+
+BUIDERPALETE = \
+        Palete/Gir.vala \
 		Palete/GirObject.vala \
 		Palete/VapiParser.vala \
 		Palete/Gtk.vala \
 		Palete/RooDatabase.vala \
-		c/jscore_object_call_as_function.c \
+        c/jscore_object_call_as_function.c \
 		Palete/Javascript.vala \
 		Palete/Palete.vala \
 		Palete/Roo.vala \
 		Palete/ValaSource.vala \
 		Palete/ValaSourceCompiler.vala \
-		Palete/CompletionProvider.vala \
-		Builder4/About.vala \
+		Palete/CompletionProvider.vala
+        
+BUIDERPROJECT = \
+        Project/Gtk.vala \
+		Project/Project.vala \
+		Project/Roo.vala 
+
+
+BUIDERUI = \
+        Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/StandardErrorDialog.vala \
 		Builder4/DialogSaveTemplate.vala \
@@ -141,8 +144,20 @@ builder4_SOURCES = \
 		Builder4/PopoverFileDetails.vala \
 		Builder4/ValaCompileErrors.vala \
 		Builder4/ValaCompileResults.vala \
-		Builder4/PopoverProperty.vala \
-		Resources.vala 
+		Builder4/PopoverProperty.vala
+        
+builder4_SOURCES = \
+		Application.vala \
+		Main.vala \
+		Spawn.vala \
+        Resources.vala  \
+	   $(BUIDERJSRENDER) \
+       $(BUIDERPALETE) \
+       $(BUIDERPROJECT) \
+       $(BUIDERUI) \
+
+		
+		
 		
 		
  
