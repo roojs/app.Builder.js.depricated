@@ -959,10 +959,7 @@ public class Xcls_WindowRooView : Object
             
                 this.loading = true;
                 var buf = this.el.get_buffer();
-                buf.notify.connect((ps) => {
-                   
-                    
-                });
+                buf.notify.connect(this.onCursorChanged);
               
               
               
