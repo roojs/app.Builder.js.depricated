@@ -225,7 +225,7 @@ public class JsRender.Node : Object {
 	}
 	public void dumpProps(string indent = "")
 	{
-		print("%s:\n" + this.fqn());
+		print("%s:\n" , this.fqn());
 		foreach(int el in this.node_lines) {
 			print("%s  %s\n", indent, this.line_map.get(el));
 		}
