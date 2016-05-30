@@ -1111,7 +1111,7 @@ public class Xcls_WindowRooView : Object
             
            
             // clear all the marks..
-             Gtk.TextIter start;
+            Gtk.TextIter start;
             Gtk.TextIter end;     
                 
             sbuf.get_bounds (out start, out end);
@@ -1143,6 +1143,14 @@ public class Xcls_WindowRooView : Object
             
             var start = sel.line_start;
             var end = sel.line_end;
+            
+            // now if we have selected a property...
+            if (this.propSelected.length> 0 ) {
+        		
+        		
+            }
+            
+            
             
             for (var i = 0; i < buf.get_line_count();i++) {
                 if (i < (start -1) || i > (end -1)) {
