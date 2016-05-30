@@ -47,10 +47,10 @@
      "$ enable_tree_lines" : true,
      "$ headers_visible" : false,
      "|           void highlightDropPath" : " ( string treepath, Gtk.TreeViewDropPosition pos) {\n\n        // highlighting for drag/drop\n        if (treepath.length > 0) {\n            this.el.set_drag_dest_row(  new  Gtk.TreePath.from_string( treepath ), pos);\n          } else {\n            this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);\n         }\n             \n}",
+     "$ string lastEventSource" : "\"\"",
      "# bool drag_in_motion" : "",
      "# bool blockChanges" : false,
      "$ xns" : "Gtk",
-     "string XXXX" : "",
      "|           void selectNode" : "(string treepath_str, string source) {\n\tthis.lastEventSource = source;\n    //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));\n     var tp = new Gtk.TreePath.from_string(treepath_str);\n     \n     this.el.set_cursor(tp, null, false);  \n     this.el.scroll_to_cell(tp, null, false, 0,0);\n}\n",
      "items" : [
       {

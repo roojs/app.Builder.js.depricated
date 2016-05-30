@@ -80,9 +80,9 @@ public class Xcls_WindowLeftTree : Object
         public string[] dropList;
         public int drag_x;
         public int drag_y;
+        public string lastEventSource;
         public bool drag_in_motion;
         public bool blockChanges;
-        public string XXXX;
 
         // ctor
         public Xcls_view(Xcls_WindowLeftTree _owner )
@@ -92,6 +92,7 @@ public class Xcls_WindowLeftTree : Object
             this.el = new Gtk.TreeView();
 
             // my vars (dec)
+            this.lastEventSource = "";
             this.blockChanges = false;
 
             // set gobject values
