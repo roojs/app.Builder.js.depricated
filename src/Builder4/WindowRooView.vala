@@ -1146,7 +1146,11 @@ public class Xcls_WindowRooView : Object
             
             // now if we have selected a property...
             if (this.propSelected.length> 0 ) {
+        		int nstart, nend;
+        		sel.getPropertyRange(this.propSelected, out nstart, out nend);
+        		if (nstart != nend) {
         		
+        		}
         		
             }
             
