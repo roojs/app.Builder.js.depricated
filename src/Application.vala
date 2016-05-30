@@ -58,13 +58,21 @@
 			{ "add-file", 0, 0, OptionArg.STRING, ref opt_compile_add, "Add this file to compile list", null },
 			{ "output", 0, 0, OptionArg.STRING, ref opt_compile_output, "output binary file path", null },
 			{ "debug", 0, 0, OptionArg.NONE, ref opt_debug, "Show debug messages", null },
+            
+            // some testing code.
+            { "bjs", 0, 0, OptionArg.STRING, ref opt_bjs_compile, "convert bjs file", null },
+            { "bjs-target", 0, 0, OptionArg.STRING, ref opt_bjs_compile_target, "convert bjs file to tareet  : vala / js", null },
+            
+            
 			{ null }
 		};
 		public static string opt_compile_project;
 		public static string opt_compile_target;
 		public static string opt_compile_skip;
 		public static string opt_compile_add;
-		public static string opt_compile_output;		
+		public static string opt_compile_output;
+        public static string opt_bjs_compile;
+        public static string opt_bjs_compile_target;
 		public static bool opt_debug = false;
 		
 		public static string _self;
