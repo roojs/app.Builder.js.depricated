@@ -243,6 +243,7 @@ public class JsRender.NodeToJs : Object {
 			while (pliter.next()) {
 				var addstr = this.mungeChildNew(this.pad + indent_str  + indent_str, pliter.get());
 				this.addLine(this.pad + indent_str + addstr, ',');
+				this.node.setLine(this.cur_line, "e", "");
 			}
 			this.closeLine();
 			this.addLine(this.pad + "]" , ',');			
