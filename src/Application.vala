@@ -61,7 +61,7 @@
             
             // some testing code.
             { "list-projects", 0, 0,  OptionArg.NONE, ref opt_list_projects, "List Projects", null },
-            
+            { "list-files", 0, 0,  OptionArg.NONE, ref  opt_list_files, "List Files (in a project", null},
             { "bjs", 0, 0, OptionArg.STRING, ref opt_bjs_compile, "convert bjs file", null },
             { "bjs-target", 0, 0, OptionArg.STRING, ref opt_bjs_compile_target, "convert bjs file to tareet  : vala / js", null },
             
@@ -77,6 +77,7 @@
         public static string opt_bjs_compile_target;
 		public static bool opt_debug = false;
 		public static bool opt_list_projects = false;
+		public static bool opt_list_files = false;
 		
 		public static string _self;
 		
