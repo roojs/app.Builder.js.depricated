@@ -1027,12 +1027,12 @@ public class Xcls_WindowRooView : Object
 
         // user defined functions
         public void onCursorChanged (ParamSpec ps) {
-        	 if (this.loading) {
+        	  if (this.loading) {
                     return;
                 }
-                if (ps.name != "cursor-position") {
-                    return;
-                }
+               // if (ps.name != "cursor-position") {
+               //     return;
+               // }
         
                 var buf = this.el.get_buffer();
                 print("cursor changed : %d\n", buf.cursor_position);
