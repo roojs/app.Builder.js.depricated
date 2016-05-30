@@ -21,13 +21,7 @@ int main (string[] args) {
 		});
 	}
 	
-    if (BuilderApplication.opt_bjs_compile != null) {
-		 
-		//BuilderApplication.compileBjs();
-        print("compile BJS comming soon");
-		
-		GLib.Process.exit(Posix.EXIT_SUCCESS);
-	}
+     
 	if (BuilderApplication.opt_list_projects) {
 		 
 		//BuilderApplication.compileBjs();
