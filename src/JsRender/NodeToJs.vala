@@ -213,7 +213,7 @@ public class JsRender.NodeToJs : Object {
 		
 		//------- at this point it is the end of the code relating directly to the object..
 		
-		this.node.line_end = this.cur_line;
+		
 		
 		
 		
@@ -225,10 +225,10 @@ public class JsRender.NodeToJs : Object {
 			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
 			this.node.setLine(this.cur_line, "p",niter.get_key());
 			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
-			if (iter.get_key() == "xns") {
-					this.addLine(this.pad + "'|xns' : '" + addstr + "'", ',');
+			if (niter.get_key() == "xns") {
+				this.addLine(this.pad + "'|xns' : '" + addstr + "'", ',');
 
-				}
+			}
 			
 		}			 
 		// prop arrays...
@@ -271,6 +271,9 @@ public class JsRender.NodeToJs : Object {
 		}
 		
 		this.node.sortLines();
+		
+		this.node.line_end = this.cur_line;
+		
 		return this.ret;
 	
 	}
