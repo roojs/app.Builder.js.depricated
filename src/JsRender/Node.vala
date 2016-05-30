@@ -223,7 +223,7 @@ public class JsRender.Node : Object {
 		return null;
 	
 	}
-	void dumpProps(string indent = "")
+	public void dumpProps(string indent = "")
 	{
 		print("%s:\n" + this.fqn());
 		foreach(int el in this.node_lines) {
