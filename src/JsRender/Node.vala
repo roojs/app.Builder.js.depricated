@@ -185,7 +185,7 @@ public class JsRender.Node : Object {
 		return null;
 		
 	}
-	public lineToProp(line)
+	public string lineToProp(line)
 	{
 		// assume lineToNode called first...
 		var l = -1;
