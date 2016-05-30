@@ -60,13 +60,18 @@ int main (string[] args) {
 		if (cur_project == null) {
 			GLib.error("missing project, use --project to select which project");
 		}
-		print("Files\n %s\n",  cur_project.listAllFilesToString());
+		print("Files for %s\n %s\n", cur_project.name, cur_project.listAllFilesToString());
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
     
     if (BuilderApplication.opt_bjs_compile != null) {
-			
-		
+		if (cur_project == null) {
+			GLib.error("missing project, use --project to select which project");
+		}	
+		var file = cur_project.getByName(BuilderApplication.opt_bjs_compile);
+		if (file == null) {
+			GLib.error("missing file %s in project %s", BuilderApplication.opt_bjs_compile, cur_project.name);
+		}
 		//BuilderApplication.compileBjs();
         print("compile BJS comming soon");
 		
