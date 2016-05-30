@@ -142,7 +142,7 @@ public class JsRender.Node : Object {
 	
 	public void setLine(int line, string type, string prop) {
 		if (this.line_map.has_key(line)) {
-			if  (this.line_map.get(line) != ":e"  ) {
+			if  (this.line_map.get(line) != "e:"  ) {
 				return;
 			}
 		} else {
@@ -241,6 +241,26 @@ public class JsRender.Node : Object {
 		return null;
 	
 	}
+	
+	public void getPropertyRange(string prop, out start, out end)
+	{
+		start = -1;
+		foreach(int el in this.lines) {
+			if (start < 0) {
+				if (this.line_map.get(el) == prop) {
+					start = el;
+					end = el;
+				}
+				continue;
+			}
+			end = el;
+			break;
+		}
+		
+	
+	
+	}
+	
 	public void dumpProps(string indent = "")
 	{
 		print("%s:\n" , this.fqn());
