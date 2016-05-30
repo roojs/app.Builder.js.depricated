@@ -958,7 +958,7 @@ public class Xcls_WindowRooView : Object
                 this.el.override_font(description);
             
                 this.loading = true;
-                var buf = this.el.get_buffer();
+                //var buf = this.el.get_buffer();
                 //buf.notify.connect(this.onCursorChanged);
               
               
