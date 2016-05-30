@@ -78,6 +78,9 @@ int main (string[] args) {
     		GLib.Process.exit(Posix.EXIT_SUCCESS);
 		}
 		
+		// dump the node tree
+		
+		
 		
         var str_ar = str.split("\n");
         for(var i =0;i<str_ar.length;i++) {
