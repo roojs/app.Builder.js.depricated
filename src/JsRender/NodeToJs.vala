@@ -226,7 +226,7 @@ public class JsRender.NodeToJs : Object {
 			this.node.setLine(this.cur_line, "p",niter.get_key());
 			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
 			if (iter.get_key() == "xns") {
-					this.addLine(this.pad + "'|xns' : '" + addstr "'", ',');
+					this.addLine(this.pad + "'|xns' : '" + addstr + "'", ',');
 
 				}
 			
