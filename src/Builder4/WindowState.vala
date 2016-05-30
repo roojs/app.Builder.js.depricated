@@ -93,13 +93,7 @@ public class WindowState : Object
 		this.template_select = new DialogTemplateSelect();
 		this.children_loaded = true;
 		
-		this.left_tree.node_selected.connect((sel) => {
-			if (this.file.xtype == "Roo") { 
-				this.window_rooview.sourceview.nodeSelected(sel);			
-			} else {
-				this.window_gladeview.sourceview.nodeSelected(sel);
-			}
-		});
+		
 		this.valasource = new Palete.ValaSource();
 		this.valasource.compiled.connect(this.valaCompiled);
 		
