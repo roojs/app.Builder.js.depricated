@@ -189,7 +189,7 @@ public class JsRender.NodeToJs : Object {
  
 			 
 			var k = iter.get();
-			if (k == "xns" || x == "xtype") {
+			if (k == "xns" || k == "xtype") {
 				continue;
 			}
 
