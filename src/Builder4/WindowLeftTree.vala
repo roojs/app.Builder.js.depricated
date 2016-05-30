@@ -149,6 +149,7 @@ public class Xcls_WindowLeftTree : Object
             //listeners
             this.el.button_press_event.connect( ( ev) => {
                 //console.log("button press?");
+                this.lastEventSource = "tree";
                 if (! _this.before_node_change(null) ) {
                 
                    return true;
