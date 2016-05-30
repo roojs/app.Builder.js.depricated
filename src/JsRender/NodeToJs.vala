@@ -184,8 +184,14 @@ public class JsRender.NodeToJs : Object {
 			 
 			var k = iter.get();
 			var v = this.out_props.get(k);
-			this.node.setLine(this.cur_line, "p",k); //listener
+			this.node.setLine(this.cur_line, "p",k); 
 			this.addLine(this.pad + k + " : " + v + suffix, ',');
+			this.node.setLine(this.cur_line, "p","| xns" ); 
+			if (k== "xns") {
+				this.addLine(this.pad + "'|xns' : '" + v + "'", ',');
+
+			}
+			
 			this.node.setLine(this.cur_line, "e", "");
 			
 		}
@@ -225,10 +231,7 @@ public class JsRender.NodeToJs : Object {
 			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
 			this.node.setLine(this.cur_line, "p",niter.get_key());
 			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
-			if (niter.get_key() == "xns") {
-				this.addLine(this.pad + "'|xns' : '" + addstr + "'", ',');
-
-			}
+			
 			this.node.setLine(this.cur_line, "e", "");
 		}			 
 		// prop arrays...
