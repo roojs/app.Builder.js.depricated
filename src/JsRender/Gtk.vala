@@ -137,15 +137,15 @@ namespace JsRender {
 		}
 	    public override void setSource(string str) {}
 	    
+	    public override string toSourceCode() // no seed support currently.
+	    {
+		    return  NodeToVala.mungeFile(this);
+	    }
 	    
 	    // this is only used by dumping code...
-	    public override string toSource(string format) // no seed support currently.
+	    public override string toSource() // no seed support currently.
 	    {
-			if (format != "vala") {
-				return "";
-			}
-			return  NodeToVala.mungeFile(this);
-			
+		 
 			
 	        /*
 	        if (this.tree == null) {
