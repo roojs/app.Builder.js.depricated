@@ -1075,8 +1075,9 @@ public class Xcls_WindowRooView : Object
         	        		
                 		} elseif (kv[0]) = "l") {
                 			this.el.editable = true;
+                			this.editableTop = node.firstLine(prop);
+                			this.editableBottom = node.lastLine(prop);
                 			
-                		
                 		}
                     }
                     
