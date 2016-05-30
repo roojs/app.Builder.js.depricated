@@ -50,7 +50,7 @@
      "# bool drag_in_motion" : "",
      "# bool blockChanges" : false,
      "$ xns" : "Gtk",
-     "|           void selectNode" : "(string treepath_str) {\n    //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));\n     var tp = new Gtk.TreePath.from_string(treepath_str);\n     \n     this.el.set_cursor(tp, null, false);  \n     this.el.scroll_to_cell(tp, null, false, 0,0);\n}\n",
+     "|           void selectNode" : "(string treepath_str, string source) {\n\tthis.lastEventSource = source;\n    //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));\n     var tp = new Gtk.TreePath.from_string(treepath_str);\n     \n     this.el.set_cursor(tp, null, false);  \n     this.el.scroll_to_cell(tp, null, false, 0,0);\n}\n",
      "items" : [
       {
        "|           string findDropNode" : " (string treepath_str, string[] targets) {\n\n    // this is used by the dragdrop code in the roo version AFAIR..\n\n    //var path = treepath_str.replace(/^builder-/, '');\n    // treemap is depreciated... - should really check if model has any entries..\n\n    if (this.el.iter_n_children(null) < 1) {\n        //print(\"NO KEYS\");\n        return \"|%d\".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);\n    }\n    //print(\"FIND treepath: \" + path);\n    //console.dump(this.treemap);\n    \n    //if (!treepath_str.match(/^builder-/)) {\n    //    return []; // nothing!\n    //}\n    if (targets.length > 0 && targets[0] == \"*\") {\n        return  treepath_str;\n    }\n    return this.findDropNodeByPath(treepath_str,targets, -1);\n}\n",
