@@ -220,9 +220,10 @@ public class JsRender.NodeToJs : Object {
 		var niter = this.out_nodeprops.map_iterator();
 
 		while(niter.next()) {
-			this.addLine(this.pad + niter.get_key() + " : ", 0);
 			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
-			this.addLine(addstr,',') ;
+			this.node.setLine(this.cur_line, "p",niter.get_key());
+			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
+			
 			
 		}			 
 		// prop arrays...
