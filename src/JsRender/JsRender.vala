@@ -74,7 +74,7 @@ namespace JsRender {
 			this.content_type = "";
 			this.build_module = "";
 			this.loaded = false;
-			print("JsRender.cto() - reset transStrings\n");
+			//print("JsRender.cto() - reset transStrings\n");
 			this.transStrings = new Gee.HashMap<string,string> ();
 			
 			// should use basename reallly...
