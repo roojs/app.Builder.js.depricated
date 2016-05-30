@@ -1150,7 +1150,7 @@ public class Xcls_WindowRooView : Object
         		int nstart, nend;
         		if (sel.getPropertyRange(this.propSelected, out nstart, out nend) && nend > nstart) {
         			start_line = nstart;
-        			end_line = nend -1;
+        			end_line = nend;
         		
         		}
         		print("propSelected = %s range  %d -> %d\n", this.propSelected, nstart, nend);		
