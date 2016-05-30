@@ -153,9 +153,9 @@ public class JsRender.Node : Object {
 	{
 		//print("Searching for line %d\n",line);
 		var l = -1;
-		foreach(int el in this.node_lines) {
+		//foreach(int el in this.node_lines) {
 			//print("all lines %d\n", el);
-		}
+		//}
 		
 		
 		foreach(int el in this.node_lines) {
@@ -185,6 +185,44 @@ public class JsRender.Node : Object {
 		return null;
 		
 	}
+	public lineToProp(line)
+	{
+		// assume lineToNode called first...
+		var l = -1;
+		//foreach(int el in this.lines) {
+		//	//print("all lines %d\n", el);
+		//
+		
+		
+		foreach(int el in this.lines) {
+			//print("?match %d\n", el);
+			if (el < line) {
+				
+				l = el;
+				//print("LESS\n");
+				continue;
+			}
+			if (el == line) {
+				//print("SAME\n");
+				l = el;
+				break;
+			}
+			if (l > -1) {
+				//print("RETURNING NODE ON LINE %d", l);
+				return this.lines.get(l);
+			}
+			return null;
+			
+		}
+		if (l > -1) {
+			//print("RETURNING NODE ON LINE %d", l);
+			return this.lines.get(l);
+		}
+		return null;
+	
+	}
+	
+	
 	
 	public string uid()
 	{
