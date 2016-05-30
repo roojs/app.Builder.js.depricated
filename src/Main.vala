@@ -28,7 +28,7 @@ int main (string[] args) {
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
-	if (BuilderApplication.opt_list_projects != null) {
+	if (BuilderApplication.opt_list_projects) {
 		 
 		//BuilderApplication.compileBjs();
         Project.Project.loadAll();
