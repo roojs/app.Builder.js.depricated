@@ -75,8 +75,12 @@ int main (string[] args) {
         var str_ar = str.split("\n");
         for(var i =0;i<str_ar.length;i++) {
     		var node = file.tree.lineToNode(i);
-    		print("%d: %s   :  %s", 
+    		var prop = node == null ? null : node.lineToProp(i);
+    		print("%d: %s   :  %s\n", 
     			i+1, 
+    			prop == null ? "????????" : prop,
+    			str_ar[i]
+			);
         }
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
