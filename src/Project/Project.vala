@@ -138,6 +138,28 @@ namespace Project {
 			return null;
 		
 		}
+		
+		public static string listAllToString()
+		{
+			
+			var iter = projects.map_iterator();
+			var ret = "ID\tName\tDirectory\n";
+			while (iter.next()) {
+				ret += "%s\t%s\t%s\n".printf(
+						iter.get_value().id,
+						iter.get_value().name,
+						iter.get_value().firstPath()
+						);
+				}
+				
+			}
+			
+			return ret;
+		
+		}
+		
+		
+		
 		public static Project getProjectByHash(string fn)
 		{
 			
