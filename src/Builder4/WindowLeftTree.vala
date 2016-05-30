@@ -829,7 +829,7 @@ public class Xcls_WindowLeftTree : Object
                  }
                      
         }
-        public return_type XXXX () {
+        public void setCursor () {
         
         }
         public           void selectNode (string treepath_str, string source) {
