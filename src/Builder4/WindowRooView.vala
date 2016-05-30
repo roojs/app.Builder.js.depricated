@@ -1054,6 +1054,9 @@ public class Xcls_WindowRooView : Object
         }
 
         // user defined functions
+        public void onCursorChanged () {
+        
+        }
         public void nodeSelected (JsRender.Node? sel) {
           
             
@@ -1233,9 +1236,6 @@ public class Xcls_WindowRooView : Object
             
          
         
-        
-        }
-        public return_type XXXX () {
         
         }
     }
