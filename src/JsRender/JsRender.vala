@@ -350,6 +350,7 @@ namespace JsRender {
 		public abstract void save();
 		public abstract void saveHTML(string html);
 		public abstract string toSource() ;
+		public abstract string toSourceCode() ; // used by commandline tester..
 		public abstract void setSource(string str);
 		public abstract string toSourcePreview() ;
 		public abstract void removeFiles() ;
