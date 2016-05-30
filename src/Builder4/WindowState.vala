@@ -125,6 +125,9 @@ public class WindowState : Object
 		});
 		
 		this.left_tree.node_selected.connect((sel, source) => {
+			if (source == "editor") {
+				return;
+			}
 			if (this.file.xtype == "Roo") { 
 				this.window_rooview.sourceview.nodeSelected(sel);			
 			} else {
