@@ -1043,8 +1043,11 @@ public class Xcls_WindowRooView : Object
                 var tp = ltree.model.treePathFromNode(node);
                 print("got tree path %s\n", tp);
                 if (tp != "") {
-        	       this.allow_node_scroll = false;        
+        	       this.allow_node_scroll = false; /// block node scrolling..
+        	       
+        	       
         	       print("changing cursor on tree..\n");
+        	       
                     ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
                     // scrolling is disabled... as node selection calls scroll 10ms after it changes.
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
