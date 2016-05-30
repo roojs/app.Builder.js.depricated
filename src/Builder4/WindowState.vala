@@ -123,7 +123,15 @@ public class WindowState : Object
 			return this.leftTreeBeforeChange();
 
 		});
-
+		
+		this.left_tree.node_selected.connect((sel, source) => {
+			if (this.file.xtype == "Roo") { 
+				this.window_rooview.sourceview.nodeSelected(sel);			
+			} else {
+				this.window_gladeview.sourceview.nodeSelected(sel);
+			}
+		});
+		
 		this.left_tree.node_selected.connect((sel) => {
 			this.leftTreeNodeSelected(sel);
 		});
