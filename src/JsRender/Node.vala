@@ -253,7 +253,7 @@ public class JsRender.Node : Object {
 				}
 				continue;
 			}
-			end = el;
+			end = el -1;
 			break;
 		}
 		return start > -1;
