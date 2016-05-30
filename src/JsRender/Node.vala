@@ -134,11 +134,13 @@ public class JsRender.Node : Object {
 		//print("Add node @ %d\n", line);
 		this.node_lines.add(line);
 		this.node_lines_map.set(line, node);
+		
 	}
 	
 	public void setLine(int line, string type, string prop) {
 		this.lines.add(line);
 		this.line_map.set(line, type + ":" + prop);
+		GLib.debug("setLine %d, %s", line, type + ":" + prop);
 	}
 	public void sortLines() {
 		//print("sortLines\n");
@@ -220,6 +222,16 @@ public class JsRender.Node : Object {
 		}
 		return null;
 	
+	}
+	void dumpProps(string indent = "")
+	{
+		print("%s:\n" + this.fqn());
+		foreach(int el in this.node_lines) {
+			print("%s  %s\n", indent, this.line_map.get(el));
+		}
+		foreach(Node n in this.items) {
+			n.dumpProps(indent + "  ");
+		}
 	}
 	
 	
