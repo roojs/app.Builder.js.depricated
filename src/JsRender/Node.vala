@@ -132,7 +132,7 @@ public class JsRender.Node : Object {
 	
 	public void setNodeLine(int line, Node node) {
 		//print("Add node @ %d\n", line);
-		if (this.node_line_map.has_key(line)) {
+		if (this.node_lines_map.has_key(line)) {
 			return;
 		}
 		this.node_lines.add(line);
@@ -141,6 +141,9 @@ public class JsRender.Node : Object {
 	}
 	
 	public void setLine(int line, string type, string prop) {
+		if (this.line_map.has_key(line) && this.line_map.get(line) != ":e"  ) {
+			return;
+		}
 		this.lines.add(line);
 		this.line_map.set(line, type + ":" + prop);
 		GLib.debug("setLine %d, %s", line, type + ":" + prop);
@@ -148,7 +151,7 @@ public class JsRender.Node : Object {
 	public void sortLines() {
 		//print("sortLines\n");
 		this.lines.sort((a,b) => {   
-			return (int)b-(int)a;
+			return (int)a-(int)b;
 		});
 		this.node_lines.sort((a,b) => {   
 			return (int)a-(int)b;
@@ -177,15 +180,24 @@ public class JsRender.Node : Object {
 				break;
 			}
 			if (l > -1) {
+				var ret = this.node_lines_map.get(l);
+				if (line > ret.line_end) {
+					return null;
+				}
 				//print("RETURNING NODE ON LINE %d", l);
-				return this.node_lines_map.get(l);
+				return ret;
 			}
 			return null;
 			
 		}
 		if (l > -1) {
+			var ret = this.node_lines_map.get(l);
+			if (line > ret.line_end) {
+				return null;
+			}
 			//print("RETURNING NODE ON LINE %d", l);
-			return this.node_lines_map.get(l);
+			return ret;
+
 		}
 		return null;
 		
