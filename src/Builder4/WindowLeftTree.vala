@@ -82,6 +82,7 @@ public class Xcls_WindowLeftTree : Object
         public int drag_y;
         public bool drag_in_motion;
         public bool blockChanges;
+        public string XXXX;
 
         // ctor
         public Xcls_view(Xcls_WindowLeftTree _owner )
