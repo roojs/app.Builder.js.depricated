@@ -141,14 +141,26 @@ namespace Project {
 		
 		public static string listAllToString()
 		{
+			var all = new Gee.ArrayList<Project>();
+
+			var fiter = projects.map_iterator();
 			
-			var iter = projects.map_iterator();
+			while(fiter.next()) {
+				all.add(fiter.get_value());
+			}
+			
+			all.sort((fa,fb) => {
+				return ((Project)fa).name.collate(((Project)fb).name);
+
+			});
+
+			var iter = all.list_iterator();
 			var ret = "ID\tName\tDirectory\n";
 			while (iter.next()) {
 				ret += "%s\t%s\t%s\n".printf(
-						iter.get_value().id,
-						iter.get_value().name,
-						iter.get_value().firstPath()
+						iter.get().id,
+						iter.get().name,
+						iter.get().firstPath()
 						);
 			 
 				
