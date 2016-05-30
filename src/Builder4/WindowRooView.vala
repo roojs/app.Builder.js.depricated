@@ -1141,15 +1141,15 @@ public class Xcls_WindowRooView : Object
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
-            var start = sel.line_start;
-            var end = sel.line_end;
+            var start_line = sel.line_start;
+            var end_line = sel.line_end;
             
             // now if we have selected a property...
             if (this.propSelected.length> 0 ) {
         		int nstart, nend;
         		if (sel.getPropertyRange(this.propSelected, out nstart, out nend) && nend > nstart) {
-        			start = nstart;
-        			end = nend;
+        			start_line = nstart;
+        			end_line = nend;
         		
         		}
         		
@@ -1158,7 +1158,7 @@ public class Xcls_WindowRooView : Object
             
             
             for (var i = 0; i < buf.get_line_count();i++) {
-                if (i < (start -1) || i > (end -1)) {
+                if (i < (start_line -1) || i > (end_line -1)) {
                    
                     sbuf.get_iter_at_line(out iter, i);
                     sbuf.create_source_mark(null, "grey", iter);
