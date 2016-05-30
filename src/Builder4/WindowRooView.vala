@@ -932,7 +932,7 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
         public bool loading;
         public bool allow_node_scroll;
-        public string XXXX;
+        public string propSelected;
 
         // ctor
         public Xcls_sourceview(Xcls_WindowRooView _owner )
@@ -944,6 +944,7 @@ public class Xcls_WindowRooView : Object
             // my vars (dec)
             this.loading = true;
             this.allow_node_scroll = true;
+            this.propSelected = "";
 
             // set gobject values
             this.el.editable = false;
