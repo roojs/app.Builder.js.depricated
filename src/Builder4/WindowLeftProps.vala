@@ -533,7 +533,7 @@ public class Xcls_LeftProps : Object
     }
     public              void updateIter (Gtk.TreeIter iter,  string type, string key, string kvalue) {
     
-        print("update Iter %s, %s\n", key,kvalue);
+        //print("update Iter %s, %s\n", key,kvalue);
         //typeof(string),  // 0 key type
          //typeof(string),  // 1 key
          //typeof(string),  // 2 key (display)
