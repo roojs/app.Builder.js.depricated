@@ -1067,7 +1067,17 @@ public class Xcls_WindowRooView : Object
                     // a little klunky at present..
                     if (prop != null) {
                 		//see if we can find it..
-                    
+                		var kv = prop.split(":");
+                		if (kv[0] == "p") {
+                		
+        	        		var k = prop.get_key(kv[1]);
+        	        		
+        	        		
+                		} elseif (kv[0]) = "l") {
+                			this.el.editable = true;
+                			
+                		
+                		}
                     }
                     
                     
