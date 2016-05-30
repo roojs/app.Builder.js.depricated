@@ -1040,7 +1040,7 @@ public class Xcls_WindowRooView : Object
                     return;
                 }
                 var prop = node.lineToProp(ln+1);
-                print("prop : %s", prop == null : "???" : prop);
+                print("prop : %s", prop == null ? "???" : prop);
                 
                 
                 var ltree = _this.main_window.windowstate.left_tree;
