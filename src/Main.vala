@@ -9,7 +9,7 @@ int main (string[] args) {
 	
 	
 	
-    
+    	new JsRender.Lang_Class();
 
 	var app =  BuilderApplication.singleton(  args);
 	
@@ -47,6 +47,8 @@ int main (string[] args) {
 		if (cur_project == null) {
 			GLib.error("invalid project %s, use --list-projects to show project ids",BuilderApplication.opt_compile_project);
 		}
+		cur_project.scanDirs();
+		
 		
 	}
 	
@@ -67,7 +69,15 @@ int main (string[] args) {
 			GLib.error("missing file %s in project %s", BuilderApplication.opt_bjs_compile, cur_project.name);
 		}
 		//BuilderApplication.compileBjs();
-        print(file.toSourceCode());
+		file.loadItems();
+        var str = file.toSourceCode();
+          
+        var str_ar = str.split("\n");
+        for(var i =0;i<str_ar.length;i++) {
+    		var node = file.tree.lineToNode(i);
+    		print("%d: %s   :  %s", 
+    			i+1, 
+        }
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
@@ -87,7 +97,7 @@ int main (string[] args) {
 	Gtk.init (ref args);
 	 
 	GtkClutter.init (ref args);
-	new JsRender.Lang_Class();
+
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	
     
