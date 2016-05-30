@@ -1072,6 +1072,7 @@ public class Xcls_WindowRooView : Object
                 		if (kv[0] == "p") {
                 		
         	        		var k = prop.get_key(kv[1]);
+        	        		// fixme -- need to determine if it's an editable property...
         	        		this.propSelected = prop;
         	        		
                 		} elseif (kv[0]) = "l") {
