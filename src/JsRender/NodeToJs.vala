@@ -176,6 +176,7 @@ public class JsRender.NodeToJs : Object {
 		// output the items...
 		// work out remaining items...
 	 
+		// output xns / xtype first..
 		
 		// plain properties.
 		var iter = this.orderedPropKeys().list_iterator();
