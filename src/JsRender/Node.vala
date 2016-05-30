@@ -141,10 +141,13 @@ public class JsRender.Node : Object {
 	}
 	
 	public void setLine(int line, string type, string prop) {
-		if (this.line_map.has_key(line) && this.line_map.get(line) != ":e"  ) {
-			return;
+		if (this.line_map.has_key(line) {
+			if  this.line_map.get(line) != ":e"  ) {
+				return;
+			}
+		} else {
+			this.lines.add(line);
 		}
-		this.lines.add(line);
 		this.line_map.set(line, type + ":" + prop);
 		GLib.debug("setLine %d, %s", line, type + ":" + prop);
 	}
