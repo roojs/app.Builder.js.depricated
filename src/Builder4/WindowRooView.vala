@@ -932,6 +932,7 @@ public class Xcls_WindowRooView : Object
             // my vars (def)
         public bool loading;
         public bool allow_node_scroll;
+        public string XXXX;
 
         // ctor
         public Xcls_sourceview(Xcls_WindowRooView _owner )
