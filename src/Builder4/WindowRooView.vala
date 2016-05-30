@@ -1063,6 +1063,12 @@ public class Xcls_WindowRooView : Object
                     ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
                     
                     
+                    // let's try allowing editing on the methods.
+                    // a little klunky at present..
+                    if (prop != null) {
+                		//see if we can find it..
+                    
+                    }
                     
                     
                     // scrolling is disabled... as node selection calls scroll 10ms after it changes.
