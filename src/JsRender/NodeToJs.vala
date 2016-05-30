@@ -177,7 +177,7 @@ public class JsRender.NodeToJs : Object {
 		// work out remaining items...
 	 
 		// output xns / xtype first..
-		if (this.out_props.has_key("xtype") {
+		if (this.out_props.has_key("xtype")) {
 			var v = this.out_props.get("xtype");
 			this.node.setLine(this.cur_line, "p","xtype"); 
 			this.addLine(this.pad + "xtype" + " : " + v + suffix, ',');
@@ -225,7 +225,7 @@ public class JsRender.NodeToJs : Object {
 		
 		//------- at this point it is the end of the code relating directly to the object..
 		
-		if (this.out_props.has_key("xns") {
+		if (this.out_props.has_key("xns")) {
 			var v = this.out_props.get("xns");
 			this.node.setLine(this.cur_line, "p","xns"); 
 			this.addLine(this.pad + "xns" + " : " + v + suffix, ',');
