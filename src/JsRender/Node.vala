@@ -209,14 +209,14 @@ public class JsRender.Node : Object {
 			}
 			if (l > -1) {
 				//print("RETURNING NODE ON LINE %d", l);
-				return this.lines.get(l);
+				return this.line_map.get(l);
 			}
 			return null;
 			
 		}
 		if (l > -1) {
 			//print("RETURNING NODE ON LINE %d", l);
-			return this.lines.get(l);
+			return this.line_map.get(l);
 		}
 		return null;
 	
