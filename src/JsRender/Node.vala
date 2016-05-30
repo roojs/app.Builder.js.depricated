@@ -244,7 +244,7 @@ public class JsRender.Node : Object {
 	
 	public void getPropertyRange(string prop, out start, out end)
 	{
-		start = -1;
+		var start = -1;
 		foreach(int el in this.lines) {
 			if (start < 0) {
 				if (this.line_map.get(el) == prop) {
