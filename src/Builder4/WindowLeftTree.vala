@@ -1569,7 +1569,7 @@ public class Xcls_WindowLeftTree : Object
                     _this.model.el.remove(ref citer);
                 }
                 _this.changed();
-                _this.node_selected(node);
+                _this.node_selected(node, "tree");
                  
                 
             });
