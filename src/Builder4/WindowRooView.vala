@@ -1065,18 +1065,17 @@ public class Xcls_WindowRooView : Object
                     
                     // let's try allowing editing on the methods.
                     // a little klunky at present..
+                    this.propSelected = "";
                     if (prop != null) {
                 		//see if we can find it..
                 		var kv = prop.split(":");
                 		if (kv[0] == "p") {
                 		
         	        		var k = prop.get_key(kv[1]);
-        	        		
+        	        		this.propSelected = prop;
         	        		
                 		} elseif (kv[0]) = "l") {
-                			this.el.editable = true;
-                			this.editableTop = node.firstLine(prop);
-                			this.editableBottom = node.lastLine(prop);
+                			 this.propSelected = prop;
                 			
                 		}
                     }
