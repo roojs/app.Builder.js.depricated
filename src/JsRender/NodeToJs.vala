@@ -230,6 +230,7 @@ public class JsRender.NodeToJs : Object {
 			this.addLine(this.pad + "xns" + " : " + v + suffix, ',');
 			this.node.setLine(this.cur_line, "p","| xns"); 
 			this.addLine(this.pad + "'|xns' : '" + v + "'", ',');
+			this.node.setLine(this.cur_line, "e", "");
 		}
 		
 		this.node.line_end = this.cur_line;
