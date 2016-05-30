@@ -157,7 +157,7 @@
        "items" : [
         {
          "listeners" : {
-          "button_release_event" : "() => {\n\n}"
+          "button_release_event" : "() => {\n\n\n\n}"
          },
          "gboolean show_line_marks" : true,
          "id" : "sourceview",
