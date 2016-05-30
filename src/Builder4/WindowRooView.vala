@@ -1022,7 +1022,7 @@ public class Xcls_WindowRooView : Object
         }
 
         // user defined functions
-        public void onCursorChanged () {
+        public void onCursorChanged (ParamSpec ps) {
          if (this.loading) {
                     return;
                 }
