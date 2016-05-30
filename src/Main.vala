@@ -32,7 +32,7 @@ int main (string[] args) {
 		 
 		//BuilderApplication.compileBjs();
         Project.Project.loadAll();
-		print("Projects\n %s\n", Project.Project.listToString());
+		print("Projects\n %s\n", Project.Project.listAllToString());
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
 	
