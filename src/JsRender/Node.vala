@@ -242,7 +242,7 @@ public class JsRender.Node : Object {
 	
 	}
 	
-	public void getPropertyRange(string prop, out int start, out int end)
+	public bool getPropertyRange(string prop, out int start, out int end)
 	{
 		start = -1;
 		foreach(int el in this.lines) {
@@ -256,7 +256,7 @@ public class JsRender.Node : Object {
 			end = el;
 			break;
 		}
-		
+		return start > -1;
 	
 	
 	}
