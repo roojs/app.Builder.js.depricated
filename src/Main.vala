@@ -35,8 +35,30 @@ int main (string[] args) {
 		print("Projects\n %s\n", Project.Project.listAllToString());
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
-	
-      if (BuilderApplication.opt_bjs_compile != null) {
+    Project.Project.loadAll();
+    
+    if (BuilderApplication.opt_list_projects) {
+		 
+		//BuilderApplication.compileBjs();
+
+		print("Projects\n %s\n", Project.Project.listAllToString());
+		GLib.Process.exit(Posix.EXIT_SUCCESS);
+	}
+	var cur_project = null;
+    if (BuilderApplication.opt_compile_project != null) {
+		 
+		 
+		cur_project = Project.Project.getProjectByHash( BuilderApplication.opt_compile_project);
+		
+		if (cur_project == null) {
+			GLib.error("invalid project %s, use --list-projects to show project ids");
+		}
+		
+	}
+    
+    
+    
+    if (BuilderApplication.opt_bjs_compile != null) {
 		 
 		//BuilderApplication.compileBjs();
         print("compile BJS comming soon");
@@ -45,7 +67,7 @@ int main (string[] args) {
 	}
 	
     
-	if (BuilderApplication.opt_compile_project != null) {
+	if (BuilderApplication.opt_compile_target != null) {
 		 
 		Palete.ValaSourceCompiler.buildApplication();
 		
