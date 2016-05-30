@@ -1016,6 +1016,11 @@ public class Xcls_WindowRooView : Object
                 
                 
             }
+
+            //listeners
+            this.el.button_release_event.connect( () => {
+            
+            });
         }
 
         // user defined functions

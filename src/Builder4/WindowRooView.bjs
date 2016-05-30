@@ -156,6 +156,9 @@
        "$ xns" : "Gtk",
        "items" : [
         {
+         "listeners" : {
+          "button_release_event" : "() => {\n\n}"
+         },
          "gboolean show_line_marks" : true,
          "id" : "sourceview",
          "| void onCursorChanged" : "(ParamSpec ps) {\n\t if (this.loading) {\n            return;\n        }\n        if (ps.name != \"cursor-position\") {\n            return;\n        }\n        var buf = this.el.get_buffer();\n        print(\"cursor changed : %d\\n\", buf.cursor_position);\n        Gtk.TextIter cpos;\n        buf.get_iter_at_offset(out cpos, buf.cursor_position);\n        \n        var ln = cpos.get_line();\n\t\tprint(\"cursor changed line : %d\\n\", ln);\n        var node = _this.file.lineToNode(ln+1);\n \n        if (node == null) {\n            print(\"can not find node\\n\");\n            return;\n        }\n        var prop = node.lineToProp(ln+1);\n        print(\"prop : %s\", prop == null ? \"???\" : prop);\n        \n        \n        var ltree = _this.main_window.windowstate.left_tree;\n        var tp = ltree.model.treePathFromNode(node);\n        print(\"got tree path %s\\n\", tp);\n        if (tp != \"\") {\n\t       this.allow_node_scroll = false; /// block node scrolling..\n\t       \n\t       \n\t       print(\"changing cursor on tree..\\n\");\n\t       \n            ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);\n            // scrolling is disabled... as node selection calls scroll 10ms after it changes.\n            GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {\n\t            this.allow_node_scroll = true;\n\t            return false;\n            });\n        }\n        \n        // highlight the node..\n}\n ",
