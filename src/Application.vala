@@ -60,7 +60,7 @@
 			{ "debug", 0, 0, OptionArg.NONE, ref opt_debug, "Show debug messages", null },
             
             // some testing code.
-            { "list-projects", 0, 0,  OptionArg.NONE, ref opt_debug, "List Projects", null },
+            { "list-projects", 0, 0,  OptionArg.NONE, ref opt_list_projects, "List Projects", null },
             
             { "bjs", 0, 0, OptionArg.STRING, ref opt_bjs_compile, "convert bjs file", null },
             { "bjs-target", 0, 0, OptionArg.STRING, ref opt_bjs_compile_target, "convert bjs file to tareet  : vala / js", null },
@@ -76,6 +76,7 @@
         public static string opt_bjs_compile;
         public static string opt_bjs_compile_target;
 		public static bool opt_debug = false;
+		public static bool opt_list_projects = false;
 		
 		public static string _self;
 		
