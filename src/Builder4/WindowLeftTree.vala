@@ -205,7 +205,7 @@ public class Xcls_WindowLeftTree : Object
             
                             print("selected rows < 1\n");
                             //??this.model.load( false);
-                            _this.node_selected(null);
+                            _this.node_selected(null, this.lastEventSource);
                             
                             return false ;
                         }
