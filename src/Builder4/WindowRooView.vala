@@ -1060,7 +1060,7 @@ public class Xcls_WindowRooView : Object
         	       
         	        //print("changing cursor on tree..\n");
         	       
-                    ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false);
+        
                     
                     
                     // let's try allowing editing on the methods.
@@ -1081,6 +1081,8 @@ public class Xcls_WindowRooView : Object
                 		}
                     }
                     
+                   ltree.view.el.set_cursor(new Gtk.TreePath.from_string(tp), null, false); 
+                   
                     
                     // scrolling is disabled... as node selection calls scroll 10ms after it changes.
                     GLib.Timeout.add_full(GLib.Priority.DEFAULT,100 , () => {
