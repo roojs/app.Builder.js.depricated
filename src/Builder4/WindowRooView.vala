@@ -1032,7 +1032,7 @@ public class Xcls_WindowRooView : Object
                 buf.get_iter_at_offset(out cpos, buf.cursor_position);
                 
                 var ln = cpos.get_line();
-         
+        		print("cursor changed line : %d\n", ln);
                 var node = _this.file.lineToNode(ln);
          
                 if (node == null) {
