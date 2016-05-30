@@ -199,9 +199,9 @@ public class JsRender.NodeToJs : Object {
 				
 				var k = iter.get();
 				var v = this.out_listeners.get(k);
-				this.addLine(this.pad + indent_str + k + " : ", 0);
 				this.node.setLine(this.cur_line, "l",k); //listener
-				this.addLine( v,',');
+				this.addLine(this.pad + indent_str + k + " : " + v , ',');
+				
 			}
 			
 			this.closeLine();
@@ -558,9 +558,6 @@ public class JsRender.NodeToJs : Object {
 		
 					this.out_props.set("'|xns'", "'" +  nstr + "'" );
 				}
-		
-
-		}
 
 				
 				
