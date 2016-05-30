@@ -73,7 +73,7 @@ int main (string[] args) {
 			GLib.error("missing file %s in project %s", BuilderApplication.opt_bjs_compile, cur_project.name);
 		}
 		//BuilderApplication.compileBjs();
-        print(cur_project.toSource());
+        print(file.toSourceCode());
 		
 		GLib.Process.exit(Posix.EXIT_SUCCESS);
 	}
