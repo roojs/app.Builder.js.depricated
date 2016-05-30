@@ -1144,6 +1144,8 @@ public class Xcls_WindowRooView : Object
             var start_line = sel.line_start;
             var end_line = sel.line_end;
             
+            
+            this.el.editable = false;
             // now if we have selected a property...
             if (this.propSelected.length> 0 ) {
         
@@ -1151,7 +1153,7 @@ public class Xcls_WindowRooView : Object
         		if (sel.getPropertyRange(this.propSelected, out nstart, out nend) && nend > nstart) {
         			start_line = nstart;
         			end_line = nend;
-        		
+        			this.el.editable = true;
         		}
         		print("propSelected = %s range  %d -> %d\n", this.propSelected, nstart, nend);		
         		
