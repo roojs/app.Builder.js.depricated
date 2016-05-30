@@ -142,7 +142,7 @@ public class JsRender.Node : Object {
 	
 	public void setLine(int line, string type, string prop) {
 		if (this.line_map.has_key(line)) {
-			if  this.line_map.get(line) != ":e"  ) {
+			if  (this.line_map.get(line) != ":e"  ) {
 				return;
 			}
 		} else {
