@@ -87,7 +87,7 @@ namespace JsRender {
         {
             
 				 
-			print("load Items!");
+			GLib.debug("load Items!");
 			if (this.tree != null) {
 				return;
 			}
