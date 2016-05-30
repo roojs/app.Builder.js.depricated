@@ -79,7 +79,7 @@ int main (string[] args) {
 		}
 		
 		// dump the node tree
-		
+		file.tree.dumpProps();
 		
 		
         var str_ar = str.split("\n");
