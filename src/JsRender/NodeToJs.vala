@@ -186,6 +186,8 @@ public class JsRender.NodeToJs : Object {
 			var v = this.out_props.get(k);
 			this.node.setLine(this.cur_line, "p",k); //listener
 			this.addLine(this.pad + k + " : " + v + suffix, ',');
+			
+			
 		}
 	 
 		// listeners..
@@ -289,7 +291,9 @@ public class JsRender.NodeToJs : Object {
 	*/
 	public void addLine(string str, char line_end)
 	{
-		this.ret += (this.last_line_end == 0 ? "" : this.last_line_end.to_string()) + "\n"; 
+		if (this.last_line_end != '!') {
+			this.ret += (this.last_line_end == 0 ? "" : this.last_line_end.to_string()) + "\n"; 
+		}
 		this.last_line_end = line_end;
 		this.cur_line += str.split("\n").length;
 		this.ret += str;
@@ -555,10 +559,7 @@ public class JsRender.NodeToJs : Object {
 				}
 				this.out_props.set(left, nstr);
 				
-				if (left == "xns") {
-		
-					this.out_props.set("'|xns'", "'" +  nstr + "'" );
-				}
+				
 
 				
 				
