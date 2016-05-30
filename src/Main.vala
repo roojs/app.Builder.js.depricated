@@ -72,13 +72,20 @@ int main (string[] args) {
 		file.loadItems();
         var str = file.toSourceCode();
           
+          
+        if (!BuilderApplication.opt_debug) {
+    		print("%s", str);
+    		GLib.Process.exit(Posix.EXIT_SUCCESS);
+		}
+		
+		
         var str_ar = str.split("\n");
         for(var i =0;i<str_ar.length;i++) {
-    		var node = file.tree.lineToNode(i);
-    		var prop = node == null ? null : node.lineToProp(i);
+    		var node = file.tree.lineToNode(i+1);
+    		var prop = node == null ? null : node.lineToProp(i+1);
     		print("%d: %s   :  %s\n", 
     			i+1, 
-    			node == null ? "......" ) : (prop == null ? "????????" : prop),
+    			node == null ? "......"  : (prop == null ? "????????" : prop),
     			str_ar[i]
 			);
         }
