@@ -187,9 +187,8 @@ public class JsRender.NodeToJs : Object {
 			this.node.setLine(this.cur_line, "p",k); 
 			this.addLine(this.pad + k + " : " + v + suffix, ',');
 			this.node.setLine(this.cur_line, "p","| xns" ); 
-			if (k== "xns") {
+			if (k == "xns") {
 				this.addLine(this.pad + "'|xns' : '" + v + "'", ',');
-
 			}
 			
 			this.node.setLine(this.cur_line, "e", "");
