@@ -1062,8 +1062,7 @@ public class Xcls_WindowRooView : Object
         	       
         	        //print("changing cursor on tree..\n");
         	       
-        
-                    
+         
                     
                     // let's try allowing editing on the methods.
                     // a little klunky at present..
