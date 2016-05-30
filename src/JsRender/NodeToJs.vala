@@ -276,7 +276,7 @@ public class JsRender.NodeToJs : Object {
 	*
 	*/
 
-	char last_line_end = -1; 
+	char last_line_end = '!'; 
 	
 	/**
 	* add a line - note we will end up with an extra line break 
