@@ -1033,7 +1033,7 @@ public class Xcls_WindowRooView : Object
                 
                 var ln = cpos.get_line();
         		print("cursor changed line : %d\n", ln);
-                var node = _this.file.lineToNode(ln);
+                var node = _this.file.lineToNode(ln+1);
          
                 if (node == null) {
                     print("can not find node\n");
