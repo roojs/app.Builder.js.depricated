@@ -226,7 +226,7 @@ public class Xcls_WindowLeftTree : Object
                         _this.model.activePath = mod.get_path(iter).to_string();
                         
                         var node = (JsRender.Node)value.dup_object();
-                        _this.node_selected(node);
+                        _this.node_selected(node, this.lastSourceEvent);
                         while (Gtk.events_pending()) {
                             Gtk.main_iteration();
                        }
