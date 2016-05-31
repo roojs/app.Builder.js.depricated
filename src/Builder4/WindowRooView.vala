@@ -1053,6 +1053,10 @@ public class Xcls_WindowRooView : Object
                 print("prop : %s", prop == null ? "???" : prop);
                 
                 
+                
+                
+                
+                
                 var ltree = _this.main_window.windowstate.left_tree;
                 var tp = ltree.model.treePathFromNode(node);
                 print("got tree path %s\n", tp);
