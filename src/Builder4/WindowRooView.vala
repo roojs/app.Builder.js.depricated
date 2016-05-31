@@ -1245,15 +1245,18 @@ public class Xcls_WindowRooView : Object
             sbuf.get_bounds (out start, out end);
             sbuf.remove_source_marks (start, end, null); // remove all marks..
             
-             
-            Gtk.TextIter cpos_iter;
-            buf.get_iter_at_offset(out cpos_iter, cpos);
-            buf.place_cursor(cpos_iter); 
-            
-            this.el.set_vadjustment(vadj);
-            this.onCursorChanged();
-            
-            
+             GLib.Timeout.add(500, () => {
+               
+               
+        		Gtk.TextIter cpos_iter;
+        		buf.get_iter_at_offset(out cpos_iter, cpos);
+        		buf.place_cursor(cpos_iter); 
+        		
+        		this.el.set_vadjustment(vadj);
+        		this.onCursorChanged();
+        		return true;
+        	});
+        		
             this.loading = false; 
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
