@@ -1214,7 +1214,7 @@ public class Xcls_WindowRooView : Object
             var vadj = this.el.get_vadjustment();
            
             
-            var buf = this.el.get_buffer();
+         
             buf.set_text("",0);
             var sbuf = (Gtk.SourceBuffer) buf;
         
