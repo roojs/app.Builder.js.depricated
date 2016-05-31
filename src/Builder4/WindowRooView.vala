@@ -1168,7 +1168,8 @@ public class Xcls_WindowRooView : Object
             if (this.el.editable && sbuf.get_has_selection()) {
         		Gtk.TextIter sel_start_iter, sel_end_iter;
         		sbuf.get_selection_bounds(out sel_start_iter, out sel_end_iter);
-        		if (sel_start_iter.get_line() < start_line || sel_start_iter.get_line() > end_line) {
+        		
+        		if (sel_start_iter.get_line() < start_line || sel_end_iter.get_line() > end_line) {
         			// save?
         			this.el.editable = false;
         		}
