@@ -1206,7 +1206,13 @@ public class Xcls_WindowRooView : Object
             
             
             // get the cursor and scroll position....
-            
+            var buf = this.el.get_buffer();
+         
+            Gtk.TextIter cpos;
+            buf.get_iter_at_offset(out cpos, buf.cursor_position);
+           
+           
+           
             
             var buf = this.el.get_buffer();
             buf.set_text("",0);
