@@ -136,8 +136,8 @@ namespace JsRender {
 	public  override  void save()
 	{
             
-		print("--- JsRender.Roo.save");
-		print("save() - reset transStrings\n");
+		GLib.debug("--- JsRender.Roo.save");
+		GLib.debug("save() - reset transStrings\n");
 		this.transStrings = new Gee.HashMap<string,string>();
 		this.findTransStrings(this.tree);
 		
@@ -185,12 +185,12 @@ namespace JsRender {
 	{
 		 
 		var top = this.tree.fqn();
-    		print ("TOP = " + top + "\n" );
-    		if (top.index_of("Roo.bootstrap.") < 0 &&
-		    top.index_of("Roo.mailer.") < 0
-		        ) {
-        		return;
-    		}
+		GLib.debug ("TOP = " + top + "\n" );
+		if (top.index_of("Roo.bootstrap.") < 0 &&
+	    top.index_of("Roo.mailer.") < 0
+	        ) {
+    		return;
+		}
     		
     		
 		//now write the js file..
@@ -215,7 +215,7 @@ namespace JsRender {
 			print("Skip save - templates folder does not exist : %s\n", targetdir);
 			return;
 		}
-		print("SAVE HTML -- %s\n%s\n",targetdir + "/" +  bn, html);
+		//print("SAVE HTML -- %s\n%s\n",targetdir + "/" +  bn, html);
 		try {
 			this.writeFile(targetdir + "/" +  bn , html);            
 		} catch (FileError e ) {
@@ -276,7 +276,7 @@ namespace JsRender {
 				
 				var str = iter.get_value();
 				if (this.doubleStringProps.index_of(kname) > -1) {
-					print("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
+					GLib.debug("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str.strip())
 					);
@@ -284,7 +284,7 @@ namespace JsRender {
 				}
 				
 				if (ktype.down() == "string" && kname[0] == '_') {
-					print("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
+					GLib.debug("flag=%s type=%s name=%s : %s\n", kflag,ktype,kname,str);
 					this.transStrings.set(str,  
 						GLib.Checksum.compute_for_string (ChecksumType.MD5, str.strip())
 					);
@@ -306,9 +306,9 @@ namespace JsRender {
 		public string  transStringsToJs()
 		{
 			
-			print("Roo.transStringsToJs()\n");
+			GLib.debug("Roo.transStringsToJs()\n");
 			if (this.transStrings.size < 1) {
-				print("Roo.transStringsToJs() size < 1?\n");
+				GLib.debug("Roo.transStringsToJs() size < 1?\n");
 				return "";
 			}
 			 
