@@ -1255,7 +1255,7 @@ public class Xcls_WindowRooView : Object
             buf.place_cursor(cpos_iter); 
             
             this.el.set_vadjustment(vadj);
-            
+            this.onCursorChanged();
             
             
             this.loading = false; 
