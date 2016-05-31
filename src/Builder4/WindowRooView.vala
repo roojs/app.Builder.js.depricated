@@ -1098,7 +1098,7 @@ public class Xcls_WindowRooView : Object
                 
                 // highlight the node..
         }
-        public void nodeSelected (JsRender.Node? sel, bool scroll =false) {
+        public void nodeSelected (JsRender.Node? sel, bool scroll ) {
           
             
           
