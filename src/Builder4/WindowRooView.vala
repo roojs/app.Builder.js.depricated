@@ -1098,7 +1098,7 @@ public class Xcls_WindowRooView : Object
                 
                 // highlight the node..
         }
-        public void nodeSelected (JsRender.Node? sel) {
+        public void nodeSelected (JsRender.Node? sel, bool scroll =false) {
           
             
           
@@ -1140,7 +1140,7 @@ public class Xcls_WindowRooView : Object
             //if (cur_line > sel.line_start && cur_line < sel.line_end) {
             
             //} else {
-            if (this.allow_node_scroll) {
+            if (scroll) {
         		 
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
@@ -1169,7 +1169,8 @@ public class Xcls_WindowRooView : Object
         		Gtk.TextIter sel_start_iter, sel_end_iter;
         		sbuf.get_selection_bounds(out sel_start_iter, out sel_end_iter);
         		
-        		if (sel_start_iter.get_line() < start_line || sel_end_iter.get_line() > end_line) {
+        		if (sel_start_iter.get_line() < start_line || sel_end_iter.get_line() > end_line ||
+        			sel_start_iter.get_line() > end_line   || sel_end_iter.get_line() < start_line			) {
         			// save?
         			this.el.editable = false;
         		}
