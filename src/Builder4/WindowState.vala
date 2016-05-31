@@ -129,7 +129,7 @@ public class WindowState : Object
 				return;
 			}
 			if (this.file.xtype == "Roo") { 
-				this.window_rooview.sourceview.nodeSelected(sel);			
+				this.window_rooview.sourceview.nodeSelected(sel,false);			
 			} else {
 				this.window_gladeview.sourceview.nodeSelected(sel);
 			}
