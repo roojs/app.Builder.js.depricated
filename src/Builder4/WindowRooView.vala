@@ -1203,6 +1203,11 @@ public class Xcls_WindowRooView : Object
         }
         public void loadFile ( ) {
             this.loading = true;
+            
+            
+            // get the cursor and scroll position....
+            
+            
             var buf = this.el.get_buffer();
             buf.set_text("",0);
             var sbuf = (Gtk.SourceBuffer) buf;
