@@ -526,7 +526,7 @@ public class Xcls_GtkView : Object
         public void nodeSelected (JsRender.Node? sel) {
           
             
-          
+          	return;
             // this is connected in widnowstate
             print("Roo-view - node selected\n");
             var buf = this.el.get_buffer();
