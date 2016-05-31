@@ -1209,7 +1209,7 @@ public class Xcls_WindowRooView : Object
             var buf = this.el.get_buffer();
         	var cpos = buf.cursor_position;
             
-        
+           print("BEFORE LOAD cursor = %d\n", cpos);
            
             var vadj = this.el.get_vadjustment();
            
@@ -1247,7 +1247,7 @@ public class Xcls_WindowRooView : Object
             
              GLib.Timeout.add(500, () => {
                
-               
+               print("RESORTING cursor to = %d\n", cpos);
         		Gtk.TextIter cpos_iter;
         		buf.get_iter_at_offset(out cpos_iter, cpos);
         		buf.place_cursor(cpos_iter); 
