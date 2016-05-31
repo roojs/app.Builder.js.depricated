@@ -1245,11 +1245,7 @@ public class Xcls_WindowRooView : Object
             sbuf.get_bounds (out start, out end);
             sbuf.remove_source_marks (start, end, null); // remove all marks..
             
-            
-            while(Gtk.events_pending()) {
-                Gtk.main_iteration();
-            }
-            
+             
             Gtk.TextIter cpos_iter;
             buf.get_iter_at_offset(out cpos_iter, cpos);
             buf.place_cursor(cpos_iter); 
