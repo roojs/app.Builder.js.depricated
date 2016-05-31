@@ -1254,7 +1254,7 @@ public class Xcls_WindowRooView : Object
         		
         		this.el.set_vadjustment(vadj);
         		this.onCursorChanged();
-        		return true;
+        		return false;
         	});
         		
             this.loading = false; 
