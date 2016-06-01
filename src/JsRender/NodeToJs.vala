@@ -241,6 +241,7 @@ public class JsRender.NodeToJs : Object {
 
 		while(niter.next()) {
 			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
+			print("add str: %s\n", addstr);
 			this.node.setLine(this.cur_line, "p",niter.get_key());
 			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
 			
@@ -251,7 +252,7 @@ public class JsRender.NodeToJs : Object {
 		var piter = this.out_props_array.map_iterator();
 
 		while(piter.next()) {
-			this.node.setLine(this.cur_line, "p",niter.get_key());
+			this.node.setLine(this.cur_line, "p",piter.get_key());
 			this.addLine(this.pad + piter.get_key() + " : [", 0);
 			
 			var pliter = piter.get_value().list_iterator();
