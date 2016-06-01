@@ -503,7 +503,7 @@ namespace Project {
 			
 			this.name = el.get_string_member("name");
 			this.compile_flags = el.get_string_member("compile_flags");
-			if ( el.has_string_member("execute_args")) {
+			if ( el.has_member("execute_args")) {
 				this.execute_args = el.get_string_member("execute_args");
 			}
 			this.target_bin = el.get_string_member("target_bin");

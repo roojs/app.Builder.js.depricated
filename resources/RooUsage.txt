@@ -335,6 +335,10 @@ left:
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
     Roo.bootstrap.Element
+    Roo.bootstrap.Form
+    Roo.bootstrap.UploadCropbox
+    Roo.bootstrap.Popover
+    Roo.bootstrap.Link
 right:
     Roo.bootstrap.Container
     Roo.bootstrap.Button
@@ -375,6 +379,13 @@ right:
     Roo.bootstrap.Alert
     Roo.bootstrap.TabGroup
     Roo.bootstrap.LayoutMasonry
+    Roo.bootstrap.UploadCropbox
+    Roo.bootstrap.DocumentManager
+    Roo.bootstrap.DocumentViewer
+    Roo.bootstrap.PagingToolbar
+    Roo.bootstrap.NavProgressBar
+    Roo.bootstrap.FieldLabel
+    Roo.bootstrap.DateSplitField
 
 left:
     Roo.bootstrap.TabGroup
@@ -416,6 +427,16 @@ left:
     Roo.bootstrap.PagingToolbar:buttons[]
 right:  
     Roo.bootstrap.Button
+
+left:
+    Roo.bootstrap.PagingToolbar:store
+right:  
+    Roo.data.Store
+
+left:
+    Roo.bootstrap.NavProgressBar:bullets[]
+right:
+    Roo.bootstrap.NavProgressItem
 
 left:
     Roo.bootstrap.TableBody
