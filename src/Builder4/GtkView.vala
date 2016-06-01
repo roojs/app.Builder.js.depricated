@@ -49,7 +49,7 @@ public class Xcls_GtkView : Object
 
         //listeners
         this.el.size_allocate.connect( (aloc) => {
-        
+         
             this.width = aloc.width;
             this.height =aloc.height;
         });
@@ -526,7 +526,7 @@ public class Xcls_GtkView : Object
         public void nodeSelected (JsRender.Node? sel) {
           
             
-          	return;
+          
             // this is connected in widnowstate
             print("Roo-view - node selected\n");
             var buf = this.el.get_buffer();
@@ -534,9 +534,9 @@ public class Xcls_GtkView : Object
             var sbuf = (Gtk.SourceBuffer) buf;
         
            
-            //while(Gtk.events_pending()) {
-             //   Gtk.main_iteration();
-            //}
+            while(Gtk.events_pending()) {
+                Gtk.main_iteration();
+            }
             
            
             // clear all the marks..

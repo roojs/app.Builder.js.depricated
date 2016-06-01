@@ -508,6 +508,7 @@ public class WindowState : Object
 			 
 
 	}
+ 
 	// our project properties is different for Roo and Gtk
 	// it would be better to change the above code to use this, 
 	public void attachProjectSettings() {
@@ -524,9 +525,16 @@ public class WindowState : Object
 			ctr_p.add(this.vala_projectsettings.el);
 			this.vala_projectsettings.el.show_all();
 		}
-	
-	
+    }
+	 /*
+	public void fileViewOpenPlain(string fname)
+	{
+		
+		this.switchState (State.CODEONLY); 
+		this.code_editor.showPlainFile(fname);
 	}
+ */
+	 
 	// ---------  webkit view
 	public void webkitViewInit()
 	{

@@ -25,8 +25,8 @@
     {
      "id" : "compile_view",
      "bool hexpand" : false,
-     "* pack" : "add",
      "xtype" : "Box",
+     "* pack" : "add",
      "gboolean homogeneous" : false,
      "$ xns" : "Gtk",
      "Gtk.Orientation orientation" : "Gtk.Orientation.VERTICAL",
@@ -47,8 +47,8 @@
       },
       {
        "* init" : "{\n this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n\n}\n",
-       "* pack" : "pack_end,true,true,0",
        "xtype" : "ScrolledWindow",
+       "* pack" : "pack_end,true,true,0",
        "$ xns" : "Gtk",
        "items" : [
         {
@@ -79,8 +79,8 @@
            "items" : [
             {
              "id" : "renderer",
-             "xtype" : "CellRendererText",
              "* pack" : "pack_start,true",
+             "xtype" : "CellRendererText",
              "$ xns" : "Gtk"
             }
            ]

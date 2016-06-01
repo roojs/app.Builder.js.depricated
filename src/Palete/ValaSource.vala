@@ -197,6 +197,7 @@ namespace Palete {
 			 
 		}
 		
+ 
 
 		
 		
@@ -252,7 +253,9 @@ namespace Palete {
 		* Used to compile a non builder file..
 		*/
 		 
-		public bool checkPlainFileSpawn(  JsRender.JsRender file, string contents )
+		 
+		public bool checkPlainFileSpawn( JsRender.JsRender file, string contents )
+ 
 		{
  			// race condition..
  			if (this.compiler != null) { 
@@ -289,6 +292,10 @@ namespace Palete {
 			DataOutputStream dostream = new DataOutputStream (ostream);
 			dostream.put_string (contents);
 			
+			var target = pr.firstBuildModule();
+			if (target.length < 1) {
+				return false;
+			}
  			
  			this.file = null;
 			this.line_offset = 0;
@@ -298,6 +305,7 @@ namespace Palete {
 			args += "--project";
 			args +=  file.project.fn;
 			args += "--target";
+ 
 			args += pr.firstBuildModule();
 			args += "--add-file";
 			args +=  tmpfile.get_path();
@@ -319,7 +327,7 @@ namespace Palete {
 			return true;
 			 
 		}
-		
+		 
 		
 		public void spawnResult(int res, string output, string stderr)
 		{

@@ -550,7 +550,7 @@ public class Editor : Object
             
                 // assume it's gtk...
                    this.check_running = true;
-        
+         
                  if (!_this.window.windowstate.valasource.checkPlainFileSpawn(
         	   _this.file,
         	    str
