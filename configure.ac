@@ -76,7 +76,7 @@ else
         fi
     fi
 fi
-AM_CONDITIONAL(HAVE_LIBVALA30, test "$vala_3_2_enabled" = "yes")
+AM_CONDITIONAL(HAVE_LIBVALA32, test "$vala_3_2_enabled" = "yes")
 AM_CONDITIONAL(HAVE_LIBVALA30, test "$vala_3_0_enabled" = "yes")
 AM_CONDITIONAL(HAVE_LIBVALA28, test "$vala_2_8_enabled" = "yes")
 AM_CONDITIONAL(HAVE_LIBVALA26, test "$vala_2_6_enabled" = "yes")

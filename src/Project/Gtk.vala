@@ -505,6 +505,8 @@ namespace Project {
 			this.compile_flags = el.get_string_member("compile_flags");
 			if ( el.has_member("execute_args")) {
 				this.execute_args = el.get_string_member("execute_args");
+			} else {
+				this.execute_args = "";
 			}
 			this.target_bin = el.get_string_member("target_bin");
 			// sources and packages.
@@ -529,6 +531,7 @@ namespace Project {
 			var ret = new Json.Object();
 			ret.set_string_member("name", this.name);
 			ret.set_string_member("compile_flags", this.compile_flags);
+			ret.set_string_member("execute_args", this.execute_args);
 			ret.set_string_member("target_bin", this.target_bin);
 			ret.set_array_member("sources", this.writeArray(this.sources));
 			ret.set_array_member("packages", this.writeArray(this.packages));

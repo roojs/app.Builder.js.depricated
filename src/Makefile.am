@@ -86,7 +86,7 @@ builder4_PKGS = \
 
 
 BUIDERJSRENDER = \
-        JsRender/Gtk.vala \
+		JsRender/Gtk.vala \
 		JsRender/PlainFile.vala \
 		JsRender/JsRender.vala \
 		JsRender/Lang.vala \
@@ -98,12 +98,12 @@ BUIDERJSRENDER = \
 		JsRender/Roo.vala 
 
 BUIDERPALETE = \
-        Palete/Gir.vala \
+		Palete/Gir.vala \
 		Palete/GirObject.vala \
 		Palete/VapiParser.vala \
 		Palete/Gtk.vala \
 		Palete/RooDatabase.vala \
-        c/jscore_object_call_as_function.c \
+		c/jscore_object_call_as_function.c \
 		Palete/Javascript.vala \
 		Palete/Palete.vala \
 		Palete/Roo.vala \
@@ -112,13 +112,13 @@ BUIDERPALETE = \
 		Palete/CompletionProvider.vala
         
 BUIDERPROJECT = \
-        Project/Gtk.vala \
+		Project/Gtk.vala \
 		Project/Project.vala \
 		Project/Roo.vala 
 
 
 BUIDERUI = \
-        Builder4/About.vala \
+		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/StandardErrorDialog.vala \
 		Builder4/DialogSaveTemplate.vala \
@@ -150,11 +150,11 @@ builder4_SOURCES = \
 		Application.vala \
 		Main.vala \
 		Spawn.vala \
-        Resources.vala  \
-	   $(BUIDERJSRENDER) \
-       $(BUIDERPALETE) \
-       $(BUIDERPROJECT) \
-       $(BUIDERUI) \
+		Resources.vala  \
+		$(BUIDERJSRENDER) \
+		$(BUIDERPALETE) \
+		$(BUIDERPROJECT) \
+		$(BUIDERUI) 
 
 		
 		
