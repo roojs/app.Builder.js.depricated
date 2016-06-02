@@ -109,7 +109,8 @@ left:
   Roo.form.HtmlEditor.ToolbarContext:btns[]
 right:
   Roo.form.TextField         
-  Roo.form.DateField         
+  Roo.form.DateField   
+  Roo.form.MonthField      
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
@@ -126,7 +127,8 @@ left:
   Roo.grid.GridEditor:field
 right:
   Roo.form.TextField         
-  Roo.form.DateField         
+  Roo.form.DateField   
+  Roo.form.MonthField      
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
