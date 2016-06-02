@@ -160,6 +160,7 @@ right:
   Roo.Toolbar.TextItem        
   Roo.form.ComboBox
   Roo.form.DateField
+  Roo.form.MonthField
   Roo.form.TextField
 
            
