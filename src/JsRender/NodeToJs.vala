@@ -241,7 +241,7 @@ public class JsRender.NodeToJs : Object {
 
 		while(niter.next()) {
 			var addstr = this.mungeChildNew(this.pad + indent_str, niter.get_value());
-			print("add str: %s\n", addstr);
+			//print("add str: %s\n", addstr);
 			this.node.setLine(this.cur_line, "p",niter.get_key());
 			this.addLine(this.pad + niter.get_key() + " : " + addstr, ',');
 			
