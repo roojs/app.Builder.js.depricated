@@ -86,7 +86,8 @@ right:
   Roo.form.Hidden         
   Roo.form.TextField         
   Roo.form.GridField
-  Roo.form.DateField         
+  Roo.form.DateField
+  Roo.form.MonthField
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
