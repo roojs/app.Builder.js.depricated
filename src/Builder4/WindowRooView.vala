@@ -1262,7 +1262,7 @@ public class Xcls_WindowRooView : Object
         	});
         		
             this.loading = false; 
-            _this.buffer.dirty = false
+            _this.buffer.dirty = false;
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
               Gtk.TextIter start;
