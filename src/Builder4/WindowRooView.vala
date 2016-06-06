@@ -1211,7 +1211,7 @@ public class Xcls_WindowRooView : Object
             
            print("BEFORE LOAD cursor = %d\n", cpos);
            
-            var vadj = this.el.get_vadjustment();
+            var vadj_pos = this.el.get_vadjustment().get_value();
            
             
          
@@ -1252,7 +1252,7 @@ public class Xcls_WindowRooView : Object
         		buf.get_iter_at_offset(out cpos_iter, cpos);
         		buf.place_cursor(cpos_iter); 
         		
-        		this.el.set_vadjustment(vadj);
+        		this.el.get_vadjustment().set_value(vadj_pos);;
         		this.onCursorChanged();
         		return false;
         	});
