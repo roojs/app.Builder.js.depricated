@@ -1430,14 +1430,14 @@ public class Xcls_WindowRooView : Object
             
                 // assume it's gtk...
                    this.check_running = true;
-         
+         /*
                  if (!_this.window.windowstate.valasource.checkPlainFileSpawn(
         	   _this.file,
         	    str
         	 )) {
                     this.check_running = false;
                 }
-        	
+        	*/
                 return true;
             
             }
@@ -1468,7 +1468,7 @@ public class Xcls_WindowRooView : Object
             print("calling validate vala\n");    
             // clear the buttons.
          
-            
+            /*
            if (! _this.window.windowstate.valasource.checkFileWithNodePropChange(
                 _this.file,
                 _this.node,
@@ -1479,7 +1479,7 @@ public class Xcls_WindowRooView : Object
                 this.check_running = false;
             } 
              
-            
+            */
             
             //print("done mark line\n");
              
