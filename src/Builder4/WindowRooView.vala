@@ -1159,7 +1159,7 @@ public class Xcls_WindowRooView : Object
         			end_line = nend;
         			this.el.editable = true;
         		}
-        		print("propSelected = %s range  %d -> %d\n", this.propSelected, nstart, nend);		
+        		print("propSelected = %s range  %d -> %d\n", this.propSelected, start_line, end_line);		
         		
         		
             }
