@@ -168,6 +168,7 @@ AM_CONDITIONAL(HAVE_VTE_2_91, test "$vte_2_91_enabled" = "yes")
 AC_CONFIG_FILES([
 	Makefile
 	src/Makefile
+	pixmaps/Makefile
 ])
 
   
