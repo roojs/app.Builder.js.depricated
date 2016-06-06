@@ -1145,7 +1145,7 @@ public class Xcls_WindowRooView : Object
             
             //} else {
             if (scroll) {
-        		 
+        		  print("scrolling to node\n");
             	this.el.scroll_to_iter(iter,  0.1f, true, 0.0f, 0.5f);
         	}
             
