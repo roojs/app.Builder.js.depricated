@@ -1368,7 +1368,9 @@ public class Xcls_WindowRooView : Object
                 // ??needed..??
                 _this.save_button.el.sensitive = true;
                 print("EDITOR CHANGED");
-                this.checkSyntax();
+                
+                
+                //this.checkSyntax();
                
                 _this.dirty = true;
             
