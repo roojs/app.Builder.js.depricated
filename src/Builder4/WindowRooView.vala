@@ -1345,9 +1345,9 @@ public class Xcls_WindowRooView : Object
 
             // my vars (def)
         public bool check_queued;
+        public bool dirty;
         public int error_line;
         public bool check_running;
-        public bool XXX;
 
         // ctor
         public Xcls_buffer(Xcls_WindowRooView _owner )
@@ -1358,9 +1358,9 @@ public class Xcls_WindowRooView : Object
 
             // my vars (dec)
             this.check_queued = false;
+            this.dirty = false;
             this.error_line = -1;
             this.check_running = false;
-            this.XXX = true;
 
             // set gobject values
 
