@@ -1366,7 +1366,7 @@ public class Xcls_WindowRooView : Object
             this.el.changed.connect( () => {
                 // check syntax??
                 // ??needed..??
-                _this.save_button.el.sensitive = true;
+               // _this.save_button.el.sensitive = true;
                 ///?? has changed occured during loading?
                 print("- PREVIEW EDITOR CHANGED--");
                 
