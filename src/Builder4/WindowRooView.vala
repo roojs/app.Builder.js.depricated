@@ -1454,14 +1454,14 @@ public class Xcls_WindowRooView : Object
             if (_this.file.language == "js") {
                 this.check_running = false;
                 print("calling validate javascript\n"); 
-                return this.highlightErrors(p.validateJavascript(
+              /*  return this.highlightErrors(p.validateJavascript(
                     str, 
                      _this.key, 
                     _this.ptype,
                     _this.file,
                     _this.node
                 ));    
-                
+                */
             }
                 
                 
