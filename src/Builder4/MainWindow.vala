@@ -80,7 +80,7 @@ public class Xcls_MainWindow : Object
 
         //this.el.show_all();
             //try {
-                 this.el.icon = new Gdk.Pixbuf.from_file ("roobuilder.png");
+                 this.el.set_icon_name("roobuilder");
         	//} catch (Exception e) {
         	//	print("no icon found");
         //	}
