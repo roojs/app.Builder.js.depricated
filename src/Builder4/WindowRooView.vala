@@ -1367,14 +1367,15 @@ public class Xcls_WindowRooView : Object
                 // check syntax??
                 // ??needed..??
                 _this.save_button.el.sensitive = true;
-                print("EDITOR CHANGED");
+                ///?? has changed occured during loading?
+                print("- PREVIEW EDITOR CHANGED--");
                 
                 
                 //this.checkSyntax();
                
                 _this.dirty = true;
             
-                // this.get('/LeftPanel.model').changed(  str , false);
+            
                 return ;
             });
         }

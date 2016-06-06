@@ -178,7 +178,7 @@
          "items" : [
           {
            "listeners" : {
-            "changed" : " () => {\n    // check syntax??\n    // ??needed..??\n    _this.save_button.el.sensitive = true;\n    print(\"EDITOR CHANGED\");\n    \n    \n    //this.checkSyntax();\n   \n    _this.dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return ;\n}\n\n \n"
+            "changed" : " () => {\n    // check syntax??\n    // ??needed..??\n    _this.save_button.el.sensitive = true;\n    ///?? has changed occured during loading?\n    print(\"- PREVIEW EDITOR CHANGED--\");\n    \n    \n    //this.checkSyntax();\n   \n    _this.dirty = true;\n\n\n    return ;\n}\n\n \n"
            },
            "bool check_queued" : false,
            "id" : "buffer",
