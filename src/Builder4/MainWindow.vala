@@ -79,11 +79,11 @@ public class Xcls_MainWindow : Object
         // init method
 
         //this.el.show_all();
-            try {
+            //try {
                  this.el.icon = new Gdk.Pixbuf.from_file ("roobuilder.png");
-        	} catch (Exception e) {
-        		print("no icon found");
-        	}
+        	//} catch (Exception e) {
+        	//	print("no icon found");
+        //	}
 
         //listeners
         this.el.delete_event.connect( (   event) => {

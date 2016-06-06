@@ -16,7 +16,7 @@
    },
    "id" : "MainWindow",
    "default_width" : 800,
-   "* init" : " \n\t  \n    //this.el.show_all();\n    try {\n         this.el.icon = new Gdk.Pixbuf.from_file (\"roobuilder.png\");\n\t} catch (Exception e) {\n\t\tprint(\"no icon found\");\n\t}",
+   "* init" : " \n\t  \n    //this.el.show_all();\n    //try {\n         this.el.icon = new Gdk.Pixbuf.from_file (\"roobuilder.png\");\n\t//} catch (Exception e) {\n\t//\tprint(\"no icon found\");\n//\t}",
    "| void openNewWindow" : "() {\n\tXcls_MainWindow.singleton().no_windows++;\n        var w = new Xcls_MainWindow();\n        w.ref();\n\n        w.el.show_all();\n        w.initChildren();\n        w.windowstate.switchState(WindowState.State.FILES);\n}\n",
    "# Project.Project project" : "null",
    "# string title" : "\"Application Builder\"",
