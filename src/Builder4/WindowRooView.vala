@@ -22,6 +22,7 @@ public class Xcls_WindowRooView : Object
     public Xcls_view view;
     public Xcls_inspectorcontainer inspectorcontainer;
     public Xcls_sourceview sourceview;
+    public Xcls_buffer buffer;
 
         // my vars (def)
     public Gtk.Widget lastObj;
@@ -950,6 +951,9 @@ public class Xcls_WindowRooView : Object
             this.el.editable = false;
             this.el.show_line_marks = true;
             this.el.show_line_numbers = true;
+            var child_0 = new Xcls_buffer( _this );
+            child_0.ref();
+            this.el.set_buffer (  child_0.el  );
 
             // init method
 
@@ -1333,6 +1337,273 @@ public class Xcls_WindowRooView : Object
         
         }
     }
+    public class Xcls_buffer : Object
+    {
+        public Gtk.SourceBuffer el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars (def)
+        public bool check_queued;
+        public int error_line;
+        public bool check_running;
+
+        // ctor
+        public Xcls_buffer(Xcls_WindowRooView _owner )
+        {
+            _this = _owner;
+            _this.buffer = this;
+            this.el = new Gtk.SourceBuffer( null );
+
+            // my vars (dec)
+            this.check_queued = false;
+            this.error_line = -1;
+            this.check_running = false;
+
+            // set gobject values
+
+            //listeners
+            this.el.changed.connect( () => {
+                // check syntax??
+                // ??needed..??
+                _this.save_button.el.sensitive = true;
+                print("EDITOR CHANGED");
+                this.checkSyntax();
+               
+                _this.dirty = true;
+            
+                // this.get('/LeftPanel.model').changed(  str , false);
+                return ;
+            });
+        }
+
+        // user defined functions
+        public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
+                 
+                this.error_line = validate_res.size;
+        
+                if (this.error_line < 1) {
+                      return true;
+                }
+                var tlines = this.el.get_line_count ();
+                Gtk.TextIter iter;
+                var valiter = validate_res.map_iterator();
+                while (valiter.next()) {
+                
+            //        print("get inter\n");
+                    var eline = valiter.get_key();
+                    if (eline > tlines) {
+                        continue;
+                    }
+                    this.el.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    this.el.create_source_mark(valiter.get_value(), "ERR", iter);
+                }   
+                return false;
+            }
+        public   string toString () {
+            
+            Gtk.TextIter s;
+            Gtk.TextIter e;
+            this.el.get_start_iter(out s);
+            this.el.get_end_iter(out e);
+            var ret = this.el.get_text(s,e,true);
+            //print("TO STRING? " + ret);
+            return ret;
+        }
+        public   bool checkSyntax () {
+         
+            if (this.check_running) {
+                print("Check is running\n");
+                if (this.check_queued) { 
+                    print("Check is already queued");
+                    return true;
+                }
+                this.check_queued = true;
+                print("Adding queued Check ");
+                GLib.Timeout.add_seconds(1, () => {
+                    this.check_queued = false;
+                    
+                    this.checkSyntax();
+                    return false;
+                });
+            
+        
+                return true;
+            }
+            var str = this.toString();
+            
+            // needed???
+            if (this.error_line > 0) {
+                 Gtk.TextIter start;
+                 Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+        
+                this.el.remove_source_marks (start, end, null);
+            }
+            if (str.length < 1) {
+                print("checkSyntax - empty string?\n");
+                return true;
+            }
+            
+            if (_this.file.xtype == "PlainFile") {
+            
+                // assume it's gtk...
+                   this.check_running = true;
+         
+                 if (!_this.window.windowstate.valasource.checkPlainFileSpawn(
+        	   _this.file,
+        	    str
+        	 )) {
+                    this.check_running = false;
+                }
+        	
+                return true;
+            
+            }
+           if (_this.file == null) {
+               return true;
+           }
+            var p = Palete.factory(_this.file.xtype);   
+            
+        
+             
+            this.check_running = true;
+            
+            
+            if (_this.file.language == "js") {
+                this.check_running = false;
+                print("calling validate javascript\n"); 
+                return this.highlightErrors(p.validateJavascript(
+                    str, 
+                     _this.key, 
+                    _this.ptype,
+                    _this.file,
+                    _this.node
+                ));    
+                
+            }
+                
+                
+            print("calling validate vala\n");    
+            // clear the buttons.
+         
+            
+           if (! _this.window.windowstate.valasource.checkFileWithNodePropChange(
+                _this.file,
+                _this.node,
+                 _this.key,        
+                 _this.ptype,
+                    str
+                )) {
+                this.check_running = false;
+            } 
+             
+            
+            
+            //print("done mark line\n");
+             
+            return true; // at present allow saving - even if it's invalid..
+        }
+        public bool highlightErrorsJson (string type, Json.Object obj) {
+              Gtk.TextIter start;
+             Gtk.TextIter end;     
+                this.el.get_bounds (out start, out end);
+                
+                this.el.remove_source_marks (start, end, type);
+                         
+             
+             // we should highlight other types of errors..
+            
+            if (!obj.has_member(type)) {
+                print("Return has no errors\n");
+                return true;
+            }
+            
+            if (_this.window.windowstate.state != WindowState.State.CODEONLY && 
+                _this.window.windowstate.state != WindowState.State.CODE
+                ) {
+                return true;
+            } 
+            
+            
+            var err = obj.get_object_member(type);
+            
+            
+            if (_this.file == null) {
+                return true;
+            
+            }
+            var valafn = _this.file.path;
+         
+            if (_this.file.xtype != "PlainFile") {
+        
+        
+                
+                
+                 valafn = "";
+                  try {             
+                       var  regex = new Regex("\\.bjs$");
+                       // should not happen
+                      
+                     
+                        valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
+                     } catch (GLib.RegexError e) {
+                        return true;
+                    }   
+        
+        
+        
+              }
+               if (!err.has_member(valafn)) {
+                    print("File path has no errors\n");
+                    return  true;
+                }
+        
+                var lines = err.get_object_member(valafn);
+                
+                var offset = 1;
+                if (obj.has_member("line_offset")) {
+                    offset = (int)obj.get_int_member("line_offset") + 1;
+                }
+            
+        
+             
+            
+            var tlines = this.el.get_line_count () +1;
+            
+            lines.foreach_member((obj, line, node) => {
+                
+                     Gtk.TextIter iter;
+            //        print("get inter\n");
+                    var eline = int.parse(line) - offset;
+                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
+                    
+                    
+                    if (eline > tlines || eline < 0) {
+                        return;
+                    }
+                    this.el.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    var msg  = "Line: %d".printf(eline+1);
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+                    
+                    
+                    this.el.create_source_mark(msg, type, iter);
+                } );
+                return false;
+            
+        
+        
+        
+        
+        }
+    }
+
 
 
 
