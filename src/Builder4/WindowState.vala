@@ -120,6 +120,10 @@ public class WindowState : Object
 		this.left_tree.el.show_all();
 		   
 		this.left_tree.before_node_change.connect(() => {
+			// if the node change is caused by the editor (code preview)
+			if (this.left_tree.tree.lastEventSource == "editor") {
+				return false;
+			}
 			return this.leftTreeBeforeChange();
 
 		});
