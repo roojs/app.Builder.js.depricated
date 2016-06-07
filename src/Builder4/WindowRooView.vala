@@ -1168,20 +1168,30 @@ public class Xcls_WindowRooView : Object
         			start_line = nstart;
         			end_line = nend;
         			this.el.editable = true;
-        			
+        			print("start line = %d, end line = %d\n", start_line, end_line);
         			
         				// see if we are 'right of ':'
         				// get an iter for the start of the line.
-        			Gtk.TextIter start_line_iter;
-        			this.el.buffer.get_iter_at_line(out start_line_iter, start_line);
-        			var end_line_iter = start_line_iter.copy();
+        			Gtk.TextIter start_line_iter,end_line_iter;
+        			this.el.buffer.get_iter_at_line(out start_line_iter, start_line -1);
+        			this.el.buffer.get_iter_at_line(out end_line_iter, start_line -1);
+        			 
+        			
+        			
+        			
         			if (end_line_iter.forward_to_line_end()) {
         				var first_line  = this.el.buffer.get_text(start_line_iter, end_line_iter, false);
-        				colon_pos = start_line_iter.get_offset() + first_line.index_of(":");
+        				print("first line = %s\n", first_line);
+        				if (first_line.contains(":")) {
+        					colon_pos = start_line_iter.get_offset() + first_line.index_of(":");
+        				}
+        				print("colon_pos  = %d\n", colon_pos);
         			}
-        			
-        			if (start_line == cursor_at_line) {
+        			print("is cursor at line? %d ?= %d\n", start_line -1 , cursor_at_line);
+        			if (start_line - 1 == cursor_at_line) {
+        				print("cursor is on current line.\n");
         				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter, false);
+        				print("before cursor string =  %s\n", before_cursor_string);
         				if (!before_cursor_string.contains(":")) {
         					this.el.editable = false;
         				}
@@ -1195,7 +1205,7 @@ public class Xcls_WindowRooView : Object
         		
             }
             
-            
+        	print("checking selection\n");
             
             
             // check selection - if it's out of 'bounds'
