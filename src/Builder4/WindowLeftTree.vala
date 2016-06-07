@@ -229,7 +229,7 @@ public class Xcls_WindowLeftTree : Object
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
-                  if (!_this.before_node_change(null) ) {
+                  if (!_this.before_node_change( ) ) {
             	     this.blockChanges = true;
             	     this.el.get_selection().unselect_all();
             	     this.blockChanges = false;
