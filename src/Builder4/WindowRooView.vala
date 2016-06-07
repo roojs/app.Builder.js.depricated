@@ -1324,7 +1324,7 @@ public class Xcls_WindowRooView : Object
         public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
                  
             this.error_line = validate_res.size;
-        
+        	
             if (this.error_line < 1) {
                   return true;
             }
@@ -1379,12 +1379,15 @@ public class Xcls_WindowRooView : Object
             var p = Palete.factory(_this.file.xtype);  // returns Roo | Gtk  | PlainFile 
             
          
-            if (_this.file.language == "js") {
+            if (_this.file.language != "js") {
+        		return;
+        	}
+        	
                 
-                print("calling validate javascript\n"); 
-          		return this.highlightErrors(p.validateJavascript(
+        
+          		var res =  this.highlightErrors(p.validateJavascript(
                     str, 
-                     "|", // _this.key, 
+                     "", // _this.key, 
                     "file", //_this.ptype,
                     _this.file,
                     null
