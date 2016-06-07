@@ -1035,6 +1035,11 @@ public class Xcls_WindowRooView : Object
             	this.onCursorChanged();
             	return false;
             });
+            this.el.key_release_event.connect( () => {
+            	// in theory this should be after a change has been done..
+            	
+            
+            });
         }
 
         // user defined functions
