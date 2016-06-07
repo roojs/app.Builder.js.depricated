@@ -1076,7 +1076,7 @@ public class Xcls_WindowRooView : Object
                     
                     // let's try allowing editing on the methods.
                     // a little klunky at present..
-                    this.propSelected = "";
+                    this.prop_selected = "";
                     if (prop != null) {
                 		//see if we can find it..
                 		var kv = prop.split(":");
