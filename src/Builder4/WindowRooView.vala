@@ -1105,18 +1105,20 @@ public class Xcls_WindowRooView : Object
         public void nodeSelected (JsRender.Node? sel, bool scroll ) {
           
             
-          
+        	
             // this is connected in widnowstate
-            print("node selected\n");
-            var buf = this.el.get_buffer();
-         
-            var sbuf = (Gtk.SourceBuffer) buf;
         
-           
+        
+        	// not sure why....   
             while(Gtk.events_pending()) {
                 Gtk.main_iteration();
             }
             
+        
+            print("node selected\n");
+            var buf = this.el.get_buffer();
+            var sbuf = (Gtk.SourceBuffer) buf;
+        
            
             // clear all the marks..
             Gtk.TextIter start;
