@@ -1157,6 +1157,8 @@ public class Xcls_WindowRooView : Object
             
             
             this.el.editable = false;
+            
+            var before_cursor_string = "";
             // now if we have selected a property...
             if (this.propSelected.length> 0 ) {
         
