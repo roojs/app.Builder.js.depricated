@@ -1158,7 +1158,7 @@ public class Xcls_WindowRooView : Object
             
             this.el.editable = false;
             
-            var before_cursor_string = "";
+            var colon_pos = 0;
             
             // now if we have selected a property...
             if (this.propSelected.length> 0 ) {
@@ -1172,9 +1172,12 @@ public class Xcls_WindowRooView : Object
         			
         				// see if we are 'right of ':'
         				// get an iter for the start of the line.
-        				Gtk.TextIter start_line_iter, end_start_line_iter;
-        				this.el.buffer.get_iter_at_line(out start_line_iter, start_line);
-        				this.el.buffer.get_iter_at_line(out end_start_line_iter, start_line+1);
+        			Gtk.TextIter start_line_iter;
+        			this.el.buffer.get_iter_at_line(out start_line_iter, start_line);
+        			var end_line_iter = start_line_iter.copy().forward_to_line_end();
+        			var first_line  = this.el.buffer.get_text(start_line_iter, end_line_iter, false);
+        			
+        			
         			if (start_line == cursor_at_line) {
         				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter, false);
         				if (!before_cursor_string.contains(":")) {
@@ -1203,6 +1206,15 @@ public class Xcls_WindowRooView : Object
         			// save?
         			this.el.editable = false;
         		}
+        		if (colon_pos > 0 &&
+        			(sel_start_iter.get_offset() < colon_pos || sel_end_iter.get_offset() < colon_pos)
+        			
+        		) {
+        			this.el.editable = false;
+        		}
+        		
+        		}
+        		
             
             }
             
