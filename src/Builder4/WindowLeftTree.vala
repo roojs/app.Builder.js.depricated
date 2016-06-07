@@ -832,7 +832,7 @@ public class Xcls_WindowLeftTree : Object
         }
         public void setCursor (string treepath, string sourceEvent)   {
         	this.lastEventSource = sourceEvent;
-        	//this.blockChanges = true;
+        	//this.blockChanges = true; << block changes prevents loading of 'node data' and firing of node_selected..
             this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); 
             // fire node_selected..
             //this.blockChanges = false;
