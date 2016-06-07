@@ -375,7 +375,7 @@ namespace Palete
 			if (file.language != "js") {
 				return ret;
 			 }
-			 if (ptype != "listener" && property[0] == '|') {
+			 if (ptype != "listener" && property.length > 0 && property[0] == '|') {
 				return ret;
 			 }
 			
