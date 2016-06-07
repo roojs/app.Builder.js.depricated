@@ -1167,6 +1167,13 @@ public class Xcls_WindowRooView : Object
         			
         			if (start_line == cursor_at_line) {
         				// see if we are 'right of ':'
+        				// get an iter for the start of the line.
+        				Gtk.TextIter start_line_iter;
+        				this.el.buffer.get_iter_at_line(out start_line_iter, cursor_at_line);
+        				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter);
+        				if (!before_cursor_string.contains(":")) {
+        					this.editable = false;
+        				}
         				
         			}
         			
