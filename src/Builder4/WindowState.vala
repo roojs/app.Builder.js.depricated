@@ -144,7 +144,7 @@ public class WindowState : Object
 		});
 	 
 		this.left_tree.changed.connect(() => {
-			
+			print("LEFT TREE: Changed fired\n");
 			this.file.save();
 			if (this.left_tree.getActiveFile().xtype == "Roo" ) {
 				   this.window_rooview.requestRedraw();
@@ -168,7 +168,7 @@ public class WindowState : Object
 		return false;
 	}
 	
-	public void leftTreeNodeSelected(JsRender.Node? sel)
+	public void leftTreeNodeSelected(JsRender.Node? sel, string source)
 	{
 
 		print("node_selected called %s\n", (sel == null) ? "NULL" : "a value");
