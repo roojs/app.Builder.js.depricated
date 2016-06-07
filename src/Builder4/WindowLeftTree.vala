@@ -832,10 +832,10 @@ public class Xcls_WindowLeftTree : Object
         }
         public void setCursor (string treepath, string sourceEvent)   {
         	this.lastEventSource = sourceEvent;
-        	this.blockChanges = true;
+        	//this.blockChanges = true;
             this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); 
             // fire node_selected..
-            this.blockChanges = false;
+            //this.blockChanges = false;
         	this.lastEventSource = "";
         }
         public           void selectNode (string treepath_str, string source) {
