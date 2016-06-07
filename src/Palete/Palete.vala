@@ -365,11 +365,11 @@ namespace Palete
 					string property, 
 					string ptype,
 					JsRender.JsRender file,
-					JsRender.Node node
+					JsRender.Node? node
 		                 ) 
 		{   
 
-			 print("validate code (%s) %s\n", file.language, code);
+			 print("validate code (%s) ptype=%s property=%s\n", file.language, ptype, property);
 			 var ret = new Gee.HashMap<int,string>();
 		
 			if (file.language != "js") {
@@ -382,8 +382,9 @@ namespace Palete
 			//var cd = new JSCore.ClassDefinitionEmpty();
 			//print("TESTING CODE %s\n", code);
 			string errmsg;
+			var testcode = ptype == "file" ? code : "var __aaa___ = " + code;
 			var line = Javascript.singleton().validate(
-								  "var __aaa___ = " + code, out errmsg);
+								  testcode, out errmsg);
 
 			if (line < 0) {
 				print("no errors\n");
