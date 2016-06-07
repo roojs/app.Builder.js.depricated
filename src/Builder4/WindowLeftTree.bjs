@@ -51,7 +51,7 @@
      "# bool drag_in_motion" : "",
      "# bool blockChanges" : false,
      "$ xns" : "Gtk",
-     "| void setCursor" : "(string treepath, string sourceEvent)   {\n\tthis.lastEventSource = sourceEvent;\n\tthis.blockChanges = true;\n    this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); \n    this.blockChanges = false; \n}\n",
+     "| void setCursor" : "(string treepath, string sourceEvent)   {\n\tthis.lastEventSource = sourceEvent;\n\tthis.blockChanges = true;\n    this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); \n\tthis.lastEventSource = \"\";\n}\n",
      "|           void selectNode" : "(string treepath_str, string source) {\n\tthis.lastEventSource = source;\n    //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));\n     var tp = new Gtk.TreePath.from_string(treepath_str);\n     \n     this.el.set_cursor(tp, null, false);  \n     this.el.scroll_to_cell(tp, null, false, 0,0);\n}\n",
      "items" : [
       {
