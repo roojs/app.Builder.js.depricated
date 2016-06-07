@@ -1370,17 +1370,17 @@ public class Xcls_WindowRooView : Object
             
             if (str.length < 1) {
                 print("checkSyntax - empty string?\n");
-                return true;
+                return false;
             }
             
            if (_this.file == null) {
-               return true;
+               return false;
            }
             var p = Palete.factory(_this.file.xtype);  // returns Roo | Gtk  | PlainFile 
             
          
             if (_this.file.language != "js") {
-        		return;
+        		return false; // no syntax.
         	}
         	
                 
