@@ -2,6 +2,13 @@ public_icons_themes =  hicolor
 
 iconsdir = $(datadir)/icons/hicolor
 
+public_icon_dirs = \
+    16x16/apps \
+    22x22/apps \
+    24x24/apps \
+    32x32/apps \
+    48x48/apps
+
 public_icons = \
     16x16/apps/roobuilder.png \
     22x22/apps/roobuilder.png \
@@ -33,11 +40,10 @@ update-icon-cache:
 	fi
 
 install-icons:
-	for icon in $(public_icons); do \
+	for icon in $(public_icon_dirs); do \
 		mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/$$icon; \
-		$(INSTALL_DATA) $(srcdir)/$$icon $(DESTDIR)$(datadir)/icons/hicolor/$$icon; \
+        $(INSTALL_DATA) $(srcdir)/$$icon/roobuilder.png $(DESTDIR)$(datadir)/icons/hicolor/$$icon/roobuilder.png;
 	done; 
-	
 
 uninstall-icons:
 	-for icon in $(public_icons); do \
