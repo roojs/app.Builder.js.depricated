@@ -1164,6 +1164,7 @@ public class Xcls_WindowRooView : Object
         		if (sel.getPropertyRange(this.propSelected, out nstart, out nend) && nend > nstart) {
         			start_line = nstart;
         			end_line = nend;
+        			this.el.editable = true;
         			
         			if (start_line == cursor_at_line) {
         				// see if we are 'right of ':'
@@ -1177,7 +1178,7 @@ public class Xcls_WindowRooView : Object
         				
         			}
         			
-        			this.el.editable = true;
+        			
         		}
         		print("propSelected = %s range  %d -> %d\n", this.propSelected, start_line, end_line);		
         		
