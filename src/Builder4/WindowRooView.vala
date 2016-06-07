@@ -1031,9 +1031,9 @@ public class Xcls_WindowRooView : Object
             
             	return false;
             });
-            this.el.key_press_event.connect( () {
-            	this.updateGreySelection();
-            
+            this.el.key_press_event.connect( () => {
+            	this.onCursorChanged();
+            	return false;
             });
         }
 
