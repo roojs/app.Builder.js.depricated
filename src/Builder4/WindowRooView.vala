@@ -1176,7 +1176,8 @@ public class Xcls_WindowRooView : Object
         			this.el.buffer.get_iter_at_line(out start_line_iter, start_line);
         			var end_line_iter = start_line_iter.copy().forward_to_line_end();
         			var first_line  = this.el.buffer.get_text(start_line_iter, end_line_iter, false);
-        			colon_pos = first_line.index_of(":");
+        			colon_pos = start_line_iter.get_offset() + first_line.index_of(":");
+        			
         			
         			if (start_line == cursor_at_line) {
         				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter, false);
