@@ -1258,6 +1258,7 @@ public class Xcls_WindowRooView : Object
         		
         		this.el.get_vadjustment().set_value(vadj_pos);;
         		this.onCursorChanged();
+        		_this.buffer.checkSyntax();
         		return false;
         	});
         		
@@ -1265,72 +1266,8 @@ public class Xcls_WindowRooView : Object
             _this.buffer.dirty = false;
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
-              Gtk.TextIter start;
-             Gtk.TextIter end;   
-             
-             var buf =  this.el.get_buffer();
-               var sbuf = (Gtk.SourceBuffer)buf;
-                buf.get_bounds (out start, out end);
-                
-                sbuf.remove_source_marks (start, end, type);
-                         
-             
-             // we should highlight other types of errors..
-            
-            if (!obj.has_member(type)) {
-                print("Return has no errors\n");
-                return  ;
-            }
-            var err = obj.get_object_member(type);
-            
-            if (_this.file == null) { 
-                return; // just in case the file has not loaded yet?
-            }
-         
-        
-            var valafn = "";
-              try {             
-                   var  regex = new Regex("\\.bjs$");
-                
-                 
-                    valafn = regex.replace(_this.file.path,_this.file.path.length , 0 , ".vala");
-                 } catch (GLib.RegexError e) {
-                    return;
-                }   
-        
-           if (!err.has_member(valafn)) {
-                print("File path has no errors\n");
-                return  ;
-            }
-            var lines = err.get_object_member(valafn);
-            
-           
-            
-            var tlines = buf.get_line_count () +1;
-            
-            lines.foreach_member((obj, line, node) => {
-                
-                     Gtk.TextIter iter;
-            //        print("get inter\n");
-                    var eline = int.parse(line) -1  ;
-                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
-                    
-                    
-                    if (eline > tlines || eline < 0) {
-                        return;
-                    }
-                    sbuf.get_iter_at_line( out iter, eline);
-                    //print("mark line\n");
-                    var msg  = type + " on line: %d - %s".printf(eline+1, valafn);
-                    var ar = lines.get_array_member(line);
-                    for (var i = 0 ; i < ar.get_length(); i++) {
-        		    msg += (msg.length > 0) ? "\n" : "";
-        		    msg += ar.get_string_element(i);
-        	    }
-                    
-                    
-                    sbuf.create_source_mark(msg, type, iter);
-                } );
+               // this is a hook for the vala code - it has no value in javascript 
+               // as we only have one error ususally....
                 return  ;
             
          
@@ -1374,7 +1311,7 @@ public class Xcls_WindowRooView : Object
                 print("- PREVIEW EDITOR CHANGED--");
                 
                 
-                //this.checkSyntax();
+                 this.checkSyntax();
                
                 this.dirty = true;
             
@@ -1384,6 +1321,29 @@ public class Xcls_WindowRooView : Object
         }
 
         // user defined functions
+        public bool highlightErrors ( Gee.HashMap<int,string> validate_res) {
+                 
+            this.error_line = validate_res.size;
+        
+            if (this.error_line < 1) {
+                  return true;
+            }
+            var tlines = this.el.get_line_count ();
+            Gtk.TextIter iter;
+            var valiter = validate_res.map_iterator();
+            while (valiter.next()) {
+            
+        //        print("get inter\n");
+                var eline = valiter.get_key();
+                if (eline > tlines) {
+                    continue;
+                }
+                this.el.get_iter_at_line( out iter, eline);
+                //print("mark line\n");
+                this.el.create_source_mark(valiter.get_value(), "ERR", iter);
+            }   
+            return false;
+        }
         public   string toString () {
             
             Gtk.TextIter s;
@@ -1416,44 +1376,25 @@ public class Xcls_WindowRooView : Object
            if (_this.file == null) {
                return true;
            }
-            var p = Palete.factory(_this.file.xtype);   
+            var p = Palete.factory(_this.file.xtype);  // returns Roo | Gtk  | PlainFile 
             
-        
-             
-            this.check_running = true;
-            
-            
+         
             if (_this.file.language == "js") {
                 
                 print("calling validate javascript\n"); 
           		return this.highlightErrors(p.validateJavascript(
                     str, 
-                     _this.key, 
-                    _this.ptype,
+                     "|", // _this.key, 
+                    "file", //_this.ptype,
                     _this.file,
-                    _this.node
+                    null
                 ));    
                 
             }
                 
                 
             print("calling validate vala\n");    
-            // clear the buttons.
-         
-            /*
-           if (! _this.window.windowstate.valasource.checkFileWithNodePropChange(
-                _this.file,
-                _this.node,
-                 _this.key,        
-                 _this.ptype,
-                    str
-                )) {
-                this.check_running = false;
-            } 
-             
-            */
             
-            //print("done mark line\n");
              
             return true; // at present allow saving - even if it's invalid..
         }
