@@ -1392,18 +1392,7 @@ public class Xcls_WindowRooView : Object
                 _this.file,
                 null
             ));    
-                
-            if (!res) { // an error in the code.. don't save it..
-        	    return; 
-            }
-            
-            
-            
-                
-        
-            
-             
-            return true; // at present allow saving - even if it's invalid..
+            return res;
         }
     }
 
