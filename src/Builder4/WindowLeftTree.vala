@@ -18,7 +18,7 @@ public class Xcls_WindowLeftTree : Object
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars (def)
-    public signal bool before_node_change (JsRender.Node? node);
+    public signal bool before_node_change ();
     public signal void changed ();
     public signal void node_selected (JsRender.Node? node, string source);
     public Xcls_MainWindow main_window;
@@ -833,7 +833,7 @@ public class Xcls_WindowLeftTree : Object
         	this.lastEventSource = sourceEvent;
         	this.blockChanges = true;
             this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); 
-            this.blockChanges = true;
+            this.blockChanges = false;
         	this.lastEventSource = "";
         }
         public           void selectNode (string treepath_str, string source) {

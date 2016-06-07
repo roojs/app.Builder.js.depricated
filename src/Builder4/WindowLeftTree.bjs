@@ -10,7 +10,7 @@
   {
    "|           JsRender.Node? getActiveElement" : " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     return _this.model.pathToNode(path);\n     \n}\n",
    "id" : "WindowLeftTree",
-   "@ bool before_node_change" : "(JsRender.Node? node)",
+   "@ bool before_node_change" : "()",
    "$ shadow_type" : "Gtk.ShadowType.IN",
    "* init" : " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
    "|           JsRender.JsRender getActiveFile" : "() {\n    return this.main_window.windowstate.file;\n}\n",
@@ -51,7 +51,7 @@
      "# bool drag_in_motion" : "",
      "# bool blockChanges" : false,
      "$ xns" : "Gtk",
-     "| void setCursor" : "(string treepath, string sourceEvent)   {\n\tthis.lastEventSource = sourceEvent;\n\tthis.blockChanges = true;\n    this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); \n    this.blockChanges = true;\n\tthis.lastEventSource = \"\";\n}\n",
+     "| void setCursor" : "(string treepath, string sourceEvent)   {\n\tthis.lastEventSource = sourceEvent;\n\tthis.blockChanges = true;\n    this.el.set_cursor(new Gtk.TreePath.from_string(treepath), null, false); \n    this.blockChanges = false;\n\tthis.lastEventSource = \"\";\n}\n",
      "|           void selectNode" : "(string treepath_str, string source) {\n\tthis.lastEventSource = source;\n    //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));\n     var tp = new Gtk.TreePath.from_string(treepath_str);\n     \n     this.el.set_cursor(tp, null, false);  \n     this.el.scroll_to_cell(tp, null, false, 0,0);\n}\n",
      "items" : [
       {
