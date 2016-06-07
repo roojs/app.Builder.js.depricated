@@ -1214,8 +1214,7 @@ public class Xcls_WindowRooView : Object
         			this.el.editable = false;
         		}
         		
-        		}
-        		
+        		 
             
             }
             
