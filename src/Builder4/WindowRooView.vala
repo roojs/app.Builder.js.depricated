@@ -1106,7 +1106,7 @@ public class Xcls_WindowRooView : Object
         }
         public void clearGreySelection () {
          // clear all the marks..
-            var sbuf = (GtkSource.TextBuffer)this.el.buffer;
+            var sbuf = (Gtk.SourceBuffer)this.el.buffer;
             
             Gtk.TextIter start;
             Gtk.TextIter end;     
@@ -1129,8 +1129,81 @@ public class Xcls_WindowRooView : Object
             }
             
             this.node_selected = sel;
+            
+            this.updateGreySelection(scroll);
+        }
+        public string toString () {
+           Gtk.TextIter s;
+            Gtk.TextIter e;
+            this.el.get_buffer().get_start_iter(out s);
+            this.el.get_buffer().get_end_iter(out e);
+            var ret = this.el.get_buffer().get_text(s,e,true);
+            //print("TO STRING? " + ret);
+            return ret;
+        }
+        public void loadFile ( ) {
+            this.loading = true;
+            
+            
+            // get the cursor and scroll position....
+            var buf = this.el.get_buffer();
+        	var cpos = buf.cursor_position;
+            
+           print("BEFORE LOAD cursor = %d\n", cpos);
+           
+            var vadj_pos = this.el.get_vadjustment().get_value();
+           
+            
+         
+            buf.set_text("",0);
+            var sbuf = (Gtk.SourceBuffer) buf;
         
-            print("node selected\n");
+            
+        
+            if (_this.file == null || _this.file.xtype != "Roo") {
+                print("xtype != Roo");
+                this.loading = false;
+                return;
+            }
+            
+            // get the string from the rendered tree...
+             
+             var str = _this.file.toSource();
+             
+        //    print("setting str %d\n", str.length);
+            buf.set_text(str, str.length);
+            var lm = Gtk.SourceLanguageManager.get_default();
+             
+            //?? is javascript going to work as js?
+            
+            ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(_this.file.language));
+          
+            
+            Gtk.TextIter start;
+            Gtk.TextIter end;     
+                
+            sbuf.get_bounds (out start, out end);
+            sbuf.remove_source_marks (start, end, null); // remove all marks..
+            
+             GLib.Timeout.add(500, () => {
+               
+               print("RESORTING cursor to = %d\n", cpos);
+        		Gtk.TextIter cpos_iter;
+        		buf.get_iter_at_offset(out cpos_iter, cpos);
+        		buf.place_cursor(cpos_iter); 
+        		
+        		this.el.get_vadjustment().set_value(vadj_pos);;
+        		this.onCursorChanged();
+        		_this.buffer.checkSyntax();
+        		return false;
+        	});
+        		
+            this.loading = false; 
+            _this.buffer.dirty = false;
+        }
+        public void updateGreySelection (bool scroll) { 
+        	var sel = this.node_selected;
+        	print("node selected\n");
             var buf = this.el.get_buffer();
             var sbuf = (Gtk.SourceBuffer) buf;
         
@@ -1257,75 +1330,6 @@ public class Xcls_WindowRooView : Object
             
         
         }
-        public string toString () {
-           Gtk.TextIter s;
-            Gtk.TextIter e;
-            this.el.get_buffer().get_start_iter(out s);
-            this.el.get_buffer().get_end_iter(out e);
-            var ret = this.el.get_buffer().get_text(s,e,true);
-            //print("TO STRING? " + ret);
-            return ret;
-        }
-        public void loadFile ( ) {
-            this.loading = true;
-            
-            
-            // get the cursor and scroll position....
-            var buf = this.el.get_buffer();
-        	var cpos = buf.cursor_position;
-            
-           print("BEFORE LOAD cursor = %d\n", cpos);
-           
-            var vadj_pos = this.el.get_vadjustment().get_value();
-           
-            
-         
-            buf.set_text("",0);
-            var sbuf = (Gtk.SourceBuffer) buf;
-        
-            
-        
-            if (_this.file == null || _this.file.xtype != "Roo") {
-                print("xtype != Roo");
-                this.loading = false;
-                return;
-            }
-            
-            // get the string from the rendered tree...
-             
-             var str = _this.file.toSource();
-             
-        //    print("setting str %d\n", str.length);
-            buf.set_text(str, str.length);
-            var lm = Gtk.SourceLanguageManager.get_default();
-             
-            //?? is javascript going to work as js?
-            
-            ((Gtk.SourceBuffer)(buf)) .set_language(lm.get_language(_this.file.language));
-          
-            
-            Gtk.TextIter start;
-            Gtk.TextIter end;     
-                
-            sbuf.get_bounds (out start, out end);
-            sbuf.remove_source_marks (start, end, null); // remove all marks..
-            
-             GLib.Timeout.add(500, () => {
-               
-               print("RESORTING cursor to = %d\n", cpos);
-        		Gtk.TextIter cpos_iter;
-        		buf.get_iter_at_offset(out cpos_iter, cpos);
-        		buf.place_cursor(cpos_iter); 
-        		
-        		this.el.get_vadjustment().set_value(vadj_pos);;
-        		this.onCursorChanged();
-        		_this.buffer.checkSyntax();
-        		return false;
-        	});
-        		
-            this.loading = false; 
-            _this.buffer.dirty = false;
-        }
         public void highlightErrorsJson (string type, Json.Object obj) {
                // this is a hook for the vala code - it has no value in javascript 
                // as we only have one error ususally....
@@ -1370,7 +1374,7 @@ public class Xcls_WindowRooView : Object
             	}
             	
                 print("- PREVIEW EDITOR CHANGED--");
-                
+            
                 this.dirty = true;    
                 if (!this.checkSyntax()) {
             		return;
@@ -1378,7 +1382,7 @@ public class Xcls_WindowRooView : Object
                 
                // what are we editing??
                
-               
+            
             
             
             
