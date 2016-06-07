@@ -1105,7 +1105,14 @@ public class Xcls_WindowRooView : Object
                 // highlight the node..
         }
         public void clearGreySelection () {
-        
+         // clear all the marks..
+            Gtk.TextIter start;
+            Gtk.TextIter end;     
+                
+            sbuf.get_bounds (out start, out end);
+            sbuf.remove_source_marks (start, end, "grey");
+            
+            
         }
         public void nodeSelected (JsRender.Node? sel, bool scroll ) {
           
@@ -1126,14 +1133,10 @@ public class Xcls_WindowRooView : Object
             var sbuf = (Gtk.SourceBuffer) buf;
         
            
-            // clear all the marks..
-            Gtk.TextIter start;
-            Gtk.TextIter end;     
-                
-            sbuf.get_bounds (out start, out end);
-            sbuf.remove_source_marks (start, end, "grey");
-            
-            
+           this.clearGreySelection();
+           
+           
+           
              if (sel == null) {
         	     print("no selected node\n");
                 // no highlighting..
