@@ -1273,7 +1273,7 @@ public class Xcls_WindowRooView : Object
         				var first_line  = this.el.buffer.get_text(start_line_iter, end_line_iter, false);
         				print("first line = %s\n", first_line);
         				if (first_line.contains(":")) {
-        					colon_pos = start_line_iter.get_offset() + first_line.index_of(":");
+        					colon_pos = start_line_iter.get_offset() + first_line.index_of(":") + 1;
         				}
         				print("colon_pos  = %d\n", colon_pos);
         			}
