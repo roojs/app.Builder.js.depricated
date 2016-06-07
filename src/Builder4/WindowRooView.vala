@@ -1104,6 +1104,9 @@ public class Xcls_WindowRooView : Object
                 
                 // highlight the node..
         }
+        public void clearGreySelection () {
+        
+        }
         public void nodeSelected (JsRender.Node? sel, bool scroll ) {
           
             
@@ -1325,9 +1328,6 @@ public class Xcls_WindowRooView : Object
             
          
         
-        
-        }
-        public return_type XXXX () {
         
         }
     }
