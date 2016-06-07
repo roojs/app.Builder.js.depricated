@@ -156,6 +156,7 @@ public class Xcls_WindowLeftTree : Object
                 
                    return true;
                 }
+                
             
                 
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
