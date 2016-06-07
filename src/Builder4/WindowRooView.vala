@@ -1139,6 +1139,9 @@ public class Xcls_WindowRooView : Object
             
             Gtk.TextIter cur_iter;
             sbuf.get_iter_at_offset(out cur_iter, sbuf.cursor_position);
+           
+            var cursor_at_line = cur_iter.get_line();
+            
             
             //var cur_line = cur_iter.get_line();
             //if (cur_line > sel.line_start && cur_line < sel.line_end) {
@@ -1162,7 +1165,10 @@ public class Xcls_WindowRooView : Object
         			start_line = nstart;
         			end_line = nend;
         			
-        			//if (start_line == 
+        			if (start_line == cursor_at_line) {
+        				// see if we are 'right of ':'
+        				
+        			}
         			
         			this.el.editable = true;
         		}
