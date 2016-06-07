@@ -1327,6 +1327,9 @@ public class Xcls_WindowRooView : Object
         
         
         }
+        public return_type XXXX () {
+        
+        }
     }
     public class Xcls_buffer : Object
     {
