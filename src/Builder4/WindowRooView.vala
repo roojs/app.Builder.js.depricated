@@ -1116,6 +1116,7 @@ public class Xcls_WindowRooView : Object
                 Gtk.main_iteration();
             }
             
+            this.nodeSelected = sel;
         
             print("node selected\n");
             var buf = this.el.get_buffer();
