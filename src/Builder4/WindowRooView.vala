@@ -1087,7 +1087,7 @@ public class Xcls_WindowRooView : Object
         	        		this.prop_selected = prop;
         	        		
                 		} else if (kv[0] == "l") {
-                			 this.propSelected = prop;
+                			 this.prop_selected = prop;
                 			
                 		}
                     }
@@ -1116,7 +1116,7 @@ public class Xcls_WindowRooView : Object
                 Gtk.main_iteration();
             }
             
-            this.nodeSelected = sel;
+            this.node_selected = sel;
         
             print("node selected\n");
             var buf = this.el.get_buffer();
