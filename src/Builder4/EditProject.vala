@@ -47,7 +47,7 @@ public class EditProject : Object
 
         //listeners
         this.el.destroy_event.connect( (self, event) => {
-          this.el.response(0);
+        	this.el.response(0);
         //     this.el.hide();
             return false;
         });
