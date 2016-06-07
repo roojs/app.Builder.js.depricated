@@ -1380,7 +1380,7 @@ public class Xcls_WindowRooView : Object
             
          
             if (_this.file.language != "js") {
-        		return false; // no syntax.
+        		return false; // fake syntax error.
         	}
         	
                 
