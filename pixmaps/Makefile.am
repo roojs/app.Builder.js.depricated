@@ -46,8 +46,8 @@ install-icons:
 	done; 
 
 uninstall-icons:
-	-for icon in $(public_icons); do \
-		rm -f  $(DESTDIR)$(datadir)/icons/hicolor/$$icon; \
+	-for icon in $(public_icons_dirs); do \
+		rm -f  $(DESTDIR)$(datadir)/icons/hicolor/$$icon/roobuilder.png; \
 	done;
 	
 
