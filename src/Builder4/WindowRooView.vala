@@ -1385,14 +1385,16 @@ public class Xcls_WindowRooView : Object
         	
                 
         
-          		var res =  this.highlightErrors(p.validateJavascript(
-                    str, 
-                     "", // _this.key, 
-                    "file", //_this.ptype,
-                    _this.file,
-                    null
-                ));    
+        	var res =  this.highlightErrors(p.validateJavascript(
+                str, 
+                 "", // _this.key, 
+                "file", //_this.ptype,
+                _this.file,
+                null
+            ));    
                 
+            if (!res) { // an error in the code.. don't save it..
+        	    return; 
             }
                 
                 
