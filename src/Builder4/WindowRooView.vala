@@ -1385,14 +1385,14 @@ public class Xcls_WindowRooView : Object
         	
                 
         
-        	var res =  this.highlightErrors(p.validateJavascript(
+        	return this.highlightErrors(p.validateJavascript(
                 str, 
                  "", // _this.key, 
                 "file", //_this.ptype,
                 _this.file,
                 null
             ));    
-            return res;
+             
         }
     }
 
