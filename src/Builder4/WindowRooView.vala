@@ -934,6 +934,7 @@ public class Xcls_WindowRooView : Object
         public bool loading;
         public bool allow_node_scroll;
         public string propSelected;
+        public string XXXX;
 
         // ctor
         public Xcls_sourceview(Xcls_WindowRooView _owner )
