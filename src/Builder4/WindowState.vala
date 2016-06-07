@@ -122,7 +122,7 @@ public class WindowState : Object
 		this.left_tree.before_node_change.connect(() => {
 			// if the node change is caused by the editor (code preview)
 			if (this.left_tree.view.lastEventSource == "editor") {
-				return false;
+				return true;
 			}
 			return this.leftTreeBeforeChange();
 
@@ -139,8 +139,8 @@ public class WindowState : Object
 			}
 		});
 		
-		this.left_tree.node_selected.connect((sel) => {
-			this.leftTreeNodeSelected(sel);
+		this.left_tree.node_selected.connect((sel, source) => {
+			this.leftTreeNodeSelected(sel, source);
 		});
 	 
 		this.left_tree.changed.connect(() => {
