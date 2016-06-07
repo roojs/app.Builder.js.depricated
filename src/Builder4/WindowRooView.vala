@@ -1032,7 +1032,7 @@ public class Xcls_WindowRooView : Object
             	return false;
             });
             this.el.key_press_event.connect( () {
-            	
+            	this.updateGreySelection();
             
             });
         }
