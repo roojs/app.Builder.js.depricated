@@ -1170,9 +1170,9 @@ public class Xcls_WindowRooView : Object
         				// get an iter for the start of the line.
         				Gtk.TextIter start_line_iter;
         				this.el.buffer.get_iter_at_line(out start_line_iter, cursor_at_line);
-        				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter);
+        				var before_cursor_string = this.el.buffer.get_text(start_line_iter, cur_iter, false);
         				if (!before_cursor_string.contains(":")) {
-        					this.editable = false;
+        					this.el.editable = false;
         				}
         				
         			}
