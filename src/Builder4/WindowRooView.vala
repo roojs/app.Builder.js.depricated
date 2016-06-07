@@ -1310,10 +1310,13 @@ public class Xcls_WindowRooView : Object
             	
                 print("- PREVIEW EDITOR CHANGED--");
                 
+                this.dirty = true;    
+                if (!this.checkSyntax()) {
+            		return;
+            	}		
                 
-                 this.checkSyntax();
                
-                this.dirty = true;
+            
             
             
                 return ;

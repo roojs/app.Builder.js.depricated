@@ -178,7 +178,7 @@
          "items" : [
           {
            "listeners" : {
-            "changed" : " () => {\n    // check syntax??\n    // ??needed..??\n   // _this.save_button.el.sensitive = true;\n    ///?? has changed occured during loading?\n    if (_this.sourceview.loading) {\n\t\treturn;\n\t}\n\t\n    print(\"- PREVIEW EDITOR CHANGED--\");\n    \n    \n     this.checkSyntax();\n   \n    this.dirty = true;\n\n\n    return ;\n}\n\n \n"
+            "changed" : " () => {\n    // check syntax??\n    // ??needed..??\n   // _this.save_button.el.sensitive = true;\n    ///?? has changed occured during loading?\n    if (_this.sourceview.loading) {\n\t\treturn;\n\t}\n\t\n    print(\"- PREVIEW EDITOR CHANGED--\");\n    \n    this.dirty = true;    \n    if (!this.checkSyntax()) {\n\t\treturn;\n\t}\t\t\n    \n   \n\n\n\n    return ;\n}\n\n \n"
            },
            "bool dirty" : false,
            "id" : "buffer",
