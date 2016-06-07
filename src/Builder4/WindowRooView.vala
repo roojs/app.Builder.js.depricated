@@ -1061,7 +1061,7 @@ public class Xcls_WindowRooView : Object
                 
                 
                 
-                
+                // ---------- this selects the tree's node...
                 
                 var ltree = _this.main_window.windowstate.left_tree;
                 var tp = ltree.model.treePathFromNode(node);
