@@ -1396,24 +1396,7 @@ public class Xcls_WindowRooView : Object
         }
         public   bool checkSyntax () {
          
-            if (this.check_running) {
-                print("Check is running\n");
-                if (this.check_queued) { 
-                    print("Check is already queued");
-                    return true;
-                }
-                this.check_queued = true;
-                print("Adding queued Check ");
-                GLib.Timeout.add_seconds(1, () => {
-                    this.check_queued = false;
-                    
-                    this.checkSyntax();
-                    return false;
-                });
-            
-        
-                return true;
-            }
+           
             var str = this.toString();
             
             // needed???
@@ -1424,26 +1407,12 @@ public class Xcls_WindowRooView : Object
         
                 this.el.remove_source_marks (start, end, null);
             }
+            
             if (str.length < 1) {
                 print("checkSyntax - empty string?\n");
                 return true;
             }
             
-            if (_this.file.xtype == "PlainFile") {
-            
-                // assume it's gtk...
-                   this.check_running = true;
-         /*
-                 if (!_this.window.windowstate.valasource.checkPlainFileSpawn(
-        	   _this.file,
-        	    str
-        	 )) {
-                    this.check_running = false;
-                }
-        	*/
-                return true;
-            
-            }
            if (_this.file == null) {
                return true;
            }
@@ -1455,16 +1424,16 @@ public class Xcls_WindowRooView : Object
             
             
             if (_this.file.language == "js") {
-                this.check_running = false;
+                
                 print("calling validate javascript\n"); 
-              /*  return this.highlightErrors(p.validateJavascript(
+          		return this.highlightErrors(p.validateJavascript(
                     str, 
                      _this.key, 
                     _this.ptype,
                     _this.file,
                     _this.node
                 ));    
-                */
+                
             }
                 
                 
