@@ -1396,9 +1396,11 @@ public class Xcls_WindowRooView : Object
             if (!res) { // an error in the code.. don't save it..
         	    return; 
             }
+            
+            
+            
                 
-                
-            print("calling validate vala\n");    
+        
             
              
             return true; // at present allow saving - even if it's invalid..
