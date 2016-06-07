@@ -170,11 +170,11 @@
          "* pack" : "add",
          "xtype" : "SourceView",
          "bool allow_node_scroll" : true,
+         "$ string prop_selected" : "\"\"",
          "| void highlightErrorsJson" : " (string type, Json.Object obj) {\n       // this is a hook for the vala code - it has no value in javascript \n       // as we only have one error ususally....\n        return  ;\n    \n \n\n\n}",
          "JsRender.Node? node_selected" : "null",
          "$ xns" : "Gtk",
          "gboolean show_line_numbers" : true,
-         "$ string propSelected" : "\"\"",
          "gboolean editable" : false,
          "items" : [
           {
