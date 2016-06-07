@@ -1106,6 +1106,8 @@ public class Xcls_WindowRooView : Object
         }
         public void clearGreySelection () {
          // clear all the marks..
+            var sbuf = this.el.buffer;
+            
             Gtk.TextIter start;
             Gtk.TextIter end;     
                 
