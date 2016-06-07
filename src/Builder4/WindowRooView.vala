@@ -1371,6 +1371,10 @@ public class Xcls_WindowRooView : Object
                 // ??needed..??
                // _this.save_button.el.sensitive = true;
                 ///?? has changed occured during loading?
+                if (_this.sourceview.loading) {
+            		return;
+            	}
+            	
                 print("- PREVIEW EDITOR CHANGED--");
                 
                 
