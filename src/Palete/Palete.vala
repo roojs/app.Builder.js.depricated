@@ -435,7 +435,7 @@ namespace Palete
 			var estr = "";
 			var ret = new Gee.HashMap<int,string>();
 			 
-			p.packFile(code, "ANONFILE","");
+			p.packFile(code, file.filname,"");
 			if (p.hasErrors("")) {
 			  
 			if (estr.length > 0 ) {
