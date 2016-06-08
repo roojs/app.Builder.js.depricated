@@ -95,7 +95,7 @@ public class WindowState : Object
 		
 		
 		this.valasource = new Palete.ValaSource();
-		this.valasource.compiled.connect(this.valaCompiled);
+		this.valasource.compiled.connect(this.showCompileResult);
 		
 		this.compile_results = new  Xcls_ValaCompileResults();
 		this.compile_results.window = this.win;
