@@ -73,7 +73,7 @@
     },
     {
         "name" : "_default_",
-        "compile_flags" : "--thread -X -lm --target-glib=2.32 -g",
+        "compile_flags" : "--thread -X -lm --target-glib=2.32 -g --pkg  roojspacker-1.0",
         "execute_args" : "",
         "target_bin" : "",
         "sources" : [
