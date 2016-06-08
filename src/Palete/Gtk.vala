@@ -34,6 +34,9 @@ namespace Palete {
 		    var context = new Vala.CodeContext ();
 			 
 		    this.package_cache = this.loadPackages(Path.get_dirname (context.get_vapi_path("glib-2.0")));
+		    this.package_cache.add_all(
+			    this.loadPackages(Path.get_dirname (context.get_vapi_path("gee-1.0")));
+		    );
 				//this.load();
 		    // various loader methods..
 		      //this.map = [];
