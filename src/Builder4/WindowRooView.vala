@@ -1460,7 +1460,7 @@ public class Xcls_WindowRooView : Object
                 
         
         	return p.validateJavascript(
-        		_this.window.windowstate,
+        		_this.main_window.windowstate,
                 str, 
                  "", // _this.key, 
                 "file", //_this.ptype,
