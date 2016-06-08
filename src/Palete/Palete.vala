@@ -361,6 +361,7 @@ namespace Palete
 	
 	
 		public   Gee.HashMap<int,string>  validateJavascript(
+					WindowState state,
 		 			string code, 
 					string property, 
 					string ptype,
@@ -386,7 +387,28 @@ namespace Palete
 			var line = Javascript.singleton().validate(
 								  testcode, out errmsg);
 
-			if (line < 0) {
+			if (line > -1) {
+				if (ptype == "file") {
+					var err = new Json.Object();
+					err.set_int_member("ERR-TOTAL", 1);
+					var files_obj = new Json.Object();
+					var lines_obj = new Json.Object();
+					var lines_ar = new Json.Array();
+					lines_ar.add_string_element(errmsg);
+					lines_obj.set_array_member(line, lines_ar);
+					files_obj.set_object_member(file.filename, lines_obj);
+					 
+					err.set_object_member("ERR", files_obj);
+					err.set_object_member("ERR-TOTAL", 1);
+					state.showCompileResult(err);
+					return ret;
+				}
+				ret.set(line, errmsg); // depricated - this is used by the editor currently -- but we are planning to switch from taht.
+				print("got  errors\n");
+				return ret;
+
+			}
+			
 				if (ptype == "file") {
 					return this.validateJavascriptCompression(code);
 				}
