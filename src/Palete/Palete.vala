@@ -411,9 +411,9 @@ namespace Palete
 			p.cleanup = false;
 			try {
 				p.packFile(code, "ANONFILE","");
-			} catch (TokenReaderError e) {
-			
-			} catch (ScopeParserError e) {
+			} catch (JSDOC.TokenReaderError e) {
+			 print(e.message);
+			} catch (JSDOC.ScopeParserError e) {
 				print(e.message);
 			}
 			var ret = new Gee.HashMap<int,string>();
