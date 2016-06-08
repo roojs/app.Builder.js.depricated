@@ -1167,10 +1167,11 @@ public class WindowState : Object
 			} else {
 				this.win.statusbar_depricated.setNotices( new Json.Object(),0);
 			}
-			
-			buf.highlightErrorsJson("ERR", obj);
-			buf.highlightErrorsJson("WARN", obj);
-			buf.highlightErrorsJson("DEPR", obj);
+			if (this.state = State.CODE:) {
+				buf.highlightErrorsJson("ERR", obj);
+				buf.highlightErrorsJson("WARN", obj);
+				buf.highlightErrorsJson("DEPR", obj);
+			}
 			
 			this.win.statusbar_compilestatus_label.el.hide();
 			this.win.statusbar_run.el.hide();
