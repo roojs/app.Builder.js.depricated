@@ -398,6 +398,15 @@ namespace Palete
 			return ret;
 			  
 		} 
+		
+		public validateJavascriptCompression(string code)
+		{
+		
+			
+		
+		}
+		
+		
 		      
 		public abstract void fillPack(JsRender.Node node,JsRender.Node parent);
 		public abstract void load();
