@@ -409,7 +409,7 @@ namespace Palete
 			p.skipScope = false;
 			p.dumpTokens = false;
 			p.cleanup = false;
-			try {
+			try { 
 				p.packFile(code, "ANONFILE","");
 			} catch (JSDOC.TokenReaderError e) {
 			 print(e.message);
