@@ -1458,7 +1458,7 @@ public class Xcls_WindowRooView : Object
         	}
         	
                 
-        
+         
         	return p.javascriptHasErrors(
         		_this.main_window.windowstate,
                 str, 
