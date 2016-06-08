@@ -402,11 +402,12 @@ namespace Palete
 					err.set_object_member("ERR", files_obj);
  
 					state.showCompileResult(err);
+					// do not set errors.. that's not done here..
 					return true;
 				}
-				ret.set(line, errmsg); // depricated - this is used by the editor currently -- but we are planning to switch from that..
+				errors.set(line, errmsg); // depricated - this is used by the editor currently -- but we are planning to switch from that..
 				print("got  errors\n");
-				return ret;
+				return true;
 
 			}
 			// now syntax is OK.. try the 
