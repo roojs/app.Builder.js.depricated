@@ -575,6 +575,7 @@ public class Editor : Object
                 this.check_running = false;
                 print("calling validate javascript\n"); 
                 return this.highlightErrors(p.validateJavascript(
+            		_this.window.windowstate,
                     str, 
                      _this.key, 
                     _this.ptype,
