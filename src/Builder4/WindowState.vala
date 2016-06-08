@@ -1168,7 +1168,7 @@ public class WindowState : Object
 				this.win.statusbar_depricated.setNotices( new Json.Object(),0);
 			}
 			if (this.state == State.CODE || this.state == State.PROJECTCODEONLY) {
-				buf.highlightErrorsJson("ERR", obj);
+				buf.highlightErrorsJson("ERR", obj); 
 				buf.highlightErrorsJson("WARN", obj);
 				buf.highlightErrorsJson("DEPR", obj);
 			}
@@ -1185,6 +1185,10 @@ public class WindowState : Object
 				gbuf.highlightErrorsJson("ERR", obj);
 				gbuf.highlightErrorsJson("WARN", obj);
 				gbuf.highlightErrorsJson("DEPR", obj);			
+				
+				if (!has_errors) {
+					this.win.statusbar_run.el.show();
+				}
 			
 		   }
 		   
