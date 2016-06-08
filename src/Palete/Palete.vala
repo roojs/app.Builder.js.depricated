@@ -413,14 +413,14 @@ namespace Palete
 			
 			
 			if (ptype == "file") {
-				 this.validateJavascriptCompression(code);
+				 this.validateJavascriptCompression(file, code);
 			}
 			print("no errors\n");
 			return ret;
 			  
 		} 
 		
-		public void  validateJavascriptCompression(string code)
+		public void  validateJavascriptCompression(JsRender.JsRender file, string code)
 		{
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
@@ -434,13 +434,10 @@ namespace Palete
 			p.cleanup = false; 
 			var estr = "";
 			var ret = new Gee.HashMap<int,string>();
-			try { 
-				p.packFile(code, "ANONFILE","");
-			} catch (JSDOC.TokenReaderError e) {
-				estr = e.message;
-			} catch (JSDOC.ScopeParserError e) {
-				estr = e.message;
-			}
+			 
+			p.packFile(code, "ANONFILE","");
+			if (p.hasErrors("")) {
+			  
 			if (estr.length > 0 ) {
 
 				var bits = estr.split(",");
