@@ -436,23 +436,7 @@ namespace Palete
 			var ret = new Gee.HashMap<int,string>();
 			 
 			p.packFile(code, file.path,"");
-			if (!p.hasErrors("")) {
-				state.showCompileResult(new Json.Object());
-			}
-			  
-			if (estr.length > 0 ) {
-
-				var bits = estr.split(",");
-				if (bits.length > 2) {
-					var linebits = bits[1].strip().split(" ");
-					if (linebits.length > 1) {
-						var line = int.parse(linebits[1]);
-						// line is correct - but our standard for error messages is to do it start at '0'
-						ret.set(line -1 , bits[2]);
-					}
-					
-				}
-			}
+			state.showCompileResult(p.result);
 			
 			return ret;
 		
