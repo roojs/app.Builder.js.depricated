@@ -403,25 +403,24 @@ namespace Palete
 					state.showCompileResult(err);
 					return ret;
 				}
-				ret.set(line, errmsg); // depricated - this is used by the editor currently -- but we are planning to switch from taht.
+				ret.set(line, errmsg); // depricated - this is used by the editor currently -- but we are planning to switch from that..
 				print("got  errors\n");
 				return ret;
 
 			}
+			// now syntax is OK.. try the 
 			
-				if (ptype == "file") {
-					return this.validateJavascriptCompression(code);
-				}
-				print("no errors\n");
-				return ret;
+			
+			
+			if (ptype == "file") {
+				 this.validateJavascriptCompression(code);
 			}
-			ret.set(line, errmsg);
-			print("got  errors\n");
+			print("no errors\n");
 			return ret;
 			  
 		} 
 		
-		public Gee.HashMap<int,string>  validateJavascriptCompression(string code)
+		public void  validateJavascriptCompression(string code)
 		{
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
