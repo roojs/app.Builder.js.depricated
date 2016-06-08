@@ -360,13 +360,14 @@ namespace Palete
 	
 	
 	
-		public   Gee.HashMap<int,string>  validateJavascript(
+		public   bool  validateJavascript(
 					WindowState state,
 		 			string code, 
 					string property, 
 					string ptype,
 					JsRender.JsRender file,
-					JsRender.Node? node
+					JsRender.Node? node, 
+					out Gee.HashMap<int,string> errors
 		                 ) 
 		{   
 
