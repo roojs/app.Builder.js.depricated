@@ -1383,7 +1383,7 @@ public class Xcls_WindowRooView : Object
                     }
                     sbuf.get_iter_at_line( out iter, eline);
                     //print("mark line\n");
-                    var msg  = type + " on line: %d - %s".printf(eline+1, valafn);
+                    var msg  = type + " on line: %d  ".printf(eline+1 );
                     var ar = lines.get_array_member(line);
                     for (var i = 0 ; i < ar.get_length(); i++) {
         				msg += (msg.length > 0) ? "\n" : "";
