@@ -399,11 +399,18 @@ namespace Palete
 			  
 		} 
 		
-		public validateJavascriptCompression(string code)
+		public Gee.HashMap<int,string>  validateJavascriptCompression(string code)
 		{
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
 			
+			var p = new JSDOC.Packer();
+			p.keepWhite = false;
+			p.skipScope = false;
+			p.dumpTokens = false;
+			p.cleanup = false;
+			var ret = new Gee.HashMap<int,string>();
+			return ret;
 		
 		}
 		
