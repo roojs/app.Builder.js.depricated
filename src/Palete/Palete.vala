@@ -432,7 +432,7 @@ namespace Palete
 			p.skipScope = false;
 			p.dumpTokens = false;
 			p.cleanup = false; 
-			var estr = "";
+		 
 			 
 			p.packFile(code, file.path,"");
 			state.showCompileResult(p.result);
