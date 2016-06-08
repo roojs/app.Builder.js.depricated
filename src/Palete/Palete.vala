@@ -409,7 +409,11 @@ namespace Palete
 			p.skipScope = false;
 			p.dumpTokens = false;
 			p.cleanup = false;
-			p.packFile(code, "ANONFILE","");
+			try {
+				p.packFile(code, "ANONFILE","");
+			} catch (Exception e) {
+			
+			}
 			 
 			var ret = new Gee.HashMap<int,string>();
 			return ret;
