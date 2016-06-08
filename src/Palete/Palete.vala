@@ -360,7 +360,7 @@ namespace Palete
 	
 	
 	
-		public   bool  validateJavascript(
+		public   bool  javascriptHasErrors(
 					WindowState state,
 		 			string code, 
 					string property, 
@@ -375,10 +375,10 @@ namespace Palete
 			 var errors = new Gee.HashMap<int,string>();
 		
 			if (file.language != "js") {
-				return ret;
+				return false;
 			 }
 			 if (ptype != "listener" && property.length > 0 && property[0] == '|') {
-				return ret;
+				return false;
 			 }
 			
 			//var cd = new JSCore.ClassDefinitionEmpty();
