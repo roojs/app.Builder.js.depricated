@@ -1386,9 +1386,9 @@ public class Xcls_WindowRooView : Object
                     var msg  = type + " on line: %d - %s".printf(eline+1, valafn);
                     var ar = lines.get_array_member(line);
                     for (var i = 0 ; i < ar.get_length(); i++) {
-        		    msg += (msg.length > 0) ? "\n" : "";
-        		    msg += ar.get_string_element(i);
-        	    }
+        				msg += (msg.length > 0) ? "\n" : "";
+        				msg += ar.get_string_element(i);
+        			}
                     
                     
                     sbuf.create_source_mark(msg, type, iter);
