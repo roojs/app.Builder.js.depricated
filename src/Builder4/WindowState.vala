@@ -15,7 +15,7 @@ public class WindowState : Object
 		OBJECT,
 		PROP,
 		LISTENER,
-		CODE,
+		CODE,    // code editor.
 		CODEONLY,
 		FILES,
 		PROJECT, // project settings..
