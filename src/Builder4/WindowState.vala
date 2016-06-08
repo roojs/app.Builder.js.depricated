@@ -1139,6 +1139,12 @@ public class WindowState : Object
 		{
 			// vala has finished compiling...
 			print("vala compiled");
+			var generator = new Json.Generator ();
+			var n  = new Json.Node(Json.NodeType.OBJECT);
+			n.init_object(obj);
+			generator.set_root (n);
+			print("result :%s", generator.to_data (null));
+			
 			
 			var buf = this.code_editor.buffer;
 			buf.check_running = false;
