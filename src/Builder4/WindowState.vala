@@ -1186,6 +1186,16 @@ public class WindowState : Object
 				gbuf.highlightErrorsJson("DEPR", obj);			
 			
 		   }
+		   
+		   if (this.file.xtype == "Gtk") {
+				// not sure how this is working ok? - as highlighting is happening on the vala files at present..
+				var gbuf =   this.window_rooview.sourceview;
+				gbuf.highlightErrorsJson("ERR", obj);
+				gbuf.highlightErrorsJson("WARN", obj);
+				gbuf.highlightErrorsJson("DEPR", obj);			
+			
+		   }
+		   
 			this.last_compile_result = obj;
 			
 			
