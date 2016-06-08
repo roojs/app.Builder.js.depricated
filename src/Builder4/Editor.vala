@@ -583,7 +583,7 @@ public class Editor : Object
                     _this.file,
                     _this.node,
                     errors
-                )
+                );
                 return this.highlightErrors(errors);    
                 
             }
