@@ -427,7 +427,8 @@ namespace Palete
 					var linebits = bits[1].strip().split(" ");
 					if (linebits.length > 1) {
 						var line = int.parse(linebits[1]);
-						ret.set(line, bits[2]);
+						// line is correct - but our standard for error messages is to do it start at '0'
+						ret.set(line -1 , bits[2]);
 					}
 					
 				}
