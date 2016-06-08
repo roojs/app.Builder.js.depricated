@@ -387,6 +387,9 @@ namespace Palete
 								  testcode, out errmsg);
 
 			if (line < 0) {
+				if (ptype == "file") {
+					return this.validateJavascriptCompression(code);
+				}
 				print("no errors\n");
 				return ret;
 			}
