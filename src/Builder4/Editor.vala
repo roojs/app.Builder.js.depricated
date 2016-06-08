@@ -574,14 +574,17 @@ public class Editor : Object
             if (_this.file.language == "js") {
                 this.check_running = false;
                 print("calling validate javascript\n"); 
-                return this.highlightErrors(p.validateJavascript(
+                Gee.HashMap<int,string> errors;
+                p.javascriptHasErrors(
             		_this.window.windowstate,
                     str, 
                      _this.key, 
                     _this.ptype,
                     _this.file,
-                    _this.node
-                ));    
+                    _this.node,
+                    errors
+                )
+                return this.highlightErrors(errors);    
                 
             }
                 
