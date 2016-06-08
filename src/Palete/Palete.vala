@@ -415,14 +415,14 @@ namespace Palete
 			
 			
 			if (ptype == "file") {
-				 return this.validateJavascriptCompression(file, state, code);
+				 return this.javascriptHasCompressionErrors(file, state, code);
 			}
 			print("no errors\n");
 			return false;
 			  
 		} 
 		
-		public bool  validateJavascriptCompression(JsRender.JsRender file, WindowState state, string code)
+		public bool  javascriptHasCompressionErrors(JsRender.JsRender file, WindowState state, string code)
 		{
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
