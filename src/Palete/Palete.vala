@@ -372,7 +372,7 @@ namespace Palete
 		{   
 
 			 print("validate code (%s) ptype=%s property=%s\n", file.language, ptype, property);
-			 var ret = new Gee.HashMap<int,string>();
+			 var errors = new Gee.HashMap<int,string>();
 		
 			if (file.language != "js") {
 				return ret;
