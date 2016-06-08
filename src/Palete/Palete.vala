@@ -404,19 +404,35 @@ namespace Palete
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
 			
+			// standard error format:  file %s, line %s, Error 
+
 		 	var p = new JSDOC.Packer();
 			p.keepWhite = false;
 			p.skipScope = false;
 			p.dumpTokens = false;
-			p.cleanup = false;
+			p.cleanup = false; 
+			var estr = "";
+			var ret = new Gee.HashMap<int,string>();
 			try { 
 				p.packFile(code, "ANONFILE","");
 			} catch (JSDOC.TokenReaderError e) {
-			 print(e.message);
+				estr = e.message;
 			} catch (JSDOC.ScopeParserError e) {
-				print(e.message);
+				estr = e.message;
 			}
-			var ret = new Gee.HashMap<int,string>();
+			if (estr.length > 0 ) {
+
+				var bits = estr.split(",");
+				if (bits.length > 2) {
+					var linebits = bits[1].strip().split(" ");
+					if (linebits.length > 1) {
+						var line = int.parse(linebits[1]);
+						ret.set(line, bits[2]);
+					}
+					
+				}
+			}
+			
 			return ret;
 		
 		}
