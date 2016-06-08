@@ -1335,8 +1335,64 @@ public class Xcls_WindowRooView : Object
         
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
-               // this is a hook for the vala code - it has no value in javascript 
-               // as we only have one error ususally....
+              Gtk.TextIter start;
+             Gtk.TextIter end;   
+             
+             var buf =  this.el.get_buffer();
+               var sbuf = (Gtk.SourceBuffer)buf;
+                buf.get_bounds (out start, out end);
+                
+                sbuf.remove_source_marks (start, end, type);
+                         
+             
+             // we should highlight other types of errors..
+            
+            if (!obj.has_member(type)) {
+                print("Return has no errors\n");
+                return  ;
+            }
+            var err = obj.get_object_member(type);
+            
+            if (_this.file == null) { 
+                return; // just in case the file has not loaded yet?
+            }
+         
+        
+            print("checking for errors in " + _this.file.path);
+        
+           if (!err.has_member(_this.file.path)) {
+                print("File path has no errors\n");
+                return  ;
+            }
+            var lines = err.get_object_member(_this.file.path);
+            
+           
+            
+            var tlines = buf.get_line_count () +1;
+            
+            lines.foreach_member((obj, line, node) => {
+                
+                     Gtk.TextIter iter;
+            //        print("get inter\n");
+                    var eline = int.parse(line) -1  ;
+                    print("GOT ERROR on line %s -- converted to %d\n", line,eline);
+                    
+                    
+                    if (eline > tlines || eline < 0) {
+                        return;
+                    }
+                    sbuf.get_iter_at_line( out iter, eline);
+                    //print("mark line\n");
+                    var msg  = type + " on line: %d - %s".printf(eline+1, valafn);
+                    var ar = lines.get_array_member(line);
+                    for (var i = 0 ; i < ar.get_length(); i++) {
+        		    msg += (msg.length > 0) ? "\n" : "";
+        		    msg += ar.get_string_element(i);
+        	    }
+                    
+                    
+                    sbuf.create_source_mark(msg, type, iter);
+                } );
                 return  ;
             
          
