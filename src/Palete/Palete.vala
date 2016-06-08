@@ -438,6 +438,10 @@ namespace Palete
 			 
 			p.packFile(code, file.path,"");
 			state.showCompileResult(p.result);
+			if (p.hasErrors()) {
+				return true;
+			}
+			return false;
 			
 
 		
