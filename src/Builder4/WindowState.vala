@@ -1135,7 +1135,7 @@ public class WindowState : Object
 	}
 	
 	
-	public void valaCompiled(Json.Object obj)
+	public void showCompileResult(Json.Object obj)
 		{
 			// vala has finished compiling...
 			print("vala compiled");
