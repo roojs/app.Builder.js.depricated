@@ -395,7 +395,7 @@ namespace Palete
 					var lines_obj = new Json.Object();
 					var lines_ar = new Json.Array();
 					lines_ar.add_string_element(errmsg);
-					lines_obj.set_array_member(line, lines_ar);
+					lines_obj.set_array_member(line.to_string(), lines_ar);
 					files_obj.set_object_member(file.filename, lines_obj);
 					 
 					err.set_object_member("ERR", files_obj);
@@ -413,14 +413,14 @@ namespace Palete
 			
 			
 			if (ptype == "file") {
-				 this.validateJavascriptCompression(file, code);
+				 this.validateJavascriptCompression(file, state, code);
 			}
 			print("no errors\n");
 			return ret;
 			  
 		} 
 		
-		public void  validateJavascriptCompression(JsRender.JsRender file, string code)
+		public void  validateJavascriptCompression(JsRender.JsRender file, WindowState state, string code)
 		{
 			// this uses the roojspacker code to try and compress the code.
 			// it should highlight errors before we actually push live the code.
@@ -435,8 +435,10 @@ namespace Palete
 			var estr = "";
 			var ret = new Gee.HashMap<int,string>();
 			 
-			p.packFile(code, file.filname,"");
-			if (p.hasErrors("")) {
+			p.packFile(code, file.filename,"");
+			if (!p.hasErrors("")) {
+				state.showCompileResult(err);
+			}
 			  
 			if (estr.length > 0 ) {
 
