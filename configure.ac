@@ -29,7 +29,8 @@ PKG_CHECK_MODULES(BUILDER, [
 		 json-glib-1.0 		 
 		 gee-1.0 
  		 libxml-2.0 
-		 libsoup-2.4
+		 libsoup-2.4,
+		 roojspacker-1.0
 		  
 ])
 
