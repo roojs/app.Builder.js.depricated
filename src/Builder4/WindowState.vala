@@ -1167,7 +1167,7 @@ public class WindowState : Object
 			} else {
 				this.win.statusbar_depricated.setNotices( new Json.Object(),0);
 			}
-			if (this.state = State.CODE:) {
+			if (this.state = State.CODE: || this.state == State.PROJECTCODEONLY) {
 				buf.highlightErrorsJson("ERR", obj);
 				buf.highlightErrorsJson("WARN", obj);
 				buf.highlightErrorsJson("DEPR", obj);
