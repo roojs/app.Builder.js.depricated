@@ -411,10 +411,11 @@ namespace Palete
 			p.cleanup = false;
 			try {
 				p.packFile(code, "ANONFILE","");
-			} catch (Exception e) {
+			} catch (TokenReaderError e) {
 			
+			} catch (ScopeParserError e) {
+				print(e.message);
 			}
-			 
 			var ret = new Gee.HashMap<int,string>();
 			return ret;
 		
