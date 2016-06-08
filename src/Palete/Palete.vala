@@ -399,7 +399,7 @@ namespace Palete
 					files_obj.set_object_member(file.filename, lines_obj);
 					 
 					err.set_object_member("ERR", files_obj);
-					err.set_object_member("ERR-TOTAL", 1);
+ 
 					state.showCompileResult(err);
 					return ret;
 				}
