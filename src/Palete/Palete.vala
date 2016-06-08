@@ -396,7 +396,7 @@ namespace Palete
 					var lines_ar = new Json.Array();
 					lines_ar.add_string_element(errmsg);
 					lines_obj.set_array_member(line.to_string(), lines_ar);
-					files_obj.set_object_member(file.filename, lines_obj);
+					files_obj.set_object_member(file.path, lines_obj);
 					 
 					err.set_object_member("ERR", files_obj);
  
@@ -435,9 +435,9 @@ namespace Palete
 			var estr = "";
 			var ret = new Gee.HashMap<int,string>();
 			 
-			p.packFile(code, file.filename,"");
+			p.packFile(code, file.path,"");
 			if (!p.hasErrors("")) {
-				state.showCompileResult(err);
+				state.showCompileResult(new Json.Object());
 			}
 			  
 			if (estr.length > 0 ) {
