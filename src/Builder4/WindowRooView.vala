@@ -1476,8 +1476,7 @@ public class Xcls_WindowRooView : Object
                 str, 
                  "", // _this.key, 
                 "file", //_this.ptype,
-                _this.file,
-                null,
+                _this.file, 
                 null
             );    
              
