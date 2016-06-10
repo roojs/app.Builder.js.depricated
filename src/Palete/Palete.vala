@@ -365,14 +365,13 @@ namespace Palete
 		 			string code, 
 					string property, 
 					string ptype,
-					JsRender.JsRender file,
-					JsRender.Node? node, 
+					JsRender.JsRender file, 
 					out Gee.HashMap<int,string> errors
 		                 ) 
 		{   
 
 			 print("validate code (%s) ptype=%s property=%s\n", file.language, ptype, property);
-			   errors = new Gee.HashMap<int,string>();
+			errors = new Gee.HashMap<int,string>();
 		
 			if (file.language != "js") {
 				return false;
