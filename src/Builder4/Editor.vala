@@ -581,7 +581,7 @@ public class Editor : Object
                      _this.key, 
                     _this.ptype,
                     _this.file,
-                    _this.node,
+         
                     out errors
                 );
                 return this.highlightErrors(errors);    
