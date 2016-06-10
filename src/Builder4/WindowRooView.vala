@@ -1469,7 +1469,7 @@ public class Xcls_WindowRooView : Object
         		return false; // fake syntax error.
         	}
         	
-            Gee.HashMap<int,string> ret_x;
+            //Gee.HashMap<int,string> ret_x;
         
         	return p.javascriptHasErrors(
         		_this.main_window.windowstate,
@@ -1477,8 +1477,7 @@ public class Xcls_WindowRooView : Object
                  "", // _this.key, 
                 "file", //_this.ptype,
                 _this.file,
-                null,
-                ret_x
+                null
             );    
              
         }
