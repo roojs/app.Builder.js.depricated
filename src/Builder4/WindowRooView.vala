@@ -1135,6 +1135,9 @@ public class Xcls_WindowRooView : Object
             this.node_selected = sel;
             
             this.updateGreySelection(scroll);
+            
+            
+            
         }
         public string toString () {
            Gtk.TextIter s;
