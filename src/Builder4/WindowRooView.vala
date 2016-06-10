@@ -1338,7 +1338,12 @@ public class Xcls_WindowRooView : Object
                 }
             
             }
-            
+            if (scroll) {
+        	    Gtk.TextIter cpos_iter;
+        		buf.get_iter_at_line(out cpos_iter, start_line);
+        		buf.place_cursor(cpos_iter); 
+        	}
+        
         
         }
         public void highlightErrorsJson (string type, Json.Object obj) {
