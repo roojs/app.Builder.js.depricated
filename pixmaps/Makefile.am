@@ -42,7 +42,7 @@ update-icon-cache:
 install-icons:
 	for icon in $(public_icon_dirs); do \
 		mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/$$icon; \
-        $(INSTALL_DATA) $(srcdir)/$$icon/roobuilder.png $(DESTDIR)$(datadir)/icons/hicolor/$$icon/roobuilder.png;
+		$(INSTALL_DATA) $(srcdir)/$$icon/roobuilder.png $(DESTDIR)$(datadir)/icons/hicolor/$$icon/roobuilder.png; \
 	done; 
 
 uninstall-icons:

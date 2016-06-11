@@ -77,6 +77,7 @@ builder4_PKGS = \
 		--pkg gladeui-2.0 \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore \
+		--pkg roojspacker-1.0 \
 		$(builder_LIBVALA) \
 		$(builder_GDA) \
 		$(builder_WEBKKIT) \
