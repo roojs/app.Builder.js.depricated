@@ -85,7 +85,8 @@
             "../Project",
             "../vapi",
             "../c",
-            "../..//tests"
+            "../..//tests",
+            "../..//pixmaps"
         ],
         "packages" : [
             "gdk-3.0",
