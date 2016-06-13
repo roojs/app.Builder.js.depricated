@@ -1,38 +1,38 @@
 
  
 if HAVE_LIBVALA22
-builder_LIBVALA = --pkg libvala-0.22
+roojsbuilder_LIBVALA = --pkg libvala-0.22
 endif
  
 if HAVE_LIBVALA24
-builder_LIBVALA = --pkg libvala-0.24
+roojsbuilder_LIBVALA = --pkg libvala-0.24
 endif
 
 if HAVE_LIBVALA26
-builder_LIBVALA = --pkg libvala-0.26
+roojsbuilder_LIBVALA = --pkg libvala-0.26
 endif
 
 if HAVE_LIBVALA28
-builder_LIBVALA = --pkg libvala-0.28
+roojsbuilder_LIBVALA = --pkg libvala-0.28
 endif
 
 if HAVE_LIBVALA30
-builder_LIBVALA = --pkg libvala-0.30
+roojsbuilder_LIBVALA = --pkg libvala-0.30
 endif
 
 if HAVE_LIBVALA32
-builder_LIBVALA = --pkg libvala-0.32
+roojsbuilder_LIBVALA = --pkg libvala-0.32
 endif
 
 # gda
 
 
 if HAVE_GDA5
-builder_GDA = --pkg libgda-5.0
+roojsbuilder_GDA = --pkg libgda-5.0
 endif
 
 if HAVE_GDA4
-builder_GDA = --pkg libgda-4.0
+roojsbuilder_GDA = --pkg libgda-4.0
 endif
 
 
@@ -40,31 +40,31 @@ endif
 
 
 if HAVE_WEBKIT4
-builder_WEBKKIT =   --pkg  webkit2gtk-4.0  
+roojsbuilder_WEBKKIT =   --pkg  webkit2gtk-4.0  
 endif
 
 if HAVE_WEBKIT3
-builder_WEBKKIT =   --pkg  webkit2gtk-3.0  
+roojsbuilder_WEBKKIT =   --pkg  webkit2gtk-3.0  
 endif
 
 # vte
  
 if HAVE_VTE_2_91
-builder_VTE =   --pkg  vte-2.91  
+roojsbuilder_VTE =   --pkg  vte-2.91  
 endif
 if HAVE_VTE_2_90
-builder_VTE =   --pkg  vte-2.90  
+roojsbuilder_VTE =   --pkg  vte-2.90  
 endif
  
 # - not sure if needed....  
 
-AM_CPPFLAGS =  $(BUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(GDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
+AM_CPPFLAGS =  $(ROOJSBUILDER_CFLAGS) $(WEBKIT_CFLAGS) $(GDA_CFLAGS) $(LIBVALA_CFLAGS) $(JAVASCRIPTCOREGTK_CFLAGS) $(VTE_CFLAGS)
 
 
-bin_PROGRAMS = builder4
+bin_PROGRAMS = roojsbuilder
 
  
-builder4_PKGS = \
+roojsbuilder_PKGS = \
 		--pkg glib-2.0  \
 		--pkg gobject-2.0  \
 		--pkg  gtk+-3.0 \
@@ -78,11 +78,11 @@ builder4_PKGS = \
 		--pkg libsoup-2.4 \
  		--pkg javascriptcore \
 		--pkg roojspacker-1.0 \
-		$(builder_LIBVALA) \
-		$(builder_GDA) \
-		$(builder_WEBKKIT) \
-		$(builder_JAVASCRIPTCOREGTK) \
-		$(builder_VTE) \
+		$(roojsbuilder_LIBVALA) \
+		$(roojsbuilder_GDA) \
+		$(roojsbuilder_WEBKKIT) \
+		$(roojsbuilder_JAVASCRIPTCOREGTK) \
+		$(roojsbuilder_VTE) \
 		--pkg posix 
 
 
@@ -147,7 +147,7 @@ BUIDERUI = \
 		Builder4/ValaCompileResults.vala \
 		Builder4/PopoverProperty.vala
         
-builder4_SOURCES = \
+roojsbuilder_SOURCES = \
 		Application.vala \
 		Main.vala \
 		Spawn.vala \
@@ -162,10 +162,10 @@ builder4_SOURCES = \
 		
 		
  
-builder4_VALAFLAGS = \
-	 --thread -X -lm --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(builder4_PKGS)
+roojsbuilder_VALAFLAGS = \
+	 --thread -X -lm --target-glib=2.32 --vapidir=$(srcdir)/vapi -g  $(roojsbuilder_PKGS)
 
-builder4_LDADD =  $(BUILDER_LIBS) $(LIBVALA_LIBS) $(GDA_LIBS) $(WEBKIT_LIBS) $(VTE_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
+roojsbuilder_LDADD =  $(ROOJSBUILDER_LIBS) $(LIBVALA_LIBS) $(GDA_LIBS) $(WEBKIT_LIBS) $(VTE_LIBS) $(JAVASCRIPTCOREGTK_LIBS)
 
  
 
