@@ -2,7 +2,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.68])
 
-AC_INIT([builder], [4.0.0])
+AC_INIT([roojsbuilder], [4.0.0])
 
 AC_CONFIG_HEADERS([config.h])
 
@@ -11,7 +11,7 @@ AM_MAINTAINER_MODE([enable])
 
 AM_SILENT_RULES([yes])
 
-AC_PROG_CC(["tcc -b" gcc cc])
+AC_PROG_CC
 
 AM_PROG_VALAC([0.22.0])
 
@@ -20,7 +20,7 @@ AC_CHECK_LIB([m],[cos])
 
 dnl we need to check these exist, then it will generate a compile string for them.
 
-PKG_CHECK_MODULES(BUILDER, [
+PKG_CHECK_MODULES(ROOJSBUILDER, [
 		 clutter-gtk-1.0 
 		 glib-2.0 >= 2.24.1
 		 gobject-2.0 >= 2.24.1
@@ -173,8 +173,8 @@ AC_CONFIG_FILES([
 ])
 
   
-AC_SUBST(BUILDER_CFLAGS)
-AC_SUBST(BUILDER_LIBS)
+AC_SUBST(ROOJSBUILDER_CFLAGS)
+AC_SUBST(ROOJSBUILDER_LIBS)
 
 
 AC_OUTPUT
