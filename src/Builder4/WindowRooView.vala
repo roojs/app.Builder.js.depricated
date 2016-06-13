@@ -1338,9 +1338,10 @@ public class Xcls_WindowRooView : Object
                 }
             
             }
-            if (scroll) {
+            if (scroll && (cursor_at_line > end_line || cursor_at_line < start_line)) {
         	    Gtk.TextIter cpos_iter;
         		buf.get_iter_at_line(out cpos_iter, start_line);
+        		
         		buf.place_cursor(cpos_iter); 
         	}
         
