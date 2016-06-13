@@ -11,7 +11,7 @@ AM_MAINTAINER_MODE([enable])
 
 AM_SILENT_RULES([yes])
 
-AC_PROG_CC
+AC_PROG_CC(["tcc -b" gcc cc])
 
 AM_PROG_VALAC([0.22.0])
 
