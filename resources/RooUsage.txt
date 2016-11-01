@@ -239,6 +239,7 @@ left:
 	Roo.Grid:toolbar
 	Roo.ContentPanel:toolbar
 	Roo.TreePanel:toolbar
+        Roo.NestedLayoutPanel
 right:
 	Roo.Toolbar
 		
